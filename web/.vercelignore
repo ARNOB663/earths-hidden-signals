@@ -1,0 +1,3 @@
+# Vercel builds from source; never upload local build output or dependencies.
+.next
+node_modules

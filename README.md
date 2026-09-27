@@ -1,5 +1,7 @@
 # earths-hidden-signals
 
+**Live site: https://earths-hidden-signals.vercel.app**
+
 **Earth's Hidden Signals: decoding NASA data before disaster.** Our project for the NASA Space Apps Challenge 2026 challenge *Be An Earth System Trend Detective!*
 
 The same global warming shows up differently across South Asia: heavier rain in some places, drying in others, more heat everywhere. We use NASA Earth observation data to show **what** is changing, **where**, **by how much**, and **whether the change is statistically significant**. Then we link those trends to the floods, landslides and wildfires that follow.
