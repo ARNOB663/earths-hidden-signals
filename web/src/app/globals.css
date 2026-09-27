@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0b0f14;
+  --foreground: #e2e8f0;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+.basemap-dim {
+  filter: grayscale(1) brightness(0.42) contrast(1.15);
+}
+
+/* Leaflet controls, restyled for the dark UI. */
+.leaflet-container {
+  font-family: inherit;
+  background: #0b0f14;
+}
+.leaflet-bar a,
+.leaflet-bar a:hover {
+  background: rgba(11, 15, 20, 0.85);
+  color: #cbd5e1;
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+.leaflet-bar {
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+.leaflet-control-attribution {
+  background: rgba(11, 15, 20, 0.7) !important;
+  color: #64748b;
+}
+.leaflet-control-attribution a {
+  color: #94a3b8;
+}
+.leaflet-control-scale-line {
+  background: rgba(11, 15, 20, 0.7);
+  color: #cbd5e1;
+  border-color: #64748b;
+}
+
+.trend-tooltip {
+  background: rgba(11, 15, 20, 0.95);
+  color: #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  box-shadow: none;
+  font-size: 12px;
+  line-height: 1.45;
+}
+.trend-tooltip::before {
+  display: none;
+}

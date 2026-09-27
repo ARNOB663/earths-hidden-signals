@@ -1,0 +1,68 @@
+{
+  "_note": "Approximate rectangular boxes around hazard-prone landscapes, defined by geography (basins, mountain belts, forest belts), not national borders. bbox = [latMin, latMax, lonMin, lonMax].",
+  "zones": [
+    {
+      "id": "study-area",
+      "name": "Whole study area",
+      "hazard": null,
+      "bbox": [5, 38, 60, 100],
+      "description": "All land in the South Asia study box (5-38N, 60-100E)."
+    },
+    {
+      "id": "bengal-delta",
+      "name": "Ganges-Brahmaputra-Meghna delta",
+      "hazard": "flood",
+      "bbox": [21.5, 26.5, 88, 92.5],
+      "description": "Low-lying delta where three of Asia's largest rivers meet the Bay of Bengal. Monsoon rain here and upstream drives river and flash floods."
+    },
+    {
+      "id": "indus-plain",
+      "name": "Indus plain",
+      "hazard": "flood",
+      "bbox": [24, 32, 67, 74],
+      "description": "Flat, densely farmed floodplain of the Indus. Extreme monsoon rain produced the 2010 and 2022 mega-floods."
+    },
+    {
+      "id": "central-himalaya",
+      "name": "Central Himalaya",
+      "hazard": "landslide",
+      "bbox": [26.5, 30.5, 80, 88.5],
+      "description": "Steep, young mountains where saturated monsoon soils trigger thousands of landslides a year."
+    },
+    {
+      "id": "western-himalaya",
+      "name": "Western Himalaya",
+      "hazard": "landslide",
+      "bbox": [30, 35, 73, 80],
+      "description": "Mountain belt from Kashmir to Uttarakhand; cloudbursts and road cuts make slopes fail."
+    },
+    {
+      "id": "western-ghats",
+      "name": "Western Ghats",
+      "hazard": "landslide",
+      "bbox": [8, 16, 73, 77],
+      "description": "Coastal mountain range facing the monsoon winds; intense rain caused the 2018 and 2024 Kerala landslide disasters."
+    },
+    {
+      "id": "sri-lanka-hills",
+      "name": "Sri Lanka central highlands",
+      "hazard": "landslide",
+      "bbox": [6, 8.5, 80, 81.9],
+      "description": "Tea-covered hill country where monsoon downpours regularly trigger landslides."
+    },
+    {
+      "id": "central-india-forests",
+      "name": "Central Indian forest belt",
+      "hazard": "wildfire",
+      "bbox": [18, 24, 78, 86],
+      "description": "Dry deciduous forests that burn every pre-monsoon season (March-May) when heat peaks and soils dry out."
+    },
+    {
+      "id": "northeast-hills",
+      "name": "Northeast India and Myanmar hills",
+      "hazard": "wildfire",
+      "bbox": [22, 27, 91, 97],
+      "description": "Forested hills with frequent spring fires; also landslide-prone in the monsoon."
+    }
+  ]
+}

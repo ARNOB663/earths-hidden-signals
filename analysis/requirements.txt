@@ -1,0 +1,6 @@
+numpy>=2.0
+scipy>=1.11
+requests>=2.31
+pymannkendall>=1.4
+netCDF4>=1.6
+pytest>=8
