@@ -8,7 +8,7 @@ The same global warming shows up differently across South Asia: heavier rain in 
 
 | Folder | What it is |
 |---|---|
-| [`web/`](web/) | Next.js + TypeScript website: Map Explorer (NASA GIBS imagery + Landsat forest loss) and Trend Analysis |
+| [`web/`](web/) | Next.js + TypeScript website: Overview, Map Explorer (NASA GIBS imagery + Landsat forest loss), Trend Analysis, Hazard Signals, Methods |
 | [`analysis/`](analysis/) | Python pipeline: downloads NASA records, runs the trend tests, writes JSON for the website |
 
 ## Data
@@ -17,6 +17,7 @@ The same global warming shows up differently across South Asia: heavier rain in 
 - **Rainfall:** GPCP v2.3 (NASA GSFC / NOAA)
 - **Map imagery:** NASA GIBS, from MODIS land surface temperature, MODIS NDVI, MERRA-2 and GLDAS
 - **Forest loss:** Hansen/UMD Global Forest Change, built from NASA/USGS Landsat
+- **Hazard events:** NASA FIRMS MODIS fires, NASA Global Landslide Catalog, GDACS flood alerts
 
 ## Method
 
@@ -26,6 +27,12 @@ The same global warming shows up differently across South Asia: heavier rain in 
 
 Details are in [`analysis/README.md`](analysis/README.md).
 
+## Key findings (1981–2025)
+
+- **Warming everywhere:** all 234 land cells warmed significantly, by about +0.31 °C per decade (+1.4 °C since 1981).
+- **Monsoon rain splits:** the Indus plain got wetter, while the Bengal delta, Central Himalaya, Western Ghats and Northeast hills got drier. Most cells show no detectable trend.
+- **2025 preparedness signals:** Indus plain floods and Western Himalaya landslides. In both regions, 2025 monsoon rain resembles past high-event years (evidence for readiness, not a forecast).
+
 ## Run it
 
 ```bash
@@ -33,6 +40,7 @@ Details are in [`analysis/README.md`](analysis/README.md).
 cd analysis
 pip install -r requirements.txt
 python build.py
+python build_hazards.py
 
 # website
 cd web
