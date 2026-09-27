@@ -33,3 +33,20 @@ Study area: 5–38°N, 60–100°E, 1981–2025. No login is needed for either s
 - `{variable}_{season}.json`: per-cell slope per decade, 95% CI, p-value, FDR flag and mean (row-major, south→north, west→east)
 - `{variable}_{season}_series.json`: per-cell yearly values (loaded when a cell is clicked)
 - `zones.json`: region-average series and trends
+
+## Hazard signals (`build_hazards.py`, run after `build.py`)
+
+| Hazard | Event record | Years | Driver tested |
+|---|---|---|---|
+| Wildfire | NASA FIRMS MODIS (Terra + Aqua) vegetation fires, confidence ≥ 30, Mar–May | 2003–2024 | Pre-monsoon temperature (higher) and rainfall (lower) |
+| Landslide | NASA Global Landslide Catalog (news reports), Jun–Sep | 2007–2017 | Monsoon rainfall (higher) |
+| Flood | GDACS flood alerts (UN/EU) within 1° of the region | 2000–2025 | Monsoon rainfall (higher) |
+
+For each region:
+1. **Event trend** (fires only; the other records are too short): Mann–Kendall + Sen's slope.
+2. **Link to climate:** Spearman correlation between yearly event counts and the driver, after removing each series' long-term trend, so two things that both drift over time don't look linked. A link counts only if p < 0.05 and it points in the physically expected direction.
+3. **Preparedness signal:** only where a link exists. It compares the latest year's driver percentile (within 1981–2025) with the average percentile in the top-25% event years. This is a comparison with history, **not a forecast**.
+
+Caveats: news-based landslide reports under-count remote areas, MODIS overpass times drifted after about 2020, and GDACS coverage improved over time.
+
+Outputs in `web/public/data/hazards/`: `zones.json`, `landslides.json`, `floods.json`, `fires_grid.json`.

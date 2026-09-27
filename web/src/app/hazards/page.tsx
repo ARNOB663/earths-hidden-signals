@@ -1,16 +1,29 @@
-import { ComingSoon } from "@/components/site/ComingSoon";
+import { readFile } from "node:fs/promises";
+import path from "node:path";
+import type { Metadata } from "next";
+import { Suspense } from "react";
+import HazardExplorer from "@/components/hazards/HazardExplorer";
+import type { HazardZone } from "@/lib/hazards";
+import type { Manifest } from "@/lib/trends";
 
-export default function HazardsPage() {
+export const metadata: Metadata = { title: "Hazard Signals · Earth's Hidden Signals" };
+
+// Produced offline by analysis/build_hazards.py and shipped as static JSON.
+async function readData<T>(...parts: string[]): Promise<T> {
+  return JSON.parse(await readFile(path.join(process.cwd(), "public", "data", ...parts), "utf-8")) as T;
+}
+
+export default async function HazardsPage() {
+  const [{ zones }, manifest] = await Promise.all([
+    readData<{ zones: HazardZone[] }>("hazards", "zones.json"),
+    readData<Manifest>("trends", "manifest.json"),
+  ]);
   return (
-    <ComingSoon
-      title="Hazard Signals"
-      intro="How the same warming shows up as different hazards across South Asia, compared with the conditions seen before past events."
-      items={[
-        "Floods: rainfall, soil moisture and water storage in the major river basins and deltas",
-        "Landslides: rainfall and soil saturation along the Himalaya, Western Ghats and Sri Lanka hills",
-        "Wildfire: heat, dry soil and vegetation stress in the region's forest belts",
-        "Evidence-based preparedness: similarity to past pre-event conditions, not a prediction",
-      ]}
-    />
+    <div className="lg:h-[calc(100dvh-3.5rem)]">
+      {/* HazardExplorer reads the URL's search params, which needs a Suspense boundary on a static page. */}
+      <Suspense>
+        <HazardExplorer zones={zones} manifest={manifest} />
+      </Suspense>
+    </div>
   );
 }
