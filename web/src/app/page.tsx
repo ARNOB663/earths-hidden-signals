@@ -10,6 +10,7 @@ import {
 } from "@phosphor-icons/react/ssr";
 import Link from "next/link";
 import { Sparkline } from "@/components/findings/parts";
+import { PlaceSearch } from "@/components/places/PlaceSearch";
 import { readHazardZones, readManifest, readTrendZones } from "@/lib/data";
 import { preparednessSignal } from "@/lib/hazards";
 import { formatSigned, type Zone } from "@/lib/trends";
@@ -62,6 +63,10 @@ export default async function Home() {
             <Link href="/explore" className="font-medium text-accent hover:underline">
               Open the satellite map
             </Link>
+          </div>
+          <div className="mt-8">
+            <p className="mb-2 text-sm font-medium text-ink-2">Or look up your city</p>
+            <PlaceSearch />
           </div>
         </div>
 

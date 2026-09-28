@@ -1,6 +1,6 @@
 "use client";
 
-import { List, Monitor, Moon, Sun, X } from "@phosphor-icons/react";
+import { List, MagnifyingGlass, Monitor, Moon, Sun, X } from "@phosphor-icons/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -55,6 +55,17 @@ export function SiteNav() {
         </nav>
 
         <div className="ml-auto flex items-center gap-2">
+          <Link
+            href="/places"
+            aria-label="Find a place"
+            title="Find a place"
+            className={`flex h-10 items-center gap-2 rounded-full px-3 text-sm transition-colors hover:bg-card ${
+              pathname.startsWith("/places") ? "bg-card font-medium text-ink shadow-soft" : "text-ink-2"
+            }`}
+          >
+            <MagnifyingGlass size={18} />
+            <span className="hidden xl:inline">Find a place</span>
+          </Link>
           <ThemeSwitcher />
           <button
             type="button"
