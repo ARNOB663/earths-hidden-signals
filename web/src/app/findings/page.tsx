@@ -145,6 +145,9 @@ export default async function StoryPage() {
                 decimals={2}
                 axisLabel="°C warmer than the 1951–1980 average"
                 zeroLine
+                lowerPerDecade={tStudy.lowerPerDecade}
+                upperPerDecade={tStudy.upperPerDecade}
+                title="South Asia temperature whole year"
               />
             </figure>
             <MiniGridMap

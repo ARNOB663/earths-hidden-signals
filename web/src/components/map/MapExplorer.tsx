@@ -21,6 +21,8 @@ import { useEffect, useMemo, useState } from "react";
 import { formatMonth, nearestDateIndex } from "@/lib/dates";
 import type { GibsCatalog } from "@/lib/gibs";
 import { LAYERS, type LayerDef } from "@/lib/layers";
+import { QuickGuide } from "@/components/ui/QuickGuide";
+import { CompareDivider } from "./CompareDivider";
 import { ForestLossChart } from "./ForestLossChart";
 import type { MapFocus } from "./LeafletMap";
 import { LegendBar } from "./LegendBar";
@@ -72,6 +74,10 @@ export default function MapExplorer({ catalog }: { catalog: GibsCatalog }) {
   const [loading, setLoading] = useState(false);
   const [forestTotals, setForestTotals] = useState<number[] | null>(null);
   const [focus, setFocus] = useState<{ target: MapFocus; nonce: number }>({ target: "south-asia", nonce: 0 });
+  // Compare mode: left of the divider shows the same month in `thenYear`.
+  const [compareOn, setCompareOn] = useState(() => params.has("compare"));
+  const [thenYear, setThenYear] = useState<string | null>(() => params.get("compare"));
+  const [split, setSplit] = useState(0.6);
 
   const layer = LAYERS.find((l) => l.id === layerId)!;
   const info = layer.kind === "gibs" ? catalog[layer.id] : null;
@@ -79,14 +85,23 @@ export default function MapExplorer({ catalog }: { catalog: GibsCatalog }) {
   const idx = dateIndex[layerId] ?? dates.length - 1;
   const date = dates[idx] ?? null;
 
+  // The "then" date for compare mode: the chosen year, same month as the main date (or the first year).
+  const monthYears = useMemo(
+    () => (date ? dates.filter((d) => d.slice(4) === date.slice(4)).map((d) => d.slice(0, 4)) : []),
+    [dates, date],
+  );
+  const effectiveThenYear = thenYear && monthYears.includes(thenYear) ? thenYear : (monthYears[0] ?? null);
+  const compareDate =
+    compareOn && layer.kind === "gibs" && date && effectiveThenYear ? `${effectiveThenYear}${date.slice(4)}` : null;
+
   // Keep the address bar in sync so the current view can be copied and shared.
   useEffect(() => {
     const query =
       layer.kind === "gibs"
-        ? `?layer=${layer.id}${date ? `&date=${date}` : ""}`
+        ? `?layer=${layer.id}${date ? `&date=${date}` : ""}${compareDate ? `&compare=${compareDate.slice(0, 4)}` : ""}`
         : `?layer=${layer.id}&from=${yearRange[0]}&to=${yearRange[1]}`;
     window.history.replaceState(null, "", query);
-  }, [layer, date, yearRange]);
+  }, [layer, date, yearRange, compareDate]);
 
   const setIdx = (next: number) =>
     setDateIndex((prev) => ({ ...prev, [layerId]: Math.min(dates.length - 1, Math.max(0, next)) }));
@@ -159,6 +174,22 @@ export default function MapExplorer({ catalog }: { catalog: GibsCatalog }) {
           focus={focus}
           onLoadingChange={setLoading}
           onForestStats={setForestTotals}
+          compareDate={compareDate}
+          split={split}
+        />
+        {compareDate && date && (
+          <CompareDivider split={split} onChange={setSplit} leftLabel={formatMonth(compareDate)} rightLabel={formatMonth(date)} />
+        )}
+        <QuickGuide
+          id="explore"
+          title="How to use the Satellite map"
+          steps={[
+            "Pick what you want to see: heat, rain, greenness or forest loss.",
+            "Pick a month, or press Play to watch the years go by.",
+            "Turn on \"Compare two years\" to see a place then and now, side by side.",
+          ]}
+          buttonClassName="absolute left-3 top-3 lg:left-[392px] lg:top-4"
+          cardClassName="absolute left-3 top-16 lg:left-[392px] lg:top-[68px]"
         />
         {loading && (
           <div className="pointer-events-none absolute left-1/2 top-4 z-[500] -translate-x-1/2 rounded-full bg-card px-4 py-1.5 text-sm text-ink-2 shadow-soft lg:left-[calc(50%+190px)]">
@@ -255,6 +286,48 @@ export default function MapExplorer({ catalog }: { catalog: GibsCatalog }) {
                 Play shows the same month in every year, so you can see the long-term change without the seasons getting in
                 the way.
               </p>
+
+              <div className="rounded-xl border border-line p-3.5">
+                <label className="flex cursor-pointer items-center justify-between gap-3">
+                  <span>
+                    <span className="block text-sm font-medium text-ink">Compare two years</span>
+                    <span className="block text-xs text-ink-3">See a place then and now, side by side</span>
+                  </span>
+                  <input
+                    type="checkbox"
+                    role="switch"
+                    checked={compareOn}
+                    onChange={(e) => setCompareOn(e.target.checked)}
+                    className="h-5 w-5 accent-[var(--accent)]"
+                  />
+                </label>
+                {compareOn && effectiveThenYear && (
+                  <div className="mt-3 space-y-2 text-sm text-ink-2">
+                    <label className="flex items-center justify-between gap-3">
+                      Left side
+                      <span className="relative">
+                        <select
+                          value={effectiveThenYear}
+                          onChange={(e) => setThenYear(e.target.value)}
+                          className="appearance-none rounded-full border border-line bg-card py-1.5 pl-3.5 pr-8 text-sm text-ink"
+                        >
+                          {monthYears.map((y) => (
+                            <option key={y} value={y}>
+                              {formatMonth(`${y}${date.slice(4)}`)}
+                            </option>
+                          ))}
+                        </select>
+                        <CaretDown size={13} className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-ink-3" />
+                      </span>
+                    </label>
+                    <div className="flex items-center justify-between gap-3">
+                      Right side
+                      <span className="font-medium text-ink">{formatMonth(date)}</span>
+                    </div>
+                    <p className="text-xs text-ink-3">Drag the round handle on the map to slide between them.</p>
+                  </div>
+                )}
+              </div>
             </div>
           ) : layer.kind === "forest-loss" ? (
             <div className="mt-3 space-y-3">

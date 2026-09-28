@@ -24,6 +24,10 @@ interface Props {
   focus: { target: MapFocus; nonce: number };
   onLoadingChange: (loading: boolean) => void;
   onForestStats: (totals: number[]) => void;
+  /** When set, the left part of the map shows this date and the right part shows `date`. */
+  compareDate: string | null;
+  /** Where the divider sits, 0 (left edge) to 1 (right edge). */
+  split: number;
 }
 
 type DataLayer = L.TileLayer | ForestLossLayer;
@@ -37,6 +41,8 @@ export default function LeafletMap({
   focus,
   onLoadingChange,
   onForestStats,
+  compareDate,
+  split,
 }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<L.Map | null>(null);
@@ -44,7 +50,34 @@ export default function LeafletMap({
   const staleRef = useRef(new Set<DataLayer>());
   const referenceRef = useRef<L.LayerGroup | null>(null);
   const baseRef = useRef<BaseMap | null>(null);
+  const compareRef = useRef<L.TileLayer | null>(null);
+  const splitRef = useRef(split);
   const theme = useTheme();
+
+  // Compare mode: clip the "then" layer to the left of the divider and everything else to the right.
+  // Clipping uses layer coordinates, so it must be recomputed whenever the map moves.
+  const clipLayers = useRef(() => {
+    const map = mapRef.current;
+    if (!map) return;
+    const others = [dataRef.current, ...staleRef.current].filter(Boolean) as DataLayer[];
+    const then = compareRef.current;
+    if (!then) {
+      for (const l of others) {
+        const el = l.getContainer();
+        if (el) el.style.clip = "";
+      }
+      return;
+    }
+    const nw = map.containerPointToLayerPoint([0, 0]);
+    const se = map.containerPointToLayerPoint(map.getSize());
+    const cx = nw.x + (se.x - nw.x) * splitRef.current;
+    const thenEl = then.getContainer();
+    if (thenEl) thenEl.style.clip = `rect(${nw.y}px, ${cx}px, ${se.y}px, ${nw.x}px)`;
+    for (const l of others) {
+      const el = l.getContainer();
+      if (el) el.style.clip = `rect(${nw.y}px, ${se.x}px, ${se.y}px, ${cx}px)`;
+    }
+  });
 
   // Keep latest callbacks/values reachable from Leaflet event handlers without re-creating layers.
   const latest = useRef({ onLoadingChange, onForestStats, opacity, yearRange });
@@ -61,7 +94,10 @@ export default function LeafletMap({
     baseRef.current = base;
     mapRef.current = base.map;
     referenceRef.current = base.reference;
+    const reclip = () => clipLayers.current();
+    base.map.on("move zoom resize", reclip);
     return () => {
+      base.map.off("move zoom resize", reclip);
       base.dispose();
       mapRef.current = null;
       dataRef.current = null;
@@ -125,6 +161,7 @@ export default function LeafletMap({
     next.on("load", onLoad);
     next.addTo(map);
     dataRef.current = next;
+    clipLayers.current();
 
     // Different kinds of layer never blend well; drop the old ones right away.
     if (previous && (previous instanceof ForestLossLayer) !== (next instanceof ForestLossLayer)) clearStale();
@@ -134,8 +171,31 @@ export default function LeafletMap({
     };
   }, [layer, date]);
 
+  // The "then" layer for compare mode.
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map) return;
+    if (compareRef.current) {
+      map.removeLayer(compareRef.current);
+      compareRef.current = null;
+    }
+    if (layer.kind === "gibs" && compareDate) {
+      compareRef.current = L.tileLayer(
+        `${GIBS_WMTS}/${layer.gibsId}/default/${compareDate}/${layer.tileMatrixSet}/{z}/{y}/{x}.png`,
+        { pane: "data", maxNativeZoom: layer.maxNativeZoom, opacity: latest.current.opacity },
+      ).addTo(map);
+    }
+    clipLayers.current();
+  }, [layer, compareDate]);
+
+  useEffect(() => {
+    splitRef.current = split;
+    clipLayers.current();
+  }, [split]);
+
   useEffect(() => {
     dataRef.current?.setOpacity(opacity);
+    compareRef.current?.setOpacity(opacity);
   }, [opacity]);
 
   useEffect(() => {

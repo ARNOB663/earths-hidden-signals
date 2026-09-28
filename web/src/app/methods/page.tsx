@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { readManifest } from "@/lib/data";
+import { CITATION } from "@/lib/download";
 
 export const metadata: Metadata = { title: "Methods · Earth's Hidden Signals" };
 
@@ -149,6 +150,11 @@ export default async function MethodsPage() {
           and <code className="rounded bg-sunken px-1.5 text-ink">python build_hazards.py</code>. No login is needed.
           Results generated {manifest.generated}.
         </p>
+      </Section>
+
+      <Section title="How to cite this work">
+        <p>Every chart on the site has a &ldquo;Download the data (CSV)&rdquo; button. If you use the data or the results, please cite:</p>
+        <p className="rounded-2xl bg-card p-4 font-mono text-sm leading-relaxed text-ink shadow-soft">{CITATION}</p>
       </Section>
 
       <Section title="References">

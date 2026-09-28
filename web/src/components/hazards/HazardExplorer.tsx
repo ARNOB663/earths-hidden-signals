@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Numbers, Segmented, Stat } from "@/components/ui";
+import { QuickGuide } from "@/components/ui/QuickGuide";
 import {
   HAZARD_META,
   HAZARD_ORDER,
@@ -95,6 +96,17 @@ export default function HazardExplorer({ zones, manifest }: { zones: HazardZone[
           <HandPointing size={18} className="text-accent" />
           Click a dashed box to pick a region
         </div>
+        <QuickGuide
+          id="hazards"
+          title="How to use Disaster risk"
+          steps={[
+            "Choose floods, landslides or wildfires.",
+            "Pick a region from the list, or click a dashed box on the map.",
+            "Check \"This year\": does the weather look like past disaster years?",
+          ]}
+          buttonClassName="absolute left-[58px] top-[60px]"
+          cardClassName="absolute left-[58px] top-[108px]"
+        />
         <div className="absolute bottom-10 left-3 z-[500] w-[min(300px,calc(100%-1.5rem))] rounded-2xl bg-card p-4 text-sm shadow-soft">
           <MapKey hazard={hazard} />
         </div>
@@ -226,6 +238,7 @@ function ZoneAnswer({ zone, manifest }: { zone: HazardZone; manifest: Manifest }
             unit={ev.plural}
             ariaLabel={`${ev.plural} per year in ${zone.name}`}
             labelEvery={zone.years.length > 12 ? 5 : 2}
+            csvTitle={`${zone.name} ${ev.plural} per year`}
           />
         </div>
         {zone.eventTrend && (

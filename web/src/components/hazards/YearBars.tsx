@@ -1,6 +1,8 @@
 "use client";
 
+import { DownloadSimple } from "@phosphor-icons/react";
 import { useState } from "react";
+import { downloadCsv, slug } from "@/lib/download";
 
 interface Props {
   labels: (string | number)[];
@@ -13,10 +15,12 @@ interface Props {
   height?: number;
   /** Show every Nth label under the bars. */
   labelEvery?: number;
+  /** If set, offers a CSV download named after it. */
+  csvTitle?: string;
 }
 
 /** Simple bar chart with a per-bar tooltip and a data-table fallback. */
-export function YearBars({ labels, values, highlight, color, unit, ariaLabel, height = 110, labelEvery = 5 }: Props) {
+export function YearBars({ labels, values, highlight, color, unit, ariaLabel, height = 110, labelEvery = 5, csvTitle }: Props) {
   const [hover, setHover] = useState<number | null>(null);
   const max = Math.max(1, ...values);
 
@@ -62,7 +66,23 @@ export function YearBars({ labels, values, highlight, color, unit, ariaLabel, he
           </span>
         ))}
       </div>
-      <details className="mt-2 text-xs text-ink-3">
+      {csvTitle && (
+        <button
+          type="button"
+          onClick={() =>
+            downloadCsv(
+              slug(csvTitle),
+              ["period", unit],
+              labels.map((l, i) => [l, values[i]]),
+              csvTitle,
+            )
+          }
+          className="mt-2 inline-flex items-center gap-1.5 text-xs font-medium text-accent hover:underline"
+        >
+          <DownloadSimple size={14} /> Download the data (CSV)
+        </button>
+      )}
+      <details className="mt-1 text-xs text-ink-3">
         <summary className="cursor-pointer select-none hover:text-ink">Show the data as a table</summary>
         <table className="mt-1 w-full text-left tabular-nums">
           <tbody>

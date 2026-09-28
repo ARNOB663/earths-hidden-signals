@@ -1,6 +1,8 @@
 "use client";
 
+import { DownloadSimple } from "@phosphor-icons/react";
 import { useLayoutEffect, useMemo, useRef, useState } from "react";
+import { downloadCsv, slug } from "@/lib/download";
 import { senIntercept } from "@/lib/trends";
 
 interface Props {
@@ -13,6 +15,11 @@ interface Props {
   axisLabel: string;
   /** Draw a zero line (anomaly series). */
   zeroLine: boolean;
+  /** 95% range of the trend, drawn as a shaded band around the trend line. */
+  lowerPerDecade?: number | null;
+  upperPerDecade?: number | null;
+  /** Shown in the CSV file name and header, e.g. "Around Dhaka rain, rainy season". */
+  title?: string;
 }
 
 const HEIGHT = 230;
@@ -42,7 +49,18 @@ function useWidth<T extends HTMLElement>() {
 }
 
 /** Yearly series with its Sen's-slope trend line and a crosshair readout. */
-export function SeriesChart({ years, values, slopePerDecade, unit, decimals, axisLabel, zeroLine }: Props) {
+export function SeriesChart({
+  years,
+  values,
+  slopePerDecade,
+  unit,
+  decimals,
+  axisLabel,
+  zeroLine,
+  lowerPerDecade = null,
+  upperPerDecade = null,
+  title,
+}: Props) {
   const [wrapRef, width] = useWidth<HTMLDivElement>();
   const [hover, setHover] = useState<number | null>(null);
 
@@ -63,8 +81,21 @@ export function SeriesChart({ years, values, slopePerDecade, unit, decimals, axi
 
   if (points.length < 2) return <p className="text-sm text-ink-3">No data for this place.</p>;
 
+  // The 95% range of the slope, pivoting on the middle of the record: a "bow-tie" of likely trend lines.
+  const n = values.length;
+  const mid = (n - 1) / 2;
+  const band =
+    trendAt && lowerPerDecade !== null && upperPerDecade !== null
+      ? years.map((_, k) => {
+          const a = trendAt(mid) + (lowerPerDecade / 10) * (k - mid);
+          const b = trendAt(mid) + (upperPerDecade / 10) * (k - mid);
+          return [Math.min(a, b), Math.max(a, b)] as const;
+        })
+      : null;
+
   const vals = points.map((p) => p.value);
   if (trendAt) vals.push(trendAt(0), trendAt(values.length - 1));
+  if (band) vals.push(band[0][0], band[0][1], band[n - 1][0], band[n - 1][1]);
   if (zeroLine) vals.push(0);
   let lo = Math.min(...vals);
   let hi = Math.max(...vals);
@@ -88,6 +119,20 @@ export function SeriesChart({ years, values, slopePerDecade, unit, decimals, axi
 
   const hovered = hover !== null ? values[hover] : null;
   const fmt = (v: number) => `${v.toFixed(decimals)} ${unit}`;
+  const bandPath = band
+    ? `M${band.map(([l], k) => `${x(k).toFixed(1)},${y(l).toFixed(1)}`).join("L")}L${[...band]
+        .map(([, u], k) => `${x(k).toFixed(1)},${y(u).toFixed(1)}`)
+        .reverse()
+        .join("L")}Z`
+    : null;
+
+  const download = () =>
+    downloadCsv(
+      `${slug(title ?? axisLabel)}-${years[0]}-${years[n - 1]}`,
+      ["year", `value (${unit})`, `trend line (${unit})`],
+      years.map((yr, k) => [yr, values[k], trendAt ? Number(trendAt(k).toFixed(decimals + 2)) : null]),
+      `${title ?? axisLabel}. Trend = Sen's slope${slopePerDecade !== null ? ` ${slopePerDecade} ${unit}/decade` : ""}.`,
+    );
 
   return (
     <div>
@@ -98,6 +143,11 @@ export function SeriesChart({ years, values, slopePerDecade, unit, decimals, axi
         {trendAt && (
           <span className="flex items-center gap-1.5">
             <span className="w-4 border-t-2 border-dashed border-accent" /> Long-term trend
+          </span>
+        )}
+        {band && (
+          <span className="flex items-center gap-1.5">
+            <span className="h-2.5 w-4 rounded-sm bg-accent/20" /> Likely range of the trend (95%)
           </span>
         )}
       </div>
@@ -137,6 +187,7 @@ export function SeriesChart({ years, values, slopePerDecade, unit, decimals, axi
             {axisLabel}
           </text>
 
+          {bandPath && <path d={bandPath} fill="var(--accent)" opacity={0.14} />}
           <path d={path} fill="none" stroke="var(--ink)" strokeWidth={2} strokeLinejoin="round" />
           {trendAt && (
             <line
@@ -174,7 +225,16 @@ export function SeriesChart({ years, values, slopePerDecade, unit, decimals, axi
         )}
       </div>
 
-      <details className="mt-2 text-xs text-ink-3">
+      <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1">
+        <button
+          type="button"
+          onClick={download}
+          className="inline-flex items-center gap-1.5 text-xs font-medium text-accent hover:underline"
+        >
+          <DownloadSimple size={14} /> Download the data (CSV)
+        </button>
+      </div>
+      <details className="mt-1 text-xs text-ink-3">
         <summary className="cursor-pointer select-none hover:text-ink">Show the data as a table</summary>
         <div className="mt-2 max-h-48 overflow-y-auto rounded-lg border border-line">
           <table className="w-full text-left tabular-nums">

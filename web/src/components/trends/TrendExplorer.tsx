@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Numbers, Segmented, Stat, Sureness, TrendLegend } from "@/components/ui";
+import { QuickGuide } from "@/components/ui/QuickGuide";
 import { describePlace } from "@/lib/places";
 import { SEASON_PLAIN, sureness } from "@/lib/plain";
 import {
@@ -188,6 +189,17 @@ export default function TrendExplorer({ manifest, zones }: { manifest: Manifest;
           <HandPointing size={18} className="text-accent" />
           Click any square to see its story
         </div>
+        <QuickGuide
+          id="trends"
+          title="How to use Climate trends"
+          steps={[
+            "Choose temperature or rain, and a time of year.",
+            "Pick a region from the list, or click any square on the map.",
+            "Read the answer: is it really changing, how fast, and how sure we are.",
+          ]}
+          buttonClassName="absolute left-[58px] top-[60px]"
+          cardClassName="absolute left-[58px] top-[108px]"
+        />
         <div className="absolute bottom-8 left-3 z-[500] w-[min(320px,calc(100%-6rem))] rounded-2xl bg-card p-3 shadow-soft sm:bottom-10 sm:p-4">
           <div className="mb-2 text-sm font-medium text-ink">
             Change every 10 years ({meta.unit})
@@ -258,7 +270,7 @@ export default function TrendExplorer({ manifest, zones }: { manifest: Manifest;
         <div className="h-px bg-line" />
 
         {detail ? (
-          <Answer detail={detail} meta={meta} years={years} words={words} />
+          <Answer detail={detail} meta={meta} years={years} words={words} seasonLabel={SEASON_PLAIN[season].label} />
         ) : (
           <p className="text-sm text-ink-3">Pick a place to see its story.</p>
         )}
@@ -301,11 +313,13 @@ function Answer({
   meta,
   years,
   words,
+  seasonLabel,
 }: {
   detail: Detail;
   meta: VariableMeta;
   years: number[];
   words: (typeof WORDS)[VariableId];
+  seasonLabel: string;
 }) {
   const { trend } = detail;
   const [first, last] = [years[0], years[years.length - 1]];
@@ -367,6 +381,9 @@ function Answer({
           decimals={meta.decimals}
           axisLabel={meta.anomaly ? `°C warmer than the 1951–1980 average` : `${meta.unit} of rain in the season`}
           zeroLine={meta.anomaly}
+          lowerPerDecade={trend?.lowerPerDecade ?? null}
+          upperPerDecade={trend?.upperPerDecade ?? null}
+          title={`${detail.title} ${words.label.toLowerCase()} ${seasonLabel.toLowerCase()}`}
         />
       ) : (
         trend && <div className="h-56 animate-pulse rounded-xl bg-sunken" aria-label="Loading chart" />
