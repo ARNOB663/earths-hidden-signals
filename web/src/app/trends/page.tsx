@@ -8,7 +8,7 @@ export const metadata: Metadata = { title: "Trend Analysis · Earth's Hidden Sig
 export default async function TrendsPage() {
   const [manifest, zones] = await Promise.all([readManifest(), readTrendZones()]);
   return (
-    <div className="lg:h-[calc(100dvh-3.5rem)]">
+    <div className="lg:h-[calc(100dvh-4rem)]">
       {/* TrendExplorer reads the URL's search params, which needs a Suspense boundary on a static page. */}
       <Suspense>
         <TrendExplorer manifest={manifest} zones={zones} />

@@ -4,7 +4,8 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { useEffect, useRef } from "react";
 import { GIBS_WMTS, type LayerDef } from "@/lib/layers";
-import { createBaseMap } from "./baseMap";
+import { useTheme } from "@/lib/theme";
+import { createBaseMap, type BaseMap } from "./baseMap";
 import { ForestLossLayer } from "./forestLossLayer";
 
 export type MapFocus = "south-asia" | "world";
@@ -42,6 +43,8 @@ export default function LeafletMap({
   const dataRef = useRef<DataLayer | null>(null);
   const staleRef = useRef(new Set<DataLayer>());
   const referenceRef = useRef<L.LayerGroup | null>(null);
+  const baseRef = useRef<BaseMap | null>(null);
+  const theme = useTheme();
 
   // Keep latest callbacks/values reachable from Leaflet event handlers without re-creating layers.
   const latest = useRef({ onLoadingChange, onForestStats, opacity, yearRange });
@@ -50,7 +53,12 @@ export default function LeafletMap({
   });
 
   useEffect(() => {
-    const base = createBaseMap(containerRef.current!, FOCUS["south-asia"]);
+    const base = createBaseMap(
+      containerRef.current!,
+      FOCUS["south-asia"],
+      document.documentElement.dataset.theme === "dark" ? "dark" : "light",
+    );
+    baseRef.current = base;
     mapRef.current = base.map;
     referenceRef.current = base.reference;
     return () => {
@@ -59,6 +67,10 @@ export default function LeafletMap({
       dataRef.current = null;
     };
   }, []);
+
+  useEffect(() => {
+    baseRef.current?.setTheme(theme);
+  }, [theme]);
 
   // Swap the data layer when the variable or date changes. The new layer fades in
   // over the old one, so stepping through months doesn't flash an empty map.
@@ -145,5 +157,5 @@ export default function LeafletMap({
     mapRef.current?.flyTo(center, zoom, { duration: 1.2 });
   }, [focus]);
 
-  return <div ref={containerRef} className="h-full w-full bg-[#0b0f14]" />;
+  return <div ref={containerRef} className="h-full w-full bg-sunken" />;
 }

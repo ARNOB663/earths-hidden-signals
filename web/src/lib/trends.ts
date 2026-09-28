@@ -89,35 +89,26 @@ export const cellCenter = (grid: GridSpec, i: number, j: number) => ({
   lon: grid.lon0 + j * grid.dLon,
 });
 
-// Diverging scale on the dark surface: a gray midpoint for "no change", growing
-// brighter and more saturated toward each pole.
-const MID: [number, number, number] = [56, 56, 53];
-const BLUE_ARM: [number, number, number][] = [MID, [28, 92, 171], [57, 135, 229], [134, 182, 239]];
-const RED_ARM: [number, number, number][] = [MID, [163, 45, 45], [227, 73, 72], [242, 160, 160]];
-
-function sampleArm(arm: [number, number, number][], t: number): [number, number, number] {
-  const x = Math.min(1, Math.max(0, t)) * (arm.length - 1);
-  const k = Math.min(arm.length - 2, Math.floor(x));
-  const f = x - k;
-  return [0, 1, 2].map((c) => Math.round(arm[k][c] + (arm[k + 1][c] - arm[k][c]) * f)) as [number, number, number];
-}
-
-/** Warming is red; for rainfall, drying is red and wetting is blue. */
+/** Warming is shown warm (red); for rainfall, drying is red and wetting is blue. */
 export const increaseIsRed = (v: VariableId) => v === "temperature";
 
-export function divergingColor(value: number, maxAbs: number, variable: VariableId): [number, number, number] {
-  const t = Math.abs(value) / maxAbs;
-  const redSide = value > 0 === increaseIsRed(variable);
-  return sampleArm(redSide ? RED_ARM : BLUE_ARM, t);
+/**
+ * Colour token for a trend value: a neutral middle for "about no change", then four
+ * steps toward each side. Steps are CSS variables, so maps and charts follow the theme.
+ */
+export function trendToken(value: number, limit: number, variable: VariableId): string {
+  const t = Math.min(1, Math.abs(value) / limit);
+  const step = t < 0.125 ? 0 : t < 0.375 ? 1 : t < 0.625 ? 2 : t < 0.875 ? 3 : 4;
+  if (step === 0) return "--mid";
+  const warm = value > 0 === increaseIsRed(variable);
+  return `--${warm ? "warm" : "cool"}-${step}`;
 }
 
-export function divergingGradient(variable: VariableId): string {
-  const neg = increaseIsRed(variable) ? BLUE_ARM : RED_ARM;
-  const pos = increaseIsRed(variable) ? RED_ARM : BLUE_ARM;
-  const stops = [...[...neg].reverse(), ...pos.slice(1)].map(
-    (c, i, all) => `rgb(${c.join(",")}) ${((i / (all.length - 1)) * 100).toFixed(1)}%`,
-  );
-  return `linear-gradient(to right, ${stops.join(", ")})`;
+/** The nine legend steps from "decrease" (left) to "increase" (right). */
+export function trendLegendTokens(variable: VariableId): string[] {
+  const dec = increaseIsRed(variable) ? "cool" : "warm";
+  const inc = increaseIsRed(variable) ? "warm" : "cool";
+  return [4, 3, 2, 1].map((k) => `--${dec}-${k}`).concat("--mid", [1, 2, 3, 4].map((k) => `--${inc}-${k}`));
 }
 
 /** A round colour-scale limit: the 95th percentile of |trend|, so a few extremes don't wash out the map. */
@@ -131,8 +122,9 @@ export function colorLimit(values: (number | null)[]): number {
 }
 
 export function formatSigned(value: number, decimals: number): string {
-  const s = value.toFixed(decimals);
-  return value > 0 ? `+${s}` : s.replace(/^-0(\.0+)?$/, "0$1");
+  const s = Math.abs(value).toFixed(decimals);
+  if (Number(s) === 0) return s;
+  return `${value > 0 ? "+" : "−"}${s}`;
 }
 
 export function formatP(p: number): string {
@@ -145,31 +137,4 @@ export function senIntercept(series: number[], slopePerYear: number): number {
   const r = series.map((y, x) => y - slopePerYear * x).sort((a, b) => a - b);
   const m = Math.floor(r.length / 2);
   return r.length % 2 ? r[m] : (r[m - 1] + r[m]) / 2;
-}
-
-export interface Verdict {
-  headline: string;
-  tone: "increase" | "decrease" | "none";
-  explanation: string;
-}
-
-export function verdict(trend: TrendSummary, meta: VariableMeta, years: number[]): Verdict {
-  const span = `${years[0]}–${years[years.length - 1]}`;
-  if (trend.p >= ALPHA) {
-    return {
-      headline: "No statistically detectable trend",
-      tone: "none",
-      explanation: `Over ${span} the year-to-year ups and downs are too large to separate a real trend from natural variability (${formatP(
-        trend.p,
-      )}, needs p < ${ALPHA}). This does not prove nothing is changing, only that this record can't show it with confidence.`,
-    };
-  }
-  const up = trend.slopePerDecade > 0;
-  return {
-    headline: `Significant ${up ? meta.increase : meta.decrease}`,
-    tone: up ? "increase" : "decrease",
-    explanation: `A trend this consistent is unlikely to come from chance year-to-year variation (${formatP(
-      trend.p,
-    )}, autocorrelation-corrected Mann-Kendall test).`,
-  };
 }

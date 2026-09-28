@@ -11,7 +11,7 @@ export const revalidate = 86400;
 export default async function ExplorePage() {
   const catalog = await getGibsCatalog();
   return (
-    <div className="h-[calc(100dvh-3.5rem)]">
+    <div className="lg:h-[calc(100dvh-4rem)]">
       {/* MapExplorer reads the URL's search params, which needs a Suspense boundary on a static page. */}
       <Suspense>
         <MapExplorer catalog={catalog} />

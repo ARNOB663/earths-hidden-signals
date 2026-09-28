@@ -1,9 +1,11 @@
 "use client";
 
+import { ArrowRight, CheckCircle, Fire, HandPointing, Mountains, Question, Warning, Waves } from "@phosphor-icons/react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import { Numbers, Segmented, Stat } from "@/components/ui";
 import {
   HAZARD_META,
   HAZARD_ORDER,
@@ -16,17 +18,24 @@ import {
   type HazardZone,
   type LandslideEvent,
 } from "@/lib/hazards";
+import { linkStrength, sureness } from "@/lib/plain";
 import { ALPHA, formatP, formatSigned, type Manifest, type VariableId } from "@/lib/trends";
-import { FIRE_BREAKS, fireColor, FLOOD_ALERT_COLORS, LANDSLIDE_COLOR } from "./hazardColors";
+import { EVENT_TOKEN, FIRE_BREAKS, fireToken, FLOOD_ALERT_COLORS } from "./hazardColors";
 import { YearBars } from "./YearBars";
 
 const HazardMap = dynamic(() => import("./HazardMap"), {
   ssr: false,
-  loading: () => <div className="grid h-full place-items-center text-sm text-slate-500">Loading map…</div>,
+  loading: () => <div className="grid h-full place-items-center bg-sunken text-sm text-ink-3">Loading map…</div>,
 });
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-const EVENT_COLOR: Record<HazardId, string> = { flood: "#3987e5", landslide: LANDSLIDE_COLOR, wildfire: "#d95926" };
+const HAZARD_ICON = { flood: Waves, landslide: Mountains, wildfire: Fire } as const;
+/** Plain names for what we count. */
+const EVENTS: Record<HazardId, { plural: string; bigYears: string }> = {
+  flood: { plural: "flood alerts", bigYears: "big flood years" },
+  landslide: { plural: "landslides", bigYears: "big landslide years" },
+  wildfire: { plural: "fires spotted by satellite", bigYears: "big fire years" },
+};
 
 function useJson<T>(url: string | null): T | null {
   const [data, setData] = useState<{ url: string; value: T } | null>(null);
@@ -48,7 +57,7 @@ export default function HazardExplorer({ zones, manifest }: { zones: HazardZone[
   const params = useSearchParams();
   const [hazard, setHazard] = useState<HazardId>(() => {
     const h = params.get("hazard") as HazardId;
-    return HAZARD_ORDER.includes(h) ? h : "wildfire";
+    return HAZARD_ORDER.includes(h) ? h : "flood";
   });
   const hazardZones = zones.filter((z) => z.hazard === hazard);
   const [zoneId, setZoneId] = useState<string>(() => {
@@ -70,94 +79,9 @@ export default function HazardExplorer({ zones, manifest }: { zones: HazardZone[
     setZoneId(zones.find((z) => z.hazard === h)!.id);
   };
 
-  const meta = HAZARD_META[hazard];
-
   return (
-    <div className="flex h-full flex-col lg:flex-row">
-      <aside className="flex w-full shrink-0 flex-col gap-5 overflow-y-auto border-b border-white/10 bg-[#0e141b] p-4 lg:w-[300px] lg:border-b-0 lg:border-r">
-        <section>
-          <Heading>Hazard</Heading>
-          <div className="flex rounded-md bg-white/5 p-0.5">
-            {HAZARD_ORDER.map((h) => (
-              <button
-                key={h}
-                onClick={() => selectHazard(h)}
-                className={`flex-1 rounded px-2 py-1.5 text-xs transition-colors ${
-                  hazard === h ? "bg-white/10 text-white" : "text-slate-400 hover:text-slate-200"
-                }`}
-              >
-                {HAZARD_META[h].label}
-              </button>
-            ))}
-          </div>
-          <p className="mt-2 text-sm leading-relaxed text-slate-400">{meta.intro}</p>
-        </section>
-
-        <section>
-          <Heading>Regions</Heading>
-          <div className="space-y-1">
-            {hazardZones.map((z) => {
-              const signal = preparednessSignal(z);
-              return (
-                <button
-                  key={z.id}
-                  onClick={() => setZoneId(z.id)}
-                  className={`w-full rounded-md px-2.5 py-2 text-left transition-colors ${
-                    z.id === zone.id ? "bg-sky-500/15 ring-1 ring-sky-400/50" : "hover:bg-white/5"
-                  }`}
-                >
-                  <span className={`block text-sm ${z.id === zone.id ? "text-white" : "text-slate-200"}`}>{z.name}</span>
-                  <span className="text-[11px] text-slate-500">
-                    {z.counts.reduce((a, b) => a + b, 0).toLocaleString()} {meta.eventsPlural} ·{" "}
-                    {signal.kind === "resembles"
-                      ? "conditions resemble past high-event years"
-                      : signal.kind === "not-resembling"
-                        ? "linked drivers, no current match"
-                        : "no reliable climate link"}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
-        </section>
-
-        <section>
-          <Heading>Map key</Heading>
-          {hazard === "wildfire" && (
-            <div className="space-y-1 text-xs text-slate-400">
-              <div className="flex h-3 overflow-hidden rounded-sm">
-                {FIRE_BREAKS.map((b) => (
-                  <span key={b} className="flex-1" style={{ background: fireColor(b)! }} />
-                ))}
-              </div>
-              <div className="flex justify-between font-mono text-[10px]">
-                {FIRE_BREAKS.map((b) => (
-                  <span key={b}>{b}+</span>
-                ))}
-              </div>
-              <p>Average fire detections per year, March–May, per 0.5° cell (NASA FIRMS MODIS, 2003–2024).</p>
-            </div>
-          )}
-          {hazard === "landslide" && (
-            <p className="flex items-center gap-2 text-xs text-slate-400">
-              <span className="h-2.5 w-2.5 rounded-full" style={{ background: LANDSLIDE_COLOR }} /> One reported landslide
-              (larger = 10+ deaths), NASA Global Landslide Catalog 2007–2017.
-            </p>
-          )}
-          {hazard === "flood" && (
-            <ul className="space-y-1 text-xs text-slate-400">
-              {Object.entries(FLOOD_ALERT_COLORS).map(([level, color]) => (
-                <li key={level} className="flex items-center gap-2">
-                  <span className="h-2.5 w-2.5 rounded-full" style={{ background: color }} /> {level} alert (GDACS)
-                </li>
-              ))}
-            </ul>
-          )}
-          <p className="mt-2 text-xs text-slate-500">Dashed boxes are the analysis regions; click one to select it.</p>
-        </section>
-      </aside>
-
-      <div className="relative h-[50vh] min-h-[300px] flex-1 lg:h-auto">
+    <div className="relative flex h-full flex-col lg:block">
+      <div className="relative h-[52vh] min-h-[320px] lg:absolute lg:inset-0 lg:h-auto">
         <HazardMap
           hazard={hazard}
           zones={hazardZones}
@@ -167,209 +91,301 @@ export default function HazardExplorer({ zones, manifest }: { zones: HazardZone[
           floods={floods}
           fires={fires}
         />
+        <div className="pointer-events-none absolute left-[58px] top-3 z-[500] flex items-center gap-2 rounded-full bg-card px-4 py-2 text-sm text-ink-2 shadow-soft">
+          <HandPointing size={18} className="text-accent" />
+          Click a dashed box to pick a region
+        </div>
+        <div className="absolute bottom-10 left-3 z-[500] w-[min(300px,calc(100%-1.5rem))] rounded-2xl bg-card p-4 text-sm shadow-soft">
+          <MapKey hazard={hazard} />
+        </div>
       </div>
 
-      <aside className="w-full shrink-0 overflow-y-auto border-t border-white/10 bg-[#0e141b] p-4 lg:w-[420px] lg:border-l lg:border-t-0">
-        <ZoneDetail zone={zone} manifest={manifest} />
+      <aside
+        aria-label="Disaster details"
+        className="z-[600] flex flex-col gap-5 bg-card p-5 lg:absolute lg:bottom-4 lg:right-4 lg:top-4 lg:w-[420px] lg:overflow-y-auto lg:rounded-2xl lg:border lg:border-line lg:shadow-soft"
+      >
+        <section className="space-y-3">
+          <h1 className="text-lg font-semibold text-ink">Is the weather raising disaster risk?</h1>
+          <Segmented
+            label="Type of disaster"
+            value={hazard}
+            onChange={selectHazard}
+            options={HAZARD_ORDER.map((h) => {
+              const Icon = HAZARD_ICON[h];
+              return { id: h, label: HAZARD_META[h].label, icon: <Icon size={16} /> };
+            })}
+          />
+          <p className="text-sm leading-relaxed text-ink-2">{HAZARD_META[hazard].intro}</p>
+          <div className="space-y-1.5">
+            {hazardZones.map((z) => (
+              <button
+                key={z.id}
+                onClick={() => setZoneId(z.id)}
+                aria-pressed={z.id === zone.id}
+                className={`flex w-full items-center justify-between gap-3 rounded-xl border px-3.5 py-2.5 text-left text-sm transition-all active:scale-[0.99] ${
+                  z.id === zone.id ? "border-accent bg-accent-soft font-medium text-ink" : "border-line text-ink-2 hover:border-ink-3"
+                }`}
+              >
+                {z.name}
+                <SignalBadge zone={z} />
+              </button>
+            ))}
+          </div>
+        </section>
+
+        <div className="h-px bg-line" />
+        <ZoneAnswer zone={zone} manifest={manifest} />
       </aside>
     </div>
   );
 }
 
-function ZoneDetail({ zone, manifest }: { zone: HazardZone; manifest: Manifest }) {
+function SignalBadge({ zone }: { zone: HazardZone }) {
+  const s = preparednessSignal(zone).kind;
+  if (s === "resembles")
+    return <span className="shrink-0 rounded-full bg-watch-soft px-2.5 py-0.5 text-xs font-medium text-watch">Watch</span>;
+  if (s === "not-resembling")
+    return <span className="shrink-0 rounded-full bg-sunken px-2.5 py-0.5 text-xs text-ink-2">Normal</span>;
+  return <span className="shrink-0 rounded-full bg-sunken px-2.5 py-0.5 text-xs text-ink-3">No clear link</span>;
+}
+
+function ZoneAnswer({ zone, manifest }: { zone: HazardZone; manifest: Manifest }) {
   const meta = HAZARD_META[zone.hazard];
+  const ev = EVENTS[zone.hazard];
   const signal = preparednessSignal(zone);
   const total = zone.counts.reduce((a, b) => a + b, 0);
-  const firstYear = zone.years[0];
-  const lastYear = zone.years[zone.years.length - 1];
+  const thisYear = manifest.years[manifest.years.length - 1];
+  const first = zone.years[0];
+  const last = zone.years[zone.years.length - 1];
+  const color = `var(${EVENT_TOKEN[zone.hazard]})`;
 
   return (
-    <div className="space-y-6">
+    <section className="space-y-6" aria-live="polite">
       <div>
-        <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-500">{meta.label} region</p>
-        <h2 className="mt-1 text-lg font-semibold text-white">{zone.name}</h2>
-        <p className="mt-1 text-sm leading-relaxed text-slate-400">{zone.description}</p>
+        <h2 className="text-xl font-semibold text-ink">{zone.name}</h2>
+        <p className="mt-1 text-sm leading-relaxed text-ink-2">{zone.description}</p>
       </div>
 
-      {/* 1. Preparedness signal */}
-      <section
-        className={`rounded-md p-3 ring-1 ${
-          signal.kind === "resembles" ? "bg-amber-400/10 ring-amber-400/40" : "bg-white/[0.03] ring-white/10"
-        }`}
-      >
-        <Heading>Preparedness signal · {manifest.years[manifest.years.length - 1]}</Heading>
-        {signal.kind === "resembles" && (
-          <>
-            <p className="flex items-start gap-2 text-sm font-medium text-amber-200">
-              <span aria-hidden>▲</span> Current conditions resemble those seen in past high-{meta.eventNoun} years.
+      {/* 1. This year */}
+      {signal.kind === "resembles" && (
+        <div className="rounded-2xl bg-watch-soft p-4">
+          <div className="flex items-center gap-2 font-semibold text-ink">
+            <Warning size={22} weight="fill" className="text-watch" />
+            Watch this year ({thisYear})
+          </div>
+          {signal.drivers.map((d) => (
+            <p key={d.key} className="mt-2 text-sm leading-relaxed text-ink">
+              {d.label} was {d.risk === "higher" ? "higher" : "lower"} than in{" "}
+              <strong>{d.risk === "higher" ? d.latest.percentile : 100 - d.latest.percentile}% of years</strong> since{" "}
+              {manifest.years[0]}. That is like the {ev.bigYears} of the past.
             </p>
-            <ul className="mt-2 space-y-1.5 text-sm text-slate-300">
-              {signal.drivers.map((d) => (
-                <li key={d.key}>
-                  {d.label} in {d.latest.year} was {d.risk === "higher" ? "higher" : "lower"} than{" "}
-                  {d.risk === "higher" ? d.latest.percentile : 100 - d.latest.percentile}% of years since {manifest.years[0]}.
-                  In the worst {meta.eventNoun} years it averaged the {ordinal(d.highEventYearsPercentile!)} percentile.
-                </li>
-              ))}
-            </ul>
-            <p className="mt-2 text-xs leading-relaxed text-slate-400">
-              Worth raising monitoring and readiness. This is a comparison with history, not a forecast that a disaster will
-              happen.
-            </p>
-          </>
-        )}
-        {signal.kind === "not-resembling" && (
-          <p className="text-sm text-slate-300">
-            Past high-{meta.eventNoun} years here came with unusual {signal.drivers.map((d) => d.label.toLowerCase()).join(" and ")},
-            but {manifest.years[manifest.years.length - 1]} conditions are not in that range.
+          ))}
+          <p className="mt-2 text-sm leading-relaxed text-ink-2">
+            A good time to prepare early. This compares with history; it is not a forecast.
           </p>
-        )}
-        {signal.kind === "no-link" && (
-          <p className="text-sm text-slate-300">
-            No climate driver showed a statistically reliable link with {meta.eventsPlural} in this region, so we don&apos;t
-            issue a signal. Other factors (land use, reporting, human ignition) may matter more here.
+        </div>
+      )}
+      {signal.kind === "not-resembling" && (
+        <div className="rounded-2xl bg-sunken p-4">
+          <div className="flex items-center gap-2 font-semibold text-ink">
+            <CheckCircle size={22} weight="fill" className="text-good" />
+            Normal this year ({thisYear})
+          </div>
+          <p className="mt-2 text-sm leading-relaxed text-ink-2">
+            Past {ev.bigYears} came with unusual {signal.drivers.map((d) => d.label.toLowerCase()).join(" and ")}. This year
+            wasn&apos;t like that.
           </p>
-        )}
-      </section>
+        </div>
+      )}
+      {signal.kind === "no-link" && (
+        <div className="rounded-2xl bg-sunken p-4">
+          <div className="flex items-center gap-2 font-semibold text-ink">
+            <Question size={22} weight="fill" className="text-ink-3" />
+            No clear weather link
+          </div>
+          <p className="mt-2 text-sm leading-relaxed text-ink-2">
+            Weather alone doesn&apos;t explain the {ev.plural} here, so we don&apos;t give a signal. Other things, like how
+            people use the land or water coming from upstream, probably matter more.
+          </p>
+        </div>
+      )}
 
-      {/* 2. Event record */}
-      <section>
-        <Heading>
-          Past {meta.eventsPlural} · {firstYear}–{lastYear}
-        </Heading>
-        <p className="mb-3 text-sm text-slate-400">
-          {total.toLocaleString()} in total. Bold bars are the top-25% years.
+      {/* 2. What happened before */}
+      <div>
+        <h3 className="font-semibold text-ink">What happened before</h3>
+        <p className="mt-1 text-sm text-ink-2">
+          {total.toLocaleString()} {ev.plural} from {first} to {last}. Each bar is one year; the strongest colour marks the worst
+          years.
         </p>
-        <YearBars
-          labels={zone.years}
-          values={zone.counts}
-          highlight={new Set(zone.highEventYears)}
-          color={EVENT_COLOR[zone.hazard]}
-          unit={meta.eventsPlural}
-          ariaLabel={`${meta.eventsPlural} per year in ${zone.name}`}
-          labelEvery={zone.years.length > 12 ? 5 : 2}
-        />
+        <div className="mt-3">
+          <YearBars
+            labels={zone.years}
+            values={zone.counts}
+            highlight={new Set(zone.highEventYears)}
+            color={color}
+            unit={ev.plural}
+            ariaLabel={`${ev.plural} per year in ${zone.name}`}
+            labelEvery={zone.years.length > 12 ? 5 : 2}
+          />
+        </div>
         {zone.eventTrend && (
-          <p className="mt-3 text-sm text-slate-300">
-            {zone.eventTrend.p < ALPHA ? (
-              <>
-                <span className="font-medium text-white">
-                  Significant {zone.eventTrend.slopePerDecade > 0 ? "increase" : "decrease"}
-                </span>
-                : {formatSigned(zone.eventTrend.slopePerDecade, 0)} {meta.eventsPlural} per decade (95% range{" "}
-                {formatSigned(zone.eventTrend.lowerPerDecade, 0)} to {formatSigned(zone.eventTrend.upperPerDecade, 0)},{" "}
-                {formatP(zone.eventTrend.p)}).
-              </>
-            ) : (
-              <>
-                <span className="font-medium text-white">No detectable trend</span> in yearly counts (
-                {formatSigned(zone.eventTrend.slopePerDecade, 0)} {meta.eventsPlural} per decade, {formatP(zone.eventTrend.p)}).
-              </>
-            )}
+          <p className="mt-2 text-sm text-ink-2">
+            {zone.eventTrend.p < ALPHA
+              ? `Over time they are clearly ${zone.eventTrend.slopePerDecade > 0 ? "increasing" : "decreasing"} (${sureness(zone.eventTrend.p).short.toLowerCase()}).`
+              : "No clear rise or fall over the years."}
           </p>
         )}
-        <p className="mt-2 text-xs text-slate-500">Source: {zone.eventSource}</p>
-
         <div className="mt-4">
-          <p className="mb-2 text-xs text-slate-400">When in the year they happen (all years)</p>
+          <p className="mb-2 text-sm text-ink-2">Which months they happen in</p>
           <YearBars
             labels={MONTHS}
             values={zone.monthly}
-            color={EVENT_COLOR[zone.hazard]}
-            unit={meta.eventsPlural}
-            ariaLabel={`${meta.eventsPlural} by month in ${zone.name}`}
-            height={48}
+            color={color}
+            unit={ev.plural}
+            ariaLabel={`${ev.plural} by month in ${zone.name}`}
+            height={52}
             labelEvery={2}
           />
         </div>
-      </section>
+      </div>
 
-      {/* 3. Climate drivers */}
-      <section>
-        <Heading>Climate drivers</Heading>
-        <div className="space-y-3">
+      {/* 3. What drives it */}
+      <div>
+        <h3 className="font-semibold text-ink">Does the weather explain it?</h3>
+        <div className="mt-3 space-y-2">
           {zone.drivers.map((d) => (
-            <DriverCard key={d.key} driver={d} zone={zone} manifest={manifest} />
+            <DriverRow key={d.key} driver={d} zone={zone} manifest={manifest} />
           ))}
         </div>
-      </section>
+      </div>
 
-      {/* 4. Who is affected */}
-      <section>
-        <Heading>Who this helps</Heading>
-        <div className="flex flex-wrap gap-1.5">
+      {/* 4. Who this helps */}
+      <div>
+        <h3 className="font-semibold text-ink">Who can use this</h3>
+        <div className="mt-2 flex flex-wrap gap-1.5">
           {meta.affected.map((a) => (
-            <span key={a} className="rounded-full bg-white/5 px-2.5 py-1 text-xs text-slate-300 ring-1 ring-white/10">
+            <span key={a} className="rounded-full bg-sunken px-3 py-1 text-sm text-ink-2">
               {a}
             </span>
           ))}
         </div>
-      </section>
-
-      <p className="text-xs leading-relaxed text-slate-500">
-        Links here are correlations, not proof of cause. Event records have gaps: news-based landslide reports miss remote
-        events, and satellites miss fires under clouds or smoke.
-        {zone.hazard === "wildfire" &&
-          " The MODIS satellites' overpass times drifted after about 2020, which can lower recent fire counts, so read the latest years of the fire trend with care."}
-        {zone.hazard === "flood" && " GDACS has issued more alerts in recent years partly because its coverage improved."}
-      </p>
-    </div>
-  );
-}
-
-function DriverCard({ driver: d, zone, manifest }: { driver: DriverResult; zone: HazardZone; manifest: Manifest }) {
-  const [variable, season] = d.key.split("_") as [VariableId, string];
-  const vmeta = manifest.variables[variable];
-  const meta = HAZARD_META[zone.hazard];
-  const rel = d.relationship;
-
-  return (
-    <div className="rounded-md bg-white/[0.03] p-3 ring-1 ring-white/10">
-      <div className="flex items-baseline justify-between gap-2">
-        <span className="text-sm font-medium text-white">{d.label}</span>
-        <Link
-          href={`/trends?var=${variable}&season=${season}&zone=${zone.id}`}
-          className="shrink-0 text-xs text-sky-400 hover:underline"
-        >
-          See trend →
-        </Link>
       </div>
 
-      {d.trend && (
-        <p className="mt-1 text-sm text-slate-300">
-          Long-term: {formatSigned(d.trend.slopePerDecade, vmeta.decimals + 1)} {vmeta.unit} per decade,{" "}
-          {d.trend.p < ALPHA ? (
-            <span className="text-white">significant ({formatP(d.trend.p)})</span>
-          ) : (
-            <span>not significant ({formatP(d.trend.p)})</span>
+      <Numbers>
+        <dl>
+          {zone.drivers.map((d) =>
+            d.relationship ? (
+              <Stat
+                key={d.key}
+                label={`${d.label}: link (Spearman ρ, detrended)`}
+                value={`ρ = ${d.relationship.rho.toFixed(2)}, ${formatP(d.relationship.p)}, n = ${d.relationship.n}`}
+              />
+            ) : null,
           )}
-          .
+          {zone.drivers.map((d) => (
+            <Stat
+              key={`${d.key}-pct`}
+              label={`${d.label}: ${d.latest.year} percentile / worst years`}
+              value={`${ordinal(d.latest.percentile)} / ${d.highEventYearsPercentile === null ? "–" : ordinal(d.highEventYearsPercentile)}`}
+            />
+          ))}
+          {zone.eventTrend && (
+            <Stat
+              label="Event trend (Sen's slope, per decade)"
+              value={`${formatSigned(zone.eventTrend.slopePerDecade, 0)} (${formatP(zone.eventTrend.p)})`}
+            />
+          )}
+          <Stat label="Event record" value={zone.eventSource} />
+        </dl>
+        <p className="mt-2 text-xs text-ink-3">
+          A link is a correlation, not proof of cause. Records have gaps: news-based landslide reports miss remote places,
+          satellites miss fires under cloud, and GDACS covers more floods in recent years.
         </p>
-      )}
+      </Numbers>
+    </section>
+  );
+}
 
-      <p className="mt-1 text-sm text-slate-300">
-        {rel === null ? (
-          "Too few events to test a link."
-        ) : d.linked ? (
-          <>
-            <span className="text-white">Linked:</span> years with more {meta.eventsPlural} had{" "}
-            {d.risk === "higher" ? "higher" : "lower"} {d.label.toLowerCase()} (ρ = {rel.rho.toFixed(2)},{" "}
-            {formatP(rel.p)}, n = {rel.n}).
-          </>
+function DriverRow({ driver: d, zone, manifest }: { driver: DriverResult; zone: HazardZone; manifest: Manifest }) {
+  const [variable, season] = d.key.split("_") as [VariableId, string];
+  const vmeta = manifest.variables[variable];
+  const ev = EVENTS[zone.hazard];
+  const rel = d.relationship;
+  const trendWord = d.trend
+    ? d.trend.p < ALPHA
+      ? `${d.trend.slopePerDecade > 0 ? (variable === "temperature" ? "getting warmer" : "getting wetter") : variable === "temperature" ? "getting cooler" : "getting drier"} (${formatSigned(d.trend.slopePerDecade, vmeta.decimals)} ${vmeta.unit} every 10 years)`
+      : "no clear long-term change"
+    : null;
+
+  return (
+    <div className="rounded-xl border border-line p-3.5">
+      <div className="flex items-center justify-between gap-2">
+        <span className="font-medium text-ink">{d.label}</span>
+        {d.linked ? (
+          <span className="rounded-full bg-accent-soft px-2.5 py-0.5 text-xs font-medium text-ink">Linked</span>
         ) : (
-          <>
-            No reliable link with {meta.eventsPlural} (ρ = {rel.rho.toFixed(2)}, {formatP(rel.p)}, n = {rel.n}).
-          </>
+          <span className="rounded-full bg-sunken px-2.5 py-0.5 text-xs text-ink-3">Not linked</span>
         )}
+      </div>
+      <p className="mt-1.5 text-sm leading-relaxed text-ink-2">
+        {rel === null
+          ? "Too few events to test."
+          : d.linked
+            ? `${linkStrength(rel.rho)[0].toUpperCase()}${linkStrength(rel.rho).slice(1)} link: years with more ${ev.plural} had ${d.risk === "higher" ? "more" : "less"} ${d.label.toLowerCase().replace("temperature", "heat")}.`
+            : `No clear link with ${ev.plural} here.`}
+        {trendWord && ` Over the years it is ${trendWord}.`}
       </p>
-      <p className="mt-1 text-xs text-slate-500">
-        {d.latest.year}: {ordinal(d.latest.percentile)} percentile of {manifest.years[0]}–{d.latest.year}
-        {d.highEventYearsPercentile !== null && ` · high-event years averaged the ${ordinal(d.highEventYearsPercentile)}`}
-      </p>
+      <Link
+        href={`/trends?var=${variable}&season=${season}&zone=${zone.id}`}
+        className="mt-2 inline-flex items-center gap-1 text-sm text-accent hover:underline"
+      >
+        See this trend <ArrowRight size={14} />
+      </Link>
     </div>
   );
 }
 
-function Heading({ children }: { children: React.ReactNode }) {
-  return <h3 className="mb-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-500">{children}</h3>;
+function MapKey({ hazard }: { hazard: HazardId }) {
+  if (hazard === "wildfire")
+    return (
+      <div>
+        <div className="mb-2 font-medium text-ink">Fires per year (March–May)</div>
+        <div className="flex gap-0.5 overflow-hidden rounded-md">
+          {FIRE_BREAKS.map((b) => (
+            <span key={b} className="h-3.5 flex-1" style={{ background: `var(${fireToken(b)})` }} />
+          ))}
+        </div>
+        <div className="mt-1.5 flex justify-between text-xs text-ink-3">
+          {FIRE_BREAKS.map((b) => (
+            <span key={b}>{b}+</span>
+          ))}
+        </div>
+        <p className="mt-2 text-xs text-ink-3">Seen by NASA satellites, 2003–2024 average.</p>
+      </div>
+    );
+  if (hazard === "landslide")
+    return (
+      <div>
+        <div className="mb-2 font-medium text-ink">Reported landslides</div>
+        <p className="flex items-center gap-2 text-ink-2">
+          <span className="h-3 w-3 rounded-full" style={{ background: "var(--ev-landslide)" }} /> One landslide (bigger dot =
+          10+ deaths)
+        </p>
+        <p className="mt-2 text-xs text-ink-3">NASA Global Landslide Catalog, 2007–2017.</p>
+      </div>
+    );
+  return (
+    <div>
+      <div className="mb-2 font-medium text-ink">Flood alerts</div>
+      <ul className="space-y-1 text-ink-2">
+        {Object.entries(FLOOD_ALERT_COLORS).map(([level, c]) => (
+          <li key={level} className="flex items-center gap-2">
+            <span className="h-3 w-3 rounded-full" style={{ background: c }} />
+            {level === "Green" ? "Minor" : level === "Orange" ? "Serious" : "Severe"} ({level} alert)
+          </li>
+        ))}
+      </ul>
+      <p className="mt-2 text-xs text-ink-3">From GDACS (UN/EU), 2000–2025.</p>
+    </div>
+  );
 }

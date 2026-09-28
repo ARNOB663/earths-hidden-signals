@@ -3,12 +3,12 @@
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { useEffect, useRef } from "react";
-import { createBaseMap } from "@/components/map/baseMap";
+import { createBaseMap, type BaseMap } from "@/components/map/baseMap";
+import { cssVar, useTheme } from "@/lib/theme";
 import {
   cellCenter,
-  divergingColor,
-  formatP,
   formatSigned,
+  trendToken,
   type GridSpec,
   type TrendGrid,
   type VariableId,
@@ -28,7 +28,8 @@ interface Props {
   onSelectCell: (lat: number, lon: number) => void;
 }
 
-const SOUTH_ASIA = { center: [22, 80] as L.LatLngExpression, zoom: 4 };
+// Centred east of South Asia so the region sits clear of the details panel on the right.
+const SOUTH_ASIA = { center: [22, 91] as L.LatLngExpression, zoom: 4 };
 
 export default function TrendMap({
   grid,
@@ -42,28 +43,46 @@ export default function TrendMap({
   onSelectCell,
 }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const mapRef = useRef<L.Map | null>(null);
+  const baseRef = useRef<BaseMap | null>(null);
   const cellsRef = useRef<L.LayerGroup | null>(null);
   const overlayRef = useRef<L.LayerGroup | null>(null);
   const rendererRef = useRef<L.Canvas | null>(null);
+  const theme = useTheme();
   const onSelectRef = useRef(onSelectCell);
   useEffect(() => {
     onSelectRef.current = onSelectCell;
   });
 
   useEffect(() => {
-    const base = createBaseMap(containerRef.current!, SOUTH_ASIA);
-    mapRef.current = base.map;
+    const base = createBaseMap(
+      containerRef.current!,
+      SOUTH_ASIA,
+      document.documentElement.dataset.theme === "dark" ? "dark" : "light",
+      "topleft",
+    );
+    baseRef.current = base;
+    // Frame the whole study area on any screen, leaving room for the details panel on wide screens.
+    base.map.fitBounds(
+      [
+        [6, 61],
+        [37, 99],
+      ],
+      { paddingTopLeft: [16, 56], paddingBottomRight: [window.innerWidth >= 1024 ? 430 : 16, 16] },
+    );
     rendererRef.current = L.canvas({ pane: "data", padding: 0.5 });
     cellsRef.current = L.layerGroup().addTo(base.map);
     overlayRef.current = L.layerGroup().addTo(base.map);
     return () => {
       base.dispose();
-      mapRef.current = null;
+      baseRef.current = null;
     };
   }, []);
 
-  // Trend cells: colour = rate of change; full colour + dot = significant after the map-wide FDR check.
+  useEffect(() => {
+    baseRef.current?.setTheme(theme);
+  }, [theme]);
+
+  // Trend squares: colour = how fast it changes; solid = a clear change, faded = no clear change.
   useEffect(() => {
     const group = cellsRef.current;
     const renderer = rendererRef.current;
@@ -71,54 +90,43 @@ export default function TrendMap({
     group.clearLayers();
     if (!stats) return;
 
-    const unit = `${meta.unit}/decade`;
+    const unit = `${meta.unit} every 10 years`;
+    const edge = cssVar("--page");
     stats.slopePerDecade.forEach((slope, k) => {
       if (slope === null) return;
       const i = Math.floor(k / grid.nLon);
       const j = k % grid.nLon;
       const { lat, lon } = cellCenter(grid, i, j);
-      const significant = stats.significant[k] === 1;
-      const [r, g, b] = divergingColor(slope, limit, variable);
-      const bounds: L.LatLngBoundsExpression = [
-        [lat - grid.dLat / 2, lon - grid.dLon / 2],
-        [lat + grid.dLat / 2, lon + grid.dLon / 2],
-      ];
-      const p = stats.p[k];
-      const rect = L.rectangle(bounds, {
-        renderer,
-        color: "#0b0f14",
-        weight: 1,
-        fillColor: `rgb(${r},${g},${b})`,
-        fillOpacity: significant ? 0.88 : 0.3,
-      });
+      const clear = stats.significant[k] === 1;
+      const rect = L.rectangle(
+        [
+          [lat - grid.dLat / 2, lon - grid.dLon / 2],
+          [lat + grid.dLat / 2, lon + grid.dLon / 2],
+        ],
+        {
+          renderer,
+          color: edge,
+          weight: 1.5,
+          fillColor: cssVar(trendToken(slope, limit, variable)),
+          fillOpacity: clear ? 0.9 : 0.3,
+        },
+      );
       rect.bindTooltip(
         `<strong>${formatSigned(slope, meta.decimals + 1)} ${unit}</strong><br>` +
-          `${significant ? "Significant (map-wide check)" : "Not significant"}${p !== null ? ` · ${formatP(p)}` : ""}<br>` +
-          `<span style="opacity:.7">${lat.toFixed(2)}°N, ${lon.toFixed(2)}°E · click for details</span>`,
-        { sticky: true, direction: "top", className: "trend-tooltip" },
+          `${clear ? "Clear change" : "No clear change"} · click for the full story`,
+        { sticky: true, direction: "top", className: "map-tooltip" },
       );
       rect.on("click", () => onSelectRef.current(lat, lon));
       group.addLayer(rect);
-      if (significant) {
-        group.addLayer(
-          L.circleMarker([lat, lon], {
-            renderer,
-            radius: 1.8,
-            stroke: false,
-            fillColor: "#f1f5f9",
-            fillOpacity: 0.85,
-            interactive: false,
-          }),
-        );
-      }
     });
-  }, [stats, grid, limit, variable, meta]);
+  }, [stats, grid, limit, variable, meta, theme]);
 
-  // Hazard-zone outlines and the selected cell.
+  // Region outlines and the selected square.
   useEffect(() => {
     const group = overlayRef.current;
     if (!group) return;
     group.clearLayers();
+    const ink = cssVar("--ink");
     for (const z of zones) {
       if (z.id === "study-area") continue;
       const [la0, la1, lo0, lo1] = z.bbox;
@@ -133,10 +141,10 @@ export default function TrendMap({
             pane: "reference",
             interactive: false,
             fill: false,
-            color: selected ? "#f8fafc" : "#94a3b8",
-            weight: selected ? 2.5 : 1,
-            dashArray: selected ? undefined : "4 4",
-            opacity: selected ? 1 : 0.7,
+            color: ink,
+            weight: selected ? 3 : 1,
+            dashArray: selected ? undefined : "4 5",
+            opacity: selected ? 1 : 0.45,
           },
         ),
       );
@@ -149,11 +157,11 @@ export default function TrendMap({
             [lat - grid.dLat / 2, lon - grid.dLon / 2],
             [lat + grid.dLat / 2, lon + grid.dLon / 2],
           ],
-          { pane: "reference", interactive: false, fill: false, color: "#ffffff", weight: 2.5 },
+          { pane: "reference", interactive: false, fill: false, color: ink, weight: 3 },
         ),
       );
     }
-  }, [zones, selectedZone, selectedCell, grid]);
+  }, [zones, selectedZone, selectedCell, grid, theme]);
 
-  return <div ref={containerRef} className="h-full w-full bg-[#0b0f14]" />;
+  return <div ref={containerRef} className="h-full w-full bg-sunken" />;
 }

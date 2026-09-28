@@ -61,7 +61,7 @@ export function SeriesChart({ years, values, slopePerDecade, unit, decimals, axi
     return (k: number) => b + perYear * k;
   }, [slopePerDecade, points, values.length]);
 
-  if (points.length < 2) return <p className="text-sm text-slate-500">No data for this location.</p>;
+  if (points.length < 2) return <p className="text-sm text-ink-3">No data for this place.</p>;
 
   const vals = points.map((p) => p.value);
   if (trendAt) vals.push(trendAt(0), trendAt(values.length - 1));
@@ -91,13 +91,13 @@ export function SeriesChart({ years, values, slopePerDecade, unit, decimals, axi
 
   return (
     <div>
-      <div className="mb-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-slate-400">
+      <div className="mb-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-ink-2">
         <span className="flex items-center gap-1.5">
-          <span className="h-0.5 w-4 rounded bg-slate-200" /> Yearly value
+          <span className="h-0.5 w-4 rounded bg-ink" /> Each year
         </span>
         {trendAt && (
           <span className="flex items-center gap-1.5">
-            <span className="w-4 border-t-2 border-dashed border-sky-400" /> Trend (Sen&apos;s slope)
+            <span className="w-4 border-t-2 border-dashed border-accent" /> Long-term trend
           </span>
         )}
       </div>
@@ -113,14 +113,14 @@ export function SeriesChart({ years, values, slopePerDecade, unit, decimals, axi
         >
           {yTicks.map((t) => (
             <g key={t}>
-              <line x1={PAD.left} x2={width - PAD.right} y1={y(t)} y2={y(t)} stroke="#ffffff" strokeOpacity={0.07} />
-              <text x={PAD.left - 6} y={y(t)} dy="0.32em" textAnchor="end" className="fill-slate-500 text-[10px]">
+              <line x1={PAD.left} x2={width - PAD.right} y1={y(t)} y2={y(t)} stroke="var(--line)" />
+              <text x={PAD.left - 6} y={y(t)} dy="0.32em" textAnchor="end" className="fill-ink-3 text-[11px]">
                 {Number(t.toFixed(4))}
               </text>
             </g>
           ))}
           {zeroLine && lo < 0 && hi > 0 && (
-            <line x1={PAD.left} x2={width - PAD.right} y1={y(0)} y2={y(0)} stroke="#ffffff" strokeOpacity={0.3} />
+            <line x1={PAD.left} x2={width - PAD.right} y1={y(0)} y2={y(0)} stroke="var(--ink-3)" />
           )}
           {xTicks.map((yr) => (
             <text
@@ -128,23 +128,23 @@ export function SeriesChart({ years, values, slopePerDecade, unit, decimals, axi
               x={x(years.indexOf(yr))}
               y={HEIGHT - 8}
               textAnchor="middle"
-              className="fill-slate-500 text-[10px]"
+              className="fill-ink-3 text-[11px]"
             >
               {yr}
             </text>
           ))}
-          <text x={PAD.left} y={10} className="fill-slate-500 text-[10px]">
+          <text x={PAD.left} y={10} className="fill-ink-3 text-[11px]">
             {axisLabel}
           </text>
 
-          <path d={path} fill="none" stroke="#e2e8f0" strokeWidth={2} strokeLinejoin="round" />
+          <path d={path} fill="none" stroke="var(--ink)" strokeWidth={2} strokeLinejoin="round" />
           {trendAt && (
             <line
               x1={x(0)}
               x2={x(values.length - 1)}
               y1={y(trendAt(0))}
               y2={y(trendAt(values.length - 1))}
-              stroke="#38bdf8"
+              stroke="var(--accent)"
               strokeWidth={2}
               strokeDasharray="6 4"
             />
@@ -152,9 +152,9 @@ export function SeriesChart({ years, values, slopePerDecade, unit, decimals, axi
 
           {hover !== null && (
             <g pointerEvents="none">
-              <line x1={x(hover)} x2={x(hover)} y1={PAD.top} y2={HEIGHT - PAD.bottom} stroke="#ffffff" strokeOpacity={0.35} />
+              <line x1={x(hover)} x2={x(hover)} y1={PAD.top} y2={HEIGHT - PAD.bottom} stroke="var(--ink-3)" />
               {hovered !== null && (
-                <circle cx={x(hover)} cy={y(hovered)} r={4} fill="#e2e8f0" stroke="#0e141b" strokeWidth={2} />
+                <circle cx={x(hover)} cy={y(hovered)} r={4.5} fill="var(--ink)" stroke="var(--card)" strokeWidth={2} />
               )}
             </g>
           )}
@@ -162,23 +162,23 @@ export function SeriesChart({ years, values, slopePerDecade, unit, decimals, axi
 
         {hover !== null && (
           <div
-            className="pointer-events-none absolute top-2 z-10 min-w-36 rounded-md bg-[#0b0f14]/95 px-2.5 py-1.5 text-xs ring-1 ring-white/15"
+            className="pointer-events-none absolute top-2 z-10 min-w-36 rounded-lg border border-line bg-card px-3 py-2 text-xs shadow-soft"
             style={{
               left: Math.min(Math.max(x(hover) + 10, 0), width - 160),
             }}
           >
-            <div className="font-medium text-white">{years[hover]}</div>
-            <div className="text-slate-300">Value: {hovered !== null ? fmt(hovered) : "no data"}</div>
-            {trendAt && <div className="text-slate-400">Trend line: {fmt(trendAt(hover))}</div>}
+            <div className="font-medium text-ink">{years[hover]}</div>
+            <div className="text-ink-2">That year: {hovered !== null ? fmt(hovered) : "no data"}</div>
+            {trendAt && <div className="text-ink-3">Trend line: {fmt(trendAt(hover))}</div>}
           </div>
         )}
       </div>
 
-      <details className="mt-2 text-xs text-slate-400">
-        <summary className="cursor-pointer select-none hover:text-slate-200">Show data table</summary>
-        <div className="mt-2 max-h-48 overflow-y-auto rounded ring-1 ring-white/10">
+      <details className="mt-2 text-xs text-ink-3">
+        <summary className="cursor-pointer select-none hover:text-ink">Show the data as a table</summary>
+        <div className="mt-2 max-h-48 overflow-y-auto rounded-lg border border-line">
           <table className="w-full text-left tabular-nums">
-            <thead className="sticky top-0 bg-[#0e141b] text-slate-500">
+            <thead className="sticky top-0 bg-sunken text-ink-3">
               <tr>
                 <th className="px-2 py-1 font-medium">Year</th>
                 <th className="px-2 py-1 font-medium">Value ({unit})</th>
@@ -186,7 +186,7 @@ export function SeriesChart({ years, values, slopePerDecade, unit, decimals, axi
             </thead>
             <tbody>
               {years.map((yr, k) => (
-                <tr key={yr} className="odd:bg-white/[0.02]">
+                <tr key={yr} className="odd:bg-sunken/50 text-ink-2">
                   <td className="px-2 py-0.5">{yr}</td>
                   <td className="px-2 py-0.5">{values[k] === null ? "—" : values[k]!.toFixed(decimals)}</td>
                 </tr>

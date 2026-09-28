@@ -9,11 +9,11 @@ interface Props {
 /** Bar chart of the relative tree-cover-loss index per year for the area in view. */
 export function ForestLossChart({ totals, firstYear, yearRange }: Props) {
   if (!totals) {
-    return <p className="text-xs text-slate-500">Loading forest tiles for this view…</p>;
+    return <div className="h-24 animate-pulse rounded-lg bg-sunken" aria-label="Loading forest data" />;
   }
   const max = Math.max(...totals);
   if (max === 0) {
-    return <p className="text-xs text-slate-500">No tree cover loss detected in this view.</p>;
+    return <p className="text-sm text-ink-3">No forest loss found in this part of the map.</p>;
   }
   const lastYear = firstYear + totals.length - 1;
   const span = Math.max(1, lastYear - firstYear);
@@ -28,8 +28,8 @@ export function ForestLossChart({ totals, firstYear, yearRange }: Props) {
           return (
             <div
               key={year}
-              title={`${year}: ${Math.round((v / max) * 100)}% of peak year`}
-              className="flex-1 rounded-t-[2px] transition-opacity"
+              title={`${year}: ${Math.round((v / max) * 100)}% of the worst year`}
+              className="flex-1 rounded-t-[3px] transition-opacity"
               style={{
                 height: `${Math.max(2, (v / max) * 100)}%`,
                 background: `rgb(${r},${g},${b})`,
@@ -39,10 +39,13 @@ export function ForestLossChart({ totals, firstYear, yearRange }: Props) {
           );
         })}
       </div>
-      <div className="mt-1 flex justify-between font-mono text-[11px] text-slate-500">
+      <div className="mt-1.5 flex justify-between text-xs text-ink-3">
         <span>{firstYear}</span>
         <span>{lastYear}</span>
       </div>
+      <p className="mt-2 text-xs leading-relaxed text-ink-3">
+        Taller bar = more forest lost that year, compared with the worst year. Hover a bar for details.
+      </p>
     </div>
   );
 }

@@ -1,20 +1,22 @@
+import { ArrowRight, CloudRain, Lightbulb, Question, Thermometer, UsersThree } from "@phosphor-icons/react/ssr";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { EventDriverChart, PercentileBar, RegionBars, Confidence, type RegionBar } from "@/components/findings/parts";
 import { MiniGridMap } from "@/components/findings/MiniGridMap";
+import { EventDriverChart, PercentileBar, RegionBars, type RegionBar } from "@/components/findings/parts";
 import { SeriesChart } from "@/components/trends/SeriesChart";
+import { Dots, Numbers, Sureness } from "@/components/ui";
 import { readHazardZones, readManifest, readTrendGrid, readTrendZones } from "@/lib/data";
-import { ordinal, preparednessSignal, type HazardZone } from "@/lib/hazards";
+import { preparednessSignal, type HazardZone } from "@/lib/hazards";
 import { colorLimit, formatP, formatSigned, type Zone } from "@/lib/trends";
 
 export const metadata: Metadata = {
-  title: "Findings · Earth's Hidden Signals",
-  description: "What NASA data shows about heat, rain and disasters in South Asia since 1981, explained simply and in detail.",
+  title: "The story · Earth's Hidden Signals",
+  description: "Five things 45 years of NASA data show about heat, rain and disasters in South Asia, explained simply.",
 };
 
-const EVENT_COLOR = { flood: "#3987e5", landslide: "#eda100", wildfire: "#d95926" } as const;
+const EVENT_COLOR = { flood: "var(--ev-flood)", landslide: "var(--ev-landslide)", wildfire: "var(--ev-fire)" } as const;
 
-export default async function FindingsPage() {
+export default async function StoryPage() {
   const [manifest, trendZones, hazardZones, tempGrid, rainGrid] = await Promise.all([
     readManifest(),
     readTrendZones(),
@@ -30,18 +32,15 @@ export default async function FindingsPage() {
   const tMeta = manifest.variables.temperature;
   const rMeta = manifest.variables.rainfall;
 
-  // Finding 1: warming
+  // 1. Warming
   const study = zone("study-area");
   const tStudy = trendOf(study, "temperature_annual");
   const tSeries = study.results["temperature_annual"].series as number[];
-  const warmest = years
-    .map((y, i) => ({ y, v: tSeries[i] }))
-    .sort((a, b) => b.v - a.v)
-    .slice(0, 5);
+  const hottest = years[tSeries.indexOf(Math.max(...tSeries))];
   const tempSum = manifest.summaries["temperature_annual"];
   const sinceStart = (tStudy.slopePerDecade * (last - first)) / 10;
 
-  // Finding 2: seasons and places
+  // 2. Spring heats fastest
   const regionIds = trendZones.filter((z) => z.hazard).map((z) => z.id);
   const preBars: RegionBar[] = regionIds.map((id) => {
     const t = trendOf(zone(id), "temperature_pre-monsoon");
@@ -49,9 +48,10 @@ export default async function FindingsPage() {
   });
   const fastest = [...preBars].sort((a, b) => b.value - a.value)[0];
   const slowest = [...preBars].sort((a, b) => a.value - b.value)[0];
+  const tFastest = trendOf(zone(regionIds.find((id) => zone(id).name === fastest.name)!), "temperature_pre-monsoon");
   const seasonMedian = (s: string) => manifest.summaries[`temperature_${s}`].medianSlopePerDecade;
 
-  // Finding 3: monsoon rain moves
+  // 3. Rain is moving
   const rainPct = (z: Zone) => {
     const r = z.results["rainfall_monsoon"];
     return (r.trend!.slopePerDecade / r.mean) * 100;
@@ -61,13 +61,14 @@ export default async function FindingsPage() {
     value: rainPct(zone(id)),
     significant: trendOf(zone(id), "rainfall_monsoon").p < 0.05,
   }));
+  const wettest = [...rainBars].sort((a, b) => b.value - a.value)[0];
+  const driest = [...rainBars].filter((b) => b.significant).sort((a, b) => a.value - b.value)[0];
+  const tWettest = trendOf(zone(regionIds.find((id) => zone(id).name === wettest.name)!), "rainfall_monsoon");
   const rainSum = manifest.summaries["rainfall_monsoon"];
   const rainPctGrid = rainGrid.slopePerDecade.map((s, k) => (s === null || !rainGrid.mean[k] ? null : (s / rainGrid.mean[k]!) * 100));
   const rainLimit = colorLimit(rainPctGrid);
-  const studyRainPct = rainPct(study);
-  const noTrendRain = rainSum.cells - rainSum.significantIncrease - rainSum.significantDecrease;
 
-  // Finding 4: links to disasters
+  // 4. Disasters follow the weather
   const driverSeries = (h: HazardZone, key: string) => {
     const s = zone(h.id).results[key].series as number[];
     return h.years.map((y) => s[years.indexOf(y)]);
@@ -76,84 +77,66 @@ export default async function FindingsPage() {
   const slides = hz("western-himalaya");
   const floods = hz("indus-plain");
   const rel = (h: HazardZone) => h.drivers.find((d) => d.linked)!.relationship!;
-  const neFires = hz("northeast-hills");
-  const delta = hz("bengal-delta");
-  const deltaRain = trendOf(zone("bengal-delta"), "rainfall_monsoon");
-
   const linkedCount = hazardZones.filter((h) => h.drivers.some((d) => d.linked)).length;
-  const drierSig = rainBars.filter((b) => b.significant && b.value < 0).map((b) => Math.abs(b.value));
-  const drierRange = drierSig.length
-    ? `${Math.round(Math.min(...drierSig))}–${Math.round(Math.max(...drierSig))}%`
-    : "less";
 
-  // Finding 5: this year's signals
+  // 5. This year
   const signalDriver = (h: HazardZone) => h.drivers.find((d) => d.linked)!;
-  const signalCount = hazardZones.filter((h) => preparednessSignal(h).kind === "resembles").length;
+  const watchList = hazardZones.filter((h) => preparednessSignal(h).kind === "resembles");
 
   return (
-    <article className="mx-auto w-full max-w-5xl px-4 py-14 text-slate-300">
-      <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-sky-400">Findings · {first}–{last}</p>
-      <h1 className="mt-2 max-w-3xl text-4xl font-semibold leading-tight tracking-tight text-white">
-        What 45 years of NASA data say about South Asia
-      </h1>
-      <p className="mt-4 max-w-3xl text-lg leading-relaxed text-slate-400">
-        Each finding is told twice: once in simple words that a school student can follow, and once in the technical
-        language scientists use. Every number on this page comes from our analysis of public NASA data and is updated when
-        the analysis is re-run.
-      </p>
+    <article className="mx-auto w-full max-w-[1200px] px-4 pb-24 pt-12 sm:px-6">
+      <header className="max-w-3xl">
+        <p className="text-sm font-medium text-accent">
+          The story · {first} to {last}
+        </p>
+        <h1 className="mt-2 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
+          Five things NASA data tell us about South Asia
+        </h1>
+        <p className="mt-4 text-lg leading-relaxed text-ink-2">
+          Each finding is explained in simple words first. The exact numbers are there too, for anyone who wants them.
+        </p>
+      </header>
 
-      <nav aria-label="Findings" className="mt-8 rounded-lg bg-[#0e141b] p-5 ring-1 ring-white/10">
-        <div className="text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-500">The story in 30 seconds</div>
-        <ol className="mt-3 space-y-2 text-sm">
-          <li>
-            <a href="#warming" className="text-white hover:text-sky-300">1. Every part of South Asia has warmed</a> by about{" "}
-            {formatSigned(sinceStart, 1)} °C since {first}; {warmest[0].y} was the hottest year on record.
-          </li>
-          <li>
-            <a href="#seasons" className="text-white hover:text-sky-300">2. The heat rises fastest in March–May</a>, the hot
-            dry weeks before the monsoon, and fastest of all in the mountains.
-          </li>
-          <li>
-            <a href="#rain" className="text-white hover:text-sky-300">3. The monsoon isn&apos;t disappearing, it&apos;s moving</a>
-            : the dry northwest gets more rain, the wet east and the mountains get less.
-          </li>
-          <li>
-            <a href="#disasters" className="text-white hover:text-sky-300">4. Disasters follow the weather</a> in{" "}
-            {linkedCount} regions: hot springs with forest fires, wet monsoons with landslides and floods.
-          </li>
-          <li>
-            <a href="#watch" className="text-white hover:text-sky-300">
-              5. In {last}, {signalCount} region{signalCount === 1 ? "" : "s"} matched
-            </a>{" "}
-            the conditions of past disaster years.
-          </li>
-        </ol>
+      <nav aria-label="Findings" className="mt-8 flex flex-wrap gap-2">
+        {[
+          ["warming", "1. Getting warmer"],
+          ["spring", "2. Spring heats fastest"],
+          ["rain", "3. Rain is moving"],
+          ["disasters", "4. Disasters follow the weather"],
+          ["watch", `5. ${last}: places to watch`],
+        ].map(([id, label]) => (
+          <a key={id} href={`#${id}`} className="rounded-full bg-card px-4 py-2 text-sm text-ink-2 shadow-soft transition-colors hover:text-ink">
+            {label}
+          </a>
+        ))}
       </nav>
 
-      {/* ---------------------------------------------------------------- 1 */}
-      <Chapter
+      <Finding
         id="warming"
         n={1}
-        title="South Asia is warming, everywhere"
-        big={`${formatSigned(tStudy.slopePerDecade, 2)} °C`}
-        bigUnit={`per decade · about ${formatSigned(sinceStart, 1)} °C since ${first}`}
-        simple={
+        icon={<Thermometer size={22} weight="duotone" />}
+        title="South Asia is getting warmer, everywhere"
+        big={`${formatSigned(sinceStart, 1)} °C`}
+        bigNote={`warmer than in ${first}`}
+        story={
           <>
             <p>
-              Imagine one thermometer for all of South Asia. Every year we note how much warmer or cooler it was than the
-              average of 1951–1980. In the early 1980s the region was close to that old average. In {warmest[0].y} it was{" "}
-              <strong className="text-white">{warmest[0].v.toFixed(1)} °C warmer</strong>, the hottest year on record.
+              Since {first}, the whole region has warmed by about {formatSigned(sinceStart, 1)} °C. That is a steady climb of
+              about a third of a degree every 10 years.
             </p>
             <p>
-              This isn&apos;t one hot summer. It is a steady climb of about a third of a degree every ten years, and it
-              appears in <strong className="text-white">every one of the {tempSum.cells} land squares</strong> on our map.
-              Not a single square cooled.
+              All <strong>{tempSum.cells} squares</strong> on our map got warmer, and not one got cooler. {hottest} was the
+              hottest year on record.
             </p>
           </>
         }
+        why="Gases from burning coal, oil and gas trap heat, like a blanket around the Earth."
+        soWhat="More dangerous heatwaves for workers and farmers, and drier land that catches fire more easily."
+        sure={<Sureness p={tStudy.p} />}
         visual={
           <div className="space-y-4">
-            <figure className="rounded-lg bg-[#0b0f14] p-4 ring-1 ring-white/10">
+            <figure className="rounded-2xl bg-card p-5 shadow-soft">
+              <figcaption className="mb-2 text-sm font-medium text-ink">How much warmer each year was than normal</figcaption>
               <SeriesChart
                 years={years}
                 values={tSeries}
@@ -163,10 +146,6 @@ export default async function FindingsPage() {
                 axisLabel="°C warmer than the 1951–1980 average"
                 zeroLine
               />
-              <figcaption className="mt-2 text-xs text-slate-500">
-                Yearly temperature of South Asia&apos;s land, compared with the 1951–1980 average. Hover to read any year.
-                Warmest years: {warmest.map((w) => w.y).join(", ")}.
-              </figcaption>
             </figure>
             <MiniGridMap
               grid={manifest.grids.temperature}
@@ -174,117 +153,85 @@ export default async function FindingsPage() {
               variable="temperature"
               meta={tMeta}
               limit={0.5}
-              caption="Warming per decade in each 2° square (about 220 km across), whole year."
+              title="Warming in every square of the map"
+              decreaseWord="Cooling"
+              increaseWord="Warming"
             />
           </div>
         }
-        science={
+        details={
           <>
-            NASA GISTEMP v4 surface temperature anomalies (2° grid, base 1951–1980), annual means {first}–{last}. Region
-            average (land-weighted): Sen&apos;s slope {formatSigned(tStudy.slopePerDecade, 3)} °C/decade, 95% CI{" "}
-            {formatSigned(tStudy.lowerPerDecade, 3)} to {formatSigned(tStudy.upperPerDecade, 3)}; Hamed–Rao modified
-            Mann–Kendall {formatP(tStudy.p)}. {tempSum.significantIncrease}/{tempSum.cells} land cells significant after
-            Benjamini–Hochberg FDR (α<sub>FDR</sub> = 0.10); median cell trend {formatSigned(tempSum.medianSlopePerDecade, 2)}{" "}
-            °C/decade.
+            NASA GISTEMP v4 surface temperature anomalies (2° grid, base 1951–1980), yearly means {first}–{last}. Land-weighted
+            regional trend (Sen&apos;s slope) {formatSigned(tStudy.slopePerDecade, 3)} °C/decade, 95% CI{" "}
+            {formatSigned(tStudy.lowerPerDecade, 3)} to {formatSigned(tStudy.upperPerDecade, 3)}; Hamed–Rao modified Mann–Kendall{" "}
+            {formatP(tStudy.p)}. {tempSum.significantIncrease}/{tempSum.cells} land cells significant after Benjamini–Hochberg
+            FDR (α = 0.10).
           </>
         }
-        why={
-          <>
-            The main cause is the extra greenhouse gas in the air, mostly carbon dioxide from burning coal, oil and gas. It
-            acts like a blanket that keeps more of the sun&apos;s heat near the ground. The IPCC (the UN&apos;s climate
-            science panel) concludes that human activity is the dominant cause of warming since the mid-1900s. Local
-            factors add to it, such as growing cities that trap heat. Air pollution does the opposite: its tiny particles
-            block some sunlight, which hides part of the warming.
-          </>
-        }
-        people={
-          <>
-            More dangerous heat for outdoor workers, farmers and people without cooling; higher electricity demand; and
-            faster drying of soils and forests. Warming is the first link in the chain that leads to the hazards below.
-          </>
-        }
-        confidence={<Confidence level="high" reason="Clear in every square, and confirmed by NASA's official temperature record." />}
       />
 
-      {/* ---------------------------------------------------------------- 2 */}
-      <Chapter
-        id="seasons"
+      <Finding
+        id="spring"
         n={2}
-        title="Heat rises fastest before the monsoon, and in the mountains"
+        icon={<Thermometer size={22} weight="duotone" />}
+        title="Spring is heating up fastest, especially in the mountains"
         big={`${formatSigned(fastest.value, 2)} °C`}
-        bigUnit={`per decade in March–May · ${fastest.name}`}
-        simple={
+        bigNote={`every 10 years in March–May · ${fastest.name}`}
+        story={
           <>
             <p>
-              March to May is already the hottest, driest time of year, just before the monsoon rain arrives. That&apos;s
-              exactly when the warming is fastest: a typical square warms{" "}
-              <strong className="text-white">{formatSigned(seasonMedian("pre-monsoon"), 2)} °C per decade</strong> in spring
-              but {formatSigned(seasonMedian("monsoon"), 2)} °C in the rainy season.
+              March to May is already the hottest, driest time of year, just before the monsoon. That is exactly when the
+              warming is fastest.
             </p>
             <p>
-              Where you live matters too. The {fastest.name} warms about{" "}
-              <strong className="text-white">{Math.round(fastest.value / slowest.value)} times faster</strong> in spring than
-              the {slowest.name}, where the surrounding sea keeps temperatures steadier.
+              Mountains warm fastest of all: the {fastest.name} about{" "}
+              <strong>{Math.round(fastest.value / slowest.value)} times faster</strong> than the {slowest.name}, where the sea
+              keeps temperatures steady.
             </p>
           </>
         }
+        why="In the mountains, snow melts earlier and the dark ground underneath soaks up more sunlight."
+        soWhat="Longer fire seasons, heat damage to wheat just before harvest, and glaciers melting faster."
+        sure={<Sureness p={tFastest.p} />}
         visual={
           <RegionBars
             bars={preBars}
             limit={0.5}
             variable="temperature"
-            unit="°C per decade"
+            unit="°C every 10 years"
             decimals={2}
-            label="Pre-monsoon (March–May) warming by region"
+            label="Warming in March–May, region by region"
           />
         }
-        science={
+        details={
           <>
             Median cell trend by season: whole year {formatSigned(seasonMedian("annual"), 2)}, pre-monsoon (MAM){" "}
             {formatSigned(seasonMedian("pre-monsoon"), 2)}, monsoon (JJAS) {formatSigned(seasonMedian("monsoon"), 2)} °C/decade.
-            Every hazard region shows a significant MAM warming trend (Hamed–Rao MK, p &lt; 0.05). Regional confidence
-            intervals overlap, so the exact ranking between neighbouring regions is less certain than the overall pattern.
+            Every hazard region has a significant MAM warming trend (p &lt; 0.05); regional 95% intervals overlap, so the exact
+            ranking is less certain than the pattern.
           </>
         }
-        why={
-          <>
-            In the mountains, snow melting earlier uncovers darker ground that soaks up more sunlight. Scientists call
-            this the snow–albedo feedback. In dry spring soils there is little water to evaporate, so more of the
-            sun&apos;s energy goes into heating the air. Near the coast and on islands like Sri Lanka, the ocean acts like
-            a giant heat buffer.
-          </>
-        }
-        people={
-          <>
-            Hotter springs mean a longer and more intense fire season, heat stress on wheat just as the grain fills in
-            March–April, and faster melting of Himalayan snow and glaciers that feed the rivers.
-          </>
-        }
-        confidence={<Confidence level="high" reason="Every region warms significantly in spring; the exact ranking is less certain." />}
       />
 
-      {/* ---------------------------------------------------------------- 3 */}
-      <Chapter
+      <Finding
         id="rain"
         n={3}
-        title="Same warming, opposite rain"
-        big={`${rainSum.significantIncrease} wetter · ${rainSum.significantDecrease} drier`}
-        bigUnit={`squares with a significant monsoon-rain trend · region total ${formatSigned(studyRainPct, 1)}% per decade`}
-        simple={
+        icon={<CloudRain size={22} weight="duotone" />}
+        title="The monsoon rain is moving, not disappearing"
+        big={`${formatSigned(wettest.value, 0)}% vs ${formatSigned(driest.value, 0)}%`}
+        bigNote={`rain every 10 years · ${wettest.name} vs ${driest.name}`}
+        story={
           <>
             <p>
-              Add up all the monsoon rain over South Asia and the total has{" "}
-              <strong className="text-white">hardly changed in {years.length} years</strong>. But <em>where</em> it falls has changed.
-              The dry northwest, the Indus plain, now gets about{" "}
-              <strong className="text-white">{formatSigned(rainPct(zone("indus-plain")), 0)}% more every decade</strong>,
-              while the wet east and the mountains get {drierRange} less.
+              Add up all the monsoon rain over South Asia and the total has hardly changed. But <strong>where</strong> it
+              falls has changed: the dry northwest gets more, while the wet east and the mountains get less.
             </p>
-            <p>
-              It&apos;s like pouring the same jug of water while slowly moving it west. This is exactly the challenge&apos;s
-              point: <strong className="text-white">one process, opposite trends in different places.</strong>
-            </p>
+            <p>This is the big idea of our project: one warming world, but opposite changes in different places.</p>
           </>
         }
+        why="Air pollution can weaken the monsoon winds in the east, and warmer seas push more moisture to the northwest. Scientists are still working out the exact mix."
+        soWhat="Bigger floods on the crowded plains of Pakistan, and less water for rice farms and rivers in the east."
+        sure={<Sureness p={tWettest.p} />}
         visual={
           <div className="space-y-4">
             <MiniGridMap
@@ -294,195 +241,143 @@ export default async function FindingsPage() {
               meta={rMeta}
               limit={rainLimit}
               percent
-              caption="Change in June–September rain per decade, as % of each square's average."
+              title="Change in monsoon rain (June–September)"
+              decreaseWord="Drier"
+              increaseWord="Wetter"
             />
             <RegionBars
               bars={rainBars}
               limit={15}
               variable="rainfall"
-              unit="% per decade"
+              unit="% change in monsoon rain every 10 years"
               decimals={1}
-              label="Monsoon (June–September) rain change by region"
+              label="Monsoon rain, region by region"
             />
           </div>
         }
-        science={
+        details={
           <>
             GPCP v2.3 monthly precipitation (2.5° grid), June–September totals {first}–{last}. Of {rainSum.cells} land cells,{" "}
-            {rainSum.significantIncrease} show a significant increase and {rainSum.significantDecrease} a significant
-            decrease after FDR control; {noTrendRain} ({Math.round((noTrendRain / rainSum.cells) * 100)}%) show no
-            detectable trend. Region-average trends: Indus plain{" "}
-            {formatSigned(trendOf(zone("indus-plain"), "rainfall_monsoon").slopePerDecade, 1)} mm/decade (
-            {formatP(trendOf(zone("indus-plain"), "rainfall_monsoon").p)}), Central Himalaya{" "}
-            {formatSigned(trendOf(zone("central-himalaya"), "rainfall_monsoon").slopePerDecade, 1)} mm/decade (
-            {formatP(trendOf(zone("central-himalaya"), "rainfall_monsoon").p)}), whole study area{" "}
-            {formatSigned(trendOf(study, "rainfall_monsoon").slopePerDecade, 1)} mm/decade (
+            {rainSum.significantIncrease} show a significant increase and {rainSum.significantDecrease} a significant decrease after
+            FDR control; {rainSum.cells - rainSum.significantIncrease - rainSum.significantDecrease} show no detectable trend. Whole
+            study area: {formatSigned(trendOf(study, "rainfall_monsoon").slopePerDecade, 1)} mm/decade (
             {formatP(trendOf(study, "rainfall_monsoon").p)}, not significant).
           </>
         }
-        why={
-          <>
-            Scientists are still studying this, and several causes probably work together. Air pollution particles
-            (aerosols) dim the sunlight and can weaken the monsoon winds, especially over the crowded east. Warmer seas,
-            like the Arabian Sea, can send more moisture toward the northwest. Natural cycles such as El Niño also shift
-            rain from year to year. Our data shows the pattern clearly, but it cannot separate these causes on its own.
-          </>
-        }
-        people={
-          <>
-            <strong className="text-white">Wetter northwest:</strong> bigger floods on a flat, crowded floodplain, like
-            Pakistan in 2010 and 2022. <strong className="text-white">Drier east and mountains:</strong> less water for rice
-            farming and hydropower in places used to plenty, even while each downpour can still be intense.
-          </>
-        }
-        confidence={
-          <Confidence level="medium" reason="Strong in several regions, but most single squares show no clear trend. Rain varies a lot from year to year." />
-        }
       />
 
-      {/* ---------------------------------------------------------------- 4 */}
-      <Chapter
+      <Finding
         id="disasters"
         n={4}
-        title="When the weather lines up, disasters follow"
-        wide
+        icon={<Lightbulb size={22} weight="duotone" />}
+        title="Disasters follow the weather"
         big={`${linkedCount} regions`}
-        bigUnit="where disaster years clearly match the weather"
-        simple={
+        bigNote="where the worst disaster years match the weather"
+        story={
           <>
             <p>
-              We lined up the years with the most disasters against the weather in the same season. In three regions they
-              clearly move together: <strong className="text-white">hotter springs → more forest fires</strong> in Central
-              India, and <strong className="text-white">wetter monsoons → more landslides and floods</strong> in the Western
-              Himalaya and on the Indus plain.
+              We lined up the worst disaster years with the weather in the same season. <strong>Hot springs</strong> came with
+              more forest fires in Central India. <strong>Rainy monsoons</strong> came with more landslides in the Western
+              Himalaya and more floods on the Indus plain.
             </p>
             <p>
-              We are careful here. &ldquo;Move together&rdquo; is not the same as &ldquo;cause&rdquo;, so we only count a
-              link when it is statistically significant and makes physical sense.
+              Just as useful: in some places the weather does <em>not</em> explain disasters. The Bengal delta keeps flooding
+              even though its own rain is falling, because its floods come from rivers upstream.
             </p>
           </>
         }
+        why="Heat dries forests into fuel. Heavy rain soaks steep slopes until they slide, and floods flat land."
+        soWhat="Where disasters follow the weather, weather records can warn us early. Where they don't, other causes need attention."
+        sure={
+          <span className="inline-flex items-center gap-2 rounded-full bg-accent-soft px-3 py-1.5 text-sm text-ink">
+            <Dots level={2} />
+            Fairly sure: the disaster records are short (11 to 26 years)
+          </span>
+        }
+        wide
         visual={
-          <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
-            <LinkedCase
-              title="Central Indian forest fires"
-              stat={`ρ = ${rel(fires).rho.toFixed(2)}, ${formatP(rel(fires).p)}, ${rel(fires).n} years`}
-            >
-              <EventDriverChart
-                years={fires.years}
-                counts={fires.counts}
-                highYears={fires.highEventYears}
-                driverValues={driverSeries(fires, "temperature_pre-monsoon")}
-                eventLabel="Fire detections (Mar–May)"
-                driverLabel="Spring temperature"
-                driverUnit="°C vs 1951–80"
-                eventColor={EVENT_COLOR.wildfire}
-                driverDecimals={2}
-              />
-            </LinkedCase>
-            <LinkedCase
-              title="Western Himalaya landslides"
-              stat={`ρ = ${rel(slides).rho.toFixed(2)}, ${formatP(rel(slides).p)}, ${rel(slides).n} years`}
-            >
-              <EventDriverChart
-                years={slides.years}
-                counts={slides.counts}
-                highYears={slides.highEventYears}
-                driverValues={driverSeries(slides, "rainfall_monsoon")}
-                eventLabel="Landslides (Jun–Sep)"
-                driverLabel="Monsoon rain"
-                driverUnit="mm"
-                eventColor={EVENT_COLOR.landslide}
-                driverDecimals={0}
-              />
-            </LinkedCase>
-            <LinkedCase
-              title="Indus plain floods"
-              stat={`ρ = ${rel(floods).rho.toFixed(2)}, ${formatP(rel(floods).p)}, ${rel(floods).n} years`}
-            >
-              <EventDriverChart
-                years={floods.years}
-                counts={floods.counts}
-                highYears={floods.highEventYears}
-                driverValues={driverSeries(floods, "rainfall_monsoon")}
-                eventLabel="Flood alerts"
-                driverLabel="Monsoon rain"
-                driverUnit="mm"
-                eventColor={EVENT_COLOR.flood}
-                driverDecimals={0}
-              />
-            </LinkedCase>
+          <div className="grid gap-4 lg:grid-cols-3">
+            <EventDriverChart
+              title="Forest fires in Central India"
+              years={fires.years}
+              counts={fires.counts}
+              highYears={fires.highEventYears}
+              driverValues={driverSeries(fires, "temperature_pre-monsoon")}
+              eventLabel="Fires spotted each spring"
+              driverLabel="How hot that spring was"
+              driverUnit="°C above normal"
+              eventColor={EVENT_COLOR.wildfire}
+              driverDecimals={2}
+            />
+            <EventDriverChart
+              title="Landslides in the Western Himalaya"
+              years={slides.years}
+              counts={slides.counts}
+              highYears={slides.highEventYears}
+              driverValues={driverSeries(slides, "rainfall_monsoon")}
+              eventLabel="Landslides each monsoon"
+              driverLabel="How much monsoon rain fell"
+              driverUnit="mm"
+              eventColor={EVENT_COLOR.landslide}
+              driverDecimals={0}
+            />
+            <EventDriverChart
+              title="Floods on the Indus plain"
+              years={floods.years}
+              counts={floods.counts}
+              highYears={floods.highEventYears}
+              driverValues={driverSeries(floods, "rainfall_monsoon")}
+              eventLabel="Flood alerts each year"
+              driverLabel="How much monsoon rain fell"
+              driverUnit="mm"
+              eventColor={EVENT_COLOR.flood}
+              driverDecimals={0}
+            />
           </div>
         }
-        science={
+        visualNote="Strong-coloured bars are the worst years. When the big dots below them sit high, the disasters and the weather moved together."
+        details={
           <>
-            Event records: NASA FIRMS MODIS vegetation fires (Terra + Aqua, confidence ≥ 30, 2003–2024), NASA Global
-            Landslide Catalog (2007–2017), GDACS flood alerts (2000–{last}). Link = Spearman rank correlation (ρ) between
-            yearly event counts and the seasonal driver after removing each series&apos; Sen trend, so a shared long-term
-            drift can&apos;t create a false link. Counted only if p &lt; 0.05 and the sign matches physics (heat → fire,
-            rain → landslide/flood).
+            Links are Spearman correlations between yearly event counts and the seasonal driver, after removing each series&apos;
+            long-term trend: fires vs spring temperature ρ = {rel(fires).rho.toFixed(2)} ({formatP(rel(fires).p)}, n ={" "}
+            {rel(fires).n}); landslides vs monsoon rain ρ = {rel(slides).rho.toFixed(2)} ({formatP(rel(slides).p)}, n ={" "}
+            {rel(slides).n}); floods vs monsoon rain ρ = {rel(floods).rho.toFixed(2)} ({formatP(rel(floods).p)}, n ={" "}
+            {rel(floods).n}). Events: NASA FIRMS MODIS fires (2003–2024), NASA Global Landslide Catalog (2007–2017), GDACS
+            flood alerts (2000–{last}). A link is a correlation, not proof of cause.
           </>
-        }
-        why={
-          <>
-            Heat dries leaves and grass into fuel that catches fire easily, and most fires in these forests are lit by
-            people, so a hot spring turns ordinary burning into big fires. On steep slopes, heavy rain fills the soil with
-            water until it becomes heavy and slippery and slides. On a flat floodplain, extra rain has nowhere to go.
-          </>
-        }
-        people={
-          <div className="space-y-3">
-            <p>
-              <strong className="text-white">Not everything is weather.</strong> The {delta.name} got{" "}
-              {Math.abs((deltaRain.slopePerDecade / zone("bengal-delta").results["rainfall_monsoon"].mean) * 100).toFixed(1)}%
-              drier per decade in the monsoon, yet it keeps flooding: its floods come mostly from water that falls far upstream and from
-              cyclones and tides, not from local rain. Fires in the {neFires.name} fell by about{" "}
-              {Math.round((Math.abs(neFires.eventTrend!.slopePerDecade) / neFires.eventTrend!.mean) * 100)}% per decade with
-              no clear weather link. That points to changes in how people use the land. Finding where weather does{" "}
-              <em>not</em> explain disasters is just as useful as finding where it does.
-            </p>
-          </div>
-        }
-        peopleTitle="Where the weather does not explain it"
-        confidence={
-          <Confidence level="medium" reason="Real statistical links, but short records (11–26 years), and a link is not proof of cause." />
         }
       />
 
-      {/* ---------------------------------------------------------------- 5 */}
-      <Chapter
+      <Finding
         id="watch"
         n={5}
-        title={`${last}: what to watch`}
-        big={`${signalCount} region${signalCount === 1 ? "" : "s"}`}
-        bigUnit={`matched the conditions of past disaster years in ${last}`}
-        simple={
+        icon={<UsersThree size={22} weight="duotone" />}
+        title={`${last}: ${watchList.length} place${watchList.length === 1 ? "" : "s"} to watch`}
+        big={`${watchList.length} region${watchList.length === 1 ? "" : "s"}`}
+        bigNote={`looked like past disaster years in ${last}`}
+        story={
           <>
             <p>
-              For the three regions with a real link, we asked: how does this year&apos;s weather compare with the years
-              that had the most disasters? In {last}, monsoon rain on the{" "}
-              <strong className="text-white">Indus plain was higher than in {signalDriver(floods).latest.percentile}%</strong>{" "}
-              of years since {first}, and in the{" "}
-              <strong className="text-white">
-                Western Himalaya higher than in {signalDriver(slides).latest.percentile}%
-              </strong>
-              . Both are above the level typical of past disaster years.
+              In {last}, monsoon rain on the Indus plain was higher than in{" "}
+              <strong>{signalDriver(floods).latest.percentile}% of years</strong> since {first}, and in the Western Himalaya
+              higher than in <strong>{signalDriver(slides).latest.percentile}%</strong>. Both look like past disaster years.
             </p>
-            {last === 2025 && (
-              <p>
-                This matches what happened: the 2025 monsoon brought widely reported floods in Pakistan&apos;s plains and
-                deadly cloudbursts and landslides in the Western Himalaya.
-              </p>
-            )}
-            <p>
-              Central India&apos;s spring was only the {ordinal(signalDriver(fires).latest.percentile)} percentile, below its
-              past big-fire years ({ordinal(signalDriver(fires).highEventYearsPercentile!)}), so there was no fire signal
-              there.
-            </p>
+            {last === 2025 && <p>And in 2025, both regions did suffer widely reported floods and landslides.</p>}
           </>
         }
+        why="We only compare places where the weather and disasters are clearly linked, so the check means something."
+        soWhat="Authorities can prepare early: check risky slopes, stock boats and medicine, and warn people. It is not a forecast."
+        sure={
+          <span className="inline-flex items-center gap-2 rounded-full bg-accent-soft px-3 py-1.5 text-sm text-ink">
+            <Dots level={2} />
+            Fairly sure: built on the links in finding 4
+          </span>
+        }
         visual={
-          <div className="space-y-5 rounded-lg bg-[#0b0f14] p-5 ring-1 ring-white/10">
+          <figure className="space-y-6 rounded-2xl bg-card p-5 shadow-soft">
+            <figcaption className="text-sm font-medium text-ink">
+              {last} compared with every year since {first}
+            </figcaption>
             {[floods, slides, fires].map((h) => {
               const d = signalDriver(h);
               return (
@@ -496,208 +391,165 @@ export default async function FindingsPage() {
                 />
               );
             })}
-            <p className="text-xs text-slate-500">
-              0 = the lowest value since {first}, 100 = the highest. A dot to the right of the line means this year looks
-              like past disaster years.
-            </p>
-          </div>
+            <p className="text-sm text-ink-3">A dot to the right of the line means this year looks like the worst years.</p>
+          </figure>
         }
-        science={
+        details={
           <>
             For each linked driver: percentile of the {last} value within the region&apos;s {first}–{last} record, compared with
-            the mean percentile of the driver in the region&apos;s top-quartile event years. A signal is raised when the
-            current value is at or beyond that mean in the risk direction. No signal is issued for regions without a
-            significant link.
+            the mean percentile of that driver in the region&apos;s top-quartile event years. A signal is raised when the current
+            value reaches that level in the risk direction. Regions without a significant link get no signal.
           </>
         }
-        why={
-          <>
-            This is <strong className="text-white">not a forecast</strong>. It doesn&apos;t say a disaster will happen. It
-            says &ldquo;conditions now look like the years when disasters happened before&rdquo;. That is the kind of
-            evidence that helps people get ready early.
-          </>
-        }
-        whyTitle="Why this is not a prediction"
-        people={
-          <>
-            Disaster management agencies can raise monitoring and pre-position boats, food and medical supplies; road and
-            hydropower operators can inspect risky slopes; forest departments can staff fire watch; and local authorities
-            can warn communities before the peak season.
-          </>
-        }
-        peopleTitle="Who can use this, and how"
-        confidence={<Confidence level="medium" reason="Built on the links above, so it inherits their short records." />}
       />
 
-      {/* ---------------------------------------------------------------- 6 */}
-      <section id="limits" className="scroll-mt-20 border-t border-white/10 pt-12 mt-16">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-500">6 · Honesty section</p>
-        <h2 className="mt-1 text-2xl font-semibold text-white">What we can&apos;t say (yet)</h2>
-        <div className="mt-5 grid gap-3 md:grid-cols-2">
-          {[
-            ["Squares are big", "Each square is 200–280 km wide, so a single valley or city can behave differently from its square."],
-            ["Some records are short", "The landslide record covers only 11 years and is built from news reports, which miss remote places."],
-            ["Satellites have blind spots", "Clouds and smoke hide fires, and the MODIS satellites have drifted since about 2020."],
-            ["A link is not a cause", "Land use, deforestation, road building and people starting fires also drive these hazards."],
-          ].map(([title, text]) => (
-            <div key={title} className="rounded-lg bg-[#0e141b] p-4 ring-1 ring-white/10">
-              <div className="font-medium text-white">{title}</div>
-              <p className="mt-1 text-sm text-slate-400">{text}</p>
-            </div>
-          ))}
-        </div>
-        <div className="mt-6 rounded-lg bg-sky-400/[0.06] p-5 ring-1 ring-sky-400/25">
-          <div className="text-sm font-medium text-sky-200">Our take</div>
-          <p className="mt-2 leading-relaxed text-slate-200">
-            The warming is certain and it is everywhere. What changes from place to place is how that heat shows up: as
-            drying in one region, heavier rain in another, and fiercer fire seasons in a third. That is why a single
-            national average hides the real risk. Local, season-by-season trends, checked for statistical significance,
-            are what tell a community what to prepare for.
+      <section className="mt-24 grid gap-6 lg:grid-cols-2">
+        <div className="rounded-3xl bg-accent-soft p-8">
+          <h2 className="text-2xl font-semibold text-ink">Our take</h2>
+          <p className="mt-3 text-lg leading-relaxed text-ink">
+            The warming is certain, and it is everywhere. What changes from place to place is how it shows up: drying here,
+            heavier rain there, fiercer fire seasons somewhere else. That is why local, season-by-season trends matter more
+            than one big average.
           </p>
+        </div>
+        <div className="rounded-3xl bg-card p-8 shadow-soft">
+          <h2 className="text-2xl font-semibold text-ink">What we can&apos;t say (yet)</h2>
+          <ul className="mt-4 space-y-3 text-ink-2">
+            <li>• Each map square is 200–280 km wide, so one valley or city can be different.</li>
+            <li>• The landslide record covers only 11 years and comes from news reports.</li>
+            <li>• Satellites miss fires under clouds and smoke.</li>
+            <li>• A link is not a cause: land use, roads and people also play a part.</li>
+          </ul>
         </div>
       </section>
 
       <Glossary />
 
-      <div className="mt-14 flex flex-wrap gap-3">
-        <Link href="/trends" className="rounded-md bg-sky-500 px-4 py-2.5 text-sm font-medium text-[#04121d] hover:bg-sky-400">
-          Explore the trends yourself
+      <div className="mt-16 flex flex-wrap items-center gap-4">
+        <Link
+          href="/trends"
+          className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 font-medium text-accent-ink transition-all hover:bg-accent-hover active:scale-[0.98]"
+        >
+          Explore the trends yourself <ArrowRight size={18} />
         </Link>
-        <Link href="/hazards" className="rounded-md border border-white/15 px-4 py-2.5 text-sm text-slate-200 hover:bg-white/5">
-          See every hazard region
-        </Link>
-        <Link href="/methods" className="rounded-md border border-white/15 px-4 py-2.5 text-sm text-slate-200 hover:bg-white/5">
-          Read the full method
+        <Link href="/hazards" className="font-medium text-accent hover:underline">
+          Check disaster risk by region
         </Link>
       </div>
     </article>
   );
 }
 
-function Chapter({
+function Finding({
   id,
   n,
+  icon,
   title,
   big,
-  bigUnit,
-  simple,
-  visual,
-  science,
+  bigNote,
+  story,
   why,
-  whyTitle = "Why is this happening?",
-  people,
-  peopleTitle = "What it means for people",
-  confidence,
+  soWhat,
+  sure,
+  visual,
+  visualNote,
+  details,
   wide = false,
 }: {
-  wide?: boolean;
   id: string;
   n: number;
+  icon: React.ReactNode;
   title: string;
   big: string;
-  bigUnit: string;
-  simple: React.ReactNode;
+  bigNote: string;
+  story: React.ReactNode;
+  why: string;
+  soWhat: string;
+  sure: React.ReactNode;
   visual: React.ReactNode;
-  science: React.ReactNode;
-  why: React.ReactNode;
-  whyTitle?: string;
-  people: React.ReactNode;
-  peopleTitle?: string;
-  confidence: React.ReactNode;
+  visualNote?: string;
+  details: React.ReactNode;
+  wide?: boolean;
 }) {
-  return (
-    <section id={id} className="mt-16 scroll-mt-20 border-t border-white/10 pt-12">
-      <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-sky-400">Finding {n}</p>
-      <h2 className="mt-1 text-2xl font-semibold text-white sm:text-3xl">{title}</h2>
-      <div className="mt-4 flex flex-wrap items-baseline gap-x-3 gap-y-1">
-        <span className="text-4xl font-semibold tabular-nums text-white">{big}</span>
-        <span className="text-sm text-slate-400">{bigUnit}</span>
+  const text = (
+    <div className="min-w-0">
+      <div className="flex items-center gap-3">
+        <span className="grid h-10 w-10 place-items-center rounded-full bg-accent-soft text-accent">{icon}</span>
+        <span className="text-sm font-medium text-ink-3">Finding {n}</span>
       </div>
-      <div className="mt-3">{confidence}</div>
+      <h2 className="mt-4 text-3xl font-semibold tracking-tight text-ink">{title}</h2>
+      <div className="mt-5">
+        <div className="text-5xl font-semibold tracking-tight tabular-nums text-ink">{big}</div>
+        <div className="mt-1 text-ink-2">{bigNote}</div>
+      </div>
+      <div className="mt-6 max-w-[62ch] space-y-3 text-lg leading-relaxed text-ink-2 [&_strong]:font-semibold [&_strong]:text-ink">
+        {story}
+      </div>
+      <div className="mt-6 grid gap-3 sm:grid-cols-2">
+        <div className="rounded-2xl bg-card p-4 shadow-soft">
+          <div className="flex items-center gap-2 text-sm font-semibold text-ink">
+            <Question size={18} className="text-accent" /> Why is this happening?
+          </div>
+          <p className="mt-1.5 text-sm leading-relaxed text-ink-2">{why}</p>
+        </div>
+        <div className="rounded-2xl bg-card p-4 shadow-soft">
+          <div className="flex items-center gap-2 text-sm font-semibold text-ink">
+            <UsersThree size={18} className="text-accent" /> What does it mean for people?
+          </div>
+          <p className="mt-1.5 text-sm leading-relaxed text-ink-2">{soWhat}</p>
+        </div>
+      </div>
+      <div className="mt-5">
+        <div className="mb-2 text-sm font-medium text-ink-3">How sure are we?</div>
+        {sure}
+      </div>
+    </div>
+  );
 
-      <div className="mt-6 grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)]">
-        <div className="min-w-0 space-y-5">
-          <Block label="In simple words" accent>
-            <div className="space-y-3 text-[15px] leading-relaxed text-slate-200">{simple}</div>
-          </Block>
-          <Block label={whyTitle}>
-            <p className="text-sm leading-relaxed text-slate-300">{why}</p>
-          </Block>
-          {!wide && (
-            <Block label={peopleTitle}>
-              <div className="text-sm leading-relaxed text-slate-300">{people}</div>
-            </Block>
-          )}
+  return (
+    <section id={id} className="mt-24 scroll-mt-24">
+      {wide ? (
+        <>
+          {text}
+          <div className="mt-8">{visual}</div>
+          {visualNote && <p className="mt-3 text-sm text-ink-3">{visualNote}</p>}
+        </>
+      ) : (
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-start">
+          {text}
+          <div className="min-w-0">
+            {visual}
+            {visualNote && <p className="mt-3 text-sm text-ink-3">{visualNote}</p>}
+          </div>
         </div>
-        <div className="min-w-0 space-y-4">
-          {!wide && visual}
-          {wide && (
-            <Block label={peopleTitle}>
-              <div className="text-sm leading-relaxed text-slate-300">{people}</div>
-            </Block>
-          )}
-          <details className="group rounded-lg bg-[#0e141b] p-4 ring-1 ring-white/10" open>
-            <summary className="cursor-pointer select-none text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-400 group-open:text-slate-300">
-              The science (technical details)
-            </summary>
-            <p className="mt-2 text-sm leading-relaxed text-slate-400">{science}</p>
-          </details>
-        </div>
+      )}
+      <div className="mt-6">
+        <Numbers title="For scientists: the exact method and numbers">{details}</Numbers>
       </div>
-      {wide && <div className="mt-8">{visual}</div>}
     </section>
   );
 }
 
-function Block({ label, accent, children }: { label: string; accent?: boolean; children: React.ReactNode }) {
-  return (
-    <div className={accent ? "border-l-2 border-sky-400 pl-4" : ""}>
-      <div className="mb-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-500">{label}</div>
-      {children}
-    </div>
-  );
-}
-
-function LinkedCase({ title, stat, children }: { title: string; stat: string; children: React.ReactNode }) {
-  return (
-    <div>
-      <div className="mb-2">
-        <div className="text-sm font-medium text-white">{title}</div>
-        <div className="font-mono text-[11px] text-slate-400">{stat}</div>
-      </div>
-      {children}
-    </div>
-  );
-}
-
 const TERMS: [string, string][] = [
-  ["Trend", "The long-term direction a number is moving in over many years, ignoring the ups and downs from one year to the next."],
-  ["Anomaly", "How far a value is from a normal reference. Here: how much warmer a year is than the 1951–1980 average."],
-  ["Per decade", "The change over 10 years. +0.3 °C per decade means about 1 °C warmer every 33 years."],
-  ["Sen's slope", "A robust way to measure a trend's speed: the middle value of the slopes between every pair of years, so one extreme year can't distort it."],
-  ["95% range (confidence interval)", "The span in which the true rate very likely lies. A narrow range means we know the rate well."],
-  ["Mann–Kendall test", "Checks whether later years are consistently higher (or lower) than earlier years, more often than chance would allow."],
-  ["p-value", "The chance of seeing a trend this strong if nothing were really changing. Below 0.05 (5%) we call it significant."],
-  ["Statistically significant", "Unlikely to be luck. It does not mean 'big' or 'important', only 'real, not chance'."],
-  ["Not significant", "The data can't tell a trend apart from natural ups and downs. It does not prove there is no change."],
-  ["Autocorrelation", "When one year resembles the next (a warm year after a warm year). If ignored, it creates false 'trends', so we correct for it."],
-  ["False discovery rate", "When testing hundreds of map squares, a few look significant by luck. This check keeps those false alarms low."],
-  ["Correlation (ρ, 'rho')", "How closely two things rise and fall together, from −1 to +1. It does not prove one causes the other."],
-  ["Percentile", "Where a value ranks in the record. 90th percentile = higher than 90% of all years."],
-  ["Pre-monsoon / monsoon", "March–May, the hot dry weeks before the rains / June–September, the main rainy season."],
-  ["Grid square (cell)", "The satellite-based datasets divide the map into squares; each has one value per year."],
+  ["Trend", "The long-term direction something is moving in, ignoring the ups and downs from one year to the next."],
+  ["Clear change (significant)", "A change that is very unlikely to be luck. It does not mean big, only real."],
+  ["No clear change", "The ups and downs are too big to tell. It does not prove nothing is changing."],
+  ["Every 10 years", "How much something changes per decade. +0.3 °C every 10 years is about 1 °C every 33 years."],
+  ["Warmer than normal", "Compared with the average of 1951–1980, a common starting point for climate records."],
+  ["Link (correlation)", "Two things that rise and fall together. It is a clue, not proof that one causes the other."],
+  ["Hot season / Rainy season", "March–May, the hot dry weeks before the rains / June–September, the monsoon."],
+  ["Map square", "The data divides the map into squares about 200–280 km wide; each has one value per year."],
 ];
 
 function Glossary() {
   return (
-    <section id="glossary" className="mt-16 scroll-mt-20 border-t border-white/10 pt-12">
-      <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-500">7 · Glossary</p>
-      <h2 className="mt-1 text-2xl font-semibold text-white">Words used on this page</h2>
-      <dl className="mt-5 grid gap-x-8 gap-y-4 md:grid-cols-2">
+    <section id="glossary" className="mt-24 scroll-mt-24">
+      <h2 className="text-2xl font-semibold text-ink">Words explained</h2>
+      <dl className="mt-6 grid gap-4 sm:grid-cols-2">
         {TERMS.map(([term, def]) => (
-          <div key={term}>
-            <dt className="font-medium text-white">{term}</dt>
-            <dd className="mt-0.5 text-sm leading-relaxed text-slate-400">{def}</dd>
+          <div key={term} className="rounded-2xl bg-card p-5 shadow-soft">
+            <dt className="font-semibold text-ink">{term}</dt>
+            <dd className="mt-1 leading-relaxed text-ink-2">{def}</dd>
           </div>
         ))}
       </dl>

@@ -1,67 +1,196 @@
 @import "tailwindcss";
 
+/* Dark mode follows the data-theme attribute set by the theme switcher (see layout.tsx). */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* ---------- Design tokens: one warm-neutral gray family, one accent ---------- */
 :root {
-  --background: #0b0f14;
-  --foreground: #e2e8f0;
+  color-scheme: light;
+  --page: #f6f5f2;
+  --card: #ffffff;
+  --sunken: #efeee9;
+  --line: #e2e0da;
+  --ink: #1b1b19;
+  --ink-2: #4f4e4a;
+  --ink-3: #75736d;
+  --accent: #2a78d6;
+  --accent-hover: #256abf;
+  --accent-ink: #ffffff;
+  --accent-soft: #e6effa;
+  --watch: #b47600;
+  --watch-soft: #fdf1d6;
+  --good: #0b8a0b;
+  --shadow: 30 28 24;
+
+  /* Trend maps: a neutral "no change" middle with four steps toward each side. */
+  --mid: #e4e2dc;
+  --warm-1: #f6cfcb;
+  --warm-2: #ee9690;
+  --warm-3: #e34948;
+  --warm-4: #a8201f;
+  --cool-1: #cfe0f7;
+  --cool-2: #86b6ef;
+  --cool-3: #3987e5;
+  --cool-4: #184f95;
+
+  /* Hazard events */
+  --ev-flood: #2a78d6;
+  --ev-landslide: #c98500;
+  --ev-fire: #eb6834;
+  --fire-1: #fbd9c4;
+  --fire-2: #f5ab83;
+  --fire-3: #eb6834;
+  --fire-4: #c24d1f;
+  --fire-5: #8a3210;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #121211;
+  --card: #1a1a19;
+  --sunken: #222220;
+  --line: #2f2e2b;
+  --ink: #f4f3ef;
+  --ink-2: #c3c2b7;
+  --ink-3: #8f8e86;
+  --accent: #3987e5;
+  --accent-hover: #5598e7;
+  --accent-ink: #ffffff;
+  --accent-soft: #1b2939;
+  --watch: #fab219;
+  --watch-soft: #33280f;
+  --good: #3cc13c;
+  --shadow: 0 0 0;
+
+  --mid: #3a3a37;
+  --warm-1: #5e2b2a;
+  --warm-2: #9c3534;
+  --warm-3: #e34948;
+  --warm-4: #f4a3a2;
+  --cool-1: #1f3a5c;
+  --cool-2: #245fa6;
+  --cool-3: #3987e5;
+  --cool-4: #9cc3f2;
+
+  --ev-flood: #3987e5;
+  --ev-landslide: #eda100;
+  --ev-fire: #d95926;
+  --fire-1: #6b2d14;
+  --fire-2: #a8421b;
+  --fire-3: #d95926;
+  --fire-4: #f08a5d;
+  --fire-5: #fbc4a6;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-page: var(--page);
+  --color-card: var(--card);
+  --color-sunken: var(--sunken);
+  --color-line: var(--line);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-soft: var(--accent-soft);
+  --color-watch: var(--watch);
+  --color-watch-soft: var(--watch-soft);
+  --color-good: var(--good);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 html {
-  color-scheme: dark;
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--page);
+  color: var(--ink);
   font-family: var(--font-geist-sans), system-ui, sans-serif;
+  transition: background-color 200ms ease, color 200ms ease;
 }
 
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+p {
+  text-wrap: pretty;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.shadow-soft {
+  box-shadow:
+    0 1px 2px rgb(var(--shadow) / 0.06),
+    0 4px 16px rgb(var(--shadow) / 0.06);
+}
+
+/* ---------- Leaflet, restyled to the theme ---------- */
+.leaflet-container {
+  font-family: inherit;
+  background: var(--sunken);
+}
 .basemap-dim {
   filter: grayscale(1) brightness(0.42) contrast(1.15);
 }
-
-/* Leaflet controls, restyled for the dark UI. */
-.leaflet-container {
-  font-family: inherit;
-  background: #0b0f14;
+.leaflet-bar {
+  border: 1px solid var(--line) !important;
+  box-shadow: none !important;
+  border-radius: 10px !important;
+  overflow: hidden;
 }
 .leaflet-bar a,
 .leaflet-bar a:hover {
-  background: rgba(11, 15, 20, 0.85);
-  color: #cbd5e1;
-  border-bottom-color: rgba(255, 255, 255, 0.1);
-}
-.leaflet-bar {
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  background: var(--card);
+  color: var(--ink);
+  border-bottom-color: var(--line);
+  width: 34px !important;
+  height: 34px !important;
+  line-height: 34px !important;
 }
 .leaflet-control-attribution {
-  background: rgba(11, 15, 20, 0.7) !important;
-  color: #64748b;
+  background: color-mix(in srgb, var(--card) 80%, transparent) !important;
+  color: var(--ink-3);
 }
 .leaflet-control-attribution a {
-  color: #94a3b8;
+  color: var(--ink-2);
 }
 .leaflet-control-scale-line {
-  background: rgba(11, 15, 20, 0.7);
-  color: #cbd5e1;
-  border-color: #64748b;
+  background: color-mix(in srgb, var(--card) 80%, transparent);
+  color: var(--ink-2);
+  border-color: var(--ink-3);
 }
 
-.trend-tooltip {
-  background: rgba(11, 15, 20, 0.95);
-  color: #e2e8f0;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 6px;
-  box-shadow: none;
-  font-size: 12px;
+.map-tooltip {
+  background: var(--card);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgb(var(--shadow) / 0.12);
+  font-size: 13px;
   line-height: 1.45;
+  padding: 8px 10px;
 }
-.trend-tooltip::before {
+.map-tooltip::before {
   display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0ms !important;
+    animation-duration: 0ms !important;
+  }
 }

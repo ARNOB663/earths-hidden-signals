@@ -1,14 +1,24 @@
+import {
+  ArrowRight,
+  BookOpen,
+  ChartLineUp,
+  CloudRain,
+  MapTrifold,
+  Planet,
+  Warning,
+  WarningCircle,
+} from "@phosphor-icons/react/ssr";
 import Link from "next/link";
-import { Confidence, Sparkline } from "@/components/findings/parts";
+import { Sparkline } from "@/components/findings/parts";
 import { readHazardZones, readManifest, readTrendZones } from "@/lib/data";
-import { HAZARD_META, preparednessSignal } from "@/lib/hazards";
+import { preparednessSignal } from "@/lib/hazards";
 import { formatSigned, type Zone } from "@/lib/trends";
 
-const MODULES = [
-  { href: "/findings", title: "Findings", text: "The full story: each result explained in simple words and in scientific detail, with charts." },
-  { href: "/explore", title: "Map Explorer", text: "NASA satellite imagery of heat, rain, greenness and forest loss, month by month since 2000." },
-  { href: "/trends", title: "Trend Analysis", text: "Click anywhere in South Asia: which way it's changing, how fast, and whether it's significant." },
-  { href: "/hazards", title: "Hazard Signals", text: "How those trends connect to floods, landslides and wildfires, region by region." },
+const EXPLORE = [
+  { href: "/findings", title: "Read the story", text: "Five findings, explained in simple words with charts and maps.", Icon: BookOpen },
+  { href: "/explore", title: "Satellite map", text: "Watch heat, rain, greenness and forest loss change month by month.", Icon: MapTrifold },
+  { href: "/trends", title: "Climate trends", text: "Click any place to see if it is getting hotter, wetter or drier.", Icon: ChartLineUp },
+  { href: "/hazards", title: "Disaster risk", text: "See which regions look like past flood, landslide or fire years.", Icon: Warning },
 ];
 
 export default async function Home() {
@@ -20,222 +30,182 @@ export default async function Home() {
   const study = zone("study-area");
   const tTrend = study.results["temperature_annual"].trend!;
   const tSeries = study.results["temperature_annual"].series as number[];
-  const hottest = years[tSeries.indexOf(Math.max(...tSeries))];
+  const warmer = (tTrend.slopePerDecade * (last - first)) / 10;
   const temp = manifest.summaries["temperature_annual"];
 
-  const pre = manifest.summaries["temperature_pre-monsoon"].medianSlopePerDecade;
-  const mon = manifest.summaries["temperature_monsoon"].medianSlopePerDecade;
-
-  const rain = manifest.summaries["rainfall_monsoon"];
   const rainPct = (z: Zone) => {
     const r = z.results["rainfall_monsoon"];
     return (r.trend!.slopePerDecade / r.mean) * 100;
   };
-  const indus = zone("indus-plain");
-  const himalaya = zone("central-himalaya");
-
-  const linked = hazardZones.filter((h) => h.drivers.some((d) => d.linked));
-  const signals = hazardZones.filter((h) => preparednessSignal(h).kind === "resembles");
+  const watch = hazardZones.filter((h) => preparednessSignal(h).kind === "resembles");
 
   return (
-    <div className="mx-auto w-full max-w-5xl px-4 py-16">
-      <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-sky-400">
-        NASA Space Apps 2026 · Be An Earth System Trend Detective
-      </p>
-      <h1 className="mt-3 max-w-3xl text-4xl font-semibold leading-tight tracking-tight text-white sm:text-5xl">
-        Earth&apos;s hidden signals, decoded before disaster.
-      </h1>
-      <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-400">
-        One warming planet, different responses: drying in some places, wetter monsoons in others, heat everywhere. We use
-        NASA data to show what is changing across South Asia, where, how fast, and whether it is real, and then what it
-        means for floods, landslides and wildfires.
-      </p>
-      <div className="mt-8 flex flex-wrap gap-3">
-        <Link href="/findings" className="rounded-md bg-sky-500 px-4 py-2.5 text-sm font-medium text-[#04121d] hover:bg-sky-400">
-          Read our findings
-        </Link>
-        <Link href="/trends" className="rounded-md border border-white/15 px-4 py-2.5 text-sm text-slate-200 hover:bg-white/5">
-          Explore the trends
-        </Link>
-      </div>
-
-      <div className="mt-16 flex flex-wrap items-end justify-between gap-2">
+    <div className="mx-auto w-full max-w-[1200px] px-4 pb-24 sm:px-6">
+      {/* Hero */}
+      <section className="grid items-center gap-10 pb-16 pt-14 lg:grid-cols-[1.15fr_1fr] lg:pt-20">
         <div>
-          <h2 className="text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-500">
-            What we found · {first}–{last}
-          </h2>
-          <p className="mt-1 text-sm text-slate-400">Five findings, each with how sure we are. Click any card for the full explanation.</p>
-        </div>
-      </div>
-
-      <div className="mt-4 grid gap-3 md:grid-cols-2">
-        <FindingCard
-          href="/findings#warming"
-          n={1}
-          title="South Asia is warming, everywhere"
-          value={`${formatSigned(tTrend.slopePerDecade, 2)} °C per decade`}
-          visual={<Sparkline values={tSeries} color="#e34948" />}
-          visualLabel={`Region temperature, ${first}–${last}`}
-          meaning={`All ${temp.cells} land squares warmed and none cooled: about ${formatSigned(
-            (tTrend.slopePerDecade * (last - first)) / 10,
-            1,
-          )} °C since ${first}. ${hottest} was the hottest year on record.`}
-          confidence={<Confidence level="high" reason="Every square, NASA's official record." />}
-        />
-        <FindingCard
-          href="/findings#seasons"
-          n={2}
-          title="The heat rises fastest before the monsoon"
-          value={`${formatSigned(pre, 2)} vs ${formatSigned(mon, 2)} °C`}
-          visual={
-            <div className="space-y-1.5 pt-1">
-              <MiniBar label="Mar–May" value={pre} max={0.4} color="#e34948" />
-              <MiniBar label="Jun–Sep" value={mon} max={0.4} color="#a32d2d" />
-            </div>
-          }
-          visualLabel="Typical warming per decade by season"
-          meaning="March–May, already the hottest and driest weeks, is warming fastest, and fastest of all in the mountains. That means longer, fiercer fire seasons and more heat stress on crops."
-          confidence={<Confidence level="high" reason="Every region warms in spring." />}
-        />
-        <FindingCard
-          href="/findings#rain"
-          n={3}
-          title="Same warming, opposite rain"
-          value={`${rain.significantIncrease} wetter · ${rain.significantDecrease} drier squares`}
-          visual={
-            <div className="space-y-1.5 pt-1">
-              <MiniBar label="Indus plain" value={rainPct(indus)} max={15} color="#3987e5" suffix="%" />
-              <MiniBar label="Central Himalaya" value={rainPct(himalaya)} max={15} color="#e34948" suffix="%" />
-            </div>
-          }
-          visualLabel="Monsoon rain change per decade"
-          meaning={`Total monsoon rain barely changed, but it is shifting: the dry northwest gets about ${formatSigned(
-            rainPct(indus),
-            0,
-          )}% more per decade, while the east and the mountains get less. One process, opposite trends.`}
-          confidence={<Confidence level="medium" reason="Strong in several regions; rain varies a lot." />}
-        />
-        <FindingCard
-          href="/findings#disasters"
-          n={4}
-          title="Disasters follow the weather"
-          value={`${linked.length} regions with a real link`}
-          visual={
-            <ul className="space-y-1 pt-1 text-xs text-slate-300">
-              {linked.map((h) => (
-                <li key={h.id} className="flex items-center gap-2">
-                  <span className="h-2 w-2 rounded-full" style={{ background: HAZARD_COLOR[h.hazard] }} />
-                  {h.name}: {HAZARD_META[h.hazard].label.toLowerCase()} ↔ {h.drivers.find((d) => d.linked)!.label.toLowerCase()}
-                </li>
-              ))}
-            </ul>
-          }
-          visualLabel="Statistically significant links"
-          meaning="Hot springs line up with big fire years; wet monsoons with landslide and flood years. Where the weather doesn't explain disasters, like floods in the drying Bengal delta, that's a finding too."
-          confidence={<Confidence level="medium" reason="Real links, but short records." />}
-        />
-        <FindingCard
-          href="/findings#watch"
-          n={5}
-          title={`${last}: what to watch`}
-          value={`${signals.length} region${signals.length === 1 ? "" : "s"} matched past disaster years`}
-          visual={
-            <ul className="space-y-1 pt-1 text-xs text-slate-300">
-              {signals.map((h) => {
-                const d = h.drivers.find((x) => x.linked)!;
-                return (
-                  <li key={h.id} className="flex items-center gap-2">
-                    <span className="h-2 w-2 rounded-full" style={{ background: HAZARD_COLOR[h.hazard] }} />
-                    {h.name}: {d.label.toLowerCase()} at the {d.latest.percentile}th percentile
-                  </li>
-                );
-              })}
-            </ul>
-          }
-          visualLabel={`Preparedness signals, ${last}`}
-          meaning="This year's conditions look like the years when these disasters happened before. That's a reason to prepare early (monitoring, supplies, warnings), not a forecast that disaster will strike."
-          confidence={<Confidence level="medium" reason="Built on the links in finding 4." />}
-        />
-        <Link
-          href="/findings#limits"
-          className="flex flex-col justify-between rounded-lg bg-sky-400/[0.06] p-5 ring-1 ring-sky-400/25 transition-colors hover:bg-sky-400/10"
-        >
-          <div>
-            <div className="text-[11px] font-semibold uppercase tracking-[0.14em] text-sky-300">Our take</div>
-            <p className="mt-2 text-[15px] leading-relaxed text-slate-200">
-              The warming is certain and everywhere. What changes from place to place is how it shows up: drying here,
-              heavier rain there, fiercer fire seasons elsewhere. Local, season-by-season trends, checked for significance,
-              tell a community what to prepare for.
-            </p>
+          <p className="text-sm font-medium text-accent">NASA Space Apps Challenge 2026</p>
+          <h1 className="mt-3 text-4xl font-semibold leading-[1.08] tracking-tight text-ink sm:text-6xl">
+            See how South Asia&apos;s climate is changing.
+          </h1>
+          <p className="mt-5 max-w-[52ch] text-lg leading-relaxed text-ink-2">
+            {years.length} years of NASA data, explained simply: where it is getting hotter, where the rain is moving, and
+            which places should get ready for floods, landslides and fires.
+          </p>
+          <div className="mt-8 flex flex-wrap items-center gap-5">
+            <Link
+              href="/findings"
+              className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 font-medium text-accent-ink transition-all hover:bg-accent-hover active:scale-[0.98]"
+            >
+              Read the story <ArrowRight size={18} />
+            </Link>
+            <Link href="/explore" className="font-medium text-accent hover:underline">
+              Open the satellite map
+            </Link>
           </div>
-          <span className="mt-4 text-sm text-sky-300">What we can&apos;t say yet →</span>
-        </Link>
-      </div>
+        </div>
 
-      <div className="mt-12 grid gap-3 sm:grid-cols-2">
-        {MODULES.map((m) => (
-          <Link key={m.href} href={m.href} className="group rounded-lg bg-[#0e141b] p-5 ring-1 ring-white/10 hover:ring-sky-400/40">
-            <div className="font-medium text-white group-hover:text-sky-300">{m.title} →</div>
-            <p className="mt-1 text-sm leading-relaxed text-slate-400">{m.text}</p>
-          </Link>
-        ))}
-      </div>
+        <Link
+          href="/trends?var=temperature&season=annual&zone=study-area"
+          className="group rounded-3xl bg-card p-7 shadow-soft transition-transform hover:-translate-y-0.5"
+        >
+          <p className="text-sm text-ink-2">South Asia today, compared with {first}</p>
+          <div className="mt-2 flex items-baseline gap-3">
+            <span className="text-6xl font-semibold tracking-tight tabular-nums text-ink">{formatSigned(warmer, 1)} °C</span>
+            <span className="text-ink-2">warmer</span>
+          </div>
+          <div className="mt-6">
+            <Sparkline values={tSeries} color="var(--warm-3)" />
+            <div className="mt-1 flex justify-between text-xs text-ink-3">
+              <span>{first}</span>
+              <span>{last}</span>
+            </div>
+          </div>
+          <p className="mt-5 text-sm leading-relaxed text-ink-2">
+            All {temp.cells} squares of our map got warmer; not one got cooler.{" "}
+            <span className="font-medium text-accent group-hover:underline">See the trend →</span>
+          </p>
+        </Link>
+      </section>
+
+      {/* In one minute */}
+      <section aria-labelledby="minute">
+        <h2 id="minute" className="text-2xl font-semibold tracking-tight text-ink">
+          In one minute
+        </h2>
+        <div className="mt-6 grid gap-4 md:grid-cols-3">
+          <Fact
+            href="/findings#spring"
+            label="Spring heats fastest"
+            value={`${formatSigned(manifest.summaries["temperature_pre-monsoon"].medianSlopePerDecade, 2)} °C`}
+            note="every 10 years in March–May, the hot weeks before the monsoon, and faster still in the mountains."
+          />
+          <Fact
+            href="/findings#rain"
+            label="The rain is moving"
+            value={`${formatSigned(rainPct(zone("indus-plain")), 0)}% · ${formatSigned(rainPct(zone("central-himalaya")), 0)}%`}
+            note="monsoon rain every 10 years: the dry northwest gets more, the mountains and the east get less."
+            icon={<CloudRain size={20} className="text-accent" />}
+          />
+          <Fact
+            href="/hazards"
+            label={`Places to watch in ${last}`}
+            value={`${watch.length} regions`}
+            note={`${watch.map((w) => w.name).join(" and ")} had weather like past disaster years.`}
+            icon={<WarningCircle size={20} className="text-watch" />}
+          />
+        </div>
+      </section>
+
+      {/* How it works */}
+      <section aria-labelledby="how" className="mt-24">
+        <h2 id="how" className="text-2xl font-semibold tracking-tight text-ink">
+          How it works
+        </h2>
+        <ol className="mt-6 grid gap-6 md:grid-cols-3">
+          {[
+            {
+              Icon: Planet,
+              title: "Satellites measure",
+              text: `NASA satellites and records track temperature, rain, forests and fires across South Asia since ${first}.`,
+            },
+            {
+              Icon: ChartLineUp,
+              title: "We check what is real",
+              text: "Statistics separate a real long-term change from the normal ups and downs of the weather.",
+            },
+            {
+              Icon: Warning,
+              title: "We link it to disasters",
+              text: "We compare the weather with past floods, landslides and fires, to show where to prepare.",
+            },
+          ].map(({ Icon, title, text }, i) => (
+            <li key={title} className="flex gap-4">
+              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-accent-soft text-accent">
+                <Icon size={22} weight="duotone" />
+              </span>
+              <div>
+                <div className="text-sm text-ink-3">Step {i + 1}</div>
+                <div className="font-semibold text-ink">{title}</div>
+                <p className="mt-1 leading-relaxed text-ink-2">{text}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      {/* Explore */}
+      <section aria-labelledby="explore" className="mt-24">
+        <h2 id="explore" className="text-2xl font-semibold tracking-tight text-ink">
+          Explore
+        </h2>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          {EXPLORE.map(({ href, title, text, Icon }) => (
+            <Link
+              key={href}
+              href={href}
+              className="group flex items-start gap-4 rounded-3xl bg-card p-6 shadow-soft transition-transform hover:-translate-y-0.5"
+            >
+              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-sunken text-ink transition-colors group-hover:bg-accent group-hover:text-accent-ink">
+                <Icon size={24} />
+              </span>
+              <div>
+                <div className="flex items-center gap-1.5 text-lg font-semibold text-ink">
+                  {title}
+                  <ArrowRight size={16} className="opacity-0 transition-opacity group-hover:opacity-100" />
+                </div>
+                <p className="mt-1 leading-relaxed text-ink-2">{text}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }
 
-const HAZARD_COLOR = { flood: "#3987e5", landslide: "#eda100", wildfire: "#d95926" } as const;
-
-function FindingCard({
+function Fact({
   href,
-  n,
-  title,
+  label,
   value,
-  visual,
-  visualLabel,
-  meaning,
-  confidence,
+  note,
+  icon,
 }: {
   href: string;
-  n: number;
-  title: string;
+  label: string;
   value: string;
-  visual: React.ReactNode;
-  visualLabel: string;
-  meaning: string;
-  confidence: React.ReactNode;
+  note: string;
+  icon?: React.ReactNode;
 }) {
   return (
-    <Link
-      href={href}
-      className="group flex flex-col rounded-lg bg-[#0e141b] p-5 ring-1 ring-white/10 transition-colors hover:bg-[#121a23] hover:ring-sky-400/40"
-    >
-      <div className="text-[11px] font-semibold uppercase tracking-[0.14em] text-sky-400">Finding {n}</div>
-      <div className="mt-1 text-lg font-semibold text-white">{title}</div>
-      <div className="mt-1 text-2xl font-semibold tabular-nums text-white">{value}</div>
-      <div className="mt-3 rounded-md bg-[#0b0f14] p-3 ring-1 ring-white/5">
-        {visual}
-        <div className="mt-1.5 text-[11px] text-slate-500">{visualLabel}</div>
+    <Link href={href} className="group flex flex-col rounded-3xl bg-card p-6 shadow-soft transition-transform hover:-translate-y-0.5">
+      <div className="flex items-center gap-2 text-sm font-medium text-ink-2">
+        {icon}
+        {label}
       </div>
-      <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-300">{meaning}</p>
-      <div className="mt-3">{confidence}</div>
-      <span className="mt-3 text-sm text-sky-400 group-hover:text-sky-300">Read the full explanation →</span>
+      <div className="mt-3 text-3xl font-semibold tracking-tight tabular-nums text-ink">{value}</div>
+      <p className="mt-2 flex-1 leading-relaxed text-ink-2">{note}</p>
+      <span className="mt-4 text-sm font-medium text-accent group-hover:underline">Learn more →</span>
     </Link>
-  );
-}
-
-function MiniBar({ label, value, max, color, suffix = "" }: { label: string; value: number; max: number; color: string; suffix?: string }) {
-  const w = Math.min(100, (Math.abs(value) / max) * 100);
-  return (
-    <div className="grid grid-cols-[7.5rem_1fr_3.5rem] items-center gap-2 text-xs">
-      <span className="truncate text-slate-400">{label}</span>
-      <div className="h-2.5 rounded-full bg-white/5">
-        <div className="h-full rounded-full" style={{ width: `${w}%`, background: color }} />
-      </div>
-      <span className="text-right font-mono tabular-nums text-slate-200">
-        {formatSigned(value, suffix ? 1 : 2)}
-        {suffix}
-      </span>
-    </div>
   );
 }

@@ -1,13 +1,5 @@
-import {
-  cellCenter,
-  divergingColor,
-  divergingGradient,
-  formatSigned,
-  type GridSpec,
-  type TrendGrid,
-  type VariableId,
-  type VariableMeta,
-} from "@/lib/trends";
+import { TrendLegend } from "@/components/ui";
+import { cellCenter, formatSigned, trendToken, type GridSpec, type TrendGrid, type VariableId, type VariableMeta } from "@/lib/trends";
 
 // Reference points so readers can find their way on a map without coastlines.
 const CITIES: [string, number, number][] = [
@@ -37,11 +29,13 @@ interface Props {
   limit: number;
   /** Show the value as % of the local average instead of raw units. */
   percent?: boolean;
-  caption: string;
+  title: string;
+  decreaseWord: string;
+  increaseWord: string;
 }
 
-/** Small static heat map of per-cell trends: solid = significant, faded = not. */
-export function MiniGridMap({ grid, stats, variable, meta, limit, percent, caption }: Props) {
+/** Small static map of trends per square: solid = clear change, faded = no clear change. */
+export function MiniGridMap({ grid, stats, variable, meta, limit, percent, title, decreaseWord, increaseWord }: Props) {
   const W = 520;
   const scale = W / (LON1 - LON0);
   const yTop = mercY(LAT1);
@@ -49,7 +43,7 @@ export function MiniGridMap({ grid, stats, variable, meta, limit, percent, capti
   const x = (lon: number) => (lon - LON0) * scale;
   const y = (lat: number) => ((yTop - mercY(lat)) * 180 * scale) / Math.PI;
 
-  const unit = percent ? "% per decade" : `${meta.unit} per decade`;
+  const unit = percent ? "% every 10 years" : `${meta.unit} every 10 years`;
   const cells = stats.slopePerDecade.flatMap((slope, k) => {
     if (slope === null) return [];
     const i = Math.floor(k / grid.nLon);
@@ -57,69 +51,50 @@ export function MiniGridMap({ grid, stats, variable, meta, limit, percent, capti
     const { lat, lon } = cellCenter(grid, i, j);
     const mean = stats.mean[k];
     const value = percent && mean ? (slope / mean) * 100 : slope;
-    return [{ k, lat, lon, value, significant: stats.significant[k] === 1 }];
+    return [{ k, lat, lon, value, clear: stats.significant[k] === 1 }];
   });
 
   return (
-    <figure className="rounded-lg bg-[#0b0f14] p-3 ring-1 ring-white/10">
-      <svg viewBox={`0 0 ${W} ${H}`} className="block h-auto w-full" role="img" aria-label={caption}>
-        <rect width={W} height={H} fill="#0b0f14" />
+    <figure className="rounded-2xl bg-card p-5 shadow-soft">
+      <figcaption className="mb-3 text-sm font-medium text-ink">{title}</figcaption>
+      <svg viewBox={`0 0 ${W} ${H}`} className="block h-auto w-full" role="img" aria-label={title}>
+        <rect width={W} height={H} rx={10} fill="var(--sunken)" />
         {cells.map((c) => {
-          const [r, g, b] = divergingColor(c.value, limit, variable);
           const x0 = x(c.lon - grid.dLon / 2);
           const y0 = y(c.lat + grid.dLat / 2);
           return (
             <rect
               key={c.k}
-              x={x0 + 0.75}
-              y={y0 + 0.75}
-              width={x(c.lon + grid.dLon / 2) - x0 - 1.5}
-              height={y(c.lat - grid.dLat / 2) - y0 - 1.5}
-              rx={2}
-              fill={`rgb(${r},${g},${b})`}
-              fillOpacity={c.significant ? 0.92 : 0.3}
+              x={x0 + 1}
+              y={y0 + 1}
+              width={x(c.lon + grid.dLon / 2) - x0 - 2}
+              height={y(c.lat - grid.dLat / 2) - y0 - 2}
+              rx={3}
+              fill={`var(${trendToken(c.value, limit, variable)})`}
+              fillOpacity={c.clear ? 1 : 0.3}
             >
-              <title>
-                {`${c.lat.toFixed(1)}°N ${c.lon.toFixed(1)}°E: ${formatSigned(c.value, percent ? 1 : meta.decimals + 1)} ${unit}${
-                  c.significant ? " (significant)" : " (not significant)"
-                }`}
-              </title>
+              <title>{`${formatSigned(c.value, percent ? 1 : meta.decimals + 1)} ${unit}${c.clear ? " (clear change)" : " (no clear change)"}`}</title>
             </rect>
           );
         })}
         {CITIES.map(([name, lat, lon]) => (
           <g key={name} pointerEvents="none">
-            <circle cx={x(lon)} cy={y(lat)} r={2.6} fill="#f8fafc" stroke="#0b0f14" strokeWidth={1.2} />
-            <text
-              x={x(lon) + 5}
-              y={y(lat)}
-              dy="0.35em"
-              fontSize={11}
-              fill="#f1f5f9"
-              stroke="#0b0f14"
-              strokeWidth={3}
-              paintOrder="stroke"
-            >
+            <circle cx={x(lon)} cy={y(lat)} r={3} fill="var(--ink)" stroke="var(--card)" strokeWidth={1.5} />
+            <text x={x(lon) + 6} y={y(lat)} dy="0.35em" fontSize={12} fill="var(--ink)" stroke="var(--card)" strokeWidth={3} paintOrder="stroke">
               {name}
             </text>
           </g>
         ))}
       </svg>
-      <figcaption className="mt-2 space-y-1.5">
-        <div className="h-2.5 rounded-sm" style={{ background: divergingGradient(variable) }} />
-        <div className="flex justify-between font-mono text-[11px] text-slate-400">
-          <span>
-            {formatSigned(-limit, percent ? 0 : meta.decimals + 1)} · {meta.decrease}
-          </span>
-          <span>{unit}</span>
-          <span>
-            {meta.increase} · {formatSigned(limit, percent ? 0 : meta.decimals + 1)}
-          </span>
-        </div>
-        <p className="text-xs text-slate-500">
-          {caption} Solid squares passed the significance test; faded squares did not. Hover a square for its value.
-        </p>
-      </figcaption>
+      <div className="mt-4">
+        <TrendLegend
+          variable={variable}
+          limit={limit}
+          decimals={percent ? 0 : meta.decimals}
+          decreaseWord={decreaseWord}
+          increaseWord={increaseWord}
+        />
+      </div>
     </figure>
   );
 }

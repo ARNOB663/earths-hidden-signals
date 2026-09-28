@@ -49,7 +49,7 @@ export const LAYERS: LayerDef[] = [
     kind: "gibs",
     id: "lst-day",
     title: "Land Surface Temperature (Day)",
-    shortTitle: "Surface heat",
+    shortTitle: "Ground heat",
     category: "heat",
     mission: "MODIS · Terra",
     gibsId: "MODIS_Terra_L3_Land_Surface_Temp_Monthly_Day",
@@ -58,10 +58,8 @@ export const LAYERS: LayerDef[] = [
     period: "month",
     conversion: "kelvin-to-celsius",
     displayUnit: "°C",
-    description:
-      "Monthly mean daytime temperature of the land surface itself (skin temperature), measured by the MODIS sensor on NASA's Terra satellite.",
-    relevance:
-      "Hot, dry ground dries out soil and vegetation — a precondition for wildfire and heat stress.",
+    description: "How hot the ground gets in the daytime, measured every month from space by NASA's Terra satellite.",
+    relevance: "Very hot, dry ground dries out soil and plants, which makes wildfires and heat stress more likely.",
     sourceUrl: "https://lpdaac.usgs.gov/products/mod11c3v061/",
     fallbackTimes: ["2000-03-01/2026-08-01/P1M"],
     fallbackColormap: "https://gibs.earthdata.nasa.gov/colormaps/v1.3/MODIS_Land_Surface_Temp.xml",
@@ -79,10 +77,8 @@ export const LAYERS: LayerDef[] = [
     period: "month",
     conversion: "kelvin-to-celsius",
     displayUnit: "°C",
-    description:
-      "Monthly mean air temperature 2 m above the ground from NASA's MERRA-2 reanalysis — the longest record here, back to 1980.",
-    relevance:
-      "The main 'driver' variable: the long record makes it the best layer for spotting warming over four decades.",
+    description: "How warm the air is, 2 metres above the ground, every month since 1980. It comes from NASA's MERRA-2 weather model.",
+    relevance: "This is the longest record here, so it is the best layer for seeing how much warmer the region has become.",
     sourceUrl: "https://gmao.gsfc.nasa.gov/reanalysis/MERRA-2/",
     fallbackTimes: ["1980-01-01/2023-11-01/P1M", "2024-02-01/2024-04-01/P1M", "2024-06-01/2026-06-01/P1M"],
     fallbackColormap: "https://gibs.earthdata.nasa.gov/colormaps/v1.3/MERRA2_2m_Air_Temperature_Monthly.xml",
@@ -91,7 +87,7 @@ export const LAYERS: LayerDef[] = [
     kind: "gibs",
     id: "precip",
     title: "Rainfall Rate (Monthly)",
-    shortTitle: "Rainfall",
+    shortTitle: "Rain",
     category: "water",
     mission: "GLDAS · Noah land model",
     gibsId: "GLDAS_Surface_Total_Precipitation_Rate_Monthly",
@@ -100,10 +96,8 @@ export const LAYERS: LayerDef[] = [
     period: "month",
     conversion: "kgm2s-to-mm-day",
     displayUnit: "mm/day",
-    description:
-      "Monthly mean rainfall rate from NASA's Global Land Data Assimilation System, which merges satellite and gauge observations.",
-    relevance:
-      "Monsoon rainfall drives floods in the river deltas and landslides on saturated mountain slopes.",
+    description: "How much rain falls per day, averaged over each month. NASA's GLDAS model combines satellite and rain-gauge data.",
+    relevance: "Heavy monsoon rain causes floods on the plains and landslides on wet mountain slopes.",
     sourceUrl: "https://ldas.gsfc.nasa.gov/gldas",
     fallbackTimes: ["2000-01-01/2026-05-01/P1M"],
     fallbackColormap:
@@ -121,11 +115,9 @@ export const LAYERS: LayerDef[] = [
     maxNativeZoom: 7,
     period: "month",
     conversion: "none",
-    displayUnit: "NDVI",
-    description:
-      "Normalized Difference Vegetation Index: how green and dense the vegetation is (0 = bare, ~0.9 = dense forest).",
-    relevance:
-      "Falling greenness in the dry season signals vegetation stress and fire-ready fuel.",
+    displayUnit: "greenness (0 to 1)",
+    description: "How green and leafy the land is. Bare ground is close to 0; thick forest is close to 1.",
+    relevance: "When plants turn brown in the dry season, they become fuel for fires.",
     sourceUrl: "https://lpdaac.usgs.gov/products/mod13c2v061/",
     fallbackTimes: ["2000-03-01/2025-03-01/P1M", "2025-05-01/2026-08-01/P1M"],
     fallbackColormap: "https://gibs.earthdata.nasa.gov/colormaps/v1.3/MODIS_L3_NDVI.xml",
@@ -141,17 +133,8 @@ export const LAYERS: LayerDef[] = [
     maxNativeZoom: 12,
     firstYear: 2001,
     lastYear: 2025,
-    description:
-      "Where forest canopy was removed, and in which year, mapped at 30 m from the Landsat archive (Hansen et al., University of Maryland).",
-    relevance:
-      "Forest loss removes root strength on slopes (landslides) and changes how fast rain runs off (floods).",
+    description: "Where trees were cut down or burned, and in which year, seen by Landsat satellites in 30-metre detail.",
+    relevance: "Losing trees weakens slopes (more landslides) and lets rain run off faster (more floods).",
     sourceUrl: "https://glad.earthengine.app/view/global-forest-change",
   },
 ];
-
-export const CATEGORY_LABEL: Record<LayerCategory, string> = {
-  heat: "Heat",
-  water: "Water",
-  vegetation: "Vegetation",
-  forest: "Forest",
-};

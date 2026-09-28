@@ -33,34 +33,34 @@ export default async function MethodsPage() {
   const r = manifest.variables.rainfall;
 
   return (
-    <article className="mx-auto w-full max-w-3xl px-4 py-14 leading-relaxed text-slate-300">
-      <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-sky-400">Methods</p>
-      <h1 className="mt-2 text-3xl font-semibold tracking-tight text-white">How we find a trend we can trust</h1>
-      <p className="mt-4 text-lg text-slate-400">
+    <article className="mx-auto w-full max-w-3xl px-4 pb-24 pt-12 leading-relaxed text-ink-2 sm:px-6">
+      <p className="text-sm font-medium text-accent">How it works</p>
+      <h1 className="mt-2 text-4xl font-semibold tracking-tight text-ink">How we know a change is real</h1>
+      <p className="mt-4 text-lg text-ink-2">
         A line on a chart that goes up is not yet a trend. We check that the data is consistent over time, test whether
         the change could be chance, and say clearly when it could.
       </p>
 
-      <div className="mt-10 grid gap-px overflow-hidden rounded-lg bg-white/10 sm:grid-cols-2">
+      <div className="mt-10 grid gap-3 sm:grid-cols-2">
         {QUESTIONS.map(({ q, a }) => (
-          <div key={q} className="bg-[#0e141b] p-4">
-            <div className="font-medium text-white">{q}</div>
-            <p className="mt-1 text-sm text-slate-400">{a}</p>
+          <div key={q} className="rounded-2xl bg-card p-5 shadow-soft">
+            <div className="font-semibold text-ink">{q}</div>
+            <p className="mt-1 text-sm text-ink-2">{a}</p>
           </div>
         ))}
       </div>
 
       <Section title="1. Data">
-        <div className="overflow-x-auto rounded-lg ring-1 ring-white/10">
+        <div className="overflow-x-auto rounded-2xl bg-card shadow-soft">
           <table className="w-full min-w-[520px] text-left text-sm">
-            <thead className="bg-white/[0.04] text-slate-400">
+            <thead className="bg-sunken text-ink-3">
               <tr>
-                <th className="px-3 py-2 font-medium">Variable</th>
-                <th className="px-3 py-2 font-medium">Dataset</th>
-                <th className="px-3 py-2 font-medium">Used for</th>
+                <th className="px-3 py-2.5 font-medium">Variable</th>
+                <th className="px-3 py-2.5 font-medium">Dataset</th>
+                <th className="px-3 py-2.5 font-medium">Used for</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-white/10">
+            <tbody className="divide-y divide-line">
               <Tr v="Temperature" d={`${t.dataset}, ${first}–${last}`} u="Trend analysis (anomalies vs 1951–1980)" href={t.datasetUrl} />
               <Tr v="Rainfall" d={`${r.dataset}, ${first}–${last}`} u="Trend analysis (seasonal totals)" href={r.datasetUrl} />
               <Tr v="Wildfire" d="NASA FIRMS MODIS active fires (Terra + Aqua), 2003–2024" u="Hazard events" href="https://firms.modaps.eosdis.nasa.gov/" />
@@ -82,27 +82,27 @@ export default async function MethodsPage() {
 
       <Section title="2. How much is it changing?">
         <p>
-          We use <strong className="text-white">Sen&apos;s slope</strong>: the median of the slopes between every pair of
+          We use <strong className="font-semibold text-ink">Sen&apos;s slope</strong>: the median of the slopes between every pair of
           years. Unlike a straight-line fit, one extreme year can&apos;t drag it. We report it per decade with a{" "}
-          <strong className="text-white">95% confidence range</strong> (Gilbert 1987), so &ldquo;+0.31 °C per decade
+          <strong className="font-semibold text-ink">95% confidence range</strong> (Gilbert 1987), so &ldquo;+0.31 °C per decade
           (+0.27 to +0.36)&rdquo; tells you both the rate and how sure we are of it.
         </p>
       </Section>
 
       <Section title="3. Is it significant?">
         <p>
-          The <strong className="text-white">Mann–Kendall test</strong> asks: if there were no trend, how likely would
+          The <strong className="font-semibold text-ink">Mann–Kendall test</strong> asks: if there were no trend, how likely would
           it be to see this many years higher than earlier years? A small p-value (below 0.05) means chance is an unlikely
           explanation.
         </p>
         <p>
           Climate years aren&apos;t independent: a warm year is often followed by another. That makes the plain test
-          report too many false trends, so we use the <strong className="text-white">Hamed–Rao correction</strong> for
+          report too many false trends, so we use the <strong className="font-semibold text-ink">Hamed–Rao correction</strong> for
           autocorrelation.
         </p>
         <p>
           A map tests hundreds of cells at once, so about 5% would look significant by luck alone. We apply a{" "}
-          <strong className="text-white">false discovery rate</strong> check (Benjamini–Hochberg, α<sub>FDR</sub> = 0.10,
+          <strong className="font-semibold text-ink">false discovery rate</strong> check (Benjamini–Hochberg, α<sub>FDR</sub> = 0.10,
           following Wilks 2016). Only cells that pass it are drawn solid with a dot.
         </p>
         <Callout title="When a result is not significant">
@@ -120,10 +120,10 @@ export default async function MethodsPage() {
           physically expected way (more fires with more heat, more landslides with more rain).
         </p>
         <p>
-          Where a link exists, the <strong className="text-white">preparedness signal</strong> compares the latest
+          Where a link exists, the <strong className="font-semibold text-ink">preparedness signal</strong> compares the latest
           season with the conditions seen in past high-event years. If they match, authorities could raise monitoring,
           ready resources and warn vulnerable areas.{" "}
-          <strong className="text-white">It never says a disaster will happen.</strong> Where no link exists, we give no
+          <strong className="font-semibold text-ink">It never says a disaster will happen.</strong> Where no link exists, we give no
           signal at all.
         </p>
       </Section>
@@ -141,18 +141,18 @@ export default async function MethodsPage() {
       <Section title="6. Reproduce it">
         <p>
           Everything is open source at{" "}
-          <a href={REPO} className="text-sky-400 hover:underline">
+          <a href={REPO} className="text-accent hover:underline">
             github.com/ARNOB663/earths-hidden-signals
           </a>
-          . The <code className="rounded bg-white/10 px-1 text-slate-200">analysis/</code> folder rebuilds every number on
-          this site from the public data with <code className="rounded bg-white/10 px-1 text-slate-200">python build.py</code>{" "}
-          and <code className="rounded bg-white/10 px-1 text-slate-200">python build_hazards.py</code>. No login is needed.
+          . The <code className="rounded bg-sunken px-1.5 text-ink">analysis/</code> folder rebuilds every number on
+          this site from the public data with <code className="rounded bg-sunken px-1.5 text-ink">python build.py</code>{" "}
+          and <code className="rounded bg-sunken px-1.5 text-ink">python build_hazards.py</code>. No login is needed.
           Results generated {manifest.generated}.
         </p>
       </Section>
 
       <Section title="References">
-        <ol className="list-decimal space-y-1 pl-5 text-sm text-slate-400">
+        <ol className="list-decimal space-y-1 pl-5 text-sm text-ink-3">
           {REFERENCES.map((ref) => (
             <li key={ref}>{ref}</li>
           ))}
@@ -160,10 +160,10 @@ export default async function MethodsPage() {
       </Section>
 
       <div className="mt-12 flex flex-wrap gap-4 text-sm">
-        <Link href="/trends" className="text-sky-400 hover:underline">
+        <Link href="/trends" className="text-accent hover:underline">
           Explore the trends →
         </Link>
-        <Link href="/hazards" className="text-sky-400 hover:underline">
+        <Link href="/hazards" className="text-accent hover:underline">
           See the hazard signals →
         </Link>
       </div>
@@ -173,8 +173,8 @@ export default async function MethodsPage() {
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <section className="mt-12 space-y-3">
-      <h2 className="text-xl font-semibold text-white">{title}</h2>
+    <section className="mt-14 space-y-3">
+      <h2 className="text-2xl font-semibold tracking-tight text-ink">{title}</h2>
       {children}
     </section>
   );
@@ -182,9 +182,9 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 
 function Callout({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <div className="mt-4 rounded-lg bg-sky-400/[0.06] p-4 ring-1 ring-sky-400/25">
-      <div className="text-sm font-medium text-sky-200">{title}</div>
-      <p className="mt-1 text-sm text-slate-300">{children}</p>
+    <div className="mt-4 rounded-2xl bg-accent-soft p-5">
+      <div className="font-semibold text-ink">{title}</div>
+      <p className="mt-1 text-ink-2">{children}</p>
     </div>
   );
 }
@@ -192,13 +192,13 @@ function Callout({ title, children }: { title: string; children: React.ReactNode
 function Tr({ v, d, u, href }: { v: string; d: string; u: string; href: string }) {
   return (
     <tr>
-      <td className="px-3 py-2 text-white">{v}</td>
-      <td className="px-3 py-2">
-        <a href={href} target="_blank" rel="noreferrer" className="hover:text-sky-300 hover:underline">
+      <td className="px-3 py-2.5 font-medium text-ink">{v}</td>
+      <td className="px-3 py-2.5">
+        <a href={href} target="_blank" rel="noreferrer" className="text-ink-2 hover:text-accent hover:underline">
           {d}
         </a>
       </td>
-      <td className="px-3 py-2 text-slate-400">{u}</td>
+      <td className="px-3 py-2.5 text-ink-3">{u}</td>
     </tr>
   );
 }
