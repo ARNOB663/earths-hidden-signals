@@ -4,7 +4,7 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { useEffect, useRef } from "react";
 import { createBaseMap, type BaseMap } from "@/components/map/baseMap";
-import type { FireGrid, FloodEvent, HazardId, HazardZone, LandslideEvent } from "@/lib/hazards";
+import type { CycloneTrack, FireGrid, FloodEvent, HazardId, HazardZone, LandslideEvent } from "@/lib/hazards";
 import { cssVar, useTheme } from "@/lib/theme";
 import { EVENT_TOKEN, fireToken, FLOOD_ALERT_COLORS } from "./hazardColors";
 
@@ -16,6 +16,7 @@ interface Props {
   landslides: LandslideEvent[] | null;
   floods: FloodEvent[] | null;
   fires: FireGrid | null;
+  cyclones: CycloneTrack[] | null;
 }
 
 const escapeHtml = (s: string) =>
@@ -24,7 +25,7 @@ const escapeHtml = (s: string) =>
 const prettyDate = (iso: string) =>
   new Date(`${iso}T00:00:00`).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
 
-export default function HazardMap({ hazard, zones, selectedZone, onSelectZone, landslides, floods, fires }: Props) {
+export default function HazardMap({ hazard, zones, selectedZone, onSelectZone, landslides, floods, fires, cyclones }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const baseRef = useRef<BaseMap | null>(null);
   const eventsRef = useRef<L.LayerGroup | null>(null);
@@ -105,6 +106,21 @@ export default function HazardMap({ hazard, zones, selectedZone, onSelectZone, l
       }
     }
 
+    if (hazard === "cyclone" && cyclones) {
+      const color = cssVar(EVENT_TOKEN.cyclone);
+      // Weaker storms first, so the severe ones are drawn on top.
+      for (const c of [...cyclones].sort((a, b) => a.maxWind - b.maxWind)) {
+        const severe = c.maxWind >= 64;
+        L.polyline(c.points, { renderer, color, weight: severe ? 2.6 : 1.2, opacity: severe ? 0.85 : 0.4 })
+          .bindTooltip(
+            `<strong>${c.name ? `Cyclone ${escapeHtml(c.name)}` : "Unnamed cyclone"} (${c.year})</strong><br>` +
+              `Peak wind ${Math.round(c.maxWind)} knots (about ${Math.round(c.maxWind * 1.852)} km/h)${severe ? " · severe" : ""}`,
+            { sticky: true, className: "map-tooltip" },
+          )
+          .addTo(group);
+      }
+    }
+
     if (hazard === "flood" && floods) {
       for (const e of floods) {
         L.circleMarker([e.lat, e.lon], {
@@ -121,7 +137,7 @@ export default function HazardMap({ hazard, zones, selectedZone, onSelectZone, l
           .addTo(group);
       }
     }
-  }, [hazard, landslides, floods, fires, theme]);
+  }, [hazard, landslides, floods, fires, cyclones, theme]);
 
   // Region boxes for this disaster type; click one to select it.
   useEffect(() => {

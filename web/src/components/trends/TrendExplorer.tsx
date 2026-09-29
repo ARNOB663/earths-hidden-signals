@@ -1,6 +1,18 @@
 "use client";
 
-import { CaretDown, CloudRain, HandPointing, Minus, TrendDown, TrendUp, Thermometer } from "@phosphor-icons/react";
+import {
+  Cactus,
+  CaretDown,
+  CloudLightning,
+  CloudRain,
+  HandPointing,
+  Minus,
+  Thermometer,
+  ThermometerHot,
+  TrendDown,
+  TrendUp,
+  Umbrella,
+} from "@phosphor-icons/react";
 import dynamic from "next/dynamic";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -9,6 +21,8 @@ import { QuickGuide } from "@/components/ui/QuickGuide";
 import { describePlace } from "@/lib/places";
 import { SEASON_PLAIN, sureness } from "@/lib/plain";
 import {
+  AGREEMENT_TEXT,
+  agreement,
   ALPHA,
   cellAt,
   cellCenter,
@@ -18,6 +32,7 @@ import {
   resultKey,
   SEASON_ORDER,
   VARIABLE_ORDER,
+  type Crosscheck,
   type Manifest,
   type SeasonId,
   type SeriesGrid,
@@ -38,9 +53,57 @@ type Selection = { kind: "zone"; id: string } | { kind: "point"; lat: number; lo
 
 const HAZARD_WORD = { flood: "Flood-prone", landslide: "Landslide-prone", wildfire: "Wildfire-prone" } as const;
 
-const WORDS: Record<VariableId, { up: string; down: string; less: string; more: string; label: string }> = {
-  temperature: { up: "Getting warmer", down: "Getting cooler", less: "Cooling", more: "Warming", label: "Temperature" },
-  rainfall: { up: "Getting wetter", down: "Getting drier", less: "Drier", more: "Wetter", label: "Rain" },
+const WORDS: Record<VariableId, { up: string; down: string; less: string; more: string; label: string; axis: string }> = {
+  temperature: {
+    up: "Getting warmer",
+    down: "Getting cooler",
+    less: "Cooling",
+    more: "Warming",
+    label: "Temperature",
+    axis: "°C warmer than the 1951–1980 average",
+  },
+  rainfall: { up: "Getting wetter", down: "Getting drier", less: "Drier", more: "Wetter", label: "Rain", axis: "mm of rain in the season" },
+  "hot-months": {
+    up: "More very hot months",
+    down: "Fewer very hot months",
+    less: "Fewer",
+    more: "More",
+    label: "Very hot months",
+    axis: "very hot months in the year",
+  },
+  "heavy-rain": {
+    up: "More heavy-rain days",
+    down: "Fewer heavy-rain days",
+    less: "Fewer",
+    more: "More",
+    label: "Heavy-rain days",
+    axis: "very heavy rain days in the year",
+  },
+  "dry-spell": {
+    up: "Longer dry spells",
+    down: "Shorter dry spells",
+    less: "Shorter",
+    more: "Longer",
+    label: "Monsoon dry spells",
+    axis: "longest dry spell in the monsoon (days)",
+  },
+  "wettest-day": {
+    up: "Heavier downpours",
+    down: "Lighter downpours",
+    less: "Lighter",
+    more: "Heavier",
+    label: "Wettest day",
+    axis: "mm of rain on the wettest day",
+  },
+};
+
+const VARIABLE_ICON: Record<VariableId, React.ReactNode> = {
+  temperature: <Thermometer size={16} />,
+  rainfall: <CloudRain size={16} />,
+  "hot-months": <ThermometerHot size={16} />,
+  "heavy-rain": <CloudLightning size={16} />,
+  "wettest-day": <Umbrella size={16} />,
+  "dry-spell": <Cactus size={16} />,
 };
 
 // Small in-memory cache so switching back and forth doesn't refetch.
@@ -58,7 +121,15 @@ function fetchJson<T>(url: string): Promise<T> {
   return cache.get(url) as Promise<T>;
 }
 
-export default function TrendExplorer({ manifest, zones }: { manifest: Manifest; zones: Zone[] }) {
+export default function TrendExplorer({
+  manifest,
+  zones,
+  crosscheck,
+}: {
+  manifest: Manifest;
+  zones: Zone[];
+  crosscheck: Crosscheck;
+}) {
   const params = useSearchParams();
   const [variable, setVariable] = useState<VariableId>(() => {
     const v = params.get("var") as VariableId;
@@ -79,8 +150,11 @@ export default function TrendExplorer({ manifest, zones }: { manifest: Manifest;
   const [series, setSeries] = useState<{ key: string; data: SeriesGrid } | null>(null);
   const [error, setError] = useState<string | null>(null);
 
-  const key = resultKey(variable, season);
   const meta = manifest.variables[variable];
+  // Extremes exist only for the whole year; remember the chosen season for when the user switches back.
+  const seasons = meta.seasons ?? SEASON_ORDER;
+  const effSeason: SeasonId = seasons.includes(season) ? season : "annual";
+  const key = resultKey(variable, effSeason);
   const grid = manifest.grids[variable];
   const summary = manifest.summaries[key];
   const currentStats = stats?.key === key ? stats.data : null;
@@ -111,7 +185,7 @@ export default function TrendExplorer({ manifest, zones }: { manifest: Manifest;
   // Shareable address: ?var=…&season=…&zone=… or &lat=…&lon=…
   const firstSync = useRef(true);
   useEffect(() => {
-    const q = new URLSearchParams({ var: variable, season });
+    const q = new URLSearchParams({ var: variable, season: effSeason });
     if (selection.kind === "zone") q.set("zone", selection.id);
     else {
       q.set("lat", selection.lat.toFixed(2));
@@ -123,7 +197,7 @@ export default function TrendExplorer({ manifest, zones }: { manifest: Manifest;
     }
     firstSync.current = false;
     window.history.replaceState(null, "", `?${q}`);
-  }, [variable, season, selection]);
+  }, [variable, effSeason, selection]);
 
   const limit = useMemo(() => (currentStats ? colorLimit(currentStats.slopePerDecade) : 1), [currentStats]);
 
@@ -142,6 +216,7 @@ export default function TrendExplorer({ manifest, zones }: { manifest: Manifest;
         trend: r.trend,
         mean: r.mean,
         clear: null,
+        check: crosscheck.zones[zone.id]?.[key]?.cru ?? null,
       };
     }
     if (cellIndex === null || !cell) return null;
@@ -165,9 +240,9 @@ export default function TrendExplorer({ manifest, zones }: { manifest: Manifest;
       mean: currentStats.mean[cellIndex],
       clear: currentStats.significant[cellIndex] === 1,
     };
-  }, [zone, key, cellIndex, cell, grid, currentStats, series]);
+  }, [zone, key, cellIndex, cell, grid, currentStats, series, crosscheck]);
 
-  const years = manifest.years;
+  const years = meta.years ?? manifest.years;
   const up = summary.significantIncrease;
   const down = summary.significantDecrease;
 
@@ -227,25 +302,48 @@ export default function TrendExplorer({ manifest, zones }: { manifest: Manifest;
         <section className="space-y-3">
           <h1 className="text-lg font-semibold text-ink">How is the climate changing?</h1>
           <Step n={1} label="What to look at">
-            <Segmented
-              label="What to look at"
-              value={variable}
-              onChange={setVariable}
-              options={[
-                { id: "temperature", label: "Temperature", icon: <Thermometer size={16} /> },
-                { id: "rainfall", label: "Rain", icon: <CloudRain size={16} /> },
-              ]}
-            />
+            <div role="radiogroup" aria-label="What to look at" className="space-y-2">
+              {(["average", "extreme"] as const).map((kind) => (
+                <div key={kind}>
+                  <div className="mb-1 text-xs text-ink-3">{kind === "average" ? "Averages" : "Extremes"}</div>
+                  <div className="flex flex-wrap gap-1.5">
+                    {VARIABLE_ORDER.filter((v) => (manifest.variables[v]?.kind ?? "average") === kind).map((v) => (
+                      <button
+                        key={v}
+                        type="button"
+                        role="radio"
+                        aria-checked={variable === v}
+                        onClick={() => setVariable(v)}
+                        className={`flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm transition-all active:scale-[0.98] ${
+                          variable === v ? "border-accent bg-accent-soft font-medium text-ink" : "border-line text-ink-2 hover:text-ink"
+                        }`}
+                      >
+                        {VARIABLE_ICON[v]}
+                        {WORDS[v].label}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
           </Step>
-          <Step n={2} label="Which time of year">
-            <Segmented
-              label="Which time of year"
-              value={season}
-              onChange={setSeason}
-              options={SEASON_ORDER.map((s) => ({ id: s, label: SEASON_PLAIN[s].label }))}
-            />
-            <p className="mt-1.5 text-xs text-ink-3">{SEASON_PLAIN[season].hint}</p>
-          </Step>
+          {seasons.length > 1 ? (
+            <Step n={2} label="Which time of year">
+              <Segmented
+                label="Which time of year"
+                value={effSeason}
+                onChange={setSeason}
+                options={SEASON_ORDER.map((s) => ({ id: s, label: SEASON_PLAIN[s].label }))}
+              />
+              <p className="mt-1.5 text-xs text-ink-3">{SEASON_PLAIN[effSeason].hint}</p>
+            </Step>
+          ) : (
+            <Step n={2} label="What this counts">
+              <p className="rounded-xl bg-sunken p-3 text-sm leading-relaxed text-ink-2">
+                {meta.definition} Counted over the whole year, {years[0]}–{years[years.length - 1]}.
+              </p>
+            </Step>
+          )}
           <Step n={3} label="Which place">
             <label className="relative block">
               <span className="sr-only">Choose a region</span>
@@ -270,7 +368,7 @@ export default function TrendExplorer({ manifest, zones }: { manifest: Manifest;
         <div className="h-px bg-line" />
 
         {detail ? (
-          <Answer detail={detail} meta={meta} years={years} words={words} seasonLabel={SEASON_PLAIN[season].label} />
+          <Answer detail={detail} meta={meta} years={years} words={words} seasonLabel={SEASON_PLAIN[effSeason].label} />
         ) : (
           <p className="text-sm text-ink-3">Pick a place to see its story.</p>
         )}
@@ -294,6 +392,8 @@ interface Detail {
   /** Passed the map-wide check (single squares only). */
   clear: boolean | null;
   sea?: boolean;
+  /** The same trend from the independent CRU TS record (regions only). */
+  check?: TrendSummary | null;
 }
 
 function Step({ n, label, children }: { n: number; label: string; children: React.ReactNode }) {
@@ -329,7 +429,8 @@ function Answer({
   const d = meta.decimals;
   const dd = meta.decimals + 1;
   const total = trend ? (trend.slopePerDecade * (last - first)) / 10 : 0;
-  const pct = trend && !meta.anomaly && detail.mean ? (trend.slopePerDecade / detail.mean) * 100 : null;
+  // "% of the usual amount" only makes sense for amounts like rain, not for counts of extreme events.
+  const pct = trend && !meta.anomaly && meta.kind !== "extreme" && detail.mean ? (trend.slopePerDecade / detail.mean) * 100 : null;
   const Arrow = !real ? Minus : upward ? TrendUp : TrendDown;
 
   return (
@@ -360,8 +461,13 @@ function Answer({
               since {first}.
             </p>
           )}
-          <div className="mt-3">
+          <div className="mt-3 flex flex-wrap gap-2">
             <Sureness p={trend.p} />
+            {detail.check && (
+              <span className="inline-flex items-center rounded-full bg-sunken px-3 py-1.5 text-sm text-ink-2">
+                {AGREEMENT_TEXT[agreement(trend, detail.check)]}
+              </span>
+            )}
           </div>
           {!real && (
             <p className="mt-3 text-sm leading-relaxed text-ink-2">
@@ -379,7 +485,7 @@ function Answer({
           slopePerDecade={trend?.slopePerDecade ?? null}
           unit={meta.unit}
           decimals={meta.decimals}
-          axisLabel={meta.anomaly ? `°C warmer than the 1951–1980 average` : `${meta.unit} of rain in the season`}
+          axisLabel={words.axis}
           zeroLine={meta.anomaly}
           lowerPerDecade={trend?.lowerPerDecade ?? null}
           upperPerDecade={trend?.upperPerDecade ?? null}
@@ -399,6 +505,12 @@ function Answer({
             {detail.clear !== null && <Stat label="Passes the map-wide check (FDR)" value={detail.clear ? "Yes" : "No"} />}
             {!meta.anomaly && detail.mean !== null && <Stat label="Average" value={`${detail.mean.toFixed(meta.decimals)} ${meta.unit}`} />}
             <Stat label="Data" value={meta.dataset} />
+            {detail.check && (
+              <Stat
+                label="Same trend in CRU TS 4.10 (independent)"
+                value={`${formatSigned(detail.check.slopePerDecade, dd)} ${meta.unit}/decade (${formatP(detail.check.p)})`}
+              />
+            )}
           </dl>
         </Numbers>
       )}

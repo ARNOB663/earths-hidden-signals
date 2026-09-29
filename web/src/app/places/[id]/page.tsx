@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle, CloudRain, Fire, Mountains, Question, Thermometer, Warning, Waves } from "@phosphor-icons/react/ssr";
+import { ArrowRight, CheckCircle, CloudRain, Fire, Hurricane, Mountains, Question, Thermometer, Warning, Waves } from "@phosphor-icons/react/ssr";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: PageProps<"/places/[id]">): P
     : {};
 }
 
-const HAZARD_ICON = { flood: Waves, landslide: Mountains, wildfire: Fire } as const;
+const HAZARD_ICON = { flood: Waves, landslide: Mountains, wildfire: Fire, cyclone: Hurricane } as const;
 
 export default async function PlacePage({ params }: PageProps<"/places/[id]">) {
   const place = placeById((await params).id);

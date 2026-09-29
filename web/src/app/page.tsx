@@ -11,7 +11,7 @@ import {
 import Link from "next/link";
 import { Sparkline } from "@/components/findings/parts";
 import { PlaceSearch } from "@/components/places/PlaceSearch";
-import { readHazardZones, readManifest, readTrendZones } from "@/lib/data";
+import { readHazardZones, readLatest, readManifest, readTrendZones } from "@/lib/data";
 import { preparednessSignal } from "@/lib/hazards";
 import { formatSigned, type Zone } from "@/lib/trends";
 
@@ -23,7 +23,17 @@ const EXPLORE = [
 ];
 
 export default async function Home() {
-  const [manifest, trendZones, hazardZones] = await Promise.all([readManifest(), readTrendZones(), readHazardZones()]);
+  const [manifest, trendZones, hazardZones, latest] = await Promise.all([
+    readManifest(),
+    readTrendZones(),
+    readHazardZones(),
+    readLatest(),
+  ]);
+  const monthName = (ym: string) =>
+    new Date(`${ym}-01T00:00:00`).toLocaleDateString("en-GB", { month: "long", year: "numeric" });
+  const ordinalRank = (r: number) => (r === 1 ? "" : `${r}${r === 2 ? "nd" : r === 3 ? "rd" : "th"} `);
+  const lt = latest.temperature.zones["study-area"];
+  const lr = latest.rainfall.zones["study-area"];
   const years = manifest.years;
   const [first, last] = [years[0], years[years.length - 1]];
   const zone = (id: string) => trendZones.find((z) => z.id === id)!;
@@ -93,6 +103,40 @@ export default async function Home() {
         </Link>
       </section>
 
+      {/* The latest month */}
+      <section aria-labelledby="latest" className="mb-16">
+        <h2 id="latest" className="text-2xl font-semibold tracking-tight text-ink">
+          The latest month
+        </h2>
+        <div className="mt-6 grid gap-4 md:grid-cols-2">
+          <div className="rounded-3xl bg-card p-6 shadow-soft">
+            <div className="text-sm font-medium text-ink-2">{monthName(latest.temperature.month)} · temperature</div>
+            <div className="mt-2 text-3xl font-semibold tracking-tight tabular-nums text-ink">
+              {formatSigned(lt.anomaly, 1)} °C warmer than normal
+            </div>
+            <p className="mt-2 leading-relaxed text-ink-2">
+              The {ordinalRank(lt.rank)}hottest {monthName(latest.temperature.month).split(" ")[0]} across South Asia since{" "}
+              {years[0]} ({lt.of} years), compared with the {latest.temperature.baseline} average.
+            </p>
+          </div>
+          <div className="rounded-3xl bg-card p-6 shadow-soft">
+            <div className="text-sm font-medium text-ink-2">{monthName(latest.rainfall.month)} · rain</div>
+            <div className="mt-2 text-3xl font-semibold tracking-tight tabular-nums text-ink">
+              {lr.percentOfNormal}% of the usual rain
+            </div>
+            <p className="mt-2 leading-relaxed text-ink-2">
+              {lr.percentOfNormal < 90
+                ? "Clearly drier than usual"
+                : lr.percentOfNormal > 110
+                  ? "Clearly wetter than usual"
+                  : "Close to usual"}{" "}
+              for {monthName(latest.rainfall.month).split(" ")[0]}, compared with the {latest.rainfall.baseline} average. Rain
+              data is published a few months after temperature.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* In one minute */}
       <section aria-labelledby="minute">
         <h2 id="minute" className="text-2xl font-semibold tracking-tight text-ink">
@@ -108,8 +152,8 @@ export default async function Home() {
           <Fact
             href="/findings#rain"
             label="The rain is moving"
-            value={`${formatSigned(rainPct(zone("indus-plain")), 0)}% · ${formatSigned(rainPct(zone("central-himalaya")), 0)}%`}
-            note="monsoon rain every 10 years: the dry northwest gets more, the mountains and the east get less."
+            value={`${formatSigned(rainPct(zone("indus-plain")), 0)}% · ${formatSigned(rainPct(zone("bengal-delta")), 0)}%`}
+            note="monsoon rain every 10 years: the dry Indus plain gets more, the Bengal delta gets less. Two independent records agree."
             icon={<CloudRain size={20} className="text-accent" />}
           />
           <Fact

@@ -1,7 +1,12 @@
 // Colour tokens for hazard events (CSS variables, so they follow the light/dark theme).
 // Kept free of Leaflet so server-rendered UI can import it.
 
-export const EVENT_TOKEN = { flood: "--ev-flood", landslide: "--ev-landslide", wildfire: "--ev-fire" } as const;
+export const EVENT_TOKEN = {
+  flood: "--ev-flood",
+  landslide: "--ev-landslide",
+  wildfire: "--ev-fire",
+  cyclone: "--ev-cyclone",
+} as const;
 
 /** Flood alert levels are a status scale: fixed status colours, always shown with a text label. */
 export const FLOOD_ALERT_COLORS: Record<string, string> = { Green: "#0ca30c", Orange: "#fab219", Red: "#e34948" };

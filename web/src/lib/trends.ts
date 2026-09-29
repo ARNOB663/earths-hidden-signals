@@ -1,7 +1,7 @@
 // Types and helpers for the precomputed trend results in public/data/trends/
 // (produced by analysis/build.py from NASA GISTEMP temperature and GPCP rainfall).
 
-export type VariableId = "temperature" | "rainfall";
+export type VariableId = "temperature" | "rainfall" | "hot-months" | "heavy-rain" | "wettest-day" | "dry-spell";
 export type SeasonId = "annual" | "pre-monsoon" | "monsoon";
 
 export interface TrendSummary {
@@ -32,6 +32,12 @@ export interface VariableMeta {
   /** Temperature is stored as anomalies relative to `baseline`. */
   anomaly: boolean;
   baseline: string | null;
+  /** "average" = seasonal mean/total; "extreme" = a count or maximum, whole year only. */
+  kind?: "average" | "extreme";
+  definition?: string;
+  /** Years and seasons available for this variable (defaults: the manifest's years, all seasons). */
+  years?: number[];
+  seasons?: SeasonId[];
 }
 
 export interface Manifest {
@@ -59,6 +65,30 @@ export interface TrendGrid {
 
 export type SeriesGrid = ((number | null)[] | null)[];
 
+/** Our trend and the same trend from CRU TS, per region and result key. */
+export interface Crosscheck {
+  dataset: string;
+  zones: Record<string, Record<string, { ours: TrendSummary | null; cru: TrendSummary | null }>>;
+}
+
+export type Agreement = "agree" | "partly" | "disagree";
+
+/** Do two records tell the same story? Same direction and both clear (or both unclear) = agree. */
+export function agreement(a: TrendSummary, b: TrendSummary): Agreement {
+  const clearA = a.p < ALPHA;
+  const clearB = b.p < ALPHA;
+  const same = Math.sign(a.slopePerDecade) === Math.sign(b.slopePerDecade);
+  if (clearA && clearB) return same ? "agree" : "disagree";
+  if (!clearA && !clearB) return "agree";
+  return "partly";
+}
+
+export const AGREEMENT_TEXT: Record<Agreement, string> = {
+  agree: "An independent record agrees",
+  partly: "An independent record only partly agrees",
+  disagree: "An independent record disagrees",
+};
+
 export interface Zone {
   id: string;
   name: string;
@@ -69,7 +99,14 @@ export interface Zone {
   results: Record<string, { series: (number | null)[]; mean: number; trend: TrendSummary | null }>;
 }
 
-export const VARIABLE_ORDER: VariableId[] = ["temperature", "rainfall"];
+export const VARIABLE_ORDER: VariableId[] = [
+  "temperature",
+  "rainfall",
+  "hot-months",
+  "heavy-rain",
+  "wettest-day",
+  "dry-spell",
+];
 export const SEASON_ORDER: SeasonId[] = ["annual", "pre-monsoon", "monsoon"];
 
 export const resultKey = (v: VariableId, s: SeasonId) => `${v}_${s}`;
@@ -90,7 +127,8 @@ export const cellCenter = (grid: GridSpec, i: number, j: number) => ({
 });
 
 /** Warming is shown warm (red); for rainfall, drying is red and wetting is blue. */
-export const increaseIsRed = (v: VariableId) => v === "temperature";
+// Red marks the direction that means more heat or more drought.
+export const increaseIsRed = (v: VariableId) => v === "temperature" || v === "hot-months" || v === "dry-spell";
 
 /**
  * Colour token for a trend value: a neutral middle for "about no change", then four

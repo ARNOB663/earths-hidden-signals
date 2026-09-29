@@ -1,17 +1,18 @@
 "use client";
 
-import { ArrowRight, CheckCircle, Fire, HandPointing, Mountains, Question, Warning, Waves } from "@phosphor-icons/react";
+import { ArrowRight, CheckCircle, Fire, HandPointing, Hurricane, Mountains, Question, Warning, Waves } from "@phosphor-icons/react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Numbers, Segmented, Stat } from "@/components/ui";
+import { Numbers, Stat } from "@/components/ui";
 import { QuickGuide } from "@/components/ui/QuickGuide";
 import {
   HAZARD_META,
   HAZARD_ORDER,
   ordinal,
   preparednessSignal,
+  type CycloneTrack,
   type DriverResult,
   type FireGrid,
   type FloodEvent,
@@ -30,12 +31,13 @@ const HazardMap = dynamic(() => import("./HazardMap"), {
 });
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-const HAZARD_ICON = { flood: Waves, landslide: Mountains, wildfire: Fire } as const;
+const HAZARD_ICON = { flood: Waves, landslide: Mountains, wildfire: Fire, cyclone: Hurricane } as const;
 /** Plain names for what we count. */
 const EVENTS: Record<HazardId, { plural: string; bigYears: string }> = {
   flood: { plural: "flood alerts", bigYears: "big flood years" },
   landslide: { plural: "landslides", bigYears: "big landslide years" },
   wildfire: { plural: "fires spotted by satellite", bigYears: "big fire years" },
+  cyclone: { plural: "cyclones", bigYears: "busy cyclone years" },
 };
 
 function useJson<T>(url: string | null): T | null {
@@ -70,6 +72,7 @@ export default function HazardExplorer({ zones, manifest }: { zones: HazardZone[
   const landslides = useJson<LandslideEvent[]>(hazard === "landslide" ? "/data/hazards/landslides.json" : null);
   const floods = useJson<FloodEvent[]>(hazard === "flood" ? "/data/hazards/floods.json" : null);
   const fires = useJson<FireGrid>(hazard === "wildfire" ? "/data/hazards/fires_grid.json" : null);
+  const cyclones = useJson<CycloneTrack[]>(hazard === "cyclone" ? "/data/hazards/cyclones.json" : null);
 
   useEffect(() => {
     window.history.replaceState(null, "", `?hazard=${hazard}&zone=${zone.id}`);
@@ -91,6 +94,7 @@ export default function HazardExplorer({ zones, manifest }: { zones: HazardZone[
           landslides={landslides}
           floods={floods}
           fires={fires}
+          cyclones={cyclones}
         />
         <div className="pointer-events-none absolute left-[58px] top-3 z-[500] flex items-center gap-2 rounded-full bg-card px-4 py-2 text-sm text-ink-2 shadow-soft">
           <HandPointing size={18} className="text-accent" />
@@ -118,15 +122,26 @@ export default function HazardExplorer({ zones, manifest }: { zones: HazardZone[
       >
         <section className="space-y-3">
           <h1 className="text-lg font-semibold text-ink">Is the weather raising disaster risk?</h1>
-          <Segmented
-            label="Type of disaster"
-            value={hazard}
-            onChange={selectHazard}
-            options={HAZARD_ORDER.map((h) => {
+          <div role="radiogroup" aria-label="Type of disaster" className="grid grid-cols-2 gap-1.5">
+            {HAZARD_ORDER.map((h) => {
               const Icon = HAZARD_ICON[h];
-              return { id: h, label: HAZARD_META[h].label, icon: <Icon size={16} /> };
+              return (
+                <button
+                  key={h}
+                  type="button"
+                  role="radio"
+                  aria-checked={hazard === h}
+                  onClick={() => selectHazard(h)}
+                  className={`flex items-center gap-2 rounded-xl border px-3 py-2.5 text-sm transition-all active:scale-[0.98] ${
+                    hazard === h ? "border-accent bg-accent-soft font-medium text-ink" : "border-line text-ink-2 hover:text-ink"
+                  }`}
+                >
+                  <Icon size={18} weight={hazard === h ? "fill" : "regular"} className={hazard === h ? "text-accent" : ""} />
+                  {HAZARD_META[h].label}
+                </button>
+              );
             })}
-          />
+          </div>
           <p className="text-sm leading-relaxed text-ink-2">{HAZARD_META[hazard].intro}</p>
           <div className="space-y-1.5">
             {hazardZones.map((z) => (
@@ -216,8 +231,9 @@ function ZoneAnswer({ zone, manifest }: { zone: HazardZone; manifest: Manifest }
             No clear weather link
           </div>
           <p className="mt-2 text-sm leading-relaxed text-ink-2">
-            Weather alone doesn&apos;t explain the {ev.plural} here, so we don&apos;t give a signal. Other things, like how
-            people use the land or water coming from upstream, probably matter more.
+            {zone.hazard === "cyclone"
+              ? "Sea warmth alone doesn't explain how many cyclones form each year, so we don't give a signal. Winds high in the atmosphere and natural cycles like El Niño matter too."
+              : `Weather alone doesn't explain the ${ev.plural} here, so we don't give a signal. Other things, like how people use the land or water coming from upstream, probably matter more.`}
           </p>
         </div>
       )}
@@ -226,7 +242,8 @@ function ZoneAnswer({ zone, manifest }: { zone: HazardZone; manifest: Manifest }
       <div>
         <h3 className="font-semibold text-ink">What happened before</h3>
         <p className="mt-1 text-sm text-ink-2">
-          {total.toLocaleString()} {ev.plural} from {first} to {last}. Each bar is one year; the strongest colour marks the worst
+          {total.toLocaleString()} {ev.plural} from {first} to {last}
+          {zone.severe !== undefined && ` (${zone.severe} of them severe, 64 knots or more)`}. Each bar is one year; the strongest colour marks the worst
           years.
         </p>
         <div className="mt-3">
@@ -321,12 +338,18 @@ function ZoneAnswer({ zone, manifest }: { zone: HazardZone; manifest: Manifest }
 
 function DriverRow({ driver: d, zone, manifest }: { driver: DriverResult; zone: HazardZone; manifest: Manifest }) {
   const [variable, season] = d.key.split("_") as [VariableId, string];
-  const vmeta = manifest.variables[variable];
+  // Most drivers are Climate trends variables; others (like sea warmth) carry their own unit.
+  const vmeta = manifest.variables[variable] ?? {
+    unit: d.unit ?? "",
+    decimals: Math.max(0, (d.decimals ?? 2) - 1),
+  };
+  const custom = !manifest.variables[variable];
   const ev = EVENTS[zone.hazard];
   const rel = d.relationship;
+  const warmthLike = variable === "temperature" || custom;
   const trendWord = d.trend
     ? d.trend.p < ALPHA
-      ? `${d.trend.slopePerDecade > 0 ? (variable === "temperature" ? "getting warmer" : "getting wetter") : variable === "temperature" ? "getting cooler" : "getting drier"} (${formatSigned(d.trend.slopePerDecade, vmeta.decimals)} ${vmeta.unit} every 10 years)`
+      ? `${d.trend.slopePerDecade > 0 ? (warmthLike ? "getting warmer" : "getting wetter") : warmthLike ? "getting cooler" : "getting drier"} (${formatSigned(d.trend.slopePerDecade, vmeta.decimals)} ${vmeta.unit} every 10 years)`
       : "no clear long-term change"
     : null;
 
@@ -348,17 +371,34 @@ function DriverRow({ driver: d, zone, manifest }: { driver: DriverResult; zone: 
             : `No clear link with ${ev.plural} here.`}
         {trendWord && ` Over the years it is ${trendWord}.`}
       </p>
-      <Link
-        href={`/trends?var=${variable}&season=${season}&zone=${zone.id}`}
-        className="mt-2 inline-flex items-center gap-1 text-sm text-accent hover:underline"
-      >
-        See this trend <ArrowRight size={14} />
-      </Link>
+      {!custom && (
+        <Link
+          href={`/trends?var=${variable}&season=${season}&zone=${zone.id}`}
+          className="mt-2 inline-flex items-center gap-1 text-sm text-accent hover:underline"
+        >
+          See this trend <ArrowRight size={14} />
+        </Link>
+      )}
     </div>
   );
 }
 
 function MapKey({ hazard }: { hazard: HazardId }) {
+  if (hazard === "cyclone")
+    return (
+      <div>
+        <div className="mb-2 font-medium text-ink">Cyclone tracks, 1981–2025</div>
+        <ul className="space-y-1 text-ink-2">
+          <li className="flex items-center gap-2">
+            <span className="h-1 w-6 rounded bg-[var(--ev-cyclone)]" /> Severe (64 knots or more)
+          </li>
+          <li className="flex items-center gap-2">
+            <span className="h-0.5 w-6 rounded bg-[var(--ev-cyclone)] opacity-50" /> Cyclone (34 knots or more)
+          </li>
+        </ul>
+        <p className="mt-2 text-xs text-ink-3">IBTrACS (NOAA NCEI), tracks from IMD and JTWC.</p>
+      </div>
+    );
   if (hazard === "wildfire")
     return (
       <div>

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { readManifest } from "@/lib/data";
+import { readCrosscheck, readManifest, readTrendZones } from "@/lib/data";
 import { CITATION } from "@/lib/download";
+import { agreement, formatSigned, type Agreement, type TrendSummary } from "@/lib/trends";
 
 export const metadata: Metadata = { title: "Methods · Earth's Hidden Signals" };
 
@@ -28,7 +29,7 @@ const REFERENCES = [
 ];
 
 export default async function MethodsPage() {
-  const manifest = await readManifest();
+  const [manifest, crosscheck, trendZones] = await Promise.all([readManifest(), readCrosscheck(), readTrendZones()]);
   const [first, last] = [manifest.years[0], manifest.years[manifest.years.length - 1]];
   const t = manifest.variables.temperature;
   const r = manifest.variables.rainfall;
@@ -113,6 +114,43 @@ export default async function MethodsPage() {
         </Callout>
       </Section>
 
+      <Section title="Do other datasets agree?">
+        <p>
+          We repeated the main trends with a completely separate climate record, <strong className="font-semibold text-ink">CRU TS 4.10</strong>{" "}
+          from the University of East Anglia, which is built from weather stations with its own methods. Where both records tell
+          the same story, we can be more confident. Where they don&apos;t, we say so.
+        </p>
+        <div className="overflow-x-auto rounded-2xl bg-card shadow-soft">
+          <table className="w-full min-w-[560px] text-left text-sm">
+            <thead className="bg-sunken text-ink-3">
+              <tr>
+                <th className="px-3 py-2.5 font-medium">Region</th>
+                <th className="px-3 py-2.5 font-medium">Temperature, whole year (°C per 10 years)</th>
+                <th className="px-3 py-2.5 font-medium">Monsoon rain (mm per 10 years)</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-line">
+              {trendZones.map((z) => {
+                const c = crosscheck.zones[z.id];
+                if (!c) return null;
+                return (
+                  <tr key={z.id}>
+                    <td className="px-3 py-2.5 font-medium text-ink">{z.id === "study-area" ? "All of South Asia" : z.name}</td>
+                    <CheckCell pair={c["temperature_annual"]} decimals={2} />
+                    <CheckCell pair={c["rainfall_monsoon"]} decimals={0} />
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+        <p className="text-sm text-ink-3">
+          Each cell shows our value, then CRU&apos;s. * = a clear (statistically significant) change. The two agree on warming
+          everywhere. For rain they agree on the headline pattern (Indus plain wetter; Bengal delta and Northeast hills drier) but
+          not for every region, which is why rain findings get a lower &ldquo;how sure&rdquo; rating.
+        </p>
+      </Section>
+
       <Section title="4. From trends to hazards">
         <p>
           For each hazard region we count past events per year, then ask whether high-event years line up with unusual
@@ -174,6 +212,28 @@ export default async function MethodsPage() {
         </Link>
       </div>
     </article>
+  );
+}
+
+const AGREE_STYLE: Record<Agreement, { text: string; cls: string }> = {
+  agree: { text: "Agree", cls: "bg-accent-soft text-ink" },
+  partly: { text: "Partly", cls: "bg-sunken text-ink-2" },
+  disagree: { text: "Disagree", cls: "bg-watch-soft text-ink" },
+};
+
+function CheckCell({ pair, decimals }: { pair?: { ours: TrendSummary | null; cru: TrendSummary | null }; decimals: number }) {
+  if (!pair?.ours || !pair.cru) return <td className="px-3 py-2.5 text-ink-3">–</td>;
+  const star = (t: TrendSummary) => (t.p < 0.05 ? "*" : "");
+  const a = AGREE_STYLE[agreement(pair.ours, pair.cru)];
+  return (
+    <td className="px-3 py-2.5">
+      <span className="tabular-nums text-ink-2">
+        {formatSigned(pair.ours.slopePerDecade, decimals)}
+        {star(pair.ours)} / {formatSigned(pair.cru.slopePerDecade, decimals)}
+        {star(pair.cru)}
+      </span>{" "}
+      <span className={`ml-1 rounded-full px-2 py-0.5 text-xs font-medium ${a.cls}`}>{a.text}</span>
+    </td>
   );
 }
 

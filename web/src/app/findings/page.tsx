@@ -5,25 +5,36 @@ import { MiniGridMap } from "@/components/findings/MiniGridMap";
 import { EventDriverChart, PercentileBar, RegionBars, type RegionBar } from "@/components/findings/parts";
 import { SeriesChart } from "@/components/trends/SeriesChart";
 import { Dots, Numbers, Sureness } from "@/components/ui";
-import { readHazardZones, readManifest, readTrendGrid, readTrendZones } from "@/lib/data";
+import { readCrosscheck, readHazardZones, readManifest, readTrendGrid, readTrendZones } from "@/lib/data";
 import { preparednessSignal, type HazardZone } from "@/lib/hazards";
-import { colorLimit, formatP, formatSigned, type Zone } from "@/lib/trends";
+import { agreement, colorLimit, formatP, formatSigned, type Zone } from "@/lib/trends";
 
 export const metadata: Metadata = {
   title: "The story · Earth's Hidden Signals",
   description: "Five things 45 years of NASA data show about heat, rain and disasters in South Asia, explained simply.",
 };
 
-const EVENT_COLOR = { flood: "var(--ev-flood)", landslide: "var(--ev-landslide)", wildfire: "var(--ev-fire)" } as const;
+const EVENT_COLOR = {
+  flood: "var(--ev-flood)",
+  landslide: "var(--ev-landslide)",
+  wildfire: "var(--ev-fire)",
+  cyclone: "var(--ev-cyclone)",
+} as const;
 
 export default async function StoryPage() {
-  const [manifest, trendZones, hazardZones, tempGrid, rainGrid] = await Promise.all([
+  const [manifest, trendZones, hazardZones, tempGrid, rainGrid, crosscheck] = await Promise.all([
     readManifest(),
     readTrendZones(),
     readHazardZones(),
     readTrendGrid("temperature_annual"),
     readTrendGrid("rainfall_monsoon"),
+    readCrosscheck(),
   ]);
+  // Independent check (CRU TS): which regions does it confirm?
+  const cruConfirms = (id: string, key: string) => {
+    const pair = crosscheck.zones[id]?.[key];
+    return !!pair?.ours && !!pair.cru && agreement(pair.ours, pair.cru) === "agree";
+  };
   const years = manifest.years;
   const [first, last] = [years[0], years[years.length - 1]];
   const zone = (id: string) => trendZones.find((z) => z.id === id)!;
@@ -39,6 +50,14 @@ export default async function StoryPage() {
   const hottest = years[tSeries.indexOf(Math.max(...tSeries))];
   const tempSum = manifest.summaries["temperature_annual"];
   const sinceStart = (tStudy.slopePerDecade * (last - first)) / 10;
+  const hot = study.results["hot-months_annual"].series as number[];
+  const hotThen = hot.slice(0, 10).reduce((a, b) => a + b, 0) / 10;
+  const hotNow = hot.slice(-5).reduce((a, b) => a + b, 0) / 5;
+  const hazardRegions = trendZones.filter((z) => z.hazard);
+  const cruWarm = hazardRegions.filter((z) => {
+    const c = crosscheck.zones[z.id]?.["temperature_annual"]?.cru;
+    return c && c.slopePerDecade > 0;
+  }).length;
 
   // 2. Spring heats fastest
   const regionIds = trendZones.filter((z) => z.hazard).map((z) => z.id);
@@ -61,9 +80,11 @@ export default async function StoryPage() {
     value: rainPct(zone(id)),
     significant: trendOf(zone(id), "rainfall_monsoon").p < 0.05,
   }));
-  const wettest = [...rainBars].sort((a, b) => b.value - a.value)[0];
-  const driest = [...rainBars].filter((b) => b.significant).sort((a, b) => a.value - b.value)[0];
-  const tWettest = trendOf(zone(regionIds.find((id) => zone(id).name === wettest.name)!), "rainfall_monsoon");
+  // Headline only regions where the independent rain record (CRU TS) tells the same story.
+  const confirmed = rainBars.filter((b, i) => b.significant && cruConfirms(regionIds[i], "rainfall_monsoon"));
+  const wettest = [...confirmed].sort((a, b) => b.value - a.value)[0];
+  const driest = [...confirmed].sort((a, b) => a.value - b.value)[0];
+  const confirmedNames = confirmed.map((b) => b.name);
   const rainSum = manifest.summaries["rainfall_monsoon"];
   const rainPctGrid = rainGrid.slopePerDecade.map((s, k) => (s === null || !rainGrid.mean[k] ? null : (s / rainGrid.mean[k]!) * 100));
   const rainLimit = colorLimit(rainPctGrid);
@@ -128,6 +149,10 @@ export default async function StoryPage() {
               All <strong>{tempSum.cells} squares</strong> on our map got warmer, and not one got cooler. {hottest} was the
               hottest year on record.
             </p>
+            <p>
+              Very hot months, more than 1 °C above normal, used to come about <strong>{Math.round(hotThen)} times a year</strong>{" "}
+              in the 1980s. Now it is about <strong>{Math.round(hotNow)} months out of 12</strong>.
+            </p>
           </>
         }
         why="Gases from burning coal, oil and gas trap heat, like a blanket around the Earth."
@@ -168,7 +193,9 @@ export default async function StoryPage() {
             regional trend (Sen&apos;s slope) {formatSigned(tStudy.slopePerDecade, 3)} °C/decade, 95% CI{" "}
             {formatSigned(tStudy.lowerPerDecade, 3)} to {formatSigned(tStudy.upperPerDecade, 3)}; Hamed–Rao modified Mann–Kendall{" "}
             {formatP(tStudy.p)}. {tempSum.significantIncrease}/{tempSum.cells} land cells significant after Benjamini–Hochberg
-            FDR (α = 0.10).
+            FDR (α = 0.10). Very hot months = monthly anomaly ≥ 1 °C (1981–1990 mean {hotThen.toFixed(1)}/yr; last five years{" "}
+            {hotNow.toFixed(1)}/yr). Independent check: CRU TS 4.10 also shows warming in {cruWarm} of {hazardRegions.length}{" "}
+            regions.
           </>
         }
       />
@@ -227,14 +254,24 @@ export default async function StoryPage() {
           <>
             <p>
               Add up all the monsoon rain over South Asia and the total has hardly changed. But <strong>where</strong> it
-              falls has changed: the dry northwest gets more, while the wet east and the mountains get less.
+              falls has changed: the dry northwest (the {wettest.name}) gets more, while the {driest.name} and nearby wet
+              regions in the east get less.
             </p>
             <p>This is the big idea of our project: one warming world, but opposite changes in different places.</p>
+            <p>
+              We checked this with a second, independent rain record. It agrees for the {confirmedNames.join(", ")}. For some
+              mountain regions the two records disagree, so we don&apos;t claim a rain trend there.
+            </p>
           </>
         }
         why="Air pollution can weaken the monsoon winds in the east, and warmer seas push more moisture to the northwest. Scientists are still working out the exact mix."
         soWhat="Bigger floods on the crowded plains of Pakistan, and less water for rice farms and rivers in the east."
-        sure={<Sureness p={tWettest.p} />}
+        sure={
+          <span className="inline-flex items-center gap-2 rounded-full bg-accent-soft px-3 py-1.5 text-sm text-ink">
+            <Dots level={2} />
+            Fairly sure: two rain records agree on the main pattern, but not for every region
+          </span>
+        }
         visual={
           <div className="space-y-4">
             <MiniGridMap
@@ -264,7 +301,8 @@ export default async function StoryPage() {
             {rainSum.significantIncrease} show a significant increase and {rainSum.significantDecrease} a significant decrease after
             FDR control; {rainSum.cells - rainSum.significantIncrease - rainSum.significantDecrease} show no detectable trend. Whole
             study area: {formatSigned(trendOf(study, "rainfall_monsoon").slopePerDecade, 1)} mm/decade (
-            {formatP(trendOf(study, "rainfall_monsoon").p)}, not significant).
+            {formatP(trendOf(study, "rainfall_monsoon").p)}, not significant). Independent check with CRU TS 4.10: same
+            significant direction for {confirmedNames.join(", ")}; see How it works for every region.
           </>
         }
       />

@@ -26,13 +26,31 @@ ZONES_FILE = Path(__file__).parent / "zones.json"
 YEARS = list(range(power.START_YEAR, power.END_YEAR + 1))
 # Coarse cells count as land if at least this share of them is land (keeps coasts and Sri Lanka).
 MIN_LAND_FRACTION = 0.25
+# A "very hot month" is at least this much warmer than the 1951-1980 average for that month.
+HOT_MONTH_ANOMALY = 1.0
+# A "very heavy rain day" is wetter than this percentile of the place's rainy days (>= 1 mm).
+HEAVY_RAIN_PERCENTILE = 95
+
+GISTEMP_META = {
+    "dataset": "NASA GISTEMP v4 (GISS), 2° grid",
+    "datasetUrl": "https://data.giss.nasa.gov/gistemp/",
+    "cellSize": [2.0, 2.0],
+}
+GPCP_META = {
+    "dataset": "GPCP v2.3 monthly precipitation (NASA GSFC / NOAA), 2.5° grid",
+    "datasetUrl": "https://www.ncei.noaa.gov/products/climate-data-records/precipitation-gpcp-monthly",
+    "cellSize": [2.5, 2.5],
+}
+GPCP_DAILY_META = {
+    "dataset": "GPCP 1DD v1.3 daily precipitation (NASA GSFC / NOAA), 1° grid",
+    "datasetUrl": "https://www.ncei.noaa.gov/products/climate-data-records/precipitation-gpcp-daily",
+    "cellSize": [1.0, 1.0],
+}
 
 VARIABLES = {
     "temperature": {
+        **GISTEMP_META,
         "label": "Surface temperature",
-        "dataset": "NASA GISTEMP v4 (GISS), 2° grid",
-        "datasetUrl": "https://data.giss.nasa.gov/gistemp/",
-        "cellSize": [2.0, 2.0],
         "aggregate": "mean",
         "unit": "°C",
         "anomaly": True,
@@ -40,12 +58,11 @@ VARIABLES = {
         "decimals": 2,
         "increase": "warming",
         "decrease": "cooling",
+        "kind": "average",
     },
     "rainfall": {
+        **GPCP_META,
         "label": "Rainfall",
-        "dataset": "GPCP v2.3 monthly precipitation (NASA GSFC / NOAA), 2.5° grid",
-        "datasetUrl": "https://www.ncei.noaa.gov/products/climate-data-records/precipitation-gpcp-monthly",
-        "cellSize": [2.5, 2.5],
         "aggregate": "total",  # mm/day monthly means -> seasonal totals in mm
         "unit": "mm",
         "anomaly": False,
@@ -53,6 +70,59 @@ VARIABLES = {
         "decimals": 0,
         "increase": "wetter",
         "decrease": "drier",
+        "kind": "average",
+    },
+    "hot-months": {
+        **GISTEMP_META,
+        "label": "Very hot months",
+        "aggregate": "count",
+        "unit": "months",
+        "anomaly": False,
+        "baseline": None,
+        "decimals": 1,
+        "increase": "more very hot months",
+        "decrease": "fewer very hot months",
+        "kind": "extreme",
+        "definition": f"Months at least {HOT_MONTH_ANOMALY:g} °C warmer than the 1951–1980 average for that month.",
+    },
+    "heavy-rain": {
+        **GPCP_DAILY_META,
+        "label": "Very heavy rain days",
+        "aggregate": "count",
+        "unit": "days",
+        "anomaly": False,
+        "baseline": None,
+        "decimals": 1,
+        "increase": "more heavy-rain days",
+        "decrease": "fewer heavy-rain days",
+        "kind": "extreme",
+        "definition": f"Days wetter than the local {HEAVY_RAIN_PERCENTILE}th percentile of rainy days (1 mm or more), 1997–{power.END_YEAR}.",
+    },
+    "dry-spell": {
+        **GPCP_DAILY_META,
+        "label": "Longest dry spell in the monsoon",
+        "aggregate": "max",
+        "unit": "days",
+        "anomaly": False,
+        "baseline": None,
+        "decimals": 1,
+        "increase": "longer dry spells",
+        "decrease": "shorter dry spells",
+        "kind": "extreme",
+        "definition": "The longest run of days with less than 1 mm of rain during June–September: a sign of monsoon breaks and drought.",
+    },
+    "wettest-day": {
+        **GPCP_DAILY_META,
+        "label": "Wettest day of the year",
+        "aggregate": "max",
+        "unit": "mm",
+        "anomaly": False,
+        "baseline": None,
+        "decimals": 1,
+        "increase": "heavier downpours",
+        "decrease": "lighter downpours",
+        "kind": "extreme",
+        "definition": "The most rain that fell on a single day in each year.",
     },
 }
 
@@ -100,21 +170,52 @@ def trend_summary(t, decimals: int) -> dict | None:
     }
 
 
-def load(var: str):
-    return sources.load_gistemp(YEARS) if var == "temperature" else sources.load_gpcp(YEARS)
+def prepare(var: str):
+    """Returns (lats, lons, years, {season: values[years, lat, lon]}) for one variable."""
+    if var in ("temperature", "rainfall"):
+        lats, lons, monthly = sources.load_gistemp(YEARS) if var == "temperature" else sources.load_gpcp(YEARS)
+        agg = VARIABLES[var]["aggregate"]
+        return lats, lons, YEARS, {s: seasonal(monthly, m["months"], agg) for s, m in SEASONS.items()}
+
+    if var == "hot-months":
+        lats, lons, monthly = sources.load_gistemp(YEARS)
+        hot = (np.nan_to_num(monthly, nan=-99) >= HOT_MONTH_ANOMALY).sum(axis=1).astype(float)
+        hot[:, ~np.isfinite(monthly).any(axis=(0, 1))] = np.nan
+        return lats, lons, YEARS, {"annual": hot}
+
+    import daily  # only needed for the daily-rain indicators
+
+    lats, lons, years, per_year, months = daily.load()
+    if var == "wettest-day":
+        # A few days are missing in the record; skip them rather than blanking the whole year.
+        return lats, lons, years, {"annual": np.stack([np.nanmax(p, axis=0) for p in per_year])}
+    if var == "dry-spell":
+        spells = []
+        for p, m in zip(per_year, months):
+            run = np.zeros(p.shape[1:])
+            longest = np.zeros(p.shape[1:])
+            for day in p[np.isin(m, [6, 7, 8, 9])]:
+                run = np.where(day < 1.0, run + 1, 0)
+                longest = np.maximum(longest, run)
+            spells.append(longest)
+        return lats, lons, years, {"annual": np.stack(spells)}
+    # Very heavy rain days: above the local 95th percentile of all rainy days in the record.
+    everything = np.concatenate(per_year)
+    rainy = np.where(everything >= 1.0, everything, np.nan)
+    threshold = np.nanpercentile(rainy, HEAVY_RAIN_PERCENTILE, axis=0)
+    counts = np.stack([(p > threshold).sum(axis=0) for p in per_year]).astype(float)
+    return lats, lons, years, {"annual": counts}
 
 
 def main() -> None:
     OUT_DIR.mkdir(parents=True, exist_ok=True)
-    for stale in OUT_DIR.glob("*.json"):
-        stale.unlink()
     zones = json.loads(ZONES_FILE.read_text(encoding="utf-8"))["zones"]
     zone_results: dict = {z["id"]: {} for z in zones}
-    grids, summaries = {}, {}
+    grids, summaries, var_years, var_seasons = {}, {}, {}, {}
 
     for var, meta in VARIABLES.items():
         print(f"Loading {var}")
-        lats, lons, monthly = load(var)
+        lats, lons, years, by_season = prepare(var)
         d_lat, d_lon = meta["cellSize"]
         land_frac = sources.land_fraction(lats, lons, d_lat, d_lon)
         land = land_frac >= MIN_LAND_FRACTION
@@ -123,11 +224,13 @@ def main() -> None:
             "lat0": float(lats[0]), "dLat": d_lat, "nLat": int(lats.size),
             "lon0": float(lons[0]), "dLon": d_lon, "nLon": int(lons.size),
         }
+        var_years[var] = years
+        var_seasons[var] = list(by_season)
 
-        for season, smeta in SEASONS.items():
+        for season, values in by_season.items():
             key = f"{var}_{season}"
             print(f"  trends: {key}")
-            values = seasonal(monthly, smeta["months"], meta["aggregate"])
+            values = values.copy()
             values[:, ~land] = np.nan
 
             slope, lower, upper, p = (np.full(land.shape, np.nan) for _ in range(4))
@@ -150,7 +253,7 @@ def main() -> None:
                 },
                 separators=(",", ":"),
             )
-            flat = values.reshape(len(YEARS), -1)
+            flat = values.reshape(len(years), -1)
             write_json(
                 OUT_DIR / f"{key}_series.json",
                 [rounded(flat[:, k], dec) if land.ravel()[k] else None for k in range(land.size)],
@@ -182,7 +285,10 @@ def main() -> None:
         },
         "years": YEARS,
         "grids": grids,
-        "variables": {v: {k: m[k] for k in m if k != "cellSize"} for v, m in VARIABLES.items()},
+        "variables": {
+            v: {**{k: m[k] for k in m if k != "cellSize"}, "years": var_years[v], "seasons": var_seasons[v]}
+            for v, m in VARIABLES.items()
+        },
         "seasons": {s: {"label": m["label"], "months": m["months"]} for s, m in SEASONS.items()},
         "summaries": summaries,
     }

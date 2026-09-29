@@ -5,7 +5,11 @@ Turns NASA climate records into the trend results the website shows (`web/public
 ```bash
 pip install -r requirements.txt
 python -m pytest -q      # checks the statistics
-python build.py          # downloads data (cached in raw/) and writes the JSON results
+python build.py          # trends: temperature, rainfall and the extremes (downloads data, cached in raw/)
+python build_hazards.py  # floods, landslides, wildfires
+python cyclones.py       # cyclones (adds to the hazard results)
+python crosscheck.py     # repeats the key trends with CRU TS, an independent record
+python latest.py         # the latest month compared with normal (home page)
 ```
 
 ## Data
@@ -15,7 +19,18 @@ python build.py          # downloads data (cached in raw/) and writes the JSON r
 | Temperature | NASA GISTEMP v4 (GISS), anomalies vs 1951–1980 | 2° | NASA's official climate record; station data homogenized for long-term trends |
 | Rainfall | GPCP v2.3 monthly (NASA GSFC-led, gauge + satellite) | 2.5° | Inputs inter-calibrated so the record stays consistent over time |
 
-Study area: 5–38°N, 60–100°E, 1981–2025. No login is needed for either source.
+Study area: 5–38°N, 60–100°E, 1981–2025. No login is needed for any source.
+
+**Extremes** (whole year only):
+
+| Measure | Definition | Data |
+|---|---|---|
+| Very hot months | Months at least 1 °C warmer than the 1951–1980 average for that month | GISTEMP |
+| Very heavy rain days | Days wetter than the local 95th percentile of rainy days (≥ 1 mm), 1997–2025 | GPCP 1DD v1.3 daily, 1° |
+| Wettest day of the year | The most rain on a single day | GPCP 1DD |
+| Longest monsoon dry spell | Longest run of days under 1 mm in June–September | GPCP 1DD |
+
+**Independent check:** `crosscheck.py` repeats the regional temperature and rainfall trends with CRU TS 4.10 (University of East Anglia, 0.5°, station-based). Warming agrees in every region. For rain, the two records agree on the Indus plain (wetter) and on the Bengal delta and Northeast hills (drier), but not for every mountain region.
 
 **Rejected:** NASA POWER (MERRA-2) rainfall and soil moisture. Its South Asia rainfall jumps by about 50% in 1997 and again after 2015 (for example, Bengal-delta rainfall goes from about 1,200 mm/yr to about 3,000 mm/yr). Those jumps come from changes in the dataset, not real rain, so its trends would be wrong. POWER is still used for its land mask (`power.py`).
 
@@ -41,6 +56,7 @@ Study area: 5–38°N, 60–100°E, 1981–2025. No login is needed for either s
 | Wildfire | NASA FIRMS MODIS (Terra + Aqua) vegetation fires, confidence ≥ 30, Mar–May | 2003–2024 | Pre-monsoon temperature (higher) and rainfall (lower) |
 | Landslide | NASA Global Landslide Catalog (news reports), Jun–Sep | 2007–2017 | Monsoon rainfall (higher) |
 | Flood | GDACS flood alerts (UN/EU) within 1° of the region | 2000–2025 | Monsoon rainfall (higher) |
+| Cyclone | IBTrACS v04r01 North Indian basin, storms ≥ 34 knots, by basin (Bay of Bengal, Arabian Sea) | 1981–2025 | Sea-surface warmth in the cyclone seasons, from GISTEMP ocean cells (higher) |
 
 For each region:
 1. **Event trend** (fires only; the other records are too short): Mann–Kendall + Sen's slope.

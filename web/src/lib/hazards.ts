@@ -2,9 +2,9 @@
 
 import type { TrendSummary } from "./trends";
 
-export type HazardId = "flood" | "landslide" | "wildfire";
+export type HazardId = "flood" | "landslide" | "wildfire" | "cyclone";
 
-export const HAZARD_ORDER: HazardId[] = ["flood", "landslide", "wildfire"];
+export const HAZARD_ORDER: HazardId[] = ["flood", "landslide", "wildfire", "cyclone"];
 
 export const HAZARD_META: Record<
   HazardId,
@@ -31,11 +31,21 @@ export const HAZARD_META: Record<
     intro: "Forest and scrub fires in the hot, dry weeks before the monsoon arrives (March–May).",
     affected: ["Forest communities", "Farmers", "Forest departments", "Emergency responders"],
   },
+  cyclone: {
+    label: "Cyclones",
+    eventNoun: "cyclone",
+    eventsPlural: "cyclones",
+    intro: "Tropical cyclones form over the warm Bay of Bengal and Arabian Sea, mostly in May and October–November, and bring storm surges, wind and floods to the coasts.",
+    affected: ["Coastal communities", "Fishers", "Ports and shipping", "Cyclone shelters and emergency teams"],
+  },
 };
 
 export interface DriverResult {
   key: string; // e.g. "temperature_pre-monsoon"
   label: string;
+  /** Set for drivers that are not one of the Climate trends variables (e.g. sea warmth). */
+  unit?: string;
+  decimals?: number;
   /** Which direction of the driver raises the hazard. */
   risk: "higher" | "lower";
   /** Spearman correlation between yearly event counts and the driver, both detrended. */
@@ -66,6 +76,17 @@ export interface HazardZone {
     mean: number;
   } | null;
   drivers: DriverResult[];
+  /** Cyclones only: how many reached 64 knots or more. */
+  severe?: number;
+}
+
+export interface CycloneTrack {
+  name: string;
+  year: number;
+  basin: "BB" | "AS";
+  /** Peak wind in knots. */
+  maxWind: number;
+  points: [number, number][];
 }
 
 export interface LandslideEvent {
