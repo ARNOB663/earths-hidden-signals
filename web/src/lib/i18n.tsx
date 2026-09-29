@@ -32,22 +32,13 @@ export function setLang(lang: Lang) {
   document.documentElement.lang = lang;
 }
 
-/** Runs before first paint, so a saved Bangla choice applies without a flash where possible. */
-export const LANG_INIT_SCRIPT = `(function(){try{if(localStorage.getItem("${KEY}")==="bn")document.documentElement.lang="bn";}catch(e){}})();`;
 
 /** Inline text in both languages. */
 export function T({ en, bn }: { en: React.ReactNode; bn: React.ReactNode }) {
   return <>{useLang() === "bn" ? bn : en}</>;
 }
 
-const BN_DIGITS = "০১২৩৪৫৬৭৮৯";
-
-/** Latin digits (and minus) to Bangla digits, for numbers inside Bangla sentences. */
-export function bnNum(value: string | number): string {
-  return String(value)
-    .replace(/[0-9]/g, (d) => BN_DIGITS[Number(d)])
-    .replace(/-/g, "−");
-}
+export { bnNum } from "./bn";
 
 /** A string in the current language (for attributes like aria-label and placeholder). */
 export function useT() {

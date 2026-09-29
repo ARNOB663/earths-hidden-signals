@@ -3,6 +3,7 @@
 import { DownloadSimple } from "@phosphor-icons/react";
 import { useState } from "react";
 import { downloadCsv, slug } from "@/lib/download";
+import { T } from "@/lib/i18n";
 
 interface Props {
   labels: (string | number)[];
@@ -79,11 +80,13 @@ export function YearBars({ labels, values, highlight, color, unit, ariaLabel, he
           }
           className="mt-2 inline-flex items-center gap-1.5 text-xs font-medium text-accent hover:underline"
         >
-          <DownloadSimple size={14} /> Download the data (CSV)
+          <DownloadSimple size={14} /> <T en="Download the data (CSV)" bn="তথ্য ডাউনলোড করুন (CSV)" />
         </button>
       )}
       <details className="mt-1 text-xs text-ink-3">
-        <summary className="cursor-pointer select-none hover:text-ink">Show the data as a table</summary>
+        <summary className="cursor-pointer select-none hover:text-ink">
+          <T en="Show the data as a table" bn="তথ্য টেবিল আকারে দেখুন" />
+        </summary>
         <table className="mt-1 w-full text-left tabular-nums">
           <tbody>
             {labels.map((l, i) => (

@@ -90,13 +90,20 @@ export function distanceKm(lat1: number, lon1: number, lat2: number, lon2: numbe
   return Math.hypot(lat2 - lat1, dx) * 111.2;
 }
 
-/** "Around Dhaka" (or "Near Dhaka") for a point; the nearest listed place within ~350 km. */
-export function describePlace(lat: number, lon: number): string {
-  let best: [string, number] | null = null;
+/** The nearest listed place within ~350 km, and whether it is close (< 120 km). */
+export function nearestPlace(lat: number, lon: number): { place: Place; close: boolean } | null {
+  let best: [Place, number] | null = null;
   for (const p of PLACES) {
     const d = distanceKm(lat, lon, p.lat, p.lon);
-    if (!best || d < best[1]) best = [p.name, d];
+    if (!best || d < best[1]) best = [p, d];
   }
-  if (!best || best[1] > 350) return `${lat.toFixed(1)}°N, ${lon.toFixed(1)}°E`;
-  return best[1] < 120 ? `Around ${best[0]}` : `Near ${best[0]}`;
+  if (!best || best[1] > 350) return null;
+  return { place: best[0], close: best[1] < 120 };
+}
+
+/** "Around Dhaka" (or "Near Dhaka") for a point, or its coordinates if nothing is near. */
+export function describePlace(lat: number, lon: number): string {
+  const n = nearestPlace(lat, lon);
+  if (!n) return `${lat.toFixed(1)}°N, ${lon.toFixed(1)}°E`;
+  return n.close ? `Around ${n.place.name}` : `Near ${n.place.name}`;
 }

@@ -1,5 +1,6 @@
 // Small shared building blocks. None of them use hooks, so they work on server and client pages.
 
+import { T } from "@/lib/i18n";
 import { sureness } from "@/lib/plain";
 import { formatSigned, trendLegendTokens, type VariableId } from "@/lib/trends";
 
@@ -10,7 +11,7 @@ export function Sureness({ p, className = "" }: { p: number; className?: string 
   return (
     <span className={`inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-sm ${tone} ${className}`}>
       <Dots level={s.level} />
-      {s.label}
+      <T en={s.label} bn={s.bn} />
     </span>
   );
 }
@@ -38,8 +39,8 @@ export function TrendLegend({
   variable: VariableId;
   limit: number;
   decimals: number;
-  decreaseWord: string;
-  increaseWord: string;
+  decreaseWord: React.ReactNode;
+  increaseWord: React.ReactNode;
   compact?: boolean;
   /** Hide the extra lines on small screens (used where the key floats over a map). */
   mobileCompact?: boolean;
@@ -56,12 +57,22 @@ export function TrendLegend({
       <div className="mt-1.5 grid grid-cols-3 text-xs text-ink-2">
         <span>
           {decreaseWord}
-          {!compact && <span className={`${extra} text-ink-3`}>{formatSigned(-limit, decimals)} or less</span>}
+          {!compact && (
+            <span className={`${extra} text-ink-3`}>
+              {formatSigned(-limit, decimals)} <T en="or less" bn="বা কম" />
+            </span>
+          )}
         </span>
-        <span className="text-center">No change</span>
+        <span className="text-center">
+          <T en="No change" bn="পরিবর্তন নেই" />
+        </span>
         <span className="text-right">
           {increaseWord}
-          {!compact && <span className={`${extra} text-ink-3`}>{formatSigned(limit, decimals)} or more</span>}
+          {!compact && (
+            <span className={`${extra} text-ink-3`}>
+              {formatSigned(limit, decimals)} <T en="or more" bn="বা বেশি" />
+            </span>
+          )}
         </span>
       </div>
       {!compact && (
@@ -70,7 +81,7 @@ export function TrendLegend({
             <span className="h-3 w-4 rounded-sm bg-[var(--warm-3)]" />
             <span className="h-3 w-4 rounded-sm bg-[var(--warm-3)] opacity-30" />
           </span>
-          Solid = clear change · faded = no clear change
+          <T en="Solid = clear change · faded = no clear change" bn="গাঢ় = স্পষ্ট পরিবর্তন · হালকা = স্পষ্ট পরিবর্তন নেই" />
         </p>
       )}
     </div>
@@ -83,7 +94,7 @@ export function Segmented<T extends string>({
   onChange,
   label,
 }: {
-  options: { id: T; label: string; icon?: React.ReactNode }[];
+  options: { id: T; label: React.ReactNode; icon?: React.ReactNode }[];
   value: T;
   onChange: (id: T) => void;
   label: string;
@@ -110,7 +121,13 @@ export function Segmented<T extends string>({
 }
 
 /** "Show the numbers": technical details, closed by default. */
-export function Numbers({ children, title = "Show the numbers" }: { children: React.ReactNode; title?: string }) {
+export function Numbers({
+  children,
+  title = <T en="Show the numbers" bn="সংখ্যাগুলো দেখুন" />,
+}: {
+  children: React.ReactNode;
+  title?: React.ReactNode;
+}) {
   return (
     <details className="group rounded-xl border border-line">
       <summary className="flex cursor-pointer list-none items-center justify-between px-4 py-3 text-sm font-medium text-ink-2 hover:text-ink">
@@ -124,7 +141,7 @@ export function Numbers({ children, title = "Show the numbers" }: { children: Re
   );
 }
 
-export function Stat({ label, value }: { label: string; value: string }) {
+export function Stat({ label, value }: { label: React.ReactNode; value: React.ReactNode }) {
   return (
     <div className="flex justify-between gap-3 py-1">
       <dt className="text-ink-3">{label}</dt>

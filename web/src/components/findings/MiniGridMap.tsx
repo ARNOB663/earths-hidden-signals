@@ -1,4 +1,6 @@
 import { TrendLegend } from "@/components/ui";
+import { T } from "@/lib/i18n";
+import { PLACE_BN } from "@/lib/names";
 import { cellCenter, formatSigned, trendToken, type GridSpec, type TrendGrid, type VariableId, type VariableMeta } from "@/lib/trends";
 
 // Reference points so readers can find their way on a map without coastlines.
@@ -29,13 +31,15 @@ interface Props {
   limit: number;
   /** Show the value as % of the local average instead of raw units. */
   percent?: boolean;
-  title: string;
-  decreaseWord: string;
-  increaseWord: string;
+  /** Used to tie the map to its caption for screen readers. */
+  id: string;
+  title: React.ReactNode;
+  decreaseWord: React.ReactNode;
+  increaseWord: React.ReactNode;
 }
 
 /** Small static map of trends per square: solid = clear change, faded = no clear change. */
-export function MiniGridMap({ grid, stats, variable, meta, limit, percent, title, decreaseWord, increaseWord }: Props) {
+export function MiniGridMap({ grid, stats, variable, meta, limit, percent, id, title, decreaseWord, increaseWord }: Props) {
   const W = 520;
   const scale = W / (LON1 - LON0);
   const yTop = mercY(LAT1);
@@ -56,8 +60,10 @@ export function MiniGridMap({ grid, stats, variable, meta, limit, percent, title
 
   return (
     <figure className="rounded-2xl bg-card p-5 shadow-soft">
-      <figcaption className="mb-3 text-sm font-medium text-ink">{title}</figcaption>
-      <svg viewBox={`0 0 ${W} ${H}`} className="block h-auto w-full" role="img" aria-label={title}>
+      <figcaption id={id} className="mb-3 text-sm font-medium text-ink">
+        {title}
+      </figcaption>
+      <svg viewBox={`0 0 ${W} ${H}`} className="block h-auto w-full" role="img" aria-labelledby={id}>
         <rect width={W} height={H} rx={10} fill="var(--sunken)" />
         {cells.map((c) => {
           const x0 = x(c.lon - grid.dLon / 2);
@@ -81,7 +87,7 @@ export function MiniGridMap({ grid, stats, variable, meta, limit, percent, title
           <g key={name} pointerEvents="none">
             <circle cx={x(lon)} cy={y(lat)} r={3} fill="var(--ink)" stroke="var(--card)" strokeWidth={1.5} />
             <text x={x(lon) + 6} y={y(lat)} dy="0.35em" fontSize={12} fill="var(--ink)" stroke="var(--card)" strokeWidth={3} paintOrder="stroke">
-              {name}
+              <T en={name} bn={PLACE_BN[name.toLowerCase()] ?? name} />
             </text>
           </g>
         ))}

@@ -3,6 +3,7 @@
 import { DownloadSimple } from "@phosphor-icons/react";
 import { useLayoutEffect, useMemo, useRef, useState } from "react";
 import { downloadCsv, slug } from "@/lib/download";
+import { T } from "@/lib/i18n";
 import { senIntercept } from "@/lib/trends";
 
 interface Props {
@@ -13,6 +14,8 @@ interface Props {
   decimals: number;
   /** e.g. "°C vs 1951–1980 average" */
   axisLabel: string;
+  /** Bangla version of axisLabel, shown when the page is in Bangla. */
+  axisLabelBn?: string;
   /** Draw a zero line (anomaly series). */
   zeroLine: boolean;
   /** 95% range of the trend, drawn as a shaded band around the trend line. */
@@ -56,6 +59,7 @@ export function SeriesChart({
   unit,
   decimals,
   axisLabel,
+  axisLabelBn,
   zeroLine,
   lowerPerDecade = null,
   upperPerDecade = null,
@@ -79,7 +83,12 @@ export function SeriesChart({
     return (k: number) => b + perYear * k;
   }, [slopePerDecade, points, values.length]);
 
-  if (points.length < 2) return <p className="text-sm text-ink-3">No data for this place.</p>;
+  if (points.length < 2)
+    return (
+      <p className="text-sm text-ink-3">
+        <T en="No data for this place." bn="এই জায়গার কোনো তথ্য নেই।" />
+      </p>
+    );
 
   // The 95% range of the slope, pivoting on the middle of the record: a "bow-tie" of likely trend lines.
   const n = values.length;
@@ -138,16 +147,16 @@ export function SeriesChart({
     <div>
       <div className="mb-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-ink-2">
         <span className="flex items-center gap-1.5">
-          <span className="h-0.5 w-4 rounded bg-ink" /> Each year
+          <span className="h-0.5 w-4 rounded bg-ink" /> <T en="Each year" bn="প্রতি বছর" />
         </span>
         {trendAt && (
           <span className="flex items-center gap-1.5">
-            <span className="w-4 border-t-2 border-dashed border-accent" /> Long-term trend
+            <span className="w-4 border-t-2 border-dashed border-accent" /> <T en="Long-term trend" bn="দীর্ঘমেয়াদি প্রবণতা" />
           </span>
         )}
         {band && (
           <span className="flex items-center gap-1.5">
-            <span className="h-2.5 w-4 rounded-sm bg-accent/20" /> Likely range of the trend (95%)
+            <span className="h-2.5 w-4 rounded-sm bg-accent/20" /> <T en="Likely range of the trend (95%)" bn="প্রবণতার সম্ভাব্য সীমা (৯৫%)" />
           </span>
         )}
       </div>
@@ -184,7 +193,7 @@ export function SeriesChart({
             </text>
           ))}
           <text x={PAD.left} y={10} className="fill-ink-3 text-[11px]">
-            {axisLabel}
+            <T en={axisLabel} bn={axisLabelBn ?? axisLabel} />
           </text>
 
           {bandPath && <path d={bandPath} fill="var(--accent)" opacity={0.14} />}
@@ -219,8 +228,14 @@ export function SeriesChart({
             }}
           >
             <div className="font-medium text-ink">{years[hover]}</div>
-            <div className="text-ink-2">That year: {hovered !== null ? fmt(hovered) : "no data"}</div>
-            {trendAt && <div className="text-ink-3">Trend line: {fmt(trendAt(hover))}</div>}
+            <div className="text-ink-2">
+              <T en="That year:" bn="ওই বছর:" /> {hovered !== null ? fmt(hovered) : <T en="no data" bn="তথ্য নেই" />}
+            </div>
+            {trendAt && (
+              <div className="text-ink-3">
+                <T en="Trend line:" bn="প্রবণতা রেখা:" /> {fmt(trendAt(hover))}
+              </div>
+            )}
           </div>
         )}
       </div>
@@ -231,17 +246,23 @@ export function SeriesChart({
           onClick={download}
           className="inline-flex items-center gap-1.5 text-xs font-medium text-accent hover:underline"
         >
-          <DownloadSimple size={14} /> Download the data (CSV)
+          <DownloadSimple size={14} /> <T en="Download the data (CSV)" bn="তথ্য ডাউনলোড করুন (CSV)" />
         </button>
       </div>
       <details className="mt-1 text-xs text-ink-3">
-        <summary className="cursor-pointer select-none hover:text-ink">Show the data as a table</summary>
+        <summary className="cursor-pointer select-none hover:text-ink">
+          <T en="Show the data as a table" bn="তথ্য টেবিল আকারে দেখুন" />
+        </summary>
         <div className="mt-2 max-h-48 overflow-y-auto rounded-lg border border-line">
           <table className="w-full text-left tabular-nums">
             <thead className="sticky top-0 bg-sunken text-ink-3">
               <tr>
-                <th className="px-2 py-1 font-medium">Year</th>
-                <th className="px-2 py-1 font-medium">Value ({unit})</th>
+                <th className="px-2 py-1 font-medium">
+                  <T en="Year" bn="বছর" />
+                </th>
+                <th className="px-2 py-1 font-medium">
+                  <T en="Value" bn="মান" /> ({unit})
+                </th>
               </tr>
             </thead>
             <tbody>

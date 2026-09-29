@@ -4,6 +4,9 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { useEffect, useRef } from "react";
 import { createBaseMap, type BaseMap } from "@/components/map/baseMap";
+import { bnNum } from "@/lib/bn";
+import { useLang } from "@/lib/i18n";
+import { unitBn } from "@/lib/names";
 import { cssVar, useTheme } from "@/lib/theme";
 import {
   cellCenter,
@@ -48,6 +51,7 @@ export default function TrendMap({
   const overlayRef = useRef<L.LayerGroup | null>(null);
   const rendererRef = useRef<L.Canvas | null>(null);
   const theme = useTheme();
+  const lang = useLang();
   const onSelectRef = useRef(onSelectCell);
   useEffect(() => {
     onSelectRef.current = onSelectCell;
@@ -90,7 +94,7 @@ export default function TrendMap({
     group.clearLayers();
     if (!stats) return;
 
-    const unit = `${meta.unit} every 10 years`;
+    const bn = lang === "bn";
     const edge = cssVar("--page");
     stats.slopePerDecade.forEach((slope, k) => {
       if (slope === null) return;
@@ -112,14 +116,17 @@ export default function TrendMap({
         },
       );
       rect.bindTooltip(
-        `<strong>${formatSigned(slope, meta.decimals + 1)} ${unit}</strong><br>` +
-          `${clear ? "Clear change" : "No clear change"} · click for the full story`,
+        bn
+          ? `<strong>প্রতি ১০ বছরে ${bnNum(formatSigned(slope, meta.decimals + 1))} ${unitBn(meta.unit)}</strong><br>` +
+              `${clear ? "স্পষ্ট পরিবর্তন" : "স্পষ্ট পরিবর্তন নেই"} · পুরো বিবরণের জন্য ক্লিক করুন`
+          : `<strong>${formatSigned(slope, meta.decimals + 1)} ${meta.unit} every 10 years</strong><br>` +
+              `${clear ? "Clear change" : "No clear change"} · click for the full story`,
         { sticky: true, direction: "top", className: "map-tooltip" },
       );
       rect.on("click", () => onSelectRef.current(lat, lon));
       group.addLayer(rect);
     });
-  }, [stats, grid, limit, variable, meta, theme]);
+  }, [stats, grid, limit, variable, meta, theme, lang]);
 
   // Region outlines and the selected square.
   useEffect(() => {

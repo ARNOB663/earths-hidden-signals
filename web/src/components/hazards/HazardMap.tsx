@@ -5,6 +5,9 @@ import L from "leaflet";
 import { useEffect, useRef } from "react";
 import { createBaseMap, type BaseMap } from "@/components/map/baseMap";
 import type { CycloneTrack, FireGrid, FloodEvent, HazardId, HazardZone, LandslideEvent } from "@/lib/hazards";
+import { BN_MONTHS, bnNum } from "@/lib/bn";
+import { useLang, type Lang } from "@/lib/i18n";
+import { ZONE_BN } from "@/lib/names";
 import { cssVar, useTheme } from "@/lib/theme";
 import { EVENT_TOKEN, fireToken, FLOOD_ALERT_COLORS } from "./hazardColors";
 
@@ -22,8 +25,12 @@ interface Props {
 const escapeHtml = (s: string) =>
   s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
 
-const prettyDate = (iso: string) =>
-  new Date(`${iso}T00:00:00`).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+const prettyDate = (iso: string, lang: Lang) =>
+  lang === "bn"
+    ? `${bnNum(Number(iso.slice(8, 10)))} ${BN_MONTHS[Number(iso.slice(5, 7)) - 1]} ${bnNum(iso.slice(0, 4))}`
+    : new Date(`${iso}T00:00:00`).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+
+const ALERT_BN: Record<string, string> = { Green: "সবুজ", Orange: "কমলা", Red: "লাল" };
 
 export default function HazardMap({ hazard, zones, selectedZone, onSelectZone, landslides, floods, fires, cyclones }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -32,6 +39,7 @@ export default function HazardMap({ hazard, zones, selectedZone, onSelectZone, l
   const zonesRef = useRef<L.LayerGroup | null>(null);
   const rendererRef = useRef<L.Canvas | null>(null);
   const theme = useTheme();
+  const lang = useLang();
   const onSelectRef = useRef(onSelectZone);
   useEffect(() => {
     onSelectRef.current = onSelectZone;
@@ -65,6 +73,7 @@ export default function HazardMap({ hazard, zones, selectedZone, onSelectZone, l
     if (!group || !renderer) return;
     group.clearLayers();
     const edge = cssVar("--card");
+    const bn = lang === "bn";
 
     if (hazard === "wildfire" && fires) {
       const h = fires.cell / 2;
@@ -78,7 +87,11 @@ export default function HazardMap({ hazard, zones, selectedZone, onSelectZone, l
           ],
           { renderer, stroke: false, fillColor: cssVar(token), fillOpacity: 0.85 },
         )
-          .bindTooltip(`<strong>About ${Math.round(avg)} fires a year</strong><br>seen by satellite in March–May`, {
+          .bindTooltip(
+            bn
+              ? `<strong>বছরে প্রায় ${bnNum(Math.round(avg))}টি আগুন</strong><br>মার্চ–মে মাসে স্যাটেলাইটে দেখা`
+              : `<strong>About ${Math.round(avg)} fires a year</strong><br>seen by satellite in March–May`,
+            {
             sticky: true,
             className: "map-tooltip",
           })
@@ -98,8 +111,8 @@ export default function HazardMap({ hazard, zones, selectedZone, onSelectZone, l
           fillOpacity: 0.9,
         })
           .bindTooltip(
-            `<strong>${escapeHtml(e.title)}</strong><br>${prettyDate(e.date)}` +
-              (e.fatalities ? ` · ${e.fatalities} people died` : ""),
+            `<strong>${escapeHtml(e.title)}</strong><br>${prettyDate(e.date, lang)}` +
+              (e.fatalities ? (bn ? ` · ${bnNum(e.fatalities)} জন মারা যান` : ` · ${e.fatalities} people died`) : ""),
             { className: "map-tooltip" },
           )
           .addTo(group);
@@ -113,8 +126,11 @@ export default function HazardMap({ hazard, zones, selectedZone, onSelectZone, l
         const severe = c.maxWind >= 64;
         L.polyline(c.points, { renderer, color, weight: severe ? 2.6 : 1.2, opacity: severe ? 0.85 : 0.4 })
           .bindTooltip(
-            `<strong>${c.name ? `Cyclone ${escapeHtml(c.name)}` : "Unnamed cyclone"} (${c.year})</strong><br>` +
-              `Peak wind ${Math.round(c.maxWind)} knots (about ${Math.round(c.maxWind * 1.852)} km/h)${severe ? " · severe" : ""}`,
+            bn
+              ? `<strong>${c.name ? `ঘূর্ণিঝড় ${escapeHtml(c.name)}` : "নামহীন ঘূর্ণিঝড়"} (${bnNum(c.year)})</strong><br>` +
+                  `সর্বোচ্চ বাতাস ${bnNum(Math.round(c.maxWind))} নট (প্রায় ${bnNum(Math.round(c.maxWind * 1.852))} কিমি/ঘণ্টা)${severe ? " · প্রবল" : ""}`
+              : `<strong>${c.name ? `Cyclone ${escapeHtml(c.name)}` : "Unnamed cyclone"} (${c.year})</strong><br>` +
+                  `Peak wind ${Math.round(c.maxWind)} knots (about ${Math.round(c.maxWind * 1.852)} km/h)${severe ? " · severe" : ""}`,
             { sticky: true, className: "map-tooltip" },
           )
           .addTo(group);
@@ -131,13 +147,15 @@ export default function HazardMap({ hazard, zones, selectedZone, onSelectZone, l
           fillColor: FLOOD_ALERT_COLORS[e.alert] ?? cssVar("--ink-3"),
           fillOpacity: 0.9,
         })
-          .bindTooltip(`<strong>${escapeHtml(e.title)}</strong><br>${prettyDate(e.date)} · ${escapeHtml(e.alert)} alert`, {
-            className: "map-tooltip",
-          })
+          .bindTooltip(
+            `<strong>${escapeHtml(e.title)}</strong><br>${prettyDate(e.date, lang)} · ` +
+              (bn ? `${ALERT_BN[e.alert] ?? escapeHtml(e.alert)} সতর্কতা` : `${escapeHtml(e.alert)} alert`),
+            { className: "map-tooltip" },
+          )
           .addTo(group);
       }
     }
-  }, [hazard, landslides, floods, fires, cyclones, theme]);
+  }, [hazard, landslides, floods, fires, cyclones, theme, lang]);
 
   // Region boxes for this disaster type; click one to select it.
   useEffect(() => {
@@ -163,14 +181,14 @@ export default function HazardMap({ hazard, zones, selectedZone, onSelectZone, l
           dashArray: selected ? undefined : "5 5",
         },
       );
-      rect.bindTooltip(escapeHtml(z.name), { className: "map-tooltip", direction: "top" });
+      rect.bindTooltip(escapeHtml(lang === "bn" ? (ZONE_BN[z.id]?.name ?? z.name) : z.name), { className: "map-tooltip", direction: "top" });
       rect.on("click", () => onSelectRef.current(z.id));
       group.addLayer(rect);
       // The reference pane ignores the pointer (labels shouldn't block the map); region boxes need clicks.
       const el = rect.getElement?.() as HTMLElement | undefined;
       if (el) el.style.pointerEvents = "auto";
     }
-  }, [zones, selectedZone, theme]);
+  }, [zones, selectedZone, theme, lang]);
 
   // Frame the selected region.
   useEffect(() => {

@@ -2,6 +2,7 @@
 
 import { Question, X } from "@phosphor-icons/react";
 import { useState, useSyncExternalStore } from "react";
+import { T, useT } from "@/lib/i18n";
 
 // Remembers (per browser) that someone has seen a page's guide. Storage can be blocked,
 // so every access is guarded; without it the guide simply shows again next visit.
@@ -31,8 +32,8 @@ export function QuickGuide({
   buttonClassName,
 }: {
   id: string;
-  title: string;
-  steps: string[];
+  title: React.ReactNode;
+  steps: React.ReactNode[];
   /** Where the card sits (absolute position classes). */
   cardClassName: string;
   /** Where the reopen button sits. */
@@ -44,6 +45,7 @@ export function QuickGuide({
     () => true, // never render the guide on the server
   );
   const [state, setState] = useState<"auto" | "open" | "closed">("auto");
+  const t = useT();
   const open = state === "open" || (state === "auto" && !seen);
 
   const close = () => {
@@ -59,23 +61,23 @@ export function QuickGuide({
         className={`z-[700] flex items-center gap-1.5 rounded-full bg-card px-3 py-2 text-sm text-ink-2 shadow-soft transition-colors hover:text-ink ${buttonClassName}`}
       >
         <Question size={16} className="text-accent" />
-        How to use this page
+        <T en="How to use this page" bn="এই পাতা কীভাবে ব্যবহার করবেন" />
       </button>
       {open && (
         <div
           role="dialog"
-          aria-label={title}
+          aria-label={t("How to use this page", "এই পাতা কীভাবে ব্যবহার করবেন")}
           className={`z-[800] w-[min(340px,calc(100%-2rem))] rounded-2xl border border-line bg-card p-5 shadow-soft ${cardClassName}`}
         >
           <div className="flex items-start justify-between gap-3">
             <h2 className="font-semibold text-ink">{title}</h2>
-            <button type="button" onClick={close} aria-label="Close guide" className="-m-1 rounded-full p-1 text-ink-3 hover:text-ink">
+            <button type="button" onClick={close} aria-label={t("Close guide", "নির্দেশিকা বন্ধ করুন")} className="-m-1 rounded-full p-1 text-ink-3 hover:text-ink">
               <X size={18} />
             </button>
           </div>
           <ol className="mt-3 space-y-2.5">
             {steps.map((s, i) => (
-              <li key={s} className="flex gap-3 text-sm leading-relaxed text-ink-2">
+              <li key={i} className="flex gap-3 text-sm leading-relaxed text-ink-2">
                 <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-accent-soft text-xs font-semibold text-accent">
                   {i + 1}
                 </span>
@@ -88,7 +90,7 @@ export function QuickGuide({
             onClick={close}
             className="mt-4 w-full rounded-full bg-accent py-2.5 text-sm font-medium text-accent-ink transition-all hover:bg-accent-hover active:scale-[0.98]"
           >
-            Got it
+            <T en="Got it" bn="বুঝেছি" />
           </button>
         </div>
       )}

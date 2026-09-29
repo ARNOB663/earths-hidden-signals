@@ -1,9 +1,12 @@
+import { bnNum } from "@/lib/bn";
+import { T } from "@/lib/i18n";
 import { formatSigned, trendToken, type VariableId } from "@/lib/trends";
 
 /* ---------- Region bars: one bar per region, left = decrease, right = increase ---------- */
 
 export interface RegionBar {
   name: string;
+  nameBn: string;
   value: number;
   significant: boolean;
 }
@@ -13,6 +16,7 @@ export function RegionBars({
   limit,
   variable,
   unit,
+  unitBn,
   decimals,
   label,
 }: {
@@ -20,12 +24,13 @@ export function RegionBars({
   limit: number;
   variable: VariableId;
   unit: string;
+  unitBn: string;
   decimals: number;
-  label: string;
+  label: React.ReactNode;
 }) {
   const sorted = [...bars].sort((a, b) => b.value - a.value);
   return (
-    <figure className="rounded-2xl bg-card p-5 shadow-soft" aria-label={label}>
+    <figure className="rounded-2xl bg-card p-5 shadow-soft">
       <figcaption className="mb-3 text-sm font-medium text-ink">{label}</figcaption>
       <div className="space-y-2">
         {sorted.map((b) => {
@@ -34,7 +39,7 @@ export function RegionBars({
           return (
             <div key={b.name} className="grid grid-cols-[minmax(0,8.5rem)_1fr] items-center gap-3 text-sm sm:grid-cols-[minmax(0,11rem)_1fr]">
               <span className="truncate text-ink-2" title={b.name}>
-                {b.name}
+                <T en={b.name} bn={b.nameBn} />
               </span>
               <div className="relative h-7">
                 <div className="absolute inset-y-0 left-1/2 w-px bg-line" />
@@ -59,7 +64,9 @@ export function RegionBars({
           );
         })}
       </div>
-      <p className="mt-3 text-xs text-ink-3">{unit}. Faded bars: no clear change.</p>
+      <p className="mt-3 text-xs text-ink-3">
+        <T en={`${unit}. Faded bars: no clear change.`} bn={`${unitBn}। হালকা দণ্ড: স্পষ্ট পরিবর্তন নেই।`} />
+      </p>
     </figure>
   );
 }
@@ -67,6 +74,7 @@ export function RegionBars({
 /* ---------- Events above, weather below, on the same years ---------- */
 
 export function EventDriverChart({
+  id,
   title,
   years,
   counts,
@@ -78,13 +86,15 @@ export function EventDriverChart({
   driverDecimals,
   driverUnit,
 }: {
-  title: string;
+  /** Used to tie each small chart to its label for screen readers. */
+  id: string;
+  title: React.ReactNode;
   years: number[];
   counts: number[];
   highYears: number[];
   driverValues: number[];
-  eventLabel: string;
-  driverLabel: string;
+  eventLabel: React.ReactNode;
+  driverLabel: React.ReactNode;
   eventColor: string;
   driverDecimals: number;
   driverUnit: string;
@@ -102,8 +112,10 @@ export function EventDriverChart({
   return (
     <figure className="rounded-2xl bg-card p-5 shadow-soft">
       <figcaption className="font-medium text-ink">{title}</figcaption>
-      <div className="mt-3 text-xs text-ink-3">{eventLabel}</div>
-      <svg viewBox={`0 0 ${W} 86`} className="mt-1 block h-auto w-full" role="img" aria-label={`${eventLabel} per year`}>
+      <div id={`${id}-events`} className="mt-3 text-xs text-ink-3">
+        {eventLabel}
+      </div>
+      <svg viewBox={`0 0 ${W} 86`} className="mt-1 block h-auto w-full" role="img" aria-labelledby={`${id}-events`}>
         {counts.map((c, i) => {
           const h = (c / maxC) * 80;
           return (
@@ -122,8 +134,10 @@ export function EventDriverChart({
           );
         })}
       </svg>
-      <div className="mt-3 text-xs text-ink-3">{driverLabel}</div>
-      <svg viewBox={`0 0 ${W} 76`} className="mt-1 block h-auto w-full" role="img" aria-label={`${driverLabel} per year`}>
+      <div id={`${id}-driver`} className="mt-3 text-xs text-ink-3">
+        {driverLabel}
+      </div>
+      <svg viewBox={`0 0 ${W} 76`} className="mt-1 block h-auto w-full" role="img" aria-labelledby={`${id}-driver`}>
         {years.map((yr, i) =>
           high.has(yr) ? <rect key={yr} x={cx(i) - step / 2} y={0} width={step} height={76} fill="var(--ink)" opacity={0.05} /> : null,
         )}
@@ -159,7 +173,7 @@ export function PercentileBar({
   highEvent,
   color,
 }: {
-  label: string;
+  label: React.ReactNode;
   latestYear: number;
   latest: number;
   highEvent: number;
@@ -182,15 +196,21 @@ export function PercentileBar({
         />
       </div>
       <div className="mt-1 flex justify-between text-xs text-ink-3">
-        <span>Lowest year</span>
-        <span>Highest year</span>
+        <span>
+          <T en="Lowest year" bn="সবচেয়ে কম যে বছর" />
+        </span>
+        <span>
+          <T en="Highest year" bn="সবচেয়ে বেশি যে বছর" />
+        </span>
       </div>
       <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-sm text-ink-2">
         <span className="flex items-center gap-1.5">
-          <span className="h-3 w-3 rounded-full" style={{ background: color }} /> {latestYear}: higher than {latest}% of years
+          <span className="h-3 w-3 rounded-full" style={{ background: color }} />{" "}
+          <T en={`${latestYear}: higher than ${latest}% of years`} bn={`${bnNum(latestYear)}: ${bnNum(latest)}% বছরের চেয়ে বেশি`} />
         </span>
         <span className="flex items-center gap-1.5">
-          <span className="h-3.5 w-0.5 rounded bg-ink-3" /> Worst years: about {highEvent}%
+          <span className="h-3.5 w-0.5 rounded bg-ink-3" />{" "}
+          <T en={`Worst years: about ${highEvent}%`} bn={`সবচেয়ে খারাপ বছরগুলো: প্রায় ${bnNum(highEvent)}%`} />
         </span>
       </div>
     </div>

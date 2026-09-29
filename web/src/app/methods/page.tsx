@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { readCrosscheck, readManifest, readTrendZones } from "@/lib/data";
 import { CITATION } from "@/lib/download";
+import { T } from "@/lib/i18n";
 import { agreement, formatSigned, type Agreement, type TrendSummary } from "@/lib/trends";
 
 export const metadata: Metadata = { title: "Methods · Earth's Hidden Signals" };
@@ -9,10 +10,30 @@ export const metadata: Metadata = { title: "Methods · Earth's Hidden Signals" }
 const REPO = "https://github.com/ARNOB663/earths-hidden-signals";
 
 const QUESTIONS = [
-  { q: "What is changing?", a: "Surface temperature and rainfall, plus the hazard events that follow them." },
-  { q: "Where?", a: "Every land grid cell in South Asia (5–38°N, 60–100°E), and eight hazard regions drawn by geography, not borders." },
-  { q: "How much?", a: "Sen's slope: the rate of change per decade, with a 95% confidence range." },
-  { q: "Is it significant?", a: "A Mann–Kendall test corrected for autocorrelation, plus a map-wide false-discovery check." },
+  {
+    q: "What is changing?",
+    a: "Surface temperature and rainfall, plus the hazard events that follow them.",
+    qBn: "কী বদলাচ্ছে?",
+    aBn: "ভূপৃষ্ঠের তাপমাত্রা ও বৃষ্টি, আর এগুলোর পরে যেসব দুর্যোগ ঘটে।",
+  },
+  {
+    q: "Where?",
+    a: "Every land grid cell in South Asia (5–38°N, 60–100°E), and eight hazard regions drawn by geography, not borders.",
+    qBn: "কোথায়?",
+    aBn: "দক্ষিণ এশিয়ার (৫–৩৮° উ, ৬০–১০০° পূ) প্রতিটি স্থলভাগের বর্গ, আর দেশের সীমানা নয়, ভূগোল দেখে আঁকা আটটি দুর্যোগ-অঞ্চল।",
+  },
+  {
+    q: "How much?",
+    a: "Sen's slope: the rate of change per decade, with a 95% confidence range.",
+    qBn: "কতটা?",
+    aBn: "সেনের ঢাল (Sen's slope): প্রতি দশকে পরিবর্তনের হার, ৯৫% আস্থা-সীমাসহ।",
+  },
+  {
+    q: "Is it significant?",
+    a: "A Mann–Kendall test corrected for autocorrelation, plus a map-wide false-discovery check.",
+    qBn: "এটা কি সত্যিকারের পরিবর্তন?",
+    aBn: "স্বসম্পর্ক (autocorrelation) সংশোধিত ম্যান-কেন্ডাল পরীক্ষা, আর পুরো মানচিত্রজুড়ে ভুল-আবিষ্কার (FDR) যাচাই।",
+  },
 ];
 
 const REFERENCES = [
@@ -36,18 +57,37 @@ export default async function MethodsPage() {
 
   return (
     <article className="mx-auto w-full max-w-3xl px-4 pb-24 pt-12 leading-relaxed text-ink-2 sm:px-6">
-      <p className="text-sm font-medium text-accent">How it works</p>
-      <h1 className="mt-2 text-4xl font-semibold tracking-tight text-ink">How we know a change is real</h1>
-      <p className="mt-4 text-lg text-ink-2">
-        A line on a chart that goes up is not yet a trend. We check that the data is consistent over time, test whether
-        the change could be chance, and say clearly when it could.
+      <p className="text-sm font-medium text-accent">
+        <T en="How it works" bn="কীভাবে কাজ করে" />
       </p>
+      <h1 className="mt-2 text-4xl font-semibold tracking-tight text-ink">
+        <T en="How we know a change is real" bn="পরিবর্তনটা যে সত্যি, তা আমরা কীভাবে জানি" />
+      </h1>
+      <p className="mt-4 text-lg text-ink-2">
+        <T
+          en="A line on a chart that goes up is not yet a trend. We check that the data is consistent over time, test whether the change could be chance, and say clearly when it could."
+          bn="চার্টে একটা রেখা ওপরে উঠলেই তা প্রবণতা নয়। আমরা দেখি তথ্য সময়ের সাথে সামঞ্জস্যপূর্ণ কি না, পরীক্ষা করি পরিবর্তনটা কাকতালীয় হতে পারে কি না, আর হতে পারলে তা স্পষ্ট করে বলি।"
+        />
+      </p>
+      <T
+        en={null}
+        bn={
+          <p className="mt-4 rounded-2xl bg-accent-soft px-4 py-3 text-sm text-ink">
+            এই পাতার বাকি অংশ বিজ্ঞানী ও বিচারকদের জন্য, তাই প্রযুক্তিগত বিবরণ ইংরেজিতে রাখা হয়েছে। সহজ ব্যাখ্যার জন্য
+            &ldquo;গল্পটা&rdquo; পাতা দেখুন।
+          </p>
+        }
+      />
 
       <div className="mt-10 grid gap-3 sm:grid-cols-2">
-        {QUESTIONS.map(({ q, a }) => (
+        {QUESTIONS.map(({ q, a, qBn, aBn }) => (
           <div key={q} className="rounded-2xl bg-card p-5 shadow-soft">
-            <div className="font-semibold text-ink">{q}</div>
-            <p className="mt-1 text-sm text-ink-2">{a}</p>
+            <div className="font-semibold text-ink">
+              <T en={q} bn={qBn} />
+            </div>
+            <p className="mt-1 text-sm text-ink-2">
+              <T en={a} bn={aBn} />
+            </p>
           </div>
         ))}
       </div>

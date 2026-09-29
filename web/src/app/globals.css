@@ -99,7 +99,7 @@
   --color-watch: var(--watch);
   --color-watch-soft: var(--watch-soft);
   --color-good: var(--good);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-geist-sans), var(--font-bn);
   --font-mono: var(--font-geist-mono);
 }
 
@@ -110,7 +110,7 @@ html {
 body {
   background: var(--page);
   color: var(--ink);
-  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-family: var(--font-geist-sans), var(--font-bn), system-ui, sans-serif;
   transition: background-color 200ms ease, color 200ms ease;
 }
 
@@ -118,6 +118,11 @@ h1,
 h2,
 h3 {
   text-wrap: balance;
+}
+
+/* Bangla script needs a little more line height to read comfortably. */
+html[lang="bn"] body {
+  line-height: 1.65;
 }
 p {
   text-wrap: pretty;

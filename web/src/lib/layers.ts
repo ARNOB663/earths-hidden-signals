@@ -17,6 +17,8 @@ interface BaseLayer {
   /** Why this variable matters for the project's hazard story. */
   relevance: string;
   sourceUrl: string;
+  /** Bangla versions of the texts above. */
+  bn: { shortTitle: string; description: string; relevance: string; unit?: string };
 }
 
 export interface GibsLayerDef extends BaseLayer {
@@ -50,6 +52,12 @@ export const LAYERS: LayerDef[] = [
     id: "lst-day",
     title: "Land Surface Temperature (Day)",
     shortTitle: "Ground heat",
+    bn: {
+      shortTitle: "মাটির তাপ",
+      description: "দিনের বেলা মাটির উপরিভাগ কতটা গরম হয়, নাসার টেরা স্যাটেলাইট মহাকাশ থেকে প্রতি মাসে তা মাপে।",
+      relevance: "খুব গরম, শুকনো মাটি মাটি ও গাছপালাকে শুকিয়ে দেয়, ফলে দাবানল ও তাপজনিত বিপদ বাড়ে।",
+      unit: "°সে",
+    },
     category: "heat",
     mission: "MODIS · Terra",
     gibsId: "MODIS_Terra_L3_Land_Surface_Temp_Monthly_Day",
@@ -69,6 +77,12 @@ export const LAYERS: LayerDef[] = [
     id: "air-temp",
     title: "Air Temperature (2 m)",
     shortTitle: "Air temperature",
+    bn: {
+      shortTitle: "বাতাসের তাপমাত্রা",
+      description: "মাটি থেকে ২ মিটার উপরে বাতাস কতটা গরম, ১৯৮০ সাল থেকে প্রতি মাসে। তথ্য নাসার MERRA-2 আবহাওয়া মডেল থেকে।",
+      relevance: "এটি এখানকার সবচেয়ে দীর্ঘ রেকর্ড, তাই অঞ্চলটি কতটা গরম হয়েছে তা দেখার জন্য এটিই সেরা স্তর।",
+      unit: "°সে",
+    },
     category: "heat",
     mission: "MERRA-2 · NASA GMAO model",
     gibsId: "MERRA2_2m_Air_Temperature_Monthly",
@@ -88,6 +102,12 @@ export const LAYERS: LayerDef[] = [
     id: "precip",
     title: "Rainfall Rate (Monthly)",
     shortTitle: "Rain",
+    bn: {
+      shortTitle: "বৃষ্টি",
+      description: "প্রতিদিন কত বৃষ্টি হয়, মাসের গড় হিসেবে। নাসার GLDAS মডেল স্যাটেলাইট ও বৃষ্টিমাপক যন্ত্রের তথ্য মেলায়।",
+      relevance: "বর্ষার ভারী বৃষ্টি সমতলে বন্যা আর ভেজা পাহাড়ি ঢালে ভূমিধস ঘটায়।",
+      unit: "মিমি/দিন",
+    },
     category: "water",
     mission: "GLDAS · Noah land model",
     gibsId: "GLDAS_Surface_Total_Precipitation_Rate_Monthly",
@@ -108,6 +128,12 @@ export const LAYERS: LayerDef[] = [
     id: "ndvi",
     title: "Vegetation Greenness (NDVI)",
     shortTitle: "Greenness",
+    bn: {
+      shortTitle: "সবুজের পরিমাণ",
+      description: "জমি কতটা সবুজ ও পাতায় ভরা। খালি জমি প্রায় ০, ঘন বন প্রায় ১।",
+      relevance: "শুষ্ক মৌসুমে গাছপালা বাদামি হয়ে গেলে তা আগুনের জ্বালানি হয়ে ওঠে।",
+      unit: "সবুজ (০ থেকে ১)",
+    },
     category: "vegetation",
     mission: "MODIS · Terra",
     gibsId: "MODIS_Terra_L3_NDVI_Monthly",
@@ -127,6 +153,11 @@ export const LAYERS: LayerDef[] = [
     id: "forest-loss",
     title: "Tree Cover Loss (Deforestation)",
     shortTitle: "Forest loss",
+    bn: {
+      shortTitle: "বন উজাড়",
+      description: "কোথায়, কোন বছর গাছ কাটা হয়েছে বা পুড়েছে, ল্যান্ডস্যাট স্যাটেলাইট ৩০ মিটার পর্যন্ত খুঁটিনাটিতে দেখে।",
+      relevance: "গাছ হারালে ঢাল দুর্বল হয় (বেশি ভূমিধস) আর বৃষ্টির পানি দ্রুত গড়িয়ে যায় (বেশি বন্যা)।",
+    },
     category: "forest",
     mission: "Landsat (NASA/USGS) · Hansen/UMD GFC",
     tileUrl: "https://tiles.globalforestwatch.org/umd_tree_cover_loss/v1.13/dynamic/{z}/{x}/{y}.png",

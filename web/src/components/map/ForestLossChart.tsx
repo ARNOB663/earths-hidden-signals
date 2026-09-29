@@ -1,3 +1,4 @@
+import { T } from "@/lib/i18n";
 import { lossYearColor } from "./lossColors";
 
 interface Props {
@@ -13,7 +14,9 @@ export function ForestLossChart({ totals, firstYear, yearRange }: Props) {
   }
   const max = Math.max(...totals);
   if (max === 0) {
-    return <p className="text-sm text-ink-3">No forest loss found in this part of the map.</p>;
+    return <p className="text-sm text-ink-3">
+        <T en="No forest loss found in this part of the map." bn="মানচিত্রের এই অংশে বন উজাড় পাওয়া যায়নি।" />
+      </p>;
   }
   const lastYear = firstYear + totals.length - 1;
   const span = Math.max(1, lastYear - firstYear);
@@ -44,7 +47,10 @@ export function ForestLossChart({ totals, firstYear, yearRange }: Props) {
         <span>{lastYear}</span>
       </div>
       <p className="mt-2 text-xs leading-relaxed text-ink-3">
-        Taller bar = more forest lost that year, compared with the worst year. Hover a bar for details.
+        <T
+          en="Taller bar = more forest lost that year, compared with the worst year. Hover a bar for details."
+          bn="লম্বা দণ্ড = ওই বছর বেশি বন উজাড়, সবচেয়ে খারাপ বছরের তুলনায়। বিস্তারিত দেখতে দণ্ডের উপর মাউস রাখুন।"
+        />
       </p>
     </div>
   );

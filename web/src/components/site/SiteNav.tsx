@@ -4,15 +4,16 @@ import { List, MagnifyingGlass, Monitor, Moon, Sun, X } from "@phosphor-icons/re
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { setLang, T, useLang, useT } from "@/lib/i18n";
 import { setThemePreference, systemTheme, useThemePreference, type ThemePreference } from "@/lib/theme";
 
 export const TABS = [
-  { href: "/", label: "Home" },
-  { href: "/findings", label: "The story" },
-  { href: "/explore", label: "Satellite map" },
-  { href: "/trends", label: "Climate trends" },
-  { href: "/hazards", label: "Disaster risk" },
-  { href: "/methods", label: "How it works" },
+  { href: "/", label: "Home", bn: "হোম" },
+  { href: "/findings", label: "The story", bn: "মূল গল্প" },
+  { href: "/explore", label: "Satellite map", bn: "স্যাটেলাইট মানচিত্র" },
+  { href: "/trends", label: "Climate trends", bn: "জলবায়ুর প্রবণতা" },
+  { href: "/hazards", label: "Disaster risk", bn: "দুর্যোগের ঝুঁকি" },
+  { href: "/methods", label: "How it works", bn: "কীভাবে কাজ করে" },
 ];
 
 const isActive = (pathname: string, href: string) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
@@ -20,6 +21,7 @@ const isActive = (pathname: string, href: string) => (href === "/" ? pathname ==
 export function SiteNav() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const t = useT();
 
   // Close the mobile menu after navigating.
   const [lastPath, setLastPath] = useState(pathname);
@@ -33,7 +35,7 @@ export function SiteNav() {
       <div className="mx-auto flex h-16 max-w-[1440px] items-center gap-4 px-4 sm:px-6">
         <Link href="/" className="flex shrink-0 items-center gap-2.5 rounded-lg" aria-label="Earth's Hidden Signals, home">
           <Logo />
-          <span className="text-[15px] font-semibold tracking-tight text-ink">Earth&apos;s Hidden Signals</span>
+          <span className="hidden text-[15px] font-semibold tracking-tight text-ink min-[400px]:inline">Earth&apos;s Hidden Signals</span>
         </Link>
 
         <nav aria-label="Main" className="ml-4 hidden items-center gap-1 lg:flex">
@@ -48,7 +50,7 @@ export function SiteNav() {
                   active ? "bg-card font-medium text-ink shadow-soft" : "text-ink-2 hover:bg-card/60 hover:text-ink"
                 }`}
               >
-                {tab.label}
+                <T en={tab.label} bn={tab.bn} />
               </Link>
             );
           })}
@@ -57,22 +59,25 @@ export function SiteNav() {
         <div className="ml-auto flex items-center gap-2">
           <Link
             href="/places"
-            aria-label="Find a place"
-            title="Find a place"
+            aria-label={t("Find a place", "জায়গা খুঁজুন")}
+            title={t("Find a place", "জায়গা খুঁজুন")}
             className={`flex h-10 items-center gap-2 rounded-full px-3 text-sm transition-colors hover:bg-card ${
               pathname.startsWith("/places") ? "bg-card font-medium text-ink shadow-soft" : "text-ink-2"
             }`}
           >
             <MagnifyingGlass size={18} />
-            <span className="hidden xl:inline">Find a place</span>
+            <span className="hidden xl:inline">
+              <T en="Find a place" bn="জায়গা খুঁজুন" />
+            </span>
           </Link>
+          <LanguageSwitcher />
           <ThemeSwitcher />
           <button
             type="button"
             onClick={() => setOpen((o) => !o)}
             aria-expanded={open}
             aria-controls="mobile-menu"
-            aria-label={open ? "Close menu" : "Open menu"}
+            aria-label={open ? t("Close menu", "মেনু বন্ধ করুন") : t("Open menu", "মেনু খুলুন")}
             className="grid h-10 w-10 place-items-center rounded-full text-ink transition-colors hover:bg-card lg:hidden"
           >
             {open ? <X size={22} /> : <List size={22} />}
@@ -91,7 +96,7 @@ export function SiteNav() {
                 aria-current={active ? "page" : undefined}
                 className={`block rounded-xl px-4 py-3 text-base ${active ? "bg-card font-medium text-ink" : "text-ink-2"}`}
               >
-                {tab.label}
+                <T en={tab.label} bn={tab.bn} />
               </Link>
             );
           })}
@@ -111,14 +116,45 @@ function Logo() {
   );
 }
 
-const THEME_OPTIONS: { value: ThemePreference; label: string; Icon: typeof Sun }[] = [
-  { value: "system", label: "Match my device", Icon: Monitor },
-  { value: "light", label: "Light", Icon: Sun },
-  { value: "dark", label: "Dark", Icon: Moon },
+const THEME_OPTIONS: { value: ThemePreference; label: string; bn: string; Icon: typeof Sun }[] = [
+  { value: "system", label: "Match my device", bn: "ডিভাইসের মতো", Icon: Monitor },
+  { value: "light", label: "Light", bn: "আলো", Icon: Sun },
+  { value: "dark", label: "Dark", bn: "অন্ধকার", Icon: Moon },
 ];
+
+/** English / Bangla switch. */
+function LanguageSwitcher() {
+  const lang = useLang();
+  return (
+    <div role="radiogroup" aria-label="Language / ভাষা" className="flex rounded-full border border-line bg-card p-0.5 text-sm">
+      {(
+        [
+          ["en", "EN", "English"],
+          ["bn", "বাং", "বাংলা"],
+        ] as const
+      ).map(([value, short, full]) => (
+        <button
+          key={value}
+          type="button"
+          role="radio"
+          aria-checked={lang === value}
+          aria-label={full}
+          title={full}
+          onClick={() => setLang(value)}
+          className={`h-8 min-w-9 rounded-full px-2 transition-colors ${
+            lang === value ? "bg-accent font-medium text-accent-ink" : "text-ink-3 hover:text-ink"
+          }`}
+        >
+          {short}
+        </button>
+      ))}
+    </div>
+  );
+}
 
 function ThemeSwitcher() {
   const pref = useThemePreference();
+  const t = useT();
 
   // While following the device, react when the device switches between light and dark.
   useEffect(() => {
@@ -132,15 +168,15 @@ function ThemeSwitcher() {
   }, [pref]);
 
   return (
-    <div role="radiogroup" aria-label="Colour theme" className="flex rounded-full border border-line bg-card p-0.5">
-      {THEME_OPTIONS.map(({ value, label, Icon }) => (
+    <div role="radiogroup" aria-label={t("Colour theme", "রঙের ধরন")} className="flex rounded-full border border-line bg-card p-0.5">
+      {THEME_OPTIONS.map(({ value, label, bn, Icon }) => (
         <button
           key={value}
           type="button"
           role="radio"
           aria-checked={pref === value}
-          title={label}
-          aria-label={label}
+          title={t(label, bn)}
+          aria-label={t(label, bn)}
           onClick={() => setThemePreference(value)}
           className={`grid h-8 w-8 place-items-center rounded-full transition-colors ${
             pref === value ? "bg-accent text-accent-ink" : "text-ink-3 hover:text-ink"

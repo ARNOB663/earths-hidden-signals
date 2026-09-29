@@ -3,11 +3,15 @@
 import { MagnifyingGlass, MapPin } from "@phosphor-icons/react";
 import { useRouter } from "next/navigation";
 import { useId, useMemo, useState } from "react";
+import { useT } from "@/lib/i18n";
+import { COUNTRY_BN, PLACE_BN } from "@/lib/names";
 import { PLACES } from "@/lib/places";
 
 /** Type a city name, pick it, and go to its place report. */
-export function PlaceSearch({ placeholder = "Search a city, e.g. Dhaka or Kathmandu", large = false }: { placeholder?: string; large?: boolean }) {
+export function PlaceSearch({ large = false }: { large?: boolean }) {
   const router = useRouter();
+  const t = useT();
+  const placeholder = t("Search a city, e.g. Dhaka or Kathmandu", "শহর খুঁজুন, যেমন ঢাকা বা কাঠমান্ডু");
   const listId = useId();
   const [query, setQuery] = useState("");
   const [open, setOpen] = useState(false);
@@ -16,7 +20,8 @@ export function PlaceSearch({ placeholder = "Search a city, e.g. Dhaka or Kathma
   const results = useMemo(() => {
     const q = query.trim().toLowerCase();
     if (!q) return [];
-    return PLACES.filter((p) => `${p.name} ${p.country}`.toLowerCase().includes(q))
+    // Match English or Bangla names, so "ঢাকা" finds Dhaka too.
+    return PLACES.filter((p) => `${p.name} ${p.country} ${PLACE_BN[p.id] ?? ""} ${COUNTRY_BN[p.country] ?? ""}`.toLowerCase().includes(q))
       .sort((a, b) => Number(b.name.toLowerCase().startsWith(q)) - Number(a.name.toLowerCase().startsWith(q)))
       .slice(0, 8);
   }, [query]);
@@ -40,7 +45,7 @@ export function PlaceSearch({ placeholder = "Search a city, e.g. Dhaka or Kathma
         aria-controls={listId}
         aria-autocomplete="list"
         aria-activedescendant={open && results[active] ? `${listId}-${results[active].id}` : undefined}
-        aria-label="Search for a city"
+        aria-label={t("Search for a city", "শহর খুঁজুন")}
         placeholder={placeholder}
         value={query}
         onChange={(e) => {
@@ -75,7 +80,7 @@ export function PlaceSearch({ placeholder = "Search a city, e.g. Dhaka or Kathma
           className="absolute left-0 right-0 top-full z-[1100] mt-2 overflow-hidden rounded-2xl border border-line bg-card py-1 shadow-soft"
         >
           {results.length === 0 ? (
-            <li className="px-4 py-3 text-sm text-ink-3">No match. Try a larger city nearby.</li>
+            <li className="px-4 py-3 text-sm text-ink-3">{t("No match. Try a larger city nearby.", "মিল পাওয়া যায়নি। কাছাকাছি বড় কোনো শহর চেষ্টা করুন।")}</li>
           ) : (
             results.map((p, i) => (
               <li
@@ -91,8 +96,8 @@ export function PlaceSearch({ placeholder = "Search a city, e.g. Dhaka or Kathma
                 className={`flex cursor-pointer items-center gap-3 px-4 py-2.5 text-sm ${i === active ? "bg-sunken text-ink" : "text-ink-2"}`}
               >
                 <MapPin size={16} className="shrink-0 text-accent" />
-                <span className="font-medium text-ink">{p.name}</span>
-                <span className="text-ink-3">{p.country}</span>
+                <span className="font-medium text-ink">{t(p.name, PLACE_BN[p.id] ?? p.name)}</span>
+                <span className="text-ink-3">{t(p.country, COUNTRY_BN[p.country] ?? p.country)}</span>
               </li>
             ))
           )}
