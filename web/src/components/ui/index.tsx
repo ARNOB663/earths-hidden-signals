@@ -1,5 +1,6 @@
 // Small shared building blocks. None of them use hooks, so they work on server and client pages.
 
+import { CaretDown } from "@phosphor-icons/react/ssr";
 import { T } from "@/lib/i18n";
 import { sureness } from "@/lib/plain";
 import { formatSigned, trendLegendTokens, type VariableId } from "@/lib/trends";
@@ -130,10 +131,16 @@ export function Numbers({
 }) {
   return (
     <details className="group rounded-xl border border-line">
-      <summary className="flex cursor-pointer list-none items-center justify-between px-4 py-3 text-sm font-medium text-ink-2 hover:text-ink">
+      <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-3 rounded-xl px-4 py-3 text-sm font-medium text-ink-2 transition-colors hover:bg-sunken hover:text-ink">
         {title}
-        <span aria-hidden className="text-ink-3 transition-transform group-open:rotate-180">
-          ▾
+        <span className="flex shrink-0 items-center gap-1 text-xs font-normal text-ink-3">
+          <span className="group-open:hidden">
+            <T en="Open" bn="খুলুন" />
+          </span>
+          <span className="hidden group-open:inline">
+            <T en="Close" bn="বন্ধ" />
+          </span>
+          <CaretDown size={16} aria-hidden className="transition-transform group-open:rotate-180" />
         </span>
       </summary>
       <div className="border-t border-line px-4 py-3 text-sm leading-relaxed text-ink-2">{children}</div>

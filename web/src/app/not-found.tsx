@@ -1,5 +1,8 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { T } from "@/lib/i18n";
+
+export const metadata: Metadata = { title: "Page not found · Earth's Hidden Signals" };
 
 export default function NotFound() {
   return (
@@ -19,11 +22,11 @@ export default function NotFound() {
       <div className="mt-8 flex flex-wrap items-center gap-5">
         <Link
           href="/"
-          className="rounded-full bg-accent px-6 py-3 font-medium text-accent-ink transition-all hover:bg-accent-hover active:scale-[0.98]"
+          className="rounded-full bg-accent-strong px-6 py-3 font-medium text-accent-ink transition-all hover:bg-accent-hover active:scale-[0.98]"
         >
           <T en="Go to the home page" bn="প্রথম পাতায় যান" />
         </Link>
-        <Link href="/findings" className="font-medium text-accent hover:underline">
+        <Link href="/findings" className="inline-flex min-h-10 items-center font-medium text-accent hover:underline">
           <T en="Read the story" bn="গল্পটা পড়ুন" />
         </Link>
       </div>

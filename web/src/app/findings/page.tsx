@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { MiniGridMap } from "@/components/findings/MiniGridMap";
 import { EventDriverChart, PercentileBar, RegionBars, type RegionBar } from "@/components/findings/parts";
+import { StoryNav } from "@/components/findings/StoryNav";
 import { SeriesChart } from "@/components/trends/SeriesChart";
 import { Dots, Numbers, Sureness } from "@/components/ui";
 import { bnNum } from "@/lib/bn";
@@ -136,19 +137,16 @@ export default async function StoryPage() {
         </p>
       </header>
 
-      <nav aria-label="Findings" className="mt-8 flex flex-wrap gap-2">
-        {[
-          ["warming", "1. Getting warmer", "১. গরম বাড়ছে"],
-          ["spring", "2. Spring heats fastest", "২. বসন্তে গরম বাড়ছে সবচেয়ে দ্রুত"],
-          ["rain", "3. Rain is moving", "৩. বৃষ্টির জায়গা বদলাচ্ছে"],
-          ["disasters", "4. Disasters follow the weather", "৪. দুর্যোগ আবহাওয়ার পথ ধরে"],
-          ["watch", `5. ${last}: places to watch`, `৫. ${lastBn}: যেখানে নজর দরকার`],
-        ].map(([id, en, bn]) => (
-          <a key={id} href={`#${id}`} className="rounded-full bg-card px-4 py-2 text-sm text-ink-2 shadow-soft transition-colors hover:text-ink">
-            {tx(en, bn)}
-          </a>
-        ))}
-      </nav>
+      <StoryNav
+        items={[
+          { id: "warming", en: "1. Getting warmer", bn: "১. গরম বাড়ছে" },
+          { id: "spring", en: "2. Spring heats fastest", bn: "২. বসন্তে গরম বাড়ছে সবচেয়ে দ্রুত" },
+          { id: "rain", en: "3. Rain is moving", bn: "৩. বৃষ্টির জায়গা বদলাচ্ছে" },
+          { id: "disasters", en: "4. Disasters follow the weather", bn: "৪. দুর্যোগ আবহাওয়ার পথ ধরে" },
+          { id: "watch", en: `5. Where to prepare in ${last}`, bn: `৫. ${lastBn}: কোথায় প্রস্তুতি দরকার` },
+          { id: "glossary", en: "Words explained", bn: "শব্দের মানে" },
+        ]}
+      />
 
       <Finding
         id="warming"
@@ -476,6 +474,7 @@ export default async function StoryPage() {
               eventLabel={tx("Fires spotted each spring", "প্রতি বসন্তে দেখা আগুন")}
               driverLabel={tx("How hot that spring was", "সেই বসন্ত কতটা গরম ছিল")}
               driverUnit="°C above normal"
+              unitShort={["°C", "°সে"]}
               eventColor={EVENT_COLOR.wildfire}
               driverDecimals={2}
             />
@@ -489,6 +488,7 @@ export default async function StoryPage() {
               eventLabel={tx("Landslides each monsoon", "প্রতি বর্ষায় ভূমিধস")}
               driverLabel={tx("How much monsoon rain fell", "বর্ষায় কত বৃষ্টি হয়েছে")}
               driverUnit="mm"
+              unitShort={["mm", "মিমি"]}
               eventColor={EVENT_COLOR.landslide}
               driverDecimals={0}
             />
@@ -502,14 +502,15 @@ export default async function StoryPage() {
               eventLabel={tx("Flood alerts each year", "প্রতি বছর বন্যা সতর্কতা")}
               driverLabel={tx("How much monsoon rain fell", "বর্ষায় কত বৃষ্টি হয়েছে")}
               driverUnit="mm"
+              unitShort={["mm", "মিমি"]}
               eventColor={EVENT_COLOR.flood}
               driverDecimals={0}
             />
           </div>
         }
         visualNote={tx(
-          "Strong-coloured bars are the worst years. When the big dots below them sit high, the disasters and the weather moved together.",
-          "গাঢ় রঙের দণ্ডগুলো সবচেয়ে খারাপ বছর। তার নিচের বড় বিন্দুগুলো উঁচুতে থাকলে বুঝবেন, দুর্যোগ আর আবহাওয়া একসাথে ওঠানামা করেছে।",
+          "Top: disasters each year; the dark bars are the worst years. Bottom: the weather that season, with those same worst years shaded and marked with big dots. When the big dots sit near the top, bad weather and bad disaster years came together.",
+          "উপরে: প্রতি বছরের দুর্যোগ; গাঢ় দণ্ডগুলো সবচেয়ে খারাপ বছর। নিচে: সেই মৌসুমের আবহাওয়া, একই খারাপ বছরগুলো ছায়া ও বড় বিন্দু দিয়ে চিহ্নিত। বড় বিন্দুগুলো উপরের দিকে থাকলে বুঝবেন, খারাপ আবহাওয়া আর খারাপ দুর্যোগের বছর একসাথে এসেছে।",
         )}
         details={
           <>
@@ -527,7 +528,7 @@ export default async function StoryPage() {
         id="watch"
         n={5}
         icon={<UsersThree size={22} weight="duotone" />}
-        title={tx(`${last}: ${nWatch} place${plural} to watch`, `${lastBn}: ${bnNum(nWatch)}টি জায়গায় নজর দরকার`)}
+        title={tx(`Where to prepare in ${last}`, `${lastBn}: কোথায় প্রস্তুতি দরকার`)}
         big={tx(`${nWatch} region${plural}`, `${bnNum(nWatch)}টি অঞ্চল`)}
         bigNote={tx(`looked like past disaster years in ${last}`, `${lastBn} সালে আগের দুর্যোগের বছরগুলোর মতো দেখাচ্ছিল`)}
         story={
@@ -580,6 +581,7 @@ export default async function StoryPage() {
                 <PercentileBar
                   key={h.id}
                   label={tx(`${h.name}: ${d.label.toLowerCase()}`, `${zoneNameBn(h.id, h.name)}: ${driverNameBn(d.key)}`)}
+                  status={preparednessSignal(h).kind === "resembles" ? "watch" : "normal"}
                   latestYear={d.latest.year}
                   latest={d.latest.percentile}
                   highEvent={d.highEventYearsPercentile!}
@@ -643,11 +645,11 @@ export default async function StoryPage() {
       <div className="mt-16 flex flex-wrap items-center gap-4">
         <Link
           href="/trends"
-          className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 font-medium text-accent-ink transition-all hover:bg-accent-hover active:scale-[0.98]"
+          className="inline-flex items-center gap-2 rounded-full bg-accent-strong px-6 py-3 font-medium text-accent-ink transition-all hover:bg-accent-hover active:scale-[0.98]"
         >
           {tx("Explore the trends yourself", "নিজেই প্রবণতাগুলো ঘুরে দেখুন")} <ArrowRight size={18} />
         </Link>
-        <Link href="/hazards" className="font-medium text-accent hover:underline">
+        <Link href="/hazards" className="inline-flex min-h-10 items-center font-medium text-accent hover:underline">
           {tx("Check disaster risk by region", "অঞ্চলভিত্তিক দুর্যোগের ঝুঁকি দেখুন")}
         </Link>
       </div>
@@ -722,7 +724,7 @@ function Finding({
   );
 
   return (
-    <section id={id} className="mt-24 scroll-mt-24">
+    <section id={id} className="mt-24 scroll-mt-36">
       {wide ? (
         <>
           {text}
@@ -802,7 +804,7 @@ const TERMS: [string, string, string, string][] = [
 
 function Glossary() {
   return (
-    <section id="glossary" className="mt-24 scroll-mt-24">
+    <section id="glossary" className="mt-24 scroll-mt-36">
       <h2 className="text-2xl font-semibold text-ink">{tx("Words explained", "শব্দের মানে")}</h2>
       <dl className="mt-6 grid gap-4 sm:grid-cols-2">
         {TERMS.map(([term, def, termBn, defBn]) => (

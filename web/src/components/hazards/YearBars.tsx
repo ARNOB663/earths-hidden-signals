@@ -1,9 +1,8 @@
 "use client";
 
-import { DownloadSimple } from "@phosphor-icons/react";
 import { useState } from "react";
+import { DataActions } from "@/components/ui/DataActions";
 import { downloadCsv, slug } from "@/lib/download";
-import { T } from "@/lib/i18n";
 
 interface Props {
   labels: (string | number)[];
@@ -60,44 +59,37 @@ export function YearBars({ labels, values, highlight, color, unit, ariaLabel, he
           </div>
         )}
       </div>
-      <div className="mt-1.5 flex gap-[2px] text-[11px] text-ink-3">
+      <div className="mt-1.5 flex gap-[2px] text-[12px] text-ink-3">
         {labels.map((l, i) => (
           <span key={l} className="flex-1 text-center">
             {i % labelEvery === 0 ? l : ""}
           </span>
         ))}
       </div>
-      {csvTitle && (
-        <button
-          type="button"
-          onClick={() =>
-            downloadCsv(
-              slug(csvTitle),
-              ["period", unit],
-              labels.map((l, i) => [l, values[i]]),
-              csvTitle,
-            )
-          }
-          className="mt-2 inline-flex items-center gap-1.5 text-xs font-medium text-accent hover:underline"
-        >
-          <DownloadSimple size={14} /> <T en="Download the data (CSV)" bn="তথ্য ডাউনলোড করুন (CSV)" />
-        </button>
-      )}
-      <details className="mt-1 text-xs text-ink-3">
-        <summary className="cursor-pointer select-none hover:text-ink">
-          <T en="Show the data as a table" bn="তথ্য টেবিল আকারে দেখুন" />
-        </summary>
-        <table className="mt-1 w-full text-left tabular-nums">
+      <DataActions
+        onDownload={
+          csvTitle
+            ? () =>
+                downloadCsv(
+                  slug(csvTitle),
+                  ["period", unit],
+                  labels.map((l, i) => [l, values[i]]),
+                  csvTitle,
+                )
+            : undefined
+        }
+      >
+        <table className="w-full text-left tabular-nums">
           <tbody>
             {labels.map((l, i) => (
               <tr key={l} className="text-ink-2 odd:bg-sunken/60">
-                <td className="px-2 py-0.5">{l}</td>
-                <td className="px-2 py-0.5 text-right">{values[i].toLocaleString()}</td>
+                <td className="px-3 py-1">{l}</td>
+                <td className="px-3 py-1 text-right">{values[i].toLocaleString()}</td>
               </tr>
             ))}
           </tbody>
         </table>
-      </details>
+      </DataActions>
     </div>
   );
 }

@@ -37,11 +37,11 @@ export function RegionBars({
           // Bars use at most 40% of each half so the value label always fits inside the card.
           const w = Math.min(40, (Math.abs(b.value) / limit) * 40);
           return (
-            <div key={b.name} className="grid grid-cols-[minmax(0,8.5rem)_1fr] items-center gap-3 text-sm sm:grid-cols-[minmax(0,11rem)_1fr]">
-              <span className="truncate text-ink-2" title={b.name}>
+            <div key={b.name} className="grid grid-cols-[minmax(0,9rem)_1fr] items-center gap-3 text-sm sm:grid-cols-[minmax(0,12.5rem)_1fr]">
+              <span className="leading-snug text-ink-2">
                 <T en={b.name} bn={b.nameBn} />
               </span>
-              <div className="relative h-7">
+              <div className="relative h-8">
                 <div className="absolute inset-y-0 left-1/2 w-px bg-line" />
                 <div
                   className="absolute inset-y-1 rounded-md"
@@ -85,6 +85,7 @@ export function EventDriverChart({
   eventColor,
   driverDecimals,
   driverUnit,
+  unitShort,
 }: {
   /** Used to tie each small chart to its label for screen readers. */
   id: string;
@@ -98,6 +99,8 @@ export function EventDriverChart({
   eventColor: string;
   driverDecimals: number;
   driverUnit: string;
+  /** Short unit for the scale labels, English and Bangla (e.g. ["mm", "মিমি"]). */
+  unitShort: [string, string];
 }) {
   const W = 520;
   const step = W / years.length;
@@ -105,9 +108,13 @@ export function EventDriverChart({
   const maxC = Math.max(1, ...counts);
   const lo = Math.min(...driverValues);
   const hi = Math.max(...driverValues);
-  const dy = (v: number) => 8 + (1 - (v - lo) / (hi - lo || 1)) * 60;
+  const dy = (v: number) => 10 + (1 - (v - lo) / (hi - lo || 1)) * 90;
   const high = new Set(highYears);
   const line = driverValues.map((v, i) => `${i ? "L" : "M"}${cx(i).toFixed(1)},${dy(v).toFixed(1)}`).join("");
+  const scale = (v: number) => {
+    const n = v.toLocaleString("en-US", { maximumFractionDigits: driverDecimals, minimumFractionDigits: driverDecimals });
+    return <T en={`${n} ${unitShort[0]}`} bn={`${bnNum(n)} ${unitShort[1]}`} />;
+  };
 
   return (
     <figure className="rounded-2xl bg-card p-5 shadow-soft">
@@ -137,9 +144,12 @@ export function EventDriverChart({
       <div id={`${id}-driver`} className="mt-3 text-xs text-ink-3">
         {driverLabel}
       </div>
-      <svg viewBox={`0 0 ${W} 76`} className="mt-1 block h-auto w-full" role="img" aria-labelledby={`${id}-driver`}>
+      <div className="relative mt-1">
+      <span className="pointer-events-none absolute left-0 top-0 rounded bg-card/80 px-1 text-xs tabular-nums text-ink-3">{scale(hi)}</span>
+      <span className="pointer-events-none absolute bottom-0 left-0 rounded bg-card/80 px-1 text-xs tabular-nums text-ink-3">{scale(lo)}</span>
+      <svg viewBox={`0 0 ${W} 110`} className="block h-auto w-full" role="img" aria-labelledby={`${id}-driver`}>
         {years.map((yr, i) =>
-          high.has(yr) ? <rect key={yr} x={cx(i) - step / 2} y={0} width={step} height={76} fill="var(--ink)" opacity={0.05} /> : null,
+          high.has(yr) ? <rect key={yr} x={cx(i) - step / 2} y={0} width={step} height={110} fill="var(--ink)" opacity={0.05} /> : null,
         )}
         <path d={line} fill="none" stroke="var(--ink-2)" strokeWidth={2} strokeLinejoin="round" />
         {driverValues.map((v, i) => (
@@ -156,6 +166,7 @@ export function EventDriverChart({
           </circle>
         ))}
       </svg>
+      </div>
       <div className="mt-1 flex justify-between text-xs text-ink-3">
         <span>{years[0]}</span>
         <span>{years[years.length - 1]}</span>
@@ -172,8 +183,11 @@ export function PercentileBar({
   latest,
   highEvent,
   color,
+  status,
 }: {
   label: React.ReactNode;
+  /** Whether this year's weather looks like past disaster years here. */
+  status: "watch" | "normal";
   latestYear: number;
   latest: number;
   highEvent: number;
@@ -181,7 +195,18 @@ export function PercentileBar({
 }) {
   return (
     <div>
-      <div className="text-sm font-medium text-ink">{label}</div>
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <span className="text-sm font-medium text-ink">{label}</span>
+        {status === "watch" ? (
+          <span className="rounded-full bg-watch-soft px-2.5 py-0.5 text-xs font-medium text-watch">
+            <T en="Watch" bn="নজর দিন" />
+          </span>
+        ) : (
+          <span className="rounded-full bg-sunken px-2.5 py-0.5 text-xs text-ink-2">
+            <T en="Normal, for comparison" bn="স্বাভাবিক, তুলনার জন্য" />
+          </span>
+        )}
+      </div>
       <div className="relative mt-3 h-8">
         <div className="absolute inset-x-0 top-3 h-2 rounded-full bg-sunken" />
         <div

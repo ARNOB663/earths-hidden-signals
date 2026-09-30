@@ -12,12 +12,13 @@
   --line: #e2e0da;
   --ink: #1b1b19;
   --ink-2: #4f4e4a;
-  --ink-3: #75736d;
-  --accent: #2a78d6;
-  --accent-hover: #256abf;
+  --ink-3: #6b6964;
+  --accent: #1f66c1;
+  --accent-strong: #1f66c1;
+  --accent-hover: #1a58a8;
   --accent-ink: #ffffff;
   --accent-soft: #e6effa;
-  --watch: #b47600;
+  --watch: #8f5c00;
   --watch-soft: #fdf1d6;
   --good: #0b8a0b;
   --shadow: 30 28 24;
@@ -54,8 +55,9 @@
   --ink: #f4f3ef;
   --ink-2: #c3c2b7;
   --ink-3: #8f8e86;
-  --accent: #3987e5;
-  --accent-hover: #5598e7;
+  --accent: #5098ea;
+  --accent-strong: #2b6cc4;
+  --accent-hover: #2f70c9;
   --accent-ink: #ffffff;
   --accent-soft: #1b2939;
   --watch: #fab219;
@@ -93,6 +95,7 @@
   --color-ink-2: var(--ink-2);
   --color-ink-3: var(--ink-3);
   --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
   --color-accent-hover: var(--accent-hover);
   --color-accent-ink: var(--accent-ink);
   --color-accent-soft: var(--accent-soft);
@@ -199,5 +202,24 @@ p {
   *::after {
     transition-duration: 0ms !important;
     animation-duration: 0ms !important;
+  }
+}
+
+/* Sideways-scrolling rows (e.g. the story's finding chips) without a visible scrollbar. */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Phones: map pages fill the screen with a drag-up panel (see MapSheet). Pinch replaces the zoom
+   buttons, and Leaflet's scale and credits sit just above the panel's summary. */
+@media (max-width: 1023.98px) {
+  .map-shell .leaflet-control-zoom {
+    display: none;
+  }
+  .map-shell .leaflet-bottom {
+    bottom: var(--sheet-peek, 0px);
   }
 }

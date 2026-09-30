@@ -29,6 +29,12 @@ export interface GibsLayerDef extends BaseLayer {
   period: "month";
   conversion: Conversion;
   displayUnit: string;
+  /**
+   * How to draw the difference between two dates: the change that gets the strongest colour
+   * (display units), the unit shown, and which colour scheme ("temp" blue↔red, "rain" brown↔blue,
+   * "green" brown↔green).
+   */
+  diff: { range: number; unit: string; unitBn: string; kind: "temp" | "rain" | "green" };
   /** Used when the live GIBS catalog cannot be reached. */
   fallbackTimes: string[];
   fallbackColormap: string;
@@ -66,6 +72,7 @@ export const LAYERS: LayerDef[] = [
     period: "month",
     conversion: "kelvin-to-celsius",
     displayUnit: "°C",
+    diff: { range: 8, unit: "°C", unitBn: "°সে", kind: "temp" },
     description: "How hot the ground gets in the daytime, measured every month from space by NASA's Terra satellite.",
     relevance: "Very hot, dry ground dries out soil and plants, which makes wildfires and heat stress more likely.",
     sourceUrl: "https://lpdaac.usgs.gov/products/mod11c3v061/",
@@ -91,6 +98,7 @@ export const LAYERS: LayerDef[] = [
     period: "month",
     conversion: "kelvin-to-celsius",
     displayUnit: "°C",
+    diff: { range: 3, unit: "°C", unitBn: "°সে", kind: "temp" },
     description: "How warm the air is, 2 metres above the ground, every month since 1980. It comes from NASA's MERRA-2 weather model.",
     relevance: "This is the longest record here, so it is the best layer for seeing how much warmer the region has become.",
     sourceUrl: "https://gmao.gsfc.nasa.gov/reanalysis/MERRA-2/",
@@ -116,6 +124,7 @@ export const LAYERS: LayerDef[] = [
     period: "month",
     conversion: "kgm2s-to-mm-day",
     displayUnit: "mm/day",
+    diff: { range: 4, unit: "mm/day", unitBn: "মিমি/দিন", kind: "rain" },
     description: "How much rain falls per day, averaged over each month. NASA's GLDAS model combines satellite and rain-gauge data.",
     relevance: "Heavy monsoon rain causes floods on the plains and landslides on wet mountain slopes.",
     sourceUrl: "https://ldas.gsfc.nasa.gov/gldas",
@@ -142,6 +151,7 @@ export const LAYERS: LayerDef[] = [
     period: "month",
     conversion: "none",
     displayUnit: "greenness (0 to 1)",
+    diff: { range: 0.25, unit: "greenness", unitBn: "সবুজ", kind: "green" },
     description: "How green and leafy the land is. Bare ground is close to 0; thick forest is close to 1.",
     relevance: "When plants turn brown in the dry season, they become fuel for fires.",
     sourceUrl: "https://lpdaac.usgs.gov/products/mod13c2v061/",

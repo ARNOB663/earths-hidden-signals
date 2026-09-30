@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function PlacesPage() {
   const countries = [...new Set(PLACES.map((p) => p.country))];
   return (
-    <div className="mx-auto w-full max-w-[1100px] px-4 pb-24 pt-12 sm:px-6">
+    <div className="mx-auto w-full max-w-[1200px] px-4 pb-24 pt-12 sm:px-6">
       <h1 className="text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
         <T en="Find a place" bn="জায়গা খুঁজুন" />
       </h1>

@@ -50,7 +50,7 @@ export function SiteNav() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-[1440px] items-center gap-4 px-4 sm:px-6">
-        <Link href="/" className="flex shrink-0 items-center gap-2.5 rounded-lg" aria-label="Earth's Hidden Signals, home">
+        <Link href="/" className="-m-1.5 flex min-h-10 shrink-0 items-center gap-2.5 rounded-lg p-1.5" aria-label="Earth's Hidden Signals, home">
           <Logo />
           <span className="hidden text-[15px] font-semibold tracking-tight text-ink min-[400px]:inline">Earth&apos;s Hidden Signals</span>
         </Link>
@@ -117,6 +117,16 @@ export function SiteNav() {
               </Link>
             );
           })}
+          <Link
+            href="/places"
+            aria-current={pathname.startsWith("/places") ? "page" : undefined}
+            className={`mt-1 flex items-center gap-2 rounded-xl border-t border-line px-4 py-3 text-base ${
+              pathname.startsWith("/places") ? "bg-card font-medium text-ink" : "text-ink-2"
+            }`}
+          >
+            <MagnifyingGlass size={18} />
+            <T en="Find a place" bn="জায়গা খুঁজুন" />
+          </Link>
         </nav>
       )}
     </header>
@@ -159,7 +169,7 @@ function LanguageSwitcher() {
           title={full}
           onClick={() => setLang(value)}
           className={`h-8 min-w-9 rounded-full px-2 transition-colors ${
-            lang === value ? "bg-accent font-medium text-accent-ink" : "text-ink-3 hover:text-ink"
+            lang === value ? "bg-accent-strong font-medium text-accent-ink" : "text-ink-3 hover:text-ink"
           }`}
         >
           {short}
@@ -196,7 +206,7 @@ function ThemeSwitcher() {
           aria-label={t(label, bn)}
           onClick={() => setThemePreference(value)}
           className={`grid h-8 w-8 place-items-center rounded-full transition-colors ${
-            pref === value ? "bg-accent text-accent-ink" : "text-ink-3 hover:text-ink"
+            pref === value ? "bg-accent-strong text-accent-ink" : "text-ink-3 hover:text-ink"
           }`}
         >
           <Icon size={16} weight={pref === value ? "fill" : "regular"} />

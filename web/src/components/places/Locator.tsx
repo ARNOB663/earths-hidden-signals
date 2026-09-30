@@ -30,7 +30,8 @@ export function Locator({ grid, land, lat, lon, label }: { grid: GridSpec; land:
             width={x(c.lon + grid.dLon / 2) - x0 - 1}
             height={y(c.lat - grid.dLat / 2) - y0 - 1}
             rx={1.5}
-            fill="var(--line)"
+            fill="var(--ink-3)"
+            fillOpacity={0.28}
           />
         );
       })}

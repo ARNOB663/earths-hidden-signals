@@ -17,7 +17,10 @@ import dynamic from "next/dynamic";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Numbers, Segmented, Stat, Sureness, TrendLegend } from "@/components/ui";
+import { MapLoading } from "@/components/map/MapLoading";
+import { MapSheet, type SheetSnap } from "@/components/map/MapSheet";
 import { QuickGuide } from "@/components/ui/QuickGuide";
+import { ShareButton } from "@/components/ui/ShareButton";
 import { bnNum } from "@/lib/bn";
 import { T, useT } from "@/lib/i18n";
 import { AGREEMENT_BN, DEFINITION_BN, PLACE_BN, unitBn, ZONE_BN } from "@/lib/names";
@@ -49,7 +52,7 @@ import { SeriesChart } from "./SeriesChart";
 
 const TrendMap = dynamic(() => import("./TrendMap"), {
   ssr: false,
-  loading: () => <div className="grid h-full place-items-center bg-sunken text-sm text-ink-3">Loading map…</div>,
+  loading: () => <MapLoading />,
 });
 
 type Selection = { kind: "zone"; id: string } | { kind: "point"; lat: number; lon: number };
@@ -286,9 +289,50 @@ export default function TrendExplorer({
   const up = summary.significantIncrease;
   const down = summary.significantDecrease;
 
+  // Phones: the one-glance answer shown in the panel's summary, above the full details.
+  const [snap, setSnap] = useState<SheetSnap>("peek");
+  const peekTrend = detail?.trend ?? null;
+  const peekReal = peekTrend ? peekTrend.p < ALPHA : false;
+  const peekUp = peekTrend ? peekTrend.slopePerDecade > 0 : false;
+  const PeekArrow = !peekReal ? Minus : peekUp ? TrendUp : TrendDown;
+  const peekRate = peekTrend ? formatSigned(peekTrend.slopePerDecade, meta.decimals) : "";
+  const peek = (
+    <div className="min-w-0">
+      <div className="flex items-baseline justify-between gap-3">
+        <div className="min-w-0 truncate font-semibold text-ink">{detail?.title}</div>
+        <div className="shrink-0 text-xs text-ink-3">
+          <T en={words.label} bn={wordsBn.label} />
+        </div>
+      </div>
+      {peekTrend ? (
+        <div className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-0.5">
+          <PeekArrow size={20} weight="bold" className={peekReal ? "text-accent" : "text-ink-3"} />
+          <span className="text-2xl font-semibold tabular-nums tracking-tight text-ink">
+            <T en={`${peekRate} ${meta.unit}`} bn={`${bnNum(peekRate)} ${unitBn(meta.unit)}`} />
+          </span>
+          <span className="text-sm text-ink-2">
+            <T
+              en={`every 10 years · ${sureness(peekTrend.p).short}`}
+              bn={`প্রতি ১০ বছরে · ${sureness(peekTrend.p).shortBn}`}
+            />
+          </span>
+        </div>
+      ) : (
+        <p className="mt-1 text-sm text-ink-2">
+          <T en="No data for this place." bn="এই জায়গার কোনো তথ্য নেই।" />
+        </p>
+      )}
+      <p className="mt-1.5 flex items-center gap-1.5 text-xs text-ink-3">
+        <HandPointing size={14} className="text-accent" />
+        <T en="Tap any square on the map · drag up for details" bn="মানচিত্রের যেকোনো বর্গে ট্যাপ করুন · বিস্তারিত দেখতে উপরে টানুন" />
+      </p>
+    </div>
+  );
+
   return (
-    <div className="relative flex h-full flex-col lg:block">
-      <div className="relative h-[52vh] min-h-[320px] lg:absolute lg:inset-0 lg:h-auto">
+    <div className="map-shell relative h-full overflow-hidden">
+      {/* Its own stacking layer, so Leaflet's controls and the map keys stay under the phone panel. */}
+      <div className="absolute inset-0 isolate">
         <TrendMap
           grid={grid}
           stats={currentStats}
@@ -300,7 +344,7 @@ export default function TrendExplorer({
           selectedCell={cell}
           onSelectCell={(lat, lon) => setSelection({ kind: "point", lat, lon })}
         />
-        <div className="pointer-events-none absolute left-[58px] top-3 z-[500] flex items-center gap-2 rounded-full bg-card px-4 py-2 text-sm text-ink-2 shadow-soft">
+        <div className="pointer-events-none absolute left-[58px] top-3 z-[500] hidden items-center gap-2 rounded-full bg-card px-4 py-2 text-sm text-ink-2 shadow-soft lg:flex">
           <HandPointing size={18} className="text-accent" />
           <T en="Click any square to see its story" bn="যেকোনো বর্গে ক্লিক করে তার গল্প দেখুন" />
         </div>
@@ -312,10 +356,10 @@ export default function TrendExplorer({
             <T key="2" en="Pick a region from the list, or click any square on the map." bn="তালিকা থেকে একটি অঞ্চল বেছে নিন, অথবা মানচিত্রের যেকোনো বর্গে ক্লিক করুন।" />,
             <T key="3" en="Read the answer: is it really changing, how fast, and how sure we are." bn="উত্তর পড়ুন: সত্যিই বদলাচ্ছে কি না, কত দ্রুত, আর আমরা কতটা নিশ্চিত।" />,
           ]}
-          buttonClassName="absolute left-[58px] top-[60px]"
-          cardClassName="absolute left-[58px] top-[108px]"
+          buttonClassName="absolute left-3 top-3 lg:left-[58px] lg:top-[60px]"
+          cardClassName="lg:left-[58px] lg:top-[108px]"
         />
-        <div className="absolute bottom-8 left-3 z-[500] w-[min(320px,calc(100%-6rem))] rounded-2xl bg-card p-3 shadow-soft sm:bottom-10 sm:p-4">
+        <div className="absolute bottom-[calc(var(--sheet-peek,9rem)+0.75rem)] left-3 z-[500] w-[min(320px,calc(100%-6rem))] rounded-2xl bg-card p-3 shadow-soft sm:p-4 lg:bottom-10">
           <div className="mb-2 text-sm font-medium text-ink">
             <T en={`Change every 10 years (${meta.unit})`} bn={`প্রতি ১০ বছরে পরিবর্তন (${unitBn(meta.unit)})`} />
           </div>
@@ -335,14 +379,24 @@ export default function TrendExplorer({
         )}
       </div>
 
-      <aside
-        aria-label={t("Trend details", "প্রবণতার বিস্তারিত")}
-        className="z-[600] flex flex-col gap-5 bg-card p-5 lg:absolute lg:bottom-4 lg:right-4 lg:top-4 lg:w-[400px] lg:overflow-y-auto lg:rounded-2xl lg:border lg:border-line lg:shadow-soft"
+      <MapSheet
+        id="trend-panel"
+        label={t("Trend details", "প্রবণতার বিস্তারিত")}
+        className="lg:absolute lg:bottom-4 lg:right-4 lg:top-4 lg:z-[600] lg:w-[400px] lg:overflow-y-auto lg:rounded-2xl lg:border lg:border-line lg:bg-card lg:shadow-soft"
+        bodyClassName="flex flex-col gap-5 p-5"
+        peek={peek}
+        snap={snap}
+        onSnapChange={setSnap}
+        scrollKey={JSON.stringify(selection)}
+        scrollTargetId="trend-answer"
       >
         <section className="space-y-3">
-          <h1 className="text-lg font-semibold text-ink">
-            <T en="How is the climate changing?" bn="জলবায়ু কীভাবে বদলাচ্ছে?" />
-          </h1>
+          <div className="flex items-start justify-between gap-2">
+            <h1 className="text-lg font-semibold text-ink">
+              <T en="How is the climate changing?" bn="জলবায়ু কীভাবে বদলাচ্ছে?" />
+            </h1>
+            <ShareButton className="-mr-2 -mt-1.5" />
+          </div>
           <Step n={1} label={<T en="What to look at" bn="কী দেখবেন" />}>
             <div role="radiogroup" aria-label={t("What to look at", "কী দেখবেন")} className="space-y-2">
               {(["average", "extreme"] as const).map((kind) => (
@@ -448,7 +502,7 @@ export default function TrendExplorer({
             bn={`পুরো মানচিত্রে ${bnNum(summary.cells)}টি বর্গের মধ্যে ${bnNum(up)}টিতে স্পষ্ট বৃদ্ধি${down > 0 ? ` এবং ${bnNum(down)}টিতে স্পষ্ট হ্রাস` : ", কোনোটিতেই স্পষ্ট হ্রাস নেই"}।${summary.cells - up - down > 0 ? ` বাকি ${bnNum(summary.cells - up - down)}টিতে স্পষ্ট পরিবর্তন নেই।` : ""}`}
           />
         </p>
-      </aside>
+      </MapSheet>
     </div>
   );
 }
@@ -511,7 +565,7 @@ function Answer({
   const Arrow = !real ? Minus : upward ? TrendUp : TrendDown;
 
   return (
-    <section className="space-y-4" aria-live="polite">
+    <section id="trend-answer" className="scroll-mt-4 space-y-4" aria-live="polite">
       <div>
         <h2 className="text-xl font-semibold text-ink">{detail.title}</h2>
         <p className="mt-1 text-sm leading-relaxed text-ink-2">{detail.subtitle}</p>

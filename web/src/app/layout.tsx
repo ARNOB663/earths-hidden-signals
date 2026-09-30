@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Noto_Sans_Bengali } from "next/font/google";
 import Link from "next/link";
+import { TourBar } from "@/components/site/Tour";
 import { SiteNav } from "@/components/site/SiteNav";
 import { LANG_INIT_SCRIPT, THEME_INIT_SCRIPT } from "@/lib/bootScripts";
 import { T } from "@/lib/i18n";
@@ -24,6 +25,8 @@ const notoBengali = Noto_Sans_Bengali({
 });
 
 export const metadata: Metadata = {
+  // Social previews need absolute image URLs.
+  metadataBase: new URL("https://earths-hidden-signals.vercel.app"),
   title: "Earth's Hidden Signals",
   description:
     "How South Asia's climate is changing, and what it means for floods, landslides and wildfires, told with 45 years of NASA data.",
@@ -32,6 +35,7 @@ export const metadata: Metadata = {
     description: "How South Asia's climate is changing, told with 45 years of NASA data. NASA Space Apps 2026.",
     type: "website",
   },
+  twitter: { card: "summary_large_image" },
 };
 
 export const viewport: Viewport = {
@@ -50,27 +54,28 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="flex min-h-full flex-col">
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[2000] focus:rounded-lg focus:bg-accent focus:px-4 focus:py-2 focus:text-accent-ink"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[2000] focus:rounded-lg focus:bg-accent-strong focus:px-4 focus:py-2 focus:text-accent-ink"
         >
           <T en="Skip to content" bn="মূল অংশে যান" />
         </a>
         <SiteNav />
+        <TourBar />
         <main id="main" className="flex flex-1 flex-col">
           {children}
         </main>
         <footer className="border-t border-line">
-          <div className="mx-auto flex max-w-[1440px] flex-col gap-2 px-4 py-6 text-sm text-ink-3 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+          <div className="mx-auto flex max-w-[1200px] flex-col gap-2 px-4 py-6 text-sm text-ink-3 sm:flex-row sm:items-center sm:justify-between sm:px-6">
             <p>
               <T
                 en="Built for the NASA Space Apps Challenge 2026 with open NASA data. It shows trends to help people prepare; it does not predict disasters."
                 bn="নাসার উন্মুক্ত তথ্য দিয়ে NASA Space Apps Challenge 2026-এর জন্য তৈরি। এটি মানুষকে প্রস্তুত হতে সাহায্য করার জন্য প্রবণতা দেখায়; দুর্যোগের পূর্বাভাস দেয় না।"
               />
             </p>
-            <div className="flex shrink-0 gap-4">
-              <Link href="/methods" className="hover:text-ink">
-                <T en="Data & methods" bn="তথ্য ও পদ্ধতি" />
+            <div className="-my-2 flex shrink-0 gap-5">
+              <Link href="/methods" className="inline-flex min-h-10 items-center hover:text-ink">
+                <T en="How it works" bn="কীভাবে কাজ করে" />
               </Link>
-              <a href="https://github.com/ARNOB663/earths-hidden-signals" className="hover:text-ink">
+              <a href="https://github.com/ARNOB663/earths-hidden-signals" className="inline-flex min-h-10 items-center hover:text-ink">
                 <T en="Source code" bn="সোর্স কোড" />
               </a>
             </div>

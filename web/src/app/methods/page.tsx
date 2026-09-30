@@ -5,7 +5,7 @@ import { CITATION } from "@/lib/download";
 import { T } from "@/lib/i18n";
 import { agreement, formatSigned, type Agreement, type TrendSummary } from "@/lib/trends";
 
-export const metadata: Metadata = { title: "Methods · Earth's Hidden Signals" };
+export const metadata: Metadata = { title: "How it works · Earth's Hidden Signals" };
 
 const REPO = "https://github.com/ARNOB663/earths-hidden-signals";
 
@@ -56,7 +56,7 @@ export default async function MethodsPage() {
   const r = manifest.variables.rainfall;
 
   return (
-    <article className="mx-auto w-full max-w-3xl px-4 pb-24 pt-12 leading-relaxed text-ink-2 sm:px-6">
+    <article className="mx-auto w-full max-w-[1200px] px-4 pb-24 pt-12 leading-relaxed text-ink-2 sm:px-6 [&>*]:max-w-3xl">
       <p className="text-sm font-medium text-accent">
         <T en="How it works" bn="কীভাবে কাজ করে" />
       </p>
@@ -108,8 +108,8 @@ export default async function MethodsPage() {
               <Tr v="Wildfire" d="NASA FIRMS MODIS active fires (Terra + Aqua), 2003–2024" u="Hazard events" href="https://firms.modaps.eosdis.nasa.gov/" />
               <Tr v="Landslides" d="NASA Global Landslide Catalog, 2007–2017" u="Hazard events" href="https://data.nasa.gov/" />
               <Tr v="Floods" d="GDACS flood alerts (UN/EU), 2000–2025" u="Hazard events" href="https://www.gdacs.org/" />
-              <Tr v="Map imagery" d="NASA GIBS: MODIS surface temperature and NDVI, MERRA-2, GLDAS" u="Map Explorer (visual only)" href="https://earthdata.nasa.gov/gibs" />
-              <Tr v="Forest loss" d="Hansen/UMD Global Forest Change (Landsat), via Global Forest Watch" u="Map Explorer" href="https://glad.earthengine.app/view/global-forest-change" />
+              <Tr v="Map imagery" d="NASA GIBS: MODIS surface temperature and NDVI, MERRA-2, GLDAS" u="Satellite map (visual only)" href="https://earthdata.nasa.gov/gibs" />
+              <Tr v="Forest loss" d="Hansen/UMD Global Forest Change (Landsat), via Global Forest Watch" u="Satellite map" href="https://glad.earthengine.app/view/global-forest-change" />
             </tbody>
           </table>
         </div>
@@ -243,12 +243,12 @@ export default async function MethodsPage() {
         </ol>
       </Section>
 
-      <div className="mt-12 flex flex-wrap gap-4 text-sm">
-        <Link href="/trends" className="text-accent hover:underline">
-          Explore the trends →
+      <div className="mt-12 flex flex-wrap gap-x-6 gap-y-2">
+        <Link href="/trends" className="inline-flex min-h-10 items-center font-medium text-accent hover:underline">
+          <T en="Explore the climate trends →" bn="জলবায়ুর প্রবণতা ঘুরে দেখুন →" />
         </Link>
-        <Link href="/hazards" className="text-accent hover:underline">
-          See the hazard signals →
+        <Link href="/hazards" className="inline-flex min-h-10 items-center font-medium text-accent hover:underline">
+          <T en="Check disaster risk →" bn="দুর্যোগের ঝুঁকি দেখুন →" />
         </Link>
       </div>
     </article>

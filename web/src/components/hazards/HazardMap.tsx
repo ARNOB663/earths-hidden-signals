@@ -201,7 +201,13 @@ export default function HazardMap({ hazard, zones, selectedZone, onSelectZone, l
         [la0, lo0],
         [la1, lo1],
       ],
-      { paddingTopLeft: [60, 60], paddingBottomRight: [window.innerWidth >= 1024 ? 480 : 60, 60], maxZoom: 7, duration: 0.8 },
+      {
+        ...(window.innerWidth >= 1024
+          ? { paddingTopLeft: [60, 60] as L.PointTuple, paddingBottomRight: [480, 60] as L.PointTuple }
+          : { paddingTopLeft: [24, 64] as L.PointTuple, paddingBottomRight: [24, 200] as L.PointTuple }),
+        maxZoom: 7,
+        duration: 0.8,
+      },
     );
   }, [selectedZone, zones]);
 

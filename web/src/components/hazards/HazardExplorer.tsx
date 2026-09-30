@@ -1,12 +1,15 @@
 "use client";
 
-import { ArrowRight, CheckCircle, Fire, HandPointing, Hurricane, Mountains, Question, Warning, Waves } from "@phosphor-icons/react";
+import { ArrowRight, CheckCircle, Fire, HandPointing, Hurricane, Mountains, Question, Warning, Waves, X } from "@phosphor-icons/react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Numbers, Stat } from "@/components/ui";
+import { MapLoading } from "@/components/map/MapLoading";
+import { MapSheet, type SheetSnap } from "@/components/map/MapSheet";
 import { QuickGuide } from "@/components/ui/QuickGuide";
+import { ShareButton } from "@/components/ui/ShareButton";
 import {
   HAZARD_META,
   HAZARD_ORDER,
@@ -30,7 +33,7 @@ import { YearBars } from "./YearBars";
 
 const HazardMap = dynamic(() => import("./HazardMap"), {
   ssr: false,
-  loading: () => <div className="grid h-full place-items-center bg-sunken text-sm text-ink-3">Loading map…</div>,
+  loading: () => <MapLoading />,
 });
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -79,6 +82,7 @@ export default function HazardExplorer({ zones, manifest }: { zones: HazardZone[
   const floods = useJson<FloodEvent[]>(hazard === "flood" ? "/data/hazards/floods.json" : null);
   const fires = useJson<FireGrid>(hazard === "wildfire" ? "/data/hazards/fires_grid.json" : null);
   const cyclones = useJson<CycloneTrack[]>(hazard === "cyclone" ? "/data/hazards/cyclones.json" : null);
+  const eventsLoading = { landslide: landslides, flood: floods, wildfire: fires, cyclone: cyclones }[hazard] === null;
 
   useEffect(() => {
     window.history.replaceState(null, "", `?hazard=${hazard}&zone=${zone.id}`);
@@ -91,9 +95,49 @@ export default function HazardExplorer({ zones, manifest }: { zones: HazardZone[
     setZoneId(zones.find((z) => z.hazard === h)!.id);
   };
 
+  // Phones: the region and this year's signal, shown in the panel's summary.
+  const [snap, setSnap] = useState<SheetSnap>("peek");
+  const [keyOpen, setKeyOpen] = useState(false);
+  const PeekIcon = HAZARD_ICON[hazard];
+  const signal = preparednessSignal(zone).kind;
+  const thisYear = manifest.years[manifest.years.length - 1];
+  const peek = (
+    <div className="min-w-0">
+      <div className="flex items-center justify-between gap-3">
+        <div className="flex min-w-0 items-center gap-2 font-semibold text-ink">
+          <PeekIcon size={18} weight="fill" className="shrink-0 text-accent" />
+          <span className="truncate">
+            <T en={zone.name} bn={ZONE_BN[zone.id]?.name ?? zone.name} />
+          </span>
+        </div>
+        <SignalBadge zone={zone} />
+      </div>
+      <p className="mt-1 text-sm leading-snug text-ink-2">
+        {signal === "resembles" ? (
+          <T
+            en={`${thisYear} weather looked like the ${EVENTS[hazard].bigYears} of the past. A good time to prepare early.`}
+            bn={`${bnNum(thisYear)} সালের আবহাওয়া আগের ${HAZARD_BN[hazard].bigYears}গুলোর মতো। আগেভাগে প্রস্তুতির ভালো সময়।`}
+          />
+        ) : signal === "not-resembling" ? (
+          <T
+            en={`${thisYear} weather wasn't like the ${EVENTS[hazard].bigYears} of the past.`}
+            bn={`${bnNum(thisYear)} সালের আবহাওয়া আগের ${HAZARD_BN[hazard].bigYears}গুলোর মতো ছিল না।`}
+          />
+        ) : (
+          <T en="Weather alone doesn't explain these disasters here." bn="এখানে শুধু আবহাওয়া দিয়ে এই দুর্যোগ ব্যাখ্যা করা যায় না।" />
+        )}
+      </p>
+      <p className="mt-1.5 flex items-center gap-1.5 text-xs text-ink-3">
+        <HandPointing size={14} className="text-accent" />
+        <T en="Tap a dashed box · drag up for more" bn="ড্যাশ-দাগের বাক্সে ট্যাপ করুন · আরও দেখতে উপরে টানুন" />
+      </p>
+    </div>
+  );
+
   return (
-    <div className="relative flex h-full flex-col lg:block">
-      <div className="relative h-[52vh] min-h-[320px] lg:absolute lg:inset-0 lg:h-auto">
+    <div className="map-shell relative h-full overflow-hidden">
+      {/* Its own stacking layer, so Leaflet's controls and the map keys stay under the phone panel. */}
+      <div className="absolute inset-0 isolate">
         <HazardMap
           hazard={hazard}
           zones={hazardZones}
@@ -104,7 +148,16 @@ export default function HazardExplorer({ zones, manifest }: { zones: HazardZone[
           fires={fires}
           cyclones={cyclones}
         />
-        <div className="pointer-events-none absolute left-[58px] top-3 z-[500] flex items-center gap-2 rounded-full bg-card px-4 py-2 text-sm text-ink-2 shadow-soft">
+        {eventsLoading && (
+          <div
+            role="status"
+            className="pointer-events-none absolute left-1/2 top-16 z-[500] flex -translate-x-1/2 items-center gap-2 rounded-full bg-card px-4 py-1.5 text-sm text-ink-2 shadow-soft lg:left-[calc(50%-218px)] lg:top-4"
+          >
+            <span className="h-2 w-2 animate-pulse rounded-full bg-accent" />
+            <T en="Loading past events…" bn="আগের ঘটনাগুলো লোড হচ্ছে…" />
+          </div>
+        )}
+        <div className="pointer-events-none absolute left-[58px] top-3 z-[500] hidden items-center gap-2 rounded-full bg-card px-4 py-2 text-sm text-ink-2 shadow-soft lg:flex">
           <HandPointing size={18} className="text-accent" />
           <T en="Click a dashed box to pick a region" bn="অঞ্চল বেছে নিতে ড্যাশ-দাগের বাক্সে ক্লিক করুন" />
         </div>
@@ -124,22 +177,52 @@ export default function HazardExplorer({ zones, manifest }: { zones: HazardZone[
               bn="&ldquo;এই বছর&rdquo; দেখুন: আবহাওয়া কি আগের দুর্যোগের বছরগুলোর মতো?"
             />,
           ]}
-          buttonClassName="absolute left-[58px] top-[60px]"
-          cardClassName="absolute left-[58px] top-[108px]"
+          buttonClassName="absolute left-3 top-3 lg:left-[58px] lg:top-[60px]"
+          cardClassName="lg:left-[58px] lg:top-[108px]"
         />
-        <div className="absolute bottom-10 left-3 z-[500] w-[min(300px,calc(100%-1.5rem))] rounded-2xl bg-card p-4 text-sm shadow-soft">
-          <MapKey hazard={hazard} />
+        <div className="absolute bottom-[calc(var(--sheet-peek,9rem)+0.75rem)] left-3 z-[500] w-[min(300px,calc(100%-1.5rem))] text-sm lg:bottom-10">
+          {/* On phones the key folds into a small button so it doesn't cover the map. */}
+          <button
+            type="button"
+            onClick={() => setKeyOpen((o) => !o)}
+            aria-expanded={keyOpen}
+            className={`inline-flex h-10 items-center gap-2 rounded-full bg-card px-4 font-medium text-ink shadow-soft lg:hidden ${keyOpen ? "hidden" : ""}`}
+          >
+            <span className="h-2.5 w-2.5 rounded-full" style={{ background: `var(${EVENT_TOKEN[hazard]})` }} />
+            <T en="Map key" bn="মানচিত্রের সংকেত" />
+          </button>
+          <div className={`relative rounded-2xl bg-card p-3 shadow-soft sm:p-4 ${keyOpen ? "" : "hidden lg:block"}`}>
+            <button
+              type="button"
+              onClick={() => setKeyOpen(false)}
+              aria-label={t("Hide the map key", "সংকেত লুকান")}
+              className="absolute right-1 top-1 grid h-10 w-10 place-items-center rounded-full text-ink-3 hover:text-ink lg:hidden"
+            >
+              <X size={16} />
+            </button>
+            <MapKey hazard={hazard} />
+          </div>
         </div>
       </div>
 
-      <aside
-        aria-label={t("Disaster details", "দুর্যোগের বিস্তারিত")}
-        className="z-[600] flex flex-col gap-5 bg-card p-5 lg:absolute lg:bottom-4 lg:right-4 lg:top-4 lg:w-[420px] lg:overflow-y-auto lg:rounded-2xl lg:border lg:border-line lg:shadow-soft"
+      <MapSheet
+        id="hazard-panel"
+        label={t("Disaster details", "দুর্যোগের বিস্তারিত")}
+        className="lg:absolute lg:bottom-4 lg:right-4 lg:top-4 lg:z-[600] lg:w-[420px] lg:overflow-y-auto lg:rounded-2xl lg:border lg:border-line lg:bg-card lg:shadow-soft"
+        bodyClassName="flex flex-col gap-5 p-5"
+        peek={peek}
+        snap={snap}
+        onSnapChange={setSnap}
+        scrollKey={`${hazard}:${zone.id}`}
+        scrollTargetId="zone-answer"
       >
         <section className="space-y-3">
-          <h1 className="text-lg font-semibold text-ink">
-            <T en="Is the weather raising disaster risk?" bn="আবহাওয়া কি দুর্যোগের ঝুঁকি বাড়াচ্ছে?" />
-          </h1>
+          <div className="flex items-start justify-between gap-2">
+            <h1 className="text-lg font-semibold text-ink">
+              <T en="Is the weather raising disaster risk?" bn="আবহাওয়া কি দুর্যোগের ঝুঁকি বাড়াচ্ছে?" />
+            </h1>
+            <ShareButton className="-mr-2 -mt-1.5" />
+          </div>
           <div role="radiogroup" aria-label={t("Type of disaster", "দুর্যোগের ধরন")} className="grid grid-cols-2 gap-1.5">
             {HAZARD_ORDER.map((h) => {
               const Icon = HAZARD_ICON[h];
@@ -181,8 +264,10 @@ export default function HazardExplorer({ zones, manifest }: { zones: HazardZone[
         </section>
 
         <div className="h-px bg-line" />
-        <ZoneAnswer zone={zone} manifest={manifest} />
-      </aside>
+        <div id="zone-answer" className="scroll-mt-4">
+          <ZoneAnswer zone={zone} manifest={manifest} />
+        </div>
+      </MapSheet>
     </div>
   );
 }
@@ -478,7 +563,7 @@ function DriverRow({ driver: d, zone, manifest }: { driver: DriverResult; zone: 
       {!custom && (
         <Link
           href={`/trends?var=${variable}&season=${season}&zone=${zone.id}`}
-          className="mt-2 inline-flex items-center gap-1 text-sm text-accent hover:underline"
+          className="mt-1 inline-flex min-h-10 items-center gap-1 text-sm font-medium text-accent hover:underline"
         >
           <T en="See this trend" bn="এই প্রবণতা দেখুন" /> <ArrowRight size={14} />
         </Link>

@@ -34,7 +34,7 @@ export function QuickGuide({
   id: string;
   title: React.ReactNode;
   steps: React.ReactNode[];
-  /** Where the card sits (absolute position classes). */
+  /** Where the card sits on large screens (lg: position classes). On phones it spans the map's width. */
   cardClassName: string;
   /** Where the reopen button sits. */
   buttonClassName: string;
@@ -67,11 +67,16 @@ export function QuickGuide({
         <div
           role="dialog"
           aria-label={t("How to use this page", "এই পাতা কীভাবে ব্যবহার করবেন")}
-          className={`z-[800] w-[min(340px,calc(100%-2rem))] rounded-2xl border border-line bg-card p-5 shadow-soft ${cardClassName}`}
+          className={`absolute inset-x-3 top-3 z-[800] rounded-2xl border border-line bg-card p-5 shadow-soft lg:inset-x-auto lg:w-[340px] ${cardClassName}`}
         >
           <div className="flex items-start justify-between gap-3">
             <h2 className="font-semibold text-ink">{title}</h2>
-            <button type="button" onClick={close} aria-label={t("Close guide", "নির্দেশিকা বন্ধ করুন")} className="-m-1 rounded-full p-1 text-ink-3 hover:text-ink">
+            <button
+              type="button"
+              onClick={close}
+              aria-label={t("Close guide", "নির্দেশিকা বন্ধ করুন")}
+              className="-m-2.5 grid h-10 w-10 shrink-0 place-items-center rounded-full text-ink-3 transition-colors hover:bg-sunken hover:text-ink"
+            >
               <X size={18} />
             </button>
           </div>
@@ -88,7 +93,7 @@ export function QuickGuide({
           <button
             type="button"
             onClick={close}
-            className="mt-4 w-full rounded-full bg-accent py-2.5 text-sm font-medium text-accent-ink transition-all hover:bg-accent-hover active:scale-[0.98]"
+            className="mt-4 w-full rounded-full bg-accent-strong py-2.5 text-sm font-medium text-accent-ink transition-all hover:bg-accent-hover active:scale-[0.98]"
           >
             <T en="Got it" bn="বুঝেছি" />
           </button>

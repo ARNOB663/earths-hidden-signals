@@ -1,8 +1,8 @@
 "use client";
 
-import { DownloadSimple } from "@phosphor-icons/react";
 import { useLayoutEffect, useMemo, useRef, useState } from "react";
 import { downloadCsv, slug } from "@/lib/download";
+import { DataActions } from "@/components/ui/DataActions";
 import { T } from "@/lib/i18n";
 import { senIntercept } from "@/lib/trends";
 
@@ -173,7 +173,7 @@ export function SeriesChart({
           {yTicks.map((t) => (
             <g key={t}>
               <line x1={PAD.left} x2={width - PAD.right} y1={y(t)} y2={y(t)} stroke="var(--line)" />
-              <text x={PAD.left - 6} y={y(t)} dy="0.32em" textAnchor="end" className="fill-ink-3 text-[11px]">
+              <text x={PAD.left - 6} y={y(t)} dy="0.32em" textAnchor="end" className="fill-ink-3 text-[12px]">
                 {Number(t.toFixed(4))}
               </text>
             </g>
@@ -187,12 +187,12 @@ export function SeriesChart({
               x={x(years.indexOf(yr))}
               y={HEIGHT - 8}
               textAnchor="middle"
-              className="fill-ink-3 text-[11px]"
+              className="fill-ink-3 text-[12px]"
             >
               {yr}
             </text>
           ))}
-          <text x={PAD.left} y={10} className="fill-ink-3 text-[11px]">
+          <text x={PAD.left} y={10} className="fill-ink-3 text-[12px]">
             <T en={axisLabel} bn={axisLabelBn ?? axisLabel} />
           </text>
 
@@ -240,27 +240,14 @@ export function SeriesChart({
         )}
       </div>
 
-      <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1">
-        <button
-          type="button"
-          onClick={download}
-          className="inline-flex items-center gap-1.5 text-xs font-medium text-accent hover:underline"
-        >
-          <DownloadSimple size={14} /> <T en="Download the data (CSV)" bn="তথ্য ডাউনলোড করুন (CSV)" />
-        </button>
-      </div>
-      <details className="mt-1 text-xs text-ink-3">
-        <summary className="cursor-pointer select-none hover:text-ink">
-          <T en="Show the data as a table" bn="তথ্য টেবিল আকারে দেখুন" />
-        </summary>
-        <div className="mt-2 max-h-48 overflow-y-auto rounded-lg border border-line">
-          <table className="w-full text-left tabular-nums">
+      <DataActions onDownload={download}>
+        <table className="w-full text-left tabular-nums">
             <thead className="sticky top-0 bg-sunken text-ink-3">
               <tr>
-                <th className="px-2 py-1 font-medium">
+                <th className="px-3 py-1.5 font-medium">
                   <T en="Year" bn="বছর" />
                 </th>
-                <th className="px-2 py-1 font-medium">
+                <th className="px-3 py-1.5 font-medium">
                   <T en="Value" bn="মান" /> ({unit})
                 </th>
               </tr>
@@ -268,14 +255,13 @@ export function SeriesChart({
             <tbody>
               {years.map((yr, k) => (
                 <tr key={yr} className="odd:bg-sunken/50 text-ink-2">
-                  <td className="px-2 py-0.5">{yr}</td>
-                  <td className="px-2 py-0.5">{values[k] === null ? "—" : values[k]!.toFixed(decimals)}</td>
+                  <td className="px-3 py-1">{yr}</td>
+                  <td className="px-3 py-1">{values[k] === null ? "—" : values[k]!.toFixed(decimals)}</td>
                 </tr>
               ))}
             </tbody>
           </table>
-        </div>
-      </details>
+      </DataActions>
     </div>
   );
 }

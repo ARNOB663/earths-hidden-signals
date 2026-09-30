@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { Locator } from "@/components/places/Locator";
 import { PlaceSearch } from "@/components/places/PlaceSearch";
 import { SeriesChart } from "@/components/trends/SeriesChart";
+import { ShareButton } from "@/components/ui/ShareButton";
 import { Numbers, Stat, Sureness } from "@/components/ui";
 import { bnMonth, bnNum } from "@/lib/bn";
 import { readManifest, readTrendGrid } from "@/lib/data";
@@ -73,16 +74,19 @@ export default async function PlacePage({ params }: PageProps<"/places/[id]">) {
   const deadliest = report.landslides.deadliest;
 
   return (
-    <article className="mx-auto w-full max-w-[1100px] px-4 pb-24 pt-10 sm:px-6">
-      <nav aria-label="Breadcrumb" className="text-sm text-ink-3">
-        <Link href="/places" className="hover:text-ink">
-          <T en="Places" bn="জায়গা" />
-        </Link>{" "}
-        /{" "}
-        <span className="text-ink-2">
-          <T en={place.name} bn={nameBn} />
-        </span>
-      </nav>
+    <article className="mx-auto w-full max-w-[1200px] px-4 pb-24 pt-10 sm:px-6">
+      <div className="flex items-center justify-between gap-3">
+        <nav aria-label="Breadcrumb" className="text-sm text-ink-3">
+          <Link href="/places" className="hover:text-ink">
+            <T en="Places" bn="জায়গা" />
+          </Link>{" "}
+          /{" "}
+          <span className="text-ink-2">
+            <T en={place.name} bn={nameBn} />
+          </span>
+        </nav>
+        <ShareButton variant="label" className="-mr-3" />
+      </div>
 
       <header className="mt-4 grid gap-8 md:grid-cols-[1fr_280px] md:items-center">
         <div>
@@ -173,7 +177,7 @@ export default async function PlacePage({ params }: PageProps<"/places/[id]">) {
             extra={
               report.floods.latest ? (
                 <T
-                  en={`Most recent: ${report.floods.latest.date.slice(0, 7)}.`}
+                  en={`Most recent: ${new Date(`${report.floods.latest.date}T00:00:00`).toLocaleDateString("en-GB", { month: "long", year: "numeric" })}.`}
                   bn={`সর্বশেষ: ${bnMonth(report.floods.latest.date)}।`}
                 />
               ) : null
@@ -224,11 +228,14 @@ export default async function PlacePage({ params }: PageProps<"/places/[id]">) {
       <section className="mt-12 flex flex-wrap items-center gap-4">
         <Link
           href={`/trends?var=temperature&season=annual&lat=${place.lat}&lon=${place.lon}`}
-          className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 font-medium text-accent-ink transition-all hover:bg-accent-hover active:scale-[0.98]"
+          className="inline-flex items-center gap-2 rounded-full bg-accent-strong px-6 py-3 font-medium text-accent-ink transition-all hover:bg-accent-hover active:scale-[0.98]"
         >
           <T en={`See ${place.name} on the trends map`} bn={`প্রবণতার মানচিত্রে ${nameBn} দেখুন`} /> <ArrowRight size={18} />
         </Link>
-        <Link href={`/explore?layer=lst-day&date=2024-05-01&compare=2001`} className="font-medium text-accent hover:underline">
+        <Link
+          href={`/explore?layer=lst-day&date=2024-05-01&compare=2001&at=${place.lat},${place.lon},7`}
+          className="inline-flex min-h-10 items-center font-medium text-accent hover:underline"
+        >
           <T en="Compare 2001 and 2024 on the satellite map" bn="স্যাটেলাইট মানচিত্রে ২০০১ ও ২০২৪ তুলনা করুন" />
         </Link>
       </section>

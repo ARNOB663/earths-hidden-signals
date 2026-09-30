@@ -1,6 +1,6 @@
 import { TrendLegend } from "@/components/ui";
 import { T } from "@/lib/i18n";
-import { PLACE_BN } from "@/lib/names";
+import { PLACE_BN, unitBn } from "@/lib/names";
 import { cellCenter, formatSigned, trendToken, type GridSpec, type TrendGrid, type VariableId, type VariableMeta } from "@/lib/trends";
 
 // Reference points so readers can find their way on a map without coastlines.
@@ -93,6 +93,12 @@ export function MiniGridMap({ grid, stats, variable, meta, limit, percent, id, t
         ))}
       </svg>
       <div className="mt-4">
+        <div className="mb-2 text-xs font-medium text-ink-2">
+          <T
+            en={`Change every 10 years (${percent ? "% of the usual amount" : meta.unit})`}
+            bn={`প্রতি ১০ বছরে পরিবর্তন (${percent ? "স্বাভাবিক পরিমাণের %" : unitBn(meta.unit)})`}
+          />
+        </div>
         <TrendLegend
           variable={variable}
           limit={limit}

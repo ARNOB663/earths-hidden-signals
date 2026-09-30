@@ -11,6 +11,7 @@ import {
   MapTrifold,
   MoonStars,
   Planet,
+  Thermometer,
   Translate,
   Warning,
   WarningCircle,
@@ -20,6 +21,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Sparkline } from "@/components/findings/parts";
 import { PlaceSearch } from "@/components/places/PlaceSearch";
+import { StartTourButton } from "@/components/site/Tour";
 import { bnMonth, bnNum } from "@/lib/bn";
 import { readHazardZones, readLatest, readManifest, readTrendZones } from "@/lib/data";
 import { preparednessSignal } from "@/lib/hazards";
@@ -53,7 +55,7 @@ const TOOLS: Tool[] = [
     ],
     shot: { name: "explore", alt: "Satellite map of ground heat over South Asia in May 2024" },
     tries: [
-      { href: "/explore?layer=lst-day&date=2024-05-01&compare=2001", label: ["May heat: 2001 vs 2024", "মে মাসের তাপ: ২০০১ বনাম ২০২৪"] },
+      { href: "/explore?layer=lst-day&date=2024-05-01&compare=2001&view=diff", label: ["May heat: 2024 vs 2001", "মে মাসের তাপ: ২০২৪ বনাম ২০০১"] },
       { href: "/explore?layer=forest-loss", label: ["Forest loss since 2001", "২০০১ থেকে বন উজাড়"] },
     ],
   },
@@ -141,7 +143,8 @@ export default async function Home() {
     const r = z.results["rainfall_monsoon"];
     return (r.trend!.slopePerDecade / r.mean) * 100;
   };
-  const rainValue = `${formatSigned(rainPct(zone("indus-plain")), 0)}% · ${formatSigned(rainPct(zone("bengal-delta")), 0)}%`;
+  const rainIndus = `${formatSigned(rainPct(zone("indus-plain")), 0)}%`;
+  const rainDelta = `${formatSigned(rainPct(zone("bengal-delta")), 0)}%`;
   const watch = hazardZones.filter((h) => preparednessSignal(h).kind === "resembles");
   const rainWord = lr.percentOfNormal < 90 ? 0 : lr.percentOfNormal > 110 ? 2 : 1;
 
@@ -163,13 +166,11 @@ export default async function Home() {
           <div className="mt-8 flex flex-wrap items-center gap-5">
             <Link
               href="/findings"
-              className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 font-medium text-accent-ink transition-all hover:bg-accent-hover active:scale-[0.98]"
+              className="inline-flex items-center gap-2 rounded-full bg-accent-strong px-6 py-3 font-medium text-accent-ink transition-all hover:bg-accent-hover active:scale-[0.98]"
             >
               <T en="Read the story" bn="মূল গল্প পড়ুন" /> <ArrowRight size={18} />
             </Link>
-            <Link href="/explore" className="font-medium text-accent hover:underline">
-              <T en="Open the satellite map" bn="স্যাটেলাইট মানচিত্র খুলুন" />
-            </Link>
+            <StartTourButton />
           </div>
           <div className="mt-8">
             <p className="mb-2 text-sm font-medium text-ink-2">
@@ -305,6 +306,12 @@ export default async function Home() {
         <h2 id="latest" className="text-2xl font-semibold tracking-tight text-ink">
           <T en="The latest month" bn="সর্বশেষ মাস" />
         </h2>
+        <p className="mt-2 max-w-[70ch] text-sm leading-relaxed text-ink-3">
+          <T
+            en={`"Normal" means the long-term average for that month: ${latest.temperature.baseline} for temperature (NASA's usual starting point) and ${latest.rainfall.baseline} for rain (the standard for rainfall records).`}
+            bn={`"স্বাভাবিক" মানে ওই মাসের দীর্ঘমেয়াদি গড়: তাপমাত্রার জন্য ${bnNum(latest.temperature.baseline)} (নাসার প্রচলিত ভিত্তি) আর বৃষ্টির জন্য ${bnNum(latest.rainfall.baseline)} (বৃষ্টির রেকর্ডের প্রচলিত ভিত্তি)।`}
+          />
+        </p>
         <div className="mt-6 grid gap-4 md:grid-cols-2">
           <div className="rounded-3xl bg-card p-6 shadow-soft">
             <div className="text-sm font-medium text-ink-2">
@@ -353,6 +360,7 @@ export default async function Home() {
             href="/findings#spring"
             label={<T en="Spring heats fastest" bn="বসন্তে গরম বাড়ছে সবচেয়ে দ্রুত" />}
             value={<T en={`${spring} °C`} bn={`${bnNum(spring)} °সে`} />}
+            icon={<Thermometer size={20} className="text-accent" />}
             note={
               <T
                 en="every 10 years in March–May, the hot weeks before the monsoon, and faster still in the mountains."
@@ -363,7 +371,22 @@ export default async function Home() {
           <Fact
             href="/findings#rain"
             label={<T en="The rain is moving" bn="বৃষ্টি জায়গা বদলাচ্ছে" />}
-            value={<T en={rainValue} bn={bnNum(rainValue)} />}
+            value={
+              <span className="flex flex-wrap gap-x-6 gap-y-2">
+                <span>
+                  <T en={rainIndus} bn={bnNum(rainIndus)} />
+                  <span className="block text-sm font-normal tracking-normal text-ink-3">
+                    <T en="Indus plain" bn="সিন্ধু সমভূমি" />
+                  </span>
+                </span>
+                <span>
+                  <T en={rainDelta} bn={bnNum(rainDelta)} />
+                  <span className="block text-sm font-normal tracking-normal text-ink-3">
+                    <T en="Bengal delta" bn="বাংলার ব-দ্বীপ" />
+                  </span>
+                </span>
+              </span>
+            }
             note={
               <T
                 en="monsoon rain every 10 years: the dry Indus plain gets more, the Bengal delta gets less. Two independent records agree."
@@ -482,7 +505,7 @@ function ToolCard({ tool, preview }: { tool: Tool; preview?: React.ReactNode }) 
           <T en={question[0]} bn={question[1]} />
         </div>
         <h3 className="mt-2 text-xl font-semibold tracking-tight text-ink">
-          <Link href={href} className="inline-flex items-center gap-1.5 hover:text-accent">
+          <Link href={href} className="inline-flex min-h-10 items-center gap-1.5 hover:text-accent">
             <T en={title[0]} bn={title[1]} />
             <ArrowRight size={17} className="transition-transform group-hover/card:translate-x-0.5" />
           </Link>

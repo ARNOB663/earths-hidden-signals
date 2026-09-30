@@ -4,11 +4,27 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { useEffect, useRef } from "react";
 import { GIBS_WMTS, type LayerDef } from "@/lib/layers";
-import { useTheme } from "@/lib/theme";
+import { cssVar, useTheme } from "@/lib/theme";
 import { createBaseMap, type BaseMap } from "./baseMap";
+import { DifferenceLayer } from "./differenceLayer";
+import { hexToRgb, type DiffKind } from "./diffColors";
 import { ForestLossLayer } from "./forestLossLayer";
 
 export type MapFocus = "south-asia" | "world";
+
+/** Settings for showing the change between the two compare dates as one coloured layer. */
+export interface DiffSettings {
+  values: [number, number][];
+  range: number;
+  kind: DiffKind;
+}
+
+/** A map position: centre and zoom level. */
+export interface MapView {
+  lat: number;
+  lon: number;
+  zoom: number;
+}
 
 const FOCUS: Record<MapFocus, { center: L.LatLngExpression; zoom: number }> = {
   "south-asia": { center: [23.5, 81], zoom: 4 },
@@ -28,9 +44,16 @@ interface Props {
   compareDate: string | null;
   /** Where the divider sits, 0 (left edge) to 1 (right edge). */
   split: number;
+  /** Where the map opens (defaults to South Asia). */
+  initialView?: MapView | null;
+  /** Called after the map stops moving, so the page can keep the position in its link. */
+  onViewChange?: (view: MapView) => void;
+  /** With a compare date: show the change between the dates as one layer, instead of side by side. */
+  diff?: DiffSettings | null;
 }
 
-type DataLayer = L.TileLayer | ForestLossLayer;
+type DataLayer = L.TileLayer | ForestLossLayer | DifferenceLayer;
+const kindOf = (l: DataLayer) => (l instanceof ForestLossLayer ? "forest" : l instanceof DifferenceLayer ? "diff" : "tiles");
 
 export default function LeafletMap({
   layer,
@@ -43,6 +66,9 @@ export default function LeafletMap({
   onForestStats,
   compareDate,
   split,
+  initialView,
+  onViewChange,
+  diff,
 }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<L.Map | null>(null);
@@ -80,24 +106,35 @@ export default function LeafletMap({
   });
 
   // Keep latest callbacks/values reachable from Leaflet event handlers without re-creating layers.
-  const latest = useRef({ onLoadingChange, onForestStats, opacity, yearRange });
+  const latest = useRef({ onLoadingChange, onForestStats, opacity, yearRange, onViewChange, diff });
   useEffect(() => {
-    latest.current = { onLoadingChange, onForestStats, opacity, yearRange };
+    latest.current = { onLoadingChange, onForestStats, opacity, yearRange, onViewChange, diff };
   });
+  // The difference layer is rebuilt when its dates, variable or theme change.
+  const diffActive = !!diff && !!compareDate && layer.kind === "gibs";
+  const diffKey = diffActive ? `${compareDate}|${theme}` : "";
+  const startView = useRef(initialView);
 
   useEffect(() => {
+    const start = startView.current;
     const base = createBaseMap(
       containerRef.current!,
-      FOCUS["south-asia"],
+      start ? { center: [start.lat, start.lon], zoom: start.zoom } : FOCUS["south-asia"],
       document.documentElement.dataset.theme === "dark" ? "dark" : "light",
     );
     baseRef.current = base;
     mapRef.current = base.map;
     referenceRef.current = base.reference;
     const reclip = () => clipLayers.current();
+    const reportView = () => {
+      const c = base.map.getCenter();
+      latest.current.onViewChange?.({ lat: c.lat, lon: c.wrap().lng, zoom: base.map.getZoom() });
+    };
     base.map.on("move zoom resize", reclip);
+    base.map.on("moveend", reportView);
     return () => {
       base.map.off("move zoom resize", reclip);
+      base.map.off("moveend", reportView);
       base.dispose();
       mapRef.current = null;
       dataRef.current = null;
@@ -118,15 +155,28 @@ export default function LeafletMap({
 
     if (layer.kind === "gibs") {
       if (!date) return;
-      next = L.tileLayer(
-        `${GIBS_WMTS}/${layer.gibsId}/default/${date}/${layer.tileMatrixSet}/{z}/{y}/{x}.png`,
-        {
-          pane: "data",
-          maxNativeZoom: layer.maxNativeZoom,
-          opacity: latest.current.opacity,
-          attribution: '<a href="https://earthdata.nasa.gov/gibs">NASA GIBS</a>',
-        },
-      );
+      const template = (d: string) => `${GIBS_WMTS}/${layer.gibsId}/default/${d}/${layer.tileMatrixSet}/{z}/{y}/{x}.png`;
+      const settings = latest.current.diff;
+      next =
+        diffKey && settings
+          ? new DifferenceLayer({
+              pane: "data",
+              urlThen: template(diffKey.split("|")[0]),
+              urlNow: template(date),
+              values: settings.values,
+              range: settings.range,
+              kind: settings.kind,
+              mid: hexToRgb(cssVar("--mid")),
+              maxNativeZoom: layer.maxNativeZoom,
+              opacity: latest.current.opacity,
+              attribution: '<a href="https://earthdata.nasa.gov/gibs">NASA GIBS</a>',
+            })
+          : L.tileLayer(template(date), {
+              pane: "data",
+              maxNativeZoom: layer.maxNativeZoom,
+              opacity: latest.current.opacity,
+              attribution: '<a href="https://earthdata.nasa.gov/gibs">NASA GIBS</a>',
+            });
     } else {
       const [startYear, endYear] = latest.current.yearRange;
       next = new ForestLossLayer({
@@ -164,12 +214,12 @@ export default function LeafletMap({
     clipLayers.current();
 
     // Different kinds of layer never blend well; drop the old ones right away.
-    if (previous && (previous instanceof ForestLossLayer) !== (next instanceof ForestLossLayer)) clearStale();
+    if (previous && kindOf(previous) !== kindOf(next)) clearStale();
 
     return () => {
       next.off("load", onLoad);
     };
-  }, [layer, date]);
+  }, [layer, date, diffKey]);
 
   // The "then" layer for compare mode.
   useEffect(() => {
@@ -179,14 +229,14 @@ export default function LeafletMap({
       map.removeLayer(compareRef.current);
       compareRef.current = null;
     }
-    if (layer.kind === "gibs" && compareDate) {
+    if (layer.kind === "gibs" && compareDate && !diffActive) {
       compareRef.current = L.tileLayer(
         `${GIBS_WMTS}/${layer.gibsId}/default/${compareDate}/${layer.tileMatrixSet}/{z}/{y}/{x}.png`,
         { pane: "data", maxNativeZoom: layer.maxNativeZoom, opacity: latest.current.opacity },
       ).addTo(map);
     }
     clipLayers.current();
-  }, [layer, compareDate]);
+  }, [layer, compareDate, diffActive]);
 
   useEffect(() => {
     splitRef.current = split;
