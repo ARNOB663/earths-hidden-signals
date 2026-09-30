@@ -3,11 +3,20 @@ import {
   BookOpen,
   ChartLineUp,
   CloudRain,
+  DeviceMobile,
+  DownloadSimple,
+  Flask,
+  LinkSimple,
+  MapPin,
   MapTrifold,
+  MoonStars,
   Planet,
+  Translate,
   Warning,
   WarningCircle,
 } from "@phosphor-icons/react/ssr";
+import type { Icon } from "@phosphor-icons/react";
+import Image from "next/image";
 import Link from "next/link";
 import { Sparkline } from "@/components/findings/parts";
 import { PlaceSearch } from "@/components/places/PlaceSearch";
@@ -16,49 +25,101 @@ import { readHazardZones, readLatest, readManifest, readTrendZones } from "@/lib
 import { preparednessSignal } from "@/lib/hazards";
 import { T } from "@/lib/i18n";
 import { zoneNameBn } from "@/lib/names";
+import { buildPlaceReport } from "@/lib/placeReport";
+import { placeById, PLACES } from "@/lib/places";
 import { formatSigned, type Zone } from "@/lib/trends";
 
-const EXPLORE = [
-  {
-    href: "/findings",
-    title: "Read the story",
-    bn: "মূল গল্প পড়ুন",
-    text: "Five findings, explained in simple words with charts and maps.",
-    textBn: "পাঁচটি ফলাফল, সহজ ভাষায়, চার্ট ও মানচিত্রসহ।",
-    Icon: BookOpen,
-  },
+interface Tool {
+  href: string;
+  Icon: Icon;
+  question: [string, string];
+  title: [string, string];
+  text: [string, string];
+  /** Screenshot in public/features, one per theme; omitted when the card draws a live preview. */
+  shot?: { name: string; alt: string };
+  /** "Try this" links that open the tool on an interesting view. */
+  tries: { href: string; label: [string, string] }[];
+}
+
+const TOOLS: Tool[] = [
   {
     href: "/explore",
-    title: "Satellite map",
-    bn: "স্যাটেলাইট মানচিত্র",
-    text: "Watch heat, rain, greenness and forest loss change month by month.",
-    textBn: "মাসে মাসে তাপ, বৃষ্টি, সবুজের পরিমাণ ও বন উজাড় কীভাবে বদলায় দেখুন।",
     Icon: MapTrifold,
+    question: ["What does space see?", "মহাকাশ থেকে কী দেখা যায়?"],
+    title: ["Satellite map", "স্যাটেলাইট মানচিত্র"],
+    text: [
+      "NASA satellite images of heat, rain, greenness and forest loss, month by month since 2000. Slide between two years to compare them.",
+      "২০০০ সাল থেকে মাসে মাসে তাপ, বৃষ্টি, সবুজের পরিমাণ ও বন উজাড়ের নাসার স্যাটেলাইট ছবি। দুই বছর পাশাপাশি রেখে তুলনা করুন।",
+    ],
+    shot: { name: "explore", alt: "Satellite map of ground heat over South Asia in May 2024" },
+    tries: [
+      { href: "/explore?layer=lst-day&date=2024-05-01&compare=2001", label: ["May heat: 2001 vs 2024", "মে মাসের তাপ: ২০০১ বনাম ২০২৪"] },
+      { href: "/explore?layer=forest-loss", label: ["Forest loss since 2001", "২০০১ থেকে বন উজাড়"] },
+    ],
   },
   {
     href: "/trends",
-    title: "Climate trends",
-    bn: "জলবায়ুর প্রবণতা",
-    text: "Click any place to see if it is getting hotter, wetter or drier.",
-    textBn: "যেকোনো জায়গায় ক্লিক করে দেখুন সেখানে গরম, বৃষ্টি বা শুষ্কতা বাড়ছে কি না।",
     Icon: ChartLineUp,
+    question: ["Is it really changing here?", "এখানে কি সত্যিই বদলাচ্ছে?"],
+    title: ["Climate trends", "জলবায়ুর প্রবণতা"],
+    text: [
+      "Click any square of South Asia to see whether heat, rain, very hot months or dry spells are rising, by how much, and how sure we are.",
+      "দক্ষিণ এশিয়ার যেকোনো বর্গে ক্লিক করে দেখুন তাপ, বৃষ্টি, খুব গরম মাস বা টানা শুকনো দিন বাড়ছে কি না, কতটা, আর আমরা কতটা নিশ্চিত।",
+    ],
+    shot: { name: "trends", alt: "Map of squares showing where monsoon rain is rising (blue) and falling (red)" },
+    tries: [
+      { href: "/trends?var=rainfall&season=monsoon", label: ["Where monsoon rain is moving", "বর্ষার বৃষ্টি কোথায় সরছে"] },
+      { href: "/trends?var=hot-months&season=annual", label: ["Very hot months", "খুব গরম মাস"] },
+    ],
   },
   {
     href: "/hazards",
-    title: "Disaster risk",
-    bn: "দুর্যোগের ঝুঁকি",
-    text: "See which regions look like past flood, landslide, fire or cyclone years.",
-    textBn: "কোন অঞ্চলের আবহাওয়া আগের বন্যা, ভূমিধস, আগুন বা ঘূর্ণিঝড়ের বছরের মতো, দেখুন।",
     Icon: Warning,
+    question: ["Should we get ready?", "প্রস্তুতি কি দরকার?"],
+    title: ["Disaster risk", "দুর্যোগের ঝুঁকি"],
+    text: [
+      "Past floods, landslides, fires and cyclones on the map, whether the weather explains them, and which regions look like past disaster years.",
+      "মানচিত্রে আগের বন্যা, ভূমিধস, আগুন ও ঘূর্ণিঝড়; আবহাওয়া এগুলো ব্যাখ্যা করে কি না; আর কোন অঞ্চল আগের দুর্যোগের বছরের মতো দেখাচ্ছে।",
+    ],
+    shot: { name: "hazards", alt: "Cyclone tracks crossing the Bay of Bengal since 1981" },
+    tries: [
+      { href: "/hazards?hazard=cyclone&zone=bay-of-bengal", label: ["Bay of Bengal cyclones", "বঙ্গোপসাগরের ঘূর্ণিঝড়"] },
+      { href: "/hazards?hazard=flood&zone=indus-plain", label: ["This year's flood signal", "এ বছরের বন্যা সংকেত"] },
+    ],
+  },
+  {
+    href: "/places",
+    Icon: MapPin,
+    question: ["What about my city?", "আমার শহরের কী অবস্থা?"],
+    title: ["Place reports", "শহরের রিপোর্ট"],
+    text: [
+      `A one-page climate report for each of ${PLACES.length} cities: how much warmer it got, how the rain changed, and which disasters happen nearby.`,
+      `${bnNum(PLACES.length)}টি শহরের প্রতিটির জন্য এক পাতার জলবায়ু রিপোর্ট: কতটা গরম বেড়েছে, বৃষ্টি কীভাবে বদলেছে, আর আশপাশে কোন দুর্যোগ ঘটে।`,
+    ],
+    tries: [
+      { href: "/places/dhaka", label: ["Dhaka", "ঢাকা"] },
+      { href: "/places/kathmandu", label: ["Kathmandu", "কাঠমান্ডু"] },
+      { href: "/places", label: ["All cities", "সব শহর"] },
+    ],
   },
 ];
 
+const EXTRAS: { Icon: Icon; label: [string, string] }[] = [
+  { Icon: Translate, label: ["বাংলা or English", "বাংলা বা English"] },
+  { Icon: MoonStars, label: ["Light and dark mode", "আলো ও অন্ধকার মোড"] },
+  { Icon: DownloadSimple, label: ["Download the data behind any chart", "যেকোনো চার্টের তথ্য ডাউনলোড"] },
+  { Icon: LinkSimple, label: ["Share a view: the link keeps your place", "লিংক শেয়ার করলে একই দৃশ্য খোলে"] },
+  { Icon: DeviceMobile, label: ["Works on phones", "ফোনেও চলে"] },
+];
+
 export default async function Home() {
-  const [manifest, trendZones, hazardZones, latest] = await Promise.all([
+  const dhaka = placeById("dhaka")!;
+  const [manifest, trendZones, hazardZones, latest, dhakaReport] = await Promise.all([
     readManifest(),
     readTrendZones(),
     readHazardZones(),
     readLatest(),
+    buildPlaceReport(dhaka),
   ]);
   const monthName = (ym: string) =>
     new Date(`${ym}-01T00:00:00`).toLocaleDateString("en-GB", { month: "long", year: "numeric" });
@@ -150,6 +211,93 @@ export default async function Home() {
             </span>
           </p>
         </Link>
+      </section>
+
+      {/* What you can do here */}
+      <section aria-labelledby="tools" className="mb-20">
+        <h2 id="tools" className="text-3xl font-semibold tracking-tight text-ink">
+          <T en="What you can do here" bn="এই সাইটে যা করতে পারবেন" />
+        </h2>
+        <p className="mt-2 max-w-[60ch] text-lg leading-relaxed text-ink-2">
+          <T
+            en="Four tools, each answering one question. Pick the one that matches yours, or try one of the ready-made views."
+            bn="চারটি টুল, প্রতিটি একটি প্রশ্নের উত্তর দেয়। আপনার প্রশ্নের সাথে মেলে এমনটি বেছে নিন, অথবা তৈরি করে রাখা দৃশ্যগুলোর একটি খুলে দেখুন।"
+          />
+        </p>
+        <div className="mt-8 grid gap-6 md:grid-cols-2">
+          {TOOLS.map((tool) => (
+            <ToolCard
+              key={tool.href}
+              tool={tool}
+              preview={
+                tool.shot ? undefined : (
+                  <PlacePreview
+                    name={<T en={dhaka.name} bn="ঢাকা" />}
+                    warmed={dhakaReport.temperature.annual ? (dhakaReport.temperature.annual.trend.slopePerDecade * (last - first)) / 10 : null}
+                    series={(dhakaReport.temperature.annual?.series ?? []).filter((v): v is number => v !== null)}
+                    rainPct={
+                      dhakaReport.rain.monsoon?.mean
+                        ? (dhakaReport.rain.monsoon.trend.slopePerDecade / dhakaReport.rain.monsoon.mean) * 100
+                        : null
+                    }
+                    floods={dhakaReport.floods.count}
+                    radiusKm={dhakaReport.floods.radiusKm}
+                    first={first}
+                  />
+                )
+              }
+            />
+          ))}
+        </div>
+
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          <Link
+            href="/findings"
+            className="group flex items-center gap-4 rounded-3xl bg-card p-5 shadow-soft transition-transform hover:-translate-y-0.5"
+          >
+            <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-accent-soft text-accent">
+              <BookOpen size={22} weight="duotone" />
+            </span>
+            <span className="min-w-0 flex-1">
+              <span className="block font-semibold text-ink">
+                <T en="The story" bn="মূল গল্প" />
+              </span>
+              <span className="block text-sm leading-relaxed text-ink-2">
+                <T en="Our five main findings, in plain words with charts." bn="আমাদের পাঁচটি মূল ফলাফল, সহজ ভাষায়, চার্টসহ।" />
+              </span>
+            </span>
+            <ArrowRight size={18} className="shrink-0 text-accent transition-transform group-hover:translate-x-0.5" />
+          </Link>
+          <Link
+            href="/methods"
+            className="group flex items-center gap-4 rounded-3xl bg-card p-5 shadow-soft transition-transform hover:-translate-y-0.5"
+          >
+            <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-accent-soft text-accent">
+              <Flask size={22} weight="duotone" />
+            </span>
+            <span className="min-w-0 flex-1">
+              <span className="block font-semibold text-ink">
+                <T en="How it works" bn="কীভাবে কাজ করে" />
+              </span>
+              <span className="block text-sm leading-relaxed text-ink-2">
+                <T
+                  en="The NASA data we use and how we test that a change is real."
+                  bn="আমরা নাসার কোন তথ্য ব্যবহার করি, আর পরিবর্তন সত্যি কি না কীভাবে যাচাই করি।"
+                />
+              </span>
+            </span>
+            <ArrowRight size={18} className="shrink-0 text-accent transition-transform group-hover:translate-x-0.5" />
+          </Link>
+        </div>
+
+        <ul className="mt-6 flex flex-wrap gap-2" aria-label="Also on this site">
+          {EXTRAS.map(({ Icon, label }) => (
+            <li key={label[0]} className="flex items-center gap-2 rounded-full border border-line px-3.5 py-1.5 text-sm text-ink-2">
+              <Icon size={16} className="text-accent" />
+              <T en={label[0]} bn={label[1]} />
+            </li>
+          ))}
+        </ul>
       </section>
 
       {/* The latest month */}
@@ -293,34 +441,134 @@ export default async function Home() {
         </ol>
       </section>
 
-      {/* Explore */}
-      <section aria-labelledby="explore" className="mt-24">
-        <h2 id="explore" className="text-2xl font-semibold tracking-tight text-ink">
-          <T en="Explore" bn="ঘুরে দেখুন" />
-        </h2>
-        <div className="mt-6 grid gap-4 sm:grid-cols-2">
-          {EXPLORE.map(({ href, title, bn, text, textBn, Icon }) => (
+    </div>
+  );
+}
+
+function ToolCard({ tool, preview }: { tool: Tool; preview?: React.ReactNode }) {
+  const { href, Icon, question, title, text, shot, tries } = tool;
+  return (
+    <article className="group/card flex flex-col rounded-3xl bg-card p-2 shadow-soft">
+      <Link
+        href={href}
+        className="relative block aspect-[16/10] overflow-hidden rounded-2xl bg-sunken"
+        aria-label={title[0]}
+        tabIndex={-1}
+      >
+        {shot ? (
+          <>
+            <Image
+              src={`/features/${shot.name}-light.webp`}
+              alt={shot.alt}
+              fill
+              sizes="(min-width: 1200px) 580px, (min-width: 768px) 50vw, 100vw"
+              className="object-cover transition-transform duration-500 group-hover/card:scale-[1.03] dark:hidden"
+            />
+            <Image
+              src={`/features/${shot.name}-dark.webp`}
+              alt={shot.alt}
+              fill
+              sizes="(min-width: 1200px) 580px, (min-width: 768px) 50vw, 100vw"
+              className="hidden object-cover transition-transform duration-500 group-hover/card:scale-[1.03] dark:block"
+            />
+          </>
+        ) : (
+          preview
+        )}
+      </Link>
+      <div className="flex flex-1 flex-col p-4 sm:p-5">
+        <div className="flex items-center gap-2 text-sm font-medium text-accent">
+          <Icon size={18} weight="duotone" />
+          <T en={question[0]} bn={question[1]} />
+        </div>
+        <h3 className="mt-2 text-xl font-semibold tracking-tight text-ink">
+          <Link href={href} className="inline-flex items-center gap-1.5 hover:text-accent">
+            <T en={title[0]} bn={title[1]} />
+            <ArrowRight size={17} className="transition-transform group-hover/card:translate-x-0.5" />
+          </Link>
+        </h3>
+        <p className="mt-1.5 flex-1 leading-relaxed text-ink-2">
+          <T en={text[0]} bn={text[1]} />
+        </p>
+        <div className="mt-4 flex flex-wrap items-center gap-2">
+          <span className="text-sm text-ink-3">
+            <T en="Try:" bn="দেখুন:" />
+          </span>
+          {tries.map((t) => (
             <Link
-              key={href}
-              href={href}
-              className="group flex items-start gap-4 rounded-3xl bg-card p-6 shadow-soft transition-transform hover:-translate-y-0.5"
+              key={t.href}
+              href={t.href}
+              className="rounded-full bg-sunken px-3 py-1.5 text-sm text-ink transition-colors hover:bg-accent-soft hover:text-accent"
             >
-              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-sunken text-ink transition-colors group-hover:bg-accent group-hover:text-accent-ink">
-                <Icon size={24} />
-              </span>
-              <div>
-                <div className="flex items-center gap-1.5 text-lg font-semibold text-ink">
-                  <T en={title} bn={bn} />
-                  <ArrowRight size={16} className="opacity-0 transition-opacity group-hover:opacity-100" />
-                </div>
-                <p className="mt-1 leading-relaxed text-ink-2">
-                  <T en={text} bn={textBn} />
-                </p>
-              </div>
+              <T en={t.label[0]} bn={t.label[1]} />
             </Link>
           ))}
         </div>
-      </section>
+      </div>
+    </article>
+  );
+}
+
+/** A live miniature of a place report, drawn from the same data as the real page. */
+function PlacePreview({
+  name,
+  warmed,
+  series,
+  rainPct,
+  floods,
+  radiusKm,
+  first,
+}: {
+  name: React.ReactNode;
+  warmed: number | null;
+  series: number[];
+  rainPct: number | null;
+  floods: number;
+  radiusKm: number;
+  first: number;
+}) {
+  const w = warmed !== null ? formatSigned(warmed, 1) : null;
+  const r = rainPct !== null ? formatSigned(rainPct, 0) : null;
+  return (
+    <div className="flex h-full flex-col justify-between p-5 sm:p-7">
+      <div>
+        <div className="flex items-center gap-2 text-sm text-ink-3">
+          <MapPin size={16} weight="fill" className="text-accent" />
+          <T en="Place report" bn="শহরের রিপোর্ট" />
+        </div>
+        <div className="mt-1 text-3xl font-semibold tracking-tight text-ink sm:text-4xl">{name}</div>
+      </div>
+      {series.length > 1 && <Sparkline values={series} color="var(--warm-3)" />}
+      <dl className="grid grid-cols-3 gap-3 text-sm">
+        {w && (
+          <div>
+            <dt className="text-ink-3">
+              <T en={`Since ${first}`} bn={`${bnNum(first)} থেকে`} />
+            </dt>
+            <dd className="text-lg font-semibold tabular-nums text-ink">
+              <T en={`${w} °C`} bn={`${bnNum(w)} °সে`} />
+            </dd>
+          </div>
+        )}
+        {r && (
+          <div>
+            <dt className="text-ink-3">
+              <T en="Monsoon rain" bn="বর্ষার বৃষ্টি" />
+            </dt>
+            <dd className="text-lg font-semibold tabular-nums text-ink">
+              <T en={`${r}%/decade`} bn={`${bnNum(r)}%/দশক`} />
+            </dd>
+          </div>
+        )}
+        <div>
+          <dt className="text-ink-3">
+            <T en={`Floods, ${radiusKm} km`} bn={`বন্যা, ${bnNum(radiusKm)} কিমি`} />
+          </dt>
+          <dd className="text-lg font-semibold tabular-nums text-ink">
+            <T en={String(floods)} bn={bnNum(floods)} />
+          </dd>
+        </div>
+      </dl>
     </div>
   );
 }

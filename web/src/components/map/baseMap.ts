@@ -29,20 +29,14 @@ function baseLayers(theme: Theme): L.Layer[] {
   ];
 }
 
+// Esri's reference layers carry both the borders and the place names. (GIBS Reference_Labels_15m and
+// Reference_Features_15m serve opaque black tiles in EPSG:3857, which would darken the data beneath.)
 function referenceLayers(theme: Theme): L.Layer[] {
-  const labels = L.tileLayer(
-    `${ESRI}/${theme === "light" ? "World_Light_Gray_Reference" : "World_Dark_Gray_Reference"}/MapServer/tile/{z}/{y}/{x}`,
-    { pane: "reference", maxNativeZoom: 16, attribution: "Labels &copy; Esri" },
-  );
-  if (theme === "light") return [labels];
-  // (GIBS Reference_Labels_15m serves opaque black tiles in EPSG:3857, so only its borders layer is used.)
   return [
-    L.tileLayer(`${GIBS_WMTS}/Reference_Features_15m/default/GoogleMapsCompatible_Level13/{z}/{y}/{x}.png`, {
-      pane: "reference",
-      maxNativeZoom: 13,
-      opacity: 0.55,
-    }),
-    labels,
+    L.tileLayer(
+      `${ESRI}/${theme === "light" ? "World_Light_Gray_Reference" : "World_Dark_Gray_Reference"}/MapServer/tile/{z}/{y}/{x}`,
+      { pane: "reference", maxNativeZoom: 16, attribution: "Labels &copy; Esri" },
+    ),
   ];
 }
 

@@ -10,6 +10,7 @@ import {
   MapPin,
   Pause,
   Play,
+  SidebarSimple,
   Sun,
   Thermometer,
   TreeEvergreen,
@@ -80,6 +81,8 @@ export default function MapExplorer({ catalog }: { catalog: GibsCatalog }) {
   const [compareOn, setCompareOn] = useState(() => params.has("compare"));
   const [thenYear, setThenYear] = useState<string | null>(() => params.get("compare"));
   const [split, setSplit] = useState(0.6);
+  // On large screens the controls float over the map; hiding them frees the whole map.
+  const [panelHidden, setPanelHidden] = useState(false);
 
   const layer = LAYERS.find((l) => l.id === layerId)!;
   const info = layer.kind === "gibs" ? catalog[layer.id] : null;
@@ -202,11 +205,11 @@ export default function MapExplorer({ catalog }: { catalog: GibsCatalog }) {
               bn="&ldquo;দুই বছর তুলনা&rdquo; চালু করে একই জায়গা আগে ও এখন পাশাপাশি দেখুন।"
             />,
           ]}
-          buttonClassName="absolute left-3 top-3 lg:left-[392px] lg:top-4"
-          cardClassName="absolute left-3 top-16 lg:left-[392px] lg:top-[68px]"
+          buttonClassName={`absolute left-3 top-3 ${panelHidden ? "lg:left-4 lg:top-[76px]" : "lg:left-[392px] lg:top-4"}`}
+          cardClassName={`absolute left-3 top-16 ${panelHidden ? "lg:left-4 lg:top-[128px]" : "lg:left-[392px] lg:top-[68px]"}`}
         />
         {loading && (
-          <div className="pointer-events-none absolute left-1/2 top-4 z-[500] -translate-x-1/2 rounded-full bg-card px-4 py-1.5 text-sm text-ink-2 shadow-soft lg:left-[calc(50%+190px)]">
+          <div className={`pointer-events-none absolute left-1/2 top-4 z-[500] -translate-x-1/2 rounded-full bg-card px-4 py-1.5 text-sm text-ink-2 shadow-soft ${panelHidden ? "" : "lg:left-[calc(50%+190px)]"}`}>
             <T en="Loading NASA imagery…" bn="নাসার ছবি লোড হচ্ছে…" />
           </div>
         )}
@@ -222,16 +225,63 @@ export default function MapExplorer({ catalog }: { catalog: GibsCatalog }) {
             </button>
           ))}
         </div>
+
+        {panelHidden && (
+          <>
+            <div className="absolute left-4 top-4 z-[600] hidden items-center gap-3 rounded-full border border-line bg-card py-1.5 pl-1.5 pr-4 text-sm shadow-soft lg:flex">
+              <button
+                onClick={() => setPanelHidden(false)}
+                aria-expanded={false}
+                aria-controls="map-controls"
+                className="inline-flex items-center gap-2 rounded-full bg-accent px-3.5 py-2 font-medium text-accent-ink transition-all hover:bg-accent-hover active:scale-[0.98]"
+              >
+                <SidebarSimple size={16} weight="fill" />
+                <T en="Show controls" bn="নিয়ন্ত্রণ দেখান" />
+              </button>
+              <span className="font-medium text-ink">
+                <T en={layer.shortTitle} bn={layer.bn.shortTitle} />
+              </span>
+              <span className="tabular-nums text-ink-2">
+                {layer.kind === "gibs" && date
+                  ? compareDate
+                    ? `${month(compareDate)} ↔ ${month(date)}`
+                    : month(date)
+                  : `${year(yearRange[0])} – ${year(yearRange[1])}`}
+              </span>
+            </div>
+            <div className="absolute bottom-4 left-4 z-[600] hidden w-72 rounded-2xl border border-line bg-card p-4 shadow-soft lg:block">
+              <div className="mb-2 text-sm font-medium text-ink">
+                <T en="Colour key" bn="রঙের অর্থ" />
+              </div>
+              <ColourKey layer={layer} info={info} />
+            </div>
+          </>
+        )}
       </div>
 
       <aside
+        id="map-controls"
         aria-label={t("Map controls", "মানচিত্রের নিয়ন্ত্রণ")}
-        className="z-[600] flex flex-col gap-6 bg-card p-5 lg:absolute lg:bottom-4 lg:left-4 lg:top-4 lg:w-[360px] lg:overflow-y-auto lg:rounded-2xl lg:border lg:border-line lg:shadow-soft"
+        className={`z-[600] flex flex-col gap-6 bg-card p-5 lg:absolute lg:bottom-4 lg:left-4 lg:top-4 lg:w-[360px] lg:overflow-y-auto lg:rounded-2xl lg:border lg:border-line lg:shadow-soft lg:transition-[translate,visibility] lg:duration-300 ${
+          panelHidden ? "lg:invisible lg:-translate-x-[calc(100%+2rem)]" : ""
+        }`}
       >
         <section>
-          <h1 className="text-lg font-semibold text-ink">
-            <T en="What do you want to see?" bn="কী দেখতে চান?" />
-          </h1>
+          <div className="flex items-start justify-between gap-3">
+            <h1 className="text-lg font-semibold text-ink">
+              <T en="What do you want to see?" bn="কী দেখতে চান?" />
+            </h1>
+            <button
+              onClick={() => setPanelHidden(true)}
+              aria-expanded={!panelHidden}
+              aria-controls="map-controls"
+              title={t("Hide this panel to see more of the map", "মানচিত্র বড় করে দেখতে এই অংশটি লুকান")}
+              className="-mr-1.5 -mt-1 hidden shrink-0 items-center gap-1.5 rounded-full px-2.5 py-1.5 text-sm text-ink-2 transition-colors hover:bg-sunken hover:text-ink lg:inline-flex"
+            >
+              <SidebarSimple size={17} />
+              <T en="Hide" bn="লুকান" />
+            </button>
+          </div>
           <div className="mt-3 grid grid-cols-2 gap-2">
             {LAYERS.map((l) => {
               const active = l.id === layerId;
@@ -396,25 +446,7 @@ export default function MapExplorer({ catalog }: { catalog: GibsCatalog }) {
             <T en="Colour key" bn="রঙের অর্থ" />
           </h2>
           <div className="mt-3">
-            {layer.kind === "gibs" && info?.legend ? (
-              <LegendBar legend={info.legend} unit={t(layer.displayUnit, layer.bn.unit ?? layer.displayUnit)} />
-            ) : layer.kind === "forest-loss" ? (
-              <div>
-                <div className="h-3 rounded-full" style={{ background: lossYearGradient() }} />
-                <div className="mt-1.5 flex justify-between text-xs text-ink-3">
-                  <span>
-                    <T en={`Lost in ${layer.firstYear}`} bn={`${bnNum(layer.firstYear)} সালে উজাড়`} />
-                  </span>
-                  <span>
-                    <T en={`Lost in ${layer.lastYear}`} bn={`${bnNum(layer.lastYear)} সালে উজাড়`} />
-                  </span>
-                </div>
-              </div>
-            ) : (
-              <p className="text-sm text-ink-3">
-                <T en="Colour key unavailable." bn="রঙের অর্থ পাওয়া যায়নি।" />
-              </p>
-            )}
+            <ColourKey layer={layer} info={info} />
           </div>
         </section>
 
@@ -486,6 +518,31 @@ export default function MapExplorer({ catalog }: { catalog: GibsCatalog }) {
         </details>
       </aside>
     </div>
+  );
+}
+
+function ColourKey({ layer, info }: { layer: LayerDef; info: GibsCatalog[string] | null }) {
+  const t = useT();
+  if (layer.kind === "gibs" && info?.legend)
+    return <LegendBar legend={info.legend} unit={t(layer.displayUnit, layer.bn.unit ?? layer.displayUnit)} />;
+  if (layer.kind === "forest-loss")
+    return (
+      <div>
+        <div className="h-3 rounded-full" style={{ background: lossYearGradient() }} />
+        <div className="mt-1.5 flex justify-between text-xs text-ink-3">
+          <span>
+            <T en={`Lost in ${layer.firstYear}`} bn={`${bnNum(layer.firstYear)} সালে উজাড়`} />
+          </span>
+          <span>
+            <T en={`Lost in ${layer.lastYear}`} bn={`${bnNum(layer.lastYear)} সালে উজাড়`} />
+          </span>
+        </div>
+      </div>
+    );
+  return (
+    <p className="text-sm text-ink-3">
+      <T en="Colour key unavailable." bn="রঙের অর্থ পাওয়া যায়নি।" />
+    </p>
   );
 }
 

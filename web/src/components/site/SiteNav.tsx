@@ -30,8 +30,25 @@ export function SiteNav() {
     setOpen(false);
   }
 
+  // At the top of a page the bar blends into it; once the page scrolls, a line and a frosted
+  // background separate the bar from the content passing beneath. Full-screen map pages don't
+  // scroll on large screens, so they keep the line to frame the map.
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const update = () => setScrolled(window.scrollY > 4);
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    return () => window.removeEventListener("scroll", update);
+  }, []);
+  const mapPage = ["/explore", "/trends", "/hazards"].some((href) => pathname.startsWith(href));
+  const separated = scrolled || open || mapPage;
+
   return (
-    <header className="sticky top-0 z-[1000] border-b border-line bg-page/85 backdrop-blur-md">
+    <header
+      className={`sticky top-0 z-[1000] border-b transition-[border-color,background-color] duration-200 ${
+        separated ? "border-line bg-page/85 backdrop-blur-md" : "border-transparent bg-page"
+      }`}
+    >
       <div className="mx-auto flex h-16 max-w-[1440px] items-center gap-4 px-4 sm:px-6">
         <Link href="/" className="flex shrink-0 items-center gap-2.5 rounded-lg" aria-label="Earth's Hidden Signals, home">
           <Logo />
