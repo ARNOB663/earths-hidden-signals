@@ -13,7 +13,6 @@ import {
 } from "@phosphor-icons/react/ssr";
 import type { Icon } from "@phosphor-icons/react";
 import Image from "next/image";
-import HeroOverlay from "@/components/site/HeroOverlay";
 import Link from "next/link";
 import { Sparkline } from "@/components/findings/parts";
 import { PlaceSearch } from "@/components/places/PlaceSearch";
@@ -273,8 +272,7 @@ export default async function Home() {
         </div>
 
         {/* Scientific overlay visualization */}
-        <HeroOverlay />
-
+        
         {/* Photo credit — required by CC BY-SA 2.0 */}
         <p className="absolute bottom-2 right-3 z-10 text-[10px] text-white/35 select-none">
           Photo: Faisal Akram / CC BY-SA 2.0
