@@ -273,7 +273,7 @@ export default async function Home() {
         </div>
 
         {/* ── Far-right: real South Asia map (positioned relative to hero section) ── */}
-        <div className="absolute right-6 top-1/2 z-20 -translate-y-1/2 xl:right-12" style={{border: '2px solid red'}}>
+        <div className="absolute right-6 top-1/2 z-20 -translate-y-1/2 xl:right-12">
           <HeroMapWrapper />
         </div>
 
