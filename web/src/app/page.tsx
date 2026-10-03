@@ -28,6 +28,7 @@ import { preparednessSignal } from "@/lib/hazards";
 import { T } from "@/lib/i18n";
 import { zoneNameBn } from "@/lib/names";
 import { buildPlaceReport } from "@/lib/placeReport";
+import HeroMapWrapper from "@/components/hero/HeroMapWrapper";
 import { placeById, PLACES } from "@/lib/places";
 import { formatSigned, type Zone } from "@/lib/trends";
 
@@ -269,6 +270,11 @@ export default async function Home() {
             </div>
           </div>
 
+        </div>
+
+        {/* ── Far-right: real South Asia map (positioned relative to hero section) ── */}
+        <div className="absolute right-6 top-1/2 z-20 -translate-y-1/2 xl:right-12" style={{border: '2px solid red'}}>
+          <HeroMapWrapper />
         </div>
 
         {/* Scientific overlay visualization */}
