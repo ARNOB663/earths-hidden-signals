@@ -4,3 +4,6 @@ requests>=2.31
 pymannkendall>=1.4
 netCDF4>=1.6
 pytest>=8
+
+# Country polygon aggregation for the satellite map
+shapely>=2.0

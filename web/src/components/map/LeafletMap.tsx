@@ -9,6 +9,7 @@ import { createBaseMap, type BaseMap } from "./baseMap";
 import { DifferenceLayer } from "./differenceLayer";
 import { hexToRgb, type DiffKind } from "./diffColors";
 import { ForestLossLayer } from "./forestLossLayer";
+import type { MapPlace } from "@/lib/mapPlaces";
 
 export type MapFocus = "south-asia" | "world";
 
@@ -50,6 +51,8 @@ interface Props {
   onViewChange?: (view: MapView) => void;
   /** With a compare date: show the change between the dates as one layer, instead of side by side. */
   diff?: DiffSettings | null;
+  selectedPlace?: MapPlace | null;
+  panelHidden?: boolean;
 }
 
 type DataLayer = L.TileLayer | ForestLossLayer | DifferenceLayer;
@@ -69,6 +72,8 @@ export default function LeafletMap({
   initialView,
   onViewChange,
   diff,
+  selectedPlace = null,
+  panelHidden = false,
 }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<L.Map | null>(null);
@@ -79,6 +84,10 @@ export default function LeafletMap({
   const compareRef = useRef<L.TileLayer | null>(null);
   const splitRef = useRef(split);
   const theme = useTheme();
+  const selectionRef = useRef<L.LayerGroup | null>(null);
+  const previousSelection = useRef<string | null>(null);
+  const panelHiddenRef = useRef(panelHidden);
+  useEffect(() => { panelHiddenRef.current = panelHidden; }, [panelHidden]);
 
   // Compare mode: clip the "then" layer to the left of the divider and everything else to the right.
   // Clipping uses layer coordinates, so it must be recomputed whenever the map moves.
@@ -266,6 +275,32 @@ export default function LeafletMap({
     const { center, zoom } = FOCUS[focus.target];
     mapRef.current?.flyTo(center, zoom, { duration: 1.2 });
   }, [focus]);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map) return;
+    map.invalidateSize({ pan: false });
+    selectionRef.current?.remove();
+    selectionRef.current = null;
+    const desktop = window.matchMedia("(min-width: 1024px)").matches;
+    const paddingTopLeft: L.PointExpression = desktop && !panelHiddenRef.current ? [380, 76] : [20, 76];
+    const paddingBottomRight: L.PointExpression = desktop ? [24, 36] : [20, 200];
+    if (selectedPlace) {
+      if (!map.getPane("selection")) map.createPane("selection").style.zIndex = "480";
+      const feature = { type: "Feature" as const, properties: {}, geometry: selectedPlace.geometry };
+      const outline = L.geoJSON(feature, { pane: "selection", interactive: false, style: { color: "#111111", weight: 4, fill: false } });
+      const highlight = L.geoJSON(feature, { pane: "selection", style: { color: "#5098ea", weight: 2, fillOpacity: 0.04, dashArray: selectedPlace.type === "region" ? "6 4" : undefined } });
+      const label = document.createElement("span");
+      label.textContent = selectedPlace.name;
+      highlight.bindTooltip(label, { permanent: true, direction: "center" });
+      selectionRef.current = L.layerGroup([outline, highlight]).addTo(map);
+      map.flyToBounds(selectedPlace.bounds, { paddingTopLeft, paddingBottomRight, duration: 1.2, maxZoom: 8 });
+    } else if (previousSelection.current) {
+      map.flyToBounds([[5, 60], [38, 100]], { paddingTopLeft, paddingBottomRight, duration: 1.2 });
+    }
+    previousSelection.current = selectedPlace?.id ?? null;
+    return () => { selectionRef.current?.remove(); selectionRef.current = null; };
+  }, [selectedPlace]);
 
   return <div ref={containerRef} className="h-full w-full bg-sunken" />;
 }

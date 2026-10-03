@@ -1,0 +1,7 @@
+.shell :global(.leaflet-top.leaflet-right) { top: 58px; }
+.shell:has([role="listbox"]) :global(.leaflet-top.leaflet-right) { top: 320px; }
+.shell:has([role="listbox"]) .focusControls { visibility: hidden; }
+@media (min-width: 1024px) {
+  .shell :global(.leaflet-top.leaflet-right) { top: 62px; }
+  .shell:has([role="listbox"]) :global(.leaflet-top.leaflet-right) { top: 324px; }
+}

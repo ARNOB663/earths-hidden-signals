@@ -15,6 +15,9 @@ import type { Icon } from "@phosphor-icons/react";
 import Image from "next/image";
 import Link from "next/link";
 import { Sparkline } from "@/components/findings/parts";
+import EvidenceStory from "@/components/home/EvidenceStory";
+import HeroClimateStory from "@/components/hero/HeroClimateStory";
+import HeroImageSlideshow from "@/components/hero/HeroImageSlideshow";
 import { PlaceSearch } from "@/components/places/PlaceSearch";
 import { StartTourButton } from "@/components/site/Tour";
 import { bnMonth, bnNum } from "@/lib/bn";
@@ -22,13 +25,13 @@ import {
   readHazardZones,
   readLatest,
   readManifest,
+  readTrendGrid,
   readTrendZones,
 } from "@/lib/data";
 import { preparednessSignal } from "@/lib/hazards";
 import { T } from "@/lib/i18n";
 import { zoneNameBn } from "@/lib/names";
 import { buildPlaceReport } from "@/lib/placeReport";
-import HeroMapWrapper from "@/components/hero/HeroMapWrapper";
 import { placeById, PLACES } from "@/lib/places";
 import { formatSigned, type Zone } from "@/lib/trends";
 
@@ -130,13 +133,14 @@ const TOOLS: Tool[] = [
 
 export default async function Home() {
   const dhaka = placeById("dhaka")!;
-  const [manifest, trendZones, hazardZones, latest, dhakaReport] =
+  const [manifest, trendZones, hazardZones, latest, dhakaReport, rainfallGrid] =
     await Promise.all([
       readManifest(),
       readTrendZones(),
       readHazardZones(),
       readLatest(),
       buildPlaceReport(dhaka),
+      readTrendGrid("rainfall_monsoon"),
     ]);
   const monthName = (ym: string) =>
     new Date(`${ym}-01T00:00:00`).toLocaleDateString("en-GB", {
@@ -212,7 +216,10 @@ export default async function Home() {
             .scan-line { animation: none; }
           }
         `}</style>
-        <div className="relative mx-auto max-w-384 px-6 pb-20 pt-14 sm:px-8 lg:min-h-[86vh] lg:px-12 lg:pb-28 lg:pr-96 lg:pt-20 xl:pr-12">
+
+        <HeroImageSlideshow />
+
+        <div className="relative mx-auto max-w-384 px-6 pb-20 pt-14 sm:px-8 lg:min-h-[86vh] lg:px-12 lg:pb-28 lg:pt-20 xl:pr-12">
           {/* ── Left: text ── */}
           <div className="relative z-10 max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent-soft px-4 py-1.5 text-sm font-medium text-accent">
@@ -230,7 +237,7 @@ export default async function Home() {
               />
             </h1>
 
-            <p className="mt-5 max-w-[50ch] text-lg leading-relaxed text-white/80">
+            <p className="mt-5 max-w-[50ch] text-lg leading-[1.6] text-white/85">
               <T
                 en={`${years.length} years of NASA data, explained simply: where it is getting hotter, where the rain is moving, and which places should get ready for floods, landslides and fires.`}
                 bn={`নাসার ${bnNum(years.length)} বছরের তথ্য, সহজ ভাষায়: কোথায় গরম বাড়ছে, বৃষ্টি কোন দিকে সরছে, আর কোন জায়গাগুলোকে বন্যা, ভূমিধস ও আগুনের জন্য প্রস্তুত থাকতে হবে।`}
@@ -259,224 +266,62 @@ export default async function Home() {
             </div>
 
             <div className="mt-3">
-              <StartTourButton />
+              <StartTourButton className="text-[#58A6FF] hover:text-[#8CC4FF]" />
             </div>
 
             <div className="mt-8">
-              <p className="mb-2 text-sm text-white/70">
+              <p className="mb-2 text-sm text-white/80">
                 <T en="Or search your city" bn="অথবা আপনার শহর খুঁজুন" />
               </p>
               <PlaceSearch />
             </div>
           </div>
 
+          <HeroClimateStory
+            zones={trendZones}
+          />
         </div>
 
-        {/* ── Far-right: real South Asia map (positioned relative to hero section) ── */}
-        <div className="absolute right-6 top-1/2 z-20 -translate-y-1/2 xl:right-12">
-          <HeroMapWrapper />
-        </div>
 
         {/* Scientific overlay visualization */}
         
-        {/* Photo credit — required by CC BY-SA 2.0 */}
-        <p className="absolute bottom-2 right-3 z-10 text-[10px] text-white/35 select-none">
-          Photo: Faisal Akram / CC BY-SA 2.0
+        {/* Photo credit for the Wikimedia Commons flood photographs */}
+        <p className="absolute bottom-2 right-3 z-10 text-[10px] text-white/55 select-none">
+          Photos: Wikimedia Commons / Bangladesh flood series
         </p>
       </section>
 
       {/* ===== CONTENT ===== */}
-      <div className="mx-auto w-full max-w-300 px-4 pb-24 sm:px-6">
-        {/* ── The Signal: concept flow ── */}
-        <section className="py-20 md:py-28" aria-labelledby="signal-hdg">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2
-              id="signal-hdg"
-              className="text-3xl font-semibold tracking-tight text-ink sm:text-4xl"
-            >
-              <T
-                en={`${years.length} years of Earth data reveal signals we normally cannot see.`}
-                bn={`পৃথিবীর ${bnNum(years.length)} বছরের তথ্য এমন সংকেত প্রকাশ করে যা আমরা সাধারণত দেখতে পাই না।`}
-              />
-            </h2>
-            <p className="mt-4 text-lg text-ink-2">
-              <T
-                en="Preparedness, not prediction."
-                bn="প্রস্তুতি, পূর্বাভাস নয়।"
-              />
-            </p>
-          </div>
-
-          <div className="mt-14 grid grid-cols-2 gap-x-6 gap-y-12 md:grid-cols-4">
-            {(
-              [
-                {
-                  Icon: Planet,
-                  en: "NASA Data",
-                  bn: "নাসা ডেটা",
-                  sub: [
-                    `Satellites and records since ${first}`,
-                    `${bnNum(first)} থেকে স্যাটেলাইট ও রেকর্ড`,
-                  ],
-                },
-                {
-                  Icon: ChartLineUp,
-                  en: "Long-term Trends",
-                  bn: "দীর্ঘমেয়াদি প্রবণতা",
-                  sub: [
-                    `Statistical analysis of ${temp.cells} cells`,
-                    `${bnNum(temp.cells)}টি কোষের পরিসংখ্যান`,
-                  ],
-                },
-                {
-                  Icon: Warning,
-                  en: "Hazard Signals",
-                  bn: "বিপদ সংকেত",
-                  sub: [
-                    "Linked to past floods, fires, cyclones",
-                    "অতীত দুর্যোগের সাথে যুক্ত",
-                  ],
-                },
-                {
-                  Icon: BookOpen,
-                  en: "Preparedness",
-                  bn: "প্রস্তুতি",
-                  sub: [
-                    "So communities can act early",
-                    "যাতে জনগোষ্ঠী আগে থেকে পদক্ষেপ নিতে পারে",
-                  ],
-                },
-              ] as const
-            ).map(({ Icon, en, bn, sub }, i, arr) => (
-              <div
-                key={en}
-                className="relative flex flex-col items-center text-center"
-              >
-                {/* Arrow connector (desktop only) */}
-                {i < arr.length - 1 && (
-                  <ArrowRight
-                    size={16}
-                    className="absolute -right-4 top-3.5 hidden text-line md:block"
-                    aria-hidden
-                  />
-                )}
-                <div className="relative z-10 grid h-12 w-12 place-items-center rounded-2xl bg-accent-soft text-accent ring-4 ring-page">
-                  <Icon size={22} weight="duotone" aria-hidden />
-                </div>
-                <div className="mt-3 font-semibold text-ink">
-                  <T en={en} bn={bn} />
-                </div>
-                <p className="mt-1 text-sm leading-snug text-ink-3">
-                  <T en={sub[0]} bn={sub[1]} />
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* ── South Asia Today: big-number stat ── */}
-        <section aria-labelledby="south-asia-today" className="mb-24">
-          <Link
-            href="/trends?var=temperature&season=annual&zone=study-area"
-            className="group block overflow-hidden rounded-3xl bg-card shadow-soft transition-all hover:-translate-y-0.5"
-          >
-            <div className="grid md:grid-cols-2">
-              {/* Left: massive number */}
-              <div className="p-10 sm:p-12">
-                <p
-                  id="south-asia-today"
-                  className="text-sm font-medium text-ink-3"
-                >
-                  <T
-                    en={`South Asia today, compared with ${first}`}
-                    bn={`আজকের দক্ষিণ এশিয়া, ${bnNum(first)} সালের তুলনায়`}
-                  />
-                </p>
-                <div className="mt-4 flex items-start gap-3">
-                  <span className="text-[5.5rem] font-semibold leading-none tracking-tight tabular-nums text-ink sm:text-[7rem]">
-                    <T
-                      en={formatSigned(warmer, 1)}
-                      bn={bnNum(formatSigned(warmer, 1))}
-                    />
-                  </span>
-                  <div className="mt-5 flex flex-col">
-                    <span className="text-2xl font-semibold text-ink-2">
-                      <T en="°C" bn="°সে" />
-                    </span>
-                    <span className="mt-1 text-base text-ink-3">
-                      <T en="warmer" bn="বেশি গরম" />
-                    </span>
-                  </div>
-                </div>
-                <p className="mt-6 max-w-[38ch] leading-relaxed text-ink-2">
-                  <T
-                    en={`All ${temp.cells} analyzed land cells warmed. Not one got cooler.`}
-                    bn={`বিশ্লেষণ করা ${bnNum(temp.cells)}টি ভূমির কোষ সবগুলোই উষ্ণ হয়েছে। একটিও ঠান্ডা হয়নি।`}
-                  />
-                </p>
-                <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-accent group-hover:underline">
-                  <T en="See the trend map" bn="প্রবণতার মানচিত্র দেখুন" />
-                  <ArrowRight
-                    size={15}
-                    className="transition-transform group-hover:translate-x-0.5"
-                    aria-hidden
-                  />
-                </span>
-              </div>
-
-              {/* Right: sparkline + metric */}
-              <div className="flex flex-col justify-center gap-7 border-t border-line px-10 py-10 sm:px-12 md:border-l md:border-t-0">
-                <div>
-                  <p className="text-sm text-ink-3">
-                    <T
-                      en={`Annual temperature trend, ${first}–${last}`}
-                      bn={`বার্ষিক তাপমাত্রার প্রবণতা, ${bnNum(first)}–${bnNum(last)}`}
-                    />
-                  </p>
-                  <div className="mt-3">
-                    <Sparkline values={tSeries} color="var(--warm-3)" />
-                    <div className="mt-1 flex justify-between text-xs text-ink-3">
-                      <span>{first}</span>
-                      <span>{last}</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="rounded-2xl bg-accent-soft px-6 py-5">
-                  <span className="text-3xl font-semibold tabular-nums text-ink">
-                    <T
-                      en={`${temp.cells} / ${temp.cells}`}
-                      bn={`${bnNum(temp.cells)} / ${bnNum(temp.cells)}`}
-                    />
-                  </span>
-                  <p className="mt-1 text-sm text-ink-2">
-                    <T
-                      en="land cells warmed across South Asia"
-                      bn="দক্ষিণ এশিয়া জুড়ে ভূমির কোষ উষ্ণ হয়েছে"
-                    />
-                  </p>
-                </div>
-              </div>
-            </div>
-          </Link>
-        </section>
+      <div className="mx-auto w-full max-w-384 px-6 pb-24 sm:px-8 lg:px-12">
+        <EvidenceStory
+          zones={trendZones}
+          rainfallGrid={rainfallGrid}
+          hazardZones={hazardZones}
+          warmingCells={temp.cells}
+          first={first}
+          last={last}
+        />
 
         {/* ── The latest month ── */}
         <section aria-labelledby="latest" className="mb-24">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+            <T en="Latest conditions" bn="সর্বশেষ অবস্থা" />
+          </p>
           <h2
             id="latest"
-            className="text-2xl font-semibold tracking-tight text-ink"
+            className="mt-2 text-3xl font-semibold tracking-tight text-ink sm:text-4xl"
           >
             <T en="The latest month" bn="সর্বশেষ মাস" />
           </h2>
-          <p className="mt-2 max-w-[68ch] text-sm leading-relaxed text-ink-3">
+          <p className="mt-3 max-w-[68ch] text-base leading-relaxed text-ink-2">
             <T
-              en={`"Normal" means the long-term average for that month: ${latest.temperature.baseline} for temperature and ${latest.rainfall.baseline} for rain.`}
+              en={`How recent observations compare with the long-term normal: ${latest.temperature.baseline} for temperature and ${latest.rainfall.baseline} for rain.`}
               bn={`"স্বাভাবিক" মানে ওই মাসের দীর্ঘমেয়াদি গড়: তাপমাত্রার জন্য ${bnNum(latest.temperature.baseline)}, বৃষ্টির জন্য ${bnNum(latest.rainfall.baseline)}।`}
             />
           </p>
           <div className="mt-8 grid gap-5 md:grid-cols-2">
             {/* Temperature */}
-            <div className="rounded-3xl bg-card p-8 shadow-soft sm:p-10">
+            <div className="rounded-2xl border border-line bg-card p-6 shadow-soft sm:p-8">
               <div className="flex items-center gap-2 text-sm text-ink-3">
                 <Thermometer
                   size={15}
@@ -513,7 +358,7 @@ export default async function Home() {
             </div>
 
             {/* Rainfall */}
-            <div className="rounded-3xl bg-card p-8 shadow-soft sm:p-10">
+            <div className="rounded-2xl border border-line bg-card p-6 shadow-soft sm:p-8">
               <div className="flex items-center gap-2 text-sm text-ink-3">
                 <CloudRain
                   size={15}
@@ -553,13 +398,19 @@ export default async function Home() {
 
         {/* ── In one minute: three key findings ── */}
         <section aria-labelledby="minute" className="mb-24">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+            <T en="45-year findings" bn="৪৫ বছরের ফলাফল" />
+          </p>
           <h2
             id="minute"
-            className="text-2xl font-semibold tracking-tight text-ink"
+            className="mt-2 text-3xl font-semibold tracking-tight text-ink sm:text-4xl"
           >
             <T en="In one minute" bn="এক মিনিটে" />
           </h2>
-          <div className="mt-8 grid gap-5 md:grid-cols-3">
+          <p className="mt-3 max-w-[60ch] text-base text-ink-2">
+            <T en="Three things our analysis revealed." bn="আমাদের বিশ্লেষণে প্রকাশিত তিনটি বিষয়।" />
+          </p>
+          <div className="mt-7 grid gap-5 md:grid-cols-3">
             <Fact
               href="/findings#spring"
               label={
@@ -635,9 +486,12 @@ export default async function Home() {
 
         {/* ── How it works ── */}
         <section aria-labelledby="how" className="mb-24">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+            <T en="Method" bn="পদ্ধতি" />
+          </p>
           <h2
             id="how"
-            className="text-2xl font-semibold tracking-tight text-ink"
+            className="mt-2 text-3xl font-semibold tracking-tight text-ink sm:text-4xl"
           >
             <T en="How it works" bn="কীভাবে কাজ করে" />
           </h2>
@@ -712,13 +566,16 @@ export default async function Home() {
 
         {/* ── Explore: destination cards ── */}
         <section aria-labelledby="explore-hdg" className="mb-24">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+            <T en="Explore" bn="অনুসন্ধান" />
+          </p>
           <h2
             id="explore-hdg"
-            className="text-2xl font-semibold tracking-tight text-ink"
+            className="mt-2 text-3xl font-semibold tracking-tight text-ink sm:text-4xl"
           >
             <T en="Explore the data" bn="তথ্য অনুসন্ধান করুন" />
           </h2>
-          <p className="mt-2 text-lg text-ink-2">
+          <p className="mt-3 max-w-[60ch] text-base leading-relaxed text-ink-2">
             <T
               en="Four tools, each answering one question. Pick the one that matches yours."
               bn="চারটি টুল, প্রতিটি একটি প্রশ্নের উত্তর দেয়। আপনার প্রশ্নের সাথে মেলে এমনটি বেছে নিন।"
@@ -726,13 +583,12 @@ export default async function Home() {
           </p>
 
           {/* Asymmetric grid: 3 columns on desktop */}
-          <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-3">
+          <div className="mt-7 grid grid-cols-1 gap-5 md:grid-cols-2">
             {/* Satellite Map — large (2/3) */}
-            <ToolCard tool={TOOLS[0]} className="md:col-span-2" />
+            <ToolCard tool={TOOLS[0]} />
             {/* Climate Trends — small (1/3) */}
             <ToolCard
               tool={TOOLS[1]}
-              className="md:col-span-1"
               preview={
                 <TrendPreview
                   series={tSeries}
@@ -744,11 +600,10 @@ export default async function Home() {
               }
             />
             {/* Disaster Risk — small (1/3) */}
-            <ToolCard tool={TOOLS[2]} className="md:col-span-1" />
+            <ToolCard tool={TOOLS[2]} />
             {/* Place Reports — large (2/3) with live preview */}
             <ToolCard
               tool={TOOLS[3]}
-              className="md:col-span-2"
               preview={
                 <PlacePreview
                   name={<T en={dhaka.name} bn="ঢাকা" />}
@@ -848,11 +703,11 @@ function ToolCard({
   const { href, Icon, question, title, text, shot, tries } = tool;
   return (
     <article
-      className={`group/card flex flex-col rounded-3xl bg-card p-2 shadow-soft transition-all hover:-translate-y-1 ${className}`}
+      className={`group/card flex flex-col rounded-2xl border border-line bg-card p-2 shadow-soft transition-all hover:-translate-y-0.5 ${className}`}
     >
       <Link
         href={href}
-        className="relative block aspect-16/10 overflow-hidden rounded-2xl bg-sunken"
+        className="relative block aspect-16/10 overflow-hidden rounded-xl bg-sunken"
         aria-label={title[0]}
         tabIndex={-1}
       >
@@ -1077,7 +932,7 @@ function Fact({
   return (
     <Link
       href={href}
-      className="group flex flex-col rounded-3xl bg-card p-8 shadow-soft transition-all hover:-translate-y-1"
+      className="group flex flex-col rounded-2xl border border-line bg-card p-6 shadow-soft transition-all hover:-translate-y-0.5 sm:p-7"
     >
       <div className="flex items-center gap-2 text-sm font-medium text-ink-2">
         {icon}
