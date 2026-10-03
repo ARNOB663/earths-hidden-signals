@@ -299,6 +299,9 @@ def main() -> None:
         separators=(",", ":"),
     )
     print(f"Wrote results to {OUT_DIR}")
+    # Build geographic context from the published grids using the same trend tests.
+    from build_country_signals import main as build_country_signals
+    build_country_signals()
 
 
 if __name__ == "__main__":

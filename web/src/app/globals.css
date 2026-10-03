@@ -5,221 +5,383 @@
 
 /* ---------- Design tokens: one warm-neutral gray family, one accent ---------- */
 :root {
-  color-scheme: light;
-  --page: #f6f5f2;
-  --card: #ffffff;
-  --sunken: #efeee9;
-  --line: #e2e0da;
-  --ink: #1b1b19;
-  --ink-2: #4f4e4a;
-  --ink-3: #6b6964;
-  --accent: #1f66c1;
-  --accent-strong: #1f66c1;
-  --accent-hover: #1a58a8;
-  --accent-ink: #ffffff;
-  --accent-soft: #e6effa;
-  --watch: #8f5c00;
-  --watch-soft: #fdf1d6;
-  --good: #0b8a0b;
-  --shadow: 30 28 24;
+    color-scheme: light;
+    --page: #f4f3ef;
+    --card: #ffffff;
+    --sunken: #efeee9;
+    --line: #e2e0da;
+    --ink: #1b1b19;
+    --ink-2: #4f4e4a;
+    --ink-3: #6b6964;
+    --accent: #1f66c1;
+    --accent-strong: #1f66c1;
+    --accent-hover: #1a58a8;
+    --accent-ink: #ffffff;
+    --accent-soft: #e6effa;
+    --watch: #8f5c00;
+    --watch-soft: #fdf1d6;
+    --good: #0b8a0b;
+    --shadow: 30 28 24;
 
-  /* Trend maps: a neutral "no change" middle with four steps toward each side. */
-  --mid: #e4e2dc;
-  --warm-1: #f6cfcb;
-  --warm-2: #ee9690;
-  --warm-3: #e34948;
-  --warm-4: #a8201f;
-  --cool-1: #cfe0f7;
-  --cool-2: #86b6ef;
-  --cool-3: #3987e5;
-  --cool-4: #184f95;
+    /* Trend maps: a neutral "no change" middle with four steps toward each side. */
+    --mid: #e4e2dc;
+    --warm-1: #f6cfcb;
+    --warm-2: #ee9690;
+    --warm-3: #e34948;
+    --warm-4: #a8201f;
+    --cool-1: #cfe0f7;
+    --cool-2: #86b6ef;
+    --cool-3: #3987e5;
+    --cool-4: #184f95;
 
-  /* Hazard events */
-  --ev-flood: #2a78d6;
-  --ev-landslide: #c98500;
-  --ev-fire: #eb6834;
-  --ev-cyclone: #4a3aa7;
-  --fire-1: #fbd9c4;
-  --fire-2: #f5ab83;
-  --fire-3: #eb6834;
-  --fire-4: #c24d1f;
-  --fire-5: #8a3210;
+    /* Hazard events */
+    --ev-flood: #2a78d6;
+    --ev-landslide: #c98500;
+    --ev-fire: #eb6834;
+    --ev-cyclone: #4a3aa7;
+    --fire-1: #fbd9c4;
+    --fire-2: #f5ab83;
+    --fire-3: #eb6834;
+    --fire-4: #c24d1f;
+    --fire-5: #8a3210;
 }
 
 [data-theme="dark"] {
-  color-scheme: dark;
-  --page: #121211;
-  --card: #1a1a19;
-  --sunken: #222220;
-  --line: #2f2e2b;
-  --ink: #f4f3ef;
-  --ink-2: #c3c2b7;
-  --ink-3: #8f8e86;
-  --accent: #5098ea;
-  --accent-strong: #2b6cc4;
-  --accent-hover: #2f70c9;
-  --accent-ink: #ffffff;
-  --accent-soft: #1b2939;
-  --watch: #fab219;
-  --watch-soft: #33280f;
-  --good: #3cc13c;
-  --shadow: 0 0 0;
+    color-scheme: dark;
+    --page: #090909;
+    --card: #111111;
+    --sunken: #0d0d0d;
+    --line: rgba(255, 255, 255, 0.07);
+    --ink: #f4f4f4;
+    --ink-2: #c5c5c5;
+    --ink-3: #929292;
+    --accent: #5098ea;
+    --accent-strong: #2b6cc4;
+    --accent-hover: #2f70c9;
+    --accent-ink: #ffffff;
+    --accent-soft: #1b2939;
+    --watch: #fab219;
+    --watch-soft: #33280f;
+    --good: #3cc13c;
+    --shadow: 0 0 0;
 
-  --mid: #3a3a37;
-  --warm-1: #5e2b2a;
-  --warm-2: #9c3534;
-  --warm-3: #e34948;
-  --warm-4: #f4a3a2;
-  --cool-1: #1f3a5c;
-  --cool-2: #245fa6;
-  --cool-3: #3987e5;
-  --cool-4: #9cc3f2;
+    --mid: #3a3a37;
+    --warm-1: #5e2b2a;
+    --warm-2: #9c3534;
+    --warm-3: #e34948;
+    --warm-4: #f4a3a2;
+    --cool-1: #1f3a5c;
+    --cool-2: #245fa6;
+    --cool-3: #3987e5;
+    --cool-4: #9cc3f2;
 
-  --ev-flood: #3987e5;
-  --ev-landslide: #eda100;
-  --ev-fire: #d95926;
-  --ev-cyclone: #9085e9;
-  --fire-1: #6b2d14;
-  --fire-2: #a8421b;
-  --fire-3: #d95926;
-  --fire-4: #f08a5d;
-  --fire-5: #fbc4a6;
+    --ev-flood: #3987e5;
+    --ev-landslide: #eda100;
+    --ev-fire: #d95926;
+    --ev-cyclone: #9085e9;
+    --fire-1: #6b2d14;
+    --fire-2: #a8421b;
+    --fire-3: #d95926;
+    --fire-4: #f08a5d;
+    --fire-5: #fbc4a6;
 }
 
 @theme inline {
-  --color-page: var(--page);
-  --color-card: var(--card);
-  --color-sunken: var(--sunken);
-  --color-line: var(--line);
-  --color-ink: var(--ink);
-  --color-ink-2: var(--ink-2);
-  --color-ink-3: var(--ink-3);
-  --color-accent: var(--accent);
-  --color-accent-strong: var(--accent-strong);
-  --color-accent-hover: var(--accent-hover);
-  --color-accent-ink: var(--accent-ink);
-  --color-accent-soft: var(--accent-soft);
-  --color-watch: var(--watch);
-  --color-watch-soft: var(--watch-soft);
-  --color-good: var(--good);
-  --font-sans: var(--font-geist-sans), var(--font-bn);
-  --font-mono: var(--font-geist-mono);
+    --color-page: var(--page);
+    --color-card: var(--card);
+    --color-sunken: var(--sunken);
+    --color-line: var(--line);
+    --color-ink: var(--ink);
+    --color-ink-2: var(--ink-2);
+    --color-ink-3: var(--ink-3);
+    --color-accent: var(--accent);
+    --color-accent-strong: var(--accent-strong);
+    --color-accent-hover: var(--accent-hover);
+    --color-accent-ink: var(--accent-ink);
+    --color-accent-soft: var(--accent-soft);
+    --color-watch: var(--watch);
+    --color-watch-soft: var(--watch-soft);
+    --color-good: var(--good);
+    --font-sans: var(--font-geist-sans), var(--font-bn);
+    --font-mono: var(--font-geist-mono);
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  background: var(--page);
-  color: var(--ink);
-  font-family: var(--font-geist-sans), var(--font-bn), system-ui, sans-serif;
-  transition: background-color 200ms ease, color 200ms ease;
+    background: var(--page);
+    color: var(--ink);
+    font-family: var(--font-geist-sans), var(--font-bn), system-ui, sans-serif;
+    transition:
+        background-color 200ms ease,
+        color 200ms ease;
 }
 
 h1,
 h2,
 h3 {
-  text-wrap: balance;
+    text-wrap: balance;
 }
 
 /* Bangla script needs a little more line height to read comfortably. */
 html[lang="bn"] body {
-  line-height: 1.65;
+    line-height: 1.65;
 }
 p {
-  text-wrap: pretty;
+    text-wrap: pretty;
 }
 
 :focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-  border-radius: 4px;
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 4px;
 }
 
 .shadow-soft {
-  box-shadow:
-    0 1px 2px rgb(var(--shadow) / 0.06),
-    0 4px 16px rgb(var(--shadow) / 0.06);
+    box-shadow:
+        0 1px 2px rgb(var(--shadow) / 0.06),
+        0 4px 16px rgb(var(--shadow) / 0.06);
 }
 
 /* ---------- Leaflet, restyled to the theme ---------- */
 .leaflet-container {
-  font-family: inherit;
-  background: var(--sunken);
+    font-family: inherit;
+    background: var(--sunken);
 }
 .basemap-dim {
-  filter: grayscale(1) brightness(0.42) contrast(1.15);
+    filter: grayscale(1) brightness(0.42) contrast(1.15);
 }
 .leaflet-bar {
-  border: 1px solid var(--line) !important;
-  box-shadow: none !important;
-  border-radius: 10px !important;
-  overflow: hidden;
+    border: 1px solid var(--line) !important;
+    box-shadow: none !important;
+    border-radius: 10px !important;
+    overflow: hidden;
 }
 .leaflet-bar a,
 .leaflet-bar a:hover {
-  background: var(--card);
-  color: var(--ink);
-  border-bottom-color: var(--line);
-  width: 34px !important;
-  height: 34px !important;
-  line-height: 34px !important;
+    background: var(--card);
+    color: var(--ink);
+    border-bottom-color: var(--line);
+    width: 34px !important;
+    height: 34px !important;
+    line-height: 34px !important;
 }
 .leaflet-control-attribution {
-  background: color-mix(in srgb, var(--card) 80%, transparent) !important;
-  color: var(--ink-3);
+    background: color-mix(in srgb, var(--card) 80%, transparent) !important;
+    color: var(--ink-3);
 }
 .leaflet-control-attribution a {
-  color: var(--ink-2);
+    color: var(--ink-2);
 }
 .leaflet-control-scale-line {
-  background: color-mix(in srgb, var(--card) 80%, transparent);
-  color: var(--ink-2);
-  border-color: var(--ink-3);
+    background: color-mix(in srgb, var(--card) 80%, transparent);
+    color: var(--ink-2);
+    border-color: var(--ink-3);
 }
 
 .map-tooltip {
-  background: var(--card);
-  color: var(--ink);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  box-shadow: 0 4px 16px rgb(var(--shadow) / 0.12);
-  font-size: 13px;
-  line-height: 1.45;
-  padding: 8px 10px;
+    background: var(--card);
+    color: var(--ink);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgb(var(--shadow) / 0.12);
+    font-size: 13px;
+    line-height: 1.45;
+    padding: 8px 10px;
 }
 .map-tooltip::before {
-  display: none;
+    display: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-  *,
-  *::before,
-  *::after {
-    transition-duration: 0ms !important;
-    animation-duration: 0ms !important;
-  }
+    html {
+        scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0ms !important;
+        animation-duration: 0ms !important;
+    }
 }
 
 /* Sideways-scrolling rows (e.g. the story's finding chips) without a visible scrollbar. */
 .no-scrollbar {
-  scrollbar-width: none;
+    scrollbar-width: none;
 }
 .no-scrollbar::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 /* Phones: map pages fill the screen with a drag-up panel (see MapSheet). Pinch replaces the zoom
    buttons, and Leaflet's scale and credits sit just above the panel's summary. */
 @media (max-width: 1023.98px) {
-  .map-shell .leaflet-control-zoom {
+    .map-shell .leaflet-control-zoom {
+        display: none;
+    }
+    .map-shell .leaflet-bottom {
+        bottom: var(--sheet-peek, 0px);
+    }
+}
+
+/* ===== Homepage ===== */
+
+/*
+ * Hero background: real photograph (Bangladesh flood, mother & child, CC BY-SA 2.0,
+ * Faisal Akram) with a dark cinematic overlay so text stays readable while the
+ * photograph remains clearly visible. The diagonal gradient is darker on the
+ * top-left (text + navbar) and lighter toward the bottom-right (visualization card
+ * has its own glass background). The same background covers both the navbar area
+ * and the hero section thanks to the -mt-16 pull-up on the section.
+ */
+.home-hero {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(4, 12, 32, 0.88) 0%,
+            rgba(4, 12, 32, 0.68) 48%,
+            rgba(4, 12, 32, 0.48) 100%
+        );
+}
+
+.hero-transition-fade {
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        color-mix(in srgb, var(--page) 18%, transparent) 28%,
+        color-mix(in srgb, var(--page) 72%, transparent) 68%,
+        var(--page) 100%
+    );
+}
+
+.site-footer {
+    position: relative;
+    background: #090909;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+.site-footer::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 100%;
+    left: 0;
+    height: 160px;
+    pointer-events: none;
+    background: linear-gradient(
+        to bottom,
+        var(--page) 0%,
+        var(--page) 30%,
+        color-mix(in srgb, var(--page) 82%, #090909) 65%,
+        color-mix(in srgb, #090909 88%, var(--page)) 84%,
+        #090909 100%
+    );
+}
+
+.site-footer > * {
+    position: relative;
+    z-index: 1;
+}
+
+[data-theme="dark"] .site-footer::before {
     display: none;
-  }
-  .map-shell .leaflet-bottom {
-    bottom: var(--sheet-peek, 0px);
-  }
+}
+
+@media (max-width: 1023px) {
+    .site-footer::before {
+        height: 120px;
+    }
+}
+
+@media (max-width: 639px) {
+    .site-footer::before {
+        height: 90px;
+    }
+}
+
+.site-footer-link {
+    color: rgba(255, 255, 255, 0.68);
+    transition: color 160ms ease;
+}
+
+.site-footer-link:hover,
+.site-footer-link:focus-visible {
+    color: #ffffff;
+}
+
+/* The full-viewport map page does not need the site footer below its canvas. */
+body:has(.map-shell) .site-footer {
+    display: none;
+}
+
+/* The homepage navbar stays as dark glass over the photograph in both themes. */
+.home-hero-nav {
+    background: linear-gradient(
+        to bottom,
+        rgba(7, 9, 12, 0.36) 0%,
+        rgba(7, 9, 12, 0.22) 72%,
+        rgba(7, 9, 12, 0.04) 100%
+    );
+    border-bottom-color: transparent;
+    backdrop-filter: blur(10px) saturate(110%);
+    -webkit-backdrop-filter: blur(10px) saturate(110%);
+}
+
+.home-hero-nav .text-ink,
+.home-hero-nav .text-ink-2,
+.home-hero-nav .text-ink-3 {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.home-hero-nav .text-ink:hover,
+.home-hero-nav .text-ink-2:hover,
+.home-hero-nav .text-ink-3:hover {
+    color: #ffffff;
+}
+
+[data-theme="light"] .home-hero-nav .bg-card,
+[data-theme="dark"] .home-hero-nav .bg-card {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="light"] .home-hero-nav .border-line,
+[data-theme="dark"] .home-hero-nav .border-line {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="light"] .home-hero-nav nav a[aria-current="page"],
+[data-theme="dark"] .home-hero-nav nav a[aria-current="page"] {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+}
+
+.home-hero-nav nav a:hover,
+.home-hero-nav > div > div > a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="light"] .hero-transition-fade {
+    height: 160px;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        transparent 30%,
+        color-mix(in srgb, var(--page) 18%, transparent) 60%,
+        color-mix(in srgb, var(--page) 78%, transparent) 82%,
+        var(--page) 100%
+    );
+}
+
+/* Dark mode: deeper still so navy tone feels intentional */
+[data-theme="dark"] .home-hero {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(3, 9, 26, 0.94) 0%,
+            rgba(3, 9, 26, 0.74) 48%,
+            rgba(3, 9, 26, 0.54) 100%
+        );
 }

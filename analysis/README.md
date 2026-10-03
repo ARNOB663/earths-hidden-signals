@@ -66,3 +66,26 @@ For each region:
 Caveats: news-based landslide reports under-count remote areas, MODIS overpass times drifted after about 2020, and GDACS coverage improved over time.
 
 Outputs in `web/public/data/hazards/`: `zones.json`, `landslides.json`, `floods.json`, `fires_grid.json`.
+
+## Satellite map geographic context
+
+`build.py` also runs `build_country_signals.py`, which can be run independently
+against the existing published grids. It writes
+`web/public/data/maps/place-signals.json` for the six countries in the project's
+local boundary file and the existing research regions. Country weights use the
+country-land polygon area intersecting each retained analysis cell, multiplied
+by cos(cell latitude). This extends the existing zone area/land-share/latitude
+weighting to country shapes. Normalized weights and contributing cell indices
+are included for reproducibility. The published, rounded annual cell series are
+aggregated; trend and uncertainty calculations reuse `stats.py`. Regional
+results are copied unchanged from `trends/zones.json`.
+
+These are coarse country estimates, not city measurements. Country shapes
+may intersect cells extending outside the country; cells excluded by the
+existing land mask are excluded here too. This context uses annual GISTEMP
+surface-temperature anomalies and GPCP rainfall totals through the manifest's
+last research year. It does **not** measure the monthly MODIS, MERRA-2, GLDAS or
+NDVI imagery. The map labels the annual dataset and observation year explicitly,
+and does not extrapolate beyond the research record. Greenness and country
+forest-loss statistics are unavailable; selecting a country hides the viewport
+forest totals so they cannot be mistaken for a country total.

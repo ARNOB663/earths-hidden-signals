@@ -19,7 +19,6 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Numbers, Segmented, Stat, Sureness, TrendLegend } from "@/components/ui";
 import { MapLoading } from "@/components/map/MapLoading";
 import { MapSheet, type SheetSnap } from "@/components/map/MapSheet";
-import { QuickGuide } from "@/components/ui/QuickGuide";
 import { ShareButton } from "@/components/ui/ShareButton";
 import { bnNum } from "@/lib/bn";
 import { T, useT } from "@/lib/i18n";
@@ -322,10 +321,6 @@ export default function TrendExplorer({
           <T en="No data for this place." bn="এই জায়গার কোনো তথ্য নেই।" />
         </p>
       )}
-      <p className="mt-1.5 flex items-center gap-1.5 text-xs text-ink-3">
-        <HandPointing size={14} className="text-accent" />
-        <T en="Tap any square on the map · drag up for details" bn="মানচিত্রের যেকোনো বর্গে ট্যাপ করুন · বিস্তারিত দেখতে উপরে টানুন" />
-      </p>
     </div>
   );
 
@@ -348,17 +343,6 @@ export default function TrendExplorer({
           <HandPointing size={18} className="text-accent" />
           <T en="Click any square to see its story" bn="যেকোনো বর্গে ক্লিক করে তার গল্প দেখুন" />
         </div>
-        <QuickGuide
-          id="trends"
-          title={<T en="How to use Climate trends" bn="জলবায়ুর প্রবণতা পাতা কীভাবে ব্যবহার করবেন" />}
-          steps={[
-            <T key="1" en="Choose temperature or rain, and a time of year." bn="তাপমাত্রা বা বৃষ্টি বেছে নিন, আর বছরের কোন সময় তা বেছে নিন।" />,
-            <T key="2" en="Pick a region from the list, or click any square on the map." bn="তালিকা থেকে একটি অঞ্চল বেছে নিন, অথবা মানচিত্রের যেকোনো বর্গে ক্লিক করুন।" />,
-            <T key="3" en="Read the answer: is it really changing, how fast, and how sure we are." bn="উত্তর পড়ুন: সত্যিই বদলাচ্ছে কি না, কত দ্রুত, আর আমরা কতটা নিশ্চিত।" />,
-          ]}
-          buttonClassName="absolute left-3 top-3 lg:left-[58px] lg:top-[60px]"
-          cardClassName="lg:left-[58px] lg:top-[108px]"
-        />
         <div className="absolute bottom-[calc(var(--sheet-peek,9rem)+0.75rem)] left-3 z-[500] w-[min(320px,calc(100%-6rem))] rounded-2xl bg-card p-3 shadow-soft sm:p-4 lg:bottom-10">
           <div className="mb-2 text-sm font-medium text-ink">
             <T en={`Change every 10 years (${meta.unit})`} bn={`প্রতি ১০ বছরে পরিবর্তন (${unitBn(meta.unit)})`} />
@@ -382,18 +366,35 @@ export default function TrendExplorer({
       <MapSheet
         id="trend-panel"
         label={t("Trend details", "প্রবণতার বিস্তারিত")}
-        className="lg:absolute lg:bottom-4 lg:right-4 lg:top-4 lg:z-[600] lg:w-[400px] lg:overflow-y-auto lg:rounded-2xl lg:border lg:border-line lg:bg-card lg:shadow-soft"
-        bodyClassName="flex flex-col gap-5 p-5"
+        className="lg:absolute lg:bottom-4 lg:right-4 lg:top-4 lg:z-[600] lg:w-[360px] lg:overflow-y-auto lg:rounded-2xl lg:border lg:border-line lg:bg-card lg:shadow-soft"
+        bodyClassName="flex flex-col gap-4 p-4"
         peek={peek}
         snap={snap}
         onSnapChange={setSnap}
         scrollKey={JSON.stringify(selection)}
         scrollTargetId="trend-answer"
       >
+        {detail ? (
+          <Answer
+            detail={detail}
+            meta={meta}
+            years={years}
+            words={words}
+            wordsBn={wordsBn}
+            seasonLabel={SEASON_PLAIN[effSeason].label}
+          />
+        ) : (
+          <p className="text-sm text-ink-3">
+            <T en="Pick a place to see its story." bn="একটি জায়গা বেছে নিয়ে তার গল্প দেখুন।" />
+          </p>
+        )}
+
+        <div className="h-px bg-line" />
+
         <section className="space-y-3">
           <div className="flex items-start justify-between gap-2">
-            <h1 className="text-lg font-semibold text-ink">
-              <T en="How is the climate changing?" bn="জলবায়ু কীভাবে বদলাচ্ছে?" />
+            <h1 className="text-[11px] font-semibold uppercase tracking-[0.16em] text-ink-3">
+              <T en="Explore another trend" bn="অন্য প্রবণতা দেখুন" />
             </h1>
             <ShareButton className="-mr-2 -mt-1.5" />
           </div>
@@ -478,23 +479,6 @@ export default function TrendExplorer({
             </p>
           </Step>
         </section>
-
-        <div className="h-px bg-line" />
-
-        {detail ? (
-          <Answer
-            detail={detail}
-            meta={meta}
-            years={years}
-            words={words}
-            wordsBn={wordsBn}
-            seasonLabel={SEASON_PLAIN[effSeason].label}
-          />
-        ) : (
-          <p className="text-sm text-ink-3">
-            <T en="Pick a place to see its story." bn="একটি জায়গা বেছে নিয়ে তার গল্প দেখুন।" />
-          </p>
-        )}
 
         <p className="rounded-xl bg-sunken p-3.5 text-sm leading-relaxed text-ink-2">
           <T
