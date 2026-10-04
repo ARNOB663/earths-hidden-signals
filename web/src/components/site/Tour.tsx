@@ -62,6 +62,9 @@ const STOPS: { href: string; title: [string, string]; text: [string, string] }[]
 const KEY = "tour-stop";
 const listeners = new Set<() => void>();
 function readStop(): number | null {
+  // Guard against accessing sessionStorage during server-side rendering
+  if (typeof window === 'undefined') return null;
+
   try {
     const v = sessionStorage.getItem(KEY);
     return v === null ? null : Number(v);
@@ -70,6 +73,9 @@ function readStop(): number | null {
   }
 }
 function writeStop(stop: number | null) {
+  // Guard against accessing sessionStorage during server-side rendering
+  if (typeof window === 'undefined') return;
+
   try {
     if (stop === null) sessionStorage.removeItem(KEY);
     else sessionStorage.setItem(KEY, String(stop));

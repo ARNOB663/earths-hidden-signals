@@ -56,14 +56,14 @@ export default async function MethodsPage() {
   const r = manifest.variables.rainfall;
 
   return (
-    <article className="mx-auto w-full max-w-[1200px] px-4 pb-24 pt-12 leading-relaxed text-ink-2 sm:px-6 [&>*]:max-w-3xl">
-      <p className="text-sm font-medium text-accent">
+    <article className="mx-auto w-full max-w-384 px-6 pb-24 pt-12 leading-relaxed text-ink-2 sm:px-8 lg:px-12">
+      <p className="max-w-3xl text-sm font-medium text-accent">
         <T en="How it works" bn="কীভাবে কাজ করে" />
       </p>
-      <h1 className="mt-2 text-4xl font-semibold tracking-tight text-ink">
+      <h1 className="mt-2 max-w-3xl text-4xl font-semibold tracking-tight text-ink">
         <T en="How we know a change is real" bn="পরিবর্তনটা যে সত্যি, তা আমরা কীভাবে জানি" />
       </h1>
-      <p className="mt-4 text-lg text-ink-2">
+      <p className="mt-4 max-w-3xl text-lg text-ink-2">
         <T
           en="A line on a chart that goes up is not yet a trend. We check that the data is consistent over time, test whether the change could be chance, and say clearly when it could."
           bn="চার্টে একটা রেখা ওপরে উঠলেই তা প্রবণতা নয়। আমরা দেখি তথ্য সময়ের সাথে সামঞ্জস্যপূর্ণ কি না, পরীক্ষা করি পরিবর্তনটা কাকতালীয় হতে পারে কি না, আর হতে পারলে তা স্পষ্ট করে বলি।"
@@ -72,16 +72,16 @@ export default async function MethodsPage() {
       <T
         en={null}
         bn={
-          <p className="mt-4 rounded-2xl bg-accent-soft px-4 py-3 text-sm text-ink">
+          <p className="mt-4 max-w-3xl rounded-2xl bg-accent-soft px-4 py-3 text-sm text-ink">
             এই পাতার বাকি অংশ বিজ্ঞানী ও বিচারকদের জন্য, তাই প্রযুক্তিগত বিবরণ ইংরেজিতে রাখা হয়েছে। সহজ ব্যাখ্যার জন্য
             &ldquo;গল্পটা&rdquo; পাতা দেখুন।
           </p>
         }
       />
 
-      <div className="mt-10 grid gap-3 sm:grid-cols-2">
+      <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {QUESTIONS.map(({ q, a, qBn, aBn }) => (
-          <div key={q} className="rounded-2xl bg-card p-5 shadow-soft">
+          <div key={q} className="flex min-h-36 flex-col rounded-2xl bg-card p-5 shadow-soft">
             <div className="font-semibold text-ink">
               <T en={q} bn={qBn} />
             </div>
@@ -92,14 +92,19 @@ export default async function MethodsPage() {
         ))}
       </div>
 
-      <Section title="1. Data">
+      <Section title="1. Data" wide>
         <div className="overflow-x-auto rounded-2xl bg-card shadow-soft">
-          <table className="w-full min-w-[520px] text-left text-sm">
+          <table className="w-full min-w-[760px] table-fixed text-left text-sm">
+            <colgroup>
+              <col className="w-[15%]" />
+              <col className="w-1/2" />
+              <col className="w-[35%]" />
+            </colgroup>
             <thead className="bg-sunken text-ink-3">
               <tr>
-                <th className="px-3 py-2.5 font-medium">Variable</th>
-                <th className="px-3 py-2.5 font-medium">Dataset</th>
-                <th className="px-3 py-2.5 font-medium">Used for</th>
+                <th className="px-4 py-3 font-medium">Variable</th>
+                <th className="px-4 py-3 font-medium">Dataset</th>
+                <th className="px-4 py-3 font-medium">Used for</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-line">
@@ -154,19 +159,24 @@ export default async function MethodsPage() {
         </Callout>
       </Section>
 
-      <Section title="Do other datasets agree?">
+      <Section title="Do other datasets agree?" wide>
         <p>
           We repeated the main trends with a completely separate climate record, <strong className="font-semibold text-ink">CRU TS 4.10</strong>{" "}
           from the University of East Anglia, which is built from weather stations with its own methods. Where both records tell
           the same story, we can be more confident. Where they don&apos;t, we say so.
         </p>
         <div className="overflow-x-auto rounded-2xl bg-card shadow-soft">
-          <table className="w-full min-w-[560px] text-left text-sm">
+          <table className="w-full min-w-[760px] table-fixed text-left text-sm">
+            <colgroup>
+              <col className="w-[30%]" />
+              <col className="w-[35%]" />
+              <col className="w-[35%]" />
+            </colgroup>
             <thead className="bg-sunken text-ink-3">
               <tr>
-                <th className="px-3 py-2.5 font-medium">Region</th>
-                <th className="px-3 py-2.5 font-medium">Temperature, whole year (°C per 10 years)</th>
-                <th className="px-3 py-2.5 font-medium">Monsoon rain (mm per 10 years)</th>
+                <th className="px-4 py-3 font-medium">Region</th>
+                <th className="px-4 py-3 font-medium">Temperature, whole year (°C per 10 years)</th>
+                <th className="px-4 py-3 font-medium">Monsoon rain (mm per 10 years)</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-line">
@@ -175,7 +185,7 @@ export default async function MethodsPage() {
                 if (!c) return null;
                 return (
                   <tr key={z.id}>
-                    <td className="px-3 py-2.5 font-medium text-ink">{z.id === "study-area" ? "All of South Asia" : z.name}</td>
+                    <td className="px-4 py-3 font-medium text-ink">{z.id === "study-area" ? "All of South Asia" : z.name}</td>
                     <CheckCell pair={c["temperature_annual"]} decimals={2} />
                     <CheckCell pair={c["rainfall_monsoon"]} decimals={0} />
                   </tr>
@@ -232,24 +242,26 @@ export default async function MethodsPage() {
 
       <Section title="How to cite this work">
         <p>Every chart on the site has a &ldquo;Download the data (CSV)&rdquo; button. If you use the data or the results, please cite:</p>
-        <p className="rounded-2xl bg-card p-4 font-mono text-sm leading-relaxed text-ink shadow-soft">{CITATION}</p>
+        <p className="break-words rounded-lg border border-line bg-card p-5 font-mono text-sm leading-relaxed text-ink">{CITATION}</p>
       </Section>
 
       <Section title="References">
-        <ol className="list-decimal space-y-1 pl-5 text-sm text-ink-3">
+        <ol className="list-decimal space-y-3 pl-6 text-sm leading-relaxed text-ink-2 marker:text-ink-3">
           {REFERENCES.map((ref) => (
-            <li key={ref}>{ref}</li>
+            <li key={ref} className="pl-1">{ref}</li>
           ))}
         </ol>
       </Section>
 
-      <div className="mt-12 flex flex-wrap gap-x-6 gap-y-2">
-        <Link href="/trends" className="inline-flex min-h-10 items-center font-medium text-accent hover:underline">
-          <T en="Explore the climate trends →" bn="জলবায়ুর প্রবণতা ঘুরে দেখুন →" />
-        </Link>
-        <Link href="/hazards" className="inline-flex min-h-10 items-center font-medium text-accent hover:underline">
-          <T en="Check disaster risk →" bn="দুর্যোগের ঝুঁকি দেখুন →" />
-        </Link>
+      <div className="mt-12 grid border-t border-line pt-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] lg:gap-12">
+        <div className="flex flex-wrap gap-x-6 gap-y-2 lg:col-start-2">
+          <Link href="/trends" className="inline-flex min-h-10 items-center font-medium text-accent hover:underline">
+            <T en="Explore the climate trends →" bn="জলবায়ুর প্রবণতা ঘুরে দেখুন →" />
+          </Link>
+          <Link href="/hazards" className="inline-flex min-h-10 items-center font-medium text-accent hover:underline">
+            <T en="Check disaster risk →" bn="দুর্যোগের ঝুঁকি দেখুন →" />
+          </Link>
+        </div>
       </div>
     </article>
   );
@@ -262,11 +274,11 @@ const AGREE_STYLE: Record<Agreement, { text: string; cls: string }> = {
 };
 
 function CheckCell({ pair, decimals }: { pair?: { ours: TrendSummary | null; cru: TrendSummary | null }; decimals: number }) {
-  if (!pair?.ours || !pair.cru) return <td className="px-3 py-2.5 text-ink-3">–</td>;
+  if (!pair?.ours || !pair.cru) return <td className="px-4 py-3 text-ink-3">–</td>;
   const star = (t: TrendSummary) => (t.p < 0.05 ? "*" : "");
   const a = AGREE_STYLE[agreement(pair.ours, pair.cru)];
   return (
-    <td className="px-3 py-2.5">
+    <td className="px-4 py-3">
       <span className="tabular-nums text-ink-2">
         {formatSigned(pair.ours.slopePerDecade, decimals)}
         {star(pair.ours)} / {formatSigned(pair.cru.slopePerDecade, decimals)}
@@ -277,18 +289,20 @@ function CheckCell({ pair, decimals }: { pair?: { ours: TrendSummary | null; cru
   );
 }
 
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
+function Section({ title, children, wide = false }: { title: string; children: React.ReactNode; wide?: boolean }) {
   return (
-    <section className="mt-14 space-y-3">
-      <h2 className="text-2xl font-semibold tracking-tight text-ink">{title}</h2>
-      {children}
+    <section className={`mt-12 border-t border-line pt-8 ${wide ? "space-y-6" : "mx-auto w-full max-w-5xl grid gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] lg:gap-12"}`}>
+      <h2 className="text-xl font-semibold leading-snug tracking-tight text-ink sm:text-2xl">{title}</h2>
+      <div className="min-w-0 space-y-5 leading-7 [overflow-wrap:anywhere] [&>ol]:max-w-3xl [&>p]:max-w-3xl [&>ul]:max-w-3xl">
+        {children}
+      </div>
     </section>
   );
 }
 
 function Callout({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <div className="mt-4 rounded-2xl bg-accent-soft p-5">
+    <div className="mx-auto max-w-3xl rounded-r-lg border-l-2 border-line bg-card p-5">
       <div className="font-semibold text-ink">{title}</div>
       <p className="mt-1 text-ink-2">{children}</p>
     </div>
@@ -298,13 +312,13 @@ function Callout({ title, children }: { title: string; children: React.ReactNode
 function Tr({ v, d, u, href }: { v: string; d: string; u: string; href: string }) {
   return (
     <tr>
-      <td className="px-3 py-2.5 font-medium text-ink">{v}</td>
-      <td className="px-3 py-2.5">
+      <td className="px-4 py-3 font-medium text-ink">{v}</td>
+      <td className="px-4 py-3">
         <a href={href} target="_blank" rel="noreferrer" className="text-ink-2 hover:text-accent hover:underline">
           {d}
         </a>
       </td>
-      <td className="px-3 py-2.5 text-ink-3">{u}</td>
+      <td className="px-4 py-3 text-ink-3">{u}</td>
     </tr>
   );
 }
