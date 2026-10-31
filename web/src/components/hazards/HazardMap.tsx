@@ -3,8 +3,19 @@
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { useEffect, useRef } from "react";
-import { createBaseMap, type BaseMap } from "@/components/map/baseMap";
-import type { CycloneTrack, FireGrid, FloodEvent, HazardId, HazardZone, LandslideEvent } from "@/lib/hazards";
+import {
+  createBaseMap,
+  createCanvasRenderer,
+  type BaseMap,
+} from "@/components/map/baseMap";
+import type {
+  CycloneTrack,
+  FireGrid,
+  FloodEvent,
+  HazardId,
+  HazardZone,
+  LandslideEvent,
+} from "@/lib/hazards";
 import { BN_MONTHS, bnNum } from "@/lib/bn";
 import { useLang, type Lang } from "@/lib/i18n";
 import { ZONE_BN } from "@/lib/names";
@@ -23,16 +34,39 @@ interface Props {
 }
 
 const escapeHtml = (s: string) =>
-  s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
+  s.replace(
+    /[&<>"']/g,
+    (c) =>
+      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[
+        c
+      ]!,
+  );
 
 const prettyDate = (iso: string, lang: Lang) =>
   lang === "bn"
     ? `${bnNum(Number(iso.slice(8, 10)))} ${BN_MONTHS[Number(iso.slice(5, 7)) - 1]} ${bnNum(iso.slice(0, 4))}`
-    : new Date(`${iso}T00:00:00`).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+    : new Date(`${iso}T00:00:00`).toLocaleDateString("en-GB", {
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+      });
 
-const ALERT_BN: Record<string, string> = { Green: "সবুজ", Orange: "কমলা", Red: "লাল" };
+const ALERT_BN: Record<string, string> = {
+  Green: "সবুজ",
+  Orange: "কমলা",
+  Red: "লাল",
+};
 
-export default function HazardMap({ hazard, zones, selectedZone, onSelectZone, landslides, floods, fires, cyclones }: Props) {
+export default function HazardMap({
+  hazard,
+  zones,
+  selectedZone,
+  onSelectZone,
+  landslides,
+  floods,
+  fires,
+  cyclones,
+}: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const baseRef = useRef<BaseMap | null>(null);
   const eventsRef = useRef<L.LayerGroup | null>(null);
@@ -53,10 +87,16 @@ export default function HazardMap({ hazard, zones, selectedZone, onSelectZone, l
       "topleft",
     );
     baseRef.current = base;
-    rendererRef.current = L.canvas({ pane: "data", padding: 0.5 });
+    rendererRef.current = createCanvasRenderer({ pane: "data", padding: 0.5 });
     eventsRef.current = L.layerGroup().addTo(base.map);
     zonesRef.current = L.layerGroup().addTo(base.map);
     return () => {
+      // Drop the layers while the map is still alive, and forget them so no later effect touches a dead map.
+      eventsRef.current?.clearLayers();
+      zonesRef.current?.clearLayers();
+      eventsRef.current = null;
+      zonesRef.current = null;
+      rendererRef.current = null;
       base.dispose();
       baseRef.current = null;
     };
@@ -85,16 +125,22 @@ export default function HazardMap({ hazard, zones, selectedZone, onSelectZone, l
             [lat - h, lon - h],
             [lat + h, lon + h],
           ],
-          { renderer, stroke: false, fillColor: cssVar(token), fillOpacity: 0.85 },
+          {
+            renderer,
+            stroke: false,
+            fillColor: cssVar(token),
+            fillOpacity: 0.85,
+          },
         )
           .bindTooltip(
             bn
               ? `<strong>বছরে প্রায় ${bnNum(Math.round(avg))}টি আগুন</strong><br>মার্চ–মে মাসে স্যাটেলাইটে দেখা`
               : `<strong>About ${Math.round(avg)} fires a year</strong><br>seen by satellite in March–May`,
             {
-            sticky: true,
-            className: "map-tooltip",
-          })
+              sticky: true,
+              className: "map-tooltip",
+            },
+          )
           .addTo(group);
       }
     }
@@ -112,7 +158,11 @@ export default function HazardMap({ hazard, zones, selectedZone, onSelectZone, l
         })
           .bindTooltip(
             `<strong>${escapeHtml(e.title)}</strong><br>${prettyDate(e.date, lang)}` +
-              (e.fatalities ? (bn ? ` · ${bnNum(e.fatalities)} জন মারা যান` : ` · ${e.fatalities} people died`) : ""),
+              (e.fatalities
+                ? bn
+                  ? ` · ${bnNum(e.fatalities)} জন মারা যান`
+                  : ` · ${e.fatalities} people died`
+                : ""),
             { className: "map-tooltip" },
           )
           .addTo(group);
@@ -124,7 +174,12 @@ export default function HazardMap({ hazard, zones, selectedZone, onSelectZone, l
       // Weaker storms first, so the severe ones are drawn on top.
       for (const c of [...cyclones].sort((a, b) => a.maxWind - b.maxWind)) {
         const severe = c.maxWind >= 64;
-        L.polyline(c.points, { renderer, color, weight: severe ? 2.6 : 1.2, opacity: severe ? 0.85 : 0.4 })
+        L.polyline(c.points, {
+          renderer,
+          color,
+          weight: severe ? 2.6 : 1.2,
+          opacity: severe ? 0.85 : 0.4,
+        })
           .bindTooltip(
             bn
               ? `<strong>${c.name ? `ঘূর্ণিঝড় ${escapeHtml(c.name)}` : "নামহীন ঘূর্ণিঝড়"} (${bnNum(c.year)})</strong><br>` +
@@ -149,7 +204,9 @@ export default function HazardMap({ hazard, zones, selectedZone, onSelectZone, l
         })
           .bindTooltip(
             `<strong>${escapeHtml(e.title)}</strong><br>${prettyDate(e.date, lang)} · ` +
-              (bn ? `${ALERT_BN[e.alert] ?? escapeHtml(e.alert)} সতর্কতা` : `${escapeHtml(e.alert)} alert`),
+              (bn
+                ? `${ALERT_BN[e.alert] ?? escapeHtml(e.alert)} সতর্কতা`
+                : `${escapeHtml(e.alert)} alert`),
             { className: "map-tooltip" },
           )
           .addTo(group);
@@ -181,7 +238,10 @@ export default function HazardMap({ hazard, zones, selectedZone, onSelectZone, l
           dashArray: selected ? undefined : "5 5",
         },
       );
-      rect.bindTooltip(escapeHtml(lang === "bn" ? (ZONE_BN[z.id]?.name ?? z.name) : z.name), { className: "map-tooltip", direction: "top" });
+      rect.bindTooltip(
+        escapeHtml(lang === "bn" ? (ZONE_BN[z.id]?.name ?? z.name) : z.name),
+        { className: "map-tooltip", direction: "top" },
+      );
       rect.on("click", () => onSelectRef.current(z.id));
       group.addLayer(rect);
       // The reference pane ignores the pointer (labels shouldn't block the map); region boxes need clicks.
@@ -203,8 +263,14 @@ export default function HazardMap({ hazard, zones, selectedZone, onSelectZone, l
       ],
       {
         ...(window.innerWidth >= 1024
-          ? { paddingTopLeft: [60, 60] as L.PointTuple, paddingBottomRight: [480, 60] as L.PointTuple }
-          : { paddingTopLeft: [24, 64] as L.PointTuple, paddingBottomRight: [24, 200] as L.PointTuple }),
+          ? {
+              paddingTopLeft: [60, 60] as L.PointTuple,
+              paddingBottomRight: [480, 60] as L.PointTuple,
+            }
+          : {
+              paddingTopLeft: [24, 64] as L.PointTuple,
+              paddingBottomRight: [24, 200] as L.PointTuple,
+            }),
         maxZoom: 7,
         duration: 0.8,
       },

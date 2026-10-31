@@ -39,7 +39,9 @@ export default function HeroImageSlideshow() {
   const reduceMotionRef = useRef(false);
 
   useEffect(() => {
-    reduceMotionRef.current = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    reduceMotionRef.current = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
   }, []);
 
   const goTo = useCallback(
@@ -81,7 +83,10 @@ export default function HeroImageSlideshow() {
   }, [activeIndex, goTo]);
 
   return (
-    <div className="group absolute inset-0 z-0 overflow-hidden" aria-label="Hero image carousel">
+    <div
+      className="group absolute inset-0 z-0 overflow-hidden"
+      aria-label="Hero image carousel"
+    >
       <div className="absolute inset-0 h-full w-full overflow-hidden">
         {slides.map((slide, index) => {
           const isCurrent = index === activeIndex && nextIndex === null;
@@ -124,7 +129,7 @@ export default function HeroImageSlideshow() {
                   objectFit: "cover",
                   objectPosition: slide.objectPosition,
                   transform: "scale(1.04)",
-                  filter: "brightness(0.78) saturate(0.9)",
+                  filter: "var(--hero-photo-filter)",
                 }}
                 className="h-full w-full"
               />
@@ -134,12 +139,8 @@ export default function HeroImageSlideshow() {
       </div>
 
       <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          zIndex: 2,
-          background:
-            "linear-gradient(90deg, rgba(5, 12, 25, 0.84) 0%, rgba(5, 12, 25, 0.72) 35%, rgba(5, 12, 25, 0.58) 70%, rgba(5, 12, 25, 0.52) 100%)",
-        }}
+        className="hero-photo-overlay pointer-events-none absolute inset-0"
+        style={{ zIndex: 2 }}
       />
 
       <div
@@ -147,12 +148,14 @@ export default function HeroImageSlideshow() {
         style={{ zIndex: 3 }}
       />
 
-      <div className="pointer-events-none absolute bottom-5 right-5 z-10 flex items-center gap-3 text-white/80">
+      <div className="pointer-events-none absolute bottom-5 right-5 z-10 flex items-center gap-3 text-(--hero-fg-2)">
         <button
           type="button"
           aria-label="Previous slide"
-          onClick={() => goTo((activeIndex - 1 + slides.length) % slides.length)}
-          className="pointer-events-auto flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-slate-950/30 text-lg opacity-0 transition-all duration-200 hover:bg-white/12 group-hover:opacity-100"
+          onClick={() =>
+            goTo((activeIndex - 1 + slides.length) % slides.length)
+          }
+          className="pointer-events-auto flex h-9 w-9 items-center justify-center rounded-full border border-(--hero-ctrl-border) bg-(--hero-ctrl-bg) text-lg opacity-0 transition-all duration-200 hover:bg-(--hero-ghost-bg-hover) group-hover:opacity-100"
         >
           ←
         </button>
@@ -160,24 +163,26 @@ export default function HeroImageSlideshow() {
           type="button"
           aria-label="Next slide"
           onClick={() => goTo((activeIndex + 1) % slides.length)}
-          className="pointer-events-auto flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-slate-950/30 text-lg opacity-0 transition-all duration-200 hover:bg-white/12 group-hover:opacity-100"
+          className="pointer-events-auto flex h-9 w-9 items-center justify-center rounded-full border border-(--hero-ctrl-border) bg-(--hero-ctrl-bg) text-lg opacity-0 transition-all duration-200 hover:bg-(--hero-ghost-bg-hover) group-hover:opacity-100"
         >
           →
         </button>
       </div>
 
-      <div className="pointer-events-none absolute bottom-6 right-28 z-10 flex items-center gap-2 text-lg text-white/70">
+      <div className="pointer-events-none absolute bottom-6 right-28 z-10 flex items-center gap-2 text-lg text-(--hero-fg-2)">
         {slides.map((slide, index) => (
           <button
             key={`${slide.src}-indicator`}
             type="button"
             aria-label={`Go to slide ${index + 1}`}
             onClick={() => goTo(index)}
-            className="pointer-events-auto flex h-4 w-4 items-center justify-center rounded-full border border-white/20 bg-transparent p-0 transition-all duration-200"
+            className="pointer-events-auto flex h-4 w-4 items-center justify-center rounded-full border border-(--hero-ctrl-border) bg-transparent p-0 transition-all duration-200"
           >
             <span
               className={`block h-2 w-2 rounded-full transition-all duration-200 ${
-                index === activeIndex ? "bg-white scale-100" : "bg-white/35 scale-75"
+                index === activeIndex
+                  ? "bg-(--hero-dot-on) scale-100"
+                  : "bg-(--hero-dot-off) scale-75"
               }`}
             />
           </button>

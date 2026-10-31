@@ -40,6 +40,18 @@ function referenceLayers(theme: Theme): L.Layer[] {
   ];
 }
 
+/**
+ * A canvas renderer for layers that draw many shapes: one canvas per pane instead of a DOM element
+ * per shape. Leaflet's overlay pane redraws its canvas on every mouse move, so pages with thousands
+ * of rectangles turn that redraw off and one canvas serves them all.
+ */
+export function createCanvasRenderer(options: L.RendererOptions = {}): L.Canvas {
+  const renderer = L.canvas(options);
+  const internals = renderer as unknown as { _updateHoverStyle?: () => void };
+  internals._updateHoverStyle = () => {};
+  return renderer;
+}
+
 export function createBaseMap(
   container: HTMLElement,
   view: { center: L.LatLngExpression; zoom: number },

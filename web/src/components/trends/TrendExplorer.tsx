@@ -5,7 +5,6 @@ import {
   CaretDown,
   CloudLightning,
   CloudRain,
-  HandPointing,
   Minus,
   Thermometer,
   ThermometerHot,
@@ -339,10 +338,6 @@ export default function TrendExplorer({
           selectedCell={cell}
           onSelectCell={(lat, lon) => setSelection({ kind: "point", lat, lon })}
         />
-        <div className="pointer-events-none absolute left-[58px] top-3 z-[500] hidden items-center gap-2 rounded-full bg-card px-4 py-2 text-sm text-ink-2 shadow-soft lg:flex">
-          <HandPointing size={18} className="text-accent" />
-          <T en="Click any square to see its story" bn="যেকোনো বর্গে ক্লিক করে তার গল্প দেখুন" />
-        </div>
         <div className="absolute bottom-[calc(var(--sheet-peek,9rem)+0.75rem)] left-3 z-[500] w-[min(320px,calc(100%-6rem))] rounded-2xl bg-card p-3 shadow-soft sm:p-4 lg:bottom-10">
           <div className="mb-2 text-sm font-medium text-ink">
             <T en={`Change every 10 years (${meta.unit})`} bn={`প্রতি ১০ বছরে পরিবর্তন (${unitBn(meta.unit)})`} />

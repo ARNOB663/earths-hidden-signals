@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, CheckCircle, Fire, HandPointing, Hurricane, Mountains, Question, Warning, Waves, X } from "@phosphor-icons/react";
+import { ArrowRight, CheckCircle, Fire, Hurricane, Mountains, Question, Warning, Waves, X } from "@phosphor-icons/react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
@@ -8,7 +8,6 @@ import { useEffect, useState } from "react";
 import { Numbers, Stat } from "@/components/ui";
 import { MapLoading } from "@/components/map/MapLoading";
 import { MapSheet, type SheetSnap } from "@/components/map/MapSheet";
-import { QuickGuide } from "@/components/ui/QuickGuide";
 import { ShareButton } from "@/components/ui/ShareButton";
 import {
   HAZARD_META,
@@ -127,10 +126,6 @@ export default function HazardExplorer({ zones, manifest }: { zones: HazardZone[
           <T en="Weather alone doesn't explain these disasters here." bn="এখানে শুধু আবহাওয়া দিয়ে এই দুর্যোগ ব্যাখ্যা করা যায় না।" />
         )}
       </p>
-      <p className="mt-1.5 flex items-center gap-1.5 text-xs text-ink-3">
-        <HandPointing size={14} className="text-accent" />
-        <T en="Tap a dashed box · drag up for more" bn="ড্যাশ-দাগের বাক্সে ট্যাপ করুন · আরও দেখতে উপরে টানুন" />
-      </p>
     </div>
   );
 
@@ -157,29 +152,6 @@ export default function HazardExplorer({ zones, manifest }: { zones: HazardZone[
             <T en="Loading past events…" bn="আগের ঘটনাগুলো লোড হচ্ছে…" />
           </div>
         )}
-        <div className="pointer-events-none absolute left-[58px] top-3 z-[500] hidden items-center gap-2 rounded-full bg-card px-4 py-2 text-sm text-ink-2 shadow-soft lg:flex">
-          <HandPointing size={18} className="text-accent" />
-          <T en="Click a dashed box to pick a region" bn="অঞ্চল বেছে নিতে ড্যাশ-দাগের বাক্সে ক্লিক করুন" />
-        </div>
-        <QuickGuide
-          id="hazards"
-          title={<T en="How to use Disaster risk" bn="দুর্যোগের ঝুঁকি পাতা কীভাবে ব্যবহার করবেন" />}
-          steps={[
-            <T key="1" en="Choose floods, landslides, wildfires or cyclones." bn="বন্যা, ভূমিধস, দাবানল বা ঘূর্ণিঝড় বেছে নিন।" />,
-            <T
-              key="2"
-              en="Pick a region from the list, or click a dashed box on the map."
-              bn="তালিকা থেকে একটি অঞ্চল বেছে নিন, অথবা মানচিত্রের ড্যাশ-দাগের বাক্সে ক্লিক করুন।"
-            />,
-            <T
-              key="3"
-              en='Check "This year": does the weather look like past disaster years?'
-              bn="&ldquo;এই বছর&rdquo; দেখুন: আবহাওয়া কি আগের দুর্যোগের বছরগুলোর মতো?"
-            />,
-          ]}
-          buttonClassName="absolute left-3 top-3 lg:left-[58px] lg:top-[60px]"
-          cardClassName="lg:left-[58px] lg:top-[108px]"
-        />
         <div className="absolute bottom-[calc(var(--sheet-peek,9rem)+0.75rem)] left-3 z-[500] w-[min(300px,calc(100%-1.5rem))] text-sm lg:bottom-10">
           {/* On phones the key folds into a small button so it doesn't cover the map. */}
           <button

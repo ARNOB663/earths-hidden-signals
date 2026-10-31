@@ -1,184 +1,426 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { readCrosscheck, readManifest, readTrendZones } from "@/lib/data";
 import { CITATION } from "@/lib/download";
+import { readCrosscheck, readManifest, readTrendZones } from "@/lib/data";
 import { T } from "@/lib/i18n";
-import { agreement, formatSigned, type Agreement, type TrendSummary } from "@/lib/trends";
+import {
+  agreement,
+  formatSigned,
+  type Agreement,
+  type TrendSummary,
+} from "@/lib/trends";
 
-export const metadata: Metadata = { title: "How it works · Earth's Hidden Signals" };
+export const metadata: Metadata = {
+  title: "Methods · Earth's Hidden Signals",
+  description:
+    "Reference methods for the climate trend, hazard and cross-check analyses: data sources, statistical tests, validation and known limitations.",
+};
 
 const REPO = "https://github.com/ARNOB663/earths-hidden-signals";
 
-const QUESTIONS = [
+const KEYWORDS = [
+  "Mann–Kendall",
+  "Sen's slope",
+  "Hamed–Rao",
+  "false discovery rate",
+  "GISTEMP",
+  "GPCP",
+  "CRU TS 4.10",
+  "South Asia",
+];
+
+type Ref = { en: string; url: string };
+
+const REFERENCES: Ref[] = [
   {
-    q: "What is changing?",
-    a: "Surface temperature and rainfall, plus the hazard events that follow them.",
-    qBn: "কী বদলাচ্ছে?",
-    aBn: "ভূপৃষ্ঠের তাপমাত্রা ও বৃষ্টি, আর এগুলোর পরে যেসব দুর্যোগ ঘটে।",
+    en: "Adler, R. F. et al. (2018). The Global Precipitation Climatology Project (GPCP) monthly analysis (new version 2.3) and a review of 2017 global precipitation. Atmosphere 9(4), 138.",
+    url: "https://doi.org/10.3390/atmos9040138",
   },
   {
-    q: "Where?",
-    a: "Every land grid cell in South Asia (5–38°N, 60–100°E), and eight hazard regions drawn by geography, not borders.",
-    qBn: "কোথায়?",
-    aBn: "দক্ষিণ এশিয়ার (৫–৩৮° উ, ৬০–১০০° পূ) প্রতিটি স্থলভাগের বর্গ, আর দেশের সীমানা নয়, ভূগোল দেখে আঁকা আটটি দুর্যোগ-অঞ্চল।",
+    en: "Benjamini, Y. & Hochberg, Y. (1995). Controlling the false discovery rate: a practical and powerful approach to multiple testing. J. R. Stat. Soc. B 57(1), 289–300.",
+    url: "https://doi.org/10.1111/j.2517-6161.1995.tb02031.x",
   },
   {
-    q: "How much?",
-    a: "Sen's slope: the rate of change per decade, with a 95% confidence range.",
-    qBn: "কতটা?",
-    aBn: "সেনের ঢাল (Sen's slope): প্রতি দশকে পরিবর্তনের হার, ৯৫% আস্থা-সীমাসহ।",
+    en: "Giglio, L., Schroeder, W. & Justice, C. O. (2016). The Collection 6 MODIS active fire detection algorithm and fire products. Remote Sens. Environ. 178, 31–41.",
+    url: "https://doi.org/10.1016/j.rse.2016.02.054",
   },
   {
-    q: "Is it significant?",
-    a: "A Mann–Kendall test corrected for autocorrelation, plus a map-wide false-discovery check.",
-    qBn: "এটা কি সত্যিকারের পরিবর্তন?",
-    aBn: "স্বসম্পর্ক (autocorrelation) সংশোধিত ম্যান-কেন্ডাল পরীক্ষা, আর পুরো মানচিত্রজুড়ে ভুল-আবিষ্কার (FDR) যাচাই।",
+    en: "Gilbert, R. O. (1987). Statistical Methods for Environmental Pollution Monitoring. Van Nostrand Reinhold, New York.",
+    url: "https://www.osti.gov/biblio/6166317",
+  },
+  {
+    en: "Hamed, K. H. & Rao, A. R. (1998). A modified Mann–Kendall trend test for autocorrelated data. J. Hydrology 204(1–4), 182–196.",
+    url: "https://doi.org/10.1016/S0022-1694(97)00125-X",
+  },
+  {
+    en: "Hansen, M. C. et al. (2013). High-resolution global maps of 21st-century forest cover change. Science 342(6160), 850–853.",
+    url: "https://doi.org/10.1126/science.1244693",
+  },
+  {
+    en: "Harris, I. et al. (2020). Version 4 of the CRU TS monthly high-resolution gridded multivariate climate dataset. Sci. Data 7, 109.",
+    url: "https://doi.org/10.1038/s41597-020-0453-3",
+  },
+  {
+    en: "Kirschbaum, D. et al. (2015). Spatial and temporal analysis of a global landslide catalog. Geomorphology 249, 4–15.",
+    url: "https://doi.org/10.1016/j.geomorph.2015.03.016",
+  },
+  {
+    en: "Lenssen, N. et al. (2019). Improvements in the GISTEMP uncertainty model. J. Geophys. Res. Atmos. 124(12), 6307–6326.",
+    url: "https://doi.org/10.1029/2018JD029522",
+  },
+  {
+    en: "Sen, P. K. (1968). Estimates of the regression coefficient based on Kendall's tau. J. Am. Stat. Assoc. 63(324), 1379–1389.",
+    url: "https://doi.org/10.1080/01621459.1968.10480934",
+  },
+  {
+    en: "Wilks, D. S. (2016). “The stippling shows statistically significant grid points”: how research results are routinely overstated and overinterpreted. Bull. Am. Meteorol. Soc. 97(12), 2263–2273.",
+    url: "https://doi.org/10.1175/BAMS-D-15-00267.1",
   },
 ];
 
-const REFERENCES = [
-  "Lenssen, N. et al. (2019). Improvements in the GISTEMP uncertainty model. J. Geophys. Res. Atmos. 124.",
-  "Adler, R. F. et al. (2018). The Global Precipitation Climatology Project (GPCP) monthly analysis (new version 2.3). Atmosphere 9(4).",
-  "Hamed, K. H. & Rao, A. R. (1998). A modified Mann–Kendall trend test for autocorrelated data. J. Hydrology 204.",
-  "Sen, P. K. (1968). Estimates of the regression coefficient based on Kendall's tau. J. Am. Stat. Assoc. 63.",
-  "Gilbert, R. O. (1987). Statistical Methods for Environmental Pollution Monitoring. Van Nostrand Reinhold.",
-  "Benjamini, Y. & Hochberg, Y. (1995). Controlling the false discovery rate. J. R. Stat. Soc. B 57.",
-  "Wilks, D. S. (2016). “The stippling shows statistically significant grid points.” Bull. Am. Meteorol. Soc. 97.",
-  "Hansen, M. C. et al. (2013). High-resolution global maps of 21st-century forest cover change. Science 342.",
-  "Kirschbaum, D. et al. (2015). Spatial and temporal analysis of a global landslide catalog. Geomorphology 249.",
-  "Giglio, L. et al. (2016). The Collection 6 MODIS active fire detection algorithm and fire products. Remote Sens. Environ. 178.",
-];
+// Where each in-text citation points in the reference list above.
+const cite = (keys: string[]) =>
+  keys.map((key) => {
+    const n = REFERENCES.findIndex((r) => r.en.startsWith(key)) + 1;
+    return (
+      <a
+        key={key}
+        href={`#ref-${n}`}
+        className="text-ink-2 underline decoration-line underline-offset-2 hover:text-accent"
+      >
+        {n}
+      </a>
+    );
+  });
+
+function Cite({ keys }: { keys: string[] }) {
+  const ns = cite(keys);
+  return (
+    <span className="ml-0.5 whitespace-nowrap">
+      [
+      {ns.map((n, i) => (
+        <span key={i}>
+          {i > 0 && ", "}
+          {n}
+        </span>
+      ))}
+      ]
+    </span>
+  );
+}
 
 export default async function MethodsPage() {
-  const [manifest, crosscheck, trendZones] = await Promise.all([readManifest(), readCrosscheck(), readTrendZones()]);
-  const [first, last] = [manifest.years[0], manifest.years[manifest.years.length - 1]];
+  const [manifest, crosscheck, trendZones] = await Promise.all([
+    readManifest(),
+    readCrosscheck(),
+    readTrendZones(),
+  ]);
+  const [first, last] = [
+    manifest.years[0],
+    manifest.years[manifest.years.length - 1],
+  ];
   const t = manifest.variables.temperature;
   const r = manifest.variables.rainfall;
+  const regionName = (id?: string) =>
+    id === "study-area"
+      ? "the study area"
+      : (trendZones.find((z) => z.id === id)?.name ?? "the region concerned");
+  // Regions where the independent record agrees on warming but not on its significance;
+  // keep the prose below Table 2 derived from the same data as the table itself.
+  const warmSignificanceMismatch = trendZones
+    .filter((z) => {
+      const pair = crosscheck.zones[z.id]?.["temperature_annual"];
+      return (
+        !!pair?.ours && !!pair.cru && pair.ours.p < 0.05 && pair.cru.p >= 0.05
+      );
+    })
+    .map((z) => z.id);
 
   return (
-    <article className="mx-auto w-full max-w-384 px-6 pb-24 pt-12 leading-relaxed text-ink-2 sm:px-8 lg:px-12">
-      <p className="max-w-3xl text-sm font-medium text-accent">
-        <T en="How it works" bn="কীভাবে কাজ করে" />
-      </p>
-      <h1 className="mt-2 max-w-3xl text-4xl font-semibold tracking-tight text-ink">
-        <T en="How we know a change is real" bn="পরিবর্তনটা যে সত্যি, তা আমরা কীভাবে জানি" />
-      </h1>
-      <p className="mt-4 max-w-3xl text-lg text-ink-2">
-        <T
-          en="A line on a chart that goes up is not yet a trend. We check that the data is consistent over time, test whether the change could be chance, and say clearly when it could."
-          bn="চার্টে একটা রেখা ওপরে উঠলেই তা প্রবণতা নয়। আমরা দেখি তথ্য সময়ের সাথে সামঞ্জস্যপূর্ণ কি না, পরীক্ষা করি পরিবর্তনটা কাকতালীয় হতে পারে কি না, আর হতে পারলে তা স্পষ্ট করে বলি।"
-        />
-      </p>
-      <T
-        en={null}
-        bn={
-          <p className="mt-4 max-w-3xl rounded-2xl bg-accent-soft px-4 py-3 text-sm text-ink">
-            এই পাতার বাকি অংশ বিজ্ঞানী ও বিচারকদের জন্য, তাই প্রযুক্তিগত বিবরণ ইংরেজিতে রাখা হয়েছে। সহজ ব্যাখ্যার জন্য
-            &ldquo;গল্পটা&rdquo; পাতা দেখুন।
+    <div className="mx-auto w-full max-w-384 px-6 pb-24 pt-12 sm:px-8 lg:px-12">
+      <article className="mx-auto w-full max-w-5xl">
+        {/* Title block */}
+        <header className="border-b border-line pb-8">
+          <p className="text-sm font-medium text-accent">
+            <T en="Methods reference" bn="পদ্ধতির বিবরণ" />
           </p>
-        }
-      />
+          <h1 className="mt-2 text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-4xl">
+            <T
+              en="Estimating climate trends and hazard links in South Asia, 1981–2025"
+              bn="দক্ষিণ এশিয়ায় জলবায়ু প্রবণতা ও দুর্যোগ-সংযোগ নির্ণয়, ১৯৮১–২০২৫"
+            />
+          </h1>
+          <p className="mt-4 text-lg leading-relaxed text-ink-2">
+            <T
+              en="A line on a chart that goes up is not yet a trend. This document describes how we establish that a change is real: which data we use, how we estimate its rate, how we test whether it could be chance, and where the evidence is weak."
+              bn="চার্টে রেখা ওপরে উঠলেই তা প্রবণতা নয়। এই নথিতে বর্ণনা আছে—কোন তথ্য ব্যবহার করি, পরিবর্তনের হার কীভাবে মাপি, কাকতালীয় হতে পারে কি না কীভাবে পরীক্ষা করি, আর কোথায় প্রমাণ দুর্বল।"
+            />
+          </p>
+          <dl className="mt-6 grid grid-cols-2 gap-x-6 gap-y-3 text-sm sm:grid-cols-4">
+            <Meta label="Version" value={manifest.generated} />
+            <Meta label="Study period" value={`${first}–${last}`} />
+            <Meta label="Records" value="45 annual" />
+            <Meta label="Status" value="Open methods" />
+          </dl>
+          <p className="mt-6 text-sm text-ink-3">
+            <span className="font-medium text-ink-2">
+              <T en="Keywords: " bn="মূল শব্দ: " />
+            </span>
+            {KEYWORDS.join(" · ")}
+          </p>
+          <T
+            en={null}
+            bn={
+              <p className="mt-6 rounded-lg border-l-2 border-line bg-card px-4 py-3 text-sm text-ink-2">
+                বিজ্ঞানী ও সমালোচকদের জন্য লেখা এই পাতার প্রযুক্তিগত বিবরণ
+                ইংরেজিতে রাখা হয়েছে। সহজ ব্যাখ্যার জন্য &ldquo;গল্পটা&rdquo;
+                পাতা দেখুন।
+              </p>
+            }
+          />
+        </header>
 
-      <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-        {QUESTIONS.map(({ q, a, qBn, aBn }) => (
-          <div key={q} className="flex min-h-36 flex-col rounded-2xl bg-card p-5 shadow-soft">
-            <div className="font-semibold text-ink">
-              <T en={q} bn={qBn} />
-            </div>
-            <p className="mt-1 text-sm text-ink-2">
-              <T en={a} bn={aBn} />
-            </p>
-          </div>
-        ))}
-      </div>
+        <Section id="abstract" n={null} title="Abstract">
+          <p>
+            We test whether climate indicators over South Asia changed
+            monotonically between {first} and {last}. Gridded surface
+            temperature (GISTEMP) and precipitation (GPCP) are summarised per
+            land grid cell and per ecological region, and a per-decade rate of
+            change is estimated with Sen&apos;s slope, with a 95% confidence
+            interval. Significance is assessed with a Mann–Kendall test
+            corrected for serial autocorrelation (Hamed–Rao), and family-wise
+            error from testing many cells is controlled with a false discovery
+            rate procedure. Hazard counts per region are then related to the
+            climate drivers using detrended Spearman correlation. Every headline
+            trend is replicated with an independent station-based record (CRU TS
+            4.10), and agreement between the two is reported alongside each
+            result.
+          </p>
+          <KeyFindings />
+        </Section>
 
-      <Section title="1. Data" wide>
-        <div className="overflow-x-auto rounded-2xl bg-card shadow-soft">
-          <table className="w-full min-w-[760px] table-fixed text-left text-sm">
-            <colgroup>
-              <col className="w-[15%]" />
-              <col className="w-1/2" />
-              <col className="w-[35%]" />
-            </colgroup>
+        <Section id="scope" n="1" title="Scope and study area">
+          <p>
+            The domain covers {first} to {last} and the South Asian land area
+            between 5–38°N and 60–100°E. Analyses are run at two scales: a
+            gridded product (~2° resolution, about 200–220 km) for maps, and
+            eight hazard regions drawn from geography rather than political
+            borders for reporting and hazard work.
+          </p>
+          <DefinitionList
+            items={[
+              [
+                "Unit of analysis",
+                "Land grid cell; region aggregate for reporting.",
+              ],
+              [
+                "Seasons",
+                "Annual, pre-monsoon (Mar–May) and monsoon (Jun–Sep), as defined in the manifest.",
+              ],
+              [
+                "Temperature form",
+                `Anomalies relative to the ${t.baseline} baseline.`,
+              ],
+              [
+                "Rainfall form",
+                "Seasonal totals in millimetres, not anomalies.",
+              ],
+              [
+                "Language of record",
+                "English; the site also offers a narrative summary in Bangla.",
+              ],
+            ]}
+          />
+        </Section>
+
+        <Section id="data" n="2" title="Data sources">
+          <p>
+            Table 1 lists every input. Trend products are restricted to records
+            constructed to remain consistent over decades; visual layers on the
+            satellite map may come from other products and are not used for any
+            statistic.
+          </p>
+          <Table caption="Table 1. Input datasets, period covered and role in the analysis.">
             <thead className="bg-sunken text-ink-3">
               <tr>
-                <th className="px-4 py-3 font-medium">Variable</th>
-                <th className="px-4 py-3 font-medium">Dataset</th>
-                <th className="px-4 py-3 font-medium">Used for</th>
+                <th className="w-[16%] px-4 py-3 font-medium">Variable</th>
+                <th className="px-4 py-3 font-medium">Dataset and period</th>
+                <th className="w-[22%] px-4 py-3 font-medium">Role</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-line">
-              <Tr v="Temperature" d={`${t.dataset}, ${first}–${last}`} u="Trend analysis (anomalies vs 1951–1980)" href={t.datasetUrl} />
-              <Tr v="Rainfall" d={`${r.dataset}, ${first}–${last}`} u="Trend analysis (seasonal totals)" href={r.datasetUrl} />
-              <Tr v="Wildfire" d="NASA FIRMS MODIS active fires (Terra + Aqua), 2003–2024" u="Hazard events" href="https://firms.modaps.eosdis.nasa.gov/" />
-              <Tr v="Landslides" d="NASA Global Landslide Catalog, 2007–2017" u="Hazard events" href="https://data.nasa.gov/" />
-              <Tr v="Floods" d="GDACS flood alerts (UN/EU), 2000–2025" u="Hazard events" href="https://www.gdacs.org/" />
-              <Tr v="Map imagery" d="NASA GIBS: MODIS surface temperature and NDVI, MERRA-2, GLDAS" u="Satellite map (visual only)" href="https://earthdata.nasa.gov/gibs" />
-              <Tr v="Soil water" d="SMAP L4 root-zone soil moisture, 2015–now" u="Satellite map (visual only)" href="https://smap.jpl.nasa.gov/" />
-              <Tr v="Forest loss" d="Hansen/UMD Global Forest Change (Landsat), via Global Forest Watch" u="Satellite map" href="https://glad.earthengine.app/view/global-forest-change" />
+              <Tr
+                v="Temperature"
+                d={`${t.dataset}; ${first}–${last}`}
+                u="Trends"
+                href={t.datasetUrl}
+              />
+              <Tr
+                v="Rainfall"
+                d={`${r.dataset}; ${first}–${last}`}
+                u="Trends"
+                href={r.datasetUrl}
+              />
+              <Tr
+                v="Temperature (check)"
+                d="CRU TS 4.10 station-based, University of East Anglia; same period"
+                u="Replication"
+                href="https://crudata.uea.ac.uk/cru/data/hrg/"
+              />
+              <Tr
+                v="Wildfire"
+                d="NASA FIRMS MODIS active fires (Terra + Aqua); 2003–2024"
+                u="Hazard counts"
+                href="https://firms.modaps.eosdis.nasa.gov/"
+              />
+              <Tr
+                v="Landslides"
+                d="NASA Global Landslide Catalog; 2007–2017"
+                u="Hazard counts"
+                href="https://data.nasa.gov/"
+              />
+              <Tr
+                v="Floods"
+                d="GDACS flood alerts (UN/EU); 2000–2025"
+                u="Hazard counts"
+                href="https://www.gdacs.org/"
+              />
+              <Tr
+                v="Map imagery"
+                d="NASA GIBS: MODIS LST and NDVI, MERRA-2, GLDAS"
+                u="Visual only"
+                href="https://earthdata.nasa.gov/gibs"
+              />
+              <Tr
+                v="Soil water"
+                d="SMAP L4 root-zone soil moisture; 2015–present"
+                u="Visual only"
+                href="https://smap.jpl.nasa.gov/"
+              />
+              <Tr
+                v="Forest loss"
+                d="Hansen/UMD Global Forest Change (Landsat), via Global Forest Watch"
+                u="Visual only"
+                href="https://glad.earthengine.app/view/global-forest-change"
+              />
             </tbody>
-          </table>
-        </div>
-        <Callout title="A dataset we rejected">
-          We first used NASA POWER (MERRA-2) rainfall. When we plotted it, rainfall over the Bengal delta jumped from about
-          1,200 mm to about 1,800 mm a year in 1997, and to over 3,000 mm after 2015. Real rain doesn&apos;t do that; the jumps
-          come from changes in the observations fed into the model. Its soil moisture inherits the same jumps. Trends
-          from it would have been confidently wrong, so we switched to GISTEMP and GPCP, records built to stay consistent
-          over decades. We now always plot a series before we trust its trend. The soil water on the map is SMAP, a direct
-          satellite measurement since 2015; we still do not use MERRA-2 soil moisture for any trend.
-        </Callout>
-      </Section>
+          </Table>
+          <Note title="Why MERRA-2 was rejected">
+            <p>
+              We initially used MERRA-2 precipitation. Plotted over the Bengal
+              delta, it jumped from roughly 1,200 mm to 1,800 mm per year in
+              1997 and to over 3,000 mm after 2015 — a discontinuity caused by
+              changes in the observations assimilated into the reanalysis, not
+              by rainfall. Its soil moisture inherits the same steps. Trends
+              derived from it would have been confidently wrong, so GISTEMP and
+              GPCP — records constructed for long-term consistency — replaced
+              it. Every series is now plotted and inspected before its trend is
+              reported. Soil water on the map is SMAP, a direct satellite
+              retrieval available since 2015; MERRA-2 soil moisture is not used
+              for any trend.
+            </p>
+          </Note>
+        </Section>
 
-      <Section title="2. How much is it changing?">
-        <p>
-          We use <strong className="font-semibold text-ink">Sen&apos;s slope</strong>: the median of the slopes between every pair of
-          years. Unlike a straight-line fit, one extreme year can&apos;t drag it. We report it per decade with a{" "}
-          <strong className="font-semibold text-ink">95% confidence range</strong> (Gilbert 1987), so &ldquo;+0.31 °C per decade
-          (+0.27 to +0.36)&rdquo; tells you both the rate and how sure we are of it.
-        </p>
-      </Section>
+        <Section id="trend-magnitude" n="3" title="Trend estimation">
+          <p>
+            The rate of change is estimated with{" "}
+            <strong className="font-semibold text-ink">Sen&apos;s slope</strong>
+            : the median of the slopes computed between every pair of
+            observations. Unlike an ordinary least-squares fit, a single extreme
+            year cannot dominate the estimate, which matters for short records
+            <Cite keys={["Sen, P. K."]} />. The slope is reported per decade
+            together with its{" "}
+            <strong className="font-semibold text-ink">
+              95% confidence interval
+            </strong>
+            , derived from the rank-based method of Gilbert
+            <Cite keys={["Gilbert, R. O."]} />.
+          </p>
+          <Formula
+            tex="b = median{ (xⱼ − xᵢ) / (tⱼ − tᵢ) : i < j }"
+            caption="Sen's slope estimator, with t the year and x the annual value."
+          />
+          <p>
+            Results are therefore reported as a point estimate and an interval,
+            for example &ldquo;+0.31 °C per decade [+0.27, +0.36]&rdquo;, so
+            that both the rate and its precision are visible. Slopes are quoted
+            in the units of the underlying variable: °C per decade for
+            temperature, mm per decade for rainfall.
+          </p>
+        </Section>
 
-      <Section title="3. Is it significant?">
-        <p>
-          The <strong className="font-semibold text-ink">Mann–Kendall test</strong> asks: if there were no trend, how likely would
-          it be to see this many years higher than earlier years? A small p-value (below 0.05) means chance is an unlikely
-          explanation.
-        </p>
-        <p>
-          Climate years aren&apos;t independent: a warm year is often followed by another. That makes the plain test
-          report too many false trends, so we use the <strong className="font-semibold text-ink">Hamed–Rao correction</strong> for
-          autocorrelation.
-        </p>
-        <p>
-          A map tests hundreds of cells at once, so about 5% would look significant by luck alone. We apply a{" "}
-          <strong className="font-semibold text-ink">false discovery rate</strong> check (Benjamini–Hochberg, α<sub>FDR</sub> = 0.10,
-          following Wilks 2016). Only cells that pass it are drawn solid with a dot.
-        </p>
-        <Callout title="When a result is not significant">
-          We say so plainly: &ldquo;No statistically detectable trend.&rdquo; This means the ups and downs from year to year
-          are too large, over this record, to separate a real trend from natural variability. It does{" "}
-          <em>not</em> prove nothing is changing. A longer record or a larger area might show it.
-        </Callout>
-      </Section>
+        <Section id="significance" n="4" title="Significance testing">
+          <p>
+            This section describes three tests applied in sequence. A trend is
+            called significant only if it passes all three.
+          </p>
+          <Head3>4.1 Monotonic trend test</Head3>
+          <p>
+            The{" "}
+            <strong className="font-semibold text-ink">
+              Mann–Kendall test
+            </strong>{" "}
+            asks how often a record at least as ordered as the observed one
+            would occur under the null hypothesis of no monotonic trend. A
+            p-value below 0.05 means chance is an unlikely explanation.
+          </p>
+          <Head3>4.2 Autocorrelation correction</Head3>
+          <p>
+            Climate years are not independent: a warm year tends to follow
+            another, which inflates the number of false trends reported by the
+            plain test. We apply the{" "}
+            <strong className="font-semibold text-ink">Hamed–Rao</strong>{" "}
+            variance correction for serial autocorrelation before computing the
+            p-value
+            <Cite keys={["Hamed, K. H."]} />.
+          </p>
+          <Head3>4.3 Multiple testing across the map</Head3>
+          <p>
+            A map tests hundreds of cells simultaneously, so roughly 5% would
+            appear significant by chance alone. We control the{" "}
+            <strong className="font-semibold text-ink">
+              false discovery rate
+            </strong>{" "}
+            using the Benjamini–Hochberg procedure at α<sub>FDR</sub> = 0.10
+            <Cite keys={["Benjamini, Y."]} />, following the argument for
+            map-wide correction made by Wilks
+            <Cite keys={["Wilks, D. S."]} />. Only cells that pass this stage
+            are rendered solid with a significance marker.
+          </p>
+          <Note title="Interpreting a null result">
+            <p>
+              Where no trend is detected we report &ldquo;no statistically
+              detectable trend&rdquo;. This states that, over this record,
+              year-to-year variability is too large to separate a trend from
+              natural fluctuations. It does <em>not</em> establish that nothing
+              is changing; a longer record or a larger spatial aggregate might
+              resolve it.
+            </p>
+          </Note>
+        </Section>
 
-      <Section title="Do other datasets agree?" wide>
-        <p>
-          We repeated the main trends with a completely separate climate record, <strong className="font-semibold text-ink">CRU TS 4.10</strong>{" "}
-          from the University of East Anglia, which is built from weather stations with its own methods. Where both records tell
-          the same story, we can be more confident. Where they don&apos;t, we say so.
-        </p>
-        <div className="overflow-x-auto rounded-2xl bg-card shadow-soft">
-          <table className="w-full min-w-[760px] table-fixed text-left text-sm">
-            <colgroup>
-              <col className="w-[30%]" />
-              <col className="w-[35%]" />
-              <col className="w-[35%]" />
-            </colgroup>
+        <Section id="validation" n="5" title="Validation">
+          <p>
+            All primary trends were recomputed with a completely independent
+            record,{" "}
+            <strong className="font-semibold text-ink">CRU TS 4.10</strong> from
+            the University of East Anglia, which is built from weather stations
+            using separate methods
+            <Cite keys={["Harris, I."]} />. Agreement between two independent
+            estimates increases confidence; disagreement is reported rather than
+            suppressed. Table 2 gives the region-level comparison.
+          </p>
+          <Table caption="Table 2. Region-level agreement between our estimates (first value) and CRU TS 4.10 (second value). * significant at p < 0.05.">
             <thead className="bg-sunken text-ink-3">
               <tr>
-                <th className="px-4 py-3 font-medium">Region</th>
-                <th className="px-4 py-3 font-medium">Temperature, whole year (°C per 10 years)</th>
-                <th className="px-4 py-3 font-medium">Monsoon rain (mm per 10 years)</th>
+                <th className="w-[26%] px-4 py-3 font-medium">Region</th>
+                <th className="px-4 py-3 font-medium">
+                  Temperature, annual (°C / 10 yr)
+                </th>
+                <th className="px-4 py-3 font-medium">
+                  Monsoon rain (mm / 10 yr)
+                </th>
               </tr>
             </thead>
             <tbody className="divide-y divide-line">
@@ -187,96 +429,255 @@ export default async function MethodsPage() {
                 if (!c) return null;
                 return (
                   <tr key={z.id}>
-                    <td className="px-4 py-3 font-medium text-ink">{z.id === "study-area" ? "All of South Asia" : z.name}</td>
+                    <td className="px-4 py-3 font-medium text-ink">
+                      {z.id === "study-area" ? "All of South Asia" : z.name}
+                    </td>
                     <CheckCell pair={c["temperature_annual"]} decimals={2} />
                     <CheckCell pair={c["rainfall_monsoon"]} decimals={0} />
                   </tr>
                 );
               })}
             </tbody>
-          </table>
+          </Table>
+          <div className="text-sm text-ink-3">
+            <p>
+              The two records agree on the direction of warming in every region,
+              and on its significance in all but{" "}
+              {regionName(warmSignificanceMismatch?.[0])}. For monsoon rain they
+              agree on the headline pattern — wetter in the Indus plain, drier
+              in the Bengal delta and the Northeast hills — but not in every
+              region; rain-based findings are therefore assigned a lower
+              confidence rating throughout the site.
+            </p>
+            <p className="mt-2">
+              In {regionName(warmSignificanceMismatch?.[0])} our trend is
+              significant (p &lt; 0.05) while CRU&apos;s is not, which is why
+              that row is marked &ldquo;partly&rdquo;.
+            </p>
+          </div>
+        </Section>
+
+        <Section id="hazards" n="6" title="Hazard analysis">
+          <p>
+            For each hazard region we count recorded events per year and ask
+            whether high-event years coincide with unusual heat or rainfall. We
+            use a{" "}
+            <strong className="font-semibold text-ink">
+              Spearman rank correlation
+            </strong>{" "}
+            on series from which the long-term trend has been removed, so that
+            two variables that both rise over time do not appear linked through
+            a shared trend. A relationship is retained only if it is
+            statistically significant <em>and</em> has the physically expected
+            sign (more fires with more heat, more landslides with more rain).
+          </p>
+          <p>
+            Where a relationship is established, the{" "}
+            <strong className="font-semibold text-ink">
+              preparedness signal
+            </strong>{" "}
+            compares the latest season with the conditions recorded in past
+            high-event years. A close match is a basis for raising monitoring,
+            staging resources and warning vulnerable districts.{" "}
+            <strong className="font-semibold text-ink">
+              It is not a forecast that a disaster will occur.
+            </strong>{" "}
+            Where no relationship is established, no signal is issued.
+          </p>
+        </Section>
+
+        <Section id="limitations" n="7" title="Limitations">
+          <ol className="list-decimal space-y-2 pl-5 marker:text-ink-3">
+            <li>
+              Grid resolution is coarse (2°–2.5°, roughly 200–280 km), so local
+              extremes are smoothed out.
+            </li>
+            <li>
+              Hazard regions are approximate rectangles, not exact catchments or
+              forest boundaries; edge effects are not modelled.
+            </li>
+            <li>
+              Event records are incomplete: news-based landslide reporting
+              misses remote areas, satellites miss fires under cloud, and GDACS
+              coverage improved over the period.
+            </li>
+            <li>
+              The landslide record spans 11 years, too short to support a trend
+              in event counts; it is used only for relationships with drivers.
+            </li>
+            <li>
+              Correlation is not causation: land use, deforestation, road
+              building and human ignition also influence these hazards and are
+              not included as covariates.
+            </li>
+            <li>
+              Cross-check agreement is a consistency test, not an independent
+              validation of every grid cell.
+            </li>
+          </ol>
+        </Section>
+
+        <Section id="reproducibility" n="8" title="Reproducibility">
+          <p>
+            All code and derived data are open source at{" "}
+            <a href={REPO} className="break-words text-accent hover:underline">
+              {REPO.replace("https://", "")}
+            </a>
+            . The{" "}
+            <code className="rounded bg-sunken px-1.5 text-ink">analysis/</code>{" "}
+            directory regenerates every number on this site from the public
+            inputs:
+          </p>
+          <pre className="overflow-x-auto rounded-lg border border-line bg-card p-4 font-mono text-xs leading-relaxed text-ink-2">
+            <code>{`cd analysis
+pip install -r requirements.txt
+python build.py          # trends and zone summaries
+python build_hazards.py  # hazard counts and driver links
+python crosscheck.py     # CRU TS 4.10 replication`}</code>
+          </pre>
+          <p>
+            Python tests cover the statistical procedures (
+            <code className="rounded bg-sunken px-1.5 text-ink">
+              python -m pytest -q
+            </code>
+            ). No credentials are required. The results shown throughout this
+            site were generated on {manifest.generated}.
+          </p>
+        </Section>
+
+        <Section id="citation" n={null} title="How to cite this work">
+          <p>
+            Every chart has a &ldquo;Download the data (CSV)&rdquo; button. If
+            you use the data or these results, please cite the work as follows.
+          </p>
+          <blockquote className="break-words rounded-lg border-l-2 border-accent bg-card p-4 text-sm leading-relaxed text-ink">
+            {CITATION}
+          </blockquote>
+        </Section>
+
+        <Section id="references" n={null} title="References">
+          <ol className="space-y-3 text-sm leading-relaxed text-ink-2">
+            {REFERENCES.map((ref, i) => (
+              <li
+                key={ref.url}
+                id={`ref-${i + 1}`}
+                className="grid grid-cols-[2rem_minmax(0,1fr)] scroll-mt-24"
+              >
+                <span className="tabular-nums text-ink-3">{i + 1}.</span>
+                <span>
+                  {ref.en}{" "}
+                  <a
+                    href={ref.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="break-all text-accent hover:underline"
+                  >
+                    {ref.url}
+                  </a>
+                </span>
+              </li>
+            ))}
+          </ol>
+        </Section>
+
+        <div className="mt-12 border-t border-line pt-6">
+          <p className="text-xs font-semibold uppercase tracking-wider text-ink-3">
+            <T en="Related sections" bn="সম্পর্কিত অংশ" />
+          </p>
+          <ul className="mt-3 grid gap-3 sm:grid-cols-2">
+            <li>
+              <Link
+                href="/trends"
+                className="block rounded-lg border border-line bg-card p-4 transition-colors hover:border-ink-3"
+              >
+                <span className="text-sm font-medium text-ink">
+                  <T en="Climate trends" bn="জলবায়ুর প্রবণতা" /> →
+                </span>
+                <span className="mt-1 block text-sm text-ink-3">
+                  <T
+                    en="Maps and tables for every trend described here."
+                    bn="এখানে বর্ণিত প্রতিটি প্রবণতার মানচিত্র ও সারণি।"
+                  />
+                </span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/hazards"
+                className="block rounded-lg border border-line bg-card p-4 transition-colors hover:border-ink-3"
+              >
+                <span className="text-sm font-medium text-ink">
+                  <T en="Disaster risk" bn="দুর্যোগের ঝুঁকি" /> →
+                </span>
+                <span className="mt-1 block text-sm text-ink-3">
+                  <T
+                    en="Regional hazard records and preparedness signals."
+                    bn="আঞ্চলিক দুর্যোগের তথ্য ও প্রস্তুতি-সংকেত।"
+                  />
+                </span>
+              </Link>
+            </li>
+          </ul>
         </div>
-        <p className="text-sm text-ink-3">
-          Each cell shows our value, then CRU&apos;s. * = a clear (statistically significant) change. The two agree on warming
-          everywhere. For rain they agree on the headline pattern (Indus plain wetter; Bengal delta and Northeast hills drier) but
-          not for every region, which is why rain findings get a lower &ldquo;how sure&rdquo; rating.
-        </p>
-      </Section>
+      </article>
+    </div>
+  );
+}
 
-      <Section title="4. From trends to hazards">
-        <p>
-          For each hazard region we count past events per year, then ask whether high-event years line up with unusual
-          heat or rain. We use a Spearman correlation after removing each series&apos; long-term trend, so two things that
-          simply both rise over time don&apos;t look connected. A link only counts if it is significant and points the
-          physically expected way (more fires with more heat, more landslides with more rain).
-        </p>
-        <p>
-          Where a link exists, the <strong className="font-semibold text-ink">preparedness signal</strong> compares the latest
-          season with the conditions seen in past high-event years. If they match, authorities could raise monitoring,
-          ready resources and warn vulnerable areas.{" "}
-          <strong className="font-semibold text-ink">It never says a disaster will happen.</strong> Where no link exists, we give no
-          signal at all.
-        </p>
-      </Section>
-
-      <Section title="5. Limitations">
-        <ul className="list-disc space-y-1.5 pl-5">
-          <li>Grids are coarse (2°–2.5°, about 200–280 km), so local extremes are smoothed out.</li>
-          <li>Hazard regions are approximate rectangles, not exact watersheds or forest boundaries.</li>
-          <li>Event records are incomplete: news-based landslide reports miss remote areas, satellites miss fires under cloud, and GDACS coverage improved over time.</li>
-          <li>The landslide record covers only 11 years, which is too short for a trend in event counts.</li>
-          <li>Correlation is not causation: land use, deforestation, road building and human ignition also drive these hazards.</li>
-        </ul>
-      </Section>
-
-      <Section title="6. Reproduce it">
-        <p>
-          Everything is open source at{" "}
-          <a href={REPO} className="text-accent hover:underline">
-            github.com/ARNOB663/earths-hidden-signals
-          </a>
-          . The <code className="rounded bg-sunken px-1.5 text-ink">analysis/</code> folder rebuilds every number on
-          this site from the public data with <code className="rounded bg-sunken px-1.5 text-ink">python build.py</code>{" "}
-          and <code className="rounded bg-sunken px-1.5 text-ink">python build_hazards.py</code>. No login is needed.
-          Results generated {manifest.generated}.
-        </p>
-      </Section>
-
-      <Section title="How to cite this work">
-        <p>Every chart on the site has a &ldquo;Download the data (CSV)&rdquo; button. If you use the data or the results, please cite:</p>
-        <p className="break-words rounded-lg border border-line bg-card p-5 font-mono text-sm leading-relaxed text-ink">{CITATION}</p>
-      </Section>
-
-      <Section title="References">
-        <ol className="list-decimal space-y-3 pl-6 text-sm leading-relaxed text-ink-2 marker:text-ink-3">
-          {REFERENCES.map((ref) => (
-            <li key={ref} className="pl-1">{ref}</li>
-          ))}
-        </ol>
-      </Section>
-
-      <div className="mt-12 grid border-t border-line pt-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] lg:gap-12">
-        <div className="flex flex-wrap gap-x-6 gap-y-2 lg:col-start-2">
-          <Link href="/trends" className="inline-flex min-h-10 items-center font-medium text-accent hover:underline">
-            <T en="Explore the climate trends →" bn="জলবায়ুর প্রবণতা ঘুরে দেখুন →" />
-          </Link>
-          <Link href="/hazards" className="inline-flex min-h-10 items-center font-medium text-accent hover:underline">
-            <T en="Check disaster risk →" bn="দুর্যোগের ঝুঁকি দেখুন →" />
-          </Link>
-        </div>
-      </div>
-    </article>
+function KeyFindings() {
+  const items = [
+    [
+      "Warming",
+      "Statistically significant at every hazard region and in the regional mean.",
+    ],
+    [
+      "Rainfall",
+      "Shifts are spatially uneven and individually weaker; fewer regions pass both significance and replication.",
+    ],
+    [
+      "Hazards",
+      "Links are accepted only where the correlation is significant and physically expected; otherwise no signal is issued.",
+    ],
+    [
+      "Independence",
+      "Every headline trend is replicated with a second, station-based record (CRU TS 4.10).",
+    ],
+  ];
+  return (
+    <div className="rounded-lg border border-line bg-card p-5">
+      <p className="text-xs font-semibold uppercase tracking-wider text-ink-3">
+        Key results
+      </p>
+      <dl className="mt-3 space-y-2 text-sm">
+        {items.map(([k, v]) => (
+          <div
+            key={k}
+            className="grid gap-1 sm:grid-cols-[8rem_minmax(0,1fr)] sm:gap-3"
+          >
+            <dt className="font-medium text-ink">{k}</dt>
+            <dd className="text-ink-2">{v}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
   );
 }
 
 const AGREE_STYLE: Record<Agreement, { text: string; cls: string }> = {
-  agree: { text: "Agree", cls: "bg-accent-soft text-ink" },
-  partly: { text: "Partly", cls: "bg-sunken text-ink-2" },
-  disagree: { text: "Disagree", cls: "bg-watch-soft text-ink" },
+  agree: { text: "agree", cls: "bg-accent-soft text-ink" },
+  partly: { text: "partly", cls: "bg-sunken text-ink-2" },
+  disagree: { text: "disagree", cls: "bg-watch-soft text-ink" },
 };
 
-function CheckCell({ pair, decimals }: { pair?: { ours: TrendSummary | null; cru: TrendSummary | null }; decimals: number }) {
-  if (!pair?.ours || !pair.cru) return <td className="px-4 py-3 text-ink-3">–</td>;
+function CheckCell({
+  pair,
+  decimals,
+}: {
+  pair?: { ours: TrendSummary | null; cru: TrendSummary | null };
+  decimals: number;
+}) {
+  if (!pair?.ours || !pair.cru)
+    return <td className="px-4 py-3 text-ink-3">–</td>;
   const star = (t: TrendSummary) => (t.p < 0.05 ? "*" : "");
   const a = AGREE_STYLE[agreement(pair.ours, pair.cru)];
   return (
@@ -286,41 +687,161 @@ function CheckCell({ pair, decimals }: { pair?: { ours: TrendSummary | null; cru
         {star(pair.ours)} / {formatSigned(pair.cru.slopePerDecade, decimals)}
         {star(pair.cru)}
       </span>{" "}
-      <span className={`ml-1 rounded-full px-2 py-0.5 text-xs font-medium ${a.cls}`}>{a.text}</span>
+      <span
+        className={`ml-1 rounded px-1.5 py-0.5 text-xs font-medium ${a.cls}`}
+      >
+        {a.text}
+      </span>
     </td>
   );
 }
 
-function Section({ title, children, wide = false }: { title: string; children: React.ReactNode; wide?: boolean }) {
+function Section({
+  id,
+  n,
+  title,
+  children,
+}: {
+  id: string;
+  n: string | null;
+  title: string;
+  children: React.ReactNode;
+}) {
   return (
-    <section className={`mt-12 border-t border-line pt-8 ${wide ? "space-y-6" : "mx-auto w-full max-w-5xl grid gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] lg:gap-12"}`}>
-      <h2 className="text-xl font-semibold leading-snug tracking-tight text-ink sm:text-2xl">{title}</h2>
-      <div className="min-w-0 space-y-5 leading-7 [overflow-wrap:anywhere] [&>ol]:max-w-3xl [&>p]:max-w-3xl [&>ul]:max-w-3xl">
+    <section
+      id={id}
+      aria-labelledby={`${id}-heading`}
+      className="mt-12 scroll-mt-24"
+    >
+      <h2
+        id={`${id}-heading`}
+        className="border-b border-line pb-2 text-xl font-semibold tracking-tight text-ink sm:text-2xl"
+      >
+        {n && <span className="mr-2 tabular-nums text-ink-3">{n}</span>}
+        {title}
+      </h2>
+      <div className="mt-5 space-y-4 leading-7 text-ink-2 [overflow-wrap:anywhere]">
         {children}
       </div>
     </section>
   );
 }
 
-function Callout({ title, children }: { title: string; children: React.ReactNode }) {
+function Head3({ children }: { children: React.ReactNode }) {
   return (
-    <div className="mx-auto max-w-3xl rounded-r-lg border-l-2 border-line bg-card p-5">
-      <div className="font-semibold text-ink">{title}</div>
-      <p className="mt-1 text-ink-2">{children}</p>
+    <h3 className="pt-2 text-[15px] font-semibold text-ink">{children}</h3>
+  );
+}
+
+function Table({
+  caption,
+  children,
+}: {
+  caption: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <figure className="space-y-2">
+      <div className="overflow-x-auto rounded-lg border border-line">
+        <table className="w-full min-w-[640px] table-fixed text-left text-sm">
+          {children}
+        </table>
+      </div>
+      <figcaption className="text-xs leading-relaxed text-ink-3">
+        {caption}
+      </figcaption>
+    </figure>
+  );
+}
+
+function Tr({
+  v,
+  d,
+  u,
+  href,
+}: {
+  v: string;
+  d: string;
+  u: string;
+  href: string;
+}) {
+  return (
+    <tr>
+      <td className="px-4 py-3 align-top font-medium text-ink">{v}</td>
+      <td className="px-4 py-3 align-top">
+        <a
+          href={href}
+          target="_blank"
+          rel="noreferrer"
+          className="text-ink-2 hover:text-accent hover:underline"
+        >
+          {d}
+        </a>
+      </td>
+      <td className="px-4 py-3 align-top text-ink-3">{u}</td>
+    </tr>
+  );
+}
+
+function Note({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="rounded-lg border border-line border-l-2 border-l-accent bg-card p-4">
+      <p className="text-sm font-semibold text-ink">{title}</p>
+      <div className="mt-1 text-sm leading-relaxed text-ink-2">{children}</div>
     </div>
   );
 }
 
-function Tr({ v, d, u, href }: { v: string; d: string; u: string; href: string }) {
+function Formula({ tex, caption }: { tex: string; caption: string }) {
   return (
-    <tr>
-      <td className="px-4 py-3 font-medium text-ink">{v}</td>
-      <td className="px-4 py-3">
-        <a href={href} target="_blank" rel="noreferrer" className="text-ink-2 hover:text-accent hover:underline">
-          {d}
-        </a>
-      </td>
-      <td className="px-4 py-3 text-ink-3">{u}</td>
-    </tr>
+    <Figure caption={caption}>
+      <span className="font-mono text-sm text-ink">{tex}</span>
+    </Figure>
+  );
+}
+
+function Figure({
+  caption,
+  children,
+}: {
+  caption: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <figure className="rounded-lg border border-line bg-sunken px-4 py-3">
+      <div className="overflow-x-auto">{children}</div>
+      <figcaption className="mt-1 text-xs text-ink-3">{caption}</figcaption>
+    </figure>
+  );
+}
+
+function Meta({ label, value }: { label: string; value: string }) {
+  return (
+    <div>
+      <dt className="text-xs uppercase tracking-wider text-ink-3">{label}</dt>
+      <dd className="mt-0.5 tabular-nums text-ink">{value}</dd>
+    </div>
+  );
+}
+
+function DefinitionList({ items }: { items: [string, string][] }) {
+  return (
+    <dl className="divide-y divide-line rounded-lg border border-line bg-card text-sm">
+      {items.map(([k, v]) => (
+        <div
+          key={k}
+          className="grid gap-1 px-4 py-2.5 sm:grid-cols-[10rem_minmax(0,1fr)] sm:gap-4"
+        >
+          <dt className="font-medium text-ink">{k}</dt>
+          <dd className="text-ink-2">{v}</dd>
+        </div>
+      ))}
+    </dl>
   );
 }
