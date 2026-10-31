@@ -18,7 +18,9 @@ import { Sparkline } from "@/components/findings/parts";
 import EvidenceStory from "@/components/home/EvidenceStory";
 import HeroClimateStory from "@/components/hero/HeroClimateStory";
 import HeroImageSlideshow from "@/components/hero/HeroImageSlideshow";
-import { PlaceSearch } from "@/components/places/PlaceSearch";
+import { readFile } from "node:fs/promises";
+import path from "node:path";
+import { CountrySearch } from "@/components/site/CountrySearch";
 import { StartTourButton } from "@/components/site/Tour";
 import { bnMonth, bnNum } from "@/lib/bn";
 import {
@@ -31,8 +33,9 @@ import {
 import { preparednessSignal } from "@/lib/hazards";
 import { T } from "@/lib/i18n";
 import { zoneNameBn } from "@/lib/names";
-import { buildPlaceReport } from "@/lib/placeReport";
-import { placeById, PLACES } from "@/lib/places";
+import { buildCountryReport } from "@/lib/countryReport";
+import { countriesFrom, countryBySlug } from "@/lib/countries";
+
 import { formatSigned, type Zone } from "@/lib/trends";
 
 interface Tool {
@@ -115,31 +118,34 @@ const TOOLS: Tool[] = [
     ],
   },
   {
-    href: "/places",
+    href: "/countries",
     Icon: MapPin,
-    question: ["What about my city?", "আমার শহরের কী অবস্থা?"],
-    title: ["Place reports", "শহরের রিপোর্ট"],
+    question: ["What about my country?", "আমার দেশের কী অবস্থা?"],
+    title: ["Country dashboards", "দেশের ড্যাশবোর্ড"],
     text: [
-      `A one-page climate report for each of ${PLACES.length} cities: how much warmer it got, how the rain changed, and which disasters happen nearby.`,
-      `${bnNum(PLACES.length)}টি শহরের প্রতিটির জন্য এক পাতার জলবায়ু রিপোর্ট: কতটা গরম বেড়েছে, বৃষ্টি কীভাবে বদলেছে, আর আশপাশে কোন দুর্যোগ ঘটে।`,
+      "A dashboard for each country in the study: an interactive map with NASA layers, the observed climate trends, hazard records and the regions that carry the most risk.",
+      "গবেষণা এলাকার প্রতিটি দেশের জন্য ড্যাশবোর্ড: নাসার স্তরসহ ইন্টারঅ্যাকটিভ মানচিত্র, পর্যবেক্ষিত প্রবণতা, দুর্যোগের তথ্য ও সবচেয়ে ঝুঁকিপূর্ণ অঞ্চল।",
     ],
     tries: [
-      { href: "/places/dhaka", label: ["Dhaka", "ঢাকা"] },
-      { href: "/places/kathmandu", label: ["Kathmandu", "কাঠমান্ডু"] },
-      { href: "/places", label: ["All cities", "সব শহর"] },
+      { href: "/country/bangladesh", label: ["Bangladesh", "বাংলাদেশ"] },
+      { href: "/country/india", label: ["India", "ভারত"] },
+      { href: "/countries", label: ["All countries", "সব দেশ"] },
     ],
   },
 ];
 
 export default async function Home() {
-  const dhaka = placeById("dhaka")!;
-  const [manifest, trendZones, hazardZones, latest, dhakaReport, rainfallGrid] =
+  const countries = countriesFrom(
+    JSON.parse(await readFile(path.join(process.cwd(), "public/data/maps/place-signals.json"), "utf-8")),
+  );
+  const bangladesh = countryBySlug(countries, "bangladesh")!;
+  const [manifest, trendZones, hazardZones, latest, countryReport, rainfallGrid] =
     await Promise.all([
       readManifest(),
       readTrendZones(),
       readHazardZones(),
       readLatest(),
-      buildPlaceReport(dhaka),
+      buildCountryReport(bangladesh),
       readTrendGrid("rainfall_monsoon"),
     ]);
   const monthName = (ym: string) =>
@@ -271,9 +277,11 @@ export default async function Home() {
 
             <div className="mt-8">
               <p className="mb-2 text-sm text-white/80">
-                <T en="Or search your city" bn="অথবা আপনার শহর খুঁজুন" />
+                <T en="Or open your country" bn="অথবা আপনার দেশ খুলুন" />
               </p>
-              <PlaceSearch />
+              <div className="max-w-md">
+                <CountrySearch countries={countries.map(({ slug, name, nameBn, flag }) => ({ slug, name, nameBn, flag }))} large />
+              </div>
             </div>
           </div>
 
@@ -601,31 +609,31 @@ export default async function Home() {
             />
             {/* Disaster Risk — small (1/3) */}
             <ToolCard tool={TOOLS[2]} />
-            {/* Place Reports — large (2/3) with live preview */}
+            {/* Country dashboards — large (2/3) with live preview */}
             <ToolCard
               tool={TOOLS[3]}
               preview={
-                <PlacePreview
-                  name={<T en={dhaka.name} bn="ঢাকা" />}
+                <CountryPreview
+                  name={bangladesh.name}
+                  flag={bangladesh.flag}
                   warmed={
-                    dhakaReport.temperature.annual
-                      ? (dhakaReport.temperature.annual.trend.slopePerDecade *
+                    countryReport.temperature?.trend
+                      ? (countryReport.temperature.trend.slopePerDecade *
                           (last - first)) /
                         10
                       : null
                   }
-                  series={(dhakaReport.temperature.annual?.series ?? []).filter(
-                    (v): v is number => v !== null,
-                  )}
+                  series={countryReport.temperature?.series ?? []}
                   rainPct={
-                    dhakaReport.rain.monsoon?.mean
-                      ? (dhakaReport.rain.monsoon.trend.slopePerDecade /
-                          dhakaReport.rain.monsoon.mean) *
+                    countryReport.rainfall?.trend && countryReport.rainfall.series.length
+                      ? (countryReport.rainfall.trend.slopePerDecade /
+                          (countryReport.rainfall.series.reduce((a, v) => a + v, 0) /
+                            countryReport.rainfall.series.length)) *
                         100
                       : null
                   }
-                  floods={dhakaReport.floods.count}
-                  radiusKm={dhakaReport.floods.radiusKm}
+                  regions={countryReport.regions.length}
+                  floods={countryReport.hazards.find((h) => h.id === "flood")?.events.count ?? null}
                   first={first}
                 />
               }
@@ -846,21 +854,23 @@ function TrendPreview({
 
 /* ─── Dhaka live preview (place reports card) ─────────────────────── */
 
-function PlacePreview({
+function CountryPreview({
   name,
+  flag,
   warmed,
   series,
   rainPct,
+  regions,
   floods,
-  radiusKm,
   first,
 }: {
-  name: React.ReactNode;
+  name: string;
+  flag: string;
   warmed: number | null;
   series: number[];
   rainPct: number | null;
-  floods: number;
-  radiusKm: number;
+  regions: number;
+  floods: number | null;
   first: number;
 }) {
   const w = warmed !== null ? formatSigned(warmed, 1) : null;
@@ -870,10 +880,14 @@ function PlacePreview({
       <div>
         <div className="flex items-center gap-2 text-sm text-ink-3">
           <MapPin size={16} weight="fill" className="text-accent" aria-hidden />
-          <T en="Place report" bn="শহরের রিপোর্ট" />
+          <T en="Country dashboard" bn="দেশের ড্যাশবোর্ড" />
         </div>
-        <div className="mt-1 text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
-          {name}
+        <div className="mt-1 flex items-center gap-3">
+          {flag && (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img src={`https://flagcdn.com/w40/${flag}.png`} alt="" width={26} height={19} className="rounded-sm border border-line" />
+          )}
+          <span className="text-3xl font-semibold tracking-tight text-ink sm:text-4xl">{name}</span>
         </div>
       </div>
       {series.length > 1 && <Sparkline values={series} color="var(--warm-3)" />}
@@ -891,7 +905,7 @@ function PlacePreview({
         {r && (
           <div>
             <dt className="text-ink-3">
-              <T en="Monsoon rain" bn="বর্ষার বৃষ্টি" />
+              <T en="Annual rain" bn="বার্ষিক বৃষ্টি" />
             </dt>
             <dd className="text-lg font-semibold tabular-nums text-ink">
               <T en={`${r}%/decade`} bn={`${bnNum(r)}%/দশক`} />
@@ -900,13 +914,10 @@ function PlacePreview({
         )}
         <div>
           <dt className="text-ink-3">
-            <T
-              en={`Floods, ${radiusKm} km`}
-              bn={`বন্যা, ${bnNum(radiusKm)} কিমি`}
-            />
+            <T en={floods === null ? "Hazard regions" : "Flood alerts"} bn={floods === null ? "দুর্যোগ অঞ্চল" : "বন্যা সতর্কতা"} />
           </dt>
           <dd className="text-lg font-semibold tabular-nums text-ink">
-            <T en={String(floods)} bn={bnNum(floods)} />
+            <T en={String(floods ?? regions)} bn={bnNum(floods ?? regions)} />
           </dd>
         </div>
       </dl>

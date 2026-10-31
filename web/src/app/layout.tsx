@@ -3,6 +3,9 @@ import { Geist, Geist_Mono, Noto_Sans_Bengali } from "next/font/google";
 import Link from "next/link";
 import { TourBar } from "@/components/site/Tour";
 import { Logo, SiteNav } from "@/components/site/SiteNav";
+import { countriesFrom } from "@/lib/countries";
+import { readFile } from "node:fs/promises";
+import path from "node:path";
 import { LANG_INIT_SCRIPT, THEME_INIT_SCRIPT } from "@/lib/bootScripts";
 import { T } from "@/lib/i18n";
 import "./globals.css";
@@ -46,7 +49,12 @@ export const viewport: Viewport = {
   ],
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default async function RootLayout({ children }: LayoutProps<"/">) {
+  // The navbar country search is server-rendered, so the list must also work without JS.
+  const countries = countriesFrom(
+    JSON.parse(await readFile(path.join(process.cwd(), "public/data/maps/place-signals.json"), "utf-8")),
+  ).map(({ slug, name, nameBn, flag }) => ({ slug, name, nameBn, flag }));
+
   return (
     <html
       lang="en"
@@ -67,7 +75,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         >
           <T en="Skip to content" bn="মূল অংশে যান" />
         </a>
-        <SiteNav />
+        <SiteNav countries={countries} />
         <TourBar />
         <main id="main" className="flex flex-1 flex-col">
           {children}
@@ -118,9 +126,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                   bn="দুর্যোগের ঝুঁকি"
                 />
                 <FooterLink
-                  href="/places"
-                  en="Place reports"
-                  bn="শহরের রিপোর্ট"
+                  href="/countries"
+                  en="Country dashboards"
+                  bn="দেশের ড্যাশবোর্ড"
                 />
               </FooterColumn>
 

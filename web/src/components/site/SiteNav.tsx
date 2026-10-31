@@ -2,7 +2,6 @@
 
 import {
   List,
-  MagnifyingGlass,
   Monitor,
   Moon,
   Sun,
@@ -12,6 +11,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { setLang, T, useLang, useT } from "@/lib/i18n";
+import { CountrySearch } from "./CountrySearch";
+import type { Country } from "@/lib/countries";
 import {
   setThemePreference,
   systemTheme,
@@ -31,7 +32,7 @@ export const TABS = [
 const isActive = (pathname: string, href: string) =>
   href === "/" ? pathname === "/" : pathname.startsWith(href);
 
-export function SiteNav() {
+export function SiteNav({ countries }: { countries: Pick<Country, "slug" | "name" | "nameBn" | "flag">[] }) {
   const pathname = usePathname();
   const satelliteMap = pathname === "/explore";
   const [open, setOpen] = useState(false);
@@ -114,21 +115,7 @@ export function SiteNav() {
         </nav>
 
         <div className="ml-auto flex items-center gap-2">
-          {!satelliteMap && <Link
-            href="/places"
-            aria-label={t("Find a place", "জায়গা খুঁজুন")}
-            title={t("Find a place", "জায়গা খুঁজুন")}
-            className={`flex h-10 items-center gap-2 rounded-full px-3 text-sm transition-colors hover:bg-card ${
-              pathname.startsWith("/places")
-                ? "bg-card font-medium text-ink shadow-soft"
-                : "text-ink-2"
-            }`}
-          >
-            <MagnifyingGlass size={18} />
-            <span className="hidden xl:inline">
-              <T en="Find a place" bn="জায়গা খুঁজুন" />
-            </span>
-          </Link>}
+          {!satelliteMap && <CountrySearch countries={countries} />}
           <LanguageSwitcher />
           <ThemeSwitcher />
           <button
@@ -167,18 +154,11 @@ export function SiteNav() {
               </Link>
             );
           })}
-          {!satelliteMap && <Link
-            href="/places"
-            aria-current={pathname.startsWith("/places") ? "page" : undefined}
-            className={`mt-1 flex items-center gap-2 rounded-xl border-t border-line px-4 py-3 text-base ${
-              pathname.startsWith("/places")
-                ? "bg-card font-medium text-ink"
-                : "text-ink-2"
-            }`}
-          >
-            <MagnifyingGlass size={18} />
-            <T en="Find a place" bn="জায়গা খুঁজুন" />
-          </Link>}
+          {!satelliteMap && (
+            <div className="mt-1 border-t border-line pt-3">
+              <CountrySearch countries={countries} large />
+            </div>
+          )}
         </nav>
       )}
     </header>

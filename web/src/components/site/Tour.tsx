@@ -41,11 +41,11 @@ const STOPS: { href: string; title: [string, string]; text: [string, string] }[]
     ],
   },
   {
-    href: "/places/dhaka",
-    title: ["A report for your city", "আপনার শহরের রিপোর্ট"],
+    href: "/country/bangladesh",
+    title: ["A dashboard for your country", "আপনার দেশের ড্যাশবোর্ড"],
     text: [
-      "Each of 54 cities has a one-page climate report: how much warmer it got, how its rain changed, and which disasters happen nearby. Here is Dhaka.",
-      "৫৪টি শহরের প্রতিটির এক পাতার জলবায়ু রিপোর্ট আছে: কতটা গরম বেড়েছে, বৃষ্টি কীভাবে বদলেছে, আর আশপাশে কোন দুর্যোগ ঘটে। এই যে ঢাকা।",
+      "Each country has a dashboard: an interactive map with NASA layers, the observed climate trends, hazard records and its most exposed regions. Here is Bangladesh.",
+      "প্রতিটি দেশের একটি ড্যাশবোর্ড আছে: নাসার স্তরসহ মানচিত্র, পর্যবেক্ষিত প্রবণতা, দুর্যোগের তথ্য ও সবচেয়ে ঝুঁকিপূর্ণ অঞ্চল। এই যে বাংলাদেশ।",
     ],
   },
   {
