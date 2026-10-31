@@ -1,0 +1,775 @@
+- generic [active] [ref=f19e1]:
+  - link "Skip to content" [ref=f19e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f19e3]:
+    - generic [ref=f19e4]:
+      - link "Earth's Hidden Signals, home" [ref=f19e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f19e10]: Earth's Hidden Signals
+      - generic [ref=f19e11]:
+        - link "Find a place" [ref=f19e12] [cursor=pointer]:
+          - /url: /places
+        - radiogroup "Language / ভাষা" [ref=f19e15]:
+          - radio "English" [checked] [ref=f19e16]: EN
+          - radio "বাংলা" [ref=f19e17]: বাং
+        - radiogroup "Colour theme" [ref=f19e18]:
+          - radio "Match my device" [checked] [ref=f19e19]
+          - radio "Light" [ref=f19e22]
+          - radio "Dark" [ref=f19e25]
+        - button "Open menu" [ref=f19e28]
+  - main [ref=f19e31]:
+    - article [ref=f19e32]:
+      - generic [ref=f19e33]:
+        - paragraph [ref=f19e34]: Methods
+        - heading "How we know a change is real" [level=1] [ref=f19e35]
+        - paragraph [ref=f19e36]: "A line on a chart that goes up is not yet a trend. This page records exactly how every number on the site was produced: the records we use, how we test for change, how we decide a result is real, and what we cannot claim. Everything can be reproduced from the public data."
+        - generic [ref=f19e37]:
+          - generic [ref=f19e38]:
+            - term [ref=f19e39]: Research period
+            - definition [ref=f19e40]: 1981–2025
+          - generic [ref=f19e41]:
+            - term [ref=f19e42]: Results generated
+            - definition [ref=f19e43]: 2026-09-29
+          - generic [ref=f19e44]:
+            - term [ref=f19e45]: Trend tests run
+            - definition [ref=f19e46]: 4,239 grid cells
+          - generic [ref=f19e47]:
+            - term [ref=f19e48]: Hazard regions
+            - definition [ref=f19e49]: "10"
+          - generic [ref=f19e50]:
+            - term [ref=f19e51]: Code
+            - definition [ref=f19e52]:
+              - link "GitHub" [ref=f19e53] [cursor=pointer]:
+                - /url: https://github.com/ARNOB663/earths-hidden-signals
+      - navigation "Findings" [ref=f19e57]:
+        - link "Summary" [ref=f19e58] [cursor=pointer]:
+          - /url: "#summary"
+        - link "1. Data" [ref=f19e59] [cursor=pointer]:
+          - /url: "#data"
+        - link "2. Trends" [ref=f19e60] [cursor=pointer]:
+          - /url: "#method"
+        - link "3. Significance" [ref=f19e61] [cursor=pointer]:
+          - /url: "#significance"
+        - link "4. Seasons & extremes" [ref=f19e62] [cursor=pointer]:
+          - /url: "#seasons"
+        - link "5. Regions" [ref=f19e63] [cursor=pointer]:
+          - /url: "#regions"
+        - link "6. Hazards" [ref=f19e64] [cursor=pointer]:
+          - /url: "#hazards"
+        - link "7. Cross-check" [ref=f19e65] [cursor=pointer]:
+          - /url: "#crosscheck"
+        - link "8. Results" [ref=f19e66] [cursor=pointer]:
+          - /url: "#results"
+        - link "9. Limitations" [ref=f19e67] [cursor=pointer]:
+          - /url: "#limits"
+        - link "10. Reproduce" [ref=f19e68] [cursor=pointer]:
+          - /url: "#reproduce"
+        - link "Citation" [ref=f19e69] [cursor=pointer]:
+          - /url: "#cite"
+        - link "References" [ref=f19e70] [cursor=pointer]:
+          - /url: "#refs"
+      - generic [ref=f19e71]:
+        - heading "Summary of method" [level=2] [ref=f19e72]
+        - list [ref=f19e74]:
+          - listitem [ref=f19e75]:
+            - generic [ref=f19e76]: "1"
+            - paragraph [ref=f19e77]:
+              - strong [ref=f19e78]: Change is measured on each map square.
+              - text: Every land square of the 2° (temperature) or 2.5° (rainfall) grid, 1981–2025. The rate of change is Sen's slope in units per decade; whether the change could be chance is a Hamed–Rao modified Mann–Kendall test, and a map-wide Benjamini–Hochberg false-discovery check decides which squares are drawn clearly.
+          - listitem [ref=f19e79]:
+            - generic [ref=f19e80]: "2"
+            - paragraph [ref=f19e81]:
+              - strong [ref=f19e82]: Seasons and extremes use the same test.
+              - text: Temperature and rainfall are aggregated to the whole year and to two seasons (Mar–May, Jun–Sep). Four extreme measures from the same records are tested in the same way.
+          - listitem [ref=f19e83]:
+            - generic [ref=f19e84]: "3"
+            - paragraph [ref=f19e85]:
+              - strong [ref=f19e86]: Regions are area-weighted.
+              - text: A region's series is the average of its land squares, weighted by area inside the region, land fraction and cos(latitude), so high-latitude squares do not count double.
+          - listitem [ref=f19e87]:
+            - generic [ref=f19e88]: "4"
+            - paragraph [ref=f19e89]:
+              - strong [ref=f19e90]: Hazards are linked, then compared with the past.
+              - text: Past disaster events are counted per region per year and correlated with the relevant seasonal driver after removing long-term trends. Where the link is statistically significant and in the expected direction, this year's conditions are compared with those of past high-event years. This is a preparedness comparison, not a forecast.
+          - listitem [ref=f19e91]:
+            - generic [ref=f19e92]: "5"
+            - paragraph [ref=f19e93]:
+              - strong [ref=f19e94]: A second record must agree.
+              - text: The headline temperature and rainfall trends are repeated with CRU TS 4.10, an independent station-based record. Agreement raises confidence; disagreement is reported.
+      - generic [ref=f19e95]:
+        - heading "1. Data" [level=2] [ref=f19e96]
+        - generic [ref=f19e97]:
+          - paragraph [ref=f19e98]: "All records are open, global and free of login. We use published, quality-controlled products rather than raw instruments: they are specifically built to remain consistent over decades, which is what a trend needs."
+          - table [ref=f19e100]:
+            - rowgroup [ref=f19e107]:
+              - row [ref=f19e108]:
+                - columnheader "Field" [ref=f19e109]
+                - columnheader "Dataset" [ref=f19e110]
+                - columnheader "Grid" [ref=f19e111]
+                - columnheader "Period" [ref=f19e112]
+                - columnheader "Used for" [ref=f19e113]
+            - rowgroup [ref=f19e114]:
+              - row [ref=f19e115]:
+                - cell "Surface temperature" [ref=f19e116]
+                - cell "NASA GISTEMP v4 (GHCNv4 + ERSSTv5), anomalies vs 1951–1980 Lenssen et al. (2019)" [ref=f19e117]:
+                  - link "NASA GISTEMP v4 (GHCNv4 + ERSSTv5), anomalies vs 1951–1980" [ref=f19e118] [cursor=pointer]:
+                    - /url: https://data.giss.nasa.gov/gistemp/
+                  - generic [ref=f19e119]: Lenssen et al. (2019)
+                - cell [ref=f19e120]:
+                  - code [ref=f19e121]: 2° × 2°
+                - cell "1981–2025" [ref=f19e122]
+                - cell "Trends, very hot months" [ref=f19e123]
+              - row [ref=f19e124]:
+                - cell "Rainfall, monthly" [ref=f19e125]
+                - cell "GPCP v2.3 (NASA GSFC-led; gauge + satellite, inter-calibrated) Adler et al. (2018)" [ref=f19e126]:
+                  - link "GPCP v2.3 (NASA GSFC-led; gauge + satellite, inter-calibrated)" [ref=f19e127] [cursor=pointer]:
+                    - /url: https://www.ncei.noaa.gov/products/climate-data-records/precipitation-gpcp-monthly
+                  - generic [ref=f19e128]: Adler et al. (2018)
+                - cell [ref=f19e129]:
+                  - code [ref=f19e130]: 2.5° × 2.5°
+                - cell "1981–2025" [ref=f19e131]
+                - cell "Seasonal totals, trends" [ref=f19e132]
+              - row [ref=f19e133]:
+                - cell "Rainfall, daily" [ref=f19e134]
+                - cell "GPCP 1DD v1.3 (NASA GSFC / NOAA) Huffman et al. (2001)" [ref=f19e135]:
+                  - link "GPCP 1DD v1.3 (NASA GSFC / NOAA)" [ref=f19e136] [cursor=pointer]:
+                    - /url: https://www.ncei.noaa.gov/products/climate-data-records/precipitation-gpcp-daily
+                  - generic [ref=f19e137]: Huffman et al. (2001)
+                - cell [ref=f19e138]:
+                  - code [ref=f19e139]: 1° × 1°
+                - cell "1997–2025" [ref=f19e140]
+                - cell "Very heavy rain days, longest dry spell, wettest day" [ref=f19e141]
+              - row [ref=f19e142]:
+                - cell "Independent check" [ref=f19e143]
+                - cell "CRU TS 4.10 (University of East Anglia), station-based, land only Harris et al. (2020)" [ref=f19e144]:
+                  - link "CRU TS 4.10 (University of East Anglia), station-based, land only" [ref=f19e145] [cursor=pointer]:
+                    - /url: https://crudata.uea.ac.uk/cru/data/hrg/
+                  - generic [ref=f19e146]: Harris et al. (2020)
+                - cell [ref=f19e147]:
+                  - code [ref=f19e148]: 0.5° × 0.5°
+                - cell "1981–2025" [ref=f19e149]
+                - cell "Cross-check of temperature and rainfall trends" [ref=f19e150]
+              - row [ref=f19e151]:
+                - cell "Wildfire events" [ref=f19e152]
+                - cell "NASA FIRMS MODIS active fires (Terra + Aqua), type 0, confidence ≥ 30 Giglio et al. (2016)" [ref=f19e153]:
+                  - link "NASA FIRMS MODIS active fires (Terra + Aqua), type 0, confidence ≥ 30" [ref=f19e154] [cursor=pointer]:
+                    - /url: https://firms.modaps.eosdis.nasa.gov/
+                  - generic [ref=f19e155]: Giglio et al. (2016)
+                - cell [ref=f19e156]:
+                  - code [ref=f19e157]: point detections
+                - cell "2003–2024" [ref=f19e158]
+                - cell "Hazard events, Mar–May" [ref=f19e159]
+              - row [ref=f19e160]:
+                - cell "Landslide events" [ref=f19e161]
+                - cell "NASA Global Landslide Catalog (news- and report-based) Kirschbaum et al. (2015)" [ref=f19e162]:
+                  - link "NASA Global Landslide Catalog (news- and report-based)" [ref=f19e163] [cursor=pointer]:
+                    - /url: https://gpm.nasa.gov/landslides/
+                  - generic [ref=f19e164]: Kirschbaum et al. (2015)
+                - cell [ref=f19e165]:
+                  - code [ref=f19e166]: point reports
+                - cell "2007–2017" [ref=f19e167]
+                - cell "Hazard events, Jun–Sep" [ref=f19e168]
+              - row [ref=f19e169]:
+                - cell "Flood events" [ref=f19e170]
+                - cell "GDACS flood alerts (UN OCHA / EU JRC) GDACS (2024)" [ref=f19e171]:
+                  - link "GDACS flood alerts (UN OCHA / EU JRC)" [ref=f19e172] [cursor=pointer]:
+                    - /url: https://www.gdacs.org/
+                  - generic [ref=f19e173]: GDACS (2024)
+                - cell [ref=f19e174]:
+                  - code [ref=f19e175]: alert footprints
+                - cell "2000–2025" [ref=f19e176]
+                - cell "Hazard events, Jun–Oct" [ref=f19e177]
+              - row [ref=f19e178]:
+                - cell "Cyclone events" [ref=f19e179]
+                - cell "IBTrACS v04r01 (NOAA NCEI; IMD and JTWC tracks), storms ≥ 34 kt Knapp et al. (2010)" [ref=f19e180]:
+                  - link "IBTrACS v04r01 (NOAA NCEI; IMD and JTWC tracks), storms ≥ 34 kt" [ref=f19e181] [cursor=pointer]:
+                    - /url: https://www.ncei.noaa.gov/products/international-best-track-archive
+                  - generic [ref=f19e182]: Knapp et al. (2010)
+                - cell [ref=f19e183]:
+                  - code [ref=f19e184]: best-track points
+                - cell "1981–2025" [ref=f19e185]
+                - cell "Hazard events and sea-surface driver" [ref=f19e186]
+              - row [ref=f19e187]:
+                - cell "Map imagery" [ref=f19e188]
+                - 'cell "NASA GIBS: MODIS surface temperature, NDVI, MERRA-2, GLDAS; SMAP L4 (2015–) —" [ref=f19e189]':
+                  - 'link "NASA GIBS: MODIS surface temperature, NDVI, MERRA-2, GLDAS; SMAP L4 (2015–)" [ref=f19e190] [cursor=pointer]':
+                    - /url: https://earthdata.nasa.gov/gibs
+                  - generic [ref=f19e191]: —
+                - cell [ref=f19e192]:
+                  - code [ref=f19e193]: tiles
+                - cell "varies" [ref=f19e194]
+                - cell "Satellite map (visual only, no trend)" [ref=f19e195]
+              - row [ref=f19e196]:
+                - cell "Forest loss" [ref=f19e197]
+                - cell "Hansen / UMD Global Forest Change (Landsat), via Global Forest Watch Hansen et al. (2013)" [ref=f19e198]:
+                  - link "Hansen / UMD Global Forest Change (Landsat), via Global Forest Watch" [ref=f19e199] [cursor=pointer]:
+                    - /url: https://glad.earthengine.app/view/global-forest-change
+                  - generic [ref=f19e200]: Hansen et al. (2013)
+                - cell [ref=f19e201]:
+                  - code [ref=f19e202]: 30 m
+                - cell "2001–2024" [ref=f19e203]
+                - cell "Satellite map (visual only, no trend)" [ref=f19e204]
+          - generic [ref=f19e205]:
+            - generic [ref=f19e206]: A dataset we rejected
+            - paragraph [ref=f19e207]: We first used NASA POWER (MERRA-2) rainfall. When we plotted it, rainfall over the Bengal delta jumped from about 1,200 mm to about 1,800 mm a year in 1997, and to over 3,000 mm after 2015. Real rain does not do that; the jumps come from changes in the observations fed into the model, and its soil moisture inherits them. Trends from it would have been confidently wrong, so we switched to GISTEMP and GPCP, which are built to stay consistent over decades. We now always plot a series before trusting its trend. The soil water on the satellite map is SMAP, a direct measurement since 2015; MERRA-2 soil moisture is not used for any trend.
+      - generic [ref=f19e208]:
+        - heading "2. How much is it changing?" [level=2] [ref=f19e209]
+        - generic [ref=f19e210]:
+          - paragraph [ref=f19e211]:
+            - text: The rate of change is
+            - strong [ref=f19e212]: Sen's slope
+            - text: "(Sen 1968): the median of the slopes between every pair of years in the record. Unlike an ordinary least-squares fit, a single extreme year cannot drag it, so one very hot or very wet year does not invent a trend. We report it per decade."
+          - generic [ref=f19e213]:
+            - generic [ref=f19e214]: Sen's slope for a series y₁ … yₙ
+            - paragraph [ref=f19e215]: "b = median { (yⱼ − yᵢ) / (j − i) : i &lt; j }"
+            - paragraph [ref=f19e216]: "Uncertainty: the 95% confidence interval from the rank-based formula of Gilbert (1987), using the variance of the Mann–Kendall statistic. It is shown as “+0.31 °C per decade (+0.27 to +0.36)”."
+          - paragraph [ref=f19e217]: A slope is only meaningful next to its starting level. Temperature is published as an anomaly relative to the 1951–1980 mean, the conventional GISTEMP baseline, so 0 °C means “the late-20th-century average”. Rainfall is an absolute seasonal total in millimetres, and we also report the slope as a percentage of the usual amount where that is meaningful.
+      - generic [ref=f19e218]:
+        - heading "3. Is it significant?" [level=2] [ref=f19e219]
+        - generic [ref=f19e220]:
+          - paragraph [ref=f19e221]:
+            - text: The
+            - strong [ref=f19e222]: Mann–Kendall test
+            - text: "(Mann 1945; Kendall 1975) is non-parametric: it asks, if there were no trend, how likely it is that this many years are higher than earlier years. It makes no assumption of normality, which suits short, skewed climate series. The result is a two-sided p-value; p < 0.05 means chance is an unlikely explanation."
+          - paragraph [ref=f19e223]:
+            - text: "Climate years are not independent: a warm year often follows another. That autocorrelation makes the plain test report too many false trends, so we use the"
+            - strong [ref=f19e224]: Hamed–Rao correction
+            - text: (Hamed & Rao 1998), which inflates the variance of the test statistic by the effective sample size. When the correction is invalid for a series (a negative correction factor), we fall back to the unmodified test and report that p-value.
+          - paragraph [ref=f19e225]:
+            - text: A map tests hundreds of squares at once, so about 5% would look significant by luck. We control the
+            - strong [ref=f19e226]: false discovery rate
+            - text: with the Benjamini–Hochberg procedure (α
+            - subscript [ref=f19e227]: FDR
+            - text: = 0.10, following Wilks 2016), which keeps the expected share of false discoveries near 5% in spatially correlated fields. A square is drawn solid and labelled “clear change” only if it passes this map-wide test.
+          - generic [ref=f19e228]:
+            - generic [ref=f19e229]: When a result is not significant
+            - paragraph [ref=f19e230]:
+              - text: "We say so plainly: “No statistically detectable trend.” This means the year-to-year variability is too large, over this record, to separate a real trend from natural variability. It does"
+              - emphasis [ref=f19e231]: not
+              - text: "prove nothing is changing: a longer record, a larger area or a different measure might reveal it. Absence of evidence is not evidence of absence."
+      - generic [ref=f19e232]:
+        - heading "4. Seasons and extremes" [level=2] [ref=f19e233]
+        - generic [ref=f19e234]:
+          - paragraph [ref=f19e235]: "For temperature and rainfall we test three Gregorian aggregations of the same monthly record: the whole year, the pre-monsoon (March–May) and the monsoon (June–September). Temperature uses the seasonal mean and rainfall the seasonal total (each month scaled by its number of days). The monsoon seasons exist because the site's hazard regions are South Asian; they are not described as global seasons."
+          - table [ref=f19e237]:
+            - rowgroup [ref=f19e242]:
+              - row [ref=f19e243]:
+                - columnheader "Measure" [ref=f19e244]
+                - columnheader "Definition" [ref=f19e245]
+                - columnheader "Record" [ref=f19e246]
+            - rowgroup [ref=f19e247]:
+              - row [ref=f19e248]:
+                - cell "Very hot months" [ref=f19e249]
+                - cell "Months at least 1 °C warmer than the 1951–1980 average for that same month; counted per year." [ref=f19e250]
+                - cell "GISTEMP" [ref=f19e251]
+              - row [ref=f19e252]:
+                - cell "Very heavy rain days" [ref=f19e253]
+                - cell "Days wetter than the local 95th percentile of rainy days (≥ 1 mm), counted per year." [ref=f19e254]
+                - cell "GPCP 1DD" [ref=f19e255]
+              - row [ref=f19e256]:
+                - cell "Wettest day of the year" [ref=f19e257]
+                - cell "The most rain on a single day in each year." [ref=f19e258]
+                - cell "GPCP 1DD" [ref=f19e259]
+              - row [ref=f19e260]:
+                - cell "Longest dry spell" [ref=f19e261]
+                - cell "The longest run of days under 1 mm in each year." [ref=f19e262]
+                - cell "GPCP 1DD" [ref=f19e263]
+          - paragraph [ref=f19e264]: Every extreme is one number per year, so it is tested only for the whole year (the manifest lists a single season for these measures). Percentiles are computed per grid square across the daily record, so “heavy” means heavy for that square, not for the region.
+      - generic [ref=f19e265]:
+        - heading "5. Regions and area weighting" [level=2] [ref=f19e266]
+        - generic [ref=f19e267]:
+          - paragraph [ref=f19e268]:
+            - text: Regions (
+            - code [ref=f19e269]: analysis/zones.json
+            - text: ) are approximate rectangles around hazard-prone landscapes, drawn by geography (basins, mountain belts, forest belts), not by national borders. “All of South Asia” is the full study box (5–38°N, 60–100°E).
+          - paragraph [ref=f19e270]: "A region's series is the weighted average of its grid squares:"
+          - generic [ref=f19e271]:
+            - paragraph [ref=f19e272]:
+              - text: w
+              - subscript [ref=f19e273]: ij
+              - text: = f
+              - subscript [ref=f19e274]: ij
+              - text: · land
+              - subscript [ref=f19e275]: ij
+              - text: · cos φ
+              - subscript [ref=f19e276]: i
+            - paragraph [ref=f19e277]: where f is the share of the square inside the region box, land the share of the square that is land (from a fine MERRA-2 mask, with a square counted if land ≥ 25%), and cos φ the cosine of its latitude, so the area a square represents on the globe is respected. Squares that are mostly sea are excluded.
+          - paragraph [ref=f19e278]: The region's trend is then tested on that series exactly as a square's. Region boxes are not exact watersheds or forest boundaries, and neighbouring boxes can cover one square; regional numbers are contextual, not administrative statistics.
+      - generic [ref=f19e279]:
+        - heading "6. From trends to hazards" [level=2] [ref=f19e280]
+        - generic [ref=f19e281]:
+          - paragraph [ref=f19e282]:
+            - text: For each hazard region we count past events per year from the event record, then ask whether high-event years line up with unusual heat or rain. The correlation is
+            - strong [ref=f19e283]: Spearman's rank correlation
+            - text: on both series after removing their long-term trends (Sen's slope detrending), so two quantities that simply both rise over time do not look connected.
+          - table [ref=f19e285]:
+            - rowgroup [ref=f19e291]:
+              - row [ref=f19e292]:
+                - columnheader "Hazard" [ref=f19e293]
+                - columnheader "Event record and season" [ref=f19e294]
+                - columnheader "Driver tested" [ref=f19e295]
+                - columnheader "Years" [ref=f19e296]
+            - rowgroup [ref=f19e297]:
+              - row [ref=f19e298]:
+                - cell "Wildfire" [ref=f19e299]
+                - cell "FIRMS MODIS vegetation fires, Mar–May" [ref=f19e300]
+                - cell "Pre-monsoon temperature (higher); pre-monsoon rainfall (lower)" [ref=f19e301]
+                - cell "2003–2024" [ref=f19e302]
+              - row [ref=f19e303]:
+                - cell "Landslide" [ref=f19e304]
+                - cell "NASA Global Landslide Catalog, Jun–Sep" [ref=f19e305]
+                - cell "Monsoon rainfall (higher)" [ref=f19e306]
+                - cell "2007–2017" [ref=f19e307]
+              - row [ref=f19e308]:
+                - cell "Flood" [ref=f19e309]
+                - cell "GDACS flood alerts overlapping the region, Jun–Oct" [ref=f19e310]
+                - cell "Monsoon rainfall (higher)" [ref=f19e311]
+                - cell "2000–2025" [ref=f19e312]
+              - row [ref=f19e313]:
+                - cell "Cyclone" [ref=f19e314]
+                - cell "IBTrACS storms ≥ 34 kt, by basin" [ref=f19e315]
+                - cell "Cyclone-season sea-surface warmth (higher)" [ref=f19e316]
+                - cell "1981–2025" [ref=f19e317]
+          - paragraph [ref=f19e318]:
+            - text: A link counts only if p < 0.05
+            - emphasis [ref=f19e319]: and
+            - text: the correlation points the physically expected way (ρ > 0 for a “higher risk” driver, ρ < 0 for “lower risk”). Where a link exists, the
+            - strong [ref=f19e320]: preparedness signal
+            - text: compares the latest season's rank within the record (percentile) with the median percentile of past high-event years (the top 25% of event years). A signal is raised when the current value reaches that level in the risk direction. It is a comparison with history,
+            - strong [ref=f19e321]: not a forecast
+            - text: ": it never says an event will happen. Where no link exists, no signal is given."
+          - paragraph [ref=f19e322]: Event-count trends are tested with the same Mann–Kendall machinery, but reported only for fires, the one record long enough (22 years) for a meaningful count trend.
+      - generic [ref=f19e323]:
+        - heading "7. Independent cross-check" [level=2] [ref=f19e324]
+        - generic [ref=f19e325]:
+          - paragraph [ref=f19e326]:
+            - text: We repeated the headline temperature and rainfall trends with a completely separate record,
+            - strong [ref=f19e327]: CRU TS 4.10
+            - text: "(University of East Anglia): station data, 0.5°, its own interpolation and homogenisation, land only. If two independently built records give the same trend, an artefact of one dataset is unlikely. Where they disagree, we report it and lower the confidence of the finding."
+          - paragraph [ref=f19e328]:
+            - text: "Agreement is defined as: both records significant and the same sign ("
+            - emphasis [ref=f19e329]: agree
+            - text: ); neither significant (
+            - emphasis [ref=f19e330]: agree
+            - text: ); one significant and the other not (
+            - emphasis [ref=f19e331]: partly
+            - text: ); both significant with opposite signs (
+            - emphasis [ref=f19e332]: disagree
+            - text: ).
+          - paragraph [ref=f19e333]:
+            - text: In the current run, 8 of 9 regions are a full
+            - emphasis [ref=f19e334]: agree
+            - text: on whole-year temperature. In Ganges-Brahmaputra-Meghna delta, both records warm but one trend is not clear enough to call significant, so those rows are marked
+            - emphasis [ref=f19e335]: partly
+            - text: . The direction of warming agrees in every region.
+          - table [ref=f19e337]:
+            - rowgroup [ref=f19e342]:
+              - row [ref=f19e343]:
+                - columnheader "Region" [ref=f19e344]
+                - columnheader "Temperature, whole year (°C per 10 years)" [ref=f19e345]
+                - columnheader "Monsoon rain (mm per 10 years)" [ref=f19e346]
+            - rowgroup [ref=f19e347]:
+              - row [ref=f19e348]:
+                - cell "All of South Asia" [ref=f19e349]
+                - cell "+0.31* / +0.25* Agree" [ref=f19e350]:
+                  - generic [ref=f19e351]: +0.31* / +0.25*
+                  - text: Agree
+                - cell "0 / +14* Partly" [ref=f19e352]:
+                  - generic [ref=f19e353]: 0 / +14*
+                  - text: Partly
+              - row [ref=f19e354]:
+                - cell "Ganges-Brahmaputra-Meghna delta" [ref=f19e355]
+                - cell "+0.33* / +0.08 Partly" [ref=f19e356]:
+                  - generic [ref=f19e357]: +0.33* / +0.08
+                  - text: Partly
+                - cell "−66* / −60* Agree" [ref=f19e358]:
+                  - generic [ref=f19e359]: −66* / −60*
+                  - text: Agree
+              - row [ref=f19e360]:
+                - cell "Indus plain" [ref=f19e361]
+                - cell "+0.30* / +0.28* Agree" [ref=f19e362]:
+                  - generic [ref=f19e363]: +0.30* / +0.28*
+                  - text: Agree
+                - cell "+37* / +14* Agree" [ref=f19e364]:
+                  - generic [ref=f19e365]: +37* / +14*
+                  - text: Agree
+              - row [ref=f19e366]:
+                - cell "Central Himalaya" [ref=f19e367]
+                - cell "+0.29* / +0.21* Agree" [ref=f19e368]:
+                  - generic [ref=f19e369]: +0.29* / +0.21*
+                  - text: Agree
+                - cell "−55* / −4 Partly" [ref=f19e370]:
+                  - generic [ref=f19e371]: −55* / −4
+                  - text: Partly
+              - row [ref=f19e372]:
+                - cell "Western Himalaya" [ref=f19e373]
+                - cell "+0.33* / +0.29* Agree" [ref=f19e374]:
+                  - generic [ref=f19e375]: +0.33* / +0.29*
+                  - text: Agree
+                - cell "−5 / +26* Partly" [ref=f19e376]:
+                  - generic [ref=f19e377]: −5 / +26*
+                  - text: Partly
+              - row [ref=f19e378]:
+                - cell "Western Ghats" [ref=f19e379]
+                - cell "+0.18* / +0.16* Agree" [ref=f19e380]:
+                  - generic [ref=f19e381]: +0.18* / +0.16*
+                  - text: Agree
+                - cell "−64* / +44* Disagree" [ref=f19e382]:
+                  - generic [ref=f19e383]: −64* / +44*
+                  - text: Disagree
+              - row [ref=f19e384]:
+                - cell "Sri Lanka central highlands" [ref=f19e385]
+                - cell "+0.18* / +0.17* Agree" [ref=f19e386]:
+                  - generic [ref=f19e387]: +0.18* / +0.17*
+                  - text: Agree
+                - cell "−20 / −9 Agree" [ref=f19e388]:
+                  - generic [ref=f19e389]: −20 / −9
+                  - text: Agree
+              - row [ref=f19e390]:
+                - cell "Central Indian forest belt" [ref=f19e391]
+                - cell "+0.22* / +0.12* Agree" [ref=f19e392]:
+                  - generic [ref=f19e393]: +0.22* / +0.12*
+                  - text: Agree
+                - cell "+9 / +43* Partly" [ref=f19e394]:
+                  - generic [ref=f19e395]: +9 / +43*
+                  - text: Partly
+              - row [ref=f19e396]:
+                - cell "Northeast India and Myanmar hills" [ref=f19e397]
+                - cell "+0.36* / +0.16* Agree" [ref=f19e398]:
+                  - generic [ref=f19e399]: +0.36* / +0.16*
+                  - text: Agree
+                - cell "−56* / −42* Agree" [ref=f19e400]:
+                  - generic [ref=f19e401]: −56* / −42*
+                  - text: Agree
+          - paragraph [ref=f19e402]: Each cell shows this project's value, then CRU's. * = a clear (statistically significant) change. Both records warm in every region, so the direction of warming is confirmed even where one trend is not clear. For rain the records conflict outright in Western Ghats; the all-South-Asia row is only partly agreeing, which is why rain findings carry a lower confidence rating than temperature.
+      - generic [ref=f19e403]:
+        - heading "8. Current results" [level=2] [ref=f19e404]
+        - generic [ref=f19e405]:
+          - paragraph [ref=f19e406]:
+            - text: The values below are read directly from
+            - code [ref=f19e407]: trends/zones.json
+            - text: and
+            - code [ref=f19e408]: hazards/zones.json
+            - text: ", the same files that drive the site. They are shown so the page itself can be checked."
+          - heading "South Asia, whole year" [level=3] [ref=f19e409]
+          - table [ref=f19e411]:
+            - rowgroup [ref=f19e418]:
+              - row [ref=f19e419]:
+                - columnheader "Measure" [ref=f19e420]
+                - columnheader "Usual value" [ref=f19e421]
+                - columnheader "Change per decade" [ref=f19e422]
+                - columnheader "95% range" [ref=f19e423]
+                - columnheader "p" [ref=f19e424]
+            - rowgroup [ref=f19e425]:
+              - row [ref=f19e426]:
+                - cell "Temperature (anomaly)" [ref=f19e427]
+                - cell "0.68 °C" [ref=f19e428]
+                - cell "+0.31 °C" [ref=f19e429]
+                - cell "+0.27 to +0.36" [ref=f19e430]
+                - cell "< 0.001" [ref=f19e431]
+              - row [ref=f19e432]:
+                - cell "Rainfall, annual total" [ref=f19e433]
+                - cell "1008 mm" [ref=f19e434]
+                - cell "+5 mm" [ref=f19e435]
+                - cell "−8 to +17" [ref=f19e436]
+                - cell "0.487" [ref=f19e437]
+              - row [ref=f19e438]:
+                - cell "Very hot months per year" [ref=f19e439]
+                - cell "3.9 months" [ref=f19e440]
+                - cell "+1.7 months" [ref=f19e441]
+                - cell "+1.2 to +2.0" [ref=f19e442]
+                - cell "< 0.001" [ref=f19e443]
+              - row [ref=f19e444]:
+                - cell "Very heavy rain days per year" [ref=f19e445]
+                - cell "4.2 days" [ref=f19e446]
+                - cell "+0.1 days" [ref=f19e447]
+                - cell "−0.1 to +0.3" [ref=f19e448]
+                - cell "0.196" [ref=f19e449]
+              - row [ref=f19e450]:
+                - cell "Wettest day (mm)" [ref=f19e451]
+                - cell "50.3 mm" [ref=f19e452]
+                - cell "+0.9 mm" [ref=f19e453]
+                - cell "−0.1 to +1.8" [ref=f19e454]
+                - cell "0.088" [ref=f19e455]
+              - row [ref=f19e456]:
+                - cell "Longest dry spell (days)" [ref=f19e457]
+                - cell "23.1 days" [ref=f19e458]
+                - cell "−0.4 days" [ref=f19e459]
+                - cell "−1.4 to +0.6" [ref=f19e460]
+                - cell "0.464" [ref=f19e461]
+          - heading "Hazard links and latest season" [level=3] [ref=f19e462]
+          - table [ref=f19e464]:
+            - rowgroup [ref=f19e473]:
+              - row [ref=f19e474]:
+                - columnheader "Region" [ref=f19e475]
+                - columnheader "Hazard" [ref=f19e476]
+                - columnheader "Driver" [ref=f19e477]
+                - columnheader "ρ (p)" [ref=f19e478]
+                - columnheader "Link" [ref=f19e479]
+                - columnheader "Latest percentile" [ref=f19e480]
+                - columnheader "Past high-event years" [ref=f19e481]
+            - rowgroup [ref=f19e482]:
+              - row [ref=f19e483]:
+                - cell "Ganges-Brahmaputra-Meghna delta" [ref=f19e484]
+                - cell "flood" [ref=f19e485]
+                - cell "Monsoon rainfall" [ref=f19e486]
+                - cell "0.33 (0.099)" [ref=f19e487]
+                - cell "–" [ref=f19e488]
+                - cell "24th" [ref=f19e489]
+                - cell "40th" [ref=f19e490]
+              - row [ref=f19e491]:
+                - cell "Indus plain" [ref=f19e492]
+                - cell "flood" [ref=f19e493]
+                - cell "Monsoon rainfall" [ref=f19e494]
+                - cell "0.47 (0.014)" [ref=f19e495]
+                - cell "linked" [ref=f19e496]
+                - cell "87th" [ref=f19e497]
+                - cell "72th" [ref=f19e498]
+              - row [ref=f19e499]:
+                - cell "Central Himalaya" [ref=f19e500]
+                - cell "landslide" [ref=f19e501]
+                - cell "Monsoon rainfall" [ref=f19e502]
+                - cell "0.17 (0.628)" [ref=f19e503]
+                - cell "–" [ref=f19e504]
+                - cell "24th" [ref=f19e505]
+                - cell "37th" [ref=f19e506]
+              - row [ref=f19e507]:
+                - cell "Western Himalaya" [ref=f19e508]
+                - cell "landslide" [ref=f19e509]
+                - cell "Monsoon rainfall" [ref=f19e510]
+                - cell "0.73 (0.010)" [ref=f19e511]
+                - cell "linked" [ref=f19e512]
+                - cell "96th" [ref=f19e513]
+                - cell "84th" [ref=f19e514]
+              - row [ref=f19e515]:
+                - cell "Western Ghats" [ref=f19e516]
+                - cell "landslide" [ref=f19e517]
+                - cell "Monsoon rainfall" [ref=f19e518]
+                - cell "-0.05 (0.883)" [ref=f19e519]
+                - cell "–" [ref=f19e520]
+                - cell "53th" [ref=f19e521]
+                - cell "33th" [ref=f19e522]
+              - row [ref=f19e523]:
+                - cell "Sri Lanka central highlands" [ref=f19e524]
+                - cell "landslide" [ref=f19e525]
+                - cell "Monsoon rainfall" [ref=f19e526]
+                - cell "0.23 (0.493)" [ref=f19e527]
+                - cell "–" [ref=f19e528]
+                - cell "7th" [ref=f19e529]
+                - cell "44th" [ref=f19e530]
+              - row [ref=f19e531]:
+                - cell "Central Indian forest belt" [ref=f19e532]
+                - cell "wildfire" [ref=f19e533]
+                - cell "Pre-monsoon temperature" [ref=f19e534]
+                - cell "0.56 (0.007)" [ref=f19e535]
+                - cell "linked" [ref=f19e536]
+                - cell "58th" [ref=f19e537]
+                - cell "77th" [ref=f19e538]
+              - row [ref=f19e539]:
+                - cell "Central Indian forest belt" [ref=f19e540]
+                - cell "wildfire" [ref=f19e541]
+                - cell "Pre-monsoon rainfall" [ref=f19e542]
+                - cell "-0.41 (0.060)" [ref=f19e543]
+                - cell "–" [ref=f19e544]
+                - cell "96th" [ref=f19e545]
+                - cell "48th" [ref=f19e546]
+              - row [ref=f19e547]:
+                - cell "Northeast India and Myanmar hills" [ref=f19e548]
+                - cell "wildfire" [ref=f19e549]
+                - cell "Pre-monsoon temperature" [ref=f19e550]
+                - cell "0.42 (0.051)" [ref=f19e551]
+                - cell "–" [ref=f19e552]
+                - cell "82th" [ref=f19e553]
+                - cell "71th" [ref=f19e554]
+              - row [ref=f19e555]:
+                - cell "Northeast India and Myanmar hills" [ref=f19e556]
+                - cell "wildfire" [ref=f19e557]
+                - cell "Pre-monsoon rainfall" [ref=f19e558]
+                - cell "-0.20 (0.360)" [ref=f19e559]
+                - cell "–" [ref=f19e560]
+                - cell "73th" [ref=f19e561]
+                - cell "52th" [ref=f19e562]
+              - row [ref=f19e563]:
+                - cell "Bay of Bengal" [ref=f19e564]
+                - cell "cyclone" [ref=f19e565]
+                - cell "Sea-surface warmth in the cyclone seasons" [ref=f19e566]
+                - cell "-0.13 (0.395)" [ref=f19e567]
+                - cell "–" [ref=f19e568]
+                - cell "93th" [ref=f19e569]
+                - cell "46th" [ref=f19e570]
+              - row [ref=f19e571]:
+                - cell "Arabian Sea" [ref=f19e572]
+                - cell "cyclone" [ref=f19e573]
+                - cell "Sea-surface warmth in the cyclone seasons" [ref=f19e574]
+                - cell "0.09 (0.576)" [ref=f19e575]
+                - cell "–" [ref=f19e576]
+                - cell "64th" [ref=f19e577]
+                - cell "58th" [ref=f19e578]
+          - paragraph [ref=f19e579]: 3 of 12 driver tests form a statistically significant link in the expected direction. The samples are short (11–45 years), so a link is evidence, not proof of causation. The latest conditions compare 2026-08 (temperature) and 2026-06 (rainfall) with their published baselines.
+      - generic [ref=f19e580]:
+        - heading "9. Limitations" [level=2] [ref=f19e581]
+        - list [ref=f19e583]:
+          - listitem [ref=f19e584]:
+            - strong [ref=f19e585]: Resolution.
+            - text: Grids are 1°–2.5° (about 110–280 km), so local extremes, valleys and cities are smoothed out. A map square is not a measurement of one place.
+          - listitem [ref=f19e586]:
+            - strong [ref=f19e587]: Record length.
+            - text: 45 years is enough for a temperature trend and marginal for rainfall; the landslide record covers only 11 years, too short for an event-count trend.
+          - listitem [ref=f19e588]:
+            - strong [ref=f19e589]: Incomplete events.
+            - text: News-based landslide reports miss remote areas, satellites miss fires under cloud and smoke, and GDACS coverage improved over time. Where these changes are gradual they can mimic trends.
+          - listitem [ref=f19e590]:
+            - strong [ref=f19e591]: Multiple testing.
+            - text: FDR control limits but does not eliminate false discoveries; a single isolated “clear change” square should be treated cautiously.
+          - listitem [ref=f19e592]:
+            - strong [ref=f19e593]: Correlation is not causation.
+            - text: Land use, deforestation, road building, water management and human ignition also drive these hazards and are not in our models.
+          - listitem [ref=f19e594]:
+            - strong [ref=f19e595]: Regions.
+            - text: Hazard regions are rectangles drawn by geography, not administrative units or exact watersheds.
+          - listitem [ref=f19e596]:
+            - strong [ref=f19e597]: No forecast.
+            - text: The preparedness signal compares the present with the past; it is not a prediction of events.
+      - generic [ref=f19e598]:
+        - heading "10. Reproduce it" [level=2] [ref=f19e599]
+        - generic [ref=f19e600]:
+          - paragraph [ref=f19e601]:
+            - text: Everything is open source at
+            - link "github.com/ARNOB663/earths-hidden-signals" [ref=f19e602] [cursor=pointer]:
+              - /url: https://github.com/ARNOB663/earths-hidden-signals
+            - text: . No login is needed. From
+            - code [ref=f19e603]: analysis/
+            - text: ":"
+          - generic [ref=f19e604]: "pip install -r requirements.txt python -m pytest -q # the statistics are unit-tested python build.py # trends and the extremes python build_hazards.py # floods, landslides, wildfires python cyclones.py # cyclones python crosscheck.py # CRU TS cross-check python latest.py # latest month vs normal"
+          - paragraph [ref=f19e605]:
+            - text: "The order matters: each step reads the outputs of the earlier ones. Downloads are cached under"
+            - code [ref=f19e606]: raw/
+            - text: (not in the repository), and every result file is committed under
+            - code [ref=f19e607]: web/public/data/
+            - text: . Results in this page generated 2026-09-29.
+          - paragraph [ref=f19e608]: "Data also available per chart: every chart carries a “Download the data (CSV)” button with the exact numbers and the citation."
+      - generic [ref=f19e609]:
+        - heading "How to cite this work" [level=2] [ref=f19e610]
+        - generic [ref=f19e611]:
+          - paragraph [ref=f19e612]: "If you use the data, the results or the method, please cite the project and the underlying records:"
+          - paragraph [ref=f19e613]: "Earth's Hidden Signals (NASA Space Apps 2026), https://earths-hidden-signals.vercel.app. Temperature: NASA GISTEMP v4 (GISTEMP Team, NASA GISS). Rainfall: GPCP v2.3 (Adler et al. 2018). Events: NASA FIRMS, NASA Global Landslide Catalog, GDACS."
+          - paragraph [ref=f19e614]: Please also cite the primary data products listed in the Data section (GISTEMP, GPCP, GPCP 1DD, CRU TS) and the statistical papers in the References.
+      - generic [ref=f19e615]:
+        - heading "References" [level=2] [ref=f19e616]
+        - list [ref=f19e618]:
+          - listitem [ref=f19e619]:
+            - 'link "Lenssen, N., Schmidt, G., Hansen, J., Menne, M., Persin, A., Ruedy, R., & Zyss, D. (2019). Improvements in the GISTEMP uncertainty model. Journal of Geophysical Research: Atmospheres, 124(12), 6307–6326." [ref=f19e620] [cursor=pointer]':
+              - /url: https://doi.org/10.1029/2018JD029522
+          - listitem [ref=f19e621]:
+            - link "Adler, R. F., Sapiano, M. R. P., Huffman, G. J., et al. (2018). The Global Precipitation Climatology Project (GPCP) monthly analysis (new version 2.3) and a review of 2017 global precipitation. Atmosphere, 9(4), 138." [ref=f19e622] [cursor=pointer]:
+              - /url: https://doi.org/10.3390/atmos9040138
+          - listitem [ref=f19e623]:
+            - link "Huffman, G. J., Adler, R. F., Morrissey, M. M., Bolvin, D. T., Curtis, S., Joyce, R., McGavock, B., & Susskind, J. (2001). Global precipitation at one-degree daily resolution from multisatellite observations. Journal of Hydrometeorology, 2(1), 36–50." [ref=f19e624] [cursor=pointer]:
+              - /url: https://doi.org/10.1175/1525-7541(2001)002%3C0036:GPAODD%3E2.0.CO;2
+          - listitem [ref=f19e625]:
+            - link "Harris, I., Osborn, T. J., Jones, P., & Lister, D. (2020). Version 4 of the CRU TS monthly high-resolution gridded multivariate climate dataset. Scientific Data, 7, 109." [ref=f19e626] [cursor=pointer]:
+              - /url: https://doi.org/10.1038/s41597-020-0453-3
+          - listitem [ref=f19e627]:
+            - link "Mann, H. B. (1945). Nonparametric tests against trend. Econometrica, 13(3), 245–259." [ref=f19e628] [cursor=pointer]:
+              - /url: https://doi.org/10.2307/1907187
+          - listitem [ref=f19e629]: Kendall, M. G. (1975). Rank Correlation Methods (4th ed.). Charles Griffin.
+          - listitem [ref=f19e630]:
+            - link "Sen, P. K. (1968). Estimates of the regression coefficient based on Kendall's tau. Journal of the American Statistical Association, 63(324), 1379–1389." [ref=f19e631] [cursor=pointer]:
+              - /url: https://doi.org/10.1080/01621459.1968.10480934
+          - listitem [ref=f19e632]: Gilbert, R. O. (1987). Statistical Methods for Environmental Pollution Monitoring. Van Nostrand Reinhold.
+          - listitem [ref=f19e633]:
+            - link "Hamed, K. H., & Rao, A. R. (1998). A modified Mann–Kendall trend test for autocorrelated data. Journal of Hydrology, 204(1–4), 182–196." [ref=f19e634] [cursor=pointer]:
+              - /url: https://doi.org/10.1016/S0022-1694(97)00125-X
+          - listitem [ref=f19e635]:
+            - 'link "Benjamini, Y., & Hochberg, Y. (1995). Controlling the false discovery rate: a practical and powerful approach to multiple testing. Journal of the Royal Statistical Society: Series B, 57(1), 289–300." [ref=f19e636] [cursor=pointer]':
+              - /url: https://doi.org/10.1111/j.2517-6161.1995.tb02031.x
+          - listitem [ref=f19e637]:
+            - 'link "Wilks, D. S. (2016). “The stippling shows statistically significant grid points”: How research results are routinely overstated and overinterpreted, and what to do about it. Bulletin of the American Meteorological Society, 97(12), 2263–2273." [ref=f19e638] [cursor=pointer]':
+              - /url: https://doi.org/10.1175/BAMS-D-15-00267.1
+          - listitem [ref=f19e639]:
+            - link "Giglio, L., Schroeder, W., & Justice, C. O. (2016). The Collection 6 MODIS active fire detection algorithm and fire products. Remote Sensing of Environment, 178, 31–41." [ref=f19e640] [cursor=pointer]:
+              - /url: https://doi.org/10.1016/j.rse.2016.02.054
+          - listitem [ref=f19e641]:
+            - 'link "Kirschbaum, D., Stanley, T., & Simmons, J. (2015). A dynamic landslide hazard assessment system for Central America and Hispaniola. Geomorphology, 249, 6–18 (and the Global Landslide Catalog: Kirschbaum et al., 2010, Natural Hazards, 54, 121–136)." [ref=f19e642] [cursor=pointer]':
+              - /url: https://doi.org/10.1016/j.geomorph.2015.04.019
+          - listitem [ref=f19e643]:
+            - link "Knapp, K. R., Kruk, M. C., Levinson, D. H., Diamond, H. J., & Neumann, C. J. (2010). The International Best Track Archive for Climate Stewardship (IBTrACS). Bulletin of the American Meteorological Society, 91(3), 363–376." [ref=f19e644] [cursor=pointer]:
+              - /url: https://doi.org/10.1175/2009BAMS2755.1
+          - listitem [ref=f19e645]:
+            - link "Hansen, M. C., Potapov, P. V., Moore, R., et al. (2013). High-resolution global maps of 21st-century forest cover change. Science, 342(6160), 850–853." [ref=f19e646] [cursor=pointer]:
+              - /url: https://doi.org/10.1126/science.1244693
+          - listitem [ref=f19e647]:
+            - text: GDACS (Global Disaster Alert and Coordination System), European Commission JRC & UN OCHA,
+            - link "gdacs.org" [ref=f19e648] [cursor=pointer]:
+              - /url: https://www.gdacs.org/
+            - text: .
+          - listitem [ref=f19e649]:
+            - text: GISTEMP Team (2024). GISS Surface Temperature Analysis (GISTEMP v4), NASA Goddard Institute for Space Studies,
+            - link "data.giss.nasa.gov/gistemp" [ref=f19e650] [cursor=pointer]:
+              - /url: https://data.giss.nasa.gov/gistemp/
+            - text: .
+      - generic [ref=f19e651]:
+        - link "Read the story →" [ref=f19e652] [cursor=pointer]:
+          - /url: /findings
+        - link "Explore the climate trends →" [ref=f19e653] [cursor=pointer]:
+          - /url: /trends
+        - link "Check disaster risk →" [ref=f19e654] [cursor=pointer]:
+          - /url: /hazards
+        - link "Top" [ref=f19e655] [cursor=pointer]:
+          - /url: "#top"
+  - contentinfo [ref=f19e658]:
+    - generic [ref=f19e659]:
+      - generic [ref=f19e660]:
+        - generic [ref=f19e661]:
+          - generic [ref=f19e662]: Earth's Hidden Signals
+          - paragraph [ref=f19e668]: 45 years of Earth data reveal signals we normally cannot see.
+          - paragraph [ref=f19e669]: Preparedness, not prediction.
+          - link "Explore the map" [ref=f19e670] [cursor=pointer]:
+            - /url: /explore
+            - text: Explore the map
+            - generic [aria-hidden] [ref=f19e671]: →
+        - generic [ref=f19e672]:
+          - paragraph [ref=f19e673]: Explore
+          - navigation [ref=f19e674]:
+            - link "Satellite map" [ref=f19e675] [cursor=pointer]:
+              - /url: /explore
+            - link "Climate trends" [ref=f19e676] [cursor=pointer]:
+              - /url: /trends
+            - link "Disaster risk" [ref=f19e677] [cursor=pointer]:
+              - /url: /hazards
+            - link "Place reports" [ref=f19e678] [cursor=pointer]:
+              - /url: /places
+        - generic [ref=f19e679]:
+          - paragraph [ref=f19e680]: Project
+          - navigation [ref=f19e681]:
+            - link "The story" [ref=f19e682] [cursor=pointer]:
+              - /url: /findings
+            - link "How it works" [ref=f19e683] [cursor=pointer]:
+              - /url: /methods
+            - link "Data sources" [ref=f19e684] [cursor=pointer]:
+              - /url: /methods
+            - link "GitHub" [ref=f19e685] [cursor=pointer]:
+              - /url: https://github.com/ARNOB663/earths-hidden-signals
+              - text: GitHub
+              - generic [aria-hidden] [ref=f19e686]: ↗
+      - generic [ref=f19e688]:
+        - paragraph [ref=f19e689]: Built for NASA Space Apps Challenge 2026 using open Earth data.
+        - paragraph [ref=f19e690]:
+          - text: DATA FROM
+          - link "GISTEMP" [ref=f19e691] [cursor=pointer]:
+            - /url: https://data.giss.nasa.gov/gistemp/
+          - text: ·
+          - link "GPCP" [ref=f19e692] [cursor=pointer]:
+            - /url: https://www.ncei.noaa.gov/products/climate-data-records/precipitation-gpcp-monthly
+          - text: ·
+          - link "FIRMS" [ref=f19e693] [cursor=pointer]:
+            - /url: https://firms.modaps.eosdis.nasa.gov/
+          - text: ·
+          - link "GLC" [ref=f19e694] [cursor=pointer]:
+            - /url: https://data.nasa.gov/
+          - text: ·
+          - link "GDACS" [ref=f19e695] [cursor=pointer]:
+            - /url: https://www.gdacs.org/
+          - text: ·
+          - link "GIBS" [ref=f19e696] [cursor=pointer]:
+            - /url: https://earthdata.nasa.gov/gibs

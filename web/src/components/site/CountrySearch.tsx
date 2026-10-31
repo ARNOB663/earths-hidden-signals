@@ -3,7 +3,7 @@
 import { MagnifyingGlass, X } from "@phosphor-icons/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect, useId, useMemo, useRef, useState } from "react";
+import { useEffect, useId, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { T, useT } from "@/lib/i18n";
 import type { Country } from "@/lib/countries";
 
@@ -27,6 +27,9 @@ export function CountrySearch({ countries, large = false }: Props) {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState(0);
   const [expanded, setExpanded] = useState(false);
+  // Phones: pin the list to the viewport under the header instead of the narrow search pill.
+  const [mobile, setMobile] = useState(false);
+  const [menuTop, setMenuTop] = useState<number | undefined>(undefined);
 
   const results = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -36,6 +39,28 @@ export function CountrySearch({ countries, large = false }: Props) {
       .sort((a, b) => Number(b.name.toLowerCase().startsWith(q)) - Number(a.name.toLowerCase().startsWith(q)))
       .slice(0, 8);
   }, [query, countries]);
+
+  // Keep the mobile anchor under the field, measuring whenever the list is shown or resized.
+  useLayoutEffect(() => {
+    const mq = window.matchMedia("(max-width: 639.98px)");
+    const sync = () => {
+      setMobile(mq.matches);
+      const form = inputRef.current?.closest("form");
+      if (form) setMenuTop(Math.round(form.getBoundingClientRect().bottom + 8));
+    };
+    sync();
+    // The navbar's own transition settles a frame later; re-measure then.
+    const raf = requestAnimationFrame(sync);
+    mq.addEventListener("change", sync);
+    window.addEventListener("resize", sync);
+    window.addEventListener("scroll", sync, { passive: true });
+    return () => {
+      cancelAnimationFrame(raf);
+      mq.removeEventListener("change", sync);
+      window.removeEventListener("resize", sync);
+      window.removeEventListener("scroll", sync);
+    };
+  }, [open, expanded]);
 
   useEffect(() => {
     if (!expanded) return;
@@ -64,7 +89,7 @@ export function CountrySearch({ countries, large = false }: Props) {
   };
 
   return (
-    <div className={`relative ${large ? "w-full" : ""}`}>
+    <div className={`relative ${large ? "w-full" : "shrink-0"}`}>
       <form
         role="search"
         onSubmit={(e) => {
@@ -73,9 +98,9 @@ export function CountrySearch({ countries, large = false }: Props) {
         }}
         className={
           large
-            ? "flex items-center gap-2 rounded-xl border border-line bg-card px-3"
-            : `flex items-center rounded-full border bg-card transition-all ${
-                expanded ? "w-56 border-ink-3 xl:w-64" : "w-10 border-transparent hover:border-line"
+            ? "country-search flex items-center gap-2 rounded-xl border border-line bg-card px-3"
+            : `country-search flex items-center rounded-full border bg-card transition-all ${
+                expanded ? "w-44 border-ink-3 xl:w-56" : "w-10 border-transparent hover:border-line"
               }`
         }
       >
@@ -126,7 +151,7 @@ export function CountrySearch({ countries, large = false }: Props) {
               close();
             }
           }}
-          className={`min-w-0 flex-1 bg-transparent py-2 text-sm text-ink placeholder:text-ink-3 focus:outline-none ${expanded || large ? "" : "w-0 opacity-0"}`}
+          className={`country-search-input min-w-0 flex-1 bg-transparent py-2 text-sm text-ink placeholder:text-ink-3 focus:outline-none focus-visible:outline-none ${expanded || large ? "" : "w-0 opacity-0"}`}
         />
         {expanded && query && (
           <button
@@ -148,12 +173,19 @@ export function CountrySearch({ countries, large = false }: Props) {
           id={listId}
           role="listbox"
           aria-label={t("Countries", "দেশ")}
-          className={`absolute top-full z-[1100] mt-2 overflow-hidden rounded-2xl border border-line bg-card py-1 shadow-soft ${
+          className={`country-search-menu absolute top-full z-[1200] mt-2 overflow-hidden rounded-xl py-1 ${
             large ? "left-0 right-0" : "right-0 w-64"
           }`}
+          // The collapsed pill is only 40px wide, so on phones the list is placed with fixed
+          // positioning against the viewport instead of running off the left edge.
+          style={
+            mobile
+              ? { position: "fixed", top: menuTop, right: 16, left: 16, width: "auto" }
+              : undefined
+          }
         >
           {results.length === 0 ? (
-            <li className="px-4 py-3 text-sm text-ink-3">
+            <li className="country-search-empty px-4 py-3 text-sm">
               <T en="No country by that name." bn="এই নামে কোনো দেশ নেই।" />{" "}
               <Link href={`/countries?q=${encodeURIComponent(query)}`} className="text-accent hover:underline" onClick={close}>
                 <T en="See the country list" bn="দেশের তালিকা দেখুন" />
@@ -170,11 +202,19 @@ export function CountrySearch({ countries, large = false }: Props) {
                   onClick={close}
                   onMouseEnter={() => setActive(i)}
                   onMouseDown={(e) => e.preventDefault()}
-                  className={`flex items-center gap-3 px-3 py-2 text-sm ${i === active ? "bg-sunken text-ink" : "text-ink-2"}`}
+                  className={`country-search-option flex items-center gap-3 px-3 py-2 text-sm ${
+                    i === active ? "is-active" : ""
+                  }`}
                 >
                   {c.flag ? (
                     // eslint-disable-next-line @next/next/no-img-element
-                    <img src={`https://flagcdn.com/w40/${c.flag}.png`} alt="" width={22} height={16} className="rounded-sm border border-line object-cover" />
+                    <img
+                      src={`https://flagcdn.com/w40/${c.flag}.png`}
+                      alt=""
+                      width={22}
+                      height={16}
+                      className="h-4 w-[22px] shrink-0 rounded-[3px] object-cover ring-1 ring-black/15"
+                    />
                   ) : (
                     <span className="h-4 w-[22px] rounded-sm bg-line" aria-hidden />
                   )}
@@ -183,8 +223,8 @@ export function CountrySearch({ countries, large = false }: Props) {
               </li>
             ))
           )}
-          <li className="border-t border-line">
-            <Link href="/countries" onClick={close} className="block px-3 py-2 text-xs text-ink-3 hover:text-ink">
+          <li className="country-search-footer">
+            <Link href="/countries" onClick={close} className="block px-3 py-2 text-xs">
               <T en="All countries →" bn="সব দেশ →" />
             </Link>
           </li>

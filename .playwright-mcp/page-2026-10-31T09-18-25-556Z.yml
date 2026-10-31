@@ -1,0 +1,143 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "Earth's Hidden Signals, home" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e10]: Earth's Hidden Signals
+      - generic [ref=e11]:
+        - link "Find a place" [ref=e12] [cursor=pointer]:
+          - /url: /places
+        - radiogroup "Language / ভাষা" [ref=e15]:
+          - radio "English" [checked] [ref=e16]: EN
+          - radio "বাংলা" [ref=e17]: বাং
+        - radiogroup "Colour theme" [ref=e18]:
+          - radio "Match my device" [checked] [ref=e19]
+          - radio "Light" [ref=e22]
+          - radio "Dark" [ref=e25]
+        - button "Open menu" [ref=e28]
+  - main [ref=e31]:
+    - generic [ref=e33]:
+      - generic [ref=e34]:
+        - status [ref=e35]:
+          - generic [ref=e37]: Loading map…
+        - generic [ref=e40]:
+          - generic [ref=e41]: Change every 10 years (°C)
+          - generic [ref=e42]:
+            - generic [ref=e53]:
+              - generic [ref=e54]:
+                - text: Cooling
+                - generic [ref=e55]: −1.00 or less
+              - generic [ref=e56]: No change
+              - generic [ref=e57]:
+                - text: Warming
+                - generic [ref=e58]: +1.00 or more
+            - paragraph [ref=e59]: Solid = clear change · faded = no clear change
+      - complementary "Trend details" [ref=e63]:
+        - generic [ref=e64]:
+          - button "Show more" [ref=e65]
+          - generic [ref=e67]:
+            - generic [ref=e68]:
+              - generic [ref=e69]: All of South Asia
+              - generic [ref=e70]: Temperature
+            - generic [ref=e71]:
+              - generic [ref=e74]: +0.31 °C
+              - generic [ref=e75]: every 10 years · Very sure
+        - generic [ref=e76]:
+          - generic [ref=e77]:
+            - generic [ref=e78]:
+              - paragraph [ref=e79]: All of South Asia
+              - generic [ref=e81]:
+                - button "Share this view" [ref=e82]
+                - status
+            - heading "Climate trends · since 1981" [level=1] [ref=e85]:
+              - text: Climate trends
+              - generic [ref=e86]: · since 1981
+          - generic [ref=e87]:
+            - paragraph [ref=e88]: Temperature · Whole year
+            - paragraph [ref=e89]: The average of every land square on the map.
+            - generic [ref=e90]:
+              - paragraph [ref=e91]: Getting warmer
+              - paragraph [ref=e94]: +0.31°C
+              - paragraph [ref=e95]: every 10 years
+              - paragraph [ref=e96]: +1.38 °C added up since 1981
+          - region "Choose what to explore" [ref=e97]:
+            - generic [ref=e98]:
+              - heading "What to look at" [level=2] [ref=e99]
+              - radiogroup "What to look at" [ref=e100]:
+                - generic [ref=e101]:
+                  - generic [ref=e102]: Averages
+                  - generic [ref=e103]:
+                    - radio [checked] [ref=e104]
+                    - radio [ref=e108]
+                - generic [ref=e112]:
+                  - generic [ref=e113]: Extremes
+                  - generic [ref=e114]:
+                    - radio [ref=e115]
+                    - radio [ref=e119]
+                    - radio [ref=e123]
+                    - radio [ref=e127]
+            - generic [ref=e131]:
+              - heading "Time of year" [level=2] [ref=e132]
+              - radiogroup "Which time of year" [ref=e133]:
+                - radio "Whole year" [checked] [ref=e134]
+                - radio "Hot season" [ref=e135]
+                - radio "Rainy season" [ref=e136]
+              - paragraph [ref=e137]: January–December
+            - generic [ref=e138]:
+              - heading "Place" [level=2] [ref=e139]
+              - generic [ref=e140]:
+                - generic [ref=e141]: Choose a region
+                - combobox "Choose a region" [ref=e142]:
+                  - option "All of South Asia" [selected]
+                  - option "Ganges-Brahmaputra-Meghna delta · Flood-prone"
+                  - option "Indus plain · Flood-prone"
+                  - option "Central Himalaya · Landslide-prone"
+                  - option "Western Himalaya · Landslide-prone"
+                  - option "Western Ghats · Landslide-prone"
+                  - option "Sri Lanka central highlands · Landslide-prone"
+                  - option "Central Indian forest belt · Wildfire-prone"
+                  - option "Northeast India and Myanmar hills · Wildfire-prone"
+              - paragraph [ref=e143]: Or click any square on the map.
+          - generic [ref=e144]:
+            - generic [ref=e145]:
+              - generic [ref=e146]: How sure are we?
+              - generic [ref=e147]: Very sure this is a real change
+              - paragraph [ref=e153]: The change is much bigger than the normal ups and downs from year to year, so it is almost certainly real.
+            - generic [ref=e154]:
+              - generic [ref=e155]: A second opinion
+              - paragraph [ref=e156]: An independent record agrees
+              - paragraph [ref=e157]: We repeated the test on a separate dataset (CRU TS) to see if it tells the same story.
+          - generic [ref=e158]:
+            - generic [ref=e159]: Year by year
+            - paragraph [ref=e160]: Move over the chart (or touch it) to read any single year.
+            - generic [ref=e161]:
+              - generic [ref=e162]:
+                - generic [ref=e163]: Each year
+                - generic [ref=e165]: Long-term trend
+                - generic [ref=e167]: Likely range of the trend (95%)
+              - img "Yearly °C warmer than the 1951–1980 average, 1981 to 2025" [ref=e170]:
+                - generic [ref=e171]: "0"
+                - generic [ref=e173]: "0.5"
+                - generic [ref=e175]: "1"
+                - generic [ref=e177]: "1.5"
+                - generic [ref=e179]: "1990"
+                - generic [ref=e180]: "2000"
+                - generic [ref=e181]: "2010"
+                - generic [ref=e182]: "2020"
+                - generic [ref=e183]: °C warmer than the 1951–1980 average
+              - generic [ref=e188]:
+                - button "Download the data (CSV)" [ref=e189]
+                - button "Show as a table" [ref=e192]
+          - group [ref=e197]:
+            - generic "What the numbers mean Open" [ref=e198] [cursor=pointer]:
+              - text: What the numbers mean
+              - generic [ref=e199]: Open
+          - region [ref=e203]:
+            - heading "Across the whole map" [level=2] [ref=e204]
+            - paragraph [ref=e205]: "Every square on the map is one place. Here is how many show a clear change:"
+            - img "234 rise, 0 no clear change, 0 fall" [ref=e206]
+            - generic [ref=e208]: 234 · Warming
+            - paragraph [ref=e211]: 234 of 234 squares show a clear rise and none a clear fall.
+  - button "Open Next.js Dev Tools" [ref=e217] [cursor=pointer]

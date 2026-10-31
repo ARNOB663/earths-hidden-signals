@@ -1,0 +1,156 @@
+- generic [active] [ref=f6e1]:
+  - link "মূল অংশে যান" [ref=f6e214] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f6e3]:
+    - generic [ref=f6e4]:
+      - link "Earth's Hidden Signals, home" [ref=f6e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f6e10]: Earth's Hidden Signals
+      - navigation "Main" [ref=f6e11]:
+        - link "হোম" [ref=f6e215] [cursor=pointer]:
+          - /url: /
+        - link "মূল গল্প" [ref=f6e216] [cursor=pointer]:
+          - /url: /findings
+        - link "স্যাটেলাইট মানচিত্র" [ref=f6e217] [cursor=pointer]:
+          - /url: /explore
+        - link "জলবায়ুর প্রবণতা" [ref=f6e218] [cursor=pointer]:
+          - /url: /trends
+        - link "দুর্যোগের ঝুঁকি" [ref=f6e219] [cursor=pointer]:
+          - /url: /hazards
+        - link "কীভাবে কাজ করে" [ref=f6e220] [cursor=pointer]:
+          - /url: /methods
+      - generic [ref=f6e18]:
+        - link "জায়গা খুঁজুন" [ref=f6e221] [cursor=pointer]:
+          - /url: /places
+        - radiogroup "Language / ভাষা" [ref=f6e23]:
+          - radio "English" [ref=f6e24]: EN
+          - radio "বাংলা" [checked] [ref=f6e25]: বাং
+        - radiogroup "রঙের ধরন" [ref=f6e222]:
+          - radio "ডিভাইসের মতো" [checked] [ref=f6e223]
+          - radio "আলো" [ref=f6e224]
+          - radio "অন্ধকার" [ref=f6e225]
+  - main [ref=f6e36]:
+    - generic [ref=f6e38]:
+      - generic [ref=f6e39]:
+        - generic [ref=f6e226]:
+          - generic:
+            - generic [ref=f6e228]:
+              - button "Zoom in" [ref=f6e229] [cursor=pointer]: +
+              - button "Zoom out" [ref=f6e230] [cursor=pointer]: −
+            - generic:
+              - generic [ref=f6e231]: 500 km
+              - generic [ref=f6e233]:
+                - link "Leaflet" [ref=f6e234] [cursor=pointer]:
+                  - /url: https://leafletjs.com
+                - text: "| Base map © Esri, Labels © Esri"
+        - generic [ref=f6e45]:
+          - generic [ref=f6e46]: প্রতি ১০ বছরে পরিবর্তন (°সে)
+          - generic [ref=f6e47]:
+            - generic [ref=f6e58]:
+              - generic [ref=f6e59]:
+                - text: ঠান্ডা
+                - generic [ref=f6e60]: −0.50 বা কম
+              - generic [ref=f6e61]: পরিবর্তন নেই
+              - generic [ref=f6e62]:
+                - text: গরম
+                - generic [ref=f6e63]: +0.50 বা বেশি
+            - paragraph [ref=f6e64]: গাঢ় = স্পষ্ট পরিবর্তন · হালকা = স্পষ্ট পরিবর্তন নেই
+      - complementary "প্রবণতার বিস্তারিত" [ref=f6e239]:
+        - generic [ref=f6e69]:
+          - generic [ref=f6e70]:
+            - generic [ref=f6e71]:
+              - paragraph [ref=f6e72]: সমগ্র দক্ষিণ এশিয়া
+              - generic [ref=f6e74]:
+                - button "এই দৃশ্য শেয়ার করুন" [ref=f6e240]
+                - status
+            - heading "জলবায়ুর প্রবণতা · ১৯৮১ সাল থেকে" [level=1] [ref=f6e241]:
+              - text: জলবায়ুর প্রবণতা
+              - generic [ref=f6e79]: · ১৯৮১ সাল থেকে
+          - generic [ref=f6e80]:
+            - paragraph [ref=f6e81]: তাপমাত্রা · সারা বছর
+            - paragraph [ref=f6e82]: মানচিত্রের সব স্থলভাগের গড়।
+            - generic [ref=f6e83]:
+              - paragraph [ref=f6e84]: গরম বাড়ছে
+              - paragraph [ref=f6e87]: +০.৩১°সে
+              - paragraph [ref=f6e88]: প্রতি ১০ বছরে
+              - paragraph [ref=f6e89]: ১৯৮১ সাল থেকে মোট +১.৩৮ °সে
+          - region "কী দেখবেন বেছে নিন" [ref=f6e242]:
+            - generic [ref=f6e91]:
+              - heading "কী দেখবেন" [level=2] [ref=f6e243]
+              - radiogroup "কী দেখবেন" [ref=f6e244]:
+                - generic [ref=f6e94]:
+                  - generic [ref=f6e95]: গড়
+                  - generic [ref=f6e96]:
+                    - radio [checked] [ref=f6e245]
+                    - radio [ref=f6e246]
+                - generic [ref=f6e105]:
+                  - generic [ref=f6e106]: চরম অবস্থা
+                  - generic [ref=f6e107]:
+                    - radio [ref=f6e247]
+                    - radio [ref=f6e248]
+                    - radio [ref=f6e249]
+                    - radio [ref=f6e250]
+            - generic [ref=f6e124]:
+              - heading "বছরের কোন সময়" [level=2] [ref=f6e251]
+              - radiogroup "বছরের কোন সময়" [ref=f6e252]:
+                - radio "সারা বছর" [checked] [ref=f6e253]
+                - radio "গরমের মৌসুম" [ref=f6e254]
+                - radio "বর্ষাকাল" [ref=f6e255]
+              - paragraph [ref=f6e130]: জানুয়ারি–ডিসেম্বর
+            - generic [ref=f6e131]:
+              - heading "জায়গা" [level=2] [ref=f6e256]
+              - generic [ref=f6e133]:
+                - generic [ref=f6e134]: একটি অঞ্চল বেছে নিন
+                - combobox "একটি অঞ্চল বেছে নিন" [ref=f6e257]:
+                  - option "সমগ্র দক্ষিণ এশিয়া" [selected]
+                  - option "গঙ্গা-ব্রহ্মপুত্র-মেঘনা ব-দ্বীপ · বন্যাপ্রবণ"
+                  - option "সিন্ধু সমভূমি · বন্যাপ্রবণ"
+                  - option "মধ্য হিমালয় · ভূমিধসপ্রবণ"
+                  - option "পশ্চিম হিমালয় · ভূমিধসপ্রবণ"
+                  - option "পশ্চিমঘাট পর্বতমালা · ভূমিধসপ্রবণ"
+                  - option "শ্রীলঙ্কার মধ্য পার্বত্য অঞ্চল · ভূমিধসপ্রবণ"
+                  - option "মধ্য ভারতের বনাঞ্চল · দাবানলপ্রবণ"
+                  - option "উত্তর-পূর্ব ভারত ও মিয়ানমারের পাহাড় · দাবানলপ্রবণ"
+              - paragraph [ref=f6e136]: অথবা মানচিত্রের যেকোনো বর্গে ক্লিক করুন।
+          - generic [ref=f6e137]:
+            - generic [ref=f6e138]:
+              - generic [ref=f6e139]: আমরা কতটা নিশ্চিত?
+              - generic [ref=f6e140]: এটি যে সত্যিকারের পরিবর্তন, সে বিষয়ে খুবই নিশ্চিত
+              - paragraph [ref=f6e146]: পরিবর্তনটি বছরে বছরে স্বাভাবিক ওঠানামার চেয়ে অনেক বড়, তাই এটি প্রায় নিশ্চিতভাবেই সত্যিকারের।
+            - generic [ref=f6e147]:
+              - generic [ref=f6e148]: দ্বিতীয় মতামত
+              - paragraph [ref=f6e149]: আরেকটি স্বাধীন তথ্যসূত্রও একমত
+              - paragraph [ref=f6e150]: আমরা আলাদা একটি তথ্যসূত্রে (CRU TS) একই পরীক্ষা করে দেখেছি, একই গল্প বলে কি না।
+          - generic [ref=f6e151]:
+            - generic [ref=f6e152]: বছর ধরে ধরে
+            - paragraph [ref=f6e153]: যেকোনো বছরের মান দেখতে চার্টের ওপর মাউস নিন (বা আঙুল রাখুন)।
+            - generic [ref=f6e154]:
+              - generic [ref=f6e155]:
+                - generic [ref=f6e156]: প্রতি বছর
+                - generic [ref=f6e158]: দীর্ঘমেয়াদি প্রবণতা
+                - generic [ref=f6e160]: প্রবণতার সম্ভাব্য সীমা (৯৫%)
+              - img "Yearly ১৯৫১–১৯৮০ সালের গড়ের চেয়ে কত °সে বেশি, 1981 to 2025" [ref=f6e258]:
+                - generic [ref=f6e164]: "0"
+                - generic [ref=f6e166]: "0.5"
+                - generic [ref=f6e168]: "1"
+                - generic [ref=f6e170]: "1.5"
+                - generic [ref=f6e172]: "1990"
+                - generic [ref=f6e173]: "2000"
+                - generic [ref=f6e174]: "2010"
+                - generic [ref=f6e175]: "2020"
+                - generic [ref=f6e176]: ১৯৫১–১৯৮০ সালের গড়ের চেয়ে কত °সে বেশি
+              - generic [ref=f6e181]:
+                - button "তথ্য ডাউনলোড (CSV)" [ref=f6e259]
+                - button "টেবিল আকারে দেখুন" [ref=f6e260]
+          - group [ref=f6e190]:
+            - generic "সংখ্যাগুলোর মানে খুলুন" [ref=f6e261] [cursor=pointer]:
+              - text: সংখ্যাগুলোর মানে
+              - generic [ref=f6e192]: খুলুন
+          - region [ref=f6e262]:
+            - heading "পুরো মানচিত্র জুড়ে" [level=2] [ref=f6e263]
+            - paragraph [ref=f6e198]: "মানচিত্রের প্রতিটি বর্গ একটি জায়গা। কতগুলোতে স্পষ্ট পরিবর্তন আছে:"
+            - img "234 rise, 0 no clear change, 0 fall" [ref=f6e199]
+            - generic [ref=f6e201]: ২৩৪ · গরম
+            - paragraph [ref=f6e204]: ২৩৪টি বর্গের মধ্যে ২৩৪টিতে স্পষ্ট বৃদ্ধি, কোনোটিতেই স্পষ্ট হ্রাস নেই।
+  - button "Open Next.js Dev Tools" [ref=f6e210] [cursor=pointer]
+  - alert [ref=f6e264]

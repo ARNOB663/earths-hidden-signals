@@ -1,0 +1,144 @@
+- generic [active] [ref=f4e1]:
+  - link "Skip to content" [ref=f4e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f4e3]:
+    - generic [ref=f4e4]:
+      - link "Earth's Hidden Signals, home" [ref=f4e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f4e10]: Earth's Hidden Signals
+      - navigation "Main" [ref=f4e11]:
+        - link "Home" [ref=f4e12] [cursor=pointer]:
+          - /url: /
+        - link "The story" [ref=f4e13] [cursor=pointer]:
+          - /url: /findings
+        - link "Satellite map" [ref=f4e14] [cursor=pointer]:
+          - /url: /explore
+        - link "Climate trends" [ref=f4e15] [cursor=pointer]:
+          - /url: /trends
+        - link "Disaster risk" [ref=f4e16] [cursor=pointer]:
+          - /url: /hazards
+        - link "How it works" [ref=f4e17] [cursor=pointer]:
+          - /url: /methods
+      - generic [ref=f4e18]:
+        - link "Find a place" [ref=f4e19] [cursor=pointer]:
+          - /url: /places
+        - radiogroup "Language / ভাষা" [ref=f4e23]:
+          - radio "English" [checked] [ref=f4e24]: EN
+          - radio "বাংলা" [ref=f4e25]: বাং
+        - radiogroup "Colour theme" [ref=f4e26]:
+          - radio "Match my device" [checked] [ref=f4e27]
+          - radio "Light" [ref=f4e30]
+          - radio "Dark" [ref=f4e33]
+  - main [ref=f4e36]:
+    - generic [ref=f4e38]:
+      - generic [ref=f4e39]:
+        - status [ref=f4e40]:
+          - generic [ref=f4e42]: Loading map…
+        - generic [ref=f4e45]:
+          - generic [ref=f4e46]: Change every 10 years (°C)
+          - generic [ref=f4e47]:
+            - generic [ref=f4e58]:
+              - generic [ref=f4e59]:
+                - text: Cooling
+                - generic [ref=f4e60]: −1.00 or less
+              - generic [ref=f4e61]: No change
+              - generic [ref=f4e62]:
+                - text: Warming
+                - generic [ref=f4e63]: +1.00 or more
+            - paragraph [ref=f4e64]: Solid = clear change · faded = no clear change
+      - complementary "Trend details" [ref=f4e68]:
+        - generic [ref=f4e69]:
+          - generic [ref=f4e70]:
+            - generic [ref=f4e71]:
+              - paragraph [ref=f4e72]: Ganges-Brahmaputra-Meghna delta
+              - generic [ref=f4e74]:
+                - button "Share this view" [ref=f4e75]
+                - status
+            - heading "Climate trends · since 1981" [level=1] [ref=f4e78]:
+              - text: Climate trends
+              - generic [ref=f4e79]: · since 1981
+          - generic [ref=f4e80]:
+            - paragraph [ref=f4e81]: Temperature · Whole year
+            - paragraph [ref=f4e82]: Low-lying delta where three of Asia's largest rivers meet the Bay of Bengal. Monsoon rain here and upstream drives river and flash floods.
+            - generic [ref=f4e83]:
+              - paragraph [ref=f4e84]: Getting warmer
+              - paragraph [ref=f4e87]: +0.33°C
+              - paragraph [ref=f4e88]: every 10 years
+              - paragraph [ref=f4e89]: +1.44 °C added up since 1981
+          - region "Choose what to explore" [ref=f4e90]:
+            - generic [ref=f4e91]:
+              - heading "What to look at" [level=2] [ref=f4e92]
+              - radiogroup "What to look at" [ref=f4e93]:
+                - generic [ref=f4e94]:
+                  - generic [ref=f4e95]: Averages
+                  - generic [ref=f4e96]:
+                    - radio [checked] [ref=f4e97]
+                    - radio [ref=f4e101]
+                - generic [ref=f4e105]:
+                  - generic [ref=f4e106]: Extremes
+                  - generic [ref=f4e107]:
+                    - radio [ref=f4e108]
+                    - radio [ref=f4e112]
+                    - radio [ref=f4e116]
+                    - radio [ref=f4e120]
+            - generic [ref=f4e124]:
+              - heading "Time of year" [level=2] [ref=f4e125]
+              - radiogroup "Which time of year" [ref=f4e126]:
+                - radio "Whole year" [checked] [ref=f4e127]
+                - radio "Hot season" [ref=f4e128]
+                - radio "Rainy season" [ref=f4e129]
+              - paragraph [ref=f4e130]: January–December
+            - generic [ref=f4e131]:
+              - heading "Place" [level=2] [ref=f4e132]
+              - generic [ref=f4e133]:
+                - generic [ref=f4e134]: Choose a region
+                - combobox "Choose a region" [ref=f4e135]:
+                  - option "All of South Asia"
+                  - option "Ganges-Brahmaputra-Meghna delta · Flood-prone" [selected]
+                  - option "Indus plain · Flood-prone"
+                  - option "Central Himalaya · Landslide-prone"
+                  - option "Western Himalaya · Landslide-prone"
+                  - option "Western Ghats · Landslide-prone"
+                  - option "Sri Lanka central highlands · Landslide-prone"
+                  - option "Central Indian forest belt · Wildfire-prone"
+                  - option "Northeast India and Myanmar hills · Wildfire-prone"
+              - paragraph [ref=f4e136]: Or click any square on the map.
+          - generic [ref=f4e137]:
+            - generic [ref=f4e138]:
+              - generic [ref=f4e139]: How sure are we?
+              - generic [ref=f4e140]: Very sure this is a real change
+              - paragraph [ref=f4e146]: The change is much bigger than the normal ups and downs from year to year, so it is almost certainly real.
+            - generic [ref=f4e147]:
+              - generic [ref=f4e148]: A second opinion
+              - paragraph [ref=f4e149]: An independent record only partly agrees
+              - paragraph [ref=f4e150]: We repeated the test on a separate dataset (CRU TS) to see if it tells the same story.
+          - generic [ref=f4e151]:
+            - generic [ref=f4e152]: Year by year
+            - paragraph [ref=f4e153]: Move over the chart (or touch it) to read any single year.
+            - generic [ref=f4e154]:
+              - generic [ref=f4e155]:
+                - generic [ref=f4e156]: Each year
+                - generic [ref=f4e158]: Long-term trend
+                - generic [ref=f4e160]: Likely range of the trend (95%)
+              - img "Yearly °C warmer than the 1951–1980 average, 1981 to 2025" [ref=f4e163]:
+                - generic [ref=f4e164]: "0"
+                - generic [ref=f4e166]: "1"
+                - generic [ref=f4e168]: "1990"
+                - generic [ref=f4e169]: "2000"
+                - generic [ref=f4e170]: "2010"
+                - generic [ref=f4e171]: "2020"
+                - generic [ref=f4e172]: °C warmer than the 1951–1980 average
+              - generic [ref=f4e177]:
+                - button "Download the data (CSV)" [ref=f4e178]
+                - button "Show as a table" [ref=f4e181]
+          - group [ref=f4e186]:
+            - generic "What the numbers mean Open" [ref=f4e187] [cursor=pointer]:
+              - text: What the numbers mean
+              - generic [ref=f4e188]: Open
+          - region [ref=f4e192]:
+            - heading "Across the whole map" [level=2] [ref=f4e193]
+            - paragraph [ref=f4e194]: "Every square on the map is one place. Here is how many show a clear change:"
+            - img "234 rise, 0 no clear change, 0 fall" [ref=f4e195]
+            - generic [ref=f4e197]: 234 · Warming
+            - paragraph [ref=f4e200]: 234 of 234 squares show a clear rise and none a clear fall.
+  - button "Open Next.js Dev Tools" [ref=f4e206] [cursor=pointer]

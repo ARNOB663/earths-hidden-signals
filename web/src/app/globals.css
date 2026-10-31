@@ -420,6 +420,113 @@ body:has(.map-shell) .site-footer {
     display: none;
 }
 
+/* ---------- Navbar country search ---------- */
+/* The field and its suggestions use explicit surfaces rather than theme tokens: over the hero
+   the navbar runs in its glass mode, where .bg-card/.border-line/.shadow-soft are re-pointed at
+   translucent values, which made the dropdown see-through. */
+
+.country-search:focus-within {
+    outline: none;
+}
+
+/* The site-wide :focus-visible outline is meant for links and standalone controls; inside the
+   search field the ring is drawn on the field, so the input itself shows none. */
+.country-search .country-search-input:focus-visible {
+    outline: none;
+}
+
+/* A soft themed ring on the field itself replaces the browser's default focus outline. */
+.country-search:has(.country-search-input:focus-visible) {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 26%, transparent);
+}
+
+.country-search-menu {
+    background: rgba(17, 19, 23, 0.97);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow:
+        0 12px 32px rgba(0, 0, 0, 0.45),
+        0 2px 6px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(14px) saturate(120%);
+    -webkit-backdrop-filter: blur(14px) saturate(120%);
+    isolation: isolate;
+    color: #e8e8e8;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+}
+
+.country-search-option {
+    color: rgba(240, 240, 240, 0.82);
+    border-radius: 8px;
+    margin-inline: 4px;
+    transition:
+        background-color 120ms ease,
+        color 120ms ease;
+}
+
+.country-search-option:hover,
+.country-search-option.is-active {
+    background: rgba(80, 152, 234, 0.18);
+    color: #ffffff;
+}
+
+.country-search-option.is-active {
+    box-shadow: inset 2px 0 0 var(--accent);
+}
+
+.country-search-empty {
+    color: rgba(225, 225, 225, 0.72);
+}
+
+.country-search-empty a {
+    color: var(--accent);
+}
+
+.country-search-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 4px;
+}
+
+.country-search-footer a {
+    color: rgba(225, 225, 225, 0.62);
+}
+
+.country-search-footer a:hover {
+    color: #ffffff;
+}
+
+/* Light theme: a warm white sheet instead of dark glass. */
+[data-theme="light"] .country-search-menu {
+    background: rgba(255, 255, 255, 0.98);
+    border-color: rgba(20, 20, 20, 0.1);
+    box-shadow:
+        0 12px 32px rgba(30, 28, 24, 0.16),
+        0 2px 6px rgba(30, 28, 24, 0.08);
+    color: var(--ink);
+}
+
+[data-theme="light"] .country-search-option {
+    color: var(--ink-2);
+}
+
+[data-theme="light"] .country-search-option:hover,
+[data-theme="light"] .country-search-option.is-active {
+    background: var(--accent-soft);
+    color: var(--ink);
+}
+
+[data-theme="light"] .country-search-empty {
+    color: var(--ink-3);
+}
+
+[data-theme="light"] .country-search-footer {
+    border-top-color: var(--line);
+}
+
+[data-theme="light"] .country-search-footer a {
+    color: var(--ink-3);
+}
+
 /* ---------- Homepage navbar over the hero ---------- */
 /* Light: a soft frosted wash so the normal dark nav text stays readable over the pale photo. */
 .home-hero-nav {
