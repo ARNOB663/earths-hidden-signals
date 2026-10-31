@@ -5,15 +5,15 @@ import {
   ArrowDown,
   ArrowRight,
   Binoculars,
-  ChartLineUp,
+  ChartLine,
   CloudRain,
-  Fire,
-  Mountains,
-  Planet,
+  Flame,
+  Globe,
+  Mountain,
   Thermometer,
-  Warning,
-  Waves,
-} from "@phosphor-icons/react/ssr";
+  TriangleAlert,
+  WavesHorizontal,
+} from "lucide-react";
 import { bnNum } from "@/lib/bn";
 import { T } from "@/lib/i18n";
 import { senIntercept, trendToken } from "@/lib/trends";
@@ -166,7 +166,7 @@ export function GoalBanner({
 }: GoalProps) {
   const steps = [
     {
-      Icon: Planet,
+      Icon: Globe,
       title: tx("Satellites measure", "স্যাটেলাইট মাপে"),
       big: tx(`${nYears} years`, `${bnNum(nYears)} বছর`),
       text: tx(
@@ -180,14 +180,14 @@ export function GoalBanner({
               key={i}
               className="grid h-9 w-9 place-items-center rounded-full bg-sunken text-ink-2"
             >
-              <I size={18} weight="duotone" />
+              <I size={18} />
             </span>
           ))}
         </div>
       ),
     },
     {
-      Icon: ChartLineUp,
+      Icon: ChartLine,
       title: tx("We check what is real", "আমরা যাচাই করি কোনটা সত্যি"),
       big: tx("Trend or luck?", "প্রবণতা, না কাকতালীয়?"),
       text: tx(
@@ -197,7 +197,7 @@ export function GoalBanner({
       visual: <TrendMini series={series} slopePerDecade={slopePerDecade} />,
     },
     {
-      Icon: Warning,
+      Icon: TriangleAlert,
       title: tx("We link it to disasters", "আমরা দুর্যোগের সাথে মেলাই"),
       big: tx(
         `${nLinked} of ${nZones}`,
@@ -234,7 +234,7 @@ export function GoalBanner({
       ),
       visual: (
         <span className="inline-flex items-center gap-1.5 rounded-full bg-watch-soft px-2.5 py-1 text-xs font-medium text-watch">
-          <Warning size={14} weight="fill" aria-hidden />
+          <TriangleAlert size={14} strokeWidth={2.25} aria-hidden />
           {tx("Watch", "নজর দিন")}
         </span>
       ),
@@ -268,7 +268,7 @@ export function GoalBanner({
           >
             <div className="flex items-center gap-2.5">
               <span className="grid h-9 w-9 place-items-center rounded-full bg-accent-soft text-accent">
-                <Icon size={18} weight="duotone" aria-hidden />
+                <Icon size={18} aria-hidden />
               </span>
               <span className="text-xs font-medium text-ink-3">
                 {tx(`Step ${i + 1}`, `ধাপ ${bnNum(i + 1)}`)}
@@ -287,7 +287,7 @@ export function GoalBanner({
                 aria-hidden
                 className="absolute -right-[18px] top-1/2 z-10 hidden h-6 w-6 -translate-y-1/2 place-items-center rounded-full bg-accent text-accent-ink xl:grid"
               >
-                <ArrowRight size={14} weight="bold" />
+                <ArrowRight size={14} />
               </span>
             )}
           </li>
@@ -396,7 +396,7 @@ export function FindingsMap(p: MapProps) {
     },
     {
       id: "disasters",
-      Icon: Fire,
+      Icon: Flame,
       label: tx("Disasters follow the weather", "দুর্যোগ আবহাওয়ার পথ ধরে"),
       big: tx(
         `${p.nLinked} of ${p.nZones}`,
@@ -406,18 +406,18 @@ export function FindingsMap(p: MapProps) {
       visual: (
         <div className="flex h-14 flex-col justify-center gap-1.5" aria-hidden>
           {[
-            { From: Thermometer, To: Fire, color: p.eventColors.fire },
-            { From: CloudRain, To: Mountains, color: p.eventColors.landslide },
-            { From: CloudRain, To: Waves, color: p.eventColors.flood },
+            { From: Thermometer, To: Flame, color: p.eventColors.fire },
+            { From: CloudRain, To: Mountain, color: p.eventColors.landslide },
+            { From: CloudRain, To: WavesHorizontal, color: p.eventColors.flood },
           ].map(({ From, To, color }, i) => (
             <div key={i} className="flex items-center gap-1.5 text-ink-3">
-              <From size={13} weight="duotone" />
+              <From size={13} />
               <ArrowRight size={11} />
               <span
                 className="grid h-4 w-4 place-items-center rounded-full text-white"
                 style={{ background: color }}
               >
-                <To size={10} weight="fill" />
+                <To size={10} />
               </span>
             </div>
           ))}
@@ -497,7 +497,6 @@ export function FindingsMap(p: MapProps) {
               </span>
               <Icon
                 size={18}
-                weight="duotone"
                 className="text-accent"
                 aria-hidden
               />
@@ -515,7 +514,7 @@ export function FindingsMap(p: MapProps) {
                 aria-hidden
                 className="absolute -right-[18px] top-1/2 z-10 hidden h-6 w-6 -translate-y-1/2 place-items-center rounded-full bg-accent-soft text-accent xl:grid"
               >
-                <ArrowRight size={14} weight="bold" />
+                <ArrowRight size={14} />
               </span>
             )}
           </a>
@@ -791,7 +790,7 @@ export function DisasterGlance({
   const rows = [
     {
       From: Thermometer,
-      to: Fire,
+      to: Flame,
       color: colors.fire,
       cause: tx("Hot spring", "গরম বসন্ত"),
       effect: tx("More forest fires", "বনে আগুন বেশি"),
@@ -800,7 +799,7 @@ export function DisasterGlance({
     },
     {
       From: CloudRain,
-      to: Mountains,
+      to: Mountain,
       color: colors.landslide,
       cause: tx("Rainy monsoon", "বৃষ্টিবহুল বর্ষা"),
       effect: tx("More landslides", "ভূমিধস বেশি"),
@@ -809,7 +808,7 @@ export function DisasterGlance({
     },
     {
       From: CloudRain,
-      to: Waves,
+      to: WavesHorizontal,
       color: colors.flood,
       cause: tx("Rainy monsoon", "বৃষ্টিবহুল বর্ষা"),
       effect: tx("More floods", "বন্যা বেশি"),
@@ -818,7 +817,7 @@ export function DisasterGlance({
     },
     {
       From: CloudRain,
-      to: Waves,
+      to: WavesHorizontal,
       color: colors.flood,
       cause: tx("Its own rain", "নিজের বৃষ্টি"),
       effect: tx(
@@ -848,14 +847,13 @@ export function DisasterGlance({
             <div className="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center gap-2 text-sm">
               <span className="flex items-center gap-2 text-ink-2">
                 <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-sunken text-ink-2">
-                  <r.From size={16} weight="duotone" aria-hidden />
+                  <r.From size={16} aria-hidden />
                 </span>
                 <span className="leading-snug">{r.cause}</span>
               </span>
               {r.linked ? (
                 <ArrowRight
                   size={16}
-                  weight="bold"
                   className="text-ink-3"
                   aria-hidden
                 />
@@ -872,7 +870,7 @@ export function DisasterGlance({
                   className={`grid h-8 w-8 shrink-0 place-items-center rounded-full text-white ${r.linked ? "" : "opacity-40"}`}
                   style={{ background: r.color }}
                 >
-                  <r.to size={16} weight="fill" aria-hidden />
+                  <r.to size={16} aria-hidden />
                 </span>
                 <span className="leading-snug">{r.effect}</span>
               </span>
@@ -911,7 +909,7 @@ export function OneWorldDiagram({
 }) {
   const branches = [
     {
-      Icon: Fire,
+      Icon: Flame,
       color: "var(--ev-fire)",
       head: tx("Fiercer fire seasons", "আরও ভয়াবহ আগুনের মৌসুম"),
       sub: tx(`Hot springs, ${fires.name}`, `গরম বসন্ত, ${fires.nameBn}`),
@@ -940,7 +938,6 @@ export function OneWorldDiagram({
       <div className="panel-card rounded-2xl p-4 text-center">
         <Thermometer
           size={22}
-          weight="duotone"
           className="mx-auto text-(--warm-3)"
           aria-hidden
         />
@@ -952,8 +949,8 @@ export function OneWorldDiagram({
         </div>
       </div>
       <span className="grid place-items-center text-accent" aria-hidden>
-        <ArrowRight size={22} weight="bold" className="hidden md:block" />
-        <ArrowDown size={22} weight="bold" className="md:hidden" />
+        <ArrowRight size={22} className="hidden md:block" />
+        <ArrowDown size={22} className="md:hidden" />
       </span>
       <ul className="space-y-2">
         {branches.map((b, i) => (
@@ -965,7 +962,7 @@ export function OneWorldDiagram({
               className="grid h-9 w-9 shrink-0 place-items-center rounded-full text-white"
               style={{ background: b.color }}
             >
-              <b.Icon size={18} weight="fill" aria-hidden />
+              <b.Icon size={18} aria-hidden />
             </span>
             <span className="min-w-0">
               <span className="block text-sm font-semibold text-ink">

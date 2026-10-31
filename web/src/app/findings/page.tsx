@@ -1,12 +1,12 @@
 import {
   ArrowDown,
   ArrowRight,
+  CircleQuestionMark,
   CloudRain,
   Lightbulb,
-  Question,
   Thermometer,
-  UsersThree,
-} from "@phosphor-icons/react/ssr";
+  Users,
+} from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { MiniGridMap } from "@/components/findings/MiniGridMap";
@@ -278,7 +278,7 @@ export default async function StoryPage() {
       <Finding
         id="warming"
         n={1}
-        icon={<Thermometer size={22} weight="duotone" />}
+        icon={<Thermometer size={22} />}
         title={tx(
           "South Asia is getting warmer, everywhere",
           "দক্ষিণ এশিয়া সবখানেই গরম হচ্ছে",
@@ -419,7 +419,7 @@ export default async function StoryPage() {
       <Finding
         id="spring"
         n={2}
-        icon={<Thermometer size={22} weight="duotone" />}
+        icon={<Thermometer size={22} />}
         title={tx(
           "Spring is heating up fastest, especially in the mountains",
           "বসন্তে গরম বাড়ছে সবচেয়ে দ্রুত, বিশেষ করে পাহাড়ে",
@@ -440,7 +440,7 @@ export default async function StoryPage() {
                   fastest.
                 </p>
                 <p>
-                  Mountains warm fastest of all: the {fastest.name} about{" "}
+                  Mountain warm fastest of all: the {fastest.name} about{" "}
                   <strong>{times} times faster</strong> than the {slowest.name},
                   where the sea keeps temperatures steady.
                 </p>
@@ -499,7 +499,7 @@ export default async function StoryPage() {
       <Finding
         id="rain"
         n={3}
-        icon={<CloudRain size={22} weight="duotone" />}
+        icon={<CloudRain size={22} />}
         title={tx(
           "The monsoon rain is moving, not disappearing",
           "বর্ষার বৃষ্টি হারিয়ে যাচ্ছে না, জায়গা বদলাচ্ছে",
@@ -638,7 +638,7 @@ export default async function StoryPage() {
       <Finding
         id="disasters"
         n={4}
-        icon={<Lightbulb size={22} weight="duotone" />}
+        icon={<Lightbulb size={22} />}
         title={tx(
           "Disasters follow the weather",
           "দুর্যোগ আবহাওয়ার পথ ধরে আসে",
@@ -802,7 +802,7 @@ export default async function StoryPage() {
       <Finding
         id="watch"
         n={5}
-        icon={<UsersThree size={22} weight="duotone" />}
+        icon={<Users size={22} />}
         title={tx(
           `Where to prepare in ${last}`,
           `${lastBn}: কোথায় প্রস্তুতি দরকার`,
@@ -978,7 +978,7 @@ export default async function StoryPage() {
       <div className="mt-16 flex flex-wrap items-center gap-4">
         <Link
           href="/trends"
-          className="inline-flex items-center gap-2 rounded-full bg-accent-strong px-6 py-3 font-medium text-accent-ink transition-all hover:bg-accent-hover active:scale-[0.98]"
+          className="inline-flex min-h-10 items-center gap-2 rounded-full bg-accent-strong px-6 font-medium text-accent-ink transition-colors duration-150 hover:bg-accent-hover"
         >
           {tx("Explore the trends yourself", "নিজেই প্রবণতাগুলো ঘুরে দেখুন")}{" "}
           <ArrowRight size={18} />
@@ -1057,18 +1057,18 @@ function Finding({
       <div className="mt-6 grid gap-2 sm:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] sm:items-stretch">
         <div className="rounded-2xl bg-card p-4 shadow-soft">
           <div className="flex items-center gap-2 text-sm font-semibold text-ink">
-            <Question size={18} className="text-accent" />{" "}
+            <CircleQuestionMark size={18} className="text-accent" />{" "}
             {tx("Why is this happening?", "কেন এমন হচ্ছে?")}
           </div>
           <p className="mt-1.5 text-sm leading-relaxed text-ink-2">{why}</p>
         </div>
         <span className="grid place-items-center text-accent" aria-hidden>
-          <ArrowRight size={20} weight="bold" className="hidden sm:block" />
-          <ArrowDown size={20} weight="bold" className="sm:hidden" />
+          <ArrowRight size={20} className="hidden sm:block" />
+          <ArrowDown size={20} className="sm:hidden" />
         </span>
         <div className="rounded-2xl bg-card p-4 shadow-soft">
           <div className="flex items-center gap-2 text-sm font-semibold text-ink">
-            <UsersThree size={18} className="text-accent" />{" "}
+            <Users size={18} className="text-accent" />{" "}
             {tx("What does it mean for people?", "মানুষের জন্য এর মানে কী?")}
           </div>
           <p className="mt-1.5 text-sm leading-relaxed text-ink-2">{soWhat}</p>

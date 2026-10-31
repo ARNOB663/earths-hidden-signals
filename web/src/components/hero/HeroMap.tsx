@@ -119,7 +119,7 @@ export default function HeroMap() {
 
         {/* Label: 45 YEARS OF EARTH DATA / 234/234 LAND CELLS WARMING */}
         {ready && (
-          <div className="pointer-events-none absolute bottom-2 left-2 right-2 z-[500] select-none">
+          <div className="pointer-events-none absolute bottom-2 left-2 right-2 z-[var(--z-map)] select-none">
             <div className="inline-block rounded-md bg-black/50 px-2.5 py-1.5 text-[9px] leading-none tracking-wider text-white/90 backdrop-blur-sm">
               <div className="font-medium">45 YEARS OF EARTH DATA</div>
               <div className="mt-0.5 font-semibold opacity-85">234/234 LAND CELLS WARMING</div>
@@ -131,7 +131,7 @@ export default function HeroMap() {
         {ready && (
           <a
             href="/explore"
-            className="pointer-events-auto absolute right-2 top-2 z-[500] rounded-md bg-black/50 px-2.5 py-1 text-[11px] font-medium text-white/85 backdrop-blur-sm transition-colors hover:bg-black/70 hover:text-white"
+            className="pointer-events-auto absolute right-2 top-2 z-[var(--z-map)] rounded-md bg-black/50 px-2.5 py-1 text-[11px] font-medium text-white/85 backdrop-blur-sm transition-colors hover:bg-black/70 hover:text-white"
           >
             Explore climate signals &rarr;
           </a>

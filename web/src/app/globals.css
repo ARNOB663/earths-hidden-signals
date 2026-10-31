@@ -23,6 +23,17 @@
     --good: #0b8a0b;
     --shadow: 30 28 24;
 
+    /* One stacking scale for everything that floats above the page. */
+    --z-map: 500;
+    --z-map-panel: 600;
+    --z-map-search: 700;
+    --z-sheet: 800;
+    --z-subnav: 900;
+    --z-nav: 1000;
+    --z-menu: 1200;
+    --z-tour: 1500;
+    --z-toast: 2000;
+
     /* Trend maps: a neutral "no change" middle with four steps toward each side. */
     --mid: #e4e2dc;
     --warm-1: #f6cfcb;

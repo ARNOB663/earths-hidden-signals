@@ -1,5 +1,6 @@
 "use client";
 
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 
@@ -155,17 +156,17 @@ export default function HeroImageSlideshow() {
           onClick={() =>
             goTo((activeIndex - 1 + slides.length) % slides.length)
           }
-          className="pointer-events-auto flex h-9 w-9 items-center justify-center rounded-full border border-(--hero-ctrl-border) bg-(--hero-ctrl-bg) text-lg opacity-0 transition-all duration-200 hover:bg-(--hero-ghost-bg-hover) group-hover:opacity-100"
+          className="pointer-events-auto flex h-9 w-9 items-center justify-center rounded-full border border-(--hero-ctrl-border) bg-(--hero-ctrl-bg) opacity-0 transition-opacity duration-200 hover:bg-(--hero-ghost-bg-hover) group-hover:opacity-100 focus-visible:opacity-100"
         >
-          ←
+          <ChevronLeft size={18} strokeWidth={1.75} aria-hidden />
         </button>
         <button
           type="button"
           aria-label="Next slide"
           onClick={() => goTo((activeIndex + 1) % slides.length)}
-          className="pointer-events-auto flex h-9 w-9 items-center justify-center rounded-full border border-(--hero-ctrl-border) bg-(--hero-ctrl-bg) text-lg opacity-0 transition-all duration-200 hover:bg-(--hero-ghost-bg-hover) group-hover:opacity-100"
+          className="pointer-events-auto flex h-9 w-9 items-center justify-center rounded-full border border-(--hero-ctrl-border) bg-(--hero-ctrl-bg) opacity-0 transition-opacity duration-200 hover:bg-(--hero-ghost-bg-hover) group-hover:opacity-100 focus-visible:opacity-100"
         >
-          →
+          <ChevronRight size={18} strokeWidth={1.75} aria-hidden />
         </button>
       </div>
 
@@ -176,10 +177,10 @@ export default function HeroImageSlideshow() {
             type="button"
             aria-label={`Go to slide ${index + 1}`}
             onClick={() => goTo(index)}
-            className="pointer-events-auto flex h-4 w-4 items-center justify-center rounded-full border border-(--hero-ctrl-border) bg-transparent p-0 transition-all duration-200"
+            className="pointer-events-auto flex h-4 w-4 items-center justify-center rounded-full border border-(--hero-ctrl-border) bg-transparent p-0 transition-opacity duration-200"
           >
             <span
-              className={`block h-2 w-2 rounded-full transition-all duration-200 ${
+              className={`block h-2 w-2 rounded-full transition-opacity duration-200 ${
                 index === activeIndex
                   ? "bg-(--hero-dot-on) scale-100"
                   : "bg-(--hero-dot-off) scale-75"

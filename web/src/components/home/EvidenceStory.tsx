@@ -1,8 +1,17 @@
 "use client";
 
-import { ArrowDown, ArrowRight, ChartLineUp, CloudRain, Fire, Mountains } from "@phosphor-icons/react";
+import {
+  ArrowDown,
+  ArrowRight,
+  BookOpen,
+  ChartLine,
+  Globe,
+  TriangleAlert,
+  type LucideIcon,
+} from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
+import { GIcon, HAZARD_ICONS } from "@/components/ui/icons";
 import { T } from "@/lib/i18n";
 import { HAZARD_META, type HazardZone } from "@/lib/hazards";
 import { formatSigned, senIntercept, type TrendGrid, type Zone } from "@/lib/trends";
@@ -42,8 +51,6 @@ function rainfallSummary(grid: TrendGrid) {
   return { ...counts, total: counts.wetter + counts.drier + counts.unclear };
 }
 
-const HAZARD_ICONS = { wildfire: Fire, landslide: Mountains, flood: CloudRain, cyclone: CloudRain } as const;
-
 export default function EvidenceStory({ zones, rainfallGrid, hazardZones, warmingCells, first, last }: { zones: Zone[]; rainfallGrid: TrendGrid; hazardZones: HazardZone[]; warmingCells: number; first: number; last: number }) {
   const [hoveredYear, setHoveredYear] = useState<number | null>(null);
   const study = zones.find((zone) => zone.id === "study-area");
@@ -79,18 +86,18 @@ export default function EvidenceStory({ zones, rainfallGrid, hazardZones, warmin
 
         <div className="mt-14 grid grid-cols-2 gap-x-8 gap-y-12 lg:grid-cols-4">
           {[
-            ["NASA Data", "45 years of Earth observations", "নাসা ডেটা", "পৃথিবীর ৪৫ বছরের পর্যবেক্ষণ", "planet"],
-            ["Long-term Trends", "See what changed and where", "দীর্ঘমেয়াদি প্রবণতা", "কী বদলেছে ও কোথায় দেখুন", "chart"],
-            ["Hazard Signals", "Connect change with past events", "বিপদ সংকেত", "পরিবর্তনকে অতীত ঘটনার সাথে মিলান", "warning"],
-            ["Preparedness", "Turn signals into useful context", "প্রস্তুতি", "সংকেতকে দরকারি প্রেক্ষাপটে দেখুন", "book"],
-          ].map(([en, sub, bn, subBn, key], index, items) => (
-            <div key={key} className="relative flex flex-col items-center text-center">
+            ["NASA Data", "45 years of Earth observations", "নাসা ডেটা", "পৃথিবীর ৪৫ বছরের পর্যবেক্ষণ", Globe],
+            ["Long-term Trends", "See what changed and where", "দীর্ঘমেয়াদি প্রবণতা", "কী বদলেছে ও কোথায় দেখুন", ChartLine],
+            ["Hazard Signals", "Connect change with past events", "বিপদ সংকেত", "পরিবর্তনকে অতীত ঘটনার সাথে মিলান", TriangleAlert],
+            ["Preparedness", "Turn signals into useful context", "প্রস্তুতি", "সংকেতকে দরকারি প্রেক্ষাপটে দেখুন", BookOpen],
+          ].map(([en, sub, bn, subBn, Icon], index, items) => (
+            <div key={String(en)} className="relative flex flex-col items-center text-center">
               {index < items.length - 1 && <ArrowRight size={18} className="absolute -right-5 top-3.5 hidden text-ink-3 lg:block" aria-hidden />}
               <div className="grid h-12 w-12 place-items-center rounded-2xl bg-accent-soft text-accent ring-4 ring-page">
-                {key === "planet" ? <span aria-hidden>◌</span> : key === "chart" ? <ChartLineUp size={22} aria-hidden /> : key === "warning" ? <span aria-hidden>!</span> : <span aria-hidden>▣</span>}
+                <GIcon icon={Icon as LucideIcon} size="xl" />
               </div>
-              <div className="mt-3 font-semibold text-ink"><T en={en} bn={bn} /></div>
-              <p className="mt-1 text-sm leading-snug text-ink-2"><T en={sub} bn={subBn} /></p>
+              <div className="mt-3 font-semibold text-ink"><T en={String(en)} bn={String(bn)} /></div>
+              <p className="mt-1 text-sm leading-snug text-ink-2"><T en={String(sub)} bn={String(subBn)} /></p>
             </div>
           ))}
         </div>
@@ -179,5 +186,5 @@ function RainExample({ zone }: { zone: Zone }) {
 function ImpactSignal({ zone }: { zone: HazardZone }) {
   const driver = zone.drivers.find((item) => item.linked) ?? zone.drivers[0];
   const Icon = HAZARD_ICONS[zone.hazard];
-  return <div className="rounded-2xl bg-sunken/65 p-4"><div className="flex items-center gap-2 text-sm font-semibold text-ink"><Icon size={18} className="text-accent" aria-hidden />{zone.name}</div><p className="mt-3 text-sm text-ink-2">{driver?.label ?? "Environmental conditions"}</p><div className="mt-2 flex items-center gap-2 text-sm font-medium text-[var(--warm-4)]"><ArrowDown size={15} aria-hidden />{HAZARD_META[zone.hazard].label} concern</div></div>;
+  return <div className="rounded-2xl bg-sunken/65 p-4"><div className="flex items-center gap-2 text-sm font-semibold text-ink"><GIcon icon={Icon} className="text-accent" />{zone.name}</div><p className="mt-3 text-sm text-ink-2">{driver?.label ?? "Environmental conditions"}</p><div className="mt-2 flex items-center gap-2 text-sm font-medium text-[var(--warm-4)]"><ArrowDown size={15} aria-hidden />{HAZARD_META[zone.hazard].label} concern</div></div>;
 }

@@ -1,23 +1,16 @@
 "use client";
 
 import {
-  CaretDown,
-  CaretLeft,
-  CaretRight,
-  Drop,
-  GlobeHemisphereEast,
-  Leaf,
+  ChevronDown,
+  ChevronLeft,
+  ChevronRight,
+  Globe,
   MapPin,
+  PanelLeft,
   Pause,
-  Plant,
   Play,
-  SidebarSimple,
-  Sun,
-  Thermometer,
-  TreeEvergreen,
   X,
-  type Icon,
-} from "@phosphor-icons/react";
+} from "lucide-react";
 import dynamic from "next/dynamic";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
@@ -26,7 +19,11 @@ import { formatDay, formatMonth, nearestDateIndex } from "@/lib/dates";
 import { T, useLang, useT } from "@/lib/i18n";
 import type { GibsCatalog } from "@/lib/gibs";
 import { LAYERS, type LayerDef } from "@/lib/layers";
+import { GIcon } from "@/components/ui/icons";
+import { Spinner } from "@/components/ui/motion-icons";
 import { ShareButton } from "@/components/ui/ShareButton";
+import { toast } from "@/components/ui/toast";
+import { LAYER_ICONS } from "@/components/ui/icons";
 import { CompareDivider } from "./CompareDivider";
 import { ForestLossChart } from "./ForestLossChart";
 import type { MapFocus, MapView } from "./LeafletMap";
@@ -44,15 +41,6 @@ const LeafletMap = dynamic(() => import("./LeafletMap"), {
 });
 
 const PLAY_INTERVAL_MS = 1600;
-
-const LAYER_ICON: Record<string, Icon> = {
-  "lst-day": Sun,
-  "air-temp": Thermometer,
-  precip: Drop,
-  "soil-moisture": Plant,
-  ndvi: Leaf,
-  "forest-loss": TreeEvergreen,
-};
 
 export default function MapExplorer({ catalog, placeData }: { catalog: GibsCatalog; placeData: MapPlaceData }) {
   // The URL (?layer=…&date=… or ?layer=forest-loss&from=…&to=…) sets the starting view,
@@ -199,10 +187,27 @@ export default function MapExplorer({ catalog, placeData }: { catalog: GibsCatal
     setPlaying(false);
     if (next.kind === "forest-loss") setForestTotals(null);
     setLayerId(next.id);
+    toast.info(t(`Showing ${next.shortTitle.toLowerCase()}`, `${next.bn.shortTitle} দেখানো হচ্ছে`));
   };
 
   const lang = useLang();
   const t = useT();
+  // NASA's catalogue can be unreachable at build time; say so once instead of leaving stale dates unexplained.
+  // Read once: the catalog report is fixed for the session.
+  const catalogStale = useMemo(
+    () => Object.values(catalog).some((info) => info && "live" in info && info.live === false),
+    [catalog],
+  );
+  useEffect(() => {
+    if (!catalogStale) return;
+    // Keyed, not deps-guarded: `t` is a new function each render, so a language or theme change
+    // would otherwise re-announce the same warning.
+    toast.warningOnce(
+      "gibs-catalog-stale",
+      t("NASA catalog unreachable — showing saved dates", "নাসার ক্যাটালগে পৌঁছানো যায়নি — সংরক্ষিত তারিখ দেখানো হচ্ছে"),
+      t("The newest images may be a little behind.", "সবচেয়ে নতুন ছবিগুলো কিছুটা পিছিয়ে থাকতে পারে।"),
+    );
+  }, [catalogStale, t]);
   // Daily layers (SMAP soil moisture) need day-precision labels; monthly ones only need the month.
   const isDaily = layer.kind === "gibs" && layer.period === "day";
   const month = (d: string) =>
@@ -212,13 +217,13 @@ export default function MapExplorer({ catalog, placeData }: { catalog: GibsCatal
   // Phones: the layer, the month (with previous/next) and Play stay in the panel's summary,
   // so the time can change while the map stays in view.
   const [snap, setSnap] = useState<SheetSnap>("peek");
-  const PeekIcon = LAYER_ICON[layer.id];
+  const PeekIcon = LAYER_ICONS[layer.id];
   const peek = (
     <div className="min-w-0">
       <p className="mb-2 truncate text-xs font-medium text-ink-2">{t(contextPlace.name, COUNTRY_BN[contextPlace.name] ?? contextPlace.name)}</p>
       <div className="flex items-center justify-between gap-3">
         <div className="flex min-w-0 items-center gap-2 font-semibold text-ink">
-          <PeekIcon size={18} weight="fill" className="shrink-0 text-accent" />
+          <GIcon icon={PeekIcon} className="shrink-0 text-accent" />
           <span className="truncate">
             <T en={layer.shortTitle} bn={layer.bn.shortTitle} />
           </span>
@@ -237,11 +242,11 @@ export default function MapExplorer({ catalog, placeData }: { catalog: GibsCatal
         {layer.kind === "gibs" && date ? (
           <>
             <IconButton label={isDaily ? t("Previous day", "আগের দিন") : t("Previous month", "আগের মাস")} onClick={() => stepDate(-1, "month")}>
-              <CaretLeft size={18} />
+              <ChevronLeft size={18} />
             </IconButton>
             <div className="min-w-0 flex-1 text-center text-lg font-semibold tabular-nums text-ink">{month(date)}</div>
             <IconButton label={isDaily ? t("Next day", "পরের দিন") : t("Next month", "পরের মাস")} onClick={() => stepDate(1, "month")}>
-              <CaretRight size={18} />
+              <ChevronRight size={18} />
             </IconButton>
           </>
         ) : (
@@ -252,9 +257,9 @@ export default function MapExplorer({ catalog, placeData }: { catalog: GibsCatal
         <button
           type="button"
           onClick={togglePlay}
-          className="inline-flex h-10 shrink-0 items-center gap-1.5 rounded-full bg-accent-strong px-4 text-sm font-medium text-accent-ink transition-all hover:bg-accent-hover active:scale-[0.98]"
+          className="inline-flex h-10 shrink-0 items-center gap-1.5 rounded-full bg-accent-strong px-4 text-sm font-medium text-accent-ink transition-colors duration-150 hover:bg-accent-hover"
         >
-          {playing ? <Pause size={16} weight="fill" /> : <Play size={16} weight="fill" />}
+          {playing ? <Pause size={16} strokeWidth={1.75} aria-hidden /> : <Play size={16} strokeWidth={1.75} aria-hidden />}
           {playing ? <T en="Pause" bn="থামান" /> : <T en="Play" bn="চালান" />}
         </button>
       </div>
@@ -290,11 +295,12 @@ export default function MapExplorer({ catalog, placeData }: { catalog: GibsCatal
           <CompareDivider split={split} onChange={setSplit} leftLabel={month(compareDate)} rightLabel={month(date)} />
         )}
         {loading && (
-          <div className={`pointer-events-none absolute left-1/2 top-16 z-[500] -translate-x-1/2 rounded-full bg-card px-4 py-1.5 text-sm text-ink-2 shadow-soft lg:top-4 ${panelHidden ? "" : "lg:left-[calc(50%+190px)]"}`}>
+          <div className={`pointer-events-none absolute left-1/2 top-16 z-[var(--z-map)] flex -translate-x-1/2 items-center gap-2 rounded-full bg-card px-4 py-1.5 text-sm text-ink-2 shadow-soft lg:top-4 ${panelHidden ? "" : "lg:left-[calc(50%+190px)]"}`}>
+            <Spinner size="sm" className="text-accent" />
             <T en="Loading NASA imagery…" bn="নাসার ছবি লোড হচ্ছে…" />
           </div>
         )}
-        <div className={`absolute right-3 top-[148px] z-[500] flex rounded-full border border-line bg-card text-sm shadow-soft lg:bottom-10 lg:top-auto ${styles.focusControls}`}>
+        <div className={`absolute right-3 top-[148px] z-[var(--z-map)] flex rounded-full border border-line bg-card text-sm shadow-soft lg:bottom-10 lg:top-auto ${styles.focusControls}`}>
           {(["south-asia", "world"] as MapFocus[]).map((target) => (
             <button
               key={target}
@@ -302,7 +308,7 @@ export default function MapExplorer({ catalog, placeData }: { catalog: GibsCatal
               aria-label={target === "south-asia" ? t("Zoom to South Asia", "দক্ষিণ এশিয়ায় যান") : t("Show the whole world", "পুরো বিশ্ব দেখুন")}
               className="flex h-10 items-center gap-1.5 px-3 text-ink-2 transition-colors hover:bg-sunken hover:text-ink lg:px-3.5"
             >
-              {target === "south-asia" ? <MapPin size={16} /> : <GlobeHemisphereEast size={16} />}
+              {target === "south-asia" ? <MapPin size={16} strokeWidth={1.75} aria-hidden /> : <Globe size={16} strokeWidth={1.75} aria-hidden />}
               <span className="hidden lg:inline">
                 {target === "south-asia" ? <T en="South Asia" bn="দক্ষিণ এশিয়া" /> : <T en="World" bn="বিশ্ব" />}
               </span>
@@ -313,14 +319,14 @@ export default function MapExplorer({ catalog, placeData }: { catalog: GibsCatal
         </div>
         {panelHidden && (
           <>
-            <div className="absolute left-4 top-4 z-[600] hidden items-center gap-3 rounded-full border border-line bg-card py-1.5 pl-1.5 pr-4 text-sm shadow-soft lg:flex">
+            <div className="absolute left-4 top-4 z-[var(--z-map-panel)] hidden items-center gap-3 rounded-full border border-line bg-card py-1.5 pl-1.5 pr-4 text-sm shadow-soft lg:flex">
               <button
                 onClick={() => setPanelHidden(false)}
                 aria-expanded={false}
                 aria-controls="map-controls"
-                className="inline-flex items-center gap-2 rounded-full bg-accent-strong px-3.5 py-2 font-medium text-accent-ink transition-all hover:bg-accent-hover active:scale-[0.98]"
+                className="inline-flex min-h-10 items-center gap-2 rounded-full bg-accent-strong px-3.5 font-medium text-accent-ink transition-colors duration-150 hover:bg-accent-hover"
               >
-                <SidebarSimple size={16} weight="fill" />
+                <PanelLeft size={16} strokeWidth={1.75} aria-hidden />
                 <T en="Show controls" bn="নিয়ন্ত্রণ দেখান" />
               </button>
               <span className="font-medium text-ink">
@@ -341,7 +347,7 @@ export default function MapExplorer({ catalog, placeData }: { catalog: GibsCatal
       <MapSheet
         id="map-controls"
         label={t("Map controls", "মানচিত্রের নিয়ন্ত্রণ")}
-        className={`lg:absolute lg:bottom-4 lg:left-4 lg:top-4 lg:z-[600] lg:w-[340px] lg:overflow-y-auto lg:rounded-2xl lg:border lg:border-line lg:bg-card lg:shadow-soft lg:transition-[translate,visibility] lg:duration-300 ${
+        className={`lg:absolute lg:bottom-4 lg:left-4 lg:top-4 lg:z-[var(--z-map-panel)] lg:w-[340px] lg:overflow-y-auto lg:rounded-2xl lg:border lg:border-line lg:bg-card lg:shadow-soft lg:transition-[translate,visibility] lg:duration-300 ${
           panelHidden ? "lg:invisible lg:-translate-x-[calc(100%+2rem)]" : ""
         }`}
         bodyClassName="flex flex-col gap-4 p-4"
@@ -352,7 +358,7 @@ export default function MapExplorer({ catalog, placeData }: { catalog: GibsCatal
         <section>
           <div className="mb-3 flex items-center justify-between gap-2 border-b border-line pb-3">
             <p className="text-sm font-semibold uppercase tracking-wide text-ink">{t(contextPlace.name, COUNTRY_BN[contextPlace.name] ?? contextPlace.name)}</p>
-            {selectedPlace && <button type="button" onClick={() => setSelectedPlace(null)} aria-label={t("Clear place selection", "নির্বাচিত স্থান মুছুন")} className="grid h-8 w-8 shrink-0 place-items-center rounded-full text-ink-2 hover:bg-sunken"><X size={16} /></button>}
+            {selectedPlace && <button type="button" onClick={() => setSelectedPlace(null)} aria-label={t("Clear place selection", "নির্বাচিত স্থান মুছুন")} className="grid h-8 w-8 shrink-0 place-items-center rounded-full text-ink-2 hover:bg-sunken"><X size={16} strokeWidth={1.75} aria-hidden /></button>}
           </div>
           <div className="flex items-start justify-between gap-3">
             <h1 className="text-sm font-medium text-ink">
@@ -366,7 +372,7 @@ export default function MapExplorer({ catalog, placeData }: { catalog: GibsCatal
               title={t("Hide this panel to see more of the map", "মানচিত্র বড় করে দেখতে এই অংশটি লুকান")}
               className="-mr-1.5 -mt-1 hidden shrink-0 items-center gap-1.5 rounded-full px-2.5 py-1.5 text-sm text-ink-2 transition-colors hover:bg-sunken hover:text-ink lg:inline-flex"
             >
-              <SidebarSimple size={17} />
+              <PanelLeft size={17} strokeWidth={1.75} aria-hidden />
               <T en="Hide" bn="লুকান" />
             </button>
           </div>
@@ -383,17 +389,17 @@ export default function MapExplorer({ catalog, placeData }: { catalog: GibsCatal
               ].map(group => {
                 const target = LAYERS.find(l => l.id === group.id)!;
                 const active = layer.category === group.category;
-                const Icon = LAYER_ICON[group.id];
+                const Icon = LAYER_ICONS[group.id];
                 return <button key={group.id} type="button" aria-pressed={active}
                   onClick={() => selectLayer(active ? layer : target)}
-                  className={`flex min-h-12 flex-col items-center justify-center gap-1 rounded-lg border text-[11px] transition-colors ${active ? "border-accent bg-accent-soft font-medium text-ink" : "border-line text-ink-2 hover:border-ink-3 hover:text-ink"}`}>
-                  <Icon size={16} className={active ? "text-accent" : ""} aria-hidden /><T en={group.label} bn={group.bn} />
+                  className={`flex min-h-12 flex-col items-center justify-center gap-1 rounded-lg border text-[11px] transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${active ? "border-accent bg-accent-soft font-medium text-ink" : "border-line text-ink-2 hover:border-ink-3 hover:text-ink"}`}>
+                  <GIcon icon={Icon} className={active ? "text-accent" : ""} /><T en={group.label} bn={group.bn} />
                 </button>;
               })}
             </div>
             {layer.category === "heat" && <div className="mt-2 flex gap-2" role="group" aria-label={t("Heat measurement", "তাপের পরিমাপ")}>
               {[["lst-day", "Land", "মাটি"], ["air-temp", "Air", "বাতাস"]].map(([id, en, bn]) => <button key={id} type="button" aria-pressed={layer.id === id} onClick={() => selectLayer(LAYERS.find(l => l.id === id)!)}
-                className={`min-h-8 flex-1 rounded-full text-xs ${layer.id === id ? "bg-sunken font-medium text-ink" : "text-ink-3 hover:bg-sunken"}`}><T en={en} bn={bn} /></button>)}
+                className={`h-8 flex-1 rounded-full text-xs transition-colors duration-150 ${layer.id === id ? "bg-sunken font-medium text-ink" : "text-ink-3 hover:bg-sunken"}`}><T en={en} bn={bn} /></button>)}
             </div>}
           </div>
         </section>
@@ -406,11 +412,11 @@ export default function MapExplorer({ catalog, placeData }: { catalog: GibsCatal
             <div className="mt-3 space-y-3">
               <div className="flex items-center gap-2">
                 <IconButton label={isDaily ? t("Previous day", "আগের দিন") : t("Previous month", "আগের মাস")} onClick={() => stepDate(-1, "month")}>
-                  <CaretLeft size={18} />
+                  <ChevronLeft size={18} />
                 </IconButton>
                 <div className="flex-1 text-center text-lg font-semibold tabular-nums text-ink">{month(date)}</div>
                 <IconButton label={isDaily ? t("Next day", "পরের দিন") : t("Next month", "পরের মাস")} onClick={() => stepDate(1, "month")}>
-                  <CaretRight size={18} />
+                  <ChevronRight size={18} />
                 </IconButton>
               </div>
               <input
@@ -477,7 +483,7 @@ export default function MapExplorer({ catalog, placeData }: { catalog: GibsCatal
                             </option>
                           ))}
                         </select>
-                        <CaretDown size={13} className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-ink-3" />
+                        <ChevronDown size={14} strokeWidth={1.75} className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-ink-3" aria-hidden />
                       </span>
                     </label>
                     <div className="flex items-center justify-between gap-3">
@@ -577,7 +583,7 @@ function IconButton({ label, onClick, children }: { label: string; onClick: () =
       onClick={onClick}
       title={label}
       aria-label={label}
-      className="grid h-10 w-10 place-items-center rounded-full border border-line text-ink-2 transition-all hover:bg-sunken hover:text-ink active:scale-95"
+      className="grid h-10 w-10 place-items-center rounded-full border border-line text-ink-2 transition-colors duration-150 hover:bg-sunken hover:text-ink"
     >
       {children}
     </button>
@@ -588,9 +594,9 @@ function PlayButton({ playing, onClick }: { playing: boolean; onClick: () => voi
   return (
     <button
       onClick={onClick}
-      className="inline-flex items-center gap-2 rounded-full bg-accent-strong px-5 py-2.5 text-sm font-medium text-accent-ink transition-all hover:bg-accent-hover active:scale-[0.98]"
+      className="inline-flex min-h-10 items-center gap-2 rounded-full bg-accent-strong px-5 text-sm font-medium text-accent-ink transition-colors duration-150 hover:bg-accent-hover"
     >
-      {playing ? <Pause size={16} weight="fill" /> : <Play size={16} weight="fill" />}
+      {playing ? <Pause size={16} strokeWidth={1.75} aria-hidden /> : <Play size={16} strokeWidth={1.75} aria-hidden />}
       {playing ? <T en="Pause" bn="থামান" /> : <T en="Animate years" bn="বছর চালান" />}
     </button>
   );

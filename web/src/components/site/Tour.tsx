@@ -1,6 +1,11 @@
 "use client";
 
-import { ArrowLeft, ArrowRight, Compass, X } from "@phosphor-icons/react";
+import {
+  ArrowLeft,
+  ArrowRight,
+  Compass,
+  X,
+} from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useSyncExternalStore } from "react";
 import { bnNum } from "@/lib/bn";
@@ -124,7 +129,7 @@ export function TourBar() {
     <div
       role="dialog"
       aria-label={t("Guided tour", "গাইডেড ট্যুর")}
-      className="fixed inset-x-3 top-[4.5rem] z-[1500] mx-auto max-w-xl rounded-2xl border border-line bg-card p-4 shadow-[0_12px_40px_rgb(0_0_0/0.18)] lg:bottom-6 lg:top-auto"
+      className="fixed inset-x-3 top-[4.5rem] z-[var(--z-tour)] mx-auto max-w-xl rounded-2xl border border-line bg-card p-4 shadow-[0_12px_40px_rgb(0_0_0/0.18)] lg:bottom-6 lg:top-auto"
     >
       <div className="flex items-center justify-between gap-3">
         <span className="flex items-center gap-1.5 text-xs font-medium text-accent">

@@ -1,9 +1,10 @@
 "use client";
 
-import { MagnifyingGlass, X } from "@phosphor-icons/react";
+import { ArrowRight, Search, X } from "lucide-react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useId, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { toast } from "@/components/ui/toast";
 import { T, useT } from "@/lib/i18n";
 import type { Country } from "@/lib/countries";
 
@@ -20,6 +21,8 @@ interface Props {
  */
 export function CountrySearch({ countries, large = false }: Props) {
   const router = useRouter();
+  // The last country toast, so holding Enter on a suggestion does not stack duplicates.
+  const lastToast = useRef<{ slug: string; at: number }>({ slug: "", at: 0 });
   const t = useT();
   const listId = useId();
   const inputRef = useRef<HTMLInputElement>(null);
@@ -29,6 +32,7 @@ export function CountrySearch({ countries, large = false }: Props) {
   const [expanded, setExpanded] = useState(false);
   // Phones: pin the list to the viewport under the header instead of the narrow search pill.
   const [mobile, setMobile] = useState(false);
+  const pathname = usePathname();
   const [menuTop, setMenuTop] = useState<number | undefined>(undefined);
 
   const results = useMemo(() => {
@@ -75,15 +79,32 @@ export function CountrySearch({ countries, large = false }: Props) {
     setQuery("");
   };
 
+  const announce = (slug: string, name: string, nameBn: string) => {
+    const now = Date.now();
+    if (lastToast.current.slug === slug && now - lastToast.current.at < 2500) return;
+    lastToast.current = { slug, at: now };
+    toast.success(t(`Opening ${name}`, `${nameBn} খোলা হচ্ছে`), t("Loading that country's signals.", "দেশটির সংকেত লোড হচ্ছে।"));
+  };
+
   const go = (slug: string) => {
+    const country = countries.find((c) => c.slug === slug);
+    // Reopening the page you are already on needs no announcement.
+    if (country && pathname !== `/country/${slug}`) announce(slug, country.name, country.nameBn);
     close();
     router.push(`/country/${slug}`);
   };
 
   const submit = () => {
     const q = query.trim();
-    if (!q) return;
+    if (!q) {
+      toast.warning(t("Type a country name to search", "দেশের নাম লিখে খুঁজুন"));
+      return;
+    }
     if (results.length > 0) return go(results[0].slug);
+    toast.warning(
+      t("No country matches that search", "এই খোঁজে কোনো দেশ মেলেনি"),
+      t("Choose a country from the list below.", "নিচের তালিকা থেকে একটি দেশ বেছে নিন।"),
+    );
     close();
     router.push(`/countries?q=${encodeURIComponent(q)}`);
   };
@@ -114,7 +135,7 @@ export function CountrySearch({ countries, large = false }: Props) {
           aria-label={t("Search countries", "দেশ খুঁজুন")}
           className={large ? "grid h-10 w-8 shrink-0 place-items-center text-ink-3" : "grid h-10 w-10 shrink-0 place-items-center text-ink-2 hover:text-ink"}
         >
-          <MagnifyingGlass size={large ? 20 : 18} />
+          <Search size={large ? 20 : 18} strokeWidth={1.75} aria-hidden />
         </button>
         <input
           ref={inputRef}
@@ -173,7 +194,7 @@ export function CountrySearch({ countries, large = false }: Props) {
           id={listId}
           role="listbox"
           aria-label={t("Countries", "দেশ")}
-          className={`country-search-menu absolute top-full z-[1200] mt-2 overflow-hidden rounded-xl py-1 ${
+          className={`country-search-menu absolute top-full z-[var(--z-menu)] mt-2 overflow-hidden rounded-xl py-1 ${
             large ? "left-0 right-0" : "right-0 w-64"
           }`}
           // The collapsed pill is only 40px wide, so on phones the list is placed with fixed
@@ -218,14 +239,14 @@ export function CountrySearch({ countries, large = false }: Props) {
                   ) : (
                     <span className="h-4 w-[22px] rounded-sm bg-line" aria-hidden />
                   )}
-                  <T en={c.name} bn={c.nameBn} />
+                  <span className="min-w-0 truncate"><T en={c.name} bn={c.nameBn} /></span>
                 </Link>
               </li>
             ))
           )}
           <li className="country-search-footer">
             <Link href="/countries" onClick={close} className="block px-3 py-2 text-xs">
-              <T en="All countries →" bn="সব দেশ →" />
+              <T en="All countries" bn="সব দেশ" /> <ArrowRight size={13} strokeWidth={2} className="inline" aria-hidden />
             </Link>
           </li>
         </ul>

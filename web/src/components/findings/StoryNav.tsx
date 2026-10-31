@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUp } from "@phosphor-icons/react";
+import { ArrowUp } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { T, useT } from "@/lib/i18n";
 
@@ -50,7 +50,7 @@ export function StoryNav({ items }: { items: { id: string; en: string; bn: strin
   }, [active]);
 
   return (
-    <div className="sticky top-16 z-[900] -mx-4 mt-8 bg-page/90 px-4 py-3 backdrop-blur-md sm:-mx-6 sm:px-6">
+    <div className="sticky top-16 z-[var(--z-subnav)] -mx-4 mt-8 bg-page/90 px-4 py-3 backdrop-blur-md sm:-mx-6 sm:px-6">
       <div ref={navRef} className="no-scrollbar -my-1 flex gap-2 overflow-x-auto py-1">
         <nav aria-label={t("Findings", "ফলাফলগুলো")} className="flex shrink-0 gap-2">
           {items.map((item) => (

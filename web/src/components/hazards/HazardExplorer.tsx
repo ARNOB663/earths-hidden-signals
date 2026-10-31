@@ -1,6 +1,11 @@
 "use client";
 
-import { ArrowRight, CheckCircle, Fire, Hurricane, Mountains, Question, Warning, Waves, X } from "@phosphor-icons/react";
+import {
+  ArrowRight,
+  CircleCheck,
+  CircleQuestionMark,
+  X,
+} from "lucide-react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
@@ -8,7 +13,11 @@ import { useEffect, useState } from "react";
 import { Numbers, Stat } from "@/components/ui";
 import { MapLoading } from "@/components/map/MapLoading";
 import { MapSheet, type SheetSnap } from "@/components/map/MapSheet";
+import { GIcon } from "@/components/ui/icons";
+import { AlertPulse, Spinner } from "@/components/ui/motion-icons";
 import { ShareButton } from "@/components/ui/ShareButton";
+import { toast } from "@/components/ui/toast";
+import { HAZARD_ICONS } from "@/components/ui/icons";
 import {
   HAZARD_META,
   HAZARD_ORDER,
@@ -39,7 +48,6 @@ const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "
 const MONTHS_BN = ["জানু", "ফেব্রু", "মার্চ", "এপ্রি", "মে", "জুন", "জুলা", "আগ", "সেপ্টে", "অক্টো", "নভে", "ডিসে"];
 
 const STRENGTH_BN: Record<string, string> = { strong: "জোরালো", moderate: "মাঝারি", weak: "দুর্বল" };
-const HAZARD_ICON = { flood: Waves, landslide: Mountains, wildfire: Fire, cyclone: Hurricane } as const;
 /** Plain names for what we count. */
 const EVENTS: Record<HazardId, { plural: string; bigYears: string }> = {
   flood: { plural: "flood alerts", bigYears: "big flood years" },
@@ -92,19 +100,20 @@ export default function HazardExplorer({ zones, manifest }: { zones: HazardZone[
   const selectHazard = (h: HazardId) => {
     setHazard(h);
     setZoneId(zones.find((z) => z.hazard === h)!.id);
+    toast.info(t(`Showing ${HAZARD_META[h].label.toLowerCase()}`, `${HAZARD_BN[h].label} দেখানো হচ্ছে`));
   };
 
   // Phones: the region and this year's signal, shown in the panel's summary.
   const [snap, setSnap] = useState<SheetSnap>("peek");
   const [keyOpen, setKeyOpen] = useState(false);
-  const PeekIcon = HAZARD_ICON[hazard];
+  const PeekIcon = HAZARD_ICONS[hazard];
   const signal = preparednessSignal(zone).kind;
   const thisYear = manifest.years[manifest.years.length - 1];
   const peek = (
     <div className="min-w-0">
       <div className="flex items-center justify-between gap-3">
         <div className="flex min-w-0 items-center gap-2 font-semibold text-ink">
-          <PeekIcon size={18} weight="fill" className="shrink-0 text-accent" />
+          <GIcon icon={PeekIcon} className="shrink-0 text-accent" />
           <span className="truncate">
             <T en={zone.name} bn={ZONE_BN[zone.id]?.name ?? zone.name} />
           </span>
@@ -146,13 +155,13 @@ export default function HazardExplorer({ zones, manifest }: { zones: HazardZone[
         {eventsLoading && (
           <div
             role="status"
-            className="pointer-events-none absolute left-1/2 top-16 z-[500] flex -translate-x-1/2 items-center gap-2 rounded-full bg-card px-4 py-1.5 text-sm text-ink-2 shadow-soft lg:left-[calc(50%-218px)] lg:top-4"
+            className="pointer-events-none absolute left-1/2 top-16 z-[var(--z-map)] flex -translate-x-1/2 items-center gap-2 rounded-full bg-card px-4 py-1.5 text-sm text-ink-2 shadow-soft lg:left-[calc(50%-218px)] lg:top-4"
           >
-            <span className="h-2 w-2 animate-pulse rounded-full bg-accent" />
+            <Spinner size="sm" className="text-accent" />
             <T en="Loading past events…" bn="আগের ঘটনাগুলো লোড হচ্ছে…" />
           </div>
         )}
-        <div className="absolute bottom-[calc(var(--sheet-peek,9rem)+0.75rem)] left-3 z-[500] w-[min(300px,calc(100%-1.5rem))] text-sm lg:bottom-10">
+        <div className="absolute bottom-[calc(var(--sheet-peek,9rem)+0.75rem)] left-3 z-[var(--z-map)] w-[min(300px,calc(100%-1.5rem))] text-sm lg:bottom-10">
           {/* On phones the key folds into a small button so it doesn't cover the map. */}
           <button
             type="button"
@@ -180,7 +189,7 @@ export default function HazardExplorer({ zones, manifest }: { zones: HazardZone[
       <MapSheet
         id="hazard-panel"
         label={t("Disaster details", "দুর্যোগের বিস্তারিত")}
-        className="lg:absolute lg:bottom-4 lg:right-4 lg:top-4 lg:z-[600] lg:w-[420px] lg:overflow-y-auto lg:rounded-2xl lg:border lg:border-line lg:bg-card lg:shadow-soft"
+        className="lg:absolute lg:bottom-4 lg:right-4 lg:top-4 lg:z-[var(--z-map-panel)] lg:w-[420px] lg:overflow-y-auto lg:rounded-2xl lg:border lg:border-line lg:bg-card lg:shadow-soft"
         bodyClassName="flex flex-col gap-5 p-5"
         peek={peek}
         snap={snap}
@@ -197,7 +206,7 @@ export default function HazardExplorer({ zones, manifest }: { zones: HazardZone[
           </div>
           <div role="radiogroup" aria-label={t("Type of disaster", "দুর্যোগের ধরন")} className="grid grid-cols-2 gap-1.5">
             {HAZARD_ORDER.map((h) => {
-              const Icon = HAZARD_ICON[h];
+              const Icon = HAZARD_ICONS[h];
               return (
                 <button
                   key={h}
@@ -205,11 +214,11 @@ export default function HazardExplorer({ zones, manifest }: { zones: HazardZone[
                   role="radio"
                   aria-checked={hazard === h}
                   onClick={() => selectHazard(h)}
-                  className={`flex items-center gap-2 rounded-xl border px-3 py-2.5 text-sm transition-all active:scale-[0.98] ${
+                  className={`flex min-h-10 items-center gap-2 rounded-xl border px-3 text-sm transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${
                     hazard === h ? "border-accent bg-accent-soft font-medium text-ink" : "border-line text-ink-2 hover:text-ink"
                   }`}
                 >
-                  <Icon size={18} weight={hazard === h ? "fill" : "regular"} className={hazard === h ? "text-accent" : ""} />
+                  <GIcon icon={Icon} className={hazard === h ? "text-accent" : ""} />
                   <T en={HAZARD_META[h].label} bn={HAZARD_BN[h].label} />
                 </button>
               );
@@ -224,7 +233,7 @@ export default function HazardExplorer({ zones, manifest }: { zones: HazardZone[
                 key={z.id}
                 onClick={() => setZoneId(z.id)}
                 aria-pressed={z.id === zone.id}
-                className={`flex w-full items-center justify-between gap-3 rounded-xl border px-3.5 py-2.5 text-left text-sm transition-all active:scale-[0.99] ${
+                className={`flex min-h-10 w-full items-center justify-between gap-3 rounded-xl border px-3.5 py-1.5 text-left text-sm transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${
                   z.id === zone.id ? "border-accent bg-accent-soft font-medium text-ink" : "border-line text-ink-2 hover:border-ink-3"
                 }`}
               >
@@ -292,7 +301,7 @@ function ZoneAnswer({ zone, manifest }: { zone: HazardZone; manifest: Manifest }
       {signal.kind === "resembles" && (
         <div className="rounded-2xl bg-watch-soft p-4">
           <div className="flex items-center gap-2 font-semibold text-ink">
-            <Warning size={22} weight="fill" className="text-watch" />
+            <AlertPulse size="xl" className="text-watch" />
             <T en={`Watch this year (${thisYear})`} bn={`এই বছর নজর দিন (${bnNum(thisYear)})`} />
           </div>
           {signal.drivers.map((d) => {
@@ -328,7 +337,7 @@ function ZoneAnswer({ zone, manifest }: { zone: HazardZone; manifest: Manifest }
       {signal.kind === "not-resembling" && (
         <div className="rounded-2xl bg-sunken p-4">
           <div className="flex items-center gap-2 font-semibold text-ink">
-            <CheckCircle size={22} weight="fill" className="text-good" />
+            <CircleCheck size={22} strokeWidth={1.75} className="text-good" aria-hidden />
             <T en={`Normal this year (${thisYear})`} bn={`এই বছর স্বাভাবিক (${bnNum(thisYear)})`} />
           </div>
           <p className="mt-2 text-sm leading-relaxed text-ink-2">
@@ -342,7 +351,7 @@ function ZoneAnswer({ zone, manifest }: { zone: HazardZone; manifest: Manifest }
       {signal.kind === "no-link" && (
         <div className="rounded-2xl bg-sunken p-4">
           <div className="flex items-center gap-2 font-semibold text-ink">
-            <Question size={22} weight="fill" className="text-ink-3" />
+            <CircleQuestionMark size={22} strokeWidth={1.75} className="text-ink-3" aria-hidden />
             <T en="No clear weather link" bn="আবহাওয়ার সাথে স্পষ্ট যোগসূত্র নেই" />
           </div>
           <p className="mt-2 text-sm leading-relaxed text-ink-2">

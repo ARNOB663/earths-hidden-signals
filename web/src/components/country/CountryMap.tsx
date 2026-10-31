@@ -4,19 +4,20 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
-  Drop,
+  ChevronDown,
+  ChevronUp,
   Leaf,
-  Plant,
-  SidebarSimple,
-  Sun,
+  Menu,
+  PanelLeft,
+  Pause,
+  Play,
   Thermometer,
-  TreeEvergreen,
   X,
-  type Icon,
-} from "@phosphor-icons/react";
+} from "lucide-react";
 import { createBaseMap, type BaseMap } from "@/components/map/baseMap";
 import { ForestLossLayer } from "@/components/map/forestLossLayer";
 import { TrendLegend } from "@/components/ui";
+import { GIcon, LAYER_ICONS, TREND_ICONS } from "@/components/ui/icons";
 import { bnNum } from "@/lib/bn";
 import type { Country } from "@/lib/countries";
 import { pointInCountry } from "@/lib/geo";
@@ -61,32 +62,7 @@ interface Props {
   datesByLayer: Record<string, string[]>;
 }
 
-const TREND_ICON: Record<string, Icon> = {
-  temperature: Thermometer,
-  rainfall: Drop,
-  "hot-months": Sun,
-  "dry-spell": Plant,
-};
-
-const GIBS_ICON: Record<string, Icon> = {
-  "lst-day": Sun,
-  "air-temp": Thermometer,
-  precip: Drop,
-  "soil-moisture": Plant,
-  ndvi: Leaf,
-  "forest-loss": TreeEvergreen,
-};
-
 type LayerKey = string;
-
-/** Three stacked bars: the closed-state icon for the layer list. */
-function ListIcon() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round">
-      <path d="M3 5h14M3 10h14M3 15h14" />
-    </svg>
-  );
-}
 
 const escape = (s: string) =>
   s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
@@ -289,14 +265,14 @@ export default function CountryMap({ country, data, datesByLayer }: Props) {
         aria-controls="country-layer-panel"
         aria-label={panelOpen ? t("Hide layers", "স্তর লুকান") : t("Show layers", "স্তর দেখান")}
         title={panelOpen ? t("Hide layers", "স্তর লুকান") : t("Show layers", "স্তর দেখান")}
-        className="absolute left-3 top-3 z-[600] grid h-10 w-10 place-items-center rounded-xl border border-line bg-card/95 text-ink-2 shadow-soft backdrop-blur transition-colors hover:text-ink"
+        className="absolute left-3 top-3 z-[var(--z-map-panel)] grid h-10 w-10 place-items-center rounded-xl border border-line bg-card/95 text-ink-2 shadow-soft backdrop-blur transition-colors hover:text-ink"
       >
-        {panelOpen ? <SidebarSimple size={18} /> : <ListIcon />}
+        {panelOpen ? <PanelLeft size={18} /> : <Menu size={18} />}
       </button>
 
       {/* Layer list column on the left; the legend lives on the right so the two never compete. */}
       <div
-        className={`pointer-events-none absolute left-3 top-16 z-[500] flex w-[15rem] max-w-[calc(100%-1.5rem)] flex-col ${
+        className={`pointer-events-none absolute left-3 top-16 z-[var(--z-map)] flex w-[15rem] max-w-[calc(100%-1.5rem)] flex-col ${
           isGibs && dates.length > 1 ? "bottom-14" : "bottom-2"
         }`}
       >
@@ -321,7 +297,7 @@ export default function CountryMap({ country, data, datesByLayer }: Props) {
           </div>
           <ul className="space-y-0.5">
             {data.trendLayers.map((l) => {
-              const Icon = TREND_ICON[l.variable] ?? Thermometer;
+              const Icon = TREND_ICONS[l.variable] ?? Thermometer;
               return (
                 <li key={l.id}>
                   <button
@@ -330,7 +306,7 @@ export default function CountryMap({ country, data, datesByLayer }: Props) {
                     aria-pressed={active === l.id}
                     className={`flex w-full items-center gap-2 rounded-lg px-2 py-1.5 text-left text-sm ${active === l.id ? "bg-accent-soft font-medium text-ink" : "text-ink-2 hover:bg-sunken"}`}
                   >
-                    <Icon size={16} className="shrink-0 text-accent" />
+                    <GIcon icon={Icon} className="shrink-0 text-accent" />
                     <span><T en={l.label} bn={l.labelBn} /></span>
                   </button>
                 </li>
@@ -342,7 +318,7 @@ export default function CountryMap({ country, data, datesByLayer }: Props) {
           </p>
           <ul className="space-y-0.5">
             {gibs.map((l) => {
-              const Icon = GIBS_ICON[l.id] ?? Leaf;
+              const Icon = LAYER_ICONS[l.id] ?? Leaf;
               return (
                 <li key={l.id}>
                   <button
@@ -351,7 +327,7 @@ export default function CountryMap({ country, data, datesByLayer }: Props) {
                     aria-pressed={active === l.id}
                     className={`flex w-full items-center gap-2 rounded-lg px-2 py-1.5 text-left text-sm ${active === l.id ? "bg-accent-soft font-medium text-ink" : "text-ink-2 hover:bg-sunken"}`}
                   >
-                    <Icon size={16} className="shrink-0 text-accent" />
+                    <GIcon icon={Icon} className="shrink-0 text-accent" />
                     <span>{lang === "bn" ? l.bn.shortTitle : l.shortTitle}</span>
                   </button>
                 </li>
@@ -365,7 +341,7 @@ export default function CountryMap({ country, data, datesByLayer }: Props) {
 
       {/* Legend on the right, clear of the attribution strip and the slideshow. */}
       <div
-        className={`pointer-events-auto absolute right-3 z-[500] w-[min(15rem,calc(100%-1.5rem))] rounded-xl border border-line bg-card/95 shadow-soft backdrop-blur ${
+        className={`pointer-events-auto absolute right-3 z-[var(--z-map)] w-[min(15rem,calc(100%-1.5rem))] rounded-xl border border-line bg-card/95 shadow-soft backdrop-blur ${
           isGibs && dates.length > 1 ? "bottom-24" : "bottom-9"
         } ${legendOpen ? "p-3" : "px-3 py-1.5"}`}
       >
@@ -394,9 +370,7 @@ export default function CountryMap({ country, data, datesByLayer }: Props) {
             title={legendOpen ? t("Hide legend", "লিজেন্ড লুকান") : t("Show legend", "লিজেন্ড দেখান")}
             className="-mr-1 -mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-md text-ink-3 hover:bg-sunken hover:text-ink"
           >
-            <svg width="13" height="13" viewBox="0 0 16 16" aria-hidden fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-              {legendOpen ? <path d="M4 10l4-4 4 4" /> : <path d="M4 6l4 4 4-4" />}
-            </svg>
+            {legendOpen ? <ChevronUp size={14} aria-hidden /> : <ChevronDown size={14} aria-hidden />}
           </button>
         </div>
         {legendOpen && (
@@ -433,7 +407,7 @@ export default function CountryMap({ country, data, datesByLayer }: Props) {
       {/* Time slider, only for time-enabled satellite layers. It sits above the credits so
           the two never overlap at the bottom of the map. */}
       {isGibs && dates.length > 1 && (
-        <div className="absolute bottom-9 right-3 z-[500] flex items-center gap-2.5 rounded-xl border border-line bg-card/95 px-3 py-2 shadow-soft backdrop-blur">
+        <div className="absolute bottom-9 right-3 z-[var(--z-map)] flex items-center gap-2.5 rounded-xl border border-line bg-card/95 px-3 py-2 shadow-soft backdrop-blur">
           <button
             type="button"
             onClick={() => setPlaying((p) => !p)}
@@ -441,7 +415,7 @@ export default function CountryMap({ country, data, datesByLayer }: Props) {
             aria-label={playing ? t("Pause months", "মাস থামান") : t("Play months", "মাস চালান")}
             aria-pressed={playing}
           >
-            {playing ? "❚❚" : "▶"}
+            {playing ? <Pause size={12} aria-hidden /> : <Play size={12} aria-hidden className="translate-x-px" />}
           </button>
           <input
             type="range"

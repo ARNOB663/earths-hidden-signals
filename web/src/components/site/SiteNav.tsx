@@ -1,12 +1,18 @@
 "use client";
 
 import {
-  List,
+  BookOpen,
+  ChartLine,
+  FlaskConical,
+  House,
+  Menu,
   Monitor,
   Moon,
+  Satellite,
   Sun,
+  TriangleAlert,
   X,
-} from "@phosphor-icons/react";
+} from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -20,13 +26,14 @@ import {
   type ThemePreference,
 } from "@/lib/theme";
 
+// Each tab keeps a short label for the tab bar and a full one for phones and screen readers.
 export const TABS = [
-  { href: "/", label: "Home", bn: "হোম" },
-  { href: "/findings", label: "The story", bn: "মূল গল্প" },
-  { href: "/explore", label: "Satellite map", bn: "স্যাটেলাইট মানচিত্র" },
-  { href: "/trends", label: "Climate trends", bn: "জলবায়ুর প্রবণতা" },
-  { href: "/hazards", label: "Disaster risk", bn: "দুর্যোগের ঝুঁকি" },
-  { href: "/methods", label: "How it works", bn: "কীভাবে কাজ করে" },
+  { href: "/", label: "Home", short: "Home", bn: "হোম", shortBn: "হোম", Icon: House },
+  { href: "/findings", label: "The story", short: "Story", bn: "মূল গল্প", shortBn: "গল্প", Icon: BookOpen },
+  { href: "/explore", label: "Satellite map", short: "Map", bn: "স্যাটেলাইট মানচিত্র", shortBn: "মানচিত্র", Icon: Satellite },
+  { href: "/trends", label: "Climate trends", short: "Trends", bn: "জলবায়ুর প্রবণতা", shortBn: "প্রবণতা", Icon: ChartLine },
+  { href: "/hazards", label: "Disaster risk", short: "Risk", bn: "দুর্যোগের ঝুঁকি", shortBn: "ঝুঁকি", Icon: TriangleAlert },
+  { href: "/methods", label: "How it works", short: "Methods", bn: "কীভাবে কাজ করে", shortBn: "পদ্ধতি", Icon: FlaskConical },
 ];
 
 const isActive = (pathname: string, href: string) =>
@@ -75,25 +82,26 @@ export function SiteNav({ countries }: { countries: Pick<Country, "slug" | "name
 
   return (
     <header
-      className={`sticky top-0 z-[1000] transition-[border-color,background-color] duration-300 ${
+      className={`sticky top-0 z-[var(--z-nav)] transition-[border-color,background-color] duration-300 ${
         isHome && !scrolled && !open ? "home-hero-nav" : `border-b ${headerBg}`
       }`}
     >
-      <div className="mx-auto flex h-16 max-w-384 items-center gap-4 px-6 sm:px-8 lg:px-12">
+      <div className="mx-auto flex h-16 min-w-0 max-w-384 items-center gap-3 px-6 sm:px-8 lg:gap-3 lg:px-12">
         <Link
           href="/"
-          className="-m-1.5 flex min-h-10 shrink-0 items-center gap-2.5 rounded-lg p-1.5"
+          className="-m-1.5 flex min-h-10 min-w-0 items-center gap-2.5 rounded-lg p-1.5"
           aria-label="Earth's Hidden Signals, home"
         >
           <Logo />
-          <span className="hidden text-[15px] font-semibold tracking-tight text-ink min-[400px]:inline">
+          <span className="hidden truncate text-[15px] font-semibold tracking-tight text-ink min-[400px]:inline">
             Earth&apos;s Hidden Signals
           </span>
         </Link>
 
+        {/* From lg the tabs carry icons only; from xl they gain short labels, so 1024-1279 stays uncrowded. */}
         <nav
           aria-label="Main"
-          className="ml-4 hidden items-center gap-1 lg:flex"
+          className="ml-2 hidden min-w-0 items-center gap-1 lg:flex"
         >
           {TABS.map((tab) => {
             const active = isActive(pathname, tab.href);
@@ -102,19 +110,24 @@ export function SiteNav({ countries }: { countries: Pick<Country, "slug" | "name
                 key={tab.href}
                 href={tab.href}
                 aria-current={active ? "page" : undefined}
-                className={`rounded-full px-3.5 py-2 text-sm transition-colors ${
+                aria-label={t(tab.label, tab.bn)}
+                title={t(tab.label, tab.bn)}
+                className={`inline-flex h-9 shrink-0 items-center gap-1.5 rounded-full px-2.5 text-sm transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent xl:px-3 ${
                   active
                     ? "bg-card font-medium text-ink shadow-soft"
                     : "text-ink-2 hover:bg-card/60 hover:text-ink"
                 }`}
               >
-                <T en={tab.label} bn={tab.bn} />
+                <tab.Icon size={18} strokeWidth={1.75} aria-hidden />
+                <span className="hidden xl:inline">
+                  <T en={tab.short} bn={tab.shortBn} />
+                </span>
               </Link>
             );
           })}
         </nav>
 
-        <div className="ml-auto flex items-center gap-2">
+        <div className="ml-auto flex shrink-0 items-center gap-1.5 sm:gap-2 [&_button]:focus-visible:outline-2 [&_button]:focus-visible:outline-offset-2 [&_button]:focus-visible:outline-accent">
           {!satelliteMap && <CountrySearch countries={countries} />}
           <LanguageSwitcher />
           <ThemeSwitcher />
@@ -128,9 +141,9 @@ export function SiteNav({ countries }: { countries: Pick<Country, "slug" | "name
                 ? t("Close menu", "মেনু বন্ধ করুন")
                 : t("Open menu", "মেনু খুলুন")
             }
-            className="grid h-10 w-10 place-items-center rounded-full text-ink transition-colors hover:bg-card lg:hidden"
+            className="grid h-10 w-10 place-items-center rounded-full text-ink transition-colors duration-150 hover:bg-card lg:hidden"
           >
-            {open ? <X size={22} /> : <List size={22} />}
+            {open ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </div>
@@ -276,7 +289,7 @@ function ThemeSwitcher() {
               : "text-ink-3 hover:text-ink"
           }`}
         >
-          <Icon size={16} weight={pref === value ? "fill" : "regular"} />
+          <Icon size={16} strokeWidth={pref === value ? 2.25 : 1.75} />
         </button>
       ))}
     </div>

@@ -1,9 +1,23 @@
 // Small shared building blocks. None of them use hooks, so they work on server and client pages.
 
-import { CaretDown } from "@phosphor-icons/react/ssr";
+import { ChevronDown } from "lucide-react";
 import { T } from "@/lib/i18n";
 import { sureness } from "@/lib/plain";
 import { formatSigned, trendLegendTokens, type VariableId } from "@/lib/trends";
+
+/** One place for the height of every kind of control, so buttons, pills and segments line up. */
+export const CONTROL = {
+  /** Standalone buttons and icon buttons: a 40px touch target. */
+  button: "min-h-10",
+  /** Segments inside a pill or segmented control. */
+  segment: "h-8",
+  /** Soft accent ring shared by controls that draw their own focus state. */
+  focusRing: "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent",
+  /** The standard control transition. */
+  transition: "transition-colors duration-150",
+} as const;
+
+const CONTROL_SEGMENT = `${CONTROL.segment} ${CONTROL.transition} ${CONTROL.focusRing}`;
 
 /** "How sure are we?" in words, with a 3-dot meter. */
 export function Sureness({ p, className = "" }: { p: number; className?: string }) {
@@ -55,8 +69,8 @@ export function TrendLegend({
           <span key={t} className="h-3.5 flex-1" style={{ background: `var(${t})` }} />
         ))}
       </div>
-      <div className="mt-1.5 grid grid-cols-3 text-xs text-ink-2">
-        <span>
+      <div className="mt-1.5 grid grid-cols-3 gap-x-2 text-xs leading-snug text-ink-2">
+        <span className="flex min-w-0 flex-col">
           {decreaseWord}
           {!compact && (
             <span className={`${extra} text-ink-3`}>
@@ -64,10 +78,10 @@ export function TrendLegend({
             </span>
           )}
         </span>
-        <span className="text-center">
+        <span className="min-w-0 text-center">
           <T en="No change" bn="পরিবর্তন নেই" />
         </span>
-        <span className="text-right">
+        <span className="flex min-w-0 flex-col items-end text-right">
           {increaseWord}
           {!compact && (
             <span className={`${extra} text-ink-3`}>
@@ -109,7 +123,7 @@ export function Segmented<T extends string>({
           role="radio"
           aria-checked={value === o.id}
           onClick={() => onChange(o.id)}
-          className={`flex flex-1 items-center justify-center gap-1.5 rounded-full px-3 py-2 text-sm transition-all active:scale-[0.98] ${
+          className={`${CONTROL_SEGMENT} flex flex-1 items-center justify-center gap-1.5 rounded-full px-3 text-sm duration-150 ${
             value === o.id ? "bg-card font-medium text-ink shadow-soft" : "text-ink-2 hover:text-ink"
           }`}
         >
@@ -140,7 +154,7 @@ export function Numbers({
           <span className="hidden group-open:inline">
             <T en="Close" bn="বন্ধ" />
           </span>
-          <CaretDown size={16} aria-hidden className="transition-transform group-open:rotate-180" />
+          <ChevronDown size={16} aria-hidden className="transition-transform group-open:rotate-180" />
         </span>
       </summary>
       <div className="border-t border-line px-4 py-3 text-sm leading-relaxed text-ink-2">{children}</div>
@@ -150,9 +164,9 @@ export function Numbers({
 
 export function Stat({ label, value }: { label: React.ReactNode; value: React.ReactNode }) {
   return (
-    <div className="flex justify-between gap-3 py-1">
-      <dt className="text-ink-3">{label}</dt>
-      <dd className="text-right tabular-nums text-ink">{value}</dd>
+    <div className="flex min-w-0 justify-between gap-3 py-1">
+      <dt className="min-w-0 text-ink-3">{label}</dt>
+      <dd className="min-w-0 text-right tabular-nums text-ink">{value}</dd>
     </div>
   );
 }

@@ -2,10 +2,10 @@
 
 import {
   ArrowRight,
-  ChartLineUp,
-  DownloadSimple,
+  ChartLine,
+  Download,
   Table,
-} from "@phosphor-icons/react";
+} from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import { T } from "@/lib/i18n";
@@ -83,7 +83,7 @@ export default function HeroClimateStory({ zones }: { zones: Zone[] }) {
               />
             </h2>
           </div>
-          <ChartLineUp
+          <ChartLine
             size={21}
             className="mt-1 shrink-0 text-(--hero-link)"
             aria-hidden
@@ -216,7 +216,7 @@ export default function HeroClimateStory({ zones }: { zones: Zone[] }) {
 
         <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-(--hero-link)">
           <span className="inline-flex items-center gap-1">
-            <DownloadSimple size={14} aria-hidden /> Download data
+            <Download size={14} aria-hidden /> Download data
           </span>
           <span className="inline-flex items-center gap-1">
             <Table size={14} aria-hidden /> Show as a table

@@ -1,24 +1,26 @@
 "use client";
 
 import {
-  Cactus,
-  CaretDown,
+  ChevronDown,
   CloudLightning,
   CloudRain,
   Minus,
+  Sprout,
   Thermometer,
-  ThermometerHot,
-  TrendDown,
-  TrendUp,
+  ThermometerSun,
+  TrendingDown,
+  TrendingUp,
   Umbrella,
-} from "@phosphor-icons/react";
+} from "lucide-react";
 import dynamic from "next/dynamic";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Numbers, Segmented, Stat, Sureness, TrendLegend } from "@/components/ui";
 import { MapLoading } from "@/components/map/MapLoading";
 import { MapSheet, type SheetSnap } from "@/components/map/MapSheet";
+import { Spinner } from "@/components/ui/motion-icons";
 import { ShareButton } from "@/components/ui/ShareButton";
+import { toast } from "@/components/ui/toast";
 import { bnNum } from "@/lib/bn";
 import { T, useT } from "@/lib/i18n";
 import { AGREEMENT_BN, DEFINITION_BN, PLACE_BN, unitBn, ZONE_BN } from "@/lib/names";
@@ -119,12 +121,12 @@ const WORDS: Record<VariableId, Words> = {
 };
 
 const VARIABLE_ICON: Record<VariableId, React.ReactNode> = {
-  temperature: <Thermometer size={16} />,
-  rainfall: <CloudRain size={16} />,
-  "hot-months": <ThermometerHot size={16} />,
-  "heavy-rain": <CloudLightning size={16} />,
-  "wettest-day": <Umbrella size={16} />,
-  "dry-spell": <Cactus size={16} />,
+  temperature: <Thermometer size={16} strokeWidth={1.75} aria-hidden />,
+  rainfall: <CloudRain size={16} strokeWidth={1.75} aria-hidden />,
+  "hot-months": <ThermometerSun size={16} strokeWidth={1.75} aria-hidden />,
+  "heavy-rain": <CloudLightning size={16} strokeWidth={1.75} aria-hidden />,
+  "wettest-day": <Umbrella size={16} strokeWidth={1.75} aria-hidden />,
+  "dry-spell": <Sprout size={16} strokeWidth={1.75} aria-hidden />,
 };
 
 // Small in-memory cache so switching back and forth doesn't refetch.
@@ -292,7 +294,7 @@ export default function TrendExplorer({
   const peekTrend = detail?.trend ?? null;
   const peekReal = peekTrend ? peekTrend.p < ALPHA : false;
   const peekUp = peekTrend ? peekTrend.slopePerDecade > 0 : false;
-  const PeekArrow = !peekReal ? Minus : peekUp ? TrendUp : TrendDown;
+  const PeekArrow = !peekReal ? Minus : peekUp ? TrendingUp : TrendingDown;
   const peekRate = peekTrend ? formatSigned(peekTrend.slopePerDecade, meta.decimals) : "";
   const peek = (
     <div className="min-w-0">
@@ -304,7 +306,7 @@ export default function TrendExplorer({
       </div>
       {peekTrend ? (
         <div className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-0.5">
-          <PeekArrow size={20} weight="bold" className={peekReal ? "text-accent" : "text-ink-3"} />
+          <PeekArrow size={20} className={peekReal ? "text-accent" : "text-ink-3"} />
           <span className="text-2xl font-semibold tabular-nums tracking-tight text-ink">
             <T en={`${peekRate} ${meta.unit}`} bn={`${bnNum(peekRate)} ${unitBn(meta.unit)}`} />
           </span>
@@ -338,7 +340,7 @@ export default function TrendExplorer({
           selectedCell={cell}
           onSelectCell={(lat, lon) => setSelection({ kind: "point", lat, lon })}
         />
-        <div className="absolute bottom-[calc(var(--sheet-peek,9rem)+0.75rem)] left-3 z-[500] w-[min(320px,calc(100%-6rem))] rounded-2xl bg-card p-3 shadow-soft sm:p-4 lg:bottom-10">
+        <div className="absolute bottom-[calc(var(--sheet-peek,9rem)+0.75rem)] left-3 z-[var(--z-map)] w-[min(320px,calc(100%-6rem))] rounded-2xl bg-card p-3 shadow-soft sm:p-4 lg:bottom-10">
           <div className="mb-2 text-sm font-medium text-ink">
             <T en={`Change every 10 years (${meta.unit})`} bn={`প্রতি ১০ বছরে পরিবর্তন (${unitBn(meta.unit)})`} />
           </div>
@@ -352,7 +354,7 @@ export default function TrendExplorer({
           />
         </div>
         {error && (
-          <div className="absolute inset-x-3 top-16 z-[500] rounded-xl bg-card px-4 py-3 text-sm text-ink shadow-soft">
+          <div className="absolute inset-x-3 top-16 z-[var(--z-map)] rounded-xl bg-card px-4 py-3 text-sm text-ink shadow-soft">
             <T en="Couldn't load the results. Please refresh the page." bn="ফলাফল লোড করা যায়নি। পাতাটি আবার লোড করুন।" />
           </div>
         )}
@@ -361,7 +363,7 @@ export default function TrendExplorer({
       <MapSheet
         id="trend-panel"
         label={t("Trend details", "প্রবণতার বিস্তারিত")}
-        className="lg:absolute lg:bottom-4 lg:right-4 lg:top-4 lg:z-[600] lg:w-[360px] lg:overflow-y-auto lg:rounded-2xl lg:border lg:border-line lg:bg-card lg:shadow-soft"
+        className="lg:absolute lg:bottom-4 lg:right-4 lg:top-4 lg:z-[var(--z-map-panel)] lg:w-[360px] lg:overflow-y-auto lg:rounded-2xl lg:border lg:border-line lg:bg-card lg:shadow-soft"
         bodyClassName="flex flex-col gap-4 p-4"
         peek={peek}
         snap={snap}
@@ -407,8 +409,11 @@ export default function TrendExplorer({
                         type="button"
                         role="radio"
                         aria-checked={variable === v}
-                        onClick={() => setVariable(v)}
-                        className={`flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm transition-all active:scale-[0.98] ${
+                        onClick={() => {
+                          setVariable(v);
+                          toast.info(t(`Showing ${WORDS[v].label.toLowerCase()}`, `${WORDS_BN[v].label} দেখানো হচ্ছে`));
+                        }}
+                        className={`flex h-8 items-center gap-1.5 rounded-full border px-3 text-sm transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${
                           variable === v ? "border-accent bg-accent-soft font-medium text-ink" : "border-line text-ink-2 hover:text-ink"
                         }`}
                       >
@@ -467,7 +472,7 @@ export default function TrendExplorer({
                   </option>
                 ))}
               </select>
-              <CaretDown size={16} className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 text-ink-3" />
+              <ChevronDown size={16} className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 text-ink-3" />
             </label>
             <p className="mt-1.5 text-xs text-ink-3">
               <T en="Or click any square on the map." bn="অথবা মানচিত্রের যেকোনো বর্গে ক্লিক করুন।" />
@@ -541,7 +546,7 @@ function Answer({
   const total = trend ? (trend.slopePerDecade * (last - first)) / 10 : 0;
   // "% of the usual amount" only makes sense for amounts like rain, not for counts of extreme events.
   const pct = trend && !meta.anomaly && meta.kind !== "extreme" && detail.mean ? (trend.slopePerDecade / detail.mean) * 100 : null;
-  const Arrow = !real ? Minus : upward ? TrendUp : TrendDown;
+  const Arrow = !real ? Minus : upward ? TrendingUp : TrendingDown;
 
   return (
     <section id="trend-answer" className="scroll-mt-4 space-y-4" aria-live="polite">
@@ -562,7 +567,7 @@ function Answer({
       {trend && (
         <div className="rounded-2xl bg-sunken p-4">
           <div className="flex items-center gap-2 text-base font-semibold text-ink">
-            <Arrow size={22} weight="bold" className={real ? "text-accent" : "text-ink-3"} />
+            <Arrow size={22} className={real ? "text-accent" : "text-ink-3"} />
             {real ? (
               <T en={upward ? words.up : words.down} bn={upward ? wordsBn.up : wordsBn.down} />
             ) : (
@@ -638,7 +643,14 @@ function Answer({
           title={`${detail.titleEn} ${words.label.toLowerCase()} ${seasonLabel.toLowerCase()}`}
         />
       ) : (
-        trend && <div className="h-56 animate-pulse rounded-xl bg-sunken" aria-label={t("Loading chart", "চার্ট লোড হচ্ছে")} />
+        trend && (
+          <div role="status" className="grid h-56 place-items-center rounded-xl bg-sunken">
+            <span className="flex items-center gap-2 text-sm text-ink-2">
+              <Spinner size="sm" className="text-accent" />
+              {t("Loading chart", "চার্ট লোড হচ্ছে")}
+            </span>
+          </div>
+        )
       )}
 
       {trend && (

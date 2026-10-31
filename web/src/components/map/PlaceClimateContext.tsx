@@ -1,6 +1,11 @@
 "use client";
 
-import { ArrowDownRight, ArrowUpRight, Info, Minus } from "@phosphor-icons/react";
+import {
+  ArrowDownRight,
+  ArrowUpRight,
+  Info,
+  Minus,
+} from "lucide-react";
 import { useT } from "@/lib/i18n";
 import type { MapPlace, PlaceSignal } from "@/lib/mapPlaces";
 import type { LayerDef } from "@/lib/layers";

@@ -1,7 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Noto_Sans_Bengali } from "next/font/google";
 import Link from "next/link";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { TourBar } from "@/components/site/Tour";
+import { ToasterHost } from "@/components/ui/ToasterHost";
 import { Logo, SiteNav } from "@/components/site/SiteNav";
 import { countriesFrom } from "@/lib/countries";
 import { readFile } from "node:fs/promises";
@@ -71,12 +73,13 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
       <body className="flex min-h-full flex-col">
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[2000] focus:rounded-lg focus:bg-accent-strong focus:px-4 focus:py-2 focus:text-accent-ink"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[var(--z-toast)] focus:rounded-lg focus:bg-accent-strong focus:px-4 focus:py-2 focus:text-accent-ink"
         >
           <T en="Skip to content" bn="মূল অংশে যান" />
         </a>
         <SiteNav countries={countries} />
         <TourBar />
+        <ToasterHost />
         <main id="main" className="flex flex-1 flex-col">
           {children}
         </main>
@@ -105,7 +108,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
                   className="site-footer-cta mt-7 inline-flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold transition-colors"
                 >
                   <T en="Explore the map" bn="মানচিত্র দেখুন" />
-                  <span aria-hidden>→</span>
+                  <ArrowRight size={16} strokeWidth={2} aria-hidden />
                 </Link>
               </div>
 
@@ -147,7 +150,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
                   className="site-footer-link inline-flex items-center gap-1.5 text-sm"
                 >
                   <T en="GitHub" bn="গিটহাব" />
-                  <span aria-hidden>↗</span>
+                  <ArrowUpRight size={14} strokeWidth={2} aria-hidden />
                 </a>
               </FooterColumn>
             </div>

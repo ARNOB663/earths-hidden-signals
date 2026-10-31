@@ -1,17 +1,17 @@
 import {
   ArrowRight,
   BookOpen,
-  ChartLineUp,
+  ChartLine,
+  CircleAlert,
   CloudRain,
-  Flask,
+  FlaskConical,
+  Globe,
+  Map,
   MapPin,
-  MapTrifold,
-  Planet,
   Thermometer,
-  Warning,
-  WarningCircle,
-} from "@phosphor-icons/react/ssr";
-import type { Icon } from "@phosphor-icons/react";
+  TriangleAlert,
+  type LucideIcon,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Sparkline } from "@/components/findings/parts";
@@ -40,7 +40,7 @@ import { formatSigned, type Zone } from "@/lib/trends";
 
 interface Tool {
   href: string;
-  Icon: Icon;
+  Icon: LucideIcon;
   question: [string, string];
   title: [string, string];
   text: [string, string];
@@ -51,7 +51,7 @@ interface Tool {
 const TOOLS: Tool[] = [
   {
     href: "/explore",
-    Icon: MapTrifold,
+    Icon: Map,
     question: ["What does space see?", "মহাকাশ থেকে কী দেখা যায়?"],
     title: ["Satellite map", "স্যাটেলাইট মানচিত্র"],
     text: [
@@ -75,7 +75,7 @@ const TOOLS: Tool[] = [
   },
   {
     href: "/trends",
-    Icon: ChartLineUp,
+    Icon: ChartLine,
     question: ["Is it really changing here?", "এখানে কি সত্যিই বদলাচ্ছে?"],
     title: ["Climate trends", "জলবায়ুর প্রবণতা"],
     text: [
@@ -95,7 +95,7 @@ const TOOLS: Tool[] = [
   },
   {
     href: "/hazards",
-    Icon: Warning,
+    Icon: TriangleAlert,
     question: ["Should we get ready?", "প্রস্তুতি কি দরকার?"],
     title: ["Disaster risk", "দুর্যোগের ঝুঁকি"],
     text: [
@@ -229,7 +229,7 @@ export default async function Home() {
           {/* ── Left: text ── */}
           <div className="relative z-10 max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent-soft px-4 py-1.5 text-sm font-medium text-accent">
-              <Planet size={14} weight="fill" aria-hidden />
+              <Globe size={14} aria-hidden />
               NASA Space Apps Challenge 2026
             </div>
 
@@ -253,20 +253,20 @@ export default async function Home() {
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <Link
                 href="/explore"
-                className="inline-flex items-center gap-2 rounded-full bg-accent-strong px-6 py-3.5 font-medium text-accent-ink transition-all hover:bg-accent-hover active:scale-[0.98]"
+                className="inline-flex min-h-12 items-center gap-2 rounded-full bg-accent-strong px-6 font-medium text-accent-ink transition-colors duration-150 hover:bg-accent-hover"
                 style={{
                   boxShadow:
                     "0 4px 18px color-mix(in srgb, var(--accent) 38%, transparent)",
                 }}
               >
-                <MapTrifold size={18} weight="duotone" aria-hidden />
+                <Map size={18} aria-hidden />
                 <T en="Explore the map" bn="মানচিত্র দেখুন" />
               </Link>
               <Link
                 href="/findings"
-                className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/15 px-6 py-3.5 font-medium text-white backdrop-blur-sm transition-all hover:bg-white/22 active:scale-[0.98]"
+                className="inline-flex min-h-12 items-center gap-2 rounded-full border border-white/25 bg-white/15 px-6 font-medium text-white backdrop-blur-sm transition-colors duration-150 hover:bg-white/22"
               >
-                <BookOpen size={18} weight="duotone" aria-hidden />
+                <BookOpen size={18} aria-hidden />
                 <T en="Discover the story" bn="মূল গল্প পড়ুন" />
               </Link>
             </div>
@@ -333,7 +333,6 @@ export default async function Home() {
               <div className="flex items-center gap-2 text-sm text-ink-3">
                 <Thermometer
                   size={15}
-                  weight="fill"
                   style={{ color: "var(--warm-3)" }}
                   aria-hidden
                 />
@@ -370,7 +369,6 @@ export default async function Home() {
               <div className="flex items-center gap-2 text-sm text-ink-3">
                 <CloudRain
                   size={15}
-                  weight="fill"
                   style={{ color: "var(--cool-3)" }}
                   aria-hidden
                 />
@@ -486,7 +484,7 @@ export default async function Home() {
                 />
               }
               icon={
-                <WarningCircle size={18} className="text-watch" aria-hidden />
+                <CircleAlert size={18} className="text-watch" aria-hidden />
               }
             />
           </div>
@@ -506,7 +504,7 @@ export default async function Home() {
           <ol className="mt-10 grid gap-8 md:grid-cols-3">
             {[
               {
-                Icon: Planet,
+                Icon: Globe,
                 title: <T en="Satellites measure" bn="স্যাটেলাইট মাপে" />,
                 text: (
                   <T
@@ -516,7 +514,7 @@ export default async function Home() {
                 ),
               },
               {
-                Icon: ChartLineUp,
+                Icon: ChartLine,
                 title: (
                   <T
                     en="We check what is real"
@@ -531,7 +529,7 @@ export default async function Home() {
                 ),
               },
               {
-                Icon: Warning,
+                Icon: TriangleAlert,
                 title: (
                   <T
                     en="We link it to disasters"
@@ -548,7 +546,7 @@ export default async function Home() {
             ].map(({ Icon, title, text }, i) => (
               <li key={i} className="flex gap-5">
                 <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-accent-soft text-accent">
-                  <Icon size={22} weight="duotone" aria-hidden />
+                  <Icon size={22} aria-hidden />
                 </span>
                 <div>
                   <div className="text-xs font-medium text-ink-3">
@@ -565,7 +563,7 @@ export default async function Home() {
               href="/methods"
               className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:underline"
             >
-              <Flask size={15} weight="duotone" aria-hidden />
+              <FlaskConical size={15} aria-hidden />
               <T en="Read the full methodology" bn="পুরো পদ্ধতি পড়ুন" />
               <ArrowRight size={14} aria-hidden />
             </Link>
@@ -644,10 +642,10 @@ export default async function Home() {
           <div className="mt-5 grid gap-4 sm:grid-cols-2">
             <Link
               href="/findings"
-              className="group flex items-center gap-4 rounded-3xl bg-card p-5 shadow-soft transition-transform hover:-translate-y-0.5"
+              className="group flex items-center gap-4 rounded-2xl bg-card p-5 shadow-soft transition-transform hover:-translate-y-0.5"
             >
               <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-accent-soft text-accent">
-                <BookOpen size={22} weight="duotone" aria-hidden />
+                <BookOpen size={22} aria-hidden />
               </span>
               <span className="min-w-0 flex-1">
                 <span className="block font-semibold text-ink">
@@ -668,10 +666,10 @@ export default async function Home() {
             </Link>
             <Link
               href="/methods"
-              className="group flex items-center gap-4 rounded-3xl bg-card p-5 shadow-soft transition-transform hover:-translate-y-0.5"
+              className="group flex items-center gap-4 rounded-2xl bg-card p-5 shadow-soft transition-transform hover:-translate-y-0.5"
             >
               <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-accent-soft text-accent">
-                <Flask size={22} weight="duotone" aria-hidden />
+                <FlaskConical size={22} aria-hidden />
               </span>
               <span className="min-w-0 flex-1">
                 <span className="block font-semibold text-ink">
@@ -711,7 +709,7 @@ function ToolCard({
   const { href, Icon, question, title, text, shot, tries } = tool;
   return (
     <article
-      className={`group/card flex flex-col rounded-2xl border border-line bg-card p-2 shadow-soft transition-all hover:-translate-y-0.5 ${className}`}
+      className={`group/card flex flex-col rounded-2xl border border-line bg-card p-2 shadow-soft transition-transform hover:-translate-y-0.5 ${className}`}
     >
       <Link
         href={href}
@@ -742,7 +740,7 @@ function ToolCard({
       </Link>
       <div className="flex flex-1 flex-col p-5 sm:p-6">
         <div className="flex items-center gap-2 text-sm font-medium text-accent">
-          <Icon size={18} weight="duotone" aria-hidden />
+          <Icon size={18} aria-hidden />
           <T en={question[0]} bn={question[1]} />
         </div>
         <h3 className="mt-2 text-xl font-semibold tracking-tight text-ink">
@@ -879,7 +877,7 @@ function CountryPreview({
     <div className="flex h-full flex-col justify-between p-5 sm:p-7">
       <div>
         <div className="flex items-center gap-2 text-sm text-ink-3">
-          <MapPin size={16} weight="fill" className="text-accent" aria-hidden />
+          <MapPin size={16} className="text-accent" aria-hidden />
           <T en="Country dashboard" bn="দেশের ড্যাশবোর্ড" />
         </div>
         <div className="mt-1 flex items-center gap-3">
@@ -943,7 +941,7 @@ function Fact({
   return (
     <Link
       href={href}
-      className="group flex flex-col rounded-2xl border border-line bg-card p-6 shadow-soft transition-all hover:-translate-y-0.5 sm:p-7"
+      className="group flex flex-col rounded-2xl border border-line bg-card p-6 shadow-soft transition-transform hover:-translate-y-0.5 sm:p-7"
     >
       <div className="flex items-center gap-2 text-sm font-medium text-ink-2">
         {icon}
@@ -953,8 +951,9 @@ function Fact({
         {value}
       </div>
       <p className="mt-3 flex-1 leading-relaxed text-ink-2">{note}</p>
-      <span className="mt-5 text-sm font-medium text-accent group-hover:underline">
-        <T en="Learn more →" bn="আরও জানুন →" />
+      <span className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-accent group-hover:underline">
+        <T en="Learn more" bn="আরও জানুন" />
+        <ArrowRight size={14} strokeWidth={2} className="transition-transform duration-150 group-hover:translate-x-0.5" aria-hidden />
       </span>
     </Link>
   );

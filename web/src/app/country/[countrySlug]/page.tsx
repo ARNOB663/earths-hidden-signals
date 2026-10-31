@@ -3,18 +3,15 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
   ArrowUpRight,
-  Drop,
-  Fire,
-  Hurricane,
-  Mountains,
-  Plant,
+  Droplets,
+  Sprout,
   Sun,
   Thermometer,
-  Waves,
-} from "@phosphor-icons/react/ssr";
+} from "lucide-react";
 import { CountryMapClient } from "@/components/country/CountryMapClient";
 import { CountryTrends } from "@/components/country/CountryTrends";
 import { ShareButton } from "@/components/ui/ShareButton";
+import { HAZARD_ICONS } from "@/components/ui/icons";
 import { Sureness } from "@/components/ui";
 import { bnNum } from "@/lib/bn";
 import {
@@ -66,7 +63,6 @@ const TREND_LAYER_KEYS = [
   { key: "dry-spell_annual", variable: "dry-spell", label: "Monsoon dry spells", labelBn: "বর্ষার খরা" },
 ] as const;
 
-const HAZARD_ICON = { flood: Waves, cyclone: Hurricane, landslide: Mountains, wildfire: Fire } as const;
 
 export default async function CountryPage({ params }: PageProps<"/country/[countrySlug]">) {
   const country = countryBySlug(await allCountries(), (await params).countrySlug);
@@ -206,7 +202,7 @@ export default async function CountryPage({ params }: PageProps<"/country/[count
             }
           />
           <UnsupportedRisk
-            icon={<Plant size={18} />}
+            icon={<Sprout size={18} />}
             title={<T en="Droughts" bn="খরা" />}
             detail={
               <T
@@ -364,7 +360,7 @@ function IndicatorCard({
   anomaly?: boolean;
   icon: "temperature" | "rain";
 }) {
-  const Icon = icon === "temperature" ? Thermometer : Drop;
+  const Icon = icon === "temperature" ? Thermometer : Droplets;
   if (!signal?.trend) {
     return (
       <div className="rounded-2xl border border-line bg-card p-5">
@@ -400,7 +396,7 @@ function IndicatorCard({
 }
 
 function HazardCard({ hazard }: { hazard: CountryHazard }) {
-  const Icon = HAZARD_ICON[hazard.id];
+  const Icon = HAZARD_ICONS[hazard.id];
   const meta = HAZARD_META[hazard.id];
   const bn = HAZARD_BN[hazard.id];
   const e = hazard.events;
