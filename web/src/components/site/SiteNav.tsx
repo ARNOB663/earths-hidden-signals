@@ -1,14 +1,16 @@
 "use client";
 
 import {
-  BookOpen,
+  Activity,
   ChartLine,
   FlaskConical,
   House,
+  MapPin,
   Menu,
   Monitor,
   Moon,
   Satellite,
+  ShieldCheck,
   Sun,
   TriangleAlert,
   X,
@@ -29,15 +31,19 @@ import {
 // Each tab keeps a short label for the tab bar and a full one for phones and screen readers.
 export const TABS = [
   { href: "/", label: "Home", short: "Home", bn: "হোম", shortBn: "হোম", Icon: House },
-  { href: "/findings", label: "The story", short: "Story", bn: "মূল গল্প", shortBn: "গল্প", Icon: BookOpen },
-  { href: "/explore", label: "Satellite map", short: "Map", bn: "স্যাটেলাইট মানচিত্র", shortBn: "মানচিত্র", Icon: Satellite },
+  { href: "/monitoring", label: "Monitoring", short: "Monitor", bn: "পর্যবেক্ষণ", shortBn: "পর্যবেক্ষণ", Icon: Activity },
+  { href: "/locations", label: "Locations", short: "Places", bn: "স্থান", shortBn: "স্থান", Icon: MapPin, also: ["/location/"] },
+  { href: "/hazards", label: "Hazard intelligence", short: "Hazards", bn: "দুর্যোগ বিশ্লেষণ", shortBn: "দুর্যোগ", Icon: TriangleAlert },
   { href: "/trends", label: "Climate trends", short: "Trends", bn: "জলবায়ুর প্রবণতা", shortBn: "প্রবণতা", Icon: ChartLine },
-  { href: "/hazards", label: "Disaster risk", short: "Risk", bn: "দুর্যোগের ঝুঁকি", shortBn: "ঝুঁকি", Icon: TriangleAlert },
-  { href: "/methods", label: "How it works", short: "Methods", bn: "কীভাবে কাজ করে", shortBn: "পদ্ধতি", Icon: FlaskConical },
+  { href: "/explore", label: "Satellite map", short: "Map", bn: "স্যাটেলাইট মানচিত্র", shortBn: "মানচিত্র", Icon: Satellite },
+  { href: "/countries", label: "Resilience: country dashboards", short: "Resilience", bn: "সহনশীলতা: দেশের ড্যাশবোর্ড", shortBn: "সহনশীলতা", Icon: ShieldCheck, also: ["/country/"] },
+  { href: "/methods", label: "Methodology", short: "Methods", bn: "পদ্ধতি", shortBn: "পদ্ধতি", Icon: FlaskConical },
 ];
 
-const isActive = (pathname: string, href: string) =>
-  href === "/" ? pathname === "/" : pathname.startsWith(href);
+const isActive = (pathname: string, tab: (typeof TABS)[number]) =>
+  tab.href === "/"
+    ? pathname === "/"
+    : pathname.startsWith(tab.href) || ("also" in tab && (tab.also ?? []).some((p) => pathname.startsWith(p)));
 
 export function SiteNav({ countries }: { countries: Pick<Country, "slug" | "name" | "nameBn" | "flag">[] }) {
   const pathname = usePathname();
@@ -104,7 +110,7 @@ export function SiteNav({ countries }: { countries: Pick<Country, "slug" | "name
           className="ml-2 hidden min-w-0 items-center gap-1 lg:flex"
         >
           {TABS.map((tab) => {
-            const active = isActive(pathname, tab.href);
+            const active = isActive(pathname, tab);
             return (
               <Link
                 key={tab.href}
@@ -155,7 +161,7 @@ export function SiteNav({ countries }: { countries: Pick<Country, "slug" | "name
           className="border-t border-line bg-page px-4 pb-4 pt-2 lg:hidden"
         >
           {TABS.map((tab) => {
-            const active = isActive(pathname, tab.href);
+            const active = isActive(pathname, tab);
             return (
               <Link
                 key={tab.href}

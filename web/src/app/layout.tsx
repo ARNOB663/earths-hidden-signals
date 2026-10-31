@@ -113,6 +113,8 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
               </div>
 
               <FooterColumn title="Explore" titleBn="অনুসন্ধান">
+                <FooterLink href="/monitoring" en="Monitoring" bn="পর্যবেক্ষণ" />
+                <FooterLink href="/locations" en="Locations" bn="স্থান" />
                 <FooterLink
                   href="/explore"
                   en="Satellite map"
@@ -142,7 +144,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
                   en="How it works"
                   bn="কীভাবে কাজ করে"
                 />
-                <FooterLink href="/methods" en="Data sources" bn="তথ্যের উৎস" />
+                <FooterLink href="/methods#intelligence" en="Classes, alerts and evaluation" bn="শ্রেণি, সতর্কতা ও মূল্যায়ন" />
                 <a
                   href="https://github.com/ARNOB663/earths-hidden-signals"
                   target="_blank"

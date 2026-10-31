@@ -431,6 +431,23 @@ function ZoneAnswer({ zone, manifest }: { zone: HazardZone; manifest: Manifest }
             <DriverRow key={d.key} driver={d} zone={zone} manifest={manifest} />
           ))}
         </div>
+        <div className="mt-2 flex flex-wrap gap-x-4">
+          {zone.hazard !== "cyclone" && (
+            // Sea basins are not assessed locations; land regions have a /location report.
+            <Link
+              href={`/location/${zone.id}`}
+              className="inline-flex min-h-10 items-center gap-1 text-sm font-medium text-accent hover:underline"
+            >
+              <T en="Latest screening for this region" bn="এই অঞ্চলের সর্বশেষ স্ক্রিনিং" /> <ArrowRight size={14} />
+            </Link>
+          )}
+          <Link
+            href={`/locations?hazard=${zone.hazard}`}
+            className="inline-flex min-h-10 items-center gap-1 text-sm font-medium text-accent hover:underline"
+          >
+            <T en="All locations exposed to this hazard" bn="এই দুর্যোগের ঝুঁকিতে থাকা সব স্থান" /> <ArrowRight size={14} />
+          </Link>
+        </div>
       </div>
 
       {/* 4. Who this helps */}

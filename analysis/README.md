@@ -10,6 +10,8 @@ python build_hazards.py  # floods, landslides, wildfires
 python cyclones.py       # cyclones (adds to the hazard results)
 python crosscheck.py     # repeats the key trends with CRU TS, an independent record
 python latest.py         # the latest month compared with normal (home page)
+python intelligence.py   # conclusions, alerts, confidence and history for every location (offline)
+python evaluate.py       # backtest and evaluation metrics (add --check to fail on a regression)
 ```
 
 ## Data
@@ -89,3 +91,45 @@ NDVI imagery. The map labels the annual dataset and observation year explicitly,
 and does not extrapolate beyond the research record. Greenness and country
 forest-loss statistics are unavailable; selecting a country hides the viewport
 forest totals so they cannot be mistaken for a country total.
+
+## Climate hazard intelligence (`intelligence.py`, `evaluate.py`, `intel/`)
+
+Runs after the steps above and needs no network: it reads the committed outputs in
+`web/public/data/` and writes `web/public/data/intelligence/`:
+
+| File | Contents |
+|---|---|
+| `current.json` | Every indicator for every country, region and the study area: value, 1991–2020 baseline, percentile, rank, z (supplementary), class, duration, freshness, coverage, confidence and input hashes; plus the composite rainfall assessments |
+| `locations.json` | 69 locations (6 countries, 8 regions, the study area, 54 cities) with geography, conclusion (seven questions, English and Bangla), hazard screening, four confidences and validation verdicts |
+| `index.json` | Compact list for search and filters |
+| `alerts.json` | Internal screening alerts (`computed` for the latest period, `reconstructed` historical replay) and official GDACS records, kept separate |
+| `history.json` | Real pipeline runs, and a per-year replay using only the data available at the time |
+| `sources.json` | Dataset versions, freshness (age, usual delay, stale), source lineage and input hashes |
+| `thresholds.json` | Every threshold, published from `intel/thresholds.py` for the /methods page |
+| `evaluation.json` | Six evaluation metrics and the per-region backtest (from `evaluate.py`) |
+
+Modules (`intel/` is a package so nothing shadows the standard `calendar` module):
+
+- `thresholds.py` — the only place a cut-off is defined (`class-v1`, `composite-v1`, `alert-v1`, `confidence-v1`).
+- `periods.py` — seasons and months, day counts, the 30-year 1991–2020 baseline (24-year 1997–2020 for daily data).
+- `anomalies.py` — percentile-primary classifier (mid-rank plotting position); z is supplementary.
+- `composite.py` — rainfall composite anchored on the period total; daily components corroborate or conflict.
+- `confidence.py` — four separate grades (observation, anomaly, hazard, validation) with reasons.
+- `validation.py` — verdicts with an explicit independence tag; GISTEMP/CRU are "same input family", GPCP monthly/1DD a "consistency check".
+- `alerts.py` — screening rules and alert lifecycle (no duplicates, supersede, expire).
+- `geography.py` — locations, the city fallback chain (region → country → study area), coverage and resolution.
+- `conclude.py` — the seven-question conclusion in English and Bangla.
+- `evaluation.py` — no-leakage backtest and metrics.
+- `names.py` — reads the city list and Bangla names from `web/src/lib/places.ts` and `names.ts`.
+
+`python intelligence.py --reproduce` re-runs with the committed assessment date; CI requires the output to be
+byte-identical. `python intelligence.py --refresh` first runs `monthly.py`, which downloads monthly GISTEMP and GPCP
+fields (network needed), writes `intelligence/inputs/monthly.json`, and adds monthly indicators to every report.
+Without it the engine assesses the latest complete seasons and year and says so.
+
+Evaluation result to keep in mind: seasonal screening rarely flags the years with the most recorded events (pooled
+missed-event rate above 90%), so it is a screening summary, not an early warning. `evaluation_baseline.json` holds the
+committed false-alarm rates; `python evaluate.py --check` fails if one rises by more than 2 percentage points.
+
+Tests: `python -m pytest -q` also runs `tests/` (calendar, classifier, composite, confidence, alert rules,
+conclusions, evaluation, locations, monthly aggregation) on synthetic fixtures in `tests/fixtures/`.

@@ -9,6 +9,8 @@ import {
   Thermometer,
 } from "lucide-react";
 import { CountryMapClient } from "@/components/country/CountryMapClient";
+import { IntelligenceStrip } from "@/components/intelligence/IntelligenceStrip";
+import { readAlerts, readLocation } from "@/lib/intelligence/data";
 import { CountryTrends } from "@/components/country/CountryTrends";
 import { ShareButton } from "@/components/ui/ShareButton";
 import { HAZARD_ICONS } from "@/components/ui/icons";
@@ -68,7 +70,9 @@ export default async function CountryPage({ params }: PageProps<"/country/[count
   const country = countryBySlug(await allCountries(), (await params).countrySlug);
   if (!country) notFound();
 
-  const [report, manifest, catalog, hazardZones, slides, floods, fires] = await Promise.all([
+  const [screening, alertData, report, manifest, catalog, hazardZones, slides, floods, fires] = await Promise.all([
+    readLocation(country.slug),
+    readAlerts(),
     buildCountryReport(country),
     readManifest(),
     getGibsCatalog(),
@@ -158,6 +162,13 @@ export default async function CountryPage({ params }: PageProps<"/country/[count
           />
         </div>
       </header>
+
+      {/* Latest screening: conclusion, status and alerts from the intelligence pipeline */}
+      {screening && (
+        <div className="mt-8">
+          <IntelligenceStrip loc={screening} alerts={alertData.computed} asOf={alertData.asOf} />
+        </div>
+      )}
 
       {/* B. Interactive map */}
       <Section id="map" label={<T en="Explore the map" bn="মানচিত্র ঘুরে দেখুন" />} title={<T en="Country map and satellite layers" bn="দেশের মানচিত্র ও স্যাটেলাইট স্তর" />}>

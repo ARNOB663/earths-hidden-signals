@@ -3,6 +3,8 @@ import Link from "next/link";
 import { CITATION } from "@/lib/download";
 import { readCrosscheck, readManifest, readTrendZones } from "@/lib/data";
 import { T } from "@/lib/i18n";
+import { MethodsIntelligence } from "@/components/intelligence/MethodsIntelligence";
+import { readEvaluation, readSources, readThresholds } from "@/lib/intelligence/data";
 import {
   agreement,
   formatSigned,
@@ -110,10 +112,13 @@ function Cite({ keys }: { keys: string[] }) {
 }
 
 export default async function MethodsPage() {
-  const [manifest, crosscheck, trendZones] = await Promise.all([
+  const [manifest, crosscheck, trendZones, thresholds, sources, evaluation] = await Promise.all([
     readManifest(),
     readCrosscheck(),
     readTrendZones(),
+    readThresholds(),
+    readSources(),
+    readEvaluation(),
   ]);
   const [first, last] = [
     manifest.years[0],
@@ -486,7 +491,11 @@ export default async function MethodsPage() {
           </p>
         </Section>
 
-        <Section id="limitations" n="7" title="Limitations">
+        <Section id="intelligence" n="7" title="Climate hazard intelligence">
+          <MethodsIntelligence thresholds={thresholds} sources={sources} evaluation={evaluation} />
+        </Section>
+
+        <Section id="limitations" n="8" title="Limitations">
           <ol className="list-decimal space-y-2 pl-5 marker:text-ink-3">
             <li>
               Grid resolution is coarse (2°–2.5°, roughly 200–280 km), so local
@@ -517,7 +526,7 @@ export default async function MethodsPage() {
           </ol>
         </Section>
 
-        <Section id="reproducibility" n="8" title="Reproducibility">
+        <Section id="reproducibility" n="9" title="Reproducibility">
           <p>
             All code and derived data are open source at{" "}
             <a href={REPO} className="break-words text-accent hover:underline">
@@ -533,7 +542,11 @@ export default async function MethodsPage() {
 pip install -r requirements.txt
 python build.py          # trends and zone summaries
 python build_hazards.py  # hazard counts and driver links
-python crosscheck.py     # CRU TS 4.10 replication`}</code>
+python cyclones.py       # cyclone tracks and basin sea warmth
+python crosscheck.py     # CRU TS 4.10 replication
+python latest.py         # latest month vs normal
+python intelligence.py   # conclusions, alerts, confidence, history
+python evaluate.py       # backtest and evaluation metrics`}</code>
           </pre>
           <p>
             Python tests cover the statistical procedures (

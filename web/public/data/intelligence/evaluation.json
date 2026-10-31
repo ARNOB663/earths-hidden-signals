@@ -1,0 +1,390 @@
+{
+ "schema": "evaluation-v1",
+ "eventDefinition": "An 'event year' is a year in the top quarter of the region's own event record (highEventYears in hazards/zones.json): GDACS floods, NASA Global Landslide Catalog, FIRMS MODIS fire detections or IBTrACS cyclones.",
+ "metrics": {
+  "anomalyDetectionAccuracy": {
+   "value": 82.3,
+   "unit": "% agreement",
+   "n": 1230,
+   "window": [
+    2011,
+    2020
+   ],
+   "definition": "For each cutoff year Y, the class computed with only baseline years before Y is compared with the class from the complete 1991–2020 (daily: 1997–2020) baseline. Years from 2021 are excluded because both baselines are then identical. Years before the baseline reached 20 values are not computable.",
+   "byClass": {
+    "above-normal:high": {
+     "agree": 103,
+     "n": 153,
+     "pct": 67.3
+    },
+    "below-normal:low": {
+     "agree": 68,
+     "n": 82,
+     "pct": 82.9
+    },
+    "extreme:high": {
+     "agree": 24,
+     "n": 24,
+     "pct": 100.0
+    },
+    "extreme:low": {
+     "agree": 4,
+     "n": 4,
+     "pct": 100.0
+    },
+    "normal": {
+     "agree": 733,
+     "n": 824,
+     "pct": 89.0
+    },
+    "unusually-high:high": {
+     "agree": 49,
+     "n": 105,
+     "pct": 46.7
+    },
+    "unusually-low:low": {
+     "agree": 31,
+     "n": 38,
+     "pct": 81.6
+    }
+   },
+   "byYear": {
+    "2011": {
+     "agree": 95,
+     "n": 105
+    },
+    "2012": {
+     "agree": 80,
+     "n": 105
+    },
+    "2013": {
+     "agree": 91,
+     "n": 105
+    },
+    "2014": {
+     "agree": 86,
+     "n": 105
+    },
+    "2015": {
+     "agree": 70,
+     "n": 105
+    },
+    "2016": {
+     "agree": 58,
+     "n": 105
+    },
+    "2017": {
+     "agree": 122,
+     "n": 150
+    },
+    "2018": {
+     "agree": 136,
+     "n": 150
+    },
+    "2019": {
+     "agree": 133,
+     "n": 150
+    },
+    "2020": {
+     "agree": 141,
+     "n": 150
+    }
+   }
+  },
+  "falseAlarmRate": {
+   "value": 0.8,
+   "byHazard": {
+    "flood": 1.0,
+    "landslide": null,
+    "wildfire": 0.75
+   },
+   "definition": "Flagged (watch or warning) seasons that were not event years, as a share of all flagged seasons, pooled over hazard regions. Same-season matching replaces the 30-day window because the inputs are seasonal.",
+   "reason": null
+  },
+  "missedEvents": {
+   "value": 0.958,
+   "definition": "Event years with no watch or warning in the same season, as a share of all event years, pooled over hazard regions.",
+   "reason": null
+  },
+  "leadTime": {
+   "value": null,
+   "reason": "Not computable: seasonal screening is only possible after the season has ended and been published, so it cannot precede an event inside that season. Lead time needs daily or monthly inputs (intelligence.py --refresh)."
+  },
+  "confidenceCalibration": {
+   "definition": "Share of real-time anomaly assessments, per anomaly-confidence grade, whose class matched the full-record class.",
+   "byGrade": {
+    "low": {
+     "agree": 231,
+     "n": 393,
+     "pct": 58.8
+    },
+    "moderate": {
+     "agree": 781,
+     "n": 837,
+     "pct": 93.3
+    }
+   },
+   "value": {
+    "low": 58.8,
+    "moderate": 93.3
+   },
+   "monotonic": true
+  },
+  "geographicCoverage": {
+   "value": {
+    "temperature_annual": {
+     "landCells": 234,
+     "usableCells": 234,
+     "pct": 100.0
+    },
+    "temperature_pre-monsoon": {
+     "landCells": 234,
+     "usableCells": 234,
+     "pct": 100.0
+    },
+    "temperature_monsoon": {
+     "landCells": 234,
+     "usableCells": 234,
+     "pct": 100.0
+    },
+    "rainfall_annual": {
+     "landCells": 146,
+     "usableCells": 146,
+     "pct": 100.0
+    },
+    "rainfall_pre-monsoon": {
+     "landCells": 146,
+     "usableCells": 146,
+     "pct": 100.0
+    },
+    "rainfall_monsoon": {
+     "landCells": 146,
+     "usableCells": 146,
+     "pct": 100.0
+    },
+    "hot-months_annual": {
+     "landCells": 234,
+     "usableCells": 234,
+     "pct": 100.0
+    },
+    "heavy-rain_annual": {
+     "landCells": 955,
+     "usableCells": 955,
+     "pct": 100.0
+    },
+    "dry-spell_annual": {
+     "landCells": 955,
+     "usableCells": 955,
+     "pct": 100.0
+    },
+    "wettest-day_annual": {
+     "landCells": 955,
+     "usableCells": 955,
+     "pct": 100.0
+    }
+   },
+   "definition": "Share of study-area land cells with at least 20 baseline values and a value in the latest year, per variable and season."
+  }
+ },
+ "backtest": {
+  "bengal-delta": {
+   "regionId": "bengal-delta",
+   "hazard": "flood",
+   "eventSource": "GDACS flood alerts (UN/EU), all months",
+   "available": true,
+   "window": [
+    2011,
+    2025
+   ],
+   "years": 15,
+   "hits": 0,
+   "misses": 5,
+   "falseAlarms": 0,
+   "correctNegatives": 10,
+   "falseAlarmRate": null,
+   "falseAlarmRateReason": "No year in the window was flagged (watch or warning).",
+   "missedEventRate": 1.0,
+   "missedEventRateReason": null,
+   "linkRequirementApplied": null
+  },
+  "indus-plain": {
+   "regionId": "indus-plain",
+   "hazard": "flood",
+   "eventSource": "GDACS flood alerts (UN/EU), all months",
+   "available": true,
+   "window": [
+    2011,
+    2025
+   ],
+   "years": 15,
+   "hits": 0,
+   "misses": 3,
+   "falseAlarms": 1,
+   "correctNegatives": 11,
+   "falseAlarmRate": 1.0,
+   "falseAlarmRateReason": null,
+   "missedEventRate": 1.0,
+   "missedEventRateReason": null,
+   "linkRequirementApplied": null
+  },
+  "central-himalaya": {
+   "regionId": "central-himalaya",
+   "hazard": "landslide",
+   "eventSource": "NASA Global Landslide Catalog (news reports), Jun–Sep",
+   "available": true,
+   "window": [
+    2011,
+    2017
+   ],
+   "years": 7,
+   "hits": 0,
+   "misses": 2,
+   "falseAlarms": 0,
+   "correctNegatives": 5,
+   "falseAlarmRate": null,
+   "falseAlarmRateReason": "No year in the window was flagged (watch or warning).",
+   "missedEventRate": 1.0,
+   "missedEventRateReason": null,
+   "linkRequirementApplied": null
+  },
+  "western-himalaya": {
+   "regionId": "western-himalaya",
+   "hazard": "landslide",
+   "eventSource": "NASA Global Landslide Catalog (news reports), Jun–Sep",
+   "available": true,
+   "window": [
+    2011,
+    2017
+   ],
+   "years": 7,
+   "hits": 0,
+   "misses": 2,
+   "falseAlarms": 0,
+   "correctNegatives": 5,
+   "falseAlarmRate": null,
+   "falseAlarmRateReason": "No year in the window was flagged (watch or warning).",
+   "missedEventRate": 1.0,
+   "missedEventRateReason": null,
+   "linkRequirementApplied": null
+  },
+  "western-ghats": {
+   "regionId": "western-ghats",
+   "hazard": "landslide",
+   "eventSource": "NASA Global Landslide Catalog (news reports), Jun–Sep",
+   "available": true,
+   "window": [
+    2011,
+    2017
+   ],
+   "years": 7,
+   "hits": 0,
+   "misses": 3,
+   "falseAlarms": 0,
+   "correctNegatives": 4,
+   "falseAlarmRate": null,
+   "falseAlarmRateReason": "No year in the window was flagged (watch or warning).",
+   "missedEventRate": 1.0,
+   "missedEventRateReason": null,
+   "linkRequirementApplied": null
+  },
+  "sri-lanka-hills": {
+   "regionId": "sri-lanka-hills",
+   "hazard": "landslide",
+   "eventSource": "NASA Global Landslide Catalog (news reports), Jun–Sep",
+   "available": true,
+   "window": [
+    2011,
+    2017
+   ],
+   "years": 7,
+   "hits": 0,
+   "misses": 3,
+   "falseAlarms": 0,
+   "correctNegatives": 4,
+   "falseAlarmRate": null,
+   "falseAlarmRateReason": "No year in the window was flagged (watch or warning).",
+   "missedEventRate": 1.0,
+   "missedEventRateReason": null,
+   "linkRequirementApplied": null
+  },
+  "central-india-forests": {
+   "regionId": "central-india-forests",
+   "hazard": "wildfire",
+   "eventSource": "NASA FIRMS MODIS (Terra + Aqua) vegetation fires, Mar–May",
+   "available": true,
+   "window": [
+    2011,
+    2024
+   ],
+   "years": 14,
+   "hits": 0,
+   "misses": 5,
+   "falseAlarms": 0,
+   "correctNegatives": 9,
+   "falseAlarmRate": null,
+   "falseAlarmRateReason": "No year in the window was flagged (watch or warning).",
+   "missedEventRate": 1.0,
+   "missedEventRateReason": null,
+   "linkRequirementApplied": false
+  },
+  "northeast-hills": {
+   "regionId": "northeast-hills",
+   "hazard": "wildfire",
+   "eventSource": "NASA FIRMS MODIS (Terra + Aqua) vegetation fires, Mar–May",
+   "available": true,
+   "window": [
+    2011,
+    2024
+   ],
+   "years": 14,
+   "hits": 1,
+   "misses": 0,
+   "falseAlarms": 3,
+   "correctNegatives": 10,
+   "falseAlarmRate": 0.75,
+   "falseAlarmRateReason": null,
+   "missedEventRate": 0.0,
+   "missedEventRateReason": null,
+   "linkRequirementApplied": false
+  },
+  "bay-of-bengal": {
+   "regionId": "bay-of-bengal",
+   "hazard": "cyclone",
+   "eventSource": "IBTrACS v04r01 (NOAA NCEI; IMD and JTWC tracks), storms of 34 knots or more",
+   "available": false,
+   "reason": "The basin sea-warmth series is not in the committed record (only its latest value); cyclones.py publishes it from the next run with network access."
+  },
+  "arabian-sea": {
+   "regionId": "arabian-sea",
+   "hazard": "cyclone",
+   "eventSource": "IBTrACS v04r01 (NOAA NCEI; IMD and JTWC tracks), storms of 34 knots or more",
+   "available": false,
+   "reason": "The basin sea-warmth series is not in the committed record (only its latest value); cyclones.py publishes it from the next run with network access."
+  }
+ },
+ "limitations": [
+  "Event records are uneven: news-based landslide reports under-count remote areas, GDACS coverage improved over time, and MODIS overpass times drifted after about 2020.",
+  "The wildfire backtest does not require a linked driver, because the link itself is estimated from the full record.",
+  "Hazard regions are approximate boxes; countries and cities are not backtested separately."
+ ],
+ "asOf": "2026-10-31",
+ "pipelineRunId": "9d0abcaa88587a79",
+ "thresholdsId": "class-v1",
+ "inputsHash": "3746ed87433d9bfb642adf2bd13ec957251abfdf3a30093bdd640c28982ec767",
+ "regressionGate": {
+  "baselineFile": "analysis/evaluation_baseline.json",
+  "tolerance": 0.02,
+  "baseline": {
+   "falseAlarmRate": {
+    "value": 0.8,
+    "byHazard": {
+     "flood": 1.0,
+     "landslide": null,
+     "wildfire": 0.75
+    }
+   },
+   "missedEvents": 0.958
+  },
+  "regressions": []
+ }
+}

@@ -1,0 +1,11 @@
+{
+ "falseAlarmRate": {
+  "value": 0.8,
+  "byHazard": {
+   "flood": 1.0,
+   "landslide": null,
+   "wildfire": 0.75
+  }
+ },
+ "missedEvents": 0.958
+}

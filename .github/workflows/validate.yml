@@ -1,0 +1,117 @@
+name: validate
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "17 3 * * 1" # weekly refresh, Mondays 03:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    if: github.event_name != 'schedule'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: analysis/requirements.txt
+
+      - name: Python tests
+        working-directory: analysis
+        run: |
+          pip install -r requirements.txt
+          python -m pytest -q
+
+      - name: Intelligence pipeline is deterministic (offline, from committed inputs)
+        working-directory: analysis
+        run: |
+          python intelligence.py --reproduce
+          python evaluate.py --check
+          git diff --exit-code -- ../web/public/data
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      - name: Web lint and build
+        working-directory: web
+        run: |
+          npm ci
+          npm run lint
+          npm run build
+
+  refresh:
+    # Weekly: re-download the public records, rebuild everything, and open a PR only if the
+    # evaluation does not regress and something changed.
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: analysis/requirements.txt
+
+      - name: Cache raw downloads
+        uses: actions/cache@v4
+        with:
+          path: analysis/raw
+          key: raw-${{ github.run_id }}
+          restore-keys: raw-
+
+      - name: Refresh pipeline
+        working-directory: analysis
+        run: |
+          pip install -r requirements.txt
+          python build.py
+          python build_hazards.py
+          python cyclones.py
+          python crosscheck.py
+          python latest.py
+          python intelligence.py --refresh
+          python evaluate.py --check
+
+      - name: Tests on refreshed data
+        working-directory: analysis
+        run: python -m pytest -q
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      - name: Site still builds
+        working-directory: web
+        run: |
+          npm ci
+          npm run build
+
+      - name: Open a pull request if the data changed
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: data/weekly-refresh
+          commit-message: "data: weekly refresh of climate records and intelligence outputs"
+          title: "Weekly data refresh"
+          body: |
+            Automated weekly refresh: downloads the public records, reruns the pipeline (build → hazards → cyclones → crosscheck → latest → intelligence --refresh → evaluate --check) and rebuilds the site.
+
+            The evaluation gate passed: no false-alarm rate rose above the committed baseline (analysis/evaluation_baseline.json).
+          add-paths: |
+            web/public/data/**

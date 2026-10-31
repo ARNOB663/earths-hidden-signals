@@ -21,6 +21,9 @@ import HeroImageSlideshow from "@/components/hero/HeroImageSlideshow";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { CountrySearch } from "@/components/site/CountrySearch";
+import { IntelligenceStrip } from "@/components/intelligence/IntelligenceStrip";
+import { LevelBadge } from "@/components/intelligence/parts";
+import { readAlerts, readIndex, readLocation } from "@/lib/intelligence/data";
 import { StartTourButton } from "@/components/site/Tour";
 import { bnMonth, bnNum } from "@/lib/bn";
 import {
@@ -139,6 +142,15 @@ export default async function Home() {
     JSON.parse(await readFile(path.join(process.cwd(), "public/data/maps/place-signals.json"), "utf-8")),
   );
   const bangladesh = countryBySlug(countries, "bangladesh")!;
+  const [studyScreening, intelAlerts, intelIndex] = await Promise.all([
+    readLocation("study-area"),
+    readAlerts(),
+    readIndex(),
+  ]);
+  const levelCounts = (["high", "elevated", "notable", "quiet"] as const).map((l) => ({
+    level: l,
+    n: intelIndex.filter((e) => e.kind !== "city" && e.level === l).length,
+  }));
   const [manifest, trendZones, hazardZones, latest, countryReport, rainfallGrid] =
     await Promise.all([
       readManifest(),
@@ -301,6 +313,44 @@ export default async function Home() {
 
       {/* ===== CONTENT ===== */}
       <div className="mx-auto w-full max-w-384 px-6 pb-24 sm:px-8 lg:px-12">
+        {/* ── Intelligence strip: the latest screening for the whole study area ── */}
+        {studyScreening && (
+          <section aria-labelledby="intelligence-hdg" className="mt-16 mb-8">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+              <T en="Climate hazard intelligence" bn="জলবায়ু দুর্যোগ বিশ্লেষণ" />
+            </p>
+            <h2 id="intelligence-hdg" className="mt-2 text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+              <T en="What the latest observations mean" bn="সর্বশেষ পর্যবেক্ষণের অর্থ" />
+            </h2>
+            <div className="mt-6 grid gap-5 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)]">
+              <IntelligenceStrip loc={studyScreening} alerts={intelAlerts.computed} asOf={intelAlerts.asOf} />
+              <div className="rounded-2xl border border-line bg-card p-5">
+                <p className="text-sm font-medium text-ink">
+                  <T en="Countries and research regions by screening level" bn="স্ক্রিনিং স্তর অনুযায়ী দেশ ও গবেষণা অঞ্চল" />
+                </p>
+                <ul className="mt-3 space-y-2">
+                  {levelCounts.map(({ level, n }) => (
+                    <li key={level} className="flex items-center justify-between gap-3">
+                      <Link href={`/locations?level=${level}`} className="hover:underline">
+                        <LevelBadge level={level} />
+                      </Link>
+                      <span className="tabular-nums text-ink">{n}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-4 flex flex-wrap gap-3 text-sm">
+                  <Link href="/monitoring" className="font-medium text-accent hover:underline">
+                    <T en="Monitoring" bn="পর্যবেক্ষণ" />
+                  </Link>
+                  <Link href="/locations" className="font-medium text-accent hover:underline">
+                    <T en="Find a location" bn="স্থান খুঁজুন" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
         <EvidenceStory
           zones={trendZones}
           rainfallGrid={rainfallGrid}

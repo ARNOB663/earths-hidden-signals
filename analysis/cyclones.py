@@ -157,6 +157,8 @@ def main() -> None:
                             "p": round(t_sst.p, 5),
                         },
                         "latest": {"year": YEARS[-1], "value": float(sst[-1]), "percentile": round(pct[-1])},
+                        # The yearly series, so intelligence/evaluate.py can backtest cyclone screening.
+                        "series": {"years": YEARS, "values": [round(float(v), 3) for v in sst]},
                         "highEventYearsPercentile": round(float(pct[high].mean())) if high.any() else None,
                     }
                 ],

@@ -5,3 +5,6 @@ Thumbs.db
 
 # partial downloads
 *.part
+
+# intelligence pipeline logs
+analysis/logs/

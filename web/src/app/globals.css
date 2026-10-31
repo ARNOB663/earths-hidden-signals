@@ -20,6 +20,9 @@
     --accent-soft: #e6effa;
     --watch: #8f5c00;
     --watch-soft: #fdf1d6;
+    /* Internal "high" screening level and warnings. Never used for official alerts. */
+    --alert: #b42318;
+    --alert-soft: #fdeceb;
     --good: #0b8a0b;
     --shadow: 30 28 24;
 
@@ -73,6 +76,8 @@
     --accent-soft: #1b2939;
     --watch: #fab219;
     --watch-soft: #33280f;
+    --alert: #ff7b70;
+    --alert-soft: #3b1714;
     --good: #3cc13c;
     --shadow: 0 0 0;
 
@@ -112,6 +117,8 @@
     --color-accent-soft: var(--accent-soft);
     --color-watch: var(--watch);
     --color-watch-soft: var(--watch-soft);
+    --color-alert: var(--alert);
+    --color-alert-soft: var(--alert-soft);
     --color-good: var(--good);
     --font-sans: var(--font-geist-sans), var(--font-bn);
     --font-mono: var(--font-geist-mono);
