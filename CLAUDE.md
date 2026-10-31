@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository. See `AGENTS.md` for the canonical, verified instruction file.
 
 ## Repository overview
 
@@ -97,7 +97,7 @@ Data responsibilities are split as follows:
 - `web/src/lib/data.ts` reads committed JSON on the server with Node file APIs and provides cached loaders.
 - `web/src/lib/placeReport.ts` assembles place reports server-side from trend and event data.
 - `web/src/lib/trends.ts`, `hazards.ts`, and `places.ts` hold domain types, metadata, and geographic helpers.
-- `web/src/lib/locale.ts` provides English/Bangla translations. `web/src/contexts/LanguageContext.tsx` exposes language state to client components.
+- `web/src/lib/i18n.tsx` (`<T>`), `web/src/lib/bn.ts`, and `web/src/lib/names.ts` provide English/Bangla translations and language state.
 - Large trend and hazard detail files are fetched by client components from `/data/...` when needed.
 - `web/src/lib/layers.ts` defines live NASA GIBS and Global Forest Watch map layers. These are separate from the precomputed analysis datasets.
 - `web/src/lib/gibs.ts` fetches NASA WMTS metadata server-side with one-day revalidation and fallback metadata.

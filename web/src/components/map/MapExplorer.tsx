@@ -9,6 +9,7 @@ import {
   Leaf,
   MapPin,
   Pause,
+  Plant,
   Play,
   SidebarSimple,
   Sun,
@@ -20,8 +21,8 @@ import {
 import dynamic from "next/dynamic";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
-import { bnMonth, bnNum } from "@/lib/bn";
-import { formatMonth, nearestDateIndex } from "@/lib/dates";
+import { bnDay, bnMonth, bnNum } from "@/lib/bn";
+import { formatDay, formatMonth, nearestDateIndex } from "@/lib/dates";
 import { T, useLang, useT } from "@/lib/i18n";
 import type { GibsCatalog } from "@/lib/gibs";
 import { LAYERS, type LayerDef } from "@/lib/layers";
@@ -48,6 +49,7 @@ const LAYER_ICON: Record<string, Icon> = {
   "lst-day": Sun,
   "air-temp": Thermometer,
   precip: Drop,
+  "soil-moisture": Plant,
   ndvi: Leaf,
   "forest-loss": TreeEvergreen,
 };
@@ -142,9 +144,21 @@ export default function MapExplorer({ catalog, placeData }: { catalog: GibsCatal
       setIdx(next);
       return true;
     }
-    const found = dates.indexOf(`${Number(date.slice(0, 4)) + direction}${date.slice(4)}`);
-    if (found < 0) return false;
-    setIdx(found);
+    // Prefer the same calendar day one year on. Daily records (SMAP) have gaps, so fall back to
+    // the nearest available date instead of stopping the animation.
+    const wanted = `${Number(date.slice(0, 4)) + direction}${date.slice(4)}`;
+    const found = dates.indexOf(wanted);
+    if (found >= 0) {
+      setIdx(found);
+      return true;
+    }
+    const target = Date.parse(wanted);
+    if (!Number.isFinite(target)) return false;
+    const limit = direction > 0 ? Date.parse(dates[dates.length - 1]) : Date.parse(dates[0]);
+    if ((direction > 0 && target > limit) || (direction < 0 && target < limit)) return false;
+    const nearest = nearestDateIndex(dates, wanted);
+    if (nearest < 0 || nearest === idx) return false;
+    setIdx(nearest);
     return true;
   };
 
@@ -189,7 +203,10 @@ export default function MapExplorer({ catalog, placeData }: { catalog: GibsCatal
 
   const lang = useLang();
   const t = useT();
-  const month = (d: string) => (lang === "bn" ? bnMonth(d) : formatMonth(d));
+  // Daily layers (SMAP soil moisture) need day-precision labels; monthly ones only need the month.
+  const isDaily = layer.kind === "gibs" && layer.period === "day";
+  const month = (d: string) =>
+    lang === "bn" ? (isDaily ? bnDay(d) : bnMonth(d)) : isDaily ? formatDay(d) : formatMonth(d);
   const year = (y: string | number) => (lang === "bn" ? bnNum(y) : String(y));
 
   // Phones: the layer, the month (with previous/next) and Play stay in the panel's summary,
@@ -219,11 +236,11 @@ export default function MapExplorer({ catalog, placeData }: { catalog: GibsCatal
       <div className="mt-2 flex items-center gap-2">
         {layer.kind === "gibs" && date ? (
           <>
-            <IconButton label={t("Previous month", "আগের মাস")} onClick={() => stepDate(-1, "month")}>
+            <IconButton label={isDaily ? t("Previous day", "আগের দিন") : t("Previous month", "আগের মাস")} onClick={() => stepDate(-1, "month")}>
               <CaretLeft size={18} />
             </IconButton>
             <div className="min-w-0 flex-1 text-center text-lg font-semibold tabular-nums text-ink">{month(date)}</div>
-            <IconButton label={t("Next month", "পরের মাস")} onClick={() => stepDate(1, "month")}>
+            <IconButton label={isDaily ? t("Next day", "পরের দিন") : t("Next month", "পরের মাস")} onClick={() => stepDate(1, "month")}>
               <CaretRight size={18} />
             </IconButton>
           </>
@@ -356,10 +373,11 @@ export default function MapExplorer({ catalog, placeData }: { catalog: GibsCatal
           <PlaceClimateContext place={contextPlace} layer={layer} date={date} />
           <div className="mt-4">
             <p className="mb-2 text-[11px] font-medium text-ink-3"><T en="Explore" bn="দেখুন" /></p>
-            <div className="grid grid-cols-4 gap-1.5">
+            <div className="grid grid-cols-3 gap-1.5 sm:grid-cols-5">
               {[
                 { id: "lst-day", category: "heat", label: "Heat", bn: "তাপ" },
                 { id: "precip", category: "water", label: "Rain", bn: "বৃষ্টি" },
+                { id: "soil-moisture", category: "soil", label: "Soil", bn: "মাটি" },
                 { id: "ndvi", category: "vegetation", label: "Green", bn: "সবুজ" },
                 { id: "forest-loss", category: "forest", label: "Forest", bn: "বন" },
               ].map(group => {
@@ -387,11 +405,11 @@ export default function MapExplorer({ catalog, placeData }: { catalog: GibsCatal
           {layer.kind === "gibs" && date ? (
             <div className="mt-3 space-y-3">
               <div className="flex items-center gap-2">
-                <IconButton label={t("Previous month", "আগের মাস")} onClick={() => stepDate(-1, "month")}>
+                <IconButton label={isDaily ? t("Previous day", "আগের দিন") : t("Previous month", "আগের মাস")} onClick={() => stepDate(-1, "month")}>
                   <CaretLeft size={18} />
                 </IconButton>
                 <div className="flex-1 text-center text-lg font-semibold tabular-nums text-ink">{month(date)}</div>
-                <IconButton label={t("Next month", "পরের মাস")} onClick={() => stepDate(1, "month")}>
+                <IconButton label={isDaily ? t("Next day", "পরের দিন") : t("Next month", "পরের মাস")} onClick={() => stepDate(1, "month")}>
                   <CaretRight size={18} />
                 </IconButton>
               </div>
@@ -401,7 +419,7 @@ export default function MapExplorer({ catalog, placeData }: { catalog: GibsCatal
                 max={dates.length - 1}
                 value={idx}
                 onChange={(e) => setIdx(Number(e.target.value))}
-                aria-label={t("Choose a month", "একটি মাস বেছে নিন")}
+                aria-label={isDaily ? t("Choose a day", "একটি দিন বেছে নিন") : t("Choose a month", "একটি মাস বেছে নিন")}
                 className="h-8 w-full cursor-pointer accent-[var(--accent)]"
               />
               <div className="flex justify-between text-xs text-ink-3">
@@ -416,7 +434,7 @@ export default function MapExplorer({ catalog, placeData }: { catalog: GibsCatal
                   aria-pressed={compareOn}
                   className={`min-h-10 flex-1 rounded-full border px-3 text-xs font-medium transition-colors ${compareOn ? "border-accent bg-accent-soft text-ink" : "border-line text-ink-2 hover:border-ink-3 hover:text-ink"}`}
                 >
-                  <T en={`⇄ Compare with ${monthYears[0] ?? "2000"}`} bn={`⇄ ${monthYears[0] ?? "2000"}-এর সাথে তুলনা`} />
+                  <T en={`⇄ Compare with ${month(monthYears[0] ? `${monthYears[0]}${date.slice(4)}` : "2000-01-01")}`} bn={`⇄ ${month(monthYears[0] ? `${monthYears[0]}${date.slice(4)}` : "2000-01-01")}-এর সাথে তুলনা`} />
                 </button>
               </div>
               {compareOn && (

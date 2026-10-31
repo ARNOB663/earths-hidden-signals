@@ -2,7 +2,7 @@
 // It asks NASA which dates exist for each layer and how its colors map to values,
 // so the time slider only offers dates that really have imagery.
 
-import { expandMonthlyIntervals } from "./dates";
+import { expandDailyIntervals, expandMonthlyIntervals } from "./dates";
 import { GIBS_WMTS, LAYERS, type Conversion, type GibsLayerDef } from "./layers";
 
 export interface LegendTick {
@@ -74,7 +74,12 @@ function formatValue(value: number, conversion: Conversion): string {
   const v = convert(value, conversion);
   if (conversion === "kelvin-to-celsius") return `${Math.round(v)}°`;
   if (conversion === "kgm2s-to-mm-day") return v < 10 ? v.toFixed(1) : v.toFixed(0);
+  // Fractional variables (greenness, soil water) lose their meaning when rounded to an integer.
   return String(Number(v.toFixed(2)));
+}
+
+function expandDates(intervals: string[], period: "month" | "day"): string[] {
+  return period === "day" ? expandDailyIntervals(intervals) : expandMonthlyIntervals(intervals);
 }
 
 /** Rewrites a label like "< 200.0" into display units, keeping the comparison sign. */
@@ -151,10 +156,10 @@ async function describeLayer(layer: GibsLayerDef, capabilities: string | null): 
     block?.match(/colormap\/1\.3'[^>]*xlink:href='([^']*)'/)?.[1] ?? layer.fallbackColormap;
 
   const colormapXml = await fetchText(colormapUrl);
-  const liveDates = expandMonthlyIntervals(liveTimes);
+  const liveDates = expandDates(liveTimes, layer.period);
 
   return {
-    dates: liveDates.length > 0 ? liveDates : expandMonthlyIntervals(layer.fallbackTimes),
+    dates: liveDates.length > 0 ? liveDates : expandDates(layer.fallbackTimes, layer.period),
     legend: colormapXml ? parseColormap(colormapXml, layer.conversion) : null,
     values: colormapXml ? parseColorValues(colormapXml, layer.conversion) : null,
     live: liveDates.length > 0,

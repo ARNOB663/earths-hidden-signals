@@ -3,7 +3,7 @@
 // "forest-loss" is the Hansen/UMD Global Forest Change product (built from NASA/USGS
 // Landsat) served as encoded tiles by Global Forest Watch; we decode them in the browser.
 
-export type LayerCategory = "heat" | "water" | "vegetation" | "forest";
+export type LayerCategory = "heat" | "water" | "soil" | "vegetation" | "forest";
 
 export type Conversion = "kelvin-to-celsius" | "kgm2s-to-mm-day" | "none";
 
@@ -26,15 +26,16 @@ export interface GibsLayerDef extends BaseLayer {
   gibsId: string;
   tileMatrixSet: string;
   maxNativeZoom: number;
-  period: "month";
+  /** Spacing of the imagery NASA publishes for this layer. */
+  period: "month" | "day";
   conversion: Conversion;
   displayUnit: string;
   /**
    * How to draw the difference between two dates: the change that gets the strongest colour
    * (display units), the unit shown, and which colour scheme ("temp" blue↔red, "rain" brown↔blue,
-   * "green" brown↔green).
+   * "green" brown↔green, "soil" brown↔blue for soil water).
    */
-  diff: { range: number; unit: string; unitBn: string; kind: "temp" | "rain" | "green" };
+  diff: { range: number; unit: string; unitBn: string; kind: "temp" | "rain" | "green" | "soil" };
   /** Used when the live GIBS catalog cannot be reached. */
   fallbackTimes: string[];
   fallbackColormap: string;
@@ -131,6 +132,34 @@ export const LAYERS: LayerDef[] = [
     fallbackTimes: ["2000-01-01/2026-05-01/P1M"],
     fallbackColormap:
       "https://gibs.earthdata.nasa.gov/colormaps/v1.3/GLDAS_Surface_Total_Precipitation_Rate_Monthly.xml",
+  },
+  {
+    kind: "gibs",
+    id: "soil-moisture",
+    title: "Root-Zone Soil Moisture",
+    shortTitle: "Soil water",
+    bn: {
+      shortTitle: "মাটির পানি",
+      description: "মাটির উপরের এক মিটারে কতটা পানি আছে, নাসার স্ম্যাপ স্যাটেলাইট প্রায় প্রতিদিন তা মাপে। মান ০-এর কাছে হলে মাটি শুকনো, ০.৪-এর বেশি হলে পানি-ভরা।",
+      relevance: "পানি-ভরা মাটি পাহাড়ি ঢালে ভূমিধস আর সমতলে বন্যা ঘটায়; বসন্তে শুকনো মাটি দাবানলের জ্বালানি বাড়ায়।",
+      unit: "m³/m³",
+    },
+    category: "soil",
+    mission: "SMAP · NASA JPL",
+    gibsId: "SMAP_L4_Analyzed_Root_Zone_Soil_Moisture",
+    tileMatrixSet: "GoogleMapsCompatible_Level6",
+    maxNativeZoom: 6,
+    period: "day",
+    conversion: "none",
+    displayUnit: "m³/m³",
+    diff: { range: 0.12, unit: "m³/m³", unitBn: "m³/m³", kind: "soil" },
+    description:
+      "How much of the top metre of soil is water, measured by NASA's SMAP satellite. Values near 0 are dry; above 0.4 means the soil is saturated.",
+    relevance:
+      "Saturated soil triggers landslides on mountain slopes and floods on the plains; dry spring soil becomes fuel for wildfires.",
+    sourceUrl: "https://smap.jpl.nasa.gov/",
+    fallbackTimes: ["2015-03-31/2026-10-28/P1D"],
+    fallbackColormap: "https://gibs.earthdata.nasa.gov/colormaps/v1.3/SMAP_Analyzed_Soil_Moisture.xml",
   },
   {
     kind: "gibs",

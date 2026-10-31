@@ -114,6 +114,7 @@ export default async function MethodsPage() {
               <Tr v="Landslides" d="NASA Global Landslide Catalog, 2007–2017" u="Hazard events" href="https://data.nasa.gov/" />
               <Tr v="Floods" d="GDACS flood alerts (UN/EU), 2000–2025" u="Hazard events" href="https://www.gdacs.org/" />
               <Tr v="Map imagery" d="NASA GIBS: MODIS surface temperature and NDVI, MERRA-2, GLDAS" u="Satellite map (visual only)" href="https://earthdata.nasa.gov/gibs" />
+              <Tr v="Soil water" d="SMAP L4 root-zone soil moisture, 2015–now" u="Satellite map (visual only)" href="https://smap.jpl.nasa.gov/" />
               <Tr v="Forest loss" d="Hansen/UMD Global Forest Change (Landsat), via Global Forest Watch" u="Satellite map" href="https://glad.earthengine.app/view/global-forest-change" />
             </tbody>
           </table>
@@ -123,7 +124,8 @@ export default async function MethodsPage() {
           1,200 mm to about 1,800 mm a year in 1997, and to over 3,000 mm after 2015. Real rain doesn&apos;t do that; the jumps
           come from changes in the observations fed into the model. Its soil moisture inherits the same jumps. Trends
           from it would have been confidently wrong, so we switched to GISTEMP and GPCP, records built to stay consistent
-          over decades. We now always plot a series before we trust its trend.
+          over decades. We now always plot a series before we trust its trend. The soil water on the map is SMAP, a direct
+          satellite measurement since 2015; we still do not use MERRA-2 soil moisture for any trend.
         </Callout>
       </Section>
 
