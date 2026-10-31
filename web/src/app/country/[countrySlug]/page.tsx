@@ -168,7 +168,7 @@ export default async function CountryPage({ params }: PageProps<"/country/[count
         <CountryMapClient
           country={country}
           data={{ trendLayers, zones: mapZones, landslides: slides, floods, fires }}
-          dates={catalog["lst-day"]?.dates ?? []}
+          catalog={catalog}
         />
         <p className="mt-3 text-sm text-ink-3">
           <T

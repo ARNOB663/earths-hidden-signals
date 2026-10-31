@@ -57,8 +57,8 @@ export interface CountryMapData {
 interface Props {
   country: Country;
   data: CountryMapData;
-  /** GIBS layers, so the satellite views follow the same catalog as the explorer. */
-  catalog: { dates: string[] }[];
+  /** Published dates per satellite layer id, so each layer's slider matches NASA's timeline. */
+  datesByLayer: Record<string, string[]>;
 }
 
 const TREND_ICON: Record<string, Icon> = {
@@ -68,12 +68,11 @@ const TREND_ICON: Record<string, Icon> = {
   "dry-spell": Plant,
 };
 
-const GIBS_IDS = ["lst-day", "air-temp", "precip", "ndvi", "forest-loss"] as const;
-
 const GIBS_ICON: Record<string, Icon> = {
   "lst-day": Sun,
   "air-temp": Thermometer,
   precip: Drop,
+  "soil-moisture": Plant,
   ndvi: Leaf,
   "forest-loss": TreeEvergreen,
 };
@@ -92,7 +91,7 @@ function ListIcon() {
 const escape = (s: string) =>
   s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
 
-export default function CountryMap({ country, data, catalog }: Props) {
+export default function CountryMap({ country, data, datesByLayer }: Props) {
   const t = useT();
   const lang = useLang();
   const theme = useTheme();
@@ -106,14 +105,19 @@ export default function CountryMap({ country, data, catalog }: Props) {
   const [monthIndex, setMonthIndex] = useState(0);
   const [selected, setSelected] = useState<string | null>(null);
   // The layer list can be collapsed so the whole map is visible.
-  const [panelOpen, setPanelOpen] = useState(true);
+  const [panelOpen, setPanelOpen] = useState(false);
+  // The legend can be hidden to clear the bottom of the map.
+  const [legendOpen, setLegendOpen] = useState(false);
 
+  // Every satellite layer in the shared catalog, so the country map never silently drops one.
   const gibs = useMemo(
-    () => GIBS_IDS.map((id) => LAYERS.find((l) => l.id === id)).filter(Boolean) as (GibsLayerDef | import("@/lib/layers").ForestLossLayerDef)[],
+    () => LAYERS.filter((l) => l.kind === "gibs" || l.kind === "forest-loss") as (GibsLayerDef | import("@/lib/layers").ForestLossLayerDef)[],
     [],
   );
-  const dates = catalog[0]?.dates ?? [];
-  const date = dates[monthIndex] ?? null;
+  // Each layer has its own published timeline; keep the month index inside it.
+  const dates = datesByLayer[active] ?? [];
+  const safeIndex = Math.min(monthIndex, Math.max(dates.length - 1, 0));
+  const date = dates[safeIndex] ?? null;
   const isGibs = gibs.some((g) => g.id === active);
   const trendLayer = data.trendLayers.find((l) => l.id === active) ?? null;
 
@@ -277,7 +281,10 @@ export default function CountryMap({ country, data, catalog }: Props) {
       {/* Layer list toggle: stays put whether the panel is open or closed. */}
       <button
         type="button"
-        onClick={() => setPanelOpen((o) => !o)}
+        onClick={() => {
+          setPanelOpen((o) => !o);
+          setLegendOpen(false);
+        }}
         aria-expanded={panelOpen}
         aria-controls="country-layer-panel"
         aria-label={panelOpen ? t("Hide layers", "স্তর লুকান") : t("Show layers", "স্তর দেখান")}
@@ -287,11 +294,17 @@ export default function CountryMap({ country, data, catalog }: Props) {
         {panelOpen ? <SidebarSimple size={18} /> : <ListIcon />}
       </button>
 
+      {/* Layer list column on the left; the legend lives on the right so the two never compete. */}
+      <div
+        className={`pointer-events-none absolute left-3 top-16 z-[500] flex w-[15rem] max-w-[calc(100%-1.5rem)] flex-col ${
+          isGibs && dates.length > 1 ? "bottom-14" : "bottom-2"
+        }`}
+      >
       {/* Layer switcher */}
       {panelOpen && (
         <div
           id="country-layer-panel"
-          className="absolute left-3 top-16 z-[500] max-h-[calc(100%-5.5rem)] w-[15rem] overflow-y-auto rounded-xl border border-line bg-card/95 p-2 shadow-soft backdrop-blur"
+          className="pointer-events-auto min-h-0 overflow-y-auto rounded-xl border border-line bg-card/95 p-2 shadow-soft backdrop-blur"
         >
           <div className="flex items-center justify-between pl-2 pr-1">
             <p className="pb-1 pt-1 text-[11px] font-semibold uppercase tracking-wider text-ink-3">
@@ -334,7 +347,7 @@ export default function CountryMap({ country, data, catalog }: Props) {
                 <li key={l.id}>
                   <button
                     type="button"
-                    onClick={() => setActive(l.id)}
+                    onClick={() => { setActive(l.id); setMonthIndex(0); setPlaying(false); }}
                     aria-pressed={active === l.id}
                     className={`flex w-full items-center gap-2 rounded-lg px-2 py-1.5 text-left text-sm ${active === l.id ? "bg-accent-soft font-medium text-ink" : "text-ink-2 hover:bg-sunken"}`}
                   >
@@ -348,43 +361,73 @@ export default function CountryMap({ country, data, catalog }: Props) {
         </div>
       )}
 
-      {/* Legend */}
+      </div>
+
+      {/* Legend on the right, clear of the attribution strip and the slideshow. */}
       <div
-        className={`absolute left-3 z-[500] w-[min(19rem,calc(100%-1.5rem))] rounded-xl border border-line bg-card/95 p-3 shadow-soft backdrop-blur ${
-          isGibs && dates.length > 1 ? "bottom-24" : "bottom-3"
-        }`}
+        className={`pointer-events-auto absolute right-3 z-[500] w-[min(15rem,calc(100%-1.5rem))] rounded-xl border border-line bg-card/95 shadow-soft backdrop-blur ${
+          isGibs && dates.length > 1 ? "bottom-24" : "bottom-9"
+        } ${legendOpen ? "p-3" : "px-3 py-1.5"}`}
       >
-        {trendLayer ? (
-          <>
-            <p className="mb-2 text-xs font-medium text-ink">
+        <div className="flex items-start justify-between gap-2">
+          {trendLayer ? (
+            <p className={`text-xs font-medium text-ink ${legendOpen ? "mb-2" : ""}`}>
               <T en={trendLayer.label} bn={trendLayer.labelBn} />{" "}
               <span className="text-ink-3">
                 (<T en="per decade" bn="প্রতি দশকে" />)
               </span>
             </p>
-            <TrendLegend
-              variable={trendLayer.variable}
-              limit={trendLayer.limit}
-              decimals={trendLayer.meta.decimals + 1}
-              decreaseWord={trendLayer.meta.decrease}
-              increaseWord={trendLayer.meta.increase}
-              compact
-              mobileCompact
-            />
-            <p className="mt-1.5 text-[11px] text-ink-3">
-              <T en="Solid = passes the map-wide test (FDR 10%). Faint = no clear change." bn="গাঢ় = মানচিত্র-ব্যাপী পরীক্ষায় উত্তীর্ণ। হালকা = স্পষ্ট পরিবর্তন নেই।" />
+          ) : (
+            <p className="text-xs font-medium text-ink">
+              <T en="About this layer" bn="এই স্তর সম্পর্কে" />
             </p>
-            {selected && (
-              <p className="mt-1 text-[11px] text-ink-2">
-                <T en="Selected square:" bn="নির্বাচিত বর্গ:" /> <span className="tabular-nums">{selected}</span>
+          )}
+          <button
+            type="button"
+            onClick={() => {
+              setLegendOpen((o) => !o);
+              if (!legendOpen) setPanelOpen(false);
+            }}
+            aria-expanded={legendOpen}
+            aria-controls="country-legend-body"
+            aria-label={legendOpen ? t("Hide legend", "লিজেন্ড লুকান") : t("Show legend", "লিজেন্ড দেখান")}
+            title={legendOpen ? t("Hide legend", "লিজেন্ড লুকান") : t("Show legend", "লিজেন্ড দেখান")}
+            className="-mr-1 -mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-md text-ink-3 hover:bg-sunken hover:text-ink"
+          >
+            <svg width="13" height="13" viewBox="0 0 16 16" aria-hidden fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              {legendOpen ? <path d="M4 10l4-4 4 4" /> : <path d="M4 6l4 4 4-4" />}
+            </svg>
+          </button>
+        </div>
+        {legendOpen && (
+          <div id="country-legend-body">
+            {trendLayer ? (
+              <>
+                <TrendLegend
+                  variable={trendLayer.variable}
+                  limit={trendLayer.limit}
+                  decimals={trendLayer.meta.decimals + 1}
+                  decreaseWord={trendLayer.meta.decrease}
+                  increaseWord={trendLayer.meta.increase}
+                  compact
+                  mobileCompact
+                />
+                <p className="mt-1.5 text-[11px] text-ink-3">
+                  <T en="Solid = passes the map-wide test (FDR 10%). Faint = no clear change." bn="গাঢ় = মানচিত্র-ব্যাপী পরীক্ষায় উত্তীর্ণ। হালকা = স্পষ্ট পরিবর্তন নেই।" />
+                </p>
+                {selected && (
+                  <p className="mt-1 text-[11px] text-ink-2">
+                    <T en="Selected square:" bn="নির্বাচিত বর্গ:" /> <span className="tabular-nums">{selected}</span>
+                  </p>
+                )}
+              </>
+            ) : activeDef ? (
+              <p className="text-xs text-ink-2">
+                {lang === "bn" ? activeDef.bn.description : activeDef.description}
               </p>
-            )}
-          </>
-        ) : activeDef ? (
-          <p className="text-xs text-ink-2">
-            {lang === "bn" ? activeDef.bn.description : activeDef.description}
-          </p>
-        ) : null}
+            ) : null}
+          </div>
+        )}
       </div>
 
       {/* Time slider, only for time-enabled satellite layers. It sits above the credits so
@@ -404,7 +447,7 @@ export default function CountryMap({ country, data, catalog }: Props) {
             type="range"
             min={0}
             max={dates.length - 1}
-            value={monthIndex}
+            value={safeIndex}
             onChange={(e) => { setPlaying(false); setMonthIndex(Number(e.target.value)); }}
             aria-label={t("Month", "মাস")}
             aria-valuetext={date ? new Date(`${date}T00:00:00`).toLocaleDateString("en-GB", { month: "long", year: "numeric" }) : undefined}
