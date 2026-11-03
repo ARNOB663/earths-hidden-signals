@@ -73,6 +73,11 @@ def write_archive(day: dt.date, payload: dict, config: dict) -> None:
     check_budget(f"archive/{day.isoformat()}.json", size, config["budgets"]["archiveBytes"])
 
 
+def write_watch(payload: dict, config: dict) -> None:
+    size = _dump(OUT / "watch.json", payload)
+    check_budget("watch.json", size, config["budgets"]["watchBytes"])
+
+
 def write_demo(files: dict[str, dict], config: dict) -> None:
     total = 0
     for name, payload in files.items():

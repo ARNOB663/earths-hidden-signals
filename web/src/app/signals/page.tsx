@@ -85,9 +85,15 @@ export default async function SignalsPage() {
           wmoUrl={config.official.wmo}
           disclaimer={config.official.line}
         />
-        <p className="text-sm text-ink-2">
+        <p className="flex flex-wrap gap-x-3 text-sm text-ink-2">
           <Link href="/accuracy" className="underline decoration-line underline-offset-2 hover:text-ink">
             <T en="How well does this work? See the accuracy page" bn="এটি কতটা কাজে লাগে? নির্ভুলতার পাতা দেখুন" />
+          </Link>
+          <Link href="/signals/evidence" className="underline decoration-line underline-offset-2 hover:text-ink">
+            <T en="Evidence and checks" bn="প্রমাণ ও যাচাই" />
+          </Link>
+          <Link href="/about" className="underline decoration-line underline-offset-2 hover:text-ink">
+            <T en="About the signals" bn="সংকেত সম্পর্কে" />
           </Link>
         </p>
         <p className="text-xs text-ink-3">

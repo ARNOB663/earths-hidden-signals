@@ -367,3 +367,40 @@ def test_no_forbidden_words_in_sources() -> None:
         assert "false alarm" not in text.lower(), path.name
         for word in ("bangladesh", "pakistan", "sri lanka"):
             assert word not in text.lower(), f"{path.name} mentions {word}"
+
+
+# ---------------------------------------------------------------------------------------
+# Step 4: what-to-watch reads the archive and never invents a rise
+# ---------------------------------------------------------------------------------------
+watch_mod = load("watch")
+
+
+def test_watch_with_one_entry_has_no_rises(tmp_path) -> None:
+    (tmp_path / "2025-08-31.json").write_text(
+        json.dumps({"date": "2025-08-31", "sample": True, "rises": []}), encoding="utf-8"
+    )
+    summary = watch_mod.summary(watch_mod.read_archive(tmp_path))
+    assert summary["entries"] == 1 and summary["previous"] is None and summary["rises"] == []
+
+
+def test_watch_reports_only_real_rises_between_the_last_two_entries(tmp_path) -> None:
+    for day, status in (("2025-09-01", "green"), ("2025-09-02", "red")):
+        payload = {"date": day, "sample": False, "rises": [{"lat": 22.5, "lon": 90.5, "date": day, "status": status}]}
+        (tmp_path / f"{day}.json").write_text(json.dumps(payload), encoding="utf-8")
+    summary = watch_mod.summary(watch_mod.read_archive(tmp_path))
+    assert len(summary["rises"]) == 1
+    assert summary["rises"][0]["from"] == "green" and summary["rises"][0]["status"] == "red"
+
+
+def test_watch_ignores_sample_archives(tmp_path) -> None:
+    for day, status in (("2025-09-01", "green"), ("2025-09-02", "red")):
+        payload = {"date": day, "sample": True, "rises": [{"lat": 22.5, "lon": 90.5, "date": day, "status": status}]}
+        (tmp_path / f"{day}.json").write_text(json.dumps(payload), encoding="utf-8")
+    assert watch_mod.summary(watch_mod.read_archive(tmp_path))["rises"] == []
+
+
+def test_committed_watch_json_matches_the_archive() -> None:
+    watch = json.loads((writer.OUT / "watch.json").read_text())
+    archive = watch_mod.read_archive(writer.OUT / "archive")
+    assert watch == watch_mod.summary(archive)
+    assert watch["entries"] == len(archive)

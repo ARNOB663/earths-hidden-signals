@@ -10,6 +10,7 @@ import type {
   SourcesFile,
   TileGrid,
   TopList,
+  WatchPayload,
 } from "./types";
 
 const ROOT = path.join(process.cwd(), "public", "data", "signals");
@@ -39,7 +40,7 @@ export async function readSignalsMeta(): Promise<SignalsMeta> {
 export async function readSignalsConfig(): Promise<SignalsConfig> {
   return assertKeys(
     await readJson<SignalsConfig>("config.json"),
-    ["gridDeg", "enabledTiles", "staleHours", "official", "yellow", "red"],
+    ["gridDeg", "enabledTiles", "staleHours", "official", "yellow", "red", "doyHalfWindow", "baselineCountMin", "baselineYearsMin"],
     "config.json",
   );
 }
@@ -52,6 +53,12 @@ export async function readTop(): Promise<TopList> {
 
 export async function readSources(): Promise<SourcesFile> {
   return readJson<SourcesFile>("sources.json");
+}
+
+export async function readWatch(): Promise<WatchPayload> {
+  const watch = await assertKeys(await readJson<WatchPayload>("watch.json"), ["entries", "rises", "sample"], "watch.json");
+  if (!Array.isArray(watch.rises)) throw new Error("signals data: watch.json has no rises array");
+  return watch;
 }
 
 export async function readAccuracy(): Promise<AccuracyPayload> {

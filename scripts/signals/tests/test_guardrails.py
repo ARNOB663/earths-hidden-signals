@@ -29,6 +29,7 @@ ALLOWED_NEW_PREFIXES = (
     "web/src/app/watch/",
     "web/src/app/accuracy/",
     "web/src/app/about/",
+    "web/src/app/signals/evidence/",
     "web/src/components/signals/",
     "web/src/lib/signals/",
     "web/public/data/signals/",
@@ -91,19 +92,37 @@ def test_no_frozen_page_or_component_changed() -> None:
     assert not offenders, "Existing files must not change:\n" + "\n".join(offenders)
 
 
-def test_site_nav_only_adds_tabs() -> None:
-    patch = patch_of(NAV_FILE)
-    if not patch.strip():
-        return
-    added = [line[1:] for line in patch.splitlines() if line.startswith("+") and not line.startswith("+++")]
-    removed = [line[1:] for line in patch.splitlines() if line.startswith("-") and not line.startswith("---")]
-    assert not removed, "SiteNav.tsx may only gain lines: removed " + repr(removed[:3])
-    # Every added line must be a TABS entry (or the closing of the last entry).
-    assert any("href:" in line for line in added), "No TABS entry added"
-    for line in added:
-        assert line.strip().startswith(("{", "href:", "}")) or line.strip().startswith("\""), (
-            f"Unexpected non-TABS line added to SiteNav.tsx: {line!r}"
-        )
+# The three rev. 8 tabs were staged before the rev. 9 plan added /about; the guard checks the
+# final set and order rather than how many rounds of edits produced it.
+# The nav the rev. 9 plan ships, in order. Monitoring loses its tab (it stays at /monitoring)
+# and About is not a tab (it stays at /about, linked from the Signals footer).
+NAV_TABS = (
+    ("/", "Home"),
+    ("/signals", "Signals"),
+    ("/watch", "What to watch"),
+    ("/accuracy", "Accuracy"),
+    ("/hazards", "Hazard intelligence"),
+    ("/trends", "Climate trends"),
+    ("/explore", "Satellite map"),
+    ("/methods", "Methodology"),
+)
+NO_TAB_ROUTES = ("/monitoring", "/about")
+
+
+def test_site_nav_has_exactly_the_planned_tabs() -> None:
+    nav = (ROOT / NAV_FILE).read_text(encoding="utf-8")
+    block = nav[nav.index("export const TABS = [") : nav.index("];", nav.index("export const TABS = ["))]
+    entries = [line.strip() for line in block.splitlines() if line.strip().startswith("{ href:")]
+    got = [line.split('href: "', 1)[1].split('"', 1)[0] for line in entries]
+    assert tuple(got) == tuple(href for href, _ in NAV_TABS), f"Tabs are {got}"
+    for (href, label), entry in zip(NAV_TABS, entries):
+        assert f'label: "{label}"' in entry, entry
+    for route in NO_TAB_ROUTES:
+        assert f'href: "{route}"' not in block, f"{route} must not be a tab"
+    # Only TABS may change: the rest of the nav is frozen against the baseline commit.
+    changed = [line[1:] for line in patch_of(NAV_FILE).splitlines() if line.startswith(("+", "-")) and line[:3] not in ("+++", "---")]
+    outside = [line for line in changed if '{ href: "' not in line]
+    assert not outside, "Only TABS entries may change in SiteNav.tsx: " + repr(outside[:3])
 
 
 def test_methods_only_gains_the_signals_section() -> None:

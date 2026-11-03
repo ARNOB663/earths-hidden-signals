@@ -73,6 +73,28 @@ export interface SignalsConfig {
   official: { wmo: string; line: string };
   outlook: { days: number; label: string };
   budgets: Record<string, number>;
+  doyHalfWindow: number;
+  wetDayMinMm: number;
+  baselineCountMin: number;
+  baselineYearsMin: number;
+  baselineProduct: string;
+  baselineNote: string;
+}
+
+export interface WatchRise {
+  lat: number;
+  lon: number;
+  date: string;
+  status: Status;
+  from: Status;
+}
+
+export interface WatchPayload {
+  entries: number;
+  latest: string | null;
+  previous: string | null;
+  rises: WatchRise[];
+  sample: boolean;
 }
 
 export interface AccuracyEvent {
@@ -105,7 +127,8 @@ export interface AccuracyPayload {
 }
 
 export interface SourceStatus {
-  status: "ok" | "unavailable" | "sample" | "not-integrated";
+  /** Free-form so a source can record "reachable from the pipeline host only" etc. */
+  status: string;
   checkedOn?: string;
   sample?: boolean;
 }
