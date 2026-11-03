@@ -34,6 +34,10 @@ export const TABS = [
   { href: "/trends", label: "Climate trends", short: "Trends", bn: "জলবায়ুর প্রবণতা", shortBn: "প্রবণতা", Icon: ChartLine },
   { href: "/explore", label: "Satellite map", short: "Map", bn: "স্যাটেলাইট মানচিত্র", shortBn: "মানচিত্র", Icon: Satellite },
   { href: "/methods", label: "Methodology", short: "Methods", bn: "পদ্ধতি", shortBn: "পদ্ধতি", Icon: FlaskConical },
+  { href: "/signals", label: "Signals", short: "Signals", bn: "সংকেত", shortBn: "সংকেত", Icon: Activity },
+  { href: "/watch", label: "What to watch", short: "Watch", bn: "কী দেখবেন", shortBn: "দেখুন", Icon: ChartLine },
+  { href: "/accuracy", label: "Accuracy", short: "Accuracy", bn: "নির্ভুলতা", shortBn: "নির্ভুলতা", Icon: TriangleAlert },
+  { href: "/about", label: "About the signals", short: "About", bn: "সংকেত সম্পর্কে", shortBn: "পরিচিতি", Icon: FlaskConical },
 ];
 
 const isActive = (pathname: string, tab: (typeof TABS)[number]) =>

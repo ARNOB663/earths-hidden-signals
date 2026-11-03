@@ -50,6 +50,51 @@ jobs:
           npm run lint
           npm run build
 
+  signals:
+    # Offline and keyless: no NASA credentials, no network downloads. The guard test diffs against
+    # the pre-step-1 commit, so the checkout needs full history.
+    if: github.event_name != 'schedule'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install signals dependencies
+        working-directory: scripts/signals
+        run: |
+          python -m venv .venv
+          .venv/bin/pip install -r requirements.txt
+
+      - name: Guard — existing pages frozen
+        run: scripts/signals/.venv/bin/python -m pytest -q scripts/signals/tests/test_guardrails.py
+
+      - name: Signals tests
+        working-directory: scripts/signals
+        run: .venv/bin/python -m pytest -q tests
+
+      - name: Seeded sample build is byte-identical
+        # Same interpreter as the tests: the runner's system python has no numpy. The porcelain
+        # check also catches untracked or deleted outputs, which `git diff` cannot see.
+        run: |
+          scripts/signals/.venv/bin/python scripts/signals/build.py --seeded-sample
+          scripts/signals/.venv/bin/python scripts/signals/build.py --replay-events
+          scripts/signals/.venv/bin/python scripts/signals/build.py --demo
+          git diff --exit-code -- web/public/data/signals
+          test -z "$(git status --porcelain --untracked-files=all -- web/public/data/signals)"
+
+      - name: Client age helper
+        working-directory: web
+        run: node --experimental-strip-types --test src/lib/signals/age.test.ts
+
   refresh:
     # Weekly: re-download the public records, rebuild everything, and open a PR only if the
     # evaluation does not regress and something changed.

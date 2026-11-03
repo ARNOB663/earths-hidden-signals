@@ -1,0 +1,6 @@
+# Signals pipeline dependencies (plan rev. 7b, step 2).
+# Deliberately small: no subsetting client is added until the spike proves one is needed.
+requests>=2.31
+numpy>=2.0
+tifffile>=2024.9.20
+pytest>=8

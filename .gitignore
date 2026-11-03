@@ -8,3 +8,16 @@ Thumbs.db
 
 # intelligence pipeline logs
 analysis/logs/
+
+# signals pipeline: secrets and heavy caches
+.env*
+__pycache__/
+*.pyc
+
+# signals pipeline: raw downloads, derived caches and logs (committed outputs live in
+# web/public/data/signals/ and scripts/signals/baseline/)
+scripts/signals/raw/
+scripts/signals/derived/
+scripts/signals/logs/
+scripts/signals/.venv/
+.venv/

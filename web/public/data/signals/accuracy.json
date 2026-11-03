@@ -1,0 +1,47 @@
+{
+ "events": [
+  {
+   "gdacsId": 4215,
+   "hit": null,
+   "id": "gdacs-4215-2014-12-20",
+   "inCoverage": true,
+   "lat": 7.909,
+   "lon": 80.983,
+   "start": "2014-12-20",
+   "status": "pending-real-data"
+  },
+  {
+   "gdacsId": 1000226,
+   "hit": null,
+   "id": "gdacs-1000226-2019-03-04",
+   "inCoverage": false,
+   "lat": -15.38,
+   "lon": 35.122,
+   "start": "2019-03-04",
+   "status": "pending-real-data"
+  },
+  {
+   "gdacsId": 1000220,
+   "hit": null,
+   "id": "gdacs-1000220-2019-01-25",
+   "inCoverage": false,
+   "lat": -20.135,
+   "lon": -44.173,
+   "start": "2019-01-25",
+   "status": "pending-real-data"
+  }
+ ],
+ "hits": null,
+ "label": "Historical replay, not live",
+ "leadDays": 3,
+ "measuredEvents": 0,
+ "misses": null,
+ "notEnough": true,
+ "notEnoughText": "Not enough events yet.",
+ "product": "late",
+ "radiusKm": 50,
+ "reportingEvents": 3,
+ "satelliteConfirmed": null,
+ "unmatched": null,
+ "unmatchedText": "Signals with no catalogued event (upper bound; flood catalogues are incomplete)."
+}
