@@ -1,0 +1,2278 @@
+{
+ "code": "LCA",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Saint Lucia",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2005",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "District",
+   "code": "ADM1",
+   "count": 10,
+   "name": "District",
+   "nameBn": "জেলা",
+   "representedYear": "2015",
+   "sourceCount": 10,
+   "units": [
+    {
+     "id": "lca-adm1-anse-la-raya",
+     "name": "Anse la Raya",
+     "shapeISO": "LC-01"
+    },
+    {
+     "id": "lca-adm1-canaries",
+     "name": "Canaries",
+     "shapeISO": "LC-12"
+    },
+    {
+     "id": "lca-adm1-castries",
+     "name": "Castries",
+     "shapeISO": "LC-02"
+    },
+    {
+     "id": "lca-adm1-choiseul",
+     "name": "Choiseul",
+     "shapeISO": "LC-03"
+    },
+    {
+     "id": "lca-adm1-dennery",
+     "name": "Dennery",
+     "shapeISO": "LC-05"
+    },
+    {
+     "id": "lca-adm1-gros-islet",
+     "name": "Gros Islet",
+     "shapeISO": "LC-06"
+    },
+    {
+     "id": "lca-adm1-laborie",
+     "name": "Laborie",
+     "shapeISO": "LC-07"
+    },
+    {
+     "id": "lca-adm1-micoud",
+     "name": "Micoud",
+     "shapeISO": "LC-08"
+    },
+    {
+     "id": "lca-adm1-soufrière",
+     "name": "Soufrière",
+     "shapeISO": "LC-10"
+    },
+    {
+     "id": "lca-adm1-vieux-fort",
+     "name": "Vieux Fort",
+     "shapeISO": "LC-11"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Communities",
+   "code": "ADM2",
+   "count": 547,
+   "name": "Communities",
+   "nameBn": "Communities",
+   "representedYear": "2019",
+   "sourceCount": 547,
+   "units": [
+    {
+     "id": "lca-adm2-active-hill",
+     "name": "Active Hill"
+    },
+    {
+     "id": "lca-adm2-agard-lands",
+     "name": "Agard Lands"
+    },
+    {
+     "id": "lca-adm2-almondale",
+     "name": "Almondale"
+    },
+    {
+     "id": "lca-adm2-americ",
+     "name": "Americ"
+    },
+    {
+     "id": "lca-adm2-anbre",
+     "name": "Anbre"
+    },
+    {
+     "id": "lca-adm2-annus",
+     "name": "Annus"
+    },
+    {
+     "id": "lca-adm2-anse-canot",
+     "name": "Anse Canot"
+    },
+    {
+     "id": "lca-adm2-anse-chastanet",
+     "name": "Anse Chastanet"
+    },
+    {
+     "id": "lca-adm2-anse-cochon",
+     "name": "Anse Cochon"
+    },
+    {
+     "id": "lca-adm2-anse-de-sables-beane-field",
+     "name": "Anse De Sables/Beane Field"
+    },
+    {
+     "id": "lca-adm2-anse-galet",
+     "name": "Anse Galet"
+    },
+    {
+     "id": "lca-adm2-anse-ger",
+     "name": "Anse Ger"
+    },
+    {
+     "id": "lca-adm2-anse-la-verdue",
+     "name": "Anse La Verdue"
+    },
+    {
+     "id": "lca-adm2-athens",
+     "name": "Athens"
+    },
+    {
+     "id": "lca-adm2-au-leon",
+     "name": "Au Leon"
+    },
+    {
+     "id": "lca-adm2-au-tabor",
+     "name": "Au Tabor"
+    },
+    {
+     "id": "lca-adm2-au-tabor-hill",
+     "name": "Au Tabor Hill"
+    },
+    {
+     "id": "lca-adm2-augier",
+     "name": "Augier"
+    },
+    {
+     "id": "lca-adm2-aurendel-hill",
+     "name": "Aurendel Hill"
+    },
+    {
+     "id": "lca-adm2-babonneau-proper",
+     "name": "Babonneau Proper"
+    },
+    {
+     "id": "lca-adm2-bagatelle",
+     "name": "Bagatelle"
+    },
+    {
+     "id": "lca-adm2-balata",
+     "name": "Balata"
+    },
+    {
+     "id": "lca-adm2-balca",
+     "name": "Balca"
+    },
+    {
+     "id": "lca-adm2-balembouche",
+     "name": "Balembouche"
+    },
+    {
+     "id": "lca-adm2-banannes-bay",
+     "name": "Banannes Bay"
+    },
+    {
+     "id": "lca-adm2-banse",
+     "name": "Banse"
+    },
+    {
+     "id": "lca-adm2-banse-la-grace",
+     "name": "Banse La Grace"
+    },
+    {
+     "id": "lca-adm2-bara-bara",
+     "name": "Bara Bara"
+    },
+    {
+     "id": "lca-adm2-barnard-hill",
+     "name": "Barnard Hill"
+    },
+    {
+     "id": "lca-adm2-baron-s-drive-coin-de-l-anse",
+     "name": "Baron'S Drive/Coin De L'Anse"
+    },
+    {
+     "id": "lca-adm2-barre-de-l-isle",
+     "name": "Barre De L'Isle"
+    },
+    {
+     "id": "lca-adm2-barre-denis",
+     "name": "Barre Denis"
+    },
+    {
+     "id": "lca-adm2-barre-duchaussee",
+     "name": "Barre Duchaussee"
+    },
+    {
+     "id": "lca-adm2-barre-st-joseph",
+     "name": "Barre St Joseph"
+    },
+    {
+     "id": "lca-adm2-bazile",
+     "name": "Bazile"
+    },
+    {
+     "id": "lca-adm2-beane-field",
+     "name": "Beane Field"
+    },
+    {
+     "id": "lca-adm2-beauchamp",
+     "name": "Beauchamp"
+    },
+    {
+     "id": "lca-adm2-beausejour",
+     "name": "Beausejour"
+    },
+    {
+     "id": "lca-adm2-beausejour-2",
+     "name": "Beausejour"
+    },
+    {
+     "id": "lca-adm2-beausejour-fostin-s-development",
+     "name": "Beausejour/Fostin'S Development"
+    },
+    {
+     "id": "lca-adm2-beausejour-myers-bridge",
+     "name": "Beausejour/Myers Bridge"
+    },
+    {
+     "id": "lca-adm2-beausejour-ndc",
+     "name": "Beausejour/Ndc"
+    },
+    {
+     "id": "lca-adm2-belair",
+     "name": "Belair"
+    },
+    {
+     "id": "lca-adm2-belfond",
+     "name": "Belfond"
+    },
+    {
+     "id": "lca-adm2-bella-rosa",
+     "name": "Bella Rosa"
+    },
+    {
+     "id": "lca-adm2-bella-rosa-2",
+     "name": "Bella Rosa"
+    },
+    {
+     "id": "lca-adm2-belle-plain",
+     "name": "Belle Plain"
+    },
+    {
+     "id": "lca-adm2-belle-vue",
+     "name": "Belle Vue"
+    },
+    {
+     "id": "lca-adm2-belle-vue-2",
+     "name": "Belle Vue"
+    },
+    {
+     "id": "lca-adm2-belle-vue-3",
+     "name": "Belle Vue"
+    },
+    {
+     "id": "lca-adm2-belle-vue-estate",
+     "name": "Belle Vue Estate"
+    },
+    {
+     "id": "lca-adm2-belmont",
+     "name": "Belmont"
+    },
+    {
+     "id": "lca-adm2-belvedere",
+     "name": "Belvedere"
+    },
+    {
+     "id": "lca-adm2-belvedere-2",
+     "name": "Belvedere"
+    },
+    {
+     "id": "lca-adm2-bexon",
+     "name": "Bexon"
+    },
+    {
+     "id": "lca-adm2-beyar",
+     "name": "Beyar"
+    },
+    {
+     "id": "lca-adm2-bishop-s-gap-ghirawoo-road",
+     "name": "Bishop'S Gap/Ghirawoo Road"
+    },
+    {
+     "id": "lca-adm2-bissee",
+     "name": "Bissee"
+    },
+    {
+     "id": "lca-adm2-black-bay",
+     "name": "Black Bay"
+    },
+    {
+     "id": "lca-adm2-black-mallet",
+     "name": "Black Mallet"
+    },
+    {
+     "id": "lca-adm2-blanchard",
+     "name": "Blanchard"
+    },
+    {
+     "id": "lca-adm2-bocage",
+     "name": "Bocage"
+    },
+    {
+     "id": "lca-adm2-boguis",
+     "name": "Boguis"
+    },
+    {
+     "id": "lca-adm2-boguis-desa-blond",
+     "name": "Boguis/Desa Blond"
+    },
+    {
+     "id": "lca-adm2-bois-canot",
+     "name": "Bois Canot"
+    },
+    {
+     "id": "lca-adm2-bois-catchet",
+     "name": "Bois Catchet"
+    },
+    {
+     "id": "lca-adm2-bois-d-inde",
+     "name": "Bois D'Inde"
+    },
+    {
+     "id": "lca-adm2-bois-d-inde-2",
+     "name": "Bois D'Inde"
+    },
+    {
+     "id": "lca-adm2-bois-d-inde-3",
+     "name": "Bois D'Inde"
+    },
+    {
+     "id": "lca-adm2-bois-d-orange",
+     "name": "Bois D'Orange"
+    },
+    {
+     "id": "lca-adm2-bois-d-orange-trouya",
+     "name": "Bois D'Orange/Trouya"
+    },
+    {
+     "id": "lca-adm2-bois-joli",
+     "name": "Bois Joli"
+    },
+    {
+     "id": "lca-adm2-bois-patat",
+     "name": "Bois Patat"
+    },
+    {
+     "id": "lca-adm2-bongalo",
+     "name": "Bongalo"
+    },
+    {
+     "id": "lca-adm2-bonneterre",
+     "name": "Bonneterre"
+    },
+    {
+     "id": "lca-adm2-bonneterre-gardens",
+     "name": "Bonneterre Gardens"
+    },
+    {
+     "id": "lca-adm2-bordelais",
+     "name": "Bordelais"
+    },
+    {
+     "id": "lca-adm2-bosquet-d-or",
+     "name": "Bosquet D'Or"
+    },
+    {
+     "id": "lca-adm2-bouton",
+     "name": "Bouton"
+    },
+    {
+     "id": "lca-adm2-bruceville-shanty-town",
+     "name": "Bruceville/Shanty Town"
+    },
+    {
+     "id": "lca-adm2-cabiche-babonneau",
+     "name": "Cabiche/Babonneau"
+    },
+    {
+     "id": "lca-adm2-cacoa",
+     "name": "Cacoa"
+    },
+    {
+     "id": "lca-adm2-cacoa-babonneau",
+     "name": "Cacoa/Babonneau"
+    },
+    {
+     "id": "lca-adm2-caffiere",
+     "name": "Caffiere"
+    },
+    {
+     "id": "lca-adm2-caico-millet",
+     "name": "Caico/Millet"
+    },
+    {
+     "id": "lca-adm2-caille-des",
+     "name": "Caille Des"
+    },
+    {
+     "id": "lca-adm2-calvary",
+     "name": "Calvary"
+    },
+    {
+     "id": "lca-adm2-calvary-calvaire",
+     "name": "Calvary/Calvaire"
+    },
+    {
+     "id": "lca-adm2-calypso",
+     "name": "Calypso"
+    },
+    {
+     "id": "lca-adm2-canelles",
+     "name": "Canelles"
+    },
+    {
+     "id": "lca-adm2-cantonement",
+     "name": "Cantonement"
+    },
+    {
+     "id": "lca-adm2-cap-estate",
+     "name": "Cap Estate"
+    },
+    {
+     "id": "lca-adm2-cap-estate-anse-du-cap",
+     "name": "Cap Estate/Anse Du Cap"
+    },
+    {
+     "id": "lca-adm2-cap-estate-becune-park",
+     "name": "Cap Estate/Becune Park"
+    },
+    {
+     "id": "lca-adm2-cap-estate-becune-point",
+     "name": "Cap Estate/Becune Point"
+    },
+    {
+     "id": "lca-adm2-cap-estate-caribbean-park",
+     "name": "Cap Estate/Caribbean Park"
+    },
+    {
+     "id": "lca-adm2-cap-estate-golf-park",
+     "name": "Cap Estate/Golf Park"
+    },
+    {
+     "id": "lca-adm2-cap-estate-lower-saline-point",
+     "name": "Cap Estate/Lower Saline Point"
+    },
+    {
+     "id": "lca-adm2-cap-estate-mon-du-cap",
+     "name": "Cap Estate/Mon Du Cap"
+    },
+    {
+     "id": "lca-adm2-cap-estate-ranch-site",
+     "name": "Cap Estate/Ranch Site"
+    },
+    {
+     "id": "lca-adm2-cap-estate-saddle-back",
+     "name": "Cap Estate/Saddle Back"
+    },
+    {
+     "id": "lca-adm2-cap-estate-upper-saline-point",
+     "name": "Cap Estate/Upper Saline Point"
+    },
+    {
+     "id": "lca-adm2-capital-hill",
+     "name": "Capital Hill"
+    },
+    {
+     "id": "lca-adm2-carellie",
+     "name": "Carellie"
+    },
+    {
+     "id": "lca-adm2-carierre",
+     "name": "Carierre"
+    },
+    {
+     "id": "lca-adm2-carriere",
+     "name": "Carriere"
+    },
+    {
+     "id": "lca-adm2-cas-en-bas",
+     "name": "Cas En Bas"
+    },
+    {
+     "id": "lca-adm2-catin",
+     "name": "Catin"
+    },
+    {
+     "id": "lca-adm2-catter-beaufond",
+     "name": "Catter Beaufond"
+    },
+    {
+     "id": "lca-adm2-caye-manje",
+     "name": "Caye Manje'"
+    },
+    {
+     "id": "lca-adm2-cazuca",
+     "name": "Cazuca"
+    },
+    {
+     "id": "lca-adm2-cedars",
+     "name": "Cedars"
+    },
+    {
+     "id": "lca-adm2-cedars-chu-tigre",
+     "name": "Cedars/Chu Tigre"
+    },
+    {
+     "id": "lca-adm2-cenac",
+     "name": "Cenac"
+    },
+    {
+     "id": "lca-adm2-central-forest-reserve",
+     "name": "Central Forest Reserve"
+    },
+    {
+     "id": "lca-adm2-chalon",
+     "name": "Chalon"
+    },
+    {
+     "id": "lca-adm2-champen-estate",
+     "name": "Champen Estate"
+    },
+    {
+     "id": "lca-adm2-chase-gardens",
+     "name": "Chase Gardens"
+    },
+    {
+     "id": "lca-adm2-chassin-babonneau",
+     "name": "Chassin/Babonneau"
+    },
+    {
+     "id": "lca-adm2-chateau-belair",
+     "name": "Chateau Belair"
+    },
+    {
+     "id": "lca-adm2-chatin",
+     "name": "Chatin"
+    },
+    {
+     "id": "lca-adm2-chique-blanchard",
+     "name": "Chique/Blanchard"
+    },
+    {
+     "id": "lca-adm2-choc",
+     "name": "Choc"
+    },
+    {
+     "id": "lca-adm2-choppin",
+     "name": "Choppin"
+    },
+    {
+     "id": "lca-adm2-choucomel",
+     "name": "Choucomel"
+    },
+    {
+     "id": "lca-adm2-christian-hill",
+     "name": "Christian Hill"
+    },
+    {
+     "id": "lca-adm2-ciceron",
+     "name": "Ciceron"
+    },
+    {
+     "id": "lca-adm2-city",
+     "name": "City"
+    },
+    {
+     "id": "lca-adm2-city-gate",
+     "name": "City Gate"
+    },
+    {
+     "id": "lca-adm2-cocoa-dan",
+     "name": "Cocoa Dan"
+    },
+    {
+     "id": "lca-adm2-colombette",
+     "name": "Colombette"
+    },
+    {
+     "id": "lca-adm2-compar",
+     "name": "Compar"
+    },
+    {
+     "id": "lca-adm2-conway",
+     "name": "Conway"
+    },
+    {
+     "id": "lca-adm2-coolie-town",
+     "name": "Coolie Town"
+    },
+    {
+     "id": "lca-adm2-coolie-town-2",
+     "name": "Coolie Town"
+    },
+    {
+     "id": "lca-adm2-coolie-town-3",
+     "name": "Coolie Town"
+    },
+    {
+     "id": "lca-adm2-corinth",
+     "name": "Corinth"
+    },
+    {
+     "id": "lca-adm2-corinth-estate",
+     "name": "Corinth Estate"
+    },
+    {
+     "id": "lca-adm2-corinth-la-bel-lair",
+     "name": "Corinth/La Bel Lair"
+    },
+    {
+     "id": "lca-adm2-coubaril",
+     "name": "Coubaril"
+    },
+    {
+     "id": "lca-adm2-coubaril-estate",
+     "name": "Coubaril Estate"
+    },
+    {
+     "id": "lca-adm2-cresslands",
+     "name": "Cresslands"
+    },
+    {
+     "id": "lca-adm2-crownlands-marc",
+     "name": "Crownlands/Marc"
+    },
+    {
+     "id": "lca-adm2-cul-de-sac",
+     "name": "Cul De Sac"
+    },
+    {
+     "id": "lca-adm2-daban",
+     "name": "Daban"
+    },
+    {
+     "id": "lca-adm2-dacretin",
+     "name": "Dacretin"
+    },
+    {
+     "id": "lca-adm2-dame-de-traversay",
+     "name": "Dame De Traversay"
+    },
+    {
+     "id": "lca-adm2-darling-road",
+     "name": "Darling Road"
+    },
+    {
+     "id": "lca-adm2-dauphin",
+     "name": "Dauphin"
+    },
+    {
+     "id": "lca-adm2-de-mailly",
+     "name": "De Mailly"
+    },
+    {
+     "id": "lca-adm2-debreiul",
+     "name": "Debreiul"
+    },
+    {
+     "id": "lca-adm2-deglos",
+     "name": "Deglos"
+    },
+    {
+     "id": "lca-adm2-delaide",
+     "name": "Delaide"
+    },
+    {
+     "id": "lca-adm2-delcer",
+     "name": "Delcer"
+    },
+    {
+     "id": "lca-adm2-delomel",
+     "name": "Delomel"
+    },
+    {
+     "id": "lca-adm2-dennery-by-pass",
+     "name": "Dennery By Pass"
+    },
+    {
+     "id": "lca-adm2-dennery-by-pass-green-mountain",
+     "name": "Dennery By Pass/Green Mountain"
+    },
+    {
+     "id": "lca-adm2-dennery-by-pass-rocky-lane",
+     "name": "Dennery By Pass/Rocky Lane"
+    },
+    {
+     "id": "lca-adm2-dennery-by-pass-white-rock-gardens",
+     "name": "Dennery By Pass/White Rock Gardens"
+    },
+    {
+     "id": "lca-adm2-dennery-village",
+     "name": "Dennery Village"
+    },
+    {
+     "id": "lca-adm2-derierre-bois",
+     "name": "Derierre Bois"
+    },
+    {
+     "id": "lca-adm2-derierre-fort-old-victoria-road",
+     "name": "Derierre Fort/Old Victoria Road"
+    },
+    {
+     "id": "lca-adm2-derierre-morne",
+     "name": "Derierre Morne"
+    },
+    {
+     "id": "lca-adm2-derniere-riviere",
+     "name": "Derniere Riviere"
+    },
+    {
+     "id": "lca-adm2-derniere-riviere-fond-maricient",
+     "name": "Derniere Riviere/Fond Maricient"
+    },
+    {
+     "id": "lca-adm2-derniere-riviere-fond-petit",
+     "name": "Derniere Riviere/Fond Petit"
+    },
+    {
+     "id": "lca-adm2-derniere-riviere-mardi-gras-morne-caca-cochon",
+     "name": "Derniere Riviere/Mardi Gras/Morne Caca Cochon"
+    },
+    {
+     "id": "lca-adm2-derniere-riviere-morne-panache",
+     "name": "Derniere Riviere/Morne Panache"
+    },
+    {
+     "id": "lca-adm2-derriere-dos",
+     "name": "Derriere Dos"
+    },
+    {
+     "id": "lca-adm2-derriere-lagoon",
+     "name": "Derriere Lagoon"
+    },
+    {
+     "id": "lca-adm2-derriere-morne",
+     "name": "Derriere Morne"
+    },
+    {
+     "id": "lca-adm2-des-barras",
+     "name": "Des Barras"
+    },
+    {
+     "id": "lca-adm2-des-barras-cacolie",
+     "name": "Des Barras/Cacolie"
+    },
+    {
+     "id": "lca-adm2-des-blanchard",
+     "name": "Des Blanchard"
+    },
+    {
+     "id": "lca-adm2-des-bottes",
+     "name": "Des Bottes"
+    },
+    {
+     "id": "lca-adm2-descolons",
+     "name": "Descolons"
+    },
+    {
+     "id": "lca-adm2-despinoze",
+     "name": "Despinoze"
+    },
+    {
+     "id": "lca-adm2-desrameaux",
+     "name": "Desrameaux"
+    },
+    {
+     "id": "lca-adm2-desruisseaux",
+     "name": "Desruisseaux"
+    },
+    {
+     "id": "lca-adm2-deville",
+     "name": "Deville"
+    },
+    {
+     "id": "lca-adm2-diamond-diamond-estate",
+     "name": "Diamond/Diamond Estate"
+    },
+    {
+     "id": "lca-adm2-docamel-la-resource",
+     "name": "Docamel/La Resource"
+    },
+    {
+     "id": "lca-adm2-dubonaire",
+     "name": "Dubonaire"
+    },
+    {
+     "id": "lca-adm2-dubrassay",
+     "name": "Dubrassay"
+    },
+    {
+     "id": "lca-adm2-dugard",
+     "name": "Dugard"
+    },
+    {
+     "id": "lca-adm2-dugard-2",
+     "name": "Dugard"
+    },
+    {
+     "id": "lca-adm2-dupre",
+     "name": "Dupre"
+    },
+    {
+     "id": "lca-adm2-durandeau",
+     "name": "Durandeau"
+    },
+    {
+     "id": "lca-adm2-eau-piquant-st-urbain",
+     "name": "Eau Piquant/St Urbain"
+    },
+    {
+     "id": "lca-adm2-en-bamboo",
+     "name": "En Bamboo"
+    },
+    {
+     "id": "lca-adm2-en-leur-ba-balca",
+     "name": "En Leur Ba/Balca"
+    },
+    {
+     "id": "lca-adm2-en-mango",
+     "name": "En Mango"
+    },
+    {
+     "id": "lca-adm2-en-pois-doux-babonneau",
+     "name": "En Pois Doux/Babonneau"
+    },
+    {
+     "id": "lca-adm2-enbar-pwin-millet",
+     "name": "Enbar Pwin/Millet"
+    },
+    {
+     "id": "lca-adm2-entrepot",
+     "name": "Entrepot"
+    },
+    {
+     "id": "lca-adm2-errard",
+     "name": "Errard"
+    },
+    {
+     "id": "lca-adm2-escap",
+     "name": "Escap"
+    },
+    {
+     "id": "lca-adm2-esperance",
+     "name": "Esperance"
+    },
+    {
+     "id": "lca-adm2-esperance-2",
+     "name": "Esperance"
+    },
+    {
+     "id": "lca-adm2-esperance-3",
+     "name": "Esperance"
+    },
+    {
+     "id": "lca-adm2-etangs",
+     "name": "Etangs"
+    },
+    {
+     "id": "lca-adm2-faux-a-chaud",
+     "name": "Faux A Chaud"
+    },
+    {
+     "id": "lca-adm2-ferrand",
+     "name": "Ferrand"
+    },
+    {
+     "id": "lca-adm2-floissac-marc",
+     "name": "Floissac/Marc"
+    },
+    {
+     "id": "lca-adm2-fond-assau-babonneau",
+     "name": "Fond Assau/Babonneau"
+    },
+    {
+     "id": "lca-adm2-fond-berange",
+     "name": "Fond Berange"
+    },
+    {
+     "id": "lca-adm2-fond-bernier",
+     "name": "Fond Bernier"
+    },
+    {
+     "id": "lca-adm2-fond-cacoa",
+     "name": "Fond Cacoa"
+    },
+    {
+     "id": "lca-adm2-fond-canie",
+     "name": "Fond Canie"
+    },
+    {
+     "id": "lca-adm2-fond-capeche",
+     "name": "Fond Capeche"
+    },
+    {
+     "id": "lca-adm2-fond-d-or",
+     "name": "Fond D'Or"
+    },
+    {
+     "id": "lca-adm2-fond-dor-dugard",
+     "name": "Fond Dor/Dugard"
+    },
+    {
+     "id": "lca-adm2-fond-doux",
+     "name": "Fond Doux"
+    },
+    {
+     "id": "lca-adm2-fond-eau-rouge",
+     "name": "Fond Eau Rouge"
+    },
+    {
+     "id": "lca-adm2-fond-estate",
+     "name": "Fond Estate"
+    },
+    {
+     "id": "lca-adm2-fond-gens-libre",
+     "name": "Fond Gens Libre"
+    },
+    {
+     "id": "lca-adm2-fond-manger",
+     "name": "Fond Manger"
+    },
+    {
+     "id": "lca-adm2-fond-sabot",
+     "name": "Fond Sabot"
+    },
+    {
+     "id": "lca-adm2-fond-desruisseaux",
+     "name": "Fond/Desruisseaux"
+    },
+    {
+     "id": "lca-adm2-forest-reserve",
+     "name": "Forest Reserve"
+    },
+    {
+     "id": "lca-adm2-forestiere",
+     "name": "Forestiere"
+    },
+    {
+     "id": "lca-adm2-franciou",
+     "name": "Franciou"
+    },
+    {
+     "id": "lca-adm2-gadette",
+     "name": "Gadette"
+    },
+    {
+     "id": "lca-adm2-galba",
+     "name": "Galba"
+    },
+    {
+     "id": "lca-adm2-garrand",
+     "name": "Garrand"
+    },
+    {
+     "id": "lca-adm2-gayabois",
+     "name": "Gayabois"
+    },
+    {
+     "id": "lca-adm2-gentil",
+     "name": "Gentil"
+    },
+    {
+     "id": "lca-adm2-george-charles-boulevard",
+     "name": "George Charles Boulevard"
+    },
+    {
+     "id": "lca-adm2-georgeville",
+     "name": "Georgeville"
+    },
+    {
+     "id": "lca-adm2-getrine",
+     "name": "Getrine"
+    },
+    {
+     "id": "lca-adm2-girard-babonneau",
+     "name": "Girard/Babonneau"
+    },
+    {
+     "id": "lca-adm2-giraud",
+     "name": "Giraud"
+    },
+    {
+     "id": "lca-adm2-glavier",
+     "name": "Glavier"
+    },
+    {
+     "id": "lca-adm2-gomier",
+     "name": "Gomier"
+    },
+    {
+     "id": "lca-adm2-goodlands",
+     "name": "Goodlands"
+    },
+    {
+     "id": "lca-adm2-gouette",
+     "name": "Gouette"
+    },
+    {
+     "id": "lca-adm2-grace",
+     "name": "Grace"
+    },
+    {
+     "id": "lca-adm2-grande-ravine",
+     "name": "Grande Ravine"
+    },
+    {
+     "id": "lca-adm2-grande-riviere",
+     "name": "Grande Riviere"
+    },
+    {
+     "id": "lca-adm2-grande-riviere-2",
+     "name": "Grande Riviere"
+    },
+    {
+     "id": "lca-adm2-grande-riviere-assou-canal",
+     "name": "Grande Riviere/Assou Canal"
+    },
+    {
+     "id": "lca-adm2-grande-riviere-degazon",
+     "name": "Grande Riviere/Degazon"
+    },
+    {
+     "id": "lca-adm2-grande-riviere-des-branch",
+     "name": "Grande Riviere/Des Branch"
+    },
+    {
+     "id": "lca-adm2-grande-riviere-en-leur-morne-discompere",
+     "name": "Grande Riviere/En Leur Morne/Discompere"
+    },
+    {
+     "id": "lca-adm2-grande-riviere-funier",
+     "name": "Grande Riviere/Funier"
+    },
+    {
+     "id": "lca-adm2-grande-riviere-ingle-woods",
+     "name": "Grande Riviere/Ingle Woods"
+    },
+    {
+     "id": "lca-adm2-grande-riviere-morne-caca-cochon",
+     "name": "Grande Riviere/Morne Caca Cochon"
+    },
+    {
+     "id": "lca-adm2-grande-riviere-morne-elwin",
+     "name": "Grande Riviere/Morne Elwin"
+    },
+    {
+     "id": "lca-adm2-grande-riviere-morne-serpent",
+     "name": "Grande Riviere/Morne Serpent"
+    },
+    {
+     "id": "lca-adm2-grande-riviere-norbert",
+     "name": "Grande Riviere/Norbert"
+    },
+    {
+     "id": "lca-adm2-grande-riviere-piat",
+     "name": "Grande Riviere/Piat"
+    },
+    {
+     "id": "lca-adm2-grande-riviere-postlewaithe",
+     "name": "Grande Riviere/Postlewaithe"
+    },
+    {
+     "id": "lca-adm2-grande-riviere-white-rock",
+     "name": "Grande Riviere/White Rock"
+    },
+    {
+     "id": "lca-adm2-grass-street",
+     "name": "Grass Street"
+    },
+    {
+     "id": "lca-adm2-green-gold-babonneau",
+     "name": "Green Gold/Babonneau"
+    },
+    {
+     "id": "lca-adm2-gros-islet-town",
+     "name": "Gros Islet Town"
+    },
+    {
+     "id": "lca-adm2-gros-islet-edge-water",
+     "name": "Gros Islet/Edge Water"
+    },
+    {
+     "id": "lca-adm2-gros-piton",
+     "name": "Gros Piton"
+    },
+    {
+     "id": "lca-adm2-guesneau",
+     "name": "Guesneau"
+    },
+    {
+     "id": "lca-adm2-h-erelle",
+     "name": "H'Erelle"
+    },
+    {
+     "id": "lca-adm2-hewanorra-orchard",
+     "name": "Hewanorra Orchard"
+    },
+    {
+     "id": "lca-adm2-hill-20-babonneau",
+     "name": "Hill 20/Babonneau"
+    },
+    {
+     "id": "lca-adm2-hillcrest-gardens",
+     "name": "Hillcrest Gardens"
+    },
+    {
+     "id": "lca-adm2-honeymoon-beach",
+     "name": "Honeymoon Beach"
+    },
+    {
+     "id": "lca-adm2-hope-estate",
+     "name": "Hope Estate"
+    },
+    {
+     "id": "lca-adm2-hospital-road",
+     "name": "Hospital Road"
+    },
+    {
+     "id": "lca-adm2-independence-city",
+     "name": "Independence City"
+    },
+    {
+     "id": "lca-adm2-industrial-estate",
+     "name": "Industrial Estate"
+    },
+    {
+     "id": "lca-adm2-industry",
+     "name": "Industry"
+    },
+    {
+     "id": "lca-adm2-invorgoil-estate",
+     "name": "Invorgoil Estate"
+    },
+    {
+     "id": "lca-adm2-jacmel",
+     "name": "Jacmel"
+    },
+    {
+     "id": "lca-adm2-jalousie",
+     "name": "Jalousie"
+    },
+    {
+     "id": "lca-adm2-jean-baptiste",
+     "name": "Jean Baptiste"
+    },
+    {
+     "id": "lca-adm2-john-compton-highway",
+     "name": "John Compton Highway"
+    },
+    {
+     "id": "lca-adm2-joyeux",
+     "name": "Joyeux"
+    },
+    {
+     "id": "lca-adm2-kennedy-highway",
+     "name": "Kennedy Highway"
+    },
+    {
+     "id": "lca-adm2-l-eau-mineau",
+     "name": "L'Eau Mineau"
+    },
+    {
+     "id": "lca-adm2-l-hermitage",
+     "name": "L'Hermitage"
+    },
+    {
+     "id": "lca-adm2-l-orangerie-road",
+     "name": "L'Orangerie Road"
+    },
+    {
+     "id": "lca-adm2-l-union",
+     "name": "L'Union"
+    },
+    {
+     "id": "lca-adm2-la-carierre",
+     "name": "La Carierre"
+    },
+    {
+     "id": "lca-adm2-la-caye",
+     "name": "La Caye"
+    },
+    {
+     "id": "lca-adm2-la-clery",
+     "name": "La Clery"
+    },
+    {
+     "id": "lca-adm2-la-courville",
+     "name": "La Courville"
+    },
+    {
+     "id": "lca-adm2-la-croix",
+     "name": "La Croix"
+    },
+    {
+     "id": "lca-adm2-la-croix-chaubough",
+     "name": "La Croix Chaubough"
+    },
+    {
+     "id": "lca-adm2-la-croix-maingot",
+     "name": "La Croix Maingot"
+    },
+    {
+     "id": "lca-adm2-la-dauphine-estate",
+     "name": "La Dauphine Estate"
+    },
+    {
+     "id": "lca-adm2-la-fargue",
+     "name": "La Fargue"
+    },
+    {
+     "id": "lca-adm2-la-fille",
+     "name": "La Fille"
+    },
+    {
+     "id": "lca-adm2-la-guerre",
+     "name": "La Guerre"
+    },
+    {
+     "id": "lca-adm2-la-guerre-chickenback-street",
+     "name": "La Guerre/Chickenback Street"
+    },
+    {
+     "id": "lca-adm2-la-gwen-ba",
+     "name": "La Gwen Ba"
+    },
+    {
+     "id": "lca-adm2-la-haut",
+     "name": "La Haut"
+    },
+    {
+     "id": "lca-adm2-la-haut-2",
+     "name": "La Haut"
+    },
+    {
+     "id": "lca-adm2-la-haut-3",
+     "name": "La Haut"
+    },
+    {
+     "id": "lca-adm2-la-pansee",
+     "name": "La Pansee"
+    },
+    {
+     "id": "lca-adm2-la-pearle",
+     "name": "La Pearle"
+    },
+    {
+     "id": "lca-adm2-la-pelle",
+     "name": "La Pelle"
+    },
+    {
+     "id": "lca-adm2-la-perle",
+     "name": "La Perle"
+    },
+    {
+     "id": "lca-adm2-la-pointe",
+     "name": "La Pointe"
+    },
+    {
+     "id": "lca-adm2-la-pointe-2",
+     "name": "La Pointe"
+    },
+    {
+     "id": "lca-adm2-la-pointe-3",
+     "name": "La Pointe"
+    },
+    {
+     "id": "lca-adm2-la-resource",
+     "name": "La Resource"
+    },
+    {
+     "id": "lca-adm2-la-ressource",
+     "name": "La Ressource"
+    },
+    {
+     "id": "lca-adm2-la-retraite",
+     "name": "La Retraite"
+    },
+    {
+     "id": "lca-adm2-la-sorciere",
+     "name": "La Sorciere"
+    },
+    {
+     "id": "lca-adm2-la-toc",
+     "name": "La Toc"
+    },
+    {
+     "id": "lca-adm2-la-tourney-cedar-heights",
+     "name": "La Tourney/Cedar Heights"
+    },
+    {
+     "id": "lca-adm2-la-treille",
+     "name": "La Treille"
+    },
+    {
+     "id": "lca-adm2-labayee",
+     "name": "Labayee"
+    },
+    {
+     "id": "lca-adm2-lamaze",
+     "name": "Lamaze"
+    },
+    {
+     "id": "lca-adm2-lanse-road",
+     "name": "Lanse Road"
+    },
+    {
+     "id": "lca-adm2-lastic-hill",
+     "name": "Lastic Hill"
+    },
+    {
+     "id": "lca-adm2-latille",
+     "name": "Latille"
+    },
+    {
+     "id": "lca-adm2-le-riche",
+     "name": "Le Riche"
+    },
+    {
+     "id": "lca-adm2-lenny-hill",
+     "name": "Lenny Hill"
+    },
+    {
+     "id": "lca-adm2-leslie-land",
+     "name": "Leslie Land"
+    },
+    {
+     "id": "lca-adm2-lezy",
+     "name": "Lezy"
+    },
+    {
+     "id": "lca-adm2-lombard",
+     "name": "Lombard"
+    },
+    {
+     "id": "lca-adm2-london-road",
+     "name": "London Road"
+    },
+    {
+     "id": "lca-adm2-londonderry",
+     "name": "Londonderry"
+    },
+    {
+     "id": "lca-adm2-louvet",
+     "name": "Louvet"
+    },
+    {
+     "id": "lca-adm2-lumiere",
+     "name": "Lumiere"
+    },
+    {
+     "id": "lca-adm2-macdomel",
+     "name": "Macdomel"
+    },
+    {
+     "id": "lca-adm2-maganier",
+     "name": "Maganier"
+    },
+    {
+     "id": "lca-adm2-mahaut",
+     "name": "Mahaut"
+    },
+    {
+     "id": "lca-adm2-mailly-motete",
+     "name": "Mailly Motete"
+    },
+    {
+     "id": "lca-adm2-mal-maison",
+     "name": "Mal Maison"
+    },
+    {
+     "id": "lca-adm2-malgretoute",
+     "name": "Malgretoute"
+    },
+    {
+     "id": "lca-adm2-malgretoute-2",
+     "name": "Malgretoute"
+    },
+    {
+     "id": "lca-adm2-mamiku",
+     "name": "Mamiku"
+    },
+    {
+     "id": "lca-adm2-mandele",
+     "name": "Mandele"
+    },
+    {
+     "id": "lca-adm2-marc",
+     "name": "Marc"
+    },
+    {
+     "id": "lca-adm2-marchand",
+     "name": "Marchand"
+    },
+    {
+     "id": "lca-adm2-marche-gaye",
+     "name": "Marche Gaye"
+    },
+    {
+     "id": "lca-adm2-marigot",
+     "name": "Marigot"
+    },
+    {
+     "id": "lca-adm2-marisule",
+     "name": "Marisule"
+    },
+    {
+     "id": "lca-adm2-marisule-bon-air",
+     "name": "Marisule/Bon Air"
+    },
+    {
+     "id": "lca-adm2-marisule-east-winds",
+     "name": "Marisule/East Winds"
+    },
+    {
+     "id": "lca-adm2-marisule-la-brellotte",
+     "name": "Marisule/La Brellotte"
+    },
+    {
+     "id": "lca-adm2-marisule-top-of-the-world",
+     "name": "Marisule/Top Of The World"
+    },
+    {
+     "id": "lca-adm2-marisule-top-of-the-world-belle-ville",
+     "name": "Marisule/Top Of The World/Belle Ville"
+    },
+    {
+     "id": "lca-adm2-marquis-estate",
+     "name": "Marquis Estate"
+    },
+    {
+     "id": "lca-adm2-martin",
+     "name": "Martin"
+    },
+    {
+     "id": "lca-adm2-massacre",
+     "name": "Massacre"
+    },
+    {
+     "id": "lca-adm2-massade",
+     "name": "Massade"
+    },
+    {
+     "id": "lca-adm2-mavay",
+     "name": "Mavay"
+    },
+    {
+     "id": "lca-adm2-maynard-hill",
+     "name": "Maynard Hill"
+    },
+    {
+     "id": "lca-adm2-miami-bexon",
+     "name": "Miami/Bexon"
+    },
+    {
+     "id": "lca-adm2-migny",
+     "name": "Migny"
+    },
+    {
+     "id": "lca-adm2-millet",
+     "name": "Millet"
+    },
+    {
+     "id": "lca-adm2-mine",
+     "name": "Mine'"
+    },
+    {
+     "id": "lca-adm2-mocha",
+     "name": "Mocha"
+    },
+    {
+     "id": "lca-adm2-mon-repos",
+     "name": "Mon Repos"
+    },
+    {
+     "id": "lca-adm2-monchy",
+     "name": "Monchy"
+    },
+    {
+     "id": "lca-adm2-monchy-cardinal",
+     "name": "Monchy/Cardinal"
+    },
+    {
+     "id": "lca-adm2-monchy-careffe",
+     "name": "Monchy/Careffe"
+    },
+    {
+     "id": "lca-adm2-monchy-cletus-village",
+     "name": "Monchy/Cletus Village"
+    },
+    {
+     "id": "lca-adm2-monchy-la-borne",
+     "name": "Monchy/La Borne"
+    },
+    {
+     "id": "lca-adm2-monchy-la-borne-sans-souci",
+     "name": "Monchy/La Borne/Sans Souci"
+    },
+    {
+     "id": "lca-adm2-monchy-la-retraite",
+     "name": "Monchy/La Retraite"
+    },
+    {
+     "id": "lca-adm2-monchy-lafeuille",
+     "name": "Monchy/Lafeuille"
+    },
+    {
+     "id": "lca-adm2-monchy-lawi-fwen",
+     "name": "Monchy/Lawi Fwen"
+    },
+    {
+     "id": "lca-adm2-monchy-malgretoute",
+     "name": "Monchy/Malgretoute"
+    },
+    {
+     "id": "lca-adm2-monchy-moulin-a-vent",
+     "name": "Monchy/Moulin A Vent"
+    },
+    {
+     "id": "lca-adm2-monchy-mount-layau",
+     "name": "Monchy/Mount Layau"
+    },
+    {
+     "id": "lca-adm2-monchy-ravine-macock",
+     "name": "Monchy/Ravine Macock"
+    },
+    {
+     "id": "lca-adm2-monchy-riviere-mitan",
+     "name": "Monchy/Riviere Mitan"
+    },
+    {
+     "id": "lca-adm2-monchy-ti-dauphin",
+     "name": "Monchy/Ti Dauphin"
+    },
+    {
+     "id": "lca-adm2-monchy-vieux-sucreic",
+     "name": "Monchy/Vieux Sucreic"
+    },
+    {
+     "id": "lca-adm2-monchy-vieux-sucreic-bois-d-ine",
+     "name": "Monchy/Vieux Sucreic/Bois D'Ine"
+    },
+    {
+     "id": "lca-adm2-monchy-vieux-sucreic-careffe",
+     "name": "Monchy/Vieux Sucreic/Careffe"
+    },
+    {
+     "id": "lca-adm2-mongiraud",
+     "name": "Mongiraud"
+    },
+    {
+     "id": "lca-adm2-mongouge",
+     "name": "Mongouge"
+    },
+    {
+     "id": "lca-adm2-monier",
+     "name": "Monier"
+    },
+    {
+     "id": "lca-adm2-monkey-town-ciceron",
+     "name": "Monkey Town/Ciceron"
+    },
+    {
+     "id": "lca-adm2-monzie",
+     "name": "Monzie"
+    },
+    {
+     "id": "lca-adm2-moreau",
+     "name": "Moreau"
+    },
+    {
+     "id": "lca-adm2-morne-assau-babonneau",
+     "name": "Morne Assau/Babonneau"
+    },
+    {
+     "id": "lca-adm2-morne-bonin",
+     "name": "Morne Bonin"
+    },
+    {
+     "id": "lca-adm2-morne-cayenne",
+     "name": "Morne Cayenne"
+    },
+    {
+     "id": "lca-adm2-morne-ciseaux",
+     "name": "Morne Ciseaux"
+    },
+    {
+     "id": "lca-adm2-morne-citon",
+     "name": "Morne Citon"
+    },
+    {
+     "id": "lca-adm2-morne-d-or",
+     "name": "Morne D'Or"
+    },
+    {
+     "id": "lca-adm2-morne-dudon",
+     "name": "Morne Dudon"
+    },
+    {
+     "id": "lca-adm2-morne-gomier",
+     "name": "Morne Gomier"
+    },
+    {
+     "id": "lca-adm2-morne-jacques",
+     "name": "Morne Jacques"
+    },
+    {
+     "id": "lca-adm2-morne-la-croix",
+     "name": "Morne La Croix"
+    },
+    {
+     "id": "lca-adm2-morne-lastic",
+     "name": "Morne Lastic"
+    },
+    {
+     "id": "lca-adm2-morne-le-blanc",
+     "name": "Morne Le Blanc"
+    },
+    {
+     "id": "lca-adm2-morne-lezard-estate",
+     "name": "Morne Lezard Estate"
+    },
+    {
+     "id": "lca-adm2-morne-palama",
+     "name": "Morne Palama"
+    },
+    {
+     "id": "lca-adm2-morne-panache",
+     "name": "Morne Panache"
+    },
+    {
+     "id": "lca-adm2-morne-paul",
+     "name": "Morne Paul"
+    },
+    {
+     "id": "lca-adm2-morne-road",
+     "name": "Morne Road"
+    },
+    {
+     "id": "lca-adm2-morne-rouge-marc",
+     "name": "Morne Rouge/Marc"
+    },
+    {
+     "id": "lca-adm2-morne-sion",
+     "name": "Morne Sion"
+    },
+    {
+     "id": "lca-adm2-morne-siquot",
+     "name": "Morne Siquot"
+    },
+    {
+     "id": "lca-adm2-morne-tabac",
+     "name": "Morne Tabac"
+    },
+    {
+     "id": "lca-adm2-morne-vert",
+     "name": "Morne Vert"
+    },
+    {
+     "id": "lca-adm2-morne-vient",
+     "name": "Morne Vient"
+    },
+    {
+     "id": "lca-adm2-motete",
+     "name": "Motete"
+    },
+    {
+     "id": "lca-adm2-moule-a-chique",
+     "name": "Moule A Chique"
+    },
+    {
+     "id": "lca-adm2-mount-beaujolais",
+     "name": "Mount Beaujolais"
+    },
+    {
+     "id": "lca-adm2-mount-erole",
+     "name": "Mount Erole"
+    },
+    {
+     "id": "lca-adm2-mount-pleasant",
+     "name": "Mount Pleasant"
+    },
+    {
+     "id": "lca-adm2-myette-gardens",
+     "name": "Myette Gardens"
+    },
+    {
+     "id": "lca-adm2-new-development",
+     "name": "New Development"
+    },
+    {
+     "id": "lca-adm2-new-village",
+     "name": "New Village"
+    },
+    {
+     "id": "lca-adm2-new-village-2",
+     "name": "New Village"
+    },
+    {
+     "id": "lca-adm2-newfield-fiette",
+     "name": "Newfield/Fiette"
+    },
+    {
+     "id": "lca-adm2-obrier",
+     "name": "Obrier"
+    },
+    {
+     "id": "lca-adm2-odsan",
+     "name": "Odsan"
+    },
+    {
+     "id": "lca-adm2-olibo",
+     "name": "Olibo"
+    },
+    {
+     "id": "lca-adm2-paix-bouche",
+     "name": "Paix Bouche"
+    },
+    {
+     "id": "lca-adm2-paix-bouche-2",
+     "name": "Paix Bouche"
+    },
+    {
+     "id": "lca-adm2-palmiste",
+     "name": "Palmiste"
+    },
+    {
+     "id": "lca-adm2-palmiste-estate",
+     "name": "Palmiste Estate"
+    },
+    {
+     "id": "lca-adm2-parc-estate",
+     "name": "Parc Estate"
+    },
+    {
+     "id": "lca-adm2-parker-s-hill",
+     "name": "Parker'S Hill"
+    },
+    {
+     "id": "lca-adm2-pascal",
+     "name": "Pascal"
+    },
+    {
+     "id": "lca-adm2-patience",
+     "name": "Patience"
+    },
+    {
+     "id": "lca-adm2-patterson-s-gap",
+     "name": "Patterson'S Gap"
+    },
+    {
+     "id": "lca-adm2-pavee",
+     "name": "Pavee"
+    },
+    {
+     "id": "lca-adm2-pearts-gap",
+     "name": "Pearts Gap"
+    },
+    {
+     "id": "lca-adm2-pelouze",
+     "name": "Pelouze"
+    },
+    {
+     "id": "lca-adm2-perou",
+     "name": "Perou"
+    },
+    {
+     "id": "lca-adm2-petit-piton",
+     "name": "Petit Piton"
+    },
+    {
+     "id": "lca-adm2-piaye",
+     "name": "Piaye"
+    },
+    {
+     "id": "lca-adm2-pierrot",
+     "name": "Pierrot"
+    },
+    {
+     "id": "lca-adm2-pigeon-island",
+     "name": "Pigeon Island"
+    },
+    {
+     "id": "lca-adm2-piton-flore",
+     "name": "Piton Flore"
+    },
+    {
+     "id": "lca-adm2-planard",
+     "name": "Planard"
+    },
+    {
+     "id": "lca-adm2-plat-pays",
+     "name": "Plat Pays"
+    },
+    {
+     "id": "lca-adm2-plateau",
+     "name": "Plateau"
+    },
+    {
+     "id": "lca-adm2-plut",
+     "name": "Plut"
+    },
+    {
+     "id": "lca-adm2-pointe-seraphine",
+     "name": "Pointe Seraphine"
+    },
+    {
+     "id": "lca-adm2-pomme",
+     "name": "Pomme"
+    },
+    {
+     "id": "lca-adm2-ponyon",
+     "name": "Ponyon"
+    },
+    {
+     "id": "lca-adm2-portalese",
+     "name": "Portalese"
+    },
+    {
+     "id": "lca-adm2-praslin",
+     "name": "Praslin"
+    },
+    {
+     "id": "lca-adm2-quatre-chemins",
+     "name": "Quatre Chemins"
+    },
+    {
+     "id": "lca-adm2-rabot",
+     "name": "Rabot"
+    },
+    {
+     "id": "lca-adm2-raillon-road",
+     "name": "Raillon Road"
+    },
+    {
+     "id": "lca-adm2-rameau",
+     "name": "Rameau"
+    },
+    {
+     "id": "lca-adm2-raveneau",
+     "name": "Raveneau"
+    },
+    {
+     "id": "lca-adm2-ravine-chabot",
+     "name": "Ravine Chabot"
+    },
+    {
+     "id": "lca-adm2-ravine-claire",
+     "name": "Ravine Claire"
+    },
+    {
+     "id": "lca-adm2-ravine-poisson",
+     "name": "Ravine Poisson"
+    },
+    {
+     "id": "lca-adm2-ravine-touterelle",
+     "name": "Ravine Touterelle"
+    },
+    {
+     "id": "lca-adm2-reduit",
+     "name": "Reduit"
+    },
+    {
+     "id": "lca-adm2-reduit-orchard",
+     "name": "Reduit Orchard"
+    },
+    {
+     "id": "lca-adm2-reduit-park",
+     "name": "Reduit Park"
+    },
+    {
+     "id": "lca-adm2-resinard",
+     "name": "Resinard"
+    },
+    {
+     "id": "lca-adm2-reunion",
+     "name": "Reunion"
+    },
+    {
+     "id": "lca-adm2-riche-fond",
+     "name": "Riche Fond"
+    },
+    {
+     "id": "lca-adm2-riche-fond-la-belle-vie",
+     "name": "Riche Fond/La Belle Vie"
+    },
+    {
+     "id": "lca-adm2-riche-fond-new-village",
+     "name": "Riche Fond/New Village"
+    },
+    {
+     "id": "lca-adm2-river-doree",
+     "name": "River Doree"
+    },
+    {
+     "id": "lca-adm2-riverside-road",
+     "name": "Riverside Road"
+    },
+    {
+     "id": "lca-adm2-roblot",
+     "name": "Roblot"
+    },
+    {
+     "id": "lca-adm2-rock-hall",
+     "name": "Rock Hall"
+    },
+    {
+     "id": "lca-adm2-rodney-bay",
+     "name": "Rodney Bay"
+    },
+    {
+     "id": "lca-adm2-rodney-heights",
+     "name": "Rodney Heights"
+    },
+    {
+     "id": "lca-adm2-rose-hill",
+     "name": "Rose Hill"
+    },
+    {
+     "id": "lca-adm2-roseau-valley",
+     "name": "Roseau Valley"
+    },
+    {
+     "id": "lca-adm2-rouarne",
+     "name": "Rouarne"
+    },
+    {
+     "id": "lca-adm2-ruby-estate",
+     "name": "Ruby Estate"
+    },
+    {
+     "id": "lca-adm2-saint-marie-road",
+     "name": "Saint Marie Road"
+    },
+    {
+     "id": "lca-adm2-saltibus",
+     "name": "Saltibus"
+    },
+    {
+     "id": "lca-adm2-san-souci",
+     "name": "San Souci"
+    },
+    {
+     "id": "lca-adm2-sand-de-feu",
+     "name": "Sand De Feu"
+    },
+    {
+     "id": "lca-adm2-saphire",
+     "name": "Saphire"
+    },
+    {
+     "id": "lca-adm2-sapphire",
+     "name": "Sapphire"
+    },
+    {
+     "id": "lca-adm2-sarot",
+     "name": "Sarot"
+    },
+    {
+     "id": "lca-adm2-saut",
+     "name": "Saut"
+    },
+    {
+     "id": "lca-adm2-sauzay",
+     "name": "Sauzay"
+    },
+    {
+     "id": "lca-adm2-savannes",
+     "name": "Savannes"
+    },
+    {
+     "id": "lca-adm2-savannes-george-constitution-park",
+     "name": "Savannes George/Constitution Park"
+    },
+    {
+     "id": "lca-adm2-six-miles-descatier",
+     "name": "Six Miles/Descatier"
+    },
+    {
+     "id": "lca-adm2-soucis",
+     "name": "Soucis"
+    },
+    {
+     "id": "lca-adm2-soufriere-estate",
+     "name": "Soufriere Estate"
+    },
+    {
+     "id": "lca-adm2-st-helen-estate",
+     "name": "St Helen Estate"
+    },
+    {
+     "id": "lca-adm2-st-jude-s-highway",
+     "name": "St Jude'S Highway"
+    },
+    {
+     "id": "lca-adm2-st-lawrence",
+     "name": "St Lawrence"
+    },
+    {
+     "id": "lca-adm2-st-lawrence-estate",
+     "name": "St Lawrence Estate"
+    },
+    {
+     "id": "lca-adm2-st-phillip",
+     "name": "St Phillip"
+    },
+    {
+     "id": "lca-adm2-st-remy-estate",
+     "name": "St Remy Estate"
+    },
+    {
+     "id": "lca-adm2-st-joseph-estate",
+     "name": "St. Joseph Estate"
+    },
+    {
+     "id": "lca-adm2-stonefield",
+     "name": "Stonefield"
+    },
+    {
+     "id": "lca-adm2-sulphur-springs",
+     "name": "Sulphur Springs"
+    },
+    {
+     "id": "lca-adm2-summersdale",
+     "name": "Summersdale"
+    },
+    {
+     "id": "lca-adm2-sunbilt",
+     "name": "Sunbilt"
+    },
+    {
+     "id": "lca-adm2-sunny-acres",
+     "name": "Sunny Acres"
+    },
+    {
+     "id": "lca-adm2-talvern-babonneau",
+     "name": "Talvern/Babonneau"
+    },
+    {
+     "id": "lca-adm2-tapion",
+     "name": "Tapion"
+    },
+    {
+     "id": "lca-adm2-terre-blanche",
+     "name": "Terre Blanche"
+    },
+    {
+     "id": "lca-adm2-tete-chemin-millet",
+     "name": "Tete Chemin/Millet"
+    },
+    {
+     "id": "lca-adm2-tete-morne",
+     "name": "Tete Morne"
+    },
+    {
+     "id": "lca-adm2-tete-morne-morne-andrew",
+     "name": "Tete Morne/Morne Andrew"
+    },
+    {
+     "id": "lca-adm2-thamazo",
+     "name": "Thamazo"
+    },
+    {
+     "id": "lca-adm2-the-morne",
+     "name": "The Morne"
+    },
+    {
+     "id": "lca-adm2-theodorine",
+     "name": "Theodorine"
+    },
+    {
+     "id": "lca-adm2-thomazo-tournesse",
+     "name": "Thomazo/Tournesse"
+    },
+    {
+     "id": "lca-adm2-ti-boug",
+     "name": "Ti Boug"
+    },
+    {
+     "id": "lca-adm2-ti-colon",
+     "name": "Ti Colon"
+    },
+    {
+     "id": "lca-adm2-ti-delcer",
+     "name": "Ti Delcer"
+    },
+    {
+     "id": "lca-adm2-ti-riviere",
+     "name": "Ti Riviere"
+    },
+    {
+     "id": "lca-adm2-ti-rocher",
+     "name": "Ti Rocher"
+    },
+    {
+     "id": "lca-adm2-ti-rocher-2",
+     "name": "Ti Rocher"
+    },
+    {
+     "id": "lca-adm2-toraille",
+     "name": "Toraille"
+    },
+    {
+     "id": "lca-adm2-tou-cochon",
+     "name": "Tou Cochon"
+    },
+    {
+     "id": "lca-adm2-tourat-soucis",
+     "name": "Tourat/Soucis"
+    },
+    {
+     "id": "lca-adm2-town",
+     "name": "Town"
+    },
+    {
+     "id": "lca-adm2-town-2",
+     "name": "Town"
+    },
+    {
+     "id": "lca-adm2-trois-piton",
+     "name": "Trois Piton"
+    },
+    {
+     "id": "lca-adm2-trou-cochon-marc",
+     "name": "Trou Cochon/Marc"
+    },
+    {
+     "id": "lca-adm2-trou-florent-marc",
+     "name": "Trou Florent/Marc"
+    },
+    {
+     "id": "lca-adm2-trou-rouge",
+     "name": "Trou Rouge"
+    },
+    {
+     "id": "lca-adm2-troumassee",
+     "name": "Troumassee"
+    },
+    {
+     "id": "lca-adm2-union",
+     "name": "Union"
+    },
+    {
+     "id": "lca-adm2-union-terrace",
+     "name": "Union Terrace"
+    },
+    {
+     "id": "lca-adm2-union-vale",
+     "name": "Union Vale"
+    },
+    {
+     "id": "lca-adm2-union-ti-morne",
+     "name": "Union/Ti Morne"
+    },
+    {
+     "id": "lca-adm2-vanard",
+     "name": "Vanard"
+    },
+    {
+     "id": "lca-adm2-venus",
+     "name": "Venus"
+    },
+    {
+     "id": "lca-adm2-viancelle",
+     "name": "Viancelle"
+    },
+    {
+     "id": "lca-adm2-victoria",
+     "name": "Victoria"
+    },
+    {
+     "id": "lca-adm2-vide-bouteille",
+     "name": "Vide Bouteille"
+    },
+    {
+     "id": "lca-adm2-vieux-fort-laborie-highway",
+     "name": "Vieux Fort/Laborie Highway"
+    },
+    {
+     "id": "lca-adm2-vige",
+     "name": "Vige'"
+    },
+    {
+     "id": "lca-adm2-vigie",
+     "name": "Vigie"
+    },
+    {
+     "id": "lca-adm2-village",
+     "name": "Village"
+    },
+    {
+     "id": "lca-adm2-village-2",
+     "name": "Village"
+    },
+    {
+     "id": "lca-adm2-village-3",
+     "name": "Village"
+    },
+    {
+     "id": "lca-adm2-village-4",
+     "name": "Village"
+    },
+    {
+     "id": "lca-adm2-village-5",
+     "name": "Village"
+    },
+    {
+     "id": "lca-adm2-village-petite-bourgh",
+     "name": "Village/Petite Bourgh"
+    },
+    {
+     "id": "lca-adm2-volet",
+     "name": "Volet"
+    },
+    {
+     "id": "lca-adm2-warwick-daban",
+     "name": "Warwick/Daban"
+    },
+    {
+     "id": "lca-adm2-waterworks",
+     "name": "Waterworks"
+    },
+    {
+     "id": "lca-adm2-westall-group-the-mangue",
+     "name": "Westall Group/The Mangue"
+    },
+    {
+     "id": "lca-adm2-wilton-s-yard-grave-yard",
+     "name": "Wilton'S Yard/Grave Yard"
+    },
+    {
+     "id": "lca-adm2-woodlands",
+     "name": "Woodlands"
+    },
+    {
+     "id": "lca-adm2-yorke-hill",
+     "name": "Yorke Hill"
+    },
+    {
+     "id": "lca-adm2-zenon",
+     "name": "Zenon"
+    }
+   ]
+  }
+ },
+ "name": "Saint Lucia",
+ "nameBn": "Saint Lucia"
+}

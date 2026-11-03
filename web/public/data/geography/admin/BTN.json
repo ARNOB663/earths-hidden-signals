@@ -1,21 +1,16 @@
 {
  "code": "BTN",
- "flag": "🇧🇹",
+ "flag": "",
  "levels": {
   "ADM0": {
    "canonical": "Bhutan",
    "code": "ADM0",
    "count": 1,
-   "name": "Bhutan",
-   "nameBn": "ভুটান",
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
    "representedYear": "2010",
-   "units": [
-    {
-     "id": "btn-adm0-bhutan",
-     "name": "Bhutan",
-     "shapeISO": "BTN"
-    }
-   ]
+   "sourceCount": 1,
+   "units": []
   },
   "ADM1": {
    "canonical": "Dzongdeys",
@@ -24,6 +19,7 @@
    "name": "Dzongdeys",
    "nameBn": "জোংদে",
    "representedYear": "2010",
+   "sourceCount": 20,
    "units": [
     {
      "id": "btn-adm1-bumthang",
@@ -134,1035 +130,831 @@
    "name": "Gewog",
    "nameBn": "গেওগ",
    "representedYear": "2020",
+   "sourceCount": 205,
    "units": [
     {
      "id": "btn-adm2-athang",
-     "name": "Athang",
-     "shapeISO": null
+     "name": "Athang"
     },
     {
      "id": "btn-adm2-balam",
-     "name": "Balam",
-     "shapeISO": null
+     "name": "Balam"
     },
     {
      "id": "btn-adm2-bapisa",
-     "name": "Bapisa",
-     "shapeISO": null
+     "name": "Bapisa"
     },
     {
      "id": "btn-adm2-bara",
-     "name": "Bara",
-     "shapeISO": null
+     "name": "Bara"
     },
     {
      "id": "btn-adm2-bardo",
-     "name": "Bardo",
-     "shapeISO": null
+     "name": "Bardo"
     },
     {
      "id": "btn-adm2-bartsham",
-     "name": "Bartsham",
-     "shapeISO": null
+     "name": "Bartsham"
     },
     {
      "id": "btn-adm2-barzhong",
-     "name": "Barzhong",
-     "shapeISO": null
+     "name": "Barzhong"
     },
     {
      "id": "btn-adm2-beteni",
-     "name": "Beteni",
-     "shapeISO": null
+     "name": "Beteni"
     },
     {
      "id": "btn-adm2-bhur",
-     "name": "Bhur",
-     "shapeISO": null
+     "name": "Bhur"
     },
     {
      "id": "btn-adm2-bidung",
-     "name": "Bidung",
-     "shapeISO": null
+     "name": "Bidung"
     },
     {
      "id": "btn-adm2-biru",
-     "name": "Biru",
-     "shapeISO": null
+     "name": "Biru"
     },
     {
      "id": "btn-adm2-bjachho",
-     "name": "Bjachho",
-     "shapeISO": null
+     "name": "Bjachho"
     },
     {
      "id": "btn-adm2-bjena",
-     "name": "Bjena",
-     "shapeISO": null
+     "name": "Bjena"
     },
     {
      "id": "btn-adm2-bji",
-     "name": "Bji",
-     "shapeISO": null
+     "name": "Bji"
     },
     {
      "id": "btn-adm2-bjoka",
-     "name": "Bjoka",
-     "shapeISO": null
+     "name": "Bjoka"
     },
     {
      "id": "btn-adm2-bongo",
-     "name": "Bongo",
-     "shapeISO": null
+     "name": "Bongo"
     },
     {
      "id": "btn-adm2-bumdeling",
-     "name": "Bumdeling",
-     "shapeISO": null
+     "name": "Bumdeling"
     },
     {
      "id": "btn-adm2-chang",
-     "name": "Chang",
-     "shapeISO": null
+     "name": "Chang"
     },
     {
      "id": "btn-adm2-chapchha",
-     "name": "Chapchha",
-     "shapeISO": null
+     "name": "Chapchha"
     },
     {
      "id": "btn-adm2-chargharay",
-     "name": "Chargharay",
-     "shapeISO": null
+     "name": "Chargharay"
     },
     {
      "id": "btn-adm2-chaskhar",
-     "name": "Chaskhar",
-     "shapeISO": null
+     "name": "Chaskhar"
     },
     {
      "id": "btn-adm2-chengmari",
-     "name": "Chengmari",
-     "shapeISO": null
+     "name": "Chengmari"
     },
     {
      "id": "btn-adm2-chhali",
-     "name": "Chhali",
-     "shapeISO": null
+     "name": "Chhali"
     },
     {
      "id": "btn-adm2-chhimung",
-     "name": "Chhimung",
-     "shapeISO": null
+     "name": "Chhimung"
     },
     {
      "id": "btn-adm2-chhoekhor",
-     "name": "Chhoekhor",
-     "shapeISO": null
+     "name": "Chhoekhor"
     },
     {
      "id": "btn-adm2-chhubu",
-     "name": "Chhubu",
-     "shapeISO": null
+     "name": "Chhubu"
     },
     {
      "id": "btn-adm2-chhume",
-     "name": "Chhume",
-     "shapeISO": null
+     "name": "Chhume"
     },
     {
      "id": "btn-adm2-chhuzagang",
-     "name": "Chhuzagang",
-     "shapeISO": null
+     "name": "Chhuzagang"
     },
     {
      "id": "btn-adm2-chokhorling",
-     "name": "Chokhorling",
-     "shapeISO": null
+     "name": "Chokhorling"
     },
     {
      "id": "btn-adm2-chongshing",
-     "name": "Chongshing",
-     "shapeISO": null
+     "name": "Chongshing"
     },
     {
      "id": "btn-adm2-daga",
-     "name": "Daga",
-     "shapeISO": null
+     "name": "Daga"
     },
     {
      "id": "btn-adm2-dagala",
-     "name": "Dagala",
-     "shapeISO": null
+     "name": "Dagala"
     },
     {
      "id": "btn-adm2-dala",
-     "name": "Dala",
-     "shapeISO": null
+     "name": "Dala"
     },
     {
      "id": "btn-adm2-dangchhu",
-     "name": "Dangchhu",
-     "shapeISO": null
+     "name": "Dangchhu"
     },
     {
      "id": "btn-adm2-dechhenling",
-     "name": "Dechhenling",
-     "shapeISO": null
+     "name": "Dechhenling"
     },
     {
      "id": "btn-adm2-dekiling",
-     "name": "Dekiling",
-     "shapeISO": null
+     "name": "Dekiling"
     },
     {
      "id": "btn-adm2-denchhukha",
-     "name": "Denchhukha",
-     "shapeISO": null
+     "name": "Denchhukha"
     },
     {
      "id": "btn-adm2-deorali",
-     "name": "Deorali",
-     "shapeISO": null
+     "name": "Deorali"
     },
     {
      "id": "btn-adm2-dewathang",
-     "name": "Dewathang",
-     "shapeISO": null
+     "name": "Dewathang"
     },
     {
      "id": "btn-adm2-doban",
-     "name": "Doban",
-     "shapeISO": null
+     "name": "Doban"
     },
     {
      "id": "btn-adm2-doga",
-     "name": "Doga",
-     "shapeISO": null
+     "name": "Doga"
     },
     {
      "id": "btn-adm2-dopshari",
-     "name": "Dopshari",
-     "shapeISO": null
+     "name": "Dopshari"
     },
     {
      "id": "btn-adm2-dorokha",
-     "name": "Dorokha",
-     "shapeISO": null
+     "name": "Dorokha"
     },
     {
      "id": "btn-adm2-dorona",
-     "name": "Dorona",
-     "shapeISO": null
+     "name": "Dorona"
     },
     {
      "id": "btn-adm2-doteng",
-     "name": "Doteng",
-     "shapeISO": null
+     "name": "Doteng"
     },
     {
      "id": "btn-adm2-dragteng",
-     "name": "Dragteng",
-     "shapeISO": null
+     "name": "Dragteng"
     },
     {
      "id": "btn-adm2-drametse",
-     "name": "Drametse",
-     "shapeISO": null
+     "name": "Drametse"
     },
     {
      "id": "btn-adm2-drepung",
-     "name": "Drepung",
-     "shapeISO": null
+     "name": "Drepung"
     },
     {
      "id": "btn-adm2-drugyelgang",
-     "name": "Drugyelgang",
-     "shapeISO": null
+     "name": "Drugyelgang"
     },
     {
      "id": "btn-adm2-dunglegang",
-     "name": "Dunglegang",
-     "shapeISO": null
+     "name": "Dunglegang"
     },
     {
      "id": "btn-adm2-dungmin",
-     "name": "Dungmin",
-     "shapeISO": null
+     "name": "Dungmin"
     },
     {
      "id": "btn-adm2-dungna",
-     "name": "Dungna",
-     "shapeISO": null
+     "name": "Dungna"
     },
     {
      "id": "btn-adm2-dungtoe",
-     "name": "Dungtoe",
-     "shapeISO": null
+     "name": "Dungtoe"
     },
     {
      "id": "btn-adm2-dzoma",
-     "name": "Dzoma",
-     "shapeISO": null
+     "name": "Dzoma"
     },
     {
      "id": "btn-adm2-gakiling",
-     "name": "Gakiling",
-     "shapeISO": null
+     "name": "Gakiling"
     },
     {
      "id": "btn-adm2-gangte",
-     "name": "Gangte",
-     "shapeISO": null
+     "name": "Gangte"
     },
     {
      "id": "btn-adm2-gangzur",
-     "name": "Gangzur",
-     "shapeISO": null
+     "name": "Gangzur"
     },
     {
      "id": "btn-adm2-gasetsho-gom",
-     "name": "Gasetsho Gom",
-     "shapeISO": null
+     "name": "Gasetsho Gom"
     },
     {
      "id": "btn-adm2-gasetsho-om",
-     "name": "Gasetsho Om",
-     "shapeISO": null
+     "name": "Gasetsho Om"
     },
     {
      "id": "btn-adm2-gelephu",
-     "name": "Gelephu",
-     "shapeISO": null
+     "name": "Gelephu"
     },
     {
      "id": "btn-adm2-geling",
-     "name": "Geling",
-     "shapeISO": null
+     "name": "Geling"
     },
     {
      "id": "btn-adm2-genye",
-     "name": "Genye",
-     "shapeISO": null
+     "name": "Genye"
     },
     {
      "id": "btn-adm2-gesarling",
-     "name": "Gesarling",
-     "shapeISO": null
+     "name": "Gesarling"
     },
     {
      "id": "btn-adm2-getana",
-     "name": "Getana",
-     "shapeISO": null
+     "name": "Getana"
     },
     {
      "id": "btn-adm2-goenkhame",
-     "name": "Goenkhame",
-     "shapeISO": null
+     "name": "Goenkhame"
     },
     {
      "id": "btn-adm2-goenkhatoe",
-     "name": "Goenkhatoe",
-     "shapeISO": null
+     "name": "Goenkhatoe"
     },
     {
      "id": "btn-adm2-goenshari",
-     "name": "Goenshari",
-     "shapeISO": null
+     "name": "Goenshari"
     },
     {
      "id": "btn-adm2-gomdar",
-     "name": "Gomdar",
-     "shapeISO": null
+     "name": "Gomdar"
     },
     {
      "id": "btn-adm2-gongdue",
-     "name": "Gongdue",
-     "shapeISO": null
+     "name": "Gongdue"
     },
     {
      "id": "btn-adm2-gosarling",
-     "name": "Gosarling",
-     "shapeISO": null
+     "name": "Gosarling"
     },
     {
      "id": "btn-adm2-gozhi",
-     "name": "Gozhi",
-     "shapeISO": null
+     "name": "Gozhi"
     },
     {
      "id": "btn-adm2-gozhing",
-     "name": "Gozhing",
-     "shapeISO": null
+     "name": "Gozhing"
     },
     {
      "id": "btn-adm2-guma",
-     "name": "Guma",
-     "shapeISO": null
+     "name": "Guma"
     },
     {
      "id": "btn-adm2-hiley",
-     "name": "Hiley",
-     "shapeISO": null
+     "name": "Hiley"
     },
     {
      "id": "btn-adm2-hungrel",
-     "name": "Hungrel",
-     "shapeISO": null
+     "name": "Hungrel"
     },
     {
      "id": "btn-adm2-jamkhar",
-     "name": "Jamkhar",
-     "shapeISO": null
+     "name": "Jamkhar"
     },
     {
      "id": "btn-adm2-jangchhubling",
-     "name": "Jangchhubling",
-     "shapeISO": null
+     "name": "Jangchhubling"
     },
     {
      "id": "btn-adm2-jaray",
-     "name": "Jaray",
-     "shapeISO": null
+     "name": "Jaray"
     },
     {
      "id": "btn-adm2-jigmichhoeling",
-     "name": "Jigmichhoeling",
-     "shapeISO": null
+     "name": "Jigmichhoeling"
     },
     {
      "id": "btn-adm2-jurmey",
-     "name": "Jurmey",
-     "shapeISO": null
+     "name": "Jurmey"
     },
     {
      "id": "btn-adm2-kabjisa",
-     "name": "Kabjisa",
-     "shapeISO": null
+     "name": "Kabjisa"
     },
     {
      "id": "btn-adm2-kalidzingkha",
-     "name": "Kalidzingkha",
-     "shapeISO": null
+     "name": "Kalidzingkha"
     },
     {
      "id": "btn-adm2-kanglung",
-     "name": "Kanglung",
-     "shapeISO": null
+     "name": "Kanglung"
     },
     {
      "id": "btn-adm2-kangpara",
-     "name": "Kangpara",
-     "shapeISO": null
+     "name": "Kangpara"
     },
     {
      "id": "btn-adm2-katsho",
-     "name": "Katsho",
-     "shapeISO": null
+     "name": "Katsho"
     },
     {
      "id": "btn-adm2-kawang",
-     "name": "Kawang",
-     "shapeISO": null
+     "name": "Kawang"
     },
     {
      "id": "btn-adm2-kazhi",
-     "name": "Kazhi",
-     "shapeISO": null
+     "name": "Kazhi"
     },
     {
      "id": "btn-adm2-kengkhar",
-     "name": "Kengkhar",
-     "shapeISO": null
+     "name": "Kengkhar"
     },
     {
      "id": "btn-adm2-khaling",
-     "name": "Khaling",
-     "shapeISO": null
+     "name": "Khaling"
     },
     {
      "id": "btn-adm2-khamdang",
-     "name": "Khamdang",
-     "shapeISO": null
+     "name": "Khamdang"
     },
     {
      "id": "btn-adm2-khar",
-     "name": "Khar",
-     "shapeISO": null
+     "name": "Khar"
     },
     {
      "id": "btn-adm2-khipisa",
-     "name": "Khipisa",
-     "shapeISO": null
+     "name": "Khipisa"
     },
     {
      "id": "btn-adm2-khoma",
-     "name": "Khoma",
-     "shapeISO": null
+     "name": "Khoma"
     },
     {
      "id": "btn-adm2-kikorthang",
-     "name": "Kikorthang",
-     "shapeISO": null
+     "name": "Kikorthang"
     },
     {
      "id": "btn-adm2-korphu",
-     "name": "Korphu",
-     "shapeISO": null
+     "name": "Korphu"
     },
     {
      "id": "btn-adm2-kurtoe",
-     "name": "Kurtoe",
-     "shapeISO": null
+     "name": "Kurtoe"
     },
     {
      "id": "btn-adm2-lajab",
-     "name": "Lajab",
-     "shapeISO": null
+     "name": "Lajab"
     },
     {
      "id": "btn-adm2-lamgong",
-     "name": "Lamgong",
-     "shapeISO": null
+     "name": "Lamgong"
     },
     {
      "id": "btn-adm2-langchhenphu",
-     "name": "Langchhenphu",
-     "shapeISO": null
+     "name": "Langchhenphu"
     },
     {
      "id": "btn-adm2-langthil",
-     "name": "Langthil",
-     "shapeISO": null
+     "name": "Langthil"
     },
     {
      "id": "btn-adm2-lauri",
-     "name": "Lauri",
-     "shapeISO": null
+     "name": "Lauri"
     },
     {
      "id": "btn-adm2-laya",
-     "name": "Laya",
-     "shapeISO": null
+     "name": "Laya"
     },
     {
      "id": "btn-adm2-lhamoizingkha",
-     "name": "Lhamoizingkha",
-     "shapeISO": null
+     "name": "Lhamoizingkha"
     },
     {
      "id": "btn-adm2-lingmukha",
-     "name": "Lingmukha",
-     "shapeISO": null
+     "name": "Lingmukha"
     },
     {
      "id": "btn-adm2-lingzhi",
-     "name": "Lingzhi",
-     "shapeISO": null
+     "name": "Lingzhi"
     },
     {
      "id": "btn-adm2-logchina",
-     "name": "Logchina",
-     "shapeISO": null
+     "name": "Logchina"
     },
     {
      "id": "btn-adm2-lumang",
-     "name": "Lumang",
-     "shapeISO": null
+     "name": "Lumang"
     },
     {
      "id": "btn-adm2-lunana",
-     "name": "Lunana",
-     "shapeISO": null
+     "name": "Lunana"
     },
     {
      "id": "btn-adm2-lungnyi",
-     "name": "Lungnyi",
-     "shapeISO": null
+     "name": "Lungnyi"
     },
     {
      "id": "btn-adm2-martshala",
-     "name": "Martshala",
-     "shapeISO": null
+     "name": "Martshala"
     },
     {
      "id": "btn-adm2-menbi",
-     "name": "Menbi",
-     "shapeISO": null
+     "name": "Menbi"
     },
     {
      "id": "btn-adm2-mendrelgang",
-     "name": "Mendrelgang",
-     "shapeISO": null
+     "name": "Mendrelgang"
     },
     {
      "id": "btn-adm2-merak",
-     "name": "Merak",
-     "shapeISO": null
+     "name": "Merak"
     },
     {
      "id": "btn-adm2-metap",
-     "name": "Metap",
-     "shapeISO": null
+     "name": "Metap"
     },
     {
      "id": "btn-adm2-metsho",
-     "name": "Metsho",
-     "shapeISO": null
+     "name": "Metsho"
     },
     {
      "id": "btn-adm2-mewang",
-     "name": "Mewang",
-     "shapeISO": null
+     "name": "Mewang"
     },
     {
      "id": "btn-adm2-minjay",
-     "name": "Minjay",
-     "shapeISO": null
+     "name": "Minjay"
     },
     {
      "id": "btn-adm2-mongar",
-     "name": "Mongar",
-     "shapeISO": null
+     "name": "Mongar"
     },
     {
      "id": "btn-adm2-nahi",
-     "name": "Nahi",
-     "shapeISO": null
+     "name": "Nahi"
     },
     {
      "id": "btn-adm2-naja",
-     "name": "Naja",
-     "shapeISO": null
+     "name": "Naja"
     },
     {
      "id": "btn-adm2-namgyel-chhoeling",
-     "name": "Namgyel Chhoeling",
-     "shapeISO": null
+     "name": "Namgyel Chhoeling"
     },
     {
      "id": "btn-adm2-nangkor",
-     "name": "Nangkor",
-     "shapeISO": null
+     "name": "Nangkor"
     },
     {
      "id": "btn-adm2-nanong",
-     "name": "Nanong",
-     "shapeISO": null
+     "name": "Nanong"
     },
     {
      "id": "btn-adm2-narang",
-     "name": "Narang",
-     "shapeISO": null
+     "name": "Narang"
     },
     {
      "id": "btn-adm2-naro",
-     "name": "Naro",
-     "shapeISO": null
+     "name": "Naro"
     },
     {
      "id": "btn-adm2-ngangla",
-     "name": "Ngangla",
-     "shapeISO": null
+     "name": "Ngangla"
     },
     {
      "id": "btn-adm2-ngatshang",
-     "name": "Ngatshang",
-     "shapeISO": null
+     "name": "Ngatshang"
     },
     {
      "id": "btn-adm2-nichula",
-     "name": "Nichula",
-     "shapeISO": null
+     "name": "Nichula"
     },
     {
      "id": "btn-adm2-norbugang",
-     "name": "Norbugang",
-     "shapeISO": null
+     "name": "Norbugang"
     },
     {
      "id": "btn-adm2-nubi",
-     "name": "Nubi",
-     "shapeISO": null
+     "name": "Nubi"
     },
     {
      "id": "btn-adm2-nyisho",
-     "name": "Nyisho",
-     "shapeISO": null
+     "name": "Nyisho"
     },
     {
      "id": "btn-adm2-pagli",
-     "name": "Pagli",
-     "shapeISO": null
+     "name": "Pagli"
     },
     {
      "id": "btn-adm2-pangkhar",
-     "name": "Pangkhar",
-     "shapeISO": null
+     "name": "Pangkhar"
     },
     {
      "id": "btn-adm2-patakla",
-     "name": "Patakla",
-     "shapeISO": null
+     "name": "Patakla"
     },
     {
      "id": "btn-adm2-pemathang",
-     "name": "Pemathang",
-     "shapeISO": null
+     "name": "Pemathang"
     },
     {
      "id": "btn-adm2-phangyuel",
-     "name": "Phangyuel",
-     "shapeISO": null
+     "name": "Phangyuel"
     },
     {
      "id": "btn-adm2-phobji",
-     "name": "Phobji",
-     "shapeISO": null
+     "name": "Phobji"
     },
     {
      "id": "btn-adm2-phongme",
-     "name": "Phongme",
-     "shapeISO": null
+     "name": "Phongme"
     },
     {
      "id": "btn-adm2-phuentenchhu",
-     "name": "Phuentenchhu",
-     "shapeISO": null
+     "name": "Phuentenchhu"
     },
     {
      "id": "btn-adm2-phuentsholing",
-     "name": "Phuentsholing",
-     "shapeISO": null
+     "name": "Phuentsholing"
     },
     {
      "id": "btn-adm2-phuntsthothang",
-     "name": "Phuntsthothang",
-     "shapeISO": null
+     "name": "Phuntsthothang"
     },
     {
      "id": "btn-adm2-radi",
-     "name": "Radi",
-     "shapeISO": null
+     "name": "Radi"
     },
     {
      "id": "btn-adm2-ramjar",
-     "name": "Ramjar",
-     "shapeISO": null
+     "name": "Ramjar"
     },
     {
      "id": "btn-adm2-rangthangling",
-     "name": "Rangthangling",
-     "shapeISO": null
+     "name": "Rangthangling"
     },
     {
      "id": "btn-adm2-ruepisa",
-     "name": "Ruepisa",
-     "shapeISO": null
+     "name": "Ruepisa"
     },
     {
      "id": "btn-adm2-sakteng",
-     "name": "Sakteng",
-     "shapeISO": null
+     "name": "Sakteng"
     },
     {
      "id": "btn-adm2-saleng",
-     "name": "Saleng",
-     "shapeISO": null
+     "name": "Saleng"
     },
     {
      "id": "btn-adm2-sama",
-     "name": "Sama",
-     "shapeISO": null
+     "name": "Sama"
     },
     {
      "id": "btn-adm2-samkhar",
-     "name": "Samkhar",
-     "shapeISO": null
+     "name": "Samkhar"
     },
     {
      "id": "btn-adm2-samphelling",
-     "name": "Samphelling",
-     "shapeISO": null
+     "name": "Samphelling"
     },
     {
      "id": "btn-adm2-samrang",
-     "name": "Samrang",
-     "shapeISO": null
+     "name": "Samrang"
     },
     {
      "id": "btn-adm2-samtse",
-     "name": "Samtse",
-     "shapeISO": null
+     "name": "Samtse"
     },
     {
      "id": "btn-adm2-senge",
-     "name": "Senge",
-     "shapeISO": null
+     "name": "Senge"
     },
     {
      "id": "btn-adm2-sephu",
-     "name": "Sephu",
-     "shapeISO": null
+     "name": "Sephu"
     },
     {
      "id": "btn-adm2-serthig",
-     "name": "Serthig",
-     "shapeISO": null
+     "name": "Serthig"
     },
     {
      "id": "btn-adm2-shapa",
-     "name": "Shapa",
-     "shapeISO": null
+     "name": "Shapa"
     },
     {
      "id": "btn-adm2-shemjong",
-     "name": "Shemjong",
-     "shapeISO": null
+     "name": "Shemjong"
     },
     {
      "id": "btn-adm2-shengabjimi",
-     "name": "Shengabjimi",
-     "shapeISO": null
+     "name": "Shengabjimi"
     },
     {
      "id": "btn-adm2-shermung",
-     "name": "Shermung",
-     "shapeISO": null
+     "name": "Shermung"
     },
     {
      "id": "btn-adm2-sherzhong",
-     "name": "Sherzhong",
-     "shapeISO": null
+     "name": "Sherzhong"
     },
     {
      "id": "btn-adm2-shingkhar",
-     "name": "Shingkhar",
-     "shapeISO": null
+     "name": "Shingkhar"
     },
     {
      "id": "btn-adm2-shompangkha",
-     "name": "Shompangkha",
-     "shapeISO": null
+     "name": "Shompangkha"
     },
     {
      "id": "btn-adm2-shongphu",
-     "name": "Shongphu",
-     "shapeISO": null
+     "name": "Shongphu"
     },
     {
      "id": "btn-adm2-shumer",
-     "name": "Shumer",
-     "shapeISO": null
+     "name": "Shumer"
     },
     {
      "id": "btn-adm2-silambi",
-     "name": "Silambi",
-     "shapeISO": null
+     "name": "Silambi"
     },
     {
      "id": "btn-adm2-sipsu",
-     "name": "Sipsu",
-     "shapeISO": null
+     "name": "Sipsu"
     },
     {
      "id": "btn-adm2-soe",
-     "name": "Soe",
-     "shapeISO": null
+     "name": "Soe"
     },
     {
      "id": "btn-adm2-sombey",
-     "name": "Sombey",
-     "shapeISO": null
+     "name": "Sombey"
     },
     {
      "id": "btn-adm2-tading",
-     "name": "Tading",
-     "shapeISO": null
+     "name": "Tading"
     },
     {
      "id": "btn-adm2-taklai",
-     "name": "Taklai",
-     "shapeISO": null
+     "name": "Taklai"
     },
     {
      "id": "btn-adm2-talo",
-     "name": "Talo",
-     "shapeISO": null
+     "name": "Talo"
     },
     {
      "id": "btn-adm2-tang",
-     "name": "Tang",
-     "shapeISO": null
+     "name": "Tang"
     },
     {
      "id": "btn-adm2-tangsibji",
-     "name": "Tangsibji",
-     "shapeISO": null
+     "name": "Tangsibji"
     },
     {
      "id": "btn-adm2-tendu",
-     "name": "Tendu",
-     "shapeISO": null
+     "name": "Tendu"
     },
     {
      "id": "btn-adm2-thangrong",
-     "name": "Thangrong",
-     "shapeISO": null
+     "name": "Thangrong"
     },
     {
      "id": "btn-adm2-thedtsho",
-     "name": "Thedtsho",
-     "shapeISO": null
+     "name": "Thedtsho"
     },
     {
      "id": "btn-adm2-thrimshing",
-     "name": "Thrimshing",
-     "shapeISO": null
+     "name": "Thrimshing"
     },
     {
      "id": "btn-adm2-toepisa",
-     "name": "Toepisa",
-     "shapeISO": null
+     "name": "Toepisa"
     },
     {
      "id": "btn-adm2-toetsho",
-     "name": "Toetsho",
-     "shapeISO": null
+     "name": "Toetsho"
     },
     {
      "id": "btn-adm2-toewang",
-     "name": "Toewang",
-     "shapeISO": null
+     "name": "Toewang"
     },
     {
      "id": "btn-adm2-tomzhangtshen",
-     "name": "Tomzhangtshen",
-     "shapeISO": null
+     "name": "Tomzhangtshen"
     },
     {
      "id": "btn-adm2-trashiding",
-     "name": "Trashiding",
-     "shapeISO": null
+     "name": "Trashiding"
     },
     {
      "id": "btn-adm2-trashiyangtse",
-     "name": "Trashiyangtse",
-     "shapeISO": null
+     "name": "Trashiyangtse"
     },
     {
      "id": "btn-adm2-trong",
-     "name": "Trong",
-     "shapeISO": null
+     "name": "Trong"
     },
     {
      "id": "btn-adm2-tsakaling",
-     "name": "Tsakaling",
-     "shapeISO": null
+     "name": "Tsakaling"
     },
     {
      "id": "btn-adm2-tsamang",
-     "name": "Tsamang",
-     "shapeISO": null
+     "name": "Tsamang"
     },
     {
      "id": "btn-adm2-tsangkha",
-     "name": "Tsangkha",
-     "shapeISO": null
+     "name": "Tsangkha"
     },
     {
      "id": "btn-adm2-tsendagang",
-     "name": "Tsendagang",
-     "shapeISO": null
+     "name": "Tsendagang"
     },
     {
      "id": "btn-adm2-tsenkhar",
-     "name": "Tsenkhar",
-     "shapeISO": null
+     "name": "Tsenkhar"
     },
     {
      "id": "btn-adm2-tsento",
-     "name": "Tsento",
-     "shapeISO": null
+     "name": "Tsento"
     },
     {
      "id": "btn-adm2-tseza",
-     "name": "Tseza",
-     "shapeISO": null
+     "name": "Tseza"
     },
     {
      "id": "btn-adm2-tsholingkhor",
-     "name": "Tsholingkhor",
-     "shapeISO": null
+     "name": "Tsholingkhor"
     },
     {
      "id": "btn-adm2-tsirangtoe",
-     "name": "Tsirangtoe",
-     "shapeISO": null
+     "name": "Tsirangtoe"
     },
     {
      "id": "btn-adm2-udzorong",
-     "name": "Udzorong",
-     "shapeISO": null
+     "name": "Udzorong"
     },
     {
      "id": "btn-adm2-uesu",
-     "name": "Uesu",
-     "shapeISO": null
+     "name": "Uesu"
     },
     {
      "id": "btn-adm2-ugentse",
-     "name": "Ugentse",
-     "shapeISO": null
+     "name": "Ugentse"
     },
     {
      "id": "btn-adm2-umling",
-     "name": "Umling",
-     "shapeISO": null
+     "name": "Umling"
     },
     {
      "id": "btn-adm2-ura",
-     "name": "Ura",
-     "shapeISO": null
+     "name": "Ura"
     },
     {
      "id": "btn-adm2-wangchang",
-     "name": "Wangchang",
-     "shapeISO": null
+     "name": "Wangchang"
     },
     {
      "id": "btn-adm2-wangphu",
-     "name": "Wangphu",
-     "shapeISO": null
+     "name": "Wangphu"
     },
     {
      "id": "btn-adm2-yalang",
-     "name": "Yalang",
-     "shapeISO": null
+     "name": "Yalang"
     },
     {
      "id": "btn-adm2-yangnyer",
-     "name": "Yangnyer",
-     "shapeISO": null
+     "name": "Yangnyer"
     },
     {
      "id": "btn-adm2-yoeseltse",
-     "name": "Yoeseltse",
-     "shapeISO": null
+     "name": "Yoeseltse"
     },
     {
      "id": "btn-adm2-yurung",
-     "name": "Yurung",
-     "shapeISO": null
+     "name": "Yurung"
     },
     {
      "id": "btn-adm2-zobel",
-     "name": "Zobel",
-     "shapeISO": null
+     "name": "Zobel"
     }
    ]
   }
  },
  "name": "Bhutan",
- "nameBn": "ভুটান"
+ "nameBn": "Bhutan"
 }

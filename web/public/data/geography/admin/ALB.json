@@ -1,0 +1,248 @@
+{
+ "code": "ALB",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Shqipëria",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2003",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Qarqet",
+   "code": "ADM1",
+   "count": 12,
+   "name": "Qarqet",
+   "nameBn": "Qarqet",
+   "representedYear": "2021",
+   "sourceCount": 12,
+   "units": [
+    {
+     "id": "alb-adm1-berat",
+     "name": "Berat",
+     "shapeISO": "AL-01"
+    },
+    {
+     "id": "alb-adm1-dibër",
+     "name": "Dibër",
+     "shapeISO": "AL-09"
+    },
+    {
+     "id": "alb-adm1-durrës",
+     "name": "Durrës",
+     "shapeISO": "AL-02"
+    },
+    {
+     "id": "alb-adm1-elbasan",
+     "name": "Elbasan",
+     "shapeISO": "AL-03"
+    },
+    {
+     "id": "alb-adm1-fier",
+     "name": "Fier",
+     "shapeISO": "AL-04"
+    },
+    {
+     "id": "alb-adm1-gjirokastër",
+     "name": "Gjirokastër",
+     "shapeISO": "AL-05"
+    },
+    {
+     "id": "alb-adm1-korçë",
+     "name": "Korçë",
+     "shapeISO": "AL-06"
+    },
+    {
+     "id": "alb-adm1-kukës",
+     "name": "Kukës",
+     "shapeISO": "AL-07"
+    },
+    {
+     "id": "alb-adm1-lezhë",
+     "name": "Lezhë",
+     "shapeISO": "AL-08"
+    },
+    {
+     "id": "alb-adm1-shkodër",
+     "name": "Shkodër",
+     "shapeISO": "AL-10"
+    },
+    {
+     "id": "alb-adm1-tiranë",
+     "name": "Tiranë",
+     "shapeISO": "AL-11"
+    },
+    {
+     "id": "alb-adm1-vlorë",
+     "name": "Vlorë",
+     "shapeISO": "AL-12"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "rrethe",
+   "code": "ADM2",
+   "count": 37,
+   "name": "rrethe",
+   "nameBn": "rrethe",
+   "representedYear": "2021",
+   "sourceCount": 37,
+   "units": [
+    {
+     "id": "alb-adm2-berat",
+     "name": "Berat"
+    },
+    {
+     "id": "alb-adm2-bulqizë",
+     "name": "Bulqizë"
+    },
+    {
+     "id": "alb-adm2-delvinë",
+     "name": "Delvinë"
+    },
+    {
+     "id": "alb-adm2-devoll",
+     "name": "Devoll"
+    },
+    {
+     "id": "alb-adm2-dibër",
+     "name": "Dibër"
+    },
+    {
+     "id": "alb-adm2-durrës",
+     "name": "Durrës"
+    },
+    {
+     "id": "alb-adm2-elbasan",
+     "name": "Elbasan"
+    },
+    {
+     "id": "alb-adm2-fier",
+     "name": "Fier"
+    },
+    {
+     "id": "alb-adm2-gjirokastër",
+     "name": "Gjirokastër"
+    },
+    {
+     "id": "alb-adm2-gramsh",
+     "name": "Gramsh"
+    },
+    {
+     "id": "alb-adm2-has",
+     "name": "Has"
+    },
+    {
+     "id": "alb-adm2-kavajë",
+     "name": "Kavajë"
+    },
+    {
+     "id": "alb-adm2-kolonjë",
+     "name": "Kolonjë"
+    },
+    {
+     "id": "alb-adm2-krujë",
+     "name": "Krujë"
+    },
+    {
+     "id": "alb-adm2-kukës",
+     "name": "Kukës"
+    },
+    {
+     "id": "alb-adm2-kurbin",
+     "name": "Kurbin"
+    },
+    {
+     "id": "alb-adm2-kuçovë",
+     "name": "Kuçovë"
+    },
+    {
+     "id": "alb-adm2-kuçovë-2",
+     "name": "Kuçovë"
+    },
+    {
+     "id": "alb-adm2-lezhë",
+     "name": "Lezhë"
+    },
+    {
+     "id": "alb-adm2-librazhd",
+     "name": "Librazhd"
+    },
+    {
+     "id": "alb-adm2-lushnjë",
+     "name": "Lushnjë"
+    },
+    {
+     "id": "alb-adm2-mallakastër",
+     "name": "Mallakastër"
+    },
+    {
+     "id": "alb-adm2-malësi-e-madhe",
+     "name": "Malësi e Madhe"
+    },
+    {
+     "id": "alb-adm2-mat",
+     "name": "Mat"
+    },
+    {
+     "id": "alb-adm2-mirditë",
+     "name": "Mirditë"
+    },
+    {
+     "id": "alb-adm2-peqin",
+     "name": "Peqin"
+    },
+    {
+     "id": "alb-adm2-pogradec",
+     "name": "Pogradec"
+    },
+    {
+     "id": "alb-adm2-pukë",
+     "name": "Pukë"
+    },
+    {
+     "id": "alb-adm2-përmet",
+     "name": "Përmet"
+    },
+    {
+     "id": "alb-adm2-sarandë",
+     "name": "Sarandë"
+    },
+    {
+     "id": "alb-adm2-shkodër",
+     "name": "Shkodër"
+    },
+    {
+     "id": "alb-adm2-skrapar",
+     "name": "Skrapar"
+    },
+    {
+     "id": "alb-adm2-tepelenë",
+     "name": "Tepelenë"
+    },
+    {
+     "id": "alb-adm2-tiranë",
+     "name": "Tiranë"
+    },
+    {
+     "id": "alb-adm2-tropojë",
+     "name": "Tropojë"
+    },
+    {
+     "id": "alb-adm2-vlorë",
+     "name": "Vlorë"
+    },
+    {
+     "id": "alb-adm2-vlorë-2",
+     "name": "Vlorë"
+    }
+   ]
+  }
+ },
+ "name": "Albania",
+ "nameBn": "Albania"
+}

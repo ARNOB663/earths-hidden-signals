@@ -1,0 +1,792 @@
+{
+ "code": "CUB",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Unknown",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2017",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Unknown",
+   "code": "ADM1",
+   "count": 16,
+   "name": "ADM1 areas",
+   "nameBn": "ADM1 এলাকা",
+   "representedYear": "2017",
+   "sourceCount": 16,
+   "units": [
+    {
+     "id": "cub-adm1-artemisa",
+     "name": "Artemisa",
+     "shapeISO": "CU-15"
+    },
+    {
+     "id": "cub-adm1-camagüey",
+     "name": "Camagüey",
+     "shapeISO": "CU-09"
+    },
+    {
+     "id": "cub-adm1-ciego-de-avila",
+     "name": "Ciego de Avila",
+     "shapeISO": "CU-08"
+    },
+    {
+     "id": "cub-adm1-cienfuegos",
+     "name": "Cienfuegos",
+     "shapeISO": "CU-06"
+    },
+    {
+     "id": "cub-adm1-granma",
+     "name": "Granma",
+     "shapeISO": "CU-12"
+    },
+    {
+     "id": "cub-adm1-guantánamo",
+     "name": "Guantánamo",
+     "shapeISO": "CU-14"
+    },
+    {
+     "id": "cub-adm1-havana",
+     "name": "Havana",
+     "shapeISO": "CU-03"
+    },
+    {
+     "id": "cub-adm1-holguín",
+     "name": "Holguín",
+     "shapeISO": "CU-11"
+    },
+    {
+     "id": "cub-adm1-isle-of-youth",
+     "name": "Isle of Youth",
+     "shapeISO": "CU-99"
+    },
+    {
+     "id": "cub-adm1-las-tunas",
+     "name": "Las Tunas",
+     "shapeISO": "CU-10"
+    },
+    {
+     "id": "cub-adm1-matanzas",
+     "name": "Matanzas",
+     "shapeISO": "CU-04"
+    },
+    {
+     "id": "cub-adm1-mayabeque",
+     "name": "Mayabeque",
+     "shapeISO": "CU-16"
+    },
+    {
+     "id": "cub-adm1-pinar-del-rio",
+     "name": "Pinar del Rio",
+     "shapeISO": "CU-01"
+    },
+    {
+     "id": "cub-adm1-sancti-spiritus",
+     "name": "Sancti Spiritus",
+     "shapeISO": "CU-07"
+    },
+    {
+     "id": "cub-adm1-santiago-de-cuba",
+     "name": "Santiago de Cuba",
+     "shapeISO": "CU-13"
+    },
+    {
+     "id": "cub-adm1-villa-clara",
+     "name": "Villa Clara",
+     "shapeISO": "CU-05"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Unknown",
+   "code": "ADM2",
+   "count": 168,
+   "name": "ADM2 areas",
+   "nameBn": "ADM2 এলাকা",
+   "representedYear": "2017",
+   "sourceCount": 168,
+   "units": [
+    {
+     "id": "cub-adm2-abreus",
+     "name": "Abreus"
+    },
+    {
+     "id": "cub-adm2-aguada-de-pasajeros",
+     "name": "Aguada de Pasajeros"
+    },
+    {
+     "id": "cub-adm2-alquízar",
+     "name": "Alquízar"
+    },
+    {
+     "id": "cub-adm2-amancio",
+     "name": "Amancio"
+    },
+    {
+     "id": "cub-adm2-antilla",
+     "name": "Antilla"
+    },
+    {
+     "id": "cub-adm2-arroyo-naranjo",
+     "name": "Arroyo Naranjo"
+    },
+    {
+     "id": "cub-adm2-artemisa",
+     "name": "Artemisa"
+    },
+    {
+     "id": "cub-adm2-bahía-honda",
+     "name": "Bahía Honda"
+    },
+    {
+     "id": "cub-adm2-banes",
+     "name": "Banes"
+    },
+    {
+     "id": "cub-adm2-baracoa",
+     "name": "Baracoa"
+    },
+    {
+     "id": "cub-adm2-baraguá",
+     "name": "Baraguá"
+    },
+    {
+     "id": "cub-adm2-bartolomé-masó",
+     "name": "Bartolomé Masó"
+    },
+    {
+     "id": "cub-adm2-batabanó",
+     "name": "Batabanó"
+    },
+    {
+     "id": "cub-adm2-bauta",
+     "name": "Bauta"
+    },
+    {
+     "id": "cub-adm2-bayamo",
+     "name": "Bayamo"
+    },
+    {
+     "id": "cub-adm2-bejucal",
+     "name": "Bejucal"
+    },
+    {
+     "id": "cub-adm2-bolivia",
+     "name": "Bolivia"
+    },
+    {
+     "id": "cub-adm2-boyeros",
+     "name": "Boyeros"
+    },
+    {
+     "id": "cub-adm2-buey-arriba",
+     "name": "Buey Arriba"
+    },
+    {
+     "id": "cub-adm2-báguanos",
+     "name": "Báguanos"
+    },
+    {
+     "id": "cub-adm2-cabaiguán",
+     "name": "Cabaiguán"
+    },
+    {
+     "id": "cub-adm2-cacocum",
+     "name": "Cacocum"
+    },
+    {
+     "id": "cub-adm2-caibarién",
+     "name": "Caibarién"
+    },
+    {
+     "id": "cub-adm2-caimanera",
+     "name": "Caimanera"
+    },
+    {
+     "id": "cub-adm2-caimito",
+     "name": "Caimito"
+    },
+    {
+     "id": "cub-adm2-calimete",
+     "name": "Calimete"
+    },
+    {
+     "id": "cub-adm2-calixto-garcía",
+     "name": "Calixto García"
+    },
+    {
+     "id": "cub-adm2-camagüey",
+     "name": "Camagüey"
+    },
+    {
+     "id": "cub-adm2-camajuaní",
+     "name": "Camajuaní"
+    },
+    {
+     "id": "cub-adm2-campechuela",
+     "name": "Campechuela"
+    },
+    {
+     "id": "cub-adm2-candelaria",
+     "name": "Candelaria"
+    },
+    {
+     "id": "cub-adm2-cauto-cristo",
+     "name": "Cauto Cristo"
+    },
+    {
+     "id": "cub-adm2-centro-habana",
+     "name": "Centro Habana"
+    },
+    {
+     "id": "cub-adm2-cerro",
+     "name": "Cerro"
+    },
+    {
+     "id": "cub-adm2-chambas",
+     "name": "Chambas"
+    },
+    {
+     "id": "cub-adm2-ciego-de-ávila",
+     "name": "Ciego de Ávila"
+    },
+    {
+     "id": "cub-adm2-cienfuegos",
+     "name": "Cienfuegos"
+    },
+    {
+     "id": "cub-adm2-cifuentes",
+     "name": "Cifuentes"
+    },
+    {
+     "id": "cub-adm2-ciro-redondo",
+     "name": "Ciro Redondo"
+    },
+    {
+     "id": "cub-adm2-ciénaga-de-zapata",
+     "name": "Ciénaga de Zapata"
+    },
+    {
+     "id": "cub-adm2-colombia",
+     "name": "Colombia"
+    },
+    {
+     "id": "cub-adm2-colón",
+     "name": "Colón"
+    },
+    {
+     "id": "cub-adm2-consolación-del-sur",
+     "name": "Consolación del Sur"
+    },
+    {
+     "id": "cub-adm2-contramaestre",
+     "name": "Contramaestre"
+    },
+    {
+     "id": "cub-adm2-corralillo",
+     "name": "Corralillo"
+    },
+    {
+     "id": "cub-adm2-cotorro",
+     "name": "Cotorro"
+    },
+    {
+     "id": "cub-adm2-cruces",
+     "name": "Cruces"
+    },
+    {
+     "id": "cub-adm2-cueto",
+     "name": "Cueto"
+    },
+    {
+     "id": "cub-adm2-cumanayagua",
+     "name": "Cumanayagua"
+    },
+    {
+     "id": "cub-adm2-cárdenas",
+     "name": "Cárdenas"
+    },
+    {
+     "id": "cub-adm2-céspedes",
+     "name": "Céspedes"
+    },
+    {
+     "id": "cub-adm2-diez-de-octubre",
+     "name": "Diez de Octubre"
+    },
+    {
+     "id": "cub-adm2-el-salvador",
+     "name": "El Salvador"
+    },
+    {
+     "id": "cub-adm2-encrucijada",
+     "name": "Encrucijada"
+    },
+    {
+     "id": "cub-adm2-esmeralda",
+     "name": "Esmeralda"
+    },
+    {
+     "id": "cub-adm2-florencia",
+     "name": "Florencia"
+    },
+    {
+     "id": "cub-adm2-florida",
+     "name": "Florida"
+    },
+    {
+     "id": "cub-adm2-fomento",
+     "name": "Fomento"
+    },
+    {
+     "id": "cub-adm2-frank-país",
+     "name": "Frank País"
+    },
+    {
+     "id": "cub-adm2-gibara",
+     "name": "Gibara"
+    },
+    {
+     "id": "cub-adm2-guamá",
+     "name": "Guamá"
+    },
+    {
+     "id": "cub-adm2-guanabacoa",
+     "name": "Guanabacoa"
+    },
+    {
+     "id": "cub-adm2-guanajay",
+     "name": "Guanajay"
+    },
+    {
+     "id": "cub-adm2-guane",
+     "name": "Guane"
+    },
+    {
+     "id": "cub-adm2-guantánamo",
+     "name": "Guantánamo"
+    },
+    {
+     "id": "cub-adm2-guisa",
+     "name": "Guisa"
+    },
+    {
+     "id": "cub-adm2-guáimaro",
+     "name": "Guáimaro"
+    },
+    {
+     "id": "cub-adm2-güines",
+     "name": "Güines"
+    },
+    {
+     "id": "cub-adm2-güira-de-melena",
+     "name": "Güira de Melena"
+    },
+    {
+     "id": "cub-adm2-habana-del-este",
+     "name": "Habana del Este"
+    },
+    {
+     "id": "cub-adm2-holguín",
+     "name": "Holguín"
+    },
+    {
+     "id": "cub-adm2-imías",
+     "name": "Imías"
+    },
+    {
+     "id": "cub-adm2-isle-of-youth",
+     "name": "Isle of Youth"
+    },
+    {
+     "id": "cub-adm2-jagüey-grande",
+     "name": "Jagüey Grande"
+    },
+    {
+     "id": "cub-adm2-jaruco",
+     "name": "Jaruco"
+    },
+    {
+     "id": "cub-adm2-jatibonico",
+     "name": "Jatibonico"
+    },
+    {
+     "id": "cub-adm2-jesús-menéndez",
+     "name": "Jesús Menéndez"
+    },
+    {
+     "id": "cub-adm2-jiguaní",
+     "name": "Jiguaní"
+    },
+    {
+     "id": "cub-adm2-jimaguayú",
+     "name": "Jimaguayú"
+    },
+    {
+     "id": "cub-adm2-jobabo",
+     "name": "Jobabo"
+    },
+    {
+     "id": "cub-adm2-jovellanos",
+     "name": "Jovellanos"
+    },
+    {
+     "id": "cub-adm2-la-habana-vieja",
+     "name": "La Habana Vieja"
+    },
+    {
+     "id": "cub-adm2-la-lisa",
+     "name": "La Lisa"
+    },
+    {
+     "id": "cub-adm2-la-palma",
+     "name": "La Palma"
+    },
+    {
+     "id": "cub-adm2-la-sierpe",
+     "name": "La Sierpe"
+    },
+    {
+     "id": "cub-adm2-las-tunas",
+     "name": "Las Tunas"
+    },
+    {
+     "id": "cub-adm2-limonar",
+     "name": "Limonar"
+    },
+    {
+     "id": "cub-adm2-los-arabos",
+     "name": "Los Arabos"
+    },
+    {
+     "id": "cub-adm2-los-palacios",
+     "name": "Los Palacios"
+    },
+    {
+     "id": "cub-adm2-madruga",
+     "name": "Madruga"
+    },
+    {
+     "id": "cub-adm2-maisí",
+     "name": "Maisí"
+    },
+    {
+     "id": "cub-adm2-majagua",
+     "name": "Majagua"
+    },
+    {
+     "id": "cub-adm2-majibacoa",
+     "name": "Majibacoa"
+    },
+    {
+     "id": "cub-adm2-manati",
+     "name": "Manati"
+    },
+    {
+     "id": "cub-adm2-manicaragua",
+     "name": "Manicaragua"
+    },
+    {
+     "id": "cub-adm2-mantua",
+     "name": "Mantua"
+    },
+    {
+     "id": "cub-adm2-manuel-tames",
+     "name": "Manuel Tames"
+    },
+    {
+     "id": "cub-adm2-manzanillo",
+     "name": "Manzanillo"
+    },
+    {
+     "id": "cub-adm2-marianao",
+     "name": "Marianao"
+    },
+    {
+     "id": "cub-adm2-mariel",
+     "name": "Mariel"
+    },
+    {
+     "id": "cub-adm2-martí",
+     "name": "Martí"
+    },
+    {
+     "id": "cub-adm2-matanzas",
+     "name": "Matanzas"
+    },
+    {
+     "id": "cub-adm2-mayarí",
+     "name": "Mayarí"
+    },
+    {
+     "id": "cub-adm2-media-luna",
+     "name": "Media Luna"
+    },
+    {
+     "id": "cub-adm2-melena-del-sur",
+     "name": "Melena del Sur"
+    },
+    {
+     "id": "cub-adm2-mella",
+     "name": "Mella"
+    },
+    {
+     "id": "cub-adm2-minas",
+     "name": "Minas"
+    },
+    {
+     "id": "cub-adm2-minas-de-matahambre",
+     "name": "Minas de Matahambre"
+    },
+    {
+     "id": "cub-adm2-moa",
+     "name": "Moa"
+    },
+    {
+     "id": "cub-adm2-morón",
+     "name": "Morón"
+    },
+    {
+     "id": "cub-adm2-najasa",
+     "name": "Najasa"
+    },
+    {
+     "id": "cub-adm2-niceto-pérez",
+     "name": "Niceto Pérez"
+    },
+    {
+     "id": "cub-adm2-niquero",
+     "name": "Niquero"
+    },
+    {
+     "id": "cub-adm2-nueva-paz",
+     "name": "Nueva Paz"
+    },
+    {
+     "id": "cub-adm2-nuevitas",
+     "name": "Nuevitas"
+    },
+    {
+     "id": "cub-adm2-palma-soriano",
+     "name": "Palma Soriano"
+    },
+    {
+     "id": "cub-adm2-palmira",
+     "name": "Palmira"
+    },
+    {
+     "id": "cub-adm2-pedro-betancourt",
+     "name": "Pedro Betancourt"
+    },
+    {
+     "id": "cub-adm2-perico",
+     "name": "Perico"
+    },
+    {
+     "id": "cub-adm2-pilón",
+     "name": "Pilón"
+    },
+    {
+     "id": "cub-adm2-pinar-del-río",
+     "name": "Pinar del Río"
+    },
+    {
+     "id": "cub-adm2-placetas",
+     "name": "Placetas"
+    },
+    {
+     "id": "cub-adm2-playa",
+     "name": "Playa"
+    },
+    {
+     "id": "cub-adm2-plaza-de-la-revolución",
+     "name": "Plaza de la Revolución"
+    },
+    {
+     "id": "cub-adm2-primero-de-enero",
+     "name": "Primero de Enero"
+    },
+    {
+     "id": "cub-adm2-puerto-padre",
+     "name": "Puerto Padre"
+    },
+    {
+     "id": "cub-adm2-quemado-de-güines",
+     "name": "Quemado de Güines"
+    },
+    {
+     "id": "cub-adm2-quivicán",
+     "name": "Quivicán"
+    },
+    {
+     "id": "cub-adm2-rafael-freyre",
+     "name": "Rafael Freyre"
+    },
+    {
+     "id": "cub-adm2-ranchuelo",
+     "name": "Ranchuelo"
+    },
+    {
+     "id": "cub-adm2-regla",
+     "name": "Regla"
+    },
+    {
+     "id": "cub-adm2-remedios",
+     "name": "Remedios"
+    },
+    {
+     "id": "cub-adm2-rodas",
+     "name": "Rodas"
+    },
+    {
+     "id": "cub-adm2-río-cauto",
+     "name": "Río Cauto"
+    },
+    {
+     "id": "cub-adm2-sagua-de-tánamo",
+     "name": "Sagua de Tánamo"
+    },
+    {
+     "id": "cub-adm2-sagua-la-grande",
+     "name": "Sagua La Grande"
+    },
+    {
+     "id": "cub-adm2-san-antonio-de-los-baños",
+     "name": "San Antonio de los Baños"
+    },
+    {
+     "id": "cub-adm2-san-antonio-del-sur",
+     "name": "San Antonio del Sur"
+    },
+    {
+     "id": "cub-adm2-san-cristóbal",
+     "name": "San Cristóbal"
+    },
+    {
+     "id": "cub-adm2-san-josé-de-las-lajas",
+     "name": "San José de las Lajas"
+    },
+    {
+     "id": "cub-adm2-san-juan-y-martínez",
+     "name": "San Juan y Martínez"
+    },
+    {
+     "id": "cub-adm2-san-luis",
+     "name": "San Luis"
+    },
+    {
+     "id": "cub-adm2-san-luis-2",
+     "name": "San Luis"
+    },
+    {
+     "id": "cub-adm2-san-miguel-del-padrón",
+     "name": "San Miguel del Padrón"
+    },
+    {
+     "id": "cub-adm2-san-nicolás",
+     "name": "San Nicolás"
+    },
+    {
+     "id": "cub-adm2-sancti-spiritus",
+     "name": "Sancti Spiritus"
+    },
+    {
+     "id": "cub-adm2-sandino",
+     "name": "Sandino"
+    },
+    {
+     "id": "cub-adm2-santa-clara",
+     "name": "Santa Clara"
+    },
+    {
+     "id": "cub-adm2-santa-cruz-del-norte",
+     "name": "Santa Cruz del Norte"
+    },
+    {
+     "id": "cub-adm2-santa-cruz-del-sur",
+     "name": "Santa Cruz del Sur"
+    },
+    {
+     "id": "cub-adm2-santa-isabel-de-las-lajas",
+     "name": "Santa Isabel de las Lajas"
+    },
+    {
+     "id": "cub-adm2-santiago-de-cuba",
+     "name": "Santiago de Cuba"
+    },
+    {
+     "id": "cub-adm2-santo-domingo",
+     "name": "Santo Domingo"
+    },
+    {
+     "id": "cub-adm2-segundo-frente",
+     "name": "Segundo Frente"
+    },
+    {
+     "id": "cub-adm2-sibanicú",
+     "name": "Sibanicú"
+    },
+    {
+     "id": "cub-adm2-sierra-de-cubitas",
+     "name": "Sierra de Cubitas"
+    },
+    {
+     "id": "cub-adm2-songo-la-maya",
+     "name": "Songo - La Maya"
+    },
+    {
+     "id": "cub-adm2-taguasco",
+     "name": "Taguasco"
+    },
+    {
+     "id": "cub-adm2-tercer-frente",
+     "name": "Tercer Frente"
+    },
+    {
+     "id": "cub-adm2-trinidad",
+     "name": "Trinidad"
+    },
+    {
+     "id": "cub-adm2-unión-de-reyes",
+     "name": "Unión de Reyes"
+    },
+    {
+     "id": "cub-adm2-urbano-noris",
+     "name": "Urbano Noris"
+    },
+    {
+     "id": "cub-adm2-venezuela",
+     "name": "Venezuela"
+    },
+    {
+     "id": "cub-adm2-vertientes",
+     "name": "Vertientes"
+    },
+    {
+     "id": "cub-adm2-viñales",
+     "name": "Viñales"
+    },
+    {
+     "id": "cub-adm2-yaguajay",
+     "name": "Yaguajay"
+    },
+    {
+     "id": "cub-adm2-yara",
+     "name": "Yara"
+    },
+    {
+     "id": "cub-adm2-yateras",
+     "name": "Yateras"
+    }
+   ]
+  }
+ },
+ "name": "Cuba",
+ "nameBn": "Cuba"
+}

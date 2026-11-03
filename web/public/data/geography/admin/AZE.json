@@ -1,0 +1,443 @@
+{
+ "code": "AZE",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Azerbaijan",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2021",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Contiguous Regions",
+   "code": "ADM1",
+   "count": 2,
+   "name": "Contiguous Regions",
+   "nameBn": "Contiguous Regions",
+   "representedYear": "2021",
+   "sourceCount": 2,
+   "units": [
+    {
+     "id": "aze-adm1-contiguous-azerbaijan",
+     "name": "Contiguous Azerbaijan"
+    },
+    {
+     "id": "aze-adm1-nakhchivan-autonomous-republic",
+     "name": "Nakhchivan Autonomous Republic"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Unknown",
+   "code": "ADM2",
+   "count": 79,
+   "name": "ADM2 areas",
+   "nameBn": "ADM2 এলাকা",
+   "representedYear": "2020",
+   "sourceCount": 79,
+   "units": [
+    {
+     "id": "aze-adm2-absheron-district",
+     "name": "Absheron District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-agdam-district",
+     "name": "Agdam District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-agdash-district",
+     "name": "Agdash District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-aghjabadi-district",
+     "name": "Aghjabadi District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-agstafa-district",
+     "name": "Agstafa District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-agsu-district",
+     "name": "Agsu District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-astara-district",
+     "name": "Astara District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-babek-district",
+     "name": "Babek District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-baku-city",
+     "name": "Baku City",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-balakan-district",
+     "name": "Balakan District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-barda-district",
+     "name": "Barda District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-beylagan-district",
+     "name": "Beylagan District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-bilasuvar-district",
+     "name": "Bilasuvar District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-dashkasan-district",
+     "name": "Dashkasan District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-fuzuli-district",
+     "name": "Fuzuli District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-gadabay-district",
+     "name": "Gadabay District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-ganja-city",
+     "name": "Ganja City",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-gobustan-district",
+     "name": "Gobustan District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-goranboy-district",
+     "name": "Goranboy District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-goychay-district",
+     "name": "Goychay District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-goygol-district",
+     "name": "Goygol District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-hajigabul-district",
+     "name": "Hajigabul District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-imishli-district",
+     "name": "Imishli District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-ismailli-district",
+     "name": "Ismailli District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-jabrayil-district",
+     "name": "Jabrayil District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-jalilabad-district",
+     "name": "Jalilabad District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-julfa-district",
+     "name": "Julfa District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-kalbajar-district",
+     "name": "Kalbajar District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-kangarli-district",
+     "name": "Kangarli District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-khachmaz-district",
+     "name": "Khachmaz District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-khankendi-city",
+     "name": "Khankendi City",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-khizi-district",
+     "name": "Khizi District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-khojaly-district",
+     "name": "Khojaly District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-khojavend-district",
+     "name": "Khojavend District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-kurdamir-district",
+     "name": "Kurdamir District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-lachin-district",
+     "name": "Lachin District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-lankaran-city",
+     "name": "Lankaran City",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-lankaran-district",
+     "name": "Lankaran District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-lankaran-district-2",
+     "name": "Lankaran District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-lerik-district",
+     "name": "Lerik District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-masally-district",
+     "name": "Masally District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-mingachevir-city",
+     "name": "Mingachevir City",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-naftalan-city",
+     "name": "Naftalan City",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-nakhchivan-city",
+     "name": "Nakhchivan City",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-neftchala-district",
+     "name": "Neftchala District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-oghuz-district",
+     "name": "Oghuz District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-ordubad-district",
+     "name": "Ordubad District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-qabala-district",
+     "name": "Qabala District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-qakh-district",
+     "name": "Qakh District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-qazakh-district",
+     "name": "Qazakh District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-quba-district",
+     "name": "Quba District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-qubadli-district",
+     "name": "Qubadli District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-qusar-district",
+     "name": "Qusar District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-saatly-district",
+     "name": "Saatly District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-sabirabad-district",
+     "name": "Sabirabad District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-sadarak-district",
+     "name": "Sadarak District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-salyan-district",
+     "name": "Salyan District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-samukh-district",
+     "name": "Samukh District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-shabran-district",
+     "name": "Shabran District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-shahbuz-district",
+     "name": "Shahbuz District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-shaki-city",
+     "name": "Shaki City",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-shaki-district",
+     "name": "Shaki District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-shamakhi-district",
+     "name": "Shamakhi District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-shamkir-district",
+     "name": "Shamkir District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-sharur-district",
+     "name": "Sharur District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-shirvan-city",
+     "name": "Shirvan City",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-shusha-city",
+     "name": "Shusha City",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-shusha-district",
+     "name": "Shusha District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-siazan-district",
+     "name": "Siazan District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-sumqayit-city",
+     "name": "Sumqayit City",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-tartar-district",
+     "name": "Tartar District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-tovuz-district",
+     "name": "Tovuz District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-ujar-district",
+     "name": "Ujar District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-yardymli-district",
+     "name": "Yardymli District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-yevlakh-city",
+     "name": "Yevlakh City",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-yevlakh-district",
+     "name": "Yevlakh District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-zangilan-district",
+     "name": "Zangilan District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-zaqatala-district",
+     "name": "Zaqatala District",
+     "shapeISO": "AZE"
+    },
+    {
+     "id": "aze-adm2-zardab-district",
+     "name": "Zardab District",
+     "shapeISO": "AZE"
+    }
+   ]
+  }
+ },
+ "name": "Azerbaijan",
+ "nameBn": "Azerbaijan"
+}

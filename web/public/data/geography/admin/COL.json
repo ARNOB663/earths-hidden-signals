@@ -1,0 +1,4693 @@
+{
+ "code": "COL",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Republic of Colombia",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2022",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Departments",
+   "code": "ADM1",
+   "count": 33,
+   "name": "Departments",
+   "nameBn": "বিভাগ",
+   "representedYear": "2017",
+   "sourceCount": 33,
+   "units": [
+    {
+     "id": "col-adm1-amazonas",
+     "name": "Amazonas",
+     "shapeISO": "CO-AMA"
+    },
+    {
+     "id": "col-adm1-antioquia",
+     "name": "Antioquia",
+     "shapeISO": "CO-ANT"
+    },
+    {
+     "id": "col-adm1-arauca",
+     "name": "Arauca",
+     "shapeISO": "CO-ARA"
+    },
+    {
+     "id": "col-adm1-archipiélago-de-san-andrés-providencia-y-santa-catalina",
+     "name": "Archipiélago de San Andrés, Providencia y Santa Catalina",
+     "shapeISO": "CO-SAP"
+    },
+    {
+     "id": "col-adm1-atlántico",
+     "name": "Atlántico",
+     "shapeISO": "CO-ATL"
+    },
+    {
+     "id": "col-adm1-bogota-capital-district",
+     "name": "Bogota Capital District",
+     "shapeISO": "CO-DC"
+    },
+    {
+     "id": "col-adm1-bolívar",
+     "name": "Bolívar",
+     "shapeISO": "CO-BOL"
+    },
+    {
+     "id": "col-adm1-boyacá",
+     "name": "Boyacá",
+     "shapeISO": "CO-BOY"
+    },
+    {
+     "id": "col-adm1-caldas",
+     "name": "Caldas",
+     "shapeISO": "CO-CAL"
+    },
+    {
+     "id": "col-adm1-caquetá",
+     "name": "Caquetá",
+     "shapeISO": "CO-CAQ"
+    },
+    {
+     "id": "col-adm1-casanare",
+     "name": "Casanare",
+     "shapeISO": "CO-CAS"
+    },
+    {
+     "id": "col-adm1-cauca",
+     "name": "Cauca",
+     "shapeISO": "CO-CAU"
+    },
+    {
+     "id": "col-adm1-cesar",
+     "name": "Cesar",
+     "shapeISO": "CO-CES"
+    },
+    {
+     "id": "col-adm1-chocó",
+     "name": "Chocó",
+     "shapeISO": "CO-CHO"
+    },
+    {
+     "id": "col-adm1-cundinamarca",
+     "name": "Cundinamarca",
+     "shapeISO": "CO-CUN"
+    },
+    {
+     "id": "col-adm1-córdoba",
+     "name": "Córdoba",
+     "shapeISO": "CO-COR"
+    },
+    {
+     "id": "col-adm1-guainía",
+     "name": "Guainía",
+     "shapeISO": "CO-GUA"
+    },
+    {
+     "id": "col-adm1-guaviare",
+     "name": "Guaviare",
+     "shapeISO": "CO-GUV"
+    },
+    {
+     "id": "col-adm1-huila",
+     "name": "Huila",
+     "shapeISO": "CO-HUI"
+    },
+    {
+     "id": "col-adm1-la-guajira",
+     "name": "La Guajira",
+     "shapeISO": "CO-LAG"
+    },
+    {
+     "id": "col-adm1-magdalena",
+     "name": "Magdalena",
+     "shapeISO": "CO-MAG"
+    },
+    {
+     "id": "col-adm1-meta",
+     "name": "Meta",
+     "shapeISO": "CO-MET"
+    },
+    {
+     "id": "col-adm1-nariño",
+     "name": "Nariño",
+     "shapeISO": "CO-NAR"
+    },
+    {
+     "id": "col-adm1-norte-de-santander",
+     "name": "Norte de Santander",
+     "shapeISO": "CO-NSA"
+    },
+    {
+     "id": "col-adm1-putumayo",
+     "name": "Putumayo",
+     "shapeISO": "CO-PUT"
+    },
+    {
+     "id": "col-adm1-quindío",
+     "name": "Quindío",
+     "shapeISO": "CO-QUI"
+    },
+    {
+     "id": "col-adm1-risaralda",
+     "name": "Risaralda",
+     "shapeISO": "CO-RIS"
+    },
+    {
+     "id": "col-adm1-santander",
+     "name": "Santander",
+     "shapeISO": "CO-SAN"
+    },
+    {
+     "id": "col-adm1-sucre",
+     "name": "Sucre",
+     "shapeISO": "CO-SUC"
+    },
+    {
+     "id": "col-adm1-tolima",
+     "name": "Tolima",
+     "shapeISO": "CO-TOL"
+    },
+    {
+     "id": "col-adm1-valle-del-cauca",
+     "name": "Valle del Cauca",
+     "shapeISO": "CO-VAC"
+    },
+    {
+     "id": "col-adm1-vaupés",
+     "name": "Vaupés",
+     "shapeISO": "CO-VAU"
+    },
+    {
+     "id": "col-adm1-vichada",
+     "name": "Vichada",
+     "shapeISO": "CO-VID"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Unknown",
+   "code": "ADM2",
+   "count": 1122,
+   "name": "ADM2 areas",
+   "nameBn": "ADM2 এলাকা",
+   "representedYear": "2020",
+   "sourceCount": 1122,
+   "units": [
+    {
+     "id": "col-adm2-abejorral",
+     "name": "Abejorral"
+    },
+    {
+     "id": "col-adm2-abrego",
+     "name": "Abrego"
+    },
+    {
+     "id": "col-adm2-abriaquí",
+     "name": "Abriaquí"
+    },
+    {
+     "id": "col-adm2-acacías",
+     "name": "Acacías"
+    },
+    {
+     "id": "col-adm2-acandí",
+     "name": "Acandí"
+    },
+    {
+     "id": "col-adm2-acevedo",
+     "name": "Acevedo"
+    },
+    {
+     "id": "col-adm2-achí",
+     "name": "Achí"
+    },
+    {
+     "id": "col-adm2-agrado",
+     "name": "Agrado"
+    },
+    {
+     "id": "col-adm2-agua-de-dios",
+     "name": "Agua De Dios"
+    },
+    {
+     "id": "col-adm2-aguachica",
+     "name": "Aguachica"
+    },
+    {
+     "id": "col-adm2-aguada",
+     "name": "Aguada"
+    },
+    {
+     "id": "col-adm2-aguadas",
+     "name": "Aguadas"
+    },
+    {
+     "id": "col-adm2-aguazul",
+     "name": "Aguazul"
+    },
+    {
+     "id": "col-adm2-agustín-codazzi",
+     "name": "Agustín Codazzi"
+    },
+    {
+     "id": "col-adm2-aipe",
+     "name": "Aipe"
+    },
+    {
+     "id": "col-adm2-albania",
+     "name": "Albania"
+    },
+    {
+     "id": "col-adm2-albania-2",
+     "name": "Albania"
+    },
+    {
+     "id": "col-adm2-albania-3",
+     "name": "Albania"
+    },
+    {
+     "id": "col-adm2-albán",
+     "name": "Albán"
+    },
+    {
+     "id": "col-adm2-albán-san-josé",
+     "name": "Albán (San José)"
+    },
+    {
+     "id": "col-adm2-alcalá",
+     "name": "Alcalá"
+    },
+    {
+     "id": "col-adm2-aldana",
+     "name": "Aldana"
+    },
+    {
+     "id": "col-adm2-alejandría",
+     "name": "Alejandría"
+    },
+    {
+     "id": "col-adm2-algarrobo",
+     "name": "Algarrobo"
+    },
+    {
+     "id": "col-adm2-algeciras",
+     "name": "Algeciras"
+    },
+    {
+     "id": "col-adm2-almaguer",
+     "name": "Almaguer"
+    },
+    {
+     "id": "col-adm2-almeida",
+     "name": "Almeida"
+    },
+    {
+     "id": "col-adm2-alpujarra",
+     "name": "Alpujarra"
+    },
+    {
+     "id": "col-adm2-altamira",
+     "name": "Altamira"
+    },
+    {
+     "id": "col-adm2-alto-baudó-pie-de-pato",
+     "name": "Alto Baudó (Pie De Pato)"
+    },
+    {
+     "id": "col-adm2-altos-del-rosario",
+     "name": "Altos Del Rosario"
+    },
+    {
+     "id": "col-adm2-alvarado",
+     "name": "Alvarado"
+    },
+    {
+     "id": "col-adm2-amagá",
+     "name": "Amagá"
+    },
+    {
+     "id": "col-adm2-amalfi",
+     "name": "Amalfi"
+    },
+    {
+     "id": "col-adm2-ambalema",
+     "name": "Ambalema"
+    },
+    {
+     "id": "col-adm2-anapoima",
+     "name": "Anapoima"
+    },
+    {
+     "id": "col-adm2-ancuya",
+     "name": "Ancuya"
+    },
+    {
+     "id": "col-adm2-andalucía",
+     "name": "Andalucía"
+    },
+    {
+     "id": "col-adm2-andes",
+     "name": "Andes"
+    },
+    {
+     "id": "col-adm2-angelópolis",
+     "name": "Angelópolis"
+    },
+    {
+     "id": "col-adm2-angostura",
+     "name": "Angostura"
+    },
+    {
+     "id": "col-adm2-anolaima",
+     "name": "Anolaima"
+    },
+    {
+     "id": "col-adm2-anorí",
+     "name": "Anorí"
+    },
+    {
+     "id": "col-adm2-anserma",
+     "name": "Anserma"
+    },
+    {
+     "id": "col-adm2-ansermanuevo",
+     "name": "Ansermanuevo"
+    },
+    {
+     "id": "col-adm2-anzoátegui",
+     "name": "Anzoátegui"
+    },
+    {
+     "id": "col-adm2-anzá",
+     "name": "Anzá"
+    },
+    {
+     "id": "col-adm2-apartadó",
+     "name": "Apartadó"
+    },
+    {
+     "id": "col-adm2-apulo",
+     "name": "Apulo"
+    },
+    {
+     "id": "col-adm2-apía",
+     "name": "Apía"
+    },
+    {
+     "id": "col-adm2-aquitania",
+     "name": "Aquitania"
+    },
+    {
+     "id": "col-adm2-aracataca",
+     "name": "Aracataca"
+    },
+    {
+     "id": "col-adm2-aranzazu",
+     "name": "Aranzazu"
+    },
+    {
+     "id": "col-adm2-aratoca",
+     "name": "Aratoca"
+    },
+    {
+     "id": "col-adm2-arauca",
+     "name": "Arauca"
+    },
+    {
+     "id": "col-adm2-arauquita",
+     "name": "Arauquita"
+    },
+    {
+     "id": "col-adm2-arbeláez",
+     "name": "Arbeláez"
+    },
+    {
+     "id": "col-adm2-arboleda",
+     "name": "Arboleda"
+    },
+    {
+     "id": "col-adm2-arboledas",
+     "name": "Arboledas"
+    },
+    {
+     "id": "col-adm2-arboletes",
+     "name": "Arboletes"
+    },
+    {
+     "id": "col-adm2-arcabuco",
+     "name": "Arcabuco"
+    },
+    {
+     "id": "col-adm2-arenal",
+     "name": "Arenal"
+    },
+    {
+     "id": "col-adm2-argelia",
+     "name": "Argelia"
+    },
+    {
+     "id": "col-adm2-argelia-2",
+     "name": "Argelia"
+    },
+    {
+     "id": "col-adm2-argelia-3",
+     "name": "Argelia"
+    },
+    {
+     "id": "col-adm2-ariguaní",
+     "name": "Ariguaní"
+    },
+    {
+     "id": "col-adm2-arjona",
+     "name": "Arjona"
+    },
+    {
+     "id": "col-adm2-armenia",
+     "name": "Armenia"
+    },
+    {
+     "id": "col-adm2-armenia-2",
+     "name": "Armenia"
+    },
+    {
+     "id": "col-adm2-armero",
+     "name": "Armero"
+    },
+    {
+     "id": "col-adm2-arroyohondo",
+     "name": "Arroyohondo"
+    },
+    {
+     "id": "col-adm2-astrea",
+     "name": "Astrea"
+    },
+    {
+     "id": "col-adm2-ataco",
+     "name": "Ataco"
+    },
+    {
+     "id": "col-adm2-atrato-yuto",
+     "name": "Atrato (Yuto)"
+    },
+    {
+     "id": "col-adm2-ayapel",
+     "name": "Ayapel"
+    },
+    {
+     "id": "col-adm2-bagadó",
+     "name": "Bagadó"
+    },
+    {
+     "id": "col-adm2-bahía-solano-mutis",
+     "name": "Bahía Solano (Mutis)"
+    },
+    {
+     "id": "col-adm2-bajo-baudó-pizarro",
+     "name": "Bajo Baudó (Pizarro)"
+    },
+    {
+     "id": "col-adm2-balboa",
+     "name": "Balboa"
+    },
+    {
+     "id": "col-adm2-balboa-2",
+     "name": "Balboa"
+    },
+    {
+     "id": "col-adm2-baranoa",
+     "name": "Baranoa"
+    },
+    {
+     "id": "col-adm2-baraya",
+     "name": "Baraya"
+    },
+    {
+     "id": "col-adm2-barbacoas",
+     "name": "Barbacoas"
+    },
+    {
+     "id": "col-adm2-barbosa",
+     "name": "Barbosa"
+    },
+    {
+     "id": "col-adm2-barbosa-2",
+     "name": "Barbosa"
+    },
+    {
+     "id": "col-adm2-barichara",
+     "name": "Barichara"
+    },
+    {
+     "id": "col-adm2-barranca-de-upia",
+     "name": "Barranca De Upia"
+    },
+    {
+     "id": "col-adm2-barrancabermeja",
+     "name": "Barrancabermeja"
+    },
+    {
+     "id": "col-adm2-barrancas",
+     "name": "Barrancas"
+    },
+    {
+     "id": "col-adm2-barranco-de-loba",
+     "name": "Barranco De Loba"
+    },
+    {
+     "id": "col-adm2-barranco-mina",
+     "name": "Barranco Mina"
+    },
+    {
+     "id": "col-adm2-becerrill",
+     "name": "Becerrill"
+    },
+    {
+     "id": "col-adm2-belalcázar",
+     "name": "Belalcázar"
+    },
+    {
+     "id": "col-adm2-belen",
+     "name": "Belen"
+    },
+    {
+     "id": "col-adm2-bello",
+     "name": "Bello"
+    },
+    {
+     "id": "col-adm2-belmira",
+     "name": "Belmira"
+    },
+    {
+     "id": "col-adm2-beltrán",
+     "name": "Beltrán"
+    },
+    {
+     "id": "col-adm2-belén",
+     "name": "Belén"
+    },
+    {
+     "id": "col-adm2-belén-de-los-andaquíes",
+     "name": "Belén De Los Andaquíes"
+    },
+    {
+     "id": "col-adm2-belén-de-umbría",
+     "name": "Belén De Umbría"
+    },
+    {
+     "id": "col-adm2-berbeo",
+     "name": "Berbeo"
+    },
+    {
+     "id": "col-adm2-betania",
+     "name": "Betania"
+    },
+    {
+     "id": "col-adm2-betulia",
+     "name": "Betulia"
+    },
+    {
+     "id": "col-adm2-betulia-2",
+     "name": "Betulia"
+    },
+    {
+     "id": "col-adm2-betéitiva",
+     "name": "Betéitiva"
+    },
+    {
+     "id": "col-adm2-bituima",
+     "name": "Bituima"
+    },
+    {
+     "id": "col-adm2-boavita",
+     "name": "Boavita"
+    },
+    {
+     "id": "col-adm2-bochalema",
+     "name": "Bochalema"
+    },
+    {
+     "id": "col-adm2-bogotá-d-c",
+     "name": "Bogotá, D.c."
+    },
+    {
+     "id": "col-adm2-bojacá",
+     "name": "Bojacá"
+    },
+    {
+     "id": "col-adm2-bojayá-bellavista",
+     "name": "Bojayá (Bellavista)"
+    },
+    {
+     "id": "col-adm2-bolivar",
+     "name": "Bolivar"
+    },
+    {
+     "id": "col-adm2-bolívar",
+     "name": "Bolívar"
+    },
+    {
+     "id": "col-adm2-bolívar-2",
+     "name": "Bolívar"
+    },
+    {
+     "id": "col-adm2-bosconia",
+     "name": "Bosconia"
+    },
+    {
+     "id": "col-adm2-boyacá",
+     "name": "Boyacá"
+    },
+    {
+     "id": "col-adm2-briceño",
+     "name": "Briceño"
+    },
+    {
+     "id": "col-adm2-briceño-2",
+     "name": "Briceño"
+    },
+    {
+     "id": "col-adm2-bucaramanga",
+     "name": "Bucaramanga"
+    },
+    {
+     "id": "col-adm2-bucarasica",
+     "name": "Bucarasica"
+    },
+    {
+     "id": "col-adm2-buenaventura",
+     "name": "Buenaventura"
+    },
+    {
+     "id": "col-adm2-buenavista",
+     "name": "Buenavista"
+    },
+    {
+     "id": "col-adm2-buenavista-2",
+     "name": "Buenavista"
+    },
+    {
+     "id": "col-adm2-buenavista-3",
+     "name": "Buenavista"
+    },
+    {
+     "id": "col-adm2-buenavista-4",
+     "name": "Buenavista"
+    },
+    {
+     "id": "col-adm2-buenos-aires",
+     "name": "Buenos Aires"
+    },
+    {
+     "id": "col-adm2-buesaco",
+     "name": "Buesaco"
+    },
+    {
+     "id": "col-adm2-buga",
+     "name": "Buga"
+    },
+    {
+     "id": "col-adm2-bugalagrande",
+     "name": "Bugalagrande"
+    },
+    {
+     "id": "col-adm2-buriticá",
+     "name": "Buriticá"
+    },
+    {
+     "id": "col-adm2-busbanzá",
+     "name": "Busbanzá"
+    },
+    {
+     "id": "col-adm2-cabrera",
+     "name": "Cabrera"
+    },
+    {
+     "id": "col-adm2-cabrera-2",
+     "name": "Cabrera"
+    },
+    {
+     "id": "col-adm2-cabuyaro",
+     "name": "Cabuyaro"
+    },
+    {
+     "id": "col-adm2-cacahual",
+     "name": "Cacahual"
+    },
+    {
+     "id": "col-adm2-cachipay",
+     "name": "Cachipay"
+    },
+    {
+     "id": "col-adm2-caicedo",
+     "name": "Caicedo"
+    },
+    {
+     "id": "col-adm2-caicedonia",
+     "name": "Caicedonia"
+    },
+    {
+     "id": "col-adm2-caimito",
+     "name": "Caimito"
+    },
+    {
+     "id": "col-adm2-cajamarca",
+     "name": "Cajamarca"
+    },
+    {
+     "id": "col-adm2-cajibío",
+     "name": "Cajibío"
+    },
+    {
+     "id": "col-adm2-cajicá",
+     "name": "Cajicá"
+    },
+    {
+     "id": "col-adm2-calamar",
+     "name": "Calamar"
+    },
+    {
+     "id": "col-adm2-calamar-2",
+     "name": "Calamar"
+    },
+    {
+     "id": "col-adm2-calarca",
+     "name": "Calarca"
+    },
+    {
+     "id": "col-adm2-caldas",
+     "name": "Caldas"
+    },
+    {
+     "id": "col-adm2-caldas-2",
+     "name": "Caldas"
+    },
+    {
+     "id": "col-adm2-caldono",
+     "name": "Caldono"
+    },
+    {
+     "id": "col-adm2-cali",
+     "name": "Cali"
+    },
+    {
+     "id": "col-adm2-california",
+     "name": "California"
+    },
+    {
+     "id": "col-adm2-calima",
+     "name": "Calima"
+    },
+    {
+     "id": "col-adm2-caloto",
+     "name": "Caloto"
+    },
+    {
+     "id": "col-adm2-campamento",
+     "name": "Campamento"
+    },
+    {
+     "id": "col-adm2-campo-de-la-cruz",
+     "name": "Campo De La Cruz"
+    },
+    {
+     "id": "col-adm2-campoalegre",
+     "name": "Campoalegre"
+    },
+    {
+     "id": "col-adm2-campohermoso",
+     "name": "Campohermoso"
+    },
+    {
+     "id": "col-adm2-canalete",
+     "name": "Canalete"
+    },
+    {
+     "id": "col-adm2-candelaria",
+     "name": "Candelaria"
+    },
+    {
+     "id": "col-adm2-candelaria-2",
+     "name": "Candelaria"
+    },
+    {
+     "id": "col-adm2-cantagallo",
+     "name": "Cantagallo"
+    },
+    {
+     "id": "col-adm2-caparrapi",
+     "name": "Caparrapi"
+    },
+    {
+     "id": "col-adm2-capitanejo",
+     "name": "Capitanejo"
+    },
+    {
+     "id": "col-adm2-caracolí",
+     "name": "Caracolí"
+    },
+    {
+     "id": "col-adm2-caramanta",
+     "name": "Caramanta"
+    },
+    {
+     "id": "col-adm2-carcasí",
+     "name": "Carcasí"
+    },
+    {
+     "id": "col-adm2-carepa",
+     "name": "Carepa"
+    },
+    {
+     "id": "col-adm2-carmen-de-apicala",
+     "name": "Carmen De Apicala"
+    },
+    {
+     "id": "col-adm2-carmen-de-carupa",
+     "name": "Carmen De Carupa"
+    },
+    {
+     "id": "col-adm2-carmen-del-darién-curbaradó",
+     "name": "Carmen Del Darién  (Curbaradó)"
+    },
+    {
+     "id": "col-adm2-carolina",
+     "name": "Carolina"
+    },
+    {
+     "id": "col-adm2-cartagena-de-indias",
+     "name": "Cartagena De Indias"
+    },
+    {
+     "id": "col-adm2-cartagena-del-chairá",
+     "name": "Cartagena Del Chairá"
+    },
+    {
+     "id": "col-adm2-cartago",
+     "name": "Cartago"
+    },
+    {
+     "id": "col-adm2-carurú",
+     "name": "Carurú"
+    },
+    {
+     "id": "col-adm2-casabianca",
+     "name": "Casabianca"
+    },
+    {
+     "id": "col-adm2-castilla-la-nueva",
+     "name": "Castilla La Nueva"
+    },
+    {
+     "id": "col-adm2-caucasia",
+     "name": "Caucasia"
+    },
+    {
+     "id": "col-adm2-cañasgordas",
+     "name": "Cañasgordas"
+    },
+    {
+     "id": "col-adm2-cepitá",
+     "name": "Cepitá"
+    },
+    {
+     "id": "col-adm2-cereté",
+     "name": "Cereté"
+    },
+    {
+     "id": "col-adm2-cerinza",
+     "name": "Cerinza"
+    },
+    {
+     "id": "col-adm2-cerrito",
+     "name": "Cerrito"
+    },
+    {
+     "id": "col-adm2-cerro-de-san-antonio",
+     "name": "Cerro De San Antonio"
+    },
+    {
+     "id": "col-adm2-chachagüí",
+     "name": "Chachagüí"
+    },
+    {
+     "id": "col-adm2-chaguaní",
+     "name": "Chaguaní"
+    },
+    {
+     "id": "col-adm2-chalán",
+     "name": "Chalán"
+    },
+    {
+     "id": "col-adm2-chameza",
+     "name": "Chameza"
+    },
+    {
+     "id": "col-adm2-chaparral",
+     "name": "Chaparral"
+    },
+    {
+     "id": "col-adm2-charala",
+     "name": "Charala"
+    },
+    {
+     "id": "col-adm2-charta",
+     "name": "Charta"
+    },
+    {
+     "id": "col-adm2-chia",
+     "name": "Chia"
+    },
+    {
+     "id": "col-adm2-chigorodó",
+     "name": "Chigorodó"
+    },
+    {
+     "id": "col-adm2-chima",
+     "name": "Chima"
+    },
+    {
+     "id": "col-adm2-chimichagua",
+     "name": "Chimichagua"
+    },
+    {
+     "id": "col-adm2-chimá",
+     "name": "Chimá"
+    },
+    {
+     "id": "col-adm2-chinavita",
+     "name": "Chinavita"
+    },
+    {
+     "id": "col-adm2-chinchiná",
+     "name": "Chinchiná"
+    },
+    {
+     "id": "col-adm2-chinácota",
+     "name": "Chinácota"
+    },
+    {
+     "id": "col-adm2-chinú",
+     "name": "Chinú"
+    },
+    {
+     "id": "col-adm2-chipaque",
+     "name": "Chipaque"
+    },
+    {
+     "id": "col-adm2-chipatá",
+     "name": "Chipatá"
+    },
+    {
+     "id": "col-adm2-chiquinquirá",
+     "name": "Chiquinquirá"
+    },
+    {
+     "id": "col-adm2-chiriguaná",
+     "name": "Chiriguaná"
+    },
+    {
+     "id": "col-adm2-chiscas",
+     "name": "Chiscas"
+    },
+    {
+     "id": "col-adm2-chita",
+     "name": "Chita"
+    },
+    {
+     "id": "col-adm2-chitagà",
+     "name": "Chitagà"
+    },
+    {
+     "id": "col-adm2-chitaraque",
+     "name": "Chitaraque"
+    },
+    {
+     "id": "col-adm2-chivatá",
+     "name": "Chivatá"
+    },
+    {
+     "id": "col-adm2-chivolo",
+     "name": "Chivolo"
+    },
+    {
+     "id": "col-adm2-chivor",
+     "name": "Chivor"
+    },
+    {
+     "id": "col-adm2-choachí",
+     "name": "Choachí"
+    },
+    {
+     "id": "col-adm2-chocontá",
+     "name": "Chocontá"
+    },
+    {
+     "id": "col-adm2-chíquiza",
+     "name": "Chíquiza"
+    },
+    {
+     "id": "col-adm2-cicuco",
+     "name": "Cicuco"
+    },
+    {
+     "id": "col-adm2-cienaga-de-oro",
+     "name": "Cienaga De Oro"
+    },
+    {
+     "id": "col-adm2-cimitarra",
+     "name": "Cimitarra"
+    },
+    {
+     "id": "col-adm2-circasia",
+     "name": "Circasia"
+    },
+    {
+     "id": "col-adm2-cisneros",
+     "name": "Cisneros"
+    },
+    {
+     "id": "col-adm2-ciudad-bolívar",
+     "name": "Ciudad Bolívar"
+    },
+    {
+     "id": "col-adm2-ciénaga",
+     "name": "Ciénaga"
+    },
+    {
+     "id": "col-adm2-ciénega",
+     "name": "Ciénega"
+    },
+    {
+     "id": "col-adm2-clemencia",
+     "name": "Clemencia"
+    },
+    {
+     "id": "col-adm2-cocorná",
+     "name": "Cocorná"
+    },
+    {
+     "id": "col-adm2-coello",
+     "name": "Coello"
+    },
+    {
+     "id": "col-adm2-cogua",
+     "name": "Cogua"
+    },
+    {
+     "id": "col-adm2-colombia",
+     "name": "Colombia"
+    },
+    {
+     "id": "col-adm2-colon",
+     "name": "Colon"
+    },
+    {
+     "id": "col-adm2-colón",
+     "name": "Colón"
+    },
+    {
+     "id": "col-adm2-combita",
+     "name": "Combita"
+    },
+    {
+     "id": "col-adm2-concepción",
+     "name": "Concepción"
+    },
+    {
+     "id": "col-adm2-concepción-2",
+     "name": "Concepción"
+    },
+    {
+     "id": "col-adm2-concordia",
+     "name": "Concordia"
+    },
+    {
+     "id": "col-adm2-concordia-2",
+     "name": "Concordia"
+    },
+    {
+     "id": "col-adm2-condoto",
+     "name": "Condoto"
+    },
+    {
+     "id": "col-adm2-confines",
+     "name": "Confines"
+    },
+    {
+     "id": "col-adm2-consacá",
+     "name": "Consacá"
+    },
+    {
+     "id": "col-adm2-contadero",
+     "name": "Contadero"
+    },
+    {
+     "id": "col-adm2-contratación",
+     "name": "Contratación"
+    },
+    {
+     "id": "col-adm2-convención",
+     "name": "Convención"
+    },
+    {
+     "id": "col-adm2-copacabana",
+     "name": "Copacabana"
+    },
+    {
+     "id": "col-adm2-coper",
+     "name": "Coper"
+    },
+    {
+     "id": "col-adm2-corinto",
+     "name": "Corinto"
+    },
+    {
+     "id": "col-adm2-coromoro",
+     "name": "Coromoro"
+    },
+    {
+     "id": "col-adm2-corozal",
+     "name": "Corozal"
+    },
+    {
+     "id": "col-adm2-corrales",
+     "name": "Corrales"
+    },
+    {
+     "id": "col-adm2-cota",
+     "name": "Cota"
+    },
+    {
+     "id": "col-adm2-cotorra",
+     "name": "Cotorra"
+    },
+    {
+     "id": "col-adm2-covarachia",
+     "name": "Covarachia"
+    },
+    {
+     "id": "col-adm2-coveñas",
+     "name": "Coveñas"
+    },
+    {
+     "id": "col-adm2-coyaima",
+     "name": "Coyaima"
+    },
+    {
+     "id": "col-adm2-cravo-norte",
+     "name": "Cravo Norte"
+    },
+    {
+     "id": "col-adm2-cuaspud",
+     "name": "Cuaspud"
+    },
+    {
+     "id": "col-adm2-cubarral",
+     "name": "Cubarral"
+    },
+    {
+     "id": "col-adm2-cubará",
+     "name": "Cubará"
+    },
+    {
+     "id": "col-adm2-cucaita",
+     "name": "Cucaita"
+    },
+    {
+     "id": "col-adm2-cucunubá",
+     "name": "Cucunubá"
+    },
+    {
+     "id": "col-adm2-cucutilla",
+     "name": "Cucutilla"
+    },
+    {
+     "id": "col-adm2-cumaral",
+     "name": "Cumaral"
+    },
+    {
+     "id": "col-adm2-cumaribo",
+     "name": "Cumaribo"
+    },
+    {
+     "id": "col-adm2-cumbal",
+     "name": "Cumbal"
+    },
+    {
+     "id": "col-adm2-cumbitara",
+     "name": "Cumbitara"
+    },
+    {
+     "id": "col-adm2-cunday",
+     "name": "Cunday"
+    },
+    {
+     "id": "col-adm2-curillo",
+     "name": "Curillo"
+    },
+    {
+     "id": "col-adm2-curití",
+     "name": "Curití"
+    },
+    {
+     "id": "col-adm2-curumaní",
+     "name": "Curumaní"
+    },
+    {
+     "id": "col-adm2-cuìtiva",
+     "name": "Cuìtiva"
+    },
+    {
+     "id": "col-adm2-cáceres",
+     "name": "Cáceres"
+    },
+    {
+     "id": "col-adm2-cáchira",
+     "name": "Cáchira"
+    },
+    {
+     "id": "col-adm2-cácota",
+     "name": "Cácota"
+    },
+    {
+     "id": "col-adm2-cáqueza",
+     "name": "Cáqueza"
+    },
+    {
+     "id": "col-adm2-cértegui",
+     "name": "Cértegui"
+    },
+    {
+     "id": "col-adm2-córdoba",
+     "name": "Córdoba"
+    },
+    {
+     "id": "col-adm2-córdoba-2",
+     "name": "Córdoba"
+    },
+    {
+     "id": "col-adm2-córdoba-3",
+     "name": "Córdoba"
+    },
+    {
+     "id": "col-adm2-cúcuta",
+     "name": "Cúcuta"
+    },
+    {
+     "id": "col-adm2-dabeiba",
+     "name": "Dabeiba"
+    },
+    {
+     "id": "col-adm2-dagua",
+     "name": "Dagua"
+    },
+    {
+     "id": "col-adm2-dibulla",
+     "name": "Dibulla"
+    },
+    {
+     "id": "col-adm2-distracción",
+     "name": "Distracción"
+    },
+    {
+     "id": "col-adm2-distrito-especial-industrial-y-portuario-de-barr",
+     "name": "Distrito Especial, Industrial Y Portuario De Barr*"
+    },
+    {
+     "id": "col-adm2-dolores",
+     "name": "Dolores"
+    },
+    {
+     "id": "col-adm2-don-matías",
+     "name": "Don Matías"
+    },
+    {
+     "id": "col-adm2-dosquebradas",
+     "name": "Dosquebradas"
+    },
+    {
+     "id": "col-adm2-duitama",
+     "name": "Duitama"
+    },
+    {
+     "id": "col-adm2-durania",
+     "name": "Durania"
+    },
+    {
+     "id": "col-adm2-ebéjico",
+     "name": "Ebéjico"
+    },
+    {
+     "id": "col-adm2-el-bagre",
+     "name": "El Bagre"
+    },
+    {
+     "id": "col-adm2-el-banco",
+     "name": "El Banco"
+    },
+    {
+     "id": "col-adm2-el-cairo",
+     "name": "El Cairo"
+    },
+    {
+     "id": "col-adm2-el-calvario",
+     "name": "El Calvario"
+    },
+    {
+     "id": "col-adm2-el-cantón-del-san-pablo-managrú",
+     "name": "El Cantón Del San Pablo (Managrú)"
+    },
+    {
+     "id": "col-adm2-el-carmen",
+     "name": "El Carmen"
+    },
+    {
+     "id": "col-adm2-el-carmen-2",
+     "name": "El Carmen"
+    },
+    {
+     "id": "col-adm2-el-carmen-de-bolívar",
+     "name": "El Carmen De Bolívar"
+    },
+    {
+     "id": "col-adm2-el-carmen-de-chucuri",
+     "name": "El Carmen De Chucuri"
+    },
+    {
+     "id": "col-adm2-el-carmen-de-viboral",
+     "name": "El Carmen De Viboral"
+    },
+    {
+     "id": "col-adm2-el-castillo",
+     "name": "El Castillo"
+    },
+    {
+     "id": "col-adm2-el-cerrito",
+     "name": "El Cerrito"
+    },
+    {
+     "id": "col-adm2-el-charco",
+     "name": "El Charco"
+    },
+    {
+     "id": "col-adm2-el-cocuy",
+     "name": "El Cocuy"
+    },
+    {
+     "id": "col-adm2-el-colegio",
+     "name": "El Colegio"
+    },
+    {
+     "id": "col-adm2-el-copey",
+     "name": "El Copey"
+    },
+    {
+     "id": "col-adm2-el-doncello",
+     "name": "El Doncello"
+    },
+    {
+     "id": "col-adm2-el-dorado",
+     "name": "El Dorado"
+    },
+    {
+     "id": "col-adm2-el-dovio",
+     "name": "El Dovio"
+    },
+    {
+     "id": "col-adm2-el-encanto",
+     "name": "El Encanto"
+    },
+    {
+     "id": "col-adm2-el-espino",
+     "name": "El Espino"
+    },
+    {
+     "id": "col-adm2-el-guacamayo",
+     "name": "El Guacamayo"
+    },
+    {
+     "id": "col-adm2-el-guamo",
+     "name": "El Guamo"
+    },
+    {
+     "id": "col-adm2-el-litoral-del-san-juán-docordó",
+     "name": "El Litoral Del San Juán (Docordó)"
+    },
+    {
+     "id": "col-adm2-el-molino",
+     "name": "El Molino"
+    },
+    {
+     "id": "col-adm2-el-paso",
+     "name": "El Paso"
+    },
+    {
+     "id": "col-adm2-el-paujil",
+     "name": "El Paujil"
+    },
+    {
+     "id": "col-adm2-el-peñol",
+     "name": "El Peñol"
+    },
+    {
+     "id": "col-adm2-el-peñon",
+     "name": "El Peñon"
+    },
+    {
+     "id": "col-adm2-el-peñon-2",
+     "name": "El Peñon"
+    },
+    {
+     "id": "col-adm2-el-peñón",
+     "name": "El Peñón"
+    },
+    {
+     "id": "col-adm2-el-piñón",
+     "name": "El Piñón"
+    },
+    {
+     "id": "col-adm2-el-playón",
+     "name": "El Playón"
+    },
+    {
+     "id": "col-adm2-el-retorno",
+     "name": "El Retorno"
+    },
+    {
+     "id": "col-adm2-el-retén",
+     "name": "El Retén"
+    },
+    {
+     "id": "col-adm2-el-roble",
+     "name": "El Roble"
+    },
+    {
+     "id": "col-adm2-el-rosal",
+     "name": "El Rosal"
+    },
+    {
+     "id": "col-adm2-el-rosario",
+     "name": "El Rosario"
+    },
+    {
+     "id": "col-adm2-el-tablón-de-gómez",
+     "name": "El Tablón De Gómez"
+    },
+    {
+     "id": "col-adm2-el-tambo",
+     "name": "El Tambo"
+    },
+    {
+     "id": "col-adm2-el-tambo-2",
+     "name": "El Tambo"
+    },
+    {
+     "id": "col-adm2-el-tarra",
+     "name": "El Tarra"
+    },
+    {
+     "id": "col-adm2-el-zulia",
+     "name": "El Zulia"
+    },
+    {
+     "id": "col-adm2-el-águila",
+     "name": "El Águila"
+    },
+    {
+     "id": "col-adm2-elías",
+     "name": "Elías"
+    },
+    {
+     "id": "col-adm2-encino",
+     "name": "Encino"
+    },
+    {
+     "id": "col-adm2-enciso",
+     "name": "Enciso"
+    },
+    {
+     "id": "col-adm2-entrerrios",
+     "name": "Entrerrios"
+    },
+    {
+     "id": "col-adm2-envigado",
+     "name": "Envigado"
+    },
+    {
+     "id": "col-adm2-espinal",
+     "name": "Espinal"
+    },
+    {
+     "id": "col-adm2-facatativá",
+     "name": "Facatativá"
+    },
+    {
+     "id": "col-adm2-falan",
+     "name": "Falan"
+    },
+    {
+     "id": "col-adm2-filadelfia",
+     "name": "Filadelfia"
+    },
+    {
+     "id": "col-adm2-filandia",
+     "name": "Filandia"
+    },
+    {
+     "id": "col-adm2-firavitoba",
+     "name": "Firavitoba"
+    },
+    {
+     "id": "col-adm2-flandes",
+     "name": "Flandes"
+    },
+    {
+     "id": "col-adm2-florencia",
+     "name": "Florencia"
+    },
+    {
+     "id": "col-adm2-florencia-2",
+     "name": "Florencia"
+    },
+    {
+     "id": "col-adm2-floresta",
+     "name": "Floresta"
+    },
+    {
+     "id": "col-adm2-florida",
+     "name": "Florida"
+    },
+    {
+     "id": "col-adm2-floridablanca",
+     "name": "Floridablanca"
+    },
+    {
+     "id": "col-adm2-florián",
+     "name": "Florián"
+    },
+    {
+     "id": "col-adm2-fonseca",
+     "name": "Fonseca"
+    },
+    {
+     "id": "col-adm2-fortul",
+     "name": "Fortul"
+    },
+    {
+     "id": "col-adm2-fosca",
+     "name": "Fosca"
+    },
+    {
+     "id": "col-adm2-francisco-pizarro-salahonda",
+     "name": "Francisco Pizarro (Salahonda)"
+    },
+    {
+     "id": "col-adm2-fredonia",
+     "name": "Fredonia"
+    },
+    {
+     "id": "col-adm2-fresno",
+     "name": "Fresno"
+    },
+    {
+     "id": "col-adm2-frontino",
+     "name": "Frontino"
+    },
+    {
+     "id": "col-adm2-fuente-de-oro",
+     "name": "Fuente De Oro"
+    },
+    {
+     "id": "col-adm2-fundación",
+     "name": "Fundación"
+    },
+    {
+     "id": "col-adm2-funes",
+     "name": "Funes"
+    },
+    {
+     "id": "col-adm2-funza",
+     "name": "Funza"
+    },
+    {
+     "id": "col-adm2-fuquene",
+     "name": "Fuquene"
+    },
+    {
+     "id": "col-adm2-fusagasugá",
+     "name": "Fusagasugá"
+    },
+    {
+     "id": "col-adm2-fómeque",
+     "name": "Fómeque"
+    },
+    {
+     "id": "col-adm2-gachalá",
+     "name": "Gachalá"
+    },
+    {
+     "id": "col-adm2-gachancipá",
+     "name": "Gachancipá"
+    },
+    {
+     "id": "col-adm2-gachantivá",
+     "name": "Gachantivá"
+    },
+    {
+     "id": "col-adm2-gachetá",
+     "name": "Gachetá"
+    },
+    {
+     "id": "col-adm2-galapa",
+     "name": "Galapa"
+    },
+    {
+     "id": "col-adm2-galeras",
+     "name": "Galeras"
+    },
+    {
+     "id": "col-adm2-galán",
+     "name": "Galán"
+    },
+    {
+     "id": "col-adm2-gama",
+     "name": "Gama"
+    },
+    {
+     "id": "col-adm2-gamarra",
+     "name": "Gamarra"
+    },
+    {
+     "id": "col-adm2-gameza",
+     "name": "Gameza"
+    },
+    {
+     "id": "col-adm2-garagoa",
+     "name": "Garagoa"
+    },
+    {
+     "id": "col-adm2-garzón",
+     "name": "Garzón"
+    },
+    {
+     "id": "col-adm2-gigante",
+     "name": "Gigante"
+    },
+    {
+     "id": "col-adm2-ginebra",
+     "name": "Ginebra"
+    },
+    {
+     "id": "col-adm2-giraldo",
+     "name": "Giraldo"
+    },
+    {
+     "id": "col-adm2-girardot",
+     "name": "Girardot"
+    },
+    {
+     "id": "col-adm2-girardota",
+     "name": "Girardota"
+    },
+    {
+     "id": "col-adm2-girón",
+     "name": "Girón"
+    },
+    {
+     "id": "col-adm2-gonzalez",
+     "name": "Gonzalez"
+    },
+    {
+     "id": "col-adm2-gramalote",
+     "name": "Gramalote"
+    },
+    {
+     "id": "col-adm2-granada",
+     "name": "Granada"
+    },
+    {
+     "id": "col-adm2-granada-2",
+     "name": "Granada"
+    },
+    {
+     "id": "col-adm2-granada-3",
+     "name": "Granada"
+    },
+    {
+     "id": "col-adm2-guaca",
+     "name": "Guaca"
+    },
+    {
+     "id": "col-adm2-guacamayas",
+     "name": "Guacamayas"
+    },
+    {
+     "id": "col-adm2-guacarí",
+     "name": "Guacarí"
+    },
+    {
+     "id": "col-adm2-guachené",
+     "name": "Guachené"
+    },
+    {
+     "id": "col-adm2-guachetá",
+     "name": "Guachetá"
+    },
+    {
+     "id": "col-adm2-guachucal",
+     "name": "Guachucal"
+    },
+    {
+     "id": "col-adm2-guadalupe",
+     "name": "Guadalupe"
+    },
+    {
+     "id": "col-adm2-guadalupe-2",
+     "name": "Guadalupe"
+    },
+    {
+     "id": "col-adm2-guadalupe-3",
+     "name": "Guadalupe"
+    },
+    {
+     "id": "col-adm2-guaduas",
+     "name": "Guaduas"
+    },
+    {
+     "id": "col-adm2-guaitarilla",
+     "name": "Guaitarilla"
+    },
+    {
+     "id": "col-adm2-gualmatán",
+     "name": "Gualmatán"
+    },
+    {
+     "id": "col-adm2-guamal",
+     "name": "Guamal"
+    },
+    {
+     "id": "col-adm2-guamal-2",
+     "name": "Guamal"
+    },
+    {
+     "id": "col-adm2-guamo",
+     "name": "Guamo"
+    },
+    {
+     "id": "col-adm2-guapi",
+     "name": "Guapi"
+    },
+    {
+     "id": "col-adm2-guapotá",
+     "name": "Guapotá"
+    },
+    {
+     "id": "col-adm2-guaranda",
+     "name": "Guaranda"
+    },
+    {
+     "id": "col-adm2-guarne",
+     "name": "Guarne"
+    },
+    {
+     "id": "col-adm2-guasca",
+     "name": "Guasca"
+    },
+    {
+     "id": "col-adm2-guatapé",
+     "name": "Guatapé"
+    },
+    {
+     "id": "col-adm2-guataquí",
+     "name": "Guataquí"
+    },
+    {
+     "id": "col-adm2-guatavita",
+     "name": "Guatavita"
+    },
+    {
+     "id": "col-adm2-guateque",
+     "name": "Guateque"
+    },
+    {
+     "id": "col-adm2-guavatá",
+     "name": "Guavatá"
+    },
+    {
+     "id": "col-adm2-guayabal-de-síquima",
+     "name": "Guayabal De Síquima"
+    },
+    {
+     "id": "col-adm2-guayabetal",
+     "name": "Guayabetal"
+    },
+    {
+     "id": "col-adm2-guayatá",
+     "name": "Guayatá"
+    },
+    {
+     "id": "col-adm2-gutierrez",
+     "name": "Gutierrez"
+    },
+    {
+     "id": "col-adm2-guática",
+     "name": "Guática"
+    },
+    {
+     "id": "col-adm2-gámbita",
+     "name": "Gámbita"
+    },
+    {
+     "id": "col-adm2-génova",
+     "name": "Génova"
+    },
+    {
+     "id": "col-adm2-gómez-plata",
+     "name": "Gómez Plata"
+    },
+    {
+     "id": "col-adm2-güepsa",
+     "name": "Güepsa"
+    },
+    {
+     "id": "col-adm2-güicán",
+     "name": "Güicán"
+    },
+    {
+     "id": "col-adm2-hacarí",
+     "name": "Hacarí"
+    },
+    {
+     "id": "col-adm2-hatillo-de-loba",
+     "name": "Hatillo De Loba"
+    },
+    {
+     "id": "col-adm2-hato",
+     "name": "Hato"
+    },
+    {
+     "id": "col-adm2-hato-corozal",
+     "name": "Hato Corozal"
+    },
+    {
+     "id": "col-adm2-hatonuevo",
+     "name": "Hatonuevo"
+    },
+    {
+     "id": "col-adm2-heliconia",
+     "name": "Heliconia"
+    },
+    {
+     "id": "col-adm2-herrán",
+     "name": "Herrán"
+    },
+    {
+     "id": "col-adm2-herveo",
+     "name": "Herveo"
+    },
+    {
+     "id": "col-adm2-hispania",
+     "name": "Hispania"
+    },
+    {
+     "id": "col-adm2-hobo",
+     "name": "Hobo"
+    },
+    {
+     "id": "col-adm2-honda",
+     "name": "Honda"
+    },
+    {
+     "id": "col-adm2-ibagué",
+     "name": "Ibagué"
+    },
+    {
+     "id": "col-adm2-icononzo",
+     "name": "Icononzo"
+    },
+    {
+     "id": "col-adm2-iles",
+     "name": "Iles"
+    },
+    {
+     "id": "col-adm2-imues",
+     "name": "Imues"
+    },
+    {
+     "id": "col-adm2-inza",
+     "name": "Inza"
+    },
+    {
+     "id": "col-adm2-inírida",
+     "name": "Inírida"
+    },
+    {
+     "id": "col-adm2-ipiales",
+     "name": "Ipiales"
+    },
+    {
+     "id": "col-adm2-isnos",
+     "name": "Isnos"
+    },
+    {
+     "id": "col-adm2-istmina",
+     "name": "Istmina"
+    },
+    {
+     "id": "col-adm2-itagüí",
+     "name": "Itagüí"
+    },
+    {
+     "id": "col-adm2-ituango",
+     "name": "Ituango"
+    },
+    {
+     "id": "col-adm2-iza",
+     "name": "Iza"
+    },
+    {
+     "id": "col-adm2-jambaló",
+     "name": "Jambaló"
+    },
+    {
+     "id": "col-adm2-jamundí",
+     "name": "Jamundí"
+    },
+    {
+     "id": "col-adm2-jardín",
+     "name": "Jardín"
+    },
+    {
+     "id": "col-adm2-jenesano",
+     "name": "Jenesano"
+    },
+    {
+     "id": "col-adm2-jericó",
+     "name": "Jericó"
+    },
+    {
+     "id": "col-adm2-jericó-2",
+     "name": "Jericó"
+    },
+    {
+     "id": "col-adm2-jerusalén",
+     "name": "Jerusalén"
+    },
+    {
+     "id": "col-adm2-jesús-maría",
+     "name": "Jesús María"
+    },
+    {
+     "id": "col-adm2-jordán-sube",
+     "name": "Jordán Sube"
+    },
+    {
+     "id": "col-adm2-juan-de-acosta",
+     "name": "Juan De Acosta"
+    },
+    {
+     "id": "col-adm2-junín",
+     "name": "Junín"
+    },
+    {
+     "id": "col-adm2-juradó",
+     "name": "Juradó"
+    },
+    {
+     "id": "col-adm2-la-apartada",
+     "name": "La Apartada"
+    },
+    {
+     "id": "col-adm2-la-argentina",
+     "name": "La Argentina"
+    },
+    {
+     "id": "col-adm2-la-belleza",
+     "name": "La Belleza"
+    },
+    {
+     "id": "col-adm2-la-calera",
+     "name": "La Calera"
+    },
+    {
+     "id": "col-adm2-la-capilla",
+     "name": "La Capilla"
+    },
+    {
+     "id": "col-adm2-la-ceja",
+     "name": "La Ceja"
+    },
+    {
+     "id": "col-adm2-la-celia",
+     "name": "La Celia"
+    },
+    {
+     "id": "col-adm2-la-chorrera",
+     "name": "La Chorrera"
+    },
+    {
+     "id": "col-adm2-la-cruz",
+     "name": "La Cruz"
+    },
+    {
+     "id": "col-adm2-la-cumbre",
+     "name": "La Cumbre"
+    },
+    {
+     "id": "col-adm2-la-dorada",
+     "name": "La Dorada"
+    },
+    {
+     "id": "col-adm2-la-esperanza",
+     "name": "La Esperanza"
+    },
+    {
+     "id": "col-adm2-la-estrella",
+     "name": "La Estrella"
+    },
+    {
+     "id": "col-adm2-la-florida",
+     "name": "La Florida"
+    },
+    {
+     "id": "col-adm2-la-gloria",
+     "name": "La Gloria"
+    },
+    {
+     "id": "col-adm2-la-guadalupe",
+     "name": "La Guadalupe"
+    },
+    {
+     "id": "col-adm2-la-jagua-de-ibirico",
+     "name": "La Jagua De Ibirico"
+    },
+    {
+     "id": "col-adm2-la-jagua-del-pilar",
+     "name": "La Jagua Del Pilar"
+    },
+    {
+     "id": "col-adm2-la-llanada",
+     "name": "La Llanada"
+    },
+    {
+     "id": "col-adm2-la-macarena",
+     "name": "La Macarena"
+    },
+    {
+     "id": "col-adm2-la-merced",
+     "name": "La Merced"
+    },
+    {
+     "id": "col-adm2-la-mesa",
+     "name": "La Mesa"
+    },
+    {
+     "id": "col-adm2-la-montañita",
+     "name": "La Montañita"
+    },
+    {
+     "id": "col-adm2-la-palma",
+     "name": "La Palma"
+    },
+    {
+     "id": "col-adm2-la-paz",
+     "name": "La Paz"
+    },
+    {
+     "id": "col-adm2-la-paz-2",
+     "name": "La Paz"
+    },
+    {
+     "id": "col-adm2-la-pedrera",
+     "name": "La Pedrera"
+    },
+    {
+     "id": "col-adm2-la-peña",
+     "name": "La Peña"
+    },
+    {
+     "id": "col-adm2-la-pintada",
+     "name": "La Pintada"
+    },
+    {
+     "id": "col-adm2-la-plata",
+     "name": "La Plata"
+    },
+    {
+     "id": "col-adm2-la-playa",
+     "name": "La Playa"
+    },
+    {
+     "id": "col-adm2-la-primavera",
+     "name": "La Primavera"
+    },
+    {
+     "id": "col-adm2-la-salina",
+     "name": "La Salina"
+    },
+    {
+     "id": "col-adm2-la-sierra",
+     "name": "La Sierra"
+    },
+    {
+     "id": "col-adm2-la-tebaida",
+     "name": "La Tebaida"
+    },
+    {
+     "id": "col-adm2-la-tola",
+     "name": "La Tola"
+    },
+    {
+     "id": "col-adm2-la-unión",
+     "name": "La Unión"
+    },
+    {
+     "id": "col-adm2-la-unión-2",
+     "name": "La Unión"
+    },
+    {
+     "id": "col-adm2-la-unión-3",
+     "name": "La Unión"
+    },
+    {
+     "id": "col-adm2-la-unión-4",
+     "name": "La Unión"
+    },
+    {
+     "id": "col-adm2-la-uvita",
+     "name": "La Uvita"
+    },
+    {
+     "id": "col-adm2-la-vega",
+     "name": "La Vega"
+    },
+    {
+     "id": "col-adm2-la-vega-2",
+     "name": "La Vega"
+    },
+    {
+     "id": "col-adm2-la-victoria",
+     "name": "La Victoria"
+    },
+    {
+     "id": "col-adm2-la-victoria-2",
+     "name": "La Victoria"
+    },
+    {
+     "id": "col-adm2-la-victoria-pacoa",
+     "name": "La Victoria (Pacoa)"
+    },
+    {
+     "id": "col-adm2-la-virginia",
+     "name": "La Virginia"
+    },
+    {
+     "id": "col-adm2-labateca",
+     "name": "Labateca"
+    },
+    {
+     "id": "col-adm2-labranza-grande",
+     "name": "Labranza Grande"
+    },
+    {
+     "id": "col-adm2-landázuri",
+     "name": "Landázuri"
+    },
+    {
+     "id": "col-adm2-lebríja",
+     "name": "Lebríja"
+    },
+    {
+     "id": "col-adm2-leiva",
+     "name": "Leiva"
+    },
+    {
+     "id": "col-adm2-lejanías",
+     "name": "Lejanías"
+    },
+    {
+     "id": "col-adm2-lenguazaque",
+     "name": "Lenguazaque"
+    },
+    {
+     "id": "col-adm2-leticia",
+     "name": "Leticia"
+    },
+    {
+     "id": "col-adm2-libano",
+     "name": "Libano"
+    },
+    {
+     "id": "col-adm2-liborina",
+     "name": "Liborina"
+    },
+    {
+     "id": "col-adm2-linares",
+     "name": "Linares"
+    },
+    {
+     "id": "col-adm2-lloró",
+     "name": "Lloró"
+    },
+    {
+     "id": "col-adm2-lorica",
+     "name": "Lorica"
+    },
+    {
+     "id": "col-adm2-los-andes",
+     "name": "Los Andes"
+    },
+    {
+     "id": "col-adm2-los-córdobas",
+     "name": "Los Córdobas"
+    },
+    {
+     "id": "col-adm2-los-palmitos",
+     "name": "Los Palmitos"
+    },
+    {
+     "id": "col-adm2-los-patios",
+     "name": "Los Patios"
+    },
+    {
+     "id": "col-adm2-los-santos",
+     "name": "Los Santos"
+    },
+    {
+     "id": "col-adm2-lourdes",
+     "name": "Lourdes"
+    },
+    {
+     "id": "col-adm2-luruaco",
+     "name": "Luruaco"
+    },
+    {
+     "id": "col-adm2-lérida",
+     "name": "Lérida"
+    },
+    {
+     "id": "col-adm2-lópez",
+     "name": "López"
+    },
+    {
+     "id": "col-adm2-macanal",
+     "name": "Macanal"
+    },
+    {
+     "id": "col-adm2-macaravita",
+     "name": "Macaravita"
+    },
+    {
+     "id": "col-adm2-maceo",
+     "name": "Maceo"
+    },
+    {
+     "id": "col-adm2-machetá",
+     "name": "Machetá"
+    },
+    {
+     "id": "col-adm2-madrid",
+     "name": "Madrid"
+    },
+    {
+     "id": "col-adm2-magangué",
+     "name": "Magangué"
+    },
+    {
+     "id": "col-adm2-magüí-payán",
+     "name": "Magüí (Payán)"
+    },
+    {
+     "id": "col-adm2-mahates",
+     "name": "Mahates"
+    },
+    {
+     "id": "col-adm2-maicao",
+     "name": "Maicao"
+    },
+    {
+     "id": "col-adm2-majagual",
+     "name": "Majagual"
+    },
+    {
+     "id": "col-adm2-malambo",
+     "name": "Malambo"
+    },
+    {
+     "id": "col-adm2-mallama-piedrancha",
+     "name": "Mallama (Piedrancha)"
+    },
+    {
+     "id": "col-adm2-manatí",
+     "name": "Manatí"
+    },
+    {
+     "id": "col-adm2-manaure",
+     "name": "Manaure"
+    },
+    {
+     "id": "col-adm2-manaure-balcón-del-cesar",
+     "name": "Manaure Balcón Del Cesar"
+    },
+    {
+     "id": "col-adm2-manizales",
+     "name": "Manizales"
+    },
+    {
+     "id": "col-adm2-manta",
+     "name": "Manta"
+    },
+    {
+     "id": "col-adm2-manzanares",
+     "name": "Manzanares"
+    },
+    {
+     "id": "col-adm2-maní",
+     "name": "Maní"
+    },
+    {
+     "id": "col-adm2-mapiripana",
+     "name": "Mapiripana"
+    },
+    {
+     "id": "col-adm2-mapiripán",
+     "name": "Mapiripán"
+    },
+    {
+     "id": "col-adm2-margarita",
+     "name": "Margarita"
+    },
+    {
+     "id": "col-adm2-maria-la-baja",
+     "name": "Maria La Baja"
+    },
+    {
+     "id": "col-adm2-marinilla",
+     "name": "Marinilla"
+    },
+    {
+     "id": "col-adm2-maripí",
+     "name": "Maripí"
+    },
+    {
+     "id": "col-adm2-marmato",
+     "name": "Marmato"
+    },
+    {
+     "id": "col-adm2-marquetalia",
+     "name": "Marquetalia"
+    },
+    {
+     "id": "col-adm2-marsella",
+     "name": "Marsella"
+    },
+    {
+     "id": "col-adm2-marulanda",
+     "name": "Marulanda"
+    },
+    {
+     "id": "col-adm2-matanza",
+     "name": "Matanza"
+    },
+    {
+     "id": "col-adm2-medellín",
+     "name": "Medellín"
+    },
+    {
+     "id": "col-adm2-medina",
+     "name": "Medina"
+    },
+    {
+     "id": "col-adm2-medio-atrato-beté",
+     "name": "Medio Atrato (Beté)"
+    },
+    {
+     "id": "col-adm2-medio-baudó-boca-de-pepé",
+     "name": "Medio Baudó(boca De Pepé)"
+    },
+    {
+     "id": "col-adm2-medio-san-juan-andagoya",
+     "name": "Medio San Juan (Andagoya)"
+    },
+    {
+     "id": "col-adm2-melgar",
+     "name": "Melgar"
+    },
+    {
+     "id": "col-adm2-mercaderes",
+     "name": "Mercaderes"
+    },
+    {
+     "id": "col-adm2-mesetas",
+     "name": "Mesetas"
+    },
+    {
+     "id": "col-adm2-milán",
+     "name": "Milán"
+    },
+    {
+     "id": "col-adm2-miraflores",
+     "name": "Miraflores"
+    },
+    {
+     "id": "col-adm2-miraflores-2",
+     "name": "Miraflores"
+    },
+    {
+     "id": "col-adm2-miranda",
+     "name": "Miranda"
+    },
+    {
+     "id": "col-adm2-mirití-paraná-campoamor",
+     "name": "Mirití-paraná (Campoamor)"
+    },
+    {
+     "id": "col-adm2-mistrató",
+     "name": "Mistrató"
+    },
+    {
+     "id": "col-adm2-mitú",
+     "name": "Mitú"
+    },
+    {
+     "id": "col-adm2-mocoa",
+     "name": "Mocoa"
+    },
+    {
+     "id": "col-adm2-mogotes",
+     "name": "Mogotes"
+    },
+    {
+     "id": "col-adm2-molagavita",
+     "name": "Molagavita"
+    },
+    {
+     "id": "col-adm2-momil",
+     "name": "Momil"
+    },
+    {
+     "id": "col-adm2-mompós",
+     "name": "Mompós"
+    },
+    {
+     "id": "col-adm2-mongua",
+     "name": "Mongua"
+    },
+    {
+     "id": "col-adm2-monguì",
+     "name": "Monguì"
+    },
+    {
+     "id": "col-adm2-moniquira",
+     "name": "Moniquira"
+    },
+    {
+     "id": "col-adm2-montebello",
+     "name": "Montebello"
+    },
+    {
+     "id": "col-adm2-montecristo",
+     "name": "Montecristo"
+    },
+    {
+     "id": "col-adm2-montelíbano",
+     "name": "Montelíbano"
+    },
+    {
+     "id": "col-adm2-montenegro",
+     "name": "Montenegro"
+    },
+    {
+     "id": "col-adm2-monterrey",
+     "name": "Monterrey"
+    },
+    {
+     "id": "col-adm2-montería",
+     "name": "Montería"
+    },
+    {
+     "id": "col-adm2-morales",
+     "name": "Morales"
+    },
+    {
+     "id": "col-adm2-morales-2",
+     "name": "Morales"
+    },
+    {
+     "id": "col-adm2-morelia",
+     "name": "Morelia"
+    },
+    {
+     "id": "col-adm2-morichal-morichal-nuevo",
+     "name": "Morichal (Morichal Nuevo)"
+    },
+    {
+     "id": "col-adm2-morroa",
+     "name": "Morroa"
+    },
+    {
+     "id": "col-adm2-mosquera",
+     "name": "Mosquera"
+    },
+    {
+     "id": "col-adm2-mosquera-2",
+     "name": "Mosquera"
+    },
+    {
+     "id": "col-adm2-motavita",
+     "name": "Motavita"
+    },
+    {
+     "id": "col-adm2-moñitos",
+     "name": "Moñitos"
+    },
+    {
+     "id": "col-adm2-murillo",
+     "name": "Murillo"
+    },
+    {
+     "id": "col-adm2-murindó",
+     "name": "Murindó"
+    },
+    {
+     "id": "col-adm2-mutatá",
+     "name": "Mutatá"
+    },
+    {
+     "id": "col-adm2-mutiscua",
+     "name": "Mutiscua"
+    },
+    {
+     "id": "col-adm2-muzo",
+     "name": "Muzo"
+    },
+    {
+     "id": "col-adm2-málaga",
+     "name": "Málaga"
+    },
+    {
+     "id": "col-adm2-nariño",
+     "name": "Nariño"
+    },
+    {
+     "id": "col-adm2-nariño-2",
+     "name": "Nariño"
+    },
+    {
+     "id": "col-adm2-nariño-3",
+     "name": "Nariño"
+    },
+    {
+     "id": "col-adm2-natagaima",
+     "name": "Natagaima"
+    },
+    {
+     "id": "col-adm2-nechí",
+     "name": "Nechí"
+    },
+    {
+     "id": "col-adm2-necoclí",
+     "name": "Necoclí"
+    },
+    {
+     "id": "col-adm2-neira",
+     "name": "Neira"
+    },
+    {
+     "id": "col-adm2-neiva",
+     "name": "Neiva"
+    },
+    {
+     "id": "col-adm2-nemocón",
+     "name": "Nemocón"
+    },
+    {
+     "id": "col-adm2-nilo",
+     "name": "Nilo"
+    },
+    {
+     "id": "col-adm2-nimaima",
+     "name": "Nimaima"
+    },
+    {
+     "id": "col-adm2-nobsa",
+     "name": "Nobsa"
+    },
+    {
+     "id": "col-adm2-nocaima",
+     "name": "Nocaima"
+    },
+    {
+     "id": "col-adm2-norcasia",
+     "name": "Norcasia"
+    },
+    {
+     "id": "col-adm2-norosi",
+     "name": "Norosi"
+    },
+    {
+     "id": "col-adm2-nueva-granada",
+     "name": "Nueva Granada"
+    },
+    {
+     "id": "col-adm2-nuevo-colón",
+     "name": "Nuevo Colón"
+    },
+    {
+     "id": "col-adm2-nunchia",
+     "name": "Nunchia"
+    },
+    {
+     "id": "col-adm2-nuquí",
+     "name": "Nuquí"
+    },
+    {
+     "id": "col-adm2-nátaga",
+     "name": "Nátaga"
+    },
+    {
+     "id": "col-adm2-nóvita",
+     "name": "Nóvita"
+    },
+    {
+     "id": "col-adm2-obando",
+     "name": "Obando"
+    },
+    {
+     "id": "col-adm2-ocamonte",
+     "name": "Ocamonte"
+    },
+    {
+     "id": "col-adm2-ocaña",
+     "name": "Ocaña"
+    },
+    {
+     "id": "col-adm2-oiba",
+     "name": "Oiba"
+    },
+    {
+     "id": "col-adm2-oicata",
+     "name": "Oicata"
+    },
+    {
+     "id": "col-adm2-olaya",
+     "name": "Olaya"
+    },
+    {
+     "id": "col-adm2-olaya-herrera-bocas-de-satinga",
+     "name": "Olaya Herrera (Bocas De Satinga)"
+    },
+    {
+     "id": "col-adm2-onzaga",
+     "name": "Onzaga"
+    },
+    {
+     "id": "col-adm2-oporapa",
+     "name": "Oporapa"
+    },
+    {
+     "id": "col-adm2-orito",
+     "name": "Orito"
+    },
+    {
+     "id": "col-adm2-orocué",
+     "name": "Orocué"
+    },
+    {
+     "id": "col-adm2-ortega",
+     "name": "Ortega"
+    },
+    {
+     "id": "col-adm2-ospina",
+     "name": "Ospina"
+    },
+    {
+     "id": "col-adm2-otanche",
+     "name": "Otanche"
+    },
+    {
+     "id": "col-adm2-ovejas",
+     "name": "Ovejas"
+    },
+    {
+     "id": "col-adm2-pachavita",
+     "name": "Pachavita"
+    },
+    {
+     "id": "col-adm2-pacho",
+     "name": "Pacho"
+    },
+    {
+     "id": "col-adm2-pacoa-cor-departamental",
+     "name": "Pacoa (Cor. Departamental)"
+    },
+    {
+     "id": "col-adm2-padilla",
+     "name": "Padilla"
+    },
+    {
+     "id": "col-adm2-paicol",
+     "name": "Paicol"
+    },
+    {
+     "id": "col-adm2-pailitas",
+     "name": "Pailitas"
+    },
+    {
+     "id": "col-adm2-paime",
+     "name": "Paime"
+    },
+    {
+     "id": "col-adm2-paipa",
+     "name": "Paipa"
+    },
+    {
+     "id": "col-adm2-pajarito",
+     "name": "Pajarito"
+    },
+    {
+     "id": "col-adm2-palermo",
+     "name": "Palermo"
+    },
+    {
+     "id": "col-adm2-palestina",
+     "name": "Palestina"
+    },
+    {
+     "id": "col-adm2-palestina-2",
+     "name": "Palestina"
+    },
+    {
+     "id": "col-adm2-palmar",
+     "name": "Palmar"
+    },
+    {
+     "id": "col-adm2-palmar-de-varela",
+     "name": "Palmar De Varela"
+    },
+    {
+     "id": "col-adm2-palmas-del-socorro",
+     "name": "Palmas Del Socorro"
+    },
+    {
+     "id": "col-adm2-palmira",
+     "name": "Palmira"
+    },
+    {
+     "id": "col-adm2-palmito",
+     "name": "Palmito"
+    },
+    {
+     "id": "col-adm2-palocabildo",
+     "name": "Palocabildo"
+    },
+    {
+     "id": "col-adm2-pamplona",
+     "name": "Pamplona"
+    },
+    {
+     "id": "col-adm2-pamplonita",
+     "name": "Pamplonita"
+    },
+    {
+     "id": "col-adm2-pandi",
+     "name": "Pandi"
+    },
+    {
+     "id": "col-adm2-panqueba",
+     "name": "Panqueba"
+    },
+    {
+     "id": "col-adm2-paná-paná-campo-alegre",
+     "name": "Paná-paná (Campo Alegre)"
+    },
+    {
+     "id": "col-adm2-papunaua-cor-departamental",
+     "name": "Papunaua(cor. Departamental)"
+    },
+    {
+     "id": "col-adm2-paratebueno",
+     "name": "Paratebueno"
+    },
+    {
+     "id": "col-adm2-pasca",
+     "name": "Pasca"
+    },
+    {
+     "id": "col-adm2-pasto",
+     "name": "Pasto"
+    },
+    {
+     "id": "col-adm2-patía",
+     "name": "Patía"
+    },
+    {
+     "id": "col-adm2-pauna",
+     "name": "Pauna"
+    },
+    {
+     "id": "col-adm2-paya",
+     "name": "Paya"
+    },
+    {
+     "id": "col-adm2-paz-de-ariporo",
+     "name": "Paz De Ariporo"
+    },
+    {
+     "id": "col-adm2-paz-de-río",
+     "name": "Paz De Río"
+    },
+    {
+     "id": "col-adm2-pedraza",
+     "name": "Pedraza"
+    },
+    {
+     "id": "col-adm2-pelaya",
+     "name": "Pelaya"
+    },
+    {
+     "id": "col-adm2-pensilvania",
+     "name": "Pensilvania"
+    },
+    {
+     "id": "col-adm2-peque",
+     "name": "Peque"
+    },
+    {
+     "id": "col-adm2-pereira",
+     "name": "Pereira"
+    },
+    {
+     "id": "col-adm2-pesca",
+     "name": "Pesca"
+    },
+    {
+     "id": "col-adm2-peñol",
+     "name": "Peñol"
+    },
+    {
+     "id": "col-adm2-piamonte",
+     "name": "Piamonte"
+    },
+    {
+     "id": "col-adm2-piedecuesta",
+     "name": "Piedecuesta"
+    },
+    {
+     "id": "col-adm2-piedras",
+     "name": "Piedras"
+    },
+    {
+     "id": "col-adm2-piendamó",
+     "name": "Piendamó"
+    },
+    {
+     "id": "col-adm2-pijao",
+     "name": "Pijao"
+    },
+    {
+     "id": "col-adm2-pijiño-del-carmen",
+     "name": "Pijiño Del Carmen"
+    },
+    {
+     "id": "col-adm2-pinchote",
+     "name": "Pinchote"
+    },
+    {
+     "id": "col-adm2-pinillos",
+     "name": "Pinillos"
+    },
+    {
+     "id": "col-adm2-piojó",
+     "name": "Piojó"
+    },
+    {
+     "id": "col-adm2-pisba",
+     "name": "Pisba"
+    },
+    {
+     "id": "col-adm2-pital",
+     "name": "Pital"
+    },
+    {
+     "id": "col-adm2-pitalito",
+     "name": "Pitalito"
+    },
+    {
+     "id": "col-adm2-pivijay",
+     "name": "Pivijay"
+    },
+    {
+     "id": "col-adm2-planadas",
+     "name": "Planadas"
+    },
+    {
+     "id": "col-adm2-planeta-rica",
+     "name": "Planeta Rica"
+    },
+    {
+     "id": "col-adm2-plato",
+     "name": "Plato"
+    },
+    {
+     "id": "col-adm2-policarpa",
+     "name": "Policarpa"
+    },
+    {
+     "id": "col-adm2-polonuevo",
+     "name": "Polonuevo"
+    },
+    {
+     "id": "col-adm2-ponedera",
+     "name": "Ponedera"
+    },
+    {
+     "id": "col-adm2-popayán",
+     "name": "Popayán"
+    },
+    {
+     "id": "col-adm2-pore",
+     "name": "Pore"
+    },
+    {
+     "id": "col-adm2-potosí",
+     "name": "Potosí"
+    },
+    {
+     "id": "col-adm2-pradera",
+     "name": "Pradera"
+    },
+    {
+     "id": "col-adm2-prado",
+     "name": "Prado"
+    },
+    {
+     "id": "col-adm2-providencia",
+     "name": "Providencia"
+    },
+    {
+     "id": "col-adm2-providencia-santa-isabel",
+     "name": "Providencia (Santa Isabel)"
+    },
+    {
+     "id": "col-adm2-pueblo-bello",
+     "name": "Pueblo Bello"
+    },
+    {
+     "id": "col-adm2-pueblo-nuevo",
+     "name": "Pueblo Nuevo"
+    },
+    {
+     "id": "col-adm2-pueblo-rico",
+     "name": "Pueblo Rico"
+    },
+    {
+     "id": "col-adm2-pueblo-viejo",
+     "name": "Pueblo Viejo"
+    },
+    {
+     "id": "col-adm2-pueblorrico",
+     "name": "Pueblorrico"
+    },
+    {
+     "id": "col-adm2-puente-nacional",
+     "name": "Puente Nacional"
+    },
+    {
+     "id": "col-adm2-puerres",
+     "name": "Puerres"
+    },
+    {
+     "id": "col-adm2-puerto-alegría",
+     "name": "Puerto Alegría"
+    },
+    {
+     "id": "col-adm2-puerto-arica",
+     "name": "Puerto Arica"
+    },
+    {
+     "id": "col-adm2-puerto-asís",
+     "name": "Puerto Asís"
+    },
+    {
+     "id": "col-adm2-puerto-berrío",
+     "name": "Puerto Berrío"
+    },
+    {
+     "id": "col-adm2-puerto-boyacá",
+     "name": "Puerto Boyacá"
+    },
+    {
+     "id": "col-adm2-puerto-caicedo",
+     "name": "Puerto Caicedo"
+    },
+    {
+     "id": "col-adm2-puerto-carreño",
+     "name": "Puerto Carreño"
+    },
+    {
+     "id": "col-adm2-puerto-colombia",
+     "name": "Puerto Colombia"
+    },
+    {
+     "id": "col-adm2-puerto-colombia-2",
+     "name": "Puerto Colombia"
+    },
+    {
+     "id": "col-adm2-puerto-concordia",
+     "name": "Puerto Concordia"
+    },
+    {
+     "id": "col-adm2-puerto-escondido",
+     "name": "Puerto Escondido"
+    },
+    {
+     "id": "col-adm2-puerto-gaitán",
+     "name": "Puerto Gaitán"
+    },
+    {
+     "id": "col-adm2-puerto-guzmán",
+     "name": "Puerto Guzmán"
+    },
+    {
+     "id": "col-adm2-puerto-leguízamo",
+     "name": "Puerto Leguízamo"
+    },
+    {
+     "id": "col-adm2-puerto-libertador",
+     "name": "Puerto Libertador"
+    },
+    {
+     "id": "col-adm2-puerto-lleras",
+     "name": "Puerto Lleras"
+    },
+    {
+     "id": "col-adm2-puerto-lópez",
+     "name": "Puerto López"
+    },
+    {
+     "id": "col-adm2-puerto-nare",
+     "name": "Puerto Nare"
+    },
+    {
+     "id": "col-adm2-puerto-nariño",
+     "name": "Puerto Nariño"
+    },
+    {
+     "id": "col-adm2-puerto-parra",
+     "name": "Puerto Parra"
+    },
+    {
+     "id": "col-adm2-puerto-rico",
+     "name": "Puerto Rico"
+    },
+    {
+     "id": "col-adm2-puerto-rico-2",
+     "name": "Puerto Rico"
+    },
+    {
+     "id": "col-adm2-puerto-rondón",
+     "name": "Puerto Rondón"
+    },
+    {
+     "id": "col-adm2-puerto-salgar",
+     "name": "Puerto Salgar"
+    },
+    {
+     "id": "col-adm2-puerto-santander",
+     "name": "Puerto Santander"
+    },
+    {
+     "id": "col-adm2-puerto-tejada",
+     "name": "Puerto Tejada"
+    },
+    {
+     "id": "col-adm2-puerto-triunfo",
+     "name": "Puerto Triunfo"
+    },
+    {
+     "id": "col-adm2-puerto-wilches",
+     "name": "Puerto Wilches"
+    },
+    {
+     "id": "col-adm2-pulí",
+     "name": "Pulí"
+    },
+    {
+     "id": "col-adm2-pupiales",
+     "name": "Pupiales"
+    },
+    {
+     "id": "col-adm2-puracé-coconuco",
+     "name": "Puracé (Coconuco)"
+    },
+    {
+     "id": "col-adm2-purificación",
+     "name": "Purificación"
+    },
+    {
+     "id": "col-adm2-purísima",
+     "name": "Purísima"
+    },
+    {
+     "id": "col-adm2-pácora",
+     "name": "Pácora"
+    },
+    {
+     "id": "col-adm2-páez",
+     "name": "Páez"
+    },
+    {
+     "id": "col-adm2-páez-2",
+     "name": "Páez"
+    },
+    {
+     "id": "col-adm2-páramo",
+     "name": "Páramo"
+    },
+    {
+     "id": "col-adm2-quebradanegra",
+     "name": "Quebradanegra"
+    },
+    {
+     "id": "col-adm2-quetame",
+     "name": "Quetame"
+    },
+    {
+     "id": "col-adm2-quibdó",
+     "name": "Quibdó"
+    },
+    {
+     "id": "col-adm2-quimbaya",
+     "name": "Quimbaya"
+    },
+    {
+     "id": "col-adm2-quinchia",
+     "name": "Quinchia"
+    },
+    {
+     "id": "col-adm2-quipile",
+     "name": "Quipile"
+    },
+    {
+     "id": "col-adm2-quípama",
+     "name": "Quípama"
+    },
+    {
+     "id": "col-adm2-ragonvalia",
+     "name": "Ragonvalia"
+    },
+    {
+     "id": "col-adm2-ramiriquí",
+     "name": "Ramiriquí"
+    },
+    {
+     "id": "col-adm2-recetor",
+     "name": "Recetor"
+    },
+    {
+     "id": "col-adm2-regidor",
+     "name": "Regidor"
+    },
+    {
+     "id": "col-adm2-remedios",
+     "name": "Remedios"
+    },
+    {
+     "id": "col-adm2-remolino",
+     "name": "Remolino"
+    },
+    {
+     "id": "col-adm2-repelón",
+     "name": "Repelón"
+    },
+    {
+     "id": "col-adm2-restrepo",
+     "name": "Restrepo"
+    },
+    {
+     "id": "col-adm2-restrepo-2",
+     "name": "Restrepo"
+    },
+    {
+     "id": "col-adm2-retiro",
+     "name": "Retiro"
+    },
+    {
+     "id": "col-adm2-ricaurte",
+     "name": "Ricaurte"
+    },
+    {
+     "id": "col-adm2-ricaurte-2",
+     "name": "Ricaurte"
+    },
+    {
+     "id": "col-adm2-ricaurte-coloso",
+     "name": "Ricaurte (Coloso)"
+    },
+    {
+     "id": "col-adm2-rio-iró-santa-rita",
+     "name": "Rio Iró (Santa Rita)"
+    },
+    {
+     "id": "col-adm2-rio-quito-paimadó",
+     "name": "Rio Quito (Paimadó)"
+    },
+    {
+     "id": "col-adm2-rioblanco",
+     "name": "Rioblanco"
+    },
+    {
+     "id": "col-adm2-riofrío",
+     "name": "Riofrío"
+    },
+    {
+     "id": "col-adm2-riohacha",
+     "name": "Riohacha"
+    },
+    {
+     "id": "col-adm2-rionegro",
+     "name": "Rionegro"
+    },
+    {
+     "id": "col-adm2-rionegro-2",
+     "name": "Rionegro"
+    },
+    {
+     "id": "col-adm2-riosucio",
+     "name": "Riosucio"
+    },
+    {
+     "id": "col-adm2-riosucio-2",
+     "name": "Riosucio"
+    },
+    {
+     "id": "col-adm2-rioviejo",
+     "name": "Rioviejo"
+    },
+    {
+     "id": "col-adm2-risaralda",
+     "name": "Risaralda"
+    },
+    {
+     "id": "col-adm2-rivera",
+     "name": "Rivera"
+    },
+    {
+     "id": "col-adm2-roberto-payán-san-josé",
+     "name": "Roberto Payán (San José)"
+    },
+    {
+     "id": "col-adm2-roldanillo",
+     "name": "Roldanillo"
+    },
+    {
+     "id": "col-adm2-roncesvalles",
+     "name": "Roncesvalles"
+    },
+    {
+     "id": "col-adm2-rondón",
+     "name": "Rondón"
+    },
+    {
+     "id": "col-adm2-rosas",
+     "name": "Rosas"
+    },
+    {
+     "id": "col-adm2-rovira",
+     "name": "Rovira"
+    },
+    {
+     "id": "col-adm2-ráquira",
+     "name": "Ráquira"
+    },
+    {
+     "id": "col-adm2-río-de-oro",
+     "name": "Río De Oro"
+    },
+    {
+     "id": "col-adm2-sabana-de-torres",
+     "name": "Sabana De Torres"
+    },
+    {
+     "id": "col-adm2-sabanagrande",
+     "name": "Sabanagrande"
+    },
+    {
+     "id": "col-adm2-sabanalarga",
+     "name": "Sabanalarga"
+    },
+    {
+     "id": "col-adm2-sabanalarga-2",
+     "name": "Sabanalarga"
+    },
+    {
+     "id": "col-adm2-sabanalarga-3",
+     "name": "Sabanalarga"
+    },
+    {
+     "id": "col-adm2-sabanas-de-san-angel",
+     "name": "Sabanas De San Angel"
+    },
+    {
+     "id": "col-adm2-sabaneta",
+     "name": "Sabaneta"
+    },
+    {
+     "id": "col-adm2-saboyá",
+     "name": "Saboyá"
+    },
+    {
+     "id": "col-adm2-sacama",
+     "name": "Sacama"
+    },
+    {
+     "id": "col-adm2-sahagún",
+     "name": "Sahagún"
+    },
+    {
+     "id": "col-adm2-saladoblanco",
+     "name": "Saladoblanco"
+    },
+    {
+     "id": "col-adm2-salamina",
+     "name": "Salamina"
+    },
+    {
+     "id": "col-adm2-salamina-2",
+     "name": "Salamina"
+    },
+    {
+     "id": "col-adm2-salazar",
+     "name": "Salazar"
+    },
+    {
+     "id": "col-adm2-saldaña",
+     "name": "Saldaña"
+    },
+    {
+     "id": "col-adm2-salento",
+     "name": "Salento"
+    },
+    {
+     "id": "col-adm2-salgar",
+     "name": "Salgar"
+    },
+    {
+     "id": "col-adm2-samacá",
+     "name": "Samacá"
+    },
+    {
+     "id": "col-adm2-samana",
+     "name": "Samana"
+    },
+    {
+     "id": "col-adm2-samaniego",
+     "name": "Samaniego"
+    },
+    {
+     "id": "col-adm2-sampués",
+     "name": "Sampués"
+    },
+    {
+     "id": "col-adm2-san-agustín",
+     "name": "San Agustín"
+    },
+    {
+     "id": "col-adm2-san-alberto",
+     "name": "San Alberto"
+    },
+    {
+     "id": "col-adm2-san-andres",
+     "name": "San Andres"
+    },
+    {
+     "id": "col-adm2-san-andres-de-sotavento",
+     "name": "San Andres De Sotavento"
+    },
+    {
+     "id": "col-adm2-san-andrès",
+     "name": "San Andrès"
+    },
+    {
+     "id": "col-adm2-san-andrés",
+     "name": "San Andrés"
+    },
+    {
+     "id": "col-adm2-san-antero",
+     "name": "San Antero"
+    },
+    {
+     "id": "col-adm2-san-antonio",
+     "name": "San Antonio"
+    },
+    {
+     "id": "col-adm2-san-antonio-del-tequendama",
+     "name": "San Antonio Del Tequendama"
+    },
+    {
+     "id": "col-adm2-san-benito",
+     "name": "San Benito"
+    },
+    {
+     "id": "col-adm2-san-benito-abad",
+     "name": "San Benito Abad"
+    },
+    {
+     "id": "col-adm2-san-bernardo",
+     "name": "San Bernardo"
+    },
+    {
+     "id": "col-adm2-san-bernardo-2",
+     "name": "San Bernardo"
+    },
+    {
+     "id": "col-adm2-san-bernardo-del-viento",
+     "name": "San Bernardo Del Viento"
+    },
+    {
+     "id": "col-adm2-san-calixto",
+     "name": "San Calixto"
+    },
+    {
+     "id": "col-adm2-san-carlos",
+     "name": "San Carlos"
+    },
+    {
+     "id": "col-adm2-san-carlos-2",
+     "name": "San Carlos"
+    },
+    {
+     "id": "col-adm2-san-carlos-de-guaroa",
+     "name": "San Carlos De Guaroa"
+    },
+    {
+     "id": "col-adm2-san-cayetano",
+     "name": "San Cayetano"
+    },
+    {
+     "id": "col-adm2-san-cayetano-2",
+     "name": "San Cayetano"
+    },
+    {
+     "id": "col-adm2-san-cristóbal",
+     "name": "San Cristóbal"
+    },
+    {
+     "id": "col-adm2-san-diego",
+     "name": "San Diego"
+    },
+    {
+     "id": "col-adm2-san-eduardo",
+     "name": "San Eduardo"
+    },
+    {
+     "id": "col-adm2-san-estanislao",
+     "name": "San Estanislao"
+    },
+    {
+     "id": "col-adm2-san-felipe",
+     "name": "San Felipe"
+    },
+    {
+     "id": "col-adm2-san-fernando",
+     "name": "San Fernando"
+    },
+    {
+     "id": "col-adm2-san-francisco",
+     "name": "San Francisco"
+    },
+    {
+     "id": "col-adm2-san-francisco-2",
+     "name": "San Francisco"
+    },
+    {
+     "id": "col-adm2-san-francisco-3",
+     "name": "San Francisco"
+    },
+    {
+     "id": "col-adm2-san-gil",
+     "name": "San Gil"
+    },
+    {
+     "id": "col-adm2-san-jacinto",
+     "name": "San Jacinto"
+    },
+    {
+     "id": "col-adm2-san-jacinto-del-cauca",
+     "name": "San Jacinto Del Cauca"
+    },
+    {
+     "id": "col-adm2-san-jerónimo",
+     "name": "San Jerónimo"
+    },
+    {
+     "id": "col-adm2-san-joaquín",
+     "name": "San Joaquín"
+    },
+    {
+     "id": "col-adm2-san-josé",
+     "name": "San José"
+    },
+    {
+     "id": "col-adm2-san-josé-de-la-montaña",
+     "name": "San José De La Montaña"
+    },
+    {
+     "id": "col-adm2-san-josé-de-miranda",
+     "name": "San José De Miranda"
+    },
+    {
+     "id": "col-adm2-san-josé-de-pare",
+     "name": "San José De Pare"
+    },
+    {
+     "id": "col-adm2-san-josé-de-uré",
+     "name": "San José De Uré"
+    },
+    {
+     "id": "col-adm2-san-josé-del-fragua",
+     "name": "San José Del Fragua"
+    },
+    {
+     "id": "col-adm2-san-josé-del-guaviare",
+     "name": "San José Del Guaviare"
+    },
+    {
+     "id": "col-adm2-san-josé-del-palmar",
+     "name": "San José Del Palmar"
+    },
+    {
+     "id": "col-adm2-san-juan-de-arama",
+     "name": "San Juan De Arama"
+    },
+    {
+     "id": "col-adm2-san-juan-de-betulia",
+     "name": "San Juan De Betulia"
+    },
+    {
+     "id": "col-adm2-san-juan-de-rio-seco",
+     "name": "San Juan De Rio Seco"
+    },
+    {
+     "id": "col-adm2-san-juan-de-urabá",
+     "name": "San Juan De Urabá"
+    },
+    {
+     "id": "col-adm2-san-juan-del-cesar",
+     "name": "San Juan Del Cesar"
+    },
+    {
+     "id": "col-adm2-san-juan-nepomuceno",
+     "name": "San Juan Nepomuceno"
+    },
+    {
+     "id": "col-adm2-san-juanito",
+     "name": "San Juanito"
+    },
+    {
+     "id": "col-adm2-san-lorenzo",
+     "name": "San Lorenzo"
+    },
+    {
+     "id": "col-adm2-san-luis",
+     "name": "San Luis"
+    },
+    {
+     "id": "col-adm2-san-luis-2",
+     "name": "San Luis"
+    },
+    {
+     "id": "col-adm2-san-luis-de-gaceno",
+     "name": "San Luis De Gaceno"
+    },
+    {
+     "id": "col-adm2-san-luis-de-palenque",
+     "name": "San Luis De Palenque"
+    },
+    {
+     "id": "col-adm2-san-luis-de-sincé",
+     "name": "San Luis De Sincé"
+    },
+    {
+     "id": "col-adm2-san-marcos",
+     "name": "San Marcos"
+    },
+    {
+     "id": "col-adm2-san-martín",
+     "name": "San Martín"
+    },
+    {
+     "id": "col-adm2-san-martín-2",
+     "name": "San Martín"
+    },
+    {
+     "id": "col-adm2-san-martín-de-loba",
+     "name": "San Martín De Loba"
+    },
+    {
+     "id": "col-adm2-san-mateo",
+     "name": "San Mateo"
+    },
+    {
+     "id": "col-adm2-san-miguel",
+     "name": "San Miguel"
+    },
+    {
+     "id": "col-adm2-san-miguel-la-dorada",
+     "name": "San Miguel (La Dorada)"
+    },
+    {
+     "id": "col-adm2-san-miguel-de-sema",
+     "name": "San Miguel De Sema"
+    },
+    {
+     "id": "col-adm2-san-onofre",
+     "name": "San Onofre"
+    },
+    {
+     "id": "col-adm2-san-pablo",
+     "name": "San Pablo"
+    },
+    {
+     "id": "col-adm2-san-pablo-2",
+     "name": "San Pablo"
+    },
+    {
+     "id": "col-adm2-san-pablo-de-borbur",
+     "name": "San Pablo De Borbur"
+    },
+    {
+     "id": "col-adm2-san-pedro",
+     "name": "San Pedro"
+    },
+    {
+     "id": "col-adm2-san-pedro-2",
+     "name": "San Pedro"
+    },
+    {
+     "id": "col-adm2-san-pedro-3",
+     "name": "San Pedro"
+    },
+    {
+     "id": "col-adm2-san-pedro-de-cartago",
+     "name": "San Pedro De Cartago"
+    },
+    {
+     "id": "col-adm2-san-pedro-de-uraba",
+     "name": "San Pedro De Uraba"
+    },
+    {
+     "id": "col-adm2-san-pelayo",
+     "name": "San Pelayo"
+    },
+    {
+     "id": "col-adm2-san-rafael",
+     "name": "San Rafael"
+    },
+    {
+     "id": "col-adm2-san-roque",
+     "name": "San Roque"
+    },
+    {
+     "id": "col-adm2-san-sebastian",
+     "name": "San Sebastian"
+    },
+    {
+     "id": "col-adm2-san-sebastian-de-buenavista",
+     "name": "San Sebastian De Buenavista"
+    },
+    {
+     "id": "col-adm2-san-sebastián-de-mariquita",
+     "name": "San Sebastián De Mariquita"
+    },
+    {
+     "id": "col-adm2-san-vicente",
+     "name": "San Vicente"
+    },
+    {
+     "id": "col-adm2-san-vicente-de-chucuri",
+     "name": "San Vicente De Chucuri"
+    },
+    {
+     "id": "col-adm2-san-vicente-del-caguán",
+     "name": "San Vicente Del Caguán"
+    },
+    {
+     "id": "col-adm2-san-zenón",
+     "name": "San Zenón"
+    },
+    {
+     "id": "col-adm2-sandoná",
+     "name": "Sandoná"
+    },
+    {
+     "id": "col-adm2-santa-ana",
+     "name": "Santa Ana"
+    },
+    {
+     "id": "col-adm2-santa-barbara",
+     "name": "Santa Barbara"
+    },
+    {
+     "id": "col-adm2-santa-bárbara",
+     "name": "Santa Bárbara"
+    },
+    {
+     "id": "col-adm2-santa-bárbara-iscuandé",
+     "name": "Santa Bárbara (Iscuandé)"
+    },
+    {
+     "id": "col-adm2-santa-bárbara-de-pinto",
+     "name": "Santa Bárbara De Pinto"
+    },
+    {
+     "id": "col-adm2-santa-catalina",
+     "name": "Santa Catalina"
+    },
+    {
+     "id": "col-adm2-santa-cruz-guachavés",
+     "name": "Santa Cruz (Guachavés)"
+    },
+    {
+     "id": "col-adm2-santa-fe-de-antioquia",
+     "name": "Santa Fe De Antioquia"
+    },
+    {
+     "id": "col-adm2-santa-helena-del-opón",
+     "name": "Santa Helena Del Opón"
+    },
+    {
+     "id": "col-adm2-santa-isabel",
+     "name": "Santa Isabel"
+    },
+    {
+     "id": "col-adm2-santa-lucía",
+     "name": "Santa Lucía"
+    },
+    {
+     "id": "col-adm2-santa-marta",
+     "name": "Santa Marta"
+    },
+    {
+     "id": "col-adm2-santa-maría",
+     "name": "Santa María"
+    },
+    {
+     "id": "col-adm2-santa-maría-2",
+     "name": "Santa María"
+    },
+    {
+     "id": "col-adm2-santa-rosa",
+     "name": "Santa Rosa"
+    },
+    {
+     "id": "col-adm2-santa-rosa-2",
+     "name": "Santa Rosa"
+    },
+    {
+     "id": "col-adm2-santa-rosa-de-cabal",
+     "name": "Santa Rosa De Cabal"
+    },
+    {
+     "id": "col-adm2-santa-rosa-de-osos",
+     "name": "Santa Rosa De Osos"
+    },
+    {
+     "id": "col-adm2-santa-rosa-de-viterbo",
+     "name": "Santa Rosa De Viterbo"
+    },
+    {
+     "id": "col-adm2-santa-rosa-del-sur",
+     "name": "Santa Rosa Del Sur"
+    },
+    {
+     "id": "col-adm2-santa-rosalía",
+     "name": "Santa Rosalía"
+    },
+    {
+     "id": "col-adm2-santa-sofía",
+     "name": "Santa Sofía"
+    },
+    {
+     "id": "col-adm2-santana",
+     "name": "Santana"
+    },
+    {
+     "id": "col-adm2-santander-araracuara",
+     "name": "Santander (Araracuara)"
+    },
+    {
+     "id": "col-adm2-santander-de-quilichao",
+     "name": "Santander De Quilichao"
+    },
+    {
+     "id": "col-adm2-santiago",
+     "name": "Santiago"
+    },
+    {
+     "id": "col-adm2-santiago-2",
+     "name": "Santiago"
+    },
+    {
+     "id": "col-adm2-santiago-de-tolú",
+     "name": "Santiago De Tolú"
+    },
+    {
+     "id": "col-adm2-santo-domingo",
+     "name": "Santo Domingo"
+    },
+    {
+     "id": "col-adm2-santo-tomás",
+     "name": "Santo Tomás"
+    },
+    {
+     "id": "col-adm2-santuario",
+     "name": "Santuario"
+    },
+    {
+     "id": "col-adm2-santuario-2",
+     "name": "Santuario"
+    },
+    {
+     "id": "col-adm2-sapuyes",
+     "name": "Sapuyes"
+    },
+    {
+     "id": "col-adm2-saravena",
+     "name": "Saravena"
+    },
+    {
+     "id": "col-adm2-sardinata",
+     "name": "Sardinata"
+    },
+    {
+     "id": "col-adm2-sasaima",
+     "name": "Sasaima"
+    },
+    {
+     "id": "col-adm2-sativanorte",
+     "name": "Sativanorte"
+    },
+    {
+     "id": "col-adm2-sativasur",
+     "name": "Sativasur"
+    },
+    {
+     "id": "col-adm2-segovia",
+     "name": "Segovia"
+    },
+    {
+     "id": "col-adm2-sesquilé",
+     "name": "Sesquilé"
+    },
+    {
+     "id": "col-adm2-sevilla",
+     "name": "Sevilla"
+    },
+    {
+     "id": "col-adm2-siachoque",
+     "name": "Siachoque"
+    },
+    {
+     "id": "col-adm2-sibaté",
+     "name": "Sibaté"
+    },
+    {
+     "id": "col-adm2-sibundoy",
+     "name": "Sibundoy"
+    },
+    {
+     "id": "col-adm2-silos",
+     "name": "Silos"
+    },
+    {
+     "id": "col-adm2-silvania",
+     "name": "Silvania"
+    },
+    {
+     "id": "col-adm2-silvia",
+     "name": "Silvia"
+    },
+    {
+     "id": "col-adm2-simacota",
+     "name": "Simacota"
+    },
+    {
+     "id": "col-adm2-simijaca",
+     "name": "Simijaca"
+    },
+    {
+     "id": "col-adm2-simití",
+     "name": "Simití"
+    },
+    {
+     "id": "col-adm2-sincelejo",
+     "name": "Sincelejo"
+    },
+    {
+     "id": "col-adm2-sipí",
+     "name": "Sipí"
+    },
+    {
+     "id": "col-adm2-sitionuevo",
+     "name": "Sitionuevo"
+    },
+    {
+     "id": "col-adm2-soacha",
+     "name": "Soacha"
+    },
+    {
+     "id": "col-adm2-soatá",
+     "name": "Soatá"
+    },
+    {
+     "id": "col-adm2-socha",
+     "name": "Socha"
+    },
+    {
+     "id": "col-adm2-socorro",
+     "name": "Socorro"
+    },
+    {
+     "id": "col-adm2-socotá",
+     "name": "Socotá"
+    },
+    {
+     "id": "col-adm2-sogamoso",
+     "name": "Sogamoso"
+    },
+    {
+     "id": "col-adm2-solano",
+     "name": "Solano"
+    },
+    {
+     "id": "col-adm2-soledad",
+     "name": "Soledad"
+    },
+    {
+     "id": "col-adm2-solita",
+     "name": "Solita"
+    },
+    {
+     "id": "col-adm2-somondoco",
+     "name": "Somondoco"
+    },
+    {
+     "id": "col-adm2-sonsón",
+     "name": "Sonsón"
+    },
+    {
+     "id": "col-adm2-sopetrán",
+     "name": "Sopetrán"
+    },
+    {
+     "id": "col-adm2-soplaviento",
+     "name": "Soplaviento"
+    },
+    {
+     "id": "col-adm2-sopo",
+     "name": "Sopo"
+    },
+    {
+     "id": "col-adm2-sora",
+     "name": "Sora"
+    },
+    {
+     "id": "col-adm2-soracá",
+     "name": "Soracá"
+    },
+    {
+     "id": "col-adm2-sotaquirá",
+     "name": "Sotaquirá"
+    },
+    {
+     "id": "col-adm2-sotará-paispamba",
+     "name": "Sotará (Paispamba)"
+    },
+    {
+     "id": "col-adm2-suaita",
+     "name": "Suaita"
+    },
+    {
+     "id": "col-adm2-suan",
+     "name": "Suan"
+    },
+    {
+     "id": "col-adm2-suaréz",
+     "name": "Suaréz"
+    },
+    {
+     "id": "col-adm2-suaza",
+     "name": "Suaza"
+    },
+    {
+     "id": "col-adm2-subachoque",
+     "name": "Subachoque"
+    },
+    {
+     "id": "col-adm2-sucre",
+     "name": "Sucre"
+    },
+    {
+     "id": "col-adm2-sucre-2",
+     "name": "Sucre"
+    },
+    {
+     "id": "col-adm2-sucre-3",
+     "name": "Sucre"
+    },
+    {
+     "id": "col-adm2-suesca",
+     "name": "Suesca"
+    },
+    {
+     "id": "col-adm2-supatá",
+     "name": "Supatá"
+    },
+    {
+     "id": "col-adm2-supia",
+     "name": "Supia"
+    },
+    {
+     "id": "col-adm2-suratá",
+     "name": "Suratá"
+    },
+    {
+     "id": "col-adm2-susa",
+     "name": "Susa"
+    },
+    {
+     "id": "col-adm2-susacón",
+     "name": "Susacón"
+    },
+    {
+     "id": "col-adm2-sutamarchàn",
+     "name": "Sutamarchàn"
+    },
+    {
+     "id": "col-adm2-sutatausa",
+     "name": "Sutatausa"
+    },
+    {
+     "id": "col-adm2-sutatenza",
+     "name": "Sutatenza"
+    },
+    {
+     "id": "col-adm2-suárez",
+     "name": "Suárez"
+    },
+    {
+     "id": "col-adm2-sáchica",
+     "name": "Sáchica"
+    },
+    {
+     "id": "col-adm2-tabio",
+     "name": "Tabio"
+    },
+    {
+     "id": "col-adm2-tadó",
+     "name": "Tadó"
+    },
+    {
+     "id": "col-adm2-talaigua-nuevo",
+     "name": "Talaigua Nuevo"
+    },
+    {
+     "id": "col-adm2-tamalameque",
+     "name": "Tamalameque"
+    },
+    {
+     "id": "col-adm2-tamara",
+     "name": "Tamara"
+    },
+    {
+     "id": "col-adm2-tame",
+     "name": "Tame"
+    },
+    {
+     "id": "col-adm2-taminango",
+     "name": "Taminango"
+    },
+    {
+     "id": "col-adm2-tangua",
+     "name": "Tangua"
+    },
+    {
+     "id": "col-adm2-taraira",
+     "name": "Taraira"
+    },
+    {
+     "id": "col-adm2-tarapacá",
+     "name": "Tarapacá"
+    },
+    {
+     "id": "col-adm2-tarazá",
+     "name": "Tarazá"
+    },
+    {
+     "id": "col-adm2-tarqui",
+     "name": "Tarqui"
+    },
+    {
+     "id": "col-adm2-tarso",
+     "name": "Tarso"
+    },
+    {
+     "id": "col-adm2-tasco",
+     "name": "Tasco"
+    },
+    {
+     "id": "col-adm2-tauramena",
+     "name": "Tauramena"
+    },
+    {
+     "id": "col-adm2-tausa",
+     "name": "Tausa"
+    },
+    {
+     "id": "col-adm2-tello",
+     "name": "Tello"
+    },
+    {
+     "id": "col-adm2-tena",
+     "name": "Tena"
+    },
+    {
+     "id": "col-adm2-tenerife",
+     "name": "Tenerife"
+    },
+    {
+     "id": "col-adm2-tenjo",
+     "name": "Tenjo"
+    },
+    {
+     "id": "col-adm2-tenza",
+     "name": "Tenza"
+    },
+    {
+     "id": "col-adm2-teorama",
+     "name": "Teorama"
+    },
+    {
+     "id": "col-adm2-teruel",
+     "name": "Teruel"
+    },
+    {
+     "id": "col-adm2-tesalia",
+     "name": "Tesalia"
+    },
+    {
+     "id": "col-adm2-tibacuy",
+     "name": "Tibacuy"
+    },
+    {
+     "id": "col-adm2-tibana",
+     "name": "Tibana"
+    },
+    {
+     "id": "col-adm2-tibasosa",
+     "name": "Tibasosa"
+    },
+    {
+     "id": "col-adm2-tibirita",
+     "name": "Tibirita"
+    },
+    {
+     "id": "col-adm2-tibú",
+     "name": "Tibú"
+    },
+    {
+     "id": "col-adm2-tierralta",
+     "name": "Tierralta"
+    },
+    {
+     "id": "col-adm2-timaná",
+     "name": "Timaná"
+    },
+    {
+     "id": "col-adm2-timbiquí",
+     "name": "Timbiquí"
+    },
+    {
+     "id": "col-adm2-timbío",
+     "name": "Timbío"
+    },
+    {
+     "id": "col-adm2-tinjacá",
+     "name": "Tinjacá"
+    },
+    {
+     "id": "col-adm2-tipacoque",
+     "name": "Tipacoque"
+    },
+    {
+     "id": "col-adm2-tiquiso",
+     "name": "Tiquiso"
+    },
+    {
+     "id": "col-adm2-titiribí",
+     "name": "Titiribí"
+    },
+    {
+     "id": "col-adm2-toca",
+     "name": "Toca"
+    },
+    {
+     "id": "col-adm2-tocaima",
+     "name": "Tocaima"
+    },
+    {
+     "id": "col-adm2-tocancipá",
+     "name": "Tocancipá"
+    },
+    {
+     "id": "col-adm2-togüí",
+     "name": "Togüí"
+    },
+    {
+     "id": "col-adm2-toledo",
+     "name": "Toledo"
+    },
+    {
+     "id": "col-adm2-toledo-2",
+     "name": "Toledo"
+    },
+    {
+     "id": "col-adm2-tolú-viejo",
+     "name": "Tolú Viejo"
+    },
+    {
+     "id": "col-adm2-tona",
+     "name": "Tona"
+    },
+    {
+     "id": "col-adm2-topaipí",
+     "name": "Topaipí"
+    },
+    {
+     "id": "col-adm2-toribío",
+     "name": "Toribío"
+    },
+    {
+     "id": "col-adm2-toro",
+     "name": "Toro"
+    },
+    {
+     "id": "col-adm2-tota",
+     "name": "Tota"
+    },
+    {
+     "id": "col-adm2-totoró",
+     "name": "Totoró"
+    },
+    {
+     "id": "col-adm2-trinidad",
+     "name": "Trinidad"
+    },
+    {
+     "id": "col-adm2-trujillo",
+     "name": "Trujillo"
+    },
+    {
+     "id": "col-adm2-tubará",
+     "name": "Tubará"
+    },
+    {
+     "id": "col-adm2-tuchin",
+     "name": "Tuchin"
+    },
+    {
+     "id": "col-adm2-tuluá",
+     "name": "Tuluá"
+    },
+    {
+     "id": "col-adm2-tumaco",
+     "name": "Tumaco"
+    },
+    {
+     "id": "col-adm2-tunja",
+     "name": "Tunja"
+    },
+    {
+     "id": "col-adm2-tununguá",
+     "name": "Tununguá"
+    },
+    {
+     "id": "col-adm2-tuquerres",
+     "name": "Tuquerres"
+    },
+    {
+     "id": "col-adm2-turbaco",
+     "name": "Turbaco"
+    },
+    {
+     "id": "col-adm2-turbana",
+     "name": "Turbana"
+    },
+    {
+     "id": "col-adm2-turbo",
+     "name": "Turbo"
+    },
+    {
+     "id": "col-adm2-turmequé",
+     "name": "Turmequé"
+    },
+    {
+     "id": "col-adm2-tuta",
+     "name": "Tuta"
+    },
+    {
+     "id": "col-adm2-tutazá",
+     "name": "Tutazá"
+    },
+    {
+     "id": "col-adm2-támesis",
+     "name": "Támesis"
+    },
+    {
+     "id": "col-adm2-tópaga",
+     "name": "Tópaga"
+    },
+    {
+     "id": "col-adm2-ubalá",
+     "name": "Ubalá"
+    },
+    {
+     "id": "col-adm2-ubaque",
+     "name": "Ubaque"
+    },
+    {
+     "id": "col-adm2-ubate",
+     "name": "Ubate"
+    },
+    {
+     "id": "col-adm2-ulloa",
+     "name": "Ulloa"
+    },
+    {
+     "id": "col-adm2-umbita",
+     "name": "Umbita"
+    },
+    {
+     "id": "col-adm2-une",
+     "name": "Une"
+    },
+    {
+     "id": "col-adm2-unguía",
+     "name": "Unguía"
+    },
+    {
+     "id": "col-adm2-unión-panamericana-animas",
+     "name": "Unión Panamericana ( Animas)"
+    },
+    {
+     "id": "col-adm2-uramita",
+     "name": "Uramita"
+    },
+    {
+     "id": "col-adm2-uribe",
+     "name": "Uribe"
+    },
+    {
+     "id": "col-adm2-uribia",
+     "name": "Uribia"
+    },
+    {
+     "id": "col-adm2-urrao",
+     "name": "Urrao"
+    },
+    {
+     "id": "col-adm2-urumita",
+     "name": "Urumita"
+    },
+    {
+     "id": "col-adm2-usiacurí",
+     "name": "Usiacurí"
+    },
+    {
+     "id": "col-adm2-valdivia",
+     "name": "Valdivia"
+    },
+    {
+     "id": "col-adm2-valencia",
+     "name": "Valencia"
+    },
+    {
+     "id": "col-adm2-valle-de-san-jose",
+     "name": "Valle De San Jose"
+    },
+    {
+     "id": "col-adm2-valle-de-san-juan",
+     "name": "Valle De San Juan"
+    },
+    {
+     "id": "col-adm2-valle-del-guamuez",
+     "name": "Valle Del Guamuez"
+    },
+    {
+     "id": "col-adm2-valledupar",
+     "name": "Valledupar"
+    },
+    {
+     "id": "col-adm2-valparaíso",
+     "name": "Valparaíso"
+    },
+    {
+     "id": "col-adm2-valparaíso-2",
+     "name": "Valparaíso"
+    },
+    {
+     "id": "col-adm2-vegachí",
+     "name": "Vegachí"
+    },
+    {
+     "id": "col-adm2-venadillo",
+     "name": "Venadillo"
+    },
+    {
+     "id": "col-adm2-venecia",
+     "name": "Venecia"
+    },
+    {
+     "id": "col-adm2-venecia-2",
+     "name": "Venecia"
+    },
+    {
+     "id": "col-adm2-ventaquemada",
+     "name": "Ventaquemada"
+    },
+    {
+     "id": "col-adm2-vergara",
+     "name": "Vergara"
+    },
+    {
+     "id": "col-adm2-versalles",
+     "name": "Versalles"
+    },
+    {
+     "id": "col-adm2-vetas",
+     "name": "Vetas"
+    },
+    {
+     "id": "col-adm2-vianí",
+     "name": "Vianí"
+    },
+    {
+     "id": "col-adm2-victoria",
+     "name": "Victoria"
+    },
+    {
+     "id": "col-adm2-vigia-del-fuerte",
+     "name": "Vigia Del Fuerte"
+    },
+    {
+     "id": "col-adm2-vijes",
+     "name": "Vijes"
+    },
+    {
+     "id": "col-adm2-villa-caro",
+     "name": "Villa Caro"
+    },
+    {
+     "id": "col-adm2-villa-de-leyva",
+     "name": "Villa De Leyva"
+    },
+    {
+     "id": "col-adm2-villa-del-rosario",
+     "name": "Villa Del Rosario"
+    },
+    {
+     "id": "col-adm2-villa-gómez",
+     "name": "Villa Gómez"
+    },
+    {
+     "id": "col-adm2-villa-rica",
+     "name": "Villa Rica"
+    },
+    {
+     "id": "col-adm2-villagarzón",
+     "name": "Villagarzón"
+    },
+    {
+     "id": "col-adm2-villahermosa",
+     "name": "Villahermosa"
+    },
+    {
+     "id": "col-adm2-villamaria",
+     "name": "Villamaria"
+    },
+    {
+     "id": "col-adm2-villanueva",
+     "name": "Villanueva"
+    },
+    {
+     "id": "col-adm2-villanueva-2",
+     "name": "Villanueva"
+    },
+    {
+     "id": "col-adm2-villanueva-3",
+     "name": "Villanueva"
+    },
+    {
+     "id": "col-adm2-villanueva-4",
+     "name": "Villanueva"
+    },
+    {
+     "id": "col-adm2-villapinzón",
+     "name": "Villapinzón"
+    },
+    {
+     "id": "col-adm2-villarrica",
+     "name": "Villarrica"
+    },
+    {
+     "id": "col-adm2-villavicencio",
+     "name": "Villavicencio"
+    },
+    {
+     "id": "col-adm2-villavieja",
+     "name": "Villavieja"
+    },
+    {
+     "id": "col-adm2-villeta",
+     "name": "Villeta"
+    },
+    {
+     "id": "col-adm2-viotá",
+     "name": "Viotá"
+    },
+    {
+     "id": "col-adm2-viracachá",
+     "name": "Viracachá"
+    },
+    {
+     "id": "col-adm2-vistahermosa",
+     "name": "Vistahermosa"
+    },
+    {
+     "id": "col-adm2-viterbo",
+     "name": "Viterbo"
+    },
+    {
+     "id": "col-adm2-vélez",
+     "name": "Vélez"
+    },
+    {
+     "id": "col-adm2-yacopí",
+     "name": "Yacopí"
+    },
+    {
+     "id": "col-adm2-yacuanquer",
+     "name": "Yacuanquer"
+    },
+    {
+     "id": "col-adm2-yaguará",
+     "name": "Yaguará"
+    },
+    {
+     "id": "col-adm2-yali",
+     "name": "Yali"
+    },
+    {
+     "id": "col-adm2-yarumal",
+     "name": "Yarumal"
+    },
+    {
+     "id": "col-adm2-yavaraté-cor-departamental",
+     "name": "Yavaraté  (Cor. Departamental)"
+    },
+    {
+     "id": "col-adm2-yolombó",
+     "name": "Yolombó"
+    },
+    {
+     "id": "col-adm2-yondó-casabe",
+     "name": "Yondó (Casabe)"
+    },
+    {
+     "id": "col-adm2-yopal",
+     "name": "Yopal"
+    },
+    {
+     "id": "col-adm2-yotoco",
+     "name": "Yotoco"
+    },
+    {
+     "id": "col-adm2-yumbo",
+     "name": "Yumbo"
+    },
+    {
+     "id": "col-adm2-zambrano",
+     "name": "Zambrano"
+    },
+    {
+     "id": "col-adm2-zapatoca",
+     "name": "Zapatoca"
+    },
+    {
+     "id": "col-adm2-zapayán",
+     "name": "Zapayán"
+    },
+    {
+     "id": "col-adm2-zaragoza",
+     "name": "Zaragoza"
+    },
+    {
+     "id": "col-adm2-zarzal",
+     "name": "Zarzal"
+    },
+    {
+     "id": "col-adm2-zetaquirá",
+     "name": "Zetaquirá"
+    },
+    {
+     "id": "col-adm2-zipacón",
+     "name": "Zipacón"
+    },
+    {
+     "id": "col-adm2-zipaquira",
+     "name": "Zipaquira"
+    },
+    {
+     "id": "col-adm2-zona-bananera",
+     "name": "Zona Bananera"
+    },
+    {
+     "id": "col-adm2-íquira",
+     "name": "Íquira"
+    },
+    {
+     "id": "col-adm2-útica",
+     "name": "Útica"
+    }
+   ]
+  }
+ },
+ "name": "Colombia",
+ "nameBn": "Colombia"
+}

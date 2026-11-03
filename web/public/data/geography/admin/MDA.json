@@ -1,0 +1,214 @@
+{
+ "code": "MDA",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Republica Moldova",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2014",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Districts",
+   "code": "ADM1",
+   "count": 37,
+   "name": "Districts",
+   "nameBn": "জেলা",
+   "representedYear": "2020",
+   "sourceCount": 37,
+   "units": [
+    {
+     "id": "mda-adm1-anenii-noi",
+     "name": "Anenii Noi",
+     "shapeISO": "MD-AN"
+    },
+    {
+     "id": "mda-adm1-balti",
+     "name": "Balti",
+     "shapeISO": "MD-BA"
+    },
+    {
+     "id": "mda-adm1-basarabeasca",
+     "name": "Basarabeasca",
+     "shapeISO": "MD-BS"
+    },
+    {
+     "id": "mda-adm1-bender",
+     "name": "Bender",
+     "shapeISO": "MD-BD"
+    },
+    {
+     "id": "mda-adm1-briceni",
+     "name": "Briceni",
+     "shapeISO": "MD-BR"
+    },
+    {
+     "id": "mda-adm1-cahul",
+     "name": "Cahul",
+     "shapeISO": "MD-CA"
+    },
+    {
+     "id": "mda-adm1-calarasi",
+     "name": "Calarasi",
+     "shapeISO": "MD-CL"
+    },
+    {
+     "id": "mda-adm1-cantemir",
+     "name": "Cantemir",
+     "shapeISO": "MD-CT"
+    },
+    {
+     "id": "mda-adm1-causeni",
+     "name": "Causeni",
+     "shapeISO": "MD-CS"
+    },
+    {
+     "id": "mda-adm1-chisinau",
+     "name": "Chisinau",
+     "shapeISO": "MD-CU"
+    },
+    {
+     "id": "mda-adm1-cimislia",
+     "name": "Cimislia",
+     "shapeISO": "MD-CM"
+    },
+    {
+     "id": "mda-adm1-criuleni",
+     "name": "Criuleni",
+     "shapeISO": "MD-CR"
+    },
+    {
+     "id": "mda-adm1-donduseni",
+     "name": "Donduseni",
+     "shapeISO": "MD-DO"
+    },
+    {
+     "id": "mda-adm1-drochia",
+     "name": "Drochia",
+     "shapeISO": "MD-DR"
+    },
+    {
+     "id": "mda-adm1-dubasari",
+     "name": "Dubasari",
+     "shapeISO": "MD-DU"
+    },
+    {
+     "id": "mda-adm1-edinet",
+     "name": "Edinet",
+     "shapeISO": "MD-ED"
+    },
+    {
+     "id": "mda-adm1-falesti",
+     "name": "Falesti",
+     "shapeISO": "MD-FA"
+    },
+    {
+     "id": "mda-adm1-floresti",
+     "name": "Floresti",
+     "shapeISO": "MD-FL"
+    },
+    {
+     "id": "mda-adm1-gagauzia",
+     "name": "Gagauzia",
+     "shapeISO": "MD-GA"
+    },
+    {
+     "id": "mda-adm1-glodeni",
+     "name": "Glodeni",
+     "shapeISO": "MD-GL"
+    },
+    {
+     "id": "mda-adm1-hincesti",
+     "name": "Hincesti",
+     "shapeISO": "MD-HI"
+    },
+    {
+     "id": "mda-adm1-ialoveni",
+     "name": "Ialoveni",
+     "shapeISO": "MD-IA"
+    },
+    {
+     "id": "mda-adm1-leova",
+     "name": "Leova",
+     "shapeISO": "MD-LE"
+    },
+    {
+     "id": "mda-adm1-nisporeni",
+     "name": "Nisporeni",
+     "shapeISO": "MD-NI"
+    },
+    {
+     "id": "mda-adm1-ocnita",
+     "name": "Ocnita",
+     "shapeISO": "MD-OC"
+    },
+    {
+     "id": "mda-adm1-orhei",
+     "name": "Orhei",
+     "shapeISO": "MD-OR"
+    },
+    {
+     "id": "mda-adm1-rezina",
+     "name": "Rezina",
+     "shapeISO": "MD-RE"
+    },
+    {
+     "id": "mda-adm1-riscani",
+     "name": "RIscani",
+     "shapeISO": "MD-RI"
+    },
+    {
+     "id": "mda-adm1-singerei",
+     "name": "SIngerei",
+     "shapeISO": "MD-SI"
+    },
+    {
+     "id": "mda-adm1-soldanesti",
+     "name": "Soldanesti",
+     "shapeISO": "MD-SD"
+    },
+    {
+     "id": "mda-adm1-soroca",
+     "name": "Soroca",
+     "shapeISO": "MD-SO"
+    },
+    {
+     "id": "mda-adm1-stefan-voda",
+     "name": "Stefan Voda",
+     "shapeISO": "MD-SV"
+    },
+    {
+     "id": "mda-adm1-straseni",
+     "name": "Straseni",
+     "shapeISO": "MD-ST"
+    },
+    {
+     "id": "mda-adm1-taraclia",
+     "name": "Taraclia",
+     "shapeISO": "MD-TA"
+    },
+    {
+     "id": "mda-adm1-telenesti",
+     "name": "Telenesti",
+     "shapeISO": "MD-TE"
+    },
+    {
+     "id": "mda-adm1-transnistria",
+     "name": "Transnistria",
+     "shapeISO": "MD-SN"
+    },
+    {
+     "id": "mda-adm1-ungheni",
+     "name": "Ungheni",
+     "shapeISO": "MD-UN"
+    }
+   ]
+  }
+ },
+ "name": "Republic of Moldova",
+ "nameBn": "Republic of Moldova"
+}

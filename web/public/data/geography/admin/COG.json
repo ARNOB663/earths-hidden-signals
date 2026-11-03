@@ -1,0 +1,284 @@
+{
+ "code": "COG",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Unknown",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2017",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Départements",
+   "code": "ADM1",
+   "count": 12,
+   "name": "Départements",
+   "nameBn": "Départements",
+   "representedYear": "2017",
+   "sourceCount": 12,
+   "units": [
+    {
+     "id": "cog-adm1-bouenza",
+     "name": "Bouenza",
+     "shapeISO": "CG-11"
+    },
+    {
+     "id": "cog-adm1-brazzaville",
+     "name": "Brazzaville",
+     "shapeISO": "CG-BZV"
+    },
+    {
+     "id": "cog-adm1-cuvette",
+     "name": "Cuvette",
+     "shapeISO": "CG-8"
+    },
+    {
+     "id": "cog-adm1-cuvette-ouest",
+     "name": "Cuvette-Ouest",
+     "shapeISO": "CG-15"
+    },
+    {
+     "id": "cog-adm1-kouilou",
+     "name": "Kouilou",
+     "shapeISO": "CG-5"
+    },
+    {
+     "id": "cog-adm1-likouala",
+     "name": "Likouala",
+     "shapeISO": "CG-2"
+    },
+    {
+     "id": "cog-adm1-lékoumou",
+     "name": "Lékoumou",
+     "shapeISO": "CG-7"
+    },
+    {
+     "id": "cog-adm1-niari",
+     "name": "Niari",
+     "shapeISO": "CG-9"
+    },
+    {
+     "id": "cog-adm1-plateaux",
+     "name": "Plateaux",
+     "shapeISO": "CG-14"
+    },
+    {
+     "id": "cog-adm1-pointe-noire",
+     "name": "Pointe-Noire",
+     "shapeISO": "CG-16"
+    },
+    {
+     "id": "cog-adm1-pool",
+     "name": "Pool",
+     "shapeISO": "CG-12"
+    },
+    {
+     "id": "cog-adm1-sangha",
+     "name": "Sangha",
+     "shapeISO": "CG-13"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Unknown",
+   "code": "ADM2",
+   "count": 46,
+   "name": "ADM2 areas",
+   "nameBn": "ADM2 এলাকা",
+   "representedYear": "2007",
+   "sourceCount": 46,
+   "units": [
+    {
+     "id": "cog-adm2-abala",
+     "name": "Abala"
+    },
+    {
+     "id": "cog-adm2-bambama",
+     "name": "Bambama"
+    },
+    {
+     "id": "cog-adm2-boko",
+     "name": "Boko"
+    },
+    {
+     "id": "cog-adm2-boko-songho",
+     "name": "Boko-Songho"
+    },
+    {
+     "id": "cog-adm2-boundji",
+     "name": "Boundji"
+    },
+    {
+     "id": "cog-adm2-divenie",
+     "name": "Divenie"
+    },
+    {
+     "id": "cog-adm2-djambala",
+     "name": "Djambala"
+    },
+    {
+     "id": "cog-adm2-dongou",
+     "name": "Dongou"
+    },
+    {
+     "id": "cog-adm2-epena",
+     "name": "Epena"
+    },
+    {
+     "id": "cog-adm2-ewo",
+     "name": "Ewo"
+    },
+    {
+     "id": "cog-adm2-gamboma",
+     "name": "Gamboma"
+    },
+    {
+     "id": "cog-adm2-impfondo",
+     "name": "Impfondo"
+    },
+    {
+     "id": "cog-adm2-kakamoeka",
+     "name": "Kakamoeka"
+    },
+    {
+     "id": "cog-adm2-kelle",
+     "name": "Kelle"
+    },
+    {
+     "id": "cog-adm2-kibangou",
+     "name": "Kibangou"
+    },
+    {
+     "id": "cog-adm2-kimongo",
+     "name": "Kimongo"
+    },
+    {
+     "id": "cog-adm2-kindamba",
+     "name": "Kindamba"
+    },
+    {
+     "id": "cog-adm2-kinkala",
+     "name": "Kinkala"
+    },
+    {
+     "id": "cog-adm2-komono",
+     "name": "Komono"
+    },
+    {
+     "id": "cog-adm2-lekana",
+     "name": "Lekana"
+    },
+    {
+     "id": "cog-adm2-loandjili-pointe-noire",
+     "name": "Loandjili (Pointe Noire)"
+    },
+    {
+     "id": "cog-adm2-loudima",
+     "name": "Loudima"
+    },
+    {
+     "id": "cog-adm2-loukela",
+     "name": "Loukela"
+    },
+    {
+     "id": "cog-adm2-louvakou-loubomo",
+     "name": "Louvakou (Loubomo)"
+    },
+    {
+     "id": "cog-adm2-madingo-kayes",
+     "name": "Madingo-Kayes"
+    },
+    {
+     "id": "cog-adm2-madingou",
+     "name": "Madingou"
+    },
+    {
+     "id": "cog-adm2-makoua",
+     "name": "Makoua"
+    },
+    {
+     "id": "cog-adm2-mayama",
+     "name": "Mayama"
+    },
+    {
+     "id": "cog-adm2-mayoko",
+     "name": "Mayoko"
+    },
+    {
+     "id": "cog-adm2-mbomo",
+     "name": "Mbomo"
+    },
+    {
+     "id": "cog-adm2-mfouati",
+     "name": "Mfouati"
+    },
+    {
+     "id": "cog-adm2-mindouli",
+     "name": "Mindouli"
+    },
+    {
+     "id": "cog-adm2-mossaka",
+     "name": "Mossaka"
+    },
+    {
+     "id": "cog-adm2-mossendjo",
+     "name": "Mossendjo"
+    },
+    {
+     "id": "cog-adm2-mouyondzi",
+     "name": "Mouyondzi"
+    },
+    {
+     "id": "cog-adm2-mvouti",
+     "name": "Mvouti"
+    },
+    {
+     "id": "cog-adm2-ngabe",
+     "name": "Ngabe"
+    },
+    {
+     "id": "cog-adm2-ngamaba-brazzaville",
+     "name": "Ngamaba (Brazzaville)"
+    },
+    {
+     "id": "cog-adm2-nkayi-district",
+     "name": "Nkayi District"
+    },
+    {
+     "id": "cog-adm2-okoyo",
+     "name": "Okoyo"
+    },
+    {
+     "id": "cog-adm2-ouesso",
+     "name": "Ouesso"
+    },
+    {
+     "id": "cog-adm2-owando",
+     "name": "Owando"
+    },
+    {
+     "id": "cog-adm2-sembe",
+     "name": "Sembe"
+    },
+    {
+     "id": "cog-adm2-sibiti",
+     "name": "Sibiti"
+    },
+    {
+     "id": "cog-adm2-souanke",
+     "name": "Souanke"
+    },
+    {
+     "id": "cog-adm2-zanaga",
+     "name": "Zanaga"
+    }
+   ]
+  }
+ },
+ "name": "Congo",
+ "nameBn": "Congo"
+}

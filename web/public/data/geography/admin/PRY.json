@@ -1,0 +1,1118 @@
+{
+ "code": "PRY",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Unknown",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2012",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Unknown",
+   "code": "ADM1",
+   "count": 18,
+   "name": "ADM1 areas",
+   "nameBn": "ADM1 এলাকা",
+   "representedYear": "2012",
+   "sourceCount": 18,
+   "units": [
+    {
+     "id": "pry-adm1-alto-paraguay",
+     "name": "ALTO PARAGUAY",
+     "shapeISO": "PY-16"
+    },
+    {
+     "id": "pry-adm1-alto-parana",
+     "name": "ALTO PARANA",
+     "shapeISO": "PY-10"
+    },
+    {
+     "id": "pry-adm1-amambay",
+     "name": "AMAMBAY",
+     "shapeISO": "PY-13"
+    },
+    {
+     "id": "pry-adm1-asuncion",
+     "name": "ASUNCION",
+     "shapeISO": "PY-ASU"
+    },
+    {
+     "id": "pry-adm1-boqueron",
+     "name": "BOQUERON",
+     "shapeISO": "PY-19"
+    },
+    {
+     "id": "pry-adm1-caaguazu",
+     "name": "CAAGUAZU",
+     "shapeISO": "PY-5"
+    },
+    {
+     "id": "pry-adm1-caazapa",
+     "name": "CAAZAPA",
+     "shapeISO": "PY-6"
+    },
+    {
+     "id": "pry-adm1-canindeyu",
+     "name": "CANINDEYU",
+     "shapeISO": "PY-14"
+    },
+    {
+     "id": "pry-adm1-central",
+     "name": "CENTRAL",
+     "shapeISO": "PY-11"
+    },
+    {
+     "id": "pry-adm1-concepcion",
+     "name": "CONCEPCION",
+     "shapeISO": "PY-1"
+    },
+    {
+     "id": "pry-adm1-cordillera",
+     "name": "CORDILLERA",
+     "shapeISO": "PY-3"
+    },
+    {
+     "id": "pry-adm1-guaira",
+     "name": "GUAIRA",
+     "shapeISO": "PY-4"
+    },
+    {
+     "id": "pry-adm1-itapua",
+     "name": "ITAPUA",
+     "shapeISO": "PY-7"
+    },
+    {
+     "id": "pry-adm1-misiones",
+     "name": "MISIONES",
+     "shapeISO": "PY-8"
+    },
+    {
+     "id": "pry-adm1-paraguari",
+     "name": "PARAGUARI",
+     "shapeISO": "PY-9"
+    },
+    {
+     "id": "pry-adm1-presidente-hayes",
+     "name": "PRESIDENTE HAYES",
+     "shapeISO": "PY-15"
+    },
+    {
+     "id": "pry-adm1-san-pedro",
+     "name": "SAN PEDRO",
+     "shapeISO": "PY-2"
+    },
+    {
+     "id": "pry-adm1-ñeembucu",
+     "name": "ÑEEMBUCU",
+     "shapeISO": "PY-12"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "gbOpen",
+   "code": "ADM2",
+   "count": 247,
+   "name": "ADM2 areas",
+   "nameBn": "ADM2 এলাকা",
+   "representedYear": "2012",
+   "sourceCount": 247,
+   "units": [
+    {
+     "id": "pry-adm2-25-de-diciembre",
+     "name": "25 De Diciembre"
+    },
+    {
+     "id": "pry-adm2-3-de-febrero",
+     "name": "3 De Febrero"
+    },
+    {
+     "id": "pry-adm2-3-de-mayo",
+     "name": "3 De Mayo"
+    },
+    {
+     "id": "pry-adm2-abai",
+     "name": "Abai"
+    },
+    {
+     "id": "pry-adm2-acahay",
+     "name": "Acahay"
+    },
+    {
+     "id": "pry-adm2-alberdi",
+     "name": "Alberdi"
+    },
+    {
+     "id": "pry-adm2-alto-vera",
+     "name": "Alto Vera"
+    },
+    {
+     "id": "pry-adm2-altos",
+     "name": "Altos"
+    },
+    {
+     "id": "pry-adm2-antequera",
+     "name": "Antequera"
+    },
+    {
+     "id": "pry-adm2-aregua",
+     "name": "Aregua"
+    },
+    {
+     "id": "pry-adm2-arroyos-y-esteros",
+     "name": "Arroyos Y Esteros"
+    },
+    {
+     "id": "pry-adm2-asuncion",
+     "name": "Asuncion"
+    },
+    {
+     "id": "pry-adm2-atyra",
+     "name": "Atyra"
+    },
+    {
+     "id": "pry-adm2-ayolas",
+     "name": "Ayolas"
+    },
+    {
+     "id": "pry-adm2-azotey",
+     "name": "Azotey"
+    },
+    {
+     "id": "pry-adm2-bahia-negra",
+     "name": "Bahia Negra"
+    },
+    {
+     "id": "pry-adm2-belen",
+     "name": "Belen"
+    },
+    {
+     "id": "pry-adm2-bella-vista",
+     "name": "Bella Vista"
+    },
+    {
+     "id": "pry-adm2-benjamin-aceval",
+     "name": "Benjamin Aceval"
+    },
+    {
+     "id": "pry-adm2-borja",
+     "name": "Borja"
+    },
+    {
+     "id": "pry-adm2-buena-vista",
+     "name": "Buena Vista"
+    },
+    {
+     "id": "pry-adm2-caacupe",
+     "name": "Caacupe"
+    },
+    {
+     "id": "pry-adm2-caaguazu",
+     "name": "Caaguazu"
+    },
+    {
+     "id": "pry-adm2-caapucu",
+     "name": "Caapucu"
+    },
+    {
+     "id": "pry-adm2-caazapa",
+     "name": "Caazapa"
+    },
+    {
+     "id": "pry-adm2-cambyreta",
+     "name": "Cambyreta"
+    },
+    {
+     "id": "pry-adm2-capiata",
+     "name": "Capiata"
+    },
+    {
+     "id": "pry-adm2-capiibary",
+     "name": "Capiibary"
+    },
+    {
+     "id": "pry-adm2-capitan-bado",
+     "name": "Capitan Bado"
+    },
+    {
+     "id": "pry-adm2-capitan-meza",
+     "name": "Capitan Meza"
+    },
+    {
+     "id": "pry-adm2-capitan-miranda",
+     "name": "Capitan Miranda"
+    },
+    {
+     "id": "pry-adm2-caraguatay",
+     "name": "Caraguatay"
+    },
+    {
+     "id": "pry-adm2-carapegua",
+     "name": "Carapegua"
+    },
+    {
+     "id": "pry-adm2-carayao",
+     "name": "Carayao"
+    },
+    {
+     "id": "pry-adm2-carlos-antonio-lopez",
+     "name": "Carlos Antonio Lopez"
+    },
+    {
+     "id": "pry-adm2-carmelo-peralta",
+     "name": "Carmelo Peralta"
+    },
+    {
+     "id": "pry-adm2-carmen-del-parana",
+     "name": "Carmen Del Parana"
+    },
+    {
+     "id": "pry-adm2-cecilio-baez",
+     "name": "Cecilio Baez"
+    },
+    {
+     "id": "pry-adm2-cerrito",
+     "name": "Cerrito"
+    },
+    {
+     "id": "pry-adm2-chore",
+     "name": "Chore"
+    },
+    {
+     "id": "pry-adm2-ciudad-del-este",
+     "name": "Ciudad Del Este"
+    },
+    {
+     "id": "pry-adm2-colonia-independencia",
+     "name": "Colonia Independencia"
+    },
+    {
+     "id": "pry-adm2-concepcion",
+     "name": "Concepcion"
+    },
+    {
+     "id": "pry-adm2-coronel-bogado",
+     "name": "Coronel Bogado"
+    },
+    {
+     "id": "pry-adm2-coronel-martinez",
+     "name": "Coronel Martinez"
+    },
+    {
+     "id": "pry-adm2-coronel-oviedo",
+     "name": "Coronel Oviedo"
+    },
+    {
+     "id": "pry-adm2-corpus-christi",
+     "name": "Corpus Christi"
+    },
+    {
+     "id": "pry-adm2-curuguaty",
+     "name": "Curuguaty"
+    },
+    {
+     "id": "pry-adm2-desmochados",
+     "name": "Desmochados"
+    },
+    {
+     "id": "pry-adm2-domingo-martinez-de-irala",
+     "name": "Domingo Martinez De Irala"
+    },
+    {
+     "id": "pry-adm2-dr-bottrell",
+     "name": "Dr. Bottrell"
+    },
+    {
+     "id": "pry-adm2-dr-juan-leon-mallorquin",
+     "name": "Dr. Juan Leon Mallorquin"
+    },
+    {
+     "id": "pry-adm2-dr-juan-manuel-frutos",
+     "name": "Dr. Juan Manuel Frutos"
+    },
+    {
+     "id": "pry-adm2-dr-raul-peña",
+     "name": "Dr. Raul Peña"
+    },
+    {
+     "id": "pry-adm2-edelira",
+     "name": "Edelira"
+    },
+    {
+     "id": "pry-adm2-emboscada",
+     "name": "Emboscada"
+    },
+    {
+     "id": "pry-adm2-encarnacion",
+     "name": "Encarnacion"
+    },
+    {
+     "id": "pry-adm2-escobar",
+     "name": "Escobar"
+    },
+    {
+     "id": "pry-adm2-eusebio-ayala",
+     "name": "Eusebio Ayala"
+    },
+    {
+     "id": "pry-adm2-felix-perez-cardozo",
+     "name": "Felix Perez Cardozo"
+    },
+    {
+     "id": "pry-adm2-fernando-de-la-mora",
+     "name": "Fernando De La Mora"
+    },
+    {
+     "id": "pry-adm2-filadelfia",
+     "name": "Filadelfia"
+    },
+    {
+     "id": "pry-adm2-fram",
+     "name": "Fram"
+    },
+    {
+     "id": "pry-adm2-francisco-caballero-alvarez",
+     "name": "Francisco Caballero Alvarez"
+    },
+    {
+     "id": "pry-adm2-fuerte-olimpo",
+     "name": "Fuerte Olimpo"
+    },
+    {
+     "id": "pry-adm2-fulgencio-yegros",
+     "name": "Fulgencio Yegros"
+    },
+    {
+     "id": "pry-adm2-general-artigas",
+     "name": "General Artigas"
+    },
+    {
+     "id": "pry-adm2-general-bernardino-caballero",
+     "name": "General Bernardino Caballero"
+    },
+    {
+     "id": "pry-adm2-general-delgado",
+     "name": "General Delgado"
+    },
+    {
+     "id": "pry-adm2-general-diaz",
+     "name": "General Diaz"
+    },
+    {
+     "id": "pry-adm2-general-elizardo-aquino",
+     "name": "General Elizardo Aquino"
+    },
+    {
+     "id": "pry-adm2-general-eugenio-a-garay",
+     "name": "General Eugenio A. Garay"
+    },
+    {
+     "id": "pry-adm2-general-higinio-morinigo",
+     "name": "General Higinio Morinigo"
+    },
+    {
+     "id": "pry-adm2-general-jose-maria-bruguez",
+     "name": "General Jose Maria Bruguez"
+    },
+    {
+     "id": "pry-adm2-general-resquin",
+     "name": "General Resquin"
+    },
+    {
+     "id": "pry-adm2-guajayvi",
+     "name": "Guajayvi"
+    },
+    {
+     "id": "pry-adm2-guarambare",
+     "name": "Guarambare"
+    },
+    {
+     "id": "pry-adm2-guazu-cua",
+     "name": "Guazu Cua"
+    },
+    {
+     "id": "pry-adm2-hernandarias",
+     "name": "Hernandarias"
+    },
+    {
+     "id": "pry-adm2-hohenau",
+     "name": "Hohenau"
+    },
+    {
+     "id": "pry-adm2-horqueta",
+     "name": "Horqueta"
+    },
+    {
+     "id": "pry-adm2-humaita",
+     "name": "Humaita"
+    },
+    {
+     "id": "pry-adm2-iruña",
+     "name": "Iruña"
+    },
+    {
+     "id": "pry-adm2-isla-pucu",
+     "name": "Isla Pucu"
+    },
+    {
+     "id": "pry-adm2-isla-umbu",
+     "name": "Isla Umbu"
+    },
+    {
+     "id": "pry-adm2-ita",
+     "name": "Ita"
+    },
+    {
+     "id": "pry-adm2-itacurubi-de-la-cordillera",
+     "name": "Itacurubi De La Cordillera"
+    },
+    {
+     "id": "pry-adm2-itacurubi-del-rosario",
+     "name": "Itacurubi Del Rosario"
+    },
+    {
+     "id": "pry-adm2-itakyry",
+     "name": "Itakyry"
+    },
+    {
+     "id": "pry-adm2-itanara",
+     "name": "Itanara"
+    },
+    {
+     "id": "pry-adm2-itape",
+     "name": "Itape"
+    },
+    {
+     "id": "pry-adm2-itapua-poty",
+     "name": "Itapua Poty"
+    },
+    {
+     "id": "pry-adm2-itaugua",
+     "name": "Itaugua"
+    },
+    {
+     "id": "pry-adm2-iturbe",
+     "name": "Iturbe"
+    },
+    {
+     "id": "pry-adm2-j-augusto-saldivar",
+     "name": "J Augusto Saldivar"
+    },
+    {
+     "id": "pry-adm2-j-eulogio-estigarribia",
+     "name": "J Eulogio Estigarribia"
+    },
+    {
+     "id": "pry-adm2-jesus",
+     "name": "Jesus"
+    },
+    {
+     "id": "pry-adm2-jose-domingo-ocampos",
+     "name": "Jose Domingo Ocampos"
+    },
+    {
+     "id": "pry-adm2-jose-falcon",
+     "name": "Jose Falcon"
+    },
+    {
+     "id": "pry-adm2-jose-fassardi",
+     "name": "Jose Fassardi"
+    },
+    {
+     "id": "pry-adm2-juan-de-mena",
+     "name": "Juan De Mena"
+    },
+    {
+     "id": "pry-adm2-juan-e-o-leary",
+     "name": "Juan E. O´Leary"
+    },
+    {
+     "id": "pry-adm2-katuete",
+     "name": "Katuete"
+    },
+    {
+     "id": "pry-adm2-la-colmena",
+     "name": "La Colmena"
+    },
+    {
+     "id": "pry-adm2-la-paloma",
+     "name": "La Paloma"
+    },
+    {
+     "id": "pry-adm2-la-pastora",
+     "name": "La Pastora"
+    },
+    {
+     "id": "pry-adm2-la-paz",
+     "name": "La Paz"
+    },
+    {
+     "id": "pry-adm2-lambare",
+     "name": "Lambare"
+    },
+    {
+     "id": "pry-adm2-leandro-oviedo",
+     "name": "Leandro Oviedo"
+    },
+    {
+     "id": "pry-adm2-liberacion",
+     "name": "Liberacion"
+    },
+    {
+     "id": "pry-adm2-lima",
+     "name": "Lima"
+    },
+    {
+     "id": "pry-adm2-limpio",
+     "name": "Limpio"
+    },
+    {
+     "id": "pry-adm2-loma-grande",
+     "name": "Loma Grande"
+    },
+    {
+     "id": "pry-adm2-loma-plata",
+     "name": "Loma Plata"
+    },
+    {
+     "id": "pry-adm2-loreto",
+     "name": "Loreto"
+    },
+    {
+     "id": "pry-adm2-los-cedrales",
+     "name": "Los Cedrales"
+    },
+    {
+     "id": "pry-adm2-los-laureles",
+     "name": "Los Laureles"
+    },
+    {
+     "id": "pry-adm2-luque",
+     "name": "Luque"
+    },
+    {
+     "id": "pry-adm2-maciel",
+     "name": "Maciel"
+    },
+    {
+     "id": "pry-adm2-mariano-roque-alonso",
+     "name": "Mariano Roque Alonso"
+    },
+    {
+     "id": "pry-adm2-mariscal-estigarribia",
+     "name": "Mariscal Estigarribia"
+    },
+    {
+     "id": "pry-adm2-mauricio-jose-troche",
+     "name": "Mauricio Jose Troche"
+    },
+    {
+     "id": "pry-adm2-mayor-martinez",
+     "name": "Mayor Martinez"
+    },
+    {
+     "id": "pry-adm2-mayor-otaño",
+     "name": "Mayor Otaño"
+    },
+    {
+     "id": "pry-adm2-mbaracayu",
+     "name": "Mbaracayu"
+    },
+    {
+     "id": "pry-adm2-mbocayaty",
+     "name": "Mbocayaty"
+    },
+    {
+     "id": "pry-adm2-mbocayaty-del-yhaguy",
+     "name": "Mbocayaty Del Yhaguy"
+    },
+    {
+     "id": "pry-adm2-mbuyapey",
+     "name": "Mbuyapey"
+    },
+    {
+     "id": "pry-adm2-mcal-francisco-solano-lopez",
+     "name": "Mcal. Francisco Solano Lopez"
+    },
+    {
+     "id": "pry-adm2-minga-guazu",
+     "name": "Minga Guazu"
+    },
+    {
+     "id": "pry-adm2-minga-pora",
+     "name": "Minga Pora"
+    },
+    {
+     "id": "pry-adm2-moises-bertoni",
+     "name": "Moises Bertoni"
+    },
+    {
+     "id": "pry-adm2-nanawa",
+     "name": "Nanawa"
+    },
+    {
+     "id": "pry-adm2-naranjal",
+     "name": "Naranjal"
+    },
+    {
+     "id": "pry-adm2-natalicio-talavera",
+     "name": "Natalicio Talavera"
+    },
+    {
+     "id": "pry-adm2-natalio",
+     "name": "Natalio"
+    },
+    {
+     "id": "pry-adm2-nueva-alborada",
+     "name": "Nueva Alborada"
+    },
+    {
+     "id": "pry-adm2-nueva-colombia",
+     "name": "Nueva Colombia"
+    },
+    {
+     "id": "pry-adm2-nueva-esperanza",
+     "name": "Nueva Esperanza"
+    },
+    {
+     "id": "pry-adm2-nueva-germania",
+     "name": "Nueva Germania"
+    },
+    {
+     "id": "pry-adm2-nueva-italia",
+     "name": "Nueva Italia"
+    },
+    {
+     "id": "pry-adm2-nueva-londres",
+     "name": "Nueva Londres"
+    },
+    {
+     "id": "pry-adm2-nueva-toledo",
+     "name": "Nueva Toledo"
+    },
+    {
+     "id": "pry-adm2-obligado",
+     "name": "Obligado"
+    },
+    {
+     "id": "pry-adm2-paraguari",
+     "name": "Paraguari"
+    },
+    {
+     "id": "pry-adm2-paso-de-patria",
+     "name": "Paso De Patria"
+    },
+    {
+     "id": "pry-adm2-paso-yobai",
+     "name": "Paso Yobai"
+    },
+    {
+     "id": "pry-adm2-pedro-juan-caballero",
+     "name": "Pedro Juan Caballero"
+    },
+    {
+     "id": "pry-adm2-pilar",
+     "name": "Pilar"
+    },
+    {
+     "id": "pry-adm2-pirapo",
+     "name": "Pirapo"
+    },
+    {
+     "id": "pry-adm2-pirayu",
+     "name": "Pirayu"
+    },
+    {
+     "id": "pry-adm2-piribebuy",
+     "name": "Piribebuy"
+    },
+    {
+     "id": "pry-adm2-presidente-franco",
+     "name": "Presidente Franco"
+    },
+    {
+     "id": "pry-adm2-primero-de-marzo",
+     "name": "Primero De Marzo"
+    },
+    {
+     "id": "pry-adm2-puerto-casado",
+     "name": "Puerto Casado"
+    },
+    {
+     "id": "pry-adm2-puerto-pinasco",
+     "name": "Puerto Pinasco"
+    },
+    {
+     "id": "pry-adm2-quiindy",
+     "name": "Quiindy"
+    },
+    {
+     "id": "pry-adm2-quyquyho",
+     "name": "Quyquyho"
+    },
+    {
+     "id": "pry-adm2-r-i-3-corrales",
+     "name": "R.I. 3 Corrales"
+    },
+    {
+     "id": "pry-adm2-raul-arsenio-oviedo",
+     "name": "Raul Arsenio Oviedo"
+    },
+    {
+     "id": "pry-adm2-repatriacion",
+     "name": "Repatriacion"
+    },
+    {
+     "id": "pry-adm2-saltos-del-guaira",
+     "name": "Saltos Del Guaira"
+    },
+    {
+     "id": "pry-adm2-san-alberto",
+     "name": "San Alberto"
+    },
+    {
+     "id": "pry-adm2-san-antonio",
+     "name": "San Antonio"
+    },
+    {
+     "id": "pry-adm2-san-bernardino",
+     "name": "San Bernardino"
+    },
+    {
+     "id": "pry-adm2-san-carlos",
+     "name": "San Carlos"
+    },
+    {
+     "id": "pry-adm2-san-cosme-y-damian",
+     "name": "San Cosme Y Damian"
+    },
+    {
+     "id": "pry-adm2-san-cristobal",
+     "name": "San Cristobal"
+    },
+    {
+     "id": "pry-adm2-san-estanislao",
+     "name": "San Estanislao"
+    },
+    {
+     "id": "pry-adm2-san-ignacio",
+     "name": "San Ignacio"
+    },
+    {
+     "id": "pry-adm2-san-joaquin",
+     "name": "San Joaquin"
+    },
+    {
+     "id": "pry-adm2-san-jose-de-los-arroyos",
+     "name": "San Jose De Los Arroyos"
+    },
+    {
+     "id": "pry-adm2-san-jose-obrero",
+     "name": "San Jose Obrero"
+    },
+    {
+     "id": "pry-adm2-san-juan-bautista",
+     "name": "San Juan Bautista"
+    },
+    {
+     "id": "pry-adm2-san-juan-bautista-de-ñeembucu",
+     "name": "San Juan Bautista De Ñeembucu"
+    },
+    {
+     "id": "pry-adm2-san-juan-de-parana",
+     "name": "San Juan De Parana"
+    },
+    {
+     "id": "pry-adm2-san-juan-del-parana",
+     "name": "San Juan Del Parana"
+    },
+    {
+     "id": "pry-adm2-san-juan-delparana",
+     "name": "San Juan Delparana"
+    },
+    {
+     "id": "pry-adm2-san-juan-nepomuceno",
+     "name": "San Juan Nepomuceno"
+    },
+    {
+     "id": "pry-adm2-san-lazaro",
+     "name": "San Lazaro"
+    },
+    {
+     "id": "pry-adm2-san-lorenzo",
+     "name": "San Lorenzo"
+    },
+    {
+     "id": "pry-adm2-san-miguel",
+     "name": "San Miguel"
+    },
+    {
+     "id": "pry-adm2-san-pablo",
+     "name": "San Pablo"
+    },
+    {
+     "id": "pry-adm2-san-patricio",
+     "name": "San Patricio"
+    },
+    {
+     "id": "pry-adm2-san-pedro-del-parana",
+     "name": "San Pedro Del Parana"
+    },
+    {
+     "id": "pry-adm2-san-pedro-del-ykuamandiyu",
+     "name": "San Pedro Del Ykuamandiyu"
+    },
+    {
+     "id": "pry-adm2-san-rafael-del-parana",
+     "name": "San Rafael Del Parana"
+    },
+    {
+     "id": "pry-adm2-san-roque-gonzalez",
+     "name": "San Roque Gonzalez"
+    },
+    {
+     "id": "pry-adm2-san-salvador",
+     "name": "San Salvador"
+    },
+    {
+     "id": "pry-adm2-santa-elena",
+     "name": "Santa Elena"
+    },
+    {
+     "id": "pry-adm2-santa-fe-del-parana",
+     "name": "Santa Fe Del Parana"
+    },
+    {
+     "id": "pry-adm2-santa-maria",
+     "name": "Santa Maria"
+    },
+    {
+     "id": "pry-adm2-santa-rita",
+     "name": "Santa Rita"
+    },
+    {
+     "id": "pry-adm2-santa-rosa",
+     "name": "Santa Rosa"
+    },
+    {
+     "id": "pry-adm2-santa-rosa-del-aguaray",
+     "name": "Santa Rosa Del Aguaray"
+    },
+    {
+     "id": "pry-adm2-santa-rosa-del-mbutuy",
+     "name": "Santa Rosa Del Mbutuy"
+    },
+    {
+     "id": "pry-adm2-santa-rosa-del-monday",
+     "name": "Santa Rosa Del Monday"
+    },
+    {
+     "id": "pry-adm2-santiago",
+     "name": "Santiago"
+    },
+    {
+     "id": "pry-adm2-sapucai",
+     "name": "Sapucai"
+    },
+    {
+     "id": "pry-adm2-sgto-jose-felix-lopez",
+     "name": "Sgto. Jose Felix Lopez"
+    },
+    {
+     "id": "pry-adm2-simon-bolivar",
+     "name": "Simon Bolivar"
+    },
+    {
+     "id": "pry-adm2-tacuaras",
+     "name": "Tacuaras"
+    },
+    {
+     "id": "pry-adm2-tacuati",
+     "name": "Tacuati"
+    },
+    {
+     "id": "pry-adm2-tavai",
+     "name": "Tavai"
+    },
+    {
+     "id": "pry-adm2-tavapy",
+     "name": "Tavapy"
+    },
+    {
+     "id": "pry-adm2-tebicuary",
+     "name": "Tebicuary"
+    },
+    {
+     "id": "pry-adm2-tebicuary-mi",
+     "name": "Tebicuary-Mi"
+    },
+    {
+     "id": "pry-adm2-tembiapora",
+     "name": "Tembiapora"
+    },
+    {
+     "id": "pry-adm2-tobati",
+     "name": "Tobati"
+    },
+    {
+     "id": "pry-adm2-tomas-romero-pereira",
+     "name": "Tomas Romero Pereira"
+    },
+    {
+     "id": "pry-adm2-trinidad",
+     "name": "Trinidad"
+    },
+    {
+     "id": "pry-adm2-tte-1ro-manuel-irala-fernandez",
+     "name": "Tte 1Ro Manuel Irala Fernandez"
+    },
+    {
+     "id": "pry-adm2-tte-esteban-martinez",
+     "name": "Tte. Esteban Martinez"
+    },
+    {
+     "id": "pry-adm2-union",
+     "name": "Union"
+    },
+    {
+     "id": "pry-adm2-valenzuela",
+     "name": "Valenzuela"
+    },
+    {
+     "id": "pry-adm2-vaqueria",
+     "name": "Vaqueria"
+    },
+    {
+     "id": "pry-adm2-villa-del-rosario",
+     "name": "Villa Del Rosario"
+    },
+    {
+     "id": "pry-adm2-villa-elisa",
+     "name": "Villa Elisa"
+    },
+    {
+     "id": "pry-adm2-villa-florida",
+     "name": "Villa Florida"
+    },
+    {
+     "id": "pry-adm2-villa-franca",
+     "name": "Villa Franca"
+    },
+    {
+     "id": "pry-adm2-villa-hayes",
+     "name": "Villa Hayes"
+    },
+    {
+     "id": "pry-adm2-villa-oliva",
+     "name": "Villa Oliva"
+    },
+    {
+     "id": "pry-adm2-villa-ygatimí",
+     "name": "Villa Ygatimí"
+    },
+    {
+     "id": "pry-adm2-villalbin",
+     "name": "Villalbin"
+    },
+    {
+     "id": "pry-adm2-villarrica",
+     "name": "Villarrica"
+    },
+    {
+     "id": "pry-adm2-villeta",
+     "name": "Villeta"
+    },
+    {
+     "id": "pry-adm2-yabebyry",
+     "name": "Yabebyry"
+    },
+    {
+     "id": "pry-adm2-yaguaron",
+     "name": "Yaguaron"
+    },
+    {
+     "id": "pry-adm2-yasy-kañy",
+     "name": "Yasy Kañy"
+    },
+    {
+     "id": "pry-adm2-yataity",
+     "name": "Yataity"
+    },
+    {
+     "id": "pry-adm2-yataity-del-norte",
+     "name": "Yataity Del Norte"
+    },
+    {
+     "id": "pry-adm2-yatytay",
+     "name": "Yatytay"
+    },
+    {
+     "id": "pry-adm2-ybyrarobana",
+     "name": "Ybyrarobana"
+    },
+    {
+     "id": "pry-adm2-yguazu",
+     "name": "Yguazu"
+    },
+    {
+     "id": "pry-adm2-yhu",
+     "name": "Yhu"
+    },
+    {
+     "id": "pry-adm2-ypacarai",
+     "name": "Ypacarai"
+    },
+    {
+     "id": "pry-adm2-ypane",
+     "name": "Ypane"
+    },
+    {
+     "id": "pry-adm2-ype-jhu",
+     "name": "Ype Jhu"
+    },
+    {
+     "id": "pry-adm2-yryvu-cua",
+     "name": "Yryvu Cua"
+    },
+    {
+     "id": "pry-adm2-yuty",
+     "name": "Yuty"
+    },
+    {
+     "id": "pry-adm2-yvy-ya-u",
+     "name": "Yvy Ya´U"
+    },
+    {
+     "id": "pry-adm2-yvycui",
+     "name": "Yvycui"
+    },
+    {
+     "id": "pry-adm2-yvytimi",
+     "name": "Yvytimi"
+    },
+    {
+     "id": "pry-adm2-zanja-pyta",
+     "name": "Zanja Pyta"
+    },
+    {
+     "id": "pry-adm2-ñacunday",
+     "name": "Ñacunday"
+    },
+    {
+     "id": "pry-adm2-ñemby",
+     "name": "Ñemby"
+    },
+    {
+     "id": "pry-adm2-ñumi",
+     "name": "Ñumi"
+    }
+   ]
+  }
+ },
+ "name": "Paraguay",
+ "nameBn": "Paraguay"
+}

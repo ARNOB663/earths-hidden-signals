@@ -1,0 +1,473 @@
+{
+ "code": "PHL",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "The Philippines",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2020",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Regions",
+   "code": "ADM1",
+   "count": 17,
+   "name": "Regions",
+   "nameBn": "অঞ্চল",
+   "representedYear": "2020",
+   "sourceCount": 17,
+   "units": [
+    {
+     "id": "phl-adm1-armm",
+     "name": "ARMM",
+     "shapeISO": "PH-14"
+    },
+    {
+     "id": "phl-adm1-bicol-region",
+     "name": "Bicol Region",
+     "shapeISO": "PH-05"
+    },
+    {
+     "id": "phl-adm1-cagayan-valley",
+     "name": "Cagayan Valley",
+     "shapeISO": "PH-02"
+    },
+    {
+     "id": "phl-adm1-calabarzon",
+     "name": "Calabarzon",
+     "shapeISO": "PH-40"
+    },
+    {
+     "id": "phl-adm1-car",
+     "name": "CAR",
+     "shapeISO": "PH-15"
+    },
+    {
+     "id": "phl-adm1-caraga",
+     "name": "Caraga",
+     "shapeISO": "PH-13"
+    },
+    {
+     "id": "phl-adm1-central-luzon",
+     "name": "Central Luzon",
+     "shapeISO": "PH-03"
+    },
+    {
+     "id": "phl-adm1-central-visayas",
+     "name": "Central Visayas",
+     "shapeISO": "PH-07"
+    },
+    {
+     "id": "phl-adm1-davao-region",
+     "name": "Davao Region",
+     "shapeISO": "PH-11"
+    },
+    {
+     "id": "phl-adm1-eastern-visayas",
+     "name": "Eastern Visayas",
+     "shapeISO": "PH-08"
+    },
+    {
+     "id": "phl-adm1-ilocos-region",
+     "name": "Ilocos Region",
+     "shapeISO": "PH-01"
+    },
+    {
+     "id": "phl-adm1-mimaropa",
+     "name": "Mimaropa",
+     "shapeISO": "PH-41"
+    },
+    {
+     "id": "phl-adm1-ncr",
+     "name": "NCR",
+     "shapeISO": "PH-00"
+    },
+    {
+     "id": "phl-adm1-northern-mindanao",
+     "name": "Northern Mindanao",
+     "shapeISO": "PH-10"
+    },
+    {
+     "id": "phl-adm1-soccsksargen",
+     "name": "Soccsksargen",
+     "shapeISO": "PH-12"
+    },
+    {
+     "id": "phl-adm1-western-visayas",
+     "name": "Western Visayas",
+     "shapeISO": "PH-06"
+    },
+    {
+     "id": "phl-adm1-zamboanga-peninsula",
+     "name": "Zamboanga Peninsula",
+     "shapeISO": "PH-09"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Provinces",
+   "code": "ADM2",
+   "count": 87,
+   "name": "Provinces",
+   "nameBn": "প্রদেশ",
+   "representedYear": "2020",
+   "sourceCount": 87,
+   "units": [
+    {
+     "id": "phl-adm2-abra",
+     "name": "Abra"
+    },
+    {
+     "id": "phl-adm2-agusan-del-norte",
+     "name": "Agusan del Norte"
+    },
+    {
+     "id": "phl-adm2-agusan-del-sur",
+     "name": "Agusan del Sur"
+    },
+    {
+     "id": "phl-adm2-aklan",
+     "name": "Aklan"
+    },
+    {
+     "id": "phl-adm2-albay",
+     "name": "Albay"
+    },
+    {
+     "id": "phl-adm2-antique",
+     "name": "Antique"
+    },
+    {
+     "id": "phl-adm2-apayao",
+     "name": "Apayao"
+    },
+    {
+     "id": "phl-adm2-aurora",
+     "name": "Aurora"
+    },
+    {
+     "id": "phl-adm2-basilan",
+     "name": "Basilan"
+    },
+    {
+     "id": "phl-adm2-bataan",
+     "name": "Bataan"
+    },
+    {
+     "id": "phl-adm2-batanes",
+     "name": "Batanes"
+    },
+    {
+     "id": "phl-adm2-batangas",
+     "name": "Batangas"
+    },
+    {
+     "id": "phl-adm2-benguet",
+     "name": "Benguet"
+    },
+    {
+     "id": "phl-adm2-biliran",
+     "name": "Biliran"
+    },
+    {
+     "id": "phl-adm2-bohol",
+     "name": "Bohol"
+    },
+    {
+     "id": "phl-adm2-bukidnon",
+     "name": "Bukidnon"
+    },
+    {
+     "id": "phl-adm2-bulacan",
+     "name": "Bulacan"
+    },
+    {
+     "id": "phl-adm2-cagayan",
+     "name": "Cagayan"
+    },
+    {
+     "id": "phl-adm2-camarines-norte",
+     "name": "Camarines Norte"
+    },
+    {
+     "id": "phl-adm2-camarines-sur",
+     "name": "Camarines Sur"
+    },
+    {
+     "id": "phl-adm2-camiguin",
+     "name": "Camiguin"
+    },
+    {
+     "id": "phl-adm2-capiz",
+     "name": "Capiz"
+    },
+    {
+     "id": "phl-adm2-catanduanes",
+     "name": "Catanduanes"
+    },
+    {
+     "id": "phl-adm2-cavite",
+     "name": "Cavite"
+    },
+    {
+     "id": "phl-adm2-cebu",
+     "name": "Cebu"
+    },
+    {
+     "id": "phl-adm2-city-of-isabela",
+     "name": "City of Isabela"
+    },
+    {
+     "id": "phl-adm2-compostela-valley",
+     "name": "Compostela Valley"
+    },
+    {
+     "id": "phl-adm2-cotabato",
+     "name": "Cotabato"
+    },
+    {
+     "id": "phl-adm2-cotabato-city",
+     "name": "Cotabato City"
+    },
+    {
+     "id": "phl-adm2-davao-del-norte",
+     "name": "Davao del Norte"
+    },
+    {
+     "id": "phl-adm2-davao-del-sur",
+     "name": "Davao del Sur"
+    },
+    {
+     "id": "phl-adm2-davao-occidental",
+     "name": "Davao Occidental"
+    },
+    {
+     "id": "phl-adm2-davao-oriental",
+     "name": "Davao Oriental"
+    },
+    {
+     "id": "phl-adm2-dinagat-islands",
+     "name": "Dinagat Islands"
+    },
+    {
+     "id": "phl-adm2-eastern-samar",
+     "name": "Eastern Samar"
+    },
+    {
+     "id": "phl-adm2-guimaras",
+     "name": "Guimaras"
+    },
+    {
+     "id": "phl-adm2-ifugao",
+     "name": "Ifugao"
+    },
+    {
+     "id": "phl-adm2-ilocos-norte",
+     "name": "Ilocos Norte"
+    },
+    {
+     "id": "phl-adm2-ilocos-sur",
+     "name": "Ilocos Sur"
+    },
+    {
+     "id": "phl-adm2-iloilo",
+     "name": "Iloilo"
+    },
+    {
+     "id": "phl-adm2-isabela",
+     "name": "Isabela"
+    },
+    {
+     "id": "phl-adm2-kalinga",
+     "name": "Kalinga"
+    },
+    {
+     "id": "phl-adm2-la-union",
+     "name": "La Union"
+    },
+    {
+     "id": "phl-adm2-laguna",
+     "name": "Laguna"
+    },
+    {
+     "id": "phl-adm2-lanao-del-norte",
+     "name": "Lanao del Norte"
+    },
+    {
+     "id": "phl-adm2-lanao-del-sur",
+     "name": "Lanao del Sur"
+    },
+    {
+     "id": "phl-adm2-leyte",
+     "name": "Leyte"
+    },
+    {
+     "id": "phl-adm2-maguindanao",
+     "name": "Maguindanao"
+    },
+    {
+     "id": "phl-adm2-marinduque",
+     "name": "Marinduque"
+    },
+    {
+     "id": "phl-adm2-masbate",
+     "name": "Masbate"
+    },
+    {
+     "id": "phl-adm2-misamis-occidental",
+     "name": "Misamis Occidental"
+    },
+    {
+     "id": "phl-adm2-misamis-oriental",
+     "name": "Misamis Oriental"
+    },
+    {
+     "id": "phl-adm2-mountain-province",
+     "name": "Mountain Province"
+    },
+    {
+     "id": "phl-adm2-ncr-city-of-manila-first-district",
+     "name": "NCR, City of Manila, First District"
+    },
+    {
+     "id": "phl-adm2-ncr-fourth-district",
+     "name": "NCR, Fourth District"
+    },
+    {
+     "id": "phl-adm2-ncr-second-district",
+     "name": "NCR, Second District"
+    },
+    {
+     "id": "phl-adm2-ncr-third-district",
+     "name": "NCR, Third District"
+    },
+    {
+     "id": "phl-adm2-negros-occidental",
+     "name": "Negros Occidental"
+    },
+    {
+     "id": "phl-adm2-negros-oriental",
+     "name": "Negros Oriental"
+    },
+    {
+     "id": "phl-adm2-northern-samar",
+     "name": "Northern Samar"
+    },
+    {
+     "id": "phl-adm2-nueva-ecija",
+     "name": "Nueva Ecija"
+    },
+    {
+     "id": "phl-adm2-nueva-vizcaya",
+     "name": "Nueva Vizcaya"
+    },
+    {
+     "id": "phl-adm2-occidental-mindoro",
+     "name": "Occidental Mindoro"
+    },
+    {
+     "id": "phl-adm2-oriental-mindoro",
+     "name": "Oriental Mindoro"
+    },
+    {
+     "id": "phl-adm2-palawan",
+     "name": "Palawan"
+    },
+    {
+     "id": "phl-adm2-pampanga",
+     "name": "Pampanga"
+    },
+    {
+     "id": "phl-adm2-pangasinan",
+     "name": "Pangasinan"
+    },
+    {
+     "id": "phl-adm2-quezon",
+     "name": "Quezon"
+    },
+    {
+     "id": "phl-adm2-quirino",
+     "name": "Quirino"
+    },
+    {
+     "id": "phl-adm2-rizal",
+     "name": "Rizal"
+    },
+    {
+     "id": "phl-adm2-romblon",
+     "name": "Romblon"
+    },
+    {
+     "id": "phl-adm2-samar",
+     "name": "Samar"
+    },
+    {
+     "id": "phl-adm2-sarangani",
+     "name": "Sarangani"
+    },
+    {
+     "id": "phl-adm2-siquijor",
+     "name": "Siquijor"
+    },
+    {
+     "id": "phl-adm2-sorsogon",
+     "name": "Sorsogon"
+    },
+    {
+     "id": "phl-adm2-south-cotabato",
+     "name": "South Cotabato"
+    },
+    {
+     "id": "phl-adm2-southern-leyte",
+     "name": "Southern Leyte"
+    },
+    {
+     "id": "phl-adm2-sultan-kudarat",
+     "name": "Sultan Kudarat"
+    },
+    {
+     "id": "phl-adm2-sulu",
+     "name": "Sulu"
+    },
+    {
+     "id": "phl-adm2-surigao-del-norte",
+     "name": "Surigao del Norte"
+    },
+    {
+     "id": "phl-adm2-surigao-del-sur",
+     "name": "Surigao del Sur"
+    },
+    {
+     "id": "phl-adm2-tarlac",
+     "name": "Tarlac"
+    },
+    {
+     "id": "phl-adm2-tawi-tawi",
+     "name": "Tawi-Tawi"
+    },
+    {
+     "id": "phl-adm2-zambales",
+     "name": "Zambales"
+    },
+    {
+     "id": "phl-adm2-zamboanga-del-norte",
+     "name": "Zamboanga del Norte"
+    },
+    {
+     "id": "phl-adm2-zamboanga-del-sur",
+     "name": "Zamboanga del Sur"
+    },
+    {
+     "id": "phl-adm2-zamboanga-sibugay",
+     "name": "Zamboanga Sibugay"
+    }
+   ]
+  }
+ },
+ "name": "Philippines",
+ "nameBn": "Philippines"
+}

@@ -1,0 +1,1160 @@
+{
+ "code": "GHA",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Country",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2007",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Region",
+   "code": "ADM1",
+   "count": 16,
+   "name": "Region",
+   "nameBn": "অঞ্চল",
+   "representedYear": "2021",
+   "sourceCount": 16,
+   "units": [
+    {
+     "id": "gha-adm1-ahafo-region",
+     "name": "Ahafo Region",
+     "shapeISO": "GH-AF"
+    },
+    {
+     "id": "gha-adm1-ashanti-region",
+     "name": "Ashanti Region",
+     "shapeISO": "GH-AH"
+    },
+    {
+     "id": "gha-adm1-bono-east-region",
+     "name": "Bono East Region",
+     "shapeISO": "GH-BE"
+    },
+    {
+     "id": "gha-adm1-bono-region",
+     "name": "Bono Region",
+     "shapeISO": "GH-BO"
+    },
+    {
+     "id": "gha-adm1-central-region",
+     "name": "Central Region",
+     "shapeISO": "GH-CP"
+    },
+    {
+     "id": "gha-adm1-eastern-region",
+     "name": "Eastern Region",
+     "shapeISO": "GH-EP"
+    },
+    {
+     "id": "gha-adm1-greater-accra-region",
+     "name": "Greater Accra Region",
+     "shapeISO": "GH-AA"
+    },
+    {
+     "id": "gha-adm1-north-east-region",
+     "name": "North East Region",
+     "shapeISO": "GH-NE"
+    },
+    {
+     "id": "gha-adm1-northern-region",
+     "name": "Northern Region",
+     "shapeISO": "GH-NP"
+    },
+    {
+     "id": "gha-adm1-oti-region",
+     "name": "Oti Region",
+     "shapeISO": "GH-OT"
+    },
+    {
+     "id": "gha-adm1-savannah-region",
+     "name": "Savannah Region",
+     "shapeISO": "GH-SV"
+    },
+    {
+     "id": "gha-adm1-upper-east-region",
+     "name": "Upper East Region",
+     "shapeISO": "GH-UE"
+    },
+    {
+     "id": "gha-adm1-upper-west-region",
+     "name": "Upper West Region",
+     "shapeISO": "GH-UW"
+    },
+    {
+     "id": "gha-adm1-volta-region",
+     "name": "Volta Region",
+     "shapeISO": "GH-TV"
+    },
+    {
+     "id": "gha-adm1-western-north-region",
+     "name": "Western North Region",
+     "shapeISO": "GH-WN"
+    },
+    {
+     "id": "gha-adm1-western-region",
+     "name": "Western Region",
+     "shapeISO": "GH-WP"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Districts",
+   "code": "ADM2",
+   "count": 260,
+   "name": "Districts",
+   "nameBn": "জেলা",
+   "representedYear": "2019",
+   "sourceCount": 260,
+   "units": [
+    {
+     "id": "gha-adm2-ablekuma-central-municipal",
+     "name": "Ablekuma Central Municipal"
+    },
+    {
+     "id": "gha-adm2-ablekuma-north-municipal",
+     "name": "Ablekuma North Municipal"
+    },
+    {
+     "id": "gha-adm2-ablekuma-west-municipal",
+     "name": "Ablekuma West Municipal"
+    },
+    {
+     "id": "gha-adm2-abuakwa-north",
+     "name": "Abuakwa North"
+    },
+    {
+     "id": "gha-adm2-abuakwa-south",
+     "name": "Abuakwa South"
+    },
+    {
+     "id": "gha-adm2-abura-asebu-kwamankese",
+     "name": "Abura-asebu-kwamankese"
+    },
+    {
+     "id": "gha-adm2-accra-metropolis",
+     "name": "Accra Metropolis"
+    },
+    {
+     "id": "gha-adm2-achiase",
+     "name": "Achiase"
+    },
+    {
+     "id": "gha-adm2-ada-east",
+     "name": "Ada East"
+    },
+    {
+     "id": "gha-adm2-ada-west",
+     "name": "Ada West"
+    },
+    {
+     "id": "gha-adm2-adaklu",
+     "name": "Adaklu"
+    },
+    {
+     "id": "gha-adm2-adansi-akrofuom",
+     "name": "Adansi Akrofuom"
+    },
+    {
+     "id": "gha-adm2-adansi-asokwa",
+     "name": "Adansi Asokwa"
+    },
+    {
+     "id": "gha-adm2-adansi-north",
+     "name": "Adansi North"
+    },
+    {
+     "id": "gha-adm2-adansi-south",
+     "name": "Adansi South"
+    },
+    {
+     "id": "gha-adm2-adenta-municipal",
+     "name": "Adenta Municipal"
+    },
+    {
+     "id": "gha-adm2-afadzato-south",
+     "name": "Afadzato South"
+    },
+    {
+     "id": "gha-adm2-afigya-kwabre-north",
+     "name": "Afigya Kwabre North"
+    },
+    {
+     "id": "gha-adm2-afigya-kwabre-south",
+     "name": "Afigya Kwabre South"
+    },
+    {
+     "id": "gha-adm2-agona-east",
+     "name": "Agona East"
+    },
+    {
+     "id": "gha-adm2-agona-west-municipal",
+     "name": "Agona West Municipal"
+    },
+    {
+     "id": "gha-adm2-agotime-ziope",
+     "name": "Agotime Ziope"
+    },
+    {
+     "id": "gha-adm2-ahafo-ano-north",
+     "name": "Ahafo Ano North"
+    },
+    {
+     "id": "gha-adm2-ahafo-ano-south-east",
+     "name": "Ahafo Ano South East"
+    },
+    {
+     "id": "gha-adm2-ahafo-ano-south-west",
+     "name": "Ahafo Ano South West"
+    },
+    {
+     "id": "gha-adm2-ahanta-west-municipal",
+     "name": "Ahanta West Municipal"
+    },
+    {
+     "id": "gha-adm2-ajumako-enyan-essiam",
+     "name": "Ajumako-enyan-essiam"
+    },
+    {
+     "id": "gha-adm2-akatsi-north",
+     "name": "Akatsi North"
+    },
+    {
+     "id": "gha-adm2-akatsi-south",
+     "name": "Akatsi South"
+    },
+    {
+     "id": "gha-adm2-akwapem-north",
+     "name": "Akwapem North"
+    },
+    {
+     "id": "gha-adm2-akwapem-south",
+     "name": "Akwapem South"
+    },
+    {
+     "id": "gha-adm2-akyem-mansa",
+     "name": "Akyem Mansa"
+    },
+    {
+     "id": "gha-adm2-amansie-central",
+     "name": "Amansie Central"
+    },
+    {
+     "id": "gha-adm2-amansie-south",
+     "name": "Amansie South"
+    },
+    {
+     "id": "gha-adm2-amansie-west",
+     "name": "Amansie West"
+    },
+    {
+     "id": "gha-adm2-anloga",
+     "name": "Anloga"
+    },
+    {
+     "id": "gha-adm2-aowin",
+     "name": "Aowin"
+    },
+    {
+     "id": "gha-adm2-asante-akim-central-municipal",
+     "name": "Asante Akim Central Municipal"
+    },
+    {
+     "id": "gha-adm2-asante-akim-north",
+     "name": "Asante Akim North"
+    },
+    {
+     "id": "gha-adm2-asante-akim-south",
+     "name": "Asante Akim South"
+    },
+    {
+     "id": "gha-adm2-asene-akroso-manso",
+     "name": "Asene Akroso Manso"
+    },
+    {
+     "id": "gha-adm2-ashaiman-municipal",
+     "name": "Ashaiman Municipal"
+    },
+    {
+     "id": "gha-adm2-asikuma-odoben-brakwa",
+     "name": "Asikuma-odoben-brakwa"
+    },
+    {
+     "id": "gha-adm2-asokore-mampong-municipal",
+     "name": "Asokore Mampong Municipal"
+    },
+    {
+     "id": "gha-adm2-asokwa-municipal",
+     "name": "Asokwa  Municipal"
+    },
+    {
+     "id": "gha-adm2-assin-fosu",
+     "name": "Assin Fosu"
+    },
+    {
+     "id": "gha-adm2-assin-north",
+     "name": "Assin North"
+    },
+    {
+     "id": "gha-adm2-assin-south",
+     "name": "Assin South"
+    },
+    {
+     "id": "gha-adm2-asunafo-north-municipal",
+     "name": "Asunafo North Municipal"
+    },
+    {
+     "id": "gha-adm2-asunafo-south",
+     "name": "Asunafo South"
+    },
+    {
+     "id": "gha-adm2-asuogyaman",
+     "name": "Asuogyaman"
+    },
+    {
+     "id": "gha-adm2-asutifi-north",
+     "name": "Asutifi North"
+    },
+    {
+     "id": "gha-adm2-asutifi-south",
+     "name": "Asutifi South"
+    },
+    {
+     "id": "gha-adm2-atebubu-amantin",
+     "name": "Atebubu Amantin"
+    },
+    {
+     "id": "gha-adm2-atiwa-east",
+     "name": "Atiwa East"
+    },
+    {
+     "id": "gha-adm2-atiwa-west",
+     "name": "Atiwa West"
+    },
+    {
+     "id": "gha-adm2-atwima-kwanwoma",
+     "name": "Atwima Kwanwoma"
+    },
+    {
+     "id": "gha-adm2-atwima-mponua",
+     "name": "Atwima Mponua"
+    },
+    {
+     "id": "gha-adm2-atwima-nwabiagya-north",
+     "name": "Atwima Nwabiagya North"
+    },
+    {
+     "id": "gha-adm2-atwima-nwabiagya-south",
+     "name": "Atwima Nwabiagya South"
+    },
+    {
+     "id": "gha-adm2-awutu-senya",
+     "name": "Awutu Senya"
+    },
+    {
+     "id": "gha-adm2-awutu-senya-east",
+     "name": "Awutu Senya East"
+    },
+    {
+     "id": "gha-adm2-ayawaso-central-municipal",
+     "name": "Ayawaso Central Municipal"
+    },
+    {
+     "id": "gha-adm2-ayawaso-east-municipal",
+     "name": "Ayawaso East Municipal"
+    },
+    {
+     "id": "gha-adm2-ayawaso-north-municipal",
+     "name": "Ayawaso North Municipal"
+    },
+    {
+     "id": "gha-adm2-ayawaso-west",
+     "name": "Ayawaso West"
+    },
+    {
+     "id": "gha-adm2-ayensuano",
+     "name": "Ayensuano"
+    },
+    {
+     "id": "gha-adm2-banda",
+     "name": "Banda"
+    },
+    {
+     "id": "gha-adm2-bawku-municipal",
+     "name": "Bawku Municipal"
+    },
+    {
+     "id": "gha-adm2-bawku-west",
+     "name": "Bawku West"
+    },
+    {
+     "id": "gha-adm2-bekwai-municipal",
+     "name": "Bekwai Municipal"
+    },
+    {
+     "id": "gha-adm2-berekum-east-municipal",
+     "name": "Berekum East Municipal"
+    },
+    {
+     "id": "gha-adm2-berekum-west",
+     "name": "Berekum West"
+    },
+    {
+     "id": "gha-adm2-bia-east",
+     "name": "Bia East"
+    },
+    {
+     "id": "gha-adm2-bia-west",
+     "name": "Bia West"
+    },
+    {
+     "id": "gha-adm2-biakoye",
+     "name": "Biakoye"
+    },
+    {
+     "id": "gha-adm2-bibiani-anhwiaso-bekwai-municipal",
+     "name": "Bibiani-anhwiaso-bekwai Municipal"
+    },
+    {
+     "id": "gha-adm2-binduri",
+     "name": "Binduri"
+    },
+    {
+     "id": "gha-adm2-birim-central-municipal",
+     "name": "Birim Central Municipal"
+    },
+    {
+     "id": "gha-adm2-birim-north",
+     "name": "Birim North"
+    },
+    {
+     "id": "gha-adm2-birim-south",
+     "name": "Birim South"
+    },
+    {
+     "id": "gha-adm2-bodi",
+     "name": "Bodi"
+    },
+    {
+     "id": "gha-adm2-bole",
+     "name": "Bole"
+    },
+    {
+     "id": "gha-adm2-bolga-east",
+     "name": "Bolga  East"
+    },
+    {
+     "id": "gha-adm2-bolgatanga-municipal",
+     "name": "Bolgatanga Municipal"
+    },
+    {
+     "id": "gha-adm2-bongo",
+     "name": "Bongo"
+    },
+    {
+     "id": "gha-adm2-bosome-freho",
+     "name": "Bosome Freho"
+    },
+    {
+     "id": "gha-adm2-bosomtwe",
+     "name": "Bosomtwe"
+    },
+    {
+     "id": "gha-adm2-builsa-north",
+     "name": "Builsa North"
+    },
+    {
+     "id": "gha-adm2-builsa-south",
+     "name": "Builsa South"
+    },
+    {
+     "id": "gha-adm2-bunkpurugu-nakpanduri",
+     "name": "Bunkpurugu Nakpanduri"
+    },
+    {
+     "id": "gha-adm2-cape-coast-metropolitan",
+     "name": "Cape Coast Metropolitan"
+    },
+    {
+     "id": "gha-adm2-central-gonja",
+     "name": "Central Gonja"
+    },
+    {
+     "id": "gha-adm2-central-tongu",
+     "name": "Central Tongu"
+    },
+    {
+     "id": "gha-adm2-chereponi",
+     "name": "Chereponi"
+    },
+    {
+     "id": "gha-adm2-daffiama-bussie-issa",
+     "name": "Daffiama Bussie Issa"
+    },
+    {
+     "id": "gha-adm2-denkyembour",
+     "name": "Denkyembour"
+    },
+    {
+     "id": "gha-adm2-dormaa-east",
+     "name": "Dormaa East"
+    },
+    {
+     "id": "gha-adm2-dormaa-municipal",
+     "name": "Dormaa Municipal"
+    },
+    {
+     "id": "gha-adm2-dormaa-west",
+     "name": "Dormaa West"
+    },
+    {
+     "id": "gha-adm2-east-gonja-municipal",
+     "name": "East Gonja Municipal"
+    },
+    {
+     "id": "gha-adm2-east-mamprusi",
+     "name": "East Mamprusi"
+    },
+    {
+     "id": "gha-adm2-effia-kwesimintsim-municipal",
+     "name": "Effia Kwesimintsim Municipal"
+    },
+    {
+     "id": "gha-adm2-effutu-municipal",
+     "name": "Effutu Municipal"
+    },
+    {
+     "id": "gha-adm2-ejisu-municipal",
+     "name": "Ejisu Municipal"
+    },
+    {
+     "id": "gha-adm2-ejura-sekyedumase",
+     "name": "Ejura-sekyedumase"
+    },
+    {
+     "id": "gha-adm2-ekumfi",
+     "name": "Ekumfi"
+    },
+    {
+     "id": "gha-adm2-ellembelle",
+     "name": "Ellembelle"
+    },
+    {
+     "id": "gha-adm2-fanteakwa-north",
+     "name": "Fanteakwa North"
+    },
+    {
+     "id": "gha-adm2-fanteakwa-south",
+     "name": "Fanteakwa South"
+    },
+    {
+     "id": "gha-adm2-ga-central-municipal",
+     "name": "Ga Central Municipal"
+    },
+    {
+     "id": "gha-adm2-ga-east",
+     "name": "Ga East"
+    },
+    {
+     "id": "gha-adm2-ga-north-municipal",
+     "name": "Ga North Municipal"
+    },
+    {
+     "id": "gha-adm2-ga-south-municipal",
+     "name": "Ga South Municipal"
+    },
+    {
+     "id": "gha-adm2-ga-west-municipal",
+     "name": "Ga West Municipal"
+    },
+    {
+     "id": "gha-adm2-garu",
+     "name": "Garu"
+    },
+    {
+     "id": "gha-adm2-gomoa-central",
+     "name": "Gomoa Central"
+    },
+    {
+     "id": "gha-adm2-gomoa-east",
+     "name": "Gomoa East"
+    },
+    {
+     "id": "gha-adm2-gomoa-west",
+     "name": "Gomoa West"
+    },
+    {
+     "id": "gha-adm2-gushegu",
+     "name": "Gushegu"
+    },
+    {
+     "id": "gha-adm2-ho-municipal",
+     "name": "Ho Municipal"
+    },
+    {
+     "id": "gha-adm2-ho-west",
+     "name": "Ho West"
+    },
+    {
+     "id": "gha-adm2-hohoe-municipal",
+     "name": "Hohoe Municipal"
+    },
+    {
+     "id": "gha-adm2-jaman-north",
+     "name": "Jaman North"
+    },
+    {
+     "id": "gha-adm2-jaman-south-municipal",
+     "name": "Jaman South Municipal"
+    },
+    {
+     "id": "gha-adm2-jasikan",
+     "name": "Jasikan"
+    },
+    {
+     "id": "gha-adm2-jirapa",
+     "name": "Jirapa"
+    },
+    {
+     "id": "gha-adm2-jomoro",
+     "name": "Jomoro"
+    },
+    {
+     "id": "gha-adm2-juaben-municipal",
+     "name": "Juaben Municipal"
+    },
+    {
+     "id": "gha-adm2-juaboso",
+     "name": "Juaboso"
+    },
+    {
+     "id": "gha-adm2-kadjebi",
+     "name": "Kadjebi"
+    },
+    {
+     "id": "gha-adm2-karaga",
+     "name": "Karaga"
+    },
+    {
+     "id": "gha-adm2-kasena-nankana-east",
+     "name": "Kasena Nankana East"
+    },
+    {
+     "id": "gha-adm2-kasena-nankana-west",
+     "name": "Kasena Nankana West"
+    },
+    {
+     "id": "gha-adm2-keta-municipal",
+     "name": "Keta Municipal"
+    },
+    {
+     "id": "gha-adm2-ketu-north",
+     "name": "Ketu North"
+    },
+    {
+     "id": "gha-adm2-ketu-south",
+     "name": "Ketu South"
+    },
+    {
+     "id": "gha-adm2-kintampo-north-municipal",
+     "name": "Kintampo North Municipal"
+    },
+    {
+     "id": "gha-adm2-kintampo-south",
+     "name": "Kintampo South"
+    },
+    {
+     "id": "gha-adm2-komenda-edina-eguafo-abirem-municipal",
+     "name": "Komenda-edina-eguafo-abirem Municipal"
+    },
+    {
+     "id": "gha-adm2-korle-klottey-municipal",
+     "name": "Korle Klottey Municipal"
+    },
+    {
+     "id": "gha-adm2-kpandai",
+     "name": "Kpandai"
+    },
+    {
+     "id": "gha-adm2-kpando-municipal",
+     "name": "Kpando Municipal"
+    },
+    {
+     "id": "gha-adm2-kpone-katamanso",
+     "name": "Kpone Katamanso"
+    },
+    {
+     "id": "gha-adm2-krachi-east-municipal",
+     "name": "Krachi East Municipal"
+    },
+    {
+     "id": "gha-adm2-krachi-nchumuru",
+     "name": "Krachi Nchumuru"
+    },
+    {
+     "id": "gha-adm2-krachi-west",
+     "name": "Krachi West"
+    },
+    {
+     "id": "gha-adm2-krowor-municipal",
+     "name": "Krowor Municipal"
+    },
+    {
+     "id": "gha-adm2-kumasi-metropolitan",
+     "name": "Kumasi Metropolitan"
+    },
+    {
+     "id": "gha-adm2-kumbungu",
+     "name": "Kumbungu"
+    },
+    {
+     "id": "gha-adm2-kwabre-east",
+     "name": "Kwabre East"
+    },
+    {
+     "id": "gha-adm2-kwadaso-municipal",
+     "name": "Kwadaso Municipal"
+    },
+    {
+     "id": "gha-adm2-kwaebibirem",
+     "name": "Kwaebibirem"
+    },
+    {
+     "id": "gha-adm2-kwahu-afram-plains-north",
+     "name": "Kwahu Afram Plains North"
+    },
+    {
+     "id": "gha-adm2-kwahu-afram-plains-south",
+     "name": "Kwahu Afram Plains South"
+    },
+    {
+     "id": "gha-adm2-kwahu-east",
+     "name": "Kwahu East"
+    },
+    {
+     "id": "gha-adm2-kwahu-south",
+     "name": "Kwahu South"
+    },
+    {
+     "id": "gha-adm2-kwahu-west",
+     "name": "Kwahu West"
+    },
+    {
+     "id": "gha-adm2-la-dade-kotopon",
+     "name": "La Dade-kotopon"
+    },
+    {
+     "id": "gha-adm2-la-nkwantanang-madina",
+     "name": "La-nkwantanang-madina"
+    },
+    {
+     "id": "gha-adm2-lambussie-karni",
+     "name": "Lambussie-karni"
+    },
+    {
+     "id": "gha-adm2-lawra",
+     "name": "Lawra"
+    },
+    {
+     "id": "gha-adm2-ledzokuku-municipal",
+     "name": "Ledzokuku Municipal"
+    },
+    {
+     "id": "gha-adm2-lower-manya",
+     "name": "Lower Manya"
+    },
+    {
+     "id": "gha-adm2-mampong-municipal",
+     "name": "Mampong Municipal"
+    },
+    {
+     "id": "gha-adm2-mamprugu-moagduri",
+     "name": "Mamprugu Moagduri"
+    },
+    {
+     "id": "gha-adm2-mfantseman-municipal",
+     "name": "Mfantseman Municipal"
+    },
+    {
+     "id": "gha-adm2-mion",
+     "name": "Mion"
+    },
+    {
+     "id": "gha-adm2-mpohor",
+     "name": "Mpohor"
+    },
+    {
+     "id": "gha-adm2-nabdam",
+     "name": "Nabdam"
+    },
+    {
+     "id": "gha-adm2-nadowli-kaleo",
+     "name": "Nadowli-kaleo"
+    },
+    {
+     "id": "gha-adm2-nandom",
+     "name": "Nandom"
+    },
+    {
+     "id": "gha-adm2-nanton",
+     "name": "Nanton"
+    },
+    {
+     "id": "gha-adm2-nanumba-north",
+     "name": "Nanumba North"
+    },
+    {
+     "id": "gha-adm2-nanumba-south",
+     "name": "Nanumba South"
+    },
+    {
+     "id": "gha-adm2-new-juaben-north-municipal",
+     "name": "New Juaben North Municipal"
+    },
+    {
+     "id": "gha-adm2-new-juaben-south-municipal",
+     "name": "New Juaben South Municipal"
+    },
+    {
+     "id": "gha-adm2-ningo-prampram",
+     "name": "Ningo/prampram"
+    },
+    {
+     "id": "gha-adm2-nkoranza-north",
+     "name": "Nkoranza North"
+    },
+    {
+     "id": "gha-adm2-nkoranza-south",
+     "name": "Nkoranza South"
+    },
+    {
+     "id": "gha-adm2-nkwanta-north",
+     "name": "Nkwanta North"
+    },
+    {
+     "id": "gha-adm2-nkwanta-south-municipal",
+     "name": "Nkwanta South Municipal"
+    },
+    {
+     "id": "gha-adm2-north-dayi",
+     "name": "North Dayi"
+    },
+    {
+     "id": "gha-adm2-north-east-gonja",
+     "name": "North East Gonja"
+    },
+    {
+     "id": "gha-adm2-north-gonja",
+     "name": "North Gonja"
+    },
+    {
+     "id": "gha-adm2-north-tongu",
+     "name": "North Tongu"
+    },
+    {
+     "id": "gha-adm2-nsawam-adoagyiri",
+     "name": "Nsawam Adoagyiri"
+    },
+    {
+     "id": "gha-adm2-nzema-east",
+     "name": "Nzema East"
+    },
+    {
+     "id": "gha-adm2-obuasi-east",
+     "name": "Obuasi East"
+    },
+    {
+     "id": "gha-adm2-obuasi-municipal",
+     "name": "Obuasi Municipal"
+    },
+    {
+     "id": "gha-adm2-offinso-municipal",
+     "name": "Offinso Municipal"
+    },
+    {
+     "id": "gha-adm2-offinso-north",
+     "name": "Offinso North"
+    },
+    {
+     "id": "gha-adm2-oforikrom-municipal",
+     "name": "Oforikrom Municipal"
+    },
+    {
+     "id": "gha-adm2-okaikwei-north-municipal",
+     "name": "Okaikwei North Municipal"
+    },
+    {
+     "id": "gha-adm2-okere",
+     "name": "Okere"
+    },
+    {
+     "id": "gha-adm2-old-tafo-municipal",
+     "name": "Old Tafo Municipal"
+    },
+    {
+     "id": "gha-adm2-prestea-huni-valley",
+     "name": "Prestea/huni Valley"
+    },
+    {
+     "id": "gha-adm2-pru-east",
+     "name": "Pru East"
+    },
+    {
+     "id": "gha-adm2-pru-west",
+     "name": "Pru West"
+    },
+    {
+     "id": "gha-adm2-pusiga",
+     "name": "Pusiga"
+    },
+    {
+     "id": "gha-adm2-saboba",
+     "name": "Saboba"
+    },
+    {
+     "id": "gha-adm2-sagnerigu",
+     "name": "Sagnerigu"
+    },
+    {
+     "id": "gha-adm2-savelugu",
+     "name": "Savelugu"
+    },
+    {
+     "id": "gha-adm2-sawla-tuna-kalba",
+     "name": "Sawla-tuna-kalba"
+    },
+    {
+     "id": "gha-adm2-sefwi-akontombra",
+     "name": "Sefwi Akontombra"
+    },
+    {
+     "id": "gha-adm2-sefwi-wiawso",
+     "name": "Sefwi-wiawso"
+    },
+    {
+     "id": "gha-adm2-sekondi-takoradi-metropolis",
+     "name": "Sekondi Takoradi Metropolis"
+    },
+    {
+     "id": "gha-adm2-sekyere-afram-plains-north",
+     "name": "Sekyere Afram Plains North"
+    },
+    {
+     "id": "gha-adm2-sekyere-central",
+     "name": "Sekyere Central"
+    },
+    {
+     "id": "gha-adm2-sekyere-east",
+     "name": "Sekyere East"
+    },
+    {
+     "id": "gha-adm2-sekyere-kumawu",
+     "name": "Sekyere Kumawu"
+    },
+    {
+     "id": "gha-adm2-sekyere-south",
+     "name": "Sekyere South"
+    },
+    {
+     "id": "gha-adm2-sene-east",
+     "name": "Sene East"
+    },
+    {
+     "id": "gha-adm2-sene-west",
+     "name": "Sene West"
+    },
+    {
+     "id": "gha-adm2-shai-osudoku",
+     "name": "Shai Osudoku"
+    },
+    {
+     "id": "gha-adm2-shama",
+     "name": "Shama"
+    },
+    {
+     "id": "gha-adm2-sissala-east",
+     "name": "Sissala East"
+    },
+    {
+     "id": "gha-adm2-sissala-west",
+     "name": "Sissala West"
+    },
+    {
+     "id": "gha-adm2-south-dayi",
+     "name": "South Dayi"
+    },
+    {
+     "id": "gha-adm2-south-tongu",
+     "name": "South Tongu"
+    },
+    {
+     "id": "gha-adm2-suaman",
+     "name": "Suaman"
+    },
+    {
+     "id": "gha-adm2-suame-municipal",
+     "name": "Suame Municipal"
+    },
+    {
+     "id": "gha-adm2-suhum-municipal",
+     "name": "Suhum Municipal"
+    },
+    {
+     "id": "gha-adm2-sunyani-municipal",
+     "name": "Sunyani Municipal"
+    },
+    {
+     "id": "gha-adm2-sunyani-west",
+     "name": "Sunyani West"
+    },
+    {
+     "id": "gha-adm2-tain",
+     "name": "Tain"
+    },
+    {
+     "id": "gha-adm2-talensi",
+     "name": "Talensi"
+    },
+    {
+     "id": "gha-adm2-tamale-metropolitan",
+     "name": "Tamale Metropolitan"
+    },
+    {
+     "id": "gha-adm2-tano-north-municipal",
+     "name": "Tano North Municipal"
+    },
+    {
+     "id": "gha-adm2-tano-south-municipal",
+     "name": "Tano South Municipal"
+    },
+    {
+     "id": "gha-adm2-tarkwa-nsuaem",
+     "name": "Tarkwa Nsuaem"
+    },
+    {
+     "id": "gha-adm2-tatale-sanguli",
+     "name": "Tatale Sanguli"
+    },
+    {
+     "id": "gha-adm2-techiman-municipal",
+     "name": "Techiman Municipal"
+    },
+    {
+     "id": "gha-adm2-techiman-north",
+     "name": "Techiman North"
+    },
+    {
+     "id": "gha-adm2-tema-metropolitan",
+     "name": "Tema Metropolitan"
+    },
+    {
+     "id": "gha-adm2-tema-west-municipal",
+     "name": "Tema West Municipal"
+    },
+    {
+     "id": "gha-adm2-tempane",
+     "name": "Tempane"
+    },
+    {
+     "id": "gha-adm2-tolon",
+     "name": "Tolon"
+    },
+    {
+     "id": "gha-adm2-twifo-atti-morkwa",
+     "name": "Twifo Atti-morkwa"
+    },
+    {
+     "id": "gha-adm2-twifo-hemang-lower-denkyira",
+     "name": "Twifo Hemang Lower Denkyira"
+    },
+    {
+     "id": "gha-adm2-upper-denkyira-east-municipal",
+     "name": "Upper Denkyira East Municipal"
+    },
+    {
+     "id": "gha-adm2-upper-denkyira-west",
+     "name": "Upper Denkyira West"
+    },
+    {
+     "id": "gha-adm2-upper-manya",
+     "name": "Upper Manya"
+    },
+    {
+     "id": "gha-adm2-upper-west-akim",
+     "name": "Upper West Akim"
+    },
+    {
+     "id": "gha-adm2-wa-east",
+     "name": "Wa East"
+    },
+    {
+     "id": "gha-adm2-wa-municipal",
+     "name": "Wa Municipal"
+    },
+    {
+     "id": "gha-adm2-wa-west",
+     "name": "Wa West"
+    },
+    {
+     "id": "gha-adm2-wassa-amenfi-central",
+     "name": "Wassa Amenfi Central"
+    },
+    {
+     "id": "gha-adm2-wassa-amenfi-east",
+     "name": "Wassa Amenfi East"
+    },
+    {
+     "id": "gha-adm2-wassa-amenfi-west",
+     "name": "Wassa Amenfi West"
+    },
+    {
+     "id": "gha-adm2-wassa-east",
+     "name": "Wassa East"
+    },
+    {
+     "id": "gha-adm2-weija-gbawe-municipal",
+     "name": "Weija Gbawe Municipal"
+    },
+    {
+     "id": "gha-adm2-wenchi-municipal",
+     "name": "Wenchi Municipal"
+    },
+    {
+     "id": "gha-adm2-west-akim",
+     "name": "West Akim"
+    },
+    {
+     "id": "gha-adm2-west-gonja",
+     "name": "West Gonja"
+    },
+    {
+     "id": "gha-adm2-west-mamprusi-municipal",
+     "name": "West Mamprusi Municipal"
+    },
+    {
+     "id": "gha-adm2-yendi-municipal",
+     "name": "Yendi Municipal"
+    },
+    {
+     "id": "gha-adm2-yilo-krobo",
+     "name": "Yilo Krobo"
+    },
+    {
+     "id": "gha-adm2-yunyoo-nasuan",
+     "name": "Yunyoo-nasuan"
+    },
+    {
+     "id": "gha-adm2-zabzugu",
+     "name": "Zabzugu"
+    }
+   ]
+  }
+ },
+ "name": "Ghana",
+ "nameBn": "Ghana"
+}

@@ -1,0 +1,1802 @@
+{
+ "code": "AFG",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "افغانستان‎ , Afġānistān",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2014",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Wilayat",
+   "code": "ADM1",
+   "count": 34,
+   "name": "Wilayat",
+   "nameBn": "Wilayat",
+   "representedYear": "2007",
+   "sourceCount": 34,
+   "units": [
+    {
+     "id": "afg-adm1-badakhshan",
+     "name": "Badakhshan",
+     "shapeISO": "AF-BDN"
+    },
+    {
+     "id": "afg-adm1-badghis",
+     "name": "Badghis",
+     "shapeISO": "AF-BDG"
+    },
+    {
+     "id": "afg-adm1-baghlan",
+     "name": "Baghlan",
+     "shapeISO": "AF-BGL"
+    },
+    {
+     "id": "afg-adm1-balkh",
+     "name": "Balkh",
+     "shapeISO": "AF-BAL"
+    },
+    {
+     "id": "afg-adm1-bamyan",
+     "name": "Bamyan",
+     "shapeISO": "AF-BAM"
+    },
+    {
+     "id": "afg-adm1-daykundi",
+     "name": "Daykundi",
+     "shapeISO": "AF-DAY"
+    },
+    {
+     "id": "afg-adm1-farah",
+     "name": "Farah",
+     "shapeISO": "AF-FRA"
+    },
+    {
+     "id": "afg-adm1-faryab",
+     "name": "Faryab",
+     "shapeISO": "AF-FYB"
+    },
+    {
+     "id": "afg-adm1-ghanzi",
+     "name": "Ghanzi",
+     "shapeISO": "AF-GHA"
+    },
+    {
+     "id": "afg-adm1-ghor",
+     "name": "Ghor",
+     "shapeISO": "AF-GHO"
+    },
+    {
+     "id": "afg-adm1-helmand",
+     "name": "Helmand",
+     "shapeISO": "AF-HEL"
+    },
+    {
+     "id": "afg-adm1-herat",
+     "name": "Herat",
+     "shapeISO": "AF-HER"
+    },
+    {
+     "id": "afg-adm1-jowzjan",
+     "name": "Jowzjan",
+     "shapeISO": "AF-JOW"
+    },
+    {
+     "id": "afg-adm1-kabul",
+     "name": "Kabul",
+     "shapeISO": "AF-KAB"
+    },
+    {
+     "id": "afg-adm1-kandahar",
+     "name": "Kandahar",
+     "shapeISO": "AF_KAN"
+    },
+    {
+     "id": "afg-adm1-kapisa",
+     "name": "Kapisa",
+     "shapeISO": "AF-KAP"
+    },
+    {
+     "id": "afg-adm1-khost",
+     "name": "Khost",
+     "shapeISO": "AF-KHO"
+    },
+    {
+     "id": "afg-adm1-kunar",
+     "name": "Kunar",
+     "shapeISO": "AF-KNR"
+    },
+    {
+     "id": "afg-adm1-kunduz",
+     "name": "Kunduz",
+     "shapeISO": "AF-KDZ"
+    },
+    {
+     "id": "afg-adm1-laghman",
+     "name": "Laghman",
+     "shapeISO": "AF-LAG"
+    },
+    {
+     "id": "afg-adm1-logar",
+     "name": "Logar",
+     "shapeISO": "AF-LOG"
+    },
+    {
+     "id": "afg-adm1-nangarhar",
+     "name": "Nangarhar",
+     "shapeISO": "AF-NAN"
+    },
+    {
+     "id": "afg-adm1-nimruz",
+     "name": "Nimruz",
+     "shapeISO": "AF-NIM"
+    },
+    {
+     "id": "afg-adm1-nuristan",
+     "name": "Nuristan",
+     "shapeISO": "AF-NUR"
+    },
+    {
+     "id": "afg-adm1-paktia",
+     "name": "Paktia",
+     "shapeISO": "AF-PIA"
+    },
+    {
+     "id": "afg-adm1-paktika",
+     "name": "Paktika",
+     "shapeISO": "AF-PKA"
+    },
+    {
+     "id": "afg-adm1-panjshir",
+     "name": "Panjshir",
+     "shapeISO": "AF-PAN"
+    },
+    {
+     "id": "afg-adm1-parwan",
+     "name": "Parwan",
+     "shapeISO": "AF-PAR"
+    },
+    {
+     "id": "afg-adm1-samangan",
+     "name": "Samangan",
+     "shapeISO": "AF-SAM"
+    },
+    {
+     "id": "afg-adm1-sar-e-pol",
+     "name": "Sar-e Pol",
+     "shapeISO": "AF-SAR"
+    },
+    {
+     "id": "afg-adm1-takhar",
+     "name": "Takhar",
+     "shapeISO": "AF-TAK"
+    },
+    {
+     "id": "afg-adm1-uruzgan",
+     "name": "Uruzgan",
+     "shapeISO": "AF-URU"
+    },
+    {
+     "id": "afg-adm1-wardak",
+     "name": "Wardak",
+     "shapeISO": "AF-WAR"
+    },
+    {
+     "id": "afg-adm1-zabul",
+     "name": "Zabul",
+     "shapeISO": "AF-ZAB"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "wuleswali",
+   "code": "ADM2",
+   "count": 398,
+   "name": "wuleswali",
+   "nameBn": "wuleswali",
+   "representedYear": "2014",
+   "sourceCount": 398,
+   "units": [
+    {
+     "id": "afg-adm2-ab-band",
+     "name": "Ab Band"
+    },
+    {
+     "id": "afg-adm2-ab-kamari",
+     "name": "Ab Kamari"
+    },
+    {
+     "id": "afg-adm2-acheen",
+     "name": "Acheen"
+    },
+    {
+     "id": "afg-adm2-adraskan",
+     "name": "Adraskan"
+    },
+    {
+     "id": "afg-adm2-ahmad-abad",
+     "name": "Ahmad Abad"
+    },
+    {
+     "id": "afg-adm2-ajristan",
+     "name": "Ajristan"
+    },
+    {
+     "id": "afg-adm2-alasay",
+     "name": "Alasay"
+    },
+    {
+     "id": "afg-adm2-ali-khail-jaji",
+     "name": "Ali Khail (Jaji)"
+    },
+    {
+     "id": "afg-adm2-aliabad",
+     "name": "Aliabad"
+    },
+    {
+     "id": "afg-adm2-alingar",
+     "name": "Alingar"
+    },
+    {
+     "id": "afg-adm2-alishing",
+     "name": "Alishing"
+    },
+    {
+     "id": "afg-adm2-almar",
+     "name": "Almar"
+    },
+    {
+     "id": "afg-adm2-anar-dara",
+     "name": "Anar Dara"
+    },
+    {
+     "id": "afg-adm2-andar",
+     "name": "Andar"
+    },
+    {
+     "id": "afg-adm2-andarab",
+     "name": "Andarab"
+    },
+    {
+     "id": "afg-adm2-andkhoy",
+     "name": "Andkhoy"
+    },
+    {
+     "id": "afg-adm2-aqcha",
+     "name": "Aqcha"
+    },
+    {
+     "id": "afg-adm2-arghandab",
+     "name": "Arghandab"
+    },
+    {
+     "id": "afg-adm2-arghandab-2",
+     "name": "Arghandab"
+    },
+    {
+     "id": "afg-adm2-arghanj-khaw",
+     "name": "Arghanj Khaw"
+    },
+    {
+     "id": "afg-adm2-arghistan",
+     "name": "Arghistan"
+    },
+    {
+     "id": "afg-adm2-argo",
+     "name": "Argo"
+    },
+    {
+     "id": "afg-adm2-asadabad",
+     "name": "Asadabad"
+    },
+    {
+     "id": "afg-adm2-atghar",
+     "name": "Atghar"
+    },
+    {
+     "id": "afg-adm2-aybak",
+     "name": "Aybak"
+    },
+    {
+     "id": "afg-adm2-azra",
+     "name": "Azra"
+    },
+    {
+     "id": "afg-adm2-baghlani-jadid",
+     "name": "Baghlani Jadid"
+    },
+    {
+     "id": "afg-adm2-baghran",
+     "name": "Baghran"
+    },
+    {
+     "id": "afg-adm2-bagram",
+     "name": "Bagram"
+    },
+    {
+     "id": "afg-adm2-bagrami",
+     "name": "Bagrami"
+    },
+    {
+     "id": "afg-adm2-baharak",
+     "name": "Baharak"
+    },
+    {
+     "id": "afg-adm2-baharak-2",
+     "name": "Baharak"
+    },
+    {
+     "id": "afg-adm2-bahrami-shahid-jaghatu",
+     "name": "Bahrami Shahid (Jaghatu)"
+    },
+    {
+     "id": "afg-adm2-bak",
+     "name": "Bak"
+    },
+    {
+     "id": "afg-adm2-bakwa",
+     "name": "Bakwa"
+    },
+    {
+     "id": "afg-adm2-bala-buluk",
+     "name": "Bala Buluk"
+    },
+    {
+     "id": "afg-adm2-bala-murghab",
+     "name": "Bala Murghab"
+    },
+    {
+     "id": "afg-adm2-balkh",
+     "name": "Balkh"
+    },
+    {
+     "id": "afg-adm2-balkhab",
+     "name": "Balkhab"
+    },
+    {
+     "id": "afg-adm2-bamyan",
+     "name": "Bamyan"
+    },
+    {
+     "id": "afg-adm2-bangi",
+     "name": "Bangi"
+    },
+    {
+     "id": "afg-adm2-bar-kunar",
+     "name": "Bar Kunar"
+    },
+    {
+     "id": "afg-adm2-baraki-barak",
+     "name": "Baraki Barak"
+    },
+    {
+     "id": "afg-adm2-bargi-matal",
+     "name": "Bargi Matal"
+    },
+    {
+     "id": "afg-adm2-barmal",
+     "name": "Barmal"
+    },
+    {
+     "id": "afg-adm2-bati-kot",
+     "name": "Bati Kot"
+    },
+    {
+     "id": "afg-adm2-bazarak",
+     "name": "Bazarak"
+    },
+    {
+     "id": "afg-adm2-bihsud",
+     "name": "Bihsud"
+    },
+    {
+     "id": "afg-adm2-bilchiragh",
+     "name": "Bilchiragh"
+    },
+    {
+     "id": "afg-adm2-burka",
+     "name": "Burka"
+    },
+    {
+     "id": "afg-adm2-chaghcharan",
+     "name": "Chaghcharan"
+    },
+    {
+     "id": "afg-adm2-chah-ab",
+     "name": "Chah Ab"
+    },
+    {
+     "id": "afg-adm2-chahar-asyab",
+     "name": "Chahar Asyab"
+    },
+    {
+     "id": "afg-adm2-chahar-bolak",
+     "name": "Chahar Bolak"
+    },
+    {
+     "id": "afg-adm2-chahar-burjak",
+     "name": "Chahar Burjak"
+    },
+    {
+     "id": "afg-adm2-chahar-dara",
+     "name": "Chahar Dara"
+    },
+    {
+     "id": "afg-adm2-chahar-kint",
+     "name": "Chahar Kint"
+    },
+    {
+     "id": "afg-adm2-chaharikar",
+     "name": "Chaharikar"
+    },
+    {
+     "id": "afg-adm2-chakhansur",
+     "name": "Chakhansur"
+    },
+    {
+     "id": "afg-adm2-chaki-wardak",
+     "name": "Chaki Wardak"
+    },
+    {
+     "id": "afg-adm2-chal",
+     "name": "Chal"
+    },
+    {
+     "id": "afg-adm2-chamkani",
+     "name": "Chamkani"
+    },
+    {
+     "id": "afg-adm2-chapa-dara",
+     "name": "Chapa Dara"
+    },
+    {
+     "id": "afg-adm2-chaparhar",
+     "name": "Chaparhar"
+    },
+    {
+     "id": "afg-adm2-charkh",
+     "name": "Charkh"
+    },
+    {
+     "id": "afg-adm2-charsada",
+     "name": "Charsada"
+    },
+    {
+     "id": "afg-adm2-chawkay",
+     "name": "Chawkay"
+    },
+    {
+     "id": "afg-adm2-chimtal",
+     "name": "Chimtal"
+    },
+    {
+     "id": "afg-adm2-chishti-sharif",
+     "name": "Chishti Sharif"
+    },
+    {
+     "id": "afg-adm2-chora",
+     "name": "Chora"
+    },
+    {
+     "id": "afg-adm2-dahana-i-ghuri",
+     "name": "Dahana-I- Ghuri"
+    },
+    {
+     "id": "afg-adm2-daman",
+     "name": "Daman"
+    },
+    {
+     "id": "afg-adm2-dand-patan",
+     "name": "Dand Patan"
+    },
+    {
+     "id": "afg-adm2-dangam",
+     "name": "Dangam"
+    },
+    {
+     "id": "afg-adm2-dara",
+     "name": "Dara"
+    },
+    {
+     "id": "afg-adm2-dara-i-nur",
+     "name": "Dara-I-Nur"
+    },
+    {
+     "id": "afg-adm2-dara-i-pech",
+     "name": "Dara-I-Pech"
+    },
+    {
+     "id": "afg-adm2-dara-i-sufi-bala",
+     "name": "Dara-I-Sufi Bala"
+    },
+    {
+     "id": "afg-adm2-dara-i-sufi-payin",
+     "name": "Dara-I-Sufi Payin"
+    },
+    {
+     "id": "afg-adm2-darayim",
+     "name": "Darayim"
+    },
+    {
+     "id": "afg-adm2-darqad",
+     "name": "Darqad"
+    },
+    {
+     "id": "afg-adm2-darwaz",
+     "name": "Darwaz"
+    },
+    {
+     "id": "afg-adm2-darwazbala",
+     "name": "Darwazbala"
+    },
+    {
+     "id": "afg-adm2-darzab",
+     "name": "Darzab"
+    },
+    {
+     "id": "afg-adm2-dashte-archi",
+     "name": "Dashte Archi"
+    },
+    {
+     "id": "afg-adm2-dashti-qala",
+     "name": "Dashti Qala"
+    },
+    {
+     "id": "afg-adm2-daulatshahi",
+     "name": "Daulatshahi"
+    },
+    {
+     "id": "afg-adm2-dawlat-yar",
+     "name": "Dawlat Yar"
+    },
+    {
+     "id": "afg-adm2-dawlatabad",
+     "name": "Dawlatabad"
+    },
+    {
+     "id": "afg-adm2-dawlatabad-2",
+     "name": "Dawlatabad"
+    },
+    {
+     "id": "afg-adm2-day-mirdad",
+     "name": "Day Mirdad"
+    },
+    {
+     "id": "afg-adm2-daychopan",
+     "name": "Daychopan"
+    },
+    {
+     "id": "afg-adm2-deh-bala",
+     "name": "Deh Bala"
+    },
+    {
+     "id": "afg-adm2-dih-sabz",
+     "name": "Dih Sabz"
+    },
+    {
+     "id": "afg-adm2-dih-salah",
+     "name": "Dih Salah"
+    },
+    {
+     "id": "afg-adm2-dih-yak",
+     "name": "Dih Yak"
+    },
+    {
+     "id": "afg-adm2-dihdadi",
+     "name": "Dihdadi"
+    },
+    {
+     "id": "afg-adm2-dihrawud",
+     "name": "Dihrawud"
+    },
+    {
+     "id": "afg-adm2-dila",
+     "name": "Dila"
+    },
+    {
+     "id": "afg-adm2-dishu",
+     "name": "Dishu"
+    },
+    {
+     "id": "afg-adm2-du-ab",
+     "name": "Du Ab"
+    },
+    {
+     "id": "afg-adm2-du-layna",
+     "name": "Du Layna"
+    },
+    {
+     "id": "afg-adm2-dur-baba",
+     "name": "Dur Baba"
+    },
+    {
+     "id": "afg-adm2-dushi",
+     "name": "Dushi"
+    },
+    {
+     "id": "afg-adm2-farah",
+     "name": "Farah"
+    },
+    {
+     "id": "afg-adm2-farang-wa-gharu",
+     "name": "Farang Wa Gharu"
+    },
+    {
+     "id": "afg-adm2-farkhar",
+     "name": "Farkhar"
+    },
+    {
+     "id": "afg-adm2-farsi",
+     "name": "Farsi"
+    },
+    {
+     "id": "afg-adm2-farza",
+     "name": "Farza"
+    },
+    {
+     "id": "afg-adm2-fayzabad",
+     "name": "Fayzabad"
+    },
+    {
+     "id": "afg-adm2-fayzabad-2",
+     "name": "Fayzabad"
+    },
+    {
+     "id": "afg-adm2-feroz-nakhchir",
+     "name": "Feroz Nakhchir"
+    },
+    {
+     "id": "afg-adm2-gaiti",
+     "name": "Gaiti"
+    },
+    {
+     "id": "afg-adm2-gardiz",
+     "name": "Gardiz"
+    },
+    {
+     "id": "afg-adm2-garmser",
+     "name": "Garmser"
+    },
+    {
+     "id": "afg-adm2-gayan",
+     "name": "Gayan"
+    },
+    {
+     "id": "afg-adm2-gelan",
+     "name": "Gelan"
+    },
+    {
+     "id": "afg-adm2-ghaziabad",
+     "name": "Ghaziabad"
+    },
+    {
+     "id": "afg-adm2-ghazni",
+     "name": "Ghazni"
+    },
+    {
+     "id": "afg-adm2-ghorak",
+     "name": "Ghorak"
+    },
+    {
+     "id": "afg-adm2-ghormach",
+     "name": "Ghormach"
+    },
+    {
+     "id": "afg-adm2-ghoryan",
+     "name": "Ghoryan"
+    },
+    {
+     "id": "afg-adm2-giro",
+     "name": "Giro"
+    },
+    {
+     "id": "afg-adm2-gizab",
+     "name": "Gizab"
+    },
+    {
+     "id": "afg-adm2-gomal",
+     "name": "Gomal"
+    },
+    {
+     "id": "afg-adm2-gosfandi",
+     "name": "Gosfandi"
+    },
+    {
+     "id": "afg-adm2-goshta",
+     "name": "Goshta"
+    },
+    {
+     "id": "afg-adm2-guldara",
+     "name": "Guldara"
+    },
+    {
+     "id": "afg-adm2-gulistan",
+     "name": "Gulistan"
+    },
+    {
+     "id": "afg-adm2-gulran",
+     "name": "Gulran"
+    },
+    {
+     "id": "afg-adm2-gurbuz",
+     "name": "Gurbuz"
+    },
+    {
+     "id": "afg-adm2-gurziwan",
+     "name": "Gurziwan"
+    },
+    {
+     "id": "afg-adm2-guzara",
+     "name": "Guzara"
+    },
+    {
+     "id": "afg-adm2-guzargahi-nur",
+     "name": "Guzargahi Nur"
+    },
+    {
+     "id": "afg-adm2-hazar-sumuch",
+     "name": "Hazar Sumuch"
+    },
+    {
+     "id": "afg-adm2-hazrati-sultan",
+     "name": "Hazrati Sultan"
+    },
+    {
+     "id": "afg-adm2-hesarak",
+     "name": "Hesarak"
+    },
+    {
+     "id": "afg-adm2-hirat",
+     "name": "Hirat"
+    },
+    {
+     "id": "afg-adm2-hisa-i-awali-bihsud",
+     "name": "Hisa-I- Awali Bihsud"
+    },
+    {
+     "id": "afg-adm2-hisa-i-awali-kohistan",
+     "name": "Hisa-i-Awali Kohistan"
+    },
+    {
+     "id": "afg-adm2-hisa-i-duwumi-kohistan",
+     "name": "Hisa-i-Duwumi Kohistan"
+    },
+    {
+     "id": "afg-adm2-imam-sahib",
+     "name": "Imam Sahib"
+    },
+    {
+     "id": "afg-adm2-injil",
+     "name": "Injil"
+    },
+    {
+     "id": "afg-adm2-ishkamish",
+     "name": "Ishkamish"
+    },
+    {
+     "id": "afg-adm2-ishkashiem",
+     "name": "Ishkashiem"
+    },
+    {
+     "id": "afg-adm2-ishtarlay",
+     "name": "Ishtarlay"
+    },
+    {
+     "id": "afg-adm2-istalif",
+     "name": "Istalif"
+    },
+    {
+     "id": "afg-adm2-jabalussaraj",
+     "name": "Jabalussaraj"
+    },
+    {
+     "id": "afg-adm2-jaghatu",
+     "name": "Jaghatu"
+    },
+    {
+     "id": "afg-adm2-jaghuri",
+     "name": "Jaghuri"
+    },
+    {
+     "id": "afg-adm2-jaji-maidan",
+     "name": "Jaji Maidan"
+    },
+    {
+     "id": "afg-adm2-jalalabad",
+     "name": "Jalalabad"
+    },
+    {
+     "id": "afg-adm2-jalrez",
+     "name": "Jalrez"
+    },
+    {
+     "id": "afg-adm2-jani-khail",
+     "name": "Jani Khail"
+    },
+    {
+     "id": "afg-adm2-jani-khel",
+     "name": "Jani Khel"
+    },
+    {
+     "id": "afg-adm2-jawand",
+     "name": "Jawand"
+    },
+    {
+     "id": "afg-adm2-jurm",
+     "name": "Jurm"
+    },
+    {
+     "id": "afg-adm2-kabul",
+     "name": "Kabul"
+    },
+    {
+     "id": "afg-adm2-kahmard",
+     "name": "Kahmard"
+    },
+    {
+     "id": "afg-adm2-kajaki",
+     "name": "Kajaki"
+    },
+    {
+     "id": "afg-adm2-kajran",
+     "name": "Kajran"
+    },
+    {
+     "id": "afg-adm2-kakar",
+     "name": "Kakar"
+    },
+    {
+     "id": "afg-adm2-kalakan",
+     "name": "Kalakan"
+    },
+    {
+     "id": "afg-adm2-kaldar",
+     "name": "Kaldar"
+    },
+    {
+     "id": "afg-adm2-kalfagan",
+     "name": "Kalfagan"
+    },
+    {
+     "id": "afg-adm2-kama",
+     "name": "Kama"
+    },
+    {
+     "id": "afg-adm2-kamdesh",
+     "name": "Kamdesh"
+    },
+    {
+     "id": "afg-adm2-kandahar",
+     "name": "Kandahar"
+    },
+    {
+     "id": "afg-adm2-kang",
+     "name": "Kang"
+    },
+    {
+     "id": "afg-adm2-karukh",
+     "name": "Karukh"
+    },
+    {
+     "id": "afg-adm2-khadir",
+     "name": "Khadir"
+    },
+    {
+     "id": "afg-adm2-khaki-jabbar",
+     "name": "Khaki Jabbar"
+    },
+    {
+     "id": "afg-adm2-khaki-safed",
+     "name": "Khaki Safed"
+    },
+    {
+     "id": "afg-adm2-khakrez",
+     "name": "Khakrez"
+    },
+    {
+     "id": "afg-adm2-kham-ab",
+     "name": "Kham Ab"
+    },
+    {
+     "id": "afg-adm2-khanabad",
+     "name": "Khanabad"
+    },
+    {
+     "id": "afg-adm2-khani-chahar-bagh",
+     "name": "Khani Chahar Bagh"
+    },
+    {
+     "id": "afg-adm2-khaniqa",
+     "name": "Khaniqa"
+    },
+    {
+     "id": "afg-adm2-kharwar",
+     "name": "Kharwar"
+    },
+    {
+     "id": "afg-adm2-khas-kunar",
+     "name": "Khas Kunar"
+    },
+    {
+     "id": "afg-adm2-khas-uruzgan",
+     "name": "Khas Uruzgan"
+    },
+    {
+     "id": "afg-adm2-khash",
+     "name": "Khash"
+    },
+    {
+     "id": "afg-adm2-khash-rod",
+     "name": "Khash Rod"
+    },
+    {
+     "id": "afg-adm2-khenj-hese-awal",
+     "name": "Khenj (Hese- Awal)"
+    },
+    {
+     "id": "afg-adm2-khinjan",
+     "name": "Khinjan"
+    },
+    {
+     "id": "afg-adm2-khogayani",
+     "name": "Khogayani"
+    },
+    {
+     "id": "afg-adm2-khoshi",
+     "name": "Khoshi"
+    },
+    {
+     "id": "afg-adm2-khost-wa-firing",
+     "name": "Khost Wa Firing"
+    },
+    {
+     "id": "afg-adm2-khost-matun",
+     "name": "Khost(Matun)"
+    },
+    {
+     "id": "afg-adm2-khulm",
+     "name": "Khulm"
+    },
+    {
+     "id": "afg-adm2-khuram-wa-sarbagh",
+     "name": "Khuram Wa Sarbagh"
+    },
+    {
+     "id": "afg-adm2-khwahan",
+     "name": "Khwahan"
+    },
+    {
+     "id": "afg-adm2-khwaja-bahawuddin",
+     "name": "Khwaja Bahawuddin"
+    },
+    {
+     "id": "afg-adm2-khwaja-du-koh",
+     "name": "Khwaja Du Koh"
+    },
+    {
+     "id": "afg-adm2-khwaja-ghar",
+     "name": "Khwaja Ghar"
+    },
+    {
+     "id": "afg-adm2-khwaja-hijran-jilga-nahrin",
+     "name": "Khwaja Hijran (Jilga Nahrin)"
+    },
+    {
+     "id": "afg-adm2-khwaja-sabz-posh",
+     "name": "Khwaja Sabz Posh"
+    },
+    {
+     "id": "afg-adm2-khwaja-umari",
+     "name": "Khwaja Umari"
+    },
+    {
+     "id": "afg-adm2-kishim",
+     "name": "Kishim"
+    },
+    {
+     "id": "afg-adm2-kishindih",
+     "name": "Kishindih"
+    },
+    {
+     "id": "afg-adm2-koh-band",
+     "name": "Koh Band"
+    },
+    {
+     "id": "afg-adm2-kohi-safi",
+     "name": "Kohi Safi"
+    },
+    {
+     "id": "afg-adm2-kohistan",
+     "name": "Kohistan"
+    },
+    {
+     "id": "afg-adm2-kohistan-2",
+     "name": "Kohistan"
+    },
+    {
+     "id": "afg-adm2-kohistanat",
+     "name": "Kohistanat"
+    },
+    {
+     "id": "afg-adm2-kohsan",
+     "name": "Kohsan"
+    },
+    {
+     "id": "afg-adm2-koshk",
+     "name": "Koshk"
+    },
+    {
+     "id": "afg-adm2-koshki-kohna",
+     "name": "Koshki Kohna"
+    },
+    {
+     "id": "afg-adm2-kot",
+     "name": "Kot"
+    },
+    {
+     "id": "afg-adm2-kuf-ab",
+     "name": "Kuf Ab"
+    },
+    {
+     "id": "afg-adm2-kunduz",
+     "name": "Kunduz"
+    },
+    {
+     "id": "afg-adm2-kuran-wa-munjan",
+     "name": "Kuran Wa Munjan"
+    },
+    {
+     "id": "afg-adm2-kuz-kunar",
+     "name": "Kuz Kunar"
+    },
+    {
+     "id": "afg-adm2-laja-ahmad-khail",
+     "name": "Laja Ahmad Khail"
+    },
+    {
+     "id": "afg-adm2-lal-por",
+     "name": "Lal Por"
+    },
+    {
+     "id": "afg-adm2-lal-wa-sarjangal",
+     "name": "Lal Wa Sarjangal"
+    },
+    {
+     "id": "afg-adm2-lash-wa-juwayn",
+     "name": "Lash Wa Juwayn"
+    },
+    {
+     "id": "afg-adm2-lashkar-gah",
+     "name": "Lashkar Gah"
+    },
+    {
+     "id": "afg-adm2-mahmudi-raqi",
+     "name": "Mahmudi Raqi"
+    },
+    {
+     "id": "afg-adm2-malistan",
+     "name": "Malistan"
+    },
+    {
+     "id": "afg-adm2-mando-zayi",
+     "name": "Mando Zayi"
+    },
+    {
+     "id": "afg-adm2-mandol",
+     "name": "Mandol"
+    },
+    {
+     "id": "afg-adm2-mangajek",
+     "name": "Mangajek"
+    },
+    {
+     "id": "afg-adm2-marawara",
+     "name": "Marawara"
+    },
+    {
+     "id": "afg-adm2-mardyan",
+     "name": "Mardyan"
+    },
+    {
+     "id": "afg-adm2-markazi-bihsud",
+     "name": "Markazi Bihsud"
+    },
+    {
+     "id": "afg-adm2-marmul",
+     "name": "Marmul"
+    },
+    {
+     "id": "afg-adm2-maruf",
+     "name": "Maruf"
+    },
+    {
+     "id": "afg-adm2-mata-khan",
+     "name": "Mata Khan"
+    },
+    {
+     "id": "afg-adm2-maydan-shahr",
+     "name": "Maydan Shahr"
+    },
+    {
+     "id": "afg-adm2-maymana",
+     "name": "Maymana"
+    },
+    {
+     "id": "afg-adm2-maywand",
+     "name": "Maywand"
+    },
+    {
+     "id": "afg-adm2-mazari-sharif",
+     "name": "Mazari Sharif"
+    },
+    {
+     "id": "afg-adm2-mihtarlam",
+     "name": "Mihtarlam"
+    },
+    {
+     "id": "afg-adm2-mir-bacha-kot",
+     "name": "Mir Bacha Kot"
+    },
+    {
+     "id": "afg-adm2-miramor",
+     "name": "Miramor"
+    },
+    {
+     "id": "afg-adm2-miya-nishin",
+     "name": "Miya Nishin"
+    },
+    {
+     "id": "afg-adm2-mizan",
+     "name": "Mizan"
+    },
+    {
+     "id": "afg-adm2-mohammad-agha",
+     "name": "Mohammad Agha"
+    },
+    {
+     "id": "afg-adm2-mosa-khail",
+     "name": "Mosa Khail"
+    },
+    {
+     "id": "afg-adm2-muhmand-dara",
+     "name": "Muhmand Dara"
+    },
+    {
+     "id": "afg-adm2-muqur",
+     "name": "Muqur"
+    },
+    {
+     "id": "afg-adm2-muqur-2",
+     "name": "Muqur"
+    },
+    {
+     "id": "afg-adm2-musa-qala",
+     "name": "Musa Qala"
+    },
+    {
+     "id": "afg-adm2-musayi",
+     "name": "Musayi"
+    },
+    {
+     "id": "afg-adm2-nad-ali",
+     "name": "Nad Ali"
+    },
+    {
+     "id": "afg-adm2-nadir-shah-kot",
+     "name": "Nadir Shah Kot"
+    },
+    {
+     "id": "afg-adm2-nahri-sarraj",
+     "name": "Nahri Sarraj"
+    },
+    {
+     "id": "afg-adm2-nahri-shahi",
+     "name": "Nahri Shahi"
+    },
+    {
+     "id": "afg-adm2-nahrin",
+     "name": "Nahrin"
+    },
+    {
+     "id": "afg-adm2-namak-ab",
+     "name": "Namak Ab"
+    },
+    {
+     "id": "afg-adm2-narang",
+     "name": "Narang"
+    },
+    {
+     "id": "afg-adm2-nari",
+     "name": "Nari"
+    },
+    {
+     "id": "afg-adm2-naw-bahar",
+     "name": "Naw Bahar"
+    },
+    {
+     "id": "afg-adm2-naw-zad",
+     "name": "Naw Zad"
+    },
+    {
+     "id": "afg-adm2-nawa",
+     "name": "Nawa"
+    },
+    {
+     "id": "afg-adm2-nawa-i-barak-zayi",
+     "name": "Nawa-I- Barak Zayi"
+    },
+    {
+     "id": "afg-adm2-nawur",
+     "name": "Nawur"
+    },
+    {
+     "id": "afg-adm2-nazyan",
+     "name": "Nazyan"
+    },
+    {
+     "id": "afg-adm2-nesh",
+     "name": "Nesh"
+    },
+    {
+     "id": "afg-adm2-nijrab",
+     "name": "Nijrab"
+    },
+    {
+     "id": "afg-adm2-nika",
+     "name": "Nika"
+    },
+    {
+     "id": "afg-adm2-nili",
+     "name": "Nili"
+    },
+    {
+     "id": "afg-adm2-nirkh",
+     "name": "Nirkh"
+    },
+    {
+     "id": "afg-adm2-nurgal",
+     "name": "Nurgal"
+    },
+    {
+     "id": "afg-adm2-nurgaram",
+     "name": "Nurgaram"
+    },
+    {
+     "id": "afg-adm2-obe",
+     "name": "Obe"
+    },
+    {
+     "id": "afg-adm2-omna",
+     "name": "Omna"
+    },
+    {
+     "id": "afg-adm2-pachier-agam",
+     "name": "Pachier Agam"
+    },
+    {
+     "id": "afg-adm2-paghman",
+     "name": "Paghman"
+    },
+    {
+     "id": "afg-adm2-panjab",
+     "name": "Panjab"
+    },
+    {
+     "id": "afg-adm2-panjwayi",
+     "name": "Panjwayi"
+    },
+    {
+     "id": "afg-adm2-parun",
+     "name": "Parun"
+    },
+    {
+     "id": "afg-adm2-paryan",
+     "name": "Paryan"
+    },
+    {
+     "id": "afg-adm2-pasaband",
+     "name": "Pasaband"
+    },
+    {
+     "id": "afg-adm2-pashtun-kot",
+     "name": "Pashtun Kot"
+    },
+    {
+     "id": "afg-adm2-pashtun-zarghun",
+     "name": "Pashtun Zarghun"
+    },
+    {
+     "id": "afg-adm2-puli-alam",
+     "name": "Puli Alam"
+    },
+    {
+     "id": "afg-adm2-puli-hisar",
+     "name": "Puli Hisar"
+    },
+    {
+     "id": "afg-adm2-puli-khumri",
+     "name": "Puli Khumri"
+    },
+    {
+     "id": "afg-adm2-pur-chaman",
+     "name": "Pur Chaman"
+    },
+    {
+     "id": "afg-adm2-pusht-rod",
+     "name": "Pusht Rod"
+    },
+    {
+     "id": "afg-adm2-qadis",
+     "name": "Qadis"
+    },
+    {
+     "id": "afg-adm2-qala-ka",
+     "name": "Qala Ka"
+    },
+    {
+     "id": "afg-adm2-qala-i-naw",
+     "name": "Qala-I- Naw"
+    },
+    {
+     "id": "afg-adm2-qalandar",
+     "name": "Qalandar"
+    },
+    {
+     "id": "afg-adm2-qalat",
+     "name": "Qalat"
+    },
+    {
+     "id": "afg-adm2-qalay-i-zal",
+     "name": "Qalay-I- Zal"
+    },
+    {
+     "id": "afg-adm2-qarabagh",
+     "name": "Qarabagh"
+    },
+    {
+     "id": "afg-adm2-qarabagh-2",
+     "name": "Qarabagh"
+    },
+    {
+     "id": "afg-adm2-qaramqol",
+     "name": "Qaramqol"
+    },
+    {
+     "id": "afg-adm2-qarghayi",
+     "name": "Qarghayi"
+    },
+    {
+     "id": "afg-adm2-qarqin",
+     "name": "Qarqin"
+    },
+    {
+     "id": "afg-adm2-qaysar",
+     "name": "Qaysar"
+    },
+    {
+     "id": "afg-adm2-qurghan",
+     "name": "Qurghan"
+    },
+    {
+     "id": "afg-adm2-qush-tepa",
+     "name": "Qush Tepa"
+    },
+    {
+     "id": "afg-adm2-raghistan",
+     "name": "Raghistan"
+    },
+    {
+     "id": "afg-adm2-rashidan",
+     "name": "Rashidan"
+    },
+    {
+     "id": "afg-adm2-reg-khanshin",
+     "name": "Reg(Khanshin)"
+    },
+    {
+     "id": "afg-adm2-registan",
+     "name": "Registan"
+    },
+    {
+     "id": "afg-adm2-rodat",
+     "name": "Rodat"
+    },
+    {
+     "id": "afg-adm2-rukha",
+     "name": "Rukha"
+    },
+    {
+     "id": "afg-adm2-rustaq",
+     "name": "Rustaq"
+    },
+    {
+     "id": "afg-adm2-ruyi-du-ab",
+     "name": "Ruyi Du Ab"
+    },
+    {
+     "id": "afg-adm2-sabri",
+     "name": "Sabri"
+    },
+    {
+     "id": "afg-adm2-saghar",
+     "name": "Saghar"
+    },
+    {
+     "id": "afg-adm2-salang",
+     "name": "Salang"
+    },
+    {
+     "id": "afg-adm2-sangcharak",
+     "name": "Sangcharak"
+    },
+    {
+     "id": "afg-adm2-sangi-takht",
+     "name": "Sangi Takht"
+    },
+    {
+     "id": "afg-adm2-sangin",
+     "name": "Sangin"
+    },
+    {
+     "id": "afg-adm2-sar-hawza",
+     "name": "Sar Hawza"
+    },
+    {
+     "id": "afg-adm2-sari-pul",
+     "name": "Sari Pul"
+    },
+    {
+     "id": "afg-adm2-sarkani",
+     "name": "Sarkani"
+    },
+    {
+     "id": "afg-adm2-sarobi",
+     "name": "Sarobi"
+    },
+    {
+     "id": "afg-adm2-sayd-khel",
+     "name": "Sayd Khel"
+    },
+    {
+     "id": "afg-adm2-saydabad",
+     "name": "Saydabad"
+    },
+    {
+     "id": "afg-adm2-sayed-karam",
+     "name": "Sayed Karam"
+    },
+    {
+     "id": "afg-adm2-sayghan",
+     "name": "Sayghan"
+    },
+    {
+     "id": "afg-adm2-sayyad",
+     "name": "Sayyad"
+    },
+    {
+     "id": "afg-adm2-shah-wali-kot",
+     "name": "Shah Wali Kot"
+    },
+    {
+     "id": "afg-adm2-shahada",
+     "name": "Shahada"
+    },
+    {
+     "id": "afg-adm2-shahidi-hassas",
+     "name": "Shahidi Hassas"
+    },
+    {
+     "id": "afg-adm2-shahjoy",
+     "name": "Shahjoy"
+    },
+    {
+     "id": "afg-adm2-shahrak",
+     "name": "Shahrak"
+    },
+    {
+     "id": "afg-adm2-shahri-buzurg",
+     "name": "Shahri Buzurg"
+    },
+    {
+     "id": "afg-adm2-shahristan",
+     "name": "Shahristan"
+    },
+    {
+     "id": "afg-adm2-shakardara",
+     "name": "Shakardara"
+    },
+    {
+     "id": "afg-adm2-shaki",
+     "name": "Shaki"
+    },
+    {
+     "id": "afg-adm2-shamal",
+     "name": "Shamal"
+    },
+    {
+     "id": "afg-adm2-shamulzayi",
+     "name": "Shamulzayi"
+    },
+    {
+     "id": "afg-adm2-sharan",
+     "name": "Sharan"
+    },
+    {
+     "id": "afg-adm2-shawak",
+     "name": "Shawak"
+    },
+    {
+     "id": "afg-adm2-shaygal-wa-shital",
+     "name": "Shaygal wa shital"
+    },
+    {
+     "id": "afg-adm2-shekh-ali",
+     "name": "Shekh  Ali"
+    },
+    {
+     "id": "afg-adm2-shib-koh",
+     "name": "Shib Koh"
+    },
+    {
+     "id": "afg-adm2-shibar",
+     "name": "Shibar"
+    },
+    {
+     "id": "afg-adm2-shibirghan",
+     "name": "Shibirghan"
+    },
+    {
+     "id": "afg-adm2-shighnan",
+     "name": "Shighnan"
+    },
+    {
+     "id": "afg-adm2-shindand",
+     "name": "Shindand"
+    },
+    {
+     "id": "afg-adm2-shinkay",
+     "name": "Shinkay"
+    },
+    {
+     "id": "afg-adm2-shinwar",
+     "name": "Shinwar"
+    },
+    {
+     "id": "afg-adm2-shinwari",
+     "name": "Shinwari"
+    },
+    {
+     "id": "afg-adm2-shirin-tagab",
+     "name": "Shirin Tagab"
+    },
+    {
+     "id": "afg-adm2-shirzad",
+     "name": "Shirzad"
+    },
+    {
+     "id": "afg-adm2-sholgara",
+     "name": "Sholgara"
+    },
+    {
+     "id": "afg-adm2-shorabak",
+     "name": "Shorabak"
+    },
+    {
+     "id": "afg-adm2-shortepa",
+     "name": "Shortepa"
+    },
+    {
+     "id": "afg-adm2-shutul",
+     "name": "Shutul"
+    },
+    {
+     "id": "afg-adm2-sia-gird-ghorbund",
+     "name": "Sia Gird ( Ghorbund)"
+    },
+    {
+     "id": "afg-adm2-sozma-qala",
+     "name": "Sozma Qala"
+    },
+    {
+     "id": "afg-adm2-spin-boldak",
+     "name": "Spin Boldak"
+    },
+    {
+     "id": "afg-adm2-spira",
+     "name": "Spira"
+    },
+    {
+     "id": "afg-adm2-surkh-rod",
+     "name": "Surkh Rod"
+    },
+    {
+     "id": "afg-adm2-surkhi-parsa",
+     "name": "Surkhi Parsa"
+    },
+    {
+     "id": "afg-adm2-surobi",
+     "name": "Surobi"
+    },
+    {
+     "id": "afg-adm2-tagab",
+     "name": "Tagab"
+    },
+    {
+     "id": "afg-adm2-tagab-kishmi-bala",
+     "name": "Tagab (Kishmi Bala)"
+    },
+    {
+     "id": "afg-adm2-tala-wa-barfak",
+     "name": "Tala Wa Barfak"
+    },
+    {
+     "id": "afg-adm2-taluqan",
+     "name": "Taluqan"
+    },
+    {
+     "id": "afg-adm2-tani",
+     "name": "Tani"
+    },
+    {
+     "id": "afg-adm2-tarnak-wa-jaldak",
+     "name": "Tarnak Wa Jaldak"
+    },
+    {
+     "id": "afg-adm2-tashkan",
+     "name": "Tashkan"
+    },
+    {
+     "id": "afg-adm2-taywara",
+     "name": "Taywara"
+    },
+    {
+     "id": "afg-adm2-tere-zayi",
+     "name": "Tere Zayi"
+    },
+    {
+     "id": "afg-adm2-tirin-kot",
+     "name": "Tirin Kot"
+    },
+    {
+     "id": "afg-adm2-tulak",
+     "name": "Tulak"
+    },
+    {
+     "id": "afg-adm2-turwo",
+     "name": "Turwo"
+    },
+    {
+     "id": "afg-adm2-unaba",
+     "name": "Unaba"
+    },
+    {
+     "id": "afg-adm2-urgun",
+     "name": "Urgun"
+    },
+    {
+     "id": "afg-adm2-waghaz",
+     "name": "Waghaz"
+    },
+    {
+     "id": "afg-adm2-wakhan",
+     "name": "Wakhan"
+    },
+    {
+     "id": "afg-adm2-wali-muhammadi-shahid",
+     "name": "Wali Muhammadi Shahid"
+    },
+    {
+     "id": "afg-adm2-wama",
+     "name": "Wama"
+    },
+    {
+     "id": "afg-adm2-waras",
+     "name": "Waras"
+    },
+    {
+     "id": "afg-adm2-warduj",
+     "name": "Warduj"
+    },
+    {
+     "id": "afg-adm2-warsaj",
+     "name": "Warsaj"
+    },
+    {
+     "id": "afg-adm2-washer",
+     "name": "Washer"
+    },
+    {
+     "id": "afg-adm2-wata-pur",
+     "name": "Wata Pur"
+    },
+    {
+     "id": "afg-adm2-waygal",
+     "name": "Waygal"
+    },
+    {
+     "id": "afg-adm2-waza-khwa",
+     "name": "Waza Khwa"
+    },
+    {
+     "id": "afg-adm2-wor-mayi",
+     "name": "Wor Mayi"
+    },
+    {
+     "id": "afg-adm2-yaftal-sufla",
+     "name": "Yaftal Sufla"
+    },
+    {
+     "id": "afg-adm2-yahya-khel",
+     "name": "Yahya Khel"
+    },
+    {
+     "id": "afg-adm2-yakawlang",
+     "name": "Yakawlang"
+    },
+    {
+     "id": "afg-adm2-yamgan-girwan",
+     "name": "Yamgan (Girwan)"
+    },
+    {
+     "id": "afg-adm2-yangi-qala",
+     "name": "Yangi Qala"
+    },
+    {
+     "id": "afg-adm2-yawan",
+     "name": "Yawan"
+    },
+    {
+     "id": "afg-adm2-yosuf-khel",
+     "name": "Yosuf Khel"
+    },
+    {
+     "id": "afg-adm2-zadran",
+     "name": "Zadran"
+    },
+    {
+     "id": "afg-adm2-zana-khan",
+     "name": "Zana Khan"
+    },
+    {
+     "id": "afg-adm2-zanda-jan",
+     "name": "Zanda  Jan"
+    },
+    {
+     "id": "afg-adm2-zaranj",
+     "name": "Zaranj"
+    },
+    {
+     "id": "afg-adm2-zarghun-shahr",
+     "name": "Zarghun Shahr"
+    },
+    {
+     "id": "afg-adm2-zari",
+     "name": "Zari"
+    },
+    {
+     "id": "afg-adm2-zebak",
+     "name": "Zebak"
+    },
+    {
+     "id": "afg-adm2-zhari",
+     "name": "Zhari"
+    },
+    {
+     "id": "afg-adm2-ziruk",
+     "name": "Ziruk"
+    },
+    {
+     "id": "afg-adm2-zurmat",
+     "name": "Zurmat"
+    }
+   ]
+  }
+ },
+ "name": "Afghanistan",
+ "nameBn": "Afghanistan"
+}

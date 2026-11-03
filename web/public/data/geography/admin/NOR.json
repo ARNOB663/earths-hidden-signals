@@ -1,0 +1,1819 @@
+{
+ "code": "NOR",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Country",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2017",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Fylke",
+   "code": "ADM1",
+   "count": 11,
+   "name": "Fylke",
+   "nameBn": "Fylke",
+   "representedYear": "2022",
+   "sourceCount": 11,
+   "units": [
+    {
+     "id": "nor-adm1-agder",
+     "name": "Agder",
+     "shapeISO": "NO-42"
+    },
+    {
+     "id": "nor-adm1-innlandet",
+     "name": "Innlandet",
+     "shapeISO": "NO-34"
+    },
+    {
+     "id": "nor-adm1-møre-og-romsdal",
+     "name": "Møre og Romsdal",
+     "shapeISO": "NO-15"
+    },
+    {
+     "id": "nor-adm1-nordland",
+     "name": "Nordland",
+     "shapeISO": "NO-18"
+    },
+    {
+     "id": "nor-adm1-oslo",
+     "name": "Oslo",
+     "shapeISO": "NO-03"
+    },
+    {
+     "id": "nor-adm1-rogaland",
+     "name": "Rogaland",
+     "shapeISO": "NO-11"
+    },
+    {
+     "id": "nor-adm1-troms-og-finnmark",
+     "name": "Troms og Finnmark",
+     "shapeISO": "NO-54"
+    },
+    {
+     "id": "nor-adm1-trøndelag",
+     "name": "Trøndelag",
+     "shapeISO": "NO-50"
+    },
+    {
+     "id": "nor-adm1-vestfold-og-telemark",
+     "name": "Vestfold og Telemark",
+     "shapeISO": "NO-38"
+    },
+    {
+     "id": "nor-adm1-vestland",
+     "name": "Vestland",
+     "shapeISO": "NO-46"
+    },
+    {
+     "id": "nor-adm1-viken",
+     "name": "Viken",
+     "shapeISO": "NO-30"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Unknown",
+   "code": "ADM2",
+   "count": 431,
+   "name": "ADM2 areas",
+   "nameBn": "ADM2 এলাকা",
+   "representedYear": "2013",
+   "sourceCount": 431,
+   "units": [
+    {
+     "id": "nor-adm2-evje-og-hornnes-nor",
+     "name": "\"Evje og Hornnes\" nor"
+    },
+    {
+     "id": "nor-adm2-midtre-gauldal-nor",
+     "name": "\"Midtre Gauldal\" nor"
+    },
+    {
+     "id": "nor-adm2-nedre-eiker-nor",
+     "name": "\"Nedre Eiker\" nor"
+    },
+    {
+     "id": "nor-adm2-nordre-land-nor",
+     "name": "\"Nordre Land\" nor"
+    },
+    {
+     "id": "nor-adm2-nore-og-uvdal-nor",
+     "name": "\"Nore og Uvdal\" nor"
+    },
+    {
+     "id": "nor-adm2-søndre-land-nor",
+     "name": "\"Søndre Land\" nor"
+    },
+    {
+     "id": "nor-adm2-vestre-slidre-nor",
+     "name": "\"Vestre Slidre\" nor"
+    },
+    {
+     "id": "nor-adm2-vestre-toten-nor",
+     "name": "\"Vestre Toten\" nor"
+    },
+    {
+     "id": "nor-adm2-østre-toten-nor",
+     "name": "\"Østre Toten\" nor"
+    },
+    {
+     "id": "nor-adm2-øvre-eiker-nor",
+     "name": "\"Øvre Eiker\" nor"
+    },
+    {
+     "id": "nor-adm2-øystre-slidre-nor",
+     "name": "\"Øystre Slidre\" nor"
+    },
+    {
+     "id": "nor-adm2-agdenes-nor",
+     "name": "Agdenes nor"
+    },
+    {
+     "id": "nor-adm2-alstahaug-nor",
+     "name": "Alstahaug nor"
+    },
+    {
+     "id": "nor-adm2-alta-nor",
+     "name": "Alta nor"
+    },
+    {
+     "id": "nor-adm2-alvdal-nor",
+     "name": "Alvdal nor"
+    },
+    {
+     "id": "nor-adm2-andøy-nor",
+     "name": "Andøy nor"
+    },
+    {
+     "id": "nor-adm2-aremark-nor",
+     "name": "Aremark nor"
+    },
+    {
+     "id": "nor-adm2-arendal-nor",
+     "name": "Arendal nor"
+    },
+    {
+     "id": "nor-adm2-asker-nor",
+     "name": "Asker nor"
+    },
+    {
+     "id": "nor-adm2-askim-nor",
+     "name": "Askim nor"
+    },
+    {
+     "id": "nor-adm2-askvoll-nor",
+     "name": "Askvoll nor"
+    },
+    {
+     "id": "nor-adm2-askøy-nor",
+     "name": "Askøy nor"
+    },
+    {
+     "id": "nor-adm2-audnedal-nor",
+     "name": "Audnedal nor"
+    },
+    {
+     "id": "nor-adm2-aukra-nor",
+     "name": "Aukra nor"
+    },
+    {
+     "id": "nor-adm2-aure-nor",
+     "name": "Aure nor"
+    },
+    {
+     "id": "nor-adm2-aurland-nor",
+     "name": "Aurland nor"
+    },
+    {
+     "id": "nor-adm2-aurskog-høland-nor",
+     "name": "Aurskog-Høland nor"
+    },
+    {
+     "id": "nor-adm2-austevoll-nor",
+     "name": "Austevoll nor"
+    },
+    {
+     "id": "nor-adm2-austrheim-nor",
+     "name": "Austrheim nor"
+    },
+    {
+     "id": "nor-adm2-averøy-nor",
+     "name": "Averøy nor"
+    },
+    {
+     "id": "nor-adm2-balestrand-nor",
+     "name": "Balestrand nor"
+    },
+    {
+     "id": "nor-adm2-ballangen-nor",
+     "name": "Ballangen nor"
+    },
+    {
+     "id": "nor-adm2-balsfjord-nor",
+     "name": "Balsfjord nor"
+    },
+    {
+     "id": "nor-adm2-bamble-nor",
+     "name": "Bamble nor"
+    },
+    {
+     "id": "nor-adm2-bardu-nor",
+     "name": "Bardu nor"
+    },
+    {
+     "id": "nor-adm2-beiarn-nor",
+     "name": "Beiarn nor"
+    },
+    {
+     "id": "nor-adm2-berg-nor",
+     "name": "Berg nor"
+    },
+    {
+     "id": "nor-adm2-bergen-nor",
+     "name": "Bergen nor"
+    },
+    {
+     "id": "nor-adm2-berlevåg-nor",
+     "name": "Berlevåg nor"
+    },
+    {
+     "id": "nor-adm2-bindal-nor",
+     "name": "Bindal nor"
+    },
+    {
+     "id": "nor-adm2-birkenes-nor",
+     "name": "Birkenes nor"
+    },
+    {
+     "id": "nor-adm2-bjerkreim-nor",
+     "name": "Bjerkreim nor"
+    },
+    {
+     "id": "nor-adm2-bjugn-nor",
+     "name": "Bjugn nor"
+    },
+    {
+     "id": "nor-adm2-bodø-nor",
+     "name": "Bodø nor"
+    },
+    {
+     "id": "nor-adm2-bokn-nor",
+     "name": "Bokn nor"
+    },
+    {
+     "id": "nor-adm2-bremanger-nor",
+     "name": "Bremanger nor"
+    },
+    {
+     "id": "nor-adm2-brønnøy-nor",
+     "name": "Brønnøy nor"
+    },
+    {
+     "id": "nor-adm2-bygland-nor",
+     "name": "Bygland nor"
+    },
+    {
+     "id": "nor-adm2-bykle-nor",
+     "name": "Bykle nor"
+    },
+    {
+     "id": "nor-adm2-båtsfjord-nor",
+     "name": "Båtsfjord nor"
+    },
+    {
+     "id": "nor-adm2-bærum-nor",
+     "name": "Bærum nor"
+    },
+    {
+     "id": "nor-adm2-bø-nor",
+     "name": "Bø nor"
+    },
+    {
+     "id": "nor-adm2-bø-nor-2",
+     "name": "Bø nor"
+    },
+    {
+     "id": "nor-adm2-bømlo-nor",
+     "name": "Bømlo nor"
+    },
+    {
+     "id": "nor-adm2-deatnu-sme-1",
+     "name": "Deatnu sme 1"
+    },
+    {
+     "id": "nor-adm2-divtasvuodna-smj-1",
+     "name": "Divtasvuodna smj 1"
+    },
+    {
+     "id": "nor-adm2-dovre-nor",
+     "name": "Dovre nor"
+    },
+    {
+     "id": "nor-adm2-drammen-nor",
+     "name": "Drammen nor"
+    },
+    {
+     "id": "nor-adm2-drangedal-nor",
+     "name": "Drangedal nor"
+    },
+    {
+     "id": "nor-adm2-dyrøy-nor",
+     "name": "Dyrøy nor"
+    },
+    {
+     "id": "nor-adm2-dønna-nor",
+     "name": "Dønna nor"
+    },
+    {
+     "id": "nor-adm2-eid-nor",
+     "name": "Eid nor"
+    },
+    {
+     "id": "nor-adm2-eide-nor",
+     "name": "Eide nor"
+    },
+    {
+     "id": "nor-adm2-eidfjord-nor",
+     "name": "Eidfjord nor"
+    },
+    {
+     "id": "nor-adm2-eidsberg-nor",
+     "name": "Eidsberg nor"
+    },
+    {
+     "id": "nor-adm2-eidskog-nor",
+     "name": "Eidskog nor"
+    },
+    {
+     "id": "nor-adm2-eidsvoll-nor",
+     "name": "Eidsvoll nor"
+    },
+    {
+     "id": "nor-adm2-eigersund-nor",
+     "name": "Eigersund nor"
+    },
+    {
+     "id": "nor-adm2-elverum-nor",
+     "name": "Elverum nor"
+    },
+    {
+     "id": "nor-adm2-enebakk-nor",
+     "name": "Enebakk nor"
+    },
+    {
+     "id": "nor-adm2-engerdal-nor",
+     "name": "Engerdal nor"
+    },
+    {
+     "id": "nor-adm2-etne-nor",
+     "name": "Etne nor"
+    },
+    {
+     "id": "nor-adm2-etnedal-nor",
+     "name": "Etnedal nor"
+    },
+    {
+     "id": "nor-adm2-evenes-nor",
+     "name": "Evenes nor"
+    },
+    {
+     "id": "nor-adm2-farsund-nor",
+     "name": "Farsund nor"
+    },
+    {
+     "id": "nor-adm2-fedje-nor",
+     "name": "Fedje nor"
+    },
+    {
+     "id": "nor-adm2-fet-nor",
+     "name": "Fet nor"
+    },
+    {
+     "id": "nor-adm2-finnøy-nor",
+     "name": "Finnøy nor"
+    },
+    {
+     "id": "nor-adm2-fitjar-nor",
+     "name": "Fitjar nor"
+    },
+    {
+     "id": "nor-adm2-fjaler-nor",
+     "name": "Fjaler nor"
+    },
+    {
+     "id": "nor-adm2-fjell-nor",
+     "name": "Fjell nor"
+    },
+    {
+     "id": "nor-adm2-flakstad-nor",
+     "name": "Flakstad nor"
+    },
+    {
+     "id": "nor-adm2-flatanger-nor",
+     "name": "Flatanger nor"
+    },
+    {
+     "id": "nor-adm2-flekkefjord-nor",
+     "name": "Flekkefjord nor"
+    },
+    {
+     "id": "nor-adm2-flesberg-nor",
+     "name": "Flesberg nor"
+    },
+    {
+     "id": "nor-adm2-flora-nor",
+     "name": "Flora nor"
+    },
+    {
+     "id": "nor-adm2-flå-nor",
+     "name": "Flå nor"
+    },
+    {
+     "id": "nor-adm2-folldal-nor",
+     "name": "Folldal nor"
+    },
+    {
+     "id": "nor-adm2-forsand-nor",
+     "name": "Forsand nor"
+    },
+    {
+     "id": "nor-adm2-fosnes-nor",
+     "name": "Fosnes nor"
+    },
+    {
+     "id": "nor-adm2-fredrikstad-nor",
+     "name": "Fredrikstad nor"
+    },
+    {
+     "id": "nor-adm2-frogn-nor",
+     "name": "Frogn nor"
+    },
+    {
+     "id": "nor-adm2-frogn-nor-2",
+     "name": "Frogn nor"
+    },
+    {
+     "id": "nor-adm2-froland-nor",
+     "name": "Froland nor"
+    },
+    {
+     "id": "nor-adm2-frosta-nor",
+     "name": "Frosta nor"
+    },
+    {
+     "id": "nor-adm2-fræna-nor",
+     "name": "Fræna nor"
+    },
+    {
+     "id": "nor-adm2-frøya-nor",
+     "name": "Frøya nor"
+    },
+    {
+     "id": "nor-adm2-fuossko-smj-2",
+     "name": "Fuossko smj 2"
+    },
+    {
+     "id": "nor-adm2-fusa-nor",
+     "name": "Fusa nor"
+    },
+    {
+     "id": "nor-adm2-fyresdal-nor",
+     "name": "Fyresdal nor"
+    },
+    {
+     "id": "nor-adm2-førde-nor",
+     "name": "Førde nor"
+    },
+    {
+     "id": "nor-adm2-gamvik-nor",
+     "name": "Gamvik nor"
+    },
+    {
+     "id": "nor-adm2-gaular-nor",
+     "name": "Gaular nor"
+    },
+    {
+     "id": "nor-adm2-gausdal-nor",
+     "name": "Gausdal nor"
+    },
+    {
+     "id": "nor-adm2-gildeskål-nor",
+     "name": "Gildeskål nor"
+    },
+    {
+     "id": "nor-adm2-giske-nor",
+     "name": "Giske nor"
+    },
+    {
+     "id": "nor-adm2-gjemnes-nor",
+     "name": "Gjemnes nor"
+    },
+    {
+     "id": "nor-adm2-gjerdrum-nor",
+     "name": "Gjerdrum nor"
+    },
+    {
+     "id": "nor-adm2-gjerstad-nor",
+     "name": "Gjerstad nor"
+    },
+    {
+     "id": "nor-adm2-gjesdal-nor",
+     "name": "Gjesdal nor"
+    },
+    {
+     "id": "nor-adm2-gjøvik-nor",
+     "name": "Gjøvik nor"
+    },
+    {
+     "id": "nor-adm2-gloppen-nor",
+     "name": "Gloppen nor"
+    },
+    {
+     "id": "nor-adm2-gol-nor",
+     "name": "Gol nor"
+    },
+    {
+     "id": "nor-adm2-gran-nor",
+     "name": "Gran nor"
+    },
+    {
+     "id": "nor-adm2-grane-nor",
+     "name": "Grane nor"
+    },
+    {
+     "id": "nor-adm2-granvin-nor",
+     "name": "Granvin nor"
+    },
+    {
+     "id": "nor-adm2-gratangen-nor",
+     "name": "Gratangen nor"
+    },
+    {
+     "id": "nor-adm2-grimstad-nor",
+     "name": "Grimstad nor"
+    },
+    {
+     "id": "nor-adm2-grong-nor",
+     "name": "Grong nor"
+    },
+    {
+     "id": "nor-adm2-grue-nor",
+     "name": "Grue nor"
+    },
+    {
+     "id": "nor-adm2-gulen-nor",
+     "name": "Gulen nor"
+    },
+    {
+     "id": "nor-adm2-guovdageaidnu-sme-1",
+     "name": "Guovdageaidnu sme 1"
+    },
+    {
+     "id": "nor-adm2-hadsel-nor",
+     "name": "Hadsel nor"
+    },
+    {
+     "id": "nor-adm2-halden-nor",
+     "name": "Halden nor"
+    },
+    {
+     "id": "nor-adm2-halsa-nor",
+     "name": "Halsa nor"
+    },
+    {
+     "id": "nor-adm2-hamar-nor",
+     "name": "Hamar nor"
+    },
+    {
+     "id": "nor-adm2-hammerfest-nor",
+     "name": "Hammerfest nor"
+    },
+    {
+     "id": "nor-adm2-haram-nor",
+     "name": "Haram nor"
+    },
+    {
+     "id": "nor-adm2-hareid-nor",
+     "name": "Hareid nor"
+    },
+    {
+     "id": "nor-adm2-harstad-nor",
+     "name": "Harstad nor"
+    },
+    {
+     "id": "nor-adm2-hasvik-nor",
+     "name": "Hasvik nor"
+    },
+    {
+     "id": "nor-adm2-hattfjelldal-nor",
+     "name": "Hattfjelldal nor"
+    },
+    {
+     "id": "nor-adm2-haugesund-nor",
+     "name": "Haugesund nor"
+    },
+    {
+     "id": "nor-adm2-hemne-nor",
+     "name": "Hemne nor"
+    },
+    {
+     "id": "nor-adm2-hemnes-nor",
+     "name": "Hemnes nor"
+    },
+    {
+     "id": "nor-adm2-hemsedal-nor",
+     "name": "Hemsedal nor"
+    },
+    {
+     "id": "nor-adm2-herøy-nor",
+     "name": "Herøy nor"
+    },
+    {
+     "id": "nor-adm2-herøy-nor-2",
+     "name": "Herøy nor"
+    },
+    {
+     "id": "nor-adm2-hitra-nor",
+     "name": "Hitra nor"
+    },
+    {
+     "id": "nor-adm2-hjartdal-nor",
+     "name": "Hjartdal nor"
+    },
+    {
+     "id": "nor-adm2-hjelmeland-nor",
+     "name": "Hjelmeland nor"
+    },
+    {
+     "id": "nor-adm2-hobøl-nor",
+     "name": "Hobøl nor"
+    },
+    {
+     "id": "nor-adm2-hof-nor",
+     "name": "Hof nor"
+    },
+    {
+     "id": "nor-adm2-hol-nor",
+     "name": "Hol nor"
+    },
+    {
+     "id": "nor-adm2-hole-nor",
+     "name": "Hole nor"
+    },
+    {
+     "id": "nor-adm2-holmestrand-nor",
+     "name": "Holmestrand nor"
+    },
+    {
+     "id": "nor-adm2-holtålen-nor",
+     "name": "Holtålen nor"
+    },
+    {
+     "id": "nor-adm2-hornindal-nor",
+     "name": "Hornindal nor"
+    },
+    {
+     "id": "nor-adm2-horten-nor",
+     "name": "Horten nor"
+    },
+    {
+     "id": "nor-adm2-horten-nor-2",
+     "name": "Horten nor"
+    },
+    {
+     "id": "nor-adm2-hurdal-nor",
+     "name": "Hurdal nor"
+    },
+    {
+     "id": "nor-adm2-hurum-nor",
+     "name": "Hurum nor"
+    },
+    {
+     "id": "nor-adm2-hvaler-nor",
+     "name": "Hvaler nor"
+    },
+    {
+     "id": "nor-adm2-hyllestad-nor",
+     "name": "Hyllestad nor"
+    },
+    {
+     "id": "nor-adm2-hábmer-smj-2",
+     "name": "Hábmer smj 2"
+    },
+    {
+     "id": "nor-adm2-hå-nor",
+     "name": "Hå nor"
+    },
+    {
+     "id": "nor-adm2-hægebostad-nor",
+     "name": "Hægebostad nor"
+    },
+    {
+     "id": "nor-adm2-høyanger-nor",
+     "name": "Høyanger nor"
+    },
+    {
+     "id": "nor-adm2-høylandet-nor",
+     "name": "Høylandet nor"
+    },
+    {
+     "id": "nor-adm2-ibestad-nor",
+     "name": "Ibestad nor"
+    },
+    {
+     "id": "nor-adm2-inderøy-nor",
+     "name": "Inderøy nor"
+    },
+    {
+     "id": "nor-adm2-iveland-nor",
+     "name": "Iveland nor"
+    },
+    {
+     "id": "nor-adm2-jevnaker-nor",
+     "name": "Jevnaker nor"
+    },
+    {
+     "id": "nor-adm2-jondal-nor",
+     "name": "Jondal nor"
+    },
+    {
+     "id": "nor-adm2-jølster-nor",
+     "name": "Jølster nor"
+    },
+    {
+     "id": "nor-adm2-karlsøy-nor",
+     "name": "Karlsøy nor"
+    },
+    {
+     "id": "nor-adm2-karmøy-nor",
+     "name": "Karmøy nor"
+    },
+    {
+     "id": "nor-adm2-klepp-nor",
+     "name": "Klepp nor"
+    },
+    {
+     "id": "nor-adm2-klæbu-nor",
+     "name": "Klæbu nor"
+    },
+    {
+     "id": "nor-adm2-kongsberg-nor",
+     "name": "Kongsberg nor"
+    },
+    {
+     "id": "nor-adm2-kongsvinger-nor",
+     "name": "Kongsvinger nor"
+    },
+    {
+     "id": "nor-adm2-kragerø-nor",
+     "name": "Kragerø nor"
+    },
+    {
+     "id": "nor-adm2-kristiansand-nor",
+     "name": "Kristiansand nor"
+    },
+    {
+     "id": "nor-adm2-kristiansund-nor",
+     "name": "Kristiansund nor"
+    },
+    {
+     "id": "nor-adm2-krødsherad-nor",
+     "name": "Krødsherad nor"
+    },
+    {
+     "id": "nor-adm2-kvalsund-nor",
+     "name": "Kvalsund nor"
+    },
+    {
+     "id": "nor-adm2-kvam-nor",
+     "name": "Kvam nor"
+    },
+    {
+     "id": "nor-adm2-kvinesdal-nor",
+     "name": "Kvinesdal nor"
+    },
+    {
+     "id": "nor-adm2-kvinnherad-nor",
+     "name": "Kvinnherad nor"
+    },
+    {
+     "id": "nor-adm2-kviteseid-nor",
+     "name": "Kviteseid nor"
+    },
+    {
+     "id": "nor-adm2-kvitsøy-nor",
+     "name": "Kvitsøy nor"
+    },
+    {
+     "id": "nor-adm2-kvæfjord-nor",
+     "name": "Kvæfjord nor"
+    },
+    {
+     "id": "nor-adm2-kvænangen-nor",
+     "name": "Kvænangen nor"
+    },
+    {
+     "id": "nor-adm2-kárášjohka-sme-1",
+     "name": "Kárášjohka sme 1"
+    },
+    {
+     "id": "nor-adm2-kåfjord-nor-2",
+     "name": "Kåfjord nor 2"
+    },
+    {
+     "id": "nor-adm2-lardal-nor",
+     "name": "Lardal nor"
+    },
+    {
+     "id": "nor-adm2-larvik-nor",
+     "name": "Larvik nor"
+    },
+    {
+     "id": "nor-adm2-lebesby-nor",
+     "name": "Lebesby nor"
+    },
+    {
+     "id": "nor-adm2-leikanger-nor",
+     "name": "Leikanger nor"
+    },
+    {
+     "id": "nor-adm2-leirfjord-nor",
+     "name": "Leirfjord nor"
+    },
+    {
+     "id": "nor-adm2-leka-nor",
+     "name": "Leka nor"
+    },
+    {
+     "id": "nor-adm2-leksvik-nor",
+     "name": "Leksvik nor"
+    },
+    {
+     "id": "nor-adm2-lenvik-nor",
+     "name": "Lenvik nor"
+    },
+    {
+     "id": "nor-adm2-lesja-nor",
+     "name": "Lesja nor"
+    },
+    {
+     "id": "nor-adm2-levanger-nor",
+     "name": "Levanger nor"
+    },
+    {
+     "id": "nor-adm2-lier-nor",
+     "name": "Lier nor"
+    },
+    {
+     "id": "nor-adm2-lierne-nor",
+     "name": "Lierne nor"
+    },
+    {
+     "id": "nor-adm2-lillehammer-nor",
+     "name": "Lillehammer nor"
+    },
+    {
+     "id": "nor-adm2-lillesand-nor",
+     "name": "Lillesand nor"
+    },
+    {
+     "id": "nor-adm2-lindesnes-nor",
+     "name": "Lindesnes nor"
+    },
+    {
+     "id": "nor-adm2-lindås-nor",
+     "name": "Lindås nor"
+    },
+    {
+     "id": "nor-adm2-loabák-sme-1",
+     "name": "Loabák sme 1"
+    },
+    {
+     "id": "nor-adm2-lom-nor",
+     "name": "Lom nor"
+    },
+    {
+     "id": "nor-adm2-loppa-nor",
+     "name": "Loppa nor"
+    },
+    {
+     "id": "nor-adm2-lund-nor",
+     "name": "Lund nor"
+    },
+    {
+     "id": "nor-adm2-lunner-nor",
+     "name": "Lunner nor"
+    },
+    {
+     "id": "nor-adm2-lurøy-nor",
+     "name": "Lurøy nor"
+    },
+    {
+     "id": "nor-adm2-luster-nor",
+     "name": "Luster nor"
+    },
+    {
+     "id": "nor-adm2-lyngdal-nor",
+     "name": "Lyngdal nor"
+    },
+    {
+     "id": "nor-adm2-lyngen-nor",
+     "name": "Lyngen nor"
+    },
+    {
+     "id": "nor-adm2-lærdal-nor",
+     "name": "Lærdal nor"
+    },
+    {
+     "id": "nor-adm2-lødingen-nor",
+     "name": "Lødingen nor"
+    },
+    {
+     "id": "nor-adm2-lørenskog-nor",
+     "name": "Lørenskog nor"
+    },
+    {
+     "id": "nor-adm2-løten-nor",
+     "name": "Løten nor"
+    },
+    {
+     "id": "nor-adm2-malvik-nor",
+     "name": "Malvik nor"
+    },
+    {
+     "id": "nor-adm2-malvik-nor-2",
+     "name": "Malvik nor"
+    },
+    {
+     "id": "nor-adm2-malvik-nor-3",
+     "name": "Malvik nor"
+    },
+    {
+     "id": "nor-adm2-mandal-nor",
+     "name": "Mandal nor"
+    },
+    {
+     "id": "nor-adm2-marker-nor",
+     "name": "Marker nor"
+    },
+    {
+     "id": "nor-adm2-marnardal-nor",
+     "name": "Marnardal nor"
+    },
+    {
+     "id": "nor-adm2-masfjorden-nor",
+     "name": "Masfjorden nor"
+    },
+    {
+     "id": "nor-adm2-meland-nor",
+     "name": "Meland nor"
+    },
+    {
+     "id": "nor-adm2-meldal-nor",
+     "name": "Meldal nor"
+    },
+    {
+     "id": "nor-adm2-melhus-nor",
+     "name": "Melhus nor"
+    },
+    {
+     "id": "nor-adm2-meløy-nor",
+     "name": "Meløy nor"
+    },
+    {
+     "id": "nor-adm2-meråker-nor",
+     "name": "Meråker nor"
+    },
+    {
+     "id": "nor-adm2-midsund-nor",
+     "name": "Midsund nor"
+    },
+    {
+     "id": "nor-adm2-modalen-nor",
+     "name": "Modalen nor"
+    },
+    {
+     "id": "nor-adm2-modum-nor",
+     "name": "Modum nor"
+    },
+    {
+     "id": "nor-adm2-molde-nor",
+     "name": "Molde nor"
+    },
+    {
+     "id": "nor-adm2-moskenes-nor",
+     "name": "Moskenes nor"
+    },
+    {
+     "id": "nor-adm2-moss-nor",
+     "name": "Moss nor"
+    },
+    {
+     "id": "nor-adm2-målselv-nor",
+     "name": "Målselv nor"
+    },
+    {
+     "id": "nor-adm2-måsøy-nor",
+     "name": "Måsøy nor"
+    },
+    {
+     "id": "nor-adm2-namdalseid-nor",
+     "name": "Namdalseid nor"
+    },
+    {
+     "id": "nor-adm2-namsos-nor",
+     "name": "Namsos nor"
+    },
+    {
+     "id": "nor-adm2-namsskogan-nor",
+     "name": "Namsskogan nor"
+    },
+    {
+     "id": "nor-adm2-nannestad-nor",
+     "name": "Nannestad nor"
+    },
+    {
+     "id": "nor-adm2-narvik-nor",
+     "name": "Narvik nor"
+    },
+    {
+     "id": "nor-adm2-naustdal-nor",
+     "name": "Naustdal nor"
+    },
+    {
+     "id": "nor-adm2-nes-nor",
+     "name": "Nes nor"
+    },
+    {
+     "id": "nor-adm2-nes-nor-2",
+     "name": "Nes nor"
+    },
+    {
+     "id": "nor-adm2-nesna-nor",
+     "name": "Nesna nor"
+    },
+    {
+     "id": "nor-adm2-nesodden-nor",
+     "name": "Nesodden nor"
+    },
+    {
+     "id": "nor-adm2-nesset-nor",
+     "name": "Nesset nor"
+    },
+    {
+     "id": "nor-adm2-nissedal-nor",
+     "name": "Nissedal nor"
+    },
+    {
+     "id": "nor-adm2-nittedal-nor",
+     "name": "Nittedal nor"
+    },
+    {
+     "id": "nor-adm2-nome-nor",
+     "name": "Nome nor"
+    },
+    {
+     "id": "nor-adm2-nome-nor-2",
+     "name": "Nome nor"
+    },
+    {
+     "id": "nor-adm2-nord-aurdal-nor",
+     "name": "Nord-Aurdal nor"
+    },
+    {
+     "id": "nor-adm2-nord-fron-nor",
+     "name": "Nord-Fron nor"
+    },
+    {
+     "id": "nor-adm2-nord-odal-nor",
+     "name": "Nord-Odal nor"
+    },
+    {
+     "id": "nor-adm2-norddal-nor",
+     "name": "Norddal nor"
+    },
+    {
+     "id": "nor-adm2-nordkapp-nor",
+     "name": "Nordkapp nor"
+    },
+    {
+     "id": "nor-adm2-nordreisa-nor",
+     "name": "Nordreisa nor"
+    },
+    {
+     "id": "nor-adm2-notodden-nor",
+     "name": "Notodden nor"
+    },
+    {
+     "id": "nor-adm2-nærøy-nor",
+     "name": "Nærøy nor"
+    },
+    {
+     "id": "nor-adm2-nøtterøy-nor",
+     "name": "Nøtterøy nor"
+    },
+    {
+     "id": "nor-adm2-odda-nor",
+     "name": "Odda nor"
+    },
+    {
+     "id": "nor-adm2-omasvuotna-sme-2",
+     "name": "Omasvuotna sme 2"
+    },
+    {
+     "id": "nor-adm2-oppdal-nor",
+     "name": "Oppdal nor"
+    },
+    {
+     "id": "nor-adm2-oppegård-nor",
+     "name": "Oppegård nor"
+    },
+    {
+     "id": "nor-adm2-orkdal-nor",
+     "name": "Orkdal nor"
+    },
+    {
+     "id": "nor-adm2-os-nor",
+     "name": "Os nor"
+    },
+    {
+     "id": "nor-adm2-os-nor-2",
+     "name": "Os nor"
+    },
+    {
+     "id": "nor-adm2-osen-nor",
+     "name": "Osen nor"
+    },
+    {
+     "id": "nor-adm2-oslo-nor",
+     "name": "Oslo nor"
+    },
+    {
+     "id": "nor-adm2-osterøy-nor",
+     "name": "Osterøy nor"
+    },
+    {
+     "id": "nor-adm2-overhalla-nor",
+     "name": "Overhalla nor"
+    },
+    {
+     "id": "nor-adm2-porsgrunn-nor",
+     "name": "Porsgrunn nor"
+    },
+    {
+     "id": "nor-adm2-porsáŋgu-sme-2",
+     "name": "Porsáŋgu sme 2"
+    },
+    {
+     "id": "nor-adm2-raarvihke-sma-1",
+     "name": "Raarvihke sma 1"
+    },
+    {
+     "id": "nor-adm2-radøy-nor",
+     "name": "Radøy nor"
+    },
+    {
+     "id": "nor-adm2-rakkestad-nor",
+     "name": "Rakkestad nor"
+    },
+    {
+     "id": "nor-adm2-rana-nor",
+     "name": "Rana nor"
+    },
+    {
+     "id": "nor-adm2-randaberg-nor",
+     "name": "Randaberg nor"
+    },
+    {
+     "id": "nor-adm2-rauma-nor",
+     "name": "Rauma nor"
+    },
+    {
+     "id": "nor-adm2-re-nor",
+     "name": "Re nor"
+    },
+    {
+     "id": "nor-adm2-rendalen-nor",
+     "name": "Rendalen nor"
+    },
+    {
+     "id": "nor-adm2-rennebu-nor",
+     "name": "Rennebu nor"
+    },
+    {
+     "id": "nor-adm2-rennesøy-nor",
+     "name": "Rennesøy nor"
+    },
+    {
+     "id": "nor-adm2-rindal-nor",
+     "name": "Rindal nor"
+    },
+    {
+     "id": "nor-adm2-ringebu-nor",
+     "name": "Ringebu nor"
+    },
+    {
+     "id": "nor-adm2-ringerike-nor",
+     "name": "Ringerike nor"
+    },
+    {
+     "id": "nor-adm2-ringsaker-nor",
+     "name": "Ringsaker nor"
+    },
+    {
+     "id": "nor-adm2-rissa-nor",
+     "name": "Rissa nor"
+    },
+    {
+     "id": "nor-adm2-risør-nor",
+     "name": "Risør nor"
+    },
+    {
+     "id": "nor-adm2-roan-nor",
+     "name": "Roan nor"
+    },
+    {
+     "id": "nor-adm2-rollag-nor",
+     "name": "Rollag nor"
+    },
+    {
+     "id": "nor-adm2-rygge-nor",
+     "name": "Rygge nor"
+    },
+    {
+     "id": "nor-adm2-råde-nor",
+     "name": "Råde nor"
+    },
+    {
+     "id": "nor-adm2-rælingen-nor",
+     "name": "Rælingen nor"
+    },
+    {
+     "id": "nor-adm2-rødøy-nor",
+     "name": "Rødøy nor"
+    },
+    {
+     "id": "nor-adm2-rømskog-nor",
+     "name": "Rømskog nor"
+    },
+    {
+     "id": "nor-adm2-røros-nor",
+     "name": "Røros nor"
+    },
+    {
+     "id": "nor-adm2-røst-nor",
+     "name": "Røst nor"
+    },
+    {
+     "id": "nor-adm2-røyken-nor",
+     "name": "Røyken nor"
+    },
+    {
+     "id": "nor-adm2-salangen-nor",
+     "name": "Salangen nor"
+    },
+    {
+     "id": "nor-adm2-saltdal-nor",
+     "name": "Saltdal nor"
+    },
+    {
+     "id": "nor-adm2-samnanger-nor",
+     "name": "Samnanger nor"
+    },
+    {
+     "id": "nor-adm2-sande-nor",
+     "name": "Sande nor"
+    },
+    {
+     "id": "nor-adm2-sande-nor-2",
+     "name": "Sande nor"
+    },
+    {
+     "id": "nor-adm2-sandefjord-nor",
+     "name": "Sandefjord nor"
+    },
+    {
+     "id": "nor-adm2-sandnes-nor",
+     "name": "Sandnes nor"
+    },
+    {
+     "id": "nor-adm2-sandøy-nor",
+     "name": "Sandøy nor"
+    },
+    {
+     "id": "nor-adm2-sarpsborg-nor",
+     "name": "Sarpsborg nor"
+    },
+    {
+     "id": "nor-adm2-sauda-nor",
+     "name": "Sauda nor"
+    },
+    {
+     "id": "nor-adm2-sauherad-nor",
+     "name": "Sauherad nor"
+    },
+    {
+     "id": "nor-adm2-sel-nor",
+     "name": "Sel nor"
+    },
+    {
+     "id": "nor-adm2-selbu-nor",
+     "name": "Selbu nor"
+    },
+    {
+     "id": "nor-adm2-selje-nor",
+     "name": "Selje nor"
+    },
+    {
+     "id": "nor-adm2-seljord-nor",
+     "name": "Seljord nor"
+    },
+    {
+     "id": "nor-adm2-sigdal-nor",
+     "name": "Sigdal nor"
+    },
+    {
+     "id": "nor-adm2-siljan-nor",
+     "name": "Siljan nor"
+    },
+    {
+     "id": "nor-adm2-sirdal-nor",
+     "name": "Sirdal nor"
+    },
+    {
+     "id": "nor-adm2-skaun-nor",
+     "name": "Skaun nor"
+    },
+    {
+     "id": "nor-adm2-skedsmo-nor",
+     "name": "Skedsmo nor"
+    },
+    {
+     "id": "nor-adm2-ski-nor",
+     "name": "Ski nor"
+    },
+    {
+     "id": "nor-adm2-skien-nor",
+     "name": "Skien nor"
+    },
+    {
+     "id": "nor-adm2-skiptvet-nor",
+     "name": "Skiptvet nor"
+    },
+    {
+     "id": "nor-adm2-skjervøy-nor",
+     "name": "Skjervøy nor"
+    },
+    {
+     "id": "nor-adm2-skjåk-nor",
+     "name": "Skjåk nor"
+    },
+    {
+     "id": "nor-adm2-skodje-nor",
+     "name": "Skodje nor"
+    },
+    {
+     "id": "nor-adm2-skånland-nor",
+     "name": "Skånland nor"
+    },
+    {
+     "id": "nor-adm2-smøla-nor",
+     "name": "Smøla nor"
+    },
+    {
+     "id": "nor-adm2-snillfjord-nor",
+     "name": "Snillfjord nor"
+    },
+    {
+     "id": "nor-adm2-snåase-sma-1",
+     "name": "Snåase sma 1"
+    },
+    {
+     "id": "nor-adm2-sogndal-nor",
+     "name": "Sogndal nor"
+    },
+    {
+     "id": "nor-adm2-sokndal-nor",
+     "name": "Sokndal nor"
+    },
+    {
+     "id": "nor-adm2-sola-nor",
+     "name": "Sola nor"
+    },
+    {
+     "id": "nor-adm2-solund-nor",
+     "name": "Solund nor"
+    },
+    {
+     "id": "nor-adm2-songdalen-nor",
+     "name": "Songdalen nor"
+    },
+    {
+     "id": "nor-adm2-sortland-nor",
+     "name": "Sortland nor"
+    },
+    {
+     "id": "nor-adm2-spydeberg-nor",
+     "name": "Spydeberg nor"
+    },
+    {
+     "id": "nor-adm2-stange-nor",
+     "name": "Stange nor"
+    },
+    {
+     "id": "nor-adm2-stavanger-nor",
+     "name": "Stavanger nor"
+    },
+    {
+     "id": "nor-adm2-steigen-nor",
+     "name": "Steigen nor"
+    },
+    {
+     "id": "nor-adm2-steinkjer-nor",
+     "name": "Steinkjer nor"
+    },
+    {
+     "id": "nor-adm2-stjørdal-nor",
+     "name": "Stjørdal nor"
+    },
+    {
+     "id": "nor-adm2-stor-elvdal-nor",
+     "name": "Stor-Elvdal nor"
+    },
+    {
+     "id": "nor-adm2-stord-nor",
+     "name": "Stord nor"
+    },
+    {
+     "id": "nor-adm2-stordal-nor",
+     "name": "Stordal nor"
+    },
+    {
+     "id": "nor-adm2-strand-nor",
+     "name": "Strand nor"
+    },
+    {
+     "id": "nor-adm2-stranda-nor",
+     "name": "Stranda nor"
+    },
+    {
+     "id": "nor-adm2-stryn-nor",
+     "name": "Stryn nor"
+    },
+    {
+     "id": "nor-adm2-sula-nor",
+     "name": "Sula nor"
+    },
+    {
+     "id": "nor-adm2-suldal-nor",
+     "name": "Suldal nor"
+    },
+    {
+     "id": "nor-adm2-sund-nor",
+     "name": "Sund nor"
+    },
+    {
+     "id": "nor-adm2-sunndal-nor",
+     "name": "Sunndal nor"
+    },
+    {
+     "id": "nor-adm2-surnadal-nor",
+     "name": "Surnadal nor"
+    },
+    {
+     "id": "nor-adm2-sveio-nor",
+     "name": "Sveio nor"
+    },
+    {
+     "id": "nor-adm2-svelvik-nor",
+     "name": "Svelvik nor"
+    },
+    {
+     "id": "nor-adm2-sykkylven-nor",
+     "name": "Sykkylven nor"
+    },
+    {
+     "id": "nor-adm2-søgne-nor",
+     "name": "Søgne nor"
+    },
+    {
+     "id": "nor-adm2-sømna-nor",
+     "name": "Sømna nor"
+    },
+    {
+     "id": "nor-adm2-sør-aurdal-nor",
+     "name": "Sør-Aurdal nor"
+    },
+    {
+     "id": "nor-adm2-sør-fron-nor",
+     "name": "Sør-Fron nor"
+    },
+    {
+     "id": "nor-adm2-sør-odal-nor",
+     "name": "Sør-Odal nor"
+    },
+    {
+     "id": "nor-adm2-sør-varanger-nor",
+     "name": "Sør-Varanger nor"
+    },
+    {
+     "id": "nor-adm2-sørfold-nor",
+     "name": "Sørfold nor"
+    },
+    {
+     "id": "nor-adm2-sørreisa-nor",
+     "name": "Sørreisa nor"
+    },
+    {
+     "id": "nor-adm2-sørum-nor",
+     "name": "Sørum nor"
+    },
+    {
+     "id": "nor-adm2-time-nor",
+     "name": "Time nor"
+    },
+    {
+     "id": "nor-adm2-tingvoll-nor",
+     "name": "Tingvoll nor"
+    },
+    {
+     "id": "nor-adm2-tinn-nor",
+     "name": "Tinn nor"
+    },
+    {
+     "id": "nor-adm2-tjeldsund-nor",
+     "name": "Tjeldsund nor"
+    },
+    {
+     "id": "nor-adm2-tjøme-nor",
+     "name": "Tjøme nor"
+    },
+    {
+     "id": "nor-adm2-tokke-nor",
+     "name": "Tokke nor"
+    },
+    {
+     "id": "nor-adm2-tolga-nor",
+     "name": "Tolga nor"
+    },
+    {
+     "id": "nor-adm2-torsken-nor",
+     "name": "Torsken nor"
+    },
+    {
+     "id": "nor-adm2-tranøy-nor",
+     "name": "Tranøy nor"
+    },
+    {
+     "id": "nor-adm2-tromsø-nor",
+     "name": "Tromsø nor"
+    },
+    {
+     "id": "nor-adm2-trondheim-nor",
+     "name": "Trondheim nor"
+    },
+    {
+     "id": "nor-adm2-trysil-nor",
+     "name": "Trysil nor"
+    },
+    {
+     "id": "nor-adm2-træna-nor",
+     "name": "Træna nor"
+    },
+    {
+     "id": "nor-adm2-trøgstad-nor",
+     "name": "Trøgstad nor"
+    },
+    {
+     "id": "nor-adm2-tvedestrand-nor",
+     "name": "Tvedestrand nor"
+    },
+    {
+     "id": "nor-adm2-tydal-nor",
+     "name": "Tydal nor"
+    },
+    {
+     "id": "nor-adm2-tynset-nor",
+     "name": "Tynset nor"
+    },
+    {
+     "id": "nor-adm2-tysnes-nor",
+     "name": "Tysnes nor"
+    },
+    {
+     "id": "nor-adm2-tysvær-nor",
+     "name": "Tysvær nor"
+    },
+    {
+     "id": "nor-adm2-tønsberg-nor",
+     "name": "Tønsberg nor"
+    },
+    {
+     "id": "nor-adm2-ullensaker-nor",
+     "name": "Ullensaker nor"
+    },
+    {
+     "id": "nor-adm2-ullensvang-nor",
+     "name": "Ullensvang nor"
+    },
+    {
+     "id": "nor-adm2-ulstein-nor",
+     "name": "Ulstein nor"
+    },
+    {
+     "id": "nor-adm2-ulvik-nor",
+     "name": "Ulvik nor"
+    },
+    {
+     "id": "nor-adm2-unjárga-sme-1",
+     "name": "Unjárga sme 1"
+    },
+    {
+     "id": "nor-adm2-utsira-nor",
+     "name": "Utsira nor"
+    },
+    {
+     "id": "nor-adm2-vadsø-nor",
+     "name": "Vadsø nor"
+    },
+    {
+     "id": "nor-adm2-vaksdal-nor",
+     "name": "Vaksdal nor"
+    },
+    {
+     "id": "nor-adm2-valle-nor",
+     "name": "Valle nor"
+    },
+    {
+     "id": "nor-adm2-vang-nor",
+     "name": "Vang nor"
+    },
+    {
+     "id": "nor-adm2-vanylven-nor",
+     "name": "Vanylven nor"
+    },
+    {
+     "id": "nor-adm2-vardø-nor",
+     "name": "Vardø nor"
+    },
+    {
+     "id": "nor-adm2-vefsn-nor",
+     "name": "Vefsn nor"
+    },
+    {
+     "id": "nor-adm2-vega-nor",
+     "name": "Vega nor"
+    },
+    {
+     "id": "nor-adm2-vegårshei-nor",
+     "name": "Vegårshei nor"
+    },
+    {
+     "id": "nor-adm2-vennesla-nor",
+     "name": "Vennesla nor"
+    },
+    {
+     "id": "nor-adm2-verdal-nor",
+     "name": "Verdal nor"
+    },
+    {
+     "id": "nor-adm2-verran-nor",
+     "name": "Verran nor"
+    },
+    {
+     "id": "nor-adm2-vestby-nor",
+     "name": "Vestby nor"
+    },
+    {
+     "id": "nor-adm2-vestnes-nor",
+     "name": "Vestnes nor"
+    },
+    {
+     "id": "nor-adm2-vestvågøy-nor",
+     "name": "Vestvågøy nor"
+    },
+    {
+     "id": "nor-adm2-vevelstad-nor",
+     "name": "Vevelstad nor"
+    },
+    {
+     "id": "nor-adm2-vik-nor",
+     "name": "Vik nor"
+    },
+    {
+     "id": "nor-adm2-vikna-nor",
+     "name": "Vikna nor"
+    },
+    {
+     "id": "nor-adm2-vindafjord-nor",
+     "name": "Vindafjord nor"
+    },
+    {
+     "id": "nor-adm2-vinje-nor",
+     "name": "Vinje nor"
+    },
+    {
+     "id": "nor-adm2-volda-nor",
+     "name": "Volda nor"
+    },
+    {
+     "id": "nor-adm2-voss-nor",
+     "name": "Voss nor"
+    },
+    {
+     "id": "nor-adm2-vågan-nor",
+     "name": "Vågan nor"
+    },
+    {
+     "id": "nor-adm2-vågsøy-nor",
+     "name": "Vågsøy nor"
+    },
+    {
+     "id": "nor-adm2-vågå-nor",
+     "name": "Vågå nor"
+    },
+    {
+     "id": "nor-adm2-våler-nor",
+     "name": "Våler nor"
+    },
+    {
+     "id": "nor-adm2-våler-nor-2",
+     "name": "Våler nor"
+    },
+    {
+     "id": "nor-adm2-værøy-nor",
+     "name": "Værøy nor"
+    },
+    {
+     "id": "nor-adm2-åfjord-nor",
+     "name": "Åfjord nor"
+    },
+    {
+     "id": "nor-adm2-ål-nor",
+     "name": "Ål nor"
+    },
+    {
+     "id": "nor-adm2-ålesund-nor",
+     "name": "Ålesund nor"
+    },
+    {
+     "id": "nor-adm2-åmli-nor",
+     "name": "Åmli nor"
+    },
+    {
+     "id": "nor-adm2-åmot-nor",
+     "name": "Åmot nor"
+    },
+    {
+     "id": "nor-adm2-årdal-nor",
+     "name": "Årdal nor"
+    },
+    {
+     "id": "nor-adm2-ås-nor",
+     "name": "Ås nor"
+    },
+    {
+     "id": "nor-adm2-åseral-nor",
+     "name": "Åseral nor"
+    },
+    {
+     "id": "nor-adm2-åsnes-nor",
+     "name": "Åsnes nor"
+    },
+    {
+     "id": "nor-adm2-øksnes-nor",
+     "name": "Øksnes nor"
+    },
+    {
+     "id": "nor-adm2-ørland-nor",
+     "name": "Ørland nor"
+    },
+    {
+     "id": "nor-adm2-ørskog-nor",
+     "name": "Ørskog nor"
+    },
+    {
+     "id": "nor-adm2-ørsta-nor",
+     "name": "Ørsta nor"
+    },
+    {
+     "id": "nor-adm2-øyer-nor",
+     "name": "Øyer nor"
+    },
+    {
+     "id": "nor-adm2-øygarden-nor",
+     "name": "Øygarden nor"
+    }
+   ]
+  }
+ },
+ "name": "Norway",
+ "nameBn": "Norway"
+}

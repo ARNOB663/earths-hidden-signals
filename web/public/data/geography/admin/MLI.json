@@ -1,0 +1,285 @@
+{
+ "code": "MLI",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Republic of Mali",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2015",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Region or Capital District",
+   "code": "ADM1",
+   "count": 9,
+   "name": "Region or Capital District",
+   "nameBn": "Region or Capital District",
+   "representedYear": "2021",
+   "sourceCount": 9,
+   "units": [
+    {
+     "id": "mli-adm1-bamako",
+     "name": "Bamako",
+     "shapeISO": "ML-BKO"
+    },
+    {
+     "id": "mli-adm1-gao",
+     "name": "Gao",
+     "shapeISO": "ML-7"
+    },
+    {
+     "id": "mli-adm1-kayes",
+     "name": "Kayes",
+     "shapeISO": "ML-1"
+    },
+    {
+     "id": "mli-adm1-kidal",
+     "name": "Kidal",
+     "shapeISO": "ML-8"
+    },
+    {
+     "id": "mli-adm1-koulikouro",
+     "name": "Koulikouro",
+     "shapeISO": "ML-2"
+    },
+    {
+     "id": "mli-adm1-mopti",
+     "name": "Mopti",
+     "shapeISO": "ML-5"
+    },
+    {
+     "id": "mli-adm1-segou",
+     "name": "Segou",
+     "shapeISO": "ML-4"
+    },
+    {
+     "id": "mli-adm1-sikasso",
+     "name": "Sikasso",
+     "shapeISO": "ML-3"
+    },
+    {
+     "id": "mli-adm1-tombouctou",
+     "name": "Tombouctou",
+     "shapeISO": "ML-6"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Cercle",
+   "code": "ADM2",
+   "count": 50,
+   "name": "Cercle",
+   "nameBn": "Cercle",
+   "representedYear": "2017",
+   "sourceCount": 50,
+   "units": [
+    {
+     "id": "mli-adm2-abeibara",
+     "name": "Abeibara"
+    },
+    {
+     "id": "mli-adm2-ansongo",
+     "name": "Ansongo"
+    },
+    {
+     "id": "mli-adm2-bafoulabe",
+     "name": "Bafoulabe"
+    },
+    {
+     "id": "mli-adm2-bamako",
+     "name": "Bamako"
+    },
+    {
+     "id": "mli-adm2-banamba",
+     "name": "Banamba"
+    },
+    {
+     "id": "mli-adm2-bandiagara",
+     "name": "Bandiagara"
+    },
+    {
+     "id": "mli-adm2-bankass",
+     "name": "Bankass"
+    },
+    {
+     "id": "mli-adm2-baroueli",
+     "name": "Baroueli"
+    },
+    {
+     "id": "mli-adm2-bla",
+     "name": "Bla"
+    },
+    {
+     "id": "mli-adm2-bougouni",
+     "name": "Bougouni"
+    },
+    {
+     "id": "mli-adm2-bourem",
+     "name": "Bourem"
+    },
+    {
+     "id": "mli-adm2-diema",
+     "name": "Diema"
+    },
+    {
+     "id": "mli-adm2-dioila",
+     "name": "Dioila"
+    },
+    {
+     "id": "mli-adm2-dire",
+     "name": "Dire"
+    },
+    {
+     "id": "mli-adm2-djenne",
+     "name": "Djenne"
+    },
+    {
+     "id": "mli-adm2-douentza",
+     "name": "Douentza"
+    },
+    {
+     "id": "mli-adm2-gao",
+     "name": "Gao"
+    },
+    {
+     "id": "mli-adm2-goundam",
+     "name": "Goundam"
+    },
+    {
+     "id": "mli-adm2-gourma-rharous",
+     "name": "Gourma-Rharous"
+    },
+    {
+     "id": "mli-adm2-kadiolo",
+     "name": "Kadiolo"
+    },
+    {
+     "id": "mli-adm2-kangaba",
+     "name": "Kangaba"
+    },
+    {
+     "id": "mli-adm2-kati",
+     "name": "Kati"
+    },
+    {
+     "id": "mli-adm2-kayes",
+     "name": "Kayes"
+    },
+    {
+     "id": "mli-adm2-kenieba",
+     "name": "Kenieba"
+    },
+    {
+     "id": "mli-adm2-kidal",
+     "name": "Kidal"
+    },
+    {
+     "id": "mli-adm2-kita",
+     "name": "Kita"
+    },
+    {
+     "id": "mli-adm2-kolokani",
+     "name": "Kolokani"
+    },
+    {
+     "id": "mli-adm2-kolondieba",
+     "name": "Kolondieba"
+    },
+    {
+     "id": "mli-adm2-koro",
+     "name": "Koro"
+    },
+    {
+     "id": "mli-adm2-koulikoro",
+     "name": "Koulikoro"
+    },
+    {
+     "id": "mli-adm2-koutiala",
+     "name": "Koutiala"
+    },
+    {
+     "id": "mli-adm2-macina",
+     "name": "Macina"
+    },
+    {
+     "id": "mli-adm2-menaka",
+     "name": "Menaka"
+    },
+    {
+     "id": "mli-adm2-mopti",
+     "name": "Mopti"
+    },
+    {
+     "id": "mli-adm2-nara",
+     "name": "Nara"
+    },
+    {
+     "id": "mli-adm2-niafunke",
+     "name": "Niafunke"
+    },
+    {
+     "id": "mli-adm2-niono",
+     "name": "Niono"
+    },
+    {
+     "id": "mli-adm2-nioro",
+     "name": "Nioro"
+    },
+    {
+     "id": "mli-adm2-san",
+     "name": "San"
+    },
+    {
+     "id": "mli-adm2-segou",
+     "name": "Segou"
+    },
+    {
+     "id": "mli-adm2-sikasso",
+     "name": "Sikasso"
+    },
+    {
+     "id": "mli-adm2-tenenkou",
+     "name": "Tenenkou"
+    },
+    {
+     "id": "mli-adm2-tessalit",
+     "name": "Tessalit"
+    },
+    {
+     "id": "mli-adm2-tin-essako",
+     "name": "Tin-Essako"
+    },
+    {
+     "id": "mli-adm2-tombouctou",
+     "name": "Tombouctou"
+    },
+    {
+     "id": "mli-adm2-tominian",
+     "name": "Tominian"
+    },
+    {
+     "id": "mli-adm2-yanfolila",
+     "name": "Yanfolila"
+    },
+    {
+     "id": "mli-adm2-yelimane",
+     "name": "Yelimane"
+    },
+    {
+     "id": "mli-adm2-yorosso",
+     "name": "Yorosso"
+    },
+    {
+     "id": "mli-adm2-youwarou",
+     "name": "Youwarou"
+    }
+   ]
+  }
+ },
+ "name": "Mali",
+ "nameBn": "Mali"
+}

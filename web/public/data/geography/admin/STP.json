@@ -1,0 +1,78 @@
+{
+ "code": "STP",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Democratic Republic of São Tomé and Príncipe",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2017",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Unknown",
+   "code": "ADM1",
+   "count": 2,
+   "name": "ADM1 areas",
+   "nameBn": "ADM1 এলাকা",
+   "representedYear": "2017",
+   "sourceCount": 2,
+   "units": [
+    {
+     "id": "stp-adm1-príncipe-province",
+     "name": "Príncipe Province",
+     "shapeISO": "ST-P"
+    },
+    {
+     "id": "stp-adm1-são-tomé-province",
+     "name": "São Tomé Province",
+     "shapeISO": "ST-S"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Districts",
+   "code": "ADM2",
+   "count": 7,
+   "name": "Districts",
+   "nameBn": "জেলা",
+   "representedYear": "2017",
+   "sourceCount": 7,
+   "units": [
+    {
+     "id": "stp-adm2-cantagalo",
+     "name": "Cantagalo"
+    },
+    {
+     "id": "stp-adm2-caué",
+     "name": "Caué"
+    },
+    {
+     "id": "stp-adm2-lemba",
+     "name": "Lemba"
+    },
+    {
+     "id": "stp-adm2-lobata",
+     "name": "Lobata"
+    },
+    {
+     "id": "stp-adm2-mé-zóxi",
+     "name": "Mé-zóxi"
+    },
+    {
+     "id": "stp-adm2-pagué",
+     "name": "Pagué"
+    },
+    {
+     "id": "stp-adm2-água-grande",
+     "name": "Água Grande"
+    }
+   ]
+  }
+ },
+ "name": "Sao Tome and Principe",
+ "nameBn": "Sao Tome and Principe"
+}

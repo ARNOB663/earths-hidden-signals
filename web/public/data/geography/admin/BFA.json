@@ -1,0 +1,285 @@
+{
+ "code": "BFA",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Burkina Faso",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2017",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Region",
+   "code": "ADM1",
+   "count": 13,
+   "name": "Region",
+   "nameBn": "অঞ্চল",
+   "representedYear": "2017",
+   "sourceCount": 13,
+   "units": [
+    {
+     "id": "bfa-adm1-boucle-du-mouhoun",
+     "name": "Boucle du Mouhoun",
+     "shapeISO": "BF-01"
+    },
+    {
+     "id": "bfa-adm1-cascades",
+     "name": "Cascades",
+     "shapeISO": "BF-02"
+    },
+    {
+     "id": "bfa-adm1-centre",
+     "name": "Centre",
+     "shapeISO": "BF-03"
+    },
+    {
+     "id": "bfa-adm1-centre-est",
+     "name": "Centre-Est",
+     "shapeISO": "BF-04"
+    },
+    {
+     "id": "bfa-adm1-centre-nord",
+     "name": "Centre-Nord",
+     "shapeISO": "BF-05"
+    },
+    {
+     "id": "bfa-adm1-centre-ouest",
+     "name": "Centre-Ouest",
+     "shapeISO": "BF-06"
+    },
+    {
+     "id": "bfa-adm1-centre-sud",
+     "name": "Centre-Sud",
+     "shapeISO": "BF-07"
+    },
+    {
+     "id": "bfa-adm1-est",
+     "name": "Est",
+     "shapeISO": "BF-08"
+    },
+    {
+     "id": "bfa-adm1-hauts-bassins",
+     "name": "Hauts-Bassins",
+     "shapeISO": "BF-09"
+    },
+    {
+     "id": "bfa-adm1-nord",
+     "name": "Nord",
+     "shapeISO": "BF-10"
+    },
+    {
+     "id": "bfa-adm1-plateau-central",
+     "name": "Plateau Central",
+     "shapeISO": "BF-11"
+    },
+    {
+     "id": "bfa-adm1-sahel",
+     "name": "Sahel",
+     "shapeISO": "BF-12"
+    },
+    {
+     "id": "bfa-adm1-sud-ouest",
+     "name": "Sud-Ouest",
+     "shapeISO": "BF-13"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Province",
+   "code": "ADM2",
+   "count": 45,
+   "name": "Province",
+   "nameBn": "প্রদেশ",
+   "representedYear": "2017",
+   "sourceCount": 45,
+   "units": [
+    {
+     "id": "bfa-adm2-bale",
+     "name": "Bale"
+    },
+    {
+     "id": "bfa-adm2-bam",
+     "name": "Bam"
+    },
+    {
+     "id": "bfa-adm2-banwa",
+     "name": "Banwa"
+    },
+    {
+     "id": "bfa-adm2-bazega",
+     "name": "Bazega"
+    },
+    {
+     "id": "bfa-adm2-bougouriba",
+     "name": "Bougouriba"
+    },
+    {
+     "id": "bfa-adm2-boulgou",
+     "name": "Boulgou"
+    },
+    {
+     "id": "bfa-adm2-boulkiemde",
+     "name": "Boulkiemde"
+    },
+    {
+     "id": "bfa-adm2-comoe",
+     "name": "Comoe"
+    },
+    {
+     "id": "bfa-adm2-ganzourgou",
+     "name": "Ganzourgou"
+    },
+    {
+     "id": "bfa-adm2-gnagna",
+     "name": "Gnagna"
+    },
+    {
+     "id": "bfa-adm2-gourma",
+     "name": "Gourma"
+    },
+    {
+     "id": "bfa-adm2-houet",
+     "name": "Houet"
+    },
+    {
+     "id": "bfa-adm2-ioba",
+     "name": "Ioba"
+    },
+    {
+     "id": "bfa-adm2-kadiogo",
+     "name": "Kadiogo"
+    },
+    {
+     "id": "bfa-adm2-kenedougou",
+     "name": "Kenedougou"
+    },
+    {
+     "id": "bfa-adm2-komonjdjari",
+     "name": "Komonjdjari"
+    },
+    {
+     "id": "bfa-adm2-kompienga",
+     "name": "Kompienga"
+    },
+    {
+     "id": "bfa-adm2-kossi",
+     "name": "Kossi"
+    },
+    {
+     "id": "bfa-adm2-koulpelogo",
+     "name": "Koulpelogo"
+    },
+    {
+     "id": "bfa-adm2-kouritenga",
+     "name": "Kouritenga"
+    },
+    {
+     "id": "bfa-adm2-kourweogo",
+     "name": "Kourweogo"
+    },
+    {
+     "id": "bfa-adm2-leraba",
+     "name": "Leraba"
+    },
+    {
+     "id": "bfa-adm2-loroum",
+     "name": "Loroum"
+    },
+    {
+     "id": "bfa-adm2-mouhoun",
+     "name": "Mouhoun"
+    },
+    {
+     "id": "bfa-adm2-nahouri",
+     "name": "Nahouri"
+    },
+    {
+     "id": "bfa-adm2-namentenga",
+     "name": "Namentenga"
+    },
+    {
+     "id": "bfa-adm2-nayala",
+     "name": "Nayala"
+    },
+    {
+     "id": "bfa-adm2-noumbiel",
+     "name": "Noumbiel"
+    },
+    {
+     "id": "bfa-adm2-oubritenga",
+     "name": "Oubritenga"
+    },
+    {
+     "id": "bfa-adm2-oudalan",
+     "name": "Oudalan"
+    },
+    {
+     "id": "bfa-adm2-passore",
+     "name": "Passore"
+    },
+    {
+     "id": "bfa-adm2-poni",
+     "name": "Poni"
+    },
+    {
+     "id": "bfa-adm2-sanguie",
+     "name": "Sanguie"
+    },
+    {
+     "id": "bfa-adm2-sanmatenga",
+     "name": "Sanmatenga"
+    },
+    {
+     "id": "bfa-adm2-seno",
+     "name": "Seno"
+    },
+    {
+     "id": "bfa-adm2-sissili",
+     "name": "Sissili"
+    },
+    {
+     "id": "bfa-adm2-soum",
+     "name": "Soum"
+    },
+    {
+     "id": "bfa-adm2-sourou",
+     "name": "Sourou"
+    },
+    {
+     "id": "bfa-adm2-tapoa",
+     "name": "Tapoa"
+    },
+    {
+     "id": "bfa-adm2-tuy",
+     "name": "Tuy"
+    },
+    {
+     "id": "bfa-adm2-yagha",
+     "name": "Yagha"
+    },
+    {
+     "id": "bfa-adm2-yatenga",
+     "name": "Yatenga"
+    },
+    {
+     "id": "bfa-adm2-ziro",
+     "name": "Ziro"
+    },
+    {
+     "id": "bfa-adm2-zondoma",
+     "name": "Zondoma"
+    },
+    {
+     "id": "bfa-adm2-zoundweogo",
+     "name": "Zoundweogo"
+    }
+   ]
+  }
+ },
+ "name": "Burkina Faso",
+ "nameBn": "Burkina Faso"
+}

@@ -1,0 +1,258 @@
+{
+ "code": "HTI",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Unknown",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2017",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Departments",
+   "code": "ADM1",
+   "count": 10,
+   "name": "Departments",
+   "nameBn": "বিভাগ",
+   "representedYear": "2017",
+   "sourceCount": 10,
+   "units": [
+    {
+     "id": "hti-adm1-artibonite-department",
+     "name": "Artibonite Department",
+     "shapeISO": "HT-AR"
+    },
+    {
+     "id": "hti-adm1-centre-department",
+     "name": "Centre Department",
+     "shapeISO": "HT-CE"
+    },
+    {
+     "id": "hti-adm1-département-de-l-ouest",
+     "name": "Département de l'Ouest",
+     "shapeISO": "HT-OU"
+    },
+    {
+     "id": "hti-adm1-département-de-la-grande-anse",
+     "name": "Département de la Grande-Anse",
+     "shapeISO": "HT-GA"
+    },
+    {
+     "id": "hti-adm1-département-des-nippes",
+     "name": "Département des Nippes",
+     "shapeISO": "HT-NI"
+    },
+    {
+     "id": "hti-adm1-département-du-nord",
+     "name": "Département du Nord",
+     "shapeISO": "HT-ND"
+    },
+    {
+     "id": "hti-adm1-département-du-sud-est",
+     "name": "Département du Sud-Est",
+     "shapeISO": "HT-SE"
+    },
+    {
+     "id": "hti-adm1-nord-est-department",
+     "name": "Nord-Est Department",
+     "shapeISO": "HT-NE"
+    },
+    {
+     "id": "hti-adm1-nord-ouest-department",
+     "name": "Nord-Ouest Department",
+     "shapeISO": "HT-NO"
+    },
+    {
+     "id": "hti-adm1-sud-department",
+     "name": "Sud Department",
+     "shapeISO": "HT-SD"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Unknown",
+   "code": "ADM2",
+   "count": 42,
+   "name": "ADM2 areas",
+   "nameBn": "ADM2 এলাকা",
+   "representedYear": "2017",
+   "sourceCount": 42,
+   "units": [
+    {
+     "id": "hti-adm2-arrondissement-belle-anse",
+     "name": "Arrondissement Belle-Anse"
+    },
+    {
+     "id": "hti-adm2-arrondissement-borgne",
+     "name": "Arrondissement Borgne"
+    },
+    {
+     "id": "hti-adm2-arrondissement-cerca-la-source",
+     "name": "Arrondissement Cerca La Source"
+    },
+    {
+     "id": "hti-adm2-arrondissement-d-acul-du-nord",
+     "name": "Arrondissement d'Acul-du-Nord"
+    },
+    {
+     "id": "hti-adm2-arrondissement-d-anse-d-hainault",
+     "name": "Arrondissement d'Anse d'Hainault"
+    },
+    {
+     "id": "hti-adm2-arrondissement-de-bainet",
+     "name": "Arrondissement de Bainet"
+    },
+    {
+     "id": "hti-adm2-arrondissement-de-baradères",
+     "name": "Arrondissement de Baradères"
+    },
+    {
+     "id": "hti-adm2-arrondissement-de-cap-haïtien",
+     "name": "Arrondissement de Cap-Haïtien"
+    },
+    {
+     "id": "hti-adm2-arrondissement-de-corail",
+     "name": "Arrondissement de Corail"
+    },
+    {
+     "id": "hti-adm2-arrondissement-de-croix-des-bouquets",
+     "name": "Arrondissement de Croix-des-Bouquets"
+    },
+    {
+     "id": "hti-adm2-arrondissement-de-dessalines",
+     "name": "Arrondissement de Dessalines"
+    },
+    {
+     "id": "hti-adm2-arrondissement-de-fort-liberté",
+     "name": "Arrondissement de Fort-Liberté"
+    },
+    {
+     "id": "hti-adm2-arrondissement-de-hinche",
+     "name": "Arrondissement de Hinche"
+    },
+    {
+     "id": "hti-adm2-arrondissement-de-jacmel",
+     "name": "Arrondissement de Jacmel"
+    },
+    {
+     "id": "hti-adm2-arrondissement-de-jérémie",
+     "name": "Arrondissement de Jérémie"
+    },
+    {
+     "id": "hti-adm2-arrondissement-de-la-gonâve",
+     "name": "Arrondissement de La Gonâve"
+    },
+    {
+     "id": "hti-adm2-arrondissement-de-léogâne",
+     "name": "Arrondissement de Léogâne"
+    },
+    {
+     "id": "hti-adm2-arrondissement-de-l-anse-à-veau",
+     "name": "Arrondissement de l’Anse-à-Veau"
+    },
+    {
+     "id": "hti-adm2-arrondissement-de-l-arcahaie",
+     "name": "Arrondissement de l’Arcahaie"
+    },
+    {
+     "id": "hti-adm2-arrondissement-de-marmelade",
+     "name": "Arrondissement de Marmelade"
+    },
+    {
+     "id": "hti-adm2-arrondissement-de-miragoâne",
+     "name": "Arrondissement de Miragoâne"
+    },
+    {
+     "id": "hti-adm2-arrondissement-de-mirebalais",
+     "name": "Arrondissement de Mirebalais"
+    },
+    {
+     "id": "hti-adm2-arrondissement-de-saint-marc",
+     "name": "Arrondissement de Saint-Marc"
+    },
+    {
+     "id": "hti-adm2-arrondissement-des-cayes",
+     "name": "Arrondissement des Cayes"
+    },
+    {
+     "id": "hti-adm2-arrondissement-des-chardonnières",
+     "name": "Arrondissement des Chardonnières"
+    },
+    {
+     "id": "hti-adm2-arrondissement-des-côteaux",
+     "name": "Arrondissement des Côteaux"
+    },
+    {
+     "id": "hti-adm2-arrondissement-des-gonaïves",
+     "name": "Arrondissement des Gonaïves"
+    },
+    {
+     "id": "hti-adm2-arrondissement-d-aquin",
+     "name": "Arrondissement d’Aquin"
+    },
+    {
+     "id": "hti-adm2-arrondissement-grande-rivière-du-nord",
+     "name": "Arrondissement Grande-Rivière-Du-Nord"
+    },
+    {
+     "id": "hti-adm2-arrondissement-gros-morne",
+     "name": "Arrondissement Gros Morne"
+    },
+    {
+     "id": "hti-adm2-arrondissement-lascahobas",
+     "name": "Arrondissement Lascahobas"
+    },
+    {
+     "id": "hti-adm2-arrondissement-limbé",
+     "name": "Arrondissement Limbé"
+    },
+    {
+     "id": "hti-adm2-arrondissement-môle-saint-nicolas",
+     "name": "Arrondissement Môle-Saint-Nicolas"
+    },
+    {
+     "id": "hti-adm2-arrondissement-ouanaminthe",
+     "name": "Arrondissement Ouanaminthe"
+    },
+    {
+     "id": "hti-adm2-arrondissement-plaisance",
+     "name": "Arrondissement Plaisance"
+    },
+    {
+     "id": "hti-adm2-arrondissement-port-de-paix",
+     "name": "Arrondissement Port-de-Paix"
+    },
+    {
+     "id": "hti-adm2-arrondissement-port-salut",
+     "name": "Arrondissement Port-Salut"
+    },
+    {
+     "id": "hti-adm2-arrondissement-saint-louis-du-nord",
+     "name": "Arrondissement Saint-Louis du Nord"
+    },
+    {
+     "id": "hti-adm2-arrondissement-saint-raphaël",
+     "name": "Arrondissement Saint-Raphaël"
+    },
+    {
+     "id": "hti-adm2-arrondissement-trou-du-nord",
+     "name": "Arrondissement Trou-Du-Nord"
+    },
+    {
+     "id": "hti-adm2-arrondissement-vallières",
+     "name": "Arrondissement Vallières"
+    },
+    {
+     "id": "hti-adm2-port-au-prince",
+     "name": "Port-au-Prince"
+    }
+   ]
+  }
+ },
+ "name": "Haiti",
+ "nameBn": "Haiti"
+}

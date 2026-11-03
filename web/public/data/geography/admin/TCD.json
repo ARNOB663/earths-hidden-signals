@@ -1,0 +1,435 @@
+{
+ "code": "TCD",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Unknown",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2017",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Unknown",
+   "code": "ADM1",
+   "count": 23,
+   "name": "ADM1 areas",
+   "nameBn": "ADM1 এলাকা",
+   "representedYear": "2017",
+   "sourceCount": 23,
+   "units": [
+    {
+     "id": "tcd-adm1-bahr-el-gazel",
+     "name": "Bahr el Gazel",
+     "shapeISO": "TD-BG"
+    },
+    {
+     "id": "tcd-adm1-batha",
+     "name": "Batha",
+     "shapeISO": "TD-BA"
+    },
+    {
+     "id": "tcd-adm1-borkou",
+     "name": "Borkou",
+     "shapeISO": "TD-BO"
+    },
+    {
+     "id": "tcd-adm1-chari-baguirmi",
+     "name": "Chari-Baguirmi",
+     "shapeISO": "TD-CB"
+    },
+    {
+     "id": "tcd-adm1-ennedi-est",
+     "name": "Ennedi-Est",
+     "shapeISO": "TD-EE"
+    },
+    {
+     "id": "tcd-adm1-ennedi-ouest",
+     "name": "Ennedi-Ouest",
+     "shapeISO": "TD-EO"
+    },
+    {
+     "id": "tcd-adm1-guéra",
+     "name": "Guéra",
+     "shapeISO": "TD-GR"
+    },
+    {
+     "id": "tcd-adm1-hadjer-lamis",
+     "name": "Hadjer-Lamis",
+     "shapeISO": "TD-HL"
+    },
+    {
+     "id": "tcd-adm1-kanem",
+     "name": "Kanem",
+     "shapeISO": "TD-KA"
+    },
+    {
+     "id": "tcd-adm1-lac",
+     "name": "Lac",
+     "shapeISO": "TD-LC"
+    },
+    {
+     "id": "tcd-adm1-logone-occidental",
+     "name": "Logone Occidental",
+     "shapeISO": "TD-LO"
+    },
+    {
+     "id": "tcd-adm1-logone-oriental",
+     "name": "Logone Oriental",
+     "shapeISO": "TD-LR"
+    },
+    {
+     "id": "tcd-adm1-mandoul",
+     "name": "Mandoul",
+     "shapeISO": "TD-MA"
+    },
+    {
+     "id": "tcd-adm1-mayo-kebbi-est",
+     "name": "Mayo-Kebbi Est",
+     "shapeISO": "TD-ME"
+    },
+    {
+     "id": "tcd-adm1-mayo-kebbi-ouest",
+     "name": "Mayo-Kebbi Ouest",
+     "shapeISO": "TD-MO"
+    },
+    {
+     "id": "tcd-adm1-moyen-chari",
+     "name": "Moyen-Chari",
+     "shapeISO": "TD-MC"
+    },
+    {
+     "id": "tcd-adm1-n-djamena-region",
+     "name": "N'Djamena Region",
+     "shapeISO": "TD-ND"
+    },
+    {
+     "id": "tcd-adm1-ouaddaï",
+     "name": "Ouaddaï",
+     "shapeISO": "TD-OD"
+    },
+    {
+     "id": "tcd-adm1-salamat",
+     "name": "Salamat",
+     "shapeISO": "TD-SA"
+    },
+    {
+     "id": "tcd-adm1-sila",
+     "name": "Sila",
+     "shapeISO": "TD-SI"
+    },
+    {
+     "id": "tcd-adm1-tandjilé",
+     "name": "Tandjilé",
+     "shapeISO": "TD-TA"
+    },
+    {
+     "id": "tcd-adm1-tibesti",
+     "name": "Tibesti",
+     "shapeISO": "TD-TI"
+    },
+    {
+     "id": "tcd-adm1-wadi-fira",
+     "name": "Wadi Fira",
+     "shapeISO": "TD-WF"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Departments",
+   "code": "ADM2",
+   "count": 70,
+   "name": "Departments",
+   "nameBn": "বিভাগ",
+   "representedYear": "2019",
+   "sourceCount": 70,
+   "units": [
+    {
+     "id": "tcd-adm2-abdi",
+     "name": "Abdi"
+    },
+    {
+     "id": "tcd-adm2-aboudéia",
+     "name": "Aboudéia"
+    },
+    {
+     "id": "tcd-adm2-abtouyour",
+     "name": "Abtouyour"
+    },
+    {
+     "id": "tcd-adm2-am-djarass",
+     "name": "Am-Djarass"
+    },
+    {
+     "id": "tcd-adm2-assoungha",
+     "name": "Assoungha"
+    },
+    {
+     "id": "tcd-adm2-baguirmi",
+     "name": "Baguirmi"
+    },
+    {
+     "id": "tcd-adm2-bahr-azoum",
+     "name": "Bahr-Azoum"
+    },
+    {
+     "id": "tcd-adm2-bahr-köh",
+     "name": "Bahr-Köh"
+    },
+    {
+     "id": "tcd-adm2-barh-el-gazel-nord",
+     "name": "Barh-El-Gazel Nord"
+    },
+    {
+     "id": "tcd-adm2-barh-el-gazel-ouest",
+     "name": "Barh-El-Gazel Ouest"
+    },
+    {
+     "id": "tcd-adm2-barh-el-gazel-sud",
+     "name": "Barh-El-Gazel Sud"
+    },
+    {
+     "id": "tcd-adm2-barh-sara",
+     "name": "Barh-Sara"
+    },
+    {
+     "id": "tcd-adm2-barh-signaka",
+     "name": "Barh-Signaka"
+    },
+    {
+     "id": "tcd-adm2-batha-est",
+     "name": "Batha Est"
+    },
+    {
+     "id": "tcd-adm2-batha-ouest",
+     "name": "Batha Ouest"
+    },
+    {
+     "id": "tcd-adm2-biltine",
+     "name": "Biltine"
+    },
+    {
+     "id": "tcd-adm2-borkou",
+     "name": "Borkou"
+    },
+    {
+     "id": "tcd-adm2-borkou-yala",
+     "name": "Borkou Yala"
+    },
+    {
+     "id": "tcd-adm2-chari",
+     "name": "Chari"
+    },
+    {
+     "id": "tcd-adm2-dababa",
+     "name": "Dababa"
+    },
+    {
+     "id": "tcd-adm2-dagana",
+     "name": "Dagana"
+    },
+    {
+     "id": "tcd-adm2-dar-tama",
+     "name": "Dar-Tama"
+    },
+    {
+     "id": "tcd-adm2-djourf-al-ahmar",
+     "name": "Djourf Al Ahmar"
+    },
+    {
+     "id": "tcd-adm2-dodjé",
+     "name": "Dodjé"
+    },
+    {
+     "id": "tcd-adm2-fada",
+     "name": "Fada"
+    },
+    {
+     "id": "tcd-adm2-fitri",
+     "name": "Fitri"
+    },
+    {
+     "id": "tcd-adm2-fouli",
+     "name": "Fouli"
+    },
+    {
+     "id": "tcd-adm2-grande-sido",
+     "name": "Grande Sido"
+    },
+    {
+     "id": "tcd-adm2-guéni",
+     "name": "Guéni"
+    },
+    {
+     "id": "tcd-adm2-guéra",
+     "name": "Guéra"
+    },
+    {
+     "id": "tcd-adm2-haraze-al-biar",
+     "name": "Haraze-Al-Biar"
+    },
+    {
+     "id": "tcd-adm2-haraze-mangueigne",
+     "name": "Haraze-Mangueigne"
+    },
+    {
+     "id": "tcd-adm2-kabbia",
+     "name": "Kabbia"
+    },
+    {
+     "id": "tcd-adm2-kanem",
+     "name": "Kanem"
+    },
+    {
+     "id": "tcd-adm2-kaya",
+     "name": "Kaya"
+    },
+    {
+     "id": "tcd-adm2-kimiti",
+     "name": "Kimiti"
+    },
+    {
+     "id": "tcd-adm2-kobé",
+     "name": "Kobé"
+    },
+    {
+     "id": "tcd-adm2-kouh-est",
+     "name": "Kouh Est"
+    },
+    {
+     "id": "tcd-adm2-kouh-ouest",
+     "name": "Kouh Ouest"
+    },
+    {
+     "id": "tcd-adm2-la-nya",
+     "name": "La Nya"
+    },
+    {
+     "id": "tcd-adm2-la-nya-pendé",
+     "name": "La Nya Pendé"
+    },
+    {
+     "id": "tcd-adm2-la-pendé",
+     "name": "La Pendé"
+    },
+    {
+     "id": "tcd-adm2-lac-iro",
+     "name": "Lac Iro"
+    },
+    {
+     "id": "tcd-adm2-lac-léré",
+     "name": "Lac Léré"
+    },
+    {
+     "id": "tcd-adm2-lac-wey",
+     "name": "Lac Wey"
+    },
+    {
+     "id": "tcd-adm2-loug-chari",
+     "name": "Loug-Chari"
+    },
+    {
+     "id": "tcd-adm2-mamdi",
+     "name": "Mamdi"
+    },
+    {
+     "id": "tcd-adm2-mandoul-occidental",
+     "name": "Mandoul Occidental"
+    },
+    {
+     "id": "tcd-adm2-mandoul-oriental",
+     "name": "Mandoul Oriental"
+    },
+    {
+     "id": "tcd-adm2-mangalmé",
+     "name": "Mangalmé"
+    },
+    {
+     "id": "tcd-adm2-mayo-binder",
+     "name": "Mayo-Binder"
+    },
+    {
+     "id": "tcd-adm2-mayo-boneye",
+     "name": "Mayo-Boneye"
+    },
+    {
+     "id": "tcd-adm2-mayo-dallah",
+     "name": "Mayo-Dallah"
+    },
+    {
+     "id": "tcd-adm2-mayo-lemié",
+     "name": "Mayo-Lemié"
+    },
+    {
+     "id": "tcd-adm2-mont-illi",
+     "name": "Mont Illi"
+    },
+    {
+     "id": "tcd-adm2-monts-de-lam",
+     "name": "Monts de Lam"
+    },
+    {
+     "id": "tcd-adm2-mourtcha",
+     "name": "Mourtcha"
+    },
+    {
+     "id": "tcd-adm2-mégri",
+     "name": "Mégri"
+    },
+    {
+     "id": "tcd-adm2-n-djaména",
+     "name": "N'Djaména"
+    },
+    {
+     "id": "tcd-adm2-ngourkosso",
+     "name": "Ngourkosso"
+    },
+    {
+     "id": "tcd-adm2-nord-kanem",
+     "name": "Nord Kanem"
+    },
+    {
+     "id": "tcd-adm2-ouara",
+     "name": "Ouara"
+    },
+    {
+     "id": "tcd-adm2-tandjile-ouest",
+     "name": "Tandjile Ouest"
+    },
+    {
+     "id": "tcd-adm2-tandjilé-centre",
+     "name": "Tandjilé Centre"
+    },
+    {
+     "id": "tcd-adm2-tandjilé-est",
+     "name": "Tandjilé Est"
+    },
+    {
+     "id": "tcd-adm2-tibesti-est",
+     "name": "Tibesti Est"
+    },
+    {
+     "id": "tcd-adm2-tibesti-ouest",
+     "name": "Tibesti Ouest"
+    },
+    {
+     "id": "tcd-adm2-wadi-bissam",
+     "name": "Wadi Bissam"
+    },
+    {
+     "id": "tcd-adm2-wadi-hawar",
+     "name": "Wadi Hawar"
+    },
+    {
+     "id": "tcd-adm2-wayi",
+     "name": "Wayi"
+    }
+   ]
+  }
+ },
+ "name": "Chad",
+ "nameBn": "Chad"
+}

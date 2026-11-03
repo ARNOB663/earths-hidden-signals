@@ -1,0 +1,376 @@
+{
+ "code": "ISL",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Iceland",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2020",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Unknown",
+   "code": "ADM1",
+   "count": 8,
+   "name": "ADM1 areas",
+   "nameBn": "ADM1 এলাকা",
+   "representedYear": "2017",
+   "sourceCount": 8,
+   "units": [
+    {
+     "id": "isl-adm1-capital-region",
+     "name": "Capital Region",
+     "shapeISO": "IS-1"
+    },
+    {
+     "id": "isl-adm1-eastern-region",
+     "name": "Eastern Region",
+     "shapeISO": "IS-7"
+    },
+    {
+     "id": "isl-adm1-northeastern-region",
+     "name": "Northeastern Region",
+     "shapeISO": "IS-6"
+    },
+    {
+     "id": "isl-adm1-northwestern-region",
+     "name": "Northwestern Region",
+     "shapeISO": "IS-5"
+    },
+    {
+     "id": "isl-adm1-southern-peninsula",
+     "name": "Southern Peninsula",
+     "shapeISO": "IS-2"
+    },
+    {
+     "id": "isl-adm1-southern-region",
+     "name": "Southern Region",
+     "shapeISO": "IS-8"
+    },
+    {
+     "id": "isl-adm1-western-region",
+     "name": "Western Region",
+     "shapeISO": "IS-3"
+    },
+    {
+     "id": "isl-adm1-westfjords",
+     "name": "Westfjords",
+     "shapeISO": "IS-4"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Municipalities",
+   "code": "ADM2",
+   "count": 74,
+   "name": "ADM2 areas",
+   "nameBn": "ADM2 এলাকা",
+   "representedYear": "2016",
+   "sourceCount": 74,
+   "units": [
+    {
+     "id": "isl-adm2-akrahreppur",
+     "name": "Akrahreppur"
+    },
+    {
+     "id": "isl-adm2-akraneskaupstaður",
+     "name": "Akraneskaupstaður"
+    },
+    {
+     "id": "isl-adm2-akureyrarkaupstaður",
+     "name": "Akureyrarkaupstaður"
+    },
+    {
+     "id": "isl-adm2-bláskógabyggð",
+     "name": "Bláskógabyggð"
+    },
+    {
+     "id": "isl-adm2-blönduósbær",
+     "name": "Blönduósbær"
+    },
+    {
+     "id": "isl-adm2-bolungarvíkurkaupstaður",
+     "name": "Bolungarvíkurkaupstaður"
+    },
+    {
+     "id": "isl-adm2-borgarbyggð",
+     "name": "Borgarbyggð"
+    },
+    {
+     "id": "isl-adm2-borgarfjarðarhreppur",
+     "name": "Borgarfjarðarhreppur"
+    },
+    {
+     "id": "isl-adm2-breiðdalshreppur",
+     "name": "Breiðdalshreppur"
+    },
+    {
+     "id": "isl-adm2-dalabyggð",
+     "name": "Dalabyggð"
+    },
+    {
+     "id": "isl-adm2-dalvíkurbyggð",
+     "name": "Dalvíkurbyggð"
+    },
+    {
+     "id": "isl-adm2-djúpavogshreppur",
+     "name": "Djúpavogshreppur"
+    },
+    {
+     "id": "isl-adm2-eyja-og-miklaholtshreppur",
+     "name": "Eyja- og Miklaholtshreppur"
+    },
+    {
+     "id": "isl-adm2-eyjafjarðarsveit",
+     "name": "Eyjafjarðarsveit"
+    },
+    {
+     "id": "isl-adm2-fjallabyggð",
+     "name": "Fjallabyggð"
+    },
+    {
+     "id": "isl-adm2-fjarðabyggð",
+     "name": "Fjarðabyggð"
+    },
+    {
+     "id": "isl-adm2-fljótsdalshreppur",
+     "name": "Fljótsdalshreppur"
+    },
+    {
+     "id": "isl-adm2-fljótsdalshérað",
+     "name": "Fljótsdalshérað"
+    },
+    {
+     "id": "isl-adm2-flóahreppur",
+     "name": "Flóahreppur"
+    },
+    {
+     "id": "isl-adm2-garðabær",
+     "name": "Garðabær"
+    },
+    {
+     "id": "isl-adm2-grindavíkurbær",
+     "name": "Grindavíkurbær"
+    },
+    {
+     "id": "isl-adm2-grundarfjarðarbær",
+     "name": "Grundarfjarðarbær"
+    },
+    {
+     "id": "isl-adm2-grímsnes-og-grafningshreppur",
+     "name": "Grímsnes- og Grafningshreppur"
+    },
+    {
+     "id": "isl-adm2-grýtubakkahreppur",
+     "name": "Grýtubakkahreppur"
+    },
+    {
+     "id": "isl-adm2-hafnarfjarðarbær",
+     "name": "Hafnarfjarðarbær"
+    },
+    {
+     "id": "isl-adm2-helgafellssveit",
+     "name": "Helgafellssveit"
+    },
+    {
+     "id": "isl-adm2-hrunamannahreppur",
+     "name": "Hrunamannahreppur"
+    },
+    {
+     "id": "isl-adm2-hvalfjarðarsveit",
+     "name": "Hvalfjarðarsveit"
+    },
+    {
+     "id": "isl-adm2-hveragerðisbær",
+     "name": "Hveragerðisbær"
+    },
+    {
+     "id": "isl-adm2-hörgársveit",
+     "name": "Hörgársveit"
+    },
+    {
+     "id": "isl-adm2-húnavatnshreppur",
+     "name": "Húnavatnshreppur"
+    },
+    {
+     "id": "isl-adm2-húnaþing-vestra",
+     "name": "Húnaþing vestra"
+    },
+    {
+     "id": "isl-adm2-kaldrananeshreppur",
+     "name": "Kaldrananeshreppur"
+    },
+    {
+     "id": "isl-adm2-kjósarhreppur",
+     "name": "Kjósarhreppur"
+    },
+    {
+     "id": "isl-adm2-kópavogsbær",
+     "name": "Kópavogsbær"
+    },
+    {
+     "id": "isl-adm2-langanesbyggð",
+     "name": "Langanesbyggð"
+    },
+    {
+     "id": "isl-adm2-mosfellsbær",
+     "name": "Mosfellsbær"
+    },
+    {
+     "id": "isl-adm2-mýrdalshreppur",
+     "name": "Mýrdalshreppur"
+    },
+    {
+     "id": "isl-adm2-norðurþing",
+     "name": "Norðurþing"
+    },
+    {
+     "id": "isl-adm2-rangárþing-eystra",
+     "name": "Rangárþing eystra"
+    },
+    {
+     "id": "isl-adm2-rangárþing-ytra",
+     "name": "Rangárþing ytra"
+    },
+    {
+     "id": "isl-adm2-reykhólahreppur",
+     "name": "Reykhólahreppur"
+    },
+    {
+     "id": "isl-adm2-reykjanesbær",
+     "name": "Reykjanesbær"
+    },
+    {
+     "id": "isl-adm2-reykjavíkurborg",
+     "name": "Reykjavíkurborg"
+    },
+    {
+     "id": "isl-adm2-sandgerðisbær",
+     "name": "Sandgerðisbær"
+    },
+    {
+     "id": "isl-adm2-seltjarnarnesbær",
+     "name": "Seltjarnarnesbær"
+    },
+    {
+     "id": "isl-adm2-seyðisfjarðarkaupstaður",
+     "name": "Seyðisfjarðarkaupstaður"
+    },
+    {
+     "id": "isl-adm2-skaftárhreppur",
+     "name": "Skaftárhreppur"
+    },
+    {
+     "id": "isl-adm2-skagabyggð",
+     "name": "Skagabyggð"
+    },
+    {
+     "id": "isl-adm2-skeiða-og-gnúpverjahreppur",
+     "name": "Skeiða- og Gnúpverjahreppur"
+    },
+    {
+     "id": "isl-adm2-skorradalshreppur",
+     "name": "Skorradalshreppur"
+    },
+    {
+     "id": "isl-adm2-skútustaðahreppur",
+     "name": "Skútustaðahreppur"
+    },
+    {
+     "id": "isl-adm2-snæfellsbær",
+     "name": "Snæfellsbær"
+    },
+    {
+     "id": "isl-adm2-strandabyggð",
+     "name": "Strandabyggð"
+    },
+    {
+     "id": "isl-adm2-stykkishólmsbær",
+     "name": "Stykkishólmsbær"
+    },
+    {
+     "id": "isl-adm2-svalbarðshreppur",
+     "name": "Svalbarðshreppur"
+    },
+    {
+     "id": "isl-adm2-svalbarðsstrandarhreppur",
+     "name": "Svalbarðsstrandarhreppur"
+    },
+    {
+     "id": "isl-adm2-sveitarfélagið-garður",
+     "name": "Sveitarfélagið Garður"
+    },
+    {
+     "id": "isl-adm2-sveitarfélagið-hornafjörðu",
+     "name": "Sveitarfélagið Hornafjörðu"
+    },
+    {
+     "id": "isl-adm2-sveitarfélagið-skagafjörðu",
+     "name": "Sveitarfélagið Skagafjörðu"
+    },
+    {
+     "id": "isl-adm2-sveitarfélagið-skagaströnd",
+     "name": "Sveitarfélagið Skagaströnd"
+    },
+    {
+     "id": "isl-adm2-sveitarfélagið-vogar",
+     "name": "Sveitarfélagið Vogar"
+    },
+    {
+     "id": "isl-adm2-sveitarfélagið-árborg",
+     "name": "Sveitarfélagið Árborg"
+    },
+    {
+     "id": "isl-adm2-sveitarfélagið-ölfus",
+     "name": "Sveitarfélagið Ölfus"
+    },
+    {
+     "id": "isl-adm2-súðavíkurhreppur",
+     "name": "Súðavíkurhreppur"
+    },
+    {
+     "id": "isl-adm2-tjörneshreppur",
+     "name": "Tjörneshreppur"
+    },
+    {
+     "id": "isl-adm2-tálknafjarðarhreppur",
+     "name": "Tálknafjarðarhreppur"
+    },
+    {
+     "id": "isl-adm2-vestmannaeyjabær",
+     "name": "Vestmannaeyjabær"
+    },
+    {
+     "id": "isl-adm2-vesturbyggð",
+     "name": "Vesturbyggð"
+    },
+    {
+     "id": "isl-adm2-vopnafjarðarhreppur",
+     "name": "Vopnafjarðarhreppur"
+    },
+    {
+     "id": "isl-adm2-árneshreppur",
+     "name": "Árneshreppur"
+    },
+    {
+     "id": "isl-adm2-ásahreppur",
+     "name": "Ásahreppur"
+    },
+    {
+     "id": "isl-adm2-ísafjarðarbær",
+     "name": "Ísafjarðarbær"
+    },
+    {
+     "id": "isl-adm2-þingeyjarsveit",
+     "name": "Þingeyjarsveit"
+    }
+   ]
+  }
+ },
+ "name": "Iceland",
+ "nameBn": "Iceland"
+}

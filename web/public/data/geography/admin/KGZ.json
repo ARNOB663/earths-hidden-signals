@@ -1,0 +1,280 @@
+{
+ "code": "KGZ",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Unknown",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2017",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Unknown",
+   "code": "ADM1",
+   "count": 7,
+   "name": "ADM1 areas",
+   "nameBn": "ADM1 এলাকা",
+   "representedYear": "2017",
+   "sourceCount": 7,
+   "units": [
+    {
+     "id": "kgz-adm1-batken-region",
+     "name": "Batken Region",
+     "shapeISO": "KG-B"
+    },
+    {
+     "id": "kgz-adm1-chuy-region",
+     "name": "Chuy Region",
+     "shapeISO": "KG-C"
+    },
+    {
+     "id": "kgz-adm1-issyk-kul-region",
+     "name": "Issyk-Kul Region",
+     "shapeISO": "KG-Y"
+    },
+    {
+     "id": "kgz-adm1-jalal-abad-region",
+     "name": "Jalal-Abad Region",
+     "shapeISO": "KG-J"
+    },
+    {
+     "id": "kgz-adm1-naryn-region",
+     "name": "Naryn Region",
+     "shapeISO": "KG-N"
+    },
+    {
+     "id": "kgz-adm1-osh-region",
+     "name": "Osh Region",
+     "shapeISO": "KG-O"
+    },
+    {
+     "id": "kgz-adm1-talas-region",
+     "name": "Talas Region",
+     "shapeISO": "KG-T"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Raions",
+   "code": "ADM2",
+   "count": 41,
+   "name": "Raions",
+   "nameBn": "Raions",
+   "representedYear": "2010",
+   "sourceCount": 41,
+   "units": [
+    {
+     "id": "kgz-adm2-ak-suu",
+     "name": "Ak-Suu",
+     "shapeISO": "KGZ"
+    },
+    {
+     "id": "kgz-adm2-ak-talaa",
+     "name": "Ak-Talaa",
+     "shapeISO": "KGZ"
+    },
+    {
+     "id": "kgz-adm2-aksy",
+     "name": "Aksy",
+     "shapeISO": "KGZ"
+    },
+    {
+     "id": "kgz-adm2-ala-buka",
+     "name": "Ala-Buka",
+     "shapeISO": "KGZ"
+    },
+    {
+     "id": "kgz-adm2-alamudun",
+     "name": "Alamudun",
+     "shapeISO": "KGZ"
+    },
+    {
+     "id": "kgz-adm2-alay",
+     "name": "Alay",
+     "shapeISO": "KGZ"
+    },
+    {
+     "id": "kgz-adm2-aravan",
+     "name": "Aravan",
+     "shapeISO": "KGZ"
+    },
+    {
+     "id": "kgz-adm2-at-bashy",
+     "name": "At-Bashy",
+     "shapeISO": "KGZ"
+    },
+    {
+     "id": "kgz-adm2-bakay-ata",
+     "name": "Bakay-Ata",
+     "shapeISO": "KGZ"
+    },
+    {
+     "id": "kgz-adm2-batken",
+     "name": "Batken",
+     "shapeISO": "KGZ"
+    },
+    {
+     "id": "kgz-adm2-bazar-korgon",
+     "name": "Bazar-Korgon",
+     "shapeISO": "KGZ"
+    },
+    {
+     "id": "kgz-adm2-chatkal",
+     "name": "Chatkal",
+     "shapeISO": "KGZ"
+    },
+    {
+     "id": "kgz-adm2-chong-alay",
+     "name": "Chong-Alay",
+     "shapeISO": "KGZ"
+    },
+    {
+     "id": "kgz-adm2-chuy",
+     "name": "Chuy",
+     "shapeISO": "KGZ"
+    },
+    {
+     "id": "kgz-adm2-city-of-tomok",
+     "name": "City of Tomok",
+     "shapeISO": "KGZ"
+    },
+    {
+     "id": "kgz-adm2-issyk-kul",
+     "name": "Issyk Kul",
+     "shapeISO": "KGZ"
+    },
+    {
+     "id": "kgz-adm2-jayyl",
+     "name": "Jayyl",
+     "shapeISO": "KGZ"
+    },
+    {
+     "id": "kgz-adm2-jeti-oguz",
+     "name": "Jeti-Oguz",
+     "shapeISO": "KGZ"
+    },
+    {
+     "id": "kgz-adm2-jumgal",
+     "name": "Jumgal",
+     "shapeISO": "KGZ"
+    },
+    {
+     "id": "kgz-adm2-kadamjay",
+     "name": "Kadamjay",
+     "shapeISO": "KGZ"
+    },
+    {
+     "id": "kgz-adm2-kara-buura",
+     "name": "Kara-Buura",
+     "shapeISO": "KGZ"
+    },
+    {
+     "id": "kgz-adm2-kara-kulja",
+     "name": "Kara-Kulja",
+     "shapeISO": "KGZ"
+    },
+    {
+     "id": "kgz-adm2-kara-suu",
+     "name": "Kara-Suu",
+     "shapeISO": "KGZ"
+    },
+    {
+     "id": "kgz-adm2-kemin",
+     "name": "Kemin",
+     "shapeISO": "KGZ"
+    },
+    {
+     "id": "kgz-adm2-kochkor",
+     "name": "Kochkor",
+     "shapeISO": "KGZ"
+    },
+    {
+     "id": "kgz-adm2-leilek",
+     "name": "Leilek",
+     "shapeISO": "KGZ"
+    },
+    {
+     "id": "kgz-adm2-manas",
+     "name": "Manas",
+     "shapeISO": "KGZ"
+    },
+    {
+     "id": "kgz-adm2-moskva",
+     "name": "Moskva",
+     "shapeISO": "KGZ"
+    },
+    {
+     "id": "kgz-adm2-naryn",
+     "name": "Naryn",
+     "shapeISO": "KGZ"
+    },
+    {
+     "id": "kgz-adm2-nookat",
+     "name": "Nookat",
+     "shapeISO": "KGZ"
+    },
+    {
+     "id": "kgz-adm2-nooken",
+     "name": "Nooken",
+     "shapeISO": "KGZ"
+    },
+    {
+     "id": "kgz-adm2-panfilov",
+     "name": "Panfilov",
+     "shapeISO": "KGZ"
+    },
+    {
+     "id": "kgz-adm2-sokuluk",
+     "name": "Sokuluk",
+     "shapeISO": "KGZ"
+    },
+    {
+     "id": "kgz-adm2-suzak",
+     "name": "Suzak",
+     "shapeISO": "KGZ"
+    },
+    {
+     "id": "kgz-adm2-talas",
+     "name": "Talas",
+     "shapeISO": "KGZ"
+    },
+    {
+     "id": "kgz-adm2-toguz-toro",
+     "name": "Toguz-Toro",
+     "shapeISO": "KGZ"
+    },
+    {
+     "id": "kgz-adm2-toktogul",
+     "name": "Toktogul",
+     "shapeISO": "KGZ"
+    },
+    {
+     "id": "kgz-adm2-tong",
+     "name": "Tong",
+     "shapeISO": "KGZ"
+    },
+    {
+     "id": "kgz-adm2-tup",
+     "name": "Tup",
+     "shapeISO": "KGZ"
+    },
+    {
+     "id": "kgz-adm2-uzgen",
+     "name": "Uzgen",
+     "shapeISO": "KGZ"
+    },
+    {
+     "id": "kgz-adm2-ysyk-ata",
+     "name": "Ysyk-Ata",
+     "shapeISO": "KGZ"
+    }
+   ]
+  }
+ },
+ "name": "Kyrgyzstan",
+ "nameBn": "Kyrgyzstan"
+}

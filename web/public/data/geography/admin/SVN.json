@@ -1,0 +1,898 @@
+{
+ "code": "SVN",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Slovene",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2009",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Macroregions",
+   "code": "ADM1",
+   "count": 2,
+   "name": "Macroregions",
+   "nameBn": "Macroregions",
+   "representedYear": "2021",
+   "sourceCount": 2,
+   "units": [
+    {
+     "id": "svn-adm1-vzhodna",
+     "name": "Vzhodna",
+     "shapeISO": "SI03"
+    },
+    {
+     "id": "svn-adm1-zahodna-slovenija",
+     "name": "Zahodna Slovenija",
+     "shapeISO": "SI04"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Unknown",
+   "code": "ADM2",
+   "count": 212,
+   "name": "ADM2 areas",
+   "nameBn": "ADM2 এলাকা",
+   "representedYear": "2017",
+   "sourceCount": 213,
+   "units": [
+    {
+     "id": "svn-adm2-ajdovtcina",
+     "name": "Ajdovtcina"
+    },
+    {
+     "id": "svn-adm2-ankaran-ancarano",
+     "name": "Ankaran / Ancarano"
+    },
+    {
+     "id": "svn-adm2-apace",
+     "name": "Apace"
+    },
+    {
+     "id": "svn-adm2-beltinci",
+     "name": "Beltinci"
+    },
+    {
+     "id": "svn-adm2-benedikt",
+     "name": "Benedikt"
+    },
+    {
+     "id": "svn-adm2-bistrica-ob-sotli",
+     "name": "Bistrica ob Sotli"
+    },
+    {
+     "id": "svn-adm2-bled",
+     "name": "Bled"
+    },
+    {
+     "id": "svn-adm2-bloke",
+     "name": "Bloke"
+    },
+    {
+     "id": "svn-adm2-bohinj",
+     "name": "Bohinj"
+    },
+    {
+     "id": "svn-adm2-borovnica",
+     "name": "Borovnica"
+    },
+    {
+     "id": "svn-adm2-bovec",
+     "name": "Bovec"
+    },
+    {
+     "id": "svn-adm2-braslovce",
+     "name": "Braslovce"
+    },
+    {
+     "id": "svn-adm2-brda",
+     "name": "Brda"
+    },
+    {
+     "id": "svn-adm2-bretice",
+     "name": "Bretice"
+    },
+    {
+     "id": "svn-adm2-brezovica",
+     "name": "Brezovica"
+    },
+    {
+     "id": "svn-adm2-cankova",
+     "name": "Cankova"
+    },
+    {
+     "id": "svn-adm2-celje",
+     "name": "Celje"
+    },
+    {
+     "id": "svn-adm2-centjernej",
+     "name": "Centjernej"
+    },
+    {
+     "id": "svn-adm2-cerklje-na-gorenjskem",
+     "name": "Cerklje na Gorenjskem"
+    },
+    {
+     "id": "svn-adm2-cerknica",
+     "name": "Cerknica"
+    },
+    {
+     "id": "svn-adm2-cerkno",
+     "name": "Cerkno"
+    },
+    {
+     "id": "svn-adm2-cerkvenjak",
+     "name": "Cerkvenjak"
+    },
+    {
+     "id": "svn-adm2-cetale",
+     "name": "Cetale"
+    },
+    {
+     "id": "svn-adm2-cirkulane",
+     "name": "Cirkulane"
+    },
+    {
+     "id": "svn-adm2-ckocjan",
+     "name": "Ckocjan"
+    },
+    {
+     "id": "svn-adm2-crencovci",
+     "name": "Crencovci"
+    },
+    {
+     "id": "svn-adm2-crna-na-koroakem",
+     "name": "Crna na Koroakem"
+    },
+    {
+     "id": "svn-adm2-crnomelj",
+     "name": "Crnomelj"
+    },
+    {
+     "id": "svn-adm2-destrnik",
+     "name": "Destrnik"
+    },
+    {
+     "id": "svn-adm2-divaca",
+     "name": "Divaca"
+    },
+    {
+     "id": "svn-adm2-dobje",
+     "name": "Dobje"
+    },
+    {
+     "id": "svn-adm2-dobrepolje",
+     "name": "Dobrepolje"
+    },
+    {
+     "id": "svn-adm2-dobrna",
+     "name": "Dobrna"
+    },
+    {
+     "id": "svn-adm2-dobrova-polhov-gradec",
+     "name": "Dobrova-Polhov Gradec"
+    },
+    {
+     "id": "svn-adm2-dobrovnik",
+     "name": "Dobrovnik"
+    },
+    {
+     "id": "svn-adm2-dol-pri-ljubljani",
+     "name": "Dol pri Ljubljani"
+    },
+    {
+     "id": "svn-adm2-dolenjske-toplice",
+     "name": "Dolenjske Toplice"
+    },
+    {
+     "id": "svn-adm2-domcale",
+     "name": "Domcale"
+    },
+    {
+     "id": "svn-adm2-dornava",
+     "name": "Dornava"
+    },
+    {
+     "id": "svn-adm2-dravograd",
+     "name": "Dravograd"
+    },
+    {
+     "id": "svn-adm2-duplek",
+     "name": "Duplek"
+    },
+    {
+     "id": "svn-adm2-gelezniki",
+     "name": "Gelezniki"
+    },
+    {
+     "id": "svn-adm2-gorenja-vas-poljane",
+     "name": "Gorenja vas-Poljane"
+    },
+    {
+     "id": "svn-adm2-goriunica",
+     "name": "Goriunica"
+    },
+    {
+     "id": "svn-adm2-gorje",
+     "name": "Gorje"
+    },
+    {
+     "id": "svn-adm2-gornja-radgona",
+     "name": "Gornja Radgona"
+    },
+    {
+     "id": "svn-adm2-gornji-grad",
+     "name": "Gornji Grad"
+    },
+    {
+     "id": "svn-adm2-gornji-petrovci",
+     "name": "Gornji Petrovci"
+    },
+    {
+     "id": "svn-adm2-grad",
+     "name": "Grad"
+    },
+    {
+     "id": "svn-adm2-grosuplje",
+     "name": "Grosuplje"
+    },
+    {
+     "id": "svn-adm2-hajdina",
+     "name": "Hajdina"
+    },
+    {
+     "id": "svn-adm2-hoce-slivnica",
+     "name": "Hoce-Slivnica"
+    },
+    {
+     "id": "svn-adm2-hodoj",
+     "name": "Hodoj"
+    },
+    {
+     "id": "svn-adm2-horjul",
+     "name": "Horjul"
+    },
+    {
+     "id": "svn-adm2-hrastnik",
+     "name": "Hrastnik"
+    },
+    {
+     "id": "svn-adm2-hrpelje-kozina",
+     "name": "Hrpelje - Kozina"
+    },
+    {
+     "id": "svn-adm2-idrija",
+     "name": "Idrija"
+    },
+    {
+     "id": "svn-adm2-ig",
+     "name": "Ig"
+    },
+    {
+     "id": "svn-adm2-ikofljica",
+     "name": "Ikofljica"
+    },
+    {
+     "id": "svn-adm2-ilirska-bistrica",
+     "name": "Ilirska Bistrica"
+    },
+    {
+     "id": "svn-adm2-ivancna-gorica",
+     "name": "Ivancna Gorica"
+    },
+    {
+     "id": "svn-adm2-izola-isola",
+     "name": "Izola / Isola"
+    },
+    {
+     "id": "svn-adm2-jesenice",
+     "name": "Jesenice"
+    },
+    {
+     "id": "svn-adm2-jezersko",
+     "name": "Jezersko"
+    },
+    {
+     "id": "svn-adm2-jurkinci",
+     "name": "Jurkinci"
+    },
+    {
+     "id": "svn-adm2-kalovci",
+     "name": "Kalovci"
+    },
+    {
+     "id": "svn-adm2-kamnik",
+     "name": "Kamnik"
+    },
+    {
+     "id": "svn-adm2-kanal",
+     "name": "Kanal"
+    },
+    {
+     "id": "svn-adm2-kidricevo",
+     "name": "Kidricevo"
+    },
+    {
+     "id": "svn-adm2-kobarid",
+     "name": "Kobarid"
+    },
+    {
+     "id": "svn-adm2-kobilje",
+     "name": "Kobilje"
+    },
+    {
+     "id": "svn-adm2-kocevje",
+     "name": "Kocevje"
+    },
+    {
+     "id": "svn-adm2-komen",
+     "name": "Komen"
+    },
+    {
+     "id": "svn-adm2-komenda",
+     "name": "Komenda"
+    },
+    {
+     "id": "svn-adm2-koper-capodistria",
+     "name": "Koper / Capodistria"
+    },
+    {
+     "id": "svn-adm2-kostanjevica-na-krki",
+     "name": "Kostanjevica na Krki"
+    },
+    {
+     "id": "svn-adm2-kostel",
+     "name": "Kostel"
+    },
+    {
+     "id": "svn-adm2-kozje",
+     "name": "Kozje"
+    },
+    {
+     "id": "svn-adm2-kranj",
+     "name": "Kranj"
+    },
+    {
+     "id": "svn-adm2-kranjska-gora",
+     "name": "Kranjska Gora"
+    },
+    {
+     "id": "svn-adm2-krcko",
+     "name": "Krcko"
+    },
+    {
+     "id": "svn-adm2-kritevci",
+     "name": "Kritevci"
+    },
+    {
+     "id": "svn-adm2-kungota",
+     "name": "Kungota"
+    },
+    {
+     "id": "svn-adm2-kuzma",
+     "name": "Kuzma"
+    },
+    {
+     "id": "svn-adm2-labko",
+     "name": "Labko"
+    },
+    {
+     "id": "svn-adm2-lenart",
+     "name": "Lenart"
+    },
+    {
+     "id": "svn-adm2-lendava",
+     "name": "Lendava"
+    },
+    {
+     "id": "svn-adm2-lentjur",
+     "name": "Lentjur"
+    },
+    {
+     "id": "svn-adm2-litija",
+     "name": "Litija"
+    },
+    {
+     "id": "svn-adm2-ljubljana",
+     "name": "Ljubljana"
+    },
+    {
+     "id": "svn-adm2-ljubno",
+     "name": "Ljubno"
+    },
+    {
+     "id": "svn-adm2-ljutomer",
+     "name": "Ljutomer"
+    },
+    {
+     "id": "svn-adm2-lmarje-pri-jelcah",
+     "name": "Lmarje pri Jelcah"
+    },
+    {
+     "id": "svn-adm2-log-dragomer",
+     "name": "Log-Dragomer"
+    },
+    {
+     "id": "svn-adm2-logatec",
+     "name": "Logatec"
+    },
+    {
+     "id": "svn-adm2-loska-dolina",
+     "name": "Loska Dolina"
+    },
+    {
+     "id": "svn-adm2-loski-potok",
+     "name": "Loski Potok"
+    },
+    {
+     "id": "svn-adm2-lovrenc-na-pohorju",
+     "name": "Lovrenc na Pohorju"
+    },
+    {
+     "id": "svn-adm2-ltore",
+     "name": "Ltore"
+    },
+    {
+     "id": "svn-adm2-luce",
+     "name": "Luce"
+    },
+    {
+     "id": "svn-adm2-lukovica",
+     "name": "Lukovica"
+    },
+    {
+     "id": "svn-adm2-majrperk",
+     "name": "Majrperk"
+    },
+    {
+     "id": "svn-adm2-makole",
+     "name": "Makole"
+    },
+    {
+     "id": "svn-adm2-maribor",
+     "name": "Maribor"
+    },
+    {
+     "id": "svn-adm2-markovci",
+     "name": "Markovci"
+    },
+    {
+     "id": "svn-adm2-medvode",
+     "name": "Medvode"
+    },
+    {
+     "id": "svn-adm2-mengel",
+     "name": "Mengel"
+    },
+    {
+     "id": "svn-adm2-metlika",
+     "name": "Metlika"
+    },
+    {
+     "id": "svn-adm2-mezica",
+     "name": "Mezica"
+    },
+    {
+     "id": "svn-adm2-miklavl-na-dravskem-polju",
+     "name": "Miklavl na Dravskem polju"
+    },
+    {
+     "id": "svn-adm2-miren-kostanjevica",
+     "name": "Miren-Kostanjevica"
+    },
+    {
+     "id": "svn-adm2-mirna",
+     "name": "Mirna"
+    },
+    {
+     "id": "svn-adm2-mirna-pec",
+     "name": "Mirna Pec"
+    },
+    {
+     "id": "svn-adm2-mislinja",
+     "name": "Mislinja"
+    },
+    {
+     "id": "svn-adm2-mkofja-loka",
+     "name": "Mkofja Loka"
+    },
+    {
+     "id": "svn-adm2-mokronog-trebelno",
+     "name": "Mokronog-Trebelno"
+    },
+    {
+     "id": "svn-adm2-moravce",
+     "name": "Moravce"
+    },
+    {
+     "id": "svn-adm2-moravske-toplice",
+     "name": "Moravske Toplice"
+    },
+    {
+     "id": "svn-adm2-mozirje",
+     "name": "Mozirje"
+    },
+    {
+     "id": "svn-adm2-murska-sobota",
+     "name": "Murska Sobota"
+    },
+    {
+     "id": "svn-adm2-muta",
+     "name": "Muta"
+    },
+    {
+     "id": "svn-adm2-naklo",
+     "name": "Naklo"
+    },
+    {
+     "id": "svn-adm2-nazarje",
+     "name": "Nazarje"
+    },
+    {
+     "id": "svn-adm2-nempeter-vrtojba",
+     "name": "Nempeter-Vrtojba"
+    },
+    {
+     "id": "svn-adm2-nova-gorica",
+     "name": "Nova Gorica"
+    },
+    {
+     "id": "svn-adm2-novo-mesto",
+     "name": "Novo mesto"
+    },
+    {
+     "id": "svn-adm2-odranci",
+     "name": "Odranci"
+    },
+    {
+     "id": "svn-adm2-oplotnica",
+     "name": "Oplotnica"
+    },
+    {
+     "id": "svn-adm2-ormo",
+     "name": "Ormo"
+    },
+    {
+     "id": "svn-adm2-osilnica",
+     "name": "Osilnica"
+    },
+    {
+     "id": "svn-adm2-pentilj",
+     "name": "Pentilj"
+    },
+    {
+     "id": "svn-adm2-pesnica",
+     "name": "Pesnica"
+    },
+    {
+     "id": "svn-adm2-piran-pirano",
+     "name": "Piran / Pirano"
+    },
+    {
+     "id": "svn-adm2-pivka",
+     "name": "Pivka"
+    },
+    {
+     "id": "svn-adm2-podcetrtek",
+     "name": "Podcetrtek"
+    },
+    {
+     "id": "svn-adm2-podlehnik",
+     "name": "Podlehnik"
+    },
+    {
+     "id": "svn-adm2-podvelka",
+     "name": "Podvelka"
+    },
+    {
+     "id": "svn-adm2-poljcane",
+     "name": "Poljcane"
+    },
+    {
+     "id": "svn-adm2-polzela",
+     "name": "Polzela"
+    },
+    {
+     "id": "svn-adm2-postojna",
+     "name": "Postojna"
+    },
+    {
+     "id": "svn-adm2-prebold",
+     "name": "Prebold"
+    },
+    {
+     "id": "svn-adm2-preddvor",
+     "name": "Preddvor"
+    },
+    {
+     "id": "svn-adm2-prevalje",
+     "name": "Prevalje"
+    },
+    {
+     "id": "svn-adm2-ptuj",
+     "name": "Ptuj"
+    },
+    {
+     "id": "svn-adm2-puconci",
+     "name": "Puconci"
+    },
+    {
+     "id": "svn-adm2-race-fram",
+     "name": "Race-Fram"
+    },
+    {
+     "id": "svn-adm2-radece",
+     "name": "Radece"
+    },
+    {
+     "id": "svn-adm2-radenci",
+     "name": "Radenci"
+    },
+    {
+     "id": "svn-adm2-radlje-ob-dravi",
+     "name": "Radlje ob Dravi"
+    },
+    {
+     "id": "svn-adm2-radovljica",
+     "name": "Radovljica"
+    },
+    {
+     "id": "svn-adm2-ravne-na-korokkem",
+     "name": "Ravne na Korokkem"
+    },
+    {
+     "id": "svn-adm2-razkrirje",
+     "name": "Razkrirje"
+    },
+    {
+     "id": "svn-adm2-recica-ob-savinji",
+     "name": "Recica ob Savinji"
+    },
+    {
+     "id": "svn-adm2-rence-vogrsko",
+     "name": "Rence-Vogrsko"
+    },
+    {
+     "id": "svn-adm2-ribnica",
+     "name": "Ribnica"
+    },
+    {
+     "id": "svn-adm2-ribnica-na-pohorju",
+     "name": "Ribnica na Pohorju"
+    },
+    {
+     "id": "svn-adm2-rmartno-pri-litiji",
+     "name": "Rmartno pri Litiji"
+    },
+    {
+     "id": "svn-adm2-rogaoovci",
+     "name": "Rogaoovci"
+    },
+    {
+     "id": "svn-adm2-rogatec",
+     "name": "Rogatec"
+    },
+    {
+     "id": "svn-adm2-rogatka-slatina",
+     "name": "Rogatka Slatina"
+    },
+    {
+     "id": "svn-adm2-rube",
+     "name": "Rube"
+    },
+    {
+     "id": "svn-adm2-selnica-ob-dravi",
+     "name": "Selnica ob Dravi"
+    },
+    {
+     "id": "svn-adm2-semic",
+     "name": "Semic"
+    },
+    {
+     "id": "svn-adm2-senana",
+     "name": "Senana"
+    },
+    {
+     "id": "svn-adm2-sentrupert",
+     "name": "Sentrupert"
+    },
+    {
+     "id": "svn-adm2-sevnica",
+     "name": "Sevnica"
+    },
+    {
+     "id": "svn-adm2-siri",
+     "name": "Siri"
+    },
+    {
+     "id": "svn-adm2-slovenj-gradec",
+     "name": "Slovenj Gradec"
+    },
+    {
+     "id": "svn-adm2-slovenska-bistrica",
+     "name": "Slovenska Bistrica"
+    },
+    {
+     "id": "svn-adm2-slovenske-konjice",
+     "name": "Slovenske Konjice"
+    },
+    {
+     "id": "svn-adm2-smarjepke-toplice",
+     "name": "Smarjepke Toplice"
+    },
+    {
+     "id": "svn-adm2-sodracica",
+     "name": "Sodracica"
+    },
+    {
+     "id": "svn-adm2-solcava",
+     "name": "Solcava"
+    },
+    {
+     "id": "svn-adm2-sredikce-ob-dravi",
+     "name": "Sredikce ob Dravi"
+    },
+    {
+     "id": "svn-adm2-star-e",
+     "name": "Star-e"
+    },
+    {
+     "id": "svn-adm2-straca",
+     "name": "Straca"
+    },
+    {
+     "id": "svn-adm2-suremberk",
+     "name": "Suremberk"
+    },
+    {
+     "id": "svn-adm2-sveta-ana",
+     "name": "Sveta Ana"
+    },
+    {
+     "id": "svn-adm2-sveta-trojica-v-slovenskih-goricah",
+     "name": "Sveta Trojica v Slovenskih goricah"
+    },
+    {
+     "id": "svn-adm2-sveti-andrac-v-slov-goricah",
+     "name": "Sveti Andrac v Slov. goricah"
+    },
+    {
+     "id": "svn-adm2-sveti-jurij-ob-lcavnici",
+     "name": "Sveti Jurij ob lcavnici"
+    },
+    {
+     "id": "svn-adm2-sveti-jurij-v-slovenskih-goricah",
+     "name": "Sveti Jurij v Slovenskih goricah"
+    },
+    {
+     "id": "svn-adm2-sveti-tomaa",
+     "name": "Sveti Tomaa"
+    },
+    {
+     "id": "svn-adm2-tabor",
+     "name": "Tabor"
+    },
+    {
+     "id": "svn-adm2-tigina",
+     "name": "Tigina"
+    },
+    {
+     "id": "svn-adm2-tirovnica",
+     "name": "Tirovnica"
+    },
+    {
+     "id": "svn-adm2-tolmin",
+     "name": "Tolmin"
+    },
+    {
+     "id": "svn-adm2-trbovlje",
+     "name": "Trbovlje"
+    },
+    {
+     "id": "svn-adm2-trebnje",
+     "name": "Trebnje"
+    },
+    {
+     "id": "svn-adm2-trnovska-vas",
+     "name": "Trnovska vas"
+    },
+    {
+     "id": "svn-adm2-trsic",
+     "name": "Trsic"
+    },
+    {
+     "id": "svn-adm2-trzin",
+     "name": "Trzin"
+    },
+    {
+     "id": "svn-adm2-turnicce",
+     "name": "Turnicce"
+    },
+    {
+     "id": "svn-adm2-valec",
+     "name": "Valec"
+    },
+    {
+     "id": "svn-adm2-velenje",
+     "name": "Velenje"
+    },
+    {
+     "id": "svn-adm2-velika-polana",
+     "name": "Velika Polana"
+    },
+    {
+     "id": "svn-adm2-velike-la",
+     "name": "Velike La"
+    },
+    {
+     "id": "svn-adm2-vencur",
+     "name": "Vencur"
+    },
+    {
+     "id": "svn-adm2-vertej",
+     "name": "Vertej"
+    },
+    {
+     "id": "svn-adm2-videm",
+     "name": "Videm"
+    },
+    {
+     "id": "svn-adm2-vipava",
+     "name": "Vipava"
+    },
+    {
+     "id": "svn-adm2-vitanje",
+     "name": "Vitanje"
+    },
+    {
+     "id": "svn-adm2-vmartno-ob-paki",
+     "name": "Vmartno ob Paki"
+    },
+    {
+     "id": "svn-adm2-voatanj",
+     "name": "Voatanj"
+    },
+    {
+     "id": "svn-adm2-vodice",
+     "name": "Vodice"
+    },
+    {
+     "id": "svn-adm2-vojnik",
+     "name": "Vojnik"
+    },
+    {
+     "id": "svn-adm2-vransko",
+     "name": "Vransko"
+    },
+    {
+     "id": "svn-adm2-vrhnika",
+     "name": "Vrhnika"
+    },
+    {
+     "id": "svn-adm2-vuzenica",
+     "name": "Vuzenica"
+    },
+    {
+     "id": "svn-adm2-zagorje-ob-savi",
+     "name": "Zagorje ob Savi"
+    },
+    {
+     "id": "svn-adm2-zavrc",
+     "name": "Zavrc"
+    },
+    {
+     "id": "svn-adm2-zrece",
+     "name": "Zrece"
+    }
+   ]
+  }
+ },
+ "name": "Slovenia",
+ "nameBn": "Slovenia"
+}

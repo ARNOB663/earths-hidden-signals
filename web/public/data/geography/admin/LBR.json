@@ -1,0 +1,659 @@
+{
+ "code": "LBR",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Liberia",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2021",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Counties",
+   "code": "ADM1",
+   "count": 15,
+   "name": "Counties",
+   "nameBn": "কাউন্টি",
+   "representedYear": "2021",
+   "sourceCount": 15,
+   "units": [
+    {
+     "id": "lbr-adm1-bomi",
+     "name": "Bomi",
+     "shapeISO": "LR-BM"
+    },
+    {
+     "id": "lbr-adm1-bong",
+     "name": "Bong",
+     "shapeISO": "LR-BG"
+    },
+    {
+     "id": "lbr-adm1-gbarpolu",
+     "name": "Gbarpolu",
+     "shapeISO": "LR-GP"
+    },
+    {
+     "id": "lbr-adm1-grand-bassa",
+     "name": "Grand Bassa",
+     "shapeISO": "LR-GB"
+    },
+    {
+     "id": "lbr-adm1-grand-cape-mount",
+     "name": "Grand Cape Mount",
+     "shapeISO": "LR-CM"
+    },
+    {
+     "id": "lbr-adm1-grand-gedeh",
+     "name": "Grand Gedeh",
+     "shapeISO": "LR-GG"
+    },
+    {
+     "id": "lbr-adm1-grand-kru",
+     "name": "Grand Kru",
+     "shapeISO": "LR-GK"
+    },
+    {
+     "id": "lbr-adm1-lofa",
+     "name": "Lofa",
+     "shapeISO": "LR-LO"
+    },
+    {
+     "id": "lbr-adm1-margibi",
+     "name": "Margibi",
+     "shapeISO": "LR-MG"
+    },
+    {
+     "id": "lbr-adm1-maryland",
+     "name": "Maryland",
+     "shapeISO": "LR-MY"
+    },
+    {
+     "id": "lbr-adm1-montserrado",
+     "name": "Montserrado",
+     "shapeISO": "LR-MO"
+    },
+    {
+     "id": "lbr-adm1-nimba",
+     "name": "Nimba",
+     "shapeISO": "LR-NI"
+    },
+    {
+     "id": "lbr-adm1-river-gee",
+     "name": "River Gee",
+     "shapeISO": "LR-RI"
+    },
+    {
+     "id": "lbr-adm1-rivercess",
+     "name": "Rivercess",
+     "shapeISO": "LR-RG"
+    },
+    {
+     "id": "lbr-adm1-sinoe",
+     "name": "Sinoe",
+     "shapeISO": "LR-SI"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Districts",
+   "code": "ADM2",
+   "count": 136,
+   "name": "Districts",
+   "nameBn": "জেলা",
+   "representedYear": "2021",
+   "sourceCount": 136,
+   "units": [
+    {
+     "id": "lbr-adm2-b-hai",
+     "name": "B'hai"
+    },
+    {
+     "id": "lbr-adm2-barclayville",
+     "name": "Barclayville"
+    },
+    {
+     "id": "lbr-adm2-beawor",
+     "name": "Beawor"
+    },
+    {
+     "id": "lbr-adm2-belleh",
+     "name": "Belleh"
+    },
+    {
+     "id": "lbr-adm2-bleebo",
+     "name": "Bleebo"
+    },
+    {
+     "id": "lbr-adm2-bodae",
+     "name": "Bodae"
+    },
+    {
+     "id": "lbr-adm2-boe-quilla",
+     "name": "Boe & Quilla"
+    },
+    {
+     "id": "lbr-adm2-boinsen",
+     "name": "Boinsen"
+    },
+    {
+     "id": "lbr-adm2-bokomu",
+     "name": "Bokomu"
+    },
+    {
+     "id": "lbr-adm2-bokon",
+     "name": "Bokon"
+    },
+    {
+     "id": "lbr-adm2-bolloh",
+     "name": "Bolloh"
+    },
+    {
+     "id": "lbr-adm2-bopolu",
+     "name": "Bopolu"
+    },
+    {
+     "id": "lbr-adm2-buah",
+     "name": "Buah"
+    },
+    {
+     "id": "lbr-adm2-butaw",
+     "name": "Butaw"
+    },
+    {
+     "id": "lbr-adm2-buu-yao",
+     "name": "Buu-Yao"
+    },
+    {
+     "id": "lbr-adm2-careysburg",
+     "name": "Careysburg"
+    },
+    {
+     "id": "lbr-adm2-cavala",
+     "name": "Cavala"
+    },
+    {
+     "id": "lbr-adm2-central-rivercess",
+     "name": "Central Rivercess"
+    },
+    {
+     "id": "lbr-adm2-chedepo",
+     "name": "Chedepo"
+    },
+    {
+     "id": "lbr-adm2-commonwealth",
+     "name": "Commonwealth"
+    },
+    {
+     "id": "lbr-adm2-commonwealth-1",
+     "name": "Commonwealth 1"
+    },
+    {
+     "id": "lbr-adm2-commonwealth-2",
+     "name": "Commonwealth 2"
+    },
+    {
+     "id": "lbr-adm2-district-1",
+     "name": "District #1"
+    },
+    {
+     "id": "lbr-adm2-district-2",
+     "name": "District #2"
+    },
+    {
+     "id": "lbr-adm2-district-3",
+     "name": "District #3"
+    },
+    {
+     "id": "lbr-adm2-district-4",
+     "name": "District #4"
+    },
+    {
+     "id": "lbr-adm2-doe",
+     "name": "Doe"
+    },
+    {
+     "id": "lbr-adm2-doedain",
+     "name": "Doedain"
+    },
+    {
+     "id": "lbr-adm2-dorbor",
+     "name": "Dorbor"
+    },
+    {
+     "id": "lbr-adm2-dowein",
+     "name": "Dowein"
+    },
+    {
+     "id": "lbr-adm2-dugbe-river",
+     "name": "Dugbe River"
+    },
+    {
+     "id": "lbr-adm2-dweh",
+     "name": "Dweh"
+    },
+    {
+     "id": "lbr-adm2-felo-jekwi",
+     "name": "Felo-Jekwi"
+    },
+    {
+     "id": "lbr-adm2-fen-river",
+     "name": "Fen River"
+    },
+    {
+     "id": "lbr-adm2-fenetoe",
+     "name": "Fenetoe"
+    },
+    {
+     "id": "lbr-adm2-firestone",
+     "name": "Firestone"
+    },
+    {
+     "id": "lbr-adm2-forpoh",
+     "name": "Forpoh"
+    },
+    {
+     "id": "lbr-adm2-foya",
+     "name": "Foya"
+    },
+    {
+     "id": "lbr-adm2-fuamah",
+     "name": "Fuamah"
+    },
+    {
+     "id": "lbr-adm2-garr-bain",
+     "name": "Garr-Bain"
+    },
+    {
+     "id": "lbr-adm2-garraway",
+     "name": "Garraway"
+    },
+    {
+     "id": "lbr-adm2-garwula",
+     "name": "Garwula"
+    },
+    {
+     "id": "lbr-adm2-gbao",
+     "name": "Gbao"
+    },
+    {
+     "id": "lbr-adm2-gbarma",
+     "name": "Gbarma"
+    },
+    {
+     "id": "lbr-adm2-gbeapo",
+     "name": "Gbeapo"
+    },
+    {
+     "id": "lbr-adm2-gbehlay-geh",
+     "name": "Gbehlay-Geh"
+    },
+    {
+     "id": "lbr-adm2-gbi-doru",
+     "name": "Gbi & Doru"
+    },
+    {
+     "id": "lbr-adm2-gboe-ploe",
+     "name": "Gboe-Ploe"
+    },
+    {
+     "id": "lbr-adm2-gbor",
+     "name": "Gbor"
+    },
+    {
+     "id": "lbr-adm2-gee",
+     "name": "Gee"
+    },
+    {
+     "id": "lbr-adm2-gibi",
+     "name": "Gibi"
+    },
+    {
+     "id": "lbr-adm2-glaro",
+     "name": "Glaro"
+    },
+    {
+     "id": "lbr-adm2-glio-twarbo",
+     "name": "Glio-Twarbo"
+    },
+    {
+     "id": "lbr-adm2-golakonneh",
+     "name": "Golakonneh"
+    },
+    {
+     "id": "lbr-adm2-gounwolaila",
+     "name": "Gounwolaila"
+    },
+    {
+     "id": "lbr-adm2-grand-cess-wedabo",
+     "name": "Grand Cess Wedabo"
+    },
+    {
+     "id": "lbr-adm2-greater-monrovia",
+     "name": "Greater Monrovia"
+    },
+    {
+     "id": "lbr-adm2-greenville",
+     "name": "Greenville"
+    },
+    {
+     "id": "lbr-adm2-gwelekpoken",
+     "name": "Gwelekpoken"
+    },
+    {
+     "id": "lbr-adm2-harper",
+     "name": "Harper"
+    },
+    {
+     "id": "lbr-adm2-jaedae",
+     "name": "Jaedae"
+    },
+    {
+     "id": "lbr-adm2-jeadepo",
+     "name": "Jeadepo"
+    },
+    {
+     "id": "lbr-adm2-jo-river",
+     "name": "Jo River"
+    },
+    {
+     "id": "lbr-adm2-jorquelleh",
+     "name": "Jorquelleh"
+    },
+    {
+     "id": "lbr-adm2-juarzon",
+     "name": "Juarzon"
+    },
+    {
+     "id": "lbr-adm2-kakata",
+     "name": "Kakata"
+    },
+    {
+     "id": "lbr-adm2-karforh",
+     "name": "Karforh"
+    },
+    {
+     "id": "lbr-adm2-karluway-1",
+     "name": "Karluway #1"
+    },
+    {
+     "id": "lbr-adm2-karluway-2",
+     "name": "Karluway #2"
+    },
+    {
+     "id": "lbr-adm2-klay",
+     "name": "Klay"
+    },
+    {
+     "id": "lbr-adm2-kokoyah",
+     "name": "Kokoyah"
+    },
+    {
+     "id": "lbr-adm2-kolahun",
+     "name": "Kolahun"
+    },
+    {
+     "id": "lbr-adm2-kongba",
+     "name": "Kongba"
+    },
+    {
+     "id": "lbr-adm2-konobo",
+     "name": "Konobo"
+    },
+    {
+     "id": "lbr-adm2-kpaai",
+     "name": "Kpaai"
+    },
+    {
+     "id": "lbr-adm2-kparblee",
+     "name": "Kparblee"
+    },
+    {
+     "id": "lbr-adm2-kpayan",
+     "name": "Kpayan"
+    },
+    {
+     "id": "lbr-adm2-kpi",
+     "name": "Kpi"
+    },
+    {
+     "id": "lbr-adm2-kulu-shaw-boe",
+     "name": "Kulu Shaw Boe"
+    },
+    {
+     "id": "lbr-adm2-leewehpea-mahn",
+     "name": "Leewehpea-Mahn"
+    },
+    {
+     "id": "lbr-adm2-lower-jloh",
+     "name": "Lower Jloh"
+    },
+    {
+     "id": "lbr-adm2-mambah-kaba",
+     "name": "Mambah Kaba"
+    },
+    {
+     "id": "lbr-adm2-meinpea-mahn",
+     "name": "Meinpea-Mahn"
+    },
+    {
+     "id": "lbr-adm2-nanee",
+     "name": "Nanee"
+    },
+    {
+     "id": "lbr-adm2-neekreen",
+     "name": "Neekreen"
+    },
+    {
+     "id": "lbr-adm2-norwein",
+     "name": "Norwein"
+    },
+    {
+     "id": "lbr-adm2-nrokwia-wesldow",
+     "name": "Nrokwia-Wesldow"
+    },
+    {
+     "id": "lbr-adm2-nyenawliken",
+     "name": "Nyenawliken"
+    },
+    {
+     "id": "lbr-adm2-nyenebo",
+     "name": "Nyenebo"
+    },
+    {
+     "id": "lbr-adm2-nyorken",
+     "name": "Nyorken"
+    },
+    {
+     "id": "lbr-adm2-owensgrove",
+     "name": "Owensgrove"
+    },
+    {
+     "id": "lbr-adm2-panta",
+     "name": "Panta"
+    },
+    {
+     "id": "lbr-adm2-plahn-nyarn",
+     "name": "Plahn Nyarn"
+    },
+    {
+     "id": "lbr-adm2-pleebo-sodoken",
+     "name": "Pleebo/Sodoken"
+    },
+    {
+     "id": "lbr-adm2-porkpa",
+     "name": "Porkpa"
+    },
+    {
+     "id": "lbr-adm2-potupo",
+     "name": "Potupo"
+    },
+    {
+     "id": "lbr-adm2-putu",
+     "name": "Putu"
+    },
+    {
+     "id": "lbr-adm2-pynes-town",
+     "name": "Pynes Town"
+    },
+    {
+     "id": "lbr-adm2-quardu-boundi",
+     "name": "Quardu Boundi"
+    },
+    {
+     "id": "lbr-adm2-salala",
+     "name": "Salala"
+    },
+    {
+     "id": "lbr-adm2-salayea",
+     "name": "Salayea"
+    },
+    {
+     "id": "lbr-adm2-sam-gbalor",
+     "name": "Sam Gbalor"
+    },
+    {
+     "id": "lbr-adm2-sanniquellie-mahn",
+     "name": "Sanniquellie Mahn"
+    },
+    {
+     "id": "lbr-adm2-sanoyeah",
+     "name": "Sanoyeah"
+    },
+    {
+     "id": "lbr-adm2-sanquin-dist-1",
+     "name": "Sanquin Dist #1"
+    },
+    {
+     "id": "lbr-adm2-sanquin-dist-2",
+     "name": "Sanquin Dist #2"
+    },
+    {
+     "id": "lbr-adm2-sanquin-dist-3",
+     "name": "Sanquin Dist #3"
+    },
+    {
+     "id": "lbr-adm2-sarbo",
+     "name": "Sarbo"
+    },
+    {
+     "id": "lbr-adm2-seekon",
+     "name": "Seekon"
+    },
+    {
+     "id": "lbr-adm2-senjeh",
+     "name": "Senjeh"
+    },
+    {
+     "id": "lbr-adm2-st-john-river-city",
+     "name": "St. John River City"
+    },
+    {
+     "id": "lbr-adm2-st-paul-river",
+     "name": "St. Paul River"
+    },
+    {
+     "id": "lbr-adm2-suakoko",
+     "name": "Suakoko"
+    },
+    {
+     "id": "lbr-adm2-suehn-mecca",
+     "name": "Suehn Mecca"
+    },
+    {
+     "id": "lbr-adm2-tchien",
+     "name": "Tchien"
+    },
+    {
+     "id": "lbr-adm2-tewor",
+     "name": "Tewor"
+    },
+    {
+     "id": "lbr-adm2-todee",
+     "name": "Todee"
+    },
+    {
+     "id": "lbr-adm2-trenbo",
+     "name": "Trenbo"
+    },
+    {
+     "id": "lbr-adm2-tukpahblee",
+     "name": "Tukpahblee"
+    },
+    {
+     "id": "lbr-adm2-tuobo",
+     "name": "Tuobo"
+    },
+    {
+     "id": "lbr-adm2-twan-river",
+     "name": "Twan River"
+    },
+    {
+     "id": "lbr-adm2-upper-jloh",
+     "name": "Upper Jloh"
+    },
+    {
+     "id": "lbr-adm2-vahun",
+     "name": "Vahun"
+    },
+    {
+     "id": "lbr-adm2-voinjama",
+     "name": "Voinjama"
+    },
+    {
+     "id": "lbr-adm2-wedjah",
+     "name": "Wedjah"
+    },
+    {
+     "id": "lbr-adm2-wee-gbehyi-mahn",
+     "name": "Wee-Gbehyi-Mahn"
+    },
+    {
+     "id": "lbr-adm2-whojah",
+     "name": "Whojah"
+    },
+    {
+     "id": "lbr-adm2-wlogba",
+     "name": "Wlogba"
+    },
+    {
+     "id": "lbr-adm2-yarmein",
+     "name": "Yarmein"
+    },
+    {
+     "id": "lbr-adm2-yarpea-mahn",
+     "name": "Yarpea Mahn"
+    },
+    {
+     "id": "lbr-adm2-yarwein-mehnsonnoh",
+     "name": "Yarwein Mehnsonnoh"
+    },
+    {
+     "id": "lbr-adm2-yeallequelleh",
+     "name": "Yeallequelleh"
+    },
+    {
+     "id": "lbr-adm2-zarflahn",
+     "name": "Zarflahn"
+    },
+    {
+     "id": "lbr-adm2-zoe-gbao",
+     "name": "Zoe-Gbao"
+    },
+    {
+     "id": "lbr-adm2-zorzor",
+     "name": "Zorzor"
+    },
+    {
+     "id": "lbr-adm2-zota",
+     "name": "Zota"
+    }
+   ]
+  }
+ },
+ "name": "Liberia",
+ "nameBn": "Liberia"
+}

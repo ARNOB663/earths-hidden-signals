@@ -1,0 +1,190 @@
+{
+ "code": "BWA",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Republic of Botswana",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2015",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "districts",
+   "code": "ADM1",
+   "count": 10,
+   "name": "districts",
+   "nameBn": "districts",
+   "representedYear": "2017",
+   "sourceCount": 10,
+   "units": [
+    {
+     "id": "bwa-adm1-central-district",
+     "name": "Central District",
+     "shapeISO": "BW-CE"
+    },
+    {
+     "id": "bwa-adm1-chobe-district",
+     "name": "Chobe District",
+     "shapeISO": "BW-CH"
+    },
+    {
+     "id": "bwa-adm1-ghanzi-district",
+     "name": "Ghanzi District",
+     "shapeISO": "BW-GH"
+    },
+    {
+     "id": "bwa-adm1-kgalagadi-district",
+     "name": "Kgalagadi District",
+     "shapeISO": "BW-KG"
+    },
+    {
+     "id": "bwa-adm1-kgatleng-district",
+     "name": "Kgatleng District",
+     "shapeISO": "BW-KL"
+    },
+    {
+     "id": "bwa-adm1-kweneng-district",
+     "name": "Kweneng District",
+     "shapeISO": "BW-KW"
+    },
+    {
+     "id": "bwa-adm1-north-east-district",
+     "name": "North-East District",
+     "shapeISO": "BW-NE"
+    },
+    {
+     "id": "bwa-adm1-north-west-district",
+     "name": "North-West District",
+     "shapeISO": "BW-NW"
+    },
+    {
+     "id": "bwa-adm1-south-east-district",
+     "name": "South-East District",
+     "shapeISO": "BW-SE"
+    },
+    {
+     "id": "bwa-adm1-southern-district",
+     "name": "Southern District",
+     "shapeISO": "BW-SO"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Unknown",
+   "code": "ADM2",
+   "count": 25,
+   "name": "ADM2 areas",
+   "nameBn": "ADM2 এলাকা",
+   "representedYear": "2015",
+   "sourceCount": 25,
+   "units": [
+    {
+     "id": "bwa-adm2-barolong",
+     "name": "Barolong"
+    },
+    {
+     "id": "bwa-adm2-bobonong",
+     "name": "Bobonong"
+    },
+    {
+     "id": "bwa-adm2-chobe",
+     "name": "Chobe"
+    },
+    {
+     "id": "bwa-adm2-gaborone",
+     "name": "Gaborone"
+    },
+    {
+     "id": "bwa-adm2-gemsbok",
+     "name": "Gemsbok"
+    },
+    {
+     "id": "bwa-adm2-ghanzi",
+     "name": "Ghanzi"
+    },
+    {
+     "id": "bwa-adm2-hukunsti",
+     "name": "Hukunsti"
+    },
+    {
+     "id": "bwa-adm2-kgatleng",
+     "name": "Kgatleng"
+    },
+    {
+     "id": "bwa-adm2-kweneng-north",
+     "name": "Kweneng North"
+    },
+    {
+     "id": "bwa-adm2-kweneng-south",
+     "name": "Kweneng South"
+    },
+    {
+     "id": "bwa-adm2-lethlakane",
+     "name": "Lethlakane"
+    },
+    {
+     "id": "bwa-adm2-machaneng",
+     "name": "Machaneng"
+    },
+    {
+     "id": "bwa-adm2-mahalapye",
+     "name": "Mahalapye"
+    },
+    {
+     "id": "bwa-adm2-masungu",
+     "name": "Masungu"
+    },
+    {
+     "id": "bwa-adm2-ngamiland-east",
+     "name": "Ngamiland East"
+    },
+    {
+     "id": "bwa-adm2-ngamiland-west",
+     "name": "Ngamiland West"
+    },
+    {
+     "id": "bwa-adm2-ngwaketse-central",
+     "name": "Ngwaketse Central"
+    },
+    {
+     "id": "bwa-adm2-ngwaketse-north",
+     "name": "Ngwaketse North"
+    },
+    {
+     "id": "bwa-adm2-ngwaketse-south",
+     "name": "Ngwaketse South"
+    },
+    {
+     "id": "bwa-adm2-palapye",
+     "name": "Palapye"
+    },
+    {
+     "id": "bwa-adm2-serowe",
+     "name": "Serowe"
+    },
+    {
+     "id": "bwa-adm2-south-east",
+     "name": "South East"
+    },
+    {
+     "id": "bwa-adm2-tshabong",
+     "name": "Tshabong"
+    },
+    {
+     "id": "bwa-adm2-tuli",
+     "name": "Tuli"
+    },
+    {
+     "id": "bwa-adm2-tutume",
+     "name": "Tutume"
+    }
+   ]
+  }
+ },
+ "name": "Botswana",
+ "nameBn": "Botswana"
+}

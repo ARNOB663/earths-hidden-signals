@@ -1,0 +1,69 @@
+{
+ "code": "ATG",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Antigua and Barbuda",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2009",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Parish and Dependency",
+   "code": "ADM1",
+   "count": 8,
+   "name": "Parish and Dependency",
+   "nameBn": "Parish and Dependency",
+   "representedYear": "2009",
+   "sourceCount": 8,
+   "units": [
+    {
+     "id": "atg-adm1-barbuda",
+     "name": "Barbuda",
+     "shapeISO": "AG-10"
+    },
+    {
+     "id": "atg-adm1-redonda",
+     "name": "Redonda",
+     "shapeISO": "AG-11"
+    },
+    {
+     "id": "atg-adm1-saint-george",
+     "name": "Saint George",
+     "shapeISO": "AG-03"
+    },
+    {
+     "id": "atg-adm1-saint-john",
+     "name": "Saint John",
+     "shapeISO": "AG-04"
+    },
+    {
+     "id": "atg-adm1-saint-mary",
+     "name": "Saint Mary",
+     "shapeISO": "AG-05"
+    },
+    {
+     "id": "atg-adm1-saint-paul",
+     "name": "Saint Paul",
+     "shapeISO": "AG-06"
+    },
+    {
+     "id": "atg-adm1-saint-peter",
+     "name": "Saint Peter",
+     "shapeISO": "AG-07"
+    },
+    {
+     "id": "atg-adm1-saint-philip",
+     "name": "Saint Philip",
+     "shapeISO": "AG-08"
+    }
+   ]
+  }
+ },
+ "name": "Antigua and Barbuda",
+ "nameBn": "Antigua and Barbuda"
+}

@@ -1,0 +1,428 @@
+{
+ "code": "PLW",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Unknown",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2017",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Unknown",
+   "code": "ADM1",
+   "count": 16,
+   "name": "ADM1 areas",
+   "nameBn": "ADM1 এলাকা",
+   "representedYear": "2017",
+   "sourceCount": 16,
+   "units": [
+    {
+     "id": "plw-adm1-aimeliik",
+     "name": "Aimeliik",
+     "shapeISO": "PW-002"
+    },
+    {
+     "id": "plw-adm1-airai",
+     "name": "Airai",
+     "shapeISO": "PW-004"
+    },
+    {
+     "id": "plw-adm1-angaur",
+     "name": "Angaur",
+     "shapeISO": "PW-010"
+    },
+    {
+     "id": "plw-adm1-hatohobei",
+     "name": "Hatohobei",
+     "shapeISO": "PW-050"
+    },
+    {
+     "id": "plw-adm1-kayangel",
+     "name": "Kayangel",
+     "shapeISO": "PW-100"
+    },
+    {
+     "id": "plw-adm1-koror",
+     "name": "Koror",
+     "shapeISO": "PW-150"
+    },
+    {
+     "id": "plw-adm1-melekeok",
+     "name": "Melekeok",
+     "shapeISO": "PW-212"
+    },
+    {
+     "id": "plw-adm1-ngaraard",
+     "name": "Ngaraard",
+     "shapeISO": "PW-214"
+    },
+    {
+     "id": "plw-adm1-ngarchelong",
+     "name": "Ngarchelong",
+     "shapeISO": "PW-218"
+    },
+    {
+     "id": "plw-adm1-ngardmau",
+     "name": "Ngardmau",
+     "shapeISO": "PW-222"
+    },
+    {
+     "id": "plw-adm1-ngatpang",
+     "name": "Ngatpang",
+     "shapeISO": "PW-224"
+    },
+    {
+     "id": "plw-adm1-ngchesar",
+     "name": "Ngchesar",
+     "shapeISO": "PW-226"
+    },
+    {
+     "id": "plw-adm1-ngeremlengui",
+     "name": "Ngeremlengui",
+     "shapeISO": "PW-227"
+    },
+    {
+     "id": "plw-adm1-ngiwal",
+     "name": "Ngiwal",
+     "shapeISO": "PW-228"
+    },
+    {
+     "id": "plw-adm1-peleliu",
+     "name": "Peleliu",
+     "shapeISO": "PW-350"
+    },
+    {
+     "id": "plw-adm1-sonsorol",
+     "name": "Sonsorol",
+     "shapeISO": "PW-370"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Hamlets",
+   "code": "ADM2",
+   "count": 77,
+   "name": "Hamlets",
+   "nameBn": "Hamlets",
+   "representedYear": "2015",
+   "sourceCount": 77,
+   "units": [
+    {
+     "id": "plw-adm2-badrulchau",
+     "name": "Badrulchau"
+    },
+    {
+     "id": "plw-adm2-chelab",
+     "name": "Chelab"
+    },
+    {
+     "id": "plw-adm2-choll",
+     "name": "Choll"
+    },
+    {
+     "id": "plw-adm2-dilong",
+     "name": "Dilong"
+    },
+    {
+     "id": "plw-adm2-dimes",
+     "name": "Dimes"
+    },
+    {
+     "id": "plw-adm2-dngronger",
+     "name": "Dngronger"
+    },
+    {
+     "id": "plw-adm2-elechui",
+     "name": "Elechui"
+    },
+    {
+     "id": "plw-adm2-hatohobei-helens-reef",
+     "name": "Hatohobei + Helens Reef"
+    },
+    {
+     "id": "plw-adm2-ibobang",
+     "name": "Ibobang"
+    },
+    {
+     "id": "plw-adm2-idid-03",
+     "name": "Idid 03"
+    },
+    {
+     "id": "plw-adm2-iebukel",
+     "name": "Iebukel"
+    },
+    {
+     "id": "plw-adm2-ikelau",
+     "name": "Ikelau"
+    },
+    {
+     "id": "plw-adm2-imeong",
+     "name": "Imeong"
+    },
+    {
+     "id": "plw-adm2-imul",
+     "name": "Imul"
+    },
+    {
+     "id": "plw-adm2-iyebukel",
+     "name": "Iyebukel"
+    },
+    {
+     "id": "plw-adm2-medalaii",
+     "name": "Medalaii"
+    },
+    {
+     "id": "plw-adm2-medorm",
+     "name": "Medorm"
+    },
+    {
+     "id": "plw-adm2-meketii",
+     "name": "Meketii"
+    },
+    {
+     "id": "plw-adm2-melekeok",
+     "name": "Melekeok"
+    },
+    {
+     "id": "plw-adm2-mengellang",
+     "name": "Mengellang"
+    },
+    {
+     "id": "plw-adm2-meyuns",
+     "name": "Meyuns"
+    },
+    {
+     "id": "plw-adm2-negerubesang",
+     "name": "Negerubesang"
+    },
+    {
+     "id": "plw-adm2-ngatpang",
+     "name": "Ngatpang"
+    },
+    {
+     "id": "plw-adm2-ngchemesed",
+     "name": "Ngchemesed"
+    },
+    {
+     "id": "plw-adm2-ngchemiangel",
+     "name": "Ngchemiangel"
+    },
+    {
+     "id": "plw-adm2-ngchesar",
+     "name": "Ngchesar"
+    },
+    {
+     "id": "plw-adm2-ngchesechang",
+     "name": "Ngchesechang"
+    },
+    {
+     "id": "plw-adm2-ngebei",
+     "name": "Ngebei"
+    },
+    {
+     "id": "plw-adm2-ngebei-2",
+     "name": "Ngebei"
+    },
+    {
+     "id": "plw-adm2-ngebeianged",
+     "name": "Ngebeianged"
+    },
+    {
+     "id": "plw-adm2-ngebuked",
+     "name": "Ngebuked"
+    },
+    {
+     "id": "plw-adm2-ngeburch",
+     "name": "Ngeburch"
+    },
+    {
+     "id": "plw-adm2-ngeiungel",
+     "name": "Ngeiungel"
+    },
+    {
+     "id": "plw-adm2-ngellau",
+     "name": "Ngellau"
+    },
+    {
+     "id": "plw-adm2-ngerang",
+     "name": "Ngerang"
+    },
+    {
+     "id": "plw-adm2-ngerbau",
+     "name": "Ngerbau"
+    },
+    {
+     "id": "plw-adm2-ngerbeched",
+     "name": "Ngerbeched"
+    },
+    {
+     "id": "plw-adm2-ngerbelau",
+     "name": "Ngerbelau"
+    },
+    {
+     "id": "plw-adm2-ngercheluuk",
+     "name": "Ngercheluuk"
+    },
+    {
+     "id": "plw-adm2-ngerchemai",
+     "name": "Ngerchemai"
+    },
+    {
+     "id": "plw-adm2-ngerchol",
+     "name": "Ngerchol"
+    },
+    {
+     "id": "plw-adm2-ngerdelolk",
+     "name": "Ngerdelolk"
+    },
+    {
+     "id": "plw-adm2-ngereklengon",
+     "name": "Ngereklengon"
+    },
+    {
+     "id": "plw-adm2-ngeriungs",
+     "name": "Ngeriungs"
+    },
+    {
+     "id": "plw-adm2-ngerkeai",
+     "name": "Ngerkeai"
+    },
+    {
+     "id": "plw-adm2-ngerkebesang",
+     "name": "Ngerkebesang"
+    },
+    {
+     "id": "plw-adm2-ngerkeiukl",
+     "name": "Ngerkeiukl"
+    },
+    {
+     "id": "plw-adm2-ngerkesou",
+     "name": "Ngerkesou"
+    },
+    {
+     "id": "plw-adm2-ngerkesowaol",
+     "name": "Ngerkesowaol"
+    },
+    {
+     "id": "plw-adm2-ngermasech",
+     "name": "Ngermasech"
+    },
+    {
+     "id": "plw-adm2-ngermechau",
+     "name": "Ngermechau"
+    },
+    {
+     "id": "plw-adm2-ngermelech",
+     "name": "Ngermelech"
+    },
+    {
+     "id": "plw-adm2-ngermetengel",
+     "name": "Ngermetengel"
+    },
+    {
+     "id": "plw-adm2-ngermid",
+     "name": "Ngermid"
+    },
+    {
+     "id": "plw-adm2-ngerngesang",
+     "name": "Ngerngesang"
+    },
+    {
+     "id": "plw-adm2-ngersngai",
+     "name": "Ngersngai"
+    },
+    {
+     "id": "plw-adm2-ngersuul",
+     "name": "Ngersuul"
+    },
+    {
+     "id": "plw-adm2-ngeruikl",
+     "name": "Ngeruikl"
+    },
+    {
+     "id": "plw-adm2-ngeruliang",
+     "name": "Ngeruliang"
+    },
+    {
+     "id": "plw-adm2-ngeruluobel",
+     "name": "Ngeruluobel"
+    },
+    {
+     "id": "plw-adm2-ngerusar",
+     "name": "Ngerusar"
+    },
+    {
+     "id": "plw-adm2-ngerutchei",
+     "name": "Ngerutchei"
+    },
+    {
+     "id": "plw-adm2-ngerutoi",
+     "name": "Ngerutoi"
+    },
+    {
+     "id": "plw-adm2-ngesias",
+     "name": "Ngesias"
+    },
+    {
+     "id": "plw-adm2-ngetbong",
+     "name": "Ngetbong"
+    },
+    {
+     "id": "plw-adm2-ngetkib",
+     "name": "Ngetkib"
+    },
+    {
+     "id": "plw-adm2-ngkeklau",
+     "name": "Ngkeklau"
+    },
+    {
+     "id": "plw-adm2-oikull",
+     "name": "Oikull"
+    },
+    {
+     "id": "plw-adm2-ollei",
+     "name": "Ollei"
+    },
+    {
+     "id": "plw-adm2-ordome",
+     "name": "Ordome"
+    },
+    {
+     "id": "plw-adm2-rock-islands",
+     "name": "Rock Islands"
+    },
+    {
+     "id": "plw-adm2-rois",
+     "name": "Rois"
+    },
+    {
+     "id": "plw-adm2-sonsorol-pulo-anna-merir",
+     "name": "Sonsorol + Pulo Anna + Merir"
+    },
+    {
+     "id": "plw-adm2-teliu",
+     "name": "Teliu"
+    },
+    {
+     "id": "plw-adm2-ukaeb",
+     "name": "Ukaeb"
+    },
+    {
+     "id": "plw-adm2-ulimang",
+     "name": "Ulimang"
+    },
+    {
+     "id": "plw-adm2-urdmau",
+     "name": "Urdmau"
+    }
+   ]
+  }
+ },
+ "name": "Palau",
+ "nameBn": "Palau"
+}

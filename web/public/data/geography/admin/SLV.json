@@ -1,0 +1,1184 @@
+{
+ "code": "SLV",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "El Salvador",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2021",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Departments",
+   "code": "ADM1",
+   "count": 14,
+   "name": "Departments",
+   "nameBn": "বিভাগ",
+   "representedYear": "2021",
+   "sourceCount": 14,
+   "units": [
+    {
+     "id": "slv-adm1-departamento-de-ahuachapán",
+     "name": "Departamento de Ahuachapán"
+    },
+    {
+     "id": "slv-adm1-departamento-de-cabañas",
+     "name": "Departamento de Cabañas"
+    },
+    {
+     "id": "slv-adm1-departamento-de-chalatenango",
+     "name": "Departamento de Chalatenango"
+    },
+    {
+     "id": "slv-adm1-departamento-de-cuscatlán",
+     "name": "Departamento de Cuscatlán"
+    },
+    {
+     "id": "slv-adm1-departamento-de-la-paz",
+     "name": "Departamento de La Paz"
+    },
+    {
+     "id": "slv-adm1-departamento-de-la-unión",
+     "name": "Departamento de La Unión"
+    },
+    {
+     "id": "slv-adm1-departamento-de-morazán",
+     "name": "Departamento de Morazán"
+    },
+    {
+     "id": "slv-adm1-departamento-de-san-miguel",
+     "name": "Departamento de San Miguel"
+    },
+    {
+     "id": "slv-adm1-departamento-de-san-salvador",
+     "name": "Departamento de San Salvador"
+    },
+    {
+     "id": "slv-adm1-departamento-de-santa-ana",
+     "name": "Departamento de Santa Ana"
+    },
+    {
+     "id": "slv-adm1-departamento-de-sonsonate",
+     "name": "Departamento de Sonsonate"
+    },
+    {
+     "id": "slv-adm1-departamento-de-usulután",
+     "name": "Departamento de Usulután"
+    },
+    {
+     "id": "slv-adm1-la-libertad",
+     "name": "La Libertad"
+    },
+    {
+     "id": "slv-adm1-san-vicente",
+     "name": "San Vicente"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Municipalities",
+   "code": "ADM2",
+   "count": 272,
+   "name": "ADM2 areas",
+   "nameBn": "ADM2 এলাকা",
+   "representedYear": "2007",
+   "sourceCount": 272,
+   "units": [
+    {
+     "id": "slv-adm2-acajutla",
+     "name": "Acajutla"
+    },
+    {
+     "id": "slv-adm2-agua-caliente",
+     "name": "Agua Caliente"
+    },
+    {
+     "id": "slv-adm2-aguilares",
+     "name": "Aguilares"
+    },
+    {
+     "id": "slv-adm2-ahuachpan",
+     "name": "Ahuachpan"
+    },
+    {
+     "id": "slv-adm2-alegría",
+     "name": "Alegría"
+    },
+    {
+     "id": "slv-adm2-anamoros",
+     "name": "Anamoros"
+    },
+    {
+     "id": "slv-adm2-antiguo-cuscatlan",
+     "name": "Antiguo Cuscatlan"
+    },
+    {
+     "id": "slv-adm2-apaneca",
+     "name": "Apaneca"
+    },
+    {
+     "id": "slv-adm2-apastepeque",
+     "name": "Apastepeque"
+    },
+    {
+     "id": "slv-adm2-apopa",
+     "name": "Apopa"
+    },
+    {
+     "id": "slv-adm2-arambala",
+     "name": "Arambala"
+    },
+    {
+     "id": "slv-adm2-arcatao",
+     "name": "Arcatao"
+    },
+    {
+     "id": "slv-adm2-armenia",
+     "name": "Armenia"
+    },
+    {
+     "id": "slv-adm2-atiquizaya",
+     "name": "Atiquizaya"
+    },
+    {
+     "id": "slv-adm2-ayutuxtepeque",
+     "name": "Ayutuxtepeque"
+    },
+    {
+     "id": "slv-adm2-azacualpa",
+     "name": "Azacualpa"
+    },
+    {
+     "id": "slv-adm2-berlin",
+     "name": "Berlin"
+    },
+    {
+     "id": "slv-adm2-bolivar",
+     "name": "Bolivar"
+    },
+    {
+     "id": "slv-adm2-cacaopera",
+     "name": "Cacaopera"
+    },
+    {
+     "id": "slv-adm2-california",
+     "name": "California"
+    },
+    {
+     "id": "slv-adm2-caluco",
+     "name": "Caluco"
+    },
+    {
+     "id": "slv-adm2-candelaria",
+     "name": "Candelaria"
+    },
+    {
+     "id": "slv-adm2-candelaria-de-la-frontera",
+     "name": "Candelaria de la Frontera"
+    },
+    {
+     "id": "slv-adm2-carolina",
+     "name": "Carolina"
+    },
+    {
+     "id": "slv-adm2-chalatenago",
+     "name": "Chalatenago"
+    },
+    {
+     "id": "slv-adm2-chalchuapa",
+     "name": "Chalchuapa"
+    },
+    {
+     "id": "slv-adm2-chapeltique",
+     "name": "Chapeltique"
+    },
+    {
+     "id": "slv-adm2-chilanga",
+     "name": "Chilanga"
+    },
+    {
+     "id": "slv-adm2-chilanga-2",
+     "name": "Chilanga"
+    },
+    {
+     "id": "slv-adm2-chiltiupán",
+     "name": "Chiltiupán"
+    },
+    {
+     "id": "slv-adm2-chinameca",
+     "name": "Chinameca"
+    },
+    {
+     "id": "slv-adm2-chirilagua",
+     "name": "Chirilagua"
+    },
+    {
+     "id": "slv-adm2-cinquera",
+     "name": "Cinquera"
+    },
+    {
+     "id": "slv-adm2-citala",
+     "name": "Citala"
+    },
+    {
+     "id": "slv-adm2-ciudad-arce",
+     "name": "Ciudad Arce"
+    },
+    {
+     "id": "slv-adm2-ciudad-barrios",
+     "name": "Ciudad Barrios"
+    },
+    {
+     "id": "slv-adm2-ciudad-ilobasco",
+     "name": "Ciudad Ilobasco"
+    },
+    {
+     "id": "slv-adm2-coatepeque",
+     "name": "Coatepeque"
+    },
+    {
+     "id": "slv-adm2-cojutepeque",
+     "name": "Cojutepeque"
+    },
+    {
+     "id": "slv-adm2-colón",
+     "name": "Colón"
+    },
+    {
+     "id": "slv-adm2-comacarán",
+     "name": "Comacarán"
+    },
+    {
+     "id": "slv-adm2-comalapa",
+     "name": "Comalapa"
+    },
+    {
+     "id": "slv-adm2-comasagua",
+     "name": "Comasagua"
+    },
+    {
+     "id": "slv-adm2-concepcion-de-ataco",
+     "name": "Concepcion de Ataco"
+    },
+    {
+     "id": "slv-adm2-concepcion-de-oriente",
+     "name": "Concepcion de Oriente"
+    },
+    {
+     "id": "slv-adm2-concepcion-quezaltepeque",
+     "name": "Concepcion Quezaltepeque"
+    },
+    {
+     "id": "slv-adm2-concepción-batres",
+     "name": "Concepción Batres"
+    },
+    {
+     "id": "slv-adm2-conchagua",
+     "name": "Conchagua"
+    },
+    {
+     "id": "slv-adm2-corinto",
+     "name": "Corinto"
+    },
+    {
+     "id": "slv-adm2-cuisnahuat",
+     "name": "Cuisnahuat"
+    },
+    {
+     "id": "slv-adm2-cuscatancingo",
+     "name": "Cuscatancingo"
+    },
+    {
+     "id": "slv-adm2-cuyultitán",
+     "name": "Cuyultitán"
+    },
+    {
+     "id": "slv-adm2-delgado",
+     "name": "Delgado"
+    },
+    {
+     "id": "slv-adm2-delicias-de-concepcion",
+     "name": "Delicias de Concepcion"
+    },
+    {
+     "id": "slv-adm2-dolores",
+     "name": "Dolores"
+    },
+    {
+     "id": "slv-adm2-dulce-nombre-de-maria",
+     "name": "Dulce Nombre de Maria"
+    },
+    {
+     "id": "slv-adm2-el-carmen",
+     "name": "El Carmen"
+    },
+    {
+     "id": "slv-adm2-el-carmen-2",
+     "name": "El Carmen"
+    },
+    {
+     "id": "slv-adm2-el-carrizal",
+     "name": "El Carrizal"
+    },
+    {
+     "id": "slv-adm2-el-congo",
+     "name": "El Congo"
+    },
+    {
+     "id": "slv-adm2-el-divisadero",
+     "name": "El Divisadero"
+    },
+    {
+     "id": "slv-adm2-el-paisnal",
+     "name": "El Paisnal"
+    },
+    {
+     "id": "slv-adm2-el-paraiso",
+     "name": "El Paraiso"
+    },
+    {
+     "id": "slv-adm2-el-porvenir",
+     "name": "El Porvenir"
+    },
+    {
+     "id": "slv-adm2-el-refugio",
+     "name": "El Refugio"
+    },
+    {
+     "id": "slv-adm2-el-rosario",
+     "name": "El Rosario"
+    },
+    {
+     "id": "slv-adm2-el-rosario-2",
+     "name": "El Rosario"
+    },
+    {
+     "id": "slv-adm2-el-rosario-3",
+     "name": "El Rosario"
+    },
+    {
+     "id": "slv-adm2-el-sauce",
+     "name": "El Sauce"
+    },
+    {
+     "id": "slv-adm2-el-transito",
+     "name": "El Transito"
+    },
+    {
+     "id": "slv-adm2-el-triunfo",
+     "name": "El Triunfo"
+    },
+    {
+     "id": "slv-adm2-ereguayquín",
+     "name": "Ereguayquín"
+    },
+    {
+     "id": "slv-adm2-estanzuelas",
+     "name": "Estanzuelas"
+    },
+    {
+     "id": "slv-adm2-guacoteci",
+     "name": "Guacoteci"
+    },
+    {
+     "id": "slv-adm2-guadalupe",
+     "name": "Guadalupe"
+    },
+    {
+     "id": "slv-adm2-gualococti",
+     "name": "Gualococti"
+    },
+    {
+     "id": "slv-adm2-guatajiagua",
+     "name": "Guatajiagua"
+    },
+    {
+     "id": "slv-adm2-guaymango",
+     "name": "Guaymango"
+    },
+    {
+     "id": "slv-adm2-guazapa",
+     "name": "Guazapa"
+    },
+    {
+     "id": "slv-adm2-huizucar",
+     "name": "Huizucar"
+    },
+    {
+     "id": "slv-adm2-ilopango",
+     "name": "Ilopango"
+    },
+    {
+     "id": "slv-adm2-intipuca",
+     "name": "Intipuca"
+    },
+    {
+     "id": "slv-adm2-izalco",
+     "name": "Izalco"
+    },
+    {
+     "id": "slv-adm2-jayaque",
+     "name": "Jayaque"
+    },
+    {
+     "id": "slv-adm2-jerusalen",
+     "name": "Jerusalen"
+    },
+    {
+     "id": "slv-adm2-jicalapa",
+     "name": "Jicalapa"
+    },
+    {
+     "id": "slv-adm2-jiquilisco",
+     "name": "Jiquilisco"
+    },
+    {
+     "id": "slv-adm2-joateca",
+     "name": "Joateca"
+    },
+    {
+     "id": "slv-adm2-jocoaitique",
+     "name": "Jocoaitique"
+    },
+    {
+     "id": "slv-adm2-jocoro",
+     "name": "Jocoro"
+    },
+    {
+     "id": "slv-adm2-juayua",
+     "name": "Juayua"
+    },
+    {
+     "id": "slv-adm2-jucuapa",
+     "name": "Jucuapa"
+    },
+    {
+     "id": "slv-adm2-jucuarán",
+     "name": "Jucuarán"
+    },
+    {
+     "id": "slv-adm2-jujutla",
+     "name": "Jujutla"
+    },
+    {
+     "id": "slv-adm2-jutiapa",
+     "name": "Jutiapa"
+    },
+    {
+     "id": "slv-adm2-la-laguna",
+     "name": "La Laguna"
+    },
+    {
+     "id": "slv-adm2-la-libertad",
+     "name": "La Libertad"
+    },
+    {
+     "id": "slv-adm2-la-palma",
+     "name": "La Palma"
+    },
+    {
+     "id": "slv-adm2-la-reina",
+     "name": "La Reina"
+    },
+    {
+     "id": "slv-adm2-la-union",
+     "name": "La Union"
+    },
+    {
+     "id": "slv-adm2-las-vueltas",
+     "name": "Las Vueltas"
+    },
+    {
+     "id": "slv-adm2-lislique",
+     "name": "Lislique"
+    },
+    {
+     "id": "slv-adm2-lolotique",
+     "name": "Lolotique"
+    },
+    {
+     "id": "slv-adm2-lolotiquillo",
+     "name": "Lolotiquillo"
+    },
+    {
+     "id": "slv-adm2-masahuat",
+     "name": "Masahuat"
+    },
+    {
+     "id": "slv-adm2-meanguera",
+     "name": "Meanguera"
+    },
+    {
+     "id": "slv-adm2-meanguera-del-golfo",
+     "name": "Meanguera del Golfo"
+    },
+    {
+     "id": "slv-adm2-mejicanos",
+     "name": "Mejicanos"
+    },
+    {
+     "id": "slv-adm2-mercedes-la-ceiba",
+     "name": "Mercedes La Ceiba"
+    },
+    {
+     "id": "slv-adm2-mercedes-umaña",
+     "name": "Mercedes Umaña"
+    },
+    {
+     "id": "slv-adm2-metapan",
+     "name": "Metapan"
+    },
+    {
+     "id": "slv-adm2-moncagua",
+     "name": "Moncagua"
+    },
+    {
+     "id": "slv-adm2-monte-san-juan",
+     "name": "Monte San Juan"
+    },
+    {
+     "id": "slv-adm2-nahuizalco",
+     "name": "Nahuizalco"
+    },
+    {
+     "id": "slv-adm2-nahulingo",
+     "name": "Nahulingo"
+    },
+    {
+     "id": "slv-adm2-nejapa",
+     "name": "Nejapa"
+    },
+    {
+     "id": "slv-adm2-nombre-de-jesus",
+     "name": "Nombre de Jesus"
+    },
+    {
+     "id": "slv-adm2-nueva-concepcion",
+     "name": "Nueva Concepcion"
+    },
+    {
+     "id": "slv-adm2-nueva-esparta",
+     "name": "Nueva Esparta"
+    },
+    {
+     "id": "slv-adm2-nueva-granada",
+     "name": "Nueva Granada"
+    },
+    {
+     "id": "slv-adm2-nueva-guadalupe",
+     "name": "Nueva Guadalupe"
+    },
+    {
+     "id": "slv-adm2-nueva-trinidad",
+     "name": "Nueva Trinidad"
+    },
+    {
+     "id": "slv-adm2-nuevo-cuscatlán",
+     "name": "Nuevo Cuscatlán"
+    },
+    {
+     "id": "slv-adm2-nuevo-eden-de-san-juan",
+     "name": "Nuevo Eden de San Juan"
+    },
+    {
+     "id": "slv-adm2-null",
+     "name": "Null"
+    },
+    {
+     "id": "slv-adm2-null-10",
+     "name": "Null"
+    },
+    {
+     "id": "slv-adm2-null-2",
+     "name": "Null"
+    },
+    {
+     "id": "slv-adm2-null-3",
+     "name": "Null"
+    },
+    {
+     "id": "slv-adm2-null-4",
+     "name": "Null"
+    },
+    {
+     "id": "slv-adm2-null-5",
+     "name": "Null"
+    },
+    {
+     "id": "slv-adm2-null-6",
+     "name": "Null"
+    },
+    {
+     "id": "slv-adm2-null-7",
+     "name": "Null"
+    },
+    {
+     "id": "slv-adm2-null-8",
+     "name": "Null"
+    },
+    {
+     "id": "slv-adm2-null-9",
+     "name": "Null"
+    },
+    {
+     "id": "slv-adm2-ojos-de-agua",
+     "name": "Ojos de Agua"
+    },
+    {
+     "id": "slv-adm2-olocuilta",
+     "name": "Olocuilta"
+    },
+    {
+     "id": "slv-adm2-opico",
+     "name": "Opico"
+    },
+    {
+     "id": "slv-adm2-oratorio-de-concepcion",
+     "name": "Oratorio de Concepcion"
+    },
+    {
+     "id": "slv-adm2-osicala",
+     "name": "Osicala"
+    },
+    {
+     "id": "slv-adm2-ozatlan",
+     "name": "Ozatlan"
+    },
+    {
+     "id": "slv-adm2-panchimalco",
+     "name": "Panchimalco"
+    },
+    {
+     "id": "slv-adm2-paraíso-de-osorio",
+     "name": "Paraíso de Osorio"
+    },
+    {
+     "id": "slv-adm2-pasaquina",
+     "name": "Pasaquina"
+    },
+    {
+     "id": "slv-adm2-perquin",
+     "name": "Perquin"
+    },
+    {
+     "id": "slv-adm2-poloros",
+     "name": "Poloros"
+    },
+    {
+     "id": "slv-adm2-potonico",
+     "name": "Potonico"
+    },
+    {
+     "id": "slv-adm2-puerto-el-triunfo",
+     "name": "Puerto El Triunfo"
+    },
+    {
+     "id": "slv-adm2-quelepa",
+     "name": "Quelepa"
+    },
+    {
+     "id": "slv-adm2-quezaltepeque",
+     "name": "Quezaltepeque"
+    },
+    {
+     "id": "slv-adm2-rosario-de-mora",
+     "name": "Rosario de Mora"
+    },
+    {
+     "id": "slv-adm2-sacacoyo",
+     "name": "Sacacoyo"
+    },
+    {
+     "id": "slv-adm2-salcoatitan",
+     "name": "Salcoatitan"
+    },
+    {
+     "id": "slv-adm2-san-agustin",
+     "name": "San Agustin"
+    },
+    {
+     "id": "slv-adm2-san-alejo",
+     "name": "San Alejo"
+    },
+    {
+     "id": "slv-adm2-san-antonia-los-ranchos",
+     "name": "San Antonia Los Ranchos"
+    },
+    {
+     "id": "slv-adm2-san-antonio",
+     "name": "San Antonio"
+    },
+    {
+     "id": "slv-adm2-san-antonio-de-la-cruz",
+     "name": "San Antonio de la Cruz"
+    },
+    {
+     "id": "slv-adm2-san-antonio-del-monte",
+     "name": "San Antonio del Monte"
+    },
+    {
+     "id": "slv-adm2-san-antonio-masahuat",
+     "name": "San Antonio Masahuat"
+    },
+    {
+     "id": "slv-adm2-san-antonio-pajonal",
+     "name": "San Antonio Pajonal"
+    },
+    {
+     "id": "slv-adm2-san-bartolome-perulapia",
+     "name": "San Bartolome Perulapia"
+    },
+    {
+     "id": "slv-adm2-san-buenaventura",
+     "name": "San Buenaventura"
+    },
+    {
+     "id": "slv-adm2-san-carlos",
+     "name": "San Carlos"
+    },
+    {
+     "id": "slv-adm2-san-cayetano-istepeque",
+     "name": "San Cayetano Istepeque"
+    },
+    {
+     "id": "slv-adm2-san-cristobal",
+     "name": "San Cristobal"
+    },
+    {
+     "id": "slv-adm2-san-dionisio",
+     "name": "San Dionisio"
+    },
+    {
+     "id": "slv-adm2-san-emigdo",
+     "name": "San Emigdo"
+    },
+    {
+     "id": "slv-adm2-san-esteban-catarina",
+     "name": "San Esteban Catarina"
+    },
+    {
+     "id": "slv-adm2-san-fernando",
+     "name": "San Fernando"
+    },
+    {
+     "id": "slv-adm2-san-fernando-2",
+     "name": "San Fernando"
+    },
+    {
+     "id": "slv-adm2-san-francisco",
+     "name": "San Francisco"
+    },
+    {
+     "id": "slv-adm2-san-francisco-javier",
+     "name": "San Francisco Javier"
+    },
+    {
+     "id": "slv-adm2-san-francisco-lempa",
+     "name": "San Francisco Lempa"
+    },
+    {
+     "id": "slv-adm2-san-francisco-menendez",
+     "name": "San Francisco Menendez"
+    },
+    {
+     "id": "slv-adm2-san-francisco-morazan",
+     "name": "San Francisco Morazan"
+    },
+    {
+     "id": "slv-adm2-san-francsico-chinameca",
+     "name": "San Francsico Chinameca"
+    },
+    {
+     "id": "slv-adm2-san-gerardo",
+     "name": "San Gerardo"
+    },
+    {
+     "id": "slv-adm2-san-ildefonso",
+     "name": "San Ildefonso"
+    },
+    {
+     "id": "slv-adm2-san-ingnacio",
+     "name": "San Ingnacio"
+    },
+    {
+     "id": "slv-adm2-san-isidro",
+     "name": "San Isidro"
+    },
+    {
+     "id": "slv-adm2-san-isidro-2",
+     "name": "San Isidro"
+    },
+    {
+     "id": "slv-adm2-san-isidro-labrador",
+     "name": "San Isidro Labrador"
+    },
+    {
+     "id": "slv-adm2-san-jorge",
+     "name": "San Jorge"
+    },
+    {
+     "id": "slv-adm2-san-jose",
+     "name": "San Jose"
+    },
+    {
+     "id": "slv-adm2-san-jose-cancasque",
+     "name": "San Jose Cancasque"
+    },
+    {
+     "id": "slv-adm2-san-jose-guayabal",
+     "name": "San Jose Guayabal"
+    },
+    {
+     "id": "slv-adm2-san-jose-las-flores",
+     "name": "San Jose Las Flores"
+    },
+    {
+     "id": "slv-adm2-san-jose-villanueva",
+     "name": "San Jose Villanueva"
+    },
+    {
+     "id": "slv-adm2-san-juan-nonualco",
+     "name": "San Juan Nonualco"
+    },
+    {
+     "id": "slv-adm2-san-juan-talpa",
+     "name": "San Juan Talpa"
+    },
+    {
+     "id": "slv-adm2-san-juan-tepezontes",
+     "name": "San Juan Tepezontes"
+    },
+    {
+     "id": "slv-adm2-san-julian",
+     "name": "San Julian"
+    },
+    {
+     "id": "slv-adm2-san-lorenzo",
+     "name": "San Lorenzo"
+    },
+    {
+     "id": "slv-adm2-san-lorenzo-2",
+     "name": "San Lorenzo"
+    },
+    {
+     "id": "slv-adm2-san-luis-de-la-reina",
+     "name": "San Luis de la Reina"
+    },
+    {
+     "id": "slv-adm2-san-luis-del-carmen",
+     "name": "San Luis del Carmen"
+    },
+    {
+     "id": "slv-adm2-san-luis-la-herradura",
+     "name": "San Luis La Herradura"
+    },
+    {
+     "id": "slv-adm2-san-luis-talpa",
+     "name": "San Luis Talpa"
+    },
+    {
+     "id": "slv-adm2-san-marcos",
+     "name": "San Marcos"
+    },
+    {
+     "id": "slv-adm2-san-martin",
+     "name": "San Martin"
+    },
+    {
+     "id": "slv-adm2-san-matias",
+     "name": "San Matias"
+    },
+    {
+     "id": "slv-adm2-san-miguel",
+     "name": "San Miguel"
+    },
+    {
+     "id": "slv-adm2-san-miguel-de-mercedes",
+     "name": "San Miguel de Mercedes"
+    },
+    {
+     "id": "slv-adm2-san-miguel-tepezontes",
+     "name": "San Miguel Tepezontes"
+    },
+    {
+     "id": "slv-adm2-san-pablo-tacachico",
+     "name": "San Pablo Tacachico"
+    },
+    {
+     "id": "slv-adm2-san-pedro-masahuat",
+     "name": "San Pedro Masahuat"
+    },
+    {
+     "id": "slv-adm2-san-pedro-nonualco",
+     "name": "San Pedro Nonualco"
+    },
+    {
+     "id": "slv-adm2-san-pedro-perulapan",
+     "name": "San Pedro Perulapan"
+    },
+    {
+     "id": "slv-adm2-san-pedro-puxtla",
+     "name": "San Pedro Puxtla"
+    },
+    {
+     "id": "slv-adm2-san-rafael",
+     "name": "San Rafael"
+    },
+    {
+     "id": "slv-adm2-san-rafael-2",
+     "name": "San Rafael"
+    },
+    {
+     "id": "slv-adm2-san-rafael-cedros",
+     "name": "San Rafael Cedros"
+    },
+    {
+     "id": "slv-adm2-san-rafael-obrajuelo",
+     "name": "San Rafael Obrajuelo"
+    },
+    {
+     "id": "slv-adm2-san-ramon",
+     "name": "San Ramon"
+    },
+    {
+     "id": "slv-adm2-san-salvador",
+     "name": "San Salvador"
+    },
+    {
+     "id": "slv-adm2-san-sebastian",
+     "name": "San Sebastian"
+    },
+    {
+     "id": "slv-adm2-san-sebastian-salitrillo",
+     "name": "San Sebastian Salitrillo"
+    },
+    {
+     "id": "slv-adm2-san-simon",
+     "name": "San Simon"
+    },
+    {
+     "id": "slv-adm2-san-vicente",
+     "name": "San Vicente"
+    },
+    {
+     "id": "slv-adm2-santa-ana",
+     "name": "Santa Ana"
+    },
+    {
+     "id": "slv-adm2-santa-catarina-masahuat",
+     "name": "Santa Catarina Masahuat"
+    },
+    {
+     "id": "slv-adm2-santa-clara",
+     "name": "Santa Clara"
+    },
+    {
+     "id": "slv-adm2-santa-cruz-analquito",
+     "name": "Santa Cruz Analquito"
+    },
+    {
+     "id": "slv-adm2-santa-cruz-michapa",
+     "name": "Santa Cruz Michapa"
+    },
+    {
+     "id": "slv-adm2-santa-elena",
+     "name": "Santa Elena"
+    },
+    {
+     "id": "slv-adm2-santa-isabel-ishuatan",
+     "name": "Santa Isabel Ishuatan"
+    },
+    {
+     "id": "slv-adm2-santa-maría",
+     "name": "Santa María"
+    },
+    {
+     "id": "slv-adm2-santa-maría-ostuma",
+     "name": "Santa María Ostuma"
+    },
+    {
+     "id": "slv-adm2-santa-rita",
+     "name": "Santa Rita"
+    },
+    {
+     "id": "slv-adm2-santa-rosa-de-lima",
+     "name": "Santa Rosa de Lima"
+    },
+    {
+     "id": "slv-adm2-santa-rosa-guachipilin",
+     "name": "Santa Rosa Guachipilin"
+    },
+    {
+     "id": "slv-adm2-santa-tecla",
+     "name": "Santa Tecla"
+    },
+    {
+     "id": "slv-adm2-santiago-de-la-frontera",
+     "name": "Santiago de la Frontera"
+    },
+    {
+     "id": "slv-adm2-santiago-de-maria",
+     "name": "Santiago de Maria"
+    },
+    {
+     "id": "slv-adm2-santiago-nonualco",
+     "name": "Santiago Nonualco"
+    },
+    {
+     "id": "slv-adm2-santiago-texacuangos",
+     "name": "Santiago Texacuangos"
+    },
+    {
+     "id": "slv-adm2-santo-domingo",
+     "name": "Santo Domingo"
+    },
+    {
+     "id": "slv-adm2-santo-domingo-2",
+     "name": "Santo Domingo"
+    },
+    {
+     "id": "slv-adm2-santo-tomas",
+     "name": "Santo Tomas"
+    },
+    {
+     "id": "slv-adm2-sensembra",
+     "name": "Sensembra"
+    },
+    {
+     "id": "slv-adm2-sensuntepeque",
+     "name": "Sensuntepeque"
+    },
+    {
+     "id": "slv-adm2-sesori",
+     "name": "Sesori"
+    },
+    {
+     "id": "slv-adm2-sociedad",
+     "name": "Sociedad"
+    },
+    {
+     "id": "slv-adm2-sonsonate",
+     "name": "Sonsonate"
+    },
+    {
+     "id": "slv-adm2-soyapango",
+     "name": "Soyapango"
+    },
+    {
+     "id": "slv-adm2-suchitoto",
+     "name": "Suchitoto"
+    },
+    {
+     "id": "slv-adm2-tacuba",
+     "name": "Tacuba"
+    },
+    {
+     "id": "slv-adm2-talnique",
+     "name": "Talnique"
+    },
+    {
+     "id": "slv-adm2-tamanique",
+     "name": "Tamanique"
+    },
+    {
+     "id": "slv-adm2-tapalhuaca",
+     "name": "Tapalhuaca"
+    },
+    {
+     "id": "slv-adm2-tecapán",
+     "name": "Tecapán"
+    },
+    {
+     "id": "slv-adm2-tecoluca",
+     "name": "Tecoluca"
+    },
+    {
+     "id": "slv-adm2-tejutla",
+     "name": "Tejutla"
+    },
+    {
+     "id": "slv-adm2-tenancingo",
+     "name": "Tenancingo"
+    },
+    {
+     "id": "slv-adm2-teotepeque",
+     "name": "Teotepeque"
+    },
+    {
+     "id": "slv-adm2-tepecoyo",
+     "name": "Tepecoyo"
+    },
+    {
+     "id": "slv-adm2-tepetitan",
+     "name": "Tepetitan"
+    },
+    {
+     "id": "slv-adm2-teujutepeque",
+     "name": "Teujutepeque"
+    },
+    {
+     "id": "slv-adm2-texistepeque",
+     "name": "Texistepeque"
+    },
+    {
+     "id": "slv-adm2-tonacatepeque",
+     "name": "Tonacatepeque"
+    },
+    {
+     "id": "slv-adm2-torola",
+     "name": "Torola"
+    },
+    {
+     "id": "slv-adm2-turin",
+     "name": "Turin"
+    },
+    {
+     "id": "slv-adm2-uluazapa",
+     "name": "Uluazapa"
+    },
+    {
+     "id": "slv-adm2-usulutan",
+     "name": "Usulutan"
+    },
+    {
+     "id": "slv-adm2-verapaz",
+     "name": "Verapaz"
+    },
+    {
+     "id": "slv-adm2-victoria",
+     "name": "Victoria"
+    },
+    {
+     "id": "slv-adm2-yamabal",
+     "name": "Yamabal"
+    },
+    {
+     "id": "slv-adm2-yayantique",
+     "name": "Yayantique"
+    },
+    {
+     "id": "slv-adm2-yoloaiquin",
+     "name": "Yoloaiquin"
+    },
+    {
+     "id": "slv-adm2-yucuaiquin",
+     "name": "Yucuaiquin"
+    },
+    {
+     "id": "slv-adm2-zacatecoluca",
+     "name": "Zacatecoluca"
+    },
+    {
+     "id": "slv-adm2-zaragoza",
+     "name": "Zaragoza"
+    }
+   ]
+  }
+ },
+ "name": "El Salvador",
+ "nameBn": "El Salvador"
+}

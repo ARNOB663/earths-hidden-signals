@@ -1,0 +1,631 @@
+{
+ "code": "URY",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Unknown",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2017",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Unknown",
+   "code": "ADM1",
+   "count": 19,
+   "name": "ADM1 areas",
+   "nameBn": "ADM1 এলাকা",
+   "representedYear": "2017",
+   "sourceCount": 19,
+   "units": [
+    {
+     "id": "ury-adm1-artigas",
+     "name": "Artigas",
+     "shapeISO": "UY-AR"
+    },
+    {
+     "id": "ury-adm1-canelones",
+     "name": "Canelones",
+     "shapeISO": "UY-CA"
+    },
+    {
+     "id": "ury-adm1-cerro-largo",
+     "name": "Cerro Largo",
+     "shapeISO": "UY-CL"
+    },
+    {
+     "id": "ury-adm1-colonia",
+     "name": "Colonia",
+     "shapeISO": "UY-CO"
+    },
+    {
+     "id": "ury-adm1-durazno",
+     "name": "Durazno",
+     "shapeISO": "UY-DU"
+    },
+    {
+     "id": "ury-adm1-flores",
+     "name": "Flores",
+     "shapeISO": "UY-FS"
+    },
+    {
+     "id": "ury-adm1-florida",
+     "name": "Florida",
+     "shapeISO": "UY-FD"
+    },
+    {
+     "id": "ury-adm1-lavalleja",
+     "name": "Lavalleja",
+     "shapeISO": "UY-LA"
+    },
+    {
+     "id": "ury-adm1-maldonado",
+     "name": "Maldonado",
+     "shapeISO": "UY-MA"
+    },
+    {
+     "id": "ury-adm1-montevideo",
+     "name": "Montevideo",
+     "shapeISO": "UY-MO"
+    },
+    {
+     "id": "ury-adm1-paysandú",
+     "name": "Paysandú",
+     "shapeISO": "UY-PA"
+    },
+    {
+     "id": "ury-adm1-rivera",
+     "name": "Rivera",
+     "shapeISO": "UY-RV"
+    },
+    {
+     "id": "ury-adm1-rocha",
+     "name": "Rocha",
+     "shapeISO": "UY-RO"
+    },
+    {
+     "id": "ury-adm1-río-negro",
+     "name": "Río Negro",
+     "shapeISO": "UY-RN"
+    },
+    {
+     "id": "ury-adm1-salto",
+     "name": "Salto",
+     "shapeISO": "UY-SA"
+    },
+    {
+     "id": "ury-adm1-san-josé",
+     "name": "San José",
+     "shapeISO": "UY-SJ"
+    },
+    {
+     "id": "ury-adm1-soriano",
+     "name": "Soriano",
+     "shapeISO": "UY-SO"
+    },
+    {
+     "id": "ury-adm1-tacuarembó",
+     "name": "Tacuarembó",
+     "shapeISO": "UY-TA"
+    },
+    {
+     "id": "ury-adm1-treinta-y-tres",
+     "name": "Treinta y Tres",
+     "shapeISO": "UY-TT"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Municipalities",
+   "code": "ADM2",
+   "count": 124,
+   "name": "ADM2 areas",
+   "nameBn": "ADM2 এলাকা",
+   "representedYear": "2013",
+   "sourceCount": 124,
+   "units": [
+    {
+     "id": "ury-adm2-18-de-mayo",
+     "name": "18 de Mayo"
+    },
+    {
+     "id": "ury-adm2-aceguá",
+     "name": "Aceguá"
+    },
+    {
+     "id": "ury-adm2-aguas-corrientes",
+     "name": "Aguas Corrientes"
+    },
+    {
+     "id": "ury-adm2-aiguá",
+     "name": "Aiguá"
+    },
+    {
+     "id": "ury-adm2-ansina",
+     "name": "Ansina"
+    },
+    {
+     "id": "ury-adm2-arbolito",
+     "name": "Arbolito"
+    },
+    {
+     "id": "ury-adm2-arévalo",
+     "name": "Arévalo"
+    },
+    {
+     "id": "ury-adm2-atlántida",
+     "name": "Atlántida"
+    },
+    {
+     "id": "ury-adm2-baltasar-brum",
+     "name": "Baltasar Brum"
+    },
+    {
+     "id": "ury-adm2-barros-blancos",
+     "name": "Barros Blancos"
+    },
+    {
+     "id": "ury-adm2-bañado-de-medina",
+     "name": "Bañado de Medina"
+    },
+    {
+     "id": "ury-adm2-bella-unión",
+     "name": "Bella Unión"
+    },
+    {
+     "id": "ury-adm2-belén",
+     "name": "Belén"
+    },
+    {
+     "id": "ury-adm2-canelones",
+     "name": "Canelones"
+    },
+    {
+     "id": "ury-adm2-cardona",
+     "name": "Cardona"
+    },
+    {
+     "id": "ury-adm2-carmelo",
+     "name": "Carmelo"
+    },
+    {
+     "id": "ury-adm2-castillos",
+     "name": "Castillos"
+    },
+    {
+     "id": "ury-adm2-casupá",
+     "name": "Casupá"
+    },
+    {
+     "id": "ury-adm2-centurión",
+     "name": "Centurión"
+    },
+    {
+     "id": "ury-adm2-cerro-chato",
+     "name": "Cerro Chato"
+    },
+    {
+     "id": "ury-adm2-cerro-de-las-cuentas",
+     "name": "Cerro de las Cuentas"
+    },
+    {
+     "id": "ury-adm2-chapicuy",
+     "name": "Chapicuy"
+    },
+    {
+     "id": "ury-adm2-chuy",
+     "name": "Chuy"
+    },
+    {
+     "id": "ury-adm2-ciudad-de-la-costa",
+     "name": "Ciudad de la Costa"
+    },
+    {
+     "id": "ury-adm2-ciudad-del-plata",
+     "name": "Ciudad del Plata"
+    },
+    {
+     "id": "ury-adm2-colonia-lavalleja",
+     "name": "Colonia Lavalleja"
+    },
+    {
+     "id": "ury-adm2-colonia-valdense",
+     "name": "Colonia Valdense"
+    },
+    {
+     "id": "ury-adm2-dolores",
+     "name": "Dolores"
+    },
+    {
+     "id": "ury-adm2-ecilda-paullier",
+     "name": "Ecilda Paullier"
+    },
+    {
+     "id": "ury-adm2-empalme-olmos",
+     "name": "Empalme Olmos"
+    },
+    {
+     "id": "ury-adm2-enrique-martínez",
+     "name": "Enrique Martínez"
+    },
+    {
+     "id": "ury-adm2-florencio-sánchez",
+     "name": "Florencio Sánchez"
+    },
+    {
+     "id": "ury-adm2-fraile-muerto",
+     "name": "Fraile Muerto"
+    },
+    {
+     "id": "ury-adm2-fray-marcos",
+     "name": "Fray Marcos"
+    },
+    {
+     "id": "ury-adm2-garzon",
+     "name": "Garzon"
+    },
+    {
+     "id": "ury-adm2-guichón",
+     "name": "Guichón"
+    },
+    {
+     "id": "ury-adm2-isidoro-noblía",
+     "name": "Isidoro Noblía"
+    },
+    {
+     "id": "ury-adm2-josé-batlle-y-ordóñez",
+     "name": "José Batlle y Ordóñez"
+    },
+    {
+     "id": "ury-adm2-josé-enrique-rodó",
+     "name": "José Enrique Rodó"
+    },
+    {
+     "id": "ury-adm2-josé-pedro-varela",
+     "name": "José Pedro Varela"
+    },
+    {
+     "id": "ury-adm2-juan-l-lacaze",
+     "name": "Juan L. Lacaze"
+    },
+    {
+     "id": "ury-adm2-la-floresta",
+     "name": "La Floresta"
+    },
+    {
+     "id": "ury-adm2-la-paloma",
+     "name": "La Paloma"
+    },
+    {
+     "id": "ury-adm2-la-paz",
+     "name": "La Paz"
+    },
+    {
+     "id": "ury-adm2-la-paz-2",
+     "name": "La Paz"
+    },
+    {
+     "id": "ury-adm2-las-cañas",
+     "name": "Las Cañas"
+    },
+    {
+     "id": "ury-adm2-las-piedras",
+     "name": "Las Piedras"
+    },
+    {
+     "id": "ury-adm2-lascano",
+     "name": "Lascano"
+    },
+    {
+     "id": "ury-adm2-libertad",
+     "name": "Libertad"
+    },
+    {
+     "id": "ury-adm2-lorenzo-geyres",
+     "name": "Lorenzo Geyres"
+    },
+    {
+     "id": "ury-adm2-los-cerrillos",
+     "name": "Los Cerrillos"
+    },
+    {
+     "id": "ury-adm2-maldonado",
+     "name": "Maldonado"
+    },
+    {
+     "id": "ury-adm2-mariscala",
+     "name": "Mariscala"
+    },
+    {
+     "id": "ury-adm2-mataojo",
+     "name": "Mataojo"
+    },
+    {
+     "id": "ury-adm2-miguelete",
+     "name": "Miguelete"
+    },
+    {
+     "id": "ury-adm2-migues",
+     "name": "Migues"
+    },
+    {
+     "id": "ury-adm2-minas-de-corrales",
+     "name": "Minas de Corrales"
+    },
+    {
+     "id": "ury-adm2-montes",
+     "name": "Montes"
+    },
+    {
+     "id": "ury-adm2-municipality-a",
+     "name": "Municipality A"
+    },
+    {
+     "id": "ury-adm2-municipality-b",
+     "name": "Municipality B"
+    },
+    {
+     "id": "ury-adm2-municipality-c",
+     "name": "Municipality C"
+    },
+    {
+     "id": "ury-adm2-municipality-ch",
+     "name": "Municipality CH"
+    },
+    {
+     "id": "ury-adm2-municipality-d",
+     "name": "Municipality D"
+    },
+    {
+     "id": "ury-adm2-municipality-e",
+     "name": "Municipality E"
+    },
+    {
+     "id": "ury-adm2-municipality-f",
+     "name": "Municipality F"
+    },
+    {
+     "id": "ury-adm2-municipality-g",
+     "name": "Municipality G"
+    },
+    {
+     "id": "ury-adm2-nicolich",
+     "name": "Nicolich"
+    },
+    {
+     "id": "ury-adm2-nueva-helvecia",
+     "name": "Nueva Helvecia"
+    },
+    {
+     "id": "ury-adm2-nueva-palmira",
+     "name": "Nueva Palmira"
+    },
+    {
+     "id": "ury-adm2-nuevo-berlín",
+     "name": "Nuevo Berlín"
+    },
+    {
+     "id": "ury-adm2-ombúes-de-lavalle",
+     "name": "Ombúes de Lavalle"
+    },
+    {
+     "id": "ury-adm2-palmitas",
+     "name": "Palmitas"
+    },
+    {
+     "id": "ury-adm2-pan-de-azúcar",
+     "name": "Pan de Azúcar"
+    },
+    {
+     "id": "ury-adm2-pando",
+     "name": "Pando"
+    },
+    {
+     "id": "ury-adm2-parque-del-plata",
+     "name": "Parque del Plata"
+    },
+    {
+     "id": "ury-adm2-paso-carrasco",
+     "name": "Paso Carrasco"
+    },
+    {
+     "id": "ury-adm2-paso-de-los-toros",
+     "name": "Paso de los Toros"
+    },
+    {
+     "id": "ury-adm2-piedras-coloradas",
+     "name": "Piedras Coloradas"
+    },
+    {
+     "id": "ury-adm2-piriápolis",
+     "name": "Piriápolis"
+    },
+    {
+     "id": "ury-adm2-plácido-rosas",
+     "name": "Plácido Rosas"
+    },
+    {
+     "id": "ury-adm2-porvenir",
+     "name": "Porvenir"
+    },
+    {
+     "id": "ury-adm2-progreso",
+     "name": "Progreso"
+    },
+    {
+     "id": "ury-adm2-punta-del-este",
+     "name": "Punta del Este"
+    },
+    {
+     "id": "ury-adm2-quebracho",
+     "name": "Quebracho"
+    },
+    {
+     "id": "ury-adm2-quebracho-2",
+     "name": "Quebracho"
+    },
+    {
+     "id": "ury-adm2-ramón-trigo",
+     "name": "Ramón Trigo"
+    },
+    {
+     "id": "ury-adm2-rincón",
+     "name": "Rincón"
+    },
+    {
+     "id": "ury-adm2-rodríguez",
+     "name": "Rodríguez"
+    },
+    {
+     "id": "ury-adm2-rosario",
+     "name": "Rosario"
+    },
+    {
+     "id": "ury-adm2-río-branco",
+     "name": "Río Branco"
+    },
+    {
+     "id": "ury-adm2-salinas",
+     "name": "Salinas"
+    },
+    {
+     "id": "ury-adm2-san-antonio",
+     "name": "San Antonio"
+    },
+    {
+     "id": "ury-adm2-san-antonio-2",
+     "name": "San Antonio"
+    },
+    {
+     "id": "ury-adm2-san-bautista",
+     "name": "San Bautista"
+    },
+    {
+     "id": "ury-adm2-san-carlos",
+     "name": "San Carlos"
+    },
+    {
+     "id": "ury-adm2-san-gregorio-de-polanco",
+     "name": "San Gregorio de Polanco"
+    },
+    {
+     "id": "ury-adm2-san-jacinto",
+     "name": "San Jacinto"
+    },
+    {
+     "id": "ury-adm2-san-javier",
+     "name": "San Javier"
+    },
+    {
+     "id": "ury-adm2-san-ramon",
+     "name": "San Ramon"
+    },
+    {
+     "id": "ury-adm2-santa-clara-de-olimar",
+     "name": "Santa Clara de Olimar"
+    },
+    {
+     "id": "ury-adm2-santa-lucía",
+     "name": "Santa Lucía"
+    },
+    {
+     "id": "ury-adm2-santa-rosa",
+     "name": "Santa Rosa"
+    },
+    {
+     "id": "ury-adm2-sarandí-del-yí",
+     "name": "Sarandí del Yí"
+    },
+    {
+     "id": "ury-adm2-sarandí-grande",
+     "name": "Sarandí Grande"
+    },
+    {
+     "id": "ury-adm2-sauce",
+     "name": "Sauce"
+    },
+    {
+     "id": "ury-adm2-soca",
+     "name": "Soca"
+    },
+    {
+     "id": "ury-adm2-solís-de-mataojo",
+     "name": "Solís de Mataojo"
+    },
+    {
+     "id": "ury-adm2-solís-grande",
+     "name": "Solís Grande"
+    },
+    {
+     "id": "ury-adm2-suárez",
+     "name": "Suárez"
+    },
+    {
+     "id": "ury-adm2-tala",
+     "name": "Tala"
+    },
+    {
+     "id": "ury-adm2-tambores",
+     "name": "Tambores"
+    },
+    {
+     "id": "ury-adm2-tarariras",
+     "name": "Tarariras"
+    },
+    {
+     "id": "ury-adm2-toledo",
+     "name": "Toledo"
+    },
+    {
+     "id": "ury-adm2-tomás-gomensoro",
+     "name": "Tomás Gomensoro"
+    },
+    {
+     "id": "ury-adm2-tranqueras",
+     "name": "Tranqueras"
+    },
+    {
+     "id": "ury-adm2-tres-islas",
+     "name": "Tres Islas"
+    },
+    {
+     "id": "ury-adm2-tupambaé",
+     "name": "Tupambaé"
+    },
+    {
+     "id": "ury-adm2-valentín",
+     "name": "Valentín"
+    },
+    {
+     "id": "ury-adm2-vergara",
+     "name": "Vergara"
+    },
+    {
+     "id": "ury-adm2-vichadero",
+     "name": "Vichadero"
+    },
+    {
+     "id": "ury-adm2-villa-constitución",
+     "name": "Villa Constitución"
+    },
+    {
+     "id": "ury-adm2-villa-del-carmen",
+     "name": "Villa del Carmen"
+    },
+    {
+     "id": "ury-adm2-villa-sara",
+     "name": "Villa Sara"
+    },
+    {
+     "id": "ury-adm2-young",
+     "name": "Young"
+    }
+   ]
+  }
+ },
+ "name": "Uruguay",
+ "nameBn": "Uruguay"
+}

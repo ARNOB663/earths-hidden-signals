@@ -71,14 +71,41 @@ export interface SignalRowData {
   id: string;
   name: string;
   level: AreaLevel;
-  country: string;
-  countryName: string;
-  areaCells: number;
-  coveredCells: number;
-  covered: string[];
   signal: "green" | "yellow" | "red" | "no-data";
   probability: number | null;
   modelConfidence: number | null;
+  /**
+   * Measured NASA coverage, kept separate from the demo score. `layers` is how many of the
+   * analysis variables have usable data for this area ("3 of 6 layers", not a distance or a
+   * percent). `cellShare` is the share of those variables' grid cells inside the boundary that
+   * carry a usable series — a real geographic percentage, used only when some layers exist.
+   */
+  coverage: {
+    layers: number;
+    totalLayers: number;
+    cellShare: number | null;
+    /** How many published child ADM1 areas carry data. Countries only; null elsewhere. */
+    childAreasCovered?: number | null;
+    childAreasTotal?: number | null;
+  };
+}
+
+/**
+ * A compact area row sent to the client. 52,000 areas cannot travel as full objects: each tuple is
+ * [id, name, signal, probability, layers, cellShare], and the client expands it. "no-data" rows
+ * carry null probability and null share.
+ */
+export type CompactAreaRow = [
+  id: string,
+  name: string,
+  signal: "green" | "yellow" | "red" | "no-data",
+  probability: number | null,
+  layers: number,
+  cellShare: number | null,
+];
+
+export function compactArea(row: SignalRowData): CompactAreaRow {
+  return [row.id, row.name, row.signal, row.probability, row.coverage.layers, row.coverage.cellShare];
 }
 
 export interface SignalCountryData extends SignalRowData {
@@ -88,96 +115,184 @@ export interface SignalCountryData extends SignalRowData {
   areaName: string;
   areaNameBn: string;
   levels: GeoCountrySummary["levels"];
-  areas: Partial<Record<"ADM1" | "ADM2", SignalRowData[]>>;
+  areas: Partial<Record<"ADM1" | "ADM2", CompactAreaRow[]>>;
 }
 
 export interface SignalDirectory {
-  countries: SignalCountryData[];
+  countries: SignalCountryHeader[];
   demo: DemoScoresFile;
   coverage: CoverageFile;
   geography: GeographyIndex;
+}
+
+/** A country row with its level counts but no area rows: the page loads areas on expand. */
+export interface SignalCountryHeader extends SignalRowData {
+  code: string;
+  nameBn: string;
+  flag: string;
+  areaName: string;
+  areaNameBn: string;
+  levels: GeoCountrySummary["levels"];
+}
+
+/** The per-country area file written by build_signal_scores.py. */
+export interface CountryAreasFile {
+  ADM1?: { name: string; nameBn: string; rows: CompactAreaRow[] };
+  ADM2?: { name: string; nameBn: string; rows: CompactAreaRow[] };
+}
+
+/** Load one country's area rows from the committed per-country file. */
+export async function readCountryAreas(iso: string): Promise<CountryAreasFile> {
+  return readJson<CountryAreasFile>(path.join(SIGNALS, "areas", `${iso}.json`));
 }
 
 export async function loadSignalDirectory(): Promise<SignalDirectory> {
   const [index, coverage, demo] = await Promise.all([readGeographyIndex(), readCoverage(), readDemoScores()]);
   const coverageById = new Map(coverage.areas.map((area) => [area.id, area]));
   const demoById = new Map(demo.areas.map((area) => [area.id, area]));
-  // A variable counts only when its grid is fine enough to say anything about the area: a 2°
-  // cell larger than the whole district is not district-level evidence.
-  const minCells = Math.max(1, ...Object.values(coverage.variables).map((variable) => Math.min(3, variable.analysisCells)));
+  // The coverage file already applied the published rule (at least half of a variable's cells in
+  // the area's bounding box inside the boundary, and at least one). The page must not add its own
+  // cut-off on top, or it would contradict the measured coverage it displays.
+  const totalLayers = Object.keys(coverage.variables).length;
+  const counts = (cell: { areaCells: number; coveredCells: number; covered: boolean }) => cell.areaCells > 0;
 
-  const row = (id: string, name: string, level: AreaLevel, country: string, countryName: string): SignalRowData => {
+  const row = (id: string, name: string, level: AreaLevel): SignalRowData => {
     const cells = coverageById.get(id)?.cells ?? {};
-    const covered = Object.keys(cells)
-      .filter((key) => cells[key].covered && cells[key].areaCells >= minCells)
-      .sort();
-    const areaCells = Object.values(cells).reduce((sum, cell) => sum + cell.areaCells, 0);
-    const coveredCells = Object.values(cells).reduce((sum, cell) => sum + cell.coveredCells, 0);
+    const layers = Object.keys(cells).filter((key) => cells[key].covered).length;
+    // The geographic share uses every variable that has at least one cell inside the area, so a
+    // coarse layer that misses the area entirely does not drag the percentage down.
+    const countedCells = Object.values(cells).filter(counts).reduce((sum, cell) => sum + cell.areaCells, 0);
+    const countedCovered = Object.values(cells).filter(counts).reduce((sum, cell) => sum + cell.coveredCells, 0);
     const score = demoById.get(id);
-    const scored = covered.length > 0 && score !== undefined;
+    const scored = layers > 0 && score !== undefined;
     return {
       id,
       name,
       level,
-      country,
-      countryName,
-      areaCells,
-      coveredCells,
-      covered,
       signal: scored ? score.signal : "no-data",
       probability: scored ? score.probability : null,
       modelConfidence: scored ? score.modelConfidence : null,
+      coverage: {
+        layers,
+        totalLayers,
+        cellShare: countedCells > 0 ? countedCovered / countedCells : null,
+      },
     };
   };
 
-  const countries: SignalCountryData[] = [];
-  for (const country of index.countries) {
-    const areas: SignalCountryData["areas"] = {};
-    for (const level of ["ADM1", "ADM2"] as const) {
-      const units = country.areas[level];
-      if (!units || units.length === 0) continue;
-      areas[level] = units
-        .map((unit) => row(unit.id, unit.name, level, country.code, country.name))
-        .sort((a, b) => a.name.localeCompare(b.name, "en") || a.id.localeCompare(b.id));
+  // Country rows only. The 52,000 area rows live in per-country files and are loaded when a
+  // country is opened, so the server never has to serialise the whole directory to the client.
+  const countries: SignalCountryHeader[] = index.countries.map((country) => {
+    const adm0 = row(`${country.code.toLowerCase()}-adm0`, country.name, "country");
+    const adm1Units = country.areas.ADM1 ?? [];
+    if (adm1Units.length > 0) {
+      // Count ADM1 areas with measured coverage straight from the coverage file.
+      const areasWithData = adm1Units.filter((unit) => row(unit.id, unit.name, "ADM1").coverage.layers > 0).length;
+      adm0.coverage.childAreasCovered = areasWithData;
+      adm0.coverage.childAreasTotal = adm1Units.length;
+      adm0.coverage.layers = areasWithData;
+      if (areasWithData === 0) {
+        adm0.signal = "no-data";
+        adm0.probability = null;
+        adm0.modelConfidence = null;
+      }
     }
-    countries.push({
-      ...row(`${country.code.toLowerCase()}-adm0`, country.name, "country", country.code, country.name),
+    return {
+      ...adm0,
       code: country.code,
       nameBn: country.nameBn,
       flag: country.flag,
       areaName: country.areaName,
       areaNameBn: country.areaNameBn,
       levels: country.levels,
-      areas,
-    });
-  }
+    };
+  });
   return { countries, demo, coverage, geography: index };
 }
 
-/** The area-level totals the page header and legend quote, computed from the same rows. */
-export function countSignalRows(countries: SignalCountryData[]) {
+/**
+ * The GYR totals the page header quotes. They are counted from the same coverage + demo files the
+ * rows and per-country area files use, so a total can never disagree with the list.
+ */
+export function countSignalRows(directory: SignalDirectory) {
+  const { countries, coverage, demo } = directory;
+  const coverageById = new Map(coverage.areas.map((area) => [area.id, area]));
+  const demoById = new Map(demo.areas.map((area) => [area.id, area]));
   const counts = { green: 0, yellow: 0, red: 0, "no-data": 0 };
-  const levels: Record<string, number> = {};
+  const levels: Record<string, number> = { country: countries.length, ADM1: 0, ADM2: 0 };
+
+  // Each participant is either a country (ADM0) or an area with a coverage row (ADM1).
+  const scoreFor = (id: string) => {
+    const layers = Object.values(coverageById.get(id)?.cells ?? {}).filter((cell) => cell.covered).length;
+    const score = demoById.get(id);
+    return layers > 0 && score ? score.signal : "no-data";
+  };
+
   for (const country of countries) {
-    counts[country.signal] += 1;
-    levels.country = (levels.country ?? 0) + 1;
-    for (const level of ["ADM1", "ADM2"] as const) {
-      const rows = country.areas[level] ?? [];
-      if (rows.length > 0) levels[level] = (levels[level] ?? 0) + rows.length;
-      for (const area of rows) counts[area.signal] += 1;
-    }
+    const adm1 = country.levels.ADM1?.count ?? 0;
+    const adm2 = country.levels.ADM2?.count ?? 0;
+    levels.ADM1 += adm1;
+    levels.ADM2 += adm2;
+    const countrySignal = country.coverage.childAreasCovered === 0 ? "no-data" : scoreFor(country.id);
+    counts[countrySignal] += 1;
   }
+  for (const area of coverage.areas) {
+    if (area.level !== "ADM1") continue;
+    counts[scoreFor(area.id)] += 1;
+  }
+  // ADM2 has no published coverage, so every ADM2 row is No data.
+  counts["no-data"] += levels.ADM2;
   return { counts, levels };
 }
 
-/** Look up one area by its shared identifier, e.g. "bgd-adm2-dhaka". */
-export async function findArea(id: string): Promise<{ country: SignalCountryData; area: SignalRowData } | null> {
-  const { countries } = await loadSignalDirectory();
+/** How many areas of each level have real measured coverage, for the coverage line. */
+export function coverageSummary(countries: SignalCountryHeader[]) {
+  const levels: Record<string, { total: number; withData: number }> = { country: { total: 0, withData: 0 }, ADM1: { total: 0, withData: 0 }, ADM2: { total: 0, withData: 0 } };
+  for (const country of countries) {
+    levels.country.total += 1;
+    if ((country.coverage.childAreasCovered ?? 0) > 0 || country.coverage.layers > 0) levels.country.withData += 1;
+    // Area totals come from the boundary index, not from rows that are no longer loaded here.
+    const adm1 = country.levels.ADM1?.count ?? 0;
+    const adm2 = country.levels.ADM2?.count ?? 0;
+    levels.ADM1.total += adm1;
+    levels.ADM2.total += adm2;
+    levels.ADM1.withData += country.coverage.childAreasCovered ?? 0;
+  }
+  return levels;
+}
+
+/** A full area row rebuilt from its compact form; the level and layer total come from the caller. */
+export function expandArea(
+  row: CompactAreaRow,
+  level: AreaLevel,
+  totalLayers: number,
+  modelConfidence: number | null = null,
+): SignalRowData {
+  const [id, name, signal, probability, layers, cellShare] = row;
+  return {
+    id,
+    name,
+    level,
+    signal,
+    probability,
+    modelConfidence,
+    coverage: { layers, totalLayers, cellShare },
+  };
+}
+
+/**
+ * Look up one area by the shared identifier every page uses, e.g. "bgd-adm2-dhaka" or
+ * "bgd-adm0". Watch, Accuracy, Hazards, Trends and Map can resolve the same IDs through this.
+ */
+export async function findArea(id: string): Promise<{ country: SignalCountryHeader; area: SignalRowData } | null> {
+  const { countries, coverage } = await loadSignalDirectory();
+  const totalLayers = Object.keys(coverage.variables).length;
   for (const country of countries) {
     if (country.id === id) return { country, area: country };
+    const areasFile = await readCountryAreas(country.code);
     for (const level of ["ADM1", "ADM2"] as const) {
-      const area = country.areas[level]?.find((candidate) => candidate.id === id);
-      if (area) return { country, area };
+      const found = areasFile[level]?.rows.find((candidate) => candidate[0] === id);
+      if (found) return { country, area: expandArea(found, level, totalLayers) };
     }
   }
   return null;

@@ -1,0 +1,762 @@
+{
+ "code": "AGO",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "República de Angola",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2021",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Province",
+   "code": "ADM1",
+   "count": 18,
+   "name": "Province",
+   "nameBn": "প্রদেশ",
+   "representedYear": "2021",
+   "sourceCount": 18,
+   "units": [
+    {
+     "id": "ago-adm1-bengo",
+     "name": "Bengo",
+     "shapeISO": "AO-BGO"
+    },
+    {
+     "id": "ago-adm1-benguela",
+     "name": "Benguela",
+     "shapeISO": "AO-BGU"
+    },
+    {
+     "id": "ago-adm1-bié",
+     "name": "Bié",
+     "shapeISO": "AO-BIE"
+    },
+    {
+     "id": "ago-adm1-cabinda",
+     "name": "Cabinda",
+     "shapeISO": "AO-CAB"
+    },
+    {
+     "id": "ago-adm1-cuando-cubango",
+     "name": "Cuando Cubango",
+     "shapeISO": "AO-CCU"
+    },
+    {
+     "id": "ago-adm1-cuanza-norte",
+     "name": "Cuanza Norte",
+     "shapeISO": "AO-CNO"
+    },
+    {
+     "id": "ago-adm1-cuanza-sul",
+     "name": "Cuanza Sul",
+     "shapeISO": "AO-CUS"
+    },
+    {
+     "id": "ago-adm1-cunene",
+     "name": "Cunene",
+     "shapeISO": "AO-CNN"
+    },
+    {
+     "id": "ago-adm1-huambo",
+     "name": "Huambo",
+     "shapeISO": "AO-HUA"
+    },
+    {
+     "id": "ago-adm1-huíla",
+     "name": "Huíla",
+     "shapeISO": "AO-HUI"
+    },
+    {
+     "id": "ago-adm1-luanda",
+     "name": "Luanda",
+     "shapeISO": "AO-LUA"
+    },
+    {
+     "id": "ago-adm1-lunda-norte",
+     "name": "Lunda Norte",
+     "shapeISO": "AO-LNO"
+    },
+    {
+     "id": "ago-adm1-lunda-sul",
+     "name": "Lunda Sul",
+     "shapeISO": "AO-LSU"
+    },
+    {
+     "id": "ago-adm1-malanje",
+     "name": "Malanje",
+     "shapeISO": "AO-MAL"
+    },
+    {
+     "id": "ago-adm1-moxico",
+     "name": "Moxico",
+     "shapeISO": "AO-MOX"
+    },
+    {
+     "id": "ago-adm1-namibe",
+     "name": "Namibe",
+     "shapeISO": "AO-NAM"
+    },
+    {
+     "id": "ago-adm1-uíge",
+     "name": "Uíge",
+     "shapeISO": "AO-UIG"
+    },
+    {
+     "id": "ago-adm1-zaire",
+     "name": "Zaire",
+     "shapeISO": "AO-ZAI"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Municipality",
+   "code": "ADM2",
+   "count": 158,
+   "name": "Municipality",
+   "nameBn": "পৌরসভা",
+   "representedYear": "2006",
+   "sourceCount": 158,
+   "units": [
+    {
+     "id": "ago-adm2-alto-zambeze",
+     "name": "Alto Zambeze"
+    },
+    {
+     "id": "ago-adm2-ambaca",
+     "name": "Ambaca"
+    },
+    {
+     "id": "ago-adm2-amboim-gabela",
+     "name": "Amboim (Gabela)"
+    },
+    {
+     "id": "ago-adm2-ambriz",
+     "name": "Ambriz"
+    },
+    {
+     "id": "ago-adm2-ambuila",
+     "name": "Ambuila"
+    },
+    {
+     "id": "ago-adm2-andulo",
+     "name": "Andulo"
+    },
+    {
+     "id": "ago-adm2-baia-farta",
+     "name": "Baia Farta"
+    },
+    {
+     "id": "ago-adm2-bailundo",
+     "name": "Bailundo"
+    },
+    {
+     "id": "ago-adm2-balombo",
+     "name": "Balombo"
+    },
+    {
+     "id": "ago-adm2-banga",
+     "name": "Banga"
+    },
+    {
+     "id": "ago-adm2-belas",
+     "name": "Belas"
+    },
+    {
+     "id": "ago-adm2-belize",
+     "name": "Belize"
+    },
+    {
+     "id": "ago-adm2-bembe",
+     "name": "Bembe"
+    },
+    {
+     "id": "ago-adm2-benguela",
+     "name": "Benguela"
+    },
+    {
+     "id": "ago-adm2-bibala",
+     "name": "Bibala"
+    },
+    {
+     "id": "ago-adm2-bocoio",
+     "name": "Bocoio"
+    },
+    {
+     "id": "ago-adm2-bolongongo",
+     "name": "Bolongongo"
+    },
+    {
+     "id": "ago-adm2-buco-zau",
+     "name": "Buco Zau"
+    },
+    {
+     "id": "ago-adm2-buengas",
+     "name": "Buengas"
+    },
+    {
+     "id": "ago-adm2-bula-atumba",
+     "name": "Bula-Atumba"
+    },
+    {
+     "id": "ago-adm2-bundas",
+     "name": "Bundas"
+    },
+    {
+     "id": "ago-adm2-bungo",
+     "name": "Bungo"
+    },
+    {
+     "id": "ago-adm2-caala",
+     "name": "Caala"
+    },
+    {
+     "id": "ago-adm2-cabinda",
+     "name": "Cabinda"
+    },
+    {
+     "id": "ago-adm2-cacolo",
+     "name": "Cacolo"
+    },
+    {
+     "id": "ago-adm2-caconda",
+     "name": "Caconda"
+    },
+    {
+     "id": "ago-adm2-cacongo-landana",
+     "name": "Cacongo (Landana)"
+    },
+    {
+     "id": "ago-adm2-cacuaco",
+     "name": "Cacuaco"
+    },
+    {
+     "id": "ago-adm2-cacuso",
+     "name": "Cacuso"
+    },
+    {
+     "id": "ago-adm2-cahama",
+     "name": "Cahama"
+    },
+    {
+     "id": "ago-adm2-cahombo",
+     "name": "Cahombo"
+    },
+    {
+     "id": "ago-adm2-caimbambo",
+     "name": "Caimbambo"
+    },
+    {
+     "id": "ago-adm2-calai",
+     "name": "Calai"
+    },
+    {
+     "id": "ago-adm2-calandula",
+     "name": "Calandula"
+    },
+    {
+     "id": "ago-adm2-caluquembe",
+     "name": "Caluquembe"
+    },
+    {
+     "id": "ago-adm2-camacupa",
+     "name": "Camacupa"
+    },
+    {
+     "id": "ago-adm2-camanongue",
+     "name": "Camanongue"
+    },
+    {
+     "id": "ago-adm2-cambambe",
+     "name": "Cambambe"
+    },
+    {
+     "id": "ago-adm2-cambulo",
+     "name": "Cambulo"
+    },
+    {
+     "id": "ago-adm2-cambundi-catembo",
+     "name": "Cambundi-Catembo"
+    },
+    {
+     "id": "ago-adm2-cameia-lumeje",
+     "name": "Cameia (Lumeje)"
+    },
+    {
+     "id": "ago-adm2-camucuio",
+     "name": "Camucuio"
+    },
+    {
+     "id": "ago-adm2-cangandala",
+     "name": "Cangandala"
+    },
+    {
+     "id": "ago-adm2-cangola",
+     "name": "Cangola"
+    },
+    {
+     "id": "ago-adm2-capenda-camulemba",
+     "name": "Capenda-Camulemba"
+    },
+    {
+     "id": "ago-adm2-cassongue",
+     "name": "Cassongue"
+    },
+    {
+     "id": "ago-adm2-catabola",
+     "name": "Catabola"
+    },
+    {
+     "id": "ago-adm2-catchiungo",
+     "name": "Catchiungo"
+    },
+    {
+     "id": "ago-adm2-catumbela",
+     "name": "Catumbela"
+    },
+    {
+     "id": "ago-adm2-caungula",
+     "name": "Caungula"
+    },
+    {
+     "id": "ago-adm2-cazengo",
+     "name": "Cazengo"
+    },
+    {
+     "id": "ago-adm2-cela-waku-kungo",
+     "name": "Cela (Waku Kungo)"
+    },
+    {
+     "id": "ago-adm2-chibia",
+     "name": "Chibia"
+    },
+    {
+     "id": "ago-adm2-chicomba",
+     "name": "Chicomba"
+    },
+    {
+     "id": "ago-adm2-chinguar",
+     "name": "Chinguar"
+    },
+    {
+     "id": "ago-adm2-chipindo",
+     "name": "Chipindo"
+    },
+    {
+     "id": "ago-adm2-chitato",
+     "name": "Chitato"
+    },
+    {
+     "id": "ago-adm2-chitembo",
+     "name": "Chitembo"
+    },
+    {
+     "id": "ago-adm2-chongoroi",
+     "name": "Chongoroi"
+    },
+    {
+     "id": "ago-adm2-conda",
+     "name": "Conda"
+    },
+    {
+     "id": "ago-adm2-cuangar",
+     "name": "Cuangar"
+    },
+    {
+     "id": "ago-adm2-cuango",
+     "name": "Cuango"
+    },
+    {
+     "id": "ago-adm2-cuanhama",
+     "name": "Cuanhama"
+    },
+    {
+     "id": "ago-adm2-cubal",
+     "name": "Cubal"
+    },
+    {
+     "id": "ago-adm2-cuchi",
+     "name": "Cuchi"
+    },
+    {
+     "id": "ago-adm2-cuemba",
+     "name": "Cuemba"
+    },
+    {
+     "id": "ago-adm2-cuilo",
+     "name": "Cuilo"
+    },
+    {
+     "id": "ago-adm2-cuimba",
+     "name": "Cuimba"
+    },
+    {
+     "id": "ago-adm2-cuito",
+     "name": "Cuito"
+    },
+    {
+     "id": "ago-adm2-cuito-cuanavale",
+     "name": "Cuito Cuanavale"
+    },
+    {
+     "id": "ago-adm2-cunda-dia-baze",
+     "name": "Cunda-dia-Baze"
+    },
+    {
+     "id": "ago-adm2-cunhinga",
+     "name": "Cunhinga"
+    },
+    {
+     "id": "ago-adm2-curoca",
+     "name": "Curoca"
+    },
+    {
+     "id": "ago-adm2-cuvango",
+     "name": "Cuvango"
+    },
+    {
+     "id": "ago-adm2-cuvelai",
+     "name": "Cuvelai"
+    },
+    {
+     "id": "ago-adm2-dala",
+     "name": "Dala"
+    },
+    {
+     "id": "ago-adm2-damba",
+     "name": "Damba"
+    },
+    {
+     "id": "ago-adm2-dande",
+     "name": "Dande"
+    },
+    {
+     "id": "ago-adm2-dembos-quibaxe",
+     "name": "Dembos-Quibaxe"
+    },
+    {
+     "id": "ago-adm2-dirico",
+     "name": "Dirico"
+    },
+    {
+     "id": "ago-adm2-ebo",
+     "name": "Ebo"
+    },
+    {
+     "id": "ago-adm2-ecunha-ekunha",
+     "name": "Ecunha (Ekunha)"
+    },
+    {
+     "id": "ago-adm2-gambos-chiange",
+     "name": "Gambos(Chiange)"
+    },
+    {
+     "id": "ago-adm2-ganda",
+     "name": "Ganda"
+    },
+    {
+     "id": "ago-adm2-golungo-alto",
+     "name": "Golungo Alto"
+    },
+    {
+     "id": "ago-adm2-huambo",
+     "name": "Huambo"
+    },
+    {
+     "id": "ago-adm2-humpata",
+     "name": "Humpata"
+    },
+    {
+     "id": "ago-adm2-icolo-e-bengo",
+     "name": "Icolo e Bengo"
+    },
+    {
+     "id": "ago-adm2-jamba",
+     "name": "Jamba"
+    },
+    {
+     "id": "ago-adm2-kiuaba-n-zoji",
+     "name": "Kiuaba-N'Zoji"
+    },
+    {
+     "id": "ago-adm2-leua",
+     "name": "Leua"
+    },
+    {
+     "id": "ago-adm2-libolo-calulo",
+     "name": "Libolo (Calulo)"
+    },
+    {
+     "id": "ago-adm2-lobito",
+     "name": "Lobito"
+    },
+    {
+     "id": "ago-adm2-londuimbale",
+     "name": "Londuimbale"
+    },
+    {
+     "id": "ago-adm2-longonjo",
+     "name": "Longonjo"
+    },
+    {
+     "id": "ago-adm2-luacano",
+     "name": "Luacano"
+    },
+    {
+     "id": "ago-adm2-luanda",
+     "name": "Luanda"
+    },
+    {
+     "id": "ago-adm2-luau",
+     "name": "Luau"
+    },
+    {
+     "id": "ago-adm2-lubalo",
+     "name": "Lubalo"
+    },
+    {
+     "id": "ago-adm2-lubango",
+     "name": "Lubango"
+    },
+    {
+     "id": "ago-adm2-lucala",
+     "name": "Lucala"
+    },
+    {
+     "id": "ago-adm2-lucapa",
+     "name": "Lucapa"
+    },
+    {
+     "id": "ago-adm2-luchazes",
+     "name": "Luchazes"
+    },
+    {
+     "id": "ago-adm2-luena",
+     "name": "Luena"
+    },
+    {
+     "id": "ago-adm2-luquembo",
+     "name": "Luquembo"
+    },
+    {
+     "id": "ago-adm2-malanje",
+     "name": "Malanje"
+    },
+    {
+     "id": "ago-adm2-maquela-do-zombo",
+     "name": "Maquela do Zombo"
+    },
+    {
+     "id": "ago-adm2-marimba",
+     "name": "Marimba"
+    },
+    {
+     "id": "ago-adm2-massango",
+     "name": "Massango"
+    },
+    {
+     "id": "ago-adm2-matala",
+     "name": "Matala"
+    },
+    {
+     "id": "ago-adm2-mavinga",
+     "name": "Mavinga"
+    },
+    {
+     "id": "ago-adm2-mbanza-congo",
+     "name": "Mbanza Congo"
+    },
+    {
+     "id": "ago-adm2-menongue",
+     "name": "Menongue"
+    },
+    {
+     "id": "ago-adm2-milunga",
+     "name": "Milunga"
+    },
+    {
+     "id": "ago-adm2-mucaba",
+     "name": "Mucaba"
+    },
+    {
+     "id": "ago-adm2-mucari",
+     "name": "Mucari"
+    },
+    {
+     "id": "ago-adm2-muconda",
+     "name": "Muconda"
+    },
+    {
+     "id": "ago-adm2-mungo",
+     "name": "Mungo"
+    },
+    {
+     "id": "ago-adm2-mussende",
+     "name": "Mussende"
+    },
+    {
+     "id": "ago-adm2-n-harea",
+     "name": "N'harea"
+    },
+    {
+     "id": "ago-adm2-n-zeto",
+     "name": "N'Zeto"
+    },
+    {
+     "id": "ago-adm2-namacunde",
+     "name": "Namacunde"
+    },
+    {
+     "id": "ago-adm2-nambuangongo",
+     "name": "Nambuangongo"
+    },
+    {
+     "id": "ago-adm2-namibe",
+     "name": "Namibe"
+    },
+    {
+     "id": "ago-adm2-nancova",
+     "name": "Nancova"
+    },
+    {
+     "id": "ago-adm2-negage",
+     "name": "Negage"
+    },
+    {
+     "id": "ago-adm2-ngonguembo",
+     "name": "Ngonguembo"
+    },
+    {
+     "id": "ago-adm2-noqui",
+     "name": "Noqui"
+    },
+    {
+     "id": "ago-adm2-ombadja",
+     "name": "Ombadja"
+    },
+    {
+     "id": "ago-adm2-pango-aluquem",
+     "name": "Pango-Aluquem"
+    },
+    {
+     "id": "ago-adm2-porto-amboim",
+     "name": "Porto Amboim"
+    },
+    {
+     "id": "ago-adm2-puri",
+     "name": "Puri"
+    },
+    {
+     "id": "ago-adm2-quela",
+     "name": "Quela"
+    },
+    {
+     "id": "ago-adm2-quibala",
+     "name": "Quibala"
+    },
+    {
+     "id": "ago-adm2-quiculongo",
+     "name": "Quiculongo"
+    },
+    {
+     "id": "ago-adm2-quilenda",
+     "name": "Quilenda"
+    },
+    {
+     "id": "ago-adm2-quilengues",
+     "name": "Quilengues"
+    },
+    {
+     "id": "ago-adm2-quimbele",
+     "name": "Quimbele"
+    },
+    {
+     "id": "ago-adm2-quipungo",
+     "name": "Quipungo"
+    },
+    {
+     "id": "ago-adm2-quirima",
+     "name": "Quirima"
+    },
+    {
+     "id": "ago-adm2-quissama",
+     "name": "Quissama"
+    },
+    {
+     "id": "ago-adm2-quitexe",
+     "name": "Quitexe"
+    },
+    {
+     "id": "ago-adm2-rivungo",
+     "name": "Rivungo"
+    },
+    {
+     "id": "ago-adm2-samba-caju",
+     "name": "Samba Caju"
+    },
+    {
+     "id": "ago-adm2-sanza-pombo",
+     "name": "Sanza Pombo"
+    },
+    {
+     "id": "ago-adm2-saurimo",
+     "name": "Saurimo"
+    },
+    {
+     "id": "ago-adm2-seles-uku-seles",
+     "name": "Seles (Uku Seles)"
+    },
+    {
+     "id": "ago-adm2-songo",
+     "name": "Songo"
+    },
+    {
+     "id": "ago-adm2-soyo",
+     "name": "Soyo"
+    },
+    {
+     "id": "ago-adm2-sumbe-ngangula",
+     "name": "Sumbe (Ngangula)"
+    },
+    {
+     "id": "ago-adm2-tchikala-tcholohanga",
+     "name": "Tchikala-Tcholohanga"
+    },
+    {
+     "id": "ago-adm2-tchinjenje",
+     "name": "Tchinjenje"
+    },
+    {
+     "id": "ago-adm2-tomboco",
+     "name": "Tomboco"
+    },
+    {
+     "id": "ago-adm2-tombwa",
+     "name": "Tombwa"
+    },
+    {
+     "id": "ago-adm2-uige",
+     "name": "Uige"
+    },
+    {
+     "id": "ago-adm2-ukuma",
+     "name": "Ukuma"
+    },
+    {
+     "id": "ago-adm2-virei",
+     "name": "Virei"
+    },
+    {
+     "id": "ago-adm2-xa-muteba",
+     "name": "Xa-Muteba"
+    }
+   ]
+  }
+ },
+ "name": "Angola",
+ "nameBn": "Angola"
+}

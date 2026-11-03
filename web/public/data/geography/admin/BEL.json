@@ -1,0 +1,110 @@
+{
+ "code": "BEL",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Country",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2022",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Region",
+   "code": "ADM1",
+   "count": 3,
+   "name": "Region",
+   "nameBn": "অঞ্চল",
+   "representedYear": "2022",
+   "sourceCount": 3,
+   "units": [
+    {
+     "id": "bel-adm1-brussels-hoofdstedelijk",
+     "name": "Brussels Hoofdstedelijk",
+     "shapeISO": "BRU"
+    },
+    {
+     "id": "bel-adm1-vlaams-gewest",
+     "name": "Vlaams Gewest",
+     "shapeISO": "VLG"
+    },
+    {
+     "id": "bel-adm1-wallonne-gewest",
+     "name": "Wallonne Gewest",
+     "shapeISO": "WAL"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Unknown",
+   "code": "ADM2",
+   "count": 11,
+   "name": "ADM2 areas",
+   "nameBn": "ADM2 এলাকা",
+   "representedYear": "2015",
+   "sourceCount": 11,
+   "units": [
+    {
+     "id": "bel-adm2-antwerpen",
+     "name": "Antwerpen",
+     "shapeISO": "BE-VAN"
+    },
+    {
+     "id": "bel-adm2-brussels",
+     "name": "Brussels",
+     "shapeISO": "BE-BRU"
+    },
+    {
+     "id": "bel-adm2-henegouwen",
+     "name": "Henegouwen",
+     "shapeISO": "BE-WHT"
+    },
+    {
+     "id": "bel-adm2-limburg",
+     "name": "Limburg",
+     "shapeISO": "BE-VLI"
+    },
+    {
+     "id": "bel-adm2-luik",
+     "name": "Luik",
+     "shapeISO": "BE-WLG"
+    },
+    {
+     "id": "bel-adm2-luxemburg",
+     "name": "Luxemburg",
+     "shapeISO": "BE-WLX"
+    },
+    {
+     "id": "bel-adm2-namen",
+     "name": "Namen",
+     "shapeISO": "BE-WNA"
+    },
+    {
+     "id": "bel-adm2-oost-vlaanderen",
+     "name": "Oost-Vlaanderen",
+     "shapeISO": "BE-VOV"
+    },
+    {
+     "id": "bel-adm2-vlaams-brabant",
+     "name": "Vlaams-Brabant",
+     "shapeISO": "BE-VBR"
+    },
+    {
+     "id": "bel-adm2-waals-brabant",
+     "name": "Waals-Brabant",
+     "shapeISO": "BE-WBR"
+    },
+    {
+     "id": "bel-adm2-west-vlaanderen",
+     "name": "West-Vlaanderen",
+     "shapeISO": "BE-VWV"
+    }
+   ]
+  }
+ },
+ "name": "Belgium",
+ "nameBn": "Belgium"
+}

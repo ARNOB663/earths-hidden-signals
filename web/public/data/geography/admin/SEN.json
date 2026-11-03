@@ -1,0 +1,290 @@
+{
+ "code": "SEN",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Republic of Senegal",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2019",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "region",
+   "code": "ADM1",
+   "count": 14,
+   "name": "region",
+   "nameBn": "region",
+   "representedYear": "2019",
+   "sourceCount": 14,
+   "units": [
+    {
+     "id": "sen-adm1-dakar",
+     "name": "Dakar",
+     "shapeISO": "SN-DK"
+    },
+    {
+     "id": "sen-adm1-diourbel",
+     "name": "Diourbel",
+     "shapeISO": "SN-DB"
+    },
+    {
+     "id": "sen-adm1-fatick",
+     "name": "Fatick",
+     "shapeISO": "SN-FK"
+    },
+    {
+     "id": "sen-adm1-kaffrine",
+     "name": "Kaffrine",
+     "shapeISO": "SN-KA"
+    },
+    {
+     "id": "sen-adm1-kaolack",
+     "name": "Kaolack",
+     "shapeISO": "SN-KL"
+    },
+    {
+     "id": "sen-adm1-kedougou",
+     "name": "Kedougou",
+     "shapeISO": "SN-KE"
+    },
+    {
+     "id": "sen-adm1-kolda",
+     "name": "Kolda",
+     "shapeISO": "SN-KD"
+    },
+    {
+     "id": "sen-adm1-louga",
+     "name": "Louga",
+     "shapeISO": "SN-LG"
+    },
+    {
+     "id": "sen-adm1-matam",
+     "name": "Matam",
+     "shapeISO": "SN-MT"
+    },
+    {
+     "id": "sen-adm1-saint-louis",
+     "name": "Saint Louis",
+     "shapeISO": "SN-SL"
+    },
+    {
+     "id": "sen-adm1-sedhiou",
+     "name": "Sedhiou",
+     "shapeISO": "SN-SE"
+    },
+    {
+     "id": "sen-adm1-tambacounda",
+     "name": "Tambacounda",
+     "shapeISO": "SN-TC"
+    },
+    {
+     "id": "sen-adm1-thies",
+     "name": "Thies",
+     "shapeISO": "SN-TH"
+    },
+    {
+     "id": "sen-adm1-ziguinchor",
+     "name": "Ziguinchor",
+     "shapeISO": "SN-ZG"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "department",
+   "code": "ADM2",
+   "count": 45,
+   "name": "department",
+   "nameBn": "department",
+   "representedYear": "2019",
+   "sourceCount": 45,
+   "units": [
+    {
+     "id": "sen-adm2-bakel",
+     "name": "Bakel"
+    },
+    {
+     "id": "sen-adm2-bambey",
+     "name": "Bambey"
+    },
+    {
+     "id": "sen-adm2-bignona",
+     "name": "Bignona"
+    },
+    {
+     "id": "sen-adm2-birkelane",
+     "name": "Birkelane"
+    },
+    {
+     "id": "sen-adm2-bounkiling",
+     "name": "Bounkiling"
+    },
+    {
+     "id": "sen-adm2-dagana",
+     "name": "Dagana"
+    },
+    {
+     "id": "sen-adm2-dakar",
+     "name": "Dakar"
+    },
+    {
+     "id": "sen-adm2-diourbel",
+     "name": "Diourbel"
+    },
+    {
+     "id": "sen-adm2-fatick",
+     "name": "Fatick"
+    },
+    {
+     "id": "sen-adm2-foundiougne",
+     "name": "Foundiougne"
+    },
+    {
+     "id": "sen-adm2-gossas",
+     "name": "Gossas"
+    },
+    {
+     "id": "sen-adm2-goudiry",
+     "name": "Goudiry"
+    },
+    {
+     "id": "sen-adm2-goudomp",
+     "name": "Goudomp"
+    },
+    {
+     "id": "sen-adm2-guediawaye",
+     "name": "Guediawaye"
+    },
+    {
+     "id": "sen-adm2-guinguineo",
+     "name": "Guinguineo"
+    },
+    {
+     "id": "sen-adm2-kaffrine",
+     "name": "Kaffrine"
+    },
+    {
+     "id": "sen-adm2-kanel",
+     "name": "Kanel"
+    },
+    {
+     "id": "sen-adm2-kaolack",
+     "name": "Kaolack"
+    },
+    {
+     "id": "sen-adm2-kebemer",
+     "name": "Kebemer"
+    },
+    {
+     "id": "sen-adm2-kedougou",
+     "name": "Kedougou"
+    },
+    {
+     "id": "sen-adm2-kolda",
+     "name": "Kolda"
+    },
+    {
+     "id": "sen-adm2-koumpentoum",
+     "name": "Koumpentoum"
+    },
+    {
+     "id": "sen-adm2-koungheul",
+     "name": "Koungheul"
+    },
+    {
+     "id": "sen-adm2-linguere",
+     "name": "Linguere"
+    },
+    {
+     "id": "sen-adm2-louga",
+     "name": "Louga"
+    },
+    {
+     "id": "sen-adm2-malem-hodar",
+     "name": "Malem Hodar"
+    },
+    {
+     "id": "sen-adm2-matam",
+     "name": "Matam"
+    },
+    {
+     "id": "sen-adm2-mbacke",
+     "name": "Mbacke"
+    },
+    {
+     "id": "sen-adm2-mbour",
+     "name": "Mbour"
+    },
+    {
+     "id": "sen-adm2-medina-yoroufoula",
+     "name": "Medina Yoroufoula"
+    },
+    {
+     "id": "sen-adm2-nioro-du-rip",
+     "name": "Nioro Du Rip"
+    },
+    {
+     "id": "sen-adm2-oussouye",
+     "name": "Oussouye"
+    },
+    {
+     "id": "sen-adm2-pikine",
+     "name": "Pikine"
+    },
+    {
+     "id": "sen-adm2-podor",
+     "name": "Podor"
+    },
+    {
+     "id": "sen-adm2-ranerou",
+     "name": "Ranerou"
+    },
+    {
+     "id": "sen-adm2-rufisque",
+     "name": "Rufisque"
+    },
+    {
+     "id": "sen-adm2-saint-louis",
+     "name": "Saint Louis"
+    },
+    {
+     "id": "sen-adm2-salemata",
+     "name": "Salemata"
+    },
+    {
+     "id": "sen-adm2-saraya",
+     "name": "Saraya"
+    },
+    {
+     "id": "sen-adm2-sedhiou",
+     "name": "Sedhiou"
+    },
+    {
+     "id": "sen-adm2-tambacounda",
+     "name": "Tambacounda"
+    },
+    {
+     "id": "sen-adm2-thies",
+     "name": "Thies"
+    },
+    {
+     "id": "sen-adm2-tivaoune",
+     "name": "Tivaoune"
+    },
+    {
+     "id": "sen-adm2-velingara",
+     "name": "Velingara"
+    },
+    {
+     "id": "sen-adm2-ziguinchor",
+     "name": "Ziguinchor"
+    }
+   ]
+  }
+ },
+ "name": "Senegal",
+ "nameBn": "Senegal"
+}

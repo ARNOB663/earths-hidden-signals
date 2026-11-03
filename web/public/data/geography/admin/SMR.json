@@ -1,0 +1,74 @@
+{
+ "code": "SMR",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Unknown",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2017",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Unknown",
+   "code": "ADM1",
+   "count": 9,
+   "name": "ADM1 areas",
+   "nameBn": "ADM1 এলাকা",
+   "representedYear": "2017",
+   "sourceCount": 9,
+   "units": [
+    {
+     "id": "smr-adm1-acquaviva",
+     "name": "Acquaviva",
+     "shapeISO": "SM-01"
+    },
+    {
+     "id": "smr-adm1-borgo-maggiore",
+     "name": "Borgo Maggiore",
+     "shapeISO": "SM-06"
+    },
+    {
+     "id": "smr-adm1-chiesanuova",
+     "name": "Chiesanuova",
+     "shapeISO": "SM-02"
+    },
+    {
+     "id": "smr-adm1-città-di-san-marino",
+     "name": "Città di San Marino",
+     "shapeISO": "SM-07"
+    },
+    {
+     "id": "smr-adm1-domagnano",
+     "name": "Domagnano",
+     "shapeISO": "SM-03"
+    },
+    {
+     "id": "smr-adm1-faetano",
+     "name": "Faetano",
+     "shapeISO": "SM-04"
+    },
+    {
+     "id": "smr-adm1-fiorentino",
+     "name": "Fiorentino",
+     "shapeISO": "SM-05"
+    },
+    {
+     "id": "smr-adm1-montegiardino",
+     "name": "Montegiardino",
+     "shapeISO": "SM-08"
+    },
+    {
+     "id": "smr-adm1-serravalle",
+     "name": "Serravalle",
+     "shapeISO": "SM-09"
+    }
+   ]
+  }
+ },
+ "name": "San Marino",
+ "nameBn": "San Marino"
+}

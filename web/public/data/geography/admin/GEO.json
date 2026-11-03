@@ -1,0 +1,372 @@
+{
+ "code": "GEO",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Georgia",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2017",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Autonomous Republic, Region, City",
+   "code": "ADM1",
+   "count": 12,
+   "name": "ADM1 areas",
+   "nameBn": "ADM1 এলাকা",
+   "representedYear": "2015",
+   "sourceCount": 12,
+   "units": [
+    {
+     "id": "geo-adm1-abkhazia",
+     "name": "Abkhazia",
+     "shapeISO": "GE-AB"
+    },
+    {
+     "id": "geo-adm1-adjara",
+     "name": "Adjara",
+     "shapeISO": "GE-AJ"
+    },
+    {
+     "id": "geo-adm1-guria",
+     "name": "Guria",
+     "shapeISO": "GE-GU"
+    },
+    {
+     "id": "geo-adm1-imereti",
+     "name": "Imereti",
+     "shapeISO": "GE-IM"
+    },
+    {
+     "id": "geo-adm1-kakheti",
+     "name": "Kakheti",
+     "shapeISO": "GE-KA"
+    },
+    {
+     "id": "geo-adm1-kvemo-kartli",
+     "name": "Kvemo Kartli",
+     "shapeISO": "GE-KK"
+    },
+    {
+     "id": "geo-adm1-mtskheta-mtianeti",
+     "name": "Mtskheta-Mtianeti",
+     "shapeISO": "GE-MM"
+    },
+    {
+     "id": "geo-adm1-racha-lechkhumi-and-kvemo-svaneti",
+     "name": "Racha-Lechkhumi and Kvemo Svaneti",
+     "shapeISO": "GE-RL"
+    },
+    {
+     "id": "geo-adm1-samegrelo-zemo-svaneti",
+     "name": "Samegrelo-Zemo Svaneti",
+     "shapeISO": "GE-SZ"
+    },
+    {
+     "id": "geo-adm1-samtskhe-javakheti",
+     "name": "Samtskhe–Javakheti",
+     "shapeISO": "GE-SJ"
+    },
+    {
+     "id": "geo-adm1-shida-kartli",
+     "name": "Shida Kartli",
+     "shapeISO": "GE-SK"
+    },
+    {
+     "id": "geo-adm1-tbilisi",
+     "name": "Tbilisi",
+     "shapeISO": "GE-TB"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Municipality",
+   "code": "ADM2",
+   "count": 68,
+   "name": "Municipality",
+   "nameBn": "পৌরসভা",
+   "representedYear": "2007",
+   "sourceCount": 68,
+   "units": [
+    {
+     "id": "geo-adm2-abasha",
+     "name": "Abasha"
+    },
+    {
+     "id": "geo-adm2-adigeni",
+     "name": "Adigeni"
+    },
+    {
+     "id": "geo-adm2-akhalgori",
+     "name": "Akhalgori"
+    },
+    {
+     "id": "geo-adm2-akhalkalaki",
+     "name": "Akhalkalaki"
+    },
+    {
+     "id": "geo-adm2-akhaltsikhe",
+     "name": "Akhaltsikhe"
+    },
+    {
+     "id": "geo-adm2-akhmeta",
+     "name": "Akhmeta"
+    },
+    {
+     "id": "geo-adm2-ambrolauri",
+     "name": "Ambrolauri"
+    },
+    {
+     "id": "geo-adm2-aspindza",
+     "name": "Aspindza"
+    },
+    {
+     "id": "geo-adm2-baghdati",
+     "name": "Baghdati"
+    },
+    {
+     "id": "geo-adm2-bolnisi",
+     "name": "Bolnisi"
+    },
+    {
+     "id": "geo-adm2-borjomi",
+     "name": "Borjomi"
+    },
+    {
+     "id": "geo-adm2-chiatura",
+     "name": "Chiatura"
+    },
+    {
+     "id": "geo-adm2-chkhorotsku",
+     "name": "Chkhorotsku"
+    },
+    {
+     "id": "geo-adm2-chokhatauri",
+     "name": "Chokhatauri"
+    },
+    {
+     "id": "geo-adm2-dedoplis-tskaro",
+     "name": "Dedoplis Tskaro"
+    },
+    {
+     "id": "geo-adm2-dmanisi",
+     "name": "Dmanisi"
+    },
+    {
+     "id": "geo-adm2-dusheti",
+     "name": "Dusheti"
+    },
+    {
+     "id": "geo-adm2-gagra",
+     "name": "Gagra"
+    },
+    {
+     "id": "geo-adm2-gali",
+     "name": "Gali"
+    },
+    {
+     "id": "geo-adm2-gardabani",
+     "name": "Gardabani"
+    },
+    {
+     "id": "geo-adm2-gori",
+     "name": "Gori"
+    },
+    {
+     "id": "geo-adm2-gudauta",
+     "name": "Gudauta"
+    },
+    {
+     "id": "geo-adm2-gulripshi",
+     "name": "Gulripshi"
+    },
+    {
+     "id": "geo-adm2-gurjaani",
+     "name": "Gurjaani"
+    },
+    {
+     "id": "geo-adm2-java",
+     "name": "Java"
+    },
+    {
+     "id": "geo-adm2-kareli",
+     "name": "Kareli"
+    },
+    {
+     "id": "geo-adm2-kaspi",
+     "name": "Kaspi"
+    },
+    {
+     "id": "geo-adm2-kazbegi",
+     "name": "Kazbegi"
+    },
+    {
+     "id": "geo-adm2-keda",
+     "name": "Keda"
+    },
+    {
+     "id": "geo-adm2-kharagauli",
+     "name": "Kharagauli"
+    },
+    {
+     "id": "geo-adm2-khashuri",
+     "name": "Khashuri"
+    },
+    {
+     "id": "geo-adm2-khelvachauri",
+     "name": "Khelvachauri"
+    },
+    {
+     "id": "geo-adm2-khobi",
+     "name": "Khobi"
+    },
+    {
+     "id": "geo-adm2-khoni",
+     "name": "Khoni"
+    },
+    {
+     "id": "geo-adm2-khulo",
+     "name": "Khulo"
+    },
+    {
+     "id": "geo-adm2-kobuleti",
+     "name": "Kobuleti"
+    },
+    {
+     "id": "geo-adm2-lagodekhi",
+     "name": "Lagodekhi"
+    },
+    {
+     "id": "geo-adm2-lanchkhuti",
+     "name": "Lanchkhuti"
+    },
+    {
+     "id": "geo-adm2-lentekhi",
+     "name": "Lentekhi"
+    },
+    {
+     "id": "geo-adm2-marneuli",
+     "name": "Marneuli"
+    },
+    {
+     "id": "geo-adm2-martvili",
+     "name": "Martvili"
+    },
+    {
+     "id": "geo-adm2-mestia",
+     "name": "Mestia"
+    },
+    {
+     "id": "geo-adm2-mtskheta",
+     "name": "Mtskheta"
+    },
+    {
+     "id": "geo-adm2-ninotsminda",
+     "name": "Ninotsminda"
+    },
+    {
+     "id": "geo-adm2-ochamchire",
+     "name": "Ochamchire"
+    },
+    {
+     "id": "geo-adm2-oni",
+     "name": "Oni"
+    },
+    {
+     "id": "geo-adm2-ozurgeti",
+     "name": "Ozurgeti"
+    },
+    {
+     "id": "geo-adm2-qvareli",
+     "name": "Qvareli"
+    },
+    {
+     "id": "geo-adm2-sachkhere",
+     "name": "Sachkhere"
+    },
+    {
+     "id": "geo-adm2-sagarejo",
+     "name": "Sagarejo"
+    },
+    {
+     "id": "geo-adm2-samtredia",
+     "name": "Samtredia"
+    },
+    {
+     "id": "geo-adm2-senaki",
+     "name": "Senaki"
+    },
+    {
+     "id": "geo-adm2-shuakhevi",
+     "name": "Shuakhevi"
+    },
+    {
+     "id": "geo-adm2-sighnaghi",
+     "name": "Sighnaghi"
+    },
+    {
+     "id": "geo-adm2-sokhumi",
+     "name": "Sokhumi"
+    },
+    {
+     "id": "geo-adm2-tbilisi",
+     "name": "Tbilisi"
+    },
+    {
+     "id": "geo-adm2-telavi",
+     "name": "Telavi"
+    },
+    {
+     "id": "geo-adm2-terjola",
+     "name": "Terjola"
+    },
+    {
+     "id": "geo-adm2-tetri-sqaro",
+     "name": "Tetri Sqaro"
+    },
+    {
+     "id": "geo-adm2-tianeti",
+     "name": "Tianeti"
+    },
+    {
+     "id": "geo-adm2-tkibuli",
+     "name": "Tkibuli"
+    },
+    {
+     "id": "geo-adm2-tsageri",
+     "name": "Tsageri"
+    },
+    {
+     "id": "geo-adm2-tsalenjikha",
+     "name": "Tsalenjikha"
+    },
+    {
+     "id": "geo-adm2-tsalka",
+     "name": "Tsalka"
+    },
+    {
+     "id": "geo-adm2-tsqaltubo",
+     "name": "Tsqaltubo"
+    },
+    {
+     "id": "geo-adm2-vani",
+     "name": "Vani"
+    },
+    {
+     "id": "geo-adm2-zestaponi",
+     "name": "Zestaponi"
+    },
+    {
+     "id": "geo-adm2-zugdidi",
+     "name": "Zugdidi"
+    }
+   ]
+  }
+ },
+ "name": "Georgia",
+ "nameBn": "Georgia"
+}

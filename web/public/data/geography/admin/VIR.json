@@ -1,0 +1,18 @@
+{
+ "code": "VIR",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "The Virgin Islands of the United States",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2021",
+   "sourceCount": 1,
+   "units": []
+  }
+ },
+ "name": "United States Virgin Islands",
+ "nameBn": "United States Virgin Islands"
+}

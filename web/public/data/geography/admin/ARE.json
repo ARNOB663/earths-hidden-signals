@@ -1,0 +1,64 @@
+{
+ "code": "ARE",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "al-ʾImārāt al-ʿArabīyah al-Muttaḥidah",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "1995",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Unknown",
+   "code": "ADM1",
+   "count": 7,
+   "name": "ADM1 areas",
+   "nameBn": "ADM1 এলাকা",
+   "representedYear": "2017",
+   "sourceCount": 7,
+   "units": [
+    {
+     "id": "are-adm1-abu-dhabi",
+     "name": "Abu Dhabi",
+     "shapeISO": "AE-AZ"
+    },
+    {
+     "id": "are-adm1-ajman",
+     "name": "Ajman",
+     "shapeISO": "AE-AJ"
+    },
+    {
+     "id": "are-adm1-dubai",
+     "name": "Dubai",
+     "shapeISO": "AE-DU"
+    },
+    {
+     "id": "are-adm1-fujairah",
+     "name": "Fujairah",
+     "shapeISO": "AE-FU"
+    },
+    {
+     "id": "are-adm1-ras-al-khaimah",
+     "name": "Ras al-Khaimah",
+     "shapeISO": "AE-RK"
+    },
+    {
+     "id": "are-adm1-sharjah",
+     "name": "Sharjah",
+     "shapeISO": "AE-SH"
+    },
+    {
+     "id": "are-adm1-umm-al-quwain",
+     "name": "Umm al-Quwain",
+     "shapeISO": "AE-UQ"
+    }
+   ]
+  }
+ },
+ "name": "United Arab Emirates",
+ "nameBn": "United Arab Emirates"
+}

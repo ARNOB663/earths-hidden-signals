@@ -1,0 +1,726 @@
+{
+ "code": "MOZ",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Unknown",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2017",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Unknown",
+   "code": "ADM1",
+   "count": 10,
+   "name": "ADM1 areas",
+   "nameBn": "ADM1 এলাকা",
+   "representedYear": "2017",
+   "sourceCount": 10,
+   "units": [
+    {
+     "id": "moz-adm1-cabo-delgado",
+     "name": "Cabo Delgado",
+     "shapeISO": "MZ-P"
+    },
+    {
+     "id": "moz-adm1-gaza",
+     "name": "Gaza",
+     "shapeISO": "MZ-G"
+    },
+    {
+     "id": "moz-adm1-inhambane",
+     "name": "Inhambane",
+     "shapeISO": "MZ-I"
+    },
+    {
+     "id": "moz-adm1-manica",
+     "name": "Manica",
+     "shapeISO": "MZ-B"
+    },
+    {
+     "id": "moz-adm1-maputo",
+     "name": "Maputo",
+     "shapeISO": "MZ-L"
+    },
+    {
+     "id": "moz-adm1-nampula",
+     "name": "Nampula",
+     "shapeISO": "MZ-N"
+    },
+    {
+     "id": "moz-adm1-niassa",
+     "name": "Niassa",
+     "shapeISO": "MZ-A"
+    },
+    {
+     "id": "moz-adm1-sofala",
+     "name": "Sofala",
+     "shapeISO": "MZ-S"
+    },
+    {
+     "id": "moz-adm1-tete",
+     "name": "Tete",
+     "shapeISO": "MZ-T"
+    },
+    {
+     "id": "moz-adm1-zambézia",
+     "name": "Zambézia",
+     "shapeISO": "MZ-Q"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "districts",
+   "code": "ADM2",
+   "count": 159,
+   "name": "districts",
+   "nameBn": "districts",
+   "representedYear": "2019",
+   "sourceCount": 159,
+   "units": [
+    {
+     "id": "moz-adm2-alto-molocue",
+     "name": "Alto Molocue"
+    },
+    {
+     "id": "moz-adm2-ancuabe",
+     "name": "Ancuabe"
+    },
+    {
+     "id": "moz-adm2-angoche",
+     "name": "Angoche"
+    },
+    {
+     "id": "moz-adm2-angonia",
+     "name": "Angonia"
+    },
+    {
+     "id": "moz-adm2-balama",
+     "name": "Balama"
+    },
+    {
+     "id": "moz-adm2-barue",
+     "name": "Barue"
+    },
+    {
+     "id": "moz-adm2-bilene",
+     "name": "Bilene"
+    },
+    {
+     "id": "moz-adm2-boane",
+     "name": "Boane"
+    },
+    {
+     "id": "moz-adm2-buzi",
+     "name": "Buzi"
+    },
+    {
+     "id": "moz-adm2-cahora-bassa",
+     "name": "Cahora Bassa"
+    },
+    {
+     "id": "moz-adm2-caia",
+     "name": "Caia"
+    },
+    {
+     "id": "moz-adm2-changara",
+     "name": "Changara"
+    },
+    {
+     "id": "moz-adm2-chemba",
+     "name": "Chemba"
+    },
+    {
+     "id": "moz-adm2-cheringoma",
+     "name": "Cheringoma"
+    },
+    {
+     "id": "moz-adm2-chibabava",
+     "name": "Chibabava"
+    },
+    {
+     "id": "moz-adm2-chibuto",
+     "name": "Chibuto"
+    },
+    {
+     "id": "moz-adm2-chicualacuala",
+     "name": "Chicualacuala"
+    },
+    {
+     "id": "moz-adm2-chifunde",
+     "name": "Chifunde"
+    },
+    {
+     "id": "moz-adm2-chigubo",
+     "name": "Chigubo"
+    },
+    {
+     "id": "moz-adm2-chimbonila",
+     "name": "Chimbonila"
+    },
+    {
+     "id": "moz-adm2-chinde",
+     "name": "Chinde"
+    },
+    {
+     "id": "moz-adm2-chiure",
+     "name": "Chiure"
+    },
+    {
+     "id": "moz-adm2-chiuta",
+     "name": "Chiuta"
+    },
+    {
+     "id": "moz-adm2-chokwe",
+     "name": "Chokwe"
+    },
+    {
+     "id": "moz-adm2-chongoene",
+     "name": "Chongoene"
+    },
+    {
+     "id": "moz-adm2-cidade-da-beira",
+     "name": "Cidade Da Beira"
+    },
+    {
+     "id": "moz-adm2-cidade-da-matola",
+     "name": "Cidade Da Matola"
+    },
+    {
+     "id": "moz-adm2-cidade-de-chimoio",
+     "name": "Cidade De Chimoio"
+    },
+    {
+     "id": "moz-adm2-cidade-de-inhambane",
+     "name": "Cidade De Inhambane"
+    },
+    {
+     "id": "moz-adm2-cidade-de-lichinga",
+     "name": "Cidade De Lichinga"
+    },
+    {
+     "id": "moz-adm2-cidade-de-maputo",
+     "name": "Cidade De Maputo"
+    },
+    {
+     "id": "moz-adm2-cidade-de-nampula",
+     "name": "Cidade De Nampula"
+    },
+    {
+     "id": "moz-adm2-cidade-de-pemba",
+     "name": "Cidade De Pemba"
+    },
+    {
+     "id": "moz-adm2-cidade-de-quelimane",
+     "name": "Cidade De Quelimane"
+    },
+    {
+     "id": "moz-adm2-cidade-de-tete",
+     "name": "Cidade De Tete"
+    },
+    {
+     "id": "moz-adm2-cidade-de-xai-xai",
+     "name": "Cidade De Xai-Xai"
+    },
+    {
+     "id": "moz-adm2-cuamba",
+     "name": "Cuamba"
+    },
+    {
+     "id": "moz-adm2-derre",
+     "name": "Derre"
+    },
+    {
+     "id": "moz-adm2-doa",
+     "name": "Doa"
+    },
+    {
+     "id": "moz-adm2-dondo",
+     "name": "Dondo"
+    },
+    {
+     "id": "moz-adm2-erati",
+     "name": "Erati"
+    },
+    {
+     "id": "moz-adm2-funhalouro",
+     "name": "Funhalouro"
+    },
+    {
+     "id": "moz-adm2-gile",
+     "name": "Gile"
+    },
+    {
+     "id": "moz-adm2-gondola",
+     "name": "Gondola"
+    },
+    {
+     "id": "moz-adm2-gorongosa",
+     "name": "Gorongosa"
+    },
+    {
+     "id": "moz-adm2-govuro",
+     "name": "Govuro"
+    },
+    {
+     "id": "moz-adm2-guija",
+     "name": "Guija"
+    },
+    {
+     "id": "moz-adm2-guro",
+     "name": "Guro"
+    },
+    {
+     "id": "moz-adm2-gurue",
+     "name": "Gurue"
+    },
+    {
+     "id": "moz-adm2-homoine",
+     "name": "Homoine"
+    },
+    {
+     "id": "moz-adm2-ibo",
+     "name": "Ibo"
+    },
+    {
+     "id": "moz-adm2-ile",
+     "name": "Ile"
+    },
+    {
+     "id": "moz-adm2-ilha-de-moçambique",
+     "name": "Ilha De Moçambique"
+    },
+    {
+     "id": "moz-adm2-ilha-licom",
+     "name": "Ilha Licom"
+    },
+    {
+     "id": "moz-adm2-ilha-risunodo",
+     "name": "Ilha Risunodo"
+    },
+    {
+     "id": "moz-adm2-inharrime",
+     "name": "Inharrime"
+    },
+    {
+     "id": "moz-adm2-inhassoro",
+     "name": "Inhassoro"
+    },
+    {
+     "id": "moz-adm2-inhassunge",
+     "name": "Inhassunge"
+    },
+    {
+     "id": "moz-adm2-jangamo",
+     "name": "Jangamo"
+    },
+    {
+     "id": "moz-adm2-lago",
+     "name": "Lago"
+    },
+    {
+     "id": "moz-adm2-lago-niassa",
+     "name": "Lago Niassa"
+    },
+    {
+     "id": "moz-adm2-lalaua",
+     "name": "Lalaua"
+    },
+    {
+     "id": "moz-adm2-larde",
+     "name": "Larde"
+    },
+    {
+     "id": "moz-adm2-limpopo",
+     "name": "Limpopo"
+    },
+    {
+     "id": "moz-adm2-liúpo",
+     "name": "Liúpo"
+    },
+    {
+     "id": "moz-adm2-luabo",
+     "name": "Luabo"
+    },
+    {
+     "id": "moz-adm2-lugela",
+     "name": "Lugela"
+    },
+    {
+     "id": "moz-adm2-mabalane",
+     "name": "Mabalane"
+    },
+    {
+     "id": "moz-adm2-mabote",
+     "name": "Mabote"
+    },
+    {
+     "id": "moz-adm2-macanga",
+     "name": "Macanga"
+    },
+    {
+     "id": "moz-adm2-macate",
+     "name": "Macate"
+    },
+    {
+     "id": "moz-adm2-machanga",
+     "name": "Machanga"
+    },
+    {
+     "id": "moz-adm2-machaze",
+     "name": "Machaze"
+    },
+    {
+     "id": "moz-adm2-macomia",
+     "name": "Macomia"
+    },
+    {
+     "id": "moz-adm2-macossa",
+     "name": "Macossa"
+    },
+    {
+     "id": "moz-adm2-maganja-da-costa",
+     "name": "Maganja Da Costa"
+    },
+    {
+     "id": "moz-adm2-magoe",
+     "name": "Magoe"
+    },
+    {
+     "id": "moz-adm2-magude",
+     "name": "Magude"
+    },
+    {
+     "id": "moz-adm2-majune",
+     "name": "Majune"
+    },
+    {
+     "id": "moz-adm2-malema",
+     "name": "Malema"
+    },
+    {
+     "id": "moz-adm2-mandimba",
+     "name": "Mandimba"
+    },
+    {
+     "id": "moz-adm2-mandlakaze",
+     "name": "Mandlakaze"
+    },
+    {
+     "id": "moz-adm2-manhiça",
+     "name": "Manhiça"
+    },
+    {
+     "id": "moz-adm2-manica",
+     "name": "Manica"
+    },
+    {
+     "id": "moz-adm2-mapai",
+     "name": "Mapai"
+    },
+    {
+     "id": "moz-adm2-maquival",
+     "name": "Maquival"
+    },
+    {
+     "id": "moz-adm2-marara",
+     "name": "Marara"
+    },
+    {
+     "id": "moz-adm2-maravia",
+     "name": "Maravia"
+    },
+    {
+     "id": "moz-adm2-maringue",
+     "name": "Maringue"
+    },
+    {
+     "id": "moz-adm2-marracuene",
+     "name": "Marracuene"
+    },
+    {
+     "id": "moz-adm2-marromeu",
+     "name": "Marromeu"
+    },
+    {
+     "id": "moz-adm2-marrupa",
+     "name": "Marrupa"
+    },
+    {
+     "id": "moz-adm2-massangena",
+     "name": "Massangena"
+    },
+    {
+     "id": "moz-adm2-massinga",
+     "name": "Massinga"
+    },
+    {
+     "id": "moz-adm2-massingir",
+     "name": "Massingir"
+    },
+    {
+     "id": "moz-adm2-matutuine",
+     "name": "Matutuine"
+    },
+    {
+     "id": "moz-adm2-maua",
+     "name": "Maua"
+    },
+    {
+     "id": "moz-adm2-mavago",
+     "name": "Mavago"
+    },
+    {
+     "id": "moz-adm2-maxixe",
+     "name": "Maxixe"
+    },
+    {
+     "id": "moz-adm2-mecanhelas",
+     "name": "Mecanhelas"
+    },
+    {
+     "id": "moz-adm2-meconta",
+     "name": "Meconta"
+    },
+    {
+     "id": "moz-adm2-mecuburi",
+     "name": "Mecuburi"
+    },
+    {
+     "id": "moz-adm2-mecufi",
+     "name": "Mecufi"
+    },
+    {
+     "id": "moz-adm2-mecula",
+     "name": "Mecula"
+    },
+    {
+     "id": "moz-adm2-meluco",
+     "name": "Meluco"
+    },
+    {
+     "id": "moz-adm2-memba",
+     "name": "Memba"
+    },
+    {
+     "id": "moz-adm2-metarica",
+     "name": "Metarica"
+    },
+    {
+     "id": "moz-adm2-metuge",
+     "name": "Metuge"
+    },
+    {
+     "id": "moz-adm2-milange",
+     "name": "Milange"
+    },
+    {
+     "id": "moz-adm2-moamba",
+     "name": "Moamba"
+    },
+    {
+     "id": "moz-adm2-moatize",
+     "name": "Moatize"
+    },
+    {
+     "id": "moz-adm2-mocimboa-da-praia",
+     "name": "Mocimboa Da Praia"
+    },
+    {
+     "id": "moz-adm2-mocuba",
+     "name": "Mocuba"
+    },
+    {
+     "id": "moz-adm2-mocubela",
+     "name": "Mocubela"
+    },
+    {
+     "id": "moz-adm2-mogincual",
+     "name": "Mogincual"
+    },
+    {
+     "id": "moz-adm2-mogovolas",
+     "name": "Mogovolas"
+    },
+    {
+     "id": "moz-adm2-molumbo",
+     "name": "Molumbo"
+    },
+    {
+     "id": "moz-adm2-moma",
+     "name": "Moma"
+    },
+    {
+     "id": "moz-adm2-monapo",
+     "name": "Monapo"
+    },
+    {
+     "id": "moz-adm2-montepuez",
+     "name": "Montepuez"
+    },
+    {
+     "id": "moz-adm2-mopeia",
+     "name": "Mopeia"
+    },
+    {
+     "id": "moz-adm2-morrumbala",
+     "name": "Morrumbala"
+    },
+    {
+     "id": "moz-adm2-morrumbene",
+     "name": "Morrumbene"
+    },
+    {
+     "id": "moz-adm2-mossuril",
+     "name": "Mossuril"
+    },
+    {
+     "id": "moz-adm2-mossurize",
+     "name": "Mossurize"
+    },
+    {
+     "id": "moz-adm2-muanza",
+     "name": "Muanza"
+    },
+    {
+     "id": "moz-adm2-muecate",
+     "name": "Muecate"
+    },
+    {
+     "id": "moz-adm2-mueda",
+     "name": "Mueda"
+    },
+    {
+     "id": "moz-adm2-muembe",
+     "name": "Muembe"
+    },
+    {
+     "id": "moz-adm2-muidumbe",
+     "name": "Muidumbe"
+    },
+    {
+     "id": "moz-adm2-mulevala",
+     "name": "Mulevala"
+    },
+    {
+     "id": "moz-adm2-murrupula",
+     "name": "Murrupula"
+    },
+    {
+     "id": "moz-adm2-mutarara",
+     "name": "Mutarara"
+    },
+    {
+     "id": "moz-adm2-nacala",
+     "name": "Nacala"
+    },
+    {
+     "id": "moz-adm2-nacala-a-velha",
+     "name": "Nacala-A-Velha"
+    },
+    {
+     "id": "moz-adm2-nacaroa",
+     "name": "Nacaroa"
+    },
+    {
+     "id": "moz-adm2-namaacha",
+     "name": "Namaacha"
+    },
+    {
+     "id": "moz-adm2-namacurra",
+     "name": "Namacurra"
+    },
+    {
+     "id": "moz-adm2-namarroi",
+     "name": "Namarroi"
+    },
+    {
+     "id": "moz-adm2-namuno",
+     "name": "Namuno"
+    },
+    {
+     "id": "moz-adm2-nangade",
+     "name": "Nangade"
+    },
+    {
+     "id": "moz-adm2-ngauma",
+     "name": "Ngauma"
+    },
+    {
+     "id": "moz-adm2-nhamatanda",
+     "name": "Nhamatanda"
+    },
+    {
+     "id": "moz-adm2-nicoadala",
+     "name": "Nicoadala"
+    },
+    {
+     "id": "moz-adm2-nipepe",
+     "name": "Nipepe"
+    },
+    {
+     "id": "moz-adm2-palma",
+     "name": "Palma"
+    },
+    {
+     "id": "moz-adm2-panda",
+     "name": "Panda"
+    },
+    {
+     "id": "moz-adm2-pebane",
+     "name": "Pebane"
+    },
+    {
+     "id": "moz-adm2-quissanga",
+     "name": "Quissanga"
+    },
+    {
+     "id": "moz-adm2-rapale",
+     "name": "Rapale"
+    },
+    {
+     "id": "moz-adm2-ribaue",
+     "name": "Ribaue"
+    },
+    {
+     "id": "moz-adm2-sanga",
+     "name": "Sanga"
+    },
+    {
+     "id": "moz-adm2-sussundenga",
+     "name": "Sussundenga"
+    },
+    {
+     "id": "moz-adm2-tambara",
+     "name": "Tambara"
+    },
+    {
+     "id": "moz-adm2-tsangano",
+     "name": "Tsangano"
+    },
+    {
+     "id": "moz-adm2-vanduzi",
+     "name": "Vanduzi"
+    },
+    {
+     "id": "moz-adm2-vilankulo",
+     "name": "Vilankulo"
+    },
+    {
+     "id": "moz-adm2-zavala",
+     "name": "Zavala"
+    },
+    {
+     "id": "moz-adm2-zumbu",
+     "name": "Zumbu"
+    }
+   ]
+  }
+ },
+ "name": "Mozambique",
+ "nameBn": "Mozambique"
+}

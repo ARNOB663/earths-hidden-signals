@@ -1,0 +1,216 @@
+{
+ "code": "TUV",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Tuvalu",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2017",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Unknown",
+   "code": "ADM1",
+   "count": 8,
+   "name": "ADM1 areas",
+   "nameBn": "ADM1 এলাকা",
+   "representedYear": "2017",
+   "sourceCount": 8,
+   "units": [
+    {
+     "id": "tuv-adm1-funafuti",
+     "name": "Funafuti",
+     "shapeISO": "TV-FUN"
+    },
+    {
+     "id": "tuv-adm1-nanumanga",
+     "name": "Nanumanga",
+     "shapeISO": "TV-NMG"
+    },
+    {
+     "id": "tuv-adm1-nanumea",
+     "name": "Nanumea",
+     "shapeISO": "TV-NMA"
+    },
+    {
+     "id": "tuv-adm1-niutao",
+     "name": "Niutao",
+     "shapeISO": "TV-NIT"
+    },
+    {
+     "id": "tuv-adm1-nui",
+     "name": "Nui",
+     "shapeISO": "TV-NUI"
+    },
+    {
+     "id": "tuv-adm1-nukufetau",
+     "name": "Nukufetau",
+     "shapeISO": "TV-NKF"
+    },
+    {
+     "id": "tuv-adm1-nukulaelae",
+     "name": "Nukulaelae",
+     "shapeISO": "TV-NKL"
+    },
+    {
+     "id": "tuv-adm1-vaitupu",
+     "name": "Vaitupu",
+     "shapeISO": "TV-VAI"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "village",
+   "code": "ADM2",
+   "count": 34,
+   "name": "village",
+   "nameBn": "village",
+   "representedYear": "2017",
+   "sourceCount": 34,
+   "units": [
+    {
+     "id": "tuv-adm2-alamoni",
+     "name": "Alamoni"
+    },
+    {
+     "id": "tuv-adm2-alapi",
+     "name": "Alapi"
+    },
+    {
+     "id": "tuv-adm2-amatuku",
+     "name": "Amatuku"
+    },
+    {
+     "id": "tuv-adm2-asau",
+     "name": "Asau"
+    },
+    {
+     "id": "tuv-adm2-aulotu",
+     "name": "Aulotu"
+    },
+    {
+     "id": "tuv-adm2-fakaifou",
+     "name": "Fakaifou"
+    },
+    {
+     "id": "tuv-adm2-funafala",
+     "name": "Funafala"
+    },
+    {
+     "id": "tuv-adm2-hauma",
+     "name": "Hauma"
+    },
+    {
+     "id": "tuv-adm2-haumaefa",
+     "name": "Haumaefa"
+    },
+    {
+     "id": "tuv-adm2-kulia",
+     "name": "Kulia"
+    },
+    {
+     "id": "tuv-adm2-lakena",
+     "name": "Lakena"
+    },
+    {
+     "id": "tuv-adm2-lofeagai",
+     "name": "Lofeagai"
+    },
+    {
+     "id": "tuv-adm2-lolua",
+     "name": "Lolua"
+    },
+    {
+     "id": "tuv-adm2-maneapa",
+     "name": "Maneapa"
+    },
+    {
+     "id": "tuv-adm2-manutalake",
+     "name": "Manutalake"
+    },
+    {
+     "id": "tuv-adm2-matagi",
+     "name": "Matagi"
+    },
+    {
+     "id": "tuv-adm2-matagi-2",
+     "name": "Matagi"
+    },
+    {
+     "id": "tuv-adm2-mataluafata",
+     "name": "Mataluafata"
+    },
+    {
+     "id": "tuv-adm2-motufoua",
+     "name": "Motufoua"
+    },
+    {
+     "id": "tuv-adm2-niulakita",
+     "name": "Niulakita"
+    },
+    {
+     "id": "tuv-adm2-nukualofa",
+     "name": "Nukualofa"
+    },
+    {
+     "id": "tuv-adm2-pepesala",
+     "name": "Pepesala"
+    },
+    {
+     "id": "tuv-adm2-potufale",
+     "name": "Potufale"
+    },
+    {
+     "id": "tuv-adm2-saniuta",
+     "name": "Saniuta"
+    },
+    {
+     "id": "tuv-adm2-senala",
+     "name": "Senala"
+    },
+    {
+     "id": "tuv-adm2-teava",
+     "name": "Teava"
+    },
+    {
+     "id": "tuv-adm2-tekavatoetoe",
+     "name": "Tekavatoetoe"
+    },
+    {
+     "id": "tuv-adm2-temotu",
+     "name": "Temotu"
+    },
+    {
+     "id": "tuv-adm2-teone",
+     "name": "Teone"
+    },
+    {
+     "id": "tuv-adm2-tokelau",
+     "name": "Tokelau"
+    },
+    {
+     "id": "tuv-adm2-tonga",
+     "name": "Tonga"
+    },
+    {
+     "id": "tuv-adm2-tumaseu",
+     "name": "Tumaseu"
+    },
+    {
+     "id": "tuv-adm2-vaiaku",
+     "name": "Vaiaku"
+    },
+    {
+     "id": "tuv-adm2-vao",
+     "name": "Vao"
+    }
+   ]
+  }
+ },
+ "name": "Tuvalu",
+ "nameBn": "Tuvalu"
+}

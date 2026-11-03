@@ -1,0 +1,1695 @@
+{
+ "code": "PRT",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Unknown",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2016",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Unknown",
+   "code": "ADM1",
+   "count": 20,
+   "name": "ADM1 areas",
+   "nameBn": "ADM1 এলাকা",
+   "representedYear": "2016",
+   "sourceCount": 20,
+   "units": [
+    {
+     "id": "prt-adm1-aveiro",
+     "name": "AVEIRO",
+     "shapeISO": "PT-01"
+    },
+    {
+     "id": "prt-adm1-beja",
+     "name": "BEJA",
+     "shapeISO": "PT-02"
+    },
+    {
+     "id": "prt-adm1-braga",
+     "name": "BRAGA",
+     "shapeISO": "PT-03"
+    },
+    {
+     "id": "prt-adm1-braganã-a",
+     "name": "BRAGANÃA",
+     "shapeISO": "PT-04"
+    },
+    {
+     "id": "prt-adm1-castelo-branco",
+     "name": "CASTELO BRANCO",
+     "shapeISO": "PT-05"
+    },
+    {
+     "id": "prt-adm1-coimbra",
+     "name": "COIMBRA",
+     "shapeISO": "PT-06"
+    },
+    {
+     "id": "prt-adm1-faro",
+     "name": "FARO",
+     "shapeISO": "PT-08"
+    },
+    {
+     "id": "prt-adm1-guarda",
+     "name": "GUARDA",
+     "shapeISO": "PT-09"
+    },
+    {
+     "id": "prt-adm1-leiria",
+     "name": "LEIRIA",
+     "shapeISO": "PT-10"
+    },
+    {
+     "id": "prt-adm1-lisboa",
+     "name": "LISBOA",
+     "shapeISO": "PT-11"
+    },
+    {
+     "id": "prt-adm1-portalegre",
+     "name": "PORTALEGRE",
+     "shapeISO": "PT-12"
+    },
+    {
+     "id": "prt-adm1-porto",
+     "name": "PORTO",
+     "shapeISO": "PT-13"
+    },
+    {
+     "id": "prt-adm1-regiã-o-autã³noma-da-madeira",
+     "name": "RegiÃ£o AutÃ³noma da Madeira",
+     "shapeISO": "PT-30"
+    },
+    {
+     "id": "prt-adm1-regiã-o-autã³noma-dos-aã-ores",
+     "name": "RegiÃ£o AutÃ³noma dos AÃ§ores",
+     "shapeISO": "PT-20"
+    },
+    {
+     "id": "prt-adm1-santarã-m",
+     "name": "SANTARÃM",
+     "shapeISO": "PT-14"
+    },
+    {
+     "id": "prt-adm1-setã-bal",
+     "name": "SETÃBAL",
+     "shapeISO": "PT-15"
+    },
+    {
+     "id": "prt-adm1-viana-do-castelo",
+     "name": "VIANA DO CASTELO",
+     "shapeISO": "PT-16"
+    },
+    {
+     "id": "prt-adm1-vila-real",
+     "name": "VILA REAL",
+     "shapeISO": "PT-17"
+    },
+    {
+     "id": "prt-adm1-viseu",
+     "name": "VISEU",
+     "shapeISO": "PT-18"
+    },
+    {
+     "id": "prt-adm1-ã-vora",
+     "name": "ÃVORA",
+     "shapeISO": "PT-07"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "gbOpen",
+   "code": "ADM2",
+   "count": 311,
+   "name": "ADM2 areas",
+   "nameBn": "ADM2 এলাকা",
+   "representedYear": "2020",
+   "sourceCount": 311,
+   "units": [
+    {
+     "id": "prt-adm2-abrantes",
+     "name": "Abrantes",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-agueda",
+     "name": "Agueda",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-aguiar-da-beira",
+     "name": "Aguiar da Beira",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-alandroal",
+     "name": "Alandroal",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-albergaria-a-velha",
+     "name": "Albergaria-a-Velha",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-albufeira",
+     "name": "Albufeira",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-alcacer-do-sal",
+     "name": "Alcacer do Sal",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-alcanenena",
+     "name": "Alcanenena",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-alcobaca",
+     "name": "Alcobaca",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-alcochete",
+     "name": "Alcochete",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-alcoutim",
+     "name": "Alcoutim",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-alenquer",
+     "name": "Alenquer",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-alfandega-da-fe",
+     "name": "Alfandega da Fe",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-alijezur",
+     "name": "Alijezur",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-alijo",
+     "name": "Alijo",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-aljustrel",
+     "name": "Aljustrel",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-almada",
+     "name": "Almada",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-almeida",
+     "name": "Almeida",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-almeirim",
+     "name": "Almeirim",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-almodovar",
+     "name": "Almodovar",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-alpiarca",
+     "name": "Alpiarca",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-alter-do-chao",
+     "name": "Alter do Chao",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-alvaiazere",
+     "name": "Alvaiazere",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-alvito",
+     "name": "Alvito",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-amadora",
+     "name": "Amadora",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-amarante",
+     "name": "Amarante",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-amares",
+     "name": "Amares",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-anadia",
+     "name": "Anadia",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-angra-do-heroismo",
+     "name": "Angra do Heroismo",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-ansiao",
+     "name": "Ansiao",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-arcos-de-valdevez",
+     "name": "Arcos de Valdevez",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-arganil",
+     "name": "Arganil",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-armamar",
+     "name": "Armamar",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-arouca",
+     "name": "Arouca",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-arraiolos",
+     "name": "Arraiolos",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-arronches",
+     "name": "Arronches",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-arruda-dos-vinhos",
+     "name": "Arruda dos Vinhos",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-aveiro",
+     "name": "Aveiro",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-avis",
+     "name": "Avis",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-azambuja",
+     "name": "Azambuja",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-baiao",
+     "name": "Baiao",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-barcelos",
+     "name": "Barcelos",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-barrancos",
+     "name": "Barrancos",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-barriero",
+     "name": "Barriero",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-batalha",
+     "name": "Batalha",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-beja",
+     "name": "Beja",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-belmonte",
+     "name": "Belmonte",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-benavente",
+     "name": "Benavente",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-bombarral",
+     "name": "Bombarral",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-borba",
+     "name": "Borba",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-boticas",
+     "name": "Boticas",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-braga",
+     "name": "Braga",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-braganca",
+     "name": "Braganca",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-cabeceiras-de-basto",
+     "name": "Cabeceiras de Basto",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-cadaval",
+     "name": "Cadaval",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-caldas-da-rainha",
+     "name": "Caldas da Rainha",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-calheta",
+     "name": "Calheta",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-calheta-2",
+     "name": "Calheta",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-camara-de-lobos",
+     "name": "Camara de Lobos",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-caminha",
+     "name": "Caminha",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-campo-maior",
+     "name": "Campo Maior",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-cantanhede",
+     "name": "Cantanhede",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-carrazeda-de-ansiaes",
+     "name": "Carrazeda de Ansiaes",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-carregal-do-sal",
+     "name": "Carregal do Sal",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-cartaxo",
+     "name": "Cartaxo",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-cascais",
+     "name": "Cascais",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-castanheira-de-pera",
+     "name": "Castanheira de Pera",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-castelo-branco",
+     "name": "Castelo Branco",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-castelo-de-paiva",
+     "name": "Castelo de Paiva",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-castelo-de-vide",
+     "name": "Castelo de Vide",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-castro-daire",
+     "name": "Castro Daire",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-castro-marim",
+     "name": "Castro Marim",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-castro-verde",
+     "name": "Castro Verde",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-celorico-da-beira",
+     "name": "Celorico da Beira",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-celorico-de-basto",
+     "name": "Celorico de Basto",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-chamusca",
+     "name": "Chamusca",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-chaves",
+     "name": "Chaves",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-cinfaes",
+     "name": "Cinfaes",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-coimbra",
+     "name": "Coimbra",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-condeixa-a-nova",
+     "name": "Condeixa-a-Nova",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-constancia",
+     "name": "Constancia",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-coruche",
+     "name": "Coruche",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-corvo",
+     "name": "Corvo",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-covilha",
+     "name": "Covilha",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-crato",
+     "name": "Crato",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-cuba",
+     "name": "Cuba",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-elvas",
+     "name": "Elvas",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-entroncamento",
+     "name": "Entroncamento",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-espinho",
+     "name": "Espinho",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-esposende",
+     "name": "Esposende",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-estarreja",
+     "name": "Estarreja",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-estremoz",
+     "name": "Estremoz",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-evora",
+     "name": "Evora",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-fafe",
+     "name": "Fafe",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-faro",
+     "name": "Faro",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-felgueiras",
+     "name": "Felgueiras",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-ferreira-do-zezere",
+     "name": "Ferreira do Zezere",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-ferriera-do-alentejo",
+     "name": "Ferriera do Alentejo",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-figueira-da-foz",
+     "name": "Figueira da Foz",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-figueira-de-castelo-rodrigo",
+     "name": "Figueira de Castelo Rodrigo",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-figueiro-dos-vinhos",
+     "name": "Figueiro dos Vinhos",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-fornos-de-algodres",
+     "name": "Fornos de Algodres",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-freixo-de-espada-a-cinta",
+     "name": "Freixo de Espada a Cinta",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-fronteira",
+     "name": "Fronteira",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-funchal",
+     "name": "Funchal",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-fundao",
+     "name": "Fundao",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-gaviao",
+     "name": "Gaviao",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-gois",
+     "name": "Gois",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-golega",
+     "name": "Golega",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-gondomar",
+     "name": "Gondomar",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-gouveia",
+     "name": "Gouveia",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-grandola",
+     "name": "Grandola",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-guarda",
+     "name": "Guarda",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-guimaraes",
+     "name": "Guimaraes",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-horta",
+     "name": "Horta",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-idanha-a-nova",
+     "name": "Idanha-a-Nova",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-ilhavo",
+     "name": "Ilhavo",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-ilhavo-2",
+     "name": "Ilhavo",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-lagoa",
+     "name": "Lagoa",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-lagoa-2",
+     "name": "Lagoa",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-lagos",
+     "name": "Lagos",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-lajes-das-flores",
+     "name": "Lajes das Flores",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-lajes-do-pico",
+     "name": "Lajes do Pico",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-lamego",
+     "name": "Lamego",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-leiria",
+     "name": "Leiria",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-lisboa",
+     "name": "Lisboa",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-loule",
+     "name": "Loule",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-loures",
+     "name": "Loures",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-lourinha",
+     "name": "Lourinha",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-lousa",
+     "name": "Lousa",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-lousada",
+     "name": "Lousada",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-macao",
+     "name": "Macao",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-macedo-de-cavaleiros",
+     "name": "Macedo de Cavaleiros",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-machico",
+     "name": "Machico",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-madalena",
+     "name": "Madalena",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-mafra",
+     "name": "Mafra",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-maia",
+     "name": "Maia",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-mangualde",
+     "name": "Mangualde",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-manteigas",
+     "name": "Manteigas",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-marco-de-canaveses",
+     "name": "Marco de Canaveses",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-marinha-grande",
+     "name": "Marinha Grande",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-marvao",
+     "name": "Marvao",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-matosinhos",
+     "name": "Matosinhos",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-mealhada",
+     "name": "Mealhada",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-meda",
+     "name": "Meda",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-melgaco",
+     "name": "Melgaco",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-mertola",
+     "name": "Mertola",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-mesao-frio",
+     "name": "Mesao Frio",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-mira",
+     "name": "Mira",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-miranda-do-corvo",
+     "name": "Miranda do Corvo",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-miranda-do-douro",
+     "name": "Miranda do Douro",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-mirandela",
+     "name": "Mirandela",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-mogadouro",
+     "name": "Mogadouro",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-moimenta-da-beira",
+     "name": "Moimenta da Beira",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-moita",
+     "name": "Moita",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-moncao",
+     "name": "Moncao",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-monchique",
+     "name": "Monchique",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-mondim-de-basto",
+     "name": "Mondim de Basto",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-monforte",
+     "name": "Monforte",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-montalegre",
+     "name": "Montalegre",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-montemor-o-novo",
+     "name": "Montemor-o-Novo",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-montemor-o-velho",
+     "name": "Montemor-o-Velho",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-montijo",
+     "name": "Montijo",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-montijo-2",
+     "name": "Montijo",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-mora",
+     "name": "Mora",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-mortagua",
+     "name": "Mortagua",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-moura",
+     "name": "Moura",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-mourao",
+     "name": "Mourao",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-murca",
+     "name": "Murca",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-murtosa",
+     "name": "Murtosa",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-nazare",
+     "name": "Nazare",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-nelas",
+     "name": "Nelas",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-nisa",
+     "name": "Nisa",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-nordeste",
+     "name": "Nordeste",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-obidos",
+     "name": "Obidos",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-odemira",
+     "name": "Odemira",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-odivelas",
+     "name": "Odivelas",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-oeiras",
+     "name": "Oeiras",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-oleiros",
+     "name": "Oleiros",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-olhao",
+     "name": "Olhao",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-oliveira-de-azemeis",
+     "name": "Oliveira de Azemeis",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-oliveira-de-frades",
+     "name": "Oliveira de Frades",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-oliveira-de-frades-2",
+     "name": "Oliveira de Frades",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-oliveira-do-bairro",
+     "name": "Oliveira do Bairro",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-oliveira-do-hospital",
+     "name": "Oliveira do Hospital",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-ourem",
+     "name": "Ourem",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-ourique",
+     "name": "Ourique",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-ovar",
+     "name": "Ovar",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-pacos-de-ferreira",
+     "name": "Pacos de Ferreira",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-palmela",
+     "name": "Palmela",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-pampilhosa-da-serra",
+     "name": "Pampilhosa da Serra",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-paredes",
+     "name": "Paredes",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-paredes-de-coura",
+     "name": "Paredes de Coura",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-pedrogao-grande",
+     "name": "Pedrogao Grande",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-penacova",
+     "name": "Penacova",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-penafiel",
+     "name": "Penafiel",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-penalva-do-castelo",
+     "name": "Penalva do Castelo",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-penamacor",
+     "name": "Penamacor",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-penedono",
+     "name": "Penedono",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-penela",
+     "name": "Penela",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-peniche",
+     "name": "Peniche",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-peso-da-regua",
+     "name": "Peso da Regua",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-pinhel",
+     "name": "Pinhel",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-pombal",
+     "name": "Pombal",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-ponta-delgada",
+     "name": "Ponta Delgada",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-ponta-do-sol",
+     "name": "Ponta do Sol",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-ponte-da-barca",
+     "name": "Ponte da Barca",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-ponte-de-lima",
+     "name": "Ponte de Lima",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-ponte-de-sor",
+     "name": "Ponte de Sor",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-portalegre",
+     "name": "Portalegre",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-portel",
+     "name": "Portel",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-portimao",
+     "name": "Portimao",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-porto",
+     "name": "Porto",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-porto-de-mos",
+     "name": "Porto de Mos",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-porto-moniz",
+     "name": "Porto Moniz",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-porto-santo",
+     "name": "Porto Santo",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-povoa-de-lanhosa",
+     "name": "Povoa de Lanhosa",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-povoa-de-varzim",
+     "name": "Povoa de Varzim",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-povoacao",
+     "name": "Povoacao",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-praia-da-vitoria",
+     "name": "Praia da Vitoria",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-proenca-a-nova",
+     "name": "Proenca-a-Nova",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-redondo",
+     "name": "Redondo",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-reguengos-de-monsaraz",
+     "name": "Reguengos de Monsaraz",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-resende",
+     "name": "Resende",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-ribeira-brava",
+     "name": "Ribeira Brava",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-ribeira-de-pena",
+     "name": "Ribeira de Pena",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-ribeira-grande",
+     "name": "Ribeira Grande",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-rio-maior",
+     "name": "Rio Maior",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-sabrosa",
+     "name": "Sabrosa",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-sabugal",
+     "name": "Sabugal",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-salvaterra-de-magos",
+     "name": "Salvaterra de Magos",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-santa-comba-dao",
+     "name": "Santa Comba Dao",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-santa-cruz",
+     "name": "Santa Cruz",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-santa-cruz-da-graciosa",
+     "name": "Santa Cruz da Graciosa",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-santa-cruz-das-flores",
+     "name": "Santa Cruz das Flores",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-santa-maria-da-feira",
+     "name": "Santa Maria da Feira",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-santa-marta-de-penaguiao",
+     "name": "Santa Marta de Penaguiao",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-santana",
+     "name": "Santana",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-santarem",
+     "name": "Santarem",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-santiago-do-cacem",
+     "name": "Santiago do Cacem",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-santo-tirso",
+     "name": "Santo Tirso",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-sao-bras-de-alportel",
+     "name": "Sao Bras de Alportel",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-sao-joao-da-madeira",
+     "name": "Sao Joao da Madeira",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-sao-joao-da-pesqueira",
+     "name": "Sao Joao da Pesqueira",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-sao-pedro-do-sul",
+     "name": "Sao Pedro do Sul",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-sao-roque-do-pico",
+     "name": "Sao Roque do Pico",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-sao-vicente",
+     "name": "Sao Vicente",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-sardoal",
+     "name": "Sardoal",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-satao",
+     "name": "Satao",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-seia",
+     "name": "Seia",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-seixal",
+     "name": "Seixal",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-sernancelhe",
+     "name": "Sernancelhe",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-serpa",
+     "name": "Serpa",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-serta",
+     "name": "Serta",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-server-do-vouga",
+     "name": "Server do Vouga",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-sesimbra",
+     "name": "Sesimbra",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-setubul",
+     "name": "Setubul",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-silves",
+     "name": "Silves",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-sines",
+     "name": "Sines",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-sintra",
+     "name": "Sintra",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-sobral-de-monte-agraco",
+     "name": "Sobral de Monte Agraco",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-soure",
+     "name": "Soure",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-sousel",
+     "name": "Sousel",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-tabua",
+     "name": "Tabua",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-tabuaco",
+     "name": "Tabuaco",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-tarouca",
+     "name": "Tarouca",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-tavira",
+     "name": "Tavira",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-terras-de-bouro",
+     "name": "Terras de Bouro",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-tomar",
+     "name": "Tomar",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-tondela",
+     "name": "Tondela",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-torre-de-moncorvo",
+     "name": "Torre de Moncorvo",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-torres-novas",
+     "name": "Torres Novas",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-torres-vedras",
+     "name": "Torres Vedras",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-trancoso",
+     "name": "Trancoso",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-trofa",
+     "name": "Trofa",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-vagos",
+     "name": "Vagos",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-vale-de-cambra",
+     "name": "Vale de Cambra",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-valenca",
+     "name": "Valenca",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-valongo",
+     "name": "Valongo",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-valpacos",
+     "name": "Valpacos",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-velas",
+     "name": "Velas",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-vendas-novas",
+     "name": "Vendas Novas",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-viana-do-alentejo",
+     "name": "Viana do Alentejo",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-viana-do-castelo",
+     "name": "Viana do Castelo",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-vidigueira",
+     "name": "Vidigueira",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-vieira-do-minho",
+     "name": "Vieira do Minho",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-vila-de-rei",
+     "name": "Vila de Rei",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-vila-do-bispo",
+     "name": "Vila do Bispo",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-vila-do-conde",
+     "name": "Vila do Conde",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-vila-do-porto",
+     "name": "Vila do Porto",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-vila-flor",
+     "name": "Vila Flor",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-vila-franca-de-xira",
+     "name": "Vila Franca de Xira",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-vila-franca-do-campo",
+     "name": "Vila Franca do Campo",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-vila-nova-da-barquinha",
+     "name": "Vila Nova da Barquinha",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-vila-nova-de-cerveira",
+     "name": "Vila Nova de Cerveira",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-vila-nova-de-famalicao",
+     "name": "Vila Nova de Famalicao",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-vila-nova-de-foz-coa",
+     "name": "Vila Nova de Foz Coa",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-vila-nova-de-gaia",
+     "name": "Vila Nova de Gaia",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-vila-nova-de-paiva",
+     "name": "Vila Nova de Paiva",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-vila-nova-de-poiares",
+     "name": "Vila Nova de Poiares",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-vila-pouca-de-aguiar",
+     "name": "Vila Pouca de Aguiar",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-vila-real",
+     "name": "Vila Real",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-vila-real-de-santo-antonio",
+     "name": "Vila Real de Santo Antonio",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-vila-velha-de-rodao",
+     "name": "Vila Velha de Rodao",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-vila-verde",
+     "name": "Vila Verde",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-vila-vicosa",
+     "name": "Vila Vicosa",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-vimioso",
+     "name": "Vimioso",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-vinhais",
+     "name": "Vinhais",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-viseu",
+     "name": "Viseu",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-vizela",
+     "name": "Vizela",
+     "shapeISO": "ADM 2"
+    },
+    {
+     "id": "prt-adm2-vouzela",
+     "name": "Vouzela",
+     "shapeISO": "ADM 2"
+    }
+   ]
+  }
+ },
+ "name": "Portugal",
+ "nameBn": "Portugal"
+}

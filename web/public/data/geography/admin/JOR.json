@@ -1,0 +1,308 @@
+{
+ "code": "JOR",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "the Hashemite Kingdom of Jordan",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2016",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Governorate",
+   "code": "ADM1",
+   "count": 12,
+   "name": "Governorate",
+   "nameBn": "গভর্নরেট",
+   "representedYear": "2006",
+   "sourceCount": 12,
+   "units": [
+    {
+     "id": "jor-adm1-ajloun",
+     "name": "Ajloun",
+     "shapeISO": "JO-AJ"
+    },
+    {
+     "id": "jor-adm1-amman",
+     "name": "Amman",
+     "shapeISO": "JO-AM"
+    },
+    {
+     "id": "jor-adm1-aqaba",
+     "name": "Aqaba",
+     "shapeISO": "JO-AQ"
+    },
+    {
+     "id": "jor-adm1-balqa",
+     "name": "Balqa",
+     "shapeISO": "JO-BA"
+    },
+    {
+     "id": "jor-adm1-irbid",
+     "name": "Irbid",
+     "shapeISO": "JO-IR"
+    },
+    {
+     "id": "jor-adm1-jerash",
+     "name": "Jerash",
+     "shapeISO": "JO-JA"
+    },
+    {
+     "id": "jor-adm1-karak",
+     "name": "Karak",
+     "shapeISO": "JO-KA"
+    },
+    {
+     "id": "jor-adm1-ma-an",
+     "name": "Ma'an",
+     "shapeISO": "JO-MN"
+    },
+    {
+     "id": "jor-adm1-madaba",
+     "name": "Madaba",
+     "shapeISO": "JO-MD"
+    },
+    {
+     "id": "jor-adm1-mafraq",
+     "name": "Mafraq",
+     "shapeISO": "JO-MA"
+    },
+    {
+     "id": "jor-adm1-tafilah",
+     "name": "Tafilah",
+     "shapeISO": "JO-AT"
+    },
+    {
+     "id": "jor-adm1-zarqa",
+     "name": "Zarqa",
+     "shapeISO": "JO-AZ"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Nahias",
+   "code": "ADM2",
+   "count": 52,
+   "name": "Nahias",
+   "nameBn": "Nahias",
+   "representedYear": "2006",
+   "sourceCount": 52,
+   "units": [
+    {
+     "id": "jor-adm2-al-aghwar-shamaliyyeh",
+     "name": "Al-Aghwar Shamaliyyeh"
+    },
+    {
+     "id": "jor-adm2-al-aqaba",
+     "name": "Al-Aqaba"
+    },
+    {
+     "id": "jor-adm2-al-azraq",
+     "name": "Al-Azraq"
+    },
+    {
+     "id": "jor-adm2-al-balqa",
+     "name": "Al-Balqa"
+    },
+    {
+     "id": "jor-adm2-al-hasa",
+     "name": "Al-Hasa"
+    },
+    {
+     "id": "jor-adm2-al-husanyniyya",
+     "name": "Al-Husanyniyya"
+    },
+    {
+     "id": "jor-adm2-al-jizah",
+     "name": "Al-Jizah"
+    },
+    {
+     "id": "jor-adm2-al-karak",
+     "name": "Al-Karak"
+    },
+    {
+     "id": "jor-adm2-al-mafraq",
+     "name": "Al-Mafraq"
+    },
+    {
+     "id": "jor-adm2-al-mazar-al-janubiyya",
+     "name": "Al-Mazar al-Janubiyya"
+    },
+    {
+     "id": "jor-adm2-al-mazra-a",
+     "name": "Al-Mazra'a"
+    },
+    {
+     "id": "jor-adm2-al-muwaqqar",
+     "name": "Al-Muwaqqar"
+    },
+    {
+     "id": "jor-adm2-al-qasr",
+     "name": "Al-Qasr"
+    },
+    {
+     "id": "jor-adm2-al-quwayra",
+     "name": "Al-Quwayra"
+    },
+    {
+     "id": "jor-adm2-al-safi",
+     "name": "Al-Safi"
+    },
+    {
+     "id": "jor-adm2-al-tafila",
+     "name": "Al-Tafila"
+    },
+    {
+     "id": "jor-adm2-aljun",
+     "name": "Aljun"
+    },
+    {
+     "id": "jor-adm2-amman",
+     "name": "Amman"
+    },
+    {
+     "id": "jor-adm2-ar-ramtha",
+     "name": "Ar Ramtha"
+    },
+    {
+     "id": "jor-adm2-ar-ruwayshid",
+     "name": "Ar-Ruwayshid"
+    },
+    {
+     "id": "jor-adm2-ardhah",
+     "name": "Ardhah"
+    },
+    {
+     "id": "jor-adm2-as-salt",
+     "name": "As-Salt"
+    },
+    {
+     "id": "jor-adm2-ash-shibek",
+     "name": "Ash-Shibek"
+    },
+    {
+     "id": "jor-adm2-ayi",
+     "name": "Ayi"
+    },
+    {
+     "id": "jor-adm2-ayy",
+     "name": "Ayy"
+    },
+    {
+     "id": "jor-adm2-az-zarqa",
+     "name": "Az-Zarqa"
+    },
+    {
+     "id": "jor-adm2-bal-ama",
+     "name": "Bal'ama"
+    },
+    {
+     "id": "jor-adm2-bani-knana",
+     "name": "Bani Knana"
+    },
+    {
+     "id": "jor-adm2-birin",
+     "name": "Birin"
+    },
+    {
+     "id": "jor-adm2-birsayra",
+     "name": "Birsayra"
+    },
+    {
+     "id": "jor-adm2-dair-alla",
+     "name": "Dair Alla"
+    },
+    {
+     "id": "jor-adm2-dhiban",
+     "name": "Dhiban"
+    },
+    {
+     "id": "jor-adm2-faqqu",
+     "name": "Faqqu"
+    },
+    {
+     "id": "jor-adm2-hariema",
+     "name": "Hariema"
+    },
+    {
+     "id": "jor-adm2-irbid",
+     "name": "Irbid"
+    },
+    {
+     "id": "jor-adm2-jerash",
+     "name": "Jerash"
+    },
+    {
+     "id": "jor-adm2-kofranjah",
+     "name": "Kofranjah"
+    },
+    {
+     "id": "jor-adm2-kora",
+     "name": "Kora"
+    },
+    {
+     "id": "jor-adm2-ma-an",
+     "name": "Ma'an"
+    },
+    {
+     "id": "jor-adm2-madaba",
+     "name": "Madaba"
+    },
+    {
+     "id": "jor-adm2-mazar-shamaliyyeh",
+     "name": "Mazar Shamaliyyeh"
+    },
+    {
+     "id": "jor-adm2-na-ur",
+     "name": "Na'ur"
+    },
+    {
+     "id": "jor-adm2-sabha",
+     "name": "Sabha"
+    },
+    {
+     "id": "jor-adm2-sahab",
+     "name": "Sahab"
+    },
+    {
+     "id": "jor-adm2-sama-as-sarhan",
+     "name": "Sama as-Sarhan"
+    },
+    {
+     "id": "jor-adm2-shuna-al-jabiniyya",
+     "name": "Shuna al-Jabiniyya"
+    },
+    {
+     "id": "jor-adm2-tayybeh",
+     "name": "Tayybeh"
+    },
+    {
+     "id": "jor-adm2-um-al-basatin",
+     "name": "Um al-Basatin"
+    },
+    {
+     "id": "jor-adm2-wadi-al-sayr",
+     "name": "Wadi al-Sayr"
+    },
+    {
+     "id": "jor-adm2-wadi-araba",
+     "name": "Wadi Araba"
+    },
+    {
+     "id": "jor-adm2-wadi-musa",
+     "name": "Wadi Musa"
+    },
+    {
+     "id": "jor-adm2-wastiyyeh",
+     "name": "Wastiyyeh"
+    }
+   ]
+  }
+ },
+ "name": "Jordan",
+ "nameBn": "Jordan"
+}

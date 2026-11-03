@@ -1,0 +1,602 @@
+{
+ "code": "SOM",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Somalia",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2021",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Unknown",
+   "code": "ADM1",
+   "count": 18,
+   "name": "ADM1 areas",
+   "nameBn": "ADM1 এলাকা",
+   "representedYear": "2015",
+   "sourceCount": 18,
+   "units": [
+    {
+     "id": "som-adm1-awdal",
+     "name": "Awdal",
+     "shapeISO": "SO-AW"
+    },
+    {
+     "id": "som-adm1-bakool",
+     "name": "Bakool",
+     "shapeISO": "SO-BK"
+    },
+    {
+     "id": "som-adm1-banadir",
+     "name": "Banadir",
+     "shapeISO": "SO-BN"
+    },
+    {
+     "id": "som-adm1-bari",
+     "name": "Bari",
+     "shapeISO": "SO-BR"
+    },
+    {
+     "id": "som-adm1-bay",
+     "name": "Bay",
+     "shapeISO": "SO-BY"
+    },
+    {
+     "id": "som-adm1-galgaduud",
+     "name": "Galgaduud",
+     "shapeISO": "SO-GA"
+    },
+    {
+     "id": "som-adm1-gedo",
+     "name": "Gedo",
+     "shapeISO": "SO-GE"
+    },
+    {
+     "id": "som-adm1-hiiraan",
+     "name": "Hiiraan",
+     "shapeISO": "SO-HI"
+    },
+    {
+     "id": "som-adm1-lower-juba",
+     "name": "Lower Juba",
+     "shapeISO": "SO-JH"
+    },
+    {
+     "id": "som-adm1-lower-shebelle",
+     "name": "Lower Shebelle",
+     "shapeISO": "SO-SH"
+    },
+    {
+     "id": "som-adm1-middle-juba",
+     "name": "Middle Juba",
+     "shapeISO": "SO-JD"
+    },
+    {
+     "id": "som-adm1-middle-shebelle",
+     "name": "Middle Shebelle",
+     "shapeISO": "SO-SD"
+    },
+    {
+     "id": "som-adm1-mudug",
+     "name": "Mudug",
+     "shapeISO": "SO-MU"
+    },
+    {
+     "id": "som-adm1-nugaal",
+     "name": "Nugaal",
+     "shapeISO": "SO-NU"
+    },
+    {
+     "id": "som-adm1-sanaag",
+     "name": "Sanaag",
+     "shapeISO": "SO-SA"
+    },
+    {
+     "id": "som-adm1-sool",
+     "name": "Sool",
+     "shapeISO": "SO-SO"
+    },
+    {
+     "id": "som-adm1-togdheer",
+     "name": "Togdheer",
+     "shapeISO": "SO-TO"
+    },
+    {
+     "id": "som-adm1-woqooyi-galbeed",
+     "name": "Woqooyi Galbeed",
+     "shapeISO": "SO-WO"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Districts",
+   "code": "ADM2",
+   "count": 118,
+   "name": "Districts",
+   "nameBn": "জেলা",
+   "representedYear": "2022",
+   "sourceCount": 118,
+   "units": [
+    {
+     "id": "som-adm2-abdul-aziz",
+     "name": "ABDUL AZIZ"
+    },
+    {
+     "id": "som-adm2-abudwaq",
+     "name": "ABUDWAQ"
+    },
+    {
+     "id": "som-adm2-adado",
+     "name": "ADADO"
+    },
+    {
+     "id": "som-adm2-adale",
+     "name": "ADALE"
+    },
+    {
+     "id": "som-adm2-aden-yabal",
+     "name": "ADEN YABAL"
+    },
+    {
+     "id": "som-adm2-afgoi",
+     "name": "AFGOI"
+    },
+    {
+     "id": "som-adm2-afmadow",
+     "name": "AFMADOW"
+    },
+    {
+     "id": "som-adm2-alula",
+     "name": "ALULA"
+    },
+    {
+     "id": "som-adm2-awdheegle",
+     "name": "AWDHEEGLE"
+    },
+    {
+     "id": "som-adm2-aynabo",
+     "name": "AYNABO"
+    },
+    {
+     "id": "som-adm2-badhadhe",
+     "name": "BADHADHE"
+    },
+    {
+     "id": "som-adm2-badhan",
+     "name": "BADHAN"
+    },
+    {
+     "id": "som-adm2-baidoa",
+     "name": "BAIDOA"
+    },
+    {
+     "id": "som-adm2-baki",
+     "name": "BAKI"
+    },
+    {
+     "id": "som-adm2-balad",
+     "name": "BALAD"
+    },
+    {
+     "id": "som-adm2-balanbale",
+     "name": "BALANBALE"
+    },
+    {
+     "id": "som-adm2-baligubadle",
+     "name": "BALIGUBADLE"
+    },
+    {
+     "id": "som-adm2-bardera",
+     "name": "BARDERA"
+    },
+    {
+     "id": "som-adm2-bargaal",
+     "name": "BARGAAL"
+    },
+    {
+     "id": "som-adm2-belet-hawa",
+     "name": "BELET HAWA"
+    },
+    {
+     "id": "som-adm2-belet-weyne",
+     "name": "BELET WEYNE"
+    },
+    {
+     "id": "som-adm2-bender-bayla",
+     "name": "BENDER BAYLA"
+    },
+    {
+     "id": "som-adm2-berbera",
+     "name": "BERBERA"
+    },
+    {
+     "id": "som-adm2-berdale",
+     "name": "BERDALE"
+    },
+    {
+     "id": "som-adm2-bondere",
+     "name": "BONDERE"
+    },
+    {
+     "id": "som-adm2-borama",
+     "name": "BORAMA"
+    },
+    {
+     "id": "som-adm2-bossaso",
+     "name": "BOSSASO"
+    },
+    {
+     "id": "som-adm2-brava",
+     "name": "BRAVA"
+    },
+    {
+     "id": "som-adm2-buaale",
+     "name": "BUAALE"
+    },
+    {
+     "id": "som-adm2-buhodle",
+     "name": "BUHODLE"
+    },
+    {
+     "id": "som-adm2-bulo-burti",
+     "name": "BULO BURTI"
+    },
+    {
+     "id": "som-adm2-burao",
+     "name": "BURAO"
+    },
+    {
+     "id": "som-adm2-burdubo",
+     "name": "BURDUBO"
+    },
+    {
+     "id": "som-adm2-burhakaba",
+     "name": "BURHAKABA"
+    },
+    {
+     "id": "som-adm2-burtinle",
+     "name": "BURTINLE"
+    },
+    {
+     "id": "som-adm2-dangoroyo",
+     "name": "DANGOROYO"
+    },
+    {
+     "id": "som-adm2-danyile",
+     "name": "DANYILE"
+    },
+    {
+     "id": "som-adm2-dharkenly",
+     "name": "DHARKENLY"
+    },
+    {
+     "id": "som-adm2-dinsoor",
+     "name": "DINSOOR"
+    },
+    {
+     "id": "som-adm2-dolo",
+     "name": "DOLO"
+    },
+    {
+     "id": "som-adm2-dusamreb",
+     "name": "DUSAMREB"
+    },
+    {
+     "id": "som-adm2-el-afweyn",
+     "name": "EL AFWEYN"
+    },
+    {
+     "id": "som-adm2-el-barde",
+     "name": "EL BARDE"
+    },
+    {
+     "id": "som-adm2-el-bur",
+     "name": "EL BUR"
+    },
+    {
+     "id": "som-adm2-el-dhere",
+     "name": "EL DHERE"
+    },
+    {
+     "id": "som-adm2-el-wak",
+     "name": "EL WAK"
+    },
+    {
+     "id": "som-adm2-elgaras",
+     "name": "ELGARAS"
+    },
+    {
+     "id": "som-adm2-erigavo",
+     "name": "ERIGAVO"
+    },
+    {
+     "id": "som-adm2-eyl",
+     "name": "EYL"
+    },
+    {
+     "id": "som-adm2-gabiley",
+     "name": "GABILEY"
+    },
+    {
+     "id": "som-adm2-galad",
+     "name": "GALAD"
+    },
+    {
+     "id": "som-adm2-galhareeri",
+     "name": "GALHAREERI"
+    },
+    {
+     "id": "som-adm2-galinsoor",
+     "name": "GALINSOOR"
+    },
+    {
+     "id": "som-adm2-galkayu-north",
+     "name": "GALKAYU NORTH"
+    },
+    {
+     "id": "som-adm2-galkayu-south",
+     "name": "GALKAYU SOUTH"
+    },
+    {
+     "id": "som-adm2-garbaharey",
+     "name": "GARBAHAREY"
+    },
+    {
+     "id": "som-adm2-gardo",
+     "name": "GARDO"
+    },
+    {
+     "id": "som-adm2-garowe",
+     "name": "GAROWE"
+    },
+    {
+     "id": "som-adm2-gedwein",
+     "name": "GEDWEIN"
+    },
+    {
+     "id": "som-adm2-goldogob",
+     "name": "GOLDOGOB"
+    },
+    {
+     "id": "som-adm2-guriel",
+     "name": "GURIEL"
+    },
+    {
+     "id": "som-adm2-hafun",
+     "name": "HAFUN"
+    },
+    {
+     "id": "som-adm2-hagar",
+     "name": "HAGAR"
+    },
+    {
+     "id": "som-adm2-hamar-jabjab",
+     "name": "HAMAR JABJAB"
+    },
+    {
+     "id": "som-adm2-hamar-weyn",
+     "name": "HAMAR WEYN"
+    },
+    {
+     "id": "som-adm2-haradhere",
+     "name": "HARADHERE"
+    },
+    {
+     "id": "som-adm2-hargeisa",
+     "name": "HARGEISA"
+    },
+    {
+     "id": "som-adm2-hawal-wadag",
+     "name": "HAWAL WADAG"
+    },
+    {
+     "id": "som-adm2-heliwa",
+     "name": "HELIWA"
+    },
+    {
+     "id": "som-adm2-hobyo",
+     "name": "HOBYO"
+    },
+    {
+     "id": "som-adm2-hodan",
+     "name": "HODAN"
+    },
+    {
+     "id": "som-adm2-hudun",
+     "name": "HUDUN"
+    },
+    {
+     "id": "som-adm2-hudur",
+     "name": "HUDUR"
+    },
+    {
+     "id": "som-adm2-iskushuban",
+     "name": "ISKUSHUBAN"
+    },
+    {
+     "id": "som-adm2-jalalaqsi",
+     "name": "JALALAQSI"
+    },
+    {
+     "id": "som-adm2-jamaame-east",
+     "name": "JAMAAME EAST"
+    },
+    {
+     "id": "som-adm2-jamaame-west",
+     "name": "JAMAAME WEST"
+    },
+    {
+     "id": "som-adm2-jariban",
+     "name": "JARIBAN"
+    },
+    {
+     "id": "som-adm2-jilib-east",
+     "name": "JILIB EAST"
+    },
+    {
+     "id": "som-adm2-jilib-west",
+     "name": "JILIB WEST"
+    },
+    {
+     "id": "som-adm2-jowhar",
+     "name": "JOWHAR"
+    },
+    {
+     "id": "som-adm2-kahda",
+     "name": "KAHDA"
+    },
+    {
+     "id": "som-adm2-karan",
+     "name": "KARAN"
+    },
+    {
+     "id": "som-adm2-kismayo",
+     "name": "KISMAYO"
+    },
+    {
+     "id": "som-adm2-kurtunwaarey",
+     "name": "KURTUNWAAREY"
+    },
+    {
+     "id": "som-adm2-las-anod",
+     "name": "LAS ANOD"
+    },
+    {
+     "id": "som-adm2-lughaya",
+     "name": "LUGHAYA"
+    },
+    {
+     "id": "som-adm2-luuq",
+     "name": "LUUQ"
+    },
+    {
+     "id": "som-adm2-madina",
+     "name": "MADINA"
+    },
+    {
+     "id": "som-adm2-mahaday",
+     "name": "MAHADAY"
+    },
+    {
+     "id": "som-adm2-mahas",
+     "name": "MAHAS"
+    },
+    {
+     "id": "som-adm2-marka",
+     "name": "MARKA"
+    },
+    {
+     "id": "som-adm2-mataban",
+     "name": "MATABAN"
+    },
+    {
+     "id": "som-adm2-odwayne",
+     "name": "ODWAYNE"
+    },
+    {
+     "id": "som-adm2-qandala",
+     "name": "QANDALA"
+    },
+    {
+     "id": "som-adm2-qansah-dheere",
+     "name": "QANSAH DHEERE"
+    },
+    {
+     "id": "som-adm2-qoryoley",
+     "name": "QORYOLEY"
+    },
+    {
+     "id": "som-adm2-rabdure",
+     "name": "RABDURE"
+    },
+    {
+     "id": "som-adm2-raga-elle",
+     "name": "RAGA ELLE"
+    },
+    {
+     "id": "som-adm2-rako",
+     "name": "RAKO"
+    },
+    {
+     "id": "som-adm2-runingod",
+     "name": "RUNINGOD"
+    },
+    {
+     "id": "som-adm2-sablale",
+     "name": "SABLALE"
+    },
+    {
+     "id": "som-adm2-sakow",
+     "name": "SAKOW"
+    },
+    {
+     "id": "som-adm2-salagle",
+     "name": "SALAGLE"
+    },
+    {
+     "id": "som-adm2-shangani",
+     "name": "SHANGANI"
+    },
+    {
+     "id": "som-adm2-sheikh",
+     "name": "SHEIKH"
+    },
+    {
+     "id": "som-adm2-shibis",
+     "name": "SHIBIS"
+    },
+    {
+     "id": "som-adm2-taleh",
+     "name": "TALEH"
+    },
+    {
+     "id": "som-adm2-tiyeglo",
+     "name": "TIYEGLO"
+    },
+    {
+     "id": "som-adm2-ufeyn",
+     "name": "UFEYN"
+    },
+    {
+     "id": "som-adm2-waberi",
+     "name": "WABERI"
+    },
+    {
+     "id": "som-adm2-waciya",
+     "name": "WACIYA"
+    },
+    {
+     "id": "som-adm2-wajid",
+     "name": "WAJID"
+    },
+    {
+     "id": "som-adm2-wanleweyne",
+     "name": "WANLEWEYNE"
+    },
+    {
+     "id": "som-adm2-wardegly",
+     "name": "WARDEGLY"
+    },
+    {
+     "id": "som-adm2-warsheikh",
+     "name": "WARSHEIKH"
+    },
+    {
+     "id": "som-adm2-yaqshid",
+     "name": "YAQSHID"
+    },
+    {
+     "id": "som-adm2-zeila",
+     "name": "ZEILA"
+    }
+   ]
+  }
+ },
+ "name": "Somalia",
+ "nameBn": "Somalia"
+}

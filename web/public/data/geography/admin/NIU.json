@@ -1,0 +1,85 @@
+{
+ "code": "NIU",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Niue",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2021",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "village",
+   "code": "ADM1",
+   "count": 14,
+   "name": "village",
+   "nameBn": "village",
+   "representedYear": "2020",
+   "sourceCount": 14,
+   "units": [
+    {
+     "id": "niu-adm1-alofi-north",
+     "name": "Alofi North"
+    },
+    {
+     "id": "niu-adm1-alofi-south",
+     "name": "Alofi South"
+    },
+    {
+     "id": "niu-adm1-avatele",
+     "name": "Avatele"
+    },
+    {
+     "id": "niu-adm1-hakupu",
+     "name": "Hakupu"
+    },
+    {
+     "id": "niu-adm1-hikutavake",
+     "name": "Hikutavake"
+    },
+    {
+     "id": "niu-adm1-lakepa",
+     "name": "Lakepa"
+    },
+    {
+     "id": "niu-adm1-liku",
+     "name": "Liku"
+    },
+    {
+     "id": "niu-adm1-makefu",
+     "name": "Makefu"
+    },
+    {
+     "id": "niu-adm1-mutalau",
+     "name": "Mutalau"
+    },
+    {
+     "id": "niu-adm1-namukulu",
+     "name": "Namukulu"
+    },
+    {
+     "id": "niu-adm1-tamakautoga",
+     "name": "Tamakautoga"
+    },
+    {
+     "id": "niu-adm1-toi",
+     "name": "Toi"
+    },
+    {
+     "id": "niu-adm1-tuapa",
+     "name": "Tuapa"
+    },
+    {
+     "id": "niu-adm1-vaiea",
+     "name": "Vaiea"
+    }
+   ]
+  }
+ },
+ "name": "Niue",
+ "nameBn": "Niue"
+}

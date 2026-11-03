@@ -1,0 +1,18 @@
+{
+ "code": "TCA",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "The Turks and Caicos Islands",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2021",
+   "sourceCount": 1,
+   "units": []
+  }
+ },
+ "name": "Turks and Caicos Islands",
+ "nameBn": "Turks and Caicos Islands"
+}

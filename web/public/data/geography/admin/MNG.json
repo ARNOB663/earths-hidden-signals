@@ -1,0 +1,1506 @@
+{
+ "code": "MNG",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Unknown",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2017",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Unknown",
+   "code": "ADM1",
+   "count": 22,
+   "name": "ADM1 areas",
+   "nameBn": "ADM1 এলাকা",
+   "representedYear": "2017",
+   "sourceCount": 22,
+   "units": [
+    {
+     "id": "mng-adm1-arkhangai",
+     "name": "Arkhangai",
+     "shapeISO": "MN-073"
+    },
+    {
+     "id": "mng-adm1-bayan-ölgii",
+     "name": "Bayan-Ölgii",
+     "shapeISO": "MN-071"
+    },
+    {
+     "id": "mng-adm1-bayankhongor",
+     "name": "Bayankhongor",
+     "shapeISO": "MN-069"
+    },
+    {
+     "id": "mng-adm1-bulgan",
+     "name": "Bulgan",
+     "shapeISO": "MN-067"
+    },
+    {
+     "id": "mng-adm1-darkhan-uul",
+     "name": "Darkhan-Uul",
+     "shapeISO": "MN-037"
+    },
+    {
+     "id": "mng-adm1-dornod",
+     "name": "Dornod",
+     "shapeISO": "MN-061"
+    },
+    {
+     "id": "mng-adm1-dornogovi",
+     "name": "Dornogovi",
+     "shapeISO": "MN-063"
+    },
+    {
+     "id": "mng-adm1-dundgovi",
+     "name": "Dundgovi",
+     "shapeISO": "MN-059"
+    },
+    {
+     "id": "mng-adm1-govi-altai",
+     "name": "Govi-Altai",
+     "shapeISO": "MN-065"
+    },
+    {
+     "id": "mng-adm1-govisumber",
+     "name": "Govisumber",
+     "shapeISO": "MN-064"
+    },
+    {
+     "id": "mng-adm1-hovsgel",
+     "name": "Hovsgel",
+     "shapeISO": "MN-041"
+    },
+    {
+     "id": "mng-adm1-khentii",
+     "name": "Khentii",
+     "shapeISO": "MN-039"
+    },
+    {
+     "id": "mng-adm1-khovd",
+     "name": "Khovd",
+     "shapeISO": "MN-043"
+    },
+    {
+     "id": "mng-adm1-orkhon",
+     "name": "Orkhon",
+     "shapeISO": "MN-035"
+    },
+    {
+     "id": "mng-adm1-selenge",
+     "name": "Selenge",
+     "shapeISO": "MN-049"
+    },
+    {
+     "id": "mng-adm1-sükhbaatar",
+     "name": "Sükhbaatar",
+     "shapeISO": "MN-051"
+    },
+    {
+     "id": "mng-adm1-töv",
+     "name": "Töv",
+     "shapeISO": "MN-047"
+    },
+    {
+     "id": "mng-adm1-ulaanbaatar",
+     "name": "Ulaanbaatar",
+     "shapeISO": "MN-1"
+    },
+    {
+     "id": "mng-adm1-uvs",
+     "name": "Uvs",
+     "shapeISO": "MN-046"
+    },
+    {
+     "id": "mng-adm1-zavkhan",
+     "name": "Zavkhan",
+     "shapeISO": "MN-057"
+    },
+    {
+     "id": "mng-adm1-ömnögovi",
+     "name": "Ömnögovi",
+     "shapeISO": "MN-053"
+    },
+    {
+     "id": "mng-adm1-övörkhangai",
+     "name": "Övörkhangai",
+     "shapeISO": "MN-055"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "soum, düüregs",
+   "code": "ADM2",
+   "count": 339,
+   "name": "soum, düüregs",
+   "nameBn": "soum, düüregs",
+   "representedYear": "2021",
+   "sourceCount": 339,
+   "units": [
+    {
+     "id": "mng-adm2-adaacag",
+     "name": "Adaacag"
+    },
+    {
+     "id": "mng-adm2-airag",
+     "name": "Airag"
+    },
+    {
+     "id": "mng-adm2-alag-erdene",
+     "name": "Alag-Erdene"
+    },
+    {
+     "id": "mng-adm2-aldarxaan",
+     "name": "Aldarxaan"
+    },
+    {
+     "id": "mng-adm2-altai",
+     "name": "Altai"
+    },
+    {
+     "id": "mng-adm2-altai-2",
+     "name": "Altai"
+    },
+    {
+     "id": "mng-adm2-altai-3",
+     "name": "Altai"
+    },
+    {
+     "id": "mng-adm2-altanbulag",
+     "name": "Altanbulag"
+    },
+    {
+     "id": "mng-adm2-altanbulag-2",
+     "name": "Altanbulag"
+    },
+    {
+     "id": "mng-adm2-altanco-gc",
+     "name": "Altanco'gc"
+    },
+    {
+     "id": "mng-adm2-altanshiree",
+     "name": "Altanshiree"
+    },
+    {
+     "id": "mng-adm2-arbulag",
+     "name": "Arbulag"
+    },
+    {
+     "id": "mng-adm2-argalant",
+     "name": "Argalant"
+    },
+    {
+     "id": "mng-adm2-arvaixeer",
+     "name": "Arvaixeer"
+    },
+    {
+     "id": "mng-adm2-arxust",
+     "name": "Arxust"
+    },
+    {
+     "id": "mng-adm2-asgat",
+     "name": "Asgat"
+    },
+    {
+     "id": "mng-adm2-asgat-2",
+     "name": "Asgat"
+    },
+    {
+     "id": "mng-adm2-baacagaan",
+     "name": "Baacagaan"
+    },
+    {
+     "id": "mng-adm2-baganuur",
+     "name": "Baganuur"
+    },
+    {
+     "id": "mng-adm2-bagaxangai",
+     "name": "Bagaxangai"
+    },
+    {
+     "id": "mng-adm2-baruun-urt",
+     "name": "Baruun-Urt"
+    },
+    {
+     "id": "mng-adm2-baruunbayan-ulaan",
+     "name": "Baruunbayan-Ulaan"
+    },
+    {
+     "id": "mng-adm2-baruunbu-ren",
+     "name": "Baruunbu'ren"
+    },
+    {
+     "id": "mng-adm2-baruunturuun",
+     "name": "Baruunturuun"
+    },
+    {
+     "id": "mng-adm2-bat-o-lzii",
+     "name": "Bat-O'lzii"
+    },
+    {
+     "id": "mng-adm2-batcengel",
+     "name": "Batcengel"
+    },
+    {
+     "id": "mng-adm2-batnorov",
+     "name": "Batnorov"
+    },
+    {
+     "id": "mng-adm2-batshireet",
+     "name": "Batshireet"
+    },
+    {
+     "id": "mng-adm2-batsu-mber",
+     "name": "Batsu'mber"
+    },
+    {
+     "id": "mng-adm2-bayan",
+     "name": "Bayan"
+    },
+    {
+     "id": "mng-adm2-bayan-agt",
+     "name": "Bayan agt"
+    },
+    {
+     "id": "mng-adm2-bayan-adraga",
+     "name": "Bayan-Adraga"
+    },
+    {
+     "id": "mng-adm2-bayan-o-ndor",
+     "name": "Bayan-O'ndor"
+    },
+    {
+     "id": "mng-adm2-bayan-o-ndor-2",
+     "name": "Bayan-O'ndor"
+    },
+    {
+     "id": "mng-adm2-bayan-o-ndor-3",
+     "name": "Bayan-O'ndor"
+    },
+    {
+     "id": "mng-adm2-bayan-o-njuul",
+     "name": "Bayan-O'njuul"
+    },
+    {
+     "id": "mng-adm2-bayan-ovoo",
+     "name": "Bayan-Ovoo"
+    },
+    {
+     "id": "mng-adm2-bayan-ovoo-2",
+     "name": "Bayan-Ovoo"
+    },
+    {
+     "id": "mng-adm2-bayan-ovoo-3",
+     "name": "Bayan-Ovoo"
+    },
+    {
+     "id": "mng-adm2-bayan-uul",
+     "name": "Bayan-Uul"
+    },
+    {
+     "id": "mng-adm2-bayan-uul-2",
+     "name": "Bayan-Uul"
+    },
+    {
+     "id": "mng-adm2-bayanbulag",
+     "name": "Bayanbulag"
+    },
+    {
+     "id": "mng-adm2-bayancagaan",
+     "name": "Bayancagaan"
+    },
+    {
+     "id": "mng-adm2-bayancagaan-2",
+     "name": "Bayancagaan"
+    },
+    {
+     "id": "mng-adm2-bayanchandmani",
+     "name": "Bayanchandmani"
+    },
+    {
+     "id": "mng-adm2-bayancogt",
+     "name": "Bayancogt"
+    },
+    {
+     "id": "mng-adm2-bayandalai",
+     "name": "Bayandalai"
+    },
+    {
+     "id": "mng-adm2-bayandelger",
+     "name": "Bayandelger"
+    },
+    {
+     "id": "mng-adm2-bayandelger-2",
+     "name": "Bayandelger"
+    },
+    {
+     "id": "mng-adm2-bayandun",
+     "name": "Bayandun"
+    },
+    {
+     "id": "mng-adm2-bayangol",
+     "name": "Bayangol"
+    },
+    {
+     "id": "mng-adm2-bayangol-2",
+     "name": "Bayangol"
+    },
+    {
+     "id": "mng-adm2-bayangol-3",
+     "name": "Bayangol"
+    },
+    {
+     "id": "mng-adm2-bayangovi",
+     "name": "Bayangovi"
+    },
+    {
+     "id": "mng-adm2-bayanjargalan",
+     "name": "Bayanjargalan"
+    },
+    {
+     "id": "mng-adm2-bayanjargalan-2",
+     "name": "Bayanjargalan"
+    },
+    {
+     "id": "mng-adm2-bayanlig",
+     "name": "Bayanlig"
+    },
+    {
+     "id": "mng-adm2-bayanmo-nx",
+     "name": "Bayanmo'nx"
+    },
+    {
+     "id": "mng-adm2-bayannuur",
+     "name": "Bayannuur"
+    },
+    {
+     "id": "mng-adm2-bayannuur-2",
+     "name": "Bayannuur"
+    },
+    {
+     "id": "mng-adm2-bayantal",
+     "name": "Bayantal"
+    },
+    {
+     "id": "mng-adm2-bayantes",
+     "name": "Bayantes"
+    },
+    {
+     "id": "mng-adm2-bayantu-men",
+     "name": "Bayantu'men"
+    },
+    {
+     "id": "mng-adm2-bayanxairxan",
+     "name": "Bayanxairxan"
+    },
+    {
+     "id": "mng-adm2-bayanxangai",
+     "name": "Bayanxangai"
+    },
+    {
+     "id": "mng-adm2-bayanxongor",
+     "name": "Bayanxongor"
+    },
+    {
+     "id": "mng-adm2-bayanxutag",
+     "name": "Bayanxutag"
+    },
+    {
+     "id": "mng-adm2-bayanzu-rx",
+     "name": "Bayanzu'rx"
+    },
+    {
+     "id": "mng-adm2-bayanzu-rx-2",
+     "name": "Bayanzu'rx"
+    },
+    {
+     "id": "mng-adm2-biger",
+     "name": "Biger"
+    },
+    {
+     "id": "mng-adm2-binder",
+     "name": "Binder"
+    },
+    {
+     "id": "mng-adm2-bo-mbogor",
+     "name": "Bo'mbogor"
+    },
+    {
+     "id": "mng-adm2-bo-xmoron",
+     "name": "Bo'xmoron"
+    },
+    {
+     "id": "mng-adm2-bogd",
+     "name": "Bogd"
+    },
+    {
+     "id": "mng-adm2-bogd-2",
+     "name": "Bogd"
+    },
+    {
+     "id": "mng-adm2-bor-ondor",
+     "name": "Bor-Ondor"
+    },
+    {
+     "id": "mng-adm2-bornuur",
+     "name": "Bornuur"
+    },
+    {
+     "id": "mng-adm2-bu-rd",
+     "name": "Bu'rd"
+    },
+    {
+     "id": "mng-adm2-bu-regxangai",
+     "name": "Bu'regxangai"
+    },
+    {
+     "id": "mng-adm2-bu-ren",
+     "name": "Bu'ren"
+    },
+    {
+     "id": "mng-adm2-bu-rentogtox",
+     "name": "Bu'rentogtox"
+    },
+    {
+     "id": "mng-adm2-bugat",
+     "name": "Bugat"
+    },
+    {
+     "id": "mng-adm2-bugat-2",
+     "name": "Bugat"
+    },
+    {
+     "id": "mng-adm2-bugat-3",
+     "name": "Bugat"
+    },
+    {
+     "id": "mng-adm2-bulgan",
+     "name": "Bulgan"
+    },
+    {
+     "id": "mng-adm2-bulgan-2",
+     "name": "Bulgan"
+    },
+    {
+     "id": "mng-adm2-bulgan-3",
+     "name": "Bulgan"
+    },
+    {
+     "id": "mng-adm2-bulgan-4",
+     "name": "Bulgan"
+    },
+    {
+     "id": "mng-adm2-bulgan-5",
+     "name": "Bulgan"
+    },
+    {
+     "id": "mng-adm2-bulgan-6",
+     "name": "Bulgan"
+    },
+    {
+     "id": "mng-adm2-buucagaan",
+     "name": "Buucagaan"
+    },
+    {
+     "id": "mng-adm2-buyant",
+     "name": "Buyant"
+    },
+    {
+     "id": "mng-adm2-buyant-2",
+     "name": "Buyant"
+    },
+    {
+     "id": "mng-adm2-cagaan-ovoo",
+     "name": "Cagaan-Ovoo"
+    },
+    {
+     "id": "mng-adm2-cagaan-u-ur",
+     "name": "Cagaan-U'ur"
+    },
+    {
+     "id": "mng-adm2-cagaan-uul",
+     "name": "Cagaan-Uul"
+    },
+    {
+     "id": "mng-adm2-cagaanchuluut",
+     "name": "Cagaanchuluut"
+    },
+    {
+     "id": "mng-adm2-cagaandelger",
+     "name": "Cagaandelger"
+    },
+    {
+     "id": "mng-adm2-cagaannuur",
+     "name": "Cagaannuur"
+    },
+    {
+     "id": "mng-adm2-cagaannuur-2",
+     "name": "Cagaannuur"
+    },
+    {
+     "id": "mng-adm2-cagaanxairxan",
+     "name": "Cagaanxairxan"
+    },
+    {
+     "id": "mng-adm2-cagaanxairxan-2",
+     "name": "Cagaanxairxan"
+    },
+    {
+     "id": "mng-adm2-caxir",
+     "name": "Caxir"
+    },
+    {
+     "id": "mng-adm2-ceceg",
+     "name": "Ceceg"
+    },
+    {
+     "id": "mng-adm2-cecen-uul",
+     "name": "Cecen-Uul"
+    },
+    {
+     "id": "mng-adm2-cecerleg",
+     "name": "Cecerleg"
+    },
+    {
+     "id": "mng-adm2-cecerleg-2",
+     "name": "Cecerleg"
+    },
+    {
+     "id": "mng-adm2-ceel",
+     "name": "Ceel"
+    },
+    {
+     "id": "mng-adm2-ceel-2",
+     "name": "Ceel"
+    },
+    {
+     "id": "mng-adm2-cengel",
+     "name": "Cengel"
+    },
+    {
+     "id": "mng-adm2-cenxer",
+     "name": "Cenxer"
+    },
+    {
+     "id": "mng-adm2-cenxermandal",
+     "name": "Cenxermandal"
+    },
+    {
+     "id": "mng-adm2-chandmani",
+     "name": "Chandmani"
+    },
+    {
+     "id": "mng-adm2-chandmani-2",
+     "name": "Chandmani"
+    },
+    {
+     "id": "mng-adm2-chandmani-o-ndor",
+     "name": "Chandmani-O'ndor"
+    },
+    {
+     "id": "mng-adm2-chingeltei",
+     "name": "Chingeltei"
+    },
+    {
+     "id": "mng-adm2-choibalsan",
+     "name": "Choibalsan"
+    },
+    {
+     "id": "mng-adm2-chuluunxoroot",
+     "name": "Chuluunxoroot"
+    },
+    {
+     "id": "mng-adm2-chuluut",
+     "name": "Chuluut"
+    },
+    {
+     "id": "mng-adm2-cogt",
+     "name": "Cogt"
+    },
+    {
+     "id": "mng-adm2-cogt-cecii",
+     "name": "Cogt-Cecii"
+    },
+    {
+     "id": "mng-adm2-cogt-ovoo",
+     "name": "Cogt-Ovoo"
+    },
+    {
+     "id": "mng-adm2-dadal",
+     "name": "Dadal"
+    },
+    {
+     "id": "mng-adm2-dalanjargalan",
+     "name": "Dalanjargalan"
+    },
+    {
+     "id": "mng-adm2-dalanzadgad",
+     "name": "Dalanzadgad"
+    },
+    {
+     "id": "mng-adm2-dariganga",
+     "name": "Dariganga"
+    },
+    {
+     "id": "mng-adm2-darvi",
+     "name": "Darvi"
+    },
+    {
+     "id": "mng-adm2-darvi-2",
+     "name": "Darvi"
+    },
+    {
+     "id": "mng-adm2-darxan",
+     "name": "Darxan"
+    },
+    {
+     "id": "mng-adm2-darxan-2",
+     "name": "Darxan"
+    },
+    {
+     "id": "mng-adm2-dashbalbar",
+     "name": "Dashbalbar"
+    },
+    {
+     "id": "mng-adm2-dashinchilen",
+     "name": "Dashinchilen"
+    },
+    {
+     "id": "mng-adm2-davst",
+     "name": "Davst"
+    },
+    {
+     "id": "mng-adm2-delger",
+     "name": "Delger"
+    },
+    {
+     "id": "mng-adm2-delgercogt",
+     "name": "Delgercogt"
+    },
+    {
+     "id": "mng-adm2-delgerex",
+     "name": "Delgerex"
+    },
+    {
+     "id": "mng-adm2-delgerxaan",
+     "name": "Delgerxaan"
+    },
+    {
+     "id": "mng-adm2-delgerxaan-2",
+     "name": "Delgerxaan"
+    },
+    {
+     "id": "mng-adm2-delgerxangai",
+     "name": "Delgerxangai"
+    },
+    {
+     "id": "mng-adm2-delu-un",
+     "name": "Delu'un"
+    },
+    {
+     "id": "mng-adm2-deren",
+     "name": "Deren"
+    },
+    {
+     "id": "mng-adm2-do-rgon",
+     "name": "Do'rgon"
+    },
+    {
+     "id": "mng-adm2-do-rvoljin",
+     "name": "Do'rvoljin"
+    },
+    {
+     "id": "mng-adm2-duut",
+     "name": "Duut"
+    },
+    {
+     "id": "mng-adm2-erdene",
+     "name": "Erdene"
+    },
+    {
+     "id": "mng-adm2-erdene-2",
+     "name": "Erdene"
+    },
+    {
+     "id": "mng-adm2-erdene-3",
+     "name": "Erdene"
+    },
+    {
+     "id": "mng-adm2-erdenebu-ren",
+     "name": "Erdenebu'ren"
+    },
+    {
+     "id": "mng-adm2-erdenebulgan",
+     "name": "Erdenebulgan"
+    },
+    {
+     "id": "mng-adm2-erdenebulgan-2",
+     "name": "Erdenebulgan"
+    },
+    {
+     "id": "mng-adm2-erdenecagaan",
+     "name": "Erdenecagaan"
+    },
+    {
+     "id": "mng-adm2-erdenecogt",
+     "name": "Erdenecogt"
+    },
+    {
+     "id": "mng-adm2-erdenedalai",
+     "name": "Erdenedalai"
+    },
+    {
+     "id": "mng-adm2-erdenemandal",
+     "name": "Erdenemandal"
+    },
+    {
+     "id": "mng-adm2-erdenesant",
+     "name": "Erdenesant"
+    },
+    {
+     "id": "mng-adm2-erdenexairxan",
+     "name": "Erdenexairxan"
+    },
+    {
+     "id": "mng-adm2-galshir",
+     "name": "Galshir"
+    },
+    {
+     "id": "mng-adm2-galt",
+     "name": "Galt"
+    },
+    {
+     "id": "mng-adm2-galuut",
+     "name": "Galuut"
+    },
+    {
+     "id": "mng-adm2-govi-ugtaal",
+     "name": "Govi-Ugtaal"
+    },
+    {
+     "id": "mng-adm2-guchin-us",
+     "name": "Guchin-Us"
+    },
+    {
+     "id": "mng-adm2-gurvanbulag",
+     "name": "Gurvanbulag"
+    },
+    {
+     "id": "mng-adm2-gurvanbulag-2",
+     "name": "Gurvanbulag"
+    },
+    {
+     "id": "mng-adm2-gurvansaixan",
+     "name": "Gurvansaixan"
+    },
+    {
+     "id": "mng-adm2-gurvantes",
+     "name": "Gurvantes"
+    },
+    {
+     "id": "mng-adm2-gurvanzagal",
+     "name": "Gurvanzagal"
+    },
+    {
+     "id": "mng-adm2-herlen",
+     "name": "Herlen"
+    },
+    {
+     "id": "mng-adm2-ider",
+     "name": "Ider"
+    },
+    {
+     "id": "mng-adm2-ix-xet",
+     "name": "Ix xet"
+    },
+    {
+     "id": "mng-adm2-ix-uul",
+     "name": "Ix-Uul"
+    },
+    {
+     "id": "mng-adm2-ix-uul-2",
+     "name": "Ix-Uul"
+    },
+    {
+     "id": "mng-adm2-ixtamir",
+     "name": "Ixtamir"
+    },
+    {
+     "id": "mng-adm2-jargalan",
+     "name": "Jargalan"
+    },
+    {
+     "id": "mng-adm2-jargalant",
+     "name": "Jargalant"
+    },
+    {
+     "id": "mng-adm2-jargalant-2",
+     "name": "Jargalant"
+    },
+    {
+     "id": "mng-adm2-jargalant-3",
+     "name": "Jargalant"
+    },
+    {
+     "id": "mng-adm2-jargalant-4",
+     "name": "Jargalant"
+    },
+    {
+     "id": "mng-adm2-jargalant-5",
+     "name": "Jargalant"
+    },
+    {
+     "id": "mng-adm2-jargalant-6",
+     "name": "Jargalant"
+    },
+    {
+     "id": "mng-adm2-jargaltxaan",
+     "name": "Jargaltxaan"
+    },
+    {
+     "id": "mng-adm2-javxlant",
+     "name": "Javxlant"
+    },
+    {
+     "id": "mng-adm2-jinst",
+     "name": "Jinst"
+    },
+    {
+     "id": "mng-adm2-lu-n",
+     "name": "Lu'n"
+    },
+    {
+     "id": "mng-adm2-luus",
+     "name": "Luus"
+    },
+    {
+     "id": "mng-adm2-malchin",
+     "name": "Malchin"
+    },
+    {
+     "id": "mng-adm2-mandal",
+     "name": "Mandal"
+    },
+    {
+     "id": "mng-adm2-mandal-ovoo",
+     "name": "Mandal-Ovoo"
+    },
+    {
+     "id": "mng-adm2-mandax",
+     "name": "Mandax"
+    },
+    {
+     "id": "mng-adm2-manlai",
+     "name": "Manlai"
+    },
+    {
+     "id": "mng-adm2-manxan",
+     "name": "Manxan"
+    },
+    {
+     "id": "mng-adm2-matad",
+     "name": "Matad"
+    },
+    {
+     "id": "mng-adm2-mo-ngonmorit",
+     "name": "Mo'ngonmorit"
+    },
+    {
+     "id": "mng-adm2-mo-nxxaan",
+     "name": "Mo'nxxaan"
+    },
+    {
+     "id": "mng-adm2-mo-nxxairxan",
+     "name": "Mo'nxxairxan"
+    },
+    {
+     "id": "mng-adm2-mo-ron",
+     "name": "Mo'ron"
+    },
+    {
+     "id": "mng-adm2-mo-ron-2",
+     "name": "Mo'ron"
+    },
+    {
+     "id": "mng-adm2-mo-st",
+     "name": "Mo'st"
+    },
+    {
+     "id": "mng-adm2-mogod",
+     "name": "Mogod"
+    },
+    {
+     "id": "mng-adm2-myangad",
+     "name": "Myangad"
+    },
+    {
+     "id": "mng-adm2-nalaix",
+     "name": "Nalaix"
+    },
+    {
+     "id": "mng-adm2-naran",
+     "name": "Naran"
+    },
+    {
+     "id": "mng-adm2-naranbulag",
+     "name": "Naranbulag"
+    },
+    {
+     "id": "mng-adm2-nariinteel",
+     "name": "Nariinteel"
+    },
+    {
+     "id": "mng-adm2-no-mrog",
+     "name": "No'mrog"
+    },
+    {
+     "id": "mng-adm2-nogoonnuur",
+     "name": "Nogoonnuur"
+    },
+    {
+     "id": "mng-adm2-nomgon",
+     "name": "Nomgon"
+    },
+    {
+     "id": "mng-adm2-norovlin",
+     "name": "Norovlin"
+    },
+    {
+     "id": "mng-adm2-noyon",
+     "name": "Noyon"
+    },
+    {
+     "id": "mng-adm2-o-giinuur",
+     "name": "O'giinuur"
+    },
+    {
+     "id": "mng-adm2-o-lgii",
+     "name": "O'lgii"
+    },
+    {
+     "id": "mng-adm2-o-lgii-2",
+     "name": "O'lgii"
+    },
+    {
+     "id": "mng-adm2-o-lziit",
+     "name": "O'lziit"
+    },
+    {
+     "id": "mng-adm2-o-lziit-2",
+     "name": "O'lziit"
+    },
+    {
+     "id": "mng-adm2-o-lziit-3",
+     "name": "O'lziit"
+    },
+    {
+     "id": "mng-adm2-o-lziit-4",
+     "name": "O'lziit"
+    },
+    {
+     "id": "mng-adm2-o-mnodelger",
+     "name": "O'mnodelger"
+    },
+    {
+     "id": "mng-adm2-o-mnogovi",
+     "name": "O'mnogovi"
+    },
+    {
+     "id": "mng-adm2-o-ndor-ulaan",
+     "name": "O'ndor-Ulaan"
+    },
+    {
+     "id": "mng-adm2-o-ndorshil",
+     "name": "O'ndorshil"
+    },
+    {
+     "id": "mng-adm2-o-ndorshireet",
+     "name": "O'ndorshireet"
+    },
+    {
+     "id": "mng-adm2-o-ndorxangai",
+     "name": "O'ndorxangai"
+    },
+    {
+     "id": "mng-adm2-o-rgon",
+     "name": "O'rgon"
+    },
+    {
+     "id": "mng-adm2-ongon",
+     "name": "Ongon"
+    },
+    {
+     "id": "mng-adm2-orxon",
+     "name": "Orxon"
+    },
+    {
+     "id": "mng-adm2-orxon-2",
+     "name": "Orxon"
+    },
+    {
+     "id": "mng-adm2-orxon-3",
+     "name": "Orxon"
+    },
+    {
+     "id": "mng-adm2-orxontuul",
+     "name": "Orxontuul"
+    },
+    {
+     "id": "mng-adm2-otgon",
+     "name": "Otgon"
+    },
+    {
+     "id": "mng-adm2-rashaant",
+     "name": "Rashaant"
+    },
+    {
+     "id": "mng-adm2-rashaant-2",
+     "name": "Rashaant"
+    },
+    {
+     "id": "mng-adm2-renchinlxu-mbe",
+     "name": "Renchinlxu'mbe"
+    },
+    {
+     "id": "mng-adm2-sagil",
+     "name": "Sagil"
+    },
+    {
+     "id": "mng-adm2-sagsai",
+     "name": "Sagsai"
+    },
+    {
+     "id": "mng-adm2-sainshand",
+     "name": "Sainshand"
+    },
+    {
+     "id": "mng-adm2-saintsagaan",
+     "name": "Saintsagaan"
+    },
+    {
+     "id": "mng-adm2-saixan",
+     "name": "Saixan"
+    },
+    {
+     "id": "mng-adm2-saixan-2",
+     "name": "Saixan"
+    },
+    {
+     "id": "mng-adm2-saixan-ovoo",
+     "name": "Saixan-Ovoo"
+    },
+    {
+     "id": "mng-adm2-saixandulaan",
+     "name": "Saixandulaan"
+    },
+    {
+     "id": "mng-adm2-sant",
+     "name": "Sant"
+    },
+    {
+     "id": "mng-adm2-sant-2",
+     "name": "Sant"
+    },
+    {
+     "id": "mng-adm2-santmargac",
+     "name": "Santmargac"
+    },
+    {
+     "id": "mng-adm2-selenge",
+     "name": "Selenge"
+    },
+    {
+     "id": "mng-adm2-sergelen",
+     "name": "Sergelen"
+    },
+    {
+     "id": "mng-adm2-sergelen-2",
+     "name": "Sergelen"
+    },
+    {
+     "id": "mng-adm2-sevrei",
+     "name": "Sevrei"
+    },
+    {
+     "id": "mng-adm2-shaamar",
+     "name": "Shaamar"
+    },
+    {
+     "id": "mng-adm2-sharga",
+     "name": "Sharga"
+    },
+    {
+     "id": "mng-adm2-sharyngol",
+     "name": "Sharyngol"
+    },
+    {
+     "id": "mng-adm2-shilu-ustei",
+     "name": "Shilu'ustei"
+    },
+    {
+     "id": "mng-adm2-shine-ider",
+     "name": "Shine-Ider"
+    },
+    {
+     "id": "mng-adm2-shinejinst",
+     "name": "Shinejinst"
+    },
+    {
+     "id": "mng-adm2-shiveegovi",
+     "name": "Shiveegovi"
+    },
+    {
+     "id": "mng-adm2-songino",
+     "name": "Songino"
+    },
+    {
+     "id": "mng-adm2-songinoxairxan",
+     "name": "Songinoxairxan"
+    },
+    {
+     "id": "mng-adm2-su-mber",
+     "name": "Su'mber"
+    },
+    {
+     "id": "mng-adm2-su-mber-2",
+     "name": "Su'mber"
+    },
+    {
+     "id": "mng-adm2-su-xbaatar",
+     "name": "Su'xbaatar"
+    },
+    {
+     "id": "mng-adm2-su-xbaatar-2",
+     "name": "Su'xbaatar"
+    },
+    {
+     "id": "mng-adm2-su-xbaatar-3",
+     "name": "Su'xbaatar"
+    },
+    {
+     "id": "mng-adm2-taishir",
+     "name": "Taishir"
+    },
+    {
+     "id": "mng-adm2-taragt",
+     "name": "Taragt"
+    },
+    {
+     "id": "mng-adm2-tarialan",
+     "name": "Tarialan"
+    },
+    {
+     "id": "mng-adm2-tarialan-2",
+     "name": "Tarialan"
+    },
+    {
+     "id": "mng-adm2-tariat",
+     "name": "Tariat"
+    },
+    {
+     "id": "mng-adm2-telmen",
+     "name": "Telmen"
+    },
+    {
+     "id": "mng-adm2-tes",
+     "name": "Tes"
+    },
+    {
+     "id": "mng-adm2-tes-2",
+     "name": "Tes"
+    },
+    {
+     "id": "mng-adm2-teshig",
+     "name": "Teshig"
+    },
+    {
+     "id": "mng-adm2-to-grog",
+     "name": "To'grog"
+    },
+    {
+     "id": "mng-adm2-to-grog-2",
+     "name": "To'grog"
+    },
+    {
+     "id": "mng-adm2-to-morbulag",
+     "name": "To'morbulag"
+    },
+    {
+     "id": "mng-adm2-to-vshru-ulex",
+     "name": "To'vshru'ulex"
+    },
+    {
+     "id": "mng-adm2-tolbo",
+     "name": "Tolbo"
+    },
+    {
+     "id": "mng-adm2-tonkhil",
+     "name": "Tonkhil"
+    },
+    {
+     "id": "mng-adm2-tosoncengel",
+     "name": "Tosoncengel"
+    },
+    {
+     "id": "mng-adm2-tosoncengel-2",
+     "name": "Tosoncengel"
+    },
+    {
+     "id": "mng-adm2-tu-devtei",
+     "name": "Tu'devtei"
+    },
+    {
+     "id": "mng-adm2-tu-mencogt",
+     "name": "Tu'mencogt"
+    },
+    {
+     "id": "mng-adm2-tu-nel",
+     "name": "Tu'nel"
+    },
+    {
+     "id": "mng-adm2-tu-rgen",
+     "name": "Tu'rgen"
+    },
+    {
+     "id": "mng-adm2-tu-shig",
+     "name": "Tu'shig"
+    },
+    {
+     "id": "mng-adm2-tu-vshinshiree",
+     "name": "Tu'vshinshiree"
+    },
+    {
+     "id": "mng-adm2-u-yench",
+     "name": "U'yench"
+    },
+    {
+     "id": "mng-adm2-ugtaalcaidam",
+     "name": "Ugtaalcaidam"
+    },
+    {
+     "id": "mng-adm2-ulaan-uul",
+     "name": "Ulaan uul"
+    },
+    {
+     "id": "mng-adm2-ulaanbadrax",
+     "name": "Ulaanbadrax"
+    },
+    {
+     "id": "mng-adm2-ulaangom",
+     "name": "Ulaangom"
+    },
+    {
+     "id": "mng-adm2-ulaanxus",
+     "name": "Ulaanxus"
+    },
+    {
+     "id": "mng-adm2-uliastai",
+     "name": "Uliastai"
+    },
+    {
+     "id": "mng-adm2-urgamal",
+     "name": "Urgamal"
+    },
+    {
+     "id": "mng-adm2-uulbayan",
+     "name": "Uulbayan"
+    },
+    {
+     "id": "mng-adm2-uyanga",
+     "name": "Uyanga"
+    },
+    {
+     "id": "mng-adm2-xairxan",
+     "name": "Xairxan"
+    },
+    {
+     "id": "mng-adm2-xairxandulaan",
+     "name": "Xairxandulaan"
+    },
+    {
+     "id": "mng-adm2-xaliun",
+     "name": "Xaliun"
+    },
+    {
+     "id": "mng-adm2-xalx-gol",
+     "name": "Xalx gol"
+    },
+    {
+     "id": "mng-adm2-xalzan",
+     "name": "Xalzan"
+    },
+    {
+     "id": "mng-adm2-xan-uul",
+     "name": "Xan-Uul"
+    },
+    {
+     "id": "mng-adm2-xanbogd",
+     "name": "Xanbogd"
+    },
+    {
+     "id": "mng-adm2-xangai",
+     "name": "Xangai"
+    },
+    {
+     "id": "mng-adm2-xangal",
+     "name": "Xangal"
+    },
+    {
+     "id": "mng-adm2-xanx",
+     "name": "Xanx"
+    },
+    {
+     "id": "mng-adm2-xanxongor",
+     "name": "Xanxongor"
+    },
+    {
+     "id": "mng-adm2-xarxorin",
+     "name": "Xarxorin"
+    },
+    {
+     "id": "mng-adm2-xashaat",
+     "name": "Xashaat"
+    },
+    {
+     "id": "mng-adm2-xatanbulag",
+     "name": "Xatanbulag"
+    },
+    {
+     "id": "mng-adm2-xerlen",
+     "name": "Xerlen"
+    },
+    {
+     "id": "mng-adm2-xishig-o-ndor",
+     "name": "Xishig-O'ndor"
+    },
+    {
+     "id": "mng-adm2-xo-lonbuir",
+     "name": "Xo'lonbuir"
+    },
+    {
+     "id": "mng-adm2-xo-vsgol",
+     "name": "Xo'vsgol"
+    },
+    {
+     "id": "mng-adm2-xo-xmorit",
+     "name": "Xo'xmorit"
+    },
+    {
+     "id": "mng-adm2-xongor",
+     "name": "Xongor"
+    },
+    {
+     "id": "mng-adm2-xotont",
+     "name": "Xotont"
+    },
+    {
+     "id": "mng-adm2-xovd",
+     "name": "Xovd"
+    },
+    {
+     "id": "mng-adm2-xovd-2",
+     "name": "Xovd"
+    },
+    {
+     "id": "mng-adm2-xu-der",
+     "name": "Xu'der"
+    },
+    {
+     "id": "mng-adm2-xu-reemaral",
+     "name": "Xu'reemaral"
+    },
+    {
+     "id": "mng-adm2-xu-rmen",
+     "name": "Xu'rmen"
+    },
+    {
+     "id": "mng-adm2-xujirt",
+     "name": "Xujirt"
+    },
+    {
+     "id": "mng-adm2-xuld",
+     "name": "Xuld"
+    },
+    {
+     "id": "mng-adm2-xushaat",
+     "name": "Xushaat"
+    },
+    {
+     "id": "mng-adm2-xutag-o-ndor",
+     "name": "Xutag-O'ndor"
+    },
+    {
+     "id": "mng-adm2-xyargas",
+     "name": "Xyargas"
+    },
+    {
+     "id": "mng-adm2-yaruu",
+     "name": "Yaruu"
+    },
+    {
+     "id": "mng-adm2-yero-o",
+     "name": "Yero'o"
+    },
+    {
+     "id": "mng-adm2-yeso-nbulag",
+     "name": "Yeso'nbulag"
+    },
+    {
+     "id": "mng-adm2-yeso-nzu-il",
+     "name": "Yeso'nzu'il"
+    },
+    {
+     "id": "mng-adm2-zaamar",
+     "name": "Zaamar"
+    },
+    {
+     "id": "mng-adm2-zag",
+     "name": "Zag"
+    },
+    {
+     "id": "mng-adm2-zamyn-u-ud",
+     "name": "Zamyn U'ud"
+    },
+    {
+     "id": "mng-adm2-zavxan",
+     "name": "Zavxan"
+    },
+    {
+     "id": "mng-adm2-zavxanmandal",
+     "name": "Zavxanmandal"
+    },
+    {
+     "id": "mng-adm2-zereg",
+     "name": "Zereg"
+    },
+    {
+     "id": "mng-adm2-zu-unbayan-ulaan",
+     "name": "Zu'unbayan-Ulaan"
+    },
+    {
+     "id": "mng-adm2-zu-unburen",
+     "name": "Zu'unburen"
+    },
+    {
+     "id": "mng-adm2-zu-ungovi",
+     "name": "Zu'ungovi"
+    },
+    {
+     "id": "mng-adm2-zu-unxangai",
+     "name": "Zu'unxangai"
+    },
+    {
+     "id": "mng-adm2-zuunmod",
+     "name": "Zuunmod"
+    }
+   ]
+  }
+ },
+ "name": "Mongolia",
+ "nameBn": "Mongolia"
+}

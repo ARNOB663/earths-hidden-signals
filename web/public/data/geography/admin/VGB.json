@@ -1,0 +1,18 @@
+{
+ "code": "VGB",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "British Virgin Islands",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2021",
+   "sourceCount": 1,
+   "units": []
+  }
+ },
+ "name": "British Virgin Islands",
+ "nameBn": "British Virgin Islands"
+}

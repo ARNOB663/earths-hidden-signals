@@ -1,0 +1,546 @@
+{
+ "code": "NAM",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Republic of Namibia",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2014",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Administrative Division",
+   "code": "ADM1",
+   "count": 14,
+   "name": "Administrative Division",
+   "nameBn": "Administrative Division",
+   "representedYear": "2022",
+   "sourceCount": 14,
+   "units": [
+    {
+     "id": "nam-adm1-caprivi",
+     "name": "Caprivi",
+     "shapeISO": "NA-CA"
+    },
+    {
+     "id": "nam-adm1-cunene",
+     "name": "Cunene",
+     "shapeISO": "AO-CNN"
+    },
+    {
+     "id": "nam-adm1-erongo",
+     "name": "Erongo",
+     "shapeISO": "NA-ER"
+    },
+    {
+     "id": "nam-adm1-hardap",
+     "name": "Hardap",
+     "shapeISO": "NA-HA"
+    },
+    {
+     "id": "nam-adm1-karas",
+     "name": "Karas",
+     "shapeISO": "NA-KA"
+    },
+    {
+     "id": "nam-adm1-kavango",
+     "name": "Kavango",
+     "shapeISO": "NA-OK"
+    },
+    {
+     "id": "nam-adm1-khomas",
+     "name": "Khomas",
+     "shapeISO": "NA-KH"
+    },
+    {
+     "id": "nam-adm1-kunene",
+     "name": "Kunene",
+     "shapeISO": "NA-KU"
+    },
+    {
+     "id": "nam-adm1-ohangwena",
+     "name": "Ohangwena",
+     "shapeISO": "NA-OW"
+    },
+    {
+     "id": "nam-adm1-omaheke",
+     "name": "Omaheke",
+     "shapeISO": "NA-OH"
+    },
+    {
+     "id": "nam-adm1-omusati",
+     "name": "Omusati",
+     "shapeISO": "NA-OS"
+    },
+    {
+     "id": "nam-adm1-oshana",
+     "name": "Oshana",
+     "shapeISO": "NA-ON"
+    },
+    {
+     "id": "nam-adm1-oshikoto",
+     "name": "Oshikoto",
+     "shapeISO": "NA-OT"
+    },
+    {
+     "id": "nam-adm1-otjozondjupa",
+     "name": "Otjozondjupa",
+     "shapeISO": "NA-OD"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Unknown",
+   "code": "ADM2",
+   "count": 109,
+   "name": "ADM2 areas",
+   "nameBn": "ADM2 এলাকা",
+   "representedYear": "2007",
+   "sourceCount": 109,
+   "units": [
+    {
+     "id": "nam-adm2-aminius",
+     "name": "Aminius"
+    },
+    {
+     "id": "nam-adm2-anamulenge",
+     "name": "Anamulenge"
+    },
+    {
+     "id": "nam-adm2-arandis",
+     "name": "Arandis"
+    },
+    {
+     "id": "nam-adm2-berseba",
+     "name": "Berseba"
+    },
+    {
+     "id": "nam-adm2-daures",
+     "name": "Daures"
+    },
+    {
+     "id": "nam-adm2-eenhana",
+     "name": "Eenhana"
+    },
+    {
+     "id": "nam-adm2-elim",
+     "name": "Elim"
+    },
+    {
+     "id": "nam-adm2-endola",
+     "name": "Endola"
+    },
+    {
+     "id": "nam-adm2-engela",
+     "name": "Engela"
+    },
+    {
+     "id": "nam-adm2-engodi",
+     "name": "Engodi"
+    },
+    {
+     "id": "nam-adm2-epembe",
+     "name": "Epembe"
+    },
+    {
+     "id": "nam-adm2-epupa",
+     "name": "Epupa"
+    },
+    {
+     "id": "nam-adm2-etayi",
+     "name": "Etayi"
+    },
+    {
+     "id": "nam-adm2-gibeon",
+     "name": "Gibeon"
+    },
+    {
+     "id": "nam-adm2-gobabis",
+     "name": "Gobabis"
+    },
+    {
+     "id": "nam-adm2-grootfontein",
+     "name": "Grootfontein"
+    },
+    {
+     "id": "nam-adm2-guinas",
+     "name": "Guinas"
+    },
+    {
+     "id": "nam-adm2-hakahana",
+     "name": "Hakahana"
+    },
+    {
+     "id": "nam-adm2-kabe",
+     "name": "Kabe"
+    },
+    {
+     "id": "nam-adm2-kahenge",
+     "name": "Kahenge"
+    },
+    {
+     "id": "nam-adm2-kalahari",
+     "name": "Kalahari"
+    },
+    {
+     "id": "nam-adm2-kalahari-2",
+     "name": "Kalahari"
+    },
+    {
+     "id": "nam-adm2-kamanjab",
+     "name": "Kamanjab"
+    },
+    {
+     "id": "nam-adm2-kapako",
+     "name": "Kapako"
+    },
+    {
+     "id": "nam-adm2-karas",
+     "name": "Karas"
+    },
+    {
+     "id": "nam-adm2-karibib",
+     "name": "Karibib"
+    },
+    {
+     "id": "nam-adm2-katima-muliro-rural",
+     "name": "Katima Muliro Rural"
+    },
+    {
+     "id": "nam-adm2-katima-muliro-urban",
+     "name": "Katima Muliro Urban"
+    },
+    {
+     "id": "nam-adm2-katutura-central",
+     "name": "Katutura Central"
+    },
+    {
+     "id": "nam-adm2-katutura-east",
+     "name": "Katutura East"
+    },
+    {
+     "id": "nam-adm2-keetmanshoop-rural",
+     "name": "Keetmanshoop Rural"
+    },
+    {
+     "id": "nam-adm2-keetmanshoop-urban",
+     "name": "Keetmanshoop Urban"
+    },
+    {
+     "id": "nam-adm2-khomasdal-north",
+     "name": "Khomasdal North"
+    },
+    {
+     "id": "nam-adm2-khorixas",
+     "name": "Khorixas"
+    },
+    {
+     "id": "nam-adm2-kongola",
+     "name": "Kongola"
+    },
+    {
+     "id": "nam-adm2-linyandi",
+     "name": "Linyandi"
+    },
+    {
+     "id": "nam-adm2-luderitz",
+     "name": "Luderitz"
+    },
+    {
+     "id": "nam-adm2-luderitz-2",
+     "name": "Luderitz"
+    },
+    {
+     "id": "nam-adm2-luderitz-3",
+     "name": "Luderitz"
+    },
+    {
+     "id": "nam-adm2-luderitz-4",
+     "name": "Luderitz"
+    },
+    {
+     "id": "nam-adm2-luderitz-5",
+     "name": "Luderitz"
+    },
+    {
+     "id": "nam-adm2-luderitz-6",
+     "name": "Luderitz"
+    },
+    {
+     "id": "nam-adm2-luderitz-7",
+     "name": "Luderitz"
+    },
+    {
+     "id": "nam-adm2-mariental-rural",
+     "name": "Mariental Rural"
+    },
+    {
+     "id": "nam-adm2-mariental-urban",
+     "name": "Mariental Urban"
+    },
+    {
+     "id": "nam-adm2-mashare",
+     "name": "Mashare"
+    },
+    {
+     "id": "nam-adm2-mpungu",
+     "name": "Mpungu"
+    },
+    {
+     "id": "nam-adm2-mukwe",
+     "name": "Mukwe"
+    },
+    {
+     "id": "nam-adm2-ndiyona",
+     "name": "Ndiyona"
+    },
+    {
+     "id": "nam-adm2-ogongo",
+     "name": "Ogongo"
+    },
+    {
+     "id": "nam-adm2-ohangwena",
+     "name": "Ohangwena"
+    },
+    {
+     "id": "nam-adm2-okahandja",
+     "name": "Okahandja"
+    },
+    {
+     "id": "nam-adm2-okahao",
+     "name": "Okahao"
+    },
+    {
+     "id": "nam-adm2-okakarara",
+     "name": "Okakarara"
+    },
+    {
+     "id": "nam-adm2-okaku",
+     "name": "Okaku"
+    },
+    {
+     "id": "nam-adm2-okalongo",
+     "name": "Okalongo"
+    },
+    {
+     "id": "nam-adm2-okankolo",
+     "name": "Okankolo"
+    },
+    {
+     "id": "nam-adm2-okatana",
+     "name": "Okatana"
+    },
+    {
+     "id": "nam-adm2-okatyali",
+     "name": "Okatyali"
+    },
+    {
+     "id": "nam-adm2-okongo",
+     "name": "Okongo"
+    },
+    {
+     "id": "nam-adm2-olukonda",
+     "name": "Olukonda"
+    },
+    {
+     "id": "nam-adm2-omaruru",
+     "name": "Omaruru"
+    },
+    {
+     "id": "nam-adm2-omatako",
+     "name": "Omatako"
+    },
+    {
+     "id": "nam-adm2-ompundja",
+     "name": "Ompundja"
+    },
+    {
+     "id": "nam-adm2-omundaungilo",
+     "name": "Omundaungilo"
+    },
+    {
+     "id": "nam-adm2-omuntele",
+     "name": "Omuntele"
+    },
+    {
+     "id": "nam-adm2-omuthiyagwipundi",
+     "name": "Omuthiyagwipundi"
+    },
+    {
+     "id": "nam-adm2-onayena",
+     "name": "Onayena"
+    },
+    {
+     "id": "nam-adm2-ondangwa",
+     "name": "Ondangwa"
+    },
+    {
+     "id": "nam-adm2-ondombe",
+     "name": "Ondombe"
+    },
+    {
+     "id": "nam-adm2-onesi",
+     "name": "Onesi"
+    },
+    {
+     "id": "nam-adm2-ongenga",
+     "name": "Ongenga"
+    },
+    {
+     "id": "nam-adm2-ongwediva",
+     "name": "Ongwediva"
+    },
+    {
+     "id": "nam-adm2-oniipa",
+     "name": "Oniipa"
+    },
+    {
+     "id": "nam-adm2-onyaanya",
+     "name": "Onyaanya"
+    },
+    {
+     "id": "nam-adm2-opuwo",
+     "name": "Opuwo"
+    },
+    {
+     "id": "nam-adm2-oranjemund",
+     "name": "Oranjemund"
+    },
+    {
+     "id": "nam-adm2-oshakati-east",
+     "name": "Oshakati East"
+    },
+    {
+     "id": "nam-adm2-oshakati-west",
+     "name": "Oshakati West"
+    },
+    {
+     "id": "nam-adm2-oshikango",
+     "name": "Oshikango"
+    },
+    {
+     "id": "nam-adm2-oshikuku",
+     "name": "Oshikuku"
+    },
+    {
+     "id": "nam-adm2-otavi",
+     "name": "Otavi"
+    },
+    {
+     "id": "nam-adm2-otjinene",
+     "name": "Otjinene"
+    },
+    {
+     "id": "nam-adm2-otjiwarongo",
+     "name": "Otjiwarongo"
+    },
+    {
+     "id": "nam-adm2-otjombinde",
+     "name": "Otjombinde"
+    },
+    {
+     "id": "nam-adm2-outapi",
+     "name": "Outapi"
+    },
+    {
+     "id": "nam-adm2-outjo",
+     "name": "Outjo"
+    },
+    {
+     "id": "nam-adm2-rehoboth-east",
+     "name": "Rehoboth East"
+    },
+    {
+     "id": "nam-adm2-rehoboth-rural",
+     "name": "Rehoboth Rural"
+    },
+    {
+     "id": "nam-adm2-rehoboth-west",
+     "name": "Rehoboth West"
+    },
+    {
+     "id": "nam-adm2-ruacana",
+     "name": "Ruacana"
+    },
+    {
+     "id": "nam-adm2-rundu-rural",
+     "name": "Rundu Rural"
+    },
+    {
+     "id": "nam-adm2-rundu-urban",
+     "name": "Rundu Urban"
+    },
+    {
+     "id": "nam-adm2-sesfontein",
+     "name": "Sesfontein"
+    },
+    {
+     "id": "nam-adm2-sibinda",
+     "name": "Sibinda"
+    },
+    {
+     "id": "nam-adm2-soweto",
+     "name": "Soweto"
+    },
+    {
+     "id": "nam-adm2-steinhausen",
+     "name": "Steinhausen"
+    },
+    {
+     "id": "nam-adm2-swakopmund",
+     "name": "Swakopmund"
+    },
+    {
+     "id": "nam-adm2-tsandi",
+     "name": "Tsandi"
+    },
+    {
+     "id": "nam-adm2-tsumeb",
+     "name": "Tsumeb"
+    },
+    {
+     "id": "nam-adm2-tsumkwe",
+     "name": "Tsumkwe"
+    },
+    {
+     "id": "nam-adm2-uukwiyu",
+     "name": "Uukwiyu"
+    },
+    {
+     "id": "nam-adm2-uuvudhiya",
+     "name": "Uuvudhiya"
+    },
+    {
+     "id": "nam-adm2-walvisbay-rural",
+     "name": "Walvisbay Rural"
+    },
+    {
+     "id": "nam-adm2-walvisbay-urban",
+     "name": "Walvisbay Urban"
+    },
+    {
+     "id": "nam-adm2-wanaheda",
+     "name": "Wanaheda"
+    },
+    {
+     "id": "nam-adm2-windhoek-east",
+     "name": "Windhoek East"
+    },
+    {
+     "id": "nam-adm2-windhoek-rural",
+     "name": "Windhoek Rural"
+    },
+    {
+     "id": "nam-adm2-windhoek-west",
+     "name": "Windhoek West"
+    }
+   ]
+  }
+ },
+ "name": "Namibia",
+ "nameBn": "Namibia"
+}

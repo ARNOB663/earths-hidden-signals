@@ -1,0 +1,409 @@
+{
+ "code": "CAN",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Unknown",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2020",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Province",
+   "code": "ADM1",
+   "count": 13,
+   "name": "Province",
+   "nameBn": "প্রদেশ",
+   "representedYear": "2023",
+   "sourceCount": 13,
+   "units": [
+    {
+     "id": "can-adm1-alberta",
+     "name": "Alberta",
+     "shapeISO": "CA-AB"
+    },
+    {
+     "id": "can-adm1-british-columbia",
+     "name": "British Columbia",
+     "shapeISO": "CA-BC"
+    },
+    {
+     "id": "can-adm1-manitoba",
+     "name": "Manitoba",
+     "shapeISO": "CA-MB"
+    },
+    {
+     "id": "can-adm1-new-brunswick",
+     "name": "New Brunswick",
+     "shapeISO": "CA-NB"
+    },
+    {
+     "id": "can-adm1-newfoundland-and-labrador",
+     "name": "Newfoundland and Labrador",
+     "shapeISO": "CA-NL"
+    },
+    {
+     "id": "can-adm1-northwest-territories",
+     "name": "Northwest Territories",
+     "shapeISO": "CA-NT"
+    },
+    {
+     "id": "can-adm1-nova-scotia",
+     "name": "Nova Scotia",
+     "shapeISO": "CA-NS"
+    },
+    {
+     "id": "can-adm1-nunavut",
+     "name": "Nunavut",
+     "shapeISO": "CA-NU"
+    },
+    {
+     "id": "can-adm1-ontario",
+     "name": "Ontario",
+     "shapeISO": "CA-ON"
+    },
+    {
+     "id": "can-adm1-prince-edward-island",
+     "name": "Prince Edward Island",
+     "shapeISO": "CA-PE"
+    },
+    {
+     "id": "can-adm1-quebec",
+     "name": "Quebec",
+     "shapeISO": "CA-QB"
+    },
+    {
+     "id": "can-adm1-saskatchewan",
+     "name": "Saskatchewan",
+     "shapeISO": "CA-SK"
+    },
+    {
+     "id": "can-adm1-yukon",
+     "name": "Yukon",
+     "shapeISO": "CA-YT"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Divisions",
+   "code": "ADM2",
+   "count": 76,
+   "name": "Divisions",
+   "nameBn": "বিভাগ",
+   "representedYear": "2022",
+   "sourceCount": 76,
+   "units": [
+    {
+     "id": "can-adm2-abitibi-témiscamingue",
+     "name": "Abitibi-Témiscamingue"
+    },
+    {
+     "id": "can-adm2-annapolis-valley",
+     "name": "Annapolis Valley"
+    },
+    {
+     "id": "can-adm2-athabasca-grande-prairie-pe",
+     "name": "Athabasca--Grande Prairie--Pe*"
+    },
+    {
+     "id": "can-adm2-avalon-peninsula",
+     "name": "Avalon Peninsula"
+    },
+    {
+     "id": "can-adm2-banff-jasper-rocky-mountain",
+     "name": "Banff--Jasper--Rocky Mountain*"
+    },
+    {
+     "id": "can-adm2-bas-saint-laurent",
+     "name": "Bas-Saint-Laurent"
+    },
+    {
+     "id": "can-adm2-calgary",
+     "name": "Calgary"
+    },
+    {
+     "id": "can-adm2-campbellton-miramichi",
+     "name": "Campbellton--Miramichi"
+    },
+    {
+     "id": "can-adm2-camrose-drumheller",
+     "name": "Camrose--Drumheller"
+    },
+    {
+     "id": "can-adm2-cape-breton",
+     "name": "Cape Breton"
+    },
+    {
+     "id": "can-adm2-capitale-nationale",
+     "name": "Capitale-Nationale"
+    },
+    {
+     "id": "can-adm2-cariboo",
+     "name": "Cariboo"
+    },
+    {
+     "id": "can-adm2-centre-du-québec",
+     "name": "Centre-du-Québec"
+    },
+    {
+     "id": "can-adm2-chaudière-appalaches",
+     "name": "Chaudière-Appalaches"
+    },
+    {
+     "id": "can-adm2-côte-nord",
+     "name": "Côte-Nord"
+    },
+    {
+     "id": "can-adm2-edmonton",
+     "name": "Edmonton"
+    },
+    {
+     "id": "can-adm2-edmundston-woodstock",
+     "name": "Edmundston--Woodstock"
+    },
+    {
+     "id": "can-adm2-estrie",
+     "name": "Estrie"
+    },
+    {
+     "id": "can-adm2-fredericton-oromocto",
+     "name": "Fredericton--Oromocto"
+    },
+    {
+     "id": "can-adm2-gaspésie-îles-de-la-madelei",
+     "name": "Gaspésie--Îles-de-la-Madelei"
+    },
+    {
+     "id": "can-adm2-halifax",
+     "name": "Halifax"
+    },
+    {
+     "id": "can-adm2-hamilton-niagara-peninsula",
+     "name": "Hamilton--Niagara Peninsula"
+    },
+    {
+     "id": "can-adm2-interlake",
+     "name": "Interlake"
+    },
+    {
+     "id": "can-adm2-kingston-pembroke",
+     "name": "Kingston--Pembroke"
+    },
+    {
+     "id": "can-adm2-kitchener-waterloo-barrie",
+     "name": "Kitchener--Waterloo--Barrie"
+    },
+    {
+     "id": "can-adm2-kootenay",
+     "name": "Kootenay"
+    },
+    {
+     "id": "can-adm2-lanaudière",
+     "name": "Lanaudière"
+    },
+    {
+     "id": "can-adm2-laurentides",
+     "name": "Laurentides"
+    },
+    {
+     "id": "can-adm2-laval",
+     "name": "Laval"
+    },
+    {
+     "id": "can-adm2-lethbridge-medicine-hat",
+     "name": "Lethbridge--Medicine Hat"
+    },
+    {
+     "id": "can-adm2-london",
+     "name": "London"
+    },
+    {
+     "id": "can-adm2-lower-mainland-southwest-l",
+     "name": "Lower Mainland--Southwest / L*"
+    },
+    {
+     "id": "can-adm2-mauricie",
+     "name": "Mauricie"
+    },
+    {
+     "id": "can-adm2-moncton-richibucto",
+     "name": "Moncton--Richibucto"
+    },
+    {
+     "id": "can-adm2-montréal",
+     "name": "Montréal"
+    },
+    {
+     "id": "can-adm2-montérégie",
+     "name": "Montérégie"
+    },
+    {
+     "id": "can-adm2-muskoka-kawarthas",
+     "name": "Muskoka--Kawarthas"
+    },
+    {
+     "id": "can-adm2-nechako",
+     "name": "Nechako"
+    },
+    {
+     "id": "can-adm2-nord-du-québec",
+     "name": "Nord-du-Québec"
+    },
+    {
+     "id": "can-adm2-north-nord",
+     "name": "North / Nord"
+    },
+    {
+     "id": "can-adm2-north-central-centre-nord",
+     "name": "North Central / Centre nord"
+    },
+    {
+     "id": "can-adm2-north-coast-côte-nord",
+     "name": "North Coast / Côte-nord"
+    },
+    {
+     "id": "can-adm2-north-shore-côte-nord",
+     "name": "North Shore / Côte-nord"
+    },
+    {
+     "id": "can-adm2-northeast-nord-est",
+     "name": "Northeast / Nord-est"
+    },
+    {
+     "id": "can-adm2-northeast-nord-est-2",
+     "name": "Northeast / Nord-est"
+    },
+    {
+     "id": "can-adm2-northern-nord",
+     "name": "Northern / Nord"
+    },
+    {
+     "id": "can-adm2-northwest-nord-ouest",
+     "name": "Northwest / Nord-ouest"
+    },
+    {
+     "id": "can-adm2-northwest-territories-terri",
+     "name": "Northwest Territories / Terri*"
+    },
+    {
+     "id": "can-adm2-notre-dame-central-bonavista",
+     "name": "Notre Dame--Central Bonavista*"
+    },
+    {
+     "id": "can-adm2-nunavut",
+     "name": "Nunavut"
+    },
+    {
+     "id": "can-adm2-ottawa",
+     "name": "Ottawa"
+    },
+    {
+     "id": "can-adm2-outaouais",
+     "name": "Outaouais"
+    },
+    {
+     "id": "can-adm2-parklands",
+     "name": "Parklands"
+    },
+    {
+     "id": "can-adm2-prince-albert",
+     "name": "Prince Albert"
+    },
+    {
+     "id": "can-adm2-prince-edward-island-île-du",
+     "name": "Prince Edward Island / Île-du"
+    },
+    {
+     "id": "can-adm2-red-deer",
+     "name": "Red Deer"
+    },
+    {
+     "id": "can-adm2-regina-moose-mountain",
+     "name": "Regina--Moose Mountain"
+    },
+    {
+     "id": "can-adm2-saguenay-lac-saint-jean",
+     "name": "Saguenay--Lac-Saint-Jean"
+    },
+    {
+     "id": "can-adm2-saint-john-st-stephen",
+     "name": "Saint John--St. Stephen"
+    },
+    {
+     "id": "can-adm2-saskatoon-biggar",
+     "name": "Saskatoon--Biggar"
+    },
+    {
+     "id": "can-adm2-south-central-centre-sud",
+     "name": "South Central / Centre sud"
+    },
+    {
+     "id": "can-adm2-south-coast-burin-peninsula",
+     "name": "South Coast--Burin Peninsula *"
+    },
+    {
+     "id": "can-adm2-southeast-sud-est",
+     "name": "Southeast / Sud-est"
+    },
+    {
+     "id": "can-adm2-southern-sud",
+     "name": "Southern / Sud"
+    },
+    {
+     "id": "can-adm2-southwest-sud-ouest",
+     "name": "Southwest / Sud-ouest"
+    },
+    {
+     "id": "can-adm2-stratford-bruce-peninsula",
+     "name": "Stratford--Bruce Peninsula"
+    },
+    {
+     "id": "can-adm2-swift-current-moose-jaw",
+     "name": "Swift Current--Moose Jaw"
+    },
+    {
+     "id": "can-adm2-thompson-okanagan",
+     "name": "Thompson--Okanagan"
+    },
+    {
+     "id": "can-adm2-toronto",
+     "name": "Toronto"
+    },
+    {
+     "id": "can-adm2-vancouver-island-and-coast",
+     "name": "Vancouver Island and Coast / *"
+    },
+    {
+     "id": "can-adm2-west-coast-northern-peninsul",
+     "name": "West Coast--Northern Peninsul*"
+    },
+    {
+     "id": "can-adm2-windsor-sarnia",
+     "name": "Windsor--Sarnia"
+    },
+    {
+     "id": "can-adm2-winnipeg",
+     "name": "Winnipeg"
+    },
+    {
+     "id": "can-adm2-wood-buffalo-cold-lake",
+     "name": "Wood Buffalo--Cold Lake"
+    },
+    {
+     "id": "can-adm2-yorkton-melville",
+     "name": "Yorkton--Melville"
+    },
+    {
+     "id": "can-adm2-yukon",
+     "name": "Yukon"
+    }
+   ]
+  }
+ },
+ "name": "Canada",
+ "nameBn": "Canada"
+}

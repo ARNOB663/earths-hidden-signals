@@ -1,0 +1,151 @@
+{
+ "code": "KIR",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Republic of Kiribati",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2017",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Unknown",
+   "code": "ADM1",
+   "count": 3,
+   "name": "ADM1 areas",
+   "nameBn": "ADM1 এলাকা",
+   "representedYear": "2017",
+   "sourceCount": 3,
+   "units": [
+    {
+     "id": "kir-adm1-gilbert-islands",
+     "name": "Gilbert Islands",
+     "shapeISO": "KI-G"
+    },
+    {
+     "id": "kir-adm1-line-islands",
+     "name": "Line Islands",
+     "shapeISO": "KI-L"
+    },
+    {
+     "id": "kir-adm1-phoenix-islands",
+     "name": "Phoenix Islands",
+     "shapeISO": "KI-P"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Unknown",
+   "code": "ADM2",
+   "count": 24,
+   "name": "ADM2 areas",
+   "nameBn": "ADM2 এলাকা",
+   "representedYear": "2017",
+   "sourceCount": 24,
+   "units": [
+    {
+     "id": "kir-adm2-abaiang",
+     "name": "Abaiang"
+    },
+    {
+     "id": "kir-adm2-abemama",
+     "name": "Abemama"
+    },
+    {
+     "id": "kir-adm2-aranuka",
+     "name": "Aranuka"
+    },
+    {
+     "id": "kir-adm2-arorae",
+     "name": "Arorae"
+    },
+    {
+     "id": "kir-adm2-banaba",
+     "name": "Banaba"
+    },
+    {
+     "id": "kir-adm2-beru",
+     "name": "Beru"
+    },
+    {
+     "id": "kir-adm2-betio",
+     "name": "Betio"
+    },
+    {
+     "id": "kir-adm2-butaritari",
+     "name": "Butaritari"
+    },
+    {
+     "id": "kir-adm2-kanton",
+     "name": "Kanton"
+    },
+    {
+     "id": "kir-adm2-kiritimati",
+     "name": "Kiritimati"
+    },
+    {
+     "id": "kir-adm2-kuria",
+     "name": "Kuria"
+    },
+    {
+     "id": "kir-adm2-maiana",
+     "name": "Maiana"
+    },
+    {
+     "id": "kir-adm2-makin",
+     "name": "Makin"
+    },
+    {
+     "id": "kir-adm2-marakei",
+     "name": "Marakei"
+    },
+    {
+     "id": "kir-adm2-nikunau",
+     "name": "Nikunau"
+    },
+    {
+     "id": "kir-adm2-nonouti",
+     "name": "Nonouti"
+    },
+    {
+     "id": "kir-adm2-onotoa",
+     "name": "Onotoa"
+    },
+    {
+     "id": "kir-adm2-tabiteuea-north",
+     "name": "Tabiteuea North"
+    },
+    {
+     "id": "kir-adm2-tabiteuea-south",
+     "name": "Tabiteuea South"
+    },
+    {
+     "id": "kir-adm2-tabuaeran",
+     "name": "Tabuaeran"
+    },
+    {
+     "id": "kir-adm2-tamana",
+     "name": "Tamana"
+    },
+    {
+     "id": "kir-adm2-tarawa-ieta",
+     "name": "Tarawa Ieta"
+    },
+    {
+     "id": "kir-adm2-tarawa-teinainano",
+     "name": "Tarawa Teinainano"
+    },
+    {
+     "id": "kir-adm2-teraina",
+     "name": "Teraina"
+    }
+   ]
+  }
+ },
+ "name": "Kiribati",
+ "nameBn": "Kiribati"
+}

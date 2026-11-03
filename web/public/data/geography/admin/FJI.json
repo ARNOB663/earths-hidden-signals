@@ -1,0 +1,120 @@
+{
+ "code": "FJI",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Republic of Fiji",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2017",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Divisions",
+   "code": "ADM1",
+   "count": 4,
+   "name": "Divisions",
+   "nameBn": "বিভাগ",
+   "representedYear": "2006",
+   "sourceCount": 4,
+   "units": [
+    {
+     "id": "fji-adm1-central",
+     "name": "Central",
+     "shapeISO": "FJ-C"
+    },
+    {
+     "id": "fji-adm1-eastern",
+     "name": "Eastern",
+     "shapeISO": "FJ-E"
+    },
+    {
+     "id": "fji-adm1-northern",
+     "name": "Northern",
+     "shapeISO": "FJ-N"
+    },
+    {
+     "id": "fji-adm1-western",
+     "name": "Western",
+     "shapeISO": "FJ-W"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Provinces",
+   "code": "ADM2",
+   "count": 15,
+   "name": "Provinces",
+   "nameBn": "প্রদেশ",
+   "representedYear": "2020",
+   "sourceCount": 15,
+   "units": [
+    {
+     "id": "fji-adm2-ba",
+     "name": "Ba"
+    },
+    {
+     "id": "fji-adm2-bua",
+     "name": "Bua"
+    },
+    {
+     "id": "fji-adm2-cakaudrove",
+     "name": "Cakaudrove"
+    },
+    {
+     "id": "fji-adm2-kadavu",
+     "name": "Kadavu"
+    },
+    {
+     "id": "fji-adm2-lau",
+     "name": "Lau"
+    },
+    {
+     "id": "fji-adm2-lomaiviti",
+     "name": "Lomaiviti"
+    },
+    {
+     "id": "fji-adm2-macuata",
+     "name": "Macuata"
+    },
+    {
+     "id": "fji-adm2-nadroga-navosa",
+     "name": "Nadroga-Navosa"
+    },
+    {
+     "id": "fji-adm2-naitasiri",
+     "name": "Naitasiri"
+    },
+    {
+     "id": "fji-adm2-namosi",
+     "name": "Namosi"
+    },
+    {
+     "id": "fji-adm2-ra",
+     "name": "Ra"
+    },
+    {
+     "id": "fji-adm2-rewa",
+     "name": "Rewa"
+    },
+    {
+     "id": "fji-adm2-rotuma",
+     "name": "Rotuma"
+    },
+    {
+     "id": "fji-adm2-serua",
+     "name": "Serua"
+    },
+    {
+     "id": "fji-adm2-tailevu",
+     "name": "Tailevu"
+    }
+   ]
+  }
+ },
+ "name": "Fiji",
+ "nameBn": "Fiji"
+}

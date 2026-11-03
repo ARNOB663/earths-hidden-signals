@@ -1,0 +1,64 @@
+{
+ "code": "GRD",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Unknown",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2017",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Parish",
+   "code": "ADM1",
+   "count": 7,
+   "name": "Parish",
+   "nameBn": "Parish",
+   "representedYear": "2017",
+   "sourceCount": 7,
+   "units": [
+    {
+     "id": "grd-adm1-saint-andrew",
+     "name": "Saint Andrew",
+     "shapeISO": "GD-01"
+    },
+    {
+     "id": "grd-adm1-saint-david",
+     "name": "Saint David",
+     "shapeISO": "GD-02"
+    },
+    {
+     "id": "grd-adm1-saint-george",
+     "name": "Saint George",
+     "shapeISO": "GD-03"
+    },
+    {
+     "id": "grd-adm1-saint-john",
+     "name": "Saint John",
+     "shapeISO": "GD-04"
+    },
+    {
+     "id": "grd-adm1-saint-mark",
+     "name": "Saint Mark",
+     "shapeISO": "GD-05"
+    },
+    {
+     "id": "grd-adm1-saint-patrick",
+     "name": "Saint Patrick",
+     "shapeISO": "GD-06"
+    },
+    {
+     "id": "grd-adm1-southern-grenadine-islands",
+     "name": "Southern Grenadine Islands",
+     "shapeISO": "GD-10"
+    }
+   ]
+  }
+ },
+ "name": "Grenada",
+ "nameBn": "Grenada"
+}

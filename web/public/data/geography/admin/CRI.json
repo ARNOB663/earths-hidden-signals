@@ -1,0 +1,407 @@
+{
+ "code": "CRI",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Unknown",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2017",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Unknown",
+   "code": "ADM1",
+   "count": 7,
+   "name": "ADM1 areas",
+   "nameBn": "ADM1 এলাকা",
+   "representedYear": "2017",
+   "sourceCount": 7,
+   "units": [
+    {
+     "id": "cri-adm1-provincia-alajuela",
+     "name": "Provincia Alajuela",
+     "shapeISO": "CR-A"
+    },
+    {
+     "id": "cri-adm1-provincia-cartago",
+     "name": "Provincia Cartago",
+     "shapeISO": "CR-C"
+    },
+    {
+     "id": "cri-adm1-provincia-guanacaste",
+     "name": "Provincia Guanacaste",
+     "shapeISO": "CR-G"
+    },
+    {
+     "id": "cri-adm1-provincia-heredia",
+     "name": "Provincia Heredia",
+     "shapeISO": "CR-H"
+    },
+    {
+     "id": "cri-adm1-provincia-limón",
+     "name": "Provincia Limón",
+     "shapeISO": "CR-L"
+    },
+    {
+     "id": "cri-adm1-provincia-puntarenas",
+     "name": "Provincia Puntarenas",
+     "shapeISO": "CR-P"
+    },
+    {
+     "id": "cri-adm1-provincia-san-josé",
+     "name": "Provincia San José",
+     "shapeISO": "CR-SJ"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Cantons",
+   "code": "ADM2",
+   "count": 83,
+   "name": "Cantons",
+   "nameBn": "ক্যান্টন",
+   "representedYear": "2020",
+   "sourceCount": 83,
+   "units": [
+    {
+     "id": "cri-adm2-abangares",
+     "name": "Abangares"
+    },
+    {
+     "id": "cri-adm2-acosta",
+     "name": "Acosta"
+    },
+    {
+     "id": "cri-adm2-alajuela",
+     "name": "Alajuela"
+    },
+    {
+     "id": "cri-adm2-alajuelita",
+     "name": "Alajuelita"
+    },
+    {
+     "id": "cri-adm2-alvarado",
+     "name": "Alvarado"
+    },
+    {
+     "id": "cri-adm2-aserri",
+     "name": "Aserri"
+    },
+    {
+     "id": "cri-adm2-atenas",
+     "name": "Atenas"
+    },
+    {
+     "id": "cri-adm2-bagaces",
+     "name": "Bagaces"
+    },
+    {
+     "id": "cri-adm2-barva",
+     "name": "Barva"
+    },
+    {
+     "id": "cri-adm2-belen",
+     "name": "Belen"
+    },
+    {
+     "id": "cri-adm2-buenos-aires",
+     "name": "Buenos Aires"
+    },
+    {
+     "id": "cri-adm2-canas",
+     "name": "Canas"
+    },
+    {
+     "id": "cri-adm2-carrillo",
+     "name": "Carrillo"
+    },
+    {
+     "id": "cri-adm2-cartago",
+     "name": "Cartago"
+    },
+    {
+     "id": "cri-adm2-corredores",
+     "name": "Corredores"
+    },
+    {
+     "id": "cri-adm2-coto-brus",
+     "name": "Coto Brus"
+    },
+    {
+     "id": "cri-adm2-curridabat",
+     "name": "Curridabat"
+    },
+    {
+     "id": "cri-adm2-desamparados",
+     "name": "Desamparados"
+    },
+    {
+     "id": "cri-adm2-dota",
+     "name": "Dota"
+    },
+    {
+     "id": "cri-adm2-el-guarco",
+     "name": "El Guarco"
+    },
+    {
+     "id": "cri-adm2-escazu",
+     "name": "Escazu"
+    },
+    {
+     "id": "cri-adm2-esparza",
+     "name": "Esparza"
+    },
+    {
+     "id": "cri-adm2-flores",
+     "name": "Flores"
+    },
+    {
+     "id": "cri-adm2-garabito",
+     "name": "Garabito"
+    },
+    {
+     "id": "cri-adm2-goicoechea",
+     "name": "Goicoechea"
+    },
+    {
+     "id": "cri-adm2-golfito",
+     "name": "Golfito"
+    },
+    {
+     "id": "cri-adm2-grecia",
+     "name": "Grecia"
+    },
+    {
+     "id": "cri-adm2-guacimo",
+     "name": "Guacimo"
+    },
+    {
+     "id": "cri-adm2-guatuso",
+     "name": "Guatuso"
+    },
+    {
+     "id": "cri-adm2-heredia",
+     "name": "Heredia"
+    },
+    {
+     "id": "cri-adm2-hojancha",
+     "name": "Hojancha"
+    },
+    {
+     "id": "cri-adm2-jimenez",
+     "name": "Jimenez"
+    },
+    {
+     "id": "cri-adm2-la-cruz",
+     "name": "La Cruz"
+    },
+    {
+     "id": "cri-adm2-la-union",
+     "name": "La Union"
+    },
+    {
+     "id": "cri-adm2-leon-cortes-castro",
+     "name": "Leon Cortes Castro"
+    },
+    {
+     "id": "cri-adm2-liberia",
+     "name": "Liberia"
+    },
+    {
+     "id": "cri-adm2-limon",
+     "name": "Limon"
+    },
+    {
+     "id": "cri-adm2-los-chiles",
+     "name": "Los Chiles"
+    },
+    {
+     "id": "cri-adm2-matina",
+     "name": "Matina"
+    },
+    {
+     "id": "cri-adm2-montes-de-oca",
+     "name": "Montes de Oca"
+    },
+    {
+     "id": "cri-adm2-montes-de-oro",
+     "name": "Montes de Oro"
+    },
+    {
+     "id": "cri-adm2-mora",
+     "name": "Mora"
+    },
+    {
+     "id": "cri-adm2-moravia",
+     "name": "Moravia"
+    },
+    {
+     "id": "cri-adm2-nandayure",
+     "name": "Nandayure"
+    },
+    {
+     "id": "cri-adm2-naranjo",
+     "name": "Naranjo"
+    },
+    {
+     "id": "cri-adm2-nicoya",
+     "name": "Nicoya"
+    },
+    {
+     "id": "cri-adm2-oreamuno",
+     "name": "Oreamuno"
+    },
+    {
+     "id": "cri-adm2-orotina",
+     "name": "Orotina"
+    },
+    {
+     "id": "cri-adm2-osa",
+     "name": "Osa"
+    },
+    {
+     "id": "cri-adm2-palmeras",
+     "name": "Palmeras"
+    },
+    {
+     "id": "cri-adm2-paraiso",
+     "name": "Paraiso"
+    },
+    {
+     "id": "cri-adm2-parrita",
+     "name": "Parrita"
+    },
+    {
+     "id": "cri-adm2-perez-zeledon",
+     "name": "Perez Zeledon"
+    },
+    {
+     "id": "cri-adm2-poas",
+     "name": "Poas"
+    },
+    {
+     "id": "cri-adm2-pococi",
+     "name": "Pococi"
+    },
+    {
+     "id": "cri-adm2-puerto-jimenez",
+     "name": "Puerto Jimenez"
+    },
+    {
+     "id": "cri-adm2-puntarenas",
+     "name": "Puntarenas"
+    },
+    {
+     "id": "cri-adm2-puriscal",
+     "name": "Puriscal"
+    },
+    {
+     "id": "cri-adm2-quepos",
+     "name": "Quepos"
+    },
+    {
+     "id": "cri-adm2-rio-cuarto",
+     "name": "Rio Cuarto"
+    },
+    {
+     "id": "cri-adm2-san-carlos",
+     "name": "San Carlos"
+    },
+    {
+     "id": "cri-adm2-san-isidro",
+     "name": "San Isidro"
+    },
+    {
+     "id": "cri-adm2-san-jose",
+     "name": "San Jose"
+    },
+    {
+     "id": "cri-adm2-san-mateo",
+     "name": "San Mateo"
+    },
+    {
+     "id": "cri-adm2-san-pablo",
+     "name": "San Pablo"
+    },
+    {
+     "id": "cri-adm2-san-rafael",
+     "name": "San Rafael"
+    },
+    {
+     "id": "cri-adm2-san-ramon",
+     "name": "San Ramon"
+    },
+    {
+     "id": "cri-adm2-santa-ana",
+     "name": "Santa Ana"
+    },
+    {
+     "id": "cri-adm2-santa-barbara",
+     "name": "Santa Barbara"
+    },
+    {
+     "id": "cri-adm2-santa-cruz",
+     "name": "Santa Cruz"
+    },
+    {
+     "id": "cri-adm2-santo-domingo",
+     "name": "Santo Domingo"
+    },
+    {
+     "id": "cri-adm2-sarapiqui",
+     "name": "Sarapiqui"
+    },
+    {
+     "id": "cri-adm2-sarchi",
+     "name": "Sarchi"
+    },
+    {
+     "id": "cri-adm2-siquirres",
+     "name": "Siquirres"
+    },
+    {
+     "id": "cri-adm2-talamanca",
+     "name": "Talamanca"
+    },
+    {
+     "id": "cri-adm2-tarrazu",
+     "name": "Tarrazu"
+    },
+    {
+     "id": "cri-adm2-tibas",
+     "name": "Tibas"
+    },
+    {
+     "id": "cri-adm2-tilaran",
+     "name": "Tilaran"
+    },
+    {
+     "id": "cri-adm2-turrialba",
+     "name": "Turrialba"
+    },
+    {
+     "id": "cri-adm2-turrubares",
+     "name": "Turrubares"
+    },
+    {
+     "id": "cri-adm2-upala",
+     "name": "Upala"
+    },
+    {
+     "id": "cri-adm2-vazquez-de-coronado",
+     "name": "Vazquez de Coronado"
+    },
+    {
+     "id": "cri-adm2-zarcero",
+     "name": "Zarcero"
+    }
+   ]
+  }
+ },
+ "name": "Costa Rica",
+ "nameBn": "Costa Rica"
+}

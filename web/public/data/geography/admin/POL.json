@@ -1,0 +1,1640 @@
+{
+ "code": "POL",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "gbOpen",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2011",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Unknown",
+   "code": "ADM1",
+   "count": 16,
+   "name": "ADM1 areas",
+   "nameBn": "ADM1 এলাকা",
+   "representedYear": "2017",
+   "sourceCount": 16,
+   "units": [
+    {
+     "id": "pol-adm1-greater-poland-voivodeship",
+     "name": "Greater Poland Voivodeship",
+     "shapeISO": "PL-WP"
+    },
+    {
+     "id": "pol-adm1-kuyavian-pomeranian-voivodeship",
+     "name": "Kuyavian-Pomeranian Voivodeship",
+     "shapeISO": "PL-KP"
+    },
+    {
+     "id": "pol-adm1-lesser-poland-voivodeship",
+     "name": "Lesser Poland Voivodeship",
+     "shapeISO": "PL-MA"
+    },
+    {
+     "id": "pol-adm1-lower-silesian-voivodeship",
+     "name": "Lower Silesian Voivodeship",
+     "shapeISO": "PL-DS"
+    },
+    {
+     "id": "pol-adm1-lublin-voivodeship",
+     "name": "Lublin Voivodeship",
+     "shapeISO": "PL-LU"
+    },
+    {
+     "id": "pol-adm1-lubusz-voivodeship",
+     "name": "Lubusz Voivodeship",
+     "shapeISO": "PL-LB"
+    },
+    {
+     "id": "pol-adm1-masovian-voivodeship",
+     "name": "Masovian Voivodeship",
+     "shapeISO": "PL-MZ"
+    },
+    {
+     "id": "pol-adm1-opole-voivodeship",
+     "name": "Opole Voivodeship",
+     "shapeISO": "PL-OP"
+    },
+    {
+     "id": "pol-adm1-podlaskie-voivodeship",
+     "name": "Podlaskie Voivodeship",
+     "shapeISO": "PL-PD"
+    },
+    {
+     "id": "pol-adm1-pomeranian-voivodeship",
+     "name": "Pomeranian Voivodeship",
+     "shapeISO": "PL-PM"
+    },
+    {
+     "id": "pol-adm1-silesian-voivodeship",
+     "name": "Silesian Voivodeship",
+     "shapeISO": "PL-SL"
+    },
+    {
+     "id": "pol-adm1-subcarpathian-voivodeship",
+     "name": "Subcarpathian Voivodeship",
+     "shapeISO": "PL-PK"
+    },
+    {
+     "id": "pol-adm1-warmian-masurian-voivodeship",
+     "name": "Warmian-Masurian Voivodeship",
+     "shapeISO": "PL-WN"
+    },
+    {
+     "id": "pol-adm1-west-pomeranian-voivodeship",
+     "name": "West Pomeranian Voivodeship",
+     "shapeISO": "PL-ZP"
+    },
+    {
+     "id": "pol-adm1-łódź-voivodeship",
+     "name": "Łódź Voivodeship",
+     "shapeISO": "PL-LD"
+    },
+    {
+     "id": "pol-adm1-świętokrzyskie-voivodeship",
+     "name": "Świętokrzyskie Voivodeship",
+     "shapeISO": "PL-SK"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Unknown",
+   "code": "ADM2",
+   "count": 380,
+   "name": "ADM2 areas",
+   "nameBn": "ADM2 এলাকা",
+   "representedYear": "2017",
+   "sourceCount": 380,
+   "units": [
+    {
+     "id": "pol-adm2-biała-podlaska",
+     "name": "Biała Podlaska"
+    },
+    {
+     "id": "pol-adm2-białystok",
+     "name": "Białystok"
+    },
+    {
+     "id": "pol-adm2-bielsko-county",
+     "name": "Bielsko County"
+    },
+    {
+     "id": "pol-adm2-bielsko-biała",
+     "name": "Bielsko-Biała"
+    },
+    {
+     "id": "pol-adm2-bydgoszcz",
+     "name": "Bydgoszcz"
+    },
+    {
+     "id": "pol-adm2-bytom",
+     "name": "Bytom"
+    },
+    {
+     "id": "pol-adm2-chełm",
+     "name": "Chełm"
+    },
+    {
+     "id": "pol-adm2-chorzów",
+     "name": "Chorzów"
+    },
+    {
+     "id": "pol-adm2-colberg-county",
+     "name": "Colberg County"
+    },
+    {
+     "id": "pol-adm2-częstochowa",
+     "name": "Częstochowa"
+    },
+    {
+     "id": "pol-adm2-dąbrowa-górnicza",
+     "name": "Dąbrowa Górnicza"
+    },
+    {
+     "id": "pol-adm2-elbląg",
+     "name": "Elbląg"
+    },
+    {
+     "id": "pol-adm2-gdańsk",
+     "name": "Gdańsk"
+    },
+    {
+     "id": "pol-adm2-gdynia",
+     "name": "Gdynia"
+    },
+    {
+     "id": "pol-adm2-gliwice",
+     "name": "Gliwice"
+    },
+    {
+     "id": "pol-adm2-gliwice-county",
+     "name": "Gliwice County"
+    },
+    {
+     "id": "pol-adm2-gorzów-wielkopolski",
+     "name": "Gorzów Wielkopolski"
+    },
+    {
+     "id": "pol-adm2-grodzisk-mazowiecki-county",
+     "name": "Grodzisk Mazowiecki County"
+    },
+    {
+     "id": "pol-adm2-grudziądz",
+     "name": "Grudziądz"
+    },
+    {
+     "id": "pol-adm2-jastrzębie-zdrój",
+     "name": "Jastrzębie-Zdrój"
+    },
+    {
+     "id": "pol-adm2-jaworzno",
+     "name": "Jaworzno"
+    },
+    {
+     "id": "pol-adm2-jelenia-góra",
+     "name": "Jelenia Góra"
+    },
+    {
+     "id": "pol-adm2-kalisz",
+     "name": "Kalisz"
+    },
+    {
+     "id": "pol-adm2-katowice",
+     "name": "Katowice"
+    },
+    {
+     "id": "pol-adm2-kielce",
+     "name": "Kielce"
+    },
+    {
+     "id": "pol-adm2-konin",
+     "name": "Konin"
+    },
+    {
+     "id": "pol-adm2-koszalin",
+     "name": "Koszalin"
+    },
+    {
+     "id": "pol-adm2-krakow",
+     "name": "Krakow"
+    },
+    {
+     "id": "pol-adm2-krosno",
+     "name": "Krosno"
+    },
+    {
+     "id": "pol-adm2-kutno-county",
+     "name": "Kutno County"
+    },
+    {
+     "id": "pol-adm2-legnica",
+     "name": "Legnica"
+    },
+    {
+     "id": "pol-adm2-leszno",
+     "name": "Leszno"
+    },
+    {
+     "id": "pol-adm2-lipno-county",
+     "name": "Lipno County"
+    },
+    {
+     "id": "pol-adm2-lublin",
+     "name": "Lublin"
+    },
+    {
+     "id": "pol-adm2-mysłowice",
+     "name": "Mysłowice"
+    },
+    {
+     "id": "pol-adm2-nowy-sącz",
+     "name": "Nowy Sącz"
+    },
+    {
+     "id": "pol-adm2-olsztyn",
+     "name": "Olsztyn"
+    },
+    {
+     "id": "pol-adm2-opole",
+     "name": "Opole"
+    },
+    {
+     "id": "pol-adm2-ostrołęka",
+     "name": "Ostrołęka"
+    },
+    {
+     "id": "pol-adm2-piekary-śląskie",
+     "name": "Piekary Śląskie"
+    },
+    {
+     "id": "pol-adm2-piotrków-trybunalski",
+     "name": "Piotrków Trybunalski"
+    },
+    {
+     "id": "pol-adm2-powiat-aleksandrowski",
+     "name": "powiat aleksandrowski"
+    },
+    {
+     "id": "pol-adm2-powiat-augustowski",
+     "name": "powiat augustowski"
+    },
+    {
+     "id": "pol-adm2-powiat-bartoszycki",
+     "name": "powiat bartoszycki"
+    },
+    {
+     "id": "pol-adm2-powiat-bełchatowski",
+     "name": "powiat bełchatowski"
+    },
+    {
+     "id": "pol-adm2-powiat-bialski",
+     "name": "powiat bialski"
+    },
+    {
+     "id": "pol-adm2-powiat-białobrzeski",
+     "name": "powiat białobrzeski"
+    },
+    {
+     "id": "pol-adm2-powiat-białogardzki",
+     "name": "powiat białogardzki"
+    },
+    {
+     "id": "pol-adm2-powiat-białostocki",
+     "name": "powiat białostocki"
+    },
+    {
+     "id": "pol-adm2-powiat-bielski",
+     "name": "powiat bielski"
+    },
+    {
+     "id": "pol-adm2-powiat-bieruńsko-lędziński",
+     "name": "powiat bieruńsko-lędziński"
+    },
+    {
+     "id": "pol-adm2-powiat-bieszczadzki",
+     "name": "powiat bieszczadzki"
+    },
+    {
+     "id": "pol-adm2-powiat-biłgorajski",
+     "name": "powiat biłgorajski"
+    },
+    {
+     "id": "pol-adm2-powiat-bocheński",
+     "name": "powiat bocheński"
+    },
+    {
+     "id": "pol-adm2-powiat-bolesławiecki",
+     "name": "powiat bolesławiecki"
+    },
+    {
+     "id": "pol-adm2-powiat-braniewski",
+     "name": "powiat braniewski"
+    },
+    {
+     "id": "pol-adm2-powiat-brodnicki",
+     "name": "powiat brodnicki"
+    },
+    {
+     "id": "pol-adm2-powiat-brzeski",
+     "name": "powiat brzeski"
+    },
+    {
+     "id": "pol-adm2-powiat-brzeski-2",
+     "name": "powiat brzeski"
+    },
+    {
+     "id": "pol-adm2-powiat-brzeziński",
+     "name": "powiat brzeziński"
+    },
+    {
+     "id": "pol-adm2-powiat-brzozowski",
+     "name": "powiat brzozowski"
+    },
+    {
+     "id": "pol-adm2-powiat-buski",
+     "name": "powiat buski"
+    },
+    {
+     "id": "pol-adm2-powiat-bydgoski",
+     "name": "powiat bydgoski"
+    },
+    {
+     "id": "pol-adm2-powiat-bytowski",
+     "name": "powiat bytowski"
+    },
+    {
+     "id": "pol-adm2-powiat-będziński",
+     "name": "powiat będziński"
+    },
+    {
+     "id": "pol-adm2-powiat-chełmiński",
+     "name": "powiat chełmiński"
+    },
+    {
+     "id": "pol-adm2-powiat-chełmski",
+     "name": "powiat chełmski"
+    },
+    {
+     "id": "pol-adm2-powiat-chodzieski",
+     "name": "powiat chodzieski"
+    },
+    {
+     "id": "pol-adm2-powiat-chojnicki",
+     "name": "powiat chojnicki"
+    },
+    {
+     "id": "pol-adm2-powiat-choszczeński",
+     "name": "powiat choszczeński"
+    },
+    {
+     "id": "pol-adm2-powiat-chrzanowski",
+     "name": "powiat chrzanowski"
+    },
+    {
+     "id": "pol-adm2-powiat-ciechanowski",
+     "name": "powiat ciechanowski"
+    },
+    {
+     "id": "pol-adm2-powiat-cieszyński",
+     "name": "powiat cieszyński"
+    },
+    {
+     "id": "pol-adm2-powiat-czarnkowsko-trzcianecki",
+     "name": "powiat czarnkowsko-trzcianecki"
+    },
+    {
+     "id": "pol-adm2-powiat-częstochowski",
+     "name": "powiat częstochowski"
+    },
+    {
+     "id": "pol-adm2-powiat-człuchowski",
+     "name": "powiat człuchowski"
+    },
+    {
+     "id": "pol-adm2-powiat-drawski",
+     "name": "powiat drawski"
+    },
+    {
+     "id": "pol-adm2-powiat-działdowski",
+     "name": "powiat działdowski"
+    },
+    {
+     "id": "pol-adm2-powiat-dzierżoniowski",
+     "name": "powiat dzierżoniowski"
+    },
+    {
+     "id": "pol-adm2-powiat-dąbrowski",
+     "name": "powiat dąbrowski"
+    },
+    {
+     "id": "pol-adm2-powiat-dębicki",
+     "name": "powiat dębicki"
+    },
+    {
+     "id": "pol-adm2-powiat-elbląski",
+     "name": "powiat elbląski"
+    },
+    {
+     "id": "pol-adm2-powiat-ełcki",
+     "name": "powiat ełcki"
+    },
+    {
+     "id": "pol-adm2-powiat-garwoliński",
+     "name": "powiat garwoliński"
+    },
+    {
+     "id": "pol-adm2-powiat-gdański",
+     "name": "powiat gdański"
+    },
+    {
+     "id": "pol-adm2-powiat-giżycki",
+     "name": "powiat giżycki"
+    },
+    {
+     "id": "pol-adm2-powiat-gnieźnieński",
+     "name": "powiat gnieźnieński"
+    },
+    {
+     "id": "pol-adm2-powiat-goleniowski",
+     "name": "powiat goleniowski"
+    },
+    {
+     "id": "pol-adm2-powiat-golubsko-dobrzyński",
+     "name": "powiat golubsko-dobrzyński"
+    },
+    {
+     "id": "pol-adm2-powiat-gorlicki",
+     "name": "powiat gorlicki"
+    },
+    {
+     "id": "pol-adm2-powiat-gorzowski",
+     "name": "powiat gorzowski"
+    },
+    {
+     "id": "pol-adm2-powiat-gostyniński",
+     "name": "powiat gostyniński"
+    },
+    {
+     "id": "pol-adm2-powiat-gostyński",
+     "name": "powiat gostyński"
+    },
+    {
+     "id": "pol-adm2-powiat-gołdapski",
+     "name": "powiat gołdapski"
+    },
+    {
+     "id": "pol-adm2-powiat-grajewski",
+     "name": "powiat grajewski"
+    },
+    {
+     "id": "pol-adm2-powiat-grodziski",
+     "name": "powiat grodziski"
+    },
+    {
+     "id": "pol-adm2-powiat-grudziądzki",
+     "name": "powiat grudziądzki"
+    },
+    {
+     "id": "pol-adm2-powiat-gryficki",
+     "name": "powiat gryficki"
+    },
+    {
+     "id": "pol-adm2-powiat-gryfiński",
+     "name": "powiat gryfiński"
+    },
+    {
+     "id": "pol-adm2-powiat-grójecki",
+     "name": "powiat grójecki"
+    },
+    {
+     "id": "pol-adm2-powiat-górowski",
+     "name": "powiat górowski"
+    },
+    {
+     "id": "pol-adm2-powiat-głogowski",
+     "name": "powiat głogowski"
+    },
+    {
+     "id": "pol-adm2-powiat-głubczycki",
+     "name": "powiat głubczycki"
+    },
+    {
+     "id": "pol-adm2-powiat-hajnowski",
+     "name": "powiat hajnowski"
+    },
+    {
+     "id": "pol-adm2-powiat-hrubieszowski",
+     "name": "powiat hrubieszowski"
+    },
+    {
+     "id": "pol-adm2-powiat-inowrocławski",
+     "name": "powiat inowrocławski"
+    },
+    {
+     "id": "pol-adm2-powiat-iławski",
+     "name": "powiat iławski"
+    },
+    {
+     "id": "pol-adm2-powiat-janowski",
+     "name": "powiat janowski"
+    },
+    {
+     "id": "pol-adm2-powiat-jarociński",
+     "name": "powiat jarociński"
+    },
+    {
+     "id": "pol-adm2-powiat-jarosławski",
+     "name": "powiat jarosławski"
+    },
+    {
+     "id": "pol-adm2-powiat-jasielski",
+     "name": "powiat jasielski"
+    },
+    {
+     "id": "pol-adm2-powiat-jaworski",
+     "name": "powiat jaworski"
+    },
+    {
+     "id": "pol-adm2-powiat-jeleniogórski",
+     "name": "powiat jeleniogórski"
+    },
+    {
+     "id": "pol-adm2-powiat-jędrzejowski",
+     "name": "powiat jędrzejowski"
+    },
+    {
+     "id": "pol-adm2-powiat-kaliski",
+     "name": "powiat kaliski"
+    },
+    {
+     "id": "pol-adm2-powiat-kamiennogórski",
+     "name": "powiat kamiennogórski"
+    },
+    {
+     "id": "pol-adm2-powiat-kamieński",
+     "name": "powiat kamieński"
+    },
+    {
+     "id": "pol-adm2-powiat-kartuski",
+     "name": "powiat kartuski"
+    },
+    {
+     "id": "pol-adm2-powiat-kazimierski",
+     "name": "powiat kazimierski"
+    },
+    {
+     "id": "pol-adm2-powiat-kielecki",
+     "name": "powiat kielecki"
+    },
+    {
+     "id": "pol-adm2-powiat-kluczborski",
+     "name": "powiat kluczborski"
+    },
+    {
+     "id": "pol-adm2-powiat-kolbuszowski",
+     "name": "powiat kolbuszowski"
+    },
+    {
+     "id": "pol-adm2-powiat-kolneński",
+     "name": "powiat kolneński"
+    },
+    {
+     "id": "pol-adm2-powiat-kolski",
+     "name": "powiat kolski"
+    },
+    {
+     "id": "pol-adm2-powiat-konecki",
+     "name": "powiat konecki"
+    },
+    {
+     "id": "pol-adm2-powiat-koniński",
+     "name": "powiat koniński"
+    },
+    {
+     "id": "pol-adm2-powiat-koszaliński",
+     "name": "powiat koszaliński"
+    },
+    {
+     "id": "pol-adm2-powiat-kozienicki",
+     "name": "powiat kozienicki"
+    },
+    {
+     "id": "pol-adm2-powiat-kościański",
+     "name": "powiat kościański"
+    },
+    {
+     "id": "pol-adm2-powiat-kościerski",
+     "name": "powiat kościerski"
+    },
+    {
+     "id": "pol-adm2-powiat-krakowski",
+     "name": "powiat krakowski"
+    },
+    {
+     "id": "pol-adm2-powiat-krapkowicki",
+     "name": "powiat krapkowicki"
+    },
+    {
+     "id": "pol-adm2-powiat-krasnostawski",
+     "name": "powiat krasnostawski"
+    },
+    {
+     "id": "pol-adm2-powiat-kraśnicki",
+     "name": "powiat kraśnicki"
+    },
+    {
+     "id": "pol-adm2-powiat-krotoszyński",
+     "name": "powiat krotoszyński"
+    },
+    {
+     "id": "pol-adm2-powiat-krośnieński",
+     "name": "powiat krośnieński"
+    },
+    {
+     "id": "pol-adm2-powiat-krośnieński-2",
+     "name": "powiat krośnieński"
+    },
+    {
+     "id": "pol-adm2-powiat-kwidzyński",
+     "name": "powiat kwidzyński"
+    },
+    {
+     "id": "pol-adm2-powiat-kędzierzyńsko-kozielski",
+     "name": "powiat kędzierzyńsko-kozielski"
+    },
+    {
+     "id": "pol-adm2-powiat-kępiński",
+     "name": "powiat kępiński"
+    },
+    {
+     "id": "pol-adm2-powiat-kętrzyński",
+     "name": "powiat kętrzyński"
+    },
+    {
+     "id": "pol-adm2-powiat-kłobucki",
+     "name": "powiat kłobucki"
+    },
+    {
+     "id": "pol-adm2-powiat-kłodzki",
+     "name": "powiat kłodzki"
+    },
+    {
+     "id": "pol-adm2-powiat-legionowski",
+     "name": "powiat legionowski"
+    },
+    {
+     "id": "pol-adm2-powiat-legnicki",
+     "name": "powiat legnicki"
+    },
+    {
+     "id": "pol-adm2-powiat-leski",
+     "name": "powiat leski"
+    },
+    {
+     "id": "pol-adm2-powiat-leszczyński",
+     "name": "powiat leszczyński"
+    },
+    {
+     "id": "pol-adm2-powiat-leżajski",
+     "name": "powiat leżajski"
+    },
+    {
+     "id": "pol-adm2-powiat-lidzbarski",
+     "name": "powiat lidzbarski"
+    },
+    {
+     "id": "pol-adm2-powiat-limanowski",
+     "name": "powiat limanowski"
+    },
+    {
+     "id": "pol-adm2-powiat-lipski",
+     "name": "powiat lipski"
+    },
+    {
+     "id": "pol-adm2-powiat-lubaczowski",
+     "name": "powiat lubaczowski"
+    },
+    {
+     "id": "pol-adm2-powiat-lubartowski",
+     "name": "powiat lubartowski"
+    },
+    {
+     "id": "pol-adm2-powiat-lubański",
+     "name": "powiat lubański"
+    },
+    {
+     "id": "pol-adm2-powiat-lubelski",
+     "name": "powiat lubelski"
+    },
+    {
+     "id": "pol-adm2-powiat-lubiński",
+     "name": "powiat lubiński"
+    },
+    {
+     "id": "pol-adm2-powiat-lubliniecki",
+     "name": "powiat lubliniecki"
+    },
+    {
+     "id": "pol-adm2-powiat-lwówecki",
+     "name": "powiat lwówecki"
+    },
+    {
+     "id": "pol-adm2-powiat-lęborski",
+     "name": "powiat lęborski"
+    },
+    {
+     "id": "pol-adm2-powiat-makowski",
+     "name": "powiat makowski"
+    },
+    {
+     "id": "pol-adm2-powiat-malborski",
+     "name": "powiat malborski"
+    },
+    {
+     "id": "pol-adm2-powiat-miechowski",
+     "name": "powiat miechowski"
+    },
+    {
+     "id": "pol-adm2-powiat-mielecki",
+     "name": "powiat mielecki"
+    },
+    {
+     "id": "pol-adm2-powiat-mikołowski",
+     "name": "powiat mikołowski"
+    },
+    {
+     "id": "pol-adm2-powiat-milicki",
+     "name": "powiat milicki"
+    },
+    {
+     "id": "pol-adm2-powiat-międzychodzki",
+     "name": "powiat międzychodzki"
+    },
+    {
+     "id": "pol-adm2-powiat-międzyrzecki",
+     "name": "powiat międzyrzecki"
+    },
+    {
+     "id": "pol-adm2-powiat-miński",
+     "name": "powiat miński"
+    },
+    {
+     "id": "pol-adm2-powiat-mogileński",
+     "name": "powiat mogileński"
+    },
+    {
+     "id": "pol-adm2-powiat-moniecki",
+     "name": "powiat moniecki"
+    },
+    {
+     "id": "pol-adm2-powiat-mrągowski",
+     "name": "powiat mrągowski"
+    },
+    {
+     "id": "pol-adm2-powiat-myszkowski",
+     "name": "powiat myszkowski"
+    },
+    {
+     "id": "pol-adm2-powiat-myślenicki",
+     "name": "powiat myślenicki"
+    },
+    {
+     "id": "pol-adm2-powiat-myśliborski",
+     "name": "powiat myśliborski"
+    },
+    {
+     "id": "pol-adm2-powiat-mławski",
+     "name": "powiat mławski"
+    },
+    {
+     "id": "pol-adm2-powiat-nakielski",
+     "name": "powiat nakielski"
+    },
+    {
+     "id": "pol-adm2-powiat-namysłowski",
+     "name": "powiat namysłowski"
+    },
+    {
+     "id": "pol-adm2-powiat-nidzicki",
+     "name": "powiat nidzicki"
+    },
+    {
+     "id": "pol-adm2-powiat-niżański",
+     "name": "powiat niżański"
+    },
+    {
+     "id": "pol-adm2-powiat-nowodworski",
+     "name": "powiat nowodworski"
+    },
+    {
+     "id": "pol-adm2-powiat-nowodworski-2",
+     "name": "powiat nowodworski"
+    },
+    {
+     "id": "pol-adm2-powiat-nowomiejski",
+     "name": "powiat nowomiejski"
+    },
+    {
+     "id": "pol-adm2-powiat-nowosolski",
+     "name": "powiat nowosolski"
+    },
+    {
+     "id": "pol-adm2-powiat-nowosądecki",
+     "name": "powiat nowosądecki"
+    },
+    {
+     "id": "pol-adm2-powiat-nowotarski",
+     "name": "powiat nowotarski"
+    },
+    {
+     "id": "pol-adm2-powiat-nowotomyski",
+     "name": "powiat nowotomyski"
+    },
+    {
+     "id": "pol-adm2-powiat-nyski",
+     "name": "powiat nyski"
+    },
+    {
+     "id": "pol-adm2-powiat-obornicki",
+     "name": "powiat obornicki"
+    },
+    {
+     "id": "pol-adm2-powiat-olecki",
+     "name": "powiat olecki"
+    },
+    {
+     "id": "pol-adm2-powiat-oleski",
+     "name": "powiat oleski"
+    },
+    {
+     "id": "pol-adm2-powiat-oleśnicki",
+     "name": "powiat oleśnicki"
+    },
+    {
+     "id": "pol-adm2-powiat-olkuski",
+     "name": "powiat olkuski"
+    },
+    {
+     "id": "pol-adm2-powiat-olsztyński",
+     "name": "powiat olsztyński"
+    },
+    {
+     "id": "pol-adm2-powiat-opatowski",
+     "name": "powiat opatowski"
+    },
+    {
+     "id": "pol-adm2-powiat-opoczyński",
+     "name": "powiat opoczyński"
+    },
+    {
+     "id": "pol-adm2-powiat-opolski",
+     "name": "powiat opolski"
+    },
+    {
+     "id": "pol-adm2-powiat-opolski-2",
+     "name": "powiat opolski"
+    },
+    {
+     "id": "pol-adm2-powiat-ostrowiecki",
+     "name": "powiat ostrowiecki"
+    },
+    {
+     "id": "pol-adm2-powiat-ostrowski",
+     "name": "powiat ostrowski"
+    },
+    {
+     "id": "pol-adm2-powiat-ostrowski-2",
+     "name": "powiat ostrowski"
+    },
+    {
+     "id": "pol-adm2-powiat-ostrołęcki",
+     "name": "powiat ostrołęcki"
+    },
+    {
+     "id": "pol-adm2-powiat-ostrzeszowski",
+     "name": "powiat ostrzeszowski"
+    },
+    {
+     "id": "pol-adm2-powiat-ostródzki",
+     "name": "powiat ostródzki"
+    },
+    {
+     "id": "pol-adm2-powiat-otwocki",
+     "name": "powiat otwocki"
+    },
+    {
+     "id": "pol-adm2-powiat-oławski",
+     "name": "powiat oławski"
+    },
+    {
+     "id": "pol-adm2-powiat-oświęcimski",
+     "name": "powiat oświęcimski"
+    },
+    {
+     "id": "pol-adm2-powiat-pabianicki",
+     "name": "powiat pabianicki"
+    },
+    {
+     "id": "pol-adm2-powiat-pajęczański",
+     "name": "powiat pajęczański"
+    },
+    {
+     "id": "pol-adm2-powiat-parczewski",
+     "name": "powiat parczewski"
+    },
+    {
+     "id": "pol-adm2-powiat-piaseczyński",
+     "name": "powiat piaseczyński"
+    },
+    {
+     "id": "pol-adm2-powiat-pilski",
+     "name": "powiat pilski"
+    },
+    {
+     "id": "pol-adm2-powiat-piotrkowski",
+     "name": "powiat piotrkowski"
+    },
+    {
+     "id": "pol-adm2-powiat-piski",
+     "name": "powiat piski"
+    },
+    {
+     "id": "pol-adm2-powiat-pińczowski",
+     "name": "powiat pińczowski"
+    },
+    {
+     "id": "pol-adm2-powiat-pleszewski",
+     "name": "powiat pleszewski"
+    },
+    {
+     "id": "pol-adm2-powiat-poddębicki",
+     "name": "powiat poddębicki"
+    },
+    {
+     "id": "pol-adm2-powiat-policki",
+     "name": "powiat policki"
+    },
+    {
+     "id": "pol-adm2-powiat-polkowicki",
+     "name": "powiat polkowicki"
+    },
+    {
+     "id": "pol-adm2-powiat-poznański",
+     "name": "powiat poznański"
+    },
+    {
+     "id": "pol-adm2-powiat-proszowicki",
+     "name": "powiat proszowicki"
+    },
+    {
+     "id": "pol-adm2-powiat-prudnicki",
+     "name": "powiat prudnicki"
+    },
+    {
+     "id": "pol-adm2-powiat-pruszkowski",
+     "name": "powiat pruszkowski"
+    },
+    {
+     "id": "pol-adm2-powiat-przasnyski",
+     "name": "powiat przasnyski"
+    },
+    {
+     "id": "pol-adm2-powiat-przemyski",
+     "name": "powiat przemyski"
+    },
+    {
+     "id": "pol-adm2-powiat-przeworski",
+     "name": "powiat przeworski"
+    },
+    {
+     "id": "pol-adm2-powiat-przysuski",
+     "name": "powiat przysuski"
+    },
+    {
+     "id": "pol-adm2-powiat-pszczyński",
+     "name": "powiat pszczyński"
+    },
+    {
+     "id": "pol-adm2-powiat-pucki",
+     "name": "powiat pucki"
+    },
+    {
+     "id": "pol-adm2-powiat-puławski",
+     "name": "powiat puławski"
+    },
+    {
+     "id": "pol-adm2-powiat-pułtuski",
+     "name": "powiat pułtuski"
+    },
+    {
+     "id": "pol-adm2-powiat-pyrzycki",
+     "name": "powiat pyrzycki"
+    },
+    {
+     "id": "pol-adm2-powiat-płocki",
+     "name": "powiat płocki"
+    },
+    {
+     "id": "pol-adm2-powiat-płoński",
+     "name": "powiat płoński"
+    },
+    {
+     "id": "pol-adm2-powiat-radomski",
+     "name": "powiat radomski"
+    },
+    {
+     "id": "pol-adm2-powiat-radomszczański",
+     "name": "powiat radomszczański"
+    },
+    {
+     "id": "pol-adm2-powiat-radziejowski",
+     "name": "powiat radziejowski"
+    },
+    {
+     "id": "pol-adm2-powiat-radzyński",
+     "name": "powiat radzyński"
+    },
+    {
+     "id": "pol-adm2-powiat-rawicki",
+     "name": "powiat rawicki"
+    },
+    {
+     "id": "pol-adm2-powiat-rawski",
+     "name": "powiat rawski"
+    },
+    {
+     "id": "pol-adm2-powiat-ropczycko-sędziszowski",
+     "name": "powiat ropczycko-sędziszowski"
+    },
+    {
+     "id": "pol-adm2-powiat-rybnicki",
+     "name": "powiat rybnicki"
+    },
+    {
+     "id": "pol-adm2-powiat-rycki",
+     "name": "powiat rycki"
+    },
+    {
+     "id": "pol-adm2-powiat-rypiński",
+     "name": "powiat rypiński"
+    },
+    {
+     "id": "pol-adm2-powiat-rzeszowski",
+     "name": "powiat rzeszowski"
+    },
+    {
+     "id": "pol-adm2-powiat-sandomierski",
+     "name": "powiat sandomierski"
+    },
+    {
+     "id": "pol-adm2-powiat-sanocki",
+     "name": "powiat sanocki"
+    },
+    {
+     "id": "pol-adm2-powiat-sejneński",
+     "name": "powiat sejneński"
+    },
+    {
+     "id": "pol-adm2-powiat-siemiatycki",
+     "name": "powiat siemiatycki"
+    },
+    {
+     "id": "pol-adm2-powiat-sieradzki",
+     "name": "powiat sieradzki"
+    },
+    {
+     "id": "pol-adm2-powiat-sierpecki",
+     "name": "powiat sierpecki"
+    },
+    {
+     "id": "pol-adm2-powiat-skarżyski",
+     "name": "powiat skarżyski"
+    },
+    {
+     "id": "pol-adm2-powiat-skierniewicki",
+     "name": "powiat skierniewicki"
+    },
+    {
+     "id": "pol-adm2-powiat-sochaczewski",
+     "name": "powiat sochaczewski"
+    },
+    {
+     "id": "pol-adm2-powiat-sokołowski",
+     "name": "powiat sokołowski"
+    },
+    {
+     "id": "pol-adm2-powiat-sokólski",
+     "name": "powiat sokólski"
+    },
+    {
+     "id": "pol-adm2-powiat-stalowowolski",
+     "name": "powiat stalowowolski"
+    },
+    {
+     "id": "pol-adm2-powiat-starachowicki",
+     "name": "powiat starachowicki"
+    },
+    {
+     "id": "pol-adm2-powiat-stargardzki",
+     "name": "powiat stargardzki"
+    },
+    {
+     "id": "pol-adm2-powiat-starogardzki",
+     "name": "powiat starogardzki"
+    },
+    {
+     "id": "pol-adm2-powiat-staszowski",
+     "name": "powiat staszowski"
+    },
+    {
+     "id": "pol-adm2-powiat-strzelecki",
+     "name": "powiat strzelecki"
+    },
+    {
+     "id": "pol-adm2-powiat-strzelecko-drezdenecki",
+     "name": "powiat strzelecko-drezdenecki"
+    },
+    {
+     "id": "pol-adm2-powiat-strzeliński",
+     "name": "powiat strzeliński"
+    },
+    {
+     "id": "pol-adm2-powiat-strzyżowski",
+     "name": "powiat strzyżowski"
+    },
+    {
+     "id": "pol-adm2-powiat-sulęciński",
+     "name": "powiat sulęciński"
+    },
+    {
+     "id": "pol-adm2-powiat-suski",
+     "name": "powiat suski"
+    },
+    {
+     "id": "pol-adm2-powiat-suwalski",
+     "name": "powiat suwalski"
+    },
+    {
+     "id": "pol-adm2-powiat-szamotulski",
+     "name": "powiat szamotulski"
+    },
+    {
+     "id": "pol-adm2-powiat-szczecinecki",
+     "name": "powiat szczecinecki"
+    },
+    {
+     "id": "pol-adm2-powiat-szczycieński",
+     "name": "powiat szczycieński"
+    },
+    {
+     "id": "pol-adm2-powiat-sztumski",
+     "name": "powiat sztumski"
+    },
+    {
+     "id": "pol-adm2-powiat-szydłowiecki",
+     "name": "powiat szydłowiecki"
+    },
+    {
+     "id": "pol-adm2-powiat-sępoleński",
+     "name": "powiat sępoleński"
+    },
+    {
+     "id": "pol-adm2-powiat-sławieński",
+     "name": "powiat sławieński"
+    },
+    {
+     "id": "pol-adm2-powiat-słubicki",
+     "name": "powiat słubicki"
+    },
+    {
+     "id": "pol-adm2-powiat-słupecki",
+     "name": "powiat słupecki"
+    },
+    {
+     "id": "pol-adm2-powiat-słupski",
+     "name": "powiat słupski"
+    },
+    {
+     "id": "pol-adm2-powiat-tarnobrzeski",
+     "name": "powiat tarnobrzeski"
+    },
+    {
+     "id": "pol-adm2-powiat-tarnowski",
+     "name": "powiat tarnowski"
+    },
+    {
+     "id": "pol-adm2-powiat-tatrzański",
+     "name": "powiat tatrzański"
+    },
+    {
+     "id": "pol-adm2-powiat-tczewski",
+     "name": "powiat tczewski"
+    },
+    {
+     "id": "pol-adm2-powiat-tomaszowski",
+     "name": "powiat tomaszowski"
+    },
+    {
+     "id": "pol-adm2-powiat-tomaszowski-2",
+     "name": "powiat tomaszowski"
+    },
+    {
+     "id": "pol-adm2-powiat-toruński",
+     "name": "powiat toruński"
+    },
+    {
+     "id": "pol-adm2-powiat-trzebnicki",
+     "name": "powiat trzebnicki"
+    },
+    {
+     "id": "pol-adm2-powiat-tucholski",
+     "name": "powiat tucholski"
+    },
+    {
+     "id": "pol-adm2-powiat-turecki",
+     "name": "powiat turecki"
+    },
+    {
+     "id": "pol-adm2-powiat-wadowicki",
+     "name": "powiat wadowicki"
+    },
+    {
+     "id": "pol-adm2-powiat-warszawski-zachodni",
+     "name": "powiat warszawski zachodni"
+    },
+    {
+     "id": "pol-adm2-powiat-wałbrzyski",
+     "name": "powiat wałbrzyski"
+    },
+    {
+     "id": "pol-adm2-powiat-wałecki",
+     "name": "powiat wałecki"
+    },
+    {
+     "id": "pol-adm2-powiat-wejherowski",
+     "name": "powiat wejherowski"
+    },
+    {
+     "id": "pol-adm2-powiat-wielicki",
+     "name": "powiat wielicki"
+    },
+    {
+     "id": "pol-adm2-powiat-wieluński",
+     "name": "powiat wieluński"
+    },
+    {
+     "id": "pol-adm2-powiat-wieruszowski",
+     "name": "powiat wieruszowski"
+    },
+    {
+     "id": "pol-adm2-powiat-wolsztyński",
+     "name": "powiat wolsztyński"
+    },
+    {
+     "id": "pol-adm2-powiat-wołomiński",
+     "name": "powiat wołomiński"
+    },
+    {
+     "id": "pol-adm2-powiat-wołowski",
+     "name": "powiat wołowski"
+    },
+    {
+     "id": "pol-adm2-powiat-wrocławski",
+     "name": "powiat wrocławski"
+    },
+    {
+     "id": "pol-adm2-powiat-wrzesiński",
+     "name": "powiat wrzesiński"
+    },
+    {
+     "id": "pol-adm2-powiat-wschowski",
+     "name": "powiat wschowski"
+    },
+    {
+     "id": "pol-adm2-powiat-wysokomazowiecki",
+     "name": "powiat wysokomazowiecki"
+    },
+    {
+     "id": "pol-adm2-powiat-wyszkowski",
+     "name": "powiat wyszkowski"
+    },
+    {
+     "id": "pol-adm2-powiat-wąbrzeski",
+     "name": "powiat wąbrzeski"
+    },
+    {
+     "id": "pol-adm2-powiat-wągrowiecki",
+     "name": "powiat wągrowiecki"
+    },
+    {
+     "id": "pol-adm2-powiat-węgorzewski",
+     "name": "powiat węgorzewski"
+    },
+    {
+     "id": "pol-adm2-powiat-węgrowski",
+     "name": "powiat węgrowski"
+    },
+    {
+     "id": "pol-adm2-powiat-włocławski",
+     "name": "powiat włocławski"
+    },
+    {
+     "id": "pol-adm2-powiat-włodawski",
+     "name": "powiat włodawski"
+    },
+    {
+     "id": "pol-adm2-powiat-włoszczowski",
+     "name": "powiat włoszczowski"
+    },
+    {
+     "id": "pol-adm2-powiat-zambrowski",
+     "name": "powiat zambrowski"
+    },
+    {
+     "id": "pol-adm2-powiat-zamojski",
+     "name": "powiat zamojski"
+    },
+    {
+     "id": "pol-adm2-powiat-zawierciański",
+     "name": "powiat zawierciański"
+    },
+    {
+     "id": "pol-adm2-powiat-zduńskowolski",
+     "name": "powiat zduńskowolski"
+    },
+    {
+     "id": "pol-adm2-powiat-zgierski",
+     "name": "powiat zgierski"
+    },
+    {
+     "id": "pol-adm2-powiat-zgorzelecki",
+     "name": "powiat zgorzelecki"
+    },
+    {
+     "id": "pol-adm2-powiat-zielonogórski",
+     "name": "powiat zielonogórski"
+    },
+    {
+     "id": "pol-adm2-powiat-zwoleński",
+     "name": "powiat zwoleński"
+    },
+    {
+     "id": "pol-adm2-powiat-ząbkowicki",
+     "name": "powiat ząbkowicki"
+    },
+    {
+     "id": "pol-adm2-powiat-złotoryjski",
+     "name": "powiat złotoryjski"
+    },
+    {
+     "id": "pol-adm2-powiat-złotowski",
+     "name": "powiat złotowski"
+    },
+    {
+     "id": "pol-adm2-powiat-łaski",
+     "name": "powiat łaski"
+    },
+    {
+     "id": "pol-adm2-powiat-łańcucki",
+     "name": "powiat łańcucki"
+    },
+    {
+     "id": "pol-adm2-powiat-łobeski",
+     "name": "powiat łobeski"
+    },
+    {
+     "id": "pol-adm2-powiat-łomżyński",
+     "name": "powiat łomżyński"
+    },
+    {
+     "id": "pol-adm2-powiat-łosicki",
+     "name": "powiat łosicki"
+    },
+    {
+     "id": "pol-adm2-powiat-łowicki",
+     "name": "powiat łowicki"
+    },
+    {
+     "id": "pol-adm2-powiat-łukowski",
+     "name": "powiat łukowski"
+    },
+    {
+     "id": "pol-adm2-powiat-łódzki-wschodni",
+     "name": "powiat łódzki wschodni"
+    },
+    {
+     "id": "pol-adm2-powiat-łęczycki",
+     "name": "powiat łęczycki"
+    },
+    {
+     "id": "pol-adm2-powiat-łęczyński",
+     "name": "powiat łęczyński"
+    },
+    {
+     "id": "pol-adm2-powiat-średzki",
+     "name": "powiat średzki"
+    },
+    {
+     "id": "pol-adm2-powiat-średzki-2",
+     "name": "powiat średzki"
+    },
+    {
+     "id": "pol-adm2-powiat-śremski",
+     "name": "powiat śremski"
+    },
+    {
+     "id": "pol-adm2-powiat-świdnicki",
+     "name": "powiat świdnicki"
+    },
+    {
+     "id": "pol-adm2-powiat-świdnicki-2",
+     "name": "powiat świdnicki"
+    },
+    {
+     "id": "pol-adm2-powiat-świdwiński",
+     "name": "powiat świdwiński"
+    },
+    {
+     "id": "pol-adm2-powiat-świebodziński",
+     "name": "powiat świebodziński"
+    },
+    {
+     "id": "pol-adm2-powiat-świecki",
+     "name": "powiat świecki"
+    },
+    {
+     "id": "pol-adm2-powiat-żagański",
+     "name": "powiat żagański"
+    },
+    {
+     "id": "pol-adm2-powiat-żarski",
+     "name": "powiat żarski"
+    },
+    {
+     "id": "pol-adm2-powiat-żniński",
+     "name": "powiat żniński"
+    },
+    {
+     "id": "pol-adm2-powiat-żuromiński",
+     "name": "powiat żuromiński"
+    },
+    {
+     "id": "pol-adm2-powiat-żywiecki",
+     "name": "powiat żywiecki"
+    },
+    {
+     "id": "pol-adm2-poznań",
+     "name": "Poznań"
+    },
+    {
+     "id": "pol-adm2-przemyśl",
+     "name": "Przemyśl"
+    },
+    {
+     "id": "pol-adm2-płock",
+     "name": "Płock"
+    },
+    {
+     "id": "pol-adm2-racibórz-county",
+     "name": "Racibórz County"
+    },
+    {
+     "id": "pol-adm2-radom",
+     "name": "Radom"
+    },
+    {
+     "id": "pol-adm2-ruda-śląska",
+     "name": "Ruda Śląska"
+    },
+    {
+     "id": "pol-adm2-rybnik",
+     "name": "Rybnik"
+    },
+    {
+     "id": "pol-adm2-rzeszów",
+     "name": "Rzeszów"
+    },
+    {
+     "id": "pol-adm2-siedlce",
+     "name": "Siedlce"
+    },
+    {
+     "id": "pol-adm2-siedlce-county",
+     "name": "Siedlce County"
+    },
+    {
+     "id": "pol-adm2-siemianowice-śląskie",
+     "name": "Siemianowice Śląskie"
+    },
+    {
+     "id": "pol-adm2-skierniewice",
+     "name": "Skierniewice"
+    },
+    {
+     "id": "pol-adm2-sopot",
+     "name": "Sopot"
+    },
+    {
+     "id": "pol-adm2-sosnowiec",
+     "name": "Sosnowiec"
+    },
+    {
+     "id": "pol-adm2-suwałki",
+     "name": "Suwałki"
+    },
+    {
+     "id": "pol-adm2-szczecin",
+     "name": "Szczecin"
+    },
+    {
+     "id": "pol-adm2-słupsk",
+     "name": "Słupsk"
+    },
+    {
+     "id": "pol-adm2-tarnobrzeg",
+     "name": "Tarnobrzeg"
+    },
+    {
+     "id": "pol-adm2-tarnowskie-góry-county",
+     "name": "Tarnowskie Góry County"
+    },
+    {
+     "id": "pol-adm2-tarnów",
+     "name": "Tarnów"
+    },
+    {
+     "id": "pol-adm2-toruń",
+     "name": "Toruń"
+    },
+    {
+     "id": "pol-adm2-tychy",
+     "name": "Tychy"
+    },
+    {
+     "id": "pol-adm2-warszawa",
+     "name": "Warszawa"
+    },
+    {
+     "id": "pol-adm2-wałbrzych",
+     "name": "Wałbrzych"
+    },
+    {
+     "id": "pol-adm2-wodzisław-county",
+     "name": "Wodzisław County"
+    },
+    {
+     "id": "pol-adm2-wrocław",
+     "name": "Wrocław"
+    },
+    {
+     "id": "pol-adm2-włocławek",
+     "name": "Włocławek"
+    },
+    {
+     "id": "pol-adm2-zabrze",
+     "name": "Zabrze"
+    },
+    {
+     "id": "pol-adm2-zamość",
+     "name": "Zamość"
+    },
+    {
+     "id": "pol-adm2-zielona-góra",
+     "name": "Zielona Góra"
+    },
+    {
+     "id": "pol-adm2-łomża",
+     "name": "Łomża"
+    },
+    {
+     "id": "pol-adm2-łódź",
+     "name": "Łódź"
+    },
+    {
+     "id": "pol-adm2-świnoujście",
+     "name": "Świnoujście"
+    },
+    {
+     "id": "pol-adm2-świętochłowice",
+     "name": "Świętochłowice"
+    },
+    {
+     "id": "pol-adm2-żory",
+     "name": "Żory"
+    },
+    {
+     "id": "pol-adm2-żyrardów-county",
+     "name": "Żyrardów County"
+    }
+   ]
+  }
+ },
+ "name": "Poland",
+ "nameBn": "Poland"
+}

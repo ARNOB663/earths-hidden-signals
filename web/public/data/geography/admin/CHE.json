@@ -1,0 +1,846 @@
+{
+ "code": "CHE",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "The Swiss Confederation",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2022",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Canton",
+   "code": "ADM1",
+   "count": 26,
+   "name": "Canton",
+   "nameBn": "ক্যান্টন",
+   "representedYear": "2022",
+   "sourceCount": 26,
+   "units": [
+    {
+     "id": "che-adm1-aargau",
+     "name": "Aargau",
+     "shapeISO": "CH-AG"
+    },
+    {
+     "id": "che-adm1-appenzell-ausserrhoden",
+     "name": "Appenzell Ausserrhoden",
+     "shapeISO": "CH-AR"
+    },
+    {
+     "id": "che-adm1-appenzell-innerrhoden",
+     "name": "Appenzell Innerrhoden",
+     "shapeISO": "CH-AI"
+    },
+    {
+     "id": "che-adm1-basel-landschaft",
+     "name": "Basel-Landschaft",
+     "shapeISO": "CH-BL"
+    },
+    {
+     "id": "che-adm1-basel-stadt",
+     "name": "Basel-Stadt",
+     "shapeISO": "CH-BS"
+    },
+    {
+     "id": "che-adm1-bern",
+     "name": "Bern",
+     "shapeISO": "CH-BE"
+    },
+    {
+     "id": "che-adm1-fribourg",
+     "name": "Fribourg",
+     "shapeISO": "CH-FR"
+    },
+    {
+     "id": "che-adm1-genève",
+     "name": "Genève",
+     "shapeISO": "CH-GE"
+    },
+    {
+     "id": "che-adm1-glarus",
+     "name": "Glarus",
+     "shapeISO": "CH-GL"
+    },
+    {
+     "id": "che-adm1-graubünden",
+     "name": "Graubünden",
+     "shapeISO": "CH-GR"
+    },
+    {
+     "id": "che-adm1-jura",
+     "name": "Jura",
+     "shapeISO": "CH-JU"
+    },
+    {
+     "id": "che-adm1-luzern",
+     "name": "Luzern",
+     "shapeISO": "CH-LU"
+    },
+    {
+     "id": "che-adm1-neuchâtel",
+     "name": "Neuchâtel",
+     "shapeISO": "CH-NE"
+    },
+    {
+     "id": "che-adm1-nidwalden",
+     "name": "Nidwalden",
+     "shapeISO": "CH-NW"
+    },
+    {
+     "id": "che-adm1-obwalden",
+     "name": "Obwalden",
+     "shapeISO": "CH-OW"
+    },
+    {
+     "id": "che-adm1-schaffhausen",
+     "name": "Schaffhausen",
+     "shapeISO": "CH-SH"
+    },
+    {
+     "id": "che-adm1-schwyz",
+     "name": "Schwyz",
+     "shapeISO": "CH-SZ"
+    },
+    {
+     "id": "che-adm1-solothurn",
+     "name": "Solothurn",
+     "shapeISO": "CH-SO"
+    },
+    {
+     "id": "che-adm1-st-gallen",
+     "name": "St. Gallen",
+     "shapeISO": "CH-SG"
+    },
+    {
+     "id": "che-adm1-thurgau",
+     "name": "Thurgau",
+     "shapeISO": "CH-TG"
+    },
+    {
+     "id": "che-adm1-ticino",
+     "name": "Ticino",
+     "shapeISO": "CH-TI"
+    },
+    {
+     "id": "che-adm1-uri",
+     "name": "Uri",
+     "shapeISO": "CH-UR"
+    },
+    {
+     "id": "che-adm1-valais",
+     "name": "Valais",
+     "shapeISO": "CH-VS"
+    },
+    {
+     "id": "che-adm1-vaud",
+     "name": "Vaud",
+     "shapeISO": "CH-VD"
+    },
+    {
+     "id": "che-adm1-zug",
+     "name": "Zug",
+     "shapeISO": "CH-ZG"
+    },
+    {
+     "id": "che-adm1-zürich",
+     "name": "Zürich",
+     "shapeISO": "CH-ZH"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "District",
+   "code": "ADM2",
+   "count": 169,
+   "name": "District",
+   "nameBn": "জেলা",
+   "representedYear": "2022",
+   "sourceCount": 169,
+   "units": [
+    {
+     "id": "che-adm2-aarau",
+     "name": "Aarau"
+    },
+    {
+     "id": "che-adm2-aarberg",
+     "name": "Aarberg"
+    },
+    {
+     "id": "che-adm2-aarwangen",
+     "name": "Aarwangen"
+    },
+    {
+     "id": "che-adm2-affoltern",
+     "name": "Affoltern"
+    },
+    {
+     "id": "che-adm2-aigle",
+     "name": "Aigle"
+    },
+    {
+     "id": "che-adm2-albula",
+     "name": "Albula"
+    },
+    {
+     "id": "che-adm2-andelfingen",
+     "name": "Andelfingen"
+    },
+    {
+     "id": "che-adm2-appenzell-ausserrhoden",
+     "name": "Appenzell Ausserrhoden"
+    },
+    {
+     "id": "che-adm2-appenzell-innerrhoden",
+     "name": "Appenzell Innerrhoden"
+    },
+    {
+     "id": "che-adm2-arbon",
+     "name": "Arbon"
+    },
+    {
+     "id": "che-adm2-arlesheim",
+     "name": "Arlesheim"
+    },
+    {
+     "id": "che-adm2-baden",
+     "name": "Baden"
+    },
+    {
+     "id": "che-adm2-basel",
+     "name": "Basel"
+    },
+    {
+     "id": "che-adm2-bellinzona",
+     "name": "Bellinzona"
+    },
+    {
+     "id": "che-adm2-bern",
+     "name": "Bern"
+    },
+    {
+     "id": "che-adm2-bernina",
+     "name": "Bernina"
+    },
+    {
+     "id": "che-adm2-bettingen",
+     "name": "Bettingen"
+    },
+    {
+     "id": "che-adm2-biel",
+     "name": "Biel"
+    },
+    {
+     "id": "che-adm2-bischofszell",
+     "name": "Bischofszell"
+    },
+    {
+     "id": "che-adm2-blenio",
+     "name": "Blenio"
+    },
+    {
+     "id": "che-adm2-bodensee",
+     "name": "Bodensee"
+    },
+    {
+     "id": "che-adm2-boudry",
+     "name": "Boudry"
+    },
+    {
+     "id": "che-adm2-bremgarten",
+     "name": "Bremgarten"
+    },
+    {
+     "id": "che-adm2-brig",
+     "name": "Brig"
+    },
+    {
+     "id": "che-adm2-broye-vully",
+     "name": "Broye-Vully"
+    },
+    {
+     "id": "che-adm2-brugg",
+     "name": "Brugg"
+    },
+    {
+     "id": "che-adm2-bucheggberg",
+     "name": "Bucheggberg"
+    },
+    {
+     "id": "che-adm2-burgdorf",
+     "name": "Burgdorf"
+    },
+    {
+     "id": "che-adm2-bülach",
+     "name": "Bülach"
+    },
+    {
+     "id": "che-adm2-büren",
+     "name": "Büren"
+    },
+    {
+     "id": "che-adm2-conthey",
+     "name": "Conthey"
+    },
+    {
+     "id": "che-adm2-courtelary",
+     "name": "Courtelary"
+    },
+    {
+     "id": "che-adm2-delémont",
+     "name": "Delémont"
+    },
+    {
+     "id": "che-adm2-dielsdorf",
+     "name": "Dielsdorf"
+    },
+    {
+     "id": "che-adm2-diessenhofen",
+     "name": "Diessenhofen"
+    },
+    {
+     "id": "che-adm2-dietikon",
+     "name": "Dietikon"
+    },
+    {
+     "id": "che-adm2-dorneck",
+     "name": "Dorneck"
+    },
+    {
+     "id": "che-adm2-einsiedeln",
+     "name": "Einsiedeln"
+    },
+    {
+     "id": "che-adm2-entlebuch",
+     "name": "Entlebuch"
+    },
+    {
+     "id": "che-adm2-entremont",
+     "name": "Entremont"
+    },
+    {
+     "id": "che-adm2-erlach",
+     "name": "Erlach"
+    },
+    {
+     "id": "che-adm2-fraubrunnen",
+     "name": "Fraubrunnen"
+    },
+    {
+     "id": "che-adm2-frauenfeld",
+     "name": "Frauenfeld"
+    },
+    {
+     "id": "che-adm2-frutigen",
+     "name": "Frutigen"
+    },
+    {
+     "id": "che-adm2-genève",
+     "name": "Genève"
+    },
+    {
+     "id": "che-adm2-gersau",
+     "name": "Gersau"
+    },
+    {
+     "id": "che-adm2-glarus",
+     "name": "Glarus"
+    },
+    {
+     "id": "che-adm2-goms",
+     "name": "Goms"
+    },
+    {
+     "id": "che-adm2-gros-de-vaud",
+     "name": "Gros-de-Vaud"
+    },
+    {
+     "id": "che-adm2-gäu",
+     "name": "Gäu"
+    },
+    {
+     "id": "che-adm2-gösgen",
+     "name": "Gösgen"
+    },
+    {
+     "id": "che-adm2-hinterrhein",
+     "name": "Hinterrhein"
+    },
+    {
+     "id": "che-adm2-hinwil",
+     "name": "Hinwil"
+    },
+    {
+     "id": "che-adm2-hochdorf",
+     "name": "Hochdorf"
+    },
+    {
+     "id": "che-adm2-horgen",
+     "name": "Horgen"
+    },
+    {
+     "id": "che-adm2-hérens",
+     "name": "Hérens"
+    },
+    {
+     "id": "che-adm2-höfe",
+     "name": "Höfe"
+    },
+    {
+     "id": "che-adm2-imboden",
+     "name": "Imboden"
+    },
+    {
+     "id": "che-adm2-inn",
+     "name": "Inn"
+    },
+    {
+     "id": "che-adm2-interlaken",
+     "name": "Interlaken"
+    },
+    {
+     "id": "che-adm2-jura-north-vaudois",
+     "name": "Jura-North Vaudois"
+    },
+    {
+     "id": "che-adm2-konolfingen",
+     "name": "Konolfingen"
+    },
+    {
+     "id": "che-adm2-kreuzlingen",
+     "name": "Kreuzlingen"
+    },
+    {
+     "id": "che-adm2-kulm",
+     "name": "Kulm"
+    },
+    {
+     "id": "che-adm2-küssnacht",
+     "name": "Küssnacht"
+    },
+    {
+     "id": "che-adm2-la-broye",
+     "name": "La Broye"
+    },
+    {
+     "id": "che-adm2-la-chaux-de-fonds",
+     "name": "La Chaux-de-Fonds"
+    },
+    {
+     "id": "che-adm2-la-glâne",
+     "name": "La Glâne"
+    },
+    {
+     "id": "che-adm2-la-gruyère",
+     "name": "La Gruyère"
+    },
+    {
+     "id": "che-adm2-la-neuveville",
+     "name": "La Neuveville"
+    },
+    {
+     "id": "che-adm2-la-sarine",
+     "name": "La Sarine"
+    },
+    {
+     "id": "che-adm2-la-veveyse",
+     "name": "La Veveyse"
+    },
+    {
+     "id": "che-adm2-lac",
+     "name": "Lac"
+    },
+    {
+     "id": "che-adm2-landquart",
+     "name": "Landquart"
+    },
+    {
+     "id": "che-adm2-laufen",
+     "name": "Laufen"
+    },
+    {
+     "id": "che-adm2-laufenburg",
+     "name": "Laufenburg"
+    },
+    {
+     "id": "che-adm2-laupen",
+     "name": "Laupen"
+    },
+    {
+     "id": "che-adm2-lausanne",
+     "name": "Lausanne"
+    },
+    {
+     "id": "che-adm2-lavaux-oron",
+     "name": "Lavaux-Oron"
+    },
+    {
+     "id": "che-adm2-le-locle",
+     "name": "Le Locle"
+    },
+    {
+     "id": "che-adm2-lebern",
+     "name": "Lebern"
+    },
+    {
+     "id": "che-adm2-lenzburg",
+     "name": "Lenzburg"
+    },
+    {
+     "id": "che-adm2-les-franches-montagnes",
+     "name": "Les Franches-Montagnes"
+    },
+    {
+     "id": "che-adm2-leuk",
+     "name": "Leuk"
+    },
+    {
+     "id": "che-adm2-leventina",
+     "name": "Leventina"
+    },
+    {
+     "id": "che-adm2-liestal",
+     "name": "Liestal"
+    },
+    {
+     "id": "che-adm2-locarno",
+     "name": "Locarno"
+    },
+    {
+     "id": "che-adm2-lugano",
+     "name": "Lugano"
+    },
+    {
+     "id": "che-adm2-luzern",
+     "name": "Luzern"
+    },
+    {
+     "id": "che-adm2-maloja",
+     "name": "Maloja"
+    },
+    {
+     "id": "che-adm2-march",
+     "name": "March"
+    },
+    {
+     "id": "che-adm2-martigny",
+     "name": "Martigny"
+    },
+    {
+     "id": "che-adm2-meilen",
+     "name": "Meilen"
+    },
+    {
+     "id": "che-adm2-mendrisio",
+     "name": "Mendrisio"
+    },
+    {
+     "id": "che-adm2-monthey",
+     "name": "Monthey"
+    },
+    {
+     "id": "che-adm2-morges",
+     "name": "Morges"
+    },
+    {
+     "id": "che-adm2-moutier",
+     "name": "Moutier"
+    },
+    {
+     "id": "che-adm2-moësa",
+     "name": "Moësa"
+    },
+    {
+     "id": "che-adm2-muri",
+     "name": "Muri"
+    },
+    {
+     "id": "che-adm2-münchwilen",
+     "name": "Münchwilen"
+    },
+    {
+     "id": "che-adm2-neuchâtel",
+     "name": "Neuchâtel"
+    },
+    {
+     "id": "che-adm2-nidau",
+     "name": "Nidau"
+    },
+    {
+     "id": "che-adm2-nidwalden",
+     "name": "Nidwalden"
+    },
+    {
+     "id": "che-adm2-niedersimmental",
+     "name": "Niedersimmental"
+    },
+    {
+     "id": "che-adm2-nyon",
+     "name": "Nyon"
+    },
+    {
+     "id": "che-adm2-oberhasli",
+     "name": "Oberhasli"
+    },
+    {
+     "id": "che-adm2-oberklettgau",
+     "name": "Oberklettgau"
+    },
+    {
+     "id": "che-adm2-obersimmental",
+     "name": "Obersimmental"
+    },
+    {
+     "id": "che-adm2-obwalden",
+     "name": "Obwalden"
+    },
+    {
+     "id": "che-adm2-olten",
+     "name": "Olten"
+    },
+    {
+     "id": "che-adm2-ouest-lausannois",
+     "name": "Ouest lausannois"
+    },
+    {
+     "id": "che-adm2-pays-d-enhaut",
+     "name": "Pays-d'Enhaut"
+    },
+    {
+     "id": "che-adm2-pfäffikon",
+     "name": "Pfäffikon"
+    },
+    {
+     "id": "che-adm2-plessur",
+     "name": "Plessur"
+    },
+    {
+     "id": "che-adm2-porrentruy",
+     "name": "Porrentruy"
+    },
+    {
+     "id": "che-adm2-prättigau-davos",
+     "name": "Prättigau/Davos"
+    },
+    {
+     "id": "che-adm2-raron",
+     "name": "Raron"
+    },
+    {
+     "id": "che-adm2-reiat",
+     "name": "Reiat"
+    },
+    {
+     "id": "che-adm2-rheinfelden",
+     "name": "Rheinfelden"
+    },
+    {
+     "id": "che-adm2-rheintal",
+     "name": "Rheintal"
+    },
+    {
+     "id": "che-adm2-riehen",
+     "name": "Riehen"
+    },
+    {
+     "id": "che-adm2-riviera",
+     "name": "Riviera"
+    },
+    {
+     "id": "che-adm2-rorschach",
+     "name": "Rorschach"
+    },
+    {
+     "id": "che-adm2-saanen",
+     "name": "Saanen"
+    },
+    {
+     "id": "che-adm2-saint-maurice",
+     "name": "Saint-Maurice"
+    },
+    {
+     "id": "che-adm2-sankt-gallen",
+     "name": "Sankt Gallen"
+    },
+    {
+     "id": "che-adm2-sarganserland",
+     "name": "Sarganserland"
+    },
+    {
+     "id": "che-adm2-schaffhausen",
+     "name": "Schaffhausen"
+    },
+    {
+     "id": "che-adm2-schaffhausen-2",
+     "name": "Schaffhausen"
+    },
+    {
+     "id": "che-adm2-schleitheim",
+     "name": "Schleitheim"
+    },
+    {
+     "id": "che-adm2-schwarzenburg",
+     "name": "Schwarzenburg"
+    },
+    {
+     "id": "che-adm2-schwyz",
+     "name": "Schwyz"
+    },
+    {
+     "id": "che-adm2-see-gaster",
+     "name": "See-Gaster"
+    },
+    {
+     "id": "che-adm2-seftigen",
+     "name": "Seftigen"
+    },
+    {
+     "id": "che-adm2-sense",
+     "name": "Sense"
+    },
+    {
+     "id": "che-adm2-sierre",
+     "name": "Sierre"
+    },
+    {
+     "id": "che-adm2-signau",
+     "name": "Signau"
+    },
+    {
+     "id": "che-adm2-sion",
+     "name": "Sion"
+    },
+    {
+     "id": "che-adm2-sissach",
+     "name": "Sissach"
+    },
+    {
+     "id": "che-adm2-solothurn",
+     "name": "Solothurn"
+    },
+    {
+     "id": "che-adm2-steckborn",
+     "name": "Steckborn"
+    },
+    {
+     "id": "che-adm2-stein",
+     "name": "Stein"
+    },
+    {
+     "id": "che-adm2-sursee",
+     "name": "Sursee"
+    },
+    {
+     "id": "che-adm2-surselva",
+     "name": "Surselva"
+    },
+    {
+     "id": "che-adm2-thal",
+     "name": "Thal"
+    },
+    {
+     "id": "che-adm2-thierstein",
+     "name": "Thierstein"
+    },
+    {
+     "id": "che-adm2-thun",
+     "name": "Thun"
+    },
+    {
+     "id": "che-adm2-toggenburg",
+     "name": "Toggenburg"
+    },
+    {
+     "id": "che-adm2-trachselwald",
+     "name": "Trachselwald"
+    },
+    {
+     "id": "che-adm2-unterklettgau",
+     "name": "Unterklettgau"
+    },
+    {
+     "id": "che-adm2-uri",
+     "name": "Uri"
+    },
+    {
+     "id": "che-adm2-uster",
+     "name": "Uster"
+    },
+    {
+     "id": "che-adm2-val-de-ruz",
+     "name": "Val-de-Ruz"
+    },
+    {
+     "id": "che-adm2-val-de-travers",
+     "name": "Val-de-Travers"
+    },
+    {
+     "id": "che-adm2-vallemaggia",
+     "name": "Vallemaggia"
+    },
+    {
+     "id": "che-adm2-visp",
+     "name": "Visp"
+    },
+    {
+     "id": "che-adm2-waldenburg",
+     "name": "Waldenburg"
+    },
+    {
+     "id": "che-adm2-wangen",
+     "name": "Wangen"
+    },
+    {
+     "id": "che-adm2-wasseramt",
+     "name": "Wasseramt"
+    },
+    {
+     "id": "che-adm2-weinfelden",
+     "name": "Weinfelden"
+    },
+    {
+     "id": "che-adm2-werdenberg",
+     "name": "Werdenberg"
+    },
+    {
+     "id": "che-adm2-west-raron",
+     "name": "West Raron"
+    },
+    {
+     "id": "che-adm2-wil",
+     "name": "Wil"
+    },
+    {
+     "id": "che-adm2-willisau",
+     "name": "Willisau"
+    },
+    {
+     "id": "che-adm2-winterthur",
+     "name": "Winterthur"
+    },
+    {
+     "id": "che-adm2-zofingen",
+     "name": "Zofingen"
+    },
+    {
+     "id": "che-adm2-zug",
+     "name": "Zug"
+    },
+    {
+     "id": "che-adm2-zurzach",
+     "name": "Zurzach"
+    },
+    {
+     "id": "che-adm2-zürich",
+     "name": "Zürich"
+    }
+   ]
+  }
+ },
+ "name": "Switzerland",
+ "nameBn": "Switzerland"
+}

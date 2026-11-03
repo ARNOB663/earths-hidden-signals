@@ -1,21 +1,16 @@
 {
  "code": "BGD",
- "flag": "🇧🇩",
+ "flag": "",
  "levels": {
   "ADM0": {
    "canonical": "Bangladesh",
    "code": "ADM0",
    "count": 1,
-   "name": "Bangladesh",
-   "nameBn": "বাংলাদেশ",
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
    "representedYear": "2015",
-   "units": [
-    {
-     "id": "bgd-adm0-bangledesh",
-     "name": "Bangledesh",
-     "shapeISO": "BGD"
-    }
-   ]
+   "sourceCount": 1,
+   "units": []
   },
   "ADM1": {
    "canonical": "Division",
@@ -24,6 +19,7 @@
    "name": "Division",
    "nameBn": "বিভাগ",
    "representedYear": "2015",
+   "sourceCount": 8,
    "units": [
     {
      "id": "bgd-adm1-barisal",
@@ -74,330 +70,267 @@
    "name": "district",
    "nameBn": "জেলা",
    "representedYear": "2020",
+   "sourceCount": 64,
    "units": [
     {
      "id": "bgd-adm2-bagerhat",
-     "name": "Bagerhat",
-     "shapeISO": null
+     "name": "Bagerhat"
     },
     {
      "id": "bgd-adm2-bandarban",
-     "name": "Bandarban",
-     "shapeISO": null
+     "name": "Bandarban"
     },
     {
      "id": "bgd-adm2-barguna",
-     "name": "Barguna",
-     "shapeISO": null
+     "name": "Barguna"
     },
     {
      "id": "bgd-adm2-barisal",
-     "name": "Barisal",
-     "shapeISO": null
+     "name": "Barisal"
     },
     {
      "id": "bgd-adm2-bhola",
-     "name": "Bhola",
-     "shapeISO": null
+     "name": "Bhola"
     },
     {
      "id": "bgd-adm2-bogra",
-     "name": "Bogra",
-     "shapeISO": null
+     "name": "Bogra"
     },
     {
      "id": "bgd-adm2-brahamanbaria",
-     "name": "Brahamanbaria",
-     "shapeISO": null
+     "name": "Brahamanbaria"
     },
     {
      "id": "bgd-adm2-chandpur",
-     "name": "Chandpur",
-     "shapeISO": null
+     "name": "Chandpur"
     },
     {
      "id": "bgd-adm2-chittagong",
-     "name": "Chittagong",
-     "shapeISO": null
+     "name": "Chittagong"
     },
     {
      "id": "bgd-adm2-chuadanga",
-     "name": "Chuadanga",
-     "shapeISO": null
+     "name": "Chuadanga"
     },
     {
      "id": "bgd-adm2-comilla",
-     "name": "Comilla",
-     "shapeISO": null
+     "name": "Comilla"
     },
     {
      "id": "bgd-adm2-cox-s-bazar",
-     "name": "Cox's Bazar",
-     "shapeISO": null
+     "name": "Cox's Bazar"
     },
     {
      "id": "bgd-adm2-dhaka",
-     "name": "Dhaka",
-     "shapeISO": null
+     "name": "Dhaka"
     },
     {
      "id": "bgd-adm2-dinajpur",
-     "name": "Dinajpur",
-     "shapeISO": null
+     "name": "Dinajpur"
     },
     {
      "id": "bgd-adm2-faridpur",
-     "name": "Faridpur",
-     "shapeISO": null
+     "name": "Faridpur"
     },
     {
      "id": "bgd-adm2-feni",
-     "name": "Feni",
-     "shapeISO": null
+     "name": "Feni"
     },
     {
      "id": "bgd-adm2-gaibandha",
-     "name": "Gaibandha",
-     "shapeISO": null
+     "name": "Gaibandha"
     },
     {
      "id": "bgd-adm2-gazipur",
-     "name": "Gazipur",
-     "shapeISO": null
+     "name": "Gazipur"
     },
     {
      "id": "bgd-adm2-gopalganj",
-     "name": "Gopalganj",
-     "shapeISO": null
+     "name": "Gopalganj"
     },
     {
      "id": "bgd-adm2-habiganj",
-     "name": "Habiganj",
-     "shapeISO": null
+     "name": "Habiganj"
     },
     {
      "id": "bgd-adm2-jamalpur",
-     "name": "Jamalpur",
-     "shapeISO": null
+     "name": "Jamalpur"
     },
     {
      "id": "bgd-adm2-jessore",
-     "name": "Jessore",
-     "shapeISO": null
+     "name": "Jessore"
     },
     {
      "id": "bgd-adm2-jhalokati",
-     "name": "Jhalokati",
-     "shapeISO": null
+     "name": "Jhalokati"
     },
     {
      "id": "bgd-adm2-jhenaidah",
-     "name": "Jhenaidah",
-     "shapeISO": null
+     "name": "Jhenaidah"
     },
     {
      "id": "bgd-adm2-joypurhat",
-     "name": "Joypurhat",
-     "shapeISO": null
+     "name": "Joypurhat"
     },
     {
      "id": "bgd-adm2-khagrachhari",
-     "name": "Khagrachhari",
-     "shapeISO": null
+     "name": "Khagrachhari"
     },
     {
      "id": "bgd-adm2-khulna",
-     "name": "Khulna",
-     "shapeISO": null
+     "name": "Khulna"
     },
     {
      "id": "bgd-adm2-kishoreganj",
-     "name": "Kishoreganj",
-     "shapeISO": null
+     "name": "Kishoreganj"
     },
     {
      "id": "bgd-adm2-kurigram",
-     "name": "Kurigram",
-     "shapeISO": null
+     "name": "Kurigram"
     },
     {
      "id": "bgd-adm2-kushtia",
-     "name": "Kushtia",
-     "shapeISO": null
+     "name": "Kushtia"
     },
     {
      "id": "bgd-adm2-lakshmipur",
-     "name": "Lakshmipur",
-     "shapeISO": null
+     "name": "Lakshmipur"
     },
     {
      "id": "bgd-adm2-lalmonirhat",
-     "name": "Lalmonirhat",
-     "shapeISO": null
+     "name": "Lalmonirhat"
     },
     {
      "id": "bgd-adm2-madaripur",
-     "name": "Madaripur",
-     "shapeISO": null
+     "name": "Madaripur"
     },
     {
      "id": "bgd-adm2-magura",
-     "name": "Magura",
-     "shapeISO": null
+     "name": "Magura"
     },
     {
      "id": "bgd-adm2-manikganj",
-     "name": "Manikganj",
-     "shapeISO": null
+     "name": "Manikganj"
     },
     {
      "id": "bgd-adm2-maulvibazar",
-     "name": "Maulvibazar",
-     "shapeISO": null
+     "name": "Maulvibazar"
     },
     {
      "id": "bgd-adm2-meherpur",
-     "name": "Meherpur",
-     "shapeISO": null
+     "name": "Meherpur"
     },
     {
      "id": "bgd-adm2-munshiganj",
-     "name": "Munshiganj",
-     "shapeISO": null
+     "name": "Munshiganj"
     },
     {
      "id": "bgd-adm2-mymensingh",
-     "name": "Mymensingh",
-     "shapeISO": null
+     "name": "Mymensingh"
     },
     {
      "id": "bgd-adm2-naogaon",
-     "name": "Naogaon",
-     "shapeISO": null
+     "name": "Naogaon"
     },
     {
      "id": "bgd-adm2-narail",
-     "name": "Narail",
-     "shapeISO": null
+     "name": "Narail"
     },
     {
      "id": "bgd-adm2-narayanganj",
-     "name": "Narayanganj",
-     "shapeISO": null
+     "name": "Narayanganj"
     },
     {
      "id": "bgd-adm2-narsingdi",
-     "name": "Narsingdi",
-     "shapeISO": null
+     "name": "Narsingdi"
     },
     {
      "id": "bgd-adm2-natore",
-     "name": "Natore",
-     "shapeISO": null
+     "name": "Natore"
     },
     {
      "id": "bgd-adm2-nawabganj",
-     "name": "Nawabganj",
-     "shapeISO": null
+     "name": "Nawabganj"
     },
     {
      "id": "bgd-adm2-netrakona",
-     "name": "Netrakona",
-     "shapeISO": null
+     "name": "Netrakona"
     },
     {
      "id": "bgd-adm2-nilphamari",
-     "name": "Nilphamari",
-     "shapeISO": null
+     "name": "Nilphamari"
     },
     {
      "id": "bgd-adm2-noakhali",
-     "name": "Noakhali",
-     "shapeISO": null
+     "name": "Noakhali"
     },
     {
      "id": "bgd-adm2-pabna",
-     "name": "Pabna",
-     "shapeISO": null
+     "name": "Pabna"
     },
     {
      "id": "bgd-adm2-panchagarh",
-     "name": "Panchagarh",
-     "shapeISO": null
+     "name": "Panchagarh"
     },
     {
      "id": "bgd-adm2-patuakhali",
-     "name": "Patuakhali",
-     "shapeISO": null
+     "name": "Patuakhali"
     },
     {
      "id": "bgd-adm2-pirojpur",
-     "name": "Pirojpur",
-     "shapeISO": null
+     "name": "Pirojpur"
     },
     {
      "id": "bgd-adm2-rajbari",
-     "name": "Rajbari",
-     "shapeISO": null
+     "name": "Rajbari"
     },
     {
      "id": "bgd-adm2-rajshahi",
-     "name": "Rajshahi",
-     "shapeISO": null
+     "name": "Rajshahi"
     },
     {
      "id": "bgd-adm2-rangamati",
-     "name": "Rangamati",
-     "shapeISO": null
+     "name": "Rangamati"
     },
     {
      "id": "bgd-adm2-rangpur",
-     "name": "Rangpur",
-     "shapeISO": null
+     "name": "Rangpur"
     },
     {
      "id": "bgd-adm2-satkhira",
-     "name": "Satkhira",
-     "shapeISO": null
+     "name": "Satkhira"
     },
     {
      "id": "bgd-adm2-shariatpur",
-     "name": "Shariatpur",
-     "shapeISO": null
+     "name": "Shariatpur"
     },
     {
      "id": "bgd-adm2-sherpur",
-     "name": "Sherpur",
-     "shapeISO": null
+     "name": "Sherpur"
     },
     {
      "id": "bgd-adm2-sirajganj",
-     "name": "Sirajganj",
-     "shapeISO": null
+     "name": "Sirajganj"
     },
     {
      "id": "bgd-adm2-sunamganj",
-     "name": "Sunamganj",
-     "shapeISO": null
+     "name": "Sunamganj"
     },
     {
      "id": "bgd-adm2-sylhet",
-     "name": "Sylhet",
-     "shapeISO": null
+     "name": "Sylhet"
     },
     {
      "id": "bgd-adm2-tangail",
-     "name": "Tangail",
-     "shapeISO": null
+     "name": "Tangail"
     },
     {
      "id": "bgd-adm2-thakurgaon",
-     "name": "Thakurgaon",
-     "shapeISO": null
+     "name": "Thakurgaon"
     }
    ]
   }
  },
  "name": "Bangladesh",
- "nameBn": "বাংলাদেশ"
+ "nameBn": "Bangladesh"
 }

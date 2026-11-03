@@ -1,0 +1,2286 @@
+{
+ "code": "IDN",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Unknown",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2017",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Unknown",
+   "code": "ADM1",
+   "count": 34,
+   "name": "ADM1 areas",
+   "nameBn": "ADM1 এলাকা",
+   "representedYear": "2017",
+   "sourceCount": 34,
+   "units": [
+    {
+     "id": "idn-adm1-aceh",
+     "name": "Aceh",
+     "shapeISO": "ID-AC"
+    },
+    {
+     "id": "idn-adm1-bali",
+     "name": "Bali",
+     "shapeISO": "ID-BA"
+    },
+    {
+     "id": "idn-adm1-bangka-belitung-islands",
+     "name": "Bangka-Belitung Islands",
+     "shapeISO": "ID-BB"
+    },
+    {
+     "id": "idn-adm1-banten",
+     "name": "Banten",
+     "shapeISO": "ID-BT"
+    },
+    {
+     "id": "idn-adm1-bengkulu",
+     "name": "Bengkulu",
+     "shapeISO": "ID-BE"
+    },
+    {
+     "id": "idn-adm1-central-java",
+     "name": "Central Java",
+     "shapeISO": "ID-JT"
+    },
+    {
+     "id": "idn-adm1-central-kalimantan",
+     "name": "Central Kalimantan",
+     "shapeISO": "ID-KT"
+    },
+    {
+     "id": "idn-adm1-central-sulawesi",
+     "name": "Central Sulawesi",
+     "shapeISO": "ID-ST"
+    },
+    {
+     "id": "idn-adm1-east-java",
+     "name": "East Java",
+     "shapeISO": "ID-JI"
+    },
+    {
+     "id": "idn-adm1-east-kalimantan",
+     "name": "East Kalimantan",
+     "shapeISO": "ID-KI"
+    },
+    {
+     "id": "idn-adm1-east-nusa-tenggara",
+     "name": "East Nusa Tenggara",
+     "shapeISO": "ID-NT"
+    },
+    {
+     "id": "idn-adm1-gorontalo",
+     "name": "Gorontalo",
+     "shapeISO": "ID-GO"
+    },
+    {
+     "id": "idn-adm1-jakarta-special-capital-region",
+     "name": "Jakarta Special Capital Region",
+     "shapeISO": "ID-JK"
+    },
+    {
+     "id": "idn-adm1-jambi",
+     "name": "Jambi",
+     "shapeISO": "ID-JA"
+    },
+    {
+     "id": "idn-adm1-lampung",
+     "name": "Lampung",
+     "shapeISO": "ID-LA"
+    },
+    {
+     "id": "idn-adm1-maluku",
+     "name": "Maluku",
+     "shapeISO": "ID-MA"
+    },
+    {
+     "id": "idn-adm1-north-kalimantan",
+     "name": "North Kalimantan",
+     "shapeISO": "ID-KU"
+    },
+    {
+     "id": "idn-adm1-north-maluku",
+     "name": "North Maluku",
+     "shapeISO": "ID-MU"
+    },
+    {
+     "id": "idn-adm1-north-sulawesi",
+     "name": "North Sulawesi",
+     "shapeISO": "ID-SA"
+    },
+    {
+     "id": "idn-adm1-north-sumatra",
+     "name": "North Sumatra",
+     "shapeISO": "ID-SU"
+    },
+    {
+     "id": "idn-adm1-papua",
+     "name": "Papua",
+     "shapeISO": "ID-PA"
+    },
+    {
+     "id": "idn-adm1-riau",
+     "name": "Riau",
+     "shapeISO": "ID-RI"
+    },
+    {
+     "id": "idn-adm1-riau-islands",
+     "name": "Riau Islands",
+     "shapeISO": "ID-KR"
+    },
+    {
+     "id": "idn-adm1-south-kalimantan",
+     "name": "South Kalimantan",
+     "shapeISO": "ID-KS"
+    },
+    {
+     "id": "idn-adm1-south-sulawesi",
+     "name": "South Sulawesi",
+     "shapeISO": "ID-SN"
+    },
+    {
+     "id": "idn-adm1-south-sumatra",
+     "name": "South Sumatra",
+     "shapeISO": "ID-SS"
+    },
+    {
+     "id": "idn-adm1-southeast-sulawesi",
+     "name": "Southeast Sulawesi",
+     "shapeISO": "ID-SG"
+    },
+    {
+     "id": "idn-adm1-special-region-of-yogyakarta",
+     "name": "Special Region of Yogyakarta",
+     "shapeISO": "ID-YO"
+    },
+    {
+     "id": "idn-adm1-west-java",
+     "name": "West Java",
+     "shapeISO": "ID-JB"
+    },
+    {
+     "id": "idn-adm1-west-kalimantan",
+     "name": "West Kalimantan",
+     "shapeISO": "ID-KB"
+    },
+    {
+     "id": "idn-adm1-west-nusa-tenggara",
+     "name": "West Nusa Tenggara",
+     "shapeISO": "ID-NB"
+    },
+    {
+     "id": "idn-adm1-west-papua",
+     "name": "West Papua",
+     "shapeISO": "ID-PB"
+    },
+    {
+     "id": "idn-adm1-west-sulawesi",
+     "name": "West Sulawesi",
+     "shapeISO": "ID-SR"
+    },
+    {
+     "id": "idn-adm1-west-sumatra",
+     "name": "West Sumatra",
+     "shapeISO": "ID-SB"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "regency, city",
+   "code": "ADM2",
+   "count": 519,
+   "name": "regency, city",
+   "nameBn": "regency, city",
+   "representedYear": "2020",
+   "sourceCount": 519,
+   "units": [
+    {
+     "id": "idn-adm2-aceh-barat",
+     "name": "Aceh Barat"
+    },
+    {
+     "id": "idn-adm2-aceh-barat-daya",
+     "name": "Aceh Barat Daya"
+    },
+    {
+     "id": "idn-adm2-aceh-besar",
+     "name": "Aceh Besar"
+    },
+    {
+     "id": "idn-adm2-aceh-jaya",
+     "name": "Aceh Jaya"
+    },
+    {
+     "id": "idn-adm2-aceh-selatan",
+     "name": "Aceh Selatan"
+    },
+    {
+     "id": "idn-adm2-aceh-singkil",
+     "name": "Aceh Singkil"
+    },
+    {
+     "id": "idn-adm2-aceh-tamiang",
+     "name": "Aceh Tamiang"
+    },
+    {
+     "id": "idn-adm2-aceh-tengah",
+     "name": "Aceh Tengah"
+    },
+    {
+     "id": "idn-adm2-aceh-tenggara",
+     "name": "Aceh Tenggara"
+    },
+    {
+     "id": "idn-adm2-aceh-timur",
+     "name": "Aceh Timur"
+    },
+    {
+     "id": "idn-adm2-aceh-utara",
+     "name": "Aceh Utara"
+    },
+    {
+     "id": "idn-adm2-agam",
+     "name": "Agam"
+    },
+    {
+     "id": "idn-adm2-alor",
+     "name": "Alor"
+    },
+    {
+     "id": "idn-adm2-asahan",
+     "name": "Asahan"
+    },
+    {
+     "id": "idn-adm2-asmat",
+     "name": "Asmat"
+    },
+    {
+     "id": "idn-adm2-badung",
+     "name": "Badung"
+    },
+    {
+     "id": "idn-adm2-balangan",
+     "name": "Balangan"
+    },
+    {
+     "id": "idn-adm2-bandung",
+     "name": "Bandung"
+    },
+    {
+     "id": "idn-adm2-bandung-barat",
+     "name": "Bandung Barat"
+    },
+    {
+     "id": "idn-adm2-banggai",
+     "name": "Banggai"
+    },
+    {
+     "id": "idn-adm2-banggai-kepulauan",
+     "name": "Banggai Kepulauan"
+    },
+    {
+     "id": "idn-adm2-banggai-laut",
+     "name": "Banggai Laut"
+    },
+    {
+     "id": "idn-adm2-bangka",
+     "name": "Bangka"
+    },
+    {
+     "id": "idn-adm2-bangka-barat",
+     "name": "Bangka Barat"
+    },
+    {
+     "id": "idn-adm2-bangka-selatan",
+     "name": "Bangka Selatan"
+    },
+    {
+     "id": "idn-adm2-bangka-tengah",
+     "name": "Bangka Tengah"
+    },
+    {
+     "id": "idn-adm2-bangkalan",
+     "name": "Bangkalan"
+    },
+    {
+     "id": "idn-adm2-bangli",
+     "name": "Bangli"
+    },
+    {
+     "id": "idn-adm2-banjar",
+     "name": "Banjar"
+    },
+    {
+     "id": "idn-adm2-banjarnegara",
+     "name": "Banjarnegara"
+    },
+    {
+     "id": "idn-adm2-bantaeng",
+     "name": "Bantaeng"
+    },
+    {
+     "id": "idn-adm2-bantul",
+     "name": "Bantul"
+    },
+    {
+     "id": "idn-adm2-banyu-asin",
+     "name": "Banyu Asin"
+    },
+    {
+     "id": "idn-adm2-banyumas",
+     "name": "Banyumas"
+    },
+    {
+     "id": "idn-adm2-banyuwangi",
+     "name": "Banyuwangi"
+    },
+    {
+     "id": "idn-adm2-barito-kuala",
+     "name": "Barito Kuala"
+    },
+    {
+     "id": "idn-adm2-barito-selatan",
+     "name": "Barito Selatan"
+    },
+    {
+     "id": "idn-adm2-barito-timur",
+     "name": "Barito Timur"
+    },
+    {
+     "id": "idn-adm2-barito-utara",
+     "name": "Barito Utara"
+    },
+    {
+     "id": "idn-adm2-barru",
+     "name": "Barru"
+    },
+    {
+     "id": "idn-adm2-batang",
+     "name": "Batang"
+    },
+    {
+     "id": "idn-adm2-batang-hari",
+     "name": "Batang Hari"
+    },
+    {
+     "id": "idn-adm2-batu-bara",
+     "name": "Batu Bara"
+    },
+    {
+     "id": "idn-adm2-bekasi",
+     "name": "Bekasi"
+    },
+    {
+     "id": "idn-adm2-belitung",
+     "name": "Belitung"
+    },
+    {
+     "id": "idn-adm2-belitung-timur",
+     "name": "Belitung Timur"
+    },
+    {
+     "id": "idn-adm2-belu",
+     "name": "Belu"
+    },
+    {
+     "id": "idn-adm2-bener-meriah",
+     "name": "Bener Meriah"
+    },
+    {
+     "id": "idn-adm2-bengkalis",
+     "name": "Bengkalis"
+    },
+    {
+     "id": "idn-adm2-bengkayang",
+     "name": "Bengkayang"
+    },
+    {
+     "id": "idn-adm2-bengkulu-selatan",
+     "name": "Bengkulu Selatan"
+    },
+    {
+     "id": "idn-adm2-bengkulu-tengah",
+     "name": "Bengkulu Tengah"
+    },
+    {
+     "id": "idn-adm2-bengkulu-utara",
+     "name": "Bengkulu Utara"
+    },
+    {
+     "id": "idn-adm2-berau",
+     "name": "Berau"
+    },
+    {
+     "id": "idn-adm2-biak-numfor",
+     "name": "Biak Numfor"
+    },
+    {
+     "id": "idn-adm2-bima",
+     "name": "Bima"
+    },
+    {
+     "id": "idn-adm2-bintan",
+     "name": "Bintan"
+    },
+    {
+     "id": "idn-adm2-bireuen",
+     "name": "Bireuen"
+    },
+    {
+     "id": "idn-adm2-blitar",
+     "name": "Blitar"
+    },
+    {
+     "id": "idn-adm2-blora",
+     "name": "Blora"
+    },
+    {
+     "id": "idn-adm2-boalemo",
+     "name": "Boalemo"
+    },
+    {
+     "id": "idn-adm2-bogor",
+     "name": "Bogor"
+    },
+    {
+     "id": "idn-adm2-bojonegoro",
+     "name": "Bojonegoro"
+    },
+    {
+     "id": "idn-adm2-bolaang-mongondow",
+     "name": "Bolaang Mongondow"
+    },
+    {
+     "id": "idn-adm2-bolaang-mongondow-selatan",
+     "name": "Bolaang Mongondow Selatan"
+    },
+    {
+     "id": "idn-adm2-bolaang-mongondow-timur",
+     "name": "Bolaang Mongondow Timur"
+    },
+    {
+     "id": "idn-adm2-bolaang-mongondow-utara",
+     "name": "Bolaang Mongondow Utara"
+    },
+    {
+     "id": "idn-adm2-bombana",
+     "name": "Bombana"
+    },
+    {
+     "id": "idn-adm2-bondowoso",
+     "name": "Bondowoso"
+    },
+    {
+     "id": "idn-adm2-bone",
+     "name": "Bone"
+    },
+    {
+     "id": "idn-adm2-bone-bolango",
+     "name": "Bone Bolango"
+    },
+    {
+     "id": "idn-adm2-boven-digoel",
+     "name": "Boven Digoel"
+    },
+    {
+     "id": "idn-adm2-boyolali",
+     "name": "Boyolali"
+    },
+    {
+     "id": "idn-adm2-brebes",
+     "name": "Brebes"
+    },
+    {
+     "id": "idn-adm2-buleleng",
+     "name": "Buleleng"
+    },
+    {
+     "id": "idn-adm2-bulukumba",
+     "name": "Bulukumba"
+    },
+    {
+     "id": "idn-adm2-bulungan",
+     "name": "Bulungan"
+    },
+    {
+     "id": "idn-adm2-bungo",
+     "name": "Bungo"
+    },
+    {
+     "id": "idn-adm2-buol",
+     "name": "Buol"
+    },
+    {
+     "id": "idn-adm2-buru",
+     "name": "Buru"
+    },
+    {
+     "id": "idn-adm2-buru-selatan",
+     "name": "Buru Selatan"
+    },
+    {
+     "id": "idn-adm2-buton",
+     "name": "Buton"
+    },
+    {
+     "id": "idn-adm2-buton-selatan",
+     "name": "Buton Selatan"
+    },
+    {
+     "id": "idn-adm2-buton-tengah",
+     "name": "Buton Tengah"
+    },
+    {
+     "id": "idn-adm2-buton-utara",
+     "name": "Buton Utara"
+    },
+    {
+     "id": "idn-adm2-ciamis",
+     "name": "Ciamis"
+    },
+    {
+     "id": "idn-adm2-cianjur",
+     "name": "Cianjur"
+    },
+    {
+     "id": "idn-adm2-cilacap",
+     "name": "Cilacap"
+    },
+    {
+     "id": "idn-adm2-cirebon",
+     "name": "Cirebon"
+    },
+    {
+     "id": "idn-adm2-dairi",
+     "name": "Dairi"
+    },
+    {
+     "id": "idn-adm2-danau",
+     "name": "Danau"
+    },
+    {
+     "id": "idn-adm2-danau-toba",
+     "name": "Danau Toba"
+    },
+    {
+     "id": "idn-adm2-deiyai",
+     "name": "Deiyai"
+    },
+    {
+     "id": "idn-adm2-deli-serdang",
+     "name": "Deli Serdang"
+    },
+    {
+     "id": "idn-adm2-demak",
+     "name": "Demak"
+    },
+    {
+     "id": "idn-adm2-dharmasraya",
+     "name": "Dharmasraya"
+    },
+    {
+     "id": "idn-adm2-dogiyai",
+     "name": "Dogiyai"
+    },
+    {
+     "id": "idn-adm2-dompu",
+     "name": "Dompu"
+    },
+    {
+     "id": "idn-adm2-donggala",
+     "name": "Donggala"
+    },
+    {
+     "id": "idn-adm2-empat-lawang",
+     "name": "Empat Lawang"
+    },
+    {
+     "id": "idn-adm2-ende",
+     "name": "Ende"
+    },
+    {
+     "id": "idn-adm2-enrekang",
+     "name": "Enrekang"
+    },
+    {
+     "id": "idn-adm2-fakfak",
+     "name": "Fakfak"
+    },
+    {
+     "id": "idn-adm2-flores-timur",
+     "name": "Flores Timur"
+    },
+    {
+     "id": "idn-adm2-garut",
+     "name": "Garut"
+    },
+    {
+     "id": "idn-adm2-gayo-lues",
+     "name": "Gayo Lues"
+    },
+    {
+     "id": "idn-adm2-gianyar",
+     "name": "Gianyar"
+    },
+    {
+     "id": "idn-adm2-gorontalo",
+     "name": "Gorontalo"
+    },
+    {
+     "id": "idn-adm2-gorontalo-utara",
+     "name": "Gorontalo Utara"
+    },
+    {
+     "id": "idn-adm2-gowa",
+     "name": "Gowa"
+    },
+    {
+     "id": "idn-adm2-gresik",
+     "name": "Gresik"
+    },
+    {
+     "id": "idn-adm2-grobogan",
+     "name": "Grobogan"
+    },
+    {
+     "id": "idn-adm2-gunung-kidul",
+     "name": "Gunung Kidul"
+    },
+    {
+     "id": "idn-adm2-gunung-mas",
+     "name": "Gunung Mas"
+    },
+    {
+     "id": "idn-adm2-halmahera-barat",
+     "name": "Halmahera Barat"
+    },
+    {
+     "id": "idn-adm2-halmahera-selatan",
+     "name": "Halmahera Selatan"
+    },
+    {
+     "id": "idn-adm2-halmahera-tengah",
+     "name": "Halmahera Tengah"
+    },
+    {
+     "id": "idn-adm2-halmahera-timur",
+     "name": "Halmahera Timur"
+    },
+    {
+     "id": "idn-adm2-halmahera-utara",
+     "name": "Halmahera Utara"
+    },
+    {
+     "id": "idn-adm2-hulu-sungai-selatan",
+     "name": "Hulu Sungai Selatan"
+    },
+    {
+     "id": "idn-adm2-hulu-sungai-tengah",
+     "name": "Hulu Sungai Tengah"
+    },
+    {
+     "id": "idn-adm2-hulu-sungai-utara",
+     "name": "Hulu Sungai Utara"
+    },
+    {
+     "id": "idn-adm2-humbang-hasundutan",
+     "name": "Humbang Hasundutan"
+    },
+    {
+     "id": "idn-adm2-hutan",
+     "name": "Hutan"
+    },
+    {
+     "id": "idn-adm2-indragiri-hilir",
+     "name": "Indragiri Hilir"
+    },
+    {
+     "id": "idn-adm2-indragiri-hulu",
+     "name": "Indragiri Hulu"
+    },
+    {
+     "id": "idn-adm2-indramayu",
+     "name": "Indramayu"
+    },
+    {
+     "id": "idn-adm2-intan-jaya",
+     "name": "Intan Jaya"
+    },
+    {
+     "id": "idn-adm2-jayapura",
+     "name": "Jayapura"
+    },
+    {
+     "id": "idn-adm2-jayawijaya",
+     "name": "Jayawijaya"
+    },
+    {
+     "id": "idn-adm2-jember",
+     "name": "Jember"
+    },
+    {
+     "id": "idn-adm2-jembrana",
+     "name": "Jembrana"
+    },
+    {
+     "id": "idn-adm2-jeneponto",
+     "name": "Jeneponto"
+    },
+    {
+     "id": "idn-adm2-jepara",
+     "name": "Jepara"
+    },
+    {
+     "id": "idn-adm2-jombang",
+     "name": "Jombang"
+    },
+    {
+     "id": "idn-adm2-kaimana",
+     "name": "Kaimana"
+    },
+    {
+     "id": "idn-adm2-kampar",
+     "name": "Kampar"
+    },
+    {
+     "id": "idn-adm2-kapuas",
+     "name": "Kapuas"
+    },
+    {
+     "id": "idn-adm2-kapuas-hulu",
+     "name": "Kapuas Hulu"
+    },
+    {
+     "id": "idn-adm2-karang-asem",
+     "name": "Karang Asem"
+    },
+    {
+     "id": "idn-adm2-karanganyar",
+     "name": "Karanganyar"
+    },
+    {
+     "id": "idn-adm2-karawang",
+     "name": "Karawang"
+    },
+    {
+     "id": "idn-adm2-karimun",
+     "name": "Karimun"
+    },
+    {
+     "id": "idn-adm2-karo",
+     "name": "Karo"
+    },
+    {
+     "id": "idn-adm2-katingan",
+     "name": "Katingan"
+    },
+    {
+     "id": "idn-adm2-kaur",
+     "name": "Kaur"
+    },
+    {
+     "id": "idn-adm2-kayong-utara",
+     "name": "Kayong Utara"
+    },
+    {
+     "id": "idn-adm2-kebumen",
+     "name": "Kebumen"
+    },
+    {
+     "id": "idn-adm2-kediri",
+     "name": "Kediri"
+    },
+    {
+     "id": "idn-adm2-keerom",
+     "name": "Keerom"
+    },
+    {
+     "id": "idn-adm2-kendal",
+     "name": "Kendal"
+    },
+    {
+     "id": "idn-adm2-kepahiang",
+     "name": "Kepahiang"
+    },
+    {
+     "id": "idn-adm2-kepulauan-anambas",
+     "name": "Kepulauan Anambas"
+    },
+    {
+     "id": "idn-adm2-kepulauan-aru",
+     "name": "Kepulauan Aru"
+    },
+    {
+     "id": "idn-adm2-kepulauan-mentawai",
+     "name": "Kepulauan Mentawai"
+    },
+    {
+     "id": "idn-adm2-kepulauan-meranti",
+     "name": "Kepulauan Meranti"
+    },
+    {
+     "id": "idn-adm2-kepulauan-sangihe",
+     "name": "Kepulauan Sangihe"
+    },
+    {
+     "id": "idn-adm2-kepulauan-selayar",
+     "name": "Kepulauan Selayar"
+    },
+    {
+     "id": "idn-adm2-kepulauan-seribu",
+     "name": "Kepulauan Seribu"
+    },
+    {
+     "id": "idn-adm2-kepulauan-sula",
+     "name": "Kepulauan Sula"
+    },
+    {
+     "id": "idn-adm2-kepulauan-talaud",
+     "name": "Kepulauan Talaud"
+    },
+    {
+     "id": "idn-adm2-kepulauan-yapen",
+     "name": "Kepulauan Yapen"
+    },
+    {
+     "id": "idn-adm2-kerinci",
+     "name": "Kerinci"
+    },
+    {
+     "id": "idn-adm2-ketapang",
+     "name": "Ketapang"
+    },
+    {
+     "id": "idn-adm2-klaten",
+     "name": "Klaten"
+    },
+    {
+     "id": "idn-adm2-klungkung",
+     "name": "Klungkung"
+    },
+    {
+     "id": "idn-adm2-kolaka",
+     "name": "Kolaka"
+    },
+    {
+     "id": "idn-adm2-kolaka-timur",
+     "name": "Kolaka Timur"
+    },
+    {
+     "id": "idn-adm2-kolaka-utara",
+     "name": "Kolaka Utara"
+    },
+    {
+     "id": "idn-adm2-konawe",
+     "name": "Konawe"
+    },
+    {
+     "id": "idn-adm2-konawe-kepulauan",
+     "name": "Konawe Kepulauan"
+    },
+    {
+     "id": "idn-adm2-konawe-selatan",
+     "name": "Konawe Selatan"
+    },
+    {
+     "id": "idn-adm2-konawe-utara",
+     "name": "Konawe Utara"
+    },
+    {
+     "id": "idn-adm2-kota-ambon",
+     "name": "Kota Ambon"
+    },
+    {
+     "id": "idn-adm2-kota-balikpapan",
+     "name": "Kota Balikpapan"
+    },
+    {
+     "id": "idn-adm2-kota-banda-aceh",
+     "name": "Kota Banda Aceh"
+    },
+    {
+     "id": "idn-adm2-kota-bandar-lampung",
+     "name": "Kota Bandar Lampung"
+    },
+    {
+     "id": "idn-adm2-kota-bandung",
+     "name": "Kota Bandung"
+    },
+    {
+     "id": "idn-adm2-kota-banjar",
+     "name": "Kota Banjar"
+    },
+    {
+     "id": "idn-adm2-kota-banjar-baru",
+     "name": "Kota Banjar Baru"
+    },
+    {
+     "id": "idn-adm2-kota-banjarmasin",
+     "name": "Kota Banjarmasin"
+    },
+    {
+     "id": "idn-adm2-kota-baru",
+     "name": "Kota Baru"
+    },
+    {
+     "id": "idn-adm2-kota-batam",
+     "name": "Kota Batam"
+    },
+    {
+     "id": "idn-adm2-kota-batu",
+     "name": "Kota Batu"
+    },
+    {
+     "id": "idn-adm2-kota-baubau",
+     "name": "Kota Baubau"
+    },
+    {
+     "id": "idn-adm2-kota-bekasi",
+     "name": "Kota Bekasi"
+    },
+    {
+     "id": "idn-adm2-kota-bengkulu",
+     "name": "Kota Bengkulu"
+    },
+    {
+     "id": "idn-adm2-kota-bima",
+     "name": "Kota Bima"
+    },
+    {
+     "id": "idn-adm2-kota-binjai",
+     "name": "Kota Binjai"
+    },
+    {
+     "id": "idn-adm2-kota-bitung",
+     "name": "Kota Bitung"
+    },
+    {
+     "id": "idn-adm2-kota-blitar",
+     "name": "Kota Blitar"
+    },
+    {
+     "id": "idn-adm2-kota-bogor",
+     "name": "Kota Bogor"
+    },
+    {
+     "id": "idn-adm2-kota-bontang",
+     "name": "Kota Bontang"
+    },
+    {
+     "id": "idn-adm2-kota-bukittinggi",
+     "name": "Kota Bukittinggi"
+    },
+    {
+     "id": "idn-adm2-kota-cilegon",
+     "name": "Kota Cilegon"
+    },
+    {
+     "id": "idn-adm2-kota-cimahi",
+     "name": "Kota Cimahi"
+    },
+    {
+     "id": "idn-adm2-kota-cirebon",
+     "name": "Kota Cirebon"
+    },
+    {
+     "id": "idn-adm2-kota-denpasar",
+     "name": "Kota Denpasar"
+    },
+    {
+     "id": "idn-adm2-kota-depok",
+     "name": "Kota Depok"
+    },
+    {
+     "id": "idn-adm2-kota-dumai",
+     "name": "Kota Dumai"
+    },
+    {
+     "id": "idn-adm2-kota-gorontalo",
+     "name": "Kota Gorontalo"
+    },
+    {
+     "id": "idn-adm2-kota-gunungsitoli",
+     "name": "Kota Gunungsitoli"
+    },
+    {
+     "id": "idn-adm2-kota-jakarta-barat",
+     "name": "Kota Jakarta Barat"
+    },
+    {
+     "id": "idn-adm2-kota-jakarta-pusat",
+     "name": "Kota Jakarta Pusat"
+    },
+    {
+     "id": "idn-adm2-kota-jakarta-selatan",
+     "name": "Kota Jakarta Selatan"
+    },
+    {
+     "id": "idn-adm2-kota-jakarta-timur",
+     "name": "Kota Jakarta Timur"
+    },
+    {
+     "id": "idn-adm2-kota-jakarta-utara",
+     "name": "Kota Jakarta Utara"
+    },
+    {
+     "id": "idn-adm2-kota-jambi",
+     "name": "Kota Jambi"
+    },
+    {
+     "id": "idn-adm2-kota-jayapura",
+     "name": "Kota Jayapura"
+    },
+    {
+     "id": "idn-adm2-kota-kediri",
+     "name": "Kota Kediri"
+    },
+    {
+     "id": "idn-adm2-kota-kendari",
+     "name": "Kota Kendari"
+    },
+    {
+     "id": "idn-adm2-kota-kotamobagu",
+     "name": "Kota Kotamobagu"
+    },
+    {
+     "id": "idn-adm2-kota-kupang",
+     "name": "Kota Kupang"
+    },
+    {
+     "id": "idn-adm2-kota-langsa",
+     "name": "Kota Langsa"
+    },
+    {
+     "id": "idn-adm2-kota-lhokseumawe",
+     "name": "Kota Lhokseumawe"
+    },
+    {
+     "id": "idn-adm2-kota-lubuklinggau",
+     "name": "Kota Lubuklinggau"
+    },
+    {
+     "id": "idn-adm2-kota-madiun",
+     "name": "Kota Madiun"
+    },
+    {
+     "id": "idn-adm2-kota-magelang",
+     "name": "Kota Magelang"
+    },
+    {
+     "id": "idn-adm2-kota-makassar",
+     "name": "Kota Makassar"
+    },
+    {
+     "id": "idn-adm2-kota-malang",
+     "name": "Kota Malang"
+    },
+    {
+     "id": "idn-adm2-kota-manado",
+     "name": "Kota Manado"
+    },
+    {
+     "id": "idn-adm2-kota-mataram",
+     "name": "Kota Mataram"
+    },
+    {
+     "id": "idn-adm2-kota-medan",
+     "name": "Kota Medan"
+    },
+    {
+     "id": "idn-adm2-kota-metro",
+     "name": "Kota Metro"
+    },
+    {
+     "id": "idn-adm2-kota-mojokerto",
+     "name": "Kota Mojokerto"
+    },
+    {
+     "id": "idn-adm2-kota-padang",
+     "name": "Kota Padang"
+    },
+    {
+     "id": "idn-adm2-kota-padang-panjang",
+     "name": "Kota Padang Panjang"
+    },
+    {
+     "id": "idn-adm2-kota-padangsidimpuan",
+     "name": "Kota Padangsidimpuan"
+    },
+    {
+     "id": "idn-adm2-kota-pagar-alam",
+     "name": "Kota Pagar Alam"
+    },
+    {
+     "id": "idn-adm2-kota-palangka-raya",
+     "name": "Kota Palangka Raya"
+    },
+    {
+     "id": "idn-adm2-kota-palembang",
+     "name": "Kota Palembang"
+    },
+    {
+     "id": "idn-adm2-kota-palopo",
+     "name": "Kota Palopo"
+    },
+    {
+     "id": "idn-adm2-kota-palu",
+     "name": "Kota Palu"
+    },
+    {
+     "id": "idn-adm2-kota-pangkal-pinang",
+     "name": "Kota Pangkal Pinang"
+    },
+    {
+     "id": "idn-adm2-kota-parepare",
+     "name": "Kota Parepare"
+    },
+    {
+     "id": "idn-adm2-kota-pariaman",
+     "name": "Kota Pariaman"
+    },
+    {
+     "id": "idn-adm2-kota-pasuruan",
+     "name": "Kota Pasuruan"
+    },
+    {
+     "id": "idn-adm2-kota-payakumbuh",
+     "name": "Kota Payakumbuh"
+    },
+    {
+     "id": "idn-adm2-kota-pekalongan",
+     "name": "Kota Pekalongan"
+    },
+    {
+     "id": "idn-adm2-kota-pekanbaru",
+     "name": "Kota Pekanbaru"
+    },
+    {
+     "id": "idn-adm2-kota-pematang-siantar",
+     "name": "Kota Pematang Siantar"
+    },
+    {
+     "id": "idn-adm2-kota-pontianak",
+     "name": "Kota Pontianak"
+    },
+    {
+     "id": "idn-adm2-kota-prabumulih",
+     "name": "Kota Prabumulih"
+    },
+    {
+     "id": "idn-adm2-kota-probolinggo",
+     "name": "Kota Probolinggo"
+    },
+    {
+     "id": "idn-adm2-kota-sabang",
+     "name": "Kota Sabang"
+    },
+    {
+     "id": "idn-adm2-kota-salatiga",
+     "name": "Kota Salatiga"
+    },
+    {
+     "id": "idn-adm2-kota-samarinda",
+     "name": "Kota Samarinda"
+    },
+    {
+     "id": "idn-adm2-kota-sawah-lunto",
+     "name": "Kota Sawah Lunto"
+    },
+    {
+     "id": "idn-adm2-kota-semarang",
+     "name": "Kota Semarang"
+    },
+    {
+     "id": "idn-adm2-kota-serang",
+     "name": "Kota Serang"
+    },
+    {
+     "id": "idn-adm2-kota-sibolga",
+     "name": "Kota Sibolga"
+    },
+    {
+     "id": "idn-adm2-kota-singkawang",
+     "name": "Kota Singkawang"
+    },
+    {
+     "id": "idn-adm2-kota-solok",
+     "name": "Kota Solok"
+    },
+    {
+     "id": "idn-adm2-kota-sorong",
+     "name": "Kota Sorong"
+    },
+    {
+     "id": "idn-adm2-kota-subulussalam",
+     "name": "Kota Subulussalam"
+    },
+    {
+     "id": "idn-adm2-kota-sukabumi",
+     "name": "Kota Sukabumi"
+    },
+    {
+     "id": "idn-adm2-kota-sungai-penuh",
+     "name": "Kota Sungai Penuh"
+    },
+    {
+     "id": "idn-adm2-kota-surabaya",
+     "name": "Kota Surabaya"
+    },
+    {
+     "id": "idn-adm2-kota-surakarta",
+     "name": "Kota Surakarta"
+    },
+    {
+     "id": "idn-adm2-kota-tangerang",
+     "name": "Kota Tangerang"
+    },
+    {
+     "id": "idn-adm2-kota-tangerang-selatan",
+     "name": "Kota Tangerang Selatan"
+    },
+    {
+     "id": "idn-adm2-kota-tanjung-balai",
+     "name": "Kota Tanjung Balai"
+    },
+    {
+     "id": "idn-adm2-kota-tanjung-pinang",
+     "name": "Kota Tanjung Pinang"
+    },
+    {
+     "id": "idn-adm2-kota-tarakan",
+     "name": "Kota Tarakan"
+    },
+    {
+     "id": "idn-adm2-kota-tasikmalaya",
+     "name": "Kota Tasikmalaya"
+    },
+    {
+     "id": "idn-adm2-kota-tebing-tinggi",
+     "name": "Kota Tebing Tinggi"
+    },
+    {
+     "id": "idn-adm2-kota-tegal",
+     "name": "Kota Tegal"
+    },
+    {
+     "id": "idn-adm2-kota-ternate",
+     "name": "Kota Ternate"
+    },
+    {
+     "id": "idn-adm2-kota-tidore-kepulauan",
+     "name": "Kota Tidore Kepulauan"
+    },
+    {
+     "id": "idn-adm2-kota-tomohon",
+     "name": "Kota Tomohon"
+    },
+    {
+     "id": "idn-adm2-kota-tual",
+     "name": "Kota Tual"
+    },
+    {
+     "id": "idn-adm2-kota-yogyakarta",
+     "name": "Kota Yogyakarta"
+    },
+    {
+     "id": "idn-adm2-kotawaringin-barat",
+     "name": "Kotawaringin Barat"
+    },
+    {
+     "id": "idn-adm2-kotawaringin-timur",
+     "name": "Kotawaringin Timur"
+    },
+    {
+     "id": "idn-adm2-kuantan-singingi",
+     "name": "Kuantan Singingi"
+    },
+    {
+     "id": "idn-adm2-kubu-raya",
+     "name": "Kubu Raya"
+    },
+    {
+     "id": "idn-adm2-kudus",
+     "name": "Kudus"
+    },
+    {
+     "id": "idn-adm2-kulon-progo",
+     "name": "Kulon Progo"
+    },
+    {
+     "id": "idn-adm2-kuningan",
+     "name": "Kuningan"
+    },
+    {
+     "id": "idn-adm2-kupang",
+     "name": "Kupang"
+    },
+    {
+     "id": "idn-adm2-kutai-barat",
+     "name": "Kutai Barat"
+    },
+    {
+     "id": "idn-adm2-kutai-kartanegara",
+     "name": "Kutai Kartanegara"
+    },
+    {
+     "id": "idn-adm2-kutai-timur",
+     "name": "Kutai Timur"
+    },
+    {
+     "id": "idn-adm2-labuhan-batu",
+     "name": "Labuhan Batu"
+    },
+    {
+     "id": "idn-adm2-labuhan-batu-selatan",
+     "name": "Labuhan Batu Selatan"
+    },
+    {
+     "id": "idn-adm2-labuhan-batu-utara",
+     "name": "Labuhan Batu Utara"
+    },
+    {
+     "id": "idn-adm2-lahat",
+     "name": "Lahat"
+    },
+    {
+     "id": "idn-adm2-lamandau",
+     "name": "Lamandau"
+    },
+    {
+     "id": "idn-adm2-lamongan",
+     "name": "Lamongan"
+    },
+    {
+     "id": "idn-adm2-lampung-barat",
+     "name": "Lampung Barat"
+    },
+    {
+     "id": "idn-adm2-lampung-selatan",
+     "name": "Lampung Selatan"
+    },
+    {
+     "id": "idn-adm2-lampung-tengah",
+     "name": "Lampung Tengah"
+    },
+    {
+     "id": "idn-adm2-lampung-timur",
+     "name": "Lampung Timur"
+    },
+    {
+     "id": "idn-adm2-lampung-utara",
+     "name": "Lampung Utara"
+    },
+    {
+     "id": "idn-adm2-landak",
+     "name": "Landak"
+    },
+    {
+     "id": "idn-adm2-langkat",
+     "name": "Langkat"
+    },
+    {
+     "id": "idn-adm2-lanny-jaya",
+     "name": "Lanny Jaya"
+    },
+    {
+     "id": "idn-adm2-lebak",
+     "name": "Lebak"
+    },
+    {
+     "id": "idn-adm2-lebong",
+     "name": "Lebong"
+    },
+    {
+     "id": "idn-adm2-lembata",
+     "name": "Lembata"
+    },
+    {
+     "id": "idn-adm2-lima-puluh-kota",
+     "name": "Lima Puluh Kota"
+    },
+    {
+     "id": "idn-adm2-lingga",
+     "name": "Lingga"
+    },
+    {
+     "id": "idn-adm2-lombok-barat",
+     "name": "Lombok Barat"
+    },
+    {
+     "id": "idn-adm2-lombok-tengah",
+     "name": "Lombok Tengah"
+    },
+    {
+     "id": "idn-adm2-lombok-timur",
+     "name": "Lombok Timur"
+    },
+    {
+     "id": "idn-adm2-lombok-utara",
+     "name": "Lombok Utara"
+    },
+    {
+     "id": "idn-adm2-lumajang",
+     "name": "Lumajang"
+    },
+    {
+     "id": "idn-adm2-luwu",
+     "name": "Luwu"
+    },
+    {
+     "id": "idn-adm2-luwu-timur",
+     "name": "Luwu Timur"
+    },
+    {
+     "id": "idn-adm2-luwu-utara",
+     "name": "Luwu Utara"
+    },
+    {
+     "id": "idn-adm2-madiun",
+     "name": "Madiun"
+    },
+    {
+     "id": "idn-adm2-magelang",
+     "name": "Magelang"
+    },
+    {
+     "id": "idn-adm2-magetan",
+     "name": "Magetan"
+    },
+    {
+     "id": "idn-adm2-mahakam-hulu",
+     "name": "Mahakam Hulu"
+    },
+    {
+     "id": "idn-adm2-majalengka",
+     "name": "Majalengka"
+    },
+    {
+     "id": "idn-adm2-majene",
+     "name": "Majene"
+    },
+    {
+     "id": "idn-adm2-malaka",
+     "name": "Malaka"
+    },
+    {
+     "id": "idn-adm2-malang",
+     "name": "Malang"
+    },
+    {
+     "id": "idn-adm2-malinau",
+     "name": "Malinau"
+    },
+    {
+     "id": "idn-adm2-maluku-barat-daya",
+     "name": "Maluku Barat Daya"
+    },
+    {
+     "id": "idn-adm2-maluku-tengah",
+     "name": "Maluku Tengah"
+    },
+    {
+     "id": "idn-adm2-maluku-tenggara",
+     "name": "Maluku Tenggara"
+    },
+    {
+     "id": "idn-adm2-maluku-tenggara-barat",
+     "name": "Maluku Tenggara Barat"
+    },
+    {
+     "id": "idn-adm2-mamasa",
+     "name": "Mamasa"
+    },
+    {
+     "id": "idn-adm2-mamberamo-raya",
+     "name": "Mamberamo Raya"
+    },
+    {
+     "id": "idn-adm2-mamberamo-tengah",
+     "name": "Mamberamo Tengah"
+    },
+    {
+     "id": "idn-adm2-mamuju",
+     "name": "Mamuju"
+    },
+    {
+     "id": "idn-adm2-mamuju-tengah",
+     "name": "Mamuju Tengah"
+    },
+    {
+     "id": "idn-adm2-mamuju-utara",
+     "name": "Mamuju Utara"
+    },
+    {
+     "id": "idn-adm2-mandailing-natal",
+     "name": "Mandailing Natal"
+    },
+    {
+     "id": "idn-adm2-manggarai",
+     "name": "Manggarai"
+    },
+    {
+     "id": "idn-adm2-manggarai-barat",
+     "name": "Manggarai Barat"
+    },
+    {
+     "id": "idn-adm2-manggarai-timur",
+     "name": "Manggarai Timur"
+    },
+    {
+     "id": "idn-adm2-manokwari",
+     "name": "Manokwari"
+    },
+    {
+     "id": "idn-adm2-manokwari-selatan",
+     "name": "Manokwari Selatan"
+    },
+    {
+     "id": "idn-adm2-mappi",
+     "name": "Mappi"
+    },
+    {
+     "id": "idn-adm2-maros",
+     "name": "Maros"
+    },
+    {
+     "id": "idn-adm2-maybrat",
+     "name": "Maybrat"
+    },
+    {
+     "id": "idn-adm2-melawi",
+     "name": "Melawi"
+    },
+    {
+     "id": "idn-adm2-mempawah",
+     "name": "Mempawah"
+    },
+    {
+     "id": "idn-adm2-merangin",
+     "name": "Merangin"
+    },
+    {
+     "id": "idn-adm2-merauke",
+     "name": "Merauke"
+    },
+    {
+     "id": "idn-adm2-mesuji",
+     "name": "Mesuji"
+    },
+    {
+     "id": "idn-adm2-mimika",
+     "name": "Mimika"
+    },
+    {
+     "id": "idn-adm2-minahasa",
+     "name": "Minahasa"
+    },
+    {
+     "id": "idn-adm2-minahasa-selatan",
+     "name": "Minahasa Selatan"
+    },
+    {
+     "id": "idn-adm2-minahasa-tenggara",
+     "name": "Minahasa Tenggara"
+    },
+    {
+     "id": "idn-adm2-minahasa-utara",
+     "name": "Minahasa Utara"
+    },
+    {
+     "id": "idn-adm2-mojokerto",
+     "name": "Mojokerto"
+    },
+    {
+     "id": "idn-adm2-morowali",
+     "name": "Morowali"
+    },
+    {
+     "id": "idn-adm2-morowali-utara",
+     "name": "Morowali Utara"
+    },
+    {
+     "id": "idn-adm2-muara-enim",
+     "name": "Muara Enim"
+    },
+    {
+     "id": "idn-adm2-muaro-jambi",
+     "name": "Muaro Jambi"
+    },
+    {
+     "id": "idn-adm2-mukomuko",
+     "name": "Mukomuko"
+    },
+    {
+     "id": "idn-adm2-muna",
+     "name": "Muna"
+    },
+    {
+     "id": "idn-adm2-muna-barat",
+     "name": "Muna Barat"
+    },
+    {
+     "id": "idn-adm2-murung-raya",
+     "name": "Murung Raya"
+    },
+    {
+     "id": "idn-adm2-musi-banyuasin",
+     "name": "Musi Banyuasin"
+    },
+    {
+     "id": "idn-adm2-musi-rawas",
+     "name": "Musi Rawas"
+    },
+    {
+     "id": "idn-adm2-musi-rawas-utara",
+     "name": "Musi Rawas Utara"
+    },
+    {
+     "id": "idn-adm2-nabire",
+     "name": "Nabire"
+    },
+    {
+     "id": "idn-adm2-nagan-raya",
+     "name": "Nagan Raya"
+    },
+    {
+     "id": "idn-adm2-nagekeo",
+     "name": "Nagekeo"
+    },
+    {
+     "id": "idn-adm2-natuna",
+     "name": "Natuna"
+    },
+    {
+     "id": "idn-adm2-nduga",
+     "name": "Nduga"
+    },
+    {
+     "id": "idn-adm2-ngada",
+     "name": "Ngada"
+    },
+    {
+     "id": "idn-adm2-nganjuk",
+     "name": "Nganjuk"
+    },
+    {
+     "id": "idn-adm2-ngawi",
+     "name": "Ngawi"
+    },
+    {
+     "id": "idn-adm2-nias",
+     "name": "Nias"
+    },
+    {
+     "id": "idn-adm2-nias-barat",
+     "name": "Nias Barat"
+    },
+    {
+     "id": "idn-adm2-nias-selatan",
+     "name": "Nias Selatan"
+    },
+    {
+     "id": "idn-adm2-nias-utara",
+     "name": "Nias Utara"
+    },
+    {
+     "id": "idn-adm2-nunukan",
+     "name": "Nunukan"
+    },
+    {
+     "id": "idn-adm2-ogan-ilir",
+     "name": "Ogan Ilir"
+    },
+    {
+     "id": "idn-adm2-ogan-komering-ilir",
+     "name": "Ogan Komering Ilir"
+    },
+    {
+     "id": "idn-adm2-ogan-komering-ulu",
+     "name": "Ogan Komering Ulu"
+    },
+    {
+     "id": "idn-adm2-ogan-komering-ulu-selatan",
+     "name": "Ogan Komering Ulu Selatan"
+    },
+    {
+     "id": "idn-adm2-ogan-komering-ulu-timur",
+     "name": "Ogan Komering Ulu Timur"
+    },
+    {
+     "id": "idn-adm2-pacitan",
+     "name": "Pacitan"
+    },
+    {
+     "id": "idn-adm2-padang-lawas",
+     "name": "Padang Lawas"
+    },
+    {
+     "id": "idn-adm2-padang-lawas-utara",
+     "name": "Padang Lawas Utara"
+    },
+    {
+     "id": "idn-adm2-padang-pariaman",
+     "name": "Padang Pariaman"
+    },
+    {
+     "id": "idn-adm2-pakpak-bharat",
+     "name": "Pakpak Bharat"
+    },
+    {
+     "id": "idn-adm2-pamekasan",
+     "name": "Pamekasan"
+    },
+    {
+     "id": "idn-adm2-pandeglang",
+     "name": "Pandeglang"
+    },
+    {
+     "id": "idn-adm2-pangandaran",
+     "name": "Pangandaran"
+    },
+    {
+     "id": "idn-adm2-pangkajene-dan-kepulauan",
+     "name": "Pangkajene Dan Kepulauan"
+    },
+    {
+     "id": "idn-adm2-paniai",
+     "name": "Paniai"
+    },
+    {
+     "id": "idn-adm2-parigi-moutong",
+     "name": "Parigi Moutong"
+    },
+    {
+     "id": "idn-adm2-pasaman",
+     "name": "Pasaman"
+    },
+    {
+     "id": "idn-adm2-pasaman-barat",
+     "name": "Pasaman Barat"
+    },
+    {
+     "id": "idn-adm2-paser",
+     "name": "Paser"
+    },
+    {
+     "id": "idn-adm2-pasuruan",
+     "name": "Pasuruan"
+    },
+    {
+     "id": "idn-adm2-pati",
+     "name": "Pati"
+    },
+    {
+     "id": "idn-adm2-pegunungan-arfak",
+     "name": "Pegunungan Arfak"
+    },
+    {
+     "id": "idn-adm2-pegunungan-bintang",
+     "name": "Pegunungan Bintang"
+    },
+    {
+     "id": "idn-adm2-pekalongan",
+     "name": "Pekalongan"
+    },
+    {
+     "id": "idn-adm2-pelalawan",
+     "name": "Pelalawan"
+    },
+    {
+     "id": "idn-adm2-pemalang",
+     "name": "Pemalang"
+    },
+    {
+     "id": "idn-adm2-penajam-paser-utara",
+     "name": "Penajam Paser Utara"
+    },
+    {
+     "id": "idn-adm2-penukal-abab-lematang-ilir",
+     "name": "Penukal Abab Lematang Ilir"
+    },
+    {
+     "id": "idn-adm2-pesawaran",
+     "name": "Pesawaran"
+    },
+    {
+     "id": "idn-adm2-pesisir-barat",
+     "name": "Pesisir Barat"
+    },
+    {
+     "id": "idn-adm2-pesisir-selatan",
+     "name": "Pesisir Selatan"
+    },
+    {
+     "id": "idn-adm2-pidie",
+     "name": "Pidie"
+    },
+    {
+     "id": "idn-adm2-pidie-jaya",
+     "name": "Pidie Jaya"
+    },
+    {
+     "id": "idn-adm2-pinrang",
+     "name": "Pinrang"
+    },
+    {
+     "id": "idn-adm2-pohuwato",
+     "name": "Pohuwato"
+    },
+    {
+     "id": "idn-adm2-polewali-mandar",
+     "name": "Polewali Mandar"
+    },
+    {
+     "id": "idn-adm2-ponorogo",
+     "name": "Ponorogo"
+    },
+    {
+     "id": "idn-adm2-poso",
+     "name": "Poso"
+    },
+    {
+     "id": "idn-adm2-pringsewu",
+     "name": "Pringsewu"
+    },
+    {
+     "id": "idn-adm2-probolinggo",
+     "name": "Probolinggo"
+    },
+    {
+     "id": "idn-adm2-pulang-pisau",
+     "name": "Pulang Pisau"
+    },
+    {
+     "id": "idn-adm2-pulau-morotai",
+     "name": "Pulau Morotai"
+    },
+    {
+     "id": "idn-adm2-pulau-taliabu",
+     "name": "Pulau Taliabu"
+    },
+    {
+     "id": "idn-adm2-puncak",
+     "name": "Puncak"
+    },
+    {
+     "id": "idn-adm2-puncak-jaya",
+     "name": "Puncak Jaya"
+    },
+    {
+     "id": "idn-adm2-purbalingga",
+     "name": "Purbalingga"
+    },
+    {
+     "id": "idn-adm2-purwakarta",
+     "name": "Purwakarta"
+    },
+    {
+     "id": "idn-adm2-purworejo",
+     "name": "Purworejo"
+    },
+    {
+     "id": "idn-adm2-raja-ampat",
+     "name": "Raja Ampat"
+    },
+    {
+     "id": "idn-adm2-rejang-lebong",
+     "name": "Rejang Lebong"
+    },
+    {
+     "id": "idn-adm2-rembang",
+     "name": "Rembang"
+    },
+    {
+     "id": "idn-adm2-rokan-hilir",
+     "name": "Rokan Hilir"
+    },
+    {
+     "id": "idn-adm2-rokan-hulu",
+     "name": "Rokan Hulu"
+    },
+    {
+     "id": "idn-adm2-rote-ndao",
+     "name": "Rote Ndao"
+    },
+    {
+     "id": "idn-adm2-sabu-raijua",
+     "name": "Sabu Raijua"
+    },
+    {
+     "id": "idn-adm2-sambas",
+     "name": "Sambas"
+    },
+    {
+     "id": "idn-adm2-samosir",
+     "name": "Samosir"
+    },
+    {
+     "id": "idn-adm2-sampang",
+     "name": "Sampang"
+    },
+    {
+     "id": "idn-adm2-sanggau",
+     "name": "Sanggau"
+    },
+    {
+     "id": "idn-adm2-sarmi",
+     "name": "Sarmi"
+    },
+    {
+     "id": "idn-adm2-sarolangun",
+     "name": "Sarolangun"
+    },
+    {
+     "id": "idn-adm2-sekadau",
+     "name": "Sekadau"
+    },
+    {
+     "id": "idn-adm2-seluma",
+     "name": "Seluma"
+    },
+    {
+     "id": "idn-adm2-semarang",
+     "name": "Semarang"
+    },
+    {
+     "id": "idn-adm2-seram-bagian-barat",
+     "name": "Seram Bagian Barat"
+    },
+    {
+     "id": "idn-adm2-seram-bagian-timur",
+     "name": "Seram Bagian Timur"
+    },
+    {
+     "id": "idn-adm2-serang",
+     "name": "Serang"
+    },
+    {
+     "id": "idn-adm2-serdang-bedagai",
+     "name": "Serdang Bedagai"
+    },
+    {
+     "id": "idn-adm2-seruyan",
+     "name": "Seruyan"
+    },
+    {
+     "id": "idn-adm2-siak",
+     "name": "Siak"
+    },
+    {
+     "id": "idn-adm2-siau-tagulandang-biaro",
+     "name": "Siau Tagulandang Biaro"
+    },
+    {
+     "id": "idn-adm2-sidenreng-rappang",
+     "name": "Sidenreng Rappang"
+    },
+    {
+     "id": "idn-adm2-sidoarjo",
+     "name": "Sidoarjo"
+    },
+    {
+     "id": "idn-adm2-sigi",
+     "name": "Sigi"
+    },
+    {
+     "id": "idn-adm2-sijunjung",
+     "name": "Sijunjung"
+    },
+    {
+     "id": "idn-adm2-sikka",
+     "name": "Sikka"
+    },
+    {
+     "id": "idn-adm2-simalungun",
+     "name": "Simalungun"
+    },
+    {
+     "id": "idn-adm2-simeulue",
+     "name": "Simeulue"
+    },
+    {
+     "id": "idn-adm2-sinjai",
+     "name": "Sinjai"
+    },
+    {
+     "id": "idn-adm2-sintang",
+     "name": "Sintang"
+    },
+    {
+     "id": "idn-adm2-situbondo",
+     "name": "Situbondo"
+    },
+    {
+     "id": "idn-adm2-sleman",
+     "name": "Sleman"
+    },
+    {
+     "id": "idn-adm2-solok",
+     "name": "Solok"
+    },
+    {
+     "id": "idn-adm2-solok-selatan",
+     "name": "Solok Selatan"
+    },
+    {
+     "id": "idn-adm2-soppeng",
+     "name": "Soppeng"
+    },
+    {
+     "id": "idn-adm2-sorong",
+     "name": "Sorong"
+    },
+    {
+     "id": "idn-adm2-sorong-selatan",
+     "name": "Sorong Selatan"
+    },
+    {
+     "id": "idn-adm2-sragen",
+     "name": "Sragen"
+    },
+    {
+     "id": "idn-adm2-subang",
+     "name": "Subang"
+    },
+    {
+     "id": "idn-adm2-sukabumi",
+     "name": "Sukabumi"
+    },
+    {
+     "id": "idn-adm2-sukamara",
+     "name": "Sukamara"
+    },
+    {
+     "id": "idn-adm2-sukoharjo",
+     "name": "Sukoharjo"
+    },
+    {
+     "id": "idn-adm2-sumba-barat",
+     "name": "Sumba Barat"
+    },
+    {
+     "id": "idn-adm2-sumba-barat-daya",
+     "name": "Sumba Barat Daya"
+    },
+    {
+     "id": "idn-adm2-sumba-tengah",
+     "name": "Sumba Tengah"
+    },
+    {
+     "id": "idn-adm2-sumba-timur",
+     "name": "Sumba Timur"
+    },
+    {
+     "id": "idn-adm2-sumbawa",
+     "name": "Sumbawa"
+    },
+    {
+     "id": "idn-adm2-sumbawa-barat",
+     "name": "Sumbawa Barat"
+    },
+    {
+     "id": "idn-adm2-sumedang",
+     "name": "Sumedang"
+    },
+    {
+     "id": "idn-adm2-sumenep",
+     "name": "Sumenep"
+    },
+    {
+     "id": "idn-adm2-supiori",
+     "name": "Supiori"
+    },
+    {
+     "id": "idn-adm2-tabalong",
+     "name": "Tabalong"
+    },
+    {
+     "id": "idn-adm2-tabanan",
+     "name": "Tabanan"
+    },
+    {
+     "id": "idn-adm2-takalar",
+     "name": "Takalar"
+    },
+    {
+     "id": "idn-adm2-tambrauw",
+     "name": "Tambrauw"
+    },
+    {
+     "id": "idn-adm2-tana-tidung",
+     "name": "Tana Tidung"
+    },
+    {
+     "id": "idn-adm2-tana-toraja",
+     "name": "Tana Toraja"
+    },
+    {
+     "id": "idn-adm2-tanah-bumbu",
+     "name": "Tanah Bumbu"
+    },
+    {
+     "id": "idn-adm2-tanah-datar",
+     "name": "Tanah Datar"
+    },
+    {
+     "id": "idn-adm2-tanah-laut",
+     "name": "Tanah Laut"
+    },
+    {
+     "id": "idn-adm2-tangerang",
+     "name": "Tangerang"
+    },
+    {
+     "id": "idn-adm2-tanggamus",
+     "name": "Tanggamus"
+    },
+    {
+     "id": "idn-adm2-tanjung-jabung-barat",
+     "name": "Tanjung Jabung Barat"
+    },
+    {
+     "id": "idn-adm2-tanjung-jabung-timur",
+     "name": "Tanjung Jabung Timur"
+    },
+    {
+     "id": "idn-adm2-tapanuli-selatan",
+     "name": "Tapanuli Selatan"
+    },
+    {
+     "id": "idn-adm2-tapanuli-tengah",
+     "name": "Tapanuli Tengah"
+    },
+    {
+     "id": "idn-adm2-tapanuli-utara",
+     "name": "Tapanuli Utara"
+    },
+    {
+     "id": "idn-adm2-tapin",
+     "name": "Tapin"
+    },
+    {
+     "id": "idn-adm2-tasikmalaya",
+     "name": "Tasikmalaya"
+    },
+    {
+     "id": "idn-adm2-tebo",
+     "name": "Tebo"
+    },
+    {
+     "id": "idn-adm2-tegal",
+     "name": "Tegal"
+    },
+    {
+     "id": "idn-adm2-teluk-bintuni",
+     "name": "Teluk Bintuni"
+    },
+    {
+     "id": "idn-adm2-teluk-wondama",
+     "name": "Teluk Wondama"
+    },
+    {
+     "id": "idn-adm2-temanggung",
+     "name": "Temanggung"
+    },
+    {
+     "id": "idn-adm2-timor-tengah-selatan",
+     "name": "Timor Tengah Selatan"
+    },
+    {
+     "id": "idn-adm2-timor-tengah-utara",
+     "name": "Timor Tengah Utara"
+    },
+    {
+     "id": "idn-adm2-toba-samosir",
+     "name": "Toba Samosir"
+    },
+    {
+     "id": "idn-adm2-tojo-una-una",
+     "name": "Tojo Una-Una"
+    },
+    {
+     "id": "idn-adm2-toli-toli",
+     "name": "Toli-Toli"
+    },
+    {
+     "id": "idn-adm2-tolikara",
+     "name": "Tolikara"
+    },
+    {
+     "id": "idn-adm2-toraja-utara",
+     "name": "Toraja Utara"
+    },
+    {
+     "id": "idn-adm2-trenggalek",
+     "name": "Trenggalek"
+    },
+    {
+     "id": "idn-adm2-tuban",
+     "name": "Tuban"
+    },
+    {
+     "id": "idn-adm2-tulang-bawang-barat",
+     "name": "Tulang Bawang Barat"
+    },
+    {
+     "id": "idn-adm2-tulangbawang",
+     "name": "Tulangbawang"
+    },
+    {
+     "id": "idn-adm2-tulungagung",
+     "name": "Tulungagung"
+    },
+    {
+     "id": "idn-adm2-waduk-cirata",
+     "name": "Waduk Cirata"
+    },
+    {
+     "id": "idn-adm2-wadung-kedungombo",
+     "name": "Wadung Kedungombo"
+    },
+    {
+     "id": "idn-adm2-wajo",
+     "name": "Wajo"
+    },
+    {
+     "id": "idn-adm2-wakatobi",
+     "name": "Wakatobi"
+    },
+    {
+     "id": "idn-adm2-waropen",
+     "name": "Waropen"
+    },
+    {
+     "id": "idn-adm2-way-kanan",
+     "name": "Way Kanan"
+    },
+    {
+     "id": "idn-adm2-wonogiri",
+     "name": "Wonogiri"
+    },
+    {
+     "id": "idn-adm2-wonosobo",
+     "name": "Wonosobo"
+    },
+    {
+     "id": "idn-adm2-yahukimo",
+     "name": "Yahukimo"
+    },
+    {
+     "id": "idn-adm2-yalimo",
+     "name": "Yalimo"
+    }
+   ]
+  }
+ },
+ "name": "Indonesia",
+ "nameBn": "Indonesia"
+}

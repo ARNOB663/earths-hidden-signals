@@ -1,0 +1,84 @@
+{
+ "code": "LIE",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Unknown",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2017",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Unknown",
+   "code": "ADM1",
+   "count": 11,
+   "name": "ADM1 areas",
+   "nameBn": "ADM1 এলাকা",
+   "representedYear": "2017",
+   "sourceCount": 11,
+   "units": [
+    {
+     "id": "lie-adm1-balzers",
+     "name": "Balzers",
+     "shapeISO": "LI-01"
+    },
+    {
+     "id": "lie-adm1-eschen",
+     "name": "Eschen",
+     "shapeISO": "LI-02"
+    },
+    {
+     "id": "lie-adm1-gamprin",
+     "name": "Gamprin",
+     "shapeISO": "LI-03"
+    },
+    {
+     "id": "lie-adm1-mauren",
+     "name": "Mauren",
+     "shapeISO": "LI-04"
+    },
+    {
+     "id": "lie-adm1-planken",
+     "name": "Planken",
+     "shapeISO": "LI-05"
+    },
+    {
+     "id": "lie-adm1-ruggell",
+     "name": "Ruggell",
+     "shapeISO": "LI-06"
+    },
+    {
+     "id": "lie-adm1-schaan",
+     "name": "Schaan",
+     "shapeISO": "LI-07"
+    },
+    {
+     "id": "lie-adm1-schellenberg",
+     "name": "Schellenberg",
+     "shapeISO": "LI-08"
+    },
+    {
+     "id": "lie-adm1-triesen",
+     "name": "Triesen",
+     "shapeISO": "LI-09"
+    },
+    {
+     "id": "lie-adm1-triesenberg",
+     "name": "Triesenberg",
+     "shapeISO": "LI-10"
+    },
+    {
+     "id": "lie-adm1-vaduz",
+     "name": "Vaduz",
+     "shapeISO": "LI-11"
+    }
+   ]
+  }
+ },
+ "name": "Liechtenstein",
+ "nameBn": "Liechtenstein"
+}

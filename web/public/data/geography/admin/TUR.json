@@ -1,0 +1,4337 @@
+{
+ "code": "TUR",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Republic of Turkey",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2021",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "province",
+   "code": "ADM1",
+   "count": 81,
+   "name": "province",
+   "nameBn": "province",
+   "representedYear": "2021",
+   "sourceCount": 81,
+   "units": [
+    {
+     "id": "tur-adm1-adana",
+     "name": "Adana",
+     "shapeISO": "TR-01"
+    },
+    {
+     "id": "tur-adm1-adıyaman",
+     "name": "Adıyaman",
+     "shapeISO": "TR-02"
+    },
+    {
+     "id": "tur-adm1-afyonkarahisar",
+     "name": "Afyonkarahisar",
+     "shapeISO": "TR-03"
+    },
+    {
+     "id": "tur-adm1-aksaray",
+     "name": "Aksaray",
+     "shapeISO": "TR-68"
+    },
+    {
+     "id": "tur-adm1-amasya",
+     "name": "Amasya",
+     "shapeISO": "TR-05"
+    },
+    {
+     "id": "tur-adm1-ankara",
+     "name": "Ankara",
+     "shapeISO": "TR-06"
+    },
+    {
+     "id": "tur-adm1-antalya",
+     "name": "Antalya",
+     "shapeISO": "TR-07"
+    },
+    {
+     "id": "tur-adm1-ardahan",
+     "name": "Ardahan",
+     "shapeISO": "TR-75"
+    },
+    {
+     "id": "tur-adm1-artvin",
+     "name": "Artvin",
+     "shapeISO": "TR-08"
+    },
+    {
+     "id": "tur-adm1-aydın",
+     "name": "Aydın",
+     "shapeISO": "TR-09"
+    },
+    {
+     "id": "tur-adm1-ağrı",
+     "name": "Ağrı",
+     "shapeISO": "TR-04"
+    },
+    {
+     "id": "tur-adm1-balıkesir",
+     "name": "Balıkesir",
+     "shapeISO": "TR-10"
+    },
+    {
+     "id": "tur-adm1-bartın",
+     "name": "Bartın",
+     "shapeISO": "TR-74"
+    },
+    {
+     "id": "tur-adm1-batman",
+     "name": "Batman",
+     "shapeISO": "TR-72"
+    },
+    {
+     "id": "tur-adm1-bayburt",
+     "name": "Bayburt",
+     "shapeISO": "TR-69"
+    },
+    {
+     "id": "tur-adm1-bilecik",
+     "name": "Bilecik",
+     "shapeISO": "TR-11"
+    },
+    {
+     "id": "tur-adm1-bingöl",
+     "name": "Bingöl",
+     "shapeISO": "TR-12"
+    },
+    {
+     "id": "tur-adm1-bitlis",
+     "name": "Bitlis",
+     "shapeISO": "TR-13"
+    },
+    {
+     "id": "tur-adm1-bolu",
+     "name": "Bolu",
+     "shapeISO": "TR-14"
+    },
+    {
+     "id": "tur-adm1-burdur",
+     "name": "Burdur",
+     "shapeISO": "TR-15"
+    },
+    {
+     "id": "tur-adm1-bursa",
+     "name": "Bursa",
+     "shapeISO": "TR-16"
+    },
+    {
+     "id": "tur-adm1-denizli",
+     "name": "Denizli",
+     "shapeISO": "TR-20"
+    },
+    {
+     "id": "tur-adm1-diyarbakır",
+     "name": "Diyarbakır",
+     "shapeISO": "TR-21"
+    },
+    {
+     "id": "tur-adm1-düzce",
+     "name": "Düzce",
+     "shapeISO": "TR-81"
+    },
+    {
+     "id": "tur-adm1-edirne",
+     "name": "Edirne",
+     "shapeISO": "TR-22"
+    },
+    {
+     "id": "tur-adm1-elazığ",
+     "name": "Elazığ",
+     "shapeISO": "TR-23"
+    },
+    {
+     "id": "tur-adm1-erzincan",
+     "name": "Erzincan",
+     "shapeISO": "TR-24"
+    },
+    {
+     "id": "tur-adm1-erzurum",
+     "name": "Erzurum",
+     "shapeISO": "TR-25"
+    },
+    {
+     "id": "tur-adm1-eskişehir",
+     "name": "Eskişehir",
+     "shapeISO": "TR-26"
+    },
+    {
+     "id": "tur-adm1-gaziantep",
+     "name": "Gaziantep",
+     "shapeISO": "TR-27"
+    },
+    {
+     "id": "tur-adm1-giresun",
+     "name": "Giresun",
+     "shapeISO": "TR-28"
+    },
+    {
+     "id": "tur-adm1-gümüşhane",
+     "name": "Gümüşhane",
+     "shapeISO": "TR-29"
+    },
+    {
+     "id": "tur-adm1-hakkâri",
+     "name": "Hakkâri",
+     "shapeISO": "TR-30"
+    },
+    {
+     "id": "tur-adm1-hatay",
+     "name": "Hatay",
+     "shapeISO": "TR-31"
+    },
+    {
+     "id": "tur-adm1-isparta",
+     "name": "Isparta",
+     "shapeISO": "TR-32"
+    },
+    {
+     "id": "tur-adm1-iğdır",
+     "name": "Iğdır",
+     "shapeISO": "TR-76"
+    },
+    {
+     "id": "tur-adm1-i̇stanbul",
+     "name": "İstanbul",
+     "shapeISO": "TR-34"
+    },
+    {
+     "id": "tur-adm1-i̇zmir",
+     "name": "İzmir",
+     "shapeISO": "TR-35"
+    },
+    {
+     "id": "tur-adm1-kahramanmaraş",
+     "name": "Kahramanmaraş",
+     "shapeISO": "TR-46"
+    },
+    {
+     "id": "tur-adm1-karabük",
+     "name": "Karabük",
+     "shapeISO": "TR-78"
+    },
+    {
+     "id": "tur-adm1-karaman",
+     "name": "Karaman",
+     "shapeISO": "TR-70"
+    },
+    {
+     "id": "tur-adm1-kars",
+     "name": "Kars",
+     "shapeISO": "TR-36"
+    },
+    {
+     "id": "tur-adm1-kastamonu",
+     "name": "Kastamonu",
+     "shapeISO": "TR-37"
+    },
+    {
+     "id": "tur-adm1-kayseri",
+     "name": "Kayseri",
+     "shapeISO": "TR-38"
+    },
+    {
+     "id": "tur-adm1-kilis",
+     "name": "Kilis",
+     "shapeISO": "TR-79"
+    },
+    {
+     "id": "tur-adm1-kocaeli",
+     "name": "Kocaeli",
+     "shapeISO": "TR-41"
+    },
+    {
+     "id": "tur-adm1-konya",
+     "name": "Konya",
+     "shapeISO": "TR-42"
+    },
+    {
+     "id": "tur-adm1-kütahya",
+     "name": "Kütahya",
+     "shapeISO": "TR-43"
+    },
+    {
+     "id": "tur-adm1-kırklareli",
+     "name": "Kırklareli",
+     "shapeISO": "TR-39"
+    },
+    {
+     "id": "tur-adm1-kırıkkale",
+     "name": "Kırıkkale",
+     "shapeISO": "TR-71"
+    },
+    {
+     "id": "tur-adm1-kırşehir",
+     "name": "Kırşehir",
+     "shapeISO": "TR-40"
+    },
+    {
+     "id": "tur-adm1-malatya",
+     "name": "Malatya",
+     "shapeISO": "TR-44"
+    },
+    {
+     "id": "tur-adm1-manisa",
+     "name": "Manisa",
+     "shapeISO": "TR-45"
+    },
+    {
+     "id": "tur-adm1-mardin",
+     "name": "Mardin",
+     "shapeISO": "TR-47"
+    },
+    {
+     "id": "tur-adm1-mersin",
+     "name": "Mersin",
+     "shapeISO": "TR-33"
+    },
+    {
+     "id": "tur-adm1-muğla",
+     "name": "Muğla",
+     "shapeISO": "TR-48"
+    },
+    {
+     "id": "tur-adm1-muş",
+     "name": "Muş",
+     "shapeISO": "TR-49"
+    },
+    {
+     "id": "tur-adm1-nevşehir",
+     "name": "Nevşehir",
+     "shapeISO": "TR-50"
+    },
+    {
+     "id": "tur-adm1-niğde",
+     "name": "Niğde",
+     "shapeISO": "TR-51"
+    },
+    {
+     "id": "tur-adm1-ordu",
+     "name": "Ordu",
+     "shapeISO": "TR-52"
+    },
+    {
+     "id": "tur-adm1-osmaniye",
+     "name": "Osmaniye",
+     "shapeISO": "TR-80"
+    },
+    {
+     "id": "tur-adm1-rize",
+     "name": "Rize",
+     "shapeISO": "TR-53"
+    },
+    {
+     "id": "tur-adm1-sakarya",
+     "name": "Sakarya",
+     "shapeISO": "TR-54"
+    },
+    {
+     "id": "tur-adm1-samsun",
+     "name": "Samsun",
+     "shapeISO": "TR-55"
+    },
+    {
+     "id": "tur-adm1-siirt",
+     "name": "Siirt",
+     "shapeISO": "TR-56"
+    },
+    {
+     "id": "tur-adm1-sinop",
+     "name": "Sinop",
+     "shapeISO": "TR-57"
+    },
+    {
+     "id": "tur-adm1-sivas",
+     "name": "Sivas",
+     "shapeISO": "TR-58"
+    },
+    {
+     "id": "tur-adm1-tekirdağ",
+     "name": "Tekirdağ",
+     "shapeISO": "TR-59"
+    },
+    {
+     "id": "tur-adm1-tokat",
+     "name": "Tokat",
+     "shapeISO": "TR-60"
+    },
+    {
+     "id": "tur-adm1-trabzon",
+     "name": "Trabzon",
+     "shapeISO": "TR-61"
+    },
+    {
+     "id": "tur-adm1-tunceli",
+     "name": "Tunceli",
+     "shapeISO": "TR-62"
+    },
+    {
+     "id": "tur-adm1-uşak",
+     "name": "Uşak",
+     "shapeISO": "TR-64"
+    },
+    {
+     "id": "tur-adm1-van",
+     "name": "Van",
+     "shapeISO": "TR-65"
+    },
+    {
+     "id": "tur-adm1-yalova",
+     "name": "Yalova",
+     "shapeISO": "TR-77"
+    },
+    {
+     "id": "tur-adm1-yozgat",
+     "name": "Yozgat",
+     "shapeISO": "TR-66"
+    },
+    {
+     "id": "tur-adm1-zonguldak",
+     "name": "Zonguldak",
+     "shapeISO": "TR-67"
+    },
+    {
+     "id": "tur-adm1-çanakkale",
+     "name": "Çanakkale",
+     "shapeISO": "TR-17"
+    },
+    {
+     "id": "tur-adm1-çankırı",
+     "name": "Çankırı",
+     "shapeISO": "TR-18"
+    },
+    {
+     "id": "tur-adm1-çorum",
+     "name": "Çorum",
+     "shapeISO": "TR-19"
+    },
+    {
+     "id": "tur-adm1-şanlıurfa",
+     "name": "Şanlıurfa",
+     "shapeISO": "TR-63"
+    },
+    {
+     "id": "tur-adm1-şırnak",
+     "name": "Şırnak",
+     "shapeISO": "TR-73"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Districts",
+   "code": "ADM2",
+   "count": 973,
+   "name": "Districts",
+   "nameBn": "জেলা",
+   "representedYear": "2021",
+   "sourceCount": 999,
+   "units": [
+    {
+     "id": "tur-adm2-19-mayıs",
+     "name": "19 Mayıs"
+    },
+    {
+     "id": "tur-adm2-abana",
+     "name": "Abana"
+    },
+    {
+     "id": "tur-adm2-acıgöl",
+     "name": "Acıgöl"
+    },
+    {
+     "id": "tur-adm2-acıpayam",
+     "name": "Acıpayam"
+    },
+    {
+     "id": "tur-adm2-adaklı",
+     "name": "Adaklı"
+    },
+    {
+     "id": "tur-adm2-adapazarı",
+     "name": "Adapazarı"
+    },
+    {
+     "id": "tur-adm2-adilcevaz",
+     "name": "Adilcevaz"
+    },
+    {
+     "id": "tur-adm2-adıyaman-merkez",
+     "name": "Adıyaman merkez"
+    },
+    {
+     "id": "tur-adm2-afyonkarahisar-merkez-i̇lçe",
+     "name": "Afyonkarahisar (Merkez İlçe)"
+    },
+    {
+     "id": "tur-adm2-afşin",
+     "name": "Afşin"
+    },
+    {
+     "id": "tur-adm2-ahlat",
+     "name": "Ahlat"
+    },
+    {
+     "id": "tur-adm2-ahmetli",
+     "name": "Ahmetli"
+    },
+    {
+     "id": "tur-adm2-ahırlı",
+     "name": "Ahırlı"
+    },
+    {
+     "id": "tur-adm2-akdağmadeni",
+     "name": "Akdağmadeni"
+    },
+    {
+     "id": "tur-adm2-akdeniz",
+     "name": "Akdeniz"
+    },
+    {
+     "id": "tur-adm2-akhisar",
+     "name": "Akhisar"
+    },
+    {
+     "id": "tur-adm2-akkuş",
+     "name": "Akkuş"
+    },
+    {
+     "id": "tur-adm2-akkışla",
+     "name": "Akkışla"
+    },
+    {
+     "id": "tur-adm2-akpınar",
+     "name": "Akpınar"
+    },
+    {
+     "id": "tur-adm2-aksaray-merkez",
+     "name": "Aksaray merkez"
+    },
+    {
+     "id": "tur-adm2-akseki",
+     "name": "Akseki"
+    },
+    {
+     "id": "tur-adm2-aksu",
+     "name": "Aksu"
+    },
+    {
+     "id": "tur-adm2-aksu-2",
+     "name": "Aksu"
+    },
+    {
+     "id": "tur-adm2-akyaka",
+     "name": "Akyaka"
+    },
+    {
+     "id": "tur-adm2-akyazı",
+     "name": "Akyazı"
+    },
+    {
+     "id": "tur-adm2-akyurt",
+     "name": "Akyurt"
+    },
+    {
+     "id": "tur-adm2-akçaabat",
+     "name": "Akçaabat"
+    },
+    {
+     "id": "tur-adm2-akçadağ",
+     "name": "Akçadağ"
+    },
+    {
+     "id": "tur-adm2-akçakale",
+     "name": "Akçakale"
+    },
+    {
+     "id": "tur-adm2-akçakent",
+     "name": "Akçakent"
+    },
+    {
+     "id": "tur-adm2-akçakoca",
+     "name": "Akçakoca"
+    },
+    {
+     "id": "tur-adm2-akören",
+     "name": "Akören"
+    },
+    {
+     "id": "tur-adm2-akıncılar",
+     "name": "Akıncılar"
+    },
+    {
+     "id": "tur-adm2-akşehir",
+     "name": "Akşehir"
+    },
+    {
+     "id": "tur-adm2-alaca",
+     "name": "Alaca"
+    },
+    {
+     "id": "tur-adm2-alacakaya",
+     "name": "Alacakaya"
+    },
+    {
+     "id": "tur-adm2-aladağ",
+     "name": "Aladağ"
+    },
+    {
+     "id": "tur-adm2-alanya",
+     "name": "Alanya"
+    },
+    {
+     "id": "tur-adm2-alaplı",
+     "name": "Alaplı"
+    },
+    {
+     "id": "tur-adm2-alaçam",
+     "name": "Alaçam"
+    },
+    {
+     "id": "tur-adm2-alaşehir",
+     "name": "Alaşehir"
+    },
+    {
+     "id": "tur-adm2-aliağa",
+     "name": "Aliağa"
+    },
+    {
+     "id": "tur-adm2-almus",
+     "name": "Almus"
+    },
+    {
+     "id": "tur-adm2-alpu",
+     "name": "Alpu"
+    },
+    {
+     "id": "tur-adm2-altunhisar",
+     "name": "Altunhisar"
+    },
+    {
+     "id": "tur-adm2-altıeylül",
+     "name": "Altıeylül"
+    },
+    {
+     "id": "tur-adm2-altındağ",
+     "name": "Altındağ"
+    },
+    {
+     "id": "tur-adm2-altınekin",
+     "name": "Altınekin"
+    },
+    {
+     "id": "tur-adm2-altınordu",
+     "name": "Altınordu"
+    },
+    {
+     "id": "tur-adm2-altınova",
+     "name": "Altınova"
+    },
+    {
+     "id": "tur-adm2-altıntaş",
+     "name": "Altıntaş"
+    },
+    {
+     "id": "tur-adm2-altınyayla",
+     "name": "Altınyayla"
+    },
+    {
+     "id": "tur-adm2-altınyayla-2",
+     "name": "Altınyayla"
+    },
+    {
+     "id": "tur-adm2-altınözü",
+     "name": "Altınözü"
+    },
+    {
+     "id": "tur-adm2-alucra",
+     "name": "Alucra"
+    },
+    {
+     "id": "tur-adm2-amasra",
+     "name": "Amasra"
+    },
+    {
+     "id": "tur-adm2-amasya-merkez",
+     "name": "Amasya merkez"
+    },
+    {
+     "id": "tur-adm2-anamur",
+     "name": "Anamur"
+    },
+    {
+     "id": "tur-adm2-andırın",
+     "name": "Andırın"
+    },
+    {
+     "id": "tur-adm2-antakya",
+     "name": "Antakya"
+    },
+    {
+     "id": "tur-adm2-araban",
+     "name": "Araban"
+    },
+    {
+     "id": "tur-adm2-araklı",
+     "name": "Araklı"
+    },
+    {
+     "id": "tur-adm2-aralık",
+     "name": "Aralık"
+    },
+    {
+     "id": "tur-adm2-arapgir",
+     "name": "Arapgir"
+    },
+    {
+     "id": "tur-adm2-araç",
+     "name": "Araç"
+    },
+    {
+     "id": "tur-adm2-ardahan",
+     "name": "Ardahan"
+    },
+    {
+     "id": "tur-adm2-ardanuç",
+     "name": "Ardanuç"
+    },
+    {
+     "id": "tur-adm2-ardeşen",
+     "name": "Ardeşen"
+    },
+    {
+     "id": "tur-adm2-arguvan",
+     "name": "Arguvan"
+    },
+    {
+     "id": "tur-adm2-arhavi",
+     "name": "Arhavi"
+    },
+    {
+     "id": "tur-adm2-arifiye",
+     "name": "Arifiye"
+    },
+    {
+     "id": "tur-adm2-armutlu",
+     "name": "Armutlu"
+    },
+    {
+     "id": "tur-adm2-arnavutköy",
+     "name": "Arnavutköy"
+    },
+    {
+     "id": "tur-adm2-arpaçay",
+     "name": "Arpaçay"
+    },
+    {
+     "id": "tur-adm2-arsin",
+     "name": "Arsin"
+    },
+    {
+     "id": "tur-adm2-arsuz",
+     "name": "Arsuz"
+    },
+    {
+     "id": "tur-adm2-artova",
+     "name": "Artova"
+    },
+    {
+     "id": "tur-adm2-artuklu",
+     "name": "Artuklu"
+    },
+    {
+     "id": "tur-adm2-artvin-merkez",
+     "name": "Artvin Merkez"
+    },
+    {
+     "id": "tur-adm2-arıcak",
+     "name": "Arıcak"
+    },
+    {
+     "id": "tur-adm2-asarcık",
+     "name": "Asarcık"
+    },
+    {
+     "id": "tur-adm2-aslanapa",
+     "name": "Aslanapa"
+    },
+    {
+     "id": "tur-adm2-atabey",
+     "name": "Atabey"
+    },
+    {
+     "id": "tur-adm2-atakum",
+     "name": "Atakum"
+    },
+    {
+     "id": "tur-adm2-ataşehir",
+     "name": "Ataşehir"
+    },
+    {
+     "id": "tur-adm2-atkaracalar",
+     "name": "Atkaracalar"
+    },
+    {
+     "id": "tur-adm2-avanos",
+     "name": "Avanos"
+    },
+    {
+     "id": "tur-adm2-avcılar",
+     "name": "Avcılar"
+    },
+    {
+     "id": "tur-adm2-ayancık",
+     "name": "Ayancık"
+    },
+    {
+     "id": "tur-adm2-ayaş",
+     "name": "Ayaş"
+    },
+    {
+     "id": "tur-adm2-aybastı",
+     "name": "Aybastı"
+    },
+    {
+     "id": "tur-adm2-aydıncık",
+     "name": "Aydıncık"
+    },
+    {
+     "id": "tur-adm2-aydıncık-2",
+     "name": "Aydıncık"
+    },
+    {
+     "id": "tur-adm2-aydıntepe",
+     "name": "Aydıntepe"
+    },
+    {
+     "id": "tur-adm2-ayrancı",
+     "name": "Ayrancı"
+    },
+    {
+     "id": "tur-adm2-ayvacik",
+     "name": "Ayvacik"
+    },
+    {
+     "id": "tur-adm2-ayvacık",
+     "name": "Ayvacık"
+    },
+    {
+     "id": "tur-adm2-ayvalık",
+     "name": "Ayvalık"
+    },
+    {
+     "id": "tur-adm2-azdavay",
+     "name": "Azdavay"
+    },
+    {
+     "id": "tur-adm2-aziziye",
+     "name": "Aziziye"
+    },
+    {
+     "id": "tur-adm2-ağaçören",
+     "name": "Ağaçören"
+    },
+    {
+     "id": "tur-adm2-ağlasun",
+     "name": "Ağlasun"
+    },
+    {
+     "id": "tur-adm2-ağlı",
+     "name": "Ağlı"
+    },
+    {
+     "id": "tur-adm2-ağrı-merkez",
+     "name": "Ağrı merkez"
+    },
+    {
+     "id": "tur-adm2-ağın",
+     "name": "Ağın"
+    },
+    {
+     "id": "tur-adm2-aşkale",
+     "name": "Aşkale"
+    },
+    {
+     "id": "tur-adm2-babadağ",
+     "name": "Babadağ"
+    },
+    {
+     "id": "tur-adm2-babaeski",
+     "name": "Babaeski"
+    },
+    {
+     "id": "tur-adm2-bafra",
+     "name": "Bafra"
+    },
+    {
+     "id": "tur-adm2-bahçe",
+     "name": "Bahçe"
+    },
+    {
+     "id": "tur-adm2-bahçelievler",
+     "name": "Bahçelievler"
+    },
+    {
+     "id": "tur-adm2-bahçesaray",
+     "name": "Bahçesaray"
+    },
+    {
+     "id": "tur-adm2-bahşılı",
+     "name": "Bahşılı"
+    },
+    {
+     "id": "tur-adm2-baklan",
+     "name": "Baklan"
+    },
+    {
+     "id": "tur-adm2-bakırköy",
+     "name": "Bakırköy"
+    },
+    {
+     "id": "tur-adm2-bala",
+     "name": "Bala"
+    },
+    {
+     "id": "tur-adm2-balya",
+     "name": "Balya"
+    },
+    {
+     "id": "tur-adm2-balçova",
+     "name": "Balçova"
+    },
+    {
+     "id": "tur-adm2-balışeyh",
+     "name": "Balışeyh"
+    },
+    {
+     "id": "tur-adm2-banaz",
+     "name": "Banaz"
+    },
+    {
+     "id": "tur-adm2-bandırma",
+     "name": "Bandırma"
+    },
+    {
+     "id": "tur-adm2-bartın-merkez",
+     "name": "Bartın merkez"
+    },
+    {
+     "id": "tur-adm2-baskil",
+     "name": "Baskil"
+    },
+    {
+     "id": "tur-adm2-batman-merkez",
+     "name": "Batman Merkez"
+    },
+    {
+     "id": "tur-adm2-battalgazi",
+     "name": "Battalgazi"
+    },
+    {
+     "id": "tur-adm2-bayat",
+     "name": "Bayat"
+    },
+    {
+     "id": "tur-adm2-bayat-2",
+     "name": "Bayat"
+    },
+    {
+     "id": "tur-adm2-bayburt-merkez",
+     "name": "Bayburt merkez"
+    },
+    {
+     "id": "tur-adm2-baykan",
+     "name": "Baykan"
+    },
+    {
+     "id": "tur-adm2-bayraklı",
+     "name": "Bayraklı"
+    },
+    {
+     "id": "tur-adm2-bayramiç",
+     "name": "Bayramiç"
+    },
+    {
+     "id": "tur-adm2-bayrampaşa",
+     "name": "Bayrampaşa"
+    },
+    {
+     "id": "tur-adm2-bayramören",
+     "name": "Bayramören"
+    },
+    {
+     "id": "tur-adm2-bayındır",
+     "name": "Bayındır"
+    },
+    {
+     "id": "tur-adm2-bağcılar",
+     "name": "Bağcılar"
+    },
+    {
+     "id": "tur-adm2-bağlar",
+     "name": "Bağlar"
+    },
+    {
+     "id": "tur-adm2-başakşehir",
+     "name": "Başakşehir"
+    },
+    {
+     "id": "tur-adm2-başiskele",
+     "name": "Başiskele"
+    },
+    {
+     "id": "tur-adm2-başkale",
+     "name": "Başkale"
+    },
+    {
+     "id": "tur-adm2-başmakçı",
+     "name": "Başmakçı"
+    },
+    {
+     "id": "tur-adm2-başyayla",
+     "name": "Başyayla"
+    },
+    {
+     "id": "tur-adm2-başçiftlik",
+     "name": "Başçiftlik"
+    },
+    {
+     "id": "tur-adm2-bekilli",
+     "name": "Bekilli"
+    },
+    {
+     "id": "tur-adm2-belen",
+     "name": "Belen"
+    },
+    {
+     "id": "tur-adm2-bergama",
+     "name": "Bergama"
+    },
+    {
+     "id": "tur-adm2-besni",
+     "name": "Besni"
+    },
+    {
+     "id": "tur-adm2-beyağaç",
+     "name": "Beyağaç"
+    },
+    {
+     "id": "tur-adm2-beydağ",
+     "name": "Beydağ"
+    },
+    {
+     "id": "tur-adm2-beykoz",
+     "name": "Beykoz"
+    },
+    {
+     "id": "tur-adm2-beylikdüzü",
+     "name": "Beylikdüzü"
+    },
+    {
+     "id": "tur-adm2-beylikova",
+     "name": "Beylikova"
+    },
+    {
+     "id": "tur-adm2-beyoğlu",
+     "name": "Beyoğlu"
+    },
+    {
+     "id": "tur-adm2-beypazarı",
+     "name": "Beypazarı"
+    },
+    {
+     "id": "tur-adm2-beytüşşebap",
+     "name": "Beytüşşebap"
+    },
+    {
+     "id": "tur-adm2-beyşehir",
+     "name": "Beyşehir"
+    },
+    {
+     "id": "tur-adm2-beşikdüzü",
+     "name": "Beşikdüzü"
+    },
+    {
+     "id": "tur-adm2-beşiktaş",
+     "name": "Beşiktaş"
+    },
+    {
+     "id": "tur-adm2-beşiri",
+     "name": "Beşiri"
+    },
+    {
+     "id": "tur-adm2-biga",
+     "name": "Biga"
+    },
+    {
+     "id": "tur-adm2-bigadiç",
+     "name": "Bigadiç"
+    },
+    {
+     "id": "tur-adm2-bilecik-merkez",
+     "name": "Bilecik (merkez)"
+    },
+    {
+     "id": "tur-adm2-bingöl-merkez",
+     "name": "Bingöl merkez"
+    },
+    {
+     "id": "tur-adm2-birecik",
+     "name": "Birecik"
+    },
+    {
+     "id": "tur-adm2-bismil",
+     "name": "Bismil"
+    },
+    {
+     "id": "tur-adm2-bitlis-merkez",
+     "name": "Bitlis merkez"
+    },
+    {
+     "id": "tur-adm2-bodrum",
+     "name": "Bodrum"
+    },
+    {
+     "id": "tur-adm2-bolu-merkez",
+     "name": "Bolu Merkez"
+    },
+    {
+     "id": "tur-adm2-bolvadin",
+     "name": "Bolvadin"
+    },
+    {
+     "id": "tur-adm2-bor",
+     "name": "Bor"
+    },
+    {
+     "id": "tur-adm2-bornova",
+     "name": "Bornova"
+    },
+    {
+     "id": "tur-adm2-borçka",
+     "name": "Borçka"
+    },
+    {
+     "id": "tur-adm2-boyabat",
+     "name": "Boyabat"
+    },
+    {
+     "id": "tur-adm2-bozcaada",
+     "name": "Bozcaada"
+    },
+    {
+     "id": "tur-adm2-bozdoğan",
+     "name": "Bozdoğan"
+    },
+    {
+     "id": "tur-adm2-bozkurt",
+     "name": "Bozkurt"
+    },
+    {
+     "id": "tur-adm2-bozkurt-2",
+     "name": "Bozkurt"
+    },
+    {
+     "id": "tur-adm2-bozkır",
+     "name": "Bozkır"
+    },
+    {
+     "id": "tur-adm2-bozova",
+     "name": "Bozova"
+    },
+    {
+     "id": "tur-adm2-boztepe",
+     "name": "Boztepe"
+    },
+    {
+     "id": "tur-adm2-bozyazı",
+     "name": "Bozyazı"
+    },
+    {
+     "id": "tur-adm2-bozüyük",
+     "name": "Bozüyük"
+    },
+    {
+     "id": "tur-adm2-boğazkale",
+     "name": "Boğazkale"
+    },
+    {
+     "id": "tur-adm2-boğazlıyan",
+     "name": "Boğazlıyan"
+    },
+    {
+     "id": "tur-adm2-buca",
+     "name": "Buca"
+    },
+    {
+     "id": "tur-adm2-bucak",
+     "name": "Bucak"
+    },
+    {
+     "id": "tur-adm2-buharkent",
+     "name": "Buharkent"
+    },
+    {
+     "id": "tur-adm2-bulancak",
+     "name": "Bulancak"
+    },
+    {
+     "id": "tur-adm2-bulanık",
+     "name": "Bulanık"
+    },
+    {
+     "id": "tur-adm2-buldan",
+     "name": "Buldan"
+    },
+    {
+     "id": "tur-adm2-burdur-merkez",
+     "name": "Burdur (merkez)"
+    },
+    {
+     "id": "tur-adm2-burhaniye",
+     "name": "Burhaniye"
+    },
+    {
+     "id": "tur-adm2-bünyan",
+     "name": "Bünyan"
+    },
+    {
+     "id": "tur-adm2-büyükorhan",
+     "name": "Büyükorhan"
+    },
+    {
+     "id": "tur-adm2-büyükçekmece",
+     "name": "Büyükçekmece"
+    },
+    {
+     "id": "tur-adm2-canik",
+     "name": "Canik"
+    },
+    {
+     "id": "tur-adm2-ceyhan",
+     "name": "Ceyhan"
+    },
+    {
+     "id": "tur-adm2-ceylanpınar",
+     "name": "Ceylanpınar"
+    },
+    {
+     "id": "tur-adm2-cide",
+     "name": "Cide"
+    },
+    {
+     "id": "tur-adm2-cihanbeyli",
+     "name": "Cihanbeyli"
+    },
+    {
+     "id": "tur-adm2-cizre",
+     "name": "Cizre"
+    },
+    {
+     "id": "tur-adm2-cumayeri",
+     "name": "Cumayeri"
+    },
+    {
+     "id": "tur-adm2-daday",
+     "name": "Daday"
+    },
+    {
+     "id": "tur-adm2-dalaman",
+     "name": "Dalaman"
+    },
+    {
+     "id": "tur-adm2-damal",
+     "name": "Damal"
+    },
+    {
+     "id": "tur-adm2-darende",
+     "name": "Darende"
+    },
+    {
+     "id": "tur-adm2-dargeçit",
+     "name": "Dargeçit"
+    },
+    {
+     "id": "tur-adm2-darıca",
+     "name": "Darıca"
+    },
+    {
+     "id": "tur-adm2-datça",
+     "name": "Datça"
+    },
+    {
+     "id": "tur-adm2-dazkırı",
+     "name": "Dazkırı"
+    },
+    {
+     "id": "tur-adm2-defne",
+     "name": "Defne"
+    },
+    {
+     "id": "tur-adm2-delice",
+     "name": "Delice"
+    },
+    {
+     "id": "tur-adm2-demirci",
+     "name": "Demirci"
+    },
+    {
+     "id": "tur-adm2-demirköy",
+     "name": "Demirköy"
+    },
+    {
+     "id": "tur-adm2-demirözü",
+     "name": "Demirözü"
+    },
+    {
+     "id": "tur-adm2-demre",
+     "name": "Demre"
+    },
+    {
+     "id": "tur-adm2-derbent",
+     "name": "Derbent"
+    },
+    {
+     "id": "tur-adm2-derebucak",
+     "name": "Derebucak"
+    },
+    {
+     "id": "tur-adm2-derecik",
+     "name": "Derecik"
+    },
+    {
+     "id": "tur-adm2-dereli",
+     "name": "Dereli"
+    },
+    {
+     "id": "tur-adm2-derepazarı",
+     "name": "Derepazarı"
+    },
+    {
+     "id": "tur-adm2-derik",
+     "name": "Derik"
+    },
+    {
+     "id": "tur-adm2-derince",
+     "name": "Derince"
+    },
+    {
+     "id": "tur-adm2-derinkuyu",
+     "name": "Derinkuyu"
+    },
+    {
+     "id": "tur-adm2-dernekpazarı",
+     "name": "Dernekpazarı"
+    },
+    {
+     "id": "tur-adm2-develi",
+     "name": "Develi"
+    },
+    {
+     "id": "tur-adm2-devrek",
+     "name": "Devrek"
+    },
+    {
+     "id": "tur-adm2-devrekani",
+     "name": "Devrekani"
+    },
+    {
+     "id": "tur-adm2-dicle",
+     "name": "Dicle"
+    },
+    {
+     "id": "tur-adm2-didim",
+     "name": "Didim"
+    },
+    {
+     "id": "tur-adm2-digor",
+     "name": "Digor"
+    },
+    {
+     "id": "tur-adm2-dikili",
+     "name": "Dikili"
+    },
+    {
+     "id": "tur-adm2-dikmen",
+     "name": "Dikmen"
+    },
+    {
+     "id": "tur-adm2-dilovası",
+     "name": "Dilovası"
+    },
+    {
+     "id": "tur-adm2-dinar",
+     "name": "Dinar"
+    },
+    {
+     "id": "tur-adm2-divriği",
+     "name": "Divriği"
+    },
+    {
+     "id": "tur-adm2-diyadin",
+     "name": "Diyadin"
+    },
+    {
+     "id": "tur-adm2-dodurga",
+     "name": "Dodurga"
+    },
+    {
+     "id": "tur-adm2-domaniç",
+     "name": "Domaniç"
+    },
+    {
+     "id": "tur-adm2-doğanhisar",
+     "name": "Doğanhisar"
+    },
+    {
+     "id": "tur-adm2-doğankent",
+     "name": "Doğankent"
+    },
+    {
+     "id": "tur-adm2-doğanyol",
+     "name": "Doğanyol"
+    },
+    {
+     "id": "tur-adm2-doğanyurt",
+     "name": "Doğanyurt"
+    },
+    {
+     "id": "tur-adm2-doğanşar",
+     "name": "Doğanşar"
+    },
+    {
+     "id": "tur-adm2-doğanşehir",
+     "name": "Doğanşehir"
+    },
+    {
+     "id": "tur-adm2-doğubayazıt",
+     "name": "Doğubayazıt"
+    },
+    {
+     "id": "tur-adm2-dulkadiroğlu",
+     "name": "Dulkadiroğlu"
+    },
+    {
+     "id": "tur-adm2-dumlupınar",
+     "name": "Dumlupınar"
+    },
+    {
+     "id": "tur-adm2-durağan",
+     "name": "Durağan"
+    },
+    {
+     "id": "tur-adm2-dursunbey",
+     "name": "Dursunbey"
+    },
+    {
+     "id": "tur-adm2-dörtdivan",
+     "name": "Dörtdivan"
+    },
+    {
+     "id": "tur-adm2-dörtyol",
+     "name": "Dörtyol"
+    },
+    {
+     "id": "tur-adm2-döşemealtı",
+     "name": "Döşemealtı"
+    },
+    {
+     "id": "tur-adm2-düzce-merkez",
+     "name": "Düzce merkez"
+    },
+    {
+     "id": "tur-adm2-düziçi",
+     "name": "Düziçi"
+    },
+    {
+     "id": "tur-adm2-düzköy",
+     "name": "Düzköy"
+    },
+    {
+     "id": "tur-adm2-eceabat",
+     "name": "Eceabat"
+    },
+    {
+     "id": "tur-adm2-edirne-merkez",
+     "name": "Edirne merkez"
+    },
+    {
+     "id": "tur-adm2-edremit",
+     "name": "Edremit"
+    },
+    {
+     "id": "tur-adm2-edremit-2",
+     "name": "Edremit"
+    },
+    {
+     "id": "tur-adm2-efeler",
+     "name": "Efeler"
+    },
+    {
+     "id": "tur-adm2-eflani",
+     "name": "Eflani"
+    },
+    {
+     "id": "tur-adm2-ekinözü",
+     "name": "Ekinözü"
+    },
+    {
+     "id": "tur-adm2-elazığ-merkez",
+     "name": "Elazığ merkez"
+    },
+    {
+     "id": "tur-adm2-elbeyli",
+     "name": "Elbeyli"
+    },
+    {
+     "id": "tur-adm2-elbistan",
+     "name": "Elbistan"
+    },
+    {
+     "id": "tur-adm2-eldivan",
+     "name": "Eldivan"
+    },
+    {
+     "id": "tur-adm2-eleşkirt",
+     "name": "Eleşkirt"
+    },
+    {
+     "id": "tur-adm2-elmadağ",
+     "name": "Elmadağ"
+    },
+    {
+     "id": "tur-adm2-elmalı",
+     "name": "Elmalı"
+    },
+    {
+     "id": "tur-adm2-emet",
+     "name": "Emet"
+    },
+    {
+     "id": "tur-adm2-emirdağ",
+     "name": "Emirdağ"
+    },
+    {
+     "id": "tur-adm2-emirgazi",
+     "name": "Emirgazi"
+    },
+    {
+     "id": "tur-adm2-enez",
+     "name": "Enez"
+    },
+    {
+     "id": "tur-adm2-erbaa",
+     "name": "Erbaa"
+    },
+    {
+     "id": "tur-adm2-erciş",
+     "name": "Erciş"
+    },
+    {
+     "id": "tur-adm2-erdek",
+     "name": "Erdek"
+    },
+    {
+     "id": "tur-adm2-erdemli",
+     "name": "Erdemli"
+    },
+    {
+     "id": "tur-adm2-erenler",
+     "name": "Erenler"
+    },
+    {
+     "id": "tur-adm2-ereğli",
+     "name": "Ereğli"
+    },
+    {
+     "id": "tur-adm2-ereğli-2",
+     "name": "Ereğli"
+    },
+    {
+     "id": "tur-adm2-erfelek",
+     "name": "Erfelek"
+    },
+    {
+     "id": "tur-adm2-ergani",
+     "name": "Ergani"
+    },
+    {
+     "id": "tur-adm2-ergene",
+     "name": "Ergene"
+    },
+    {
+     "id": "tur-adm2-ermenek",
+     "name": "Ermenek"
+    },
+    {
+     "id": "tur-adm2-eruh",
+     "name": "Eruh"
+    },
+    {
+     "id": "tur-adm2-erzin",
+     "name": "Erzin"
+    },
+    {
+     "id": "tur-adm2-erzincan-merkez",
+     "name": "Erzincan merkez"
+    },
+    {
+     "id": "tur-adm2-esenler",
+     "name": "Esenler"
+    },
+    {
+     "id": "tur-adm2-esenyurt",
+     "name": "Esenyurt"
+    },
+    {
+     "id": "tur-adm2-eskil",
+     "name": "Eskil"
+    },
+    {
+     "id": "tur-adm2-eskipazar",
+     "name": "Eskipazar"
+    },
+    {
+     "id": "tur-adm2-espiye",
+     "name": "Espiye"
+    },
+    {
+     "id": "tur-adm2-etimesgut",
+     "name": "Etimesgut"
+    },
+    {
+     "id": "tur-adm2-evciler",
+     "name": "Evciler"
+    },
+    {
+     "id": "tur-adm2-evren",
+     "name": "Evren"
+    },
+    {
+     "id": "tur-adm2-eynesil",
+     "name": "Eynesil"
+    },
+    {
+     "id": "tur-adm2-eyyübiye",
+     "name": "Eyyübiye"
+    },
+    {
+     "id": "tur-adm2-eyüpsultan",
+     "name": "Eyüpsultan"
+    },
+    {
+     "id": "tur-adm2-ezine",
+     "name": "Ezine"
+    },
+    {
+     "id": "tur-adm2-eğil",
+     "name": "Eğil"
+    },
+    {
+     "id": "tur-adm2-eğirdir",
+     "name": "Eğirdir"
+    },
+    {
+     "id": "tur-adm2-eşme",
+     "name": "Eşme"
+    },
+    {
+     "id": "tur-adm2-fatih",
+     "name": "Fatih"
+    },
+    {
+     "id": "tur-adm2-fatsa",
+     "name": "Fatsa"
+    },
+    {
+     "id": "tur-adm2-feke",
+     "name": "Feke"
+    },
+    {
+     "id": "tur-adm2-felahiye",
+     "name": "Felahiye"
+    },
+    {
+     "id": "tur-adm2-ferizli",
+     "name": "Ferizli"
+    },
+    {
+     "id": "tur-adm2-fethiye",
+     "name": "Fethiye"
+    },
+    {
+     "id": "tur-adm2-finike",
+     "name": "Finike"
+    },
+    {
+     "id": "tur-adm2-foça",
+     "name": "Foça"
+    },
+    {
+     "id": "tur-adm2-fındıklı",
+     "name": "Fındıklı"
+    },
+    {
+     "id": "tur-adm2-gaziemir",
+     "name": "Gaziemir"
+    },
+    {
+     "id": "tur-adm2-gaziosmanpaşa",
+     "name": "Gaziosmanpaşa"
+    },
+    {
+     "id": "tur-adm2-gazipaşa",
+     "name": "Gazipaşa"
+    },
+    {
+     "id": "tur-adm2-gebze",
+     "name": "Gebze"
+    },
+    {
+     "id": "tur-adm2-gediz-merkez",
+     "name": "Gediz Merkez"
+    },
+    {
+     "id": "tur-adm2-gelendost",
+     "name": "Gelendost"
+    },
+    {
+     "id": "tur-adm2-gelibolu",
+     "name": "Gelibolu"
+    },
+    {
+     "id": "tur-adm2-gemerek",
+     "name": "Gemerek"
+    },
+    {
+     "id": "tur-adm2-gemlik",
+     "name": "Gemlik"
+    },
+    {
+     "id": "tur-adm2-genç",
+     "name": "Genç"
+    },
+    {
+     "id": "tur-adm2-gercüş",
+     "name": "Gercüş"
+    },
+    {
+     "id": "tur-adm2-gerede",
+     "name": "Gerede"
+    },
+    {
+     "id": "tur-adm2-gerger",
+     "name": "Gerger"
+    },
+    {
+     "id": "tur-adm2-germencik",
+     "name": "Germencik"
+    },
+    {
+     "id": "tur-adm2-gerze",
+     "name": "Gerze"
+    },
+    {
+     "id": "tur-adm2-gevaş",
+     "name": "Gevaş"
+    },
+    {
+     "id": "tur-adm2-geyve",
+     "name": "Geyve"
+    },
+    {
+     "id": "tur-adm2-giresun-district",
+     "name": "Giresun District"
+    },
+    {
+     "id": "tur-adm2-göksun",
+     "name": "Göksun"
+    },
+    {
+     "id": "tur-adm2-gökçebey",
+     "name": "Gökçebey"
+    },
+    {
+     "id": "tur-adm2-gölbaşı",
+     "name": "Gölbaşı"
+    },
+    {
+     "id": "tur-adm2-gölbaşı-2",
+     "name": "Gölbaşı"
+    },
+    {
+     "id": "tur-adm2-gölcük",
+     "name": "Gölcük"
+    },
+    {
+     "id": "tur-adm2-göle",
+     "name": "Göle"
+    },
+    {
+     "id": "tur-adm2-gölhisar",
+     "name": "Gölhisar"
+    },
+    {
+     "id": "tur-adm2-gölköy",
+     "name": "Gölköy"
+    },
+    {
+     "id": "tur-adm2-gölmarmara",
+     "name": "Gölmarmara"
+    },
+    {
+     "id": "tur-adm2-gölova",
+     "name": "Gölova"
+    },
+    {
+     "id": "tur-adm2-gölpazarı",
+     "name": "Gölpazarı"
+    },
+    {
+     "id": "tur-adm2-gölyaka",
+     "name": "Gölyaka"
+    },
+    {
+     "id": "tur-adm2-gömeç",
+     "name": "Gömeç"
+    },
+    {
+     "id": "tur-adm2-gönen",
+     "name": "Gönen"
+    },
+    {
+     "id": "tur-adm2-gönen-2",
+     "name": "Gönen"
+    },
+    {
+     "id": "tur-adm2-gördes",
+     "name": "Gördes"
+    },
+    {
+     "id": "tur-adm2-görele",
+     "name": "Görele"
+    },
+    {
+     "id": "tur-adm2-göynücek",
+     "name": "Göynücek"
+    },
+    {
+     "id": "tur-adm2-göynük",
+     "name": "Göynük"
+    },
+    {
+     "id": "tur-adm2-güce",
+     "name": "Güce"
+    },
+    {
+     "id": "tur-adm2-güdül",
+     "name": "Güdül"
+    },
+    {
+     "id": "tur-adm2-gülağaç",
+     "name": "Gülağaç"
+    },
+    {
+     "id": "tur-adm2-gülnar",
+     "name": "Gülnar"
+    },
+    {
+     "id": "tur-adm2-gülyalı",
+     "name": "Gülyalı"
+    },
+    {
+     "id": "tur-adm2-gülşehir",
+     "name": "Gülşehir"
+    },
+    {
+     "id": "tur-adm2-gümüşhacıköy",
+     "name": "Gümüşhacıköy"
+    },
+    {
+     "id": "tur-adm2-gümüşhane-merkez",
+     "name": "Gümüşhane merkez"
+    },
+    {
+     "id": "tur-adm2-gümüşova",
+     "name": "Gümüşova"
+    },
+    {
+     "id": "tur-adm2-gündoğmuş",
+     "name": "Gündoğmuş"
+    },
+    {
+     "id": "tur-adm2-güney",
+     "name": "Güney"
+    },
+    {
+     "id": "tur-adm2-güneysu",
+     "name": "Güneysu"
+    },
+    {
+     "id": "tur-adm2-güneysınır",
+     "name": "Güneysınır"
+    },
+    {
+     "id": "tur-adm2-güngören",
+     "name": "Güngören"
+    },
+    {
+     "id": "tur-adm2-günyüzü",
+     "name": "Günyüzü"
+    },
+    {
+     "id": "tur-adm2-gürgentepe",
+     "name": "Gürgentepe"
+    },
+    {
+     "id": "tur-adm2-güroymak",
+     "name": "Güroymak"
+    },
+    {
+     "id": "tur-adm2-gürpınar",
+     "name": "Gürpınar"
+    },
+    {
+     "id": "tur-adm2-gürsu",
+     "name": "Gürsu"
+    },
+    {
+     "id": "tur-adm2-gürün",
+     "name": "Gürün"
+    },
+    {
+     "id": "tur-adm2-güzelbahçe",
+     "name": "Güzelbahçe"
+    },
+    {
+     "id": "tur-adm2-güzelyurt",
+     "name": "Güzelyurt"
+    },
+    {
+     "id": "tur-adm2-güçlükonak",
+     "name": "Güçlükonak"
+    },
+    {
+     "id": "tur-adm2-hacıbektaş",
+     "name": "Hacıbektaş"
+    },
+    {
+     "id": "tur-adm2-hacılar",
+     "name": "Hacılar"
+    },
+    {
+     "id": "tur-adm2-hadim",
+     "name": "Hadim"
+    },
+    {
+     "id": "tur-adm2-hafik",
+     "name": "Hafik"
+    },
+    {
+     "id": "tur-adm2-hakkari-merkez",
+     "name": "Hakkari merkez"
+    },
+    {
+     "id": "tur-adm2-halfeti",
+     "name": "Halfeti"
+    },
+    {
+     "id": "tur-adm2-haliliye",
+     "name": "Haliliye"
+    },
+    {
+     "id": "tur-adm2-halkapınar",
+     "name": "Halkapınar"
+    },
+    {
+     "id": "tur-adm2-hamamözü",
+     "name": "Hamamözü"
+    },
+    {
+     "id": "tur-adm2-hamur",
+     "name": "Hamur"
+    },
+    {
+     "id": "tur-adm2-han",
+     "name": "Han"
+    },
+    {
+     "id": "tur-adm2-hanak",
+     "name": "Hanak"
+    },
+    {
+     "id": "tur-adm2-hani",
+     "name": "Hani"
+    },
+    {
+     "id": "tur-adm2-hanönü",
+     "name": "Hanönü"
+    },
+    {
+     "id": "tur-adm2-harmancık",
+     "name": "Harmancık"
+    },
+    {
+     "id": "tur-adm2-harran",
+     "name": "Harran"
+    },
+    {
+     "id": "tur-adm2-hasanbeyli",
+     "name": "Hasanbeyli"
+    },
+    {
+     "id": "tur-adm2-hasankeyf",
+     "name": "Hasankeyf"
+    },
+    {
+     "id": "tur-adm2-hasköy",
+     "name": "Hasköy"
+    },
+    {
+     "id": "tur-adm2-hassa",
+     "name": "Hassa"
+    },
+    {
+     "id": "tur-adm2-havran",
+     "name": "Havran"
+    },
+    {
+     "id": "tur-adm2-havsa",
+     "name": "Havsa"
+    },
+    {
+     "id": "tur-adm2-havza",
+     "name": "Havza"
+    },
+    {
+     "id": "tur-adm2-haymana",
+     "name": "Haymana"
+    },
+    {
+     "id": "tur-adm2-hayrabolu",
+     "name": "Hayrabolu"
+    },
+    {
+     "id": "tur-adm2-hayrat",
+     "name": "Hayrat"
+    },
+    {
+     "id": "tur-adm2-hazro",
+     "name": "Hazro"
+    },
+    {
+     "id": "tur-adm2-hekimhan",
+     "name": "Hekimhan"
+    },
+    {
+     "id": "tur-adm2-hemşin",
+     "name": "Hemşin"
+    },
+    {
+     "id": "tur-adm2-hendek",
+     "name": "Hendek"
+    },
+    {
+     "id": "tur-adm2-hilvan",
+     "name": "Hilvan"
+    },
+    {
+     "id": "tur-adm2-hisarcık",
+     "name": "Hisarcık"
+    },
+    {
+     "id": "tur-adm2-hizan",
+     "name": "Hizan"
+    },
+    {
+     "id": "tur-adm2-hocalar",
+     "name": "Hocalar"
+    },
+    {
+     "id": "tur-adm2-honaz",
+     "name": "Honaz"
+    },
+    {
+     "id": "tur-adm2-hopa",
+     "name": "Hopa"
+    },
+    {
+     "id": "tur-adm2-horasan",
+     "name": "Horasan"
+    },
+    {
+     "id": "tur-adm2-hozat",
+     "name": "Hozat"
+    },
+    {
+     "id": "tur-adm2-hüyük",
+     "name": "Hüyük"
+    },
+    {
+     "id": "tur-adm2-hınıs",
+     "name": "Hınıs"
+    },
+    {
+     "id": "tur-adm2-ilgaz",
+     "name": "Ilgaz"
+    },
+    {
+     "id": "tur-adm2-ilgın",
+     "name": "Ilgın"
+    },
+    {
+     "id": "tur-adm2-ilıç",
+     "name": "Ilıç"
+    },
+    {
+     "id": "tur-adm2-imbros",
+     "name": "Imbros"
+    },
+    {
+     "id": "tur-adm2-isparta-merkez",
+     "name": "Isparta merkez"
+    },
+    {
+     "id": "tur-adm2-iğdır-merkez",
+     "name": "Iğdır (merkez)"
+    },
+    {
+     "id": "tur-adm2-i̇bradi",
+     "name": "İbradi"
+    },
+    {
+     "id": "tur-adm2-i̇dil",
+     "name": "İdil"
+    },
+    {
+     "id": "tur-adm2-i̇hsangazi",
+     "name": "İhsangazi"
+    },
+    {
+     "id": "tur-adm2-i̇hsaniye",
+     "name": "İhsaniye"
+    },
+    {
+     "id": "tur-adm2-i̇kizce",
+     "name": "İkizce"
+    },
+    {
+     "id": "tur-adm2-i̇kizdere",
+     "name": "İkizdere"
+    },
+    {
+     "id": "tur-adm2-i̇lkadım",
+     "name": "İlkadım"
+    },
+    {
+     "id": "tur-adm2-i̇mamoğlu",
+     "name": "İmamoğlu"
+    },
+    {
+     "id": "tur-adm2-i̇mranlı",
+     "name": "İmranlı"
+    },
+    {
+     "id": "tur-adm2-i̇ncesu",
+     "name": "İncesu"
+    },
+    {
+     "id": "tur-adm2-i̇ncirliova",
+     "name": "İncirliova"
+    },
+    {
+     "id": "tur-adm2-i̇nebolu",
+     "name": "İnebolu"
+    },
+    {
+     "id": "tur-adm2-i̇negöl",
+     "name": "İnegöl"
+    },
+    {
+     "id": "tur-adm2-i̇nhisar",
+     "name": "İnhisar"
+    },
+    {
+     "id": "tur-adm2-i̇nönü",
+     "name": "İnönü"
+    },
+    {
+     "id": "tur-adm2-i̇pekyolu",
+     "name": "İpekyolu"
+    },
+    {
+     "id": "tur-adm2-i̇psala",
+     "name": "İpsala"
+    },
+    {
+     "id": "tur-adm2-i̇scehisar",
+     "name": "İscehisar"
+    },
+    {
+     "id": "tur-adm2-i̇skenderun",
+     "name": "İskenderun"
+    },
+    {
+     "id": "tur-adm2-i̇skilip",
+     "name": "İskilip"
+    },
+    {
+     "id": "tur-adm2-i̇slahiye",
+     "name": "İslahiye"
+    },
+    {
+     "id": "tur-adm2-i̇spir",
+     "name": "İspir"
+    },
+    {
+     "id": "tur-adm2-i̇vrindi",
+     "name": "İvrindi"
+    },
+    {
+     "id": "tur-adm2-i̇yidere",
+     "name": "İyidere"
+    },
+    {
+     "id": "tur-adm2-i̇zmit",
+     "name": "İzmit"
+    },
+    {
+     "id": "tur-adm2-i̇znik",
+     "name": "İznik"
+    },
+    {
+     "id": "tur-adm2-kabadüz",
+     "name": "Kabadüz"
+    },
+    {
+     "id": "tur-adm2-kabataş",
+     "name": "Kabataş"
+    },
+    {
+     "id": "tur-adm2-kadirli",
+     "name": "Kadirli"
+    },
+    {
+     "id": "tur-adm2-kadıköy",
+     "name": "Kadıköy"
+    },
+    {
+     "id": "tur-adm2-kadınhanı",
+     "name": "Kadınhanı"
+    },
+    {
+     "id": "tur-adm2-kadışehri",
+     "name": "Kadışehri"
+    },
+    {
+     "id": "tur-adm2-kahramankazan",
+     "name": "Kahramankazan"
+    },
+    {
+     "id": "tur-adm2-kahta",
+     "name": "Kahta"
+    },
+    {
+     "id": "tur-adm2-kale",
+     "name": "Kale"
+    },
+    {
+     "id": "tur-adm2-kale-2",
+     "name": "Kale"
+    },
+    {
+     "id": "tur-adm2-kalecik",
+     "name": "Kalecik"
+    },
+    {
+     "id": "tur-adm2-kalkandere",
+     "name": "Kalkandere"
+    },
+    {
+     "id": "tur-adm2-kaman",
+     "name": "Kaman"
+    },
+    {
+     "id": "tur-adm2-kandıra",
+     "name": "Kandıra"
+    },
+    {
+     "id": "tur-adm2-kangal",
+     "name": "Kangal"
+    },
+    {
+     "id": "tur-adm2-kapaklı",
+     "name": "Kapaklı"
+    },
+    {
+     "id": "tur-adm2-karabağlar",
+     "name": "Karabağlar"
+    },
+    {
+     "id": "tur-adm2-karaburun",
+     "name": "Karaburun"
+    },
+    {
+     "id": "tur-adm2-karacabey",
+     "name": "Karacabey"
+    },
+    {
+     "id": "tur-adm2-karacasu",
+     "name": "Karacasu"
+    },
+    {
+     "id": "tur-adm2-karahallı",
+     "name": "Karahallı"
+    },
+    {
+     "id": "tur-adm2-karaisalı",
+     "name": "Karaisalı"
+    },
+    {
+     "id": "tur-adm2-karakeçeli",
+     "name": "Karakeçeli"
+    },
+    {
+     "id": "tur-adm2-karakoyunlu",
+     "name": "Karakoyunlu"
+    },
+    {
+     "id": "tur-adm2-karakoçan",
+     "name": "Karakoçan"
+    },
+    {
+     "id": "tur-adm2-karaköprü",
+     "name": "Karaköprü"
+    },
+    {
+     "id": "tur-adm2-karaman-merkez",
+     "name": "Karaman merkez"
+    },
+    {
+     "id": "tur-adm2-karamanlı",
+     "name": "Karamanlı"
+    },
+    {
+     "id": "tur-adm2-karamürsel",
+     "name": "Karamürsel"
+    },
+    {
+     "id": "tur-adm2-karapürçek",
+     "name": "Karapürçek"
+    },
+    {
+     "id": "tur-adm2-karapınar",
+     "name": "Karapınar"
+    },
+    {
+     "id": "tur-adm2-karasu",
+     "name": "Karasu"
+    },
+    {
+     "id": "tur-adm2-karatay",
+     "name": "Karatay"
+    },
+    {
+     "id": "tur-adm2-karataş",
+     "name": "Karataş"
+    },
+    {
+     "id": "tur-adm2-karayazı",
+     "name": "Karayazı"
+    },
+    {
+     "id": "tur-adm2-karaçoban",
+     "name": "Karaçoban"
+    },
+    {
+     "id": "tur-adm2-karesi",
+     "name": "Karesi"
+    },
+    {
+     "id": "tur-adm2-kargı",
+     "name": "Kargı"
+    },
+    {
+     "id": "tur-adm2-karkamış",
+     "name": "Karkamış"
+    },
+    {
+     "id": "tur-adm2-karlıova",
+     "name": "Karlıova"
+    },
+    {
+     "id": "tur-adm2-karpuzlu",
+     "name": "Karpuzlu"
+    },
+    {
+     "id": "tur-adm2-kars-merkez",
+     "name": "Kars merkez"
+    },
+    {
+     "id": "tur-adm2-kartal",
+     "name": "Kartal"
+    },
+    {
+     "id": "tur-adm2-kartepe",
+     "name": "Kartepe"
+    },
+    {
+     "id": "tur-adm2-karşıyaka",
+     "name": "Karşıyaka"
+    },
+    {
+     "id": "tur-adm2-kastamonu-merkez",
+     "name": "Kastamonu merkez"
+    },
+    {
+     "id": "tur-adm2-kavak",
+     "name": "Kavak"
+    },
+    {
+     "id": "tur-adm2-kavaklıdere",
+     "name": "Kavaklıdere"
+    },
+    {
+     "id": "tur-adm2-kayapınar",
+     "name": "Kayapınar"
+    },
+    {
+     "id": "tur-adm2-kaynarca",
+     "name": "Kaynarca"
+    },
+    {
+     "id": "tur-adm2-kaynaşlı",
+     "name": "Kaynaşlı"
+    },
+    {
+     "id": "tur-adm2-kazımkarabekir",
+     "name": "Kazımkarabekir"
+    },
+    {
+     "id": "tur-adm2-kağıthane",
+     "name": "Kağıthane"
+    },
+    {
+     "id": "tur-adm2-kağızman",
+     "name": "Kağızman"
+    },
+    {
+     "id": "tur-adm2-kaş",
+     "name": "Kaş"
+    },
+    {
+     "id": "tur-adm2-keban",
+     "name": "Keban"
+    },
+    {
+     "id": "tur-adm2-keles",
+     "name": "Keles"
+    },
+    {
+     "id": "tur-adm2-kelkit",
+     "name": "Kelkit"
+    },
+    {
+     "id": "tur-adm2-kemah",
+     "name": "Kemah"
+    },
+    {
+     "id": "tur-adm2-kemaliye",
+     "name": "Kemaliye"
+    },
+    {
+     "id": "tur-adm2-kemalpaşa",
+     "name": "Kemalpaşa"
+    },
+    {
+     "id": "tur-adm2-kemalpaşa-2",
+     "name": "Kemalpaşa"
+    },
+    {
+     "id": "tur-adm2-kemer",
+     "name": "Kemer"
+    },
+    {
+     "id": "tur-adm2-kemer-2",
+     "name": "Kemer"
+    },
+    {
+     "id": "tur-adm2-kepez",
+     "name": "Kepez"
+    },
+    {
+     "id": "tur-adm2-kepsut",
+     "name": "Kepsut"
+    },
+    {
+     "id": "tur-adm2-keskin",
+     "name": "Keskin"
+    },
+    {
+     "id": "tur-adm2-kestel",
+     "name": "Kestel"
+    },
+    {
+     "id": "tur-adm2-keçiborlu",
+     "name": "Keçiborlu"
+    },
+    {
+     "id": "tur-adm2-keçiören",
+     "name": "Keçiören"
+    },
+    {
+     "id": "tur-adm2-keşan",
+     "name": "Keşan"
+    },
+    {
+     "id": "tur-adm2-keşap",
+     "name": "Keşap"
+    },
+    {
+     "id": "tur-adm2-kilimli",
+     "name": "Kilimli"
+    },
+    {
+     "id": "tur-adm2-kilis-merkez",
+     "name": "Kilis (merkez)"
+    },
+    {
+     "id": "tur-adm2-kiraz",
+     "name": "Kiraz"
+    },
+    {
+     "id": "tur-adm2-kiğı",
+     "name": "Kiğı"
+    },
+    {
+     "id": "tur-adm2-kocaali",
+     "name": "Kocaali"
+    },
+    {
+     "id": "tur-adm2-kocaköy",
+     "name": "Kocaköy"
+    },
+    {
+     "id": "tur-adm2-kocasinan",
+     "name": "Kocasinan"
+    },
+    {
+     "id": "tur-adm2-kofçaz",
+     "name": "Kofçaz"
+    },
+    {
+     "id": "tur-adm2-konak",
+     "name": "Konak"
+    },
+    {
+     "id": "tur-adm2-konyaaltı",
+     "name": "Konyaaltı"
+    },
+    {
+     "id": "tur-adm2-korgan",
+     "name": "Korgan"
+    },
+    {
+     "id": "tur-adm2-korgun",
+     "name": "Korgun"
+    },
+    {
+     "id": "tur-adm2-korkut",
+     "name": "Korkut"
+    },
+    {
+     "id": "tur-adm2-korkuteli",
+     "name": "Korkuteli"
+    },
+    {
+     "id": "tur-adm2-kovancılar",
+     "name": "Kovancılar"
+    },
+    {
+     "id": "tur-adm2-koyulhisar",
+     "name": "Koyulhisar"
+    },
+    {
+     "id": "tur-adm2-kozaklı",
+     "name": "Kozaklı"
+    },
+    {
+     "id": "tur-adm2-kozan",
+     "name": "Kozan"
+    },
+    {
+     "id": "tur-adm2-kozlu",
+     "name": "Kozlu"
+    },
+    {
+     "id": "tur-adm2-kozluk",
+     "name": "Kozluk"
+    },
+    {
+     "id": "tur-adm2-koçarlı",
+     "name": "Koçarlı"
+    },
+    {
+     "id": "tur-adm2-kula",
+     "name": "Kula"
+    },
+    {
+     "id": "tur-adm2-kulp",
+     "name": "Kulp"
+    },
+    {
+     "id": "tur-adm2-kulu",
+     "name": "Kulu"
+    },
+    {
+     "id": "tur-adm2-kuluncak",
+     "name": "Kuluncak"
+    },
+    {
+     "id": "tur-adm2-kumlu",
+     "name": "Kumlu"
+    },
+    {
+     "id": "tur-adm2-kumluca",
+     "name": "Kumluca"
+    },
+    {
+     "id": "tur-adm2-kumru",
+     "name": "Kumru"
+    },
+    {
+     "id": "tur-adm2-kurtalan",
+     "name": "Kurtalan"
+    },
+    {
+     "id": "tur-adm2-kurucaşile",
+     "name": "Kurucaşile"
+    },
+    {
+     "id": "tur-adm2-kurşunlu",
+     "name": "Kurşunlu"
+    },
+    {
+     "id": "tur-adm2-kuyucak",
+     "name": "Kuyucak"
+    },
+    {
+     "id": "tur-adm2-kuşadası",
+     "name": "Kuşadası"
+    },
+    {
+     "id": "tur-adm2-köprübaşı",
+     "name": "Köprübaşı"
+    },
+    {
+     "id": "tur-adm2-köprübaşı-2",
+     "name": "Köprübaşı"
+    },
+    {
+     "id": "tur-adm2-köprüköy",
+     "name": "Köprüköy"
+    },
+    {
+     "id": "tur-adm2-körfez",
+     "name": "Körfez"
+    },
+    {
+     "id": "tur-adm2-köse",
+     "name": "Köse"
+    },
+    {
+     "id": "tur-adm2-köyceğiz",
+     "name": "Köyceğiz"
+    },
+    {
+     "id": "tur-adm2-köşk",
+     "name": "Köşk"
+    },
+    {
+     "id": "tur-adm2-küre",
+     "name": "Küre"
+    },
+    {
+     "id": "tur-adm2-kürtün",
+     "name": "Kürtün"
+    },
+    {
+     "id": "tur-adm2-kütahya-merkez",
+     "name": "Kütahya merkez"
+    },
+    {
+     "id": "tur-adm2-küçükçekmece",
+     "name": "Küçükçekmece"
+    },
+    {
+     "id": "tur-adm2-kıbrıscık",
+     "name": "Kıbrıscık"
+    },
+    {
+     "id": "tur-adm2-kınık",
+     "name": "Kınık"
+    },
+    {
+     "id": "tur-adm2-kırkağaç",
+     "name": "Kırkağaç"
+    },
+    {
+     "id": "tur-adm2-kırklareli-merkez",
+     "name": "Kırklareli merkez"
+    },
+    {
+     "id": "tur-adm2-kırıkhan",
+     "name": "Kırıkhan"
+    },
+    {
+     "id": "tur-adm2-kırıkkale-merkez",
+     "name": "Kırıkkale (merkez)"
+    },
+    {
+     "id": "tur-adm2-kırşehir-merkez",
+     "name": "Kırşehir merkez"
+    },
+    {
+     "id": "tur-adm2-kızılcahamam",
+     "name": "Kızılcahamam"
+    },
+    {
+     "id": "tur-adm2-kızıltepe",
+     "name": "Kızıltepe"
+    },
+    {
+     "id": "tur-adm2-kızılören",
+     "name": "Kızılören"
+    },
+    {
+     "id": "tur-adm2-kızılırmak",
+     "name": "Kızılırmak"
+    },
+    {
+     "id": "tur-adm2-ladik",
+     "name": "Ladik"
+    },
+    {
+     "id": "tur-adm2-lalapaşa",
+     "name": "Lalapaşa"
+    },
+    {
+     "id": "tur-adm2-lapseki",
+     "name": "Lapseki"
+    },
+    {
+     "id": "tur-adm2-laçin",
+     "name": "Laçin"
+    },
+    {
+     "id": "tur-adm2-lice",
+     "name": "Lice"
+    },
+    {
+     "id": "tur-adm2-lüleburgaz",
+     "name": "Lüleburgaz"
+    },
+    {
+     "id": "tur-adm2-maden",
+     "name": "Maden"
+    },
+    {
+     "id": "tur-adm2-mahmudiye",
+     "name": "Mahmudiye"
+    },
+    {
+     "id": "tur-adm2-malazgirt",
+     "name": "Malazgirt"
+    },
+    {
+     "id": "tur-adm2-malkara",
+     "name": "Malkara"
+    },
+    {
+     "id": "tur-adm2-maltepe",
+     "name": "Maltepe"
+    },
+    {
+     "id": "tur-adm2-mamak",
+     "name": "Mamak"
+    },
+    {
+     "id": "tur-adm2-manavgat",
+     "name": "Manavgat"
+    },
+    {
+     "id": "tur-adm2-manyas",
+     "name": "Manyas"
+    },
+    {
+     "id": "tur-adm2-marmara",
+     "name": "Marmara"
+    },
+    {
+     "id": "tur-adm2-marmaraereğlisi",
+     "name": "Marmaraereğlisi"
+    },
+    {
+     "id": "tur-adm2-marmaris",
+     "name": "Marmaris"
+    },
+    {
+     "id": "tur-adm2-mazgirt",
+     "name": "Mazgirt"
+    },
+    {
+     "id": "tur-adm2-mazıdağı",
+     "name": "Mazıdağı"
+    },
+    {
+     "id": "tur-adm2-maçka",
+     "name": "Maçka"
+    },
+    {
+     "id": "tur-adm2-mecitözü",
+     "name": "Mecitözü"
+    },
+    {
+     "id": "tur-adm2-melikgazi",
+     "name": "Melikgazi"
+    },
+    {
+     "id": "tur-adm2-menderes",
+     "name": "Menderes"
+    },
+    {
+     "id": "tur-adm2-menemen",
+     "name": "Menemen"
+    },
+    {
+     "id": "tur-adm2-mengen",
+     "name": "Mengen"
+    },
+    {
+     "id": "tur-adm2-menteşe",
+     "name": "Menteşe"
+    },
+    {
+     "id": "tur-adm2-meram",
+     "name": "Meram"
+    },
+    {
+     "id": "tur-adm2-meriç",
+     "name": "Meriç"
+    },
+    {
+     "id": "tur-adm2-merkez",
+     "name": "Merkez"
+    },
+    {
+     "id": "tur-adm2-merkezefendi",
+     "name": "Merkezefendi"
+    },
+    {
+     "id": "tur-adm2-merzifon",
+     "name": "Merzifon"
+    },
+    {
+     "id": "tur-adm2-mesudiye",
+     "name": "Mesudiye"
+    },
+    {
+     "id": "tur-adm2-mezitli",
+     "name": "Mezitli"
+    },
+    {
+     "id": "tur-adm2-midyat",
+     "name": "Midyat"
+    },
+    {
+     "id": "tur-adm2-mihalgazi",
+     "name": "Mihalgazi"
+    },
+    {
+     "id": "tur-adm2-mihalıççık",
+     "name": "Mihalıççık"
+    },
+    {
+     "id": "tur-adm2-milas",
+     "name": "Milas"
+    },
+    {
+     "id": "tur-adm2-mucur",
+     "name": "Mucur"
+    },
+    {
+     "id": "tur-adm2-mudanya",
+     "name": "Mudanya"
+    },
+    {
+     "id": "tur-adm2-mudurnu",
+     "name": "Mudurnu"
+    },
+    {
+     "id": "tur-adm2-muradiye",
+     "name": "Muradiye"
+    },
+    {
+     "id": "tur-adm2-muratlı",
+     "name": "Muratlı"
+    },
+    {
+     "id": "tur-adm2-muratpaşa",
+     "name": "Muratpaşa"
+    },
+    {
+     "id": "tur-adm2-murgul",
+     "name": "Murgul"
+    },
+    {
+     "id": "tur-adm2-musabeyli",
+     "name": "Musabeyli"
+    },
+    {
+     "id": "tur-adm2-mustafakemalpaşa",
+     "name": "Mustafakemalpaşa"
+    },
+    {
+     "id": "tur-adm2-mut",
+     "name": "Mut"
+    },
+    {
+     "id": "tur-adm2-mutki",
+     "name": "Mutki"
+    },
+    {
+     "id": "tur-adm2-muş-merkez",
+     "name": "Muş merkez"
+    },
+    {
+     "id": "tur-adm2-nallıhan",
+     "name": "Nallıhan"
+    },
+    {
+     "id": "tur-adm2-narlıdere",
+     "name": "Narlıdere"
+    },
+    {
+     "id": "tur-adm2-narman",
+     "name": "Narman"
+    },
+    {
+     "id": "tur-adm2-nazilli",
+     "name": "Nazilli"
+    },
+    {
+     "id": "tur-adm2-nazımiye",
+     "name": "Nazımiye"
+    },
+    {
+     "id": "tur-adm2-nevşehir-merkez",
+     "name": "Nevşehir merkez"
+    },
+    {
+     "id": "tur-adm2-niksar",
+     "name": "Niksar"
+    },
+    {
+     "id": "tur-adm2-nilüfer",
+     "name": "Nilüfer"
+    },
+    {
+     "id": "tur-adm2-nizip",
+     "name": "Nizip"
+    },
+    {
+     "id": "tur-adm2-niğde-merkez",
+     "name": "Niğde (merkez)"
+    },
+    {
+     "id": "tur-adm2-nurdağı",
+     "name": "Nurdağı"
+    },
+    {
+     "id": "tur-adm2-nurhak",
+     "name": "Nurhak"
+    },
+    {
+     "id": "tur-adm2-nusaybin",
+     "name": "Nusaybin"
+    },
+    {
+     "id": "tur-adm2-odunpazarı",
+     "name": "Odunpazarı"
+    },
+    {
+     "id": "tur-adm2-of",
+     "name": "Of"
+    },
+    {
+     "id": "tur-adm2-oltu",
+     "name": "Oltu"
+    },
+    {
+     "id": "tur-adm2-olur",
+     "name": "Olur"
+    },
+    {
+     "id": "tur-adm2-onikişubat",
+     "name": "Onikişubat"
+    },
+    {
+     "id": "tur-adm2-orhaneli",
+     "name": "Orhaneli"
+    },
+    {
+     "id": "tur-adm2-orhangazi",
+     "name": "Orhangazi"
+    },
+    {
+     "id": "tur-adm2-orta",
+     "name": "Orta"
+    },
+    {
+     "id": "tur-adm2-ortaca",
+     "name": "Ortaca"
+    },
+    {
+     "id": "tur-adm2-ortahisar",
+     "name": "Ortahisar"
+    },
+    {
+     "id": "tur-adm2-ortaköy",
+     "name": "Ortaköy"
+    },
+    {
+     "id": "tur-adm2-ortaköy-2",
+     "name": "Ortaköy"
+    },
+    {
+     "id": "tur-adm2-osmancık",
+     "name": "Osmancık"
+    },
+    {
+     "id": "tur-adm2-osmaneli",
+     "name": "Osmaneli"
+    },
+    {
+     "id": "tur-adm2-osmangazi",
+     "name": "Osmangazi"
+    },
+    {
+     "id": "tur-adm2-osmaniye-merkez",
+     "name": "Osmaniye (merkez)"
+    },
+    {
+     "id": "tur-adm2-otlukbeli",
+     "name": "Otlukbeli"
+    },
+    {
+     "id": "tur-adm2-ovacık",
+     "name": "Ovacık"
+    },
+    {
+     "id": "tur-adm2-ovacık-2",
+     "name": "Ovacık"
+    },
+    {
+     "id": "tur-adm2-oğuzeli",
+     "name": "Oğuzeli"
+    },
+    {
+     "id": "tur-adm2-oğuzlar",
+     "name": "Oğuzlar"
+    },
+    {
+     "id": "tur-adm2-palandöken",
+     "name": "Palandöken"
+    },
+    {
+     "id": "tur-adm2-palu",
+     "name": "Palu"
+    },
+    {
+     "id": "tur-adm2-pamukkale",
+     "name": "Pamukkale"
+    },
+    {
+     "id": "tur-adm2-pamukova",
+     "name": "Pamukova"
+    },
+    {
+     "id": "tur-adm2-pasinler",
+     "name": "Pasinler"
+    },
+    {
+     "id": "tur-adm2-patnos",
+     "name": "Patnos"
+    },
+    {
+     "id": "tur-adm2-payas",
+     "name": "Payas"
+    },
+    {
+     "id": "tur-adm2-pazar",
+     "name": "Pazar"
+    },
+    {
+     "id": "tur-adm2-pazar-2",
+     "name": "Pazar"
+    },
+    {
+     "id": "tur-adm2-pazarcık",
+     "name": "Pazarcık"
+    },
+    {
+     "id": "tur-adm2-pazarlar",
+     "name": "Pazarlar"
+    },
+    {
+     "id": "tur-adm2-pazaryeri",
+     "name": "Pazaryeri"
+    },
+    {
+     "id": "tur-adm2-pazaryolu",
+     "name": "Pazaryolu"
+    },
+    {
+     "id": "tur-adm2-pehlivanköy",
+     "name": "Pehlivanköy"
+    },
+    {
+     "id": "tur-adm2-pendik",
+     "name": "Pendik"
+    },
+    {
+     "id": "tur-adm2-pertek",
+     "name": "Pertek"
+    },
+    {
+     "id": "tur-adm2-pervari",
+     "name": "Pervari"
+    },
+    {
+     "id": "tur-adm2-perşembe",
+     "name": "Perşembe"
+    },
+    {
+     "id": "tur-adm2-piraziz",
+     "name": "Piraziz"
+    },
+    {
+     "id": "tur-adm2-polateli",
+     "name": "Polateli"
+    },
+    {
+     "id": "tur-adm2-polatlı",
+     "name": "Polatlı"
+    },
+    {
+     "id": "tur-adm2-posof",
+     "name": "Posof"
+    },
+    {
+     "id": "tur-adm2-pozantı",
+     "name": "Pozantı"
+    },
+    {
+     "id": "tur-adm2-prince-islands",
+     "name": "Prince Islands"
+    },
+    {
+     "id": "tur-adm2-pursaklar",
+     "name": "Pursaklar"
+    },
+    {
+     "id": "tur-adm2-pülümür",
+     "name": "Pülümür"
+    },
+    {
+     "id": "tur-adm2-pütürge",
+     "name": "Pütürge"
+    },
+    {
+     "id": "tur-adm2-pınarbaşı",
+     "name": "Pınarbaşı"
+    },
+    {
+     "id": "tur-adm2-pınarbaşı-2",
+     "name": "Pınarbaşı"
+    },
+    {
+     "id": "tur-adm2-pınarhisar",
+     "name": "Pınarhisar"
+    },
+    {
+     "id": "tur-adm2-refahiye",
+     "name": "Refahiye"
+    },
+    {
+     "id": "tur-adm2-reyhanlı",
+     "name": "Reyhanlı"
+    },
+    {
+     "id": "tur-adm2-reşadiye",
+     "name": "Reşadiye"
+    },
+    {
+     "id": "tur-adm2-rize-merkezi",
+     "name": "Rize merkezi"
+    },
+    {
+     "id": "tur-adm2-safranbolu",
+     "name": "Safranbolu"
+    },
+    {
+     "id": "tur-adm2-saimbeyli",
+     "name": "Saimbeyli"
+    },
+    {
+     "id": "tur-adm2-salihli",
+     "name": "Salihli"
+    },
+    {
+     "id": "tur-adm2-salıpazarı",
+     "name": "Salıpazarı"
+    },
+    {
+     "id": "tur-adm2-samandağ",
+     "name": "Samandağ"
+    },
+    {
+     "id": "tur-adm2-samsat",
+     "name": "Samsat"
+    },
+    {
+     "id": "tur-adm2-sancaktepe",
+     "name": "Sancaktepe"
+    },
+    {
+     "id": "tur-adm2-sandıklı",
+     "name": "Sandıklı"
+    },
+    {
+     "id": "tur-adm2-sapanca",
+     "name": "Sapanca"
+    },
+    {
+     "id": "tur-adm2-saray",
+     "name": "Saray"
+    },
+    {
+     "id": "tur-adm2-saray-2",
+     "name": "Saray"
+    },
+    {
+     "id": "tur-adm2-saraydüzü",
+     "name": "Saraydüzü"
+    },
+    {
+     "id": "tur-adm2-saraykent",
+     "name": "Saraykent"
+    },
+    {
+     "id": "tur-adm2-sarayköy",
+     "name": "Sarayköy"
+    },
+    {
+     "id": "tur-adm2-sarayönü",
+     "name": "Sarayönü"
+    },
+    {
+     "id": "tur-adm2-saruhanlı",
+     "name": "Saruhanlı"
+    },
+    {
+     "id": "tur-adm2-sarıcakaya",
+     "name": "Sarıcakaya"
+    },
+    {
+     "id": "tur-adm2-sarıgöl",
+     "name": "Sarıgöl"
+    },
+    {
+     "id": "tur-adm2-sarıkamış",
+     "name": "Sarıkamış"
+    },
+    {
+     "id": "tur-adm2-sarıkaya",
+     "name": "Sarıkaya"
+    },
+    {
+     "id": "tur-adm2-sarıoğlan",
+     "name": "Sarıoğlan"
+    },
+    {
+     "id": "tur-adm2-sarıveliler",
+     "name": "Sarıveliler"
+    },
+    {
+     "id": "tur-adm2-sarıyahşi",
+     "name": "Sarıyahşi"
+    },
+    {
+     "id": "tur-adm2-sarıyer",
+     "name": "Sarıyer"
+    },
+    {
+     "id": "tur-adm2-sarız",
+     "name": "Sarız"
+    },
+    {
+     "id": "tur-adm2-sarıçam",
+     "name": "Sarıçam"
+    },
+    {
+     "id": "tur-adm2-sason",
+     "name": "Sason"
+    },
+    {
+     "id": "tur-adm2-savaştepe",
+     "name": "Savaştepe"
+    },
+    {
+     "id": "tur-adm2-savur",
+     "name": "Savur"
+    },
+    {
+     "id": "tur-adm2-seben",
+     "name": "Seben"
+    },
+    {
+     "id": "tur-adm2-seferihisar",
+     "name": "Seferihisar"
+    },
+    {
+     "id": "tur-adm2-selendi",
+     "name": "Selendi"
+    },
+    {
+     "id": "tur-adm2-selim",
+     "name": "Selim"
+    },
+    {
+     "id": "tur-adm2-selçuk",
+     "name": "Selçuk"
+    },
+    {
+     "id": "tur-adm2-selçuklu",
+     "name": "Selçuklu"
+    },
+    {
+     "id": "tur-adm2-senirkent",
+     "name": "Senirkent"
+    },
+    {
+     "id": "tur-adm2-serdivan",
+     "name": "Serdivan"
+    },
+    {
+     "id": "tur-adm2-serik",
+     "name": "Serik"
+    },
+    {
+     "id": "tur-adm2-serinhisar",
+     "name": "Serinhisar"
+    },
+    {
+     "id": "tur-adm2-seydikemer",
+     "name": "Seydikemer"
+    },
+    {
+     "id": "tur-adm2-seydiler",
+     "name": "Seydiler"
+    },
+    {
+     "id": "tur-adm2-seydişehir",
+     "name": "Seydişehir"
+    },
+    {
+     "id": "tur-adm2-seyhan",
+     "name": "Seyhan"
+    },
+    {
+     "id": "tur-adm2-seyitgazi",
+     "name": "Seyitgazi"
+    },
+    {
+     "id": "tur-adm2-siirt-merkez",
+     "name": "Siirt (merkez)"
+    },
+    {
+     "id": "tur-adm2-silifke",
+     "name": "Silifke"
+    },
+    {
+     "id": "tur-adm2-silivri",
+     "name": "Silivri"
+    },
+    {
+     "id": "tur-adm2-silopi",
+     "name": "Silopi"
+    },
+    {
+     "id": "tur-adm2-silvan",
+     "name": "Silvan"
+    },
+    {
+     "id": "tur-adm2-simav",
+     "name": "Simav"
+    },
+    {
+     "id": "tur-adm2-sinanpaşa",
+     "name": "Sinanpaşa"
+    },
+    {
+     "id": "tur-adm2-sincan",
+     "name": "Sincan"
+    },
+    {
+     "id": "tur-adm2-sincik",
+     "name": "Sincik"
+    },
+    {
+     "id": "tur-adm2-sinop-merkez",
+     "name": "Sinop merkez"
+    },
+    {
+     "id": "tur-adm2-sivas-merkez",
+     "name": "Sivas merkez"
+    },
+    {
+     "id": "tur-adm2-sivaslı",
+     "name": "Sivaslı"
+    },
+    {
+     "id": "tur-adm2-siverek",
+     "name": "Siverek"
+    },
+    {
+     "id": "tur-adm2-sivrice",
+     "name": "Sivrice"
+    },
+    {
+     "id": "tur-adm2-sivrihisar",
+     "name": "Sivrihisar"
+    },
+    {
+     "id": "tur-adm2-solhan",
+     "name": "Solhan"
+    },
+    {
+     "id": "tur-adm2-soma",
+     "name": "Soma"
+    },
+    {
+     "id": "tur-adm2-sorgun",
+     "name": "Sorgun"
+    },
+    {
+     "id": "tur-adm2-sulakyurt",
+     "name": "Sulakyurt"
+    },
+    {
+     "id": "tur-adm2-sultanbeyli",
+     "name": "Sultanbeyli"
+    },
+    {
+     "id": "tur-adm2-sultandağı",
+     "name": "Sultandağı"
+    },
+    {
+     "id": "tur-adm2-sultangazi",
+     "name": "Sultangazi"
+    },
+    {
+     "id": "tur-adm2-sultanhanı",
+     "name": "Sultanhanı"
+    },
+    {
+     "id": "tur-adm2-sultanhisar",
+     "name": "Sultanhisar"
+    },
+    {
+     "id": "tur-adm2-suluova",
+     "name": "Suluova"
+    },
+    {
+     "id": "tur-adm2-sulusaray",
+     "name": "Sulusaray"
+    },
+    {
+     "id": "tur-adm2-sumbas",
+     "name": "Sumbas"
+    },
+    {
+     "id": "tur-adm2-sungurlu",
+     "name": "Sungurlu"
+    },
+    {
+     "id": "tur-adm2-sur",
+     "name": "Sur"
+    },
+    {
+     "id": "tur-adm2-suruç",
+     "name": "Suruç"
+    },
+    {
+     "id": "tur-adm2-susurluk",
+     "name": "Susurluk"
+    },
+    {
+     "id": "tur-adm2-susuz",
+     "name": "Susuz"
+    },
+    {
+     "id": "tur-adm2-suşehri",
+     "name": "Suşehri"
+    },
+    {
+     "id": "tur-adm2-söke",
+     "name": "Söke"
+    },
+    {
+     "id": "tur-adm2-söğüt",
+     "name": "Söğüt"
+    },
+    {
+     "id": "tur-adm2-söğütlü",
+     "name": "Söğütlü"
+    },
+    {
+     "id": "tur-adm2-süleymanpaşa",
+     "name": "Süleymanpaşa"
+    },
+    {
+     "id": "tur-adm2-süloğlu",
+     "name": "Süloğlu"
+    },
+    {
+     "id": "tur-adm2-sürmene",
+     "name": "Sürmene"
+    },
+    {
+     "id": "tur-adm2-sütçüler",
+     "name": "Sütçüler"
+    },
+    {
+     "id": "tur-adm2-sındırgı",
+     "name": "Sındırgı"
+    },
+    {
+     "id": "tur-adm2-talas",
+     "name": "Talas"
+    },
+    {
+     "id": "tur-adm2-taraklı",
+     "name": "Taraklı"
+    },
+    {
+     "id": "tur-adm2-tarsus",
+     "name": "Tarsus"
+    },
+    {
+     "id": "tur-adm2-tatvan",
+     "name": "Tatvan"
+    },
+    {
+     "id": "tur-adm2-tavas",
+     "name": "Tavas"
+    },
+    {
+     "id": "tur-adm2-tavşanlı",
+     "name": "Tavşanlı"
+    },
+    {
+     "id": "tur-adm2-taşkent",
+     "name": "Taşkent"
+    },
+    {
+     "id": "tur-adm2-taşköprü",
+     "name": "Taşköprü"
+    },
+    {
+     "id": "tur-adm2-taşlıçay",
+     "name": "Taşlıçay"
+    },
+    {
+     "id": "tur-adm2-taşova",
+     "name": "Taşova"
+    },
+    {
+     "id": "tur-adm2-tefenni",
+     "name": "Tefenni"
+    },
+    {
+     "id": "tur-adm2-tekkeköy",
+     "name": "Tekkeköy"
+    },
+    {
+     "id": "tur-adm2-tekman",
+     "name": "Tekman"
+    },
+    {
+     "id": "tur-adm2-tepebaşı",
+     "name": "Tepebaşı"
+    },
+    {
+     "id": "tur-adm2-tercan",
+     "name": "Tercan"
+    },
+    {
+     "id": "tur-adm2-termal",
+     "name": "Termal"
+    },
+    {
+     "id": "tur-adm2-terme",
+     "name": "Terme"
+    },
+    {
+     "id": "tur-adm2-tillo",
+     "name": "Tillo"
+    },
+    {
+     "id": "tur-adm2-tire",
+     "name": "Tire"
+    },
+    {
+     "id": "tur-adm2-tirebolu",
+     "name": "Tirebolu"
+    },
+    {
+     "id": "tur-adm2-tokat-merkez",
+     "name": "Tokat merkez"
+    },
+    {
+     "id": "tur-adm2-tomarza",
+     "name": "Tomarza"
+    },
+    {
+     "id": "tur-adm2-tonya",
+     "name": "Tonya"
+    },
+    {
+     "id": "tur-adm2-toprakkale",
+     "name": "Toprakkale"
+    },
+    {
+     "id": "tur-adm2-torbalı",
+     "name": "Torbalı"
+    },
+    {
+     "id": "tur-adm2-toroslar",
+     "name": "Toroslar"
+    },
+    {
+     "id": "tur-adm2-tortum",
+     "name": "Tortum"
+    },
+    {
+     "id": "tur-adm2-torul",
+     "name": "Torul"
+    },
+    {
+     "id": "tur-adm2-tosya",
+     "name": "Tosya"
+    },
+    {
+     "id": "tur-adm2-tufanbeyli",
+     "name": "Tufanbeyli"
+    },
+    {
+     "id": "tur-adm2-tunceli-merkez",
+     "name": "Tunceli merkez"
+    },
+    {
+     "id": "tur-adm2-turgutlu",
+     "name": "Turgutlu"
+    },
+    {
+     "id": "tur-adm2-turhal",
+     "name": "Turhal"
+    },
+    {
+     "id": "tur-adm2-tut",
+     "name": "Tut"
+    },
+    {
+     "id": "tur-adm2-tutak",
+     "name": "Tutak"
+    },
+    {
+     "id": "tur-adm2-tuzla",
+     "name": "Tuzla"
+    },
+    {
+     "id": "tur-adm2-tuzluca",
+     "name": "Tuzluca"
+    },
+    {
+     "id": "tur-adm2-tuzlukçu",
+     "name": "Tuzlukçu"
+    },
+    {
+     "id": "tur-adm2-tuşba",
+     "name": "Tuşba"
+    },
+    {
+     "id": "tur-adm2-türkeli",
+     "name": "Türkeli"
+    },
+    {
+     "id": "tur-adm2-türkoğlu",
+     "name": "Türkoğlu"
+    },
+    {
+     "id": "tur-adm2-ula",
+     "name": "Ula"
+    },
+    {
+     "id": "tur-adm2-ulaş",
+     "name": "Ulaş"
+    },
+    {
+     "id": "tur-adm2-ulubey",
+     "name": "Ulubey"
+    },
+    {
+     "id": "tur-adm2-ulubey-2",
+     "name": "Ulubey"
+    },
+    {
+     "id": "tur-adm2-uluborlu",
+     "name": "Uluborlu"
+    },
+    {
+     "id": "tur-adm2-uludere",
+     "name": "Uludere"
+    },
+    {
+     "id": "tur-adm2-ulukisla",
+     "name": "Ulukisla"
+    },
+    {
+     "id": "tur-adm2-ulus",
+     "name": "Ulus"
+    },
+    {
+     "id": "tur-adm2-urla",
+     "name": "Urla"
+    },
+    {
+     "id": "tur-adm2-uzundere",
+     "name": "Uzundere"
+    },
+    {
+     "id": "tur-adm2-uzunköprü",
+     "name": "Uzunköprü"
+    },
+    {
+     "id": "tur-adm2-uğurludağ",
+     "name": "Uğurludağ"
+    },
+    {
+     "id": "tur-adm2-uşak-merkez",
+     "name": "Uşak merkez"
+    },
+    {
+     "id": "tur-adm2-vakfıkebir",
+     "name": "Vakfıkebir"
+    },
+    {
+     "id": "tur-adm2-varto",
+     "name": "Varto"
+    },
+    {
+     "id": "tur-adm2-vezirköprü",
+     "name": "Vezirköprü"
+    },
+    {
+     "id": "tur-adm2-viranşehir",
+     "name": "Viranşehir"
+    },
+    {
+     "id": "tur-adm2-vize",
+     "name": "Vize"
+    },
+    {
+     "id": "tur-adm2-yahyalı",
+     "name": "Yahyalı"
+    },
+    {
+     "id": "tur-adm2-yahşihan",
+     "name": "Yahşihan"
+    },
+    {
+     "id": "tur-adm2-yakakent",
+     "name": "Yakakent"
+    },
+    {
+     "id": "tur-adm2-yakutiye",
+     "name": "Yakutiye"
+    },
+    {
+     "id": "tur-adm2-yalova-merkez",
+     "name": "Yalova merkez"
+    },
+    {
+     "id": "tur-adm2-yalvaç",
+     "name": "Yalvaç"
+    },
+    {
+     "id": "tur-adm2-yalıhüyük",
+     "name": "Yalıhüyük"
+    },
+    {
+     "id": "tur-adm2-yapraklı",
+     "name": "Yapraklı"
+    },
+    {
+     "id": "tur-adm2-yatağan",
+     "name": "Yatağan"
+    },
+    {
+     "id": "tur-adm2-yavuzeli",
+     "name": "Yavuzeli"
+    },
+    {
+     "id": "tur-adm2-yayladağı",
+     "name": "Yayladağı"
+    },
+    {
+     "id": "tur-adm2-yayladere",
+     "name": "Yayladere"
+    },
+    {
+     "id": "tur-adm2-yazıhan",
+     "name": "Yazıhan"
+    },
+    {
+     "id": "tur-adm2-yağlıdere",
+     "name": "Yağlıdere"
+    },
+    {
+     "id": "tur-adm2-yedisu",
+     "name": "Yedisu"
+    },
+    {
+     "id": "tur-adm2-yenice",
+     "name": "Yenice"
+    },
+    {
+     "id": "tur-adm2-yenice-2",
+     "name": "Yenice"
+    },
+    {
+     "id": "tur-adm2-yenifakılı",
+     "name": "Yenifakılı"
+    },
+    {
+     "id": "tur-adm2-yenimahalle",
+     "name": "Yenimahalle"
+    },
+    {
+     "id": "tur-adm2-yenipazar",
+     "name": "Yenipazar"
+    },
+    {
+     "id": "tur-adm2-yenipazar-2",
+     "name": "Yenipazar"
+    },
+    {
+     "id": "tur-adm2-yeniçağa",
+     "name": "Yeniçağa"
+    },
+    {
+     "id": "tur-adm2-yenişarbademli",
+     "name": "Yenişarbademli"
+    },
+    {
+     "id": "tur-adm2-yenişehir",
+     "name": "Yenişehir"
+    },
+    {
+     "id": "tur-adm2-yenişehir-2",
+     "name": "Yenişehir"
+    },
+    {
+     "id": "tur-adm2-yenişehir-3",
+     "name": "Yenişehir"
+    },
+    {
+     "id": "tur-adm2-yerköy",
+     "name": "Yerköy"
+    },
+    {
+     "id": "tur-adm2-yeşilhisar",
+     "name": "Yeşilhisar"
+    },
+    {
+     "id": "tur-adm2-yeşilli",
+     "name": "Yeşilli"
+    },
+    {
+     "id": "tur-adm2-yeşilova",
+     "name": "Yeşilova"
+    },
+    {
+     "id": "tur-adm2-yeşilyurt",
+     "name": "Yeşilyurt"
+    },
+    {
+     "id": "tur-adm2-yeşilyurt-2",
+     "name": "Yeşilyurt"
+    },
+    {
+     "id": "tur-adm2-yomra",
+     "name": "Yomra"
+    },
+    {
+     "id": "tur-adm2-yozgat-merkez",
+     "name": "Yozgat merkez"
+    },
+    {
+     "id": "tur-adm2-yumurtalık",
+     "name": "Yumurtalık"
+    },
+    {
+     "id": "tur-adm2-yunak",
+     "name": "Yunak"
+    },
+    {
+     "id": "tur-adm2-yunusemre",
+     "name": "Yunusemre"
+    },
+    {
+     "id": "tur-adm2-yusufeli",
+     "name": "Yusufeli"
+    },
+    {
+     "id": "tur-adm2-yüksekova",
+     "name": "Yüksekova"
+    },
+    {
+     "id": "tur-adm2-yüreğir",
+     "name": "Yüreğir"
+    },
+    {
+     "id": "tur-adm2-yıldırım",
+     "name": "Yıldırım"
+    },
+    {
+     "id": "tur-adm2-yıldızeli",
+     "name": "Yıldızeli"
+    },
+    {
+     "id": "tur-adm2-yığılca",
+     "name": "Yığılca"
+    },
+    {
+     "id": "tur-adm2-zara",
+     "name": "Zara"
+    },
+    {
+     "id": "tur-adm2-zeytinburnu",
+     "name": "Zeytinburnu"
+    },
+    {
+     "id": "tur-adm2-zile",
+     "name": "Zile"
+    },
+    {
+     "id": "tur-adm2-zonguldak-merkez",
+     "name": "Zonguldak merkez"
+    },
+    {
+     "id": "tur-adm2-çal",
+     "name": "Çal"
+    },
+    {
+     "id": "tur-adm2-çaldıran",
+     "name": "Çaldıran"
+    },
+    {
+     "id": "tur-adm2-çamardı",
+     "name": "Çamardı"
+    },
+    {
+     "id": "tur-adm2-çamaş",
+     "name": "Çamaş"
+    },
+    {
+     "id": "tur-adm2-çameli",
+     "name": "Çameli"
+    },
+    {
+     "id": "tur-adm2-çamlıdere",
+     "name": "Çamlıdere"
+    },
+    {
+     "id": "tur-adm2-çamlıhemşin",
+     "name": "Çamlıhemşin"
+    },
+    {
+     "id": "tur-adm2-çamlıyayla",
+     "name": "Çamlıyayla"
+    },
+    {
+     "id": "tur-adm2-çamoluk",
+     "name": "Çamoluk"
+    },
+    {
+     "id": "tur-adm2-çan",
+     "name": "Çan"
+    },
+    {
+     "id": "tur-adm2-çanakkale-merkez",
+     "name": "Çanakkale merkez"
+    },
+    {
+     "id": "tur-adm2-çanakçı",
+     "name": "Çanakçı"
+    },
+    {
+     "id": "tur-adm2-çandır",
+     "name": "Çandır"
+    },
+    {
+     "id": "tur-adm2-çankaya",
+     "name": "Çankaya"
+    },
+    {
+     "id": "tur-adm2-çankırı-merkez",
+     "name": "Çankırı merkez"
+    },
+    {
+     "id": "tur-adm2-çardak",
+     "name": "Çardak"
+    },
+    {
+     "id": "tur-adm2-çarşamba",
+     "name": "Çarşamba"
+    },
+    {
+     "id": "tur-adm2-çarşıbaşı",
+     "name": "Çarşıbaşı"
+    },
+    {
+     "id": "tur-adm2-çat",
+     "name": "Çat"
+    },
+    {
+     "id": "tur-adm2-çatak",
+     "name": "Çatak"
+    },
+    {
+     "id": "tur-adm2-çatalca",
+     "name": "Çatalca"
+    },
+    {
+     "id": "tur-adm2-çatalpınar",
+     "name": "Çatalpınar"
+    },
+    {
+     "id": "tur-adm2-çatalzeytin",
+     "name": "Çatalzeytin"
+    },
+    {
+     "id": "tur-adm2-çavdarhisar",
+     "name": "Çavdarhisar"
+    },
+    {
+     "id": "tur-adm2-çavdır",
+     "name": "Çavdır"
+    },
+    {
+     "id": "tur-adm2-çay",
+     "name": "Çay"
+    },
+    {
+     "id": "tur-adm2-çaybaşı",
+     "name": "Çaybaşı"
+    },
+    {
+     "id": "tur-adm2-çaycuma",
+     "name": "Çaycuma"
+    },
+    {
+     "id": "tur-adm2-çayeli",
+     "name": "Çayeli"
+    },
+    {
+     "id": "tur-adm2-çaykara",
+     "name": "Çaykara"
+    },
+    {
+     "id": "tur-adm2-çayıralan",
+     "name": "Çayıralan"
+    },
+    {
+     "id": "tur-adm2-çayırlı",
+     "name": "Çayırlı"
+    },
+    {
+     "id": "tur-adm2-çayırova",
+     "name": "Çayırova"
+    },
+    {
+     "id": "tur-adm2-çağlayancerit",
+     "name": "Çağlayancerit"
+    },
+    {
+     "id": "tur-adm2-çekerek",
+     "name": "Çekerek"
+    },
+    {
+     "id": "tur-adm2-çekmeköy",
+     "name": "Çekmeköy"
+    },
+    {
+     "id": "tur-adm2-çelebi",
+     "name": "Çelebi"
+    },
+    {
+     "id": "tur-adm2-çelikhan",
+     "name": "Çelikhan"
+    },
+    {
+     "id": "tur-adm2-çeltik",
+     "name": "Çeltik"
+    },
+    {
+     "id": "tur-adm2-çeltikçi",
+     "name": "Çeltikçi"
+    },
+    {
+     "id": "tur-adm2-çemişgezek",
+     "name": "Çemişgezek"
+    },
+    {
+     "id": "tur-adm2-çerkezköy",
+     "name": "Çerkezköy"
+    },
+    {
+     "id": "tur-adm2-çerkeş",
+     "name": "Çerkeş"
+    },
+    {
+     "id": "tur-adm2-çermik",
+     "name": "Çermik"
+    },
+    {
+     "id": "tur-adm2-çeşme",
+     "name": "Çeşme"
+    },
+    {
+     "id": "tur-adm2-çifteler",
+     "name": "Çifteler"
+    },
+    {
+     "id": "tur-adm2-çiftlik",
+     "name": "Çiftlik"
+    },
+    {
+     "id": "tur-adm2-çiftlikköy",
+     "name": "Çiftlikköy"
+    },
+    {
+     "id": "tur-adm2-çilimli",
+     "name": "Çilimli"
+    },
+    {
+     "id": "tur-adm2-çine",
+     "name": "Çine"
+    },
+    {
+     "id": "tur-adm2-çivril",
+     "name": "Çivril"
+    },
+    {
+     "id": "tur-adm2-çiçekdağı",
+     "name": "Çiçekdağı"
+    },
+    {
+     "id": "tur-adm2-çiğli",
+     "name": "Çiğli"
+    },
+    {
+     "id": "tur-adm2-çobanlar",
+     "name": "Çobanlar"
+    },
+    {
+     "id": "tur-adm2-çorlu",
+     "name": "Çorlu"
+    },
+    {
+     "id": "tur-adm2-çorum-merkez",
+     "name": "Çorum merkez"
+    },
+    {
+     "id": "tur-adm2-çubuk",
+     "name": "Çubuk"
+    },
+    {
+     "id": "tur-adm2-çukurca",
+     "name": "Çukurca"
+    },
+    {
+     "id": "tur-adm2-çukurova",
+     "name": "Çukurova"
+    },
+    {
+     "id": "tur-adm2-çumra",
+     "name": "Çumra"
+    },
+    {
+     "id": "tur-adm2-çüngüş",
+     "name": "Çüngüş"
+    },
+    {
+     "id": "tur-adm2-çıldır",
+     "name": "Çıldır"
+    },
+    {
+     "id": "tur-adm2-çınar",
+     "name": "Çınar"
+    },
+    {
+     "id": "tur-adm2-çınarcık",
+     "name": "Çınarcık"
+    },
+    {
+     "id": "tur-adm2-ödemiş",
+     "name": "Ödemiş"
+    },
+    {
+     "id": "tur-adm2-ömerli",
+     "name": "Ömerli"
+    },
+    {
+     "id": "tur-adm2-özalp",
+     "name": "Özalp"
+    },
+    {
+     "id": "tur-adm2-özvatan",
+     "name": "Özvatan"
+    },
+    {
+     "id": "tur-adm2-ümraniye",
+     "name": "Ümraniye"
+    },
+    {
+     "id": "tur-adm2-ünye",
+     "name": "Ünye"
+    },
+    {
+     "id": "tur-adm2-ürgüp",
+     "name": "Ürgüp"
+    },
+    {
+     "id": "tur-adm2-üsküdar",
+     "name": "Üsküdar"
+    },
+    {
+     "id": "tur-adm2-üzümlü",
+     "name": "Üzümlü"
+    },
+    {
+     "id": "tur-adm2-şabanözü",
+     "name": "Şabanözü"
+    },
+    {
+     "id": "tur-adm2-şahinbey",
+     "name": "Şahinbey"
+    },
+    {
+     "id": "tur-adm2-şalpazarı",
+     "name": "Şalpazarı"
+    },
+    {
+     "id": "tur-adm2-şaphane",
+     "name": "Şaphane"
+    },
+    {
+     "id": "tur-adm2-şarkîkaraağaç",
+     "name": "Şarkîkaraağaç"
+    },
+    {
+     "id": "tur-adm2-şarköy",
+     "name": "Şarköy"
+    },
+    {
+     "id": "tur-adm2-şarkışla",
+     "name": "Şarkışla"
+    },
+    {
+     "id": "tur-adm2-şavşat",
+     "name": "Şavşat"
+    },
+    {
+     "id": "tur-adm2-şebinkarahisar",
+     "name": "Şebinkarahisar"
+    },
+    {
+     "id": "tur-adm2-şefaatli",
+     "name": "Şefaatli"
+    },
+    {
+     "id": "tur-adm2-şehitkamil",
+     "name": "Şehitkamil"
+    },
+    {
+     "id": "tur-adm2-şehzadeler",
+     "name": "Şehzadeler"
+    },
+    {
+     "id": "tur-adm2-şemdinli",
+     "name": "Şemdinli"
+    },
+    {
+     "id": "tur-adm2-şenkaya",
+     "name": "Şenkaya"
+    },
+    {
+     "id": "tur-adm2-şenpazar",
+     "name": "Şenpazar"
+    },
+    {
+     "id": "tur-adm2-şereflikoçhisar",
+     "name": "Şereflikoçhisar"
+    },
+    {
+     "id": "tur-adm2-şile",
+     "name": "Şile"
+    },
+    {
+     "id": "tur-adm2-şiran",
+     "name": "Şiran"
+    },
+    {
+     "id": "tur-adm2-şirvan",
+     "name": "Şirvan"
+    },
+    {
+     "id": "tur-adm2-şişli",
+     "name": "Şişli"
+    },
+    {
+     "id": "tur-adm2-şuhut",
+     "name": "Şuhut"
+    },
+    {
+     "id": "tur-adm2-şırnak-merkez",
+     "name": "Şırnak merkez"
+    }
+   ]
+  }
+ },
+ "name": "Turkey",
+ "nameBn": "Turkey"
+}

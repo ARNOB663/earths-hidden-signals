@@ -499,24 +499,28 @@ export default async function MethodsPage() {
 
         <Section id="signals" n="7b" title="Rain signals">
           <p>
-            The Signals page lists {geography.countries.length} countries and their published local
-            administrative areas. Boundaries come from geoBoundaries{" "}
-            <span className="whitespace-nowrap">gbOpen</span> at ADM0 (country), ADM1 and ADM2; each
-            level keeps the source&apos;s own name (Division, State / Union Territory, district,
-            Province, Dzongdeys, Gewog, …) and availability differs by country. geoBoundaries
-            provides geography only: no weather data and no scores.{" "}
+            The Signals page lists every country and territory geoBoundaries publishes at ADM0
+            ({geography.counts?.countries ?? geography.countries.length} of them) and each one&apos;s
+            local administrative areas. ADM1 is published for {geography.counts?.ADM1 ?? "many"} of
+            those countries ({geography.counts?.ADM1Areas ?? "thousands of"} areas) and ADM2 for{" "}
+            {geography.counts?.ADM2 ?? "many"} ({geography.counts?.ADM2Areas ?? "tens of thousands of"}{" "}
+            areas); a level is only shown where the source publishes it. Each level keeps the
+            source&apos;s own name (Division, State / Union Territory, district, County, Province,
+            Dzongdeys, Gewog, …). geoBoundaries provides geography only: no weather data and no
+            scores.{" "}
             <Link href="/methods#signals-geography" className="underline decoration-line underline-offset-2 hover:text-ink">
               See how the levels and coverage are handled
             </Link>
             .
           </p>
           <p>
-            A signal colour (Green, Yellow, Red) is a screen for preparedness, not a forecast or an
+            A signal colour (Green, Yellow, Red) is a raised sample score, not a forecast or an
             official warning. Coverage is measured from the committed NASA analysis grids: a
             variable counts for an area when at least half of that variable&apos;s grid cells in the
-            area&apos;s bounding box fall inside its boundary and carry a usable series. Where no
-            variable qualifies, the area is shown as <strong>No data</strong> — a gap, never a safe
-            area. <Link href="/signals" className="underline decoration-line underline-offset-2 hover:text-ink">
+            area&apos;s bounding box fall inside its boundary and carry a usable series. Those grids
+            cover South Asia only, so countries outside that extent, and any area whose boundary
+            holds no grid-cell centre, are shown as <strong>No data</strong> — a gap, never a safe
+            area and never a Green. <Link href="/signals" className="underline decoration-line underline-offset-2 hover:text-ink">
               Open Signals
             </Link>
           </p>
@@ -528,9 +532,10 @@ export default async function MethodsPage() {
           <p id="signals-geography" className="scroll-mt-24">
             <span className="font-medium text-ink">Geographic levels.</span> ADM0 is the country;
             ADM1 and ADM2 are its local levels, and the deepest published level is not always a
-            district (Sri Lanka&apos;s gbOpen ADM1 and ADM2 labels are unset in the source, so the
-            page says &ldquo;ADM1 areas&rdquo; and &ldquo;ADM2 areas&rdquo; rather than inventing a
-            name). The reusable identifier is stable per boundary: {" "}
+            district (Sri Lanka&apos;s gbOpen ADM1 and ADM2 labels are unset, and a few files name
+            the country itself instead of a level, so the page says &ldquo;ADM1 areas&rdquo; and
+            &ldquo;ADM2 areas&rdquo; rather than inventing a name). Countries without a level simply
+            have no rows for it. The reusable identifier is stable per boundary: {" "}
             <code className="rounded bg-sunken px-1 text-xs">{"{iso}"}-adm0</code> for a country,{" "}
             <code className="rounded bg-sunken px-1 text-xs">{"{iso}"}-adm1-{"{slug}"}</code> and{" "}
             <code className="rounded bg-sunken px-1 text-xs">{"{iso}"}-adm2-{"{slug}"}</code> for

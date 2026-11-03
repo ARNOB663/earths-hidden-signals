@@ -1,0 +1,489 @@
+{
+ "code": "FRA",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Country",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2016",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Region",
+   "code": "ADM1",
+   "count": 13,
+   "name": "Region",
+   "nameBn": "অঞ্চল",
+   "representedYear": "2022",
+   "sourceCount": 13,
+   "units": [
+    {
+     "id": "fra-adm1-auvergne-rhône-alpes",
+     "name": "Auvergne-Rhône-Alpes",
+     "shapeISO": "FR-ARA"
+    },
+    {
+     "id": "fra-adm1-bourgogne-franche-comté",
+     "name": "Bourgogne-Franche-Comté",
+     "shapeISO": "FR-BFC"
+    },
+    {
+     "id": "fra-adm1-bretagne",
+     "name": "Bretagne",
+     "shapeISO": "FR-BRE"
+    },
+    {
+     "id": "fra-adm1-centre-val-de-loire",
+     "name": "Centre-Val de Loire",
+     "shapeISO": "FR-CVL"
+    },
+    {
+     "id": "fra-adm1-corse",
+     "name": "Corse",
+     "shapeISO": "FR-20R"
+    },
+    {
+     "id": "fra-adm1-grand-est",
+     "name": "Grand Est",
+     "shapeISO": "FR-GES"
+    },
+    {
+     "id": "fra-adm1-hauts-de-france",
+     "name": "Hauts-de-France",
+     "shapeISO": "FR-HDF"
+    },
+    {
+     "id": "fra-adm1-normandie",
+     "name": "Normandie",
+     "shapeISO": "FR-NOR"
+    },
+    {
+     "id": "fra-adm1-nouvelle-aquitaine",
+     "name": "Nouvelle-Aquitaine",
+     "shapeISO": "FR-NAQ"
+    },
+    {
+     "id": "fra-adm1-occitanie",
+     "name": "Occitanie",
+     "shapeISO": "FR-OCC"
+    },
+    {
+     "id": "fra-adm1-pays-de-la-loire",
+     "name": "Pays de la Loire",
+     "shapeISO": "FR-PDL"
+    },
+    {
+     "id": "fra-adm1-provence-alpes-côte-d-azur",
+     "name": "Provence-Alpes-Côte d'Azur",
+     "shapeISO": "FR-PAC"
+    },
+    {
+     "id": "fra-adm1-île-de-france",
+     "name": "Île-de-France",
+     "shapeISO": "FR-IDF"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Department",
+   "code": "ADM2",
+   "count": 96,
+   "name": "Department",
+   "nameBn": "বিভাগ",
+   "representedYear": "2022",
+   "sourceCount": 96,
+   "units": [
+    {
+     "id": "fra-adm2-ain",
+     "name": "Ain"
+    },
+    {
+     "id": "fra-adm2-aisne",
+     "name": "Aisne"
+    },
+    {
+     "id": "fra-adm2-allier",
+     "name": "Allier"
+    },
+    {
+     "id": "fra-adm2-alpes-de-haute-provence",
+     "name": "Alpes-de-Haute-Provence"
+    },
+    {
+     "id": "fra-adm2-alpes-maritimes",
+     "name": "Alpes-Maritimes"
+    },
+    {
+     "id": "fra-adm2-ardennes",
+     "name": "Ardennes"
+    },
+    {
+     "id": "fra-adm2-ardèche",
+     "name": "Ardèche"
+    },
+    {
+     "id": "fra-adm2-ariège",
+     "name": "Ariège"
+    },
+    {
+     "id": "fra-adm2-aube",
+     "name": "Aube"
+    },
+    {
+     "id": "fra-adm2-aude",
+     "name": "Aude"
+    },
+    {
+     "id": "fra-adm2-aveyron",
+     "name": "Aveyron"
+    },
+    {
+     "id": "fra-adm2-bas-rhin",
+     "name": "Bas-Rhin"
+    },
+    {
+     "id": "fra-adm2-bouches-du-rhône",
+     "name": "Bouches-du-Rhône"
+    },
+    {
+     "id": "fra-adm2-calvados",
+     "name": "Calvados"
+    },
+    {
+     "id": "fra-adm2-cantal",
+     "name": "Cantal"
+    },
+    {
+     "id": "fra-adm2-charente",
+     "name": "Charente"
+    },
+    {
+     "id": "fra-adm2-charente-maritime",
+     "name": "Charente-Maritime"
+    },
+    {
+     "id": "fra-adm2-cher",
+     "name": "Cher"
+    },
+    {
+     "id": "fra-adm2-corrèze",
+     "name": "Corrèze"
+    },
+    {
+     "id": "fra-adm2-corse-du-sud",
+     "name": "Corse-du-Sud"
+    },
+    {
+     "id": "fra-adm2-creuse",
+     "name": "Creuse"
+    },
+    {
+     "id": "fra-adm2-côte-d-or",
+     "name": "Côte-d'Or"
+    },
+    {
+     "id": "fra-adm2-côtes-d-armor",
+     "name": "Côtes d'Armor"
+    },
+    {
+     "id": "fra-adm2-deux-sèvres",
+     "name": "Deux-Sèvres"
+    },
+    {
+     "id": "fra-adm2-dordogne",
+     "name": "Dordogne"
+    },
+    {
+     "id": "fra-adm2-doubs",
+     "name": "Doubs"
+    },
+    {
+     "id": "fra-adm2-drôme",
+     "name": "Drôme"
+    },
+    {
+     "id": "fra-adm2-essonne",
+     "name": "Essonne"
+    },
+    {
+     "id": "fra-adm2-eure",
+     "name": "Eure"
+    },
+    {
+     "id": "fra-adm2-eure-et-loir",
+     "name": "Eure-et-Loir"
+    },
+    {
+     "id": "fra-adm2-finistère",
+     "name": "Finistère"
+    },
+    {
+     "id": "fra-adm2-gard",
+     "name": "Gard"
+    },
+    {
+     "id": "fra-adm2-gers",
+     "name": "Gers"
+    },
+    {
+     "id": "fra-adm2-gironde",
+     "name": "Gironde"
+    },
+    {
+     "id": "fra-adm2-haut-rhin",
+     "name": "Haut-Rhin"
+    },
+    {
+     "id": "fra-adm2-haute-corse",
+     "name": "Haute-Corse"
+    },
+    {
+     "id": "fra-adm2-haute-garonne",
+     "name": "Haute-Garonne"
+    },
+    {
+     "id": "fra-adm2-haute-loire",
+     "name": "Haute-Loire"
+    },
+    {
+     "id": "fra-adm2-haute-marne",
+     "name": "Haute-Marne"
+    },
+    {
+     "id": "fra-adm2-haute-savoie",
+     "name": "Haute-Savoie"
+    },
+    {
+     "id": "fra-adm2-haute-saône",
+     "name": "Haute-Saône"
+    },
+    {
+     "id": "fra-adm2-haute-vienne",
+     "name": "Haute-Vienne"
+    },
+    {
+     "id": "fra-adm2-hautes-alpes",
+     "name": "Hautes-Alpes"
+    },
+    {
+     "id": "fra-adm2-hautes-pyrénées",
+     "name": "Hautes-Pyrénées"
+    },
+    {
+     "id": "fra-adm2-hauts-de-seine",
+     "name": "Hauts-de-Seine"
+    },
+    {
+     "id": "fra-adm2-hérault",
+     "name": "Hérault"
+    },
+    {
+     "id": "fra-adm2-ille-et-vilaine",
+     "name": "Ille-et-Vilaine"
+    },
+    {
+     "id": "fra-adm2-indre",
+     "name": "Indre"
+    },
+    {
+     "id": "fra-adm2-indre-et-loire",
+     "name": "Indre-et-Loire"
+    },
+    {
+     "id": "fra-adm2-isère",
+     "name": "Isère"
+    },
+    {
+     "id": "fra-adm2-jura",
+     "name": "Jura"
+    },
+    {
+     "id": "fra-adm2-landes",
+     "name": "Landes"
+    },
+    {
+     "id": "fra-adm2-loir-et-cher",
+     "name": "Loir-et-Cher"
+    },
+    {
+     "id": "fra-adm2-loire",
+     "name": "Loire"
+    },
+    {
+     "id": "fra-adm2-loire-atlantique",
+     "name": "Loire-Atlantique"
+    },
+    {
+     "id": "fra-adm2-loiret",
+     "name": "Loiret"
+    },
+    {
+     "id": "fra-adm2-lot",
+     "name": "Lot"
+    },
+    {
+     "id": "fra-adm2-lot-et-garonne",
+     "name": "Lot-et-Garonne"
+    },
+    {
+     "id": "fra-adm2-lozère",
+     "name": "Lozère"
+    },
+    {
+     "id": "fra-adm2-maine-et-loire",
+     "name": "Maine-et-Loire"
+    },
+    {
+     "id": "fra-adm2-manche",
+     "name": "Manche"
+    },
+    {
+     "id": "fra-adm2-marne",
+     "name": "Marne"
+    },
+    {
+     "id": "fra-adm2-mayenne",
+     "name": "Mayenne"
+    },
+    {
+     "id": "fra-adm2-meurthe-et-moselle",
+     "name": "Meurthe-et-Moselle"
+    },
+    {
+     "id": "fra-adm2-meuse",
+     "name": "Meuse"
+    },
+    {
+     "id": "fra-adm2-morbihan",
+     "name": "Morbihan"
+    },
+    {
+     "id": "fra-adm2-moselle",
+     "name": "Moselle"
+    },
+    {
+     "id": "fra-adm2-nièvre",
+     "name": "Nièvre"
+    },
+    {
+     "id": "fra-adm2-nord",
+     "name": "Nord"
+    },
+    {
+     "id": "fra-adm2-oise",
+     "name": "Oise"
+    },
+    {
+     "id": "fra-adm2-orne",
+     "name": "Orne"
+    },
+    {
+     "id": "fra-adm2-paris",
+     "name": "Paris"
+    },
+    {
+     "id": "fra-adm2-pas-de-calais",
+     "name": "Pas-de-Calais"
+    },
+    {
+     "id": "fra-adm2-puy-de-dôme",
+     "name": "Puy-de-Dôme"
+    },
+    {
+     "id": "fra-adm2-pyrénées-atlantiques",
+     "name": "Pyrénées-Atlantiques"
+    },
+    {
+     "id": "fra-adm2-pyrénées-orientales",
+     "name": "Pyrénées-Orientales"
+    },
+    {
+     "id": "fra-adm2-rhône",
+     "name": "Rhône"
+    },
+    {
+     "id": "fra-adm2-sarthe",
+     "name": "Sarthe"
+    },
+    {
+     "id": "fra-adm2-savoie",
+     "name": "Savoie"
+    },
+    {
+     "id": "fra-adm2-saône-et-loire",
+     "name": "Saône-et-Loire"
+    },
+    {
+     "id": "fra-adm2-seine-et-marne",
+     "name": "Seine-et-Marne"
+    },
+    {
+     "id": "fra-adm2-seine-maritime",
+     "name": "Seine-Maritime"
+    },
+    {
+     "id": "fra-adm2-seine-saint-denis",
+     "name": "Seine-Saint-Denis"
+    },
+    {
+     "id": "fra-adm2-somme",
+     "name": "Somme"
+    },
+    {
+     "id": "fra-adm2-tarn",
+     "name": "Tarn"
+    },
+    {
+     "id": "fra-adm2-tarn-et-garonne",
+     "name": "Tarn-et-Garonne"
+    },
+    {
+     "id": "fra-adm2-territoire-de-belfort",
+     "name": "Territoire de Belfort"
+    },
+    {
+     "id": "fra-adm2-val-d-oise",
+     "name": "Val-d'Oise"
+    },
+    {
+     "id": "fra-adm2-val-de-marne",
+     "name": "Val-de-Marne"
+    },
+    {
+     "id": "fra-adm2-var",
+     "name": "Var"
+    },
+    {
+     "id": "fra-adm2-vaucluse",
+     "name": "Vaucluse"
+    },
+    {
+     "id": "fra-adm2-vendée",
+     "name": "Vendée"
+    },
+    {
+     "id": "fra-adm2-vienne",
+     "name": "Vienne"
+    },
+    {
+     "id": "fra-adm2-vosges",
+     "name": "Vosges"
+    },
+    {
+     "id": "fra-adm2-yonne",
+     "name": "Yonne"
+    },
+    {
+     "id": "fra-adm2-yvelines",
+     "name": "Yvelines"
+    }
+   ]
+  }
+ },
+ "name": "France",
+ "nameBn": "France"
+}

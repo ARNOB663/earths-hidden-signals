@@ -1,0 +1,391 @@
+{
+ "code": "ETH",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Unknown",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2016",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "kilil and astedader",
+   "code": "ADM1",
+   "count": 11,
+   "name": "kilil and astedader",
+   "nameBn": "kilil and astedader",
+   "representedYear": "2016",
+   "sourceCount": 11,
+   "units": [
+    {
+     "id": "eth-adm1-addis-ababa",
+     "name": "Addis Ababa",
+     "shapeISO": "ET-AA"
+    },
+    {
+     "id": "eth-adm1-afar",
+     "name": "Afar",
+     "shapeISO": "ET-AF"
+    },
+    {
+     "id": "eth-adm1-amhara",
+     "name": "Amhara",
+     "shapeISO": "ET-AM"
+    },
+    {
+     "id": "eth-adm1-beneshangul-gumu",
+     "name": "Beneshangul Gumu",
+     "shapeISO": "ET-BE"
+    },
+    {
+     "id": "eth-adm1-dire-dawa",
+     "name": "Dire Dawa",
+     "shapeISO": "ET-DD"
+    },
+    {
+     "id": "eth-adm1-gambela",
+     "name": "Gambela",
+     "shapeISO": "ET-GA"
+    },
+    {
+     "id": "eth-adm1-hareri",
+     "name": "Hareri",
+     "shapeISO": "ET-HA"
+    },
+    {
+     "id": "eth-adm1-oromia",
+     "name": "Oromia",
+     "shapeISO": "ET-OR"
+    },
+    {
+     "id": "eth-adm1-snnpr",
+     "name": "SNNPR",
+     "shapeISO": "ET-SN"
+    },
+    {
+     "id": "eth-adm1-somali",
+     "name": "Somali",
+     "shapeISO": "ET-SO"
+    },
+    {
+     "id": "eth-adm1-tigray",
+     "name": "Tigray",
+     "shapeISO": "ET-TI"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Unknown",
+   "code": "ADM2",
+   "count": 74,
+   "name": "ADM2 areas",
+   "nameBn": "ADM2 এলাকা",
+   "representedYear": "2016",
+   "sourceCount": 74,
+   "units": [
+    {
+     "id": "eth-adm2-afder",
+     "name": "Afder"
+    },
+    {
+     "id": "eth-adm2-agnuak",
+     "name": "Agnuak"
+    },
+    {
+     "id": "eth-adm2-alaba",
+     "name": "Alaba"
+    },
+    {
+     "id": "eth-adm2-arsi",
+     "name": "Arsi"
+    },
+    {
+     "id": "eth-adm2-asosa",
+     "name": "Asosa"
+    },
+    {
+     "id": "eth-adm2-awi-agew",
+     "name": "Awi/Agew"
+    },
+    {
+     "id": "eth-adm2-bale",
+     "name": "Bale"
+    },
+    {
+     "id": "eth-adm2-basketo",
+     "name": "Basketo"
+    },
+    {
+     "id": "eth-adm2-bench-maji",
+     "name": "Bench Maji"
+    },
+    {
+     "id": "eth-adm2-borena",
+     "name": "Borena"
+    },
+    {
+     "id": "eth-adm2-central",
+     "name": "Central"
+    },
+    {
+     "id": "eth-adm2-dawro",
+     "name": "Dawro"
+    },
+    {
+     "id": "eth-adm2-dire-dawa",
+     "name": "Dire Dawa"
+    },
+    {
+     "id": "eth-adm2-doolo",
+     "name": "Doolo"
+    },
+    {
+     "id": "eth-adm2-east-gojam",
+     "name": "East Gojam"
+    },
+    {
+     "id": "eth-adm2-east-harerge",
+     "name": "East Harerge"
+    },
+    {
+     "id": "eth-adm2-east-shewa",
+     "name": "East Shewa"
+    },
+    {
+     "id": "eth-adm2-east-wellega",
+     "name": "East Wellega"
+    },
+    {
+     "id": "eth-adm2-eastern",
+     "name": "Eastern"
+    },
+    {
+     "id": "eth-adm2-fafan",
+     "name": "Fafan"
+    },
+    {
+     "id": "eth-adm2-gamo-gofa",
+     "name": "Gamo Gofa"
+    },
+    {
+     "id": "eth-adm2-gedio",
+     "name": "Gedio"
+    },
+    {
+     "id": "eth-adm2-guji",
+     "name": "Guji"
+    },
+    {
+     "id": "eth-adm2-gurage",
+     "name": "Gurage"
+    },
+    {
+     "id": "eth-adm2-hadiya",
+     "name": "Hadiya"
+    },
+    {
+     "id": "eth-adm2-hareri",
+     "name": "Hareri"
+    },
+    {
+     "id": "eth-adm2-horo-guduru",
+     "name": "Horo Guduru"
+    },
+    {
+     "id": "eth-adm2-ilubabor",
+     "name": "Ilubabor"
+    },
+    {
+     "id": "eth-adm2-jarar",
+     "name": "Jarar"
+    },
+    {
+     "id": "eth-adm2-jimma",
+     "name": "Jimma"
+    },
+    {
+     "id": "eth-adm2-keffa",
+     "name": "Keffa"
+    },
+    {
+     "id": "eth-adm2-kelem-wellega",
+     "name": "Kelem Wellega"
+    },
+    {
+     "id": "eth-adm2-kemashi",
+     "name": "Kemashi"
+    },
+    {
+     "id": "eth-adm2-konta",
+     "name": "Konta"
+    },
+    {
+     "id": "eth-adm2-korahe",
+     "name": "Korahe"
+    },
+    {
+     "id": "eth-adm2-kt",
+     "name": "KT"
+    },
+    {
+     "id": "eth-adm2-liben",
+     "name": "Liben"
+    },
+    {
+     "id": "eth-adm2-majang",
+     "name": "Majang"
+    },
+    {
+     "id": "eth-adm2-metekel",
+     "name": "Metekel"
+    },
+    {
+     "id": "eth-adm2-nogob",
+     "name": "Nogob"
+    },
+    {
+     "id": "eth-adm2-north-gonder",
+     "name": "North Gonder"
+    },
+    {
+     "id": "eth-adm2-north-shewa-r3",
+     "name": "North Shewa(R3)"
+    },
+    {
+     "id": "eth-adm2-north-shewa-r4",
+     "name": "North Shewa(R4)"
+    },
+    {
+     "id": "eth-adm2-north-western",
+     "name": "North Western"
+    },
+    {
+     "id": "eth-adm2-north-wollo",
+     "name": "North Wollo"
+    },
+    {
+     "id": "eth-adm2-nuer",
+     "name": "Nuer"
+    },
+    {
+     "id": "eth-adm2-oromia",
+     "name": "Oromia"
+    },
+    {
+     "id": "eth-adm2-region-14",
+     "name": "Region 14"
+    },
+    {
+     "id": "eth-adm2-segen-peoples",
+     "name": "Segen Peoples'"
+    },
+    {
+     "id": "eth-adm2-selti",
+     "name": "Selti"
+    },
+    {
+     "id": "eth-adm2-shabelle",
+     "name": "Shabelle"
+    },
+    {
+     "id": "eth-adm2-sheka",
+     "name": "Sheka"
+    },
+    {
+     "id": "eth-adm2-sidama",
+     "name": "Sidama"
+    },
+    {
+     "id": "eth-adm2-siti",
+     "name": "Siti"
+    },
+    {
+     "id": "eth-adm2-south-gonder",
+     "name": "South Gonder"
+    },
+    {
+     "id": "eth-adm2-south-omo",
+     "name": "South Omo"
+    },
+    {
+     "id": "eth-adm2-south-west-shewa",
+     "name": "South West Shewa"
+    },
+    {
+     "id": "eth-adm2-south-wollo",
+     "name": "South Wollo"
+    },
+    {
+     "id": "eth-adm2-southern",
+     "name": "Southern"
+    },
+    {
+     "id": "eth-adm2-special-woreda",
+     "name": "Special Woreda"
+    },
+    {
+     "id": "eth-adm2-wag-himra",
+     "name": "Wag Himra"
+    },
+    {
+     "id": "eth-adm2-west-arsi",
+     "name": "West Arsi"
+    },
+    {
+     "id": "eth-adm2-west-gojam",
+     "name": "West Gojam"
+    },
+    {
+     "id": "eth-adm2-west-harerge",
+     "name": "West Harerge"
+    },
+    {
+     "id": "eth-adm2-west-shewa",
+     "name": "West Shewa"
+    },
+    {
+     "id": "eth-adm2-west-wellega",
+     "name": "West Wellega"
+    },
+    {
+     "id": "eth-adm2-western",
+     "name": "Western"
+    },
+    {
+     "id": "eth-adm2-wolayita",
+     "name": "Wolayita"
+    },
+    {
+     "id": "eth-adm2-yem",
+     "name": "Yem"
+    },
+    {
+     "id": "eth-adm2-zone-1",
+     "name": "Zone 1"
+    },
+    {
+     "id": "eth-adm2-zone-2",
+     "name": "Zone 2"
+    },
+    {
+     "id": "eth-adm2-zone-3",
+     "name": "Zone 3"
+    },
+    {
+     "id": "eth-adm2-zone-4",
+     "name": "Zone 4"
+    },
+    {
+     "id": "eth-adm2-zone-5",
+     "name": "Zone 5"
+    }
+   ]
+  }
+ },
+ "name": "Ethiopia",
+ "nameBn": "Ethiopia"
+}

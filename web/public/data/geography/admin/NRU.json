@@ -1,0 +1,99 @@
+{
+ "code": "NRU",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Unknown",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2017",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "District",
+   "code": "ADM1",
+   "count": 14,
+   "name": "District",
+   "nameBn": "জেলা",
+   "representedYear": "2005",
+   "sourceCount": 14,
+   "units": [
+    {
+     "id": "nru-adm1-aiwo",
+     "name": "Aiwo",
+     "shapeISO": "NR-01"
+    },
+    {
+     "id": "nru-adm1-anabar",
+     "name": "Anabar",
+     "shapeISO": "NR-02"
+    },
+    {
+     "id": "nru-adm1-anetan",
+     "name": "Anetan",
+     "shapeISO": "NR-03"
+    },
+    {
+     "id": "nru-adm1-anibare",
+     "name": "Anibare",
+     "shapeISO": "NR-04"
+    },
+    {
+     "id": "nru-adm1-baiti",
+     "name": "Baiti",
+     "shapeISO": "NR-05"
+    },
+    {
+     "id": "nru-adm1-boe",
+     "name": "Boe",
+     "shapeISO": "NR-06"
+    },
+    {
+     "id": "nru-adm1-buada",
+     "name": "Buada",
+     "shapeISO": "NR-07"
+    },
+    {
+     "id": "nru-adm1-denigomodu",
+     "name": "Denigomodu",
+     "shapeISO": "NR-08"
+    },
+    {
+     "id": "nru-adm1-ewa",
+     "name": "Ewa",
+     "shapeISO": "NR-09"
+    },
+    {
+     "id": "nru-adm1-ijuw",
+     "name": "Ijuw",
+     "shapeISO": "NR-10"
+    },
+    {
+     "id": "nru-adm1-meneng",
+     "name": "Meneng",
+     "shapeISO": "NR-11"
+    },
+    {
+     "id": "nru-adm1-nibok",
+     "name": "Nibok",
+     "shapeISO": "NR-12"
+    },
+    {
+     "id": "nru-adm1-uaboe",
+     "name": "Uaboe",
+     "shapeISO": "NR-13"
+    },
+    {
+     "id": "nru-adm1-yaren",
+     "name": "Yaren",
+     "shapeISO": "NR-14"
+    }
+   ]
+  }
+ },
+ "name": "Nauru",
+ "nameBn": "Nauru"
+}

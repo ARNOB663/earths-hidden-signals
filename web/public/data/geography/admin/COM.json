@@ -1,0 +1,123 @@
+{
+ "code": "COM",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Unknown",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2017",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Unknown",
+   "code": "ADM1",
+   "count": 3,
+   "name": "ADM1 areas",
+   "nameBn": "ADM1 এলাকা",
+   "representedYear": "2017",
+   "sourceCount": 3,
+   "units": [
+    {
+     "id": "com-adm1-anjouan",
+     "name": "Anjouan",
+     "shapeISO": "KM-A"
+    },
+    {
+     "id": "com-adm1-grande-comore",
+     "name": "Grande Comore",
+     "shapeISO": "KM-G"
+    },
+    {
+     "id": "com-adm1-moheli",
+     "name": "Moheli",
+     "shapeISO": "KM-M"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Prefecture",
+   "code": "ADM2",
+   "count": 17,
+   "name": "Prefecture",
+   "nameBn": "প্রিফেকচার",
+   "representedYear": "2019",
+   "sourceCount": 17,
+   "units": [
+    {
+     "id": "com-adm2-djando",
+     "name": "Djando"
+    },
+    {
+     "id": "com-adm2-domoni",
+     "name": "Domoni"
+    },
+    {
+     "id": "com-adm2-fomboni",
+     "name": "Fomboni"
+    },
+    {
+     "id": "com-adm2-hamahamet-mboinkou",
+     "name": "Hamahamet-Mboinkou"
+    },
+    {
+     "id": "com-adm2-hambou",
+     "name": "Hambou"
+    },
+    {
+     "id": "com-adm2-itsandra-hamanvou",
+     "name": "Itsandra-Hamanvou"
+    },
+    {
+     "id": "com-adm2-kartala",
+     "name": "Kartala"
+    },
+    {
+     "id": "com-adm2-mbadjini-est",
+     "name": "Mbadjini Est"
+    },
+    {
+     "id": "com-adm2-mbadjini-ouest",
+     "name": "Mbadjini Ouest"
+    },
+    {
+     "id": "com-adm2-mitsamiouli-mboudé",
+     "name": "Mitsamiouli-Mboudé"
+    },
+    {
+     "id": "com-adm2-moroni-bambao",
+     "name": "Moroni-Bambao"
+    },
+    {
+     "id": "com-adm2-mrémani",
+     "name": "Mrémani"
+    },
+    {
+     "id": "com-adm2-mutsamudu",
+     "name": "Mutsamudu"
+    },
+    {
+     "id": "com-adm2-nioumachioi",
+     "name": "Nioumachioi"
+    },
+    {
+     "id": "com-adm2-oichili-dimani",
+     "name": "Oichili-Dimani"
+    },
+    {
+     "id": "com-adm2-ouani",
+     "name": "Ouani"
+    },
+    {
+     "id": "com-adm2-sima",
+     "name": "Sima"
+    }
+   ]
+  }
+ },
+ "name": "Comoros",
+ "nameBn": "Comoros"
+}

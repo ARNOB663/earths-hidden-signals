@@ -1,0 +1,253 @@
+{
+ "code": "TKM",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Turkmenistan",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2007",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Regions (Welayat)",
+   "code": "ADM1",
+   "count": 5,
+   "name": "Regions (Welayat)",
+   "nameBn": "Regions (Welayat)",
+   "representedYear": "2007",
+   "sourceCount": 6,
+   "units": [
+    {
+     "id": "tkm-adm1-ahai",
+     "name": "Ahai",
+     "shapeISO": "TM-A"
+    },
+    {
+     "id": "tkm-adm1-balkan",
+     "name": "Balkan",
+     "shapeISO": "TM-B"
+    },
+    {
+     "id": "tkm-adm1-dasoguz",
+     "name": "Dasoguz",
+     "shapeISO": "TM-D"
+    },
+    {
+     "id": "tkm-adm1-lebap",
+     "name": "Lebap",
+     "shapeISO": "TM-L"
+    },
+    {
+     "id": "tkm-adm1-mary",
+     "name": "Mary",
+     "shapeISO": "TM-M"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Unknown",
+   "code": "ADM2",
+   "count": 47,
+   "name": "ADM2 areas",
+   "nameBn": "ADM2 এলাকা",
+   "representedYear": "2009",
+   "sourceCount": 66,
+   "units": [
+    {
+     "id": "tkm-adm2-ak-bugday",
+     "name": "Ak Bugday"
+    },
+    {
+     "id": "tkm-adm2-akdepe",
+     "name": "Akdepe"
+    },
+    {
+     "id": "tkm-adm2-avaza",
+     "name": "Avaza"
+    },
+    {
+     "id": "tkm-adm2-babadayhan",
+     "name": "Babadayhan"
+    },
+    {
+     "id": "tkm-adm2-baherden",
+     "name": "Baherden"
+    },
+    {
+     "id": "tkm-adm2-balkanabat",
+     "name": "Balkanabat"
+    },
+    {
+     "id": "tkm-adm2-bayramaly",
+     "name": "Bayramaly"
+    },
+    {
+     "id": "tkm-adm2-bayramaly-2",
+     "name": "Bayramaly"
+    },
+    {
+     "id": "tkm-adm2-bereket",
+     "name": "Bereket"
+    },
+    {
+     "id": "tkm-adm2-boldumsaz",
+     "name": "Boldumsaz"
+    },
+    {
+     "id": "tkm-adm2-carjew",
+     "name": "Carjew"
+    },
+    {
+     "id": "tkm-adm2-danew",
+     "name": "Danew"
+    },
+    {
+     "id": "tkm-adm2-darganata",
+     "name": "Darganata"
+    },
+    {
+     "id": "tkm-adm2-dostluk",
+     "name": "Dostluk"
+    },
+    {
+     "id": "tkm-adm2-dowletli",
+     "name": "Dowletli"
+    },
+    {
+     "id": "tkm-adm2-etrek",
+     "name": "Etrek"
+    },
+    {
+     "id": "tkm-adm2-ferap",
+     "name": "Ferap"
+    },
+    {
+     "id": "tkm-adm2-garagum",
+     "name": "Garagum"
+    },
+    {
+     "id": "tkm-adm2-gokdepe",
+     "name": "Gokdepe"
+    },
+    {
+     "id": "tkm-adm2-gorogly",
+     "name": "Gorogly"
+    },
+    {
+     "id": "tkm-adm2-gubadag",
+     "name": "Gubadag"
+    },
+    {
+     "id": "tkm-adm2-gurbansoltan-eye",
+     "name": "Gurbansoltan Eye"
+    },
+    {
+     "id": "tkm-adm2-halac",
+     "name": "Halac"
+    },
+    {
+     "id": "tkm-adm2-hazar",
+     "name": "Hazar"
+    },
+    {
+     "id": "tkm-adm2-hojambaz",
+     "name": "Hojambaz"
+    },
+    {
+     "id": "tkm-adm2-kaka",
+     "name": "Kaka"
+    },
+    {
+     "id": "tkm-adm2-kerki",
+     "name": "Kerki"
+    },
+    {
+     "id": "tkm-adm2-koneurgenc",
+     "name": "Koneurgenc"
+    },
+    {
+     "id": "tkm-adm2-koytendag",
+     "name": "Koytendag"
+    },
+    {
+     "id": "tkm-adm2-magtymguly",
+     "name": "Magtymguly"
+    },
+    {
+     "id": "tkm-adm2-mary",
+     "name": "Mary"
+    },
+    {
+     "id": "tkm-adm2-mary-2",
+     "name": "Mary"
+    },
+    {
+     "id": "tkm-adm2-murgap",
+     "name": "Murgap"
+    },
+    {
+     "id": "tkm-adm2-oguzhan",
+     "name": "Oguzhan"
+    },
+    {
+     "id": "tkm-adm2-s-a-nyyazow",
+     "name": "S.A. Nyyazow"
+    },
+    {
+     "id": "tkm-adm2-sakarcage",
+     "name": "Sakarcage"
+    },
+    {
+     "id": "tkm-adm2-saparmyrat-turkmenbasy",
+     "name": "Saparmyrat Turkmenbasy"
+    },
+    {
+     "id": "tkm-adm2-sayat",
+     "name": "Sayat"
+    },
+    {
+     "id": "tkm-adm2-sayat-2",
+     "name": "Sayat"
+    },
+    {
+     "id": "tkm-adm2-serakhs",
+     "name": "Serakhs"
+    },
+    {
+     "id": "tkm-adm2-serhetabat",
+     "name": "Serhetabat"
+    },
+    {
+     "id": "tkm-adm2-tedzhen-sovkhoz",
+     "name": "Tedzhen Sovkhoz"
+    },
+    {
+     "id": "tkm-adm2-tejen",
+     "name": "Tejen"
+    },
+    {
+     "id": "tkm-adm2-turkmenbasy",
+     "name": "Turkmenbasy"
+    },
+    {
+     "id": "tkm-adm2-turkmengala",
+     "name": "Turkmengala"
+    },
+    {
+     "id": "tkm-adm2-wekilbazar",
+     "name": "Wekilbazar"
+    },
+    {
+     "id": "tkm-adm2-yoloten",
+     "name": "Yoloten"
+    }
+   ]
+  }
+ },
+ "name": "Turkmenistan",
+ "nameBn": "Turkmenistan"
+}

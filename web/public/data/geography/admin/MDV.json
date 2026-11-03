@@ -1,0 +1,229 @@
+{
+ "code": "MDV",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "the Republic of Maldives",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2021",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Unknown",
+   "code": "ADM1",
+   "count": 21,
+   "name": "ADM1 areas",
+   "nameBn": "ADM1 এলাকা",
+   "representedYear": "2017",
+   "sourceCount": 21,
+   "units": [
+    {
+     "id": "mdv-adm1-addu",
+     "name": "Addu",
+     "shapeISO": "MV-01"
+    },
+    {
+     "id": "mdv-adm1-alif-alif",
+     "name": "Alif Alif",
+     "shapeISO": "MV-02"
+    },
+    {
+     "id": "mdv-adm1-alif-dhaalu",
+     "name": "Alif Dhaalu",
+     "shapeISO": "MV-00"
+    },
+    {
+     "id": "mdv-adm1-baa",
+     "name": "Baa",
+     "shapeISO": "MV-20"
+    },
+    {
+     "id": "mdv-adm1-dhaalu",
+     "name": "Dhaalu",
+     "shapeISO": "MV-17"
+    },
+    {
+     "id": "mdv-adm1-faafu",
+     "name": "Faafu",
+     "shapeISO": "MV-14"
+    },
+    {
+     "id": "mdv-adm1-gaafu-alif",
+     "name": "Gaafu Alif",
+     "shapeISO": "MV-27"
+    },
+    {
+     "id": "mdv-adm1-gaafu-dhaalu",
+     "name": "Gaafu Dhaalu",
+     "shapeISO": "MV-28"
+    },
+    {
+     "id": "mdv-adm1-gnaviyani",
+     "name": "Gnaviyani",
+     "shapeISO": "MV-29"
+    },
+    {
+     "id": "mdv-adm1-haa-alif",
+     "name": "Haa Alif",
+     "shapeISO": "MV-07"
+    },
+    {
+     "id": "mdv-adm1-haa-dhaalu",
+     "name": "Haa Dhaalu",
+     "shapeISO": "MV-23"
+    },
+    {
+     "id": "mdv-adm1-kaafu",
+     "name": "Kaafu",
+     "shapeISO": "MV-26"
+    },
+    {
+     "id": "mdv-adm1-laamu",
+     "name": "Laamu",
+     "shapeISO": "MV-05"
+    },
+    {
+     "id": "mdv-adm1-lhaviyani",
+     "name": "Lhaviyani",
+     "shapeISO": "MV-03"
+    },
+    {
+     "id": "mdv-adm1-malé",
+     "name": "Malé",
+     "shapeISO": "MV-MLE"
+    },
+    {
+     "id": "mdv-adm1-meemu",
+     "name": "Meemu",
+     "shapeISO": "MV-12"
+    },
+    {
+     "id": "mdv-adm1-noonu",
+     "name": "Noonu",
+     "shapeISO": "MV-25"
+    },
+    {
+     "id": "mdv-adm1-raa",
+     "name": "Raa",
+     "shapeISO": "MV-13"
+    },
+    {
+     "id": "mdv-adm1-shaviyani",
+     "name": "Shaviyani",
+     "shapeISO": "MV-24"
+    },
+    {
+     "id": "mdv-adm1-thaa",
+     "name": "Thaa",
+     "shapeISO": "MV-08"
+    },
+    {
+     "id": "mdv-adm1-vaavu",
+     "name": "Vaavu",
+     "shapeISO": "MV-04"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Administrative Atolls",
+   "code": "ADM2",
+   "count": 21,
+   "name": "Administrative Atolls",
+   "nameBn": "Administrative Atolls",
+   "representedYear": "2017",
+   "sourceCount": 21,
+   "units": [
+    {
+     "id": "mdv-adm2-addoo",
+     "name": "Addoo"
+    },
+    {
+     "id": "mdv-adm2-faadhippolhu",
+     "name": "Faadhippolhu"
+    },
+    {
+     "id": "mdv-adm2-felidhoo",
+     "name": "Felidhoo"
+    },
+    {
+     "id": "mdv-adm2-foammulah",
+     "name": "Foammulah"
+    },
+    {
+     "id": "mdv-adm2-hadhdhunmathee",
+     "name": "Hadhdhunmathee"
+    },
+    {
+     "id": "mdv-adm2-kolhumadulu",
+     "name": "Kolhumadulu"
+    },
+    {
+     "id": "mdv-adm2-male",
+     "name": "Male'"
+    },
+    {
+     "id": "mdv-adm2-male-2",
+     "name": "Male'"
+    },
+    {
+     "id": "mdv-adm2-mulaku",
+     "name": "Mulaku"
+    },
+    {
+     "id": "mdv-adm2-north-ari",
+     "name": "North Ari"
+    },
+    {
+     "id": "mdv-adm2-north-huvadhoo",
+     "name": "North Huvadhoo"
+    },
+    {
+     "id": "mdv-adm2-north-maalhosmadulu",
+     "name": "North Maalhosmadulu"
+    },
+    {
+     "id": "mdv-adm2-north-miladhunmadulu",
+     "name": "North Miladhunmadulu"
+    },
+    {
+     "id": "mdv-adm2-north-nilandhoo",
+     "name": "North Nilandhoo"
+    },
+    {
+     "id": "mdv-adm2-north-thiladhunmathe",
+     "name": "North Thiladhunmathe"
+    },
+    {
+     "id": "mdv-adm2-south-ari",
+     "name": "South Ari"
+    },
+    {
+     "id": "mdv-adm2-south-huvadhoo",
+     "name": "South Huvadhoo"
+    },
+    {
+     "id": "mdv-adm2-south-maalhosmadulu",
+     "name": "South Maalhosmadulu"
+    },
+    {
+     "id": "mdv-adm2-south-miladhunmadulu",
+     "name": "South Miladhunmadulu"
+    },
+    {
+     "id": "mdv-adm2-south-nilandhoo",
+     "name": "South Nilandhoo"
+    },
+    {
+     "id": "mdv-adm2-south-thiladhunmathe",
+     "name": "South Thiladhunmathe"
+    }
+   ]
+  }
+ },
+ "name": "Maldives",
+ "nameBn": "Maldives"
+}

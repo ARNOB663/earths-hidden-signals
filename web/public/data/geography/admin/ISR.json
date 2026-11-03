@@ -1,0 +1,130 @@
+{
+ "code": "ISR",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Unknown",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2017",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Districts",
+   "code": "ADM1",
+   "count": 6,
+   "name": "Districts",
+   "nameBn": "জেলা",
+   "representedYear": "2006",
+   "sourceCount": 6,
+   "units": [
+    {
+     "id": "isr-adm1-central-district",
+     "name": "Central District",
+     "shapeISO": "IL-M"
+    },
+    {
+     "id": "isr-adm1-haifa",
+     "name": "Haifa",
+     "shapeISO": "IL-HA"
+    },
+    {
+     "id": "isr-adm1-jerusalem-district",
+     "name": "Jerusalem District",
+     "shapeISO": "IL-JM"
+    },
+    {
+     "id": "isr-adm1-northern-district",
+     "name": "Northern District",
+     "shapeISO": "IL-Z"
+    },
+    {
+     "id": "isr-adm1-southern-district",
+     "name": "Southern District",
+     "shapeISO": "IL-D"
+    },
+    {
+     "id": "isr-adm1-tel-aviv",
+     "name": "Tel Aviv",
+     "shapeISO": "IL-TA"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Subdistrict",
+   "code": "ADM2",
+   "count": 15,
+   "name": "Subdistrict",
+   "nameBn": "Subdistrict",
+   "representedYear": "2021",
+   "sourceCount": 15,
+   "units": [
+    {
+     "id": "isr-adm2-akko",
+     "name": "Akko"
+    },
+    {
+     "id": "isr-adm2-ashqelon",
+     "name": "Ashqelon"
+    },
+    {
+     "id": "isr-adm2-be-er-sheva",
+     "name": "Be'er Sheva"
+    },
+    {
+     "id": "isr-adm2-golan",
+     "name": "Golan"
+    },
+    {
+     "id": "isr-adm2-hadera",
+     "name": "Hadera"
+    },
+    {
+     "id": "isr-adm2-haifa",
+     "name": "Haifa"
+    },
+    {
+     "id": "isr-adm2-hasharon",
+     "name": "HaSharon"
+    },
+    {
+     "id": "isr-adm2-jerusalem",
+     "name": "Jerusalem"
+    },
+    {
+     "id": "isr-adm2-kinneret",
+     "name": "Kinneret"
+    },
+    {
+     "id": "isr-adm2-petah-tiqwa",
+     "name": "Petah Tiqwa"
+    },
+    {
+     "id": "isr-adm2-ramla",
+     "name": "Ramla"
+    },
+    {
+     "id": "isr-adm2-rehovot",
+     "name": "Rehovot"
+    },
+    {
+     "id": "isr-adm2-tel-aviv",
+     "name": "Tel Aviv"
+    },
+    {
+     "id": "isr-adm2-yizre-el",
+     "name": "Yizre'el"
+    },
+    {
+     "id": "isr-adm2-zefat",
+     "name": "Zefat"
+    }
+   ]
+  }
+ },
+ "name": "Israel",
+ "nameBn": "Israel"
+}

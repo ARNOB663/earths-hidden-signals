@@ -1,0 +1,344 @@
+{
+ "code": "CHL",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "the Republic of Chile",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2009",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Regions",
+   "code": "ADM1",
+   "count": 16,
+   "name": "Regions",
+   "nameBn": "অঞ্চল",
+   "representedYear": "2020",
+   "sourceCount": 16,
+   "units": [
+    {
+     "id": "chl-adm1-regiã³n-de-antofagasta",
+     "name": "RegiÃ³n de Antofagasta",
+     "shapeISO": "CHL"
+    },
+    {
+     "id": "chl-adm1-regiã³n-de-arica-y-parinacota",
+     "name": "RegiÃ³n de Arica y Parinacota",
+     "shapeISO": "CHL"
+    },
+    {
+     "id": "chl-adm1-regiã³n-de-atacama",
+     "name": "RegiÃ³n de Atacama",
+     "shapeISO": "CHL"
+    },
+    {
+     "id": "chl-adm1-regiã³n-de-aysã-n-del-gral-ibaã-ez-del-campo",
+     "name": "RegiÃ³n de AysÃ©n del Gral.IbaÃ±ez del Campo",
+     "shapeISO": "CHL"
+    },
+    {
+     "id": "chl-adm1-regiã³n-de-coquimbo",
+     "name": "RegiÃ³n de Coquimbo",
+     "shapeISO": "CHL"
+    },
+    {
+     "id": "chl-adm1-regiã³n-de-la-araucanã-a",
+     "name": "RegiÃ³n de La AraucanÃ­a",
+     "shapeISO": "CHL"
+    },
+    {
+     "id": "chl-adm1-regiã³n-de-los-lagos",
+     "name": "RegiÃ³n de Los Lagos",
+     "shapeISO": "CHL"
+    },
+    {
+     "id": "chl-adm1-regiã³n-de-los-rã-os",
+     "name": "RegiÃ³n de Los RÃ­os",
+     "shapeISO": "CHL"
+    },
+    {
+     "id": "chl-adm1-regiã³n-de-magallanes-y-antã-rtica-chilena",
+     "name": "RegiÃ³n de Magallanes y AntÃ¡rtica Chilena",
+     "shapeISO": "CHL"
+    },
+    {
+     "id": "chl-adm1-regiã³n-de-tarapacã",
+     "name": "RegiÃ³n de TarapacÃ¡",
+     "shapeISO": "CHL"
+    },
+    {
+     "id": "chl-adm1-regiã³n-de-valparaã-so",
+     "name": "RegiÃ³n de ValparaÃ­so",
+     "shapeISO": "CHL"
+    },
+    {
+     "id": "chl-adm1-regiã³n-de-ã-uble",
+     "name": "RegiÃ³n de Ãuble",
+     "shapeISO": "CHL"
+    },
+    {
+     "id": "chl-adm1-regiã³n-del-bã-o-bã-o",
+     "name": "RegiÃ³n del BÃ­o-BÃ­o",
+     "shapeISO": "CHL"
+    },
+    {
+     "id": "chl-adm1-regiã³n-del-libertador-bernardo-o-higgins",
+     "name": "RegiÃ³n del Libertador Bernardo O'Higgins",
+     "shapeISO": "CHL"
+    },
+    {
+     "id": "chl-adm1-regiã³n-del-maule",
+     "name": "RegiÃ³n del Maule",
+     "shapeISO": "CHL"
+    },
+    {
+     "id": "chl-adm1-regiã³n-metropolitana-de-santiago",
+     "name": "RegiÃ³n Metropolitana de Santiago",
+     "shapeISO": "CHL"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Unknown",
+   "code": "ADM2",
+   "count": 56,
+   "name": "ADM2 areas",
+   "nameBn": "ADM2 এলাকা",
+   "representedYear": "2017",
+   "sourceCount": 56,
+   "units": [
+    {
+     "id": "chl-adm2-easter-island-province",
+     "name": "Easter Island Province"
+    },
+    {
+     "id": "chl-adm2-provincia-de-antofagasta",
+     "name": "Provincia de Antofagasta"
+    },
+    {
+     "id": "chl-adm2-provincia-de-arauco",
+     "name": "Provincia de Arauco"
+    },
+    {
+     "id": "chl-adm2-provincia-de-arica",
+     "name": "Provincia de Arica"
+    },
+    {
+     "id": "chl-adm2-provincia-de-aysén",
+     "name": "Provincia de Aysén"
+    },
+    {
+     "id": "chl-adm2-provincia-de-bío-bío",
+     "name": "Provincia de Bío-Bío"
+    },
+    {
+     "id": "chl-adm2-provincia-de-cachapoal",
+     "name": "Provincia de Cachapoal"
+    },
+    {
+     "id": "chl-adm2-provincia-de-capitán-prat",
+     "name": "Provincia de Capitán Prat"
+    },
+    {
+     "id": "chl-adm2-provincia-de-cardenal-caro",
+     "name": "Provincia de Cardenal Caro"
+    },
+    {
+     "id": "chl-adm2-provincia-de-cauquenes",
+     "name": "Provincia de Cauquenes"
+    },
+    {
+     "id": "chl-adm2-provincia-de-cautín",
+     "name": "Provincia de Cautín"
+    },
+    {
+     "id": "chl-adm2-provincia-de-chacabuco",
+     "name": "Provincia de Chacabuco"
+    },
+    {
+     "id": "chl-adm2-provincia-de-chañaral",
+     "name": "Provincia de Chañaral"
+    },
+    {
+     "id": "chl-adm2-provincia-de-chiloé",
+     "name": "Provincia de Chiloé"
+    },
+    {
+     "id": "chl-adm2-provincia-de-choapa",
+     "name": "Provincia de Choapa"
+    },
+    {
+     "id": "chl-adm2-provincia-de-colchagua",
+     "name": "Provincia de Colchagua"
+    },
+    {
+     "id": "chl-adm2-provincia-de-concepción",
+     "name": "Provincia de Concepción"
+    },
+    {
+     "id": "chl-adm2-provincia-de-copiapó",
+     "name": "Provincia de Copiapó"
+    },
+    {
+     "id": "chl-adm2-provincia-de-cordillera",
+     "name": "Provincia de Cordillera"
+    },
+    {
+     "id": "chl-adm2-provincia-de-coyhaique",
+     "name": "Provincia de Coyhaique"
+    },
+    {
+     "id": "chl-adm2-provincia-de-curicó",
+     "name": "Provincia de Curicó"
+    },
+    {
+     "id": "chl-adm2-provincia-de-diguillín",
+     "name": "Provincia de Diguillín"
+    },
+    {
+     "id": "chl-adm2-provincia-de-el-loa",
+     "name": "Provincia de El Loa"
+    },
+    {
+     "id": "chl-adm2-provincia-de-elqui",
+     "name": "Provincia de Elqui"
+    },
+    {
+     "id": "chl-adm2-provincia-de-general-carrera",
+     "name": "Provincia de General Carrera"
+    },
+    {
+     "id": "chl-adm2-provincia-de-huasco",
+     "name": "Provincia de Huasco"
+    },
+    {
+     "id": "chl-adm2-provincia-de-iquique",
+     "name": "Provincia de Iquique"
+    },
+    {
+     "id": "chl-adm2-provincia-de-itata",
+     "name": "Provincia de Itata"
+    },
+    {
+     "id": "chl-adm2-provincia-de-la-antártica-chilena",
+     "name": "Provincia de la Antártica Chilena"
+    },
+    {
+     "id": "chl-adm2-provincia-de-limarí",
+     "name": "Provincia de Limarí"
+    },
+    {
+     "id": "chl-adm2-provincia-de-linares",
+     "name": "Provincia de Linares"
+    },
+    {
+     "id": "chl-adm2-provincia-de-llanquihue",
+     "name": "Provincia de Llanquihue"
+    },
+    {
+     "id": "chl-adm2-provincia-de-los-andes",
+     "name": "Provincia de Los Andes"
+    },
+    {
+     "id": "chl-adm2-provincia-de-magallanes",
+     "name": "Provincia de Magallanes"
+    },
+    {
+     "id": "chl-adm2-provincia-de-maipo",
+     "name": "Provincia de Maipo"
+    },
+    {
+     "id": "chl-adm2-provincia-de-malleco",
+     "name": "Provincia de Malleco"
+    },
+    {
+     "id": "chl-adm2-provincia-de-marga-marga",
+     "name": "Provincia de Marga Marga"
+    },
+    {
+     "id": "chl-adm2-provincia-de-melipilla",
+     "name": "Provincia de Melipilla"
+    },
+    {
+     "id": "chl-adm2-provincia-de-osorno",
+     "name": "Provincia de Osorno"
+    },
+    {
+     "id": "chl-adm2-provincia-de-palena",
+     "name": "Provincia de Palena"
+    },
+    {
+     "id": "chl-adm2-provincia-de-parinacota",
+     "name": "Provincia de Parinacota"
+    },
+    {
+     "id": "chl-adm2-provincia-de-petorca",
+     "name": "Provincia de Petorca"
+    },
+    {
+     "id": "chl-adm2-provincia-de-punilla",
+     "name": "Provincia de Punilla"
+    },
+    {
+     "id": "chl-adm2-provincia-de-quillota",
+     "name": "Provincia de Quillota"
+    },
+    {
+     "id": "chl-adm2-provincia-de-ranco",
+     "name": "Provincia de Ranco"
+    },
+    {
+     "id": "chl-adm2-provincia-de-san-antonio",
+     "name": "Provincia de San Antonio"
+    },
+    {
+     "id": "chl-adm2-provincia-de-san-felipe-de-aconcagua",
+     "name": "Provincia de San Felipe de Aconcagua"
+    },
+    {
+     "id": "chl-adm2-provincia-de-santiago",
+     "name": "Provincia de Santiago"
+    },
+    {
+     "id": "chl-adm2-provincia-de-talagante",
+     "name": "Provincia de Talagante"
+    },
+    {
+     "id": "chl-adm2-provincia-de-talca",
+     "name": "Provincia de Talca"
+    },
+    {
+     "id": "chl-adm2-provincia-de-tierra-del-fuego",
+     "name": "Provincia de Tierra del Fuego"
+    },
+    {
+     "id": "chl-adm2-provincia-de-tocopilla",
+     "name": "Provincia de Tocopilla"
+    },
+    {
+     "id": "chl-adm2-provincia-de-valdivia",
+     "name": "Provincia de Valdivia"
+    },
+    {
+     "id": "chl-adm2-provincia-de-valparaíso",
+     "name": "Provincia de Valparaíso"
+    },
+    {
+     "id": "chl-adm2-provincia-de-última-esperanza",
+     "name": "Provincia de Última Esperanza"
+    },
+    {
+     "id": "chl-adm2-provincia-del-tamarugal",
+     "name": "Provincia del Tamarugal"
+    }
+   ]
+  }
+ },
+ "name": "Chile",
+ "nameBn": "Chile"
+}

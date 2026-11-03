@@ -1,0 +1,369 @@
+{
+ "code": "MLT",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Malta",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2010",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Local Council",
+   "code": "ADM1",
+   "count": 68,
+   "name": "Local Council",
+   "nameBn": "Local Council",
+   "representedYear": "2022",
+   "sourceCount": 68,
+   "units": [
+    {
+     "id": "mlt-adm1-attard",
+     "name": "Attard",
+     "shapeISO": "MT-01"
+    },
+    {
+     "id": "mlt-adm1-balzan",
+     "name": "Balzan",
+     "shapeISO": "MT-02"
+    },
+    {
+     "id": "mlt-adm1-birgu",
+     "name": "Birgu",
+     "shapeISO": "MT-03"
+    },
+    {
+     "id": "mlt-adm1-birkirkara",
+     "name": "Birkirkara",
+     "shapeISO": "MT-04"
+    },
+    {
+     "id": "mlt-adm1-birżebbuġa",
+     "name": "Birżebbuġa",
+     "shapeISO": "MT-05"
+    },
+    {
+     "id": "mlt-adm1-bormla",
+     "name": "Bormla",
+     "shapeISO": "MT-06"
+    },
+    {
+     "id": "mlt-adm1-dingli",
+     "name": "Dingli",
+     "shapeISO": "MT-07"
+    },
+    {
+     "id": "mlt-adm1-fgura",
+     "name": "Fgura",
+     "shapeISO": "MT-08"
+    },
+    {
+     "id": "mlt-adm1-floriana",
+     "name": "Floriana",
+     "shapeISO": "MT-09"
+    },
+    {
+     "id": "mlt-adm1-fontana",
+     "name": "Fontana",
+     "shapeISO": "MT-10"
+    },
+    {
+     "id": "mlt-adm1-ghajnsielem",
+     "name": "Ghajnsielem",
+     "shapeISO": "MT-13"
+    },
+    {
+     "id": "mlt-adm1-gharb",
+     "name": "Gharb",
+     "shapeISO": "MT-14"
+    },
+    {
+     "id": "mlt-adm1-ghasri",
+     "name": "Ghasri",
+     "shapeISO": "MT-16"
+    },
+    {
+     "id": "mlt-adm1-gudja",
+     "name": "Gudja",
+     "shapeISO": "MT-11"
+    },
+    {
+     "id": "mlt-adm1-għargħur",
+     "name": "Għargħur",
+     "shapeISO": "MT-15"
+    },
+    {
+     "id": "mlt-adm1-għaxaq",
+     "name": "Għaxaq",
+     "shapeISO": "MT-17"
+    },
+    {
+     "id": "mlt-adm1-gżira",
+     "name": "Gżira",
+     "shapeISO": "MT-12"
+    },
+    {
+     "id": "mlt-adm1-iklin",
+     "name": "Iklin",
+     "shapeISO": "MT-19"
+    },
+    {
+     "id": "mlt-adm1-isla",
+     "name": "Isla",
+     "shapeISO": "MT-20"
+    },
+    {
+     "id": "mlt-adm1-kalkara",
+     "name": "Kalkara",
+     "shapeISO": "MT-21"
+    },
+    {
+     "id": "mlt-adm1-kerċem",
+     "name": "Kerċem",
+     "shapeISO": "MT-22"
+    },
+    {
+     "id": "mlt-adm1-kirkop",
+     "name": "Kirkop",
+     "shapeISO": "MT-23"
+    },
+    {
+     "id": "mlt-adm1-lija",
+     "name": "Lija",
+     "shapeISO": "MT-24"
+    },
+    {
+     "id": "mlt-adm1-luqa",
+     "name": "Luqa",
+     "shapeISO": "MT-25"
+    },
+    {
+     "id": "mlt-adm1-marsa",
+     "name": "Marsa",
+     "shapeISO": "MT-26"
+    },
+    {
+     "id": "mlt-adm1-marsaskala",
+     "name": "Marsaskala",
+     "shapeISO": "MT-27"
+    },
+    {
+     "id": "mlt-adm1-marsaxlokk",
+     "name": "Marsaxlokk",
+     "shapeISO": "MT-28"
+    },
+    {
+     "id": "mlt-adm1-mdina",
+     "name": "Mdina",
+     "shapeISO": "MT-29"
+    },
+    {
+     "id": "mlt-adm1-mellieħa",
+     "name": "Mellieħa",
+     "shapeISO": "MT-30"
+    },
+    {
+     "id": "mlt-adm1-mosta",
+     "name": "Mosta",
+     "shapeISO": "MT-32"
+    },
+    {
+     "id": "mlt-adm1-mqabba",
+     "name": "Mqabba",
+     "shapeISO": "MT-33"
+    },
+    {
+     "id": "mlt-adm1-msida",
+     "name": "Msida",
+     "shapeISO": "MT-34"
+    },
+    {
+     "id": "mlt-adm1-mtarfa",
+     "name": "Mtarfa",
+     "shapeISO": "MT-35"
+    },
+    {
+     "id": "mlt-adm1-munxar",
+     "name": "Munxar",
+     "shapeISO": "MT-36"
+    },
+    {
+     "id": "mlt-adm1-mġarr",
+     "name": "Mġarr",
+     "shapeISO": "MT-30"
+    },
+    {
+     "id": "mlt-adm1-nadur",
+     "name": "Nadur",
+     "shapeISO": "MT-37"
+    },
+    {
+     "id": "mlt-adm1-naxxar",
+     "name": "Naxxar",
+     "shapeISO": "MT-38"
+    },
+    {
+     "id": "mlt-adm1-paola",
+     "name": "Paola",
+     "shapeISO": "MT-39"
+    },
+    {
+     "id": "mlt-adm1-pembroke",
+     "name": "Pembroke",
+     "shapeISO": "MT-40"
+    },
+    {
+     "id": "mlt-adm1-pietà",
+     "name": "Pietà",
+     "shapeISO": "MT-41"
+    },
+    {
+     "id": "mlt-adm1-qala",
+     "name": "Qala",
+     "shapeISO": "MT-42"
+    },
+    {
+     "id": "mlt-adm1-qormi",
+     "name": "Qormi",
+     "shapeISO": "MT-43"
+    },
+    {
+     "id": "mlt-adm1-qrendi",
+     "name": "Qrendi",
+     "shapeISO": "MT-44"
+    },
+    {
+     "id": "mlt-adm1-rabat-gozo",
+     "name": "Rabat Gozo",
+     "shapeISO": "MT-45"
+    },
+    {
+     "id": "mlt-adm1-rabat-malta",
+     "name": "Rabat Malta",
+     "shapeISO": "MT-46"
+    },
+    {
+     "id": "mlt-adm1-safi",
+     "name": "Safi",
+     "shapeISO": "MT-47"
+    },
+    {
+     "id": "mlt-adm1-saint-john",
+     "name": "Saint John",
+     "shapeISO": "MT-49"
+    },
+    {
+     "id": "mlt-adm1-saint-julian-s",
+     "name": "Saint Julian's",
+     "shapeISO": "MT-48"
+    },
+    {
+     "id": "mlt-adm1-saint-lawerence",
+     "name": "Saint Lawerence",
+     "shapeISO": "MT-50"
+    },
+    {
+     "id": "mlt-adm1-saint-lucia-s",
+     "name": "Saint Lucia's",
+     "shapeISO": "MT-53"
+    },
+    {
+     "id": "mlt-adm1-saint-paul-s-bay",
+     "name": "Saint Paul's Bay",
+     "shapeISO": "MT-51"
+    },
+    {
+     "id": "mlt-adm1-sannat",
+     "name": "Sannat",
+     "shapeISO": "MT-52"
+    },
+    {
+     "id": "mlt-adm1-santa-venera",
+     "name": "Santa Venera",
+     "shapeISO": "MT-54"
+    },
+    {
+     "id": "mlt-adm1-siġġiewi",
+     "name": "Siġġiewi",
+     "shapeISO": "MT-55"
+    },
+    {
+     "id": "mlt-adm1-sliema",
+     "name": "Sliema",
+     "shapeISO": "MT-56"
+    },
+    {
+     "id": "mlt-adm1-swieqi",
+     "name": "Swieqi",
+     "shapeISO": "MT-57"
+    },
+    {
+     "id": "mlt-adm1-ta-xbiex",
+     "name": "Ta' Xbiex",
+     "shapeISO": "MT-58"
+    },
+    {
+     "id": "mlt-adm1-tarxien",
+     "name": "Tarxien",
+     "shapeISO": "MT-59"
+    },
+    {
+     "id": "mlt-adm1-valletta",
+     "name": "Valletta",
+     "shapeISO": "MT-60"
+    },
+    {
+     "id": "mlt-adm1-xagħra",
+     "name": "Xagħra",
+     "shapeISO": "MT-61"
+    },
+    {
+     "id": "mlt-adm1-xewkija",
+     "name": "Xewkija",
+     "shapeISO": "MT-62"
+    },
+    {
+     "id": "mlt-adm1-xgħajra",
+     "name": "Xgħajra",
+     "shapeISO": "MT-63"
+    },
+    {
+     "id": "mlt-adm1-ħamrun",
+     "name": "Ħamrun",
+     "shapeISO": "MT-18"
+    },
+    {
+     "id": "mlt-adm1-żabbar",
+     "name": "Żabbar",
+     "shapeISO": "MT-64"
+    },
+    {
+     "id": "mlt-adm1-żebbuġ-gozo",
+     "name": "Żebbuġ Gozo",
+     "shapeISO": "MT-65"
+    },
+    {
+     "id": "mlt-adm1-żebbuġ-malta",
+     "name": "Żebbuġ Malta",
+     "shapeISO": "MT-66"
+    },
+    {
+     "id": "mlt-adm1-żejtun",
+     "name": "Żejtun",
+     "shapeISO": "MT-67"
+    },
+    {
+     "id": "mlt-adm1-żurrieq",
+     "name": "Żurrieq",
+     "shapeISO": "MT-68"
+    }
+   ]
+  }
+ },
+ "name": "Malta",
+ "nameBn": "Malta"
+}

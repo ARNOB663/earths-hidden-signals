@@ -1,0 +1,756 @@
+{
+ "code": "MYS",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Unknown",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2017",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Unknown",
+   "code": "ADM1",
+   "count": 16,
+   "name": "ADM1 areas",
+   "nameBn": "ADM1 এলাকা",
+   "representedYear": "2017",
+   "sourceCount": 16,
+   "units": [
+    {
+     "id": "mys-adm1-johor",
+     "name": "Johor",
+     "shapeISO": "MY-01"
+    },
+    {
+     "id": "mys-adm1-kedah",
+     "name": "Kedah",
+     "shapeISO": "MY-02"
+    },
+    {
+     "id": "mys-adm1-kelantan",
+     "name": "Kelantan",
+     "shapeISO": "MY-03"
+    },
+    {
+     "id": "mys-adm1-kuala-lumpur",
+     "name": "Kuala Lumpur",
+     "shapeISO": "MY-14"
+    },
+    {
+     "id": "mys-adm1-labuan",
+     "name": "Labuan",
+     "shapeISO": "MY-15"
+    },
+    {
+     "id": "mys-adm1-malacca",
+     "name": "Malacca",
+     "shapeISO": "MY-04"
+    },
+    {
+     "id": "mys-adm1-negeri-sembilan",
+     "name": "Negeri Sembilan",
+     "shapeISO": "MY-05"
+    },
+    {
+     "id": "mys-adm1-pahang",
+     "name": "Pahang",
+     "shapeISO": "MY-06"
+    },
+    {
+     "id": "mys-adm1-penang",
+     "name": "Penang",
+     "shapeISO": "MY-07"
+    },
+    {
+     "id": "mys-adm1-perak",
+     "name": "Perak",
+     "shapeISO": "MY-08"
+    },
+    {
+     "id": "mys-adm1-perlis",
+     "name": "Perlis",
+     "shapeISO": "MY-09"
+    },
+    {
+     "id": "mys-adm1-putrajaya",
+     "name": "Putrajaya",
+     "shapeISO": "MY-16"
+    },
+    {
+     "id": "mys-adm1-sabah",
+     "name": "Sabah",
+     "shapeISO": "MY-12"
+    },
+    {
+     "id": "mys-adm1-sarawak",
+     "name": "Sarawak",
+     "shapeISO": "MY-13"
+    },
+    {
+     "id": "mys-adm1-selangor",
+     "name": "Selangor",
+     "shapeISO": "MY-10"
+    },
+    {
+     "id": "mys-adm1-terengganu",
+     "name": "Terengganu",
+     "shapeISO": "MY-11"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Districts",
+   "code": "ADM2",
+   "count": 159,
+   "name": "Districts",
+   "nameBn": "জেলা",
+   "representedYear": "2020",
+   "sourceCount": 160,
+   "units": [
+    {
+     "id": "mys-adm2-alor-gajah",
+     "name": "Alor Gajah"
+    },
+    {
+     "id": "mys-adm2-asajaya",
+     "name": "Asajaya"
+    },
+    {
+     "id": "mys-adm2-bachok",
+     "name": "Bachok"
+    },
+    {
+     "id": "mys-adm2-bagan-datuk",
+     "name": "Bagan Datuk"
+    },
+    {
+     "id": "mys-adm2-baling",
+     "name": "Baling"
+    },
+    {
+     "id": "mys-adm2-bandar-baharu",
+     "name": "Bandar Baharu"
+    },
+    {
+     "id": "mys-adm2-barat-daya",
+     "name": "Barat Daya"
+    },
+    {
+     "id": "mys-adm2-batang-padang",
+     "name": "Batang Padang"
+    },
+    {
+     "id": "mys-adm2-batu-pahat",
+     "name": "Batu Pahat"
+    },
+    {
+     "id": "mys-adm2-bau",
+     "name": "Bau"
+    },
+    {
+     "id": "mys-adm2-beaufort",
+     "name": "Beaufort"
+    },
+    {
+     "id": "mys-adm2-belaga",
+     "name": "Belaga"
+    },
+    {
+     "id": "mys-adm2-beluran",
+     "name": "Beluran"
+    },
+    {
+     "id": "mys-adm2-beluru",
+     "name": "Beluru"
+    },
+    {
+     "id": "mys-adm2-bentong",
+     "name": "Bentong"
+    },
+    {
+     "id": "mys-adm2-bera",
+     "name": "Bera"
+    },
+    {
+     "id": "mys-adm2-besut",
+     "name": "Besut"
+    },
+    {
+     "id": "mys-adm2-betong",
+     "name": "Betong"
+    },
+    {
+     "id": "mys-adm2-bintulu",
+     "name": "Bintulu"
+    },
+    {
+     "id": "mys-adm2-bukit-mabong",
+     "name": "Bukit Mabong"
+    },
+    {
+     "id": "mys-adm2-cameron-highlands",
+     "name": "Cameron Highlands"
+    },
+    {
+     "id": "mys-adm2-dalat",
+     "name": "Dalat"
+    },
+    {
+     "id": "mys-adm2-daro",
+     "name": "Daro"
+    },
+    {
+     "id": "mys-adm2-dungun",
+     "name": "Dungun"
+    },
+    {
+     "id": "mys-adm2-gombak",
+     "name": "Gombak"
+    },
+    {
+     "id": "mys-adm2-gua-musang",
+     "name": "Gua Musang"
+    },
+    {
+     "id": "mys-adm2-hilir-perak",
+     "name": "Hilir Perak"
+    },
+    {
+     "id": "mys-adm2-hulu-perak",
+     "name": "Hulu Perak"
+    },
+    {
+     "id": "mys-adm2-hulu-terengganu",
+     "name": "Hulu Terengganu"
+    },
+    {
+     "id": "mys-adm2-jasin",
+     "name": "Jasin"
+    },
+    {
+     "id": "mys-adm2-jelebu",
+     "name": "Jelebu"
+    },
+    {
+     "id": "mys-adm2-jeli",
+     "name": "Jeli"
+    },
+    {
+     "id": "mys-adm2-jempol",
+     "name": "Jempol"
+    },
+    {
+     "id": "mys-adm2-jerantut",
+     "name": "Jerantut"
+    },
+    {
+     "id": "mys-adm2-johor-bahru",
+     "name": "Johor Bahru"
+    },
+    {
+     "id": "mys-adm2-julau",
+     "name": "Julau"
+    },
+    {
+     "id": "mys-adm2-kabong",
+     "name": "Kabong"
+    },
+    {
+     "id": "mys-adm2-kalabakan",
+     "name": "Kalabakan"
+    },
+    {
+     "id": "mys-adm2-kampar",
+     "name": "Kampar"
+    },
+    {
+     "id": "mys-adm2-kanowit",
+     "name": "Kanowit"
+    },
+    {
+     "id": "mys-adm2-kapit",
+     "name": "Kapit"
+    },
+    {
+     "id": "mys-adm2-kecil-lojing",
+     "name": "Kecil Lojing"
+    },
+    {
+     "id": "mys-adm2-kemaman",
+     "name": "Kemaman"
+    },
+    {
+     "id": "mys-adm2-keningau",
+     "name": "Keningau"
+    },
+    {
+     "id": "mys-adm2-kerian",
+     "name": "Kerian"
+    },
+    {
+     "id": "mys-adm2-kinabatangan",
+     "name": "Kinabatangan"
+    },
+    {
+     "id": "mys-adm2-kinta",
+     "name": "Kinta"
+    },
+    {
+     "id": "mys-adm2-klang",
+     "name": "Klang"
+    },
+    {
+     "id": "mys-adm2-kluang",
+     "name": "Kluang"
+    },
+    {
+     "id": "mys-adm2-kota-belud",
+     "name": "Kota Belud"
+    },
+    {
+     "id": "mys-adm2-kota-bharu",
+     "name": "Kota Bharu"
+    },
+    {
+     "id": "mys-adm2-kota-kinabalu",
+     "name": "Kota Kinabalu"
+    },
+    {
+     "id": "mys-adm2-kota-marudu",
+     "name": "Kota Marudu"
+    },
+    {
+     "id": "mys-adm2-kota-setar",
+     "name": "Kota Setar"
+    },
+    {
+     "id": "mys-adm2-kota-tinggi",
+     "name": "Kota Tinggi"
+    },
+    {
+     "id": "mys-adm2-kuala-kangsar",
+     "name": "Kuala Kangsar"
+    },
+    {
+     "id": "mys-adm2-kuala-krai",
+     "name": "Kuala Krai"
+    },
+    {
+     "id": "mys-adm2-kuala-langat",
+     "name": "Kuala Langat"
+    },
+    {
+     "id": "mys-adm2-kuala-lumpur",
+     "name": "Kuala Lumpur"
+    },
+    {
+     "id": "mys-adm2-kuala-muda",
+     "name": "Kuala Muda"
+    },
+    {
+     "id": "mys-adm2-kuala-nerus",
+     "name": "Kuala Nerus"
+    },
+    {
+     "id": "mys-adm2-kuala-penyu",
+     "name": "Kuala Penyu"
+    },
+    {
+     "id": "mys-adm2-kuala-pilah",
+     "name": "Kuala Pilah"
+    },
+    {
+     "id": "mys-adm2-kuala-selangor",
+     "name": "Kuala Selangor"
+    },
+    {
+     "id": "mys-adm2-kuala-terengganu",
+     "name": "Kuala Terengganu"
+    },
+    {
+     "id": "mys-adm2-kuantan",
+     "name": "Kuantan"
+    },
+    {
+     "id": "mys-adm2-kubang-pasu",
+     "name": "Kubang Pasu"
+    },
+    {
+     "id": "mys-adm2-kuching",
+     "name": "Kuching"
+    },
+    {
+     "id": "mys-adm2-kudat",
+     "name": "Kudat"
+    },
+    {
+     "id": "mys-adm2-kulaijaya",
+     "name": "Kulaijaya"
+    },
+    {
+     "id": "mys-adm2-kulim",
+     "name": "Kulim"
+    },
+    {
+     "id": "mys-adm2-kunak",
+     "name": "Kunak"
+    },
+    {
+     "id": "mys-adm2-labuan",
+     "name": "Labuan"
+    },
+    {
+     "id": "mys-adm2-lahad-datu",
+     "name": "Lahad Datu"
+    },
+    {
+     "id": "mys-adm2-langkawi",
+     "name": "Langkawi"
+    },
+    {
+     "id": "mys-adm2-larut-dan-matang",
+     "name": "Larut dan Matang"
+    },
+    {
+     "id": "mys-adm2-lawas",
+     "name": "Lawas"
+    },
+    {
+     "id": "mys-adm2-ledang",
+     "name": "Ledang"
+    },
+    {
+     "id": "mys-adm2-limbang",
+     "name": "Limbang"
+    },
+    {
+     "id": "mys-adm2-lipis",
+     "name": "Lipis"
+    },
+    {
+     "id": "mys-adm2-lubok-antu",
+     "name": "Lubok Antu"
+    },
+    {
+     "id": "mys-adm2-lundu",
+     "name": "Lundu"
+    },
+    {
+     "id": "mys-adm2-machang",
+     "name": "Machang"
+    },
+    {
+     "id": "mys-adm2-manjung",
+     "name": "Manjung"
+    },
+    {
+     "id": "mys-adm2-maradong",
+     "name": "Maradong"
+    },
+    {
+     "id": "mys-adm2-maran",
+     "name": "Maran"
+    },
+    {
+     "id": "mys-adm2-marang",
+     "name": "Marang"
+    },
+    {
+     "id": "mys-adm2-marudi",
+     "name": "Marudi"
+    },
+    {
+     "id": "mys-adm2-matu",
+     "name": "Matu"
+    },
+    {
+     "id": "mys-adm2-melaka-tengah",
+     "name": "Melaka Tengah"
+    },
+    {
+     "id": "mys-adm2-mersing",
+     "name": "Mersing"
+    },
+    {
+     "id": "mys-adm2-miri",
+     "name": "Miri"
+    },
+    {
+     "id": "mys-adm2-muallim",
+     "name": "Muallim"
+    },
+    {
+     "id": "mys-adm2-muar",
+     "name": "Muar"
+    },
+    {
+     "id": "mys-adm2-mukah",
+     "name": "Mukah"
+    },
+    {
+     "id": "mys-adm2-nabawan-persiangan",
+     "name": "Nabawan / Persiangan"
+    },
+    {
+     "id": "mys-adm2-padang-terap",
+     "name": "Padang Terap"
+    },
+    {
+     "id": "mys-adm2-pakan",
+     "name": "Pakan"
+    },
+    {
+     "id": "mys-adm2-papar",
+     "name": "Papar"
+    },
+    {
+     "id": "mys-adm2-pasir-mas",
+     "name": "Pasir Mas"
+    },
+    {
+     "id": "mys-adm2-pasir-puteh",
+     "name": "Pasir Puteh"
+    },
+    {
+     "id": "mys-adm2-pekan",
+     "name": "Pekan"
+    },
+    {
+     "id": "mys-adm2-penampang",
+     "name": "Penampang"
+    },
+    {
+     "id": "mys-adm2-pendang",
+     "name": "Pendang"
+    },
+    {
+     "id": "mys-adm2-perak-tengah",
+     "name": "Perak Tengah"
+    },
+    {
+     "id": "mys-adm2-perlis",
+     "name": "Perlis"
+    },
+    {
+     "id": "mys-adm2-petaling",
+     "name": "Petaling"
+    },
+    {
+     "id": "mys-adm2-pitas",
+     "name": "Pitas"
+    },
+    {
+     "id": "mys-adm2-pokok-sena",
+     "name": "Pokok Sena"
+    },
+    {
+     "id": "mys-adm2-pontian",
+     "name": "Pontian"
+    },
+    {
+     "id": "mys-adm2-port-dickson",
+     "name": "Port Dickson"
+    },
+    {
+     "id": "mys-adm2-pusa",
+     "name": "Pusa"
+    },
+    {
+     "id": "mys-adm2-putatan",
+     "name": "Putatan"
+    },
+    {
+     "id": "mys-adm2-ranau",
+     "name": "Ranau"
+    },
+    {
+     "id": "mys-adm2-raub",
+     "name": "Raub"
+    },
+    {
+     "id": "mys-adm2-rembau",
+     "name": "Rembau"
+    },
+    {
+     "id": "mys-adm2-rompin",
+     "name": "Rompin"
+    },
+    {
+     "id": "mys-adm2-sabak-bernam",
+     "name": "Sabak Bernam"
+    },
+    {
+     "id": "mys-adm2-samarahan",
+     "name": "Samarahan"
+    },
+    {
+     "id": "mys-adm2-sandakan",
+     "name": "Sandakan"
+    },
+    {
+     "id": "mys-adm2-saratok",
+     "name": "Saratok"
+    },
+    {
+     "id": "mys-adm2-sarikei",
+     "name": "Sarikei"
+    },
+    {
+     "id": "mys-adm2-sebauh",
+     "name": "Sebauh"
+    },
+    {
+     "id": "mys-adm2-seberang-perai-selatan",
+     "name": "Seberang Perai Selatan"
+    },
+    {
+     "id": "mys-adm2-seberang-perai-tengah",
+     "name": "Seberang Perai Tengah"
+    },
+    {
+     "id": "mys-adm2-seberang-perai-utara",
+     "name": "Seberang Perai Utara"
+    },
+    {
+     "id": "mys-adm2-segamat",
+     "name": "Segamat"
+    },
+    {
+     "id": "mys-adm2-selama",
+     "name": "Selama"
+    },
+    {
+     "id": "mys-adm2-selangau",
+     "name": "Selangau"
+    },
+    {
+     "id": "mys-adm2-semporna",
+     "name": "Semporna"
+    },
+    {
+     "id": "mys-adm2-sepang",
+     "name": "Sepang"
+    },
+    {
+     "id": "mys-adm2-seremban",
+     "name": "Seremban"
+    },
+    {
+     "id": "mys-adm2-serian",
+     "name": "Serian"
+    },
+    {
+     "id": "mys-adm2-setiu",
+     "name": "Setiu"
+    },
+    {
+     "id": "mys-adm2-sibu",
+     "name": "Sibu"
+    },
+    {
+     "id": "mys-adm2-sik",
+     "name": "Sik"
+    },
+    {
+     "id": "mys-adm2-simunjan",
+     "name": "Simunjan"
+    },
+    {
+     "id": "mys-adm2-sipitang",
+     "name": "Sipitang"
+    },
+    {
+     "id": "mys-adm2-song",
+     "name": "Song"
+    },
+    {
+     "id": "mys-adm2-sri-aman",
+     "name": "Sri Aman"
+    },
+    {
+     "id": "mys-adm2-subis",
+     "name": "Subis"
+    },
+    {
+     "id": "mys-adm2-tambunan",
+     "name": "Tambunan"
+    },
+    {
+     "id": "mys-adm2-tampin",
+     "name": "Tampin"
+    },
+    {
+     "id": "mys-adm2-tanah-merah",
+     "name": "Tanah Merah"
+    },
+    {
+     "id": "mys-adm2-tanjung-manis",
+     "name": "Tanjung Manis"
+    },
+    {
+     "id": "mys-adm2-tatau",
+     "name": "Tatau"
+    },
+    {
+     "id": "mys-adm2-tawau",
+     "name": "Tawau"
+    },
+    {
+     "id": "mys-adm2-tebedu",
+     "name": "Tebedu"
+    },
+    {
+     "id": "mys-adm2-telang-usan",
+     "name": "Telang Usan"
+    },
+    {
+     "id": "mys-adm2-telupid",
+     "name": "Telupid"
+    },
+    {
+     "id": "mys-adm2-temerloh",
+     "name": "Temerloh"
+    },
+    {
+     "id": "mys-adm2-tenom",
+     "name": "Tenom"
+    },
+    {
+     "id": "mys-adm2-timur-laut",
+     "name": "Timur Laut"
+    },
+    {
+     "id": "mys-adm2-tongod",
+     "name": "Tongod"
+    },
+    {
+     "id": "mys-adm2-tuaran",
+     "name": "Tuaran"
+    },
+    {
+     "id": "mys-adm2-tumpat",
+     "name": "Tumpat"
+    },
+    {
+     "id": "mys-adm2-ulu-langat",
+     "name": "Ulu Langat"
+    },
+    {
+     "id": "mys-adm2-ulu-selangor",
+     "name": "Ulu Selangor"
+    },
+    {
+     "id": "mys-adm2-yan",
+     "name": "Yan"
+    }
+   ]
+  }
+ },
+ "name": "Malaysia",
+ "nameBn": "Malaysia"
+}

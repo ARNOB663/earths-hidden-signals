@@ -1,0 +1,256 @@
+{
+ "code": "WSM",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Independent State of Samoa",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2017",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Unknown",
+   "code": "ADM1",
+   "count": 11,
+   "name": "ADM1 areas",
+   "nameBn": "ADM1 এলাকা",
+   "representedYear": "2018",
+   "sourceCount": 11,
+   "units": [
+    {
+     "id": "wsm-adm1-a-ana",
+     "name": "A'ana"
+    },
+    {
+     "id": "wsm-adm1-aiga-i-le-tai",
+     "name": "Aiga-i-le-Tai"
+    },
+    {
+     "id": "wsm-adm1-atua",
+     "name": "Atua"
+    },
+    {
+     "id": "wsm-adm1-fa-asaleleage",
+     "name": "Fa'asaleleage"
+    },
+    {
+     "id": "wsm-adm1-gaga-emauga",
+     "name": "Gaga'emauga"
+    },
+    {
+     "id": "wsm-adm1-gaga-ifomauga",
+     "name": "Gaga'ifomauga"
+    },
+    {
+     "id": "wsm-adm1-palauli",
+     "name": "Palauli"
+    },
+    {
+     "id": "wsm-adm1-satupa-itea",
+     "name": "Satupa'itea"
+    },
+    {
+     "id": "wsm-adm1-tuamasaga",
+     "name": "Tuamasaga"
+    },
+    {
+     "id": "wsm-adm1-va-a-o-fonoti",
+     "name": "Va'a-o-Fonoti"
+    },
+    {
+     "id": "wsm-adm1-vaisigano",
+     "name": "Vaisigano"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Districts",
+   "code": "ADM2",
+   "count": 43,
+   "name": "Districts",
+   "nameBn": "জেলা",
+   "representedYear": "2011",
+   "sourceCount": 43,
+   "units": [
+    {
+     "id": "wsm-adm2-aana-alofi-i",
+     "name": "Aana Alofi I"
+    },
+    {
+     "id": "wsm-adm2-aana-alofi-ii",
+     "name": "Aana Alofi II"
+    },
+    {
+     "id": "wsm-adm2-aana-alofi-iii",
+     "name": "Aana Alofi III"
+    },
+    {
+     "id": "wsm-adm2-aiga-i-le-tai",
+     "name": "Aiga i le Tai"
+    },
+    {
+     "id": "wsm-adm2-alataua-west",
+     "name": "Alataua West"
+    },
+    {
+     "id": "wsm-adm2-aleipata-itupa-i-lalo",
+     "name": "Aleipata itupa i Lalo"
+    },
+    {
+     "id": "wsm-adm2-aleipata-itupa-i-luga",
+     "name": "Aleipata itupa i Luga"
+    },
+    {
+     "id": "wsm-adm2-anoamaa-east",
+     "name": "Anoamaa East"
+    },
+    {
+     "id": "wsm-adm2-anoamaa-west",
+     "name": "Anoamaa West"
+    },
+    {
+     "id": "wsm-adm2-faasaleleaga-i",
+     "name": "Faasaleleaga I"
+    },
+    {
+     "id": "wsm-adm2-faasaleleaga-ii",
+     "name": "Faasaleleaga II"
+    },
+    {
+     "id": "wsm-adm2-faasaleleaga-iii",
+     "name": "Faasaleleaga III"
+    },
+    {
+     "id": "wsm-adm2-faasalelelaga-iv",
+     "name": "Faasalelelaga IV"
+    },
+    {
+     "id": "wsm-adm2-falealili",
+     "name": "Falealili"
+    },
+    {
+     "id": "wsm-adm2-falealupo",
+     "name": "Falealupo"
+    },
+    {
+     "id": "wsm-adm2-faleata-east",
+     "name": "Faleata East"
+    },
+    {
+     "id": "wsm-adm2-faleata-west",
+     "name": "Faleata West"
+    },
+    {
+     "id": "wsm-adm2-falelatai-samatau",
+     "name": "Falelatai & Samatau"
+    },
+    {
+     "id": "wsm-adm2-gagaemauga-i",
+     "name": "Gagaemauga I"
+    },
+    {
+     "id": "wsm-adm2-gagaemauga-i-part",
+     "name": "Gagaemauga I (PART)"
+    },
+    {
+     "id": "wsm-adm2-gagaemauga-ii",
+     "name": "Gagaemauga II"
+    },
+    {
+     "id": "wsm-adm2-gagaemauga-ii-part",
+     "name": "Gagaemauga II (PART)"
+    },
+    {
+     "id": "wsm-adm2-gagaemauga-iii",
+     "name": "Gagaemauga III"
+    },
+    {
+     "id": "wsm-adm2-gagaifomauga-i",
+     "name": "Gagaifomauga I"
+    },
+    {
+     "id": "wsm-adm2-gagaifomauga-ii",
+     "name": "Gagaifomauga II"
+    },
+    {
+     "id": "wsm-adm2-gagaifomauga-iii",
+     "name": "Gagaifomauga III"
+    },
+    {
+     "id": "wsm-adm2-lefaga-faleseela",
+     "name": "Lefaga & Faleseela"
+    },
+    {
+     "id": "wsm-adm2-lepa",
+     "name": "Lepa"
+    },
+    {
+     "id": "wsm-adm2-lotofaga",
+     "name": "Lotofaga"
+    },
+    {
+     "id": "wsm-adm2-palauli-east",
+     "name": "Palauli East"
+    },
+    {
+     "id": "wsm-adm2-palauli-le-falefa",
+     "name": "Palauli le Falefa"
+    },
+    {
+     "id": "wsm-adm2-palauli-west",
+     "name": "Palauli West"
+    },
+    {
+     "id": "wsm-adm2-safata",
+     "name": "Safata"
+    },
+    {
+     "id": "wsm-adm2-sagaga-le-falefa",
+     "name": "Sagaga le Falefa"
+    },
+    {
+     "id": "wsm-adm2-sagaga-le-usoga",
+     "name": "Sagaga le Usoga"
+    },
+    {
+     "id": "wsm-adm2-salega",
+     "name": "Salega"
+    },
+    {
+     "id": "wsm-adm2-satuipaitea",
+     "name": "Satuipaitea"
+    },
+    {
+     "id": "wsm-adm2-siumu",
+     "name": "Siumu"
+    },
+    {
+     "id": "wsm-adm2-vaa-o-fonoti",
+     "name": "Vaa o Fonoti"
+    },
+    {
+     "id": "wsm-adm2-vaimauga-east",
+     "name": "Vaimauga East"
+    },
+    {
+     "id": "wsm-adm2-vaimauga-west",
+     "name": "Vaimauga West"
+    },
+    {
+     "id": "wsm-adm2-vaisigano-east",
+     "name": "Vaisigano East"
+    },
+    {
+     "id": "wsm-adm2-vaisigano-west",
+     "name": "Vaisigano West"
+    }
+   ]
+  }
+ },
+ "name": "Samoa",
+ "nameBn": "Samoa"
+}

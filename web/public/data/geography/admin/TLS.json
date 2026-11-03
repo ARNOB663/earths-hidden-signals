@@ -1,0 +1,365 @@
+{
+ "code": "TLS",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Unknown",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2017",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Municipalities",
+   "code": "ADM1",
+   "count": 13,
+   "name": "ADM1 areas",
+   "nameBn": "ADM1 এলাকা",
+   "representedYear": "2017",
+   "sourceCount": 13,
+   "units": [
+    {
+     "id": "tls-adm1-aileu",
+     "name": "Aileu",
+     "shapeISO": "TL-AL"
+    },
+    {
+     "id": "tls-adm1-ainaro",
+     "name": "Ainaro",
+     "shapeISO": "TL-AN"
+    },
+    {
+     "id": "tls-adm1-baucau",
+     "name": "Baucau",
+     "shapeISO": "TL-BA"
+    },
+    {
+     "id": "tls-adm1-bobonaro",
+     "name": "Bobonaro",
+     "shapeISO": "TL-BO"
+    },
+    {
+     "id": "tls-adm1-cova-lima",
+     "name": "Cova Lima",
+     "shapeISO": "TL-CO"
+    },
+    {
+     "id": "tls-adm1-dili",
+     "name": "Dili",
+     "shapeISO": "TL-DI"
+    },
+    {
+     "id": "tls-adm1-ermera",
+     "name": "Ermera",
+     "shapeISO": "TL-ER"
+    },
+    {
+     "id": "tls-adm1-lautém",
+     "name": "Lautém",
+     "shapeISO": "TL-LA"
+    },
+    {
+     "id": "tls-adm1-liquiçá",
+     "name": "Liquiçá",
+     "shapeISO": "TL-LI"
+    },
+    {
+     "id": "tls-adm1-manatuto",
+     "name": "Manatuto",
+     "shapeISO": "TL-MT"
+    },
+    {
+     "id": "tls-adm1-manufahi",
+     "name": "Manufahi",
+     "shapeISO": "TL-MF"
+    },
+    {
+     "id": "tls-adm1-oecusse",
+     "name": "Oecusse",
+     "shapeISO": "TL-OE"
+    },
+    {
+     "id": "tls-adm1-viqueque",
+     "name": "Viqueque",
+     "shapeISO": "TL-VI"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Administrative Posts",
+   "code": "ADM2",
+   "count": 65,
+   "name": "Administrative Posts",
+   "nameBn": "Administrative Posts",
+   "representedYear": "2020",
+   "sourceCount": 65,
+   "units": [
+    {
+     "id": "tls-adm2-aileu-vila",
+     "name": "Aileu Vila"
+    },
+    {
+     "id": "tls-adm2-ainaro",
+     "name": "Ainaro"
+    },
+    {
+     "id": "tls-adm2-alas",
+     "name": "Alas"
+    },
+    {
+     "id": "tls-adm2-atabae",
+     "name": "Atabae"
+    },
+    {
+     "id": "tls-adm2-atauro",
+     "name": "Atauro"
+    },
+    {
+     "id": "tls-adm2-atsabe",
+     "name": "Atsabe"
+    },
+    {
+     "id": "tls-adm2-baguia",
+     "name": "Baguia"
+    },
+    {
+     "id": "tls-adm2-balibo",
+     "name": "Balibo"
+    },
+    {
+     "id": "tls-adm2-barique-natarbora",
+     "name": "Barique/Natarbora"
+    },
+    {
+     "id": "tls-adm2-baucau",
+     "name": "Baucau"
+    },
+    {
+     "id": "tls-adm2-bazartete",
+     "name": "Bazartete"
+    },
+    {
+     "id": "tls-adm2-bobonaro",
+     "name": "Bobonaro"
+    },
+    {
+     "id": "tls-adm2-cailaco",
+     "name": "Cailaco"
+    },
+    {
+     "id": "tls-adm2-cristo-rei",
+     "name": "Cristo Rei"
+    },
+    {
+     "id": "tls-adm2-dom-aleixo",
+     "name": "Dom Aleixo"
+    },
+    {
+     "id": "tls-adm2-ermera",
+     "name": "Ermera"
+    },
+    {
+     "id": "tls-adm2-fatuberliu",
+     "name": "Fatuberliu"
+    },
+    {
+     "id": "tls-adm2-fatululic",
+     "name": "Fatululic"
+    },
+    {
+     "id": "tls-adm2-fatumean",
+     "name": "Fatumean"
+    },
+    {
+     "id": "tls-adm2-forohem",
+     "name": "Forohem"
+    },
+    {
+     "id": "tls-adm2-hatolia",
+     "name": "Hatolia"
+    },
+    {
+     "id": "tls-adm2-hatu-builico",
+     "name": "Hatu-Builico"
+    },
+    {
+     "id": "tls-adm2-hatu-udo",
+     "name": "Hatu-Udo"
+    },
+    {
+     "id": "tls-adm2-iliomar",
+     "name": "Iliomar"
+    },
+    {
+     "id": "tls-adm2-laclo",
+     "name": "Laclo"
+    },
+    {
+     "id": "tls-adm2-laclubar",
+     "name": "Laclubar"
+    },
+    {
+     "id": "tls-adm2-lacluta",
+     "name": "Lacluta"
+    },
+    {
+     "id": "tls-adm2-laga",
+     "name": "Laga"
+    },
+    {
+     "id": "tls-adm2-laleia",
+     "name": "Laleia"
+    },
+    {
+     "id": "tls-adm2-laulara",
+     "name": "Laulara"
+    },
+    {
+     "id": "tls-adm2-lautém",
+     "name": "Lautém"
+    },
+    {
+     "id": "tls-adm2-letefoho",
+     "name": "Letefoho"
+    },
+    {
+     "id": "tls-adm2-liquidoe",
+     "name": "Liquidoe"
+    },
+    {
+     "id": "tls-adm2-liquiçá",
+     "name": "Liquiçá"
+    },
+    {
+     "id": "tls-adm2-lolotoe",
+     "name": "Lolotoe"
+    },
+    {
+     "id": "tls-adm2-lospalos",
+     "name": "Lospalos"
+    },
+    {
+     "id": "tls-adm2-luro",
+     "name": "Luro"
+    },
+    {
+     "id": "tls-adm2-maliana",
+     "name": "Maliana"
+    },
+    {
+     "id": "tls-adm2-manatuto",
+     "name": "Manatuto"
+    },
+    {
+     "id": "tls-adm2-maubara",
+     "name": "Maubara"
+    },
+    {
+     "id": "tls-adm2-maubisse",
+     "name": "Maubisse"
+    },
+    {
+     "id": "tls-adm2-maukatar",
+     "name": "Maukatar"
+    },
+    {
+     "id": "tls-adm2-metinaro",
+     "name": "Metinaro"
+    },
+    {
+     "id": "tls-adm2-nain-feto",
+     "name": "Nain Feto"
+    },
+    {
+     "id": "tls-adm2-nitibe",
+     "name": "Nitibe"
+    },
+    {
+     "id": "tls-adm2-oesilo",
+     "name": "Oesilo"
+    },
+    {
+     "id": "tls-adm2-ossu",
+     "name": "Ossu"
+    },
+    {
+     "id": "tls-adm2-pante-macassar",
+     "name": "Pante Macassar"
+    },
+    {
+     "id": "tls-adm2-passabe",
+     "name": "Passabe"
+    },
+    {
+     "id": "tls-adm2-quelicai",
+     "name": "Quelicai"
+    },
+    {
+     "id": "tls-adm2-railaco",
+     "name": "Railaco"
+    },
+    {
+     "id": "tls-adm2-remexio",
+     "name": "Remexio"
+    },
+    {
+     "id": "tls-adm2-same",
+     "name": "Same"
+    },
+    {
+     "id": "tls-adm2-soibada",
+     "name": "Soibada"
+    },
+    {
+     "id": "tls-adm2-suai",
+     "name": "Suai"
+    },
+    {
+     "id": "tls-adm2-tilomar",
+     "name": "Tilomar"
+    },
+    {
+     "id": "tls-adm2-turiscai",
+     "name": "Turiscai"
+    },
+    {
+     "id": "tls-adm2-tutuala",
+     "name": "Tutuala"
+    },
+    {
+     "id": "tls-adm2-uato-lari",
+     "name": "Uato-Lari"
+    },
+    {
+     "id": "tls-adm2-uatucarbau",
+     "name": "Uatucarbau"
+    },
+    {
+     "id": "tls-adm2-vemasse",
+     "name": "Vemasse"
+    },
+    {
+     "id": "tls-adm2-venilale",
+     "name": "Venilale"
+    },
+    {
+     "id": "tls-adm2-vera-cruz",
+     "name": "Vera Cruz"
+    },
+    {
+     "id": "tls-adm2-viqueque",
+     "name": "Viqueque"
+    },
+    {
+     "id": "tls-adm2-zumalai",
+     "name": "Zumalai"
+    }
+   ]
+  }
+ },
+ "name": "Timor-Leste",
+ "nameBn": "Timor-Leste"
+}

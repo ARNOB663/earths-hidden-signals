@@ -1,0 +1,407 @@
+{
+ "code": "BEN",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "The Republic of Benin",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2012",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Departments",
+   "code": "ADM1",
+   "count": 12,
+   "name": "Departments",
+   "nameBn": "বিভাগ",
+   "representedYear": "2012",
+   "sourceCount": 12,
+   "units": [
+    {
+     "id": "ben-adm1-alibori",
+     "name": "Alibori",
+     "shapeISO": "BJ-AL"
+    },
+    {
+     "id": "ben-adm1-atakora",
+     "name": "Atakora",
+     "shapeISO": "BJ-AK"
+    },
+    {
+     "id": "ben-adm1-atlanique",
+     "name": "Atlanique",
+     "shapeISO": "BJ-AQ"
+    },
+    {
+     "id": "ben-adm1-borgou",
+     "name": "Borgou",
+     "shapeISO": "BJ-BO"
+    },
+    {
+     "id": "ben-adm1-collines",
+     "name": "Collines",
+     "shapeISO": "BJ-CO"
+    },
+    {
+     "id": "ben-adm1-donga",
+     "name": "Donga",
+     "shapeISO": "BJ-DO"
+    },
+    {
+     "id": "ben-adm1-kouffo",
+     "name": "Kouffo"
+    },
+    {
+     "id": "ben-adm1-littoral",
+     "name": "Littoral",
+     "shapeISO": "BJ-LI"
+    },
+    {
+     "id": "ben-adm1-mono",
+     "name": "Mono",
+     "shapeISO": "BJ-MO"
+    },
+    {
+     "id": "ben-adm1-oueme",
+     "name": "Oueme",
+     "shapeISO": "BJ-OU"
+    },
+    {
+     "id": "ben-adm1-plateau",
+     "name": "Plateau",
+     "shapeISO": "BJ-PL"
+    },
+    {
+     "id": "ben-adm1-zou",
+     "name": "Zou",
+     "shapeISO": "BJ-ZO"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Commune",
+   "code": "ADM2",
+   "count": 77,
+   "name": "Commune",
+   "nameBn": "Commune",
+   "representedYear": "2007",
+   "sourceCount": 77,
+   "units": [
+    {
+     "id": "ben-adm2-abomey",
+     "name": "Abomey"
+    },
+    {
+     "id": "ben-adm2-abomey-calavi",
+     "name": "Abomey-Calavi"
+    },
+    {
+     "id": "ben-adm2-adja-ouere",
+     "name": "Adja-Ouere"
+    },
+    {
+     "id": "ben-adm2-adjarra",
+     "name": "Adjarra"
+    },
+    {
+     "id": "ben-adm2-adjohoun",
+     "name": "Adjohoun"
+    },
+    {
+     "id": "ben-adm2-agbangnizoun",
+     "name": "Agbangnizoun"
+    },
+    {
+     "id": "ben-adm2-aguegues",
+     "name": "Aguegues"
+    },
+    {
+     "id": "ben-adm2-akpo-misserete",
+     "name": "Akpo-Misserete"
+    },
+    {
+     "id": "ben-adm2-allada",
+     "name": "Allada"
+    },
+    {
+     "id": "ben-adm2-aplahoue",
+     "name": "Aplahoue"
+    },
+    {
+     "id": "ben-adm2-athieme",
+     "name": "Athieme"
+    },
+    {
+     "id": "ben-adm2-avrankou",
+     "name": "Avrankou"
+    },
+    {
+     "id": "ben-adm2-banikoara",
+     "name": "Banikoara"
+    },
+    {
+     "id": "ben-adm2-bante",
+     "name": "Bante"
+    },
+    {
+     "id": "ben-adm2-bassila",
+     "name": "Bassila"
+    },
+    {
+     "id": "ben-adm2-bembereke",
+     "name": "Bembereke"
+    },
+    {
+     "id": "ben-adm2-bohicon",
+     "name": "Bohicon"
+    },
+    {
+     "id": "ben-adm2-bonou",
+     "name": "Bonou"
+    },
+    {
+     "id": "ben-adm2-bopa",
+     "name": "Bopa"
+    },
+    {
+     "id": "ben-adm2-boukombe",
+     "name": "Boukombe"
+    },
+    {
+     "id": "ben-adm2-come",
+     "name": "Come"
+    },
+    {
+     "id": "ben-adm2-copargo",
+     "name": "Copargo"
+    },
+    {
+     "id": "ben-adm2-cotonou",
+     "name": "Cotonou"
+    },
+    {
+     "id": "ben-adm2-cove",
+     "name": "Cove"
+    },
+    {
+     "id": "ben-adm2-dangbo",
+     "name": "Dangbo"
+    },
+    {
+     "id": "ben-adm2-dassa-zoume",
+     "name": "Dassa-Zoume"
+    },
+    {
+     "id": "ben-adm2-djakotomey",
+     "name": "Djakotomey"
+    },
+    {
+     "id": "ben-adm2-djidja",
+     "name": "Djidja"
+    },
+    {
+     "id": "ben-adm2-djougou",
+     "name": "Djougou"
+    },
+    {
+     "id": "ben-adm2-dogbo",
+     "name": "Dogbo"
+    },
+    {
+     "id": "ben-adm2-glazoue",
+     "name": "Glazoue"
+    },
+    {
+     "id": "ben-adm2-gogounou",
+     "name": "Gogounou"
+    },
+    {
+     "id": "ben-adm2-grand-popo",
+     "name": "Grand-Popo"
+    },
+    {
+     "id": "ben-adm2-houeyogbe",
+     "name": "Houeyogbe"
+    },
+    {
+     "id": "ben-adm2-ifangni",
+     "name": "Ifangni"
+    },
+    {
+     "id": "ben-adm2-kalale",
+     "name": "Kalale"
+    },
+    {
+     "id": "ben-adm2-kandi",
+     "name": "Kandi"
+    },
+    {
+     "id": "ben-adm2-karimama",
+     "name": "Karimama"
+    },
+    {
+     "id": "ben-adm2-kerou",
+     "name": "Kerou"
+    },
+    {
+     "id": "ben-adm2-ketou",
+     "name": "Ketou"
+    },
+    {
+     "id": "ben-adm2-klouekanme",
+     "name": "Klouekanme"
+    },
+    {
+     "id": "ben-adm2-kobli",
+     "name": "Kobli"
+    },
+    {
+     "id": "ben-adm2-kouande",
+     "name": "Kouande"
+    },
+    {
+     "id": "ben-adm2-kpomasse",
+     "name": "Kpomasse"
+    },
+    {
+     "id": "ben-adm2-lalo",
+     "name": "Lalo"
+    },
+    {
+     "id": "ben-adm2-lokossa",
+     "name": "Lokossa"
+    },
+    {
+     "id": "ben-adm2-malanville",
+     "name": "Malanville"
+    },
+    {
+     "id": "ben-adm2-materi",
+     "name": "Materi"
+    },
+    {
+     "id": "ben-adm2-n-dali",
+     "name": "N'dali"
+    },
+    {
+     "id": "ben-adm2-natitingou",
+     "name": "Natitingou"
+    },
+    {
+     "id": "ben-adm2-nikki",
+     "name": "Nikki"
+    },
+    {
+     "id": "ben-adm2-ouake",
+     "name": "Ouake"
+    },
+    {
+     "id": "ben-adm2-ouesse",
+     "name": "Ouesse"
+    },
+    {
+     "id": "ben-adm2-ouidah",
+     "name": "Ouidah"
+    },
+    {
+     "id": "ben-adm2-ouinhi",
+     "name": "Ouinhi"
+    },
+    {
+     "id": "ben-adm2-parakou",
+     "name": "Parakou"
+    },
+    {
+     "id": "ben-adm2-pehunco",
+     "name": "Pehunco"
+    },
+    {
+     "id": "ben-adm2-perere",
+     "name": "Perere"
+    },
+    {
+     "id": "ben-adm2-pobe",
+     "name": "Pobe"
+    },
+    {
+     "id": "ben-adm2-porto-novo",
+     "name": "Porto-Novo"
+    },
+    {
+     "id": "ben-adm2-sakete",
+     "name": "Sakete"
+    },
+    {
+     "id": "ben-adm2-savalou",
+     "name": "Savalou"
+    },
+    {
+     "id": "ben-adm2-save",
+     "name": "Save"
+    },
+    {
+     "id": "ben-adm2-segbana",
+     "name": "Segbana"
+    },
+    {
+     "id": "ben-adm2-seme-kpodji",
+     "name": "Seme-Kpodji"
+    },
+    {
+     "id": "ben-adm2-sinende",
+     "name": "Sinende"
+    },
+    {
+     "id": "ben-adm2-so-ava",
+     "name": "So-Ava"
+    },
+    {
+     "id": "ben-adm2-tanguieta",
+     "name": "Tanguieta"
+    },
+    {
+     "id": "ben-adm2-tchaourou",
+     "name": "Tchaourou"
+    },
+    {
+     "id": "ben-adm2-toffo",
+     "name": "Toffo"
+    },
+    {
+     "id": "ben-adm2-tori-bossito",
+     "name": "Tori-Bossito"
+    },
+    {
+     "id": "ben-adm2-toucountouna",
+     "name": "Toucountouna"
+    },
+    {
+     "id": "ben-adm2-toviklin",
+     "name": "Toviklin"
+    },
+    {
+     "id": "ben-adm2-za-kpota",
+     "name": "Za-Kpota"
+    },
+    {
+     "id": "ben-adm2-zagnanado",
+     "name": "Zagnanado"
+    },
+    {
+     "id": "ben-adm2-ze",
+     "name": "Ze"
+    },
+    {
+     "id": "ben-adm2-zogbodomey",
+     "name": "Zogbodomey"
+    }
+   ]
+  }
+ },
+ "name": "Benin",
+ "nameBn": "Benin"
+}

@@ -1,0 +1,59 @@
+{
+ "code": "VCT",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Saint Vincent and the Grenadines",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2017",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Parishes",
+   "code": "ADM1",
+   "count": 6,
+   "name": "Parishes",
+   "nameBn": "Parishes",
+   "representedYear": "2017",
+   "sourceCount": 6,
+   "units": [
+    {
+     "id": "vct-adm1-charlotte",
+     "name": "Charlotte",
+     "shapeISO": "VC-01"
+    },
+    {
+     "id": "vct-adm1-grenadines",
+     "name": "Grenadines",
+     "shapeISO": "VC-06"
+    },
+    {
+     "id": "vct-adm1-saint-andrew",
+     "name": "Saint Andrew",
+     "shapeISO": "VC-02"
+    },
+    {
+     "id": "vct-adm1-saint-david",
+     "name": "Saint David",
+     "shapeISO": "VC-03"
+    },
+    {
+     "id": "vct-adm1-saint-george",
+     "name": "Saint George",
+     "shapeISO": "VC-04"
+    },
+    {
+     "id": "vct-adm1-saint-patrick",
+     "name": "Saint Patrick",
+     "shapeISO": "VC-05"
+    }
+   ]
+  }
+ },
+ "name": "Saint Vincent and the Grenadines",
+ "nameBn": "Saint Vincent and the Grenadines"
+}

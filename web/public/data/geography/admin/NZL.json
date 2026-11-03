@@ -1,0 +1,477 @@
+{
+ "code": "NZL",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Country",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2017",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Unknown",
+   "code": "ADM1",
+   "count": 17,
+   "name": "ADM1 areas",
+   "nameBn": "ADM1 এলাকা",
+   "representedYear": "2017",
+   "sourceCount": 17,
+   "units": [
+    {
+     "id": "nzl-adm1-auckland-region",
+     "name": "Auckland Region",
+     "shapeISO": "NZ-AUK"
+    },
+    {
+     "id": "nzl-adm1-bay-of-plenty-region",
+     "name": "Bay of Plenty Region",
+     "shapeISO": "NZ-BOP"
+    },
+    {
+     "id": "nzl-adm1-canterbury-region",
+     "name": "Canterbury Region",
+     "shapeISO": "NZ-CAN"
+    },
+    {
+     "id": "nzl-adm1-chatham-islands-territory",
+     "name": "Chatham Islands Territory",
+     "shapeISO": "NZ-CIT"
+    },
+    {
+     "id": "nzl-adm1-gisborne-region",
+     "name": "Gisborne Region",
+     "shapeISO": "NZ-GIS"
+    },
+    {
+     "id": "nzl-adm1-hawke-s-bay-region",
+     "name": "Hawke's Bay Region",
+     "shapeISO": "NZ-HKB"
+    },
+    {
+     "id": "nzl-adm1-manawatu-wanganui-region",
+     "name": "Manawatu-Wanganui Region",
+     "shapeISO": "NZ-MWT"
+    },
+    {
+     "id": "nzl-adm1-marlborough-region",
+     "name": "Marlborough Region",
+     "shapeISO": "NZ-MBH"
+    },
+    {
+     "id": "nzl-adm1-nelson-region",
+     "name": "Nelson Region",
+     "shapeISO": "NZ-NLS"
+    },
+    {
+     "id": "nzl-adm1-northland-region",
+     "name": "Northland Region",
+     "shapeISO": "NZ-NTL"
+    },
+    {
+     "id": "nzl-adm1-otago-region",
+     "name": "Otago Region",
+     "shapeISO": "NZ-OTA"
+    },
+    {
+     "id": "nzl-adm1-southland-region",
+     "name": "Southland Region",
+     "shapeISO": "NZ-STL"
+    },
+    {
+     "id": "nzl-adm1-taranaki-region",
+     "name": "Taranaki Region",
+     "shapeISO": "NZ-TKI"
+    },
+    {
+     "id": "nzl-adm1-tasman-region",
+     "name": "Tasman Region",
+     "shapeISO": "NZ-TAS"
+    },
+    {
+     "id": "nzl-adm1-waikato-region",
+     "name": "Waikato Region",
+     "shapeISO": "NZ-WKO"
+    },
+    {
+     "id": "nzl-adm1-wellington-region",
+     "name": "Wellington Region",
+     "shapeISO": "NZ-WGN"
+    },
+    {
+     "id": "nzl-adm1-west-coast-region",
+     "name": "West Coast Region",
+     "shapeISO": "NZ-WTC"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Territorial Authorities",
+   "code": "ADM2",
+   "count": 88,
+   "name": "Territorial Authorities",
+   "nameBn": "Territorial Authorities",
+   "representedYear": "2021",
+   "sourceCount": 88,
+   "units": [
+    {
+     "id": "nzl-adm2-albert-eden-local-board-area",
+     "name": "Albert-Eden Local Board Area"
+    },
+    {
+     "id": "nzl-adm2-aotea-great-barrier-local-board-area",
+     "name": "Aotea/Great Barrier Local Board Area"
+    },
+    {
+     "id": "nzl-adm2-area-outside-territorial-authority",
+     "name": "Area Outside Territorial Authority"
+    },
+    {
+     "id": "nzl-adm2-ashburton-district",
+     "name": "Ashburton District"
+    },
+    {
+     "id": "nzl-adm2-buller-district",
+     "name": "Buller District"
+    },
+    {
+     "id": "nzl-adm2-carterton-district",
+     "name": "Carterton District"
+    },
+    {
+     "id": "nzl-adm2-central-hawke-s-bay-district",
+     "name": "Central Hawke's Bay District"
+    },
+    {
+     "id": "nzl-adm2-central-otago-district",
+     "name": "Central Otago District"
+    },
+    {
+     "id": "nzl-adm2-chatham-islands-territory",
+     "name": "Chatham Islands Territory"
+    },
+    {
+     "id": "nzl-adm2-christchurch-city",
+     "name": "Christchurch City"
+    },
+    {
+     "id": "nzl-adm2-clutha-district",
+     "name": "Clutha District"
+    },
+    {
+     "id": "nzl-adm2-devonport-takapuna-local-board-area",
+     "name": "Devonport-Takapuna Local Board Area"
+    },
+    {
+     "id": "nzl-adm2-dunedin-city",
+     "name": "Dunedin City"
+    },
+    {
+     "id": "nzl-adm2-far-north-district",
+     "name": "Far North District"
+    },
+    {
+     "id": "nzl-adm2-franklin-local-board-area",
+     "name": "Franklin Local Board Area"
+    },
+    {
+     "id": "nzl-adm2-gisborne-district",
+     "name": "Gisborne District"
+    },
+    {
+     "id": "nzl-adm2-gore-district",
+     "name": "Gore District"
+    },
+    {
+     "id": "nzl-adm2-grey-district",
+     "name": "Grey District"
+    },
+    {
+     "id": "nzl-adm2-hamilton-city",
+     "name": "Hamilton City"
+    },
+    {
+     "id": "nzl-adm2-hastings-district",
+     "name": "Hastings District"
+    },
+    {
+     "id": "nzl-adm2-hauraki-district",
+     "name": "Hauraki District"
+    },
+    {
+     "id": "nzl-adm2-henderson-massey-local-board-area",
+     "name": "Henderson-Massey Local Board Area"
+    },
+    {
+     "id": "nzl-adm2-hibiscus-and-bays-local-board-area",
+     "name": "Hibiscus and Bays Local Board Area"
+    },
+    {
+     "id": "nzl-adm2-horowhenua-district",
+     "name": "Horowhenua District"
+    },
+    {
+     "id": "nzl-adm2-howick-local-board-area",
+     "name": "Howick Local Board Area"
+    },
+    {
+     "id": "nzl-adm2-hurunui-district",
+     "name": "Hurunui District"
+    },
+    {
+     "id": "nzl-adm2-invercargill-city",
+     "name": "Invercargill City"
+    },
+    {
+     "id": "nzl-adm2-kaikoura-district",
+     "name": "Kaikoura District"
+    },
+    {
+     "id": "nzl-adm2-kaipara-district",
+     "name": "Kaipara District"
+    },
+    {
+     "id": "nzl-adm2-kaipä-tiki-local-board-area",
+     "name": "KaipÄtiki Local Board Area"
+    },
+    {
+     "id": "nzl-adm2-kapiti-coast-district",
+     "name": "Kapiti Coast District"
+    },
+    {
+     "id": "nzl-adm2-kawerau-district",
+     "name": "Kawerau District"
+    },
+    {
+     "id": "nzl-adm2-lower-hutt-city",
+     "name": "Lower Hutt City"
+    },
+    {
+     "id": "nzl-adm2-mackenzie-district",
+     "name": "Mackenzie District"
+    },
+    {
+     "id": "nzl-adm2-manawatu-district",
+     "name": "Manawatu District"
+    },
+    {
+     "id": "nzl-adm2-manurewa-local-board-area",
+     "name": "Manurewa Local Board Area"
+    },
+    {
+     "id": "nzl-adm2-marlborough-district",
+     "name": "Marlborough District"
+    },
+    {
+     "id": "nzl-adm2-masterton-district",
+     "name": "Masterton District"
+    },
+    {
+     "id": "nzl-adm2-matamata-piako-district",
+     "name": "Matamata-Piako District"
+    },
+    {
+     "id": "nzl-adm2-maungakiekie-tä-maki-local-board-area",
+     "name": "Maungakiekie-TÄmaki Local Board Area"
+    },
+    {
+     "id": "nzl-adm2-mä-ngere-å-tä-huhu-local-board-area",
+     "name": "MÄngere-ÅtÄhuhu Local Board Area"
+    },
+    {
+     "id": "nzl-adm2-napier-city",
+     "name": "Napier City"
+    },
+    {
+     "id": "nzl-adm2-nelson-city",
+     "name": "Nelson City"
+    },
+    {
+     "id": "nzl-adm2-new-plymouth-district",
+     "name": "New Plymouth District"
+    },
+    {
+     "id": "nzl-adm2-palmerston-north-city",
+     "name": "Palmerston North City"
+    },
+    {
+     "id": "nzl-adm2-papakura-local-board-area",
+     "name": "Papakura Local Board Area"
+    },
+    {
+     "id": "nzl-adm2-porirua-city",
+     "name": "Porirua City"
+    },
+    {
+     "id": "nzl-adm2-puketä-papa-local-board-area",
+     "name": "PuketÄpapa Local Board Area"
+    },
+    {
+     "id": "nzl-adm2-queenstown-lakes-district",
+     "name": "Queenstown-Lakes District"
+    },
+    {
+     "id": "nzl-adm2-rangitikei-district",
+     "name": "Rangitikei District"
+    },
+    {
+     "id": "nzl-adm2-rodney-local-board-area",
+     "name": "Rodney Local Board Area"
+    },
+    {
+     "id": "nzl-adm2-rotorua-district",
+     "name": "Rotorua District"
+    },
+    {
+     "id": "nzl-adm2-ruapehu-district",
+     "name": "Ruapehu District"
+    },
+    {
+     "id": "nzl-adm2-selwyn-district",
+     "name": "Selwyn District"
+    },
+    {
+     "id": "nzl-adm2-south-taranaki-district",
+     "name": "South Taranaki District"
+    },
+    {
+     "id": "nzl-adm2-south-waikato-district",
+     "name": "South Waikato District"
+    },
+    {
+     "id": "nzl-adm2-south-wairarapa-district",
+     "name": "South Wairarapa District"
+    },
+    {
+     "id": "nzl-adm2-southland-district",
+     "name": "Southland District"
+    },
+    {
+     "id": "nzl-adm2-stratford-district",
+     "name": "Stratford District"
+    },
+    {
+     "id": "nzl-adm2-tararua-district",
+     "name": "Tararua District"
+    },
+    {
+     "id": "nzl-adm2-tasman-district",
+     "name": "Tasman District"
+    },
+    {
+     "id": "nzl-adm2-taupo-district",
+     "name": "Taupo District"
+    },
+    {
+     "id": "nzl-adm2-tauranga-city",
+     "name": "Tauranga City"
+    },
+    {
+     "id": "nzl-adm2-thames-coromandel-district",
+     "name": "Thames-Coromandel District"
+    },
+    {
+     "id": "nzl-adm2-timaru-district",
+     "name": "Timaru District"
+    },
+    {
+     "id": "nzl-adm2-upper-harbour-local-board-area",
+     "name": "Upper Harbour Local Board Area"
+    },
+    {
+     "id": "nzl-adm2-upper-hutt-city",
+     "name": "Upper Hutt City"
+    },
+    {
+     "id": "nzl-adm2-waiheke-local-board-area",
+     "name": "Waiheke Local Board Area"
+    },
+    {
+     "id": "nzl-adm2-waikato-district",
+     "name": "Waikato District"
+    },
+    {
+     "id": "nzl-adm2-waimakariri-district",
+     "name": "Waimakariri District"
+    },
+    {
+     "id": "nzl-adm2-waimate-district",
+     "name": "Waimate District"
+    },
+    {
+     "id": "nzl-adm2-waipa-district",
+     "name": "Waipa District"
+    },
+    {
+     "id": "nzl-adm2-wairoa-district",
+     "name": "Wairoa District"
+    },
+    {
+     "id": "nzl-adm2-waitaki-district",
+     "name": "Waitaki District"
+    },
+    {
+     "id": "nzl-adm2-waitematä-local-board-area",
+     "name": "WaitematÄ Local Board Area"
+    },
+    {
+     "id": "nzl-adm2-waitomo-district",
+     "name": "Waitomo District"
+    },
+    {
+     "id": "nzl-adm2-waitä-kere-ranges-local-board-area",
+     "name": "WaitÄkere Ranges Local Board Area"
+    },
+    {
+     "id": "nzl-adm2-wellington-city",
+     "name": "Wellington City"
+    },
+    {
+     "id": "nzl-adm2-western-bay-of-plenty-district",
+     "name": "Western Bay of Plenty District"
+    },
+    {
+     "id": "nzl-adm2-westland-district",
+     "name": "Westland District"
+    },
+    {
+     "id": "nzl-adm2-whakatane-district",
+     "name": "Whakatane District"
+    },
+    {
+     "id": "nzl-adm2-whanganui-district",
+     "name": "Whanganui District"
+    },
+    {
+     "id": "nzl-adm2-whangarei-district",
+     "name": "Whangarei District"
+    },
+    {
+     "id": "nzl-adm2-whau-local-board-area",
+     "name": "Whau Local Board Area"
+    },
+    {
+     "id": "nzl-adm2-å-på-tiki-district",
+     "name": "ÅpÅtiki District"
+    },
+    {
+     "id": "nzl-adm2-å-rä-kei-local-board-area",
+     "name": "ÅrÄkei Local Board Area"
+    },
+    {
+     "id": "nzl-adm2-å-tara-papatoetoe-local-board-area",
+     "name": "Åtara-Papatoetoe Local Board Area"
+    },
+    {
+     "id": "nzl-adm2-å-torohanga-district",
+     "name": "Åtorohanga District"
+    }
+   ]
+  }
+ },
+ "name": "New Zealand",
+ "nameBn": "New Zealand"
+}

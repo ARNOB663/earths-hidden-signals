@@ -1,0 +1,1927 @@
+{
+ "code": "IRN",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "the Islamic Republic of Iran",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2009",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "ostānhā / provinces",
+   "code": "ADM1",
+   "count": 32,
+   "name": "ostānhā / provinces",
+   "nameBn": "ostānhā / provinces",
+   "representedYear": "2017",
+   "sourceCount": 33,
+   "units": [
+    {
+     "id": "irn-adm1-alborz",
+     "name": "Alborz",
+     "shapeISO": "IR-09"
+    },
+    {
+     "id": "irn-adm1-ardabil",
+     "name": "Ardabil",
+     "shapeISO": "IR-03"
+    },
+    {
+     "id": "irn-adm1-bushehr",
+     "name": "Bushehr",
+     "shapeISO": "IR-06"
+    },
+    {
+     "id": "irn-adm1-chaharmahal-and-bakhtiari",
+     "name": "Chaharmahal and Bakhtiari",
+     "shapeISO": "IR-08"
+    },
+    {
+     "id": "irn-adm1-east-azerbaijan",
+     "name": "East Azerbaijan",
+     "shapeISO": "IR-01"
+    },
+    {
+     "id": "irn-adm1-fars",
+     "name": "Fars",
+     "shapeISO": "IR-14"
+    },
+    {
+     "id": "irn-adm1-gilan",
+     "name": "Gilan",
+     "shapeISO": "IR-19"
+    },
+    {
+     "id": "irn-adm1-golestan",
+     "name": "Golestan",
+     "shapeISO": "IR-27"
+    },
+    {
+     "id": "irn-adm1-hamadan",
+     "name": "Hamadan",
+     "shapeISO": "IR-24"
+    },
+    {
+     "id": "irn-adm1-hormozgan",
+     "name": "Hormozgan",
+     "shapeISO": "IR-23"
+    },
+    {
+     "id": "irn-adm1-ilam",
+     "name": "Ilam",
+     "shapeISO": "IR-05"
+    },
+    {
+     "id": "irn-adm1-isfahan",
+     "name": "Isfahan",
+     "shapeISO": "IR-04"
+    },
+    {
+     "id": "irn-adm1-kerman",
+     "name": "Kerman",
+     "shapeISO": "IR-15"
+    },
+    {
+     "id": "irn-adm1-kermanshah",
+     "name": "Kermanshah",
+     "shapeISO": "IR-17"
+    },
+    {
+     "id": "irn-adm1-khuzestan",
+     "name": "Khuzestan",
+     "shapeISO": "IR-10"
+    },
+    {
+     "id": "irn-adm1-kohgiluyeh-and-boyer-ahmad",
+     "name": "Kohgiluyeh and Boyer-Ahmad",
+     "shapeISO": "IR-18"
+    },
+    {
+     "id": "irn-adm1-kurdistan",
+     "name": "Kurdistan",
+     "shapeISO": "IR-16"
+    },
+    {
+     "id": "irn-adm1-lorestan",
+     "name": "Lorestan",
+     "shapeISO": "IR-20"
+    },
+    {
+     "id": "irn-adm1-markazi",
+     "name": "Markazi",
+     "shapeISO": "IR-22"
+    },
+    {
+     "id": "irn-adm1-mazandaran",
+     "name": "Mazandaran",
+     "shapeISO": "IR-21"
+    },
+    {
+     "id": "irn-adm1-mazandaran-2",
+     "name": "Mazandaran",
+     "shapeISO": "IR-21"
+    },
+    {
+     "id": "irn-adm1-north-khorasan",
+     "name": "North Khorasan",
+     "shapeISO": "IR-31"
+    },
+    {
+     "id": "irn-adm1-qazvin",
+     "name": "Qazvin",
+     "shapeISO": "IR-28"
+    },
+    {
+     "id": "irn-adm1-qom",
+     "name": "Qom",
+     "shapeISO": "IR-26"
+    },
+    {
+     "id": "irn-adm1-razavi-khorasan",
+     "name": "Razavi Khorasan",
+     "shapeISO": "IR-30"
+    },
+    {
+     "id": "irn-adm1-semnan",
+     "name": "Semnan",
+     "shapeISO": "IR-12"
+    },
+    {
+     "id": "irn-adm1-sistan-and-baluchestan",
+     "name": "Sistan and Baluchestan",
+     "shapeISO": "IR-13"
+    },
+    {
+     "id": "irn-adm1-south-khorasan",
+     "name": "South Khorasan",
+     "shapeISO": "IR-29"
+    },
+    {
+     "id": "irn-adm1-tehran",
+     "name": "Tehran"
+    },
+    {
+     "id": "irn-adm1-west-azerbaijan",
+     "name": "West Azerbaijan",
+     "shapeISO": "IR-02"
+    },
+    {
+     "id": "irn-adm1-yazd",
+     "name": "Yazd",
+     "shapeISO": "IR-25"
+    },
+    {
+     "id": "irn-adm1-zanjan",
+     "name": "Zanjan",
+     "shapeISO": "IR-11"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Shahrestan",
+   "code": "ADM2",
+   "count": 432,
+   "name": "Shahrestan",
+   "nameBn": "Shahrestan",
+   "representedYear": "2017",
+   "sourceCount": 432,
+   "units": [
+    {
+     "id": "irn-adm2-abadan",
+     "name": "Abadan"
+    },
+    {
+     "id": "irn-adm2-abadeh",
+     "name": "Abadeh"
+    },
+    {
+     "id": "irn-adm2-abarkuh",
+     "name": "Abarkuh"
+    },
+    {
+     "id": "irn-adm2-abbasabad",
+     "name": "Abbasabad"
+    },
+    {
+     "id": "irn-adm2-abdanan-county",
+     "name": "Abdanan County"
+    },
+    {
+     "id": "irn-adm2-abhar",
+     "name": "Abhar"
+    },
+    {
+     "id": "irn-adm2-abumusa",
+     "name": "Abumusa"
+    },
+    {
+     "id": "irn-adm2-abyek",
+     "name": "Abyek"
+    },
+    {
+     "id": "irn-adm2-aghajari",
+     "name": "Aghajari"
+    },
+    {
+     "id": "irn-adm2-ahar",
+     "name": "Ahar"
+    },
+    {
+     "id": "irn-adm2-ahvaz",
+     "name": "Ahvaz"
+    },
+    {
+     "id": "irn-adm2-ajabshir",
+     "name": "Ajabshir"
+    },
+    {
+     "id": "irn-adm2-alborz",
+     "name": "Alborz"
+    },
+    {
+     "id": "irn-adm2-aliabad",
+     "name": "Aliabad"
+    },
+    {
+     "id": "irn-adm2-aligudarz",
+     "name": "Aligudarz"
+    },
+    {
+     "id": "irn-adm2-amlash",
+     "name": "Amlash"
+    },
+    {
+     "id": "irn-adm2-amol",
+     "name": "Amol"
+    },
+    {
+     "id": "irn-adm2-anar",
+     "name": "Anar"
+    },
+    {
+     "id": "irn-adm2-anbarabad",
+     "name": "Anbarabad"
+    },
+    {
+     "id": "irn-adm2-andika",
+     "name": "Andika"
+    },
+    {
+     "id": "irn-adm2-andimeshk",
+     "name": "Andimeshk"
+    },
+    {
+     "id": "irn-adm2-aqqala",
+     "name": "Aqqala"
+    },
+    {
+     "id": "irn-adm2-aradan",
+     "name": "Aradan"
+    },
+    {
+     "id": "irn-adm2-arak",
+     "name": "Arak"
+    },
+    {
+     "id": "irn-adm2-aran-and-bidgol",
+     "name": "Aran and Bidgol"
+    },
+    {
+     "id": "irn-adm2-ardal",
+     "name": "Ardal"
+    },
+    {
+     "id": "irn-adm2-ardebil",
+     "name": "Ardebil"
+    },
+    {
+     "id": "irn-adm2-ardekan",
+     "name": "Ardekan"
+    },
+    {
+     "id": "irn-adm2-ardestan",
+     "name": "Ardestan"
+    },
+    {
+     "id": "irn-adm2-arsanjan",
+     "name": "Arsanjan"
+    },
+    {
+     "id": "irn-adm2-arzuiyeh",
+     "name": "Arzuiyeh"
+    },
+    {
+     "id": "irn-adm2-asadabad",
+     "name": "Asadabad"
+    },
+    {
+     "id": "irn-adm2-asaluyeh",
+     "name": "Asaluyeh"
+    },
+    {
+     "id": "irn-adm2-ashkezar",
+     "name": "Ashkezar"
+    },
+    {
+     "id": "irn-adm2-ashnavieh",
+     "name": "Ashnavieh"
+    },
+    {
+     "id": "irn-adm2-ashtian",
+     "name": "Ashtian"
+    },
+    {
+     "id": "irn-adm2-astan-e-ashrafieh",
+     "name": "Astan-e-Ashrafieh"
+    },
+    {
+     "id": "irn-adm2-astara",
+     "name": "Astara"
+    },
+    {
+     "id": "irn-adm2-avaj",
+     "name": "Avaj"
+    },
+    {
+     "id": "irn-adm2-azadshahr",
+     "name": "Azadshahr"
+    },
+    {
+     "id": "irn-adm2-azarshahr",
+     "name": "Azarshahr"
+    },
+    {
+     "id": "irn-adm2-azna",
+     "name": "Azna"
+    },
+    {
+     "id": "irn-adm2-babol",
+     "name": "Babol"
+    },
+    {
+     "id": "irn-adm2-babolsar",
+     "name": "Babolsar"
+    },
+    {
+     "id": "irn-adm2-badreh",
+     "name": "Badreh"
+    },
+    {
+     "id": "irn-adm2-bafq",
+     "name": "Bafq"
+    },
+    {
+     "id": "irn-adm2-baft",
+     "name": "Baft"
+    },
+    {
+     "id": "irn-adm2-baghmalek",
+     "name": "Baghmalek"
+    },
+    {
+     "id": "irn-adm2-bahabad",
+     "name": "Bahabad"
+    },
+    {
+     "id": "irn-adm2-bahar",
+     "name": "Bahar"
+    },
+    {
+     "id": "irn-adm2-baharestan",
+     "name": "Baharestan"
+    },
+    {
+     "id": "irn-adm2-bahmai",
+     "name": "Bahmai"
+    },
+    {
+     "id": "irn-adm2-bajestan",
+     "name": "Bajestan"
+    },
+    {
+     "id": "irn-adm2-bakharz",
+     "name": "Bakharz"
+    },
+    {
+     "id": "irn-adm2-bam",
+     "name": "Bam"
+    },
+    {
+     "id": "irn-adm2-bandar-e-abbas",
+     "name": "Bandar-e-Abbas"
+    },
+    {
+     "id": "irn-adm2-bandar-e-anzali",
+     "name": "Bandar-e-Anzali"
+    },
+    {
+     "id": "irn-adm2-bandar-e-gaz",
+     "name": "Bandar-e-Gaz"
+    },
+    {
+     "id": "irn-adm2-bandar-e-lengeh",
+     "name": "Bandar-e-Lengeh"
+    },
+    {
+     "id": "irn-adm2-bandar-e-mahshahr",
+     "name": "Bandar-e-Mahshahr"
+    },
+    {
+     "id": "irn-adm2-baneh",
+     "name": "Baneh"
+    },
+    {
+     "id": "irn-adm2-bardaskan",
+     "name": "Bardaskan"
+    },
+    {
+     "id": "irn-adm2-bardsir",
+     "name": "Bardsir"
+    },
+    {
+     "id": "irn-adm2-barkhar",
+     "name": "Barkhar"
+    },
+    {
+     "id": "irn-adm2-bashagard",
+     "name": "Bashagard"
+    },
+    {
+     "id": "irn-adm2-basht",
+     "name": "Basht"
+    },
+    {
+     "id": "irn-adm2-bastak",
+     "name": "Bastak"
+    },
+    {
+     "id": "irn-adm2-bavanat",
+     "name": "Bavanat"
+    },
+    {
+     "id": "irn-adm2-bavi",
+     "name": "Bavi"
+    },
+    {
+     "id": "irn-adm2-behbahan",
+     "name": "Behbahan"
+    },
+    {
+     "id": "irn-adm2-behshahr",
+     "name": "Behshahr"
+    },
+    {
+     "id": "irn-adm2-ben",
+     "name": "Ben"
+    },
+    {
+     "id": "irn-adm2-bijar",
+     "name": "Bijar"
+    },
+    {
+     "id": "irn-adm2-bilehsavar",
+     "name": "Bilehsavar"
+    },
+    {
+     "id": "irn-adm2-binalud",
+     "name": "Binalud"
+    },
+    {
+     "id": "irn-adm2-birjand",
+     "name": "Birjand"
+    },
+    {
+     "id": "irn-adm2-bojnurd",
+     "name": "Bojnurd"
+    },
+    {
+     "id": "irn-adm2-bonab",
+     "name": "Bonab"
+    },
+    {
+     "id": "irn-adm2-borujen",
+     "name": "Borujen"
+    },
+    {
+     "id": "irn-adm2-borujerd",
+     "name": "Borujerd"
+    },
+    {
+     "id": "irn-adm2-boshruyeh",
+     "name": "Boshruyeh"
+    },
+    {
+     "id": "irn-adm2-bostanabad",
+     "name": "Bostanabad"
+    },
+    {
+     "id": "irn-adm2-buin-and-miandasht",
+     "name": "Buin and Miandasht"
+    },
+    {
+     "id": "irn-adm2-buin-zahra",
+     "name": "Buin Zahra"
+    },
+    {
+     "id": "irn-adm2-bukan",
+     "name": "Bukan"
+    },
+    {
+     "id": "irn-adm2-bushehr",
+     "name": "Bushehr"
+    },
+    {
+     "id": "irn-adm2-buyerahmad",
+     "name": "Buyerahmad"
+    },
+    {
+     "id": "irn-adm2-chabahar",
+     "name": "Chabahar"
+    },
+    {
+     "id": "irn-adm2-chadegan",
+     "name": "Chadegan"
+    },
+    {
+     "id": "irn-adm2-chaldoran-county",
+     "name": "Chaldoran County"
+    },
+    {
+     "id": "irn-adm2-chalus",
+     "name": "Chalus"
+    },
+    {
+     "id": "irn-adm2-charam",
+     "name": "Charam"
+    },
+    {
+     "id": "irn-adm2-chardavol",
+     "name": "Chardavol"
+    },
+    {
+     "id": "irn-adm2-charuymaq",
+     "name": "Charuymaq"
+    },
+    {
+     "id": "irn-adm2-chaypareh",
+     "name": "Chaypareh"
+    },
+    {
+     "id": "irn-adm2-chenaran",
+     "name": "Chenaran"
+    },
+    {
+     "id": "irn-adm2-city-of-tehran",
+     "name": "City of Tehran"
+    },
+    {
+     "id": "irn-adm2-dalagan",
+     "name": "Dalagan"
+    },
+    {
+     "id": "irn-adm2-dalahu",
+     "name": "Dalahu"
+    },
+    {
+     "id": "irn-adm2-damavand",
+     "name": "Damavand"
+    },
+    {
+     "id": "irn-adm2-damghan",
+     "name": "Damghan"
+    },
+    {
+     "id": "irn-adm2-darab",
+     "name": "Darab"
+    },
+    {
+     "id": "irn-adm2-dargaz",
+     "name": "Dargaz"
+    },
+    {
+     "id": "irn-adm2-darmian",
+     "name": "Darmian"
+    },
+    {
+     "id": "irn-adm2-darreh-shahr-county",
+     "name": "Darreh Shahr County"
+    },
+    {
+     "id": "irn-adm2-dasht-e-azadegan",
+     "name": "Dasht-e-Azadegan"
+    },
+    {
+     "id": "irn-adm2-dashtestan",
+     "name": "Dashtestan"
+    },
+    {
+     "id": "irn-adm2-dashti",
+     "name": "Dashti"
+    },
+    {
+     "id": "irn-adm2-davarzan",
+     "name": "Davarzan"
+    },
+    {
+     "id": "irn-adm2-dehaqan",
+     "name": "Dehaqan"
+    },
+    {
+     "id": "irn-adm2-dehgolan",
+     "name": "Dehgolan"
+    },
+    {
+     "id": "irn-adm2-dehloran-county",
+     "name": "Dehloran County"
+    },
+    {
+     "id": "irn-adm2-delfan",
+     "name": "Delfan"
+    },
+    {
+     "id": "irn-adm2-delijan",
+     "name": "Delijan"
+    },
+    {
+     "id": "irn-adm2-dena",
+     "name": "Dena"
+    },
+    {
+     "id": "irn-adm2-deylam",
+     "name": "Deylam"
+    },
+    {
+     "id": "irn-adm2-deyr",
+     "name": "Deyr"
+    },
+    {
+     "id": "irn-adm2-dezful",
+     "name": "Dezful"
+    },
+    {
+     "id": "irn-adm2-divandareh",
+     "name": "Divandareh"
+    },
+    {
+     "id": "irn-adm2-doreh",
+     "name": "Doreh"
+    },
+    {
+     "id": "irn-adm2-dorud",
+     "name": "Dorud"
+    },
+    {
+     "id": "irn-adm2-eqlid",
+     "name": "Eqlid"
+    },
+    {
+     "id": "irn-adm2-esfarayen-county",
+     "name": "Esfarayen County"
+    },
+    {
+     "id": "irn-adm2-eshtehard",
+     "name": "Eshtehard"
+    },
+    {
+     "id": "irn-adm2-eslamabad-e-gharb",
+     "name": "Eslamabad-e Gharb"
+    },
+    {
+     "id": "irn-adm2-estahban",
+     "name": "Estahban"
+    },
+    {
+     "id": "irn-adm2-eyvan-county",
+     "name": "Eyvan County"
+    },
+    {
+     "id": "irn-adm2-fahraj",
+     "name": "Fahraj"
+    },
+    {
+     "id": "irn-adm2-falaverjan",
+     "name": "Falaverjan"
+    },
+    {
+     "id": "irn-adm2-famenin",
+     "name": "Famenin"
+    },
+    {
+     "id": "irn-adm2-fanuj",
+     "name": "Fanuj"
+    },
+    {
+     "id": "irn-adm2-farahan",
+     "name": "Farahan"
+    },
+    {
+     "id": "irn-adm2-farashband",
+     "name": "Farashband"
+    },
+    {
+     "id": "irn-adm2-fariman",
+     "name": "Fariman"
+    },
+    {
+     "id": "irn-adm2-farsan",
+     "name": "Farsan"
+    },
+    {
+     "id": "irn-adm2-faruj",
+     "name": "Faruj"
+    },
+    {
+     "id": "irn-adm2-faryab",
+     "name": "Faryab"
+    },
+    {
+     "id": "irn-adm2-fasa",
+     "name": "Fasa"
+    },
+    {
+     "id": "irn-adm2-ferdows",
+     "name": "Ferdows"
+    },
+    {
+     "id": "irn-adm2-fereydan",
+     "name": "Fereydan"
+    },
+    {
+     "id": "irn-adm2-fereydunkenar",
+     "name": "Fereydunkenar"
+    },
+    {
+     "id": "irn-adm2-fereydunshahr",
+     "name": "Fereydunshahr"
+    },
+    {
+     "id": "irn-adm2-firuzabad",
+     "name": "Firuzabad"
+    },
+    {
+     "id": "irn-adm2-firuzeh",
+     "name": "Firuzeh"
+    },
+    {
+     "id": "irn-adm2-firuzkuh",
+     "name": "Firuzkuh"
+    },
+    {
+     "id": "irn-adm2-fuman",
+     "name": "Fuman"
+    },
+    {
+     "id": "irn-adm2-gachsaran",
+     "name": "Gachsaran"
+    },
+    {
+     "id": "irn-adm2-galikash",
+     "name": "Galikash"
+    },
+    {
+     "id": "irn-adm2-galugah",
+     "name": "Galugah"
+    },
+    {
+     "id": "irn-adm2-garmeh",
+     "name": "Garmeh"
+    },
+    {
+     "id": "irn-adm2-garmi",
+     "name": "Garmi"
+    },
+    {
+     "id": "irn-adm2-garmsar",
+     "name": "Garmsar"
+    },
+    {
+     "id": "irn-adm2-genaveh",
+     "name": "Genaveh"
+    },
+    {
+     "id": "irn-adm2-gerash",
+     "name": "Gerash"
+    },
+    {
+     "id": "irn-adm2-ghaemshahr",
+     "name": "Ghaemshahr"
+    },
+    {
+     "id": "irn-adm2-ghaenat",
+     "name": "Ghaenat"
+    },
+    {
+     "id": "irn-adm2-ghalehganj",
+     "name": "Ghalehganj"
+    },
+    {
+     "id": "irn-adm2-gharchak",
+     "name": "Gharchak"
+    },
+    {
+     "id": "irn-adm2-ghorveh",
+     "name": "Ghorveh"
+    },
+    {
+     "id": "irn-adm2-gilan-e-gharb",
+     "name": "Gilan-e-Gharb"
+    },
+    {
+     "id": "irn-adm2-golpayegan",
+     "name": "Golpayegan"
+    },
+    {
+     "id": "irn-adm2-gomishan",
+     "name": "Gomishan"
+    },
+    {
+     "id": "irn-adm2-gonabad",
+     "name": "Gonabad"
+    },
+    {
+     "id": "irn-adm2-gonbad-e-kavus",
+     "name": "Gonbad-e-Kavus"
+    },
+    {
+     "id": "irn-adm2-gorgan",
+     "name": "Gorgan"
+    },
+    {
+     "id": "irn-adm2-gotvand",
+     "name": "Gotvand"
+    },
+    {
+     "id": "irn-adm2-haftgol",
+     "name": "Haftgol"
+    },
+    {
+     "id": "irn-adm2-hajiabad",
+     "name": "Hajiabad"
+    },
+    {
+     "id": "irn-adm2-hamedan",
+     "name": "Hamedan"
+    },
+    {
+     "id": "irn-adm2-hamidieh",
+     "name": "Hamidieh"
+    },
+    {
+     "id": "irn-adm2-hamun",
+     "name": "Hamun"
+    },
+    {
+     "id": "irn-adm2-harsin",
+     "name": "Harsin"
+    },
+    {
+     "id": "irn-adm2-hashtrud",
+     "name": "Hashtrud"
+    },
+    {
+     "id": "irn-adm2-hendijan",
+     "name": "Hendijan"
+    },
+    {
+     "id": "irn-adm2-heris",
+     "name": "Heris"
+    },
+    {
+     "id": "irn-adm2-hirmand",
+     "name": "Hirmand"
+    },
+    {
+     "id": "irn-adm2-hoveyzeh",
+     "name": "Hoveyzeh"
+    },
+    {
+     "id": "irn-adm2-ijrud",
+     "name": "Ijrud"
+    },
+    {
+     "id": "irn-adm2-ilam",
+     "name": "Ilam"
+    },
+    {
+     "id": "irn-adm2-iranshahr",
+     "name": "Iranshahr"
+    },
+    {
+     "id": "irn-adm2-isfahan",
+     "name": "Isfahan"
+    },
+    {
+     "id": "irn-adm2-isfahan-county",
+     "name": "Isfahan County"
+    },
+    {
+     "id": "irn-adm2-islamshahr",
+     "name": "Islamshahr"
+    },
+    {
+     "id": "irn-adm2-izeh",
+     "name": "Izeh"
+    },
+    {
+     "id": "irn-adm2-jahrom",
+     "name": "Jahrom"
+    },
+    {
+     "id": "irn-adm2-jajrom",
+     "name": "Jajrom"
+    },
+    {
+     "id": "irn-adm2-jam",
+     "name": "Jam"
+    },
+    {
+     "id": "irn-adm2-jask",
+     "name": "Jask"
+    },
+    {
+     "id": "irn-adm2-javanrud",
+     "name": "Javanrud"
+    },
+    {
+     "id": "irn-adm2-jiroft",
+     "name": "Jiroft"
+    },
+    {
+     "id": "irn-adm2-joghatai",
+     "name": "Joghatai"
+    },
+    {
+     "id": "irn-adm2-jolfa",
+     "name": "Jolfa"
+    },
+    {
+     "id": "irn-adm2-jowayin",
+     "name": "Jowayin"
+    },
+    {
+     "id": "irn-adm2-juybar",
+     "name": "Juybar"
+    },
+    {
+     "id": "irn-adm2-kabutarahang",
+     "name": "Kabutarahang"
+    },
+    {
+     "id": "irn-adm2-kahlkhal",
+     "name": "Kahlkhal"
+    },
+    {
+     "id": "irn-adm2-kahnuj",
+     "name": "Kahnuj"
+    },
+    {
+     "id": "irn-adm2-kalaleh",
+     "name": "Kalaleh"
+    },
+    {
+     "id": "irn-adm2-kalat",
+     "name": "Kalat"
+    },
+    {
+     "id": "irn-adm2-kaleybar",
+     "name": "Kaleybar"
+    },
+    {
+     "id": "irn-adm2-kamyaran",
+     "name": "Kamyaran"
+    },
+    {
+     "id": "irn-adm2-kangan",
+     "name": "Kangan"
+    },
+    {
+     "id": "irn-adm2-kangavar",
+     "name": "kangavar"
+    },
+    {
+     "id": "irn-adm2-karaj",
+     "name": "Karaj"
+    },
+    {
+     "id": "irn-adm2-karun",
+     "name": "Karun"
+    },
+    {
+     "id": "irn-adm2-kashan",
+     "name": "Kashan"
+    },
+    {
+     "id": "irn-adm2-kashmar",
+     "name": "Kashmar"
+    },
+    {
+     "id": "irn-adm2-kavar",
+     "name": "Kavar"
+    },
+    {
+     "id": "irn-adm2-kazerun",
+     "name": "Kazerun"
+    },
+    {
+     "id": "irn-adm2-kelardasht",
+     "name": "Kelardasht"
+    },
+    {
+     "id": "irn-adm2-kerman",
+     "name": "Kerman"
+    },
+    {
+     "id": "irn-adm2-kermanshah",
+     "name": "Kermanshah"
+    },
+    {
+     "id": "irn-adm2-khaf",
+     "name": "Khaf"
+    },
+    {
+     "id": "irn-adm2-khalilabad",
+     "name": "Khalilabad"
+    },
+    {
+     "id": "irn-adm2-khamir",
+     "name": "Khamir"
+    },
+    {
+     "id": "irn-adm2-khansar",
+     "name": "Khansar"
+    },
+    {
+     "id": "irn-adm2-kharameh",
+     "name": "Kharameh"
+    },
+    {
+     "id": "irn-adm2-khash",
+     "name": "Khash"
+    },
+    {
+     "id": "irn-adm2-khatam",
+     "name": "Khatam"
+    },
+    {
+     "id": "irn-adm2-khoda-afarin",
+     "name": "Khoda Afarin"
+    },
+    {
+     "id": "irn-adm2-khodabandeh",
+     "name": "Khodabandeh"
+    },
+    {
+     "id": "irn-adm2-khomein",
+     "name": "Khomein"
+    },
+    {
+     "id": "irn-adm2-khomeini-shahr",
+     "name": "Khomeini Shahr"
+    },
+    {
+     "id": "irn-adm2-khondab",
+     "name": "Khondab"
+    },
+    {
+     "id": "irn-adm2-khonj",
+     "name": "Khonj"
+    },
+    {
+     "id": "irn-adm2-khoramabad",
+     "name": "Khoramabad"
+    },
+    {
+     "id": "irn-adm2-khorambid",
+     "name": "Khorambid"
+    },
+    {
+     "id": "irn-adm2-khoramdareh",
+     "name": "Khoramdareh"
+    },
+    {
+     "id": "irn-adm2-khoramshahr",
+     "name": "Khoramshahr"
+    },
+    {
+     "id": "irn-adm2-khoshab",
+     "name": "Khoshab"
+    },
+    {
+     "id": "irn-adm2-khoy",
+     "name": "Khoy"
+    },
+    {
+     "id": "irn-adm2-khur-and-biabanak",
+     "name": "Khur and Biabanak"
+    },
+    {
+     "id": "irn-adm2-khusf",
+     "name": "Khusf"
+    },
+    {
+     "id": "irn-adm2-kiar",
+     "name": "Kiar"
+    },
+    {
+     "id": "irn-adm2-kohkiluyeh",
+     "name": "Kohkiluyeh"
+    },
+    {
+     "id": "irn-adm2-komijan",
+     "name": "Komijan"
+    },
+    {
+     "id": "irn-adm2-konarak",
+     "name": "Konarak"
+    },
+    {
+     "id": "irn-adm2-kordkuy",
+     "name": "Kordkuy"
+    },
+    {
+     "id": "irn-adm2-kosar",
+     "name": "Kosar"
+    },
+    {
+     "id": "irn-adm2-kuhbanan",
+     "name": "Kuhbanan"
+    },
+    {
+     "id": "irn-adm2-kuhdasht",
+     "name": "Kuhdasht"
+    },
+    {
+     "id": "irn-adm2-kuhrang",
+     "name": "Kuhrang"
+    },
+    {
+     "id": "irn-adm2-lahijan",
+     "name": "Lahijan"
+    },
+    {
+     "id": "irn-adm2-lali",
+     "name": "Lali"
+    },
+    {
+     "id": "irn-adm2-lamerd",
+     "name": "Lamerd"
+    },
+    {
+     "id": "irn-adm2-landeh",
+     "name": "Landeh"
+    },
+    {
+     "id": "irn-adm2-langerud",
+     "name": "Langerud"
+    },
+    {
+     "id": "irn-adm2-larestan",
+     "name": "Larestan"
+    },
+    {
+     "id": "irn-adm2-lenjan",
+     "name": "Lenjan"
+    },
+    {
+     "id": "irn-adm2-lordegan",
+     "name": "Lordegan"
+    },
+    {
+     "id": "irn-adm2-mahabad",
+     "name": "Mahabad"
+    },
+    {
+     "id": "irn-adm2-mahallat",
+     "name": "Mahallat"
+    },
+    {
+     "id": "irn-adm2-mahmudabad",
+     "name": "Mahmudabad"
+    },
+    {
+     "id": "irn-adm2-mahneshan",
+     "name": "Mahneshan"
+    },
+    {
+     "id": "irn-adm2-mahvelat",
+     "name": "Mahvelat"
+    },
+    {
+     "id": "irn-adm2-maku",
+     "name": "Maku"
+    },
+    {
+     "id": "irn-adm2-malard",
+     "name": "Malard"
+    },
+    {
+     "id": "irn-adm2-malayer",
+     "name": "Malayer"
+    },
+    {
+     "id": "irn-adm2-malekan",
+     "name": "Malekan"
+    },
+    {
+     "id": "irn-adm2-malekshahi",
+     "name": "Malekshahi"
+    },
+    {
+     "id": "irn-adm2-mamasani",
+     "name": "Mamasani"
+    },
+    {
+     "id": "irn-adm2-maneh-and-samalqan",
+     "name": "Maneh and Samalqan"
+    },
+    {
+     "id": "irn-adm2-manujan",
+     "name": "Manujan"
+    },
+    {
+     "id": "irn-adm2-maragheh",
+     "name": "Maragheh"
+    },
+    {
+     "id": "irn-adm2-marand",
+     "name": "Marand"
+    },
+    {
+     "id": "irn-adm2-maraveh-tapeh",
+     "name": "Maraveh Tapeh"
+    },
+    {
+     "id": "irn-adm2-marivan",
+     "name": "Marivan"
+    },
+    {
+     "id": "irn-adm2-marvdasht",
+     "name": "Marvdasht"
+    },
+    {
+     "id": "irn-adm2-masal",
+     "name": "Masal"
+    },
+    {
+     "id": "irn-adm2-mashhad",
+     "name": "Mashhad"
+    },
+    {
+     "id": "irn-adm2-masjedsoleyman",
+     "name": "Masjedsoleyman"
+    },
+    {
+     "id": "irn-adm2-mehdishahr",
+     "name": "Mehdishahr"
+    },
+    {
+     "id": "irn-adm2-mehr",
+     "name": "Mehr"
+    },
+    {
+     "id": "irn-adm2-mehran-county",
+     "name": "Mehran County"
+    },
+    {
+     "id": "irn-adm2-mehrestan",
+     "name": "Mehrestan"
+    },
+    {
+     "id": "irn-adm2-mehriz",
+     "name": "Mehriz"
+    },
+    {
+     "id": "irn-adm2-meshkinshahr",
+     "name": "Meshkinshahr"
+    },
+    {
+     "id": "irn-adm2-meybod",
+     "name": "Meybod"
+    },
+    {
+     "id": "irn-adm2-miami",
+     "name": "Miami"
+    },
+    {
+     "id": "irn-adm2-miandoab",
+     "name": "Miandoab"
+    },
+    {
+     "id": "irn-adm2-miandorud",
+     "name": "Miandorud"
+    },
+    {
+     "id": "irn-adm2-mianeh",
+     "name": "Mianeh"
+    },
+    {
+     "id": "irn-adm2-minab",
+     "name": "Minab"
+    },
+    {
+     "id": "irn-adm2-minudasht",
+     "name": "Minudasht"
+    },
+    {
+     "id": "irn-adm2-mirjaveh",
+     "name": "Mirjaveh"
+    },
+    {
+     "id": "irn-adm2-mobarakeh",
+     "name": "Mobarakeh"
+    },
+    {
+     "id": "irn-adm2-naghadeh",
+     "name": "Naghadeh"
+    },
+    {
+     "id": "irn-adm2-nahavand",
+     "name": "Nahavand"
+    },
+    {
+     "id": "irn-adm2-nain",
+     "name": "Nain"
+    },
+    {
+     "id": "irn-adm2-najafabad",
+     "name": "Najafabad"
+    },
+    {
+     "id": "irn-adm2-namin",
+     "name": "Namin"
+    },
+    {
+     "id": "irn-adm2-narmashir",
+     "name": "Narmashir"
+    },
+    {
+     "id": "irn-adm2-natanz",
+     "name": "Natanz"
+    },
+    {
+     "id": "irn-adm2-nazarabad",
+     "name": "Nazarabad"
+    },
+    {
+     "id": "irn-adm2-nehbandan",
+     "name": "Nehbandan"
+    },
+    {
+     "id": "irn-adm2-neka",
+     "name": "Neka"
+    },
+    {
+     "id": "irn-adm2-neyriz",
+     "name": "Neyriz"
+    },
+    {
+     "id": "irn-adm2-neyshabur",
+     "name": "Neyshabur"
+    },
+    {
+     "id": "irn-adm2-nikshahr",
+     "name": "Nikshahr"
+    },
+    {
+     "id": "irn-adm2-nimruz",
+     "name": "Nimruz"
+    },
+    {
+     "id": "irn-adm2-nir",
+     "name": "Nir"
+    },
+    {
+     "id": "irn-adm2-noshahr",
+     "name": "Noshahr"
+    },
+    {
+     "id": "irn-adm2-nur",
+     "name": "Nur"
+    },
+    {
+     "id": "irn-adm2-omidieh",
+     "name": "Omidieh"
+    },
+    {
+     "id": "irn-adm2-osku",
+     "name": "Osku"
+    },
+    {
+     "id": "irn-adm2-pakdasht",
+     "name": "Pakdasht"
+    },
+    {
+     "id": "irn-adm2-parsabad",
+     "name": "Parsabad"
+    },
+    {
+     "id": "irn-adm2-parsian",
+     "name": "Parsian"
+    },
+    {
+     "id": "irn-adm2-pasargad",
+     "name": "Pasargad"
+    },
+    {
+     "id": "irn-adm2-paveh",
+     "name": "Paveh"
+    },
+    {
+     "id": "irn-adm2-paveh-2",
+     "name": "Paveh"
+    },
+    {
+     "id": "irn-adm2-piranshahr",
+     "name": "Piranshahr"
+    },
+    {
+     "id": "irn-adm2-pishva",
+     "name": "Pishva"
+    },
+    {
+     "id": "irn-adm2-pol-e-dokhtar",
+     "name": "Pol-e-Dokhtar"
+    },
+    {
+     "id": "irn-adm2-poldasht",
+     "name": "Poldasht"
+    },
+    {
+     "id": "irn-adm2-qasr-e-ghand",
+     "name": "Qasr-e-Ghand"
+    },
+    {
+     "id": "irn-adm2-qasr-e-shirin",
+     "name": "Qasr-e-Shirin"
+    },
+    {
+     "id": "irn-adm2-qazvin",
+     "name": "Qazvin"
+    },
+    {
+     "id": "irn-adm2-qeshm",
+     "name": "Qeshm"
+    },
+    {
+     "id": "irn-adm2-qir-and-karzin",
+     "name": "Qir and Karzin"
+    },
+    {
+     "id": "irn-adm2-qods",
+     "name": "Qods"
+    },
+    {
+     "id": "irn-adm2-qom",
+     "name": "Qom"
+    },
+    {
+     "id": "irn-adm2-quchan",
+     "name": "Quchan"
+    },
+    {
+     "id": "irn-adm2-rabor",
+     "name": "Rabor"
+    },
+    {
+     "id": "irn-adm2-rafsanjan",
+     "name": "Rafsanjan"
+    },
+    {
+     "id": "irn-adm2-ramhormoz",
+     "name": "Ramhormoz"
+    },
+    {
+     "id": "irn-adm2-ramian",
+     "name": "Ramian"
+    },
+    {
+     "id": "irn-adm2-ramsar",
+     "name": "Ramsar"
+    },
+    {
+     "id": "irn-adm2-ramshir",
+     "name": "Ramshir"
+    },
+    {
+     "id": "irn-adm2-rasht",
+     "name": "Rasht"
+    },
+    {
+     "id": "irn-adm2-ravansar",
+     "name": "Ravansar"
+    },
+    {
+     "id": "irn-adm2-ravar",
+     "name": "Ravar"
+    },
+    {
+     "id": "irn-adm2-raz-and-jargalan",
+     "name": "Raz and Jargalan"
+    },
+    {
+     "id": "irn-adm2-razan",
+     "name": "Razan"
+    },
+    {
+     "id": "irn-adm2-rey",
+     "name": "Rey"
+    },
+    {
+     "id": "irn-adm2-rezvanshahr",
+     "name": "Rezvanshahr"
+    },
+    {
+     "id": "irn-adm2-rigan",
+     "name": "Rigan"
+    },
+    {
+     "id": "irn-adm2-robatkarim",
+     "name": "Robatkarim"
+    },
+    {
+     "id": "irn-adm2-roshtkhar",
+     "name": "Roshtkhar"
+    },
+    {
+     "id": "irn-adm2-rostam",
+     "name": "Rostam"
+    },
+    {
+     "id": "irn-adm2-rudan",
+     "name": "Rudan"
+    },
+    {
+     "id": "irn-adm2-rudbar",
+     "name": "Rudbar"
+    },
+    {
+     "id": "irn-adm2-rudbar-e-jonub",
+     "name": "Rudbar-e-Jonub"
+    },
+    {
+     "id": "irn-adm2-rudsar",
+     "name": "Rudsar"
+    },
+    {
+     "id": "irn-adm2-rumeshkhan",
+     "name": "Rumeshkhan"
+    },
+    {
+     "id": "irn-adm2-sabzevar",
+     "name": "Sabzevar"
+    },
+    {
+     "id": "irn-adm2-sahneh",
+     "name": "Sahneh"
+    },
+    {
+     "id": "irn-adm2-sahreza",
+     "name": "Sahreza"
+    },
+    {
+     "id": "irn-adm2-salas-e-babajani",
+     "name": "Salas-e Babajani"
+    },
+    {
+     "id": "irn-adm2-salmas",
+     "name": "Salmas"
+    },
+    {
+     "id": "irn-adm2-saman",
+     "name": "Saman"
+    },
+    {
+     "id": "irn-adm2-sanandaj",
+     "name": "Sanandaj"
+    },
+    {
+     "id": "irn-adm2-saqqez",
+     "name": "Saqqez"
+    },
+    {
+     "id": "irn-adm2-sarab",
+     "name": "Sarab"
+    },
+    {
+     "id": "irn-adm2-sarakhs",
+     "name": "Sarakhs"
+    },
+    {
+     "id": "irn-adm2-saravan",
+     "name": "Saravan"
+    },
+    {
+     "id": "irn-adm2-sarayan",
+     "name": "Sarayan"
+    },
+    {
+     "id": "irn-adm2-sarbaz",
+     "name": "Sarbaz"
+    },
+    {
+     "id": "irn-adm2-sarbisheh",
+     "name": "Sarbisheh"
+    },
+    {
+     "id": "irn-adm2-sardasht",
+     "name": "Sardasht"
+    },
+    {
+     "id": "irn-adm2-sareyn",
+     "name": "Sareyn"
+    },
+    {
+     "id": "irn-adm2-sari",
+     "name": "Sari"
+    },
+    {
+     "id": "irn-adm2-sarpol-e-zahab",
+     "name": "Sarpol-e-Zahab"
+    },
+    {
+     "id": "irn-adm2-sarvabad",
+     "name": "Sarvabad"
+    },
+    {
+     "id": "irn-adm2-sarvestan",
+     "name": "Sarvestan"
+    },
+    {
+     "id": "irn-adm2-savadkuh-e-shomali",
+     "name": "Savadkuh-e-Shomali"
+    },
+    {
+     "id": "irn-adm2-savdkuh",
+     "name": "Savdkuh"
+    },
+    {
+     "id": "irn-adm2-saveh",
+     "name": "Saveh"
+    },
+    {
+     "id": "irn-adm2-savojbolagh",
+     "name": "Savojbolagh"
+    },
+    {
+     "id": "irn-adm2-selseleh",
+     "name": "Selseleh"
+    },
+    {
+     "id": "irn-adm2-semirom",
+     "name": "Semirom"
+    },
+    {
+     "id": "irn-adm2-semnan",
+     "name": "Semnan"
+    },
+    {
+     "id": "irn-adm2-sepidan",
+     "name": "Sepidan"
+    },
+    {
+     "id": "irn-adm2-shabestar",
+     "name": "Shabestar"
+    },
+    {
+     "id": "irn-adm2-shadegan",
+     "name": "Shadegan"
+    },
+    {
+     "id": "irn-adm2-shaft",
+     "name": "Shaft"
+    },
+    {
+     "id": "irn-adm2-shahariar",
+     "name": "Shahariar"
+    },
+    {
+     "id": "irn-adm2-shahin-shahr-and-meymeh",
+     "name": "Shahin Shahr and Meymeh"
+    },
+    {
+     "id": "irn-adm2-shahindezh",
+     "name": "Shahindezh"
+    },
+    {
+     "id": "irn-adm2-shahmirzad",
+     "name": "Shahmirzad"
+    },
+    {
+     "id": "irn-adm2-shahr-e-babak",
+     "name": "Shahr-e-Babak"
+    },
+    {
+     "id": "irn-adm2-shahriar",
+     "name": "Shahriar"
+    },
+    {
+     "id": "irn-adm2-shahrud",
+     "name": "Shahrud"
+    },
+    {
+     "id": "irn-adm2-sharekurd",
+     "name": "Sharekurd"
+    },
+    {
+     "id": "irn-adm2-shazand",
+     "name": "Shazand"
+    },
+    {
+     "id": "irn-adm2-shemiranat",
+     "name": "Shemiranat"
+    },
+    {
+     "id": "irn-adm2-shiraz",
+     "name": "Shiraz"
+    },
+    {
+     "id": "irn-adm2-shirwan",
+     "name": "Shirwan"
+    },
+    {
+     "id": "irn-adm2-showt",
+     "name": "Showt"
+    },
+    {
+     "id": "irn-adm2-shush",
+     "name": "Shush"
+    },
+    {
+     "id": "irn-adm2-shushtar",
+     "name": "Shushtar"
+    },
+    {
+     "id": "irn-adm2-siahkal",
+     "name": "Siahkal"
+    },
+    {
+     "id": "irn-adm2-sib-and-suran",
+     "name": "Sib and Suran"
+    },
+    {
+     "id": "irn-adm2-simorgh",
+     "name": "Simorgh"
+    },
+    {
+     "id": "irn-adm2-sirik",
+     "name": "Sirik"
+    },
+    {
+     "id": "irn-adm2-sirjan",
+     "name": "Sirjan"
+    },
+    {
+     "id": "irn-adm2-sirvan",
+     "name": "Sirvan"
+    },
+    {
+     "id": "irn-adm2-soltanieh",
+     "name": "Soltanieh"
+    },
+    {
+     "id": "irn-adm2-sonqor",
+     "name": "Sonqor"
+    },
+    {
+     "id": "irn-adm2-sorkheh",
+     "name": "Sorkheh"
+    },
+    {
+     "id": "irn-adm2-sowme-eh-sara",
+     "name": "Sowme'eh Sara"
+    },
+    {
+     "id": "irn-adm2-tabas",
+     "name": "Tabas"
+    },
+    {
+     "id": "irn-adm2-tabriz",
+     "name": "Tabriz"
+    },
+    {
+     "id": "irn-adm2-tafresh",
+     "name": "Tafresh"
+    },
+    {
+     "id": "irn-adm2-taft",
+     "name": "Taft"
+    },
+    {
+     "id": "irn-adm2-takab",
+     "name": "Takab"
+    },
+    {
+     "id": "irn-adm2-takestan",
+     "name": "Takestan"
+    },
+    {
+     "id": "irn-adm2-taleghan",
+     "name": "Taleghan"
+    },
+    {
+     "id": "irn-adm2-talesh",
+     "name": "Talesh"
+    },
+    {
+     "id": "irn-adm2-tangestan",
+     "name": "Tangestan"
+    },
+    {
+     "id": "irn-adm2-tarom",
+     "name": "Tarom"
+    },
+    {
+     "id": "irn-adm2-taybad",
+     "name": "Taybad"
+    },
+    {
+     "id": "irn-adm2-tehran",
+     "name": "Tehran"
+    },
+    {
+     "id": "irn-adm2-tiran-and-karvan",
+     "name": "Tiran and Karvan"
+    },
+    {
+     "id": "irn-adm2-tonekabon",
+     "name": "Tonekabon"
+    },
+    {
+     "id": "irn-adm2-torbat-e-heydarieh",
+     "name": "Torbat-e-Heydarieh"
+    },
+    {
+     "id": "irn-adm2-torbat-e-jam",
+     "name": "Torbat-e-jam"
+    },
+    {
+     "id": "irn-adm2-turkman",
+     "name": "Turkman"
+    },
+    {
+     "id": "irn-adm2-tuyserkan",
+     "name": "Tuyserkan"
+    },
+    {
+     "id": "irn-adm2-urumia",
+     "name": "Urumia"
+    },
+    {
+     "id": "irn-adm2-varamin",
+     "name": "Varamin"
+    },
+    {
+     "id": "irn-adm2-varzaqan",
+     "name": "Varzaqan"
+    },
+    {
+     "id": "irn-adm2-yazd",
+     "name": "Yazd"
+    },
+    {
+     "id": "irn-adm2-zabol",
+     "name": "Zabol"
+    },
+    {
+     "id": "irn-adm2-zahak",
+     "name": "Zahak"
+    },
+    {
+     "id": "irn-adm2-zahedan",
+     "name": "Zahedan"
+    },
+    {
+     "id": "irn-adm2-zanjan",
+     "name": "Zanjan"
+    },
+    {
+     "id": "irn-adm2-zarand",
+     "name": "Zarand"
+    },
+    {
+     "id": "irn-adm2-zarandieh",
+     "name": "Zarandieh"
+    },
+    {
+     "id": "irn-adm2-zarindasht",
+     "name": "Zarindasht"
+    },
+    {
+     "id": "irn-adm2-zaveh",
+     "name": "Zaveh"
+    },
+    {
+     "id": "irn-adm2-zirkuh",
+     "name": "Zirkuh"
+    }
+   ]
+  }
+ },
+ "name": "Iran (Islamic Republic of)",
+ "nameBn": "Iran (Islamic Republic of)"
+}

@@ -1,0 +1,302 @@
+{
+ "code": "ERI",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Unknown",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2017",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Unknown",
+   "code": "ADM1",
+   "count": 6,
+   "name": "ADM1 areas",
+   "nameBn": "ADM1 এলাকা",
+   "representedYear": "2017",
+   "sourceCount": 6,
+   "units": [
+    {
+     "id": "eri-adm1-anseba-region",
+     "name": "Anseba Region",
+     "shapeISO": "ER-AN"
+    },
+    {
+     "id": "eri-adm1-debub-region",
+     "name": "Debub Region",
+     "shapeISO": "ER-DU"
+    },
+    {
+     "id": "eri-adm1-gash-barka-region",
+     "name": "Gash-Barka Region",
+     "shapeISO": "ER-GB"
+    },
+    {
+     "id": "eri-adm1-maekel-region",
+     "name": "Maekel Region",
+     "shapeISO": "ER-MA"
+    },
+    {
+     "id": "eri-adm1-northen-red-sea-region",
+     "name": "Northen Red Sea Region",
+     "shapeISO": "ER-SK"
+    },
+    {
+     "id": "eri-adm1-southern-red-sea-region",
+     "name": "Southern Red Sea Region",
+     "shapeISO": "ER-DK"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "districts",
+   "code": "ADM2",
+   "count": 58,
+   "name": "districts",
+   "nameBn": "districts",
+   "representedYear": "2020",
+   "sourceCount": 58,
+   "units": [
+    {
+     "id": "eri-adm2-adi-keyh",
+     "name": "Adi Keyh"
+    },
+    {
+     "id": "eri-adm2-adi-quala",
+     "name": "Adi Quala"
+    },
+    {
+     "id": "eri-adm2-adi-tekeliezan",
+     "name": "Adi Tekeliezan"
+    },
+    {
+     "id": "eri-adm2-adobha",
+     "name": "Adobha"
+    },
+    {
+     "id": "eri-adm2-afabet",
+     "name": "Afabet"
+    },
+    {
+     "id": "eri-adm2-akurdet",
+     "name": "Akurdet"
+    },
+    {
+     "id": "eri-adm2-araeta",
+     "name": "Araeta"
+    },
+    {
+     "id": "eri-adm2-areza",
+     "name": "Areza"
+    },
+    {
+     "id": "eri-adm2-asmat",
+     "name": "Asmat"
+    },
+    {
+     "id": "eri-adm2-asseb",
+     "name": "Asseb"
+    },
+    {
+     "id": "eri-adm2-barentu",
+     "name": "Barentu"
+    },
+    {
+     "id": "eri-adm2-berik",
+     "name": "Berik"
+    },
+    {
+     "id": "eri-adm2-dahlak",
+     "name": "Dahlak"
+    },
+    {
+     "id": "eri-adm2-dbarwa",
+     "name": "Dbarwa"
+    },
+    {
+     "id": "eri-adm2-debub-deb-keih-bahri",
+     "name": "Debub Deb.Keih Bahri"
+    },
+    {
+     "id": "eri-adm2-debubawi-mibrak",
+     "name": "Debubawi Mibrak"
+    },
+    {
+     "id": "eri-adm2-debubawi-mierab",
+     "name": "Debubawi Mierab"
+    },
+    {
+     "id": "eri-adm2-dekemhare",
+     "name": "Dekemhare"
+    },
+    {
+     "id": "eri-adm2-dige",
+     "name": "Dige"
+    },
+    {
+     "id": "eri-adm2-elabered",
+     "name": "Elabered"
+    },
+    {
+     "id": "eri-adm2-emni-haili",
+     "name": "Emni Haili"
+    },
+    {
+     "id": "eri-adm2-foro",
+     "name": "Foro"
+    },
+    {
+     "id": "eri-adm2-forto",
+     "name": "Forto"
+    },
+    {
+     "id": "eri-adm2-galanefhi",
+     "name": "Galanefhi"
+    },
+    {
+     "id": "eri-adm2-ghelaelo",
+     "name": "Ghelaelo"
+    },
+    {
+     "id": "eri-adm2-gheleb",
+     "name": "Gheleb"
+    },
+    {
+     "id": "eri-adm2-ghinda",
+     "name": "Ghinda"
+    },
+    {
+     "id": "eri-adm2-gogne",
+     "name": "Gogne"
+    },
+    {
+     "id": "eri-adm2-habero",
+     "name": "Habero"
+    },
+    {
+     "id": "eri-adm2-hagaz",
+     "name": "Hagaz"
+    },
+    {
+     "id": "eri-adm2-halhal",
+     "name": "Halhal"
+    },
+    {
+     "id": "eri-adm2-hamelmalo",
+     "name": "Hamelmalo"
+    },
+    {
+     "id": "eri-adm2-haykota",
+     "name": "Haykota"
+    },
+    {
+     "id": "eri-adm2-karura",
+     "name": "Karura"
+    },
+    {
+     "id": "eri-adm2-keren",
+     "name": "Keren"
+    },
+    {
+     "id": "eri-adm2-kerkebet",
+     "name": "Kerkebet"
+    },
+    {
+     "id": "eri-adm2-lalay-gash",
+     "name": "Lalay Gash"
+    },
+    {
+     "id": "eri-adm2-logo-anseba",
+     "name": "Logo Anseba"
+    },
+    {
+     "id": "eri-adm2-maekel-deb-keih-bahri",
+     "name": "Maekel Deb.Keih Bahri"
+    },
+    {
+     "id": "eri-adm2-maimine",
+     "name": "Maimine"
+    },
+    {
+     "id": "eri-adm2-massawa",
+     "name": "Massawa"
+    },
+    {
+     "id": "eri-adm2-may-aini",
+     "name": "May Aini"
+    },
+    {
+     "id": "eri-adm2-mendefera",
+     "name": "Mendefera"
+    },
+    {
+     "id": "eri-adm2-mensura",
+     "name": "Mensura"
+    },
+    {
+     "id": "eri-adm2-mogolo",
+     "name": "Mogolo"
+    },
+    {
+     "id": "eri-adm2-molqi",
+     "name": "Molqi"
+    },
+    {
+     "id": "eri-adm2-nakfa",
+     "name": "Nakfa"
+    },
+    {
+     "id": "eri-adm2-omhajer",
+     "name": "Omhajer"
+    },
+    {
+     "id": "eri-adm2-segeneity",
+     "name": "Segeneity"
+    },
+    {
+     "id": "eri-adm2-sela",
+     "name": "Sela"
+    },
+    {
+     "id": "eri-adm2-semienawi-mibrak",
+     "name": "Semienawi Mibrak"
+    },
+    {
+     "id": "eri-adm2-semienawi-mierab",
+     "name": "Semienawi Mierab"
+    },
+    {
+     "id": "eri-adm2-senafe",
+     "name": "Senafe"
+    },
+    {
+     "id": "eri-adm2-serejeka",
+     "name": "Serejeka"
+    },
+    {
+     "id": "eri-adm2-shambuko",
+     "name": "Shambuko"
+    },
+    {
+     "id": "eri-adm2-shieb",
+     "name": "Shieb"
+    },
+    {
+     "id": "eri-adm2-tesseney",
+     "name": "Tesseney"
+    },
+    {
+     "id": "eri-adm2-tsorona",
+     "name": "Tsorona"
+    }
+   ]
+  }
+ },
+ "name": "Eritrea",
+ "nameBn": "Eritrea"
+}

@@ -1,0 +1,297 @@
+{
+ "code": "TJK",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Unknown",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2017",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Unknown",
+   "code": "ADM1",
+   "count": 5,
+   "name": "ADM1 areas",
+   "nameBn": "ADM1 এলাকা",
+   "representedYear": "2017",
+   "sourceCount": 5,
+   "units": [
+    {
+     "id": "tjk-adm1-districts-of-republican-subordination",
+     "name": "Districts of Republican Subordination",
+     "shapeISO": "TJ-RA"
+    },
+    {
+     "id": "tjk-adm1-dushanbe",
+     "name": "Dushanbe",
+     "shapeISO": "TJ-DU"
+    },
+    {
+     "id": "tjk-adm1-gorno-badakhshan-autonomous-region",
+     "name": "Gorno-Badakhshan Autonomous Region",
+     "shapeISO": "TJ-GB"
+    },
+    {
+     "id": "tjk-adm1-khatlon-region",
+     "name": "Khatlon Region",
+     "shapeISO": "TJ-KT"
+    },
+    {
+     "id": "tjk-adm1-sughd-region",
+     "name": "Sughd Region",
+     "shapeISO": "TJ-SU"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Unknown",
+   "code": "ADM2",
+   "count": 58,
+   "name": "ADM2 areas",
+   "nameBn": "ADM2 এলাকা",
+   "representedYear": "2017",
+   "sourceCount": 58,
+   "units": [
+    {
+     "id": "tjk-adm2-asht-district",
+     "name": "Asht District"
+    },
+    {
+     "id": "tjk-adm2-ayni-district",
+     "name": "Ayni District"
+    },
+    {
+     "id": "tjk-adm2-baljuvon-district",
+     "name": "Baljuvon District"
+    },
+    {
+     "id": "tjk-adm2-bokhtar-district",
+     "name": "Bokhtar District"
+    },
+    {
+     "id": "tjk-adm2-danghara-district",
+     "name": "Danghara District"
+    },
+    {
+     "id": "tjk-adm2-darvoz-district",
+     "name": "Darvoz District"
+    },
+    {
+     "id": "tjk-adm2-dzhami-district",
+     "name": "Dzhami District"
+    },
+    {
+     "id": "tjk-adm2-faizobod-district",
+     "name": "Faizobod District"
+    },
+    {
+     "id": "tjk-adm2-farkhor-district",
+     "name": "Farkhor District"
+    },
+    {
+     "id": "tjk-adm2-ghafurov-district",
+     "name": "Ghafurov District"
+    },
+    {
+     "id": "tjk-adm2-ghonchi-district",
+     "name": "Ghonchi District"
+    },
+    {
+     "id": "tjk-adm2-hamadoni-district",
+     "name": "Hamadoni District"
+    },
+    {
+     "id": "tjk-adm2-hisor-district",
+     "name": "Hisor District"
+    },
+    {
+     "id": "tjk-adm2-isfara-district",
+     "name": "Isfara District"
+    },
+    {
+     "id": "tjk-adm2-ishkoshim-district",
+     "name": "Ishkoshim District"
+    },
+    {
+     "id": "tjk-adm2-istaravshan-district",
+     "name": "Istaravshan District"
+    },
+    {
+     "id": "tjk-adm2-jabbor-rasulov-district",
+     "name": "Jabbor Rasulov District"
+    },
+    {
+     "id": "tjk-adm2-jilikul-district",
+     "name": "Jilikul District"
+    },
+    {
+     "id": "tjk-adm2-jirgatol-district",
+     "name": "Jirgatol District"
+    },
+    {
+     "id": "tjk-adm2-khovaling-district",
+     "name": "Khovaling District"
+    },
+    {
+     "id": "tjk-adm2-khuroson-district",
+     "name": "Khuroson District"
+    },
+    {
+     "id": "tjk-adm2-konibodom-district",
+     "name": "Konibodom District"
+    },
+    {
+     "id": "tjk-adm2-kuhistoni-mastchoh-district",
+     "name": "Kuhistoni Mastchoh District"
+    },
+    {
+     "id": "tjk-adm2-kulob-district",
+     "name": "Kulob District"
+    },
+    {
+     "id": "tjk-adm2-mastchoh-district",
+     "name": "Mastchoh District"
+    },
+    {
+     "id": "tjk-adm2-muminobod-district",
+     "name": "Muminobod District"
+    },
+    {
+     "id": "tjk-adm2-murghob-district",
+     "name": "Murghob District"
+    },
+    {
+     "id": "tjk-adm2-norak-district",
+     "name": "Norak District"
+    },
+    {
+     "id": "tjk-adm2-nosiri-khusrav-district",
+     "name": "Nosiri Khusrav District"
+    },
+    {
+     "id": "tjk-adm2-nurobod-district",
+     "name": "Nurobod District"
+    },
+    {
+     "id": "tjk-adm2-panj-district",
+     "name": "Panj District"
+    },
+    {
+     "id": "tjk-adm2-panjakent-district",
+     "name": "Panjakent District"
+    },
+    {
+     "id": "tjk-adm2-qabodiyon-district",
+     "name": "Qabodiyon District"
+    },
+    {
+     "id": "tjk-adm2-qumsangir-district",
+     "name": "Qumsangir District"
+    },
+    {
+     "id": "tjk-adm2-rasht-district",
+     "name": "Rasht District"
+    },
+    {
+     "id": "tjk-adm2-roghun-district",
+     "name": "Roghun District"
+    },
+    {
+     "id": "tjk-adm2-roshtqal-a-district",
+     "name": "Roshtqal'a District"
+    },
+    {
+     "id": "tjk-adm2-rudaki-district",
+     "name": "Rudaki District"
+    },
+    {
+     "id": "tjk-adm2-rumi-district",
+     "name": "Rumi District"
+    },
+    {
+     "id": "tjk-adm2-rushon-district",
+     "name": "Rushon District"
+    },
+    {
+     "id": "tjk-adm2-sarband-district",
+     "name": "Sarband District"
+    },
+    {
+     "id": "tjk-adm2-shahriston-district",
+     "name": "Shahriston District"
+    },
+    {
+     "id": "tjk-adm2-shahrtuz-district",
+     "name": "Shahrtuz District"
+    },
+    {
+     "id": "tjk-adm2-sharinav-district",
+     "name": "Sharinav District"
+    },
+    {
+     "id": "tjk-adm2-shughnon-district",
+     "name": "Shughnon District"
+    },
+    {
+     "id": "tjk-adm2-shuro-obod-district",
+     "name": "Shuro-obod District"
+    },
+    {
+     "id": "tjk-adm2-spitamen-district",
+     "name": "Spitamen District"
+    },
+    {
+     "id": "tjk-adm2-tavildara-district",
+     "name": "Tavildara District"
+    },
+    {
+     "id": "tjk-adm2-temurmalik-district",
+     "name": "Temurmalik District"
+    },
+    {
+     "id": "tjk-adm2-tojikobod-district",
+     "name": "Tojikobod District"
+    },
+    {
+     "id": "tjk-adm2-tursunzoda-district",
+     "name": "Tursunzoda District"
+    },
+    {
+     "id": "tjk-adm2-vahdat-district",
+     "name": "Vahdat District"
+    },
+    {
+     "id": "tjk-adm2-vakhsh-district",
+     "name": "Vakhsh District"
+    },
+    {
+     "id": "tjk-adm2-vanj-district",
+     "name": "Vanj District"
+    },
+    {
+     "id": "tjk-adm2-varzob-district",
+     "name": "Varzob District"
+    },
+    {
+     "id": "tjk-adm2-vose-district",
+     "name": "Vose' District"
+    },
+    {
+     "id": "tjk-adm2-yovon-district",
+     "name": "Yovon District"
+    },
+    {
+     "id": "tjk-adm2-zafarobod-district",
+     "name": "Zafarobod District"
+    }
+   ]
+  }
+ },
+ "name": "Tajikistan",
+ "nameBn": "Tajikistan"
+}

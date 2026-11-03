@@ -1,0 +1,280 @@
+{
+ "code": "SGP",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Unknown",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2016",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Unknown",
+   "code": "ADM1",
+   "count": 5,
+   "name": "ADM1 areas",
+   "nameBn": "ADM1 এলাকা",
+   "representedYear": "2016",
+   "sourceCount": 5,
+   "units": [
+    {
+     "id": "sgp-adm1-central-region",
+     "name": "CENTRAL REGION"
+    },
+    {
+     "id": "sgp-adm1-east-region",
+     "name": "EAST REGION"
+    },
+    {
+     "id": "sgp-adm1-north-region",
+     "name": "NORTH REGION"
+    },
+    {
+     "id": "sgp-adm1-north-east-region",
+     "name": "NORTH-EAST REGION"
+    },
+    {
+     "id": "sgp-adm1-west-region",
+     "name": "WEST REGION"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Divisions",
+   "code": "ADM2",
+   "count": 55,
+   "name": "Divisions",
+   "nameBn": "বিভাগ",
+   "representedYear": "2016",
+   "sourceCount": 55,
+   "units": [
+    {
+     "id": "sgp-adm2-ang-mo-kio",
+     "name": "ANG MO KIO"
+    },
+    {
+     "id": "sgp-adm2-bedok",
+     "name": "BEDOK"
+    },
+    {
+     "id": "sgp-adm2-bishan",
+     "name": "BISHAN"
+    },
+    {
+     "id": "sgp-adm2-boon-lay",
+     "name": "BOON LAY"
+    },
+    {
+     "id": "sgp-adm2-bukit-batok",
+     "name": "BUKIT BATOK"
+    },
+    {
+     "id": "sgp-adm2-bukit-merah",
+     "name": "BUKIT MERAH"
+    },
+    {
+     "id": "sgp-adm2-bukit-panjang",
+     "name": "BUKIT PANJANG"
+    },
+    {
+     "id": "sgp-adm2-bukit-timah",
+     "name": "BUKIT TIMAH"
+    },
+    {
+     "id": "sgp-adm2-central-water-catchment",
+     "name": "CENTRAL WATER CATCHMENT"
+    },
+    {
+     "id": "sgp-adm2-changi",
+     "name": "CHANGI"
+    },
+    {
+     "id": "sgp-adm2-changi-bay",
+     "name": "CHANGI BAY"
+    },
+    {
+     "id": "sgp-adm2-choa-chu-kang",
+     "name": "CHOA CHU KANG"
+    },
+    {
+     "id": "sgp-adm2-clementi",
+     "name": "CLEMENTI"
+    },
+    {
+     "id": "sgp-adm2-downtown-core",
+     "name": "DOWNTOWN CORE"
+    },
+    {
+     "id": "sgp-adm2-geylang",
+     "name": "GEYLANG"
+    },
+    {
+     "id": "sgp-adm2-hougang",
+     "name": "HOUGANG"
+    },
+    {
+     "id": "sgp-adm2-jurong-east",
+     "name": "JURONG EAST"
+    },
+    {
+     "id": "sgp-adm2-jurong-west",
+     "name": "JURONG WEST"
+    },
+    {
+     "id": "sgp-adm2-kallang",
+     "name": "KALLANG"
+    },
+    {
+     "id": "sgp-adm2-lim-chu-kang",
+     "name": "LIM CHU KANG"
+    },
+    {
+     "id": "sgp-adm2-mandai",
+     "name": "MANDAI"
+    },
+    {
+     "id": "sgp-adm2-marina-east",
+     "name": "MARINA EAST"
+    },
+    {
+     "id": "sgp-adm2-marina-south",
+     "name": "MARINA SOUTH"
+    },
+    {
+     "id": "sgp-adm2-marine-parade",
+     "name": "MARINE PARADE"
+    },
+    {
+     "id": "sgp-adm2-museum",
+     "name": "MUSEUM"
+    },
+    {
+     "id": "sgp-adm2-newton",
+     "name": "NEWTON"
+    },
+    {
+     "id": "sgp-adm2-north-eastern-islands",
+     "name": "NORTH-EASTERN ISLANDS"
+    },
+    {
+     "id": "sgp-adm2-novena",
+     "name": "NOVENA"
+    },
+    {
+     "id": "sgp-adm2-orchard",
+     "name": "ORCHARD"
+    },
+    {
+     "id": "sgp-adm2-outram",
+     "name": "OUTRAM"
+    },
+    {
+     "id": "sgp-adm2-pasir-ris",
+     "name": "PASIR RIS"
+    },
+    {
+     "id": "sgp-adm2-paya-lebar",
+     "name": "PAYA LEBAR"
+    },
+    {
+     "id": "sgp-adm2-pioneer",
+     "name": "PIONEER"
+    },
+    {
+     "id": "sgp-adm2-punggol",
+     "name": "PUNGGOL"
+    },
+    {
+     "id": "sgp-adm2-queenstown",
+     "name": "QUEENSTOWN"
+    },
+    {
+     "id": "sgp-adm2-river-valley",
+     "name": "RIVER VALLEY"
+    },
+    {
+     "id": "sgp-adm2-rochor",
+     "name": "ROCHOR"
+    },
+    {
+     "id": "sgp-adm2-seletar",
+     "name": "SELETAR"
+    },
+    {
+     "id": "sgp-adm2-sembawang",
+     "name": "SEMBAWANG"
+    },
+    {
+     "id": "sgp-adm2-sengkang",
+     "name": "SENGKANG"
+    },
+    {
+     "id": "sgp-adm2-serangoon",
+     "name": "SERANGOON"
+    },
+    {
+     "id": "sgp-adm2-simpang",
+     "name": "SIMPANG"
+    },
+    {
+     "id": "sgp-adm2-singapore-river",
+     "name": "SINGAPORE RIVER"
+    },
+    {
+     "id": "sgp-adm2-southern-islands",
+     "name": "SOUTHERN ISLANDS"
+    },
+    {
+     "id": "sgp-adm2-straits-view",
+     "name": "STRAITS VIEW"
+    },
+    {
+     "id": "sgp-adm2-sungei-kadut",
+     "name": "SUNGEI KADUT"
+    },
+    {
+     "id": "sgp-adm2-tampines",
+     "name": "TAMPINES"
+    },
+    {
+     "id": "sgp-adm2-tanglin",
+     "name": "TANGLIN"
+    },
+    {
+     "id": "sgp-adm2-tengah",
+     "name": "TENGAH"
+    },
+    {
+     "id": "sgp-adm2-toa-payoh",
+     "name": "TOA PAYOH"
+    },
+    {
+     "id": "sgp-adm2-tuas",
+     "name": "TUAS"
+    },
+    {
+     "id": "sgp-adm2-western-islands",
+     "name": "WESTERN ISLANDS"
+    },
+    {
+     "id": "sgp-adm2-western-water-catchment",
+     "name": "WESTERN WATER CATCHMENT"
+    },
+    {
+     "id": "sgp-adm2-woodlands",
+     "name": "WOODLANDS"
+    },
+    {
+     "id": "sgp-adm2-yishun",
+     "name": "YISHUN"
+    }
+   ]
+  }
+ },
+ "name": "Singapore",
+ "nameBn": "Singapore"
+}

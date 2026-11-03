@@ -1,0 +1,326 @@
+{
+ "code": "SUR",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Unknown",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2017",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Unknown",
+   "code": "ADM1",
+   "count": 10,
+   "name": "ADM1 areas",
+   "nameBn": "ADM1 এলাকা",
+   "representedYear": "2017",
+   "sourceCount": 10,
+   "units": [
+    {
+     "id": "sur-adm1-brokopondo",
+     "name": "Brokopondo",
+     "shapeISO": "SR-BR"
+    },
+    {
+     "id": "sur-adm1-commewijne",
+     "name": "Commewijne",
+     "shapeISO": "SR-CM"
+    },
+    {
+     "id": "sur-adm1-coronie",
+     "name": "Coronie",
+     "shapeISO": "SR-CR"
+    },
+    {
+     "id": "sur-adm1-marowijne",
+     "name": "Marowijne",
+     "shapeISO": "SR-MA"
+    },
+    {
+     "id": "sur-adm1-nickerie",
+     "name": "Nickerie",
+     "shapeISO": "SR-NI"
+    },
+    {
+     "id": "sur-adm1-para",
+     "name": "Para",
+     "shapeISO": "SR-PR"
+    },
+    {
+     "id": "sur-adm1-paramaribo",
+     "name": "Paramaribo",
+     "shapeISO": "SR-PM"
+    },
+    {
+     "id": "sur-adm1-saramacca",
+     "name": "Saramacca",
+     "shapeISO": "SR-SA"
+    },
+    {
+     "id": "sur-adm1-sipaliwini",
+     "name": "Sipaliwini",
+     "shapeISO": "SR-SI"
+    },
+    {
+     "id": "sur-adm1-wanica",
+     "name": "Wanica",
+     "shapeISO": "SR-WA"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Ressorten",
+   "code": "ADM2",
+   "count": 59,
+   "name": "Ressorten",
+   "nameBn": "Ressorten",
+   "representedYear": "2021",
+   "sourceCount": 62,
+   "units": [
+    {
+     "id": "sur-adm2-albina",
+     "name": "Albina"
+    },
+    {
+     "id": "sur-adm2-almaar",
+     "name": "Almaar"
+    },
+    {
+     "id": "sur-adm2-bakkie",
+     "name": "Bakkie"
+    },
+    {
+     "id": "sur-adm2-beekhuizen",
+     "name": "Beekhuizen"
+    },
+    {
+     "id": "sur-adm2-bigi-poika",
+     "name": "Bigi Poika"
+    },
+    {
+     "id": "sur-adm2-blauwgrond",
+     "name": "Blauwgrond"
+    },
+    {
+     "id": "sur-adm2-boven-coppename",
+     "name": "Boven Coppename"
+    },
+    {
+     "id": "sur-adm2-boven-saramacca",
+     "name": "Boven Saramacca"
+    },
+    {
+     "id": "sur-adm2-boven-suriname",
+     "name": "Boven Suriname"
+    },
+    {
+     "id": "sur-adm2-brownsweg",
+     "name": "BrownSweg"
+    },
+    {
+     "id": "sur-adm2-calcutta",
+     "name": "Calcutta"
+    },
+    {
+     "id": "sur-adm2-carolina",
+     "name": "Carolina"
+    },
+    {
+     "id": "sur-adm2-centrum",
+     "name": "Centrum"
+    },
+    {
+     "id": "sur-adm2-centrum-2",
+     "name": "Centrum"
+    },
+    {
+     "id": "sur-adm2-coeroeni",
+     "name": "Coeroeni"
+    },
+    {
+     "id": "sur-adm2-de-nieuwe-grond",
+     "name": "De Nieuwe Grond"
+    },
+    {
+     "id": "sur-adm2-domburg",
+     "name": "Domburg"
+    },
+    {
+     "id": "sur-adm2-flora",
+     "name": "Flora"
+    },
+    {
+     "id": "sur-adm2-galibi",
+     "name": "Galibi"
+    },
+    {
+     "id": "sur-adm2-groningen",
+     "name": "Groningen"
+    },
+    {
+     "id": "sur-adm2-groot-henar",
+     "name": "Groot Henar"
+    },
+    {
+     "id": "sur-adm2-houttuin",
+     "name": "Houttuin"
+    },
+    {
+     "id": "sur-adm2-jarikaba",
+     "name": "Jarikaba"
+    },
+    {
+     "id": "sur-adm2-johanna-maria",
+     "name": "Johanna Maria"
+    },
+    {
+     "id": "sur-adm2-kabalebo",
+     "name": "Kabalebo"
+    },
+    {
+     "id": "sur-adm2-kampong-baroe",
+     "name": "Kampong Baroe"
+    },
+    {
+     "id": "sur-adm2-klaaskreek",
+     "name": "Klaaskreek"
+    },
+    {
+     "id": "sur-adm2-koewarasan",
+     "name": "Koewarasan"
+    },
+    {
+     "id": "sur-adm2-kwakoegron",
+     "name": "Kwakoegron"
+    },
+    {
+     "id": "sur-adm2-kwatta",
+     "name": "Kwatta"
+    },
+    {
+     "id": "sur-adm2-lelydorp",
+     "name": "Lelydorp"
+    },
+    {
+     "id": "sur-adm2-livornio",
+     "name": "Livornio"
+    },
+    {
+     "id": "sur-adm2-margaretha",
+     "name": "Margaretha"
+    },
+    {
+     "id": "sur-adm2-marshallkreek",
+     "name": "Marshallkreek"
+    },
+    {
+     "id": "sur-adm2-meerzorg",
+     "name": "Meerzorg"
+    },
+    {
+     "id": "sur-adm2-moengo",
+     "name": "Moengo"
+    },
+    {
+     "id": "sur-adm2-moengotapoe",
+     "name": "Moengotapoe"
+    },
+    {
+     "id": "sur-adm2-munder",
+     "name": "Munder"
+    },
+    {
+     "id": "sur-adm2-nieuw-amsterdam",
+     "name": "Nieuw Amsterdam"
+    },
+    {
+     "id": "sur-adm2-nieuw-nickerie",
+     "name": "Nieuw Nickerie"
+    },
+    {
+     "id": "sur-adm2-noord",
+     "name": "Noord"
+    },
+    {
+     "id": "sur-adm2-oost",
+     "name": "Oost"
+    },
+    {
+     "id": "sur-adm2-oostelijke-polders",
+     "name": "Oostelijke Polders"
+    },
+    {
+     "id": "sur-adm2-patamacca",
+     "name": "Patamacca"
+    },
+    {
+     "id": "sur-adm2-pontibuiten",
+     "name": "Pontibuiten"
+    },
+    {
+     "id": "sur-adm2-rainville",
+     "name": "Rainville"
+    },
+    {
+     "id": "sur-adm2-sarakreet",
+     "name": "Sarakreet"
+    },
+    {
+     "id": "sur-adm2-saramacca-polder",
+     "name": "Saramacca Polder"
+    },
+    {
+     "id": "sur-adm2-tamanredjo",
+     "name": "Tamanredjo"
+    },
+    {
+     "id": "sur-adm2-tapanahony",
+     "name": "Tapanahony"
+    },
+    {
+     "id": "sur-adm2-tijgerkreek",
+     "name": "Tijgerkreek"
+    },
+    {
+     "id": "sur-adm2-totness",
+     "name": "Totness"
+    },
+    {
+     "id": "sur-adm2-wageningen",
+     "name": "Wageningen"
+    },
+    {
+     "id": "sur-adm2-wanhatti",
+     "name": "Wanhatti"
+    },
+    {
+     "id": "sur-adm2-wayamboweg",
+     "name": "Wayamboweg"
+    },
+    {
+     "id": "sur-adm2-weg-naar-see",
+     "name": "Weg Naar See"
+    },
+    {
+     "id": "sur-adm2-welgelegen",
+     "name": "Welgelegen"
+    },
+    {
+     "id": "sur-adm2-westelijke-polders",
+     "name": "Westelijke Polders"
+    },
+    {
+     "id": "sur-adm2-zuid",
+     "name": "Zuid"
+    }
+   ]
+  }
+ },
+ "name": "Suriname",
+ "nameBn": "Suriname"
+}

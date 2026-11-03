@@ -1,0 +1,1490 @@
+{
+ "code": "YEM",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Republic of Yemen",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2017",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Unknown",
+   "code": "ADM1",
+   "count": 22,
+   "name": "ADM1 areas",
+   "nameBn": "ADM1 এলাকা",
+   "representedYear": "2017",
+   "sourceCount": 22,
+   "units": [
+    {
+     "id": "yem-adm1-amran-governorate",
+     "name": "'Amran Governorate",
+     "shapeISO": "YE-AM"
+    },
+    {
+     "id": "yem-adm1-abyan-governorate",
+     "name": "Abyan Governorate",
+     "shapeISO": "YE-AB"
+    },
+    {
+     "id": "yem-adm1-ad-dali-governorate",
+     "name": "Ad Dali' Governorate",
+     "shapeISO": "YE-DA"
+    },
+    {
+     "id": "yem-adm1-al-bayda-governorate",
+     "name": "Al Bayda' Governorate",
+     "shapeISO": "YE-BA"
+    },
+    {
+     "id": "yem-adm1-al-hudaydah-governorate",
+     "name": "Al Hudaydah Governorate",
+     "shapeISO": "YE-HU"
+    },
+    {
+     "id": "yem-adm1-al-jawf-governorate",
+     "name": "Al Jawf Governorate",
+     "shapeISO": "YE-JA"
+    },
+    {
+     "id": "yem-adm1-al-mahrah-governorate",
+     "name": "Al Mahrah Governorate",
+     "shapeISO": "YE-MR"
+    },
+    {
+     "id": "yem-adm1-al-mahwit-governorate",
+     "name": "Al Mahwit Governorate",
+     "shapeISO": "YE-MW"
+    },
+    {
+     "id": "yem-adm1-dhamar-governorate",
+     "name": "Dhamar Governorate",
+     "shapeISO": "YE-DH"
+    },
+    {
+     "id": "yem-adm1-hadhramaut",
+     "name": "Hadhramaut",
+     "shapeISO": "YE-HD"
+    },
+    {
+     "id": "yem-adm1-hajjah-governorate",
+     "name": "Hajjah Governorate",
+     "shapeISO": "YE-HJ"
+    },
+    {
+     "id": "yem-adm1-ibb-governorate",
+     "name": "Ibb Governorate",
+     "shapeISO": "YE-IB"
+    },
+    {
+     "id": "yem-adm1-lahij-governorate",
+     "name": "Lahij Governorate",
+     "shapeISO": "YE-LA"
+    },
+    {
+     "id": "yem-adm1-ma-rib-governorate",
+     "name": "Ma'rib Governorate",
+     "shapeISO": "YE-MA"
+    },
+    {
+     "id": "yem-adm1-raymah-governorate",
+     "name": "Raymah Governorate",
+     "shapeISO": "YE-RA"
+    },
+    {
+     "id": "yem-adm1-sa-dah-governorate",
+     "name": "Sa'dah Governorate",
+     "shapeISO": "YE-SD"
+    },
+    {
+     "id": "yem-adm1-sanʿaʾ",
+     "name": "Sanʿaʾ",
+     "shapeISO": "YE-SA"
+    },
+    {
+     "id": "yem-adm1-sanʿaʾ-governorate",
+     "name": "Sanʿaʾ Governorate",
+     "shapeISO": "YE-SN"
+    },
+    {
+     "id": "yem-adm1-shabwah-governorate",
+     "name": "Shabwah Governorate",
+     "shapeISO": "YE-SH"
+    },
+    {
+     "id": "yem-adm1-socotra",
+     "name": "Socotra",
+     "shapeISO": "YE-SU"
+    },
+    {
+     "id": "yem-adm1-ta-izz-governorate",
+     "name": "Ta'izz Governorate",
+     "shapeISO": "YE-TA"
+    },
+    {
+     "id": "yem-adm1-adan-governorate",
+     "name": "‘Adan Governorate",
+     "shapeISO": "YE-AD"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Districts",
+   "code": "ADM2",
+   "count": 335,
+   "name": "Districts",
+   "nameBn": "জেলা",
+   "representedYear": "2021",
+   "sourceCount": 335,
+   "units": [
+    {
+     "id": "yem-adm2-abs",
+     "name": "Abs"
+    },
+    {
+     "id": "yem-adm2-ad-dali",
+     "name": "Ad Dali'"
+    },
+    {
+     "id": "yem-adm2-ad-dis",
+     "name": "Ad Dis"
+    },
+    {
+     "id": "yem-adm2-ad-dohi",
+     "name": "Ad Dohi"
+    },
+    {
+     "id": "yem-adm2-ad-dulay-ah",
+     "name": "Ad Dulay'ah"
+    },
+    {
+     "id": "yem-adm2-ad-durayhimi",
+     "name": "Ad Durayhimi"
+    },
+    {
+     "id": "yem-adm2-adh-dhahir",
+     "name": "Adh Dhahir"
+    },
+    {
+     "id": "yem-adm2-adh-dhihar",
+     "name": "Adh Dhihar"
+    },
+    {
+     "id": "yem-adm2-aflah-al-yaman",
+     "name": "Aflah Al Yaman"
+    },
+    {
+     "id": "yem-adm2-aflah-ash-sham",
+     "name": "Aflah Ash Sham"
+    },
+    {
+     "id": "yem-adm2-ahwar",
+     "name": "Ahwar"
+    },
+    {
+     "id": "yem-adm2-al-abdiyah",
+     "name": "Al Abdiyah"
+    },
+    {
+     "id": "yem-adm2-al-abr",
+     "name": "Al Abr"
+    },
+    {
+     "id": "yem-adm2-al-arsh",
+     "name": "Al Arsh"
+    },
+    {
+     "id": "yem-adm2-al-ashah",
+     "name": "Al Ashah"
+    },
+    {
+     "id": "yem-adm2-al-azariq",
+     "name": "Al Azariq"
+    },
+    {
+     "id": "yem-adm2-al-bayda",
+     "name": "Al Bayda"
+    },
+    {
+     "id": "yem-adm2-al-bayda-city",
+     "name": "Al Bayda City"
+    },
+    {
+     "id": "yem-adm2-al-burayqah",
+     "name": "Al Burayqah"
+    },
+    {
+     "id": "yem-adm2-al-ghaydhah",
+     "name": "Al Ghaydhah"
+    },
+    {
+     "id": "yem-adm2-al-ghayl",
+     "name": "Al Ghayl"
+    },
+    {
+     "id": "yem-adm2-al-had",
+     "name": "Al Had"
+    },
+    {
+     "id": "yem-adm2-al-hada",
+     "name": "Al Hada"
+    },
+    {
+     "id": "yem-adm2-al-hali",
+     "name": "Al Hali"
+    },
+    {
+     "id": "yem-adm2-al-hasayn",
+     "name": "Al Hasayn"
+    },
+    {
+     "id": "yem-adm2-al-hashwah",
+     "name": "Al Hashwah"
+    },
+    {
+     "id": "yem-adm2-al-hawak",
+     "name": "Al Hawak"
+    },
+    {
+     "id": "yem-adm2-al-hawtah",
+     "name": "Al Hawtah"
+    },
+    {
+     "id": "yem-adm2-al-haymah-ad-dakhiliyah",
+     "name": "Al Haymah Ad Dakhiliyah"
+    },
+    {
+     "id": "yem-adm2-al-haymah-al-kharijiyah",
+     "name": "Al Haymah Al Kharijiyah"
+    },
+    {
+     "id": "yem-adm2-al-hazm",
+     "name": "Al Hazm"
+    },
+    {
+     "id": "yem-adm2-al-hissn",
+     "name": "Al Hissn"
+    },
+    {
+     "id": "yem-adm2-al-hujjaylah",
+     "name": "Al Hujjaylah"
+    },
+    {
+     "id": "yem-adm2-al-humaydat",
+     "name": "Al Humaydat"
+    },
+    {
+     "id": "yem-adm2-al-husha",
+     "name": "Al Husha"
+    },
+    {
+     "id": "yem-adm2-al-ja-fariyyah",
+     "name": "Al Ja'fariyyah"
+    },
+    {
+     "id": "yem-adm2-al-jabin",
+     "name": "Al Jabin"
+    },
+    {
+     "id": "yem-adm2-al-jamimah",
+     "name": "Al Jamimah"
+    },
+    {
+     "id": "yem-adm2-al-jarrahi",
+     "name": "Al Jarrahi"
+    },
+    {
+     "id": "yem-adm2-al-jubah",
+     "name": "Al Jubah"
+    },
+    {
+     "id": "yem-adm2-al-khabt",
+     "name": "Al Khabt"
+    },
+    {
+     "id": "yem-adm2-al-khalaq",
+     "name": "Al Khalaq"
+    },
+    {
+     "id": "yem-adm2-al-khukhah",
+     "name": "Al Khukhah"
+    },
+    {
+     "id": "yem-adm2-al-ma-afer",
+     "name": "Al Ma'afer"
+    },
+    {
+     "id": "yem-adm2-al-madan",
+     "name": "Al Madan"
+    },
+    {
+     "id": "yem-adm2-al-madaribah-wa-al-aarah",
+     "name": "Al Madaribah Wa Al Aarah"
+    },
+    {
+     "id": "yem-adm2-al-maflahi",
+     "name": "Al Maflahi"
+    },
+    {
+     "id": "yem-adm2-al-maghrabah",
+     "name": "Al Maghrabah"
+    },
+    {
+     "id": "yem-adm2-al-mahabishah",
+     "name": "Al Mahabishah"
+    },
+    {
+     "id": "yem-adm2-al-mahfad",
+     "name": "Al Mahfad"
+    },
+    {
+     "id": "yem-adm2-al-mahwit",
+     "name": "Al Mahwit"
+    },
+    {
+     "id": "yem-adm2-al-mahwit-city",
+     "name": "Al Mahwit City"
+    },
+    {
+     "id": "yem-adm2-al-makha",
+     "name": "Al Makha"
+    },
+    {
+     "id": "yem-adm2-al-makhadir",
+     "name": "Al Makhadir"
+    },
+    {
+     "id": "yem-adm2-al-malah",
+     "name": "Al Malah"
+    },
+    {
+     "id": "yem-adm2-al-malajim",
+     "name": "Al Malajim"
+    },
+    {
+     "id": "yem-adm2-al-manar",
+     "name": "Al Manar"
+    },
+    {
+     "id": "yem-adm2-al-mansurah",
+     "name": "Al Mansurah"
+    },
+    {
+     "id": "yem-adm2-al-mansuriyah",
+     "name": "Al Mansuriyah"
+    },
+    {
+     "id": "yem-adm2-al-maqatirah",
+     "name": "Al Maqatirah"
+    },
+    {
+     "id": "yem-adm2-al-marawi-ah",
+     "name": "Al Marawi'ah"
+    },
+    {
+     "id": "yem-adm2-al-mashannah",
+     "name": "Al Mashannah"
+    },
+    {
+     "id": "yem-adm2-al-masilah",
+     "name": "Al Masilah"
+    },
+    {
+     "id": "yem-adm2-al-maslub",
+     "name": "Al Maslub"
+    },
+    {
+     "id": "yem-adm2-al-matammah",
+     "name": "Al Matammah"
+    },
+    {
+     "id": "yem-adm2-al-mawasit",
+     "name": "Al Mawasit"
+    },
+    {
+     "id": "yem-adm2-al-miftah",
+     "name": "Al Miftah"
+    },
+    {
+     "id": "yem-adm2-al-mighlaf",
+     "name": "Al Mighlaf"
+    },
+    {
+     "id": "yem-adm2-al-mina",
+     "name": "Al Mina"
+    },
+    {
+     "id": "yem-adm2-al-misrakh",
+     "name": "Al Misrakh"
+    },
+    {
+     "id": "yem-adm2-al-mu-alla",
+     "name": "Al Mu'alla"
+    },
+    {
+     "id": "yem-adm2-al-mudhaffar",
+     "name": "Al Mudhaffar"
+    },
+    {
+     "id": "yem-adm2-al-mukalla",
+     "name": "Al Mukalla"
+    },
+    {
+     "id": "yem-adm2-al-mukalla-city",
+     "name": "Al Mukalla City"
+    },
+    {
+     "id": "yem-adm2-al-munirah",
+     "name": "Al Munirah"
+    },
+    {
+     "id": "yem-adm2-al-musaymir",
+     "name": "Al Musaymir"
+    },
+    {
+     "id": "yem-adm2-al-mutun",
+     "name": "Al Mutun"
+    },
+    {
+     "id": "yem-adm2-al-odayn",
+     "name": "Al Odayn"
+    },
+    {
+     "id": "yem-adm2-al-qaff",
+     "name": "Al Qaff"
+    },
+    {
+     "id": "yem-adm2-al-qafr",
+     "name": "Al Qafr"
+    },
+    {
+     "id": "yem-adm2-al-qahirah",
+     "name": "Al Qahirah"
+    },
+    {
+     "id": "yem-adm2-al-qanawis",
+     "name": "Al Qanawis"
+    },
+    {
+     "id": "yem-adm2-al-qatn",
+     "name": "Al Qatn"
+    },
+    {
+     "id": "yem-adm2-al-qubaytah",
+     "name": "Al Qubaytah"
+    },
+    {
+     "id": "yem-adm2-al-quraishyah",
+     "name": "Al Quraishyah"
+    },
+    {
+     "id": "yem-adm2-al-wadi",
+     "name": "Al Wadi'"
+    },
+    {
+     "id": "yem-adm2-al-wazi-yah",
+     "name": "Al Wazi'yah"
+    },
+    {
+     "id": "yem-adm2-al-wehdah",
+     "name": "Al Wehdah"
+    },
+    {
+     "id": "yem-adm2-alluhayah",
+     "name": "Alluhayah"
+    },
+    {
+     "id": "yem-adm2-amd",
+     "name": "Amd"
+    },
+    {
+     "id": "yem-adm2-amran",
+     "name": "Amran"
+    },
+    {
+     "id": "yem-adm2-an-nadirah",
+     "name": "An Nadirah"
+    },
+    {
+     "id": "yem-adm2-ans",
+     "name": "Ans"
+    },
+    {
+     "id": "yem-adm2-ar-radmah",
+     "name": "Ar Radmah"
+    },
+    {
+     "id": "yem-adm2-ar-rawdah",
+     "name": "Ar Rawdah"
+    },
+    {
+     "id": "yem-adm2-ar-raydah-wa-qussay-ar",
+     "name": "Ar Raydah wa Qussay'ar"
+    },
+    {
+     "id": "yem-adm2-ar-rujum",
+     "name": "Ar Rujum"
+    },
+    {
+     "id": "yem-adm2-ar-ryashyyah",
+     "name": "Ar Ryashyyah"
+    },
+    {
+     "id": "yem-adm2-arhab",
+     "name": "Arhab"
+    },
+    {
+     "id": "yem-adm2-arma-a",
+     "name": "Arma'a"
+    },
+    {
+     "id": "yem-adm2-as-sa-id",
+     "name": "As Sa'id"
+    },
+    {
+     "id": "yem-adm2-as-sab-in",
+     "name": "As Sab'in"
+    },
+    {
+     "id": "yem-adm2-as-sabrah",
+     "name": "As Sabrah"
+    },
+    {
+     "id": "yem-adm2-as-saddah",
+     "name": "As Saddah"
+    },
+    {
+     "id": "yem-adm2-as-safiyah",
+     "name": "As Safiyah"
+    },
+    {
+     "id": "yem-adm2-as-safra",
+     "name": "As Safra"
+    },
+    {
+     "id": "yem-adm2-as-saiyani",
+     "name": "As Saiyani"
+    },
+    {
+     "id": "yem-adm2-as-salafiyyah",
+     "name": "As Salafiyyah"
+    },
+    {
+     "id": "yem-adm2-as-salif",
+     "name": "As Salif"
+    },
+    {
+     "id": "yem-adm2-as-sawadiyah",
+     "name": "As Sawadiyah"
+    },
+    {
+     "id": "yem-adm2-as-sawd",
+     "name": "As Sawd"
+    },
+    {
+     "id": "yem-adm2-as-sawm",
+     "name": "As Sawm"
+    },
+    {
+     "id": "yem-adm2-as-sawma-ah",
+     "name": "As Sawma'ah"
+    },
+    {
+     "id": "yem-adm2-as-silw",
+     "name": "As Silw"
+    },
+    {
+     "id": "yem-adm2-as-sudah",
+     "name": "As Sudah"
+    },
+    {
+     "id": "yem-adm2-as-sukhnah",
+     "name": "As Sukhnah"
+    },
+    {
+     "id": "yem-adm2-ash-sha-ir",
+     "name": "Ash Sha'ir"
+    },
+    {
+     "id": "yem-adm2-ash-shaghadirah",
+     "name": "Ash shaghadirah"
+    },
+    {
+     "id": "yem-adm2-ash-shahil",
+     "name": "Ash Shahil"
+    },
+    {
+     "id": "yem-adm2-ash-shamayatayn",
+     "name": "Ash Shamayatayn"
+    },
+    {
+     "id": "yem-adm2-ash-sharyah",
+     "name": "Ash Sharyah"
+    },
+    {
+     "id": "yem-adm2-ash-shaykh-othman",
+     "name": "Ash Shaykh Othman"
+    },
+    {
+     "id": "yem-adm2-ash-shihr",
+     "name": "Ash Shihr"
+    },
+    {
+     "id": "yem-adm2-ash-shu-ayb",
+     "name": "Ash Shu'ayb"
+    },
+    {
+     "id": "yem-adm2-aslam",
+     "name": "Aslam"
+    },
+    {
+     "id": "yem-adm2-at-ta-iziyah",
+     "name": "At Ta'iziyah"
+    },
+    {
+     "id": "yem-adm2-at-taffah",
+     "name": "At Taffah"
+    },
+    {
+     "id": "yem-adm2-at-tahrir",
+     "name": "At Tahrir"
+    },
+    {
+     "id": "yem-adm2-at-talh",
+     "name": "At Talh"
+    },
+    {
+     "id": "yem-adm2-at-tawahi",
+     "name": "At Tawahi"
+    },
+    {
+     "id": "yem-adm2-at-tawilah",
+     "name": "At Tawilah"
+    },
+    {
+     "id": "yem-adm2-at-tuhayta",
+     "name": "At Tuhayta"
+    },
+    {
+     "id": "yem-adm2-at-tyal",
+     "name": "At Tyal"
+    },
+    {
+     "id": "yem-adm2-ataq",
+     "name": "Ataq"
+    },
+    {
+     "id": "yem-adm2-ath-thawrah",
+     "name": "Ath Thawrah"
+    },
+    {
+     "id": "yem-adm2-ayn",
+     "name": "Ayn"
+    },
+    {
+     "id": "yem-adm2-az-zahir",
+     "name": "Az Zahir"
+    },
+    {
+     "id": "yem-adm2-az-zahir-2",
+     "name": "Az Zahir"
+    },
+    {
+     "id": "yem-adm2-az-zaydiah",
+     "name": "Az Zaydiah"
+    },
+    {
+     "id": "yem-adm2-az-zuhrah",
+     "name": "Az Zuhrah"
+    },
+    {
+     "id": "yem-adm2-azaal",
+     "name": "Azaal"
+    },
+    {
+     "id": "yem-adm2-ba-dan",
+     "name": "Ba'dan"
+    },
+    {
+     "id": "yem-adm2-bajil",
+     "name": "Bajil"
+    },
+    {
+     "id": "yem-adm2-bakil-al-mir",
+     "name": "Bakil Al Mir"
+    },
+    {
+     "id": "yem-adm2-bani-al-awam",
+     "name": "Bani Al Awam"
+    },
+    {
+     "id": "yem-adm2-bani-al-harith",
+     "name": "Bani Al Harith"
+    },
+    {
+     "id": "yem-adm2-bani-dabyan",
+     "name": "Bani Dabyan"
+    },
+    {
+     "id": "yem-adm2-bani-hushaysh",
+     "name": "Bani Hushaysh"
+    },
+    {
+     "id": "yem-adm2-bani-matar",
+     "name": "Bani Matar"
+    },
+    {
+     "id": "yem-adm2-bani-qays",
+     "name": "Bani Qays"
+    },
+    {
+     "id": "yem-adm2-bani-sa-d",
+     "name": "Bani Sa'd"
+    },
+    {
+     "id": "yem-adm2-bani-surim",
+     "name": "Bani Surim"
+    },
+    {
+     "id": "yem-adm2-baqim",
+     "name": "Baqim"
+    },
+    {
+     "id": "yem-adm2-barat-al-anan",
+     "name": "Barat Al Anan"
+    },
+    {
+     "id": "yem-adm2-bayhan",
+     "name": "Bayhan"
+    },
+    {
+     "id": "yem-adm2-bayt-al-faqih",
+     "name": "Bayt Al Faqih"
+    },
+    {
+     "id": "yem-adm2-bidbadah",
+     "name": "Bidbadah"
+    },
+    {
+     "id": "yem-adm2-bilad-ar-rus",
+     "name": "Bilad Ar Rus"
+    },
+    {
+     "id": "yem-adm2-bilad-atta-am",
+     "name": "Bilad Atta'am"
+    },
+    {
+     "id": "yem-adm2-brum-mayf-ah",
+     "name": "Brum Mayf'ah"
+    },
+    {
+     "id": "yem-adm2-bura",
+     "name": "Bura'"
+    },
+    {
+     "id": "yem-adm2-dahr",
+     "name": "Dahr"
+    },
+    {
+     "id": "yem-adm2-damt",
+     "name": "Damt"
+    },
+    {
+     "id": "yem-adm2-dar-sa-d",
+     "name": "Dar Sa'd"
+    },
+    {
+     "id": "yem-adm2-daw-an",
+     "name": "Daw'an"
+    },
+    {
+     "id": "yem-adm2-dawran-anis",
+     "name": "Dawran Anis"
+    },
+    {
+     "id": "yem-adm2-dhamar-city",
+     "name": "Dhamar City"
+    },
+    {
+     "id": "yem-adm2-dhi-as-sufal",
+     "name": "Dhi As Sufal"
+    },
+    {
+     "id": "yem-adm2-dhi-na-im",
+     "name": "Dhi Na'im"
+    },
+    {
+     "id": "yem-adm2-dhibain",
+     "name": "Dhibain"
+    },
+    {
+     "id": "yem-adm2-dhubab",
+     "name": "Dhubab"
+    },
+    {
+     "id": "yem-adm2-dhulaymat-habur",
+     "name": "Dhulaymat Habur"
+    },
+    {
+     "id": "yem-adm2-dimnat-khadir",
+     "name": "Dimnat Khadir"
+    },
+    {
+     "id": "yem-adm2-eyal-surayh",
+     "name": "Eyal Surayh"
+    },
+    {
+     "id": "yem-adm2-far-al-odayn",
+     "name": "Far' Al Odayn"
+    },
+    {
+     "id": "yem-adm2-ghamr",
+     "name": "Ghamr"
+    },
+    {
+     "id": "yem-adm2-ghayl-bawazir",
+     "name": "Ghayl Bawazir"
+    },
+    {
+     "id": "yem-adm2-ghayl-bin-yamin",
+     "name": "Ghayl bin Yamin"
+    },
+    {
+     "id": "yem-adm2-habban",
+     "name": "Habban"
+    },
+    {
+     "id": "yem-adm2-habil-jabr",
+     "name": "Habil Jabr"
+    },
+    {
+     "id": "yem-adm2-hadibu",
+     "name": "Hadibu"
+    },
+    {
+     "id": "yem-adm2-hajar",
+     "name": "Hajar"
+    },
+    {
+     "id": "yem-adm2-hajar-as-say-ar",
+     "name": "Hajar As Say'ar"
+    },
+    {
+     "id": "yem-adm2-hajjah",
+     "name": "Hajjah"
+    },
+    {
+     "id": "yem-adm2-hajjah-city",
+     "name": "Hajjah City"
+    },
+    {
+     "id": "yem-adm2-halmin",
+     "name": "Halmin"
+    },
+    {
+     "id": "yem-adm2-hamdan",
+     "name": "Hamdan"
+    },
+    {
+     "id": "yem-adm2-harad",
+     "name": "Harad"
+    },
+    {
+     "id": "yem-adm2-harf-sufyan",
+     "name": "Harf Sufyan"
+    },
+    {
+     "id": "yem-adm2-harib",
+     "name": "Harib"
+    },
+    {
+     "id": "yem-adm2-harib-al-qaramish",
+     "name": "Harib Al Qaramish"
+    },
+    {
+     "id": "yem-adm2-haridah",
+     "name": "Haridah"
+    },
+    {
+     "id": "yem-adm2-haswin",
+     "name": "Haswin"
+    },
+    {
+     "id": "yem-adm2-hat",
+     "name": "Hat"
+    },
+    {
+     "id": "yem-adm2-hatib",
+     "name": "Hatib"
+    },
+    {
+     "id": "yem-adm2-hawf",
+     "name": "Hawf"
+    },
+    {
+     "id": "yem-adm2-haydan",
+     "name": "Haydan"
+    },
+    {
+     "id": "yem-adm2-hayfan",
+     "name": "Hayfan"
+    },
+    {
+     "id": "yem-adm2-hayran",
+     "name": "Hayran"
+    },
+    {
+     "id": "yem-adm2-hays",
+     "name": "Hays"
+    },
+    {
+     "id": "yem-adm2-hazm-al-odayn",
+     "name": "Hazm Al Odayn"
+    },
+    {
+     "id": "yem-adm2-hobeish",
+     "name": "Hobeish"
+    },
+    {
+     "id": "yem-adm2-hufash",
+     "name": "Hufash"
+    },
+    {
+     "id": "yem-adm2-huth",
+     "name": "Huth"
+    },
+    {
+     "id": "yem-adm2-ibb",
+     "name": "Ibb"
+    },
+    {
+     "id": "yem-adm2-jabal-ash-sharq",
+     "name": "Jabal Ash sharq"
+    },
+    {
+     "id": "yem-adm2-jabal-eyal-yazid",
+     "name": "Jabal Eyal Yazid"
+    },
+    {
+     "id": "yem-adm2-jabal-habashi",
+     "name": "Jabal Habashi"
+    },
+    {
+     "id": "yem-adm2-jabal-murad",
+     "name": "Jabal Murad"
+    },
+    {
+     "id": "yem-adm2-jabal-ras",
+     "name": "Jabal Ras"
+    },
+    {
+     "id": "yem-adm2-jahaf",
+     "name": "Jahaf"
+    },
+    {
+     "id": "yem-adm2-jahran",
+     "name": "Jahran"
+    },
+    {
+     "id": "yem-adm2-jardan",
+     "name": "Jardan"
+    },
+    {
+     "id": "yem-adm2-jayshan",
+     "name": "Jayshan"
+    },
+    {
+     "id": "yem-adm2-jiblah",
+     "name": "Jiblah"
+    },
+    {
+     "id": "yem-adm2-jihanah",
+     "name": "Jihanah"
+    },
+    {
+     "id": "yem-adm2-juban",
+     "name": "Juban"
+    },
+    {
+     "id": "yem-adm2-kamaran",
+     "name": "Kamaran"
+    },
+    {
+     "id": "yem-adm2-khab-wa-ash-sha-f",
+     "name": "Khab wa Ash Sha'f"
+    },
+    {
+     "id": "yem-adm2-khamir",
+     "name": "Khamir"
+    },
+    {
+     "id": "yem-adm2-khanfar",
+     "name": "Khanfar"
+    },
+    {
+     "id": "yem-adm2-kharab-al-marashi",
+     "name": "Kharab Al Marashi"
+    },
+    {
+     "id": "yem-adm2-kharif",
+     "name": "Kharif"
+    },
+    {
+     "id": "yem-adm2-khawlan",
+     "name": "Khawlan"
+    },
+    {
+     "id": "yem-adm2-khayran-al-muharraq",
+     "name": "Khayran Al Muharraq"
+    },
+    {
+     "id": "yem-adm2-khur-maksar",
+     "name": "Khur Maksar"
+    },
+    {
+     "id": "yem-adm2-kitaf-wa-al-boqa",
+     "name": "Kitaf wa Al Boqa'"
+    },
+    {
+     "id": "yem-adm2-kritar-sirah",
+     "name": "Kritar - Sirah"
+    },
+    {
+     "id": "yem-adm2-ku-aydinah",
+     "name": "Ku'aydinah"
+    },
+    {
+     "id": "yem-adm2-kuhlan-afar",
+     "name": "Kuhlan Afar"
+    },
+    {
+     "id": "yem-adm2-kuhlan-ash-sharaf",
+     "name": "Kuhlan Ash Sharaf"
+    },
+    {
+     "id": "yem-adm2-kushar",
+     "name": "Kushar"
+    },
+    {
+     "id": "yem-adm2-kusmah",
+     "name": "Kusmah"
+    },
+    {
+     "id": "yem-adm2-lawdar",
+     "name": "Lawdar"
+    },
+    {
+     "id": "yem-adm2-ma-in",
+     "name": "Ma'in"
+    },
+    {
+     "id": "yem-adm2-ma-rib",
+     "name": "Ma'rib"
+    },
+    {
+     "id": "yem-adm2-ma-rib-city",
+     "name": "Ma'rib City"
+    },
+    {
+     "id": "yem-adm2-mabyan",
+     "name": "Mabyan"
+    },
+    {
+     "id": "yem-adm2-madghal-al-jid-an",
+     "name": "Madghal Al Jid'an"
+    },
+    {
+     "id": "yem-adm2-maghrib-ans",
+     "name": "Maghrib Ans"
+    },
+    {
+     "id": "yem-adm2-mahliyah",
+     "name": "Mahliyah"
+    },
+    {
+     "id": "yem-adm2-majz",
+     "name": "Majz"
+    },
+    {
+     "id": "yem-adm2-majzar",
+     "name": "Majzar"
+    },
+    {
+     "id": "yem-adm2-man-ar",
+     "name": "Man'ar"
+    },
+    {
+     "id": "yem-adm2-manakhah",
+     "name": "Manakhah"
+    },
+    {
+     "id": "yem-adm2-maqbanah",
+     "name": "Maqbanah"
+    },
+    {
+     "id": "yem-adm2-markhah-al-olya",
+     "name": "Markhah Al Olya"
+    },
+    {
+     "id": "yem-adm2-markhah-as-sufla",
+     "name": "Markhah As Sufla"
+    },
+    {
+     "id": "yem-adm2-mashr-ah-wa-hadnan",
+     "name": "Mashr'ah Wa Hadnan"
+    },
+    {
+     "id": "yem-adm2-maswar",
+     "name": "Maswar"
+    },
+    {
+     "id": "yem-adm2-maswarah",
+     "name": "Maswarah"
+    },
+    {
+     "id": "yem-adm2-mawiyah",
+     "name": "Mawiyah"
+    },
+    {
+     "id": "yem-adm2-mawza",
+     "name": "Mawza'"
+    },
+    {
+     "id": "yem-adm2-mayfa-ah",
+     "name": "Mayfa'ah"
+    },
+    {
+     "id": "yem-adm2-mayfa-at-ans",
+     "name": "Mayfa'at Ans"
+    },
+    {
+     "id": "yem-adm2-mazhar",
+     "name": "Mazhar"
+    },
+    {
+     "id": "yem-adm2-melhan",
+     "name": "Melhan"
+    },
+    {
+     "id": "yem-adm2-midi",
+     "name": "Midi"
+    },
+    {
+     "id": "yem-adm2-monabbih",
+     "name": "Monabbih"
+    },
+    {
+     "id": "yem-adm2-mudhaykhirah",
+     "name": "Mudhaykhirah"
+    },
+    {
+     "id": "yem-adm2-mudiyah",
+     "name": "Mudiyah"
+    },
+    {
+     "id": "yem-adm2-mukayras",
+     "name": "Mukayras"
+    },
+    {
+     "id": "yem-adm2-mustaba",
+     "name": "Mustaba"
+    },
+    {
+     "id": "yem-adm2-najrah",
+     "name": "Najrah"
+    },
+    {
+     "id": "yem-adm2-nati",
+     "name": "Nati'"
+    },
+    {
+     "id": "yem-adm2-nihm",
+     "name": "Nihm"
+    },
+    {
+     "id": "yem-adm2-nisab",
+     "name": "Nisab"
+    },
+    {
+     "id": "yem-adm2-nu-man",
+     "name": "Nu'man"
+    },
+    {
+     "id": "yem-adm2-old-city",
+     "name": "Old City"
+    },
+    {
+     "id": "yem-adm2-osaylan",
+     "name": "Osaylan"
+    },
+    {
+     "id": "yem-adm2-otmah",
+     "name": "Otmah"
+    },
+    {
+     "id": "yem-adm2-qa-tabah",
+     "name": "Qa'tabah"
+    },
+    {
+     "id": "yem-adm2-qafl-shammar",
+     "name": "Qafl Shammar"
+    },
+    {
+     "id": "yem-adm2-qaflat-odhar",
+     "name": "Qaflat Odhar"
+    },
+    {
+     "id": "yem-adm2-qalansiyah-wa-abd-al-kuri",
+     "name": "Qalansiyah wa Abd Al Kuri"
+    },
+    {
+     "id": "yem-adm2-qarah",
+     "name": "Qarah"
+    },
+    {
+     "id": "yem-adm2-qatabir",
+     "name": "Qatabir"
+    },
+    {
+     "id": "yem-adm2-qishn",
+     "name": "Qishn"
+    },
+    {
+     "id": "yem-adm2-rada",
+     "name": "Rada'"
+    },
+    {
+     "id": "yem-adm2-radfan",
+     "name": "Radfan"
+    },
+    {
+     "id": "yem-adm2-radman",
+     "name": "Radman"
+    },
+    {
+     "id": "yem-adm2-radum",
+     "name": "Radum"
+    },
+    {
+     "id": "yem-adm2-raghwan",
+     "name": "Raghwan"
+    },
+    {
+     "id": "yem-adm2-rahabah",
+     "name": "Rahabah"
+    },
+    {
+     "id": "yem-adm2-rajuzah",
+     "name": "Rajuzah"
+    },
+    {
+     "id": "yem-adm2-rakhyah",
+     "name": "Rakhyah"
+    },
+    {
+     "id": "yem-adm2-rassd",
+     "name": "Rassd"
+    },
+    {
+     "id": "yem-adm2-raydah",
+     "name": "Raydah"
+    },
+    {
+     "id": "yem-adm2-razih",
+     "name": "Razih"
+    },
+    {
+     "id": "yem-adm2-rumah",
+     "name": "Rumah"
+    },
+    {
+     "id": "yem-adm2-sa-dah",
+     "name": "Sa'dah"
+    },
+    {
+     "id": "yem-adm2-sa-fan",
+     "name": "Sa'fan"
+    },
+    {
+     "id": "yem-adm2-sabah",
+     "name": "Sabah"
+    },
+    {
+     "id": "yem-adm2-sabir-al-mawadim",
+     "name": "Sabir Al Mawadim"
+    },
+    {
+     "id": "yem-adm2-sah",
+     "name": "Sah"
+    },
+    {
+     "id": "yem-adm2-sahar",
+     "name": "Sahar"
+    },
+    {
+     "id": "yem-adm2-salah",
+     "name": "Salah"
+    },
+    {
+     "id": "yem-adm2-sami",
+     "name": "Sami'"
+    },
+    {
+     "id": "yem-adm2-sana-a-city-outskirts-hamdan",
+     "name": "Sana'a City Outskirts - Hamdan"
+    },
+    {
+     "id": "yem-adm2-sana-a-city-outskirts-sanhan-wa-bani-bahlul",
+     "name": "Sana'a City Outskirts -Sanhan wa Bani Bahlul"
+    },
+    {
+     "id": "yem-adm2-sanhan-wa-bani-bahlul",
+     "name": "Sanhan wa Bani Bahlul"
+    },
+    {
+     "id": "yem-adm2-saqin",
+     "name": "Saqin"
+    },
+    {
+     "id": "yem-adm2-sarar",
+     "name": "Sarar"
+    },
+    {
+     "id": "yem-adm2-sayhut",
+     "name": "Sayhut"
+    },
+    {
+     "id": "yem-adm2-sayun",
+     "name": "Sayun"
+    },
+    {
+     "id": "yem-adm2-shada-a",
+     "name": "Shada'a"
+    },
+    {
+     "id": "yem-adm2-shaharah",
+     "name": "Shaharah"
+    },
+    {
+     "id": "yem-adm2-shahin",
+     "name": "Shahin"
+    },
+    {
+     "id": "yem-adm2-shar-ab-ar-rawnah",
+     "name": "Shar'ab Ar Rawnah"
+    },
+    {
+     "id": "yem-adm2-shar-ab-as-salam",
+     "name": "Shar'ab As Salam"
+    },
+    {
+     "id": "yem-adm2-sharas",
+     "name": "Sharas"
+    },
+    {
+     "id": "yem-adm2-shibam",
+     "name": "Shibam"
+    },
+    {
+     "id": "yem-adm2-shibam-kawkaban",
+     "name": "Shibam Kawkaban"
+    },
+    {
+     "id": "yem-adm2-shu-ub",
+     "name": "Shu'ub"
+    },
+    {
+     "id": "yem-adm2-sibah",
+     "name": "Sibah"
+    },
+    {
+     "id": "yem-adm2-sirwah",
+     "name": "Sirwah"
+    },
+    {
+     "id": "yem-adm2-suwayr",
+     "name": "Suwayr"
+    },
+    {
+     "id": "yem-adm2-tarim",
+     "name": "Tarim"
+    },
+    {
+     "id": "yem-adm2-thamud",
+     "name": "Thamud"
+    },
+    {
+     "id": "yem-adm2-thula",
+     "name": "Thula"
+    },
+    {
+     "id": "yem-adm2-tuban",
+     "name": "Tuban"
+    },
+    {
+     "id": "yem-adm2-tur-al-bahah",
+     "name": "Tur Al Bahah"
+    },
+    {
+     "id": "yem-adm2-wadi-al-ayn",
+     "name": "Wadi Al Ayn"
+    },
+    {
+     "id": "yem-adm2-wadrah",
+     "name": "Wadrah"
+    },
+    {
+     "id": "yem-adm2-wald-rabi",
+     "name": "Wald Rabi'"
+    },
+    {
+     "id": "yem-adm2-washhah",
+     "name": "Washhah"
+    },
+    {
+     "id": "yem-adm2-wusab-al-aali",
+     "name": "Wusab Al Aali"
+    },
+    {
+     "id": "yem-adm2-wusab-as-safil",
+     "name": "Wusab As Safil"
+    },
+    {
+     "id": "yem-adm2-yab-uth",
+     "name": "Yab'uth"
+    },
+    {
+     "id": "yem-adm2-yafi",
+     "name": "Yafi'"
+    },
+    {
+     "id": "yem-adm2-yahr",
+     "name": "Yahr"
+    },
+    {
+     "id": "yem-adm2-yarim",
+     "name": "Yarim"
+    },
+    {
+     "id": "yem-adm2-zabid",
+     "name": "Zabid"
+    },
+    {
+     "id": "yem-adm2-zamakh-wa-manwokh",
+     "name": "Zamakh wa Manwokh"
+    },
+    {
+     "id": "yem-adm2-zinjibar",
+     "name": "Zinjibar"
+    }
+   ]
+  }
+ },
+ "name": "Yemen",
+ "nameBn": "Yemen"
+}

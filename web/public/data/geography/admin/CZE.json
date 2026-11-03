@@ -1,0 +1,418 @@
+{
+ "code": "CZE",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Administrative Boundary",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2021",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "regions",
+   "code": "ADM1",
+   "count": 14,
+   "name": "regions",
+   "nameBn": "regions",
+   "representedYear": "2021",
+   "sourceCount": 14,
+   "units": [
+    {
+     "id": "cze-adm1-hlavní-město-praha",
+     "name": "Hlavní město Praha",
+     "shapeISO": "CZ-10"
+    },
+    {
+     "id": "cze-adm1-jihomoravský-kraj",
+     "name": "Jihomoravský kraj",
+     "shapeISO": "CZ-64"
+    },
+    {
+     "id": "cze-adm1-jihočeský-kraj",
+     "name": "Jihočeský kraj",
+     "shapeISO": "CZ-31"
+    },
+    {
+     "id": "cze-adm1-karlovarský-kraj",
+     "name": "Karlovarský kraj",
+     "shapeISO": "CZ-41"
+    },
+    {
+     "id": "cze-adm1-kraj-vysočina",
+     "name": "Kraj Vysočina",
+     "shapeISO": "CZ-63"
+    },
+    {
+     "id": "cze-adm1-královéhradecký-kraj",
+     "name": "Královéhradecký kraj",
+     "shapeISO": "CZ-52"
+    },
+    {
+     "id": "cze-adm1-liberecký-kraj",
+     "name": "Liberecký kraj",
+     "shapeISO": "CZ-51"
+    },
+    {
+     "id": "cze-adm1-moravskoslezský-kraj",
+     "name": "Moravskoslezský kraj",
+     "shapeISO": "CZ-80"
+    },
+    {
+     "id": "cze-adm1-olomoucký-kraj",
+     "name": "Olomoucký kraj",
+     "shapeISO": "CZ-71"
+    },
+    {
+     "id": "cze-adm1-pardubický-kraj",
+     "name": "Pardubický kraj",
+     "shapeISO": "CZ-53"
+    },
+    {
+     "id": "cze-adm1-plzeňský-kraj",
+     "name": "Plzeňský kraj",
+     "shapeISO": "CZ-32"
+    },
+    {
+     "id": "cze-adm1-středočeský-kraj",
+     "name": "Středočeský kraj",
+     "shapeISO": "CZ-20"
+    },
+    {
+     "id": "cze-adm1-zlínský-kraj",
+     "name": "Zlínský kraj",
+     "shapeISO": "CZ-72"
+    },
+    {
+     "id": "cze-adm1-ústecký-kraj",
+     "name": "Ústecký kraj",
+     "shapeISO": "CZ-42"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "District",
+   "code": "ADM2",
+   "count": 77,
+   "name": "District",
+   "nameBn": "জেলা",
+   "representedYear": "2010",
+   "sourceCount": 77,
+   "units": [
+    {
+     "id": "cze-adm2-benešov",
+     "name": "Benešov"
+    },
+    {
+     "id": "cze-adm2-beroun",
+     "name": "Beroun"
+    },
+    {
+     "id": "cze-adm2-blansko",
+     "name": "Blansko"
+    },
+    {
+     "id": "cze-adm2-brno-city",
+     "name": "Brno-City"
+    },
+    {
+     "id": "cze-adm2-brno-country",
+     "name": "Brno-Country"
+    },
+    {
+     "id": "cze-adm2-bruntál",
+     "name": "Bruntál"
+    },
+    {
+     "id": "cze-adm2-břeclav",
+     "name": "Břeclav"
+    },
+    {
+     "id": "cze-adm2-cheb",
+     "name": "Cheb"
+    },
+    {
+     "id": "cze-adm2-chomutov",
+     "name": "Chomutov"
+    },
+    {
+     "id": "cze-adm2-chrudim",
+     "name": "Chrudim"
+    },
+    {
+     "id": "cze-adm2-domažlice",
+     "name": "Domažlice"
+    },
+    {
+     "id": "cze-adm2-děčín",
+     "name": "Děčín"
+    },
+    {
+     "id": "cze-adm2-frýdek-místek",
+     "name": "Frýdek-Místek"
+    },
+    {
+     "id": "cze-adm2-havlíčkův-brod",
+     "name": "Havlíčkův Brod"
+    },
+    {
+     "id": "cze-adm2-hodonín",
+     "name": "Hodonín"
+    },
+    {
+     "id": "cze-adm2-hradec-králové",
+     "name": "Hradec Králové"
+    },
+    {
+     "id": "cze-adm2-jablonec-nad-nisou",
+     "name": "Jablonec nad Nisou"
+    },
+    {
+     "id": "cze-adm2-jeseník",
+     "name": "Jeseník"
+    },
+    {
+     "id": "cze-adm2-jihlava",
+     "name": "Jihlava"
+    },
+    {
+     "id": "cze-adm2-jindřichův-hradec",
+     "name": "Jindřichův Hradec"
+    },
+    {
+     "id": "cze-adm2-jičín",
+     "name": "Jičín"
+    },
+    {
+     "id": "cze-adm2-karlovy-vary",
+     "name": "Karlovy Vary"
+    },
+    {
+     "id": "cze-adm2-karviná",
+     "name": "Karviná"
+    },
+    {
+     "id": "cze-adm2-kladno",
+     "name": "Kladno"
+    },
+    {
+     "id": "cze-adm2-klatovy",
+     "name": "Klatovy"
+    },
+    {
+     "id": "cze-adm2-kolín",
+     "name": "Kolín"
+    },
+    {
+     "id": "cze-adm2-kroměříž",
+     "name": "Kroměříž"
+    },
+    {
+     "id": "cze-adm2-kutná-hora",
+     "name": "Kutná Hora"
+    },
+    {
+     "id": "cze-adm2-liberec",
+     "name": "Liberec"
+    },
+    {
+     "id": "cze-adm2-litoměřice",
+     "name": "Litoměřice"
+    },
+    {
+     "id": "cze-adm2-louny",
+     "name": "Louny"
+    },
+    {
+     "id": "cze-adm2-mladá-boleslav",
+     "name": "Mladá Boleslav"
+    },
+    {
+     "id": "cze-adm2-most",
+     "name": "Most"
+    },
+    {
+     "id": "cze-adm2-mělník",
+     "name": "Mělník"
+    },
+    {
+     "id": "cze-adm2-nový-jičín",
+     "name": "Nový Jičín"
+    },
+    {
+     "id": "cze-adm2-nymburk",
+     "name": "Nymburk"
+    },
+    {
+     "id": "cze-adm2-náchod",
+     "name": "Náchod"
+    },
+    {
+     "id": "cze-adm2-olomouc",
+     "name": "Olomouc"
+    },
+    {
+     "id": "cze-adm2-opava",
+     "name": "Opava"
+    },
+    {
+     "id": "cze-adm2-ostrava-city",
+     "name": "Ostrava-City"
+    },
+    {
+     "id": "cze-adm2-pardubice",
+     "name": "Pardubice"
+    },
+    {
+     "id": "cze-adm2-pelhřimov",
+     "name": "Pelhřimov"
+    },
+    {
+     "id": "cze-adm2-plzeň-city",
+     "name": "Plzeň-City"
+    },
+    {
+     "id": "cze-adm2-plzeň-north",
+     "name": "Plzeň-North"
+    },
+    {
+     "id": "cze-adm2-plzeň-south",
+     "name": "Plzeň-South"
+    },
+    {
+     "id": "cze-adm2-prachatice",
+     "name": "Prachatice"
+    },
+    {
+     "id": "cze-adm2-prague",
+     "name": "Prague"
+    },
+    {
+     "id": "cze-adm2-prague-east",
+     "name": "Prague-East"
+    },
+    {
+     "id": "cze-adm2-prague-west",
+     "name": "Prague-West"
+    },
+    {
+     "id": "cze-adm2-prostějov",
+     "name": "Prostějov"
+    },
+    {
+     "id": "cze-adm2-písek",
+     "name": "Písek"
+    },
+    {
+     "id": "cze-adm2-přerov",
+     "name": "Přerov"
+    },
+    {
+     "id": "cze-adm2-příbram",
+     "name": "Příbram"
+    },
+    {
+     "id": "cze-adm2-rakovnik",
+     "name": "Rakovnik"
+    },
+    {
+     "id": "cze-adm2-rokycany",
+     "name": "Rokycany"
+    },
+    {
+     "id": "cze-adm2-rychnov-nad-kněžnou",
+     "name": "Rychnov nad Kněžnou"
+    },
+    {
+     "id": "cze-adm2-semily",
+     "name": "Semily"
+    },
+    {
+     "id": "cze-adm2-sokolov",
+     "name": "Sokolov"
+    },
+    {
+     "id": "cze-adm2-strakonice",
+     "name": "Strakonice"
+    },
+    {
+     "id": "cze-adm2-svitavy",
+     "name": "Svitavy"
+    },
+    {
+     "id": "cze-adm2-tachov",
+     "name": "Tachov"
+    },
+    {
+     "id": "cze-adm2-teplice",
+     "name": "Teplice"
+    },
+    {
+     "id": "cze-adm2-trutnov",
+     "name": "Trutnov"
+    },
+    {
+     "id": "cze-adm2-tábor",
+     "name": "Tábor"
+    },
+    {
+     "id": "cze-adm2-třebíč",
+     "name": "Třebíč"
+    },
+    {
+     "id": "cze-adm2-uherské-hradiště",
+     "name": "Uherské Hradiště"
+    },
+    {
+     "id": "cze-adm2-vsetín",
+     "name": "Vsetín"
+    },
+    {
+     "id": "cze-adm2-vyškov",
+     "name": "Vyškov"
+    },
+    {
+     "id": "cze-adm2-zlín",
+     "name": "Zlín"
+    },
+    {
+     "id": "cze-adm2-znojmo",
+     "name": "Znojmo"
+    },
+    {
+     "id": "cze-adm2-ústí-nad-labem",
+     "name": "Ústí nad Labem"
+    },
+    {
+     "id": "cze-adm2-ústí-nad-orlicí",
+     "name": "Ústí nad Orlicí"
+    },
+    {
+     "id": "cze-adm2-česká-lípa",
+     "name": "Česká Lípa"
+    },
+    {
+     "id": "cze-adm2-české-budějovice",
+     "name": "České Budějovice"
+    },
+    {
+     "id": "cze-adm2-český-krumlov",
+     "name": "Český Krumlov"
+    },
+    {
+     "id": "cze-adm2-šumperk",
+     "name": "Šumperk"
+    },
+    {
+     "id": "cze-adm2-žďár-nad-sázavou",
+     "name": "Žďár nad Sázavou"
+    }
+   ]
+  }
+ },
+ "name": "Czechia",
+ "nameBn": "Czechia"
+}

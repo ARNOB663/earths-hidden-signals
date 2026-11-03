@@ -1,0 +1,906 @@
+{
+ "code": "UZB",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Unknown",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2017",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Province",
+   "code": "ADM1",
+   "count": 14,
+   "name": "Province",
+   "nameBn": "প্রদেশ",
+   "representedYear": "2017",
+   "sourceCount": 14,
+   "units": [
+    {
+     "id": "uzb-adm1-andijan-region",
+     "name": "Andijan Region",
+     "shapeISO": "UZ-AN"
+    },
+    {
+     "id": "uzb-adm1-bukhara-region",
+     "name": "Bukhara Region",
+     "shapeISO": "UZ-BU"
+    },
+    {
+     "id": "uzb-adm1-fergana-region",
+     "name": "Fergana Region",
+     "shapeISO": "UZ-FA"
+    },
+    {
+     "id": "uzb-adm1-jizzakh-region",
+     "name": "Jizzakh Region",
+     "shapeISO": "UZ-JI"
+    },
+    {
+     "id": "uzb-adm1-namangan-region",
+     "name": "Namangan Region",
+     "shapeISO": "UZ-NG"
+    },
+    {
+     "id": "uzb-adm1-navoiy-region",
+     "name": "Navoiy Region",
+     "shapeISO": "UZ-NW"
+    },
+    {
+     "id": "uzb-adm1-qashqadaryo-region",
+     "name": "Qashqadaryo Region",
+     "shapeISO": "UZ-QA"
+    },
+    {
+     "id": "uzb-adm1-republic-of-karakalpakstan",
+     "name": "Republic of Karakalpakstan",
+     "shapeISO": "UZ-QR"
+    },
+    {
+     "id": "uzb-adm1-samarqand-region",
+     "name": "Samarqand Region",
+     "shapeISO": "UZ-SA"
+    },
+    {
+     "id": "uzb-adm1-sirdaryo-region",
+     "name": "Sirdaryo Region",
+     "shapeISO": "UZ-SI"
+    },
+    {
+     "id": "uzb-adm1-surxondaryo-region",
+     "name": "Surxondaryo Region",
+     "shapeISO": "UZ-SU"
+    },
+    {
+     "id": "uzb-adm1-tashkent",
+     "name": "Tashkent",
+     "shapeISO": "UZ-TK"
+    },
+    {
+     "id": "uzb-adm1-tashkent-region",
+     "name": "Tashkent Region",
+     "shapeISO": "UZ-TO"
+    },
+    {
+     "id": "uzb-adm1-xorazm-region",
+     "name": "Xorazm Region",
+     "shapeISO": "UZ-XO"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Tuman",
+   "code": "ADM2",
+   "count": 199,
+   "name": "Tuman",
+   "nameBn": "Tuman",
+   "representedYear": "2020",
+   "sourceCount": 199,
+   "units": [
+    {
+     "id": "uzb-adm2-akaltin",
+     "name": "Akaltin"
+    },
+    {
+     "id": "uzb-adm2-akdarya",
+     "name": "Akdarya"
+    },
+    {
+     "id": "uzb-adm2-akhangaran",
+     "name": "Akhangaran"
+    },
+    {
+     "id": "uzb-adm2-akhangaran-city",
+     "name": "Akhangaran city"
+    },
+    {
+     "id": "uzb-adm2-akkurgan",
+     "name": "Akkurgan"
+    },
+    {
+     "id": "uzb-adm2-alat",
+     "name": "Alat"
+    },
+    {
+     "id": "uzb-adm2-almalik-city",
+     "name": "Almalik city"
+    },
+    {
+     "id": "uzb-adm2-almazar",
+     "name": "Almazar"
+    },
+    {
+     "id": "uzb-adm2-altiarik",
+     "name": "Altiarik"
+    },
+    {
+     "id": "uzb-adm2-altinkul",
+     "name": "Altinkul"
+    },
+    {
+     "id": "uzb-adm2-altinsay",
+     "name": "Altinsay"
+    },
+    {
+     "id": "uzb-adm2-amudarya",
+     "name": "Amudarya"
+    },
+    {
+     "id": "uzb-adm2-andijan",
+     "name": "Andijan"
+    },
+    {
+     "id": "uzb-adm2-andijan-city",
+     "name": "Andijan city"
+    },
+    {
+     "id": "uzb-adm2-angor",
+     "name": "Angor"
+    },
+    {
+     "id": "uzb-adm2-angren-city",
+     "name": "Angren city"
+    },
+    {
+     "id": "uzb-adm2-arnasay",
+     "name": "Arnasay"
+    },
+    {
+     "id": "uzb-adm2-asaka",
+     "name": "Asaka"
+    },
+    {
+     "id": "uzb-adm2-bagat",
+     "name": "Bagat"
+    },
+    {
+     "id": "uzb-adm2-bagdad",
+     "name": "Bagdad"
+    },
+    {
+     "id": "uzb-adm2-bakhmal",
+     "name": "Bakhmal"
+    },
+    {
+     "id": "uzb-adm2-balikchi",
+     "name": "Balikchi"
+    },
+    {
+     "id": "uzb-adm2-bayaut",
+     "name": "Bayaut"
+    },
+    {
+     "id": "uzb-adm2-baysun",
+     "name": "Baysun"
+    },
+    {
+     "id": "uzb-adm2-bekabad",
+     "name": "Bekabad"
+    },
+    {
+     "id": "uzb-adm2-bekabad-city",
+     "name": "Bekabad city"
+    },
+    {
+     "id": "uzb-adm2-bektemir",
+     "name": "Bektemir"
+    },
+    {
+     "id": "uzb-adm2-beruniy",
+     "name": "Beruniy"
+    },
+    {
+     "id": "uzb-adm2-besharik",
+     "name": "Besharik"
+    },
+    {
+     "id": "uzb-adm2-bostanlik",
+     "name": "Bostanlik"
+    },
+    {
+     "id": "uzb-adm2-boz",
+     "name": "Boz"
+    },
+    {
+     "id": "uzb-adm2-buka",
+     "name": "Buka"
+    },
+    {
+     "id": "uzb-adm2-bukhara",
+     "name": "Bukhara"
+    },
+    {
+     "id": "uzb-adm2-bukhara-city",
+     "name": "Bukhara city"
+    },
+    {
+     "id": "uzb-adm2-bulakbashi",
+     "name": "Bulakbashi"
+    },
+    {
+     "id": "uzb-adm2-bulungur",
+     "name": "Bulungur"
+    },
+    {
+     "id": "uzb-adm2-buvayda",
+     "name": "Buvayda"
+    },
+    {
+     "id": "uzb-adm2-chartak",
+     "name": "Chartak"
+    },
+    {
+     "id": "uzb-adm2-chilanzar",
+     "name": "Chilanzar"
+    },
+    {
+     "id": "uzb-adm2-chimbay",
+     "name": "Chimbay"
+    },
+    {
+     "id": "uzb-adm2-chinaz",
+     "name": "Chinaz"
+    },
+    {
+     "id": "uzb-adm2-chirakchi",
+     "name": "Chirakchi"
+    },
+    {
+     "id": "uzb-adm2-chirchik-city",
+     "name": "Chirchik city"
+    },
+    {
+     "id": "uzb-adm2-chust",
+     "name": "Chust"
+    },
+    {
+     "id": "uzb-adm2-dangara",
+     "name": "Dangara"
+    },
+    {
+     "id": "uzb-adm2-dehkanabad",
+     "name": "Dehkanabad"
+    },
+    {
+     "id": "uzb-adm2-denau",
+     "name": "Denau"
+    },
+    {
+     "id": "uzb-adm2-djalalkuduk",
+     "name": "Djalalkuduk"
+    },
+    {
+     "id": "uzb-adm2-dustlik",
+     "name": "Dustlik"
+    },
+    {
+     "id": "uzb-adm2-dzhambay",
+     "name": "Dzhambay"
+    },
+    {
+     "id": "uzb-adm2-dzharkurgan",
+     "name": "Dzharkurgan"
+    },
+    {
+     "id": "uzb-adm2-dzhizak-city",
+     "name": "Dzhizak city"
+    },
+    {
+     "id": "uzb-adm2-ellikkala",
+     "name": "Ellikkala"
+    },
+    {
+     "id": "uzb-adm2-farish",
+     "name": "Farish"
+    },
+    {
+     "id": "uzb-adm2-fergana",
+     "name": "Fergana"
+    },
+    {
+     "id": "uzb-adm2-fergana-city",
+     "name": "Fergana city"
+    },
+    {
+     "id": "uzb-adm2-furkat",
+     "name": "Furkat"
+    },
+    {
+     "id": "uzb-adm2-gallyaaral",
+     "name": "Gallyaaral"
+    },
+    {
+     "id": "uzb-adm2-gijduvan",
+     "name": "Gijduvan"
+    },
+    {
+     "id": "uzb-adm2-gulistan",
+     "name": "Gulistan"
+    },
+    {
+     "id": "uzb-adm2-gulistan-city",
+     "name": "Gulistan city"
+    },
+    {
+     "id": "uzb-adm2-gurlen",
+     "name": "Gurlen"
+    },
+    {
+     "id": "uzb-adm2-guzar",
+     "name": "Guzar"
+    },
+    {
+     "id": "uzb-adm2-ishtikhan",
+     "name": "Ishtikhan"
+    },
+    {
+     "id": "uzb-adm2-izboskan",
+     "name": "Izboskan"
+    },
+    {
+     "id": "uzb-adm2-jondor",
+     "name": "Jondor"
+    },
+    {
+     "id": "uzb-adm2-kagan",
+     "name": "Kagan"
+    },
+    {
+     "id": "uzb-adm2-kagan-city",
+     "name": "Kagan city"
+    },
+    {
+     "id": "uzb-adm2-kamashi",
+     "name": "Kamashi"
+    },
+    {
+     "id": "uzb-adm2-kanimekh",
+     "name": "Kanimekh"
+    },
+    {
+     "id": "uzb-adm2-kanlikul",
+     "name": "Kanlikul"
+    },
+    {
+     "id": "uzb-adm2-karakul",
+     "name": "Karakul"
+    },
+    {
+     "id": "uzb-adm2-karaulbazar",
+     "name": "Karaulbazar"
+    },
+    {
+     "id": "uzb-adm2-karauzyak",
+     "name": "Karauzyak"
+    },
+    {
+     "id": "uzb-adm2-karmana",
+     "name": "Karmana"
+    },
+    {
+     "id": "uzb-adm2-karshi",
+     "name": "Karshi"
+    },
+    {
+     "id": "uzb-adm2-karshi-city",
+     "name": "Karshi city"
+    },
+    {
+     "id": "uzb-adm2-kasan",
+     "name": "Kasan"
+    },
+    {
+     "id": "uzb-adm2-kasansay",
+     "name": "Kasansay"
+    },
+    {
+     "id": "uzb-adm2-kasbi",
+     "name": "Kasbi"
+    },
+    {
+     "id": "uzb-adm2-kattakurgan",
+     "name": "Kattakurgan"
+    },
+    {
+     "id": "uzb-adm2-kattakurgan-city",
+     "name": "Kattakurgan city"
+    },
+    {
+     "id": "uzb-adm2-kegeyli",
+     "name": "Kegeyli"
+    },
+    {
+     "id": "uzb-adm2-khadjaabad",
+     "name": "Khadjaabad"
+    },
+    {
+     "id": "uzb-adm2-khanabad-city",
+     "name": "Khanabad city"
+    },
+    {
+     "id": "uzb-adm2-khanka",
+     "name": "Khanka"
+    },
+    {
+     "id": "uzb-adm2-khatirchi",
+     "name": "Khatirchi"
+    },
+    {
+     "id": "uzb-adm2-khavas",
+     "name": "Khavas"
+    },
+    {
+     "id": "uzb-adm2-khazarasp",
+     "name": "Khazarasp"
+    },
+    {
+     "id": "uzb-adm2-khiva",
+     "name": "Khiva"
+    },
+    {
+     "id": "uzb-adm2-khiva-city",
+     "name": "Khiva city"
+    },
+    {
+     "id": "uzb-adm2-khojeyli",
+     "name": "Khojeyli"
+    },
+    {
+     "id": "uzb-adm2-kibray",
+     "name": "Kibray"
+    },
+    {
+     "id": "uzb-adm2-kitab",
+     "name": "Kitab"
+    },
+    {
+     "id": "uzb-adm2-kiziltepa",
+     "name": "Kiziltepa"
+    },
+    {
+     "id": "uzb-adm2-kizirik",
+     "name": "Kizirik"
+    },
+    {
+     "id": "uzb-adm2-kokand-city",
+     "name": "Kokand city"
+    },
+    {
+     "id": "uzb-adm2-koshkupir",
+     "name": "Koshkupir"
+    },
+    {
+     "id": "uzb-adm2-koshrabad",
+     "name": "Koshrabad"
+    },
+    {
+     "id": "uzb-adm2-kumkurgan",
+     "name": "Kumkurgan"
+    },
+    {
+     "id": "uzb-adm2-kungrad",
+     "name": "Kungrad"
+    },
+    {
+     "id": "uzb-adm2-kurgantepa",
+     "name": "Kurgantepa"
+    },
+    {
+     "id": "uzb-adm2-kushtepa",
+     "name": "Kushtepa"
+    },
+    {
+     "id": "uzb-adm2-kuva",
+     "name": "Kuva"
+    },
+    {
+     "id": "uzb-adm2-kuvasay-city",
+     "name": "Kuvasay city"
+    },
+    {
+     "id": "uzb-adm2-kuyichirchik",
+     "name": "Kuyichirchik"
+    },
+    {
+     "id": "uzb-adm2-margilan-city",
+     "name": "Margilan city"
+    },
+    {
+     "id": "uzb-adm2-markhamat",
+     "name": "Markhamat"
+    },
+    {
+     "id": "uzb-adm2-mingbulak",
+     "name": "Mingbulak"
+    },
+    {
+     "id": "uzb-adm2-mirabad",
+     "name": "Mirabad"
+    },
+    {
+     "id": "uzb-adm2-mirishkar",
+     "name": "Mirishkar"
+    },
+    {
+     "id": "uzb-adm2-mirzaabad",
+     "name": "Mirzaabad"
+    },
+    {
+     "id": "uzb-adm2-mirzachul",
+     "name": "Mirzachul"
+    },
+    {
+     "id": "uzb-adm2-mirzo-ulugbek",
+     "name": "Mirzo Ulugbek"
+    },
+    {
+     "id": "uzb-adm2-mubarek",
+     "name": "Mubarek"
+    },
+    {
+     "id": "uzb-adm2-muynak",
+     "name": "Muynak"
+    },
+    {
+     "id": "uzb-adm2-muzrabad",
+     "name": "Muzrabad"
+    },
+    {
+     "id": "uzb-adm2-namangan",
+     "name": "Namangan"
+    },
+    {
+     "id": "uzb-adm2-namangan-city",
+     "name": "Namangan city"
+    },
+    {
+     "id": "uzb-adm2-narin",
+     "name": "Narin"
+    },
+    {
+     "id": "uzb-adm2-narpay",
+     "name": "Narpay"
+    },
+    {
+     "id": "uzb-adm2-navbakhor",
+     "name": "Navbakhor"
+    },
+    {
+     "id": "uzb-adm2-navoi-city",
+     "name": "Navoi city"
+    },
+    {
+     "id": "uzb-adm2-nishan",
+     "name": "Nishan"
+    },
+    {
+     "id": "uzb-adm2-nukus",
+     "name": "Nukus"
+    },
+    {
+     "id": "uzb-adm2-nukus-city",
+     "name": "Nukus city"
+    },
+    {
+     "id": "uzb-adm2-nurabad",
+     "name": "Nurabad"
+    },
+    {
+     "id": "uzb-adm2-nurafshon-city",
+     "name": "Nurafshon city"
+    },
+    {
+     "id": "uzb-adm2-nurata",
+     "name": "Nurata"
+    },
+    {
+     "id": "uzb-adm2-pakhtachi",
+     "name": "Pakhtachi"
+    },
+    {
+     "id": "uzb-adm2-pap",
+     "name": "Pap"
+    },
+    {
+     "id": "uzb-adm2-parkent",
+     "name": "Parkent"
+    },
+    {
+     "id": "uzb-adm2-pastdargom",
+     "name": "Pastdargom"
+    },
+    {
+     "id": "uzb-adm2-paxtaabad",
+     "name": "Paxtaabad"
+    },
+    {
+     "id": "uzb-adm2-paxtakor",
+     "name": "Paxtakor"
+    },
+    {
+     "id": "uzb-adm2-payarik",
+     "name": "Payarik"
+    },
+    {
+     "id": "uzb-adm2-peshku",
+     "name": "Peshku"
+    },
+    {
+     "id": "uzb-adm2-pskent",
+     "name": "Pskent"
+    },
+    {
+     "id": "uzb-adm2-rishtan",
+     "name": "Rishtan"
+    },
+    {
+     "id": "uzb-adm2-rаmitan",
+     "name": "Rаmitan"
+    },
+    {
+     "id": "uzb-adm2-samarkand",
+     "name": "Samarkand"
+    },
+    {
+     "id": "uzb-adm2-samarkand-city",
+     "name": "Samarkand city"
+    },
+    {
+     "id": "uzb-adm2-sardoba",
+     "name": "Sardoba"
+    },
+    {
+     "id": "uzb-adm2-sariasiya",
+     "name": "Sariasiya"
+    },
+    {
+     "id": "uzb-adm2-saykhunabad",
+     "name": "Saykhunabad"
+    },
+    {
+     "id": "uzb-adm2-sergeli",
+     "name": "Sergeli"
+    },
+    {
+     "id": "uzb-adm2-shafirkan",
+     "name": "Shafirkan"
+    },
+    {
+     "id": "uzb-adm2-shakhrisabz",
+     "name": "Shakhrisabz"
+    },
+    {
+     "id": "uzb-adm2-shakhrisabz-city",
+     "name": "Shakhrisabz city"
+    },
+    {
+     "id": "uzb-adm2-shakhrixan",
+     "name": "Shakhrixan"
+    },
+    {
+     "id": "uzb-adm2-sharof-rashidov",
+     "name": "Sharof Rashidov"
+    },
+    {
+     "id": "uzb-adm2-shavat",
+     "name": "Shavat"
+    },
+    {
+     "id": "uzb-adm2-shaykhantokhur",
+     "name": "Shaykhantokhur"
+    },
+    {
+     "id": "uzb-adm2-sherabad",
+     "name": "Sherabad"
+    },
+    {
+     "id": "uzb-adm2-shirin-city",
+     "name": "Shirin city"
+    },
+    {
+     "id": "uzb-adm2-shumanay",
+     "name": "Shumanay"
+    },
+    {
+     "id": "uzb-adm2-shurchi",
+     "name": "Shurchi"
+    },
+    {
+     "id": "uzb-adm2-sirdarya",
+     "name": "Sirdarya"
+    },
+    {
+     "id": "uzb-adm2-sokh",
+     "name": "Sokh"
+    },
+    {
+     "id": "uzb-adm2-takhtakupir",
+     "name": "Takhtakupir"
+    },
+    {
+     "id": "uzb-adm2-tamdi",
+     "name": "Tamdi"
+    },
+    {
+     "id": "uzb-adm2-tashkent",
+     "name": "Tashkent"
+    },
+    {
+     "id": "uzb-adm2-tashlak",
+     "name": "Tashlak"
+    },
+    {
+     "id": "uzb-adm2-taylak",
+     "name": "Taylak"
+    },
+    {
+     "id": "uzb-adm2-termez",
+     "name": "Termez"
+    },
+    {
+     "id": "uzb-adm2-termez-city",
+     "name": "Termez city"
+    },
+    {
+     "id": "uzb-adm2-turakurgan",
+     "name": "Turakurgan"
+    },
+    {
+     "id": "uzb-adm2-turtkul",
+     "name": "Turtkul"
+    },
+    {
+     "id": "uzb-adm2-uchkuduk",
+     "name": "Uchkuduk"
+    },
+    {
+     "id": "uzb-adm2-uchkuprik",
+     "name": "Uchkuprik"
+    },
+    {
+     "id": "uzb-adm2-uchkurgan",
+     "name": "Uchkurgan"
+    },
+    {
+     "id": "uzb-adm2-uchtepa",
+     "name": "Uchtepa"
+    },
+    {
+     "id": "uzb-adm2-ulugnar",
+     "name": "Ulugnar"
+    },
+    {
+     "id": "uzb-adm2-urgench",
+     "name": "Urgench"
+    },
+    {
+     "id": "uzb-adm2-urgench-city",
+     "name": "Urgench city"
+    },
+    {
+     "id": "uzb-adm2-urgut",
+     "name": "Urgut"
+    },
+    {
+     "id": "uzb-adm2-urtachirchik",
+     "name": "Urtachirchik"
+    },
+    {
+     "id": "uzb-adm2-uychi",
+     "name": "Uychi"
+    },
+    {
+     "id": "uzb-adm2-uzbekistan",
+     "name": "Uzbekistan"
+    },
+    {
+     "id": "uzb-adm2-uzun",
+     "name": "Uzun"
+    },
+    {
+     "id": "uzb-adm2-vabkent",
+     "name": "Vabkent"
+    },
+    {
+     "id": "uzb-adm2-yakkabag",
+     "name": "Yakkabag"
+    },
+    {
+     "id": "uzb-adm2-yakkasaray",
+     "name": "Yakkasaray"
+    },
+    {
+     "id": "uzb-adm2-yangiabad",
+     "name": "Yangiabad"
+    },
+    {
+     "id": "uzb-adm2-yangiarik",
+     "name": "Yangiarik"
+    },
+    {
+     "id": "uzb-adm2-yangibazar",
+     "name": "Yangibazar"
+    },
+    {
+     "id": "uzb-adm2-yangikurgan",
+     "name": "Yangikurgan"
+    },
+    {
+     "id": "uzb-adm2-yangiyer-city",
+     "name": "Yangiyer city"
+    },
+    {
+     "id": "uzb-adm2-yangiyul",
+     "name": "Yangiyul"
+    },
+    {
+     "id": "uzb-adm2-yangiyul-city",
+     "name": "Yangiyul city"
+    },
+    {
+     "id": "uzb-adm2-yashnobod",
+     "name": "Yashnobod"
+    },
+    {
+     "id": "uzb-adm2-yazyavan",
+     "name": "Yazyavan"
+    },
+    {
+     "id": "uzb-adm2-yukarichirchik",
+     "name": "Yukarichirchik"
+    },
+    {
+     "id": "uzb-adm2-yunusabad",
+     "name": "Yunusabad"
+    },
+    {
+     "id": "uzb-adm2-zafarabad",
+     "name": "Zafarabad"
+    },
+    {
+     "id": "uzb-adm2-zangiata",
+     "name": "Zangiata"
+    },
+    {
+     "id": "uzb-adm2-zarafshan-city",
+     "name": "Zarafshan city"
+    },
+    {
+     "id": "uzb-adm2-zarbdar",
+     "name": "Zarbdar"
+    },
+    {
+     "id": "uzb-adm2-zaаmin",
+     "name": "Zaаmin"
+    }
+   ]
+  }
+ },
+ "name": "Uzbekistan",
+ "nameBn": "Uzbekistan"
+}

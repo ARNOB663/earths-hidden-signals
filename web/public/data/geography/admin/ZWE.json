@@ -1,0 +1,454 @@
+{
+ "code": "ZWE",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Country",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2020",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Province",
+   "code": "ADM1",
+   "count": 10,
+   "name": "Province",
+   "nameBn": "প্রদেশ",
+   "representedYear": "2020",
+   "sourceCount": 10,
+   "units": [
+    {
+     "id": "zwe-adm1-bulawayo",
+     "name": "Bulawayo",
+     "shapeISO": "ZW10"
+    },
+    {
+     "id": "zwe-adm1-harare",
+     "name": "Harare",
+     "shapeISO": "ZW19"
+    },
+    {
+     "id": "zwe-adm1-manicaland",
+     "name": "Manicaland",
+     "shapeISO": "ZW11"
+    },
+    {
+     "id": "zwe-adm1-mashonaland-central",
+     "name": "Mashonaland Central",
+     "shapeISO": "ZW12"
+    },
+    {
+     "id": "zwe-adm1-mashonaland-east",
+     "name": "Mashonaland East",
+     "shapeISO": "ZW13"
+    },
+    {
+     "id": "zwe-adm1-mashonaland-west",
+     "name": "Mashonaland West",
+     "shapeISO": "ZW14"
+    },
+    {
+     "id": "zwe-adm1-masvingo",
+     "name": "Masvingo",
+     "shapeISO": "ZW18"
+    },
+    {
+     "id": "zwe-adm1-matabeleland-north",
+     "name": "Matabeleland North",
+     "shapeISO": "ZW15"
+    },
+    {
+     "id": "zwe-adm1-matabeleland-south",
+     "name": "Matabeleland South",
+     "shapeISO": "ZW16"
+    },
+    {
+     "id": "zwe-adm1-midlands",
+     "name": "Midlands",
+     "shapeISO": "ZW17"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "District",
+   "code": "ADM2",
+   "count": 91,
+   "name": "District",
+   "nameBn": "জেলা",
+   "representedYear": "2020",
+   "sourceCount": 91,
+   "units": [
+    {
+     "id": "zwe-adm2-beitbridge",
+     "name": "Beitbridge"
+    },
+    {
+     "id": "zwe-adm2-beitbridge-urban",
+     "name": "Beitbridge Urban"
+    },
+    {
+     "id": "zwe-adm2-bikita",
+     "name": "Bikita"
+    },
+    {
+     "id": "zwe-adm2-bindura",
+     "name": "Bindura"
+    },
+    {
+     "id": "zwe-adm2-bindura-urban",
+     "name": "Bindura Urban"
+    },
+    {
+     "id": "zwe-adm2-binga",
+     "name": "Binga"
+    },
+    {
+     "id": "zwe-adm2-bubi",
+     "name": "Bubi"
+    },
+    {
+     "id": "zwe-adm2-buhera",
+     "name": "Buhera"
+    },
+    {
+     "id": "zwe-adm2-bulawayo",
+     "name": "Bulawayo"
+    },
+    {
+     "id": "zwe-adm2-bulilima",
+     "name": "Bulilima"
+    },
+    {
+     "id": "zwe-adm2-centenary-muzarabani",
+     "name": "Centenary/ Muzarabani"
+    },
+    {
+     "id": "zwe-adm2-chegutu",
+     "name": "Chegutu"
+    },
+    {
+     "id": "zwe-adm2-chegutu-urban",
+     "name": "Chegutu Urban"
+    },
+    {
+     "id": "zwe-adm2-chikomba",
+     "name": "Chikomba"
+    },
+    {
+     "id": "zwe-adm2-chimanimani",
+     "name": "Chimanimani"
+    },
+    {
+     "id": "zwe-adm2-chinhoyi",
+     "name": "Chinhoyi"
+    },
+    {
+     "id": "zwe-adm2-chipinge",
+     "name": "Chipinge"
+    },
+    {
+     "id": "zwe-adm2-chipinge-urban",
+     "name": "Chipinge Urban"
+    },
+    {
+     "id": "zwe-adm2-chiredzi",
+     "name": "Chiredzi"
+    },
+    {
+     "id": "zwe-adm2-chiredzi-urban",
+     "name": "Chiredzi Urban"
+    },
+    {
+     "id": "zwe-adm2-chirumhanzu",
+     "name": "Chirumhanzu"
+    },
+    {
+     "id": "zwe-adm2-chitungwiza",
+     "name": "Chitungwiza"
+    },
+    {
+     "id": "zwe-adm2-chivi",
+     "name": "Chivi"
+    },
+    {
+     "id": "zwe-adm2-epworth",
+     "name": "Epworth"
+    },
+    {
+     "id": "zwe-adm2-gokwe-north",
+     "name": "Gokwe North"
+    },
+    {
+     "id": "zwe-adm2-gokwe-south",
+     "name": "Gokwe South"
+    },
+    {
+     "id": "zwe-adm2-gokwe-south-urban",
+     "name": "Gokwe South Urban"
+    },
+    {
+     "id": "zwe-adm2-goromonzi",
+     "name": "Goromonzi"
+    },
+    {
+     "id": "zwe-adm2-guruve",
+     "name": "Guruve"
+    },
+    {
+     "id": "zwe-adm2-gutu",
+     "name": "Gutu"
+    },
+    {
+     "id": "zwe-adm2-gwanda",
+     "name": "Gwanda"
+    },
+    {
+     "id": "zwe-adm2-gwanda-urban",
+     "name": "Gwanda Urban"
+    },
+    {
+     "id": "zwe-adm2-gweru",
+     "name": "Gweru"
+    },
+    {
+     "id": "zwe-adm2-gweru-urban",
+     "name": "Gweru Urban"
+    },
+    {
+     "id": "zwe-adm2-harare",
+     "name": "Harare"
+    },
+    {
+     "id": "zwe-adm2-harare-rural",
+     "name": "Harare Rural"
+    },
+    {
+     "id": "zwe-adm2-hurungwe",
+     "name": "Hurungwe"
+    },
+    {
+     "id": "zwe-adm2-hwange",
+     "name": "Hwange"
+    },
+    {
+     "id": "zwe-adm2-hwange-urban",
+     "name": "Hwange Urban"
+    },
+    {
+     "id": "zwe-adm2-hwedza",
+     "name": "Hwedza"
+    },
+    {
+     "id": "zwe-adm2-insiza",
+     "name": "Insiza"
+    },
+    {
+     "id": "zwe-adm2-kadoma-urban",
+     "name": "Kadoma Urban"
+    },
+    {
+     "id": "zwe-adm2-kariba",
+     "name": "Kariba"
+    },
+    {
+     "id": "zwe-adm2-kariba-urban",
+     "name": "Kariba Urban"
+    },
+    {
+     "id": "zwe-adm2-karoi",
+     "name": "Karoi"
+    },
+    {
+     "id": "zwe-adm2-kwekwe",
+     "name": "Kwekwe"
+    },
+    {
+     "id": "zwe-adm2-kwekwe-urban",
+     "name": "Kwekwe Urban"
+    },
+    {
+     "id": "zwe-adm2-lupane",
+     "name": "Lupane"
+    },
+    {
+     "id": "zwe-adm2-makonde",
+     "name": "Makonde"
+    },
+    {
+     "id": "zwe-adm2-makoni",
+     "name": "Makoni"
+    },
+    {
+     "id": "zwe-adm2-mangwe",
+     "name": "Mangwe"
+    },
+    {
+     "id": "zwe-adm2-marondera",
+     "name": "Marondera"
+    },
+    {
+     "id": "zwe-adm2-marondera-urban",
+     "name": "Marondera Urban"
+    },
+    {
+     "id": "zwe-adm2-masvingo",
+     "name": "Masvingo"
+    },
+    {
+     "id": "zwe-adm2-masvingo-urban",
+     "name": "Masvingo Urban"
+    },
+    {
+     "id": "zwe-adm2-matobo",
+     "name": "Matobo"
+    },
+    {
+     "id": "zwe-adm2-mazowe",
+     "name": "Mazowe"
+    },
+    {
+     "id": "zwe-adm2-mberengwa",
+     "name": "Mberengwa"
+    },
+    {
+     "id": "zwe-adm2-mbire",
+     "name": "Mbire"
+    },
+    {
+     "id": "zwe-adm2-mhondoro-ngezi",
+     "name": "Mhondoro-Ngezi"
+    },
+    {
+     "id": "zwe-adm2-mount-darwin",
+     "name": "Mount Darwin"
+    },
+    {
+     "id": "zwe-adm2-mudzi",
+     "name": "Mudzi"
+    },
+    {
+     "id": "zwe-adm2-murehwa",
+     "name": "Murehwa"
+    },
+    {
+     "id": "zwe-adm2-mutare",
+     "name": "Mutare"
+    },
+    {
+     "id": "zwe-adm2-mutare-urban",
+     "name": "Mutare Urban"
+    },
+    {
+     "id": "zwe-adm2-mutasa",
+     "name": "Mutasa"
+    },
+    {
+     "id": "zwe-adm2-mutoko",
+     "name": "Mutoko"
+    },
+    {
+     "id": "zwe-adm2-mvurwi",
+     "name": "Mvurwi"
+    },
+    {
+     "id": "zwe-adm2-mwenezi",
+     "name": "Mwenezi"
+    },
+    {
+     "id": "zwe-adm2-nkayi",
+     "name": "Nkayi"
+    },
+    {
+     "id": "zwe-adm2-norton",
+     "name": "Norton"
+    },
+    {
+     "id": "zwe-adm2-nyanga",
+     "name": "Nyanga"
+    },
+    {
+     "id": "zwe-adm2-plumtree",
+     "name": "Plumtree"
+    },
+    {
+     "id": "zwe-adm2-redcliff",
+     "name": "Redcliff"
+    },
+    {
+     "id": "zwe-adm2-rusape",
+     "name": "Rusape"
+    },
+    {
+     "id": "zwe-adm2-rushinga",
+     "name": "Rushinga"
+    },
+    {
+     "id": "zwe-adm2-ruwa",
+     "name": "Ruwa"
+    },
+    {
+     "id": "zwe-adm2-sanyati",
+     "name": "Sanyati"
+    },
+    {
+     "id": "zwe-adm2-seke",
+     "name": "Seke"
+    },
+    {
+     "id": "zwe-adm2-shamva",
+     "name": "Shamva"
+    },
+    {
+     "id": "zwe-adm2-shurugwi",
+     "name": "Shurugwi"
+    },
+    {
+     "id": "zwe-adm2-shurugwi-town",
+     "name": "Shurugwi Town"
+    },
+    {
+     "id": "zwe-adm2-tsholotsho",
+     "name": "Tsholotsho"
+    },
+    {
+     "id": "zwe-adm2-umguza",
+     "name": "Umguza"
+    },
+    {
+     "id": "zwe-adm2-umzingwane",
+     "name": "Umzingwane"
+    },
+    {
+     "id": "zwe-adm2-uzumba-maramba-pfungwe",
+     "name": "Uzumba Maramba Pfungwe"
+    },
+    {
+     "id": "zwe-adm2-victoria-falls",
+     "name": "Victoria Falls"
+    },
+    {
+     "id": "zwe-adm2-zaka",
+     "name": "Zaka"
+    },
+    {
+     "id": "zwe-adm2-zvimba",
+     "name": "Zvimba"
+    },
+    {
+     "id": "zwe-adm2-zvishavane",
+     "name": "Zvishavane"
+    },
+    {
+     "id": "zwe-adm2-zvishavane-urban",
+     "name": "Zvishavane Urban"
+    }
+   ]
+  }
+ },
+ "name": "Zimbabwe",
+ "nameBn": "Zimbabwe"
+}

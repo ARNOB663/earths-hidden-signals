@@ -1,0 +1,18 @@
+{
+ "code": "TKL",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Tokelau",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2022",
+   "sourceCount": 1,
+   "units": []
+  }
+ },
+ "name": "Tokelau",
+ "nameBn": "Tokelau"
+}

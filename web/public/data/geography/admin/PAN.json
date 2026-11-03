@@ -1,0 +1,409 @@
+{
+ "code": "PAN",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "The Republic of Panama",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2022",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Unknown",
+   "code": "ADM1",
+   "count": 13,
+   "name": "ADM1 areas",
+   "nameBn": "ADM1 এলাকা",
+   "representedYear": "2017",
+   "sourceCount": 13,
+   "units": [
+    {
+     "id": "pan-adm1-colón-province",
+     "name": "Colón Province",
+     "shapeISO": "PA-3"
+    },
+    {
+     "id": "pan-adm1-comarca-emberá-wounaan",
+     "name": "Comarca Emberá-Wounaan",
+     "shapeISO": "PA-EM"
+    },
+    {
+     "id": "pan-adm1-comarca-guna-yala",
+     "name": "Comarca Guna Yala",
+     "shapeISO": "PA-KY"
+    },
+    {
+     "id": "pan-adm1-comarca-ngäbe-buglé",
+     "name": "Comarca Ngäbe-Buglé",
+     "shapeISO": "PA-NB"
+    },
+    {
+     "id": "pan-adm1-provincia-de-bocas-del-toro",
+     "name": "Provincia de Bocas del Toro",
+     "shapeISO": "PA-1"
+    },
+    {
+     "id": "pan-adm1-provincia-de-chiriquí",
+     "name": "Provincia de Chiriquí",
+     "shapeISO": "PA-4"
+    },
+    {
+     "id": "pan-adm1-provincia-de-coclé",
+     "name": "Provincia de Coclé",
+     "shapeISO": "PA-2"
+    },
+    {
+     "id": "pan-adm1-provincia-de-darién",
+     "name": "Provincia de Darién",
+     "shapeISO": "PA-5"
+    },
+    {
+     "id": "pan-adm1-provincia-de-herrera",
+     "name": "Provincia de Herrera",
+     "shapeISO": "PA-6"
+    },
+    {
+     "id": "pan-adm1-provincia-de-los-santos",
+     "name": "Provincia de Los Santos",
+     "shapeISO": "PA-7"
+    },
+    {
+     "id": "pan-adm1-provincia-de-panamá",
+     "name": "Provincia de Panamá",
+     "shapeISO": "PA-8"
+    },
+    {
+     "id": "pan-adm1-provincia-de-panamá-oeste",
+     "name": "Provincia de Panamá Oeste",
+     "shapeISO": "PA-10"
+    },
+    {
+     "id": "pan-adm1-provincia-de-veraguas",
+     "name": "Provincia de Veraguas",
+     "shapeISO": "PA-9"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Unknown",
+   "code": "ADM2",
+   "count": 76,
+   "name": "ADM2 areas",
+   "nameBn": "ADM2 এলাকা",
+   "representedYear": "2012",
+   "sourceCount": 76,
+   "units": [
+    {
+     "id": "pan-adm2-aguadulce",
+     "name": "Aguadulce"
+    },
+    {
+     "id": "pan-adm2-alanje",
+     "name": "Alanje"
+    },
+    {
+     "id": "pan-adm2-antón",
+     "name": "Antón"
+    },
+    {
+     "id": "pan-adm2-arraiján",
+     "name": "Arraiján"
+    },
+    {
+     "id": "pan-adm2-atalaya",
+     "name": "Atalaya"
+    },
+    {
+     "id": "pan-adm2-balboa",
+     "name": "Balboa"
+    },
+    {
+     "id": "pan-adm2-barú",
+     "name": "Barú"
+    },
+    {
+     "id": "pan-adm2-besiko",
+     "name": "Besiko"
+    },
+    {
+     "id": "pan-adm2-bocas-del-toro",
+     "name": "Bocas del Toro"
+    },
+    {
+     "id": "pan-adm2-boquerón",
+     "name": "Boquerón"
+    },
+    {
+     "id": "pan-adm2-boquete",
+     "name": "Boquete"
+    },
+    {
+     "id": "pan-adm2-bugaba",
+     "name": "Bugaba"
+    },
+    {
+     "id": "pan-adm2-calobre",
+     "name": "Calobre"
+    },
+    {
+     "id": "pan-adm2-capira",
+     "name": "Capira"
+    },
+    {
+     "id": "pan-adm2-cañazas",
+     "name": "Cañazas"
+    },
+    {
+     "id": "pan-adm2-chagres",
+     "name": "Chagres"
+    },
+    {
+     "id": "pan-adm2-chame",
+     "name": "Chame"
+    },
+    {
+     "id": "pan-adm2-changuinola",
+     "name": "Changuinola"
+    },
+    {
+     "id": "pan-adm2-chepigana",
+     "name": "Chepigana"
+    },
+    {
+     "id": "pan-adm2-chepo",
+     "name": "Chepo"
+    },
+    {
+     "id": "pan-adm2-chimán",
+     "name": "Chimán"
+    },
+    {
+     "id": "pan-adm2-chiriquí-grande",
+     "name": "Chiriquí Grande"
+    },
+    {
+     "id": "pan-adm2-chitré",
+     "name": "Chitré"
+    },
+    {
+     "id": "pan-adm2-colón",
+     "name": "Colón"
+    },
+    {
+     "id": "pan-adm2-comarca-kuna-yala",
+     "name": "Comarca Kuna Yala"
+    },
+    {
+     "id": "pan-adm2-cémaco",
+     "name": "Cémaco"
+    },
+    {
+     "id": "pan-adm2-david",
+     "name": "David"
+    },
+    {
+     "id": "pan-adm2-dolega",
+     "name": "Dolega"
+    },
+    {
+     "id": "pan-adm2-donoso",
+     "name": "Donoso"
+    },
+    {
+     "id": "pan-adm2-gualaca",
+     "name": "Gualaca"
+    },
+    {
+     "id": "pan-adm2-guararé",
+     "name": "Guararé"
+    },
+    {
+     "id": "pan-adm2-kankintú",
+     "name": "Kankintú"
+    },
+    {
+     "id": "pan-adm2-kusapín",
+     "name": "Kusapín"
+    },
+    {
+     "id": "pan-adm2-la-chorrera",
+     "name": "La Chorrera"
+    },
+    {
+     "id": "pan-adm2-la-mesa",
+     "name": "La Mesa"
+    },
+    {
+     "id": "pan-adm2-la-pintada",
+     "name": "La Pintada"
+    },
+    {
+     "id": "pan-adm2-las-minas",
+     "name": "Las Minas"
+    },
+    {
+     "id": "pan-adm2-las-palmas",
+     "name": "Las Palmas"
+    },
+    {
+     "id": "pan-adm2-las-tablas",
+     "name": "Las Tablas"
+    },
+    {
+     "id": "pan-adm2-los-pozos",
+     "name": "Los Pozos"
+    },
+    {
+     "id": "pan-adm2-los-santos",
+     "name": "Los Santos"
+    },
+    {
+     "id": "pan-adm2-macaracas",
+     "name": "Macaracas"
+    },
+    {
+     "id": "pan-adm2-mariato",
+     "name": "Mariato"
+    },
+    {
+     "id": "pan-adm2-mironó",
+     "name": "Mironó"
+    },
+    {
+     "id": "pan-adm2-montijo",
+     "name": "Montijo"
+    },
+    {
+     "id": "pan-adm2-müna",
+     "name": "Müna"
+    },
+    {
+     "id": "pan-adm2-natá",
+     "name": "Natá"
+    },
+    {
+     "id": "pan-adm2-nole-duima",
+     "name": "Nole Duima"
+    },
+    {
+     "id": "pan-adm2-ocú",
+     "name": "Ocú"
+    },
+    {
+     "id": "pan-adm2-olá",
+     "name": "Olá"
+    },
+    {
+     "id": "pan-adm2-panamá",
+     "name": "Panamá"
+    },
+    {
+     "id": "pan-adm2-parita",
+     "name": "Parita"
+    },
+    {
+     "id": "pan-adm2-pedasí",
+     "name": "Pedasí"
+    },
+    {
+     "id": "pan-adm2-penonomé",
+     "name": "Penonomé"
+    },
+    {
+     "id": "pan-adm2-pesé",
+     "name": "Pesé"
+    },
+    {
+     "id": "pan-adm2-pinogana",
+     "name": "Pinogana"
+    },
+    {
+     "id": "pan-adm2-pocrí",
+     "name": "Pocrí"
+    },
+    {
+     "id": "pan-adm2-portobelo",
+     "name": "Portobelo"
+    },
+    {
+     "id": "pan-adm2-remedios",
+     "name": "Remedios"
+    },
+    {
+     "id": "pan-adm2-renacimiento",
+     "name": "Renacimiento"
+    },
+    {
+     "id": "pan-adm2-río-de-jesús",
+     "name": "Río de Jesús"
+    },
+    {
+     "id": "pan-adm2-sambú",
+     "name": "Sambú"
+    },
+    {
+     "id": "pan-adm2-san-carlos",
+     "name": "San Carlos"
+    },
+    {
+     "id": "pan-adm2-san-francisco",
+     "name": "San Francisco"
+    },
+    {
+     "id": "pan-adm2-san-félix",
+     "name": "San Félix"
+    },
+    {
+     "id": "pan-adm2-san-lorenzo",
+     "name": "San Lorenzo"
+    },
+    {
+     "id": "pan-adm2-san-miguelito",
+     "name": "San Miguelito"
+    },
+    {
+     "id": "pan-adm2-santa-fé",
+     "name": "Santa Fé"
+    },
+    {
+     "id": "pan-adm2-santa-isabel",
+     "name": "Santa Isabel"
+    },
+    {
+     "id": "pan-adm2-santa-maría",
+     "name": "Santa María"
+    },
+    {
+     "id": "pan-adm2-santiago",
+     "name": "Santiago"
+    },
+    {
+     "id": "pan-adm2-soná",
+     "name": "Soná"
+    },
+    {
+     "id": "pan-adm2-taboga",
+     "name": "Taboga"
+    },
+    {
+     "id": "pan-adm2-tolé",
+     "name": "Tolé"
+    },
+    {
+     "id": "pan-adm2-tonosí",
+     "name": "Tonosí"
+    },
+    {
+     "id": "pan-adm2-ñürüm",
+     "name": "Ñürüm"
+    }
+   ]
+  }
+ },
+ "name": "Panama",
+ "nameBn": "Panama"
+}

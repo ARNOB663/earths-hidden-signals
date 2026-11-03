@@ -11,7 +11,10 @@ export interface GeoLevelSummary {
   /** The level's own name in the source (e.g. "Division", "district", "District"). */
   name: string;
   nameBn: string;
+  /** Units actually listed for this level, from the boundary attribute table. */
   count: number;
+  /** Units geoBoundaries reports for the file; differs from count on a few files (e.g. IND ADM2). */
+  sourceCount?: number;
 }
 
 export interface GeoCountrySummary {
@@ -25,9 +28,22 @@ export interface GeoCountrySummary {
   levels: Partial<Record<AdminLevel, GeoLevelSummary>>;
 }
 
+export interface GeographyCounts {
+  countries: number;
+  /** Countries/territories that publish ADM1 / ADM2, and their total areas. */
+  ADM1: number;
+  ADM2: number;
+  ADM1Areas: number;
+  ADM2Areas: number;
+}
+
 export interface GeographyIndex {
   schema: string;
   release: string;
+  /** Totals recomputed from the loaded boundary files, not hardcoded. */
+  counts?: GeographyCounts;
+  /** ISO codes with some levels but no ADM0 (PRI), so they are not listed as countries. */
+  skipped?: { iso: string; levels: AdminLevel[]; reason: string }[];
   source: {
     name: string;
     url: string;
@@ -117,6 +133,10 @@ export interface AreaCoverage {
 export interface CoverageFile {
   schema: string;
   generatedFrom: { trends: string };
+  /** ISO codes whose boundaries overlap the NASA grids and were measured. */
+  measuredCountries?: string[];
+  /** Extent of the analysis grids in degrees, so the page can say where coverage stops. */
+  gridExtent?: { lon: [number, number]; lat: [number, number] };
   method: string;
   variables: Record<string, CoverageVariable>;
   areas: AreaCoverage[];
@@ -138,7 +158,9 @@ export interface DemoScoresFile {
   scoreField: "probability";
   scoreMeaning: string;
   modelConfidenceMeaning: string;
-  signalBands: { signal: SignalLevel; min: number }[];
+  /** Illustrative demo cuts only; never an official risk scale. Each band is [min, max). */
+  bandMeaning?: string;
+  signalBands: { signal: SignalLevel; min: number; max?: number }[];
   generator: string;
   areas: DemoScore[];
 }

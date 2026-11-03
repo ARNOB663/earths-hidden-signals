@@ -1,0 +1,461 @@
+{
+ "code": "AUT",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Unknown",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2017",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Bundesländer",
+   "code": "ADM1",
+   "count": 9,
+   "name": "Bundesländer",
+   "nameBn": "Bundesländer",
+   "representedYear": "2017",
+   "sourceCount": 9,
+   "units": [
+    {
+     "id": "aut-adm1-burgenland",
+     "name": "Burgenland",
+     "shapeISO": "AT-1"
+    },
+    {
+     "id": "aut-adm1-kärnten",
+     "name": "Kärnten",
+     "shapeISO": "AT-2"
+    },
+    {
+     "id": "aut-adm1-niederösterreich",
+     "name": "Niederösterreich",
+     "shapeISO": "AT-3"
+    },
+    {
+     "id": "aut-adm1-oberösterreich",
+     "name": "Oberösterreich",
+     "shapeISO": "AT-4"
+    },
+    {
+     "id": "aut-adm1-salzburg",
+     "name": "Salzburg",
+     "shapeISO": "AT-5"
+    },
+    {
+     "id": "aut-adm1-steiermark",
+     "name": "Steiermark",
+     "shapeISO": "AT-6"
+    },
+    {
+     "id": "aut-adm1-tirol",
+     "name": "Tirol",
+     "shapeISO": "AT-7"
+    },
+    {
+     "id": "aut-adm1-vorarlberg",
+     "name": "Vorarlberg",
+     "shapeISO": "AT-8"
+    },
+    {
+     "id": "aut-adm1-wien",
+     "name": "Wien",
+     "shapeISO": "AT-9"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Unknown",
+   "code": "ADM2",
+   "count": 94,
+   "name": "ADM2 areas",
+   "nameBn": "ADM2 এলাকা",
+   "representedYear": "2017",
+   "sourceCount": 94,
+   "units": [
+    {
+     "id": "aut-adm2-amstetten",
+     "name": "Amstetten"
+    },
+    {
+     "id": "aut-adm2-baden",
+     "name": "Baden"
+    },
+    {
+     "id": "aut-adm2-bludenz",
+     "name": "Bludenz"
+    },
+    {
+     "id": "aut-adm2-braunau-am-inn",
+     "name": "Braunau am Inn"
+    },
+    {
+     "id": "aut-adm2-bregenz",
+     "name": "Bregenz"
+    },
+    {
+     "id": "aut-adm2-bruck-an-der-leitha",
+     "name": "Bruck an der Leitha"
+    },
+    {
+     "id": "aut-adm2-bruck-mürzzuschlag",
+     "name": "Bruck-Mürzzuschlag"
+    },
+    {
+     "id": "aut-adm2-deutschlandsberg",
+     "name": "Deutschlandsberg"
+    },
+    {
+     "id": "aut-adm2-dornbirn",
+     "name": "Dornbirn"
+    },
+    {
+     "id": "aut-adm2-eferding",
+     "name": "Eferding"
+    },
+    {
+     "id": "aut-adm2-eisenstadt-stadt",
+     "name": "Eisenstadt(Stadt)"
+    },
+    {
+     "id": "aut-adm2-eisenstadt-umgebung",
+     "name": "Eisenstadt-Umgebung"
+    },
+    {
+     "id": "aut-adm2-feldkirch",
+     "name": "Feldkirch"
+    },
+    {
+     "id": "aut-adm2-feldkirchen",
+     "name": "Feldkirchen"
+    },
+    {
+     "id": "aut-adm2-freistadt",
+     "name": "Freistadt"
+    },
+    {
+     "id": "aut-adm2-gmunden",
+     "name": "Gmunden"
+    },
+    {
+     "id": "aut-adm2-gmünd",
+     "name": "Gmünd"
+    },
+    {
+     "id": "aut-adm2-graz-stadt",
+     "name": "Graz(Stadt)"
+    },
+    {
+     "id": "aut-adm2-graz-umgebung",
+     "name": "Graz-Umgebung"
+    },
+    {
+     "id": "aut-adm2-grieskirchen",
+     "name": "Grieskirchen"
+    },
+    {
+     "id": "aut-adm2-gänserndorf",
+     "name": "Gänserndorf"
+    },
+    {
+     "id": "aut-adm2-güssing",
+     "name": "Güssing"
+    },
+    {
+     "id": "aut-adm2-hallein",
+     "name": "Hallein"
+    },
+    {
+     "id": "aut-adm2-hartberg-fürstenfeld",
+     "name": "Hartberg-Fürstenfeld"
+    },
+    {
+     "id": "aut-adm2-hermagor",
+     "name": "Hermagor"
+    },
+    {
+     "id": "aut-adm2-hollabrunn",
+     "name": "Hollabrunn"
+    },
+    {
+     "id": "aut-adm2-horn",
+     "name": "Horn"
+    },
+    {
+     "id": "aut-adm2-imst",
+     "name": "Imst"
+    },
+    {
+     "id": "aut-adm2-innsbruck-land",
+     "name": "Innsbruck-Land"
+    },
+    {
+     "id": "aut-adm2-innsbruck-stadt",
+     "name": "Innsbruck-Stadt"
+    },
+    {
+     "id": "aut-adm2-jennersdorf",
+     "name": "Jennersdorf"
+    },
+    {
+     "id": "aut-adm2-kirchdorf-an-der-krems",
+     "name": "Kirchdorf an der Krems"
+    },
+    {
+     "id": "aut-adm2-kitzbühel",
+     "name": "Kitzbühel"
+    },
+    {
+     "id": "aut-adm2-klagenfurt-land",
+     "name": "Klagenfurt Land"
+    },
+    {
+     "id": "aut-adm2-klagenfurt-stadt",
+     "name": "Klagenfurt(Stadt)"
+    },
+    {
+     "id": "aut-adm2-korneuburg",
+     "name": "Korneuburg"
+    },
+    {
+     "id": "aut-adm2-krems-an-der-donau-stadt",
+     "name": "Krems an der Donau(Stadt)"
+    },
+    {
+     "id": "aut-adm2-krems-land",
+     "name": "Krems(Land)"
+    },
+    {
+     "id": "aut-adm2-kufstein",
+     "name": "Kufstein"
+    },
+    {
+     "id": "aut-adm2-landeck",
+     "name": "Landeck"
+    },
+    {
+     "id": "aut-adm2-leibnitz",
+     "name": "Leibnitz"
+    },
+    {
+     "id": "aut-adm2-leoben",
+     "name": "Leoben"
+    },
+    {
+     "id": "aut-adm2-lienz",
+     "name": "Lienz"
+    },
+    {
+     "id": "aut-adm2-liezen",
+     "name": "Liezen"
+    },
+    {
+     "id": "aut-adm2-lilienfeld",
+     "name": "Lilienfeld"
+    },
+    {
+     "id": "aut-adm2-linz-stadt",
+     "name": "Linz(Stadt)"
+    },
+    {
+     "id": "aut-adm2-linz-land",
+     "name": "Linz-Land"
+    },
+    {
+     "id": "aut-adm2-mattersburg",
+     "name": "Mattersburg"
+    },
+    {
+     "id": "aut-adm2-melk",
+     "name": "Melk"
+    },
+    {
+     "id": "aut-adm2-mistelbach",
+     "name": "Mistelbach"
+    },
+    {
+     "id": "aut-adm2-murau",
+     "name": "Murau"
+    },
+    {
+     "id": "aut-adm2-murtal",
+     "name": "Murtal"
+    },
+    {
+     "id": "aut-adm2-mödling",
+     "name": "Mödling"
+    },
+    {
+     "id": "aut-adm2-neunkirchen",
+     "name": "Neunkirchen"
+    },
+    {
+     "id": "aut-adm2-neusiedl-am-see",
+     "name": "Neusiedl am See"
+    },
+    {
+     "id": "aut-adm2-oberpullendorf",
+     "name": "Oberpullendorf"
+    },
+    {
+     "id": "aut-adm2-oberwart",
+     "name": "Oberwart"
+    },
+    {
+     "id": "aut-adm2-perg",
+     "name": "Perg"
+    },
+    {
+     "id": "aut-adm2-reutte",
+     "name": "Reutte"
+    },
+    {
+     "id": "aut-adm2-ried-im-innkreis",
+     "name": "Ried im Innkreis"
+    },
+    {
+     "id": "aut-adm2-rohrbach",
+     "name": "Rohrbach"
+    },
+    {
+     "id": "aut-adm2-rust-stadt",
+     "name": "Rust(Stadt)"
+    },
+    {
+     "id": "aut-adm2-salzburg-stadt",
+     "name": "Salzburg(Stadt)"
+    },
+    {
+     "id": "aut-adm2-salzburg-umgebung",
+     "name": "Salzburg-Umgebung"
+    },
+    {
+     "id": "aut-adm2-sankt-johann-im-pongau",
+     "name": "Sankt Johann im Pongau"
+    },
+    {
+     "id": "aut-adm2-sankt-pölten-land",
+     "name": "Sankt Pölten(Land)"
+    },
+    {
+     "id": "aut-adm2-sankt-pölten-stadt",
+     "name": "Sankt Pölten(Stadt)"
+    },
+    {
+     "id": "aut-adm2-sankt-veit-an-der-glan",
+     "name": "Sankt Veit an der Glan"
+    },
+    {
+     "id": "aut-adm2-scheibbs",
+     "name": "Scheibbs"
+    },
+    {
+     "id": "aut-adm2-schwaz",
+     "name": "Schwaz"
+    },
+    {
+     "id": "aut-adm2-schärding",
+     "name": "Schärding"
+    },
+    {
+     "id": "aut-adm2-spittal-an-der-drau",
+     "name": "Spittal an der Drau"
+    },
+    {
+     "id": "aut-adm2-steyr-stadt",
+     "name": "Steyr(Stadt)"
+    },
+    {
+     "id": "aut-adm2-steyr-land",
+     "name": "Steyr-Land"
+    },
+    {
+     "id": "aut-adm2-südoststeiermark",
+     "name": "Südoststeiermark"
+    },
+    {
+     "id": "aut-adm2-tamsweg",
+     "name": "Tamsweg"
+    },
+    {
+     "id": "aut-adm2-tulln",
+     "name": "Tulln"
+    },
+    {
+     "id": "aut-adm2-urfahr-umgebung",
+     "name": "Urfahr-Umgebung"
+    },
+    {
+     "id": "aut-adm2-villach-land",
+     "name": "Villach Land"
+    },
+    {
+     "id": "aut-adm2-villach-stadt",
+     "name": "Villach(Stadt)"
+    },
+    {
+     "id": "aut-adm2-voitsberg",
+     "name": "Voitsberg"
+    },
+    {
+     "id": "aut-adm2-vöcklabruck",
+     "name": "Vöcklabruck"
+    },
+    {
+     "id": "aut-adm2-völkermarkt",
+     "name": "Völkermarkt"
+    },
+    {
+     "id": "aut-adm2-waidhofen-an-der-thaya",
+     "name": "Waidhofen an der Thaya"
+    },
+    {
+     "id": "aut-adm2-waidhofen-an-der-ybbs-stadt",
+     "name": "Waidhofen an der Ybbs(Stadt)"
+    },
+    {
+     "id": "aut-adm2-weiz",
+     "name": "Weiz"
+    },
+    {
+     "id": "aut-adm2-wels-stadt",
+     "name": "Wels(Stadt)"
+    },
+    {
+     "id": "aut-adm2-wels-land",
+     "name": "Wels-Land"
+    },
+    {
+     "id": "aut-adm2-wien-stadt",
+     "name": "Wien(Stadt)"
+    },
+    {
+     "id": "aut-adm2-wiener-neustadt-land",
+     "name": "Wiener Neustadt(Land)"
+    },
+    {
+     "id": "aut-adm2-wiener-neustadt-stadt",
+     "name": "Wiener Neustadt(Stadt)"
+    },
+    {
+     "id": "aut-adm2-wolfsberg",
+     "name": "Wolfsberg"
+    },
+    {
+     "id": "aut-adm2-zell-am-see",
+     "name": "Zell am See"
+    },
+    {
+     "id": "aut-adm2-zwettl",
+     "name": "Zwettl"
+    }
+   ]
+  }
+ },
+ "name": "Austria",
+ "nameBn": "Austria"
+}

@@ -1,0 +1,330 @@
+{
+ "code": "VUT",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Unknown",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2017",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Unknown",
+   "code": "ADM1",
+   "count": 6,
+   "name": "ADM1 areas",
+   "nameBn": "ADM1 এলাকা",
+   "representedYear": "2017",
+   "sourceCount": 6,
+   "units": [
+    {
+     "id": "vut-adm1-malampa",
+     "name": "Malampa",
+     "shapeISO": "VU-MAP"
+    },
+    {
+     "id": "vut-adm1-penama",
+     "name": "Penama",
+     "shapeISO": "VU-PAM"
+    },
+    {
+     "id": "vut-adm1-sanma",
+     "name": "Sanma",
+     "shapeISO": "VU-SAM"
+    },
+    {
+     "id": "vut-adm1-shefa-province",
+     "name": "Shefa Province",
+     "shapeISO": "VU-SEE"
+    },
+    {
+     "id": "vut-adm1-tafea",
+     "name": "Tafea",
+     "shapeISO": "VU-TAE"
+    },
+    {
+     "id": "vut-adm1-torba",
+     "name": "Torba",
+     "shapeISO": "VU-TOB"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Municipalities",
+   "code": "ADM2",
+   "count": 65,
+   "name": "ADM2 areas",
+   "nameBn": "ADM2 এলাকা",
+   "representedYear": "2019",
+   "sourceCount": 65,
+   "units": [
+    {
+     "id": "vut-adm2-aneityum",
+     "name": "Aneityum"
+    },
+    {
+     "id": "vut-adm2-aniwa",
+     "name": "Aniwa"
+    },
+    {
+     "id": "vut-adm2-canal-fanafo",
+     "name": "Canal - Fanafo"
+    },
+    {
+     "id": "vut-adm2-central-malekula",
+     "name": "Central Malekula"
+    },
+    {
+     "id": "vut-adm2-central-pentecost-1",
+     "name": "Central Pentecost 1"
+    },
+    {
+     "id": "vut-adm2-central-pentecost-2",
+     "name": "Central Pentecost 2"
+    },
+    {
+     "id": "vut-adm2-east-ambae",
+     "name": "East Ambae"
+    },
+    {
+     "id": "vut-adm2-east-malo",
+     "name": "East Malo"
+    },
+    {
+     "id": "vut-adm2-east-santo",
+     "name": "East Santo"
+    },
+    {
+     "id": "vut-adm2-emau",
+     "name": "Emau"
+    },
+    {
+     "id": "vut-adm2-erakor",
+     "name": "Erakor"
+    },
+    {
+     "id": "vut-adm2-eratap",
+     "name": "Eratap"
+    },
+    {
+     "id": "vut-adm2-eton",
+     "name": "Eton"
+    },
+    {
+     "id": "vut-adm2-futuna",
+     "name": "Futuna"
+    },
+    {
+     "id": "vut-adm2-gaua",
+     "name": "Gaua"
+    },
+    {
+     "id": "vut-adm2-ifira",
+     "name": "Ifira"
+    },
+    {
+     "id": "vut-adm2-luganville",
+     "name": "Luganville"
+    },
+    {
+     "id": "vut-adm2-makimae",
+     "name": "Makimae"
+    },
+    {
+     "id": "vut-adm2-malorua",
+     "name": "Malorua"
+    },
+    {
+     "id": "vut-adm2-mele",
+     "name": "Mele"
+    },
+    {
+     "id": "vut-adm2-merelava",
+     "name": "Merelava"
+    },
+    {
+     "id": "vut-adm2-middle-bush-tanna",
+     "name": "Middle Bush Tanna"
+    },
+    {
+     "id": "vut-adm2-mota",
+     "name": "Mota"
+    },
+    {
+     "id": "vut-adm2-motalava",
+     "name": "Motalava"
+    },
+    {
+     "id": "vut-adm2-nguna",
+     "name": "Nguna"
+    },
+    {
+     "id": "vut-adm2-north-ambae",
+     "name": "North Ambae"
+    },
+    {
+     "id": "vut-adm2-north-ambrym",
+     "name": "North Ambrym"
+    },
+    {
+     "id": "vut-adm2-north-east-malekula",
+     "name": "North East Malekula"
+    },
+    {
+     "id": "vut-adm2-north-efate",
+     "name": "North Efate"
+    },
+    {
+     "id": "vut-adm2-north-erromango",
+     "name": "North Erromango"
+    },
+    {
+     "id": "vut-adm2-north-maewo",
+     "name": "North Maewo"
+    },
+    {
+     "id": "vut-adm2-north-pentecost",
+     "name": "North Pentecost"
+    },
+    {
+     "id": "vut-adm2-north-santo",
+     "name": "North Santo"
+    },
+    {
+     "id": "vut-adm2-north-tanna",
+     "name": "North Tanna"
+    },
+    {
+     "id": "vut-adm2-north-tongoa",
+     "name": "North Tongoa"
+    },
+    {
+     "id": "vut-adm2-north-west-malekula",
+     "name": "North West Malekula"
+    },
+    {
+     "id": "vut-adm2-north-west-santo",
+     "name": "North West Santo"
+    },
+    {
+     "id": "vut-adm2-paama",
+     "name": "Paama"
+    },
+    {
+     "id": "vut-adm2-pango",
+     "name": "Pango"
+    },
+    {
+     "id": "vut-adm2-port-vila",
+     "name": "Port Vila"
+    },
+    {
+     "id": "vut-adm2-south-ambae",
+     "name": "South Ambae"
+    },
+    {
+     "id": "vut-adm2-south-east-ambrym",
+     "name": "South East Ambrym"
+    },
+    {
+     "id": "vut-adm2-south-east-malekula",
+     "name": "South East Malekula"
+    },
+    {
+     "id": "vut-adm2-south-east-santo",
+     "name": "South East Santo"
+    },
+    {
+     "id": "vut-adm2-south-epi",
+     "name": "South Epi"
+    },
+    {
+     "id": "vut-adm2-south-erromango",
+     "name": "South Erromango"
+    },
+    {
+     "id": "vut-adm2-south-maewo",
+     "name": "South Maewo"
+    },
+    {
+     "id": "vut-adm2-south-malekula",
+     "name": "South Malekula"
+    },
+    {
+     "id": "vut-adm2-south-pentecost",
+     "name": "South Pentecost"
+    },
+    {
+     "id": "vut-adm2-south-santo",
+     "name": "South Santo"
+    },
+    {
+     "id": "vut-adm2-south-tanna",
+     "name": "South Tanna"
+    },
+    {
+     "id": "vut-adm2-south-west-malekula",
+     "name": "South West Malekula"
+    },
+    {
+     "id": "vut-adm2-south-west-tanna",
+     "name": "South West Tanna"
+    },
+    {
+     "id": "vut-adm2-tongariki",
+     "name": "Tongariki"
+    },
+    {
+     "id": "vut-adm2-ureparapara",
+     "name": "Ureparapara"
+    },
+    {
+     "id": "vut-adm2-vanua-lava",
+     "name": "Vanua Lava"
+    },
+    {
+     "id": "vut-adm2-varisu",
+     "name": "Varisu"
+    },
+    {
+     "id": "vut-adm2-vermali",
+     "name": "Vermali"
+    },
+    {
+     "id": "vut-adm2-vermaul",
+     "name": "Vermaul"
+    },
+    {
+     "id": "vut-adm2-west-ambae",
+     "name": "West Ambae"
+    },
+    {
+     "id": "vut-adm2-west-ambrym",
+     "name": "West Ambrym"
+    },
+    {
+     "id": "vut-adm2-west-malo",
+     "name": "West Malo"
+    },
+    {
+     "id": "vut-adm2-west-santo",
+     "name": "West Santo"
+    },
+    {
+     "id": "vut-adm2-west-tanna",
+     "name": "West Tanna"
+    },
+    {
+     "id": "vut-adm2-whitesands",
+     "name": "Whitesands"
+    }
+   ]
+  }
+ },
+ "name": "Vanuatu",
+ "nameBn": "Vanuatu"
+}

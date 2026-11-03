@@ -1,0 +1,396 @@
+{
+ "code": "QAT",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Qatar",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2017",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Unknown",
+   "code": "ADM1",
+   "count": 8,
+   "name": "ADM1 areas",
+   "nameBn": "ADM1 এলাকা",
+   "representedYear": "2015",
+   "sourceCount": 8,
+   "units": [
+    {
+     "id": "qat-adm1-al-daayen",
+     "name": "Al Daayen",
+     "shapeISO": "QA-ZA"
+    },
+    {
+     "id": "qat-adm1-al-khor-and-al-thakhira",
+     "name": "Al Khor and Al Thakhira",
+     "shapeISO": "QA-KH"
+    },
+    {
+     "id": "qat-adm1-al-rayyan",
+     "name": "Al Rayyan",
+     "shapeISO": "QA-RA"
+    },
+    {
+     "id": "qat-adm1-al-shamal",
+     "name": "Al Shamal",
+     "shapeISO": "QA-MS"
+    },
+    {
+     "id": "qat-adm1-al-sheehaniya",
+     "name": "Al Sheehaniya",
+     "shapeISO": "QA-SH"
+    },
+    {
+     "id": "qat-adm1-al-wakra",
+     "name": "Al Wakra",
+     "shapeISO": "QA-WA"
+    },
+    {
+     "id": "qat-adm1-doha",
+     "name": "Doha",
+     "shapeISO": "QA-DA"
+    },
+    {
+     "id": "qat-adm1-umm-slal",
+     "name": "Umm Slal",
+     "shapeISO": "QA-US"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Unknown",
+   "code": "ADM2",
+   "count": 79,
+   "name": "ADM2 areas",
+   "nameBn": "ADM2 এলাকা",
+   "representedYear": "2015",
+   "sourceCount": 79,
+   "units": [
+    {
+     "id": "qat-adm2-13",
+     "name": "13"
+    },
+    {
+     "id": "qat-adm2-14",
+     "name": "14"
+    },
+    {
+     "id": "qat-adm2-15",
+     "name": "15"
+    },
+    {
+     "id": "qat-adm2-18-19",
+     "name": "18-19"
+    },
+    {
+     "id": "qat-adm2-20",
+     "name": "20"
+    },
+    {
+     "id": "qat-adm2-21",
+     "name": "21"
+    },
+    {
+     "id": "qat-adm2-22",
+     "name": "22"
+    },
+    {
+     "id": "qat-adm2-23",
+     "name": "23"
+    },
+    {
+     "id": "qat-adm2-24",
+     "name": "24"
+    },
+    {
+     "id": "qat-adm2-25",
+     "name": "25"
+    },
+    {
+     "id": "qat-adm2-26",
+     "name": "26"
+    },
+    {
+     "id": "qat-adm2-27",
+     "name": "27"
+    },
+    {
+     "id": "qat-adm2-28",
+     "name": "28"
+    },
+    {
+     "id": "qat-adm2-30",
+     "name": "30"
+    },
+    {
+     "id": "qat-adm2-31",
+     "name": "31"
+    },
+    {
+     "id": "qat-adm2-32",
+     "name": "32"
+    },
+    {
+     "id": "qat-adm2-33",
+     "name": "33"
+    },
+    {
+     "id": "qat-adm2-34",
+     "name": "34"
+    },
+    {
+     "id": "qat-adm2-35",
+     "name": "35"
+    },
+    {
+     "id": "qat-adm2-36",
+     "name": "36"
+    },
+    {
+     "id": "qat-adm2-37",
+     "name": "37"
+    },
+    {
+     "id": "qat-adm2-38",
+     "name": "38"
+    },
+    {
+     "id": "qat-adm2-39",
+     "name": "39"
+    },
+    {
+     "id": "qat-adm2-4",
+     "name": "4"
+    },
+    {
+     "id": "qat-adm2-40",
+     "name": "40"
+    },
+    {
+     "id": "qat-adm2-41",
+     "name": "41"
+    },
+    {
+     "id": "qat-adm2-42",
+     "name": "42"
+    },
+    {
+     "id": "qat-adm2-43",
+     "name": "43"
+    },
+    {
+     "id": "qat-adm2-44",
+     "name": "44"
+    },
+    {
+     "id": "qat-adm2-45",
+     "name": "45"
+    },
+    {
+     "id": "qat-adm2-46",
+     "name": "46"
+    },
+    {
+     "id": "qat-adm2-47",
+     "name": "47"
+    },
+    {
+     "id": "qat-adm2-48",
+     "name": "48"
+    },
+    {
+     "id": "qat-adm2-49",
+     "name": "49"
+    },
+    {
+     "id": "qat-adm2-50",
+     "name": "50"
+    },
+    {
+     "id": "qat-adm2-51",
+     "name": "51"
+    },
+    {
+     "id": "qat-adm2-52",
+     "name": "52"
+    },
+    {
+     "id": "qat-adm2-53",
+     "name": "53"
+    },
+    {
+     "id": "qat-adm2-54",
+     "name": "54"
+    },
+    {
+     "id": "qat-adm2-55",
+     "name": "55"
+    },
+    {
+     "id": "qat-adm2-56",
+     "name": "56"
+    },
+    {
+     "id": "qat-adm2-57",
+     "name": "57"
+    },
+    {
+     "id": "qat-adm2-58",
+     "name": "58"
+    },
+    {
+     "id": "qat-adm2-6",
+     "name": "6"
+    },
+    {
+     "id": "qat-adm2-61",
+     "name": "61"
+    },
+    {
+     "id": "qat-adm2-63",
+     "name": "63"
+    },
+    {
+     "id": "qat-adm2-64",
+     "name": "64"
+    },
+    {
+     "id": "qat-adm2-65",
+     "name": "65"
+    },
+    {
+     "id": "qat-adm2-66",
+     "name": "66"
+    },
+    {
+     "id": "qat-adm2-67",
+     "name": "67"
+    },
+    {
+     "id": "qat-adm2-68",
+     "name": "68"
+    },
+    {
+     "id": "qat-adm2-69",
+     "name": "69"
+    },
+    {
+     "id": "qat-adm2-7",
+     "name": "7"
+    },
+    {
+     "id": "qat-adm2-70",
+     "name": "70"
+    },
+    {
+     "id": "qat-adm2-71",
+     "name": "71"
+    },
+    {
+     "id": "qat-adm2-72",
+     "name": "72"
+    },
+    {
+     "id": "qat-adm2-73",
+     "name": "73"
+    },
+    {
+     "id": "qat-adm2-74",
+     "name": "74"
+    },
+    {
+     "id": "qat-adm2-75",
+     "name": "75"
+    },
+    {
+     "id": "qat-adm2-76",
+     "name": "76"
+    },
+    {
+     "id": "qat-adm2-77",
+     "name": "77"
+    },
+    {
+     "id": "qat-adm2-78",
+     "name": "78"
+    },
+    {
+     "id": "qat-adm2-79",
+     "name": "79"
+    },
+    {
+     "id": "qat-adm2-80",
+     "name": "80"
+    },
+    {
+     "id": "qat-adm2-81",
+     "name": "81"
+    },
+    {
+     "id": "qat-adm2-82",
+     "name": "82"
+    },
+    {
+     "id": "qat-adm2-83",
+     "name": "83"
+    },
+    {
+     "id": "qat-adm2-84",
+     "name": "84"
+    },
+    {
+     "id": "qat-adm2-85",
+     "name": "85"
+    },
+    {
+     "id": "qat-adm2-86",
+     "name": "86"
+    },
+    {
+     "id": "qat-adm2-90",
+     "name": "90"
+    },
+    {
+     "id": "qat-adm2-91",
+     "name": "91"
+    },
+    {
+     "id": "qat-adm2-92",
+     "name": "92"
+    },
+    {
+     "id": "qat-adm2-93",
+     "name": "93"
+    },
+    {
+     "id": "qat-adm2-94",
+     "name": "94"
+    },
+    {
+     "id": "qat-adm2-95",
+     "name": "95"
+    },
+    {
+     "id": "qat-adm2-96",
+     "name": "96"
+    },
+    {
+     "id": "qat-adm2-97",
+     "name": "97"
+    },
+    {
+     "id": "qat-adm2-98",
+     "name": "98"
+    }
+   ]
+  }
+ },
+ "name": "Qatar",
+ "nameBn": "Qatar"
+}

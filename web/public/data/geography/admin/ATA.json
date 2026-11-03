@@ -1,0 +1,18 @@
+{
+ "code": "ATA",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Unknown",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2020",
+   "sourceCount": 1,
+   "units": []
+  }
+ },
+ "name": "Antartica",
+ "nameBn": "Antartica"
+}

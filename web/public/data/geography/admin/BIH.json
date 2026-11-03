@@ -1,0 +1,103 @@
+{
+ "code": "BIH",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "gbOpen",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2013",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "gbOpen",
+   "code": "ADM1",
+   "count": 3,
+   "name": "ADM1 areas",
+   "nameBn": "ADM1 এলাকা",
+   "representedYear": "2013",
+   "sourceCount": 3,
+   "units": [
+    {
+     "id": "bih-adm1-brčko-district",
+     "name": "Brčko District",
+     "shapeISO": "BA-BRC*"
+    },
+    {
+     "id": "bih-adm1-federation-of-bosnia-and-herzegovina",
+     "name": "Federation of Bosnia and Herzegovina",
+     "shapeISO": "BA-BIH*"
+    },
+    {
+     "id": "bih-adm1-republika-srpska",
+     "name": "Republika Srpska",
+     "shapeISO": "BA-SRP*"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "gbOpen",
+   "code": "ADM2",
+   "count": 12,
+   "name": "ADM2 areas",
+   "nameBn": "ADM2 এলাকা",
+   "representedYear": "2013",
+   "sourceCount": 12,
+   "units": [
+    {
+     "id": "bih-adm2-bosnian-podrinje-canton-goražde",
+     "name": "Bosnian-Podrinje Canton Goražde"
+    },
+    {
+     "id": "bih-adm2-brcko-district",
+     "name": "Brcko District"
+    },
+    {
+     "id": "bih-adm2-canton-10",
+     "name": "Canton 10"
+    },
+    {
+     "id": "bih-adm2-central-bosnia-canton",
+     "name": "Central Bosnia Canton"
+    },
+    {
+     "id": "bih-adm2-herzegovina-neretva-canton",
+     "name": "Herzegovina-Neretva Canton"
+    },
+    {
+     "id": "bih-adm2-posavina-canton",
+     "name": "Posavina Canton"
+    },
+    {
+     "id": "bih-adm2-republika-srpska",
+     "name": "Republika Srpska"
+    },
+    {
+     "id": "bih-adm2-sarajevo-canton",
+     "name": "Sarajevo Canton"
+    },
+    {
+     "id": "bih-adm2-tuzla-canton",
+     "name": "Tuzla Canton"
+    },
+    {
+     "id": "bih-adm2-una-sana-canton",
+     "name": "Una-Sana Canton"
+    },
+    {
+     "id": "bih-adm2-west-herzegovina-canton",
+     "name": "West Herzegovina Canton"
+    },
+    {
+     "id": "bih-adm2-zenica-doboj-canton",
+     "name": "Zenica-Doboj Canton"
+    }
+   ]
+  }
+ },
+ "name": "Bosnia and Herzegovina",
+ "nameBn": "Bosnia and Herzegovina"
+}

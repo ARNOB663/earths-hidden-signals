@@ -1,0 +1,9770 @@
+{
+ "code": "CHN",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "People's Republic of China",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2019",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "People’s Republic of China",
+   "code": "ADM1",
+   "count": 34,
+   "name": "ADM1 areas",
+   "nameBn": "ADM1 এলাকা",
+   "representedYear": "2019",
+   "sourceCount": 34,
+   "units": [
+    {
+     "id": "chn-adm1-anhui-province",
+     "name": "Anhui Province",
+     "shapeISO": "CHN"
+    },
+    {
+     "id": "chn-adm1-beijing-municipality",
+     "name": "Beijing Municipality",
+     "shapeISO": "CHN"
+    },
+    {
+     "id": "chn-adm1-chongqing-municipality",
+     "name": "Chongqing Municipality",
+     "shapeISO": "CHN"
+    },
+    {
+     "id": "chn-adm1-fujian-province",
+     "name": "Fujian Province",
+     "shapeISO": "CHN"
+    },
+    {
+     "id": "chn-adm1-gansu-province",
+     "name": "Gansu Province",
+     "shapeISO": "CHN"
+    },
+    {
+     "id": "chn-adm1-guangxi-zhuang-autonomous-region",
+     "name": "Guangxi Zhuang Autonomous Region",
+     "shapeISO": "CHN"
+    },
+    {
+     "id": "chn-adm1-guangzhou-province",
+     "name": "Guangzhou Province",
+     "shapeISO": "CHN"
+    },
+    {
+     "id": "chn-adm1-guizhou-province",
+     "name": "Guizhou Province",
+     "shapeISO": "CHN"
+    },
+    {
+     "id": "chn-adm1-hainan-province",
+     "name": "Hainan Province",
+     "shapeISO": "CHN"
+    },
+    {
+     "id": "chn-adm1-hebei-province",
+     "name": "Hebei Province",
+     "shapeISO": "CHN"
+    },
+    {
+     "id": "chn-adm1-heilongjiang-province",
+     "name": "Heilongjiang Province",
+     "shapeISO": "CHN"
+    },
+    {
+     "id": "chn-adm1-henan-province",
+     "name": "Henan Province",
+     "shapeISO": "CHN"
+    },
+    {
+     "id": "chn-adm1-hong-kong-special-administrative-region",
+     "name": "Hong Kong Special Administrative Region",
+     "shapeISO": "CHN"
+    },
+    {
+     "id": "chn-adm1-hubei-province",
+     "name": "Hubei Province",
+     "shapeISO": "CHN"
+    },
+    {
+     "id": "chn-adm1-hunan-province",
+     "name": "Hunan Province",
+     "shapeISO": "CHN"
+    },
+    {
+     "id": "chn-adm1-inner-mongolia-autonomous-region",
+     "name": "Inner Mongolia Autonomous Region",
+     "shapeISO": "CHN"
+    },
+    {
+     "id": "chn-adm1-jiangsu-province",
+     "name": "Jiangsu Province",
+     "shapeISO": "CHN"
+    },
+    {
+     "id": "chn-adm1-jiangxi-province",
+     "name": "Jiangxi Province",
+     "shapeISO": "CHN"
+    },
+    {
+     "id": "chn-adm1-jilin-province",
+     "name": "Jilin Province",
+     "shapeISO": "CHN"
+    },
+    {
+     "id": "chn-adm1-liaoning-province",
+     "name": "Liaoning Province",
+     "shapeISO": "CHN"
+    },
+    {
+     "id": "chn-adm1-macau-special-administrative-region",
+     "name": "Macau Special Administrative Region",
+     "shapeISO": "CHN"
+    },
+    {
+     "id": "chn-adm1-ningxia-ningxia-hui-autonomous-region",
+     "name": "Ningxia Ningxia Hui Autonomous Region",
+     "shapeISO": "CHN"
+    },
+    {
+     "id": "chn-adm1-qinghai-province",
+     "name": "Qinghai Province",
+     "shapeISO": "CHN"
+    },
+    {
+     "id": "chn-adm1-shaanxi-province",
+     "name": "Shaanxi Province",
+     "shapeISO": "CHN"
+    },
+    {
+     "id": "chn-adm1-shandong-province",
+     "name": "Shandong Province",
+     "shapeISO": "CHN"
+    },
+    {
+     "id": "chn-adm1-shanghai-municipality",
+     "name": "Shanghai Municipality",
+     "shapeISO": "CHN"
+    },
+    {
+     "id": "chn-adm1-shanxi-province",
+     "name": "Shanxi Province",
+     "shapeISO": "CHN"
+    },
+    {
+     "id": "chn-adm1-sichuan-province",
+     "name": "Sichuan Province",
+     "shapeISO": "CHN"
+    },
+    {
+     "id": "chn-adm1-taiwan-province",
+     "name": "Taiwan Province",
+     "shapeISO": "CHN"
+    },
+    {
+     "id": "chn-adm1-tianjin-municipality",
+     "name": "Tianjin Municipality",
+     "shapeISO": "CHN"
+    },
+    {
+     "id": "chn-adm1-tibet-autonomous-region",
+     "name": "Tibet Autonomous Region",
+     "shapeISO": "CHN"
+    },
+    {
+     "id": "chn-adm1-xinjiang-uyghur-autonomous-region",
+     "name": "Xinjiang Uyghur Autonomous Region",
+     "shapeISO": "CHN"
+    },
+    {
+     "id": "chn-adm1-yunnan-province",
+     "name": "Yunnan Province",
+     "shapeISO": "CHN"
+    },
+    {
+     "id": "chn-adm1-zhejiang-province",
+     "name": "Zhejiang Province",
+     "shapeISO": "CHN"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "County Level",
+   "code": "ADM2",
+   "count": 2390,
+   "name": "County Level",
+   "nameBn": "County Level",
+   "representedYear": "2017",
+   "sourceCount": 2391,
+   "units": [
+    {
+     "id": "chn-adm2-abagaqi",
+     "name": "Abagaqi"
+    },
+    {
+     "id": "chn-adm2-abaxian",
+     "name": "Abaxian"
+    },
+    {
+     "id": "chn-adm2-achengshi",
+     "name": "Achengshi"
+    },
+    {
+     "id": "chn-adm2-aheqixian",
+     "name": "Aheqixian"
+    },
+    {
+     "id": "chn-adm2-akesaihashakezuzizhixian",
+     "name": "Akesaihashakezuzizhixian"
+    },
+    {
+     "id": "chn-adm2-akeshushi",
+     "name": "Akeshushi"
+    },
+    {
+     "id": "chn-adm2-alashanyouqi",
+     "name": "Alashanyouqi"
+    },
+    {
+     "id": "chn-adm2-alashanzuoqi",
+     "name": "Alashanzuoqi"
+    },
+    {
+     "id": "chn-adm2-aletaishi",
+     "name": "Aletaishi"
+    },
+    {
+     "id": "chn-adm2-alukeerqinqi",
+     "name": "Alukeerqinqi"
+    },
+    {
+     "id": "chn-adm2-andashi",
+     "name": "Andashi"
+    },
+    {
+     "id": "chn-adm2-anduoxian",
+     "name": "Anduoxian"
+    },
+    {
+     "id": "chn-adm2-anfuxian",
+     "name": "Anfuxian"
+    },
+    {
+     "id": "chn-adm2-angrenxian",
+     "name": "Angrenxian"
+    },
+    {
+     "id": "chn-adm2-anguoshi",
+     "name": "Anguoshi"
+    },
+    {
+     "id": "chn-adm2-anhuaxian",
+     "name": "Anhuaxian"
+    },
+    {
+     "id": "chn-adm2-anjixian",
+     "name": "Anjixian"
+    },
+    {
+     "id": "chn-adm2-ankangshi",
+     "name": "Ankangshi"
+    },
+    {
+     "id": "chn-adm2-anketaoxian",
+     "name": "Anketaoxian"
+    },
+    {
+     "id": "chn-adm2-anlongxian",
+     "name": "Anlongxian"
+    },
+    {
+     "id": "chn-adm2-anlushi",
+     "name": "Anlushi"
+    },
+    {
+     "id": "chn-adm2-anningxian",
+     "name": "Anningxian"
+    },
+    {
+     "id": "chn-adm2-anpingxian",
+     "name": "Anpingxian"
+    },
+    {
+     "id": "chn-adm2-anqingshi",
+     "name": "Anqingshi"
+    },
+    {
+     "id": "chn-adm2-anqiushi",
+     "name": "Anqiushi"
+    },
+    {
+     "id": "chn-adm2-anrenxian",
+     "name": "Anrenxian"
+    },
+    {
+     "id": "chn-adm2-ansaixian",
+     "name": "Ansaixian"
+    },
+    {
+     "id": "chn-adm2-anshanshi",
+     "name": "Anshanshi"
+    },
+    {
+     "id": "chn-adm2-anshunxian",
+     "name": "Anshunxian"
+    },
+    {
+     "id": "chn-adm2-antuxian",
+     "name": "Antuxian"
+    },
+    {
+     "id": "chn-adm2-anxian",
+     "name": "Anxian"
+    },
+    {
+     "id": "chn-adm2-anxiangxian",
+     "name": "Anxiangxian"
+    },
+    {
+     "id": "chn-adm2-anxinxian",
+     "name": "Anxinxian"
+    },
+    {
+     "id": "chn-adm2-anxixian",
+     "name": "Anxixian"
+    },
+    {
+     "id": "chn-adm2-anxixian-2",
+     "name": "Anxixian"
+    },
+    {
+     "id": "chn-adm2-anyangshi",
+     "name": "Anyangshi"
+    },
+    {
+     "id": "chn-adm2-anyangxian",
+     "name": "Anyangxian"
+    },
+    {
+     "id": "chn-adm2-anyangxian-2",
+     "name": "Anyangxian"
+    },
+    {
+     "id": "chn-adm2-anyixian",
+     "name": "Anyixian"
+    },
+    {
+     "id": "chn-adm2-anyuanxian",
+     "name": "Anyuanxian"
+    },
+    {
+     "id": "chn-adm2-anyuexian",
+     "name": "Anyuexian"
+    },
+    {
+     "id": "chn-adm2-anzhexian",
+     "name": "Anzhexian"
+    },
+    {
+     "id": "chn-adm2-aohanqi",
+     "name": "Aohanqi"
+    },
+    {
+     "id": "chn-adm2-arongqi",
+     "name": "Arongqi"
+    },
+    {
+     "id": "chn-adm2-atushenshi",
+     "name": "Atushenshi"
+    },
+    {
+     "id": "chn-adm2-awatixian",
+     "name": "Awatixian"
+    },
+    {
+     "id": "chn-adm2-bachuxian",
+     "name": "Bachuxian"
+    },
+    {
+     "id": "chn-adm2-badongxian",
+     "name": "Badongxian"
+    },
+    {
+     "id": "chn-adm2-baichengshi",
+     "name": "Baichengshi"
+    },
+    {
+     "id": "chn-adm2-baichengxian",
+     "name": "Baichengxian"
+    },
+    {
+     "id": "chn-adm2-baihexian",
+     "name": "Baihexian"
+    },
+    {
+     "id": "chn-adm2-bailangxian",
+     "name": "Bailangxian"
+    },
+    {
+     "id": "chn-adm2-baiquanxian",
+     "name": "Baiquanxian"
+    },
+    {
+     "id": "chn-adm2-baiseshi",
+     "name": "Baiseshi"
+    },
+    {
+     "id": "chn-adm2-baishalizuzizhixian",
+     "name": "Baishalizuzizhixian"
+    },
+    {
+     "id": "chn-adm2-baishuixian",
+     "name": "Baishuixian"
+    },
+    {
+     "id": "chn-adm2-baiyinshi",
+     "name": "Baiyinshi"
+    },
+    {
+     "id": "chn-adm2-baiyuxian",
+     "name": "Baiyuxian"
+    },
+    {
+     "id": "chn-adm2-balikunhashakezizhixian",
+     "name": "Balikunhashakezizhixian"
+    },
+    {
+     "id": "chn-adm2-balinyouqi",
+     "name": "Balinyouqi"
+    },
+    {
+     "id": "chn-adm2-balinzuoqi",
+     "name": "Balinzuoqi"
+    },
+    {
+     "id": "chn-adm2-bamayaozuzizhixian",
+     "name": "Bamayaozuzizhixian"
+    },
+    {
+     "id": "chn-adm2-bangbushi",
+     "name": "Bangbushi"
+    },
+    {
+     "id": "chn-adm2-bangexian",
+     "name": "Bangexian"
+    },
+    {
+     "id": "chn-adm2-banmaxian",
+     "name": "Banmaxian"
+    },
+    {
+     "id": "chn-adm2-banmaxian-2",
+     "name": "Banmaxian"
+    },
+    {
+     "id": "chn-adm2-baodexian",
+     "name": "Baodexian"
+    },
+    {
+     "id": "chn-adm2-baodingshi",
+     "name": "Baodingshi"
+    },
+    {
+     "id": "chn-adm2-baodixian",
+     "name": "Baodixian"
+    },
+    {
+     "id": "chn-adm2-baofengxian",
+     "name": "Baofengxian"
+    },
+    {
+     "id": "chn-adm2-baojingxian",
+     "name": "Baojingxian"
+    },
+    {
+     "id": "chn-adm2-baojishi",
+     "name": "Baojishi"
+    },
+    {
+     "id": "chn-adm2-baojixian",
+     "name": "Baojixian"
+    },
+    {
+     "id": "chn-adm2-baokangxian",
+     "name": "Baokangxian"
+    },
+    {
+     "id": "chn-adm2-baoqingxian",
+     "name": "Baoqingxian"
+    },
+    {
+     "id": "chn-adm2-baoshanshi",
+     "name": "Baoshanshi"
+    },
+    {
+     "id": "chn-adm2-baotinglizumiaozuzizhixian",
+     "name": "Baotinglizumiaozuzizhixian"
+    },
+    {
+     "id": "chn-adm2-baotoushi",
+     "name": "Baotoushi"
+    },
+    {
+     "id": "chn-adm2-baoxingxian",
+     "name": "Baoxingxian"
+    },
+    {
+     "id": "chn-adm2-baoyingxian",
+     "name": "Baoyingxian"
+    },
+    {
+     "id": "chn-adm2-baqingxian",
+     "name": "Baqingxian"
+    },
+    {
+     "id": "chn-adm2-bashuxian",
+     "name": "Bashuxian"
+    },
+    {
+     "id": "chn-adm2-batangxian",
+     "name": "Batangxian"
+    },
+    {
+     "id": "chn-adm2-baxian",
+     "name": "Baxian"
+    },
+    {
+     "id": "chn-adm2-baxian-2",
+     "name": "Baxian"
+    },
+    {
+     "id": "chn-adm2-bayanxian",
+     "name": "Bayanxian"
+    },
+    {
+     "id": "chn-adm2-bazhongshi",
+     "name": "Bazhongshi"
+    },
+    {
+     "id": "chn-adm2-beianshi",
+     "name": "Beianshi"
+    },
+    {
+     "id": "chn-adm2-beichuanxian",
+     "name": "Beichuanxian"
+    },
+    {
+     "id": "chn-adm2-beihaishi",
+     "name": "Beihaishi"
+    },
+    {
+     "id": "chn-adm2-beijingshi",
+     "name": "Beijingshi"
+    },
+    {
+     "id": "chn-adm2-beiliushi",
+     "name": "Beiliushi"
+    },
+    {
+     "id": "chn-adm2-beipiaoshi",
+     "name": "Beipiaoshi"
+    },
+    {
+     "id": "chn-adm2-beizhenmanzuzizhixian",
+     "name": "Beizhenmanzuzizhixian"
+    },
+    {
+     "id": "chn-adm2-benximanzuzizhixian",
+     "name": "Benximanzuzizhixian"
+    },
+    {
+     "id": "chn-adm2-benxishi",
+     "name": "Benxishi"
+    },
+    {
+     "id": "chn-adm2-bianbaxian",
+     "name": "Bianbaxian"
+    },
+    {
+     "id": "chn-adm2-bijieshi",
+     "name": "Bijieshi"
+    },
+    {
+     "id": "chn-adm2-binchuanxian",
+     "name": "Binchuanxian"
+    },
+    {
+     "id": "chn-adm2-binhaixian",
+     "name": "Binhaixian"
+    },
+    {
+     "id": "chn-adm2-binxian",
+     "name": "Binxian"
+    },
+    {
+     "id": "chn-adm2-binxian-2",
+     "name": "Binxian"
+    },
+    {
+     "id": "chn-adm2-binyangxian",
+     "name": "Binyangxian"
+    },
+    {
+     "id": "chn-adm2-binzhoushi",
+     "name": "Binzhoushi"
+    },
+    {
+     "id": "chn-adm2-biruxian",
+     "name": "Biruxian"
+    },
+    {
+     "id": "chn-adm2-bishanxian",
+     "name": "Bishanxian"
+    },
+    {
+     "id": "chn-adm2-bituxian",
+     "name": "Bituxian"
+    },
+    {
+     "id": "chn-adm2-bixian",
+     "name": "Bixian"
+    },
+    {
+     "id": "chn-adm2-boaixian",
+     "name": "Boaixian"
+    },
+    {
+     "id": "chn-adm2-bobaixian",
+     "name": "Bobaixian"
+    },
+    {
+     "id": "chn-adm2-bohuxian",
+     "name": "Bohuxian"
+    },
+    {
+     "id": "chn-adm2-boleshi",
+     "name": "Boleshi"
+    },
+    {
+     "id": "chn-adm2-bolixian",
+     "name": "Bolixian"
+    },
+    {
+     "id": "chn-adm2-boluoxian",
+     "name": "Boluoxian"
+    },
+    {
+     "id": "chn-adm2-bomixian",
+     "name": "Bomixian"
+    },
+    {
+     "id": "chn-adm2-botoushi",
+     "name": "Botoushi"
+    },
+    {
+     "id": "chn-adm2-boxiangxian",
+     "name": "Boxiangxian"
+    },
+    {
+     "id": "chn-adm2-boxingxian",
+     "name": "Boxingxian"
+    },
+    {
+     "id": "chn-adm2-boyangxian",
+     "name": "Boyangxian"
+    },
+    {
+     "id": "chn-adm2-boyexian",
+     "name": "Boyexian"
+    },
+    {
+     "id": "chn-adm2-bozhoushi",
+     "name": "Bozhoushi"
+    },
+    {
+     "id": "chn-adm2-buerjinxian",
+     "name": "Buerjinxian"
+    },
+    {
+     "id": "chn-adm2-butuoxian",
+     "name": "Butuoxian"
+    },
+    {
+     "id": "chn-adm2-caoxian",
+     "name": "Caoxian"
+    },
+    {
+     "id": "chn-adm2-cehengxian",
+     "name": "Cehengxian"
+    },
+    {
+     "id": "chn-adm2-celexian",
+     "name": "Celexian"
+    },
+    {
+     "id": "chn-adm2-chabuchaerxibozuzizhixian",
+     "name": "Chabuchaerxibozuzizhixian"
+    },
+    {
+     "id": "chn-adm2-chahaeryouyihouqi",
+     "name": "Chahaeryouyihouqi"
+    },
+    {
+     "id": "chn-adm2-chahaeryouyiqianqi",
+     "name": "Chahaeryouyiqianqi"
+    },
+    {
+     "id": "chn-adm2-chahaeryouyizhongqi",
+     "name": "Chahaeryouyizhongqi"
+    },
+    {
+     "id": "chn-adm2-chalingxian",
+     "name": "Chalingxian"
+    },
+    {
+     "id": "chn-adm2-changanxian",
+     "name": "Changanxian"
+    },
+    {
+     "id": "chn-adm2-changbaichaoxianzuxian",
+     "name": "Changbaichaoxianzuxian"
+    },
+    {
+     "id": "chn-adm2-changchunshi",
+     "name": "Changchunshi"
+    },
+    {
+     "id": "chn-adm2-changdeshi",
+     "name": "Changdeshi"
+    },
+    {
+     "id": "chn-adm2-changdingxian",
+     "name": "Changdingxian"
+    },
+    {
+     "id": "chn-adm2-changduxian",
+     "name": "Changduxian"
+    },
+    {
+     "id": "chn-adm2-changfengxian",
+     "name": "Changfengxian"
+    },
+    {
+     "id": "chn-adm2-changgeshi",
+     "name": "Changgeshi"
+    },
+    {
+     "id": "chn-adm2-changhaixian",
+     "name": "Changhaixian"
+    },
+    {
+     "id": "chn-adm2-changhaixian-2",
+     "name": "Changhaixian"
+    },
+    {
+     "id": "chn-adm2-changhaixian-3",
+     "name": "Changhaixian"
+    },
+    {
+     "id": "chn-adm2-changhaixian-4",
+     "name": "Changhaixian"
+    },
+    {
+     "id": "chn-adm2-changhaixian-5",
+     "name": "Changhaixian"
+    },
+    {
+     "id": "chn-adm2-changjianglizuzizhixian",
+     "name": "Changjianglizuzizhixian"
+    },
+    {
+     "id": "chn-adm2-changjishi",
+     "name": "Changjishi"
+    },
+    {
+     "id": "chn-adm2-changleshi",
+     "name": "Changleshi"
+    },
+    {
+     "id": "chn-adm2-changlexian",
+     "name": "Changlexian"
+    },
+    {
+     "id": "chn-adm2-changlingxian",
+     "name": "Changlingxian"
+    },
+    {
+     "id": "chn-adm2-changlixian",
+     "name": "Changlixian"
+    },
+    {
+     "id": "chn-adm2-changnanxian",
+     "name": "Changnanxian"
+    },
+    {
+     "id": "chn-adm2-changningxian",
+     "name": "Changningxian"
+    },
+    {
+     "id": "chn-adm2-changningxian-2",
+     "name": "Changningxian"
+    },
+    {
+     "id": "chn-adm2-changningxian-3",
+     "name": "Changningxian"
+    },
+    {
+     "id": "chn-adm2-changpingxin",
+     "name": "Changpingxin"
+    },
+    {
+     "id": "chn-adm2-changqingxian",
+     "name": "Changqingxian"
+    },
+    {
+     "id": "chn-adm2-changshangxian",
+     "name": "Changshangxian"
+    },
+    {
+     "id": "chn-adm2-changshanxian",
+     "name": "Changshanxian"
+    },
+    {
+     "id": "chn-adm2-changshashi",
+     "name": "Changshashi"
+    },
+    {
+     "id": "chn-adm2-changshaxian",
+     "name": "Changshaxian"
+    },
+    {
+     "id": "chn-adm2-changshouxian",
+     "name": "Changshouxian"
+    },
+    {
+     "id": "chn-adm2-changshunxian",
+     "name": "Changshunxian"
+    },
+    {
+     "id": "chn-adm2-changshushi",
+     "name": "Changshushi"
+    },
+    {
+     "id": "chn-adm2-changtaixian",
+     "name": "Changtaixian"
+    },
+    {
+     "id": "chn-adm2-changtuxian",
+     "name": "Changtuxian"
+    },
+    {
+     "id": "chn-adm2-changwuxian",
+     "name": "Changwuxian"
+    },
+    {
+     "id": "chn-adm2-changwuxian-2",
+     "name": "Changwuxian"
+    },
+    {
+     "id": "chn-adm2-changxian",
+     "name": "Changxian"
+    },
+    {
+     "id": "chn-adm2-changxingxian",
+     "name": "Changxingxian"
+    },
+    {
+     "id": "chn-adm2-changxixian",
+     "name": "Changxixian"
+    },
+    {
+     "id": "chn-adm2-changyangtujiazuzizhixian",
+     "name": "Changyangtujiazuzizhixian"
+    },
+    {
+     "id": "chn-adm2-changyishi",
+     "name": "Changyishi"
+    },
+    {
+     "id": "chn-adm2-changyuanwazuzizhixian",
+     "name": "Changyuanwazuzizhixian"
+    },
+    {
+     "id": "chn-adm2-changyuanxian",
+     "name": "Changyuanxian"
+    },
+    {
+     "id": "chn-adm2-changzhishi",
+     "name": "Changzhishi"
+    },
+    {
+     "id": "chn-adm2-changzhixian",
+     "name": "Changzhixian"
+    },
+    {
+     "id": "chn-adm2-changzhoushi",
+     "name": "Changzhoushi"
+    },
+    {
+     "id": "chn-adm2-changzhoushi-2",
+     "name": "Changzhoushi"
+    },
+    {
+     "id": "chn-adm2-changzixian",
+     "name": "Changzixian"
+    },
+    {
+     "id": "chn-adm2-chanzhoushi",
+     "name": "Chanzhoushi"
+    },
+    {
+     "id": "chn-adm2-chaohushi",
+     "name": "Chaohushi"
+    },
+    {
+     "id": "chn-adm2-chaohushi-2",
+     "name": "Chaohushi"
+    },
+    {
+     "id": "chn-adm2-chaoyangshi",
+     "name": "Chaoyangshi"
+    },
+    {
+     "id": "chn-adm2-chaoyangxian",
+     "name": "Chaoyangxian"
+    },
+    {
+     "id": "chn-adm2-chaoyangxian-2",
+     "name": "Chaoyangxian"
+    },
+    {
+     "id": "chn-adm2-chaozhoushi",
+     "name": "Chaozhoushi"
+    },
+    {
+     "id": "chn-adm2-chayaxian",
+     "name": "Chayaxian"
+    },
+    {
+     "id": "chn-adm2-chayuxian",
+     "name": "Chayuxian"
+    },
+    {
+     "id": "chn-adm2-chenbaerhuqi",
+     "name": "Chenbaerhuqi"
+    },
+    {
+     "id": "chn-adm2-chenganxian",
+     "name": "Chenganxian"
+    },
+    {
+     "id": "chn-adm2-chengbumiaozuzizhixian",
+     "name": "Chengbumiaozuzizhixian"
+    },
+    {
+     "id": "chn-adm2-chengchengxian",
+     "name": "Chengchengxian"
+    },
+    {
+     "id": "chn-adm2-chengdeshi",
+     "name": "Chengdeshi"
+    },
+    {
+     "id": "chn-adm2-chengdexian",
+     "name": "Chengdexian"
+    },
+    {
+     "id": "chn-adm2-chengduoxian",
+     "name": "Chengduoxian"
+    },
+    {
+     "id": "chn-adm2-chengdushi",
+     "name": "Chengdushi"
+    },
+    {
+     "id": "chn-adm2-chenggongxian",
+     "name": "Chenggongxian"
+    },
+    {
+     "id": "chn-adm2-chengguxian",
+     "name": "Chengguxian"
+    },
+    {
+     "id": "chn-adm2-chenghaishi",
+     "name": "Chenghaishi"
+    },
+    {
+     "id": "chn-adm2-chengjiangxian",
+     "name": "Chengjiangxian"
+    },
+    {
+     "id": "chn-adm2-chengkouxian",
+     "name": "Chengkouxian"
+    },
+    {
+     "id": "chn-adm2-chengmaixian",
+     "name": "Chengmaixian"
+    },
+    {
+     "id": "chn-adm2-chengongxian",
+     "name": "Chengongxian"
+    },
+    {
+     "id": "chn-adm2-chengwuxian",
+     "name": "Chengwuxian"
+    },
+    {
+     "id": "chn-adm2-chengxian",
+     "name": "Chengxian"
+    },
+    {
+     "id": "chn-adm2-chengxian-2",
+     "name": "Chengxian"
+    },
+    {
+     "id": "chn-adm2-chengzhoushi",
+     "name": "Chengzhoushi"
+    },
+    {
+     "id": "chn-adm2-chenxixian",
+     "name": "Chenxixian"
+    },
+    {
+     "id": "chn-adm2-chenxixian-2",
+     "name": "Chenxixian"
+    },
+    {
+     "id": "chn-adm2-chepingxian",
+     "name": "Chepingxian"
+    },
+    {
+     "id": "chn-adm2-chilixian",
+     "name": "Chilixian"
+    },
+    {
+     "id": "chn-adm2-chishuishi",
+     "name": "Chishuishi"
+    },
+    {
+     "id": "chn-adm2-chonghuashi",
+     "name": "Chonghuashi"
+    },
+    {
+     "id": "chn-adm2-chonglixian",
+     "name": "Chonglixian"
+    },
+    {
+     "id": "chn-adm2-chongmingxian",
+     "name": "Chongmingxian"
+    },
+    {
+     "id": "chn-adm2-chongmingxian-2",
+     "name": "Chongmingxian"
+    },
+    {
+     "id": "chn-adm2-chongrenxian",
+     "name": "Chongrenxian"
+    },
+    {
+     "id": "chn-adm2-chongxinxian",
+     "name": "Chongxinxian"
+    },
+    {
+     "id": "chn-adm2-chongyangxian",
+     "name": "Chongyangxian"
+    },
+    {
+     "id": "chn-adm2-chongyixian",
+     "name": "Chongyixian"
+    },
+    {
+     "id": "chn-adm2-chongzhoushi",
+     "name": "Chongzhoushi"
+    },
+    {
+     "id": "chn-adm2-chongzuoxian",
+     "name": "Chongzuoxian"
+    },
+    {
+     "id": "chn-adm2-chunhuaxian",
+     "name": "Chunhuaxian"
+    },
+    {
+     "id": "chn-adm2-chuxiongshi",
+     "name": "Chuxiongshi"
+    },
+    {
+     "id": "chn-adm2-chuzhoushi",
+     "name": "Chuzhoushi"
+    },
+    {
+     "id": "chn-adm2-cichengxian",
+     "name": "Cichengxian"
+    },
+    {
+     "id": "chn-adm2-cifengshi",
+     "name": "Cifengshi"
+    },
+    {
+     "id": "chn-adm2-cixian",
+     "name": "Cixian"
+    },
+    {
+     "id": "chn-adm2-cixishi",
+     "name": "Cixishi"
+    },
+    {
+     "id": "chn-adm2-congjiangxian",
+     "name": "Congjiangxian"
+    },
+    {
+     "id": "chn-adm2-congqingshi",
+     "name": "Congqingshi"
+    },
+    {
+     "id": "chn-adm2-cunanxian",
+     "name": "Cunanxian"
+    },
+    {
+     "id": "chn-adm2-cuomeixian",
+     "name": "Cuomeixian"
+    },
+    {
+     "id": "chn-adm2-cuonaxian",
+     "name": "Cuonaxian"
+    },
+    {
+     "id": "chn-adm2-cuoqinxian",
+     "name": "Cuoqinxian"
+    },
+    {
+     "id": "chn-adm2-daanshi",
+     "name": "Daanshi"
+    },
+    {
+     "id": "chn-adm2-dachanghuizuzizhixian",
+     "name": "Dachanghuizuzizhixian"
+    },
+    {
+     "id": "chn-adm2-dachengxian",
+     "name": "Dachengxian"
+    },
+    {
+     "id": "chn-adm2-dachuanshi",
+     "name": "Dachuanshi"
+    },
+    {
+     "id": "chn-adm2-daerhanmaominganlianheqi",
+     "name": "Daerhanmaominganlianheqi"
+    },
+    {
+     "id": "chn-adm2-dafangxian",
+     "name": "Dafangxian"
+    },
+    {
+     "id": "chn-adm2-dafengshi",
+     "name": "Dafengshi"
+    },
+    {
+     "id": "chn-adm2-dafengxian",
+     "name": "Dafengxian"
+    },
+    {
+     "id": "chn-adm2-daguanxian",
+     "name": "Daguanxian"
+    },
+    {
+     "id": "chn-adm2-daguxian",
+     "name": "Daguxian"
+    },
+    {
+     "id": "chn-adm2-dahuayaozuzizhixian",
+     "name": "Dahuayaozuzizhixian"
+    },
+    {
+     "id": "chn-adm2-daishanxian",
+     "name": "Daishanxian"
+    },
+    {
+     "id": "chn-adm2-daixian",
+     "name": "Daixian"
+    },
+    {
+     "id": "chn-adm2-dalateqi",
+     "name": "Dalateqi"
+    },
+    {
+     "id": "chn-adm2-dalianshi",
+     "name": "Dalianshi"
+    },
+    {
+     "id": "chn-adm2-dalingxian",
+     "name": "Dalingxian"
+    },
+    {
+     "id": "chn-adm2-dalishi",
+     "name": "Dalishi"
+    },
+    {
+     "id": "chn-adm2-dalixian",
+     "name": "Dalixian"
+    },
+    {
+     "id": "chn-adm2-damingxian",
+     "name": "Damingxian"
+    },
+    {
+     "id": "chn-adm2-danbaxian",
+     "name": "Danbaxian"
+    },
+    {
+     "id": "chn-adm2-dandongshi",
+     "name": "Dandongshi"
+    },
+    {
+     "id": "chn-adm2-danfengxian",
+     "name": "Danfengxian"
+    },
+    {
+     "id": "chn-adm2-dangshanxian",
+     "name": "Dangshanxian"
+    },
+    {
+     "id": "chn-adm2-dangtuxian",
+     "name": "Dangtuxian"
+    },
+    {
+     "id": "chn-adm2-dangxiongxian",
+     "name": "Dangxiongxian"
+    },
+    {
+     "id": "chn-adm2-dangyangshi",
+     "name": "Dangyangshi"
+    },
+    {
+     "id": "chn-adm2-danjiangkoushi",
+     "name": "Danjiangkoushi"
+    },
+    {
+     "id": "chn-adm2-danlingxian",
+     "name": "Danlingxian"
+    },
+    {
+     "id": "chn-adm2-dantuxian",
+     "name": "Dantuxian"
+    },
+    {
+     "id": "chn-adm2-danxian",
+     "name": "Danxian"
+    },
+    {
+     "id": "chn-adm2-danyangshi",
+     "name": "Danyangshi"
+    },
+    {
+     "id": "chn-adm2-danzhaixian",
+     "name": "Danzhaixian"
+    },
+    {
+     "id": "chn-adm2-daochengxian",
+     "name": "Daochengxian"
+    },
+    {
+     "id": "chn-adm2-daofuxian",
+     "name": "Daofuxian"
+    },
+    {
+     "id": "chn-adm2-daoxian",
+     "name": "Daoxian"
+    },
+    {
+     "id": "chn-adm2-daozhenkelaozhumiaozhuzizhixian",
+     "name": "Daozhenkelaozhumiaozhuzizhixian"
+    },
+    {
+     "id": "chn-adm2-dapuxian",
+     "name": "Dapuxian"
+    },
+    {
+     "id": "chn-adm2-daqingshi",
+     "name": "Daqingshi"
+    },
+    {
+     "id": "chn-adm2-darixian",
+     "name": "Darixian"
+    },
+    {
+     "id": "chn-adm2-datianxian",
+     "name": "Datianxian"
+    },
+    {
+     "id": "chn-adm2-datonghuizutuzuzizhixian",
+     "name": "Datonghuizutuzuzizhixian"
+    },
+    {
+     "id": "chn-adm2-datongshi",
+     "name": "Datongshi"
+    },
+    {
+     "id": "chn-adm2-datongxian",
+     "name": "Datongxian"
+    },
+    {
+     "id": "chn-adm2-dawaxian",
+     "name": "Dawaxian"
+    },
+    {
+     "id": "chn-adm2-dawuxian",
+     "name": "Dawuxian"
+    },
+    {
+     "id": "chn-adm2-daxian",
+     "name": "Daxian"
+    },
+    {
+     "id": "chn-adm2-daxingxian",
+     "name": "Daxingxian"
+    },
+    {
+     "id": "chn-adm2-daxinxian",
+     "name": "Daxinxian"
+    },
+    {
+     "id": "chn-adm2-dayaoxian",
+     "name": "Dayaoxian"
+    },
+    {
+     "id": "chn-adm2-dayixian",
+     "name": "Dayixian"
+    },
+    {
+     "id": "chn-adm2-dayongshi",
+     "name": "Dayongshi"
+    },
+    {
+     "id": "chn-adm2-dayuxian",
+     "name": "Dayuxian"
+    },
+    {
+     "id": "chn-adm2-dazhishi",
+     "name": "Dazhishi"
+    },
+    {
+     "id": "chn-adm2-dazhixian",
+     "name": "Dazhixian"
+    },
+    {
+     "id": "chn-adm2-dazhuxian",
+     "name": "Dazhuxian"
+    },
+    {
+     "id": "chn-adm2-dazhuxian-2",
+     "name": "Dazhuxian"
+    },
+    {
+     "id": "chn-adm2-deanxian",
+     "name": "Deanxian"
+    },
+    {
+     "id": "chn-adm2-debaoxian",
+     "name": "Debaoxian"
+    },
+    {
+     "id": "chn-adm2-dechangxian",
+     "name": "Dechangxian"
+    },
+    {
+     "id": "chn-adm2-deduxian",
+     "name": "Deduxian"
+    },
+    {
+     "id": "chn-adm2-degexian",
+     "name": "Degexian"
+    },
+    {
+     "id": "chn-adm2-dehuaxian",
+     "name": "Dehuaxian"
+    },
+    {
+     "id": "chn-adm2-dehuishi",
+     "name": "Dehuishi"
+    },
+    {
+     "id": "chn-adm2-dejiangxian",
+     "name": "Dejiangxian"
+    },
+    {
+     "id": "chn-adm2-delinghashi",
+     "name": "Delinghashi"
+    },
+    {
+     "id": "chn-adm2-dengkouxian",
+     "name": "Dengkouxian"
+    },
+    {
+     "id": "chn-adm2-dengtaxian",
+     "name": "Dengtaxian"
+    },
+    {
+     "id": "chn-adm2-dengzhoushi",
+     "name": "Dengzhoushi"
+    },
+    {
+     "id": "chn-adm2-deqingxian",
+     "name": "Deqingxian"
+    },
+    {
+     "id": "chn-adm2-deqingxian-2",
+     "name": "Deqingxian"
+    },
+    {
+     "id": "chn-adm2-deqinxian",
+     "name": "Deqinxian"
+    },
+    {
+     "id": "chn-adm2-derongxian",
+     "name": "Derongxian"
+    },
+    {
+     "id": "chn-adm2-dexingshi",
+     "name": "Dexingshi"
+    },
+    {
+     "id": "chn-adm2-deyangshi",
+     "name": "Deyangshi"
+    },
+    {
+     "id": "chn-adm2-dezhoushi",
+     "name": "Dezhoushi"
+    },
+    {
+     "id": "chn-adm2-dianbaxian",
+     "name": "Dianbaxian"
+    },
+    {
+     "id": "chn-adm2-dianjiangxian",
+     "name": "Dianjiangxian"
+    },
+    {
+     "id": "chn-adm2-diebuxian",
+     "name": "Diebuxian"
+    },
+    {
+     "id": "chn-adm2-dinganxian",
+     "name": "Dinganxian"
+    },
+    {
+     "id": "chn-adm2-dingbaixian",
+     "name": "Dingbaixian"
+    },
+    {
+     "id": "chn-adm2-dingjiexian",
+     "name": "Dingjiexian"
+    },
+    {
+     "id": "chn-adm2-dingnanxian",
+     "name": "Dingnanxian"
+    },
+    {
+     "id": "chn-adm2-dingqingxian",
+     "name": "Dingqingxian"
+    },
+    {
+     "id": "chn-adm2-dingrixian",
+     "name": "Dingrixian"
+    },
+    {
+     "id": "chn-adm2-dingtaoxian",
+     "name": "Dingtaoxian"
+    },
+    {
+     "id": "chn-adm2-dingxiangxian",
+     "name": "Dingxiangxian"
+    },
+    {
+     "id": "chn-adm2-dingxingxian",
+     "name": "Dingxingxian"
+    },
+    {
+     "id": "chn-adm2-dingxixian",
+     "name": "Dingxixian"
+    },
+    {
+     "id": "chn-adm2-dingyuanxian",
+     "name": "Dingyuanxian"
+    },
+    {
+     "id": "chn-adm2-dingzhoushi",
+     "name": "Dingzhoushi"
+    },
+    {
+     "id": "chn-adm2-donganxian",
+     "name": "Donganxian"
+    },
+    {
+     "id": "chn-adm2-dongchuanshi",
+     "name": "Dongchuanshi"
+    },
+    {
+     "id": "chn-adm2-dongerxian",
+     "name": "Dongerxian"
+    },
+    {
+     "id": "chn-adm2-dongfanglizuzizhixian",
+     "name": "Dongfanglizuzizhixian"
+    },
+    {
+     "id": "chn-adm2-dongfengshi",
+     "name": "Dongfengshi"
+    },
+    {
+     "id": "chn-adm2-dongfengxian",
+     "name": "Dongfengxian"
+    },
+    {
+     "id": "chn-adm2-donggangshi",
+     "name": "Donggangshi"
+    },
+    {
+     "id": "chn-adm2-dongguangxian",
+     "name": "Dongguangxian"
+    },
+    {
+     "id": "chn-adm2-dongguanshi",
+     "name": "Dongguanshi"
+    },
+    {
+     "id": "chn-adm2-donghaixian",
+     "name": "Donghaixian"
+    },
+    {
+     "id": "chn-adm2-dongkouxian",
+     "name": "Dongkouxian"
+    },
+    {
+     "id": "chn-adm2-donglanxian",
+     "name": "Donglanxian"
+    },
+    {
+     "id": "chn-adm2-dongliaoxian",
+     "name": "Dongliaoxian"
+    },
+    {
+     "id": "chn-adm2-dongmingxian",
+     "name": "Dongmingxian"
+    },
+    {
+     "id": "chn-adm2-dongningxian",
+     "name": "Dongningxian"
+    },
+    {
+     "id": "chn-adm2-dongpingxian",
+     "name": "Dongpingxian"
+    },
+    {
+     "id": "chn-adm2-dongshanxian",
+     "name": "Dongshanxian"
+    },
+    {
+     "id": "chn-adm2-dongshengshi",
+     "name": "Dongshengshi"
+    },
+    {
+     "id": "chn-adm2-dongtaishi",
+     "name": "Dongtaishi"
+    },
+    {
+     "id": "chn-adm2-dongwuzhumuqinqi",
+     "name": "Dongwuzhumuqinqi"
+    },
+    {
+     "id": "chn-adm2-dongxiangxian",
+     "name": "Dongxiangxian"
+    },
+    {
+     "id": "chn-adm2-dongxiangzuzizhixian",
+     "name": "Dongxiangzuzizhixian"
+    },
+    {
+     "id": "chn-adm2-dongyangshi",
+     "name": "Dongyangshi"
+    },
+    {
+     "id": "chn-adm2-dongyingshi",
+     "name": "Dongyingshi"
+    },
+    {
+     "id": "chn-adm2-dongyingshi-2",
+     "name": "Dongyingshi"
+    },
+    {
+     "id": "chn-adm2-dongzhixian",
+     "name": "Dongzhixian"
+    },
+    {
+     "id": "chn-adm2-doumenxian",
+     "name": "Doumenxian"
+    },
+    {
+     "id": "chn-adm2-duanyaozuzizhixian",
+     "name": "Duanyaozuzizhixian"
+    },
+    {
+     "id": "chn-adm2-duchangxian",
+     "name": "Duchangxian"
+    },
+    {
+     "id": "chn-adm2-duerbotemengguzuzizhixian",
+     "name": "Duerbotemengguzuzizhixian"
+    },
+    {
+     "id": "chn-adm2-duinongdeqingxian",
+     "name": "Duinongdeqingxian"
+    },
+    {
+     "id": "chn-adm2-dujiangyanshi",
+     "name": "Dujiangyanshi"
+    },
+    {
+     "id": "chn-adm2-dulanxian",
+     "name": "Dulanxian"
+    },
+    {
+     "id": "chn-adm2-dunhuangshi",
+     "name": "Dunhuangshi"
+    },
+    {
+     "id": "chn-adm2-dunhuashi",
+     "name": "Dunhuashi"
+    },
+    {
+     "id": "chn-adm2-duolunxian",
+     "name": "Duolunxian"
+    },
+    {
+     "id": "chn-adm2-dushanxian",
+     "name": "Dushanxian"
+    },
+    {
+     "id": "chn-adm2-duyunshi",
+     "name": "Duyunshi"
+    },
+    {
+     "id": "chn-adm2-ejinaqi",
+     "name": "Ejinaqi"
+    },
+    {
+     "id": "chn-adm2-elunchunzizhiqi",
+     "name": "Elunchunzizhiqi"
+    },
+    {
+     "id": "chn-adm2-enpingshi",
+     "name": "Enpingshi"
+    },
+    {
+     "id": "chn-adm2-enshishi",
+     "name": "Enshishi"
+    },
+    {
+     "id": "chn-adm2-erbianyizuzizhixian",
+     "name": "Erbianyizuzizhixian"
+    },
+    {
+     "id": "chn-adm2-erlianhaoteshi",
+     "name": "Erlianhaoteshi"
+    },
+    {
+     "id": "chn-adm2-ermeishanshi",
+     "name": "Ermeishanshi"
+    },
+    {
+     "id": "chn-adm2-erminxian",
+     "name": "Erminxian"
+    },
+    {
+     "id": "chn-adm2-ershanyizuzizhixian",
+     "name": "Ershanyizuzizhixian"
+    },
+    {
+     "id": "chn-adm2-ertuokeqi",
+     "name": "Ertuokeqi"
+    },
+    {
+     "id": "chn-adm2-ertuokeqianqi",
+     "name": "Ertuokeqianqi"
+    },
+    {
+     "id": "chn-adm2-eryuanxian",
+     "name": "Eryuanxian"
+    },
+    {
+     "id": "chn-adm2-ewenkezuzizhiqi",
+     "name": "Ewenkezuzizhiqi"
+    },
+    {
+     "id": "chn-adm2-ezhoushi",
+     "name": "Ezhoushi"
+    },
+    {
+     "id": "chn-adm2-fakuxian",
+     "name": "Fakuxian"
+    },
+    {
+     "id": "chn-adm2-fanchangxian",
+     "name": "Fanchangxian"
+    },
+    {
+     "id": "chn-adm2-fangchenggangshi",
+     "name": "Fangchenggangshi"
+    },
+    {
+     "id": "chn-adm2-fangchengxian",
+     "name": "Fangchengxian"
+    },
+    {
+     "id": "chn-adm2-fangshanxian",
+     "name": "Fangshanxian"
+    },
+    {
+     "id": "chn-adm2-fangxian",
+     "name": "Fangxian"
+    },
+    {
+     "id": "chn-adm2-fangzhengxian",
+     "name": "Fangzhengxian"
+    },
+    {
+     "id": "chn-adm2-fanshixian",
+     "name": "Fanshixian"
+    },
+    {
+     "id": "chn-adm2-fanxian",
+     "name": "Fanxian"
+    },
+    {
+     "id": "chn-adm2-feichengxian",
+     "name": "Feichengxian"
+    },
+    {
+     "id": "chn-adm2-feidongxian",
+     "name": "Feidongxian"
+    },
+    {
+     "id": "chn-adm2-feixian",
+     "name": "Feixian"
+    },
+    {
+     "id": "chn-adm2-feixiangxian",
+     "name": "Feixiangxian"
+    },
+    {
+     "id": "chn-adm2-feixixian",
+     "name": "Feixixian"
+    },
+    {
+     "id": "chn-adm2-fenchengmanzuzizhixian",
+     "name": "Fenchengmanzuzizhixian"
+    },
+    {
+     "id": "chn-adm2-fengchengshi",
+     "name": "Fengchengshi"
+    },
+    {
+     "id": "chn-adm2-fengduxian",
+     "name": "Fengduxian"
+    },
+    {
+     "id": "chn-adm2-fenggangxian",
+     "name": "Fenggangxian"
+    },
+    {
+     "id": "chn-adm2-fenghuangxian",
+     "name": "Fenghuangxian"
+    },
+    {
+     "id": "chn-adm2-fenghuashi",
+     "name": "Fenghuashi"
+    },
+    {
+     "id": "chn-adm2-fengjiexian",
+     "name": "Fengjiexian"
+    },
+    {
+     "id": "chn-adm2-fengkaixian",
+     "name": "Fengkaixian"
+    },
+    {
+     "id": "chn-adm2-fengnanxian",
+     "name": "Fengnanxian"
+    },
+    {
+     "id": "chn-adm2-fengningmanzuzizhixian",
+     "name": "Fengningmanzuzizhixian"
+    },
+    {
+     "id": "chn-adm2-fengqingxian",
+     "name": "Fengqingxian"
+    },
+    {
+     "id": "chn-adm2-fengqiuxian",
+     "name": "Fengqiuxian"
+    },
+    {
+     "id": "chn-adm2-fengruanxian",
+     "name": "Fengruanxian"
+    },
+    {
+     "id": "chn-adm2-fengshanxian",
+     "name": "Fengshanxian"
+    },
+    {
+     "id": "chn-adm2-fengshanxian-2",
+     "name": "Fengshanxian"
+    },
+    {
+     "id": "chn-adm2-fengshunxian",
+     "name": "Fengshunxian"
+    },
+    {
+     "id": "chn-adm2-fengtaixian",
+     "name": "Fengtaixian"
+    },
+    {
+     "id": "chn-adm2-fengxian",
+     "name": "Fengxian"
+    },
+    {
+     "id": "chn-adm2-fengxian-2",
+     "name": "Fengxian"
+    },
+    {
+     "id": "chn-adm2-fengxiangxian",
+     "name": "Fengxiangxian"
+    },
+    {
+     "id": "chn-adm2-fengxianxian",
+     "name": "Fengxianxian"
+    },
+    {
+     "id": "chn-adm2-fengxinxian",
+     "name": "Fengxinxian"
+    },
+    {
+     "id": "chn-adm2-fengyangxian",
+     "name": "Fengyangxian"
+    },
+    {
+     "id": "chn-adm2-fengzhenshi",
+     "name": "Fengzhenshi"
+    },
+    {
+     "id": "chn-adm2-fenxixian",
+     "name": "Fenxixian"
+    },
+    {
+     "id": "chn-adm2-fenyangxian",
+     "name": "Fenyangxian"
+    },
+    {
+     "id": "chn-adm2-fenyixian",
+     "name": "Fenyixian"
+    },
+    {
+     "id": "chn-adm2-fogangxian",
+     "name": "Fogangxian"
+    },
+    {
+     "id": "chn-adm2-fopingxian",
+     "name": "Fopingxian"
+    },
+    {
+     "id": "chn-adm2-foshanshi",
+     "name": "Foshanshi"
+    },
+    {
+     "id": "chn-adm2-fuanshi",
+     "name": "Fuanshi"
+    },
+    {
+     "id": "chn-adm2-fuchengxian",
+     "name": "Fuchengxian"
+    },
+    {
+     "id": "chn-adm2-fuchuanyaozuzizhixian",
+     "name": "Fuchuanyaozuzizhixian"
+    },
+    {
+     "id": "chn-adm2-fudingshi",
+     "name": "Fudingshi"
+    },
+    {
+     "id": "chn-adm2-fufengxian",
+     "name": "Fufengxian"
+    },
+    {
+     "id": "chn-adm2-fugongxian",
+     "name": "Fugongxian"
+    },
+    {
+     "id": "chn-adm2-fugouxian",
+     "name": "Fugouxian"
+    },
+    {
+     "id": "chn-adm2-fuguxian",
+     "name": "Fuguxian"
+    },
+    {
+     "id": "chn-adm2-fuhaixian",
+     "name": "Fuhaixian"
+    },
+    {
+     "id": "chn-adm2-fujinshi",
+     "name": "Fujinshi"
+    },
+    {
+     "id": "chn-adm2-fukangshi",
+     "name": "Fukangshi"
+    },
+    {
+     "id": "chn-adm2-fulingshi",
+     "name": "Fulingshi"
+    },
+    {
+     "id": "chn-adm2-fuminxian",
+     "name": "Fuminxian"
+    },
+    {
+     "id": "chn-adm2-funanxian",
+     "name": "Funanxian"
+    },
+    {
+     "id": "chn-adm2-funingxian",
+     "name": "Funingxian"
+    },
+    {
+     "id": "chn-adm2-funingxian-2",
+     "name": "Funingxian"
+    },
+    {
+     "id": "chn-adm2-funingxian-3",
+     "name": "Funingxian"
+    },
+    {
+     "id": "chn-adm2-fupingxian",
+     "name": "Fupingxian"
+    },
+    {
+     "id": "chn-adm2-fupingxian-2",
+     "name": "Fupingxian"
+    },
+    {
+     "id": "chn-adm2-fuqingshi",
+     "name": "Fuqingshi"
+    },
+    {
+     "id": "chn-adm2-fuquanxian",
+     "name": "Fuquanxian"
+    },
+    {
+     "id": "chn-adm2-fushanxian",
+     "name": "Fushanxian"
+    },
+    {
+     "id": "chn-adm2-fushunshi",
+     "name": "Fushunshi"
+    },
+    {
+     "id": "chn-adm2-fushunxian",
+     "name": "Fushunxian"
+    },
+    {
+     "id": "chn-adm2-fushunxian-2",
+     "name": "Fushunxian"
+    },
+    {
+     "id": "chn-adm2-fusuixian",
+     "name": "Fusuixian"
+    },
+    {
+     "id": "chn-adm2-fuxian",
+     "name": "Fuxian"
+    },
+    {
+     "id": "chn-adm2-fuxinmengguzuzizhixian",
+     "name": "Fuxinmengguzuzizhixian"
+    },
+    {
+     "id": "chn-adm2-fuxinshi",
+     "name": "Fuxinshi"
+    },
+    {
+     "id": "chn-adm2-fuyangshi",
+     "name": "Fuyangshi"
+    },
+    {
+     "id": "chn-adm2-fuyangshi-2",
+     "name": "Fuyangshi"
+    },
+    {
+     "id": "chn-adm2-fuyangshi-3",
+     "name": "Fuyangshi"
+    },
+    {
+     "id": "chn-adm2-fuyuanxian",
+     "name": "Fuyuanxian"
+    },
+    {
+     "id": "chn-adm2-fuyuanxian-2",
+     "name": "Fuyuanxian"
+    },
+    {
+     "id": "chn-adm2-fuyunxian",
+     "name": "Fuyunxian"
+    },
+    {
+     "id": "chn-adm2-fuyuxian",
+     "name": "Fuyuxian"
+    },
+    {
+     "id": "chn-adm2-fuyuxian-2",
+     "name": "Fuyuxian"
+    },
+    {
+     "id": "chn-adm2-fuzhoushi",
+     "name": "Fuzhoushi"
+    },
+    {
+     "id": "chn-adm2-gaizexian",
+     "name": "Gaizexian"
+    },
+    {
+     "id": "chn-adm2-gaizhoushi",
+     "name": "Gaizhoushi"
+    },
+    {
+     "id": "chn-adm2-gandexian",
+     "name": "Gandexian"
+    },
+    {
+     "id": "chn-adm2-gangbaxian",
+     "name": "Gangbaxian"
+    },
+    {
+     "id": "chn-adm2-gangchaxian",
+     "name": "Gangchaxian"
+    },
+    {
+     "id": "chn-adm2-ganguxian",
+     "name": "Ganguxian"
+    },
+    {
+     "id": "chn-adm2-ganluoxian",
+     "name": "Ganluoxian"
+    },
+    {
+     "id": "chn-adm2-gannanxian",
+     "name": "Gannanxian"
+    },
+    {
+     "id": "chn-adm2-ganquanxian",
+     "name": "Ganquanxian"
+    },
+    {
+     "id": "chn-adm2-ganxian",
+     "name": "Ganxian"
+    },
+    {
+     "id": "chn-adm2-ganyuxian",
+     "name": "Ganyuxian"
+    },
+    {
+     "id": "chn-adm2-ganzhixian",
+     "name": "Ganzhixian"
+    },
+    {
+     "id": "chn-adm2-ganzhoushi",
+     "name": "Ganzhoushi"
+    },
+    {
+     "id": "chn-adm2-gaoanshi",
+     "name": "Gaoanshi"
+    },
+    {
+     "id": "chn-adm2-gaochengxian",
+     "name": "Gaochengxian"
+    },
+    {
+     "id": "chn-adm2-gaochunxian",
+     "name": "Gaochunxian"
+    },
+    {
+     "id": "chn-adm2-gaolanxian",
+     "name": "Gaolanxian"
+    },
+    {
+     "id": "chn-adm2-gaolingshi",
+     "name": "Gaolingshi"
+    },
+    {
+     "id": "chn-adm2-gaomingshi",
+     "name": "Gaomingshi"
+    },
+    {
+     "id": "chn-adm2-gaomishi",
+     "name": "Gaomishi"
+    },
+    {
+     "id": "chn-adm2-gaopingshi",
+     "name": "Gaopingshi"
+    },
+    {
+     "id": "chn-adm2-gaoqingxian",
+     "name": "Gaoqingxian"
+    },
+    {
+     "id": "chn-adm2-gaotaixian",
+     "name": "Gaotaixian"
+    },
+    {
+     "id": "chn-adm2-gaotangixan",
+     "name": "Gaotangixan"
+    },
+    {
+     "id": "chn-adm2-gaoxian",
+     "name": "Gaoxian"
+    },
+    {
+     "id": "chn-adm2-gaoxiongshi",
+     "name": "Gaoxiongshi"
+    },
+    {
+     "id": "chn-adm2-gaoyangxian",
+     "name": "Gaoyangxian"
+    },
+    {
+     "id": "chn-adm2-gaoyaoshi",
+     "name": "Gaoyaoshi"
+    },
+    {
+     "id": "chn-adm2-gaoyoushi",
+     "name": "Gaoyoushi"
+    },
+    {
+     "id": "chn-adm2-gaozhoushi",
+     "name": "Gaozhoushi"
+    },
+    {
+     "id": "chn-adm2-geergunyouqi",
+     "name": "Geergunyouqi"
+    },
+    {
+     "id": "chn-adm2-geergunzuoqi",
+     "name": "Geergunzuoqi"
+    },
+    {
+     "id": "chn-adm2-geermushi",
+     "name": "Geermushi"
+    },
+    {
+     "id": "chn-adm2-geermushi-2",
+     "name": "Geermushi"
+    },
+    {
+     "id": "chn-adm2-geerxian",
+     "name": "Geerxian"
+    },
+    {
+     "id": "chn-adm2-gejiushi",
+     "name": "Gejiushi"
+    },
+    {
+     "id": "chn-adm2-gejixian",
+     "name": "Gejixian"
+    },
+    {
+     "id": "chn-adm2-gengmadaizhuwazuzizhixian",
+     "name": "Gengmadaizhuwazuzizhixian"
+    },
+    {
+     "id": "chn-adm2-gonganxian",
+     "name": "Gonganxian"
+    },
+    {
+     "id": "chn-adm2-gongbujiangdaxian",
+     "name": "Gongbujiangdaxian"
+    },
+    {
+     "id": "chn-adm2-gongchengyaozuzizhixian",
+     "name": "Gongchengyaozuzizhixian"
+    },
+    {
+     "id": "chn-adm2-gonggaxian",
+     "name": "Gonggaxian"
+    },
+    {
+     "id": "chn-adm2-gonghexian",
+     "name": "Gonghexian"
+    },
+    {
+     "id": "chn-adm2-gongjuexian",
+     "name": "Gongjuexian"
+    },
+    {
+     "id": "chn-adm2-gongliuxian",
+     "name": "Gongliuxian"
+    },
+    {
+     "id": "chn-adm2-gongshandulongzunuzuzizhixian",
+     "name": "Gongshandulongzunuzuzizhixian"
+    },
+    {
+     "id": "chn-adm2-gongxian",
+     "name": "Gongxian"
+    },
+    {
+     "id": "chn-adm2-gongxian-2",
+     "name": "Gongxian"
+    },
+    {
+     "id": "chn-adm2-gongyanxian",
+     "name": "Gongyanxian"
+    },
+    {
+     "id": "chn-adm2-gongzhulingshi",
+     "name": "Gongzhulingshi"
+    },
+    {
+     "id": "chn-adm2-guanganxian",
+     "name": "Guanganxian"
+    },
+    {
+     "id": "chn-adm2-guangchangxian",
+     "name": "Guangchangxian"
+    },
+    {
+     "id": "chn-adm2-guangdexian",
+     "name": "Guangdexian"
+    },
+    {
+     "id": "chn-adm2-guangfengxian",
+     "name": "Guangfengxian"
+    },
+    {
+     "id": "chn-adm2-guanghanshi",
+     "name": "Guanghanshi"
+    },
+    {
+     "id": "chn-adm2-guanghexian",
+     "name": "Guanghexian"
+    },
+    {
+     "id": "chn-adm2-guanglingxian",
+     "name": "Guanglingxian"
+    },
+    {
+     "id": "chn-adm2-guangnanxian",
+     "name": "Guangnanxian"
+    },
+    {
+     "id": "chn-adm2-guangningxian",
+     "name": "Guangningxian"
+    },
+    {
+     "id": "chn-adm2-guangpingxian",
+     "name": "Guangpingxian"
+    },
+    {
+     "id": "chn-adm2-guangraoxian",
+     "name": "Guangraoxian"
+    },
+    {
+     "id": "chn-adm2-guangshanxian",
+     "name": "Guangshanxian"
+    },
+    {
+     "id": "chn-adm2-guangshuishi",
+     "name": "Guangshuishi"
+    },
+    {
+     "id": "chn-adm2-guangzexian",
+     "name": "Guangzexian"
+    },
+    {
+     "id": "chn-adm2-guangzhongxian",
+     "name": "Guangzhongxian"
+    },
+    {
+     "id": "chn-adm2-guangzhoushi",
+     "name": "Guangzhoushi"
+    },
+    {
+     "id": "chn-adm2-guanlingbuyizumiaozuzizhixian",
+     "name": "Guanlingbuyizumiaozuzizhixian"
+    },
+    {
+     "id": "chn-adm2-guannanxian",
+     "name": "Guannanxian"
+    },
+    {
+     "id": "chn-adm2-guantaoxian",
+     "name": "Guantaoxian"
+    },
+    {
+     "id": "chn-adm2-guanxian",
+     "name": "Guanxian"
+    },
+    {
+     "id": "chn-adm2-guanxian-2",
+     "name": "Guanxian"
+    },
+    {
+     "id": "chn-adm2-guanyangxian",
+     "name": "Guanyangxian"
+    },
+    {
+     "id": "chn-adm2-guanyuanshi",
+     "name": "Guanyuanshi"
+    },
+    {
+     "id": "chn-adm2-guanyunxian",
+     "name": "Guanyunxian"
+    },
+    {
+     "id": "chn-adm2-guchengxian",
+     "name": "Guchengxian"
+    },
+    {
+     "id": "chn-adm2-guchengxian-2",
+     "name": "Guchengxian"
+    },
+    {
+     "id": "chn-adm2-guichishi",
+     "name": "Guichishi"
+    },
+    {
+     "id": "chn-adm2-guidexian",
+     "name": "Guidexian"
+    },
+    {
+     "id": "chn-adm2-guidingxian",
+     "name": "Guidingxian"
+    },
+    {
+     "id": "chn-adm2-guidongxian",
+     "name": "Guidongxian"
+    },
+    {
+     "id": "chn-adm2-guigangshi",
+     "name": "Guigangshi"
+    },
+    {
+     "id": "chn-adm2-guilinshi",
+     "name": "Guilinshi"
+    },
+    {
+     "id": "chn-adm2-guinanxian",
+     "name": "Guinanxian"
+    },
+    {
+     "id": "chn-adm2-guipingshi",
+     "name": "Guipingshi"
+    },
+    {
+     "id": "chn-adm2-guixixian",
+     "name": "Guixixian"
+    },
+    {
+     "id": "chn-adm2-guiyangshi",
+     "name": "Guiyangshi"
+    },
+    {
+     "id": "chn-adm2-guiyangxian",
+     "name": "Guiyangxian"
+    },
+    {
+     "id": "chn-adm2-gujiaoshi",
+     "name": "Gujiaoshi"
+    },
+    {
+     "id": "chn-adm2-gulangxian",
+     "name": "Gulangxian"
+    },
+    {
+     "id": "chn-adm2-gulinxian",
+     "name": "Gulinxian"
+    },
+    {
+     "id": "chn-adm2-gushixian",
+     "name": "Gushixian"
+    },
+    {
+     "id": "chn-adm2-gutianxian",
+     "name": "Gutianxian"
+    },
+    {
+     "id": "chn-adm2-guxian",
+     "name": "Guxian"
+    },
+    {
+     "id": "chn-adm2-guyangxian",
+     "name": "Guyangxian"
+    },
+    {
+     "id": "chn-adm2-guyuanxian",
+     "name": "Guyuanxian"
+    },
+    {
+     "id": "chn-adm2-guyuanxian-2",
+     "name": "Guyuanxian"
+    },
+    {
+     "id": "chn-adm2-guzhangxian",
+     "name": "Guzhangxian"
+    },
+    {
+     "id": "chn-adm2-guzhenxian",
+     "name": "Guzhenxian"
+    },
+    {
+     "id": "chn-adm2-habahexian",
+     "name": "Habahexian"
+    },
+    {
+     "id": "chn-adm2-haerbinshi",
+     "name": "Haerbinshi"
+    },
+    {
+     "id": "chn-adm2-haianxian",
+     "name": "Haianxian"
+    },
+    {
+     "id": "chn-adm2-haichengshi",
+     "name": "Haichengshi"
+    },
+    {
+     "id": "chn-adm2-haifengxian",
+     "name": "Haifengxian"
+    },
+    {
+     "id": "chn-adm2-haikangxian",
+     "name": "Haikangxian"
+    },
+    {
+     "id": "chn-adm2-haikoushi",
+     "name": "Haikoushi"
+    },
+    {
+     "id": "chn-adm2-hailaershi",
+     "name": "Hailaershi"
+    },
+    {
+     "id": "chn-adm2-hailinshi",
+     "name": "Hailinshi"
+    },
+    {
+     "id": "chn-adm2-hailunshi",
+     "name": "Hailunshi"
+    },
+    {
+     "id": "chn-adm2-haimenshi",
+     "name": "Haimenshi"
+    },
+    {
+     "id": "chn-adm2-hainingshi",
+     "name": "Hainingshi"
+    },
+    {
+     "id": "chn-adm2-haixingxian",
+     "name": "Haixingxian"
+    },
+    {
+     "id": "chn-adm2-haiyangxian",
+     "name": "Haiyangxian"
+    },
+    {
+     "id": "chn-adm2-haiyanxian",
+     "name": "Haiyanxian"
+    },
+    {
+     "id": "chn-adm2-haiyanxian-2",
+     "name": "Haiyanxian"
+    },
+    {
+     "id": "chn-adm2-haiyuanxian",
+     "name": "Haiyuanxian"
+    },
+    {
+     "id": "chn-adm2-hamishi",
+     "name": "Hamishi"
+    },
+    {
+     "id": "chn-adm2-hanchengshi",
+     "name": "Hanchengshi"
+    },
+    {
+     "id": "chn-adm2-hanchuanxian",
+     "name": "Hanchuanxian"
+    },
+    {
+     "id": "chn-adm2-handanshi",
+     "name": "Handanshi"
+    },
+    {
+     "id": "chn-adm2-handanshi-2",
+     "name": "Handanshi"
+    },
+    {
+     "id": "chn-adm2-handanxian",
+     "name": "Handanxian"
+    },
+    {
+     "id": "chn-adm2-hangjinhouqi",
+     "name": "Hangjinhouqi"
+    },
+    {
+     "id": "chn-adm2-hangjinqi",
+     "name": "Hangjinqi"
+    },
+    {
+     "id": "chn-adm2-hangzhoushi",
+     "name": "Hangzhoushi"
+    },
+    {
+     "id": "chn-adm2-hanshanxian",
+     "name": "Hanshanxian"
+    },
+    {
+     "id": "chn-adm2-hanshouxian",
+     "name": "Hanshouxian"
+    },
+    {
+     "id": "chn-adm2-hanyinxian",
+     "name": "Hanyinxian"
+    },
+    {
+     "id": "chn-adm2-hanyuanxian",
+     "name": "Hanyuanxian"
+    },
+    {
+     "id": "chn-adm2-hanzhongshi",
+     "name": "Hanzhongshi"
+    },
+    {
+     "id": "chn-adm2-haochengshi",
+     "name": "Haochengshi"
+    },
+    {
+     "id": "chn-adm2-hebishi",
+     "name": "Hebishi"
+    },
+    {
+     "id": "chn-adm2-hebukesaiermengguzizhixian",
+     "name": "Hebukesaiermengguzizhixian"
+    },
+    {
+     "id": "chn-adm2-hechishi",
+     "name": "Hechishi"
+    },
+    {
+     "id": "chn-adm2-hechuanshi",
+     "name": "Hechuanshi"
+    },
+    {
+     "id": "chn-adm2-hefeishi",
+     "name": "Hefeishi"
+    },
+    {
+     "id": "chn-adm2-hefengxian",
+     "name": "Hefengxian"
+    },
+    {
+     "id": "chn-adm2-hegangshi",
+     "name": "Hegangshi"
+    },
+    {
+     "id": "chn-adm2-heiheshi",
+     "name": "Heiheshi"
+    },
+    {
+     "id": "chn-adm2-heishanxian",
+     "name": "Heishanxian"
+    },
+    {
+     "id": "chn-adm2-heishuixian",
+     "name": "Heishuixian"
+    },
+    {
+     "id": "chn-adm2-hejiangxian",
+     "name": "Hejiangxian"
+    },
+    {
+     "id": "chn-adm2-hejianshi",
+     "name": "Hejianshi"
+    },
+    {
+     "id": "chn-adm2-hejingxian",
+     "name": "Hejingxian"
+    },
+    {
+     "id": "chn-adm2-hejinxian",
+     "name": "Hejinxian"
+    },
+    {
+     "id": "chn-adm2-hekouyaozuzizhixian",
+     "name": "Hekouyaozuzizhixian"
+    },
+    {
+     "id": "chn-adm2-helanxian",
+     "name": "Helanxian"
+    },
+    {
+     "id": "chn-adm2-helingeerxian",
+     "name": "Helingeerxian"
+    },
+    {
+     "id": "chn-adm2-helongshi",
+     "name": "Helongshi"
+    },
+    {
+     "id": "chn-adm2-hengdongxian",
+     "name": "Hengdongxian"
+    },
+    {
+     "id": "chn-adm2-hengfengxian",
+     "name": "Hengfengxian"
+    },
+    {
+     "id": "chn-adm2-hengnanxian",
+     "name": "Hengnanxian"
+    },
+    {
+     "id": "chn-adm2-hengshanxian",
+     "name": "Hengshanxian"
+    },
+    {
+     "id": "chn-adm2-hengshanxian-2",
+     "name": "Hengshanxian"
+    },
+    {
+     "id": "chn-adm2-hengshuishi",
+     "name": "Hengshuishi"
+    },
+    {
+     "id": "chn-adm2-hengxian",
+     "name": "Hengxian"
+    },
+    {
+     "id": "chn-adm2-hengyangshi",
+     "name": "Hengyangshi"
+    },
+    {
+     "id": "chn-adm2-hengyangxian",
+     "name": "Hengyangxian"
+    },
+    {
+     "id": "chn-adm2-hepingxian",
+     "name": "Hepingxian"
+    },
+    {
+     "id": "chn-adm2-hepuxian",
+     "name": "Hepuxian"
+    },
+    {
+     "id": "chn-adm2-heqingxian",
+     "name": "Heqingxian"
+    },
+    {
+     "id": "chn-adm2-hequxian",
+     "name": "Hequxian"
+    },
+    {
+     "id": "chn-adm2-heshanshi",
+     "name": "Heshanshi"
+    },
+    {
+     "id": "chn-adm2-heshanshi-2",
+     "name": "Heshanshi"
+    },
+    {
+     "id": "chn-adm2-heshuixian",
+     "name": "Heshuixian"
+    },
+    {
+     "id": "chn-adm2-heshunxian",
+     "name": "Heshunxian"
+    },
+    {
+     "id": "chn-adm2-heshuoxian",
+     "name": "Heshuoxian"
+    },
+    {
+     "id": "chn-adm2-hetianshi",
+     "name": "Hetianshi"
+    },
+    {
+     "id": "chn-adm2-hetianxian",
+     "name": "Hetianxian"
+    },
+    {
+     "id": "chn-adm2-hexian",
+     "name": "Hexian"
+    },
+    {
+     "id": "chn-adm2-heyangxian",
+     "name": "Heyangxian"
+    },
+    {
+     "id": "chn-adm2-heyuanshi",
+     "name": "Heyuanshi"
+    },
+    {
+     "id": "chn-adm2-hezhangxian",
+     "name": "Hezhangxian"
+    },
+    {
+     "id": "chn-adm2-hezhengxian",
+     "name": "Hezhengxian"
+    },
+    {
+     "id": "chn-adm2-hezheshi",
+     "name": "Hezheshi"
+    },
+    {
+     "id": "chn-adm2-hezhoushi",
+     "name": "Hezhoushi"
+    },
+    {
+     "id": "chn-adm2-honganxian",
+     "name": "Honganxian"
+    },
+    {
+     "id": "chn-adm2-honghexian",
+     "name": "Honghexian"
+    },
+    {
+     "id": "chn-adm2-honghushi",
+     "name": "Honghushi"
+    },
+    {
+     "id": "chn-adm2-hongjiangshi",
+     "name": "Hongjiangshi"
+    },
+    {
+     "id": "chn-adm2-hongtongxian",
+     "name": "Hongtongxian"
+    },
+    {
+     "id": "chn-adm2-hongyaxian",
+     "name": "Hongyaxian"
+    },
+    {
+     "id": "chn-adm2-hongyuanxian",
+     "name": "Hongyuanxian"
+    },
+    {
+     "id": "chn-adm2-hongzexian",
+     "name": "Hongzexian"
+    },
+    {
+     "id": "chn-adm2-houmashi",
+     "name": "Houmashi"
+    },
+    {
+     "id": "chn-adm2-huaanxian",
+     "name": "Huaanxian"
+    },
+    {
+     "id": "chn-adm2-huachixian",
+     "name": "Huachixian"
+    },
+    {
+     "id": "chn-adm2-huachuanxian",
+     "name": "Huachuanxian"
+    },
+    {
+     "id": "chn-adm2-huadexian",
+     "name": "Huadexian"
+    },
+    {
+     "id": "chn-adm2-huadianshi",
+     "name": "Huadianshi"
+    },
+    {
+     "id": "chn-adm2-huadushi",
+     "name": "Huadushi"
+    },
+    {
+     "id": "chn-adm2-huaianshi",
+     "name": "Huaianshi"
+    },
+    {
+     "id": "chn-adm2-huaianxian",
+     "name": "Huaianxian"
+    },
+    {
+     "id": "chn-adm2-huaibeishi",
+     "name": "Huaibeishi"
+    },
+    {
+     "id": "chn-adm2-huaibinxian",
+     "name": "Huaibinxian"
+    },
+    {
+     "id": "chn-adm2-huaihuashi",
+     "name": "Huaihuashi"
+    },
+    {
+     "id": "chn-adm2-huaijixian",
+     "name": "Huaijixian"
+    },
+    {
+     "id": "chn-adm2-huailaixian",
+     "name": "Huailaixian"
+    },
+    {
+     "id": "chn-adm2-huainanshi",
+     "name": "Huainanshi"
+    },
+    {
+     "id": "chn-adm2-huainingxian",
+     "name": "Huainingxian"
+    },
+    {
+     "id": "chn-adm2-huairenxian",
+     "name": "Huairenxian"
+    },
+    {
+     "id": "chn-adm2-huairouxian",
+     "name": "Huairouxian"
+    },
+    {
+     "id": "chn-adm2-huaiyangxian",
+     "name": "Huaiyangxian"
+    },
+    {
+     "id": "chn-adm2-huaiyinshi",
+     "name": "Huaiyinshi"
+    },
+    {
+     "id": "chn-adm2-huaiyinxian",
+     "name": "Huaiyinxian"
+    },
+    {
+     "id": "chn-adm2-huaiyuanxian",
+     "name": "Huaiyuanxian"
+    },
+    {
+     "id": "chn-adm2-hualonghuizuzizhixian",
+     "name": "Hualonghuizuzizhixian"
+    },
+    {
+     "id": "chn-adm2-huananxian",
+     "name": "Huananxian"
+    },
+    {
+     "id": "chn-adm2-huangchuanxian",
+     "name": "Huangchuanxian"
+    },
+    {
+     "id": "chn-adm2-huanghuashi",
+     "name": "Huanghuashi"
+    },
+    {
+     "id": "chn-adm2-huanglingxian",
+     "name": "Huanglingxian"
+    },
+    {
+     "id": "chn-adm2-huanglongxian",
+     "name": "Huanglongxian"
+    },
+    {
+     "id": "chn-adm2-huangmeixian",
+     "name": "Huangmeixian"
+    },
+    {
+     "id": "chn-adm2-huangpingxian",
+     "name": "Huangpingxian"
+    },
+    {
+     "id": "chn-adm2-huangpixian",
+     "name": "Huangpixian"
+    },
+    {
+     "id": "chn-adm2-huangshanshi",
+     "name": "Huangshanshi"
+    },
+    {
+     "id": "chn-adm2-huangshanshi-2",
+     "name": "Huangshanshi"
+    },
+    {
+     "id": "chn-adm2-huangshishi",
+     "name": "Huangshishi"
+    },
+    {
+     "id": "chn-adm2-huangyuanxian",
+     "name": "Huangyuanxian"
+    },
+    {
+     "id": "chn-adm2-huangzhongxian",
+     "name": "Huangzhongxian"
+    },
+    {
+     "id": "chn-adm2-huangzhoushi",
+     "name": "Huangzhoushi"
+    },
+    {
+     "id": "chn-adm2-huaningxian",
+     "name": "Huaningxian"
+    },
+    {
+     "id": "chn-adm2-huanjiangmaonanzuzizhixian",
+     "name": "Huanjiangmaonanzuzizhixian"
+    },
+    {
+     "id": "chn-adm2-huanrenmanzuzizhixian",
+     "name": "Huanrenmanzuzizhixian"
+    },
+    {
+     "id": "chn-adm2-huantanxian",
+     "name": "Huantanxian"
+    },
+    {
+     "id": "chn-adm2-huanxian",
+     "name": "Huanxian"
+    },
+    {
+     "id": "chn-adm2-huapingxian",
+     "name": "Huapingxian"
+    },
+    {
+     "id": "chn-adm2-huarongxian",
+     "name": "Huarongxian"
+    },
+    {
+     "id": "chn-adm2-huatingxian",
+     "name": "Huatingxian"
+    },
+    {
+     "id": "chn-adm2-huaxian",
+     "name": "Huaxian"
+    },
+    {
+     "id": "chn-adm2-huaxian-2",
+     "name": "Huaxian"
+    },
+    {
+     "id": "chn-adm2-huayingshi",
+     "name": "Huayingshi"
+    },
+    {
+     "id": "chn-adm2-huayinshi",
+     "name": "Huayinshi"
+    },
+    {
+     "id": "chn-adm2-huayuanxian",
+     "name": "Huayuanxian"
+    },
+    {
+     "id": "chn-adm2-huazhoushi",
+     "name": "Huazhoushi"
+    },
+    {
+     "id": "chn-adm2-huguanxian",
+     "name": "Huguanxian"
+    },
+    {
+     "id": "chn-adm2-huhehaoteshi",
+     "name": "Huhehaoteshi"
+    },
+    {
+     "id": "chn-adm2-huianxian",
+     "name": "Huianxian"
+    },
+    {
+     "id": "chn-adm2-huichangxian",
+     "name": "Huichangxian"
+    },
+    {
+     "id": "chn-adm2-huichunshi",
+     "name": "Huichunshi"
+    },
+    {
+     "id": "chn-adm2-huidongxian",
+     "name": "Huidongxian"
+    },
+    {
+     "id": "chn-adm2-huidongxian-2",
+     "name": "Huidongxian"
+    },
+    {
+     "id": "chn-adm2-huilaixian",
+     "name": "Huilaixian"
+    },
+    {
+     "id": "chn-adm2-huilixian",
+     "name": "Huilixian"
+    },
+    {
+     "id": "chn-adm2-huiminxian",
+     "name": "Huiminxian"
+    },
+    {
+     "id": "chn-adm2-huinanxian",
+     "name": "Huinanxian"
+    },
+    {
+     "id": "chn-adm2-huiningxian",
+     "name": "Huiningxian"
+    },
+    {
+     "id": "chn-adm2-huinongxian",
+     "name": "Huinongxian"
+    },
+    {
+     "id": "chn-adm2-huinongxian-2",
+     "name": "Huinongxian"
+    },
+    {
+     "id": "chn-adm2-huishuixian",
+     "name": "Huishuixian"
+    },
+    {
+     "id": "chn-adm2-huitongxian",
+     "name": "Huitongxian"
+    },
+    {
+     "id": "chn-adm2-huixian",
+     "name": "Huixian"
+    },
+    {
+     "id": "chn-adm2-huixianshi",
+     "name": "Huixianshi"
+    },
+    {
+     "id": "chn-adm2-huiyangshi",
+     "name": "Huiyangshi"
+    },
+    {
+     "id": "chn-adm2-huizhexian",
+     "name": "Huizhexian"
+    },
+    {
+     "id": "chn-adm2-huizhoushi",
+     "name": "Huizhoushi"
+    },
+    {
+     "id": "chn-adm2-hukouxian",
+     "name": "Hukouxian"
+    },
+    {
+     "id": "chn-adm2-hulanxian",
+     "name": "Hulanxian"
+    },
+    {
+     "id": "chn-adm2-hulinxian",
+     "name": "Hulinxian"
+    },
+    {
+     "id": "chn-adm2-huludaoishi",
+     "name": "Huludaoishi"
+    },
+    {
+     "id": "chn-adm2-humaxian",
+     "name": "Humaxian"
+    },
+    {
+     "id": "chn-adm2-hunyuanxian",
+     "name": "Hunyuanxian"
+    },
+    {
+     "id": "chn-adm2-huochengxian",
+     "name": "Huochengxian"
+    },
+    {
+     "id": "chn-adm2-huojiaxian",
+     "name": "Huojiaxian"
+    },
+    {
+     "id": "chn-adm2-huolinguoleshi",
+     "name": "Huolinguoleshi"
+    },
+    {
+     "id": "chn-adm2-huoqiuxian",
+     "name": "Huoqiuxian"
+    },
+    {
+     "id": "chn-adm2-huoshanxian",
+     "name": "Huoshanxian"
+    },
+    {
+     "id": "chn-adm2-huozhoushi",
+     "name": "Huozhoushi"
+    },
+    {
+     "id": "chn-adm2-hutubixian",
+     "name": "Hutubixian"
+    },
+    {
+     "id": "chn-adm2-huxian",
+     "name": "Huxian"
+    },
+    {
+     "id": "chn-adm2-huzhoushi",
+     "name": "Huzhoushi"
+    },
+    {
+     "id": "chn-adm2-huzhutuzuzizhixian",
+     "name": "Huzhutuzuzizhixian"
+    },
+    {
+     "id": "chn-adm2-jaioushi",
+     "name": "Jaioushi"
+    },
+    {
+     "id": "chn-adm2-jiahexian",
+     "name": "Jiahexian"
+    },
+    {
+     "id": "chn-adm2-jiahexian-2",
+     "name": "Jiahexian"
+    },
+    {
+     "id": "chn-adm2-jiajiangxian",
+     "name": "Jiajiangxian"
+    },
+    {
+     "id": "chn-adm2-jiamusishi",
+     "name": "Jiamusishi"
+    },
+    {
+     "id": "chn-adm2-jianchangshi",
+     "name": "Jianchangshi"
+    },
+    {
+     "id": "chn-adm2-jianchuanxian",
+     "name": "Jianchuanxian"
+    },
+    {
+     "id": "chn-adm2-jiandeshi",
+     "name": "Jiandeshi"
+    },
+    {
+     "id": "chn-adm2-jianganxian",
+     "name": "Jianganxian"
+    },
+    {
+     "id": "chn-adm2-jiangchenghanizhuyizuzizhixian",
+     "name": "Jiangchenghanizhuyizuzizhixian"
+    },
+    {
+     "id": "chn-adm2-jiangchuanxian",
+     "name": "Jiangchuanxian"
+    },
+    {
+     "id": "chn-adm2-jiangdaxian",
+     "name": "Jiangdaxian"
+    },
+    {
+     "id": "chn-adm2-jiangdushi",
+     "name": "Jiangdushi"
+    },
+    {
+     "id": "chn-adm2-jiangexian",
+     "name": "Jiangexian"
+    },
+    {
+     "id": "chn-adm2-jianghuayaozuzizhixian",
+     "name": "Jianghuayaozuzizhixian"
+    },
+    {
+     "id": "chn-adm2-jiangjinshi",
+     "name": "Jiangjinshi"
+    },
+    {
+     "id": "chn-adm2-jiangkouxian",
+     "name": "Jiangkouxian"
+    },
+    {
+     "id": "chn-adm2-jianglexian",
+     "name": "Jianglexian"
+    },
+    {
+     "id": "chn-adm2-jianglingxian",
+     "name": "Jianglingxian"
+    },
+    {
+     "id": "chn-adm2-jiangmenshi",
+     "name": "Jiangmenshi"
+    },
+    {
+     "id": "chn-adm2-jiangningxian",
+     "name": "Jiangningxian"
+    },
+    {
+     "id": "chn-adm2-jiangpuxian",
+     "name": "Jiangpuxian"
+    },
+    {
+     "id": "chn-adm2-jiangshanshi",
+     "name": "Jiangshanshi"
+    },
+    {
+     "id": "chn-adm2-jiangxian",
+     "name": "Jiangxian"
+    },
+    {
+     "id": "chn-adm2-jiangyanshi",
+     "name": "Jiangyanshi"
+    },
+    {
+     "id": "chn-adm2-jiangyinshi",
+     "name": "Jiangyinshi"
+    },
+    {
+     "id": "chn-adm2-jiangyongxian",
+     "name": "Jiangyongxian"
+    },
+    {
+     "id": "chn-adm2-jiangyoushi",
+     "name": "Jiangyoushi"
+    },
+    {
+     "id": "chn-adm2-jiangzixian",
+     "name": "Jiangzixian"
+    },
+    {
+     "id": "chn-adm2-jianhexian",
+     "name": "Jianhexian"
+    },
+    {
+     "id": "chn-adm2-jianhuxian",
+     "name": "Jianhuxian"
+    },
+    {
+     "id": "chn-adm2-jianlixian",
+     "name": "Jianlixian"
+    },
+    {
+     "id": "chn-adm2-jianningxian",
+     "name": "Jianningxian"
+    },
+    {
+     "id": "chn-adm2-jianpingxian",
+     "name": "Jianpingxian"
+    },
+    {
+     "id": "chn-adm2-jianshanxian",
+     "name": "Jianshanxian"
+    },
+    {
+     "id": "chn-adm2-jianshi",
+     "name": "Jianshi"
+    },
+    {
+     "id": "chn-adm2-jianshi-2",
+     "name": "Jianshi"
+    },
+    {
+     "id": "chn-adm2-jianshi-3",
+     "name": "Jianshi"
+    },
+    {
+     "id": "chn-adm2-jianshixian",
+     "name": "Jianshixian"
+    },
+    {
+     "id": "chn-adm2-jianshuixian",
+     "name": "Jianshuixian"
+    },
+    {
+     "id": "chn-adm2-jianweixian",
+     "name": "Jianweixian"
+    },
+    {
+     "id": "chn-adm2-jianyangshi",
+     "name": "Jianyangshi"
+    },
+    {
+     "id": "chn-adm2-jianyangshi-2",
+     "name": "Jianyangshi"
+    },
+    {
+     "id": "chn-adm2-jianzhaxian",
+     "name": "Jianzhaxian"
+    },
+    {
+     "id": "chn-adm2-jiaochengxian",
+     "name": "Jiaochengxian"
+    },
+    {
+     "id": "chn-adm2-jiaohexian",
+     "name": "Jiaohexian"
+    },
+    {
+     "id": "chn-adm2-jiaokouxian",
+     "name": "Jiaokouxian"
+    },
+    {
+     "id": "chn-adm2-jiaolingxian",
+     "name": "Jiaolingxian"
+    },
+    {
+     "id": "chn-adm2-jiaonanshi",
+     "name": "Jiaonanshi"
+    },
+    {
+     "id": "chn-adm2-jiaozhoushi",
+     "name": "Jiaozhoushi"
+    },
+    {
+     "id": "chn-adm2-jiaozuoshi",
+     "name": "Jiaozuoshi"
+    },
+    {
+     "id": "chn-adm2-jiashanxian",
+     "name": "Jiashanxian"
+    },
+    {
+     "id": "chn-adm2-jiashanxian-2",
+     "name": "Jiashanxian"
+    },
+    {
+     "id": "chn-adm2-jiashixian",
+     "name": "Jiashixian"
+    },
+    {
+     "id": "chn-adm2-jiaxian",
+     "name": "Jiaxian"
+    },
+    {
+     "id": "chn-adm2-jiaxian-2",
+     "name": "Jiaxian"
+    },
+    {
+     "id": "chn-adm2-jiaxiangxian",
+     "name": "Jiaxiangxian"
+    },
+    {
+     "id": "chn-adm2-jiaxingshi",
+     "name": "Jiaxingshi"
+    },
+    {
+     "id": "chn-adm2-jiayinxian",
+     "name": "Jiayinxian"
+    },
+    {
+     "id": "chn-adm2-jiayixian",
+     "name": "Jiayixian"
+    },
+    {
+     "id": "chn-adm2-jiayuxian",
+     "name": "Jiayuxian"
+    },
+    {
+     "id": "chn-adm2-jiazhaxian",
+     "name": "Jiazhaxian"
+    },
+    {
+     "id": "chn-adm2-jidongxian",
+     "name": "Jidongxian"
+    },
+    {
+     "id": "chn-adm2-jieshoushi",
+     "name": "Jieshoushi"
+    },
+    {
+     "id": "chn-adm2-jiexiushi",
+     "name": "Jiexiushi"
+    },
+    {
+     "id": "chn-adm2-jiexixian",
+     "name": "Jiexixian"
+    },
+    {
+     "id": "chn-adm2-jieyangshi",
+     "name": "Jieyangshi"
+    },
+    {
+     "id": "chn-adm2-jilinshi",
+     "name": "Jilinshi"
+    },
+    {
+     "id": "chn-adm2-jilongshi",
+     "name": "Jilongshi"
+    },
+    {
+     "id": "chn-adm2-jilongxian",
+     "name": "Jilongxian"
+    },
+    {
+     "id": "chn-adm2-jimoshi",
+     "name": "Jimoshi"
+    },
+    {
+     "id": "chn-adm2-jimunaixian",
+     "name": "Jimunaixian"
+    },
+    {
+     "id": "chn-adm2-jimushaerxian",
+     "name": "Jimushaerxian"
+    },
+    {
+     "id": "chn-adm2-jinanshi",
+     "name": "Jinanshi"
+    },
+    {
+     "id": "chn-adm2-jinchangshi",
+     "name": "Jinchangshi"
+    },
+    {
+     "id": "chn-adm2-jinchengshi",
+     "name": "Jinchengshi"
+    },
+    {
+     "id": "chn-adm2-jinchuanxian",
+     "name": "Jinchuanxian"
+    },
+    {
+     "id": "chn-adm2-jinganxian",
+     "name": "Jinganxian"
+    },
+    {
+     "id": "chn-adm2-jingbeixian",
+     "name": "Jingbeixian"
+    },
+    {
+     "id": "chn-adm2-jingbianxian",
+     "name": "Jingbianxian"
+    },
+    {
+     "id": "chn-adm2-jingchuanxian",
+     "name": "Jingchuanxian"
+    },
+    {
+     "id": "chn-adm2-jingdexian",
+     "name": "Jingdexian"
+    },
+    {
+     "id": "chn-adm2-jingdezheshi",
+     "name": "Jingdezheshi"
+    },
+    {
+     "id": "chn-adm2-jingdongyizuzizhixian",
+     "name": "Jingdongyizuzizhixian"
+    },
+    {
+     "id": "chn-adm2-jinggangshanshi",
+     "name": "Jinggangshanshi"
+    },
+    {
+     "id": "chn-adm2-jinggudaizhuyizuzizhixian",
+     "name": "Jinggudaizhuyizuzizhixian"
+    },
+    {
+     "id": "chn-adm2-jinghaixian",
+     "name": "Jinghaixian"
+    },
+    {
+     "id": "chn-adm2-jinghexian",
+     "name": "Jinghexian"
+    },
+    {
+     "id": "chn-adm2-jinghongshi",
+     "name": "Jinghongshi"
+    },
+    {
+     "id": "chn-adm2-jingjiangshi",
+     "name": "Jingjiangshi"
+    },
+    {
+     "id": "chn-adm2-jingjingxian",
+     "name": "Jingjingxian"
+    },
+    {
+     "id": "chn-adm2-jinglexian",
+     "name": "Jinglexian"
+    },
+    {
+     "id": "chn-adm2-jingmenshi",
+     "name": "Jingmenshi"
+    },
+    {
+     "id": "chn-adm2-jingningshezuzizhixian",
+     "name": "Jingningshezuzizhixian"
+    },
+    {
+     "id": "chn-adm2-jingningxian",
+     "name": "Jingningxian"
+    },
+    {
+     "id": "chn-adm2-jingshanxian",
+     "name": "Jingshanxian"
+    },
+    {
+     "id": "chn-adm2-jingtaixian",
+     "name": "Jingtaixian"
+    },
+    {
+     "id": "chn-adm2-jingxian",
+     "name": "Jingxian"
+    },
+    {
+     "id": "chn-adm2-jingxian-2",
+     "name": "Jingxian"
+    },
+    {
+     "id": "chn-adm2-jingxixian",
+     "name": "Jingxixian"
+    },
+    {
+     "id": "chn-adm2-jingyangxian",
+     "name": "Jingyangxian"
+    },
+    {
+     "id": "chn-adm2-jingyuanxian",
+     "name": "Jingyuanxian"
+    },
+    {
+     "id": "chn-adm2-jingyuanxian-2",
+     "name": "Jingyuanxian"
+    },
+    {
+     "id": "chn-adm2-jingyuxian",
+     "name": "Jingyuxian"
+    },
+    {
+     "id": "chn-adm2-jingzhoumiaozhudongzuzizhixian",
+     "name": "Jingzhoumiaozhudongzuzizhixian"
+    },
+    {
+     "id": "chn-adm2-jinhuashi",
+     "name": "Jinhuashi"
+    },
+    {
+     "id": "chn-adm2-jiningshi",
+     "name": "Jiningshi"
+    },
+    {
+     "id": "chn-adm2-jiningshi-2",
+     "name": "Jiningshi"
+    },
+    {
+     "id": "chn-adm2-jinjiangshi",
+     "name": "Jinjiangshi"
+    },
+    {
+     "id": "chn-adm2-jinkouhequ",
+     "name": "Jinkouhequ"
+    },
+    {
+     "id": "chn-adm2-jinmenxian",
+     "name": "Jinmenxian"
+    },
+    {
+     "id": "chn-adm2-jinningxian",
+     "name": "Jinningxian"
+    },
+    {
+     "id": "chn-adm2-jinpingmiaozhuyaozhudaizuzizhixian",
+     "name": "Jinpingmiaozhuyaozhudaizuzizhixian"
+    },
+    {
+     "id": "chn-adm2-jinpingxian",
+     "name": "Jinpingxian"
+    },
+    {
+     "id": "chn-adm2-jinshanxian",
+     "name": "Jinshanxian"
+    },
+    {
+     "id": "chn-adm2-jinshaxian",
+     "name": "Jinshaxian"
+    },
+    {
+     "id": "chn-adm2-jinshishi",
+     "name": "Jinshishi"
+    },
+    {
+     "id": "chn-adm2-jintangxian",
+     "name": "Jintangxian"
+    },
+    {
+     "id": "chn-adm2-jintanshi",
+     "name": "Jintanshi"
+    },
+    {
+     "id": "chn-adm2-jintaxian",
+     "name": "Jintaxian"
+    },
+    {
+     "id": "chn-adm2-jinxiangxian",
+     "name": "Jinxiangxian"
+    },
+    {
+     "id": "chn-adm2-jinxianxian",
+     "name": "Jinxianxian"
+    },
+    {
+     "id": "chn-adm2-jinxiuyaozuzizhixian",
+     "name": "Jinxiuyaozuzizhixian"
+    },
+    {
+     "id": "chn-adm2-jinxixian",
+     "name": "Jinxixian"
+    },
+    {
+     "id": "chn-adm2-jinyangxian",
+     "name": "Jinyangxian"
+    },
+    {
+     "id": "chn-adm2-jinyunxian",
+     "name": "Jinyunxian"
+    },
+    {
+     "id": "chn-adm2-jinzaixian",
+     "name": "Jinzaixian"
+    },
+    {
+     "id": "chn-adm2-jinzhoushi",
+     "name": "Jinzhoushi"
+    },
+    {
+     "id": "chn-adm2-jinzhoushi-2",
+     "name": "Jinzhoushi"
+    },
+    {
+     "id": "chn-adm2-jishanxian",
+     "name": "Jishanxian"
+    },
+    {
+     "id": "chn-adm2-jishishanbaoanzudongxiangzusalazuzizhixian",
+     "name": "Jishishanbaoanzudongxiangzusalazuzizhixian"
+    },
+    {
+     "id": "chn-adm2-jishoushi",
+     "name": "Jishoushi"
+    },
+    {
+     "id": "chn-adm2-jishuixian",
+     "name": "Jishuixian"
+    },
+    {
+     "id": "chn-adm2-jiujiangshi",
+     "name": "Jiujiangshi"
+    },
+    {
+     "id": "chn-adm2-jiujiangxian",
+     "name": "Jiujiangxian"
+    },
+    {
+     "id": "chn-adm2-jiujianxian",
+     "name": "Jiujianxian"
+    },
+    {
+     "id": "chn-adm2-jiulongxian",
+     "name": "Jiulongxian"
+    },
+    {
+     "id": "chn-adm2-jiuquanshi",
+     "name": "Jiuquanshi"
+    },
+    {
+     "id": "chn-adm2-jiutaishi",
+     "name": "Jiutaishi"
+    },
+    {
+     "id": "chn-adm2-jiuzhixian",
+     "name": "Jiuzhixian"
+    },
+    {
+     "id": "chn-adm2-jixian",
+     "name": "Jixian"
+    },
+    {
+     "id": "chn-adm2-jixian-2",
+     "name": "Jixian"
+    },
+    {
+     "id": "chn-adm2-jixian-3",
+     "name": "Jixian"
+    },
+    {
+     "id": "chn-adm2-jixianxian",
+     "name": "Jixianxian"
+    },
+    {
+     "id": "chn-adm2-jixishi",
+     "name": "Jixishi"
+    },
+    {
+     "id": "chn-adm2-jixixian",
+     "name": "Jixixian"
+    },
+    {
+     "id": "chn-adm2-jiyangxian",
+     "name": "Jiyangxian"
+    },
+    {
+     "id": "chn-adm2-jiyuanshi",
+     "name": "Jiyuanshi"
+    },
+    {
+     "id": "chn-adm2-jiyuguanshi",
+     "name": "Jiyuguanshi"
+    },
+    {
+     "id": "chn-adm2-jizhexian",
+     "name": "Jizhexian"
+    },
+    {
+     "id": "chn-adm2-juluxian",
+     "name": "Juluxian"
+    },
+    {
+     "id": "chn-adm2-junanxian",
+     "name": "Junanxian"
+    },
+    {
+     "id": "chn-adm2-junlianxian",
+     "name": "Junlianxian"
+    },
+    {
+     "id": "chn-adm2-junxian",
+     "name": "Junxian"
+    },
+    {
+     "id": "chn-adm2-jurongxian",
+     "name": "Jurongxian"
+    },
+    {
+     "id": "chn-adm2-juxian",
+     "name": "Juxian"
+    },
+    {
+     "id": "chn-adm2-juyexian",
+     "name": "Juyexian"
+    },
+    {
+     "id": "chn-adm2-kaifengshi",
+     "name": "Kaifengshi"
+    },
+    {
+     "id": "chn-adm2-kaifengxian",
+     "name": "Kaifengxian"
+    },
+    {
+     "id": "chn-adm2-kaihuaxian",
+     "name": "Kaihuaxian"
+    },
+    {
+     "id": "chn-adm2-kaijiangxian",
+     "name": "Kaijiangxian"
+    },
+    {
+     "id": "chn-adm2-kailishi",
+     "name": "Kailishi"
+    },
+    {
+     "id": "chn-adm2-kailuxian",
+     "name": "Kailuxian"
+    },
+    {
+     "id": "chn-adm2-kaipingshi",
+     "name": "Kaipingshi"
+    },
+    {
+     "id": "chn-adm2-kaixian",
+     "name": "Kaixian"
+    },
+    {
+     "id": "chn-adm2-kaiyangxian",
+     "name": "Kaiyangxian"
+    },
+    {
+     "id": "chn-adm2-kaiyuanshi",
+     "name": "Kaiyuanshi"
+    },
+    {
+     "id": "chn-adm2-kaiyuanshi-2",
+     "name": "Kaiyuanshi"
+    },
+    {
+     "id": "chn-adm2-kalaqinzuoqimengguzuzizhixian",
+     "name": "Kalaqinzuoqimengguzuzizhixian"
+    },
+    {
+     "id": "chn-adm2-kangbaoxian",
+     "name": "Kangbaoxian"
+    },
+    {
+     "id": "chn-adm2-kangdingxian",
+     "name": "Kangdingxian"
+    },
+    {
+     "id": "chn-adm2-kanglexian",
+     "name": "Kanglexian"
+    },
+    {
+     "id": "chn-adm2-kangmaxian",
+     "name": "Kangmaxian"
+    },
+    {
+     "id": "chn-adm2-kangpingxian",
+     "name": "Kangpingxian"
+    },
+    {
+     "id": "chn-adm2-kangxian",
+     "name": "Kangxian"
+    },
+    {
+     "id": "chn-adm2-kedongxian",
+     "name": "Kedongxian"
+    },
+    {
+     "id": "chn-adm2-keerqinyouyiqianqi",
+     "name": "Keerqinyouyiqianqi"
+    },
+    {
+     "id": "chn-adm2-keerqinyouyizhongqi",
+     "name": "Keerqinyouyizhongqi"
+    },
+    {
+     "id": "chn-adm2-keerqinzuoyihouqi",
+     "name": "Keerqinzuoyihouqi"
+    },
+    {
+     "id": "chn-adm2-keerqinzuoyizhongqi",
+     "name": "Keerqinzuoyizhongqi"
+    },
+    {
+     "id": "chn-adm2-kelamayishi",
+     "name": "Kelamayishi"
+    },
+    {
+     "id": "chn-adm2-kelanxian",
+     "name": "Kelanxian"
+    },
+    {
+     "id": "chn-adm2-kelinqinqi",
+     "name": "Kelinqinqi"
+    },
+    {
+     "id": "chn-adm2-kenlixian",
+     "name": "Kenlixian"
+    },
+    {
+     "id": "chn-adm2-kepingxian",
+     "name": "Kepingxian"
+    },
+    {
+     "id": "chn-adm2-keshanxian",
+     "name": "Keshanxian"
+    },
+    {
+     "id": "chn-adm2-keshenketengqi",
+     "name": "Keshenketengqi"
+    },
+    {
+     "id": "chn-adm2-keshishi",
+     "name": "Keshishi"
+    },
+    {
+     "id": "chn-adm2-kuanchengmanzuzizhixian",
+     "name": "Kuanchengmanzuzizhixian"
+    },
+    {
+     "id": "chn-adm2-kuandianmanzuzizhixian",
+     "name": "Kuandianmanzuzizhixian"
+    },
+    {
+     "id": "chn-adm2-kuchexian",
+     "name": "Kuchexian"
+    },
+    {
+     "id": "chn-adm2-kuerleshi",
+     "name": "Kuerleshi"
+    },
+    {
+     "id": "chn-adm2-kuitunshi",
+     "name": "Kuitunshi"
+    },
+    {
+     "id": "chn-adm2-kulunqi",
+     "name": "Kulunqi"
+    },
+    {
+     "id": "chn-adm2-kunmingshi",
+     "name": "Kunmingshi"
+    },
+    {
+     "id": "chn-adm2-kunshanshi",
+     "name": "Kunshanshi"
+    },
+    {
+     "id": "chn-adm2-laianxian",
+     "name": "Laianxian"
+    },
+    {
+     "id": "chn-adm2-laibinxian",
+     "name": "Laibinxian"
+    },
+    {
+     "id": "chn-adm2-laifengxian",
+     "name": "Laifengxian"
+    },
+    {
+     "id": "chn-adm2-laishuixian",
+     "name": "Laishuixian"
+    },
+    {
+     "id": "chn-adm2-laiwushi",
+     "name": "Laiwushi"
+    },
+    {
+     "id": "chn-adm2-laixishi",
+     "name": "Laixishi"
+    },
+    {
+     "id": "chn-adm2-laiyangshi",
+     "name": "Laiyangshi"
+    },
+    {
+     "id": "chn-adm2-laiyuanxian",
+     "name": "Laiyuanxian"
+    },
+    {
+     "id": "chn-adm2-laizhoushi",
+     "name": "Laizhoushi"
+    },
+    {
+     "id": "chn-adm2-lanchanglaguzuzizhixian",
+     "name": "Lanchanglaguzuzizhixian"
+    },
+    {
+     "id": "chn-adm2-langaoxian",
+     "name": "Langaoxian"
+    },
+    {
+     "id": "chn-adm2-langfangshi",
+     "name": "Langfangshi"
+    },
+    {
+     "id": "chn-adm2-langkazhixian",
+     "name": "Langkazhixian"
+    },
+    {
+     "id": "chn-adm2-langxian",
+     "name": "Langxian"
+    },
+    {
+     "id": "chn-adm2-langxixian",
+     "name": "Langxixian"
+    },
+    {
+     "id": "chn-adm2-langzhongshi",
+     "name": "Langzhongshi"
+    },
+    {
+     "id": "chn-adm2-lankaoxian",
+     "name": "Lankaoxian"
+    },
+    {
+     "id": "chn-adm2-lanpingbazupumizuzizhixian",
+     "name": "Lanpingbazupumizuzizhixian"
+    },
+    {
+     "id": "chn-adm2-lanshanxian",
+     "name": "Lanshanxian"
+    },
+    {
+     "id": "chn-adm2-lantianxian",
+     "name": "Lantianxian"
+    },
+    {
+     "id": "chn-adm2-lanxian",
+     "name": "Lanxian"
+    },
+    {
+     "id": "chn-adm2-lanxishi",
+     "name": "Lanxishi"
+    },
+    {
+     "id": "chn-adm2-lanxixian",
+     "name": "Lanxixian"
+    },
+    {
+     "id": "chn-adm2-lanzhoushi",
+     "name": "Lanzhoushi"
+    },
+    {
+     "id": "chn-adm2-laohekoushi",
+     "name": "Laohekoushi"
+    },
+    {
+     "id": "chn-adm2-lashashi",
+     "name": "Lashashi"
+    },
+    {
+     "id": "chn-adm2-lazhixian",
+     "name": "Lazhixian"
+    },
+    {
+     "id": "chn-adm2-leanxian",
+     "name": "Leanxian"
+    },
+    {
+     "id": "chn-adm2-lechangxian",
+     "name": "Lechangxian"
+    },
+    {
+     "id": "chn-adm2-ledonglizuzizhixian",
+     "name": "Ledonglizuzizhixian"
+    },
+    {
+     "id": "chn-adm2-leduxian",
+     "name": "Leduxian"
+    },
+    {
+     "id": "chn-adm2-leiboxian",
+     "name": "Leiboxian"
+    },
+    {
+     "id": "chn-adm2-leishanxian",
+     "name": "Leishanxian"
+    },
+    {
+     "id": "chn-adm2-leiwuqixian",
+     "name": "Leiwuqixian"
+    },
+    {
+     "id": "chn-adm2-leiyangshi",
+     "name": "Leiyangshi"
+    },
+    {
+     "id": "chn-adm2-lengshuijiangshi",
+     "name": "Lengshuijiangshi"
+    },
+    {
+     "id": "chn-adm2-lengshuitanshi",
+     "name": "Lengshuitanshi"
+    },
+    {
+     "id": "chn-adm2-leningshi",
+     "name": "Leningshi"
+    },
+    {
+     "id": "chn-adm2-lepingshi",
+     "name": "Lepingshi"
+    },
+    {
+     "id": "chn-adm2-leqingxian",
+     "name": "Leqingxian"
+    },
+    {
+     "id": "chn-adm2-leshanshi",
+     "name": "Leshanshi"
+    },
+    {
+     "id": "chn-adm2-letingxian",
+     "name": "Letingxian"
+    },
+    {
+     "id": "chn-adm2-leyexian",
+     "name": "Leyexian"
+    },
+    {
+     "id": "chn-adm2-lezhixian",
+     "name": "Lezhixian"
+    },
+    {
+     "id": "chn-adm2-lianchengxian",
+     "name": "Lianchengxian"
+    },
+    {
+     "id": "chn-adm2-liangchengxian",
+     "name": "Liangchengxian"
+    },
+    {
+     "id": "chn-adm2-liangdangxian",
+     "name": "Liangdangxian"
+    },
+    {
+     "id": "chn-adm2-lianghexian",
+     "name": "Lianghexian"
+    },
+    {
+     "id": "chn-adm2-liangpingxian",
+     "name": "Liangpingxian"
+    },
+    {
+     "id": "chn-adm2-liangshanxian",
+     "name": "Liangshanxian"
+    },
+    {
+     "id": "chn-adm2-lianhuaxian",
+     "name": "Lianhuaxian"
+    },
+    {
+     "id": "chn-adm2-lianhuaxian-2",
+     "name": "Lianhuaxian"
+    },
+    {
+     "id": "chn-adm2-lianjiangxian",
+     "name": "Lianjiangxian"
+    },
+    {
+     "id": "chn-adm2-lianjiangxian-2",
+     "name": "Lianjiangxian"
+    },
+    {
+     "id": "chn-adm2-liannanyaozuzizhixian",
+     "name": "Liannanyaozuzizhixian"
+    },
+    {
+     "id": "chn-adm2-lianpingxian",
+     "name": "Lianpingxian"
+    },
+    {
+     "id": "chn-adm2-lianshanzhuangzuzizhixian",
+     "name": "Lianshanzhuangzuzizhixian"
+    },
+    {
+     "id": "chn-adm2-lianshuixian",
+     "name": "Lianshuixian"
+    },
+    {
+     "id": "chn-adm2-lianyuanshi",
+     "name": "Lianyuanshi"
+    },
+    {
+     "id": "chn-adm2-lianyungangshi",
+     "name": "Lianyungangshi"
+    },
+    {
+     "id": "chn-adm2-lianzhoushi",
+     "name": "Lianzhoushi"
+    },
+    {
+     "id": "chn-adm2-liaochengshi",
+     "name": "Liaochengshi"
+    },
+    {
+     "id": "chn-adm2-liaoyangshi",
+     "name": "Liaoyangshi"
+    },
+    {
+     "id": "chn-adm2-liaoyangxian",
+     "name": "Liaoyangxian"
+    },
+    {
+     "id": "chn-adm2-liaoyangxian-2",
+     "name": "Liaoyangxian"
+    },
+    {
+     "id": "chn-adm2-liaoyuanshi",
+     "name": "Liaoyuanshi"
+    },
+    {
+     "id": "chn-adm2-liaozhongxian",
+     "name": "Liaozhongxian"
+    },
+    {
+     "id": "chn-adm2-liboxian",
+     "name": "Liboxian"
+    },
+    {
+     "id": "chn-adm2-lichengxian",
+     "name": "Lichengxian"
+    },
+    {
+     "id": "chn-adm2-lichuanshi",
+     "name": "Lichuanshi"
+    },
+    {
+     "id": "chn-adm2-lichuanxian",
+     "name": "Lichuanxian"
+    },
+    {
+     "id": "chn-adm2-lijiangnaxizuzizhixian",
+     "name": "Lijiangnaxizuzizhixian"
+    },
+    {
+     "id": "chn-adm2-lijinxian",
+     "name": "Lijinxian"
+    },
+    {
+     "id": "chn-adm2-lilingshi",
+     "name": "Lilingshi"
+    },
+    {
+     "id": "chn-adm2-linanxian",
+     "name": "Linanxian"
+    },
+    {
+     "id": "chn-adm2-linchangxian",
+     "name": "Linchangxian"
+    },
+    {
+     "id": "chn-adm2-linchanshi",
+     "name": "Linchanshi"
+    },
+    {
+     "id": "chn-adm2-linchengxian",
+     "name": "Linchengxian"
+    },
+    {
+     "id": "chn-adm2-lindianxian",
+     "name": "Lindianxian"
+    },
+    {
+     "id": "chn-adm2-linfenshi",
+     "name": "Linfenshi"
+    },
+    {
+     "id": "chn-adm2-lingaoxian",
+     "name": "Lingaoxian"
+    },
+    {
+     "id": "chn-adm2-lingbaoshi",
+     "name": "Lingbaoshi"
+    },
+    {
+     "id": "chn-adm2-lingbixian",
+     "name": "Lingbixian"
+    },
+    {
+     "id": "chn-adm2-lingchuanxian",
+     "name": "Lingchuanxian"
+    },
+    {
+     "id": "chn-adm2-lingchuanxian-2",
+     "name": "Lingchuanxian"
+    },
+    {
+     "id": "chn-adm2-lingqiuxian",
+     "name": "Lingqiuxian"
+    },
+    {
+     "id": "chn-adm2-lingshanxian",
+     "name": "Lingshanxian"
+    },
+    {
+     "id": "chn-adm2-lingshixian",
+     "name": "Lingshixian"
+    },
+    {
+     "id": "chn-adm2-lingshouxian",
+     "name": "Lingshouxian"
+    },
+    {
+     "id": "chn-adm2-lingshuilizumiaozuzizhixian",
+     "name": "Lingshuilizumiaozuzizhixian"
+    },
+    {
+     "id": "chn-adm2-lingtaixian",
+     "name": "Lingtaixian"
+    },
+    {
+     "id": "chn-adm2-linguixian",
+     "name": "Linguixian"
+    },
+    {
+     "id": "chn-adm2-lingwuxian",
+     "name": "Lingwuxian"
+    },
+    {
+     "id": "chn-adm2-lingxian",
+     "name": "Lingxian"
+    },
+    {
+     "id": "chn-adm2-lingxian-2",
+     "name": "Lingxian"
+    },
+    {
+     "id": "chn-adm2-lingxixian",
+     "name": "Lingxixian"
+    },
+    {
+     "id": "chn-adm2-lingyuanshi",
+     "name": "Lingyuanshi"
+    },
+    {
+     "id": "chn-adm2-lingyunxian",
+     "name": "Lingyunxian"
+    },
+    {
+     "id": "chn-adm2-linhaishi",
+     "name": "Linhaishi"
+    },
+    {
+     "id": "chn-adm2-linhaishi-2",
+     "name": "Linhaishi"
+    },
+    {
+     "id": "chn-adm2-linheshi",
+     "name": "Linheshi"
+    },
+    {
+     "id": "chn-adm2-linjiangshi",
+     "name": "Linjiangshi"
+    },
+    {
+     "id": "chn-adm2-linjuxian",
+     "name": "Linjuxian"
+    },
+    {
+     "id": "chn-adm2-linkouxian",
+     "name": "Linkouxian"
+    },
+    {
+     "id": "chn-adm2-linlixian",
+     "name": "Linlixian"
+    },
+    {
+     "id": "chn-adm2-linqingshi",
+     "name": "Linqingshi"
+    },
+    {
+     "id": "chn-adm2-linqixian",
+     "name": "Linqixian"
+    },
+    {
+     "id": "chn-adm2-linquanxian",
+     "name": "Linquanxian"
+    },
+    {
+     "id": "chn-adm2-linshuixian",
+     "name": "Linshuixian"
+    },
+    {
+     "id": "chn-adm2-linshuxian",
+     "name": "Linshuxian"
+    },
+    {
+     "id": "chn-adm2-lintanxian",
+     "name": "Lintanxian"
+    },
+    {
+     "id": "chn-adm2-lintaoxian",
+     "name": "Lintaoxian"
+    },
+    {
+     "id": "chn-adm2-lintongxian",
+     "name": "Lintongxian"
+    },
+    {
+     "id": "chn-adm2-linwuxian",
+     "name": "Linwuxian"
+    },
+    {
+     "id": "chn-adm2-linxian",
+     "name": "Linxian"
+    },
+    {
+     "id": "chn-adm2-linxian-2",
+     "name": "Linxian"
+    },
+    {
+     "id": "chn-adm2-linxiangshi",
+     "name": "Linxiangshi"
+    },
+    {
+     "id": "chn-adm2-linxiashi",
+     "name": "Linxiashi"
+    },
+    {
+     "id": "chn-adm2-linxiaxian",
+     "name": "Linxiaxian"
+    },
+    {
+     "id": "chn-adm2-linxixian",
+     "name": "Linxixian"
+    },
+    {
+     "id": "chn-adm2-linyingxian",
+     "name": "Linyingxian"
+    },
+    {
+     "id": "chn-adm2-linyishi",
+     "name": "Linyishi"
+    },
+    {
+     "id": "chn-adm2-linyixian",
+     "name": "Linyixian"
+    },
+    {
+     "id": "chn-adm2-linyouxian",
+     "name": "Linyouxian"
+    },
+    {
+     "id": "chn-adm2-linzhexian",
+     "name": "Linzhexian"
+    },
+    {
+     "id": "chn-adm2-linzhixian",
+     "name": "Linzhixian"
+    },
+    {
+     "id": "chn-adm2-linzhouxian",
+     "name": "Linzhouxian"
+    },
+    {
+     "id": "chn-adm2-lipingxian",
+     "name": "Lipingxian"
+    },
+    {
+     "id": "chn-adm2-lipuxian",
+     "name": "Lipuxian"
+    },
+    {
+     "id": "chn-adm2-liquanxian",
+     "name": "Liquanxian"
+    },
+    {
+     "id": "chn-adm2-lishixian",
+     "name": "Lishixian"
+    },
+    {
+     "id": "chn-adm2-lishuishi",
+     "name": "Lishuishi"
+    },
+    {
+     "id": "chn-adm2-lishuixian",
+     "name": "Lishuixian"
+    },
+    {
+     "id": "chn-adm2-lishuxian",
+     "name": "Lishuxian"
+    },
+    {
+     "id": "chn-adm2-litangxian",
+     "name": "Litangxian"
+    },
+    {
+     "id": "chn-adm2-liuanshi",
+     "name": "Liuanshi"
+    },
+    {
+     "id": "chn-adm2-liubaxian",
+     "name": "Liubaxian"
+    },
+    {
+     "id": "chn-adm2-liuchengxian",
+     "name": "Liuchengxian"
+    },
+    {
+     "id": "chn-adm2-liuhexian",
+     "name": "Liuhexian"
+    },
+    {
+     "id": "chn-adm2-liuhexian-2",
+     "name": "Liuhexian"
+    },
+    {
+     "id": "chn-adm2-liujiangxian",
+     "name": "Liujiangxian"
+    },
+    {
+     "id": "chn-adm2-liulinxian",
+     "name": "Liulinxian"
+    },
+    {
+     "id": "chn-adm2-liupanshuishi",
+     "name": "Liupanshuishi"
+    },
+    {
+     "id": "chn-adm2-liuxiangxian",
+     "name": "Liuxiangxian"
+    },
+    {
+     "id": "chn-adm2-liuyangxian",
+     "name": "Liuyangxian"
+    },
+    {
+     "id": "chn-adm2-liuzhitequ",
+     "name": "Liuzhitequ"
+    },
+    {
+     "id": "chn-adm2-liuzhoushi",
+     "name": "Liuzhoushi"
+    },
+    {
+     "id": "chn-adm2-lixian",
+     "name": "Lixian"
+    },
+    {
+     "id": "chn-adm2-lixian-2",
+     "name": "Lixian"
+    },
+    {
+     "id": "chn-adm2-lixian-3",
+     "name": "Lixian"
+    },
+    {
+     "id": "chn-adm2-lixian-4",
+     "name": "Lixian"
+    },
+    {
+     "id": "chn-adm2-lixingxian",
+     "name": "Lixingxian"
+    },
+    {
+     "id": "chn-adm2-liyangshi",
+     "name": "Liyangshi"
+    },
+    {
+     "id": "chn-adm2-longanxian",
+     "name": "Longanxian"
+    },
+    {
+     "id": "chn-adm2-longchangxian",
+     "name": "Longchangxian"
+    },
+    {
+     "id": "chn-adm2-longchuanxian",
+     "name": "Longchuanxian"
+    },
+    {
+     "id": "chn-adm2-longchuanxian-2",
+     "name": "Longchuanxian"
+    },
+    {
+     "id": "chn-adm2-longdexian",
+     "name": "Longdexian"
+    },
+    {
+     "id": "chn-adm2-longgeerxian",
+     "name": "Longgeerxian"
+    },
+    {
+     "id": "chn-adm2-longhaishi",
+     "name": "Longhaishi"
+    },
+    {
+     "id": "chn-adm2-longhuaxian",
+     "name": "Longhuaxian"
+    },
+    {
+     "id": "chn-adm2-longhuixian",
+     "name": "Longhuixian"
+    },
+    {
+     "id": "chn-adm2-longjiangxian",
+     "name": "Longjiangxian"
+    },
+    {
+     "id": "chn-adm2-longjingshi",
+     "name": "Longjingshi"
+    },
+    {
+     "id": "chn-adm2-longkoushi",
+     "name": "Longkoushi"
+    },
+    {
+     "id": "chn-adm2-longlingezuzizhixian",
+     "name": "Longlingezuzizhixian"
+    },
+    {
+     "id": "chn-adm2-longlingxian",
+     "name": "Longlingxian"
+    },
+    {
+     "id": "chn-adm2-longlixian",
+     "name": "Longlixian"
+    },
+    {
+     "id": "chn-adm2-longmenxian",
+     "name": "Longmenxian"
+    },
+    {
+     "id": "chn-adm2-longnanxian",
+     "name": "Longnanxian"
+    },
+    {
+     "id": "chn-adm2-longquanshi",
+     "name": "Longquanshi"
+    },
+    {
+     "id": "chn-adm2-longshanxian",
+     "name": "Longshanxian"
+    },
+    {
+     "id": "chn-adm2-longshengezuzizhixian",
+     "name": "Longshengezuzizhixian"
+    },
+    {
+     "id": "chn-adm2-longxian",
+     "name": "Longxian"
+    },
+    {
+     "id": "chn-adm2-longxixian",
+     "name": "Longxixian"
+    },
+    {
+     "id": "chn-adm2-longyanshi",
+     "name": "Longyanshi"
+    },
+    {
+     "id": "chn-adm2-longyaoxian",
+     "name": "Longyaoxian"
+    },
+    {
+     "id": "chn-adm2-longyouxian",
+     "name": "Longyouxian"
+    },
+    {
+     "id": "chn-adm2-longzhixian",
+     "name": "Longzhixian"
+    },
+    {
+     "id": "chn-adm2-longzhouxian",
+     "name": "Longzhouxian"
+    },
+    {
+     "id": "chn-adm2-loudishi",
+     "name": "Loudishi"
+    },
+    {
+     "id": "chn-adm2-loufanxian",
+     "name": "Loufanxian"
+    },
+    {
+     "id": "chn-adm2-luanchengxian",
+     "name": "Luanchengxian"
+    },
+    {
+     "id": "chn-adm2-luanchuanxian",
+     "name": "Luanchuanxian"
+    },
+    {
+     "id": "chn-adm2-luannanxian",
+     "name": "Luannanxian"
+    },
+    {
+     "id": "chn-adm2-luannanxian-2",
+     "name": "Luannanxian"
+    },
+    {
+     "id": "chn-adm2-luanpingxian",
+     "name": "Luanpingxian"
+    },
+    {
+     "id": "chn-adm2-luanxian",
+     "name": "Luanxian"
+    },
+    {
+     "id": "chn-adm2-luchengshi",
+     "name": "Luchengshi"
+    },
+    {
+     "id": "chn-adm2-luchuanxian",
+     "name": "Luchuanxian"
+    },
+    {
+     "id": "chn-adm2-luchunxian",
+     "name": "Luchunxian"
+    },
+    {
+     "id": "chn-adm2-ludingshi",
+     "name": "Ludingshi"
+    },
+    {
+     "id": "chn-adm2-ludingxian",
+     "name": "Ludingxian"
+    },
+    {
+     "id": "chn-adm2-lueyangxian",
+     "name": "Lueyangxian"
+    },
+    {
+     "id": "chn-adm2-lufengxian",
+     "name": "Lufengxian"
+    },
+    {
+     "id": "chn-adm2-lufengxian-2",
+     "name": "Lufengxian"
+    },
+    {
+     "id": "chn-adm2-lujiangxian",
+     "name": "Lujiangxian"
+    },
+    {
+     "id": "chn-adm2-luliangxian",
+     "name": "Luliangxian"
+    },
+    {
+     "id": "chn-adm2-lulongxian",
+     "name": "Lulongxian"
+    },
+    {
+     "id": "chn-adm2-lunanyizuzizhixian",
+     "name": "Lunanyizuzizhixian"
+    },
+    {
+     "id": "chn-adm2-luntaixian",
+     "name": "Luntaixian"
+    },
+    {
+     "id": "chn-adm2-luobeixian",
+     "name": "Luobeixian"
+    },
+    {
+     "id": "chn-adm2-luochengyaolaozuzizhixian",
+     "name": "Luochengyaolaozuzizhixian"
+    },
+    {
+     "id": "chn-adm2-luochuanxian",
+     "name": "Luochuanxian"
+    },
+    {
+     "id": "chn-adm2-luodianxian",
+     "name": "Luodianxian"
+    },
+    {
+     "id": "chn-adm2-luodingshi",
+     "name": "Luodingshi"
+    },
+    {
+     "id": "chn-adm2-luoheshi",
+     "name": "Luoheshi"
+    },
+    {
+     "id": "chn-adm2-luohuoxian",
+     "name": "Luohuoxian"
+    },
+    {
+     "id": "chn-adm2-luolongxian",
+     "name": "Luolongxian"
+    },
+    {
+     "id": "chn-adm2-luonanxian",
+     "name": "Luonanxian"
+    },
+    {
+     "id": "chn-adm2-luoningxian",
+     "name": "Luoningxian"
+    },
+    {
+     "id": "chn-adm2-luopingxian",
+     "name": "Luopingxian"
+    },
+    {
+     "id": "chn-adm2-luopuxian",
+     "name": "Luopuxian"
+    },
+    {
+     "id": "chn-adm2-luoshanxian",
+     "name": "Luoshanxian"
+    },
+    {
+     "id": "chn-adm2-luotianxian",
+     "name": "Luotianxian"
+    },
+    {
+     "id": "chn-adm2-luoyangshi",
+     "name": "Luoyangshi"
+    },
+    {
+     "id": "chn-adm2-luoyuanxian",
+     "name": "Luoyuanxian"
+    },
+    {
+     "id": "chn-adm2-luozhaxian",
+     "name": "Luozhaxian"
+    },
+    {
+     "id": "chn-adm2-luquanshi",
+     "name": "Luquanshi"
+    },
+    {
+     "id": "chn-adm2-luquanyizumiaozuzizhixian",
+     "name": "Luquanyizumiaozuzizhixian"
+    },
+    {
+     "id": "chn-adm2-luquxian",
+     "name": "Luquxian"
+    },
+    {
+     "id": "chn-adm2-lushanxian",
+     "name": "Lushanxian"
+    },
+    {
+     "id": "chn-adm2-lushanxian-2",
+     "name": "Lushanxian"
+    },
+    {
+     "id": "chn-adm2-lushixian",
+     "name": "Lushixian"
+    },
+    {
+     "id": "chn-adm2-lushuixian",
+     "name": "Lushuixian"
+    },
+    {
+     "id": "chn-adm2-luxian",
+     "name": "Luxian"
+    },
+    {
+     "id": "chn-adm2-luxixian",
+     "name": "Luxixian"
+    },
+    {
+     "id": "chn-adm2-luxixian-2",
+     "name": "Luxixian"
+    },
+    {
+     "id": "chn-adm2-luxixian-3",
+     "name": "Luxixian"
+    },
+    {
+     "id": "chn-adm2-luyixian",
+     "name": "Luyixian"
+    },
+    {
+     "id": "chn-adm2-luzaixian",
+     "name": "Luzaixian"
+    },
+    {
+     "id": "chn-adm2-luzhoushi",
+     "name": "Luzhoushi"
+    },
+    {
+     "id": "chn-adm2-maanshanshi",
+     "name": "Maanshanshi"
+    },
+    {
+     "id": "chn-adm2-mabianyizuzizhixian",
+     "name": "Mabianyizuzizhixian"
+    },
+    {
+     "id": "chn-adm2-machengshi",
+     "name": "Machengshi"
+    },
+    {
+     "id": "chn-adm2-maduoxian",
+     "name": "Maduoxian"
+    },
+    {
+     "id": "chn-adm2-maerkangxian",
+     "name": "Maerkangxian"
+    },
+    {
+     "id": "chn-adm2-maguanxian",
+     "name": "Maguanxian"
+    },
+    {
+     "id": "chn-adm2-maigaitixian",
+     "name": "Maigaitixian"
+    },
+    {
+     "id": "chn-adm2-majiangxian",
+     "name": "Majiangxian"
+    },
+    {
+     "id": "chn-adm2-malipoxian",
+     "name": "Malipoxian"
+    },
+    {
+     "id": "chn-adm2-malongxian",
+     "name": "Malongxian"
+    },
+    {
+     "id": "chn-adm2-manashixian",
+     "name": "Manashixian"
+    },
+    {
+     "id": "chn-adm2-manchengxian",
+     "name": "Manchengxian"
+    },
+    {
+     "id": "chn-adm2-manggangxian",
+     "name": "Manggangxian"
+    },
+    {
+     "id": "chn-adm2-manzhoulishi",
+     "name": "Manzhoulishi"
+    },
+    {
+     "id": "chn-adm2-maomingshi",
+     "name": "Maomingshi"
+    },
+    {
+     "id": "chn-adm2-maoxian",
+     "name": "Maoxian"
+    },
+    {
+     "id": "chn-adm2-maqinxian",
+     "name": "Maqinxian"
+    },
+    {
+     "id": "chn-adm2-maquxian",
+     "name": "Maquxian"
+    },
+    {
+     "id": "chn-adm2-mashanxian",
+     "name": "Mashanxian"
+    },
+    {
+     "id": "chn-adm2-mayangmiaozuzizhixian",
+     "name": "Mayangmiaozuzizhixian"
+    },
+    {
+     "id": "chn-adm2-meiguxian",
+     "name": "Meiguxian"
+    },
+    {
+     "id": "chn-adm2-meihekoushi",
+     "name": "Meihekoushi"
+    },
+    {
+     "id": "chn-adm2-meishanxian",
+     "name": "Meishanxian"
+    },
+    {
+     "id": "chn-adm2-meitanxian",
+     "name": "Meitanxian"
+    },
+    {
+     "id": "chn-adm2-meixian",
+     "name": "Meixian"
+    },
+    {
+     "id": "chn-adm2-meizhoushi",
+     "name": "Meizhoushi"
+    },
+    {
+     "id": "chn-adm2-mencunhuizuzizhixian",
+     "name": "Mencunhuizuzizhixian"
+    },
+    {
+     "id": "chn-adm2-mengchengxian",
+     "name": "Mengchengxian"
+    },
+    {
+     "id": "chn-adm2-menghaixian",
+     "name": "Menghaixian"
+    },
+    {
+     "id": "chn-adm2-mengjinxian",
+     "name": "Mengjinxian"
+    },
+    {
+     "id": "chn-adm2-menglaxian",
+     "name": "Menglaxian"
+    },
+    {
+     "id": "chn-adm2-mengliandaizhulaguzhuvazuzizhixian",
+     "name": "Mengliandaizhulaguzhuvazuzizhixian"
+    },
+    {
+     "id": "chn-adm2-mengshanxian",
+     "name": "Mengshanxian"
+    },
+    {
+     "id": "chn-adm2-mengxian",
+     "name": "Mengxian"
+    },
+    {
+     "id": "chn-adm2-mengxian-2",
+     "name": "Mengxian"
+    },
+    {
+     "id": "chn-adm2-mengyinxian",
+     "name": "Mengyinxian"
+    },
+    {
+     "id": "chn-adm2-mengzixian",
+     "name": "Mengzixian"
+    },
+    {
+     "id": "chn-adm2-menyuanhuizuzizhixian",
+     "name": "Menyuanhuizuzizhixian"
+    },
+    {
+     "id": "chn-adm2-mianchixian",
+     "name": "Mianchixian"
+    },
+    {
+     "id": "chn-adm2-mianningxian",
+     "name": "Mianningxian"
+    },
+    {
+     "id": "chn-adm2-mianxian",
+     "name": "Mianxian"
+    },
+    {
+     "id": "chn-adm2-mianyangshi",
+     "name": "Mianyangshi"
+    },
+    {
+     "id": "chn-adm2-mianzhuxian",
+     "name": "Mianzhuxian"
+    },
+    {
+     "id": "chn-adm2-miaolixian",
+     "name": "Miaolixian"
+    },
+    {
+     "id": "chn-adm2-miduxian",
+     "name": "Miduxian"
+    },
+    {
+     "id": "chn-adm2-milexian",
+     "name": "Milexian"
+    },
+    {
+     "id": "chn-adm2-milinxian",
+     "name": "Milinxian"
+    },
+    {
+     "id": "chn-adm2-miluoshi",
+     "name": "Miluoshi"
+    },
+    {
+     "id": "chn-adm2-minfengxian",
+     "name": "Minfengxian"
+    },
+    {
+     "id": "chn-adm2-mingshanxian",
+     "name": "Mingshanxian"
+    },
+    {
+     "id": "chn-adm2-mingshuixian",
+     "name": "Mingshuixian"
+    },
+    {
+     "id": "chn-adm2-mingxixian",
+     "name": "Mingxixian"
+    },
+    {
+     "id": "chn-adm2-minhehuizutuzuzizhixian",
+     "name": "Minhehuizutuzuzizhixian"
+    },
+    {
+     "id": "chn-adm2-minhouxian",
+     "name": "Minhouxian"
+    },
+    {
+     "id": "chn-adm2-minlexian",
+     "name": "Minlexian"
+    },
+    {
+     "id": "chn-adm2-minqingxian",
+     "name": "Minqingxian"
+    },
+    {
+     "id": "chn-adm2-minqinxian",
+     "name": "Minqinxian"
+    },
+    {
+     "id": "chn-adm2-minquanxian",
+     "name": "Minquanxian"
+    },
+    {
+     "id": "chn-adm2-minxian",
+     "name": "Minxian"
+    },
+    {
+     "id": "chn-adm2-miquanshi",
+     "name": "Miquanshi"
+    },
+    {
+     "id": "chn-adm2-mishanshi",
+     "name": "Mishanshi"
+    },
+    {
+     "id": "chn-adm2-mixian",
+     "name": "Mixian"
+    },
+    {
+     "id": "chn-adm2-miyangxian",
+     "name": "Miyangxian"
+    },
+    {
+     "id": "chn-adm2-miyixian",
+     "name": "Miyixian"
+    },
+    {
+     "id": "chn-adm2-miyunxian",
+     "name": "Miyunxian"
+    },
+    {
+     "id": "chn-adm2-mizhixian",
+     "name": "Mizhixian"
+    },
+    {
+     "id": "chn-adm2-mohexian",
+     "name": "Mohexian"
+    },
+    {
+     "id": "chn-adm2-mojianghanizuzizhixian",
+     "name": "Mojianghanizuzizhixian"
+    },
+    {
+     "id": "chn-adm2-molidawadahanerzuzizhiqi",
+     "name": "Molidawadahanerzuzizhiqi"
+    },
+    {
+     "id": "chn-adm2-motuoxian",
+     "name": "Motuoxian"
+    },
+    {
+     "id": "chn-adm2-moudingxian",
+     "name": "Moudingxian"
+    },
+    {
+     "id": "chn-adm2-moyuxian",
+     "name": "Moyuxian"
+    },
+    {
+     "id": "chn-adm2-mozhugongkaxian",
+     "name": "Mozhugongkaxian"
+    },
+    {
+     "id": "chn-adm2-muchuanxian",
+     "name": "Muchuanxian"
+    },
+    {
+     "id": "chn-adm2-mudanjiangshi",
+     "name": "Mudanjiangshi"
+    },
+    {
+     "id": "chn-adm2-mulanxian",
+     "name": "Mulanxian"
+    },
+    {
+     "id": "chn-adm2-muleihashakezizhixian",
+     "name": "Muleihashakezizhixian"
+    },
+    {
+     "id": "chn-adm2-mulicangzuzizhixian",
+     "name": "Mulicangzuzizhixian"
+    },
+    {
+     "id": "chn-adm2-mulingxian",
+     "name": "Mulingxian"
+    },
+    {
+     "id": "chn-adm2-mupingxian",
+     "name": "Mupingxian"
+    },
+    {
+     "id": "chn-adm2-naidongxian",
+     "name": "Naidongxian"
+    },
+    {
+     "id": "chn-adm2-naimanqi",
+     "name": "Naimanqi"
+    },
+    {
+     "id": "chn-adm2-nananshi",
+     "name": "Nananshi"
+    },
+    {
+     "id": "chn-adm2-nanaoxian",
+     "name": "Nanaoxian"
+    },
+    {
+     "id": "chn-adm2-nanbuxian",
+     "name": "Nanbuxian"
+    },
+    {
+     "id": "chn-adm2-nanchangshi",
+     "name": "Nanchangshi"
+    },
+    {
+     "id": "chn-adm2-nanchangxian",
+     "name": "Nanchangxian"
+    },
+    {
+     "id": "chn-adm2-nanchengxian",
+     "name": "Nanchengxian"
+    },
+    {
+     "id": "chn-adm2-nanchongshi",
+     "name": "Nanchongshi"
+    },
+    {
+     "id": "chn-adm2-nanchuanxian",
+     "name": "Nanchuanxian"
+    },
+    {
+     "id": "chn-adm2-nandanxian",
+     "name": "Nandanxian"
+    },
+    {
+     "id": "chn-adm2-nanfengxian",
+     "name": "Nanfengxian"
+    },
+    {
+     "id": "chn-adm2-nangongshi",
+     "name": "Nangongshi"
+    },
+    {
+     "id": "chn-adm2-nangqianxian",
+     "name": "Nangqianxian"
+    },
+    {
+     "id": "chn-adm2-nanhaishi",
+     "name": "Nanhaishi"
+    },
+    {
+     "id": "chn-adm2-nanhexian",
+     "name": "Nanhexian"
+    },
+    {
+     "id": "chn-adm2-nanhuaxian",
+     "name": "Nanhuaxian"
+    },
+    {
+     "id": "chn-adm2-nanhuixian",
+     "name": "Nanhuixian"
+    },
+    {
+     "id": "chn-adm2-nanjiangxian",
+     "name": "Nanjiangxian"
+    },
+    {
+     "id": "chn-adm2-nanjianyizuzizhixian",
+     "name": "Nanjianyizuzizhixian"
+    },
+    {
+     "id": "chn-adm2-nanjingshi",
+     "name": "Nanjingshi"
+    },
+    {
+     "id": "chn-adm2-nanjingxian",
+     "name": "Nanjingxian"
+    },
+    {
+     "id": "chn-adm2-nankangshi",
+     "name": "Nankangshi"
+    },
+    {
+     "id": "chn-adm2-nanlexian",
+     "name": "Nanlexian"
+    },
+    {
+     "id": "chn-adm2-nanlingxian",
+     "name": "Nanlingxian"
+    },
+    {
+     "id": "chn-adm2-nanmulinxian",
+     "name": "Nanmulinxian"
+    },
+    {
+     "id": "chn-adm2-nanningshi",
+     "name": "Nanningshi"
+    },
+    {
+     "id": "chn-adm2-nanpingshi",
+     "name": "Nanpingshi"
+    },
+    {
+     "id": "chn-adm2-nanpingxian",
+     "name": "Nanpingxian"
+    },
+    {
+     "id": "chn-adm2-nanpixian",
+     "name": "Nanpixian"
+    },
+    {
+     "id": "chn-adm2-nantongshi",
+     "name": "Nantongshi"
+    },
+    {
+     "id": "chn-adm2-nantouxian",
+     "name": "Nantouxian"
+    },
+    {
+     "id": "chn-adm2-nanxian",
+     "name": "Nanxian"
+    },
+    {
+     "id": "chn-adm2-nanxiongxian",
+     "name": "Nanxiongxian"
+    },
+    {
+     "id": "chn-adm2-nanxixian",
+     "name": "Nanxixian"
+    },
+    {
+     "id": "chn-adm2-nanyangshi",
+     "name": "Nanyangshi"
+    },
+    {
+     "id": "chn-adm2-nanyangshi-2",
+     "name": "Nanyangshi"
+    },
+    {
+     "id": "chn-adm2-nanzhangxian",
+     "name": "Nanzhangxian"
+    },
+    {
+     "id": "chn-adm2-nanzhaoxian",
+     "name": "Nanzhaoxian"
+    },
+    {
+     "id": "chn-adm2-nanzhengxian",
+     "name": "Nanzhengxian"
+    },
+    {
+     "id": "chn-adm2-napoxian",
+     "name": "Napoxian"
+    },
+    {
+     "id": "chn-adm2-naquxian",
+     "name": "Naquxian"
+    },
+    {
+     "id": "chn-adm2-naxishulishuzuzizhixian",
+     "name": "Naxishulishuzuzizhixian"
+    },
+    {
+     "id": "chn-adm2-naxixian",
+     "name": "Naxixian"
+    },
+    {
+     "id": "chn-adm2-nayongxian",
+     "name": "Nayongxian"
+    },
+    {
+     "id": "chn-adm2-nehexian",
+     "name": "Nehexian"
+    },
+    {
+     "id": "chn-adm2-neihuangxian",
+     "name": "Neihuangxian"
+    },
+    {
+     "id": "chn-adm2-neijiangshi",
+     "name": "Neijiangshi"
+    },
+    {
+     "id": "chn-adm2-neiqiuxian",
+     "name": "Neiqiuxian"
+    },
+    {
+     "id": "chn-adm2-neixiangxian",
+     "name": "Neixiangxian"
+    },
+    {
+     "id": "chn-adm2-nenjiangxian",
+     "name": "Nenjiangxian"
+    },
+    {
+     "id": "chn-adm2-nielamuxian",
+     "name": "Nielamuxian"
+    },
+    {
+     "id": "chn-adm2-nierongxian",
+     "name": "Nierongxian"
+    },
+    {
+     "id": "chn-adm2-nilekexian",
+     "name": "Nilekexian"
+    },
+    {
+     "id": "chn-adm2-nimaxian",
+     "name": "Nimaxian"
+    },
+    {
+     "id": "chn-adm2-nimuxian",
+     "name": "Nimuxian"
+    },
+    {
+     "id": "chn-adm2-ninganxian",
+     "name": "Ninganxian"
+    },
+    {
+     "id": "chn-adm2-ningboshi",
+     "name": "Ningboshi"
+    },
+    {
+     "id": "chn-adm2-ningchengxian",
+     "name": "Ningchengxian"
+    },
+    {
+     "id": "chn-adm2-ningdeshi",
+     "name": "Ningdeshi"
+    },
+    {
+     "id": "chn-adm2-ningduxian",
+     "name": "Ningduxian"
+    },
+    {
+     "id": "chn-adm2-ninggangxian",
+     "name": "Ninggangxian"
+    },
+    {
+     "id": "chn-adm2-ningguoshi",
+     "name": "Ningguoshi"
+    },
+    {
+     "id": "chn-adm2-ninghaixian",
+     "name": "Ninghaixian"
+    },
+    {
+     "id": "chn-adm2-ninghexian",
+     "name": "Ninghexian"
+    },
+    {
+     "id": "chn-adm2-ninghuaxian",
+     "name": "Ninghuaxian"
+    },
+    {
+     "id": "chn-adm2-ningjinxian",
+     "name": "Ningjinxian"
+    },
+    {
+     "id": "chn-adm2-ningjinxian-2",
+     "name": "Ningjinxian"
+    },
+    {
+     "id": "chn-adm2-ninglangyizuzizhixian",
+     "name": "Ninglangyizuzizhixian"
+    },
+    {
+     "id": "chn-adm2-ninglingxian",
+     "name": "Ninglingxian"
+    },
+    {
+     "id": "chn-adm2-ningmingxian",
+     "name": "Ningmingxian"
+    },
+    {
+     "id": "chn-adm2-ningnanxian",
+     "name": "Ningnanxian"
+    },
+    {
+     "id": "chn-adm2-ningqiangxian",
+     "name": "Ningqiangxian"
+    },
+    {
+     "id": "chn-adm2-ningshanxian",
+     "name": "Ningshanxian"
+    },
+    {
+     "id": "chn-adm2-ningwuxian",
+     "name": "Ningwuxian"
+    },
+    {
+     "id": "chn-adm2-ningxian",
+     "name": "Ningxian"
+    },
+    {
+     "id": "chn-adm2-ningyangxian",
+     "name": "Ningyangxian"
+    },
+    {
+     "id": "chn-adm2-ningyuanxian",
+     "name": "Ningyuanxian"
+    },
+    {
+     "id": "chn-adm2-nonganxian",
+     "name": "Nonganxian"
+    },
+    {
+     "id": "chn-adm2-nonganxian-2",
+     "name": "Nonganxian"
+    },
+    {
+     "id": "chn-adm2-ouhaixian",
+     "name": "Ouhaixian"
+    },
+    {
+     "id": "chn-adm2-pananxian",
+     "name": "Pananxian"
+    },
+    {
+     "id": "chn-adm2-panjinshi",
+     "name": "Panjinshi"
+    },
+    {
+     "id": "chn-adm2-panshishi",
+     "name": "Panshishi"
+    },
+    {
+     "id": "chn-adm2-panxiantequ",
+     "name": "Panxiantequ"
+    },
+    {
+     "id": "chn-adm2-panyushi",
+     "name": "Panyushi"
+    },
+    {
+     "id": "chn-adm2-panzhihuashi",
+     "name": "Panzhihuashi"
+    },
+    {
+     "id": "chn-adm2-peixian",
+     "name": "Peixian"
+    },
+    {
+     "id": "chn-adm2-penganxian",
+     "name": "Penganxian"
+    },
+    {
+     "id": "chn-adm2-penglaixian",
+     "name": "Penglaixian"
+    },
+    {
+     "id": "chn-adm2-pengshanxian",
+     "name": "Pengshanxian"
+    },
+    {
+     "id": "chn-adm2-pengshuimiaozutujiazuzizhixian",
+     "name": "Pengshuimiaozutujiazuzizhixian"
+    },
+    {
+     "id": "chn-adm2-pengxixian",
+     "name": "Pengxixian"
+    },
+    {
+     "id": "chn-adm2-pengyangxian",
+     "name": "Pengyangxian"
+    },
+    {
+     "id": "chn-adm2-pengzexian",
+     "name": "Pengzexian"
+    },
+    {
+     "id": "chn-adm2-pengzhoushi",
+     "name": "Pengzhoushi"
+    },
+    {
+     "id": "chn-adm2-pianguanxian",
+     "name": "Pianguanxian"
+    },
+    {
+     "id": "chn-adm2-pinganxian",
+     "name": "Pinganxian"
+    },
+    {
+     "id": "chn-adm2-pingbaxian",
+     "name": "Pingbaxian"
+    },
+    {
+     "id": "chn-adm2-pingbianmiaozuzizhixian",
+     "name": "Pingbianmiaozuzizhixian"
+    },
+    {
+     "id": "chn-adm2-pingchangxian",
+     "name": "Pingchangxian"
+    },
+    {
+     "id": "chn-adm2-pingdingshanshi",
+     "name": "Pingdingshanshi"
+    },
+    {
+     "id": "chn-adm2-pingdingxian",
+     "name": "Pingdingxian"
+    },
+    {
+     "id": "chn-adm2-pingdingxian-2",
+     "name": "Pingdingxian"
+    },
+    {
+     "id": "chn-adm2-pingdushi",
+     "name": "Pingdushi"
+    },
+    {
+     "id": "chn-adm2-pingguoxian",
+     "name": "Pingguoxian"
+    },
+    {
+     "id": "chn-adm2-pingguxian",
+     "name": "Pingguxian"
+    },
+    {
+     "id": "chn-adm2-pinghexian",
+     "name": "Pinghexian"
+    },
+    {
+     "id": "chn-adm2-pinghushi",
+     "name": "Pinghushi"
+    },
+    {
+     "id": "chn-adm2-pingjiangxian",
+     "name": "Pingjiangxian"
+    },
+    {
+     "id": "chn-adm2-pinglexian",
+     "name": "Pinglexian"
+    },
+    {
+     "id": "chn-adm2-pingliangshi",
+     "name": "Pingliangshi"
+    },
+    {
+     "id": "chn-adm2-pinglixian",
+     "name": "Pinglixian"
+    },
+    {
+     "id": "chn-adm2-pingluoxian",
+     "name": "Pingluoxian"
+    },
+    {
+     "id": "chn-adm2-pingluqu",
+     "name": "Pingluqu"
+    },
+    {
+     "id": "chn-adm2-pingluxian",
+     "name": "Pingluxian"
+    },
+    {
+     "id": "chn-adm2-pingnanxian",
+     "name": "Pingnanxian"
+    },
+    {
+     "id": "chn-adm2-pingnanxian-2",
+     "name": "Pingnanxian"
+    },
+    {
+     "id": "chn-adm2-pingquanxian",
+     "name": "Pingquanxian"
+    },
+    {
+     "id": "chn-adm2-pingshanxian",
+     "name": "Pingshanxian"
+    },
+    {
+     "id": "chn-adm2-pingshanxian-2",
+     "name": "Pingshanxian"
+    },
+    {
+     "id": "chn-adm2-pingshunxian",
+     "name": "Pingshunxian"
+    },
+    {
+     "id": "chn-adm2-pingtangxian",
+     "name": "Pingtangxian"
+    },
+    {
+     "id": "chn-adm2-pingtanxian",
+     "name": "Pingtanxian"
+    },
+    {
+     "id": "chn-adm2-pingwuxian",
+     "name": "Pingwuxian"
+    },
+    {
+     "id": "chn-adm2-pingxiangshi",
+     "name": "Pingxiangshi"
+    },
+    {
+     "id": "chn-adm2-pingxiangshi-2",
+     "name": "Pingxiangshi"
+    },
+    {
+     "id": "chn-adm2-pingxiangxian",
+     "name": "Pingxiangxian"
+    },
+    {
+     "id": "chn-adm2-pingyangxian",
+     "name": "Pingyangxian"
+    },
+    {
+     "id": "chn-adm2-pingyaoxian",
+     "name": "Pingyaoxian"
+    },
+    {
+     "id": "chn-adm2-pingyinxian",
+     "name": "Pingyinxian"
+    },
+    {
+     "id": "chn-adm2-pingyixian",
+     "name": "Pingyixian"
+    },
+    {
+     "id": "chn-adm2-pingyuanxian",
+     "name": "Pingyuanxian"
+    },
+    {
+     "id": "chn-adm2-pingyuanxian-2",
+     "name": "Pingyuanxian"
+    },
+    {
+     "id": "chn-adm2-pingyuxian",
+     "name": "Pingyuxian"
+    },
+    {
+     "id": "chn-adm2-pishanxian",
+     "name": "Pishanxian"
+    },
+    {
+     "id": "chn-adm2-pizhoushi",
+     "name": "Pizhoushi"
+    },
+    {
+     "id": "chn-adm2-puanxian",
+     "name": "Puanxian"
+    },
+    {
+     "id": "chn-adm2-pubeixian",
+     "name": "Pubeixian"
+    },
+    {
+     "id": "chn-adm2-puchengxian",
+     "name": "Puchengxian"
+    },
+    {
+     "id": "chn-adm2-puchengxian-2",
+     "name": "Puchengxian"
+    },
+    {
+     "id": "chn-adm2-pudingxian",
+     "name": "Pudingxian"
+    },
+    {
+     "id": "chn-adm2-puerhanizhuyizuzizhixian",
+     "name": "Puerhanizhuyizuzizhixian"
+    },
+    {
+     "id": "chn-adm2-pugexian",
+     "name": "Pugexian"
+    },
+    {
+     "id": "chn-adm2-pujiangxian",
+     "name": "Pujiangxian"
+    },
+    {
+     "id": "chn-adm2-pujiangxian-2",
+     "name": "Pujiangxian"
+    },
+    {
+     "id": "chn-adm2-pulanxian",
+     "name": "Pulanxian"
+    },
+    {
+     "id": "chn-adm2-puningshi",
+     "name": "Puningshi"
+    },
+    {
+     "id": "chn-adm2-putianshi",
+     "name": "Putianshi"
+    },
+    {
+     "id": "chn-adm2-putianxian",
+     "name": "Putianxian"
+    },
+    {
+     "id": "chn-adm2-puxian",
+     "name": "Puxian"
+    },
+    {
+     "id": "chn-adm2-puxishi",
+     "name": "Puxishi"
+    },
+    {
+     "id": "chn-adm2-puyangshi",
+     "name": "Puyangshi"
+    },
+    {
+     "id": "chn-adm2-puyangxian",
+     "name": "Puyangxian"
+    },
+    {
+     "id": "chn-adm2-qiananshi",
+     "name": "Qiananshi"
+    },
+    {
+     "id": "chn-adm2-qiananxian",
+     "name": "Qiananxian"
+    },
+    {
+     "id": "chn-adm2-qianguoerluomengguzuzizhixian",
+     "name": "Qianguoerluomengguzuzizhixian"
+    },
+    {
+     "id": "chn-adm2-qianjiangshi",
+     "name": "Qianjiangshi"
+    },
+    {
+     "id": "chn-adm2-qianjiangtujiazumiaozuzizhixian",
+     "name": "Qianjiangtujiazumiaozuzizhixian"
+    },
+    {
+     "id": "chn-adm2-qianshanxian",
+     "name": "Qianshanxian"
+    },
+    {
+     "id": "chn-adm2-qianshanxian-2",
+     "name": "Qianshanxian"
+    },
+    {
+     "id": "chn-adm2-qianxian",
+     "name": "Qianxian"
+    },
+    {
+     "id": "chn-adm2-qianxixian",
+     "name": "Qianxixian"
+    },
+    {
+     "id": "chn-adm2-qianxixian-2",
+     "name": "Qianxixian"
+    },
+    {
+     "id": "chn-adm2-qianyangxian",
+     "name": "Qianyangxian"
+    },
+    {
+     "id": "chn-adm2-qiaojiaxian",
+     "name": "Qiaojiaxian"
+    },
+    {
+     "id": "chn-adm2-qichunxian",
+     "name": "Qichunxian"
+    },
+    {
+     "id": "chn-adm2-qidongshi",
+     "name": "Qidongshi"
+    },
+    {
+     "id": "chn-adm2-qidongxian",
+     "name": "Qidongxian"
+    },
+    {
+     "id": "chn-adm2-qiemoxian",
+     "name": "Qiemoxian"
+    },
+    {
+     "id": "chn-adm2-qihexian",
+     "name": "Qihexian"
+    },
+    {
+     "id": "chn-adm2-qilianxian",
+     "name": "Qilianxian"
+    },
+    {
+     "id": "chn-adm2-qimenxian",
+     "name": "Qimenxian"
+    },
+    {
+     "id": "chn-adm2-qinanxian",
+     "name": "Qinanxian"
+    },
+    {
+     "id": "chn-adm2-qinganxian",
+     "name": "Qinganxian"
+    },
+    {
+     "id": "chn-adm2-qingchuanxian",
+     "name": "Qingchuanxian"
+    },
+    {
+     "id": "chn-adm2-qingdaoshi",
+     "name": "Qingdaoshi"
+    },
+    {
+     "id": "chn-adm2-qingdaoshi-2",
+     "name": "Qingdaoshi"
+    },
+    {
+     "id": "chn-adm2-qingfengxian",
+     "name": "Qingfengxian"
+    },
+    {
+     "id": "chn-adm2-qinggangxian",
+     "name": "Qinggangxian"
+    },
+    {
+     "id": "chn-adm2-qinghemenqu",
+     "name": "Qinghemenqu"
+    },
+    {
+     "id": "chn-adm2-qinghexian",
+     "name": "Qinghexian"
+    },
+    {
+     "id": "chn-adm2-qinghexian-2",
+     "name": "Qinghexian"
+    },
+    {
+     "id": "chn-adm2-qingjianxian",
+     "name": "Qingjianxian"
+    },
+    {
+     "id": "chn-adm2-qingliuxian",
+     "name": "Qingliuxian"
+    },
+    {
+     "id": "chn-adm2-qinglongmanzuzizhixian",
+     "name": "Qinglongmanzuzizhixian"
+    },
+    {
+     "id": "chn-adm2-qinglongxian",
+     "name": "Qinglongxian"
+    },
+    {
+     "id": "chn-adm2-qingpuxian",
+     "name": "Qingpuxian"
+    },
+    {
+     "id": "chn-adm2-qingshenxian",
+     "name": "Qingshenxian"
+    },
+    {
+     "id": "chn-adm2-qingshixian",
+     "name": "Qingshixian"
+    },
+    {
+     "id": "chn-adm2-qingshuihexian",
+     "name": "Qingshuihexian"
+    },
+    {
+     "id": "chn-adm2-qingtianxian",
+     "name": "Qingtianxian"
+    },
+    {
+     "id": "chn-adm2-qingtongxiashi",
+     "name": "Qingtongxiashi"
+    },
+    {
+     "id": "chn-adm2-qingxian",
+     "name": "Qingxian"
+    },
+    {
+     "id": "chn-adm2-qingxinxian",
+     "name": "Qingxinxian"
+    },
+    {
+     "id": "chn-adm2-qingxuxian",
+     "name": "Qingxuxian"
+    },
+    {
+     "id": "chn-adm2-qingyangxian",
+     "name": "Qingyangxian"
+    },
+    {
+     "id": "chn-adm2-qingyangxian-2",
+     "name": "Qingyangxian"
+    },
+    {
+     "id": "chn-adm2-qingyuanmanzuzizhixian",
+     "name": "Qingyuanmanzuzizhixian"
+    },
+    {
+     "id": "chn-adm2-qingyuanshi",
+     "name": "Qingyuanshi"
+    },
+    {
+     "id": "chn-adm2-qingyuanxian",
+     "name": "Qingyuanxian"
+    },
+    {
+     "id": "chn-adm2-qingyuanxian-2",
+     "name": "Qingyuanxian"
+    },
+    {
+     "id": "chn-adm2-qingyunxian",
+     "name": "Qingyunxian"
+    },
+    {
+     "id": "chn-adm2-qingzhenshi",
+     "name": "Qingzhenshi"
+    },
+    {
+     "id": "chn-adm2-qingzhoushi",
+     "name": "Qingzhoushi"
+    },
+    {
+     "id": "chn-adm2-qinhuangdaoshi",
+     "name": "Qinhuangdaoshi"
+    },
+    {
+     "id": "chn-adm2-qinshuixian",
+     "name": "Qinshuixian"
+    },
+    {
+     "id": "chn-adm2-qinxian",
+     "name": "Qinxian"
+    },
+    {
+     "id": "chn-adm2-qinyangxian",
+     "name": "Qinyangxian"
+    },
+    {
+     "id": "chn-adm2-qinyuanxian",
+     "name": "Qinyuanxian"
+    },
+    {
+     "id": "chn-adm2-qinzhoushi",
+     "name": "Qinzhoushi"
+    },
+    {
+     "id": "chn-adm2-qionghaishi",
+     "name": "Qionghaishi"
+    },
+    {
+     "id": "chn-adm2-qiongjiexian",
+     "name": "Qiongjiexian"
+    },
+    {
+     "id": "chn-adm2-qionglaixian",
+     "name": "Qionglaixian"
+    },
+    {
+     "id": "chn-adm2-qiongshanshi",
+     "name": "Qiongshanshi"
+    },
+    {
+     "id": "chn-adm2-qiongzhonglizumiaozuzizhixian",
+     "name": "Qiongzhonglizumiaozuzizhixian"
+    },
+    {
+     "id": "chn-adm2-qiqihaershi",
+     "name": "Qiqihaershi"
+    },
+    {
+     "id": "chn-adm2-qishanxian",
+     "name": "Qishanxian"
+    },
+    {
+     "id": "chn-adm2-qishanxian-2",
+     "name": "Qishanxian"
+    },
+    {
+     "id": "chn-adm2-qitaiheshi",
+     "name": "Qitaiheshi"
+    },
+    {
+     "id": "chn-adm2-qitaixian",
+     "name": "Qitaixian"
+    },
+    {
+     "id": "chn-adm2-qiubeixian",
+     "name": "Qiubeixian"
+    },
+    {
+     "id": "chn-adm2-qiuxian",
+     "name": "Qiuxian"
+    },
+    {
+     "id": "chn-adm2-qiuyangtujiazumiaozuzizhixian",
+     "name": "Qiuyangtujiazumiaozuzizhixian"
+    },
+    {
+     "id": "chn-adm2-qixian",
+     "name": "Qixian"
+    },
+    {
+     "id": "chn-adm2-qixian-2",
+     "name": "Qixian"
+    },
+    {
+     "id": "chn-adm2-qixian-3",
+     "name": "Qixian"
+    },
+    {
+     "id": "chn-adm2-qixiashi",
+     "name": "Qixiashi"
+    },
+    {
+     "id": "chn-adm2-qiyangxian",
+     "name": "Qiyangxian"
+    },
+    {
+     "id": "chn-adm2-qizhoushi",
+     "name": "Qizhoushi"
+    },
+    {
+     "id": "chn-adm2-quanjiaoxian",
+     "name": "Quanjiaoxian"
+    },
+    {
+     "id": "chn-adm2-quannanxian",
+     "name": "Quannanxian"
+    },
+    {
+     "id": "chn-adm2-quanzhoushi",
+     "name": "Quanzhoushi"
+    },
+    {
+     "id": "chn-adm2-quanzhouxian",
+     "name": "Quanzhouxian"
+    },
+    {
+     "id": "chn-adm2-queshanxian",
+     "name": "Queshanxian"
+    },
+    {
+     "id": "chn-adm2-qufushi",
+     "name": "Qufushi"
+    },
+    {
+     "id": "chn-adm2-qujiangxian",
+     "name": "Qujiangxian"
+    },
+    {
+     "id": "chn-adm2-qujingshi",
+     "name": "Qujingshi"
+    },
+    {
+     "id": "chn-adm2-qumalaixian",
+     "name": "Qumalaixian"
+    },
+    {
+     "id": "chn-adm2-qushongxian",
+     "name": "Qushongxian"
+    },
+    {
+     "id": "chn-adm2-qushuixian",
+     "name": "Qushuixian"
+    },
+    {
+     "id": "chn-adm2-quwoxian",
+     "name": "Quwoxian"
+    },
+    {
+     "id": "chn-adm2-quxian",
+     "name": "Quxian"
+    },
+    {
+     "id": "chn-adm2-quxian-2",
+     "name": "Quxian"
+    },
+    {
+     "id": "chn-adm2-quxian-3",
+     "name": "Quxian"
+    },
+    {
+     "id": "chn-adm2-quyangxian",
+     "name": "Quyangxian"
+    },
+    {
+     "id": "chn-adm2-quzhouxian",
+     "name": "Quzhouxian"
+    },
+    {
+     "id": "chn-adm2-rangtangxian",
+     "name": "Rangtangxian"
+    },
+    {
+     "id": "chn-adm2-raohexian",
+     "name": "Raohexian"
+    },
+    {
+     "id": "chn-adm2-raopingxian",
+     "name": "Raopingxian"
+    },
+    {
+     "id": "chn-adm2-raoyangxian",
+     "name": "Raoyangxian"
+    },
+    {
+     "id": "chn-adm2-renbuxian",
+     "name": "Renbuxian"
+    },
+    {
+     "id": "chn-adm2-renhuaixian",
+     "name": "Renhuaixian"
+    },
+    {
+     "id": "chn-adm2-renhuaxian",
+     "name": "Renhuaxian"
+    },
+    {
+     "id": "chn-adm2-renqiushi",
+     "name": "Renqiushi"
+    },
+    {
+     "id": "chn-adm2-renshouxian",
+     "name": "Renshouxian"
+    },
+    {
+     "id": "chn-adm2-renxian",
+     "name": "Renxian"
+    },
+    {
+     "id": "chn-adm2-rikezeshi",
+     "name": "Rikezeshi"
+    },
+    {
+     "id": "chn-adm2-rituxian",
+     "name": "Rituxian"
+    },
+    {
+     "id": "chn-adm2-rizhaoshi",
+     "name": "Rizhaoshi"
+    },
+    {
+     "id": "chn-adm2-ronganxian",
+     "name": "Ronganxian"
+    },
+    {
+     "id": "chn-adm2-rongchangxian",
+     "name": "Rongchangxian"
+    },
+    {
+     "id": "chn-adm2-rongchengshi",
+     "name": "Rongchengshi"
+    },
+    {
+     "id": "chn-adm2-rongchengxian",
+     "name": "Rongchengxian"
+    },
+    {
+     "id": "chn-adm2-rongjiangxian",
+     "name": "Rongjiangxian"
+    },
+    {
+     "id": "chn-adm2-rongshuimiaozuzizhixian",
+     "name": "Rongshuimiaozuzizhixian"
+    },
+    {
+     "id": "chn-adm2-rongxian",
+     "name": "Rongxian"
+    },
+    {
+     "id": "chn-adm2-rongxian-2",
+     "name": "Rongxian"
+    },
+    {
+     "id": "chn-adm2-ruchengxian",
+     "name": "Ruchengxian"
+    },
+    {
+     "id": "chn-adm2-rudongxian",
+     "name": "Rudongxian"
+    },
+    {
+     "id": "chn-adm2-rugaoshi",
+     "name": "Rugaoshi"
+    },
+    {
+     "id": "chn-adm2-ruianshi",
+     "name": "Ruianshi"
+    },
+    {
+     "id": "chn-adm2-ruichangshi",
+     "name": "Ruichangshi"
+    },
+    {
+     "id": "chn-adm2-ruijinshi",
+     "name": "Ruijinshi"
+    },
+    {
+     "id": "chn-adm2-ruilishi",
+     "name": "Ruilishi"
+    },
+    {
+     "id": "chn-adm2-runanxian",
+     "name": "Runanxian"
+    },
+    {
+     "id": "chn-adm2-ruoergaixian",
+     "name": "Ruoergaixian"
+    },
+    {
+     "id": "chn-adm2-ruoqiangxian",
+     "name": "Ruoqiangxian"
+    },
+    {
+     "id": "chn-adm2-rushanshi",
+     "name": "Rushanshi"
+    },
+    {
+     "id": "chn-adm2-ruyangshi",
+     "name": "Ruyangshi"
+    },
+    {
+     "id": "chn-adm2-ruyuanyaozuzizhixian",
+     "name": "Ruyuanyaozuzizhixian"
+    },
+    {
+     "id": "chn-adm2-ruzhoushi",
+     "name": "Ruzhoushi"
+    },
+    {
+     "id": "chn-adm2-sandushuizuzizhixian",
+     "name": "Sandushuizuzizhixian"
+    },
+    {
+     "id": "chn-adm2-sanmenxian",
+     "name": "Sanmenxian"
+    },
+    {
+     "id": "chn-adm2-sanmenxiashi",
+     "name": "Sanmenxiashi"
+    },
+    {
+     "id": "chn-adm2-sanmingshi",
+     "name": "Sanmingshi"
+    },
+    {
+     "id": "chn-adm2-sansuixian",
+     "name": "Sansuixian"
+    },
+    {
+     "id": "chn-adm2-saxunxian",
+     "name": "Saxunxian"
+    },
+    {
+     "id": "chn-adm2-shachexian",
+     "name": "Shachexian"
+    },
+    {
+     "id": "chn-adm2-shagaxian",
+     "name": "Shagaxian"
+    },
+    {
+     "id": "chn-adm2-shaheshi",
+     "name": "Shaheshi"
+    },
+    {
+     "id": "chn-adm2-shanchengxian",
+     "name": "Shanchengxian"
+    },
+    {
+     "id": "chn-adm2-shandanxian",
+     "name": "Shandanxian"
+    },
+    {
+     "id": "chn-adm2-shangcaixian",
+     "name": "Shangcaixian"
+    },
+    {
+     "id": "chn-adm2-shangchengxian",
+     "name": "Shangchengxian"
+    },
+    {
+     "id": "chn-adm2-shangduxian",
+     "name": "Shangduxian"
+    },
+    {
+     "id": "chn-adm2-shanggaoxian",
+     "name": "Shanggaoxian"
+    },
+    {
+     "id": "chn-adm2-shanggaoxian-2",
+     "name": "Shanggaoxian"
+    },
+    {
+     "id": "chn-adm2-shanghaishi",
+     "name": "Shanghaishi"
+    },
+    {
+     "id": "chn-adm2-shanghangxian",
+     "name": "Shanghangxian"
+    },
+    {
+     "id": "chn-adm2-shanghexian",
+     "name": "Shanghexian"
+    },
+    {
+     "id": "chn-adm2-shangjianglahuzhuvazhublangzuzizhixian",
+     "name": "Shangjianglahuzhuvazhublangzuzizhixian"
+    },
+    {
+     "id": "chn-adm2-shanglinxian",
+     "name": "Shanglinxian"
+    },
+    {
+     "id": "chn-adm2-shangnanxian",
+     "name": "Shangnanxian"
+    },
+    {
+     "id": "chn-adm2-shangqiushi",
+     "name": "Shangqiushi"
+    },
+    {
+     "id": "chn-adm2-shangqiushi-2",
+     "name": "Shangqiushi"
+    },
+    {
+     "id": "chn-adm2-shangraoshi",
+     "name": "Shangraoshi"
+    },
+    {
+     "id": "chn-adm2-shangraoxian",
+     "name": "Shangraoxian"
+    },
+    {
+     "id": "chn-adm2-shangrixian",
+     "name": "Shangrixian"
+    },
+    {
+     "id": "chn-adm2-shangshuixian",
+     "name": "Shangshuixian"
+    },
+    {
+     "id": "chn-adm2-shangsixian",
+     "name": "Shangsixian"
+    },
+    {
+     "id": "chn-adm2-shangyixian",
+     "name": "Shangyixian"
+    },
+    {
+     "id": "chn-adm2-shangyouxian",
+     "name": "Shangyouxian"
+    },
+    {
+     "id": "chn-adm2-shangyushi",
+     "name": "Shangyushi"
+    },
+    {
+     "id": "chn-adm2-shangzhishi",
+     "name": "Shangzhishi"
+    },
+    {
+     "id": "chn-adm2-shangzhixian",
+     "name": "Shangzhixian"
+    },
+    {
+     "id": "chn-adm2-shangzhoushi",
+     "name": "Shangzhoushi"
+    },
+    {
+     "id": "chn-adm2-shanheshi",
+     "name": "Shanheshi"
+    },
+    {
+     "id": "chn-adm2-shanjiangdongzuzizhixian",
+     "name": "Shanjiangdongzuzizhixian"
+    },
+    {
+     "id": "chn-adm2-shanshuishi",
+     "name": "Shanshuishi"
+    },
+    {
+     "id": "chn-adm2-shantaixian",
+     "name": "Shantaixian"
+    },
+    {
+     "id": "chn-adm2-shantoushi",
+     "name": "Shantoushi"
+    },
+    {
+     "id": "chn-adm2-shanxian",
+     "name": "Shanxian"
+    },
+    {
+     "id": "chn-adm2-shanyangxian",
+     "name": "Shanyangxian"
+    },
+    {
+     "id": "chn-adm2-shanyashi",
+     "name": "Shanyashi"
+    },
+    {
+     "id": "chn-adm2-shanyinxian",
+     "name": "Shanyinxian"
+    },
+    {
+     "id": "chn-adm2-shanyuanxian",
+     "name": "Shanyuanxian"
+    },
+    {
+     "id": "chn-adm2-shaoguanshi",
+     "name": "Shaoguanshi"
+    },
+    {
+     "id": "chn-adm2-shaoxingshi",
+     "name": "Shaoxingshi"
+    },
+    {
+     "id": "chn-adm2-shaoxingxian",
+     "name": "Shaoxingxian"
+    },
+    {
+     "id": "chn-adm2-shaoyangshi",
+     "name": "Shaoyangshi"
+    },
+    {
+     "id": "chn-adm2-shashi",
+     "name": "Shashi"
+    },
+    {
+     "id": "chn-adm2-shawanxian",
+     "name": "Shawanxian"
+    },
+    {
+     "id": "chn-adm2-shaxian",
+     "name": "Shaxian"
+    },
+    {
+     "id": "chn-adm2-shayaxian",
+     "name": "Shayaxian"
+    },
+    {
+     "id": "chn-adm2-shedaxian",
+     "name": "Shedaxian"
+    },
+    {
+     "id": "chn-adm2-shefangxian",
+     "name": "Shefangxian"
+    },
+    {
+     "id": "chn-adm2-shehongxian",
+     "name": "Shehongxian"
+    },
+    {
+     "id": "chn-adm2-shencixian",
+     "name": "Shencixian"
+    },
+    {
+     "id": "chn-adm2-shengdaxian",
+     "name": "Shengdaxian"
+    },
+    {
+     "id": "chn-adm2-shengsixian",
+     "name": "Shengsixian"
+    },
+    {
+     "id": "chn-adm2-shengxian",
+     "name": "Shengxian"
+    },
+    {
+     "id": "chn-adm2-shenmuxian",
+     "name": "Shenmuxian"
+    },
+    {
+     "id": "chn-adm2-shennongjialinqu",
+     "name": "Shennongjialinqu"
+    },
+    {
+     "id": "chn-adm2-shenqiuxian",
+     "name": "Shenqiuxian"
+    },
+    {
+     "id": "chn-adm2-shenyangshi",
+     "name": "Shenyangshi"
+    },
+    {
+     "id": "chn-adm2-shenzhaxian",
+     "name": "Shenzhaxian"
+    },
+    {
+     "id": "chn-adm2-shenzhenshi",
+     "name": "Shenzhenshi"
+    },
+    {
+     "id": "chn-adm2-shenzhenxian",
+     "name": "Shenzhenxian"
+    },
+    {
+     "id": "chn-adm2-shenzhoushi",
+     "name": "Shenzhoushi"
+    },
+    {
+     "id": "chn-adm2-sheqixian",
+     "name": "Sheqixian"
+    },
+    {
+     "id": "chn-adm2-shexian",
+     "name": "Shexian"
+    },
+    {
+     "id": "chn-adm2-shexian-2",
+     "name": "Shexian"
+    },
+    {
+     "id": "chn-adm2-sheyangxian",
+     "name": "Sheyangxian"
+    },
+    {
+     "id": "chn-adm2-shezexian",
+     "name": "Shezexian"
+    },
+    {
+     "id": "chn-adm2-shibingxian",
+     "name": "Shibingxian"
+    },
+    {
+     "id": "chn-adm2-shichengxian",
+     "name": "Shichengxian"
+    },
+    {
+     "id": "chn-adm2-shidianxian",
+     "name": "Shidianxian"
+    },
+    {
+     "id": "chn-adm2-shihezhishi",
+     "name": "Shihezhishi"
+    },
+    {
+     "id": "chn-adm2-shijiazhuanshi",
+     "name": "Shijiazhuanshi"
+    },
+    {
+     "id": "chn-adm2-shilouxian",
+     "name": "Shilouxian"
+    },
+    {
+     "id": "chn-adm2-shimenxian",
+     "name": "Shimenxian"
+    },
+    {
+     "id": "chn-adm2-shimianxian",
+     "name": "Shimianxian"
+    },
+    {
+     "id": "chn-adm2-shipingxian",
+     "name": "Shipingxian"
+    },
+    {
+     "id": "chn-adm2-shiqianxian",
+     "name": "Shiqianxian"
+    },
+    {
+     "id": "chn-adm2-shiquanxian",
+     "name": "Shiquanxian"
+    },
+    {
+     "id": "chn-adm2-shiquxian",
+     "name": "Shiquxian"
+    },
+    {
+     "id": "chn-adm2-shishishi",
+     "name": "Shishishi"
+    },
+    {
+     "id": "chn-adm2-shishoushi",
+     "name": "Shishoushi"
+    },
+    {
+     "id": "chn-adm2-shitaixian",
+     "name": "Shitaixian"
+    },
+    {
+     "id": "chn-adm2-shixingxian",
+     "name": "Shixingxian"
+    },
+    {
+     "id": "chn-adm2-shiyanshi",
+     "name": "Shiyanshi"
+    },
+    {
+     "id": "chn-adm2-shizhuishanshi",
+     "name": "Shizhuishanshi"
+    },
+    {
+     "id": "chn-adm2-shizhutujiazuzizhixian",
+     "name": "Shizhutujiazuzizhixian"
+    },
+    {
+     "id": "chn-adm2-shizongxian",
+     "name": "Shizongxian"
+    },
+    {
+     "id": "chn-adm2-shongpanxian",
+     "name": "Shongpanxian"
+    },
+    {
+     "id": "chn-adm2-shongtaomiaozuzizhixian",
+     "name": "Shongtaomiaozuzizhixian"
+    },
+    {
+     "id": "chn-adm2-shouguangshi",
+     "name": "Shouguangshi"
+    },
+    {
+     "id": "chn-adm2-shouningxian",
+     "name": "Shouningxian"
+    },
+    {
+     "id": "chn-adm2-shouxian",
+     "name": "Shouxian"
+    },
+    {
+     "id": "chn-adm2-shouyangxian",
+     "name": "Shouyangxian"
+    },
+    {
+     "id": "chn-adm2-shouzhoushi",
+     "name": "Shouzhoushi"
+    },
+    {
+     "id": "chn-adm2-shuangboxian",
+     "name": "Shuangboxian"
+    },
+    {
+     "id": "chn-adm2-shuangchengshi",
+     "name": "Shuangchengshi"
+    },
+    {
+     "id": "chn-adm2-shuangfengxian",
+     "name": "Shuangfengxian"
+    },
+    {
+     "id": "chn-adm2-shuangpaixian",
+     "name": "Shuangpaixian"
+    },
+    {
+     "id": "chn-adm2-shubeimengguzuzizhixian",
+     "name": "Shubeimengguzuzizhixian"
+    },
+    {
+     "id": "chn-adm2-shubeimengguzuzizhixian-2",
+     "name": "Shubeimengguzuzizhixian"
+    },
+    {
+     "id": "chn-adm2-shuchangxian",
+     "name": "Shuchangxian"
+    },
+    {
+     "id": "chn-adm2-shuchengxian",
+     "name": "Shuchengxian"
+    },
+    {
+     "id": "chn-adm2-shufuxian",
+     "name": "Shufuxian"
+    },
+    {
+     "id": "chn-adm2-shuichengxian",
+     "name": "Shuichengxian"
+    },
+    {
+     "id": "chn-adm2-shuifuxian",
+     "name": "Shuifuxian"
+    },
+    {
+     "id": "chn-adm2-shuilengxian",
+     "name": "Shuilengxian"
+    },
+    {
+     "id": "chn-adm2-shuiningxian",
+     "name": "Shuiningxian"
+    },
+    {
+     "id": "chn-adm2-shuipingxian",
+     "name": "Shuipingxian"
+    },
+    {
+     "id": "chn-adm2-shuixian",
+     "name": "Shuixian"
+    },
+    {
+     "id": "chn-adm2-shuizhoushi",
+     "name": "Shuizhoushi"
+    },
+    {
+     "id": "chn-adm2-shulanshi",
+     "name": "Shulanshi"
+    },
+    {
+     "id": "chn-adm2-shulexian",
+     "name": "Shulexian"
+    },
+    {
+     "id": "chn-adm2-shunanyuguzuzizhixian",
+     "name": "Shunanyuguzuzizhixian"
+    },
+    {
+     "id": "chn-adm2-shunanyuguzuzizhixian-2",
+     "name": "Shunanyuguzuzizhixian"
+    },
+    {
+     "id": "chn-adm2-shunanyuguzuzizhixian-3",
+     "name": "Shunanyuguzuzizhixian"
+    },
+    {
+     "id": "chn-adm2-shundeshi",
+     "name": "Shundeshi"
+    },
+    {
+     "id": "chn-adm2-shuningxian",
+     "name": "Shuningxian"
+    },
+    {
+     "id": "chn-adm2-shuniteyouqi",
+     "name": "Shuniteyouqi"
+    },
+    {
+     "id": "chn-adm2-shunitezuoqi",
+     "name": "Shunitezuoqi"
+    },
+    {
+     "id": "chn-adm2-shunyixian",
+     "name": "Shunyixian"
+    },
+    {
+     "id": "chn-adm2-shuqianshi",
+     "name": "Shuqianshi"
+    },
+    {
+     "id": "chn-adm2-shuyangxian",
+     "name": "Shuyangxian"
+    },
+    {
+     "id": "chn-adm2-shuzhoushi",
+     "name": "Shuzhoushi"
+    },
+    {
+     "id": "chn-adm2-shuzhoushi-2",
+     "name": "Shuzhoushi"
+    },
+    {
+     "id": "chn-adm2-shuzhoushi-3",
+     "name": "Shuzhoushi"
+    },
+    {
+     "id": "chn-adm2-sihongxian",
+     "name": "Sihongxian"
+    },
+    {
+     "id": "chn-adm2-sihuishi",
+     "name": "Sihuishi"
+    },
+    {
+     "id": "chn-adm2-simaoxian",
+     "name": "Simaoxian"
+    },
+    {
+     "id": "chn-adm2-sinanxian",
+     "name": "Sinanxian"
+    },
+    {
+     "id": "chn-adm2-sipingshi",
+     "name": "Sipingshi"
+    },
+    {
+     "id": "chn-adm2-sishuixian",
+     "name": "Sishuixian"
+    },
+    {
+     "id": "chn-adm2-siyangxian",
+     "name": "Siyangxian"
+    },
+    {
+     "id": "chn-adm2-siziwangqi",
+     "name": "Siziwangqi"
+    },
+    {
+     "id": "chn-adm2-songjiangxian",
+     "name": "Songjiangxian"
+    },
+    {
+     "id": "chn-adm2-songmingxian",
+     "name": "Songmingxian"
+    },
+    {
+     "id": "chn-adm2-songxian",
+     "name": "Songxian"
+    },
+    {
+     "id": "chn-adm2-songxixian",
+     "name": "Songxixian"
+    },
+    {
+     "id": "chn-adm2-songyangxian",
+     "name": "Songyangxian"
+    },
+    {
+     "id": "chn-adm2-songzixian",
+     "name": "Songzixian"
+    },
+    {
+     "id": "chn-adm2-suangliuxian",
+     "name": "Suangliuxian"
+    },
+    {
+     "id": "chn-adm2-suangyashanshi",
+     "name": "Suangyashanshi"
+    },
+    {
+     "id": "chn-adm2-suanliaoxian",
+     "name": "Suanliaoxian"
+    },
+    {
+     "id": "chn-adm2-suibinxian",
+     "name": "Suibinxian"
+    },
+    {
+     "id": "chn-adm2-suichuanxian",
+     "name": "Suichuanxian"
+    },
+    {
+     "id": "chn-adm2-suidexian",
+     "name": "Suidexian"
+    },
+    {
+     "id": "chn-adm2-suifenheshi",
+     "name": "Suifenheshi"
+    },
+    {
+     "id": "chn-adm2-suihuashi",
+     "name": "Suihuashi"
+    },
+    {
+     "id": "chn-adm2-suijiangxian",
+     "name": "Suijiangxian"
+    },
+    {
+     "id": "chn-adm2-suiningshi",
+     "name": "Suiningshi"
+    },
+    {
+     "id": "chn-adm2-suiningxian",
+     "name": "Suiningxian"
+    },
+    {
+     "id": "chn-adm2-suixixian",
+     "name": "Suixixian"
+    },
+    {
+     "id": "chn-adm2-suixixian-2",
+     "name": "Suixixian"
+    },
+    {
+     "id": "chn-adm2-suiyangxian",
+     "name": "Suiyangxian"
+    },
+    {
+     "id": "chn-adm2-suizhongxian",
+     "name": "Suizhongxian"
+    },
+    {
+     "id": "chn-adm2-sunwuxian",
+     "name": "Sunwuxian"
+    },
+    {
+     "id": "chn-adm2-suoxian",
+     "name": "Suoxian"
+    },
+    {
+     "id": "chn-adm2-suqianxian",
+     "name": "Suqianxian"
+    },
+    {
+     "id": "chn-adm2-susongxian",
+     "name": "Susongxian"
+    },
+    {
+     "id": "chn-adm2-suzhoushi",
+     "name": "Suzhoushi"
+    },
+    {
+     "id": "chn-adm2-tachengshi",
+     "name": "Tachengshi"
+    },
+    {
+     "id": "chn-adm2-tahexian",
+     "name": "Tahexian"
+    },
+    {
+     "id": "chn-adm2-taianshi",
+     "name": "Taianshi"
+    },
+    {
+     "id": "chn-adm2-taianxian",
+     "name": "Taianxian"
+    },
+    {
+     "id": "chn-adm2-taibaixian",
+     "name": "Taibaixian"
+    },
+    {
+     "id": "chn-adm2-taibeishi",
+     "name": "Taibeishi"
+    },
+    {
+     "id": "chn-adm2-taibeixian",
+     "name": "Taibeixian"
+    },
+    {
+     "id": "chn-adm2-taichangxian",
+     "name": "Taichangxian"
+    },
+    {
+     "id": "chn-adm2-taidongxian",
+     "name": "Taidongxian"
+    },
+    {
+     "id": "chn-adm2-taihexian",
+     "name": "Taihexian"
+    },
+    {
+     "id": "chn-adm2-taihexian-2",
+     "name": "Taihexian"
+    },
+    {
+     "id": "chn-adm2-taihuxian",
+     "name": "Taihuxian"
+    },
+    {
+     "id": "chn-adm2-taijiangxian",
+     "name": "Taijiangxian"
+    },
+    {
+     "id": "chn-adm2-taikangxian",
+     "name": "Taikangxian"
+    },
+    {
+     "id": "chn-adm2-tailaixian",
+     "name": "Tailaixian"
+    },
+    {
+     "id": "chn-adm2-tainanshi",
+     "name": "Tainanshi"
+    },
+    {
+     "id": "chn-adm2-tainanxian",
+     "name": "Tainanxian"
+    },
+    {
+     "id": "chn-adm2-tainingxian",
+     "name": "Tainingxian"
+    },
+    {
+     "id": "chn-adm2-taipusiqi",
+     "name": "Taipusiqi"
+    },
+    {
+     "id": "chn-adm2-taiqianxian",
+     "name": "Taiqianxian"
+    },
+    {
+     "id": "chn-adm2-taishanshi",
+     "name": "Taishanshi"
+    },
+    {
+     "id": "chn-adm2-taishunxian",
+     "name": "Taishunxian"
+    },
+    {
+     "id": "chn-adm2-taixingxian",
+     "name": "Taixingxian"
+    },
+    {
+     "id": "chn-adm2-taiyuanshi",
+     "name": "Taiyuanshi"
+    },
+    {
+     "id": "chn-adm2-taizhongshi",
+     "name": "Taizhongshi"
+    },
+    {
+     "id": "chn-adm2-taizhongxian",
+     "name": "Taizhongxian"
+    },
+    {
+     "id": "chn-adm2-taizhoushi",
+     "name": "Taizhoushi"
+    },
+    {
+     "id": "chn-adm2-taizhoushi-2",
+     "name": "Taizhoushi"
+    },
+    {
+     "id": "chn-adm2-tanchengxian",
+     "name": "Tanchengxian"
+    },
+    {
+     "id": "chn-adm2-tanghexian",
+     "name": "Tanghexian"
+    },
+    {
+     "id": "chn-adm2-tangshanshi",
+     "name": "Tangshanshi"
+    },
+    {
+     "id": "chn-adm2-tangxian",
+     "name": "Tangxian"
+    },
+    {
+     "id": "chn-adm2-tangyinxian",
+     "name": "Tangyinxian"
+    },
+    {
+     "id": "chn-adm2-tangyuanxian",
+     "name": "Tangyuanxian"
+    },
+    {
+     "id": "chn-adm2-taojiangxian",
+     "name": "Taojiangxian"
+    },
+    {
+     "id": "chn-adm2-taolexian",
+     "name": "Taolexian"
+    },
+    {
+     "id": "chn-adm2-taonanshi",
+     "name": "Taonanshi"
+    },
+    {
+     "id": "chn-adm2-taoyuanxian",
+     "name": "Taoyuanxian"
+    },
+    {
+     "id": "chn-adm2-taoyuanxian-2",
+     "name": "Taoyuanxian"
+    },
+    {
+     "id": "chn-adm2-tashenkuergantajike",
+     "name": "Tashenkuergantajike"
+    },
+    {
+     "id": "chn-adm2-tekeshixian",
+     "name": "Tekeshixian"
+    },
+    {
+     "id": "chn-adm2-tengchongxian",
+     "name": "Tengchongxian"
+    },
+    {
+     "id": "chn-adm2-tengzhoushi",
+     "name": "Tengzhoushi"
+    },
+    {
+     "id": "chn-adm2-tianchangshi",
+     "name": "Tianchangshi"
+    },
+    {
+     "id": "chn-adm2-tiandengxian",
+     "name": "Tiandengxian"
+    },
+    {
+     "id": "chn-adm2-tiandongxian",
+     "name": "Tiandongxian"
+    },
+    {
+     "id": "chn-adm2-tianerxian",
+     "name": "Tianerxian"
+    },
+    {
+     "id": "chn-adm2-tianjinshi",
+     "name": "Tianjinshi"
+    },
+    {
+     "id": "chn-adm2-tianjunxian",
+     "name": "Tianjunxian"
+    },
+    {
+     "id": "chn-adm2-tianlinxian",
+     "name": "Tianlinxian"
+    },
+    {
+     "id": "chn-adm2-tianmenshi",
+     "name": "Tianmenshi"
+    },
+    {
+     "id": "chn-adm2-tianquanxian",
+     "name": "Tianquanxian"
+    },
+    {
+     "id": "chn-adm2-tianshuishi",
+     "name": "Tianshuishi"
+    },
+    {
+     "id": "chn-adm2-tiantaixian",
+     "name": "Tiantaixian"
+    },
+    {
+     "id": "chn-adm2-tianyangxian",
+     "name": "Tianyangxian"
+    },
+    {
+     "id": "chn-adm2-tianzhenxian",
+     "name": "Tianzhenxian"
+    },
+    {
+     "id": "chn-adm2-tianzhuxian",
+     "name": "Tianzhuxian"
+    },
+    {
+     "id": "chn-adm2-tianzhuzhangzhuzizhixian",
+     "name": "Tianzhuzhangzhuzizhixian"
+    },
+    {
+     "id": "chn-adm2-tiefashi",
+     "name": "Tiefashi"
+    },
+    {
+     "id": "chn-adm2-tielingshi",
+     "name": "Tielingshi"
+    },
+    {
+     "id": "chn-adm2-tielingxian",
+     "name": "Tielingxian"
+    },
+    {
+     "id": "chn-adm2-tielishi",
+     "name": "Tielishi"
+    },
+    {
+     "id": "chn-adm2-tonganxian",
+     "name": "Tonganxian"
+    },
+    {
+     "id": "chn-adm2-tongboxian",
+     "name": "Tongboxian"
+    },
+    {
+     "id": "chn-adm2-tongchengxian",
+     "name": "Tongchengxian"
+    },
+    {
+     "id": "chn-adm2-tongchengxian-2",
+     "name": "Tongchengxian"
+    },
+    {
+     "id": "chn-adm2-tongchuanshi",
+     "name": "Tongchuanshi"
+    },
+    {
+     "id": "chn-adm2-tongdexian",
+     "name": "Tongdexian"
+    },
+    {
+     "id": "chn-adm2-tongguanxian",
+     "name": "Tongguanxian"
+    },
+    {
+     "id": "chn-adm2-tongguxian",
+     "name": "Tongguxian"
+    },
+    {
+     "id": "chn-adm2-tonghaixian",
+     "name": "Tonghaixian"
+    },
+    {
+     "id": "chn-adm2-tonghexian",
+     "name": "Tonghexian"
+    },
+    {
+     "id": "chn-adm2-tonghuashi",
+     "name": "Tonghuashi"
+    },
+    {
+     "id": "chn-adm2-tonghuaxian",
+     "name": "Tonghuaxian"
+    },
+    {
+     "id": "chn-adm2-tongjiangshi",
+     "name": "Tongjiangshi"
+    },
+    {
+     "id": "chn-adm2-tongjiangxian",
+     "name": "Tongjiangxian"
+    },
+    {
+     "id": "chn-adm2-tongliangxian",
+     "name": "Tongliangxian"
+    },
+    {
+     "id": "chn-adm2-tongliaoshi",
+     "name": "Tongliaoshi"
+    },
+    {
+     "id": "chn-adm2-tonglingshi",
+     "name": "Tonglingshi"
+    },
+    {
+     "id": "chn-adm2-tonglingxian",
+     "name": "Tonglingxian"
+    },
+    {
+     "id": "chn-adm2-tongluxian",
+     "name": "Tongluxian"
+    },
+    {
+     "id": "chn-adm2-tongnanxian",
+     "name": "Tongnanxian"
+    },
+    {
+     "id": "chn-adm2-tongrenshi",
+     "name": "Tongrenshi"
+    },
+    {
+     "id": "chn-adm2-tongrenxian",
+     "name": "Tongrenxian"
+    },
+    {
+     "id": "chn-adm2-tongshanxian",
+     "name": "Tongshanxian"
+    },
+    {
+     "id": "chn-adm2-tongshanxian-2",
+     "name": "Tongshanxian"
+    },
+    {
+     "id": "chn-adm2-tongweixian",
+     "name": "Tongweixian"
+    },
+    {
+     "id": "chn-adm2-tongxian",
+     "name": "Tongxian"
+    },
+    {
+     "id": "chn-adm2-tongxiangshi",
+     "name": "Tongxiangshi"
+    },
+    {
+     "id": "chn-adm2-tongxinxian",
+     "name": "Tongxinxian"
+    },
+    {
+     "id": "chn-adm2-tongxushi",
+     "name": "Tongxushi"
+    },
+    {
+     "id": "chn-adm2-tongyuxian",
+     "name": "Tongyuxian"
+    },
+    {
+     "id": "chn-adm2-tongzhixian",
+     "name": "Tongzhixian"
+    },
+    {
+     "id": "chn-adm2-tongzhoudongzuzizhixian",
+     "name": "Tongzhoudongzuzizhixian"
+    },
+    {
+     "id": "chn-adm2-tongzhoushi",
+     "name": "Tongzhoushi"
+    },
+    {
+     "id": "chn-adm2-tulufanshi",
+     "name": "Tulufanshi"
+    },
+    {
+     "id": "chn-adm2-tumenshi",
+     "name": "Tumenshi"
+    },
+    {
+     "id": "chn-adm2-tumuteyouqi",
+     "name": "Tumuteyouqi"
+    },
+    {
+     "id": "chn-adm2-tumutezuoqi",
+     "name": "Tumutezuoqi"
+    },
+    {
+     "id": "chn-adm2-tunchangxian",
+     "name": "Tunchangxian"
+    },
+    {
+     "id": "chn-adm2-tunliuxian",
+     "name": "Tunliuxian"
+    },
+    {
+     "id": "chn-adm2-tuobaxian",
+     "name": "Tuobaxian"
+    },
+    {
+     "id": "chn-adm2-tuochangxian",
+     "name": "Tuochangxian"
+    },
+    {
+     "id": "chn-adm2-tuochengxian",
+     "name": "Tuochengxian"
+    },
+    {
+     "id": "chn-adm2-tuoketuoqi",
+     "name": "Tuoketuoqi"
+    },
+    {
+     "id": "chn-adm2-tuokexunxian",
+     "name": "Tuokexunxian"
+    },
+    {
+     "id": "chn-adm2-tuolixian",
+     "name": "Tuolixian"
+    },
+    {
+     "id": "chn-adm2-tuorongxian",
+     "name": "Tuorongxian"
+    },
+    {
+     "id": "chn-adm2-tuquanxian",
+     "name": "Tuquanxian"
+    },
+    {
+     "id": "chn-adm2-wafangdianshi",
+     "name": "Wafangdianshi"
+    },
+    {
+     "id": "chn-adm2-wananxian",
+     "name": "Wananxian"
+    },
+    {
+     "id": "chn-adm2-wandingshi",
+     "name": "Wandingshi"
+    },
+    {
+     "id": "chn-adm2-wangchangxian",
+     "name": "Wangchangxian"
+    },
+    {
+     "id": "chn-adm2-wangchengxian",
+     "name": "Wangchengxian"
+    },
+    {
+     "id": "chn-adm2-wangduxian",
+     "name": "Wangduxian"
+    },
+    {
+     "id": "chn-adm2-wangjiangxian",
+     "name": "Wangjiangxian"
+    },
+    {
+     "id": "chn-adm2-wangkuixian",
+     "name": "Wangkuixian"
+    },
+    {
+     "id": "chn-adm2-wangmoxian",
+     "name": "Wangmoxian"
+    },
+    {
+     "id": "chn-adm2-wangqingxian",
+     "name": "Wangqingxian"
+    },
+    {
+     "id": "chn-adm2-wannianxian",
+     "name": "Wannianxian"
+    },
+    {
+     "id": "chn-adm2-wanningshi",
+     "name": "Wanningshi"
+    },
+    {
+     "id": "chn-adm2-wanquanxian",
+     "name": "Wanquanxian"
+    },
+    {
+     "id": "chn-adm2-wanrongxian",
+     "name": "Wanrongxian"
+    },
+    {
+     "id": "chn-adm2-wanshantequ",
+     "name": "Wanshantequ"
+    },
+    {
+     "id": "chn-adm2-wanshengqu",
+     "name": "Wanshengqu"
+    },
+    {
+     "id": "chn-adm2-wanxian",
+     "name": "Wanxian"
+    },
+    {
+     "id": "chn-adm2-wanxianshi",
+     "name": "Wanxianshi"
+    },
+    {
+     "id": "chn-adm2-wanyuanxian",
+     "name": "Wanyuanxian"
+    },
+    {
+     "id": "chn-adm2-wanzaixian",
+     "name": "Wanzaixian"
+    },
+    {
+     "id": "chn-adm2-weichangxian",
+     "name": "Weichangxian"
+    },
+    {
+     "id": "chn-adm2-weifangshi",
+     "name": "Weifangshi"
+    },
+    {
+     "id": "chn-adm2-weihaishi",
+     "name": "Weihaishi"
+    },
+    {
+     "id": "chn-adm2-weihuishi",
+     "name": "Weihuishi"
+    },
+    {
+     "id": "chn-adm2-weilixian",
+     "name": "Weilixian"
+    },
+    {
+     "id": "chn-adm2-weinanshi",
+     "name": "Weinanshi"
+    },
+    {
+     "id": "chn-adm2-weininglizuhuizumiaozuzizhixian",
+     "name": "Weininglizuhuizumiaozuzizhixian"
+    },
+    {
+     "id": "chn-adm2-weishanxian",
+     "name": "Weishanxian"
+    },
+    {
+     "id": "chn-adm2-weishanyizuhuizuzizhixian",
+     "name": "Weishanyizuhuizuzizhixian"
+    },
+    {
+     "id": "chn-adm2-weishixian",
+     "name": "Weishixian"
+    },
+    {
+     "id": "chn-adm2-weixian",
+     "name": "Weixian"
+    },
+    {
+     "id": "chn-adm2-weixian-2",
+     "name": "Weixian"
+    },
+    {
+     "id": "chn-adm2-weixian-3",
+     "name": "Weixian"
+    },
+    {
+     "id": "chn-adm2-weixinxian",
+     "name": "Weixinxian"
+    },
+    {
+     "id": "chn-adm2-weiyuanxian",
+     "name": "Weiyuanxian"
+    },
+    {
+     "id": "chn-adm2-weiyuanxian-2",
+     "name": "Weiyuanxian"
+    },
+    {
+     "id": "chn-adm2-wenanxian",
+     "name": "Wenanxian"
+    },
+    {
+     "id": "chn-adm2-wenchangxian",
+     "name": "Wenchangxian"
+    },
+    {
+     "id": "chn-adm2-wenchengxian",
+     "name": "Wenchengxian"
+    },
+    {
+     "id": "chn-adm2-wenchuanxian",
+     "name": "Wenchuanxian"
+    },
+    {
+     "id": "chn-adm2-wendengshi",
+     "name": "Wendengshi"
+    },
+    {
+     "id": "chn-adm2-wenganxian",
+     "name": "Wenganxian"
+    },
+    {
+     "id": "chn-adm2-wengniuteqi",
+     "name": "Wengniuteqi"
+    },
+    {
+     "id": "chn-adm2-wenjaingxian",
+     "name": "Wenjaingxian"
+    },
+    {
+     "id": "chn-adm2-wenlingshi",
+     "name": "Wenlingshi"
+    },
+    {
+     "id": "chn-adm2-wenquanxian",
+     "name": "Wenquanxian"
+    },
+    {
+     "id": "chn-adm2-wenshangxian",
+     "name": "Wenshangxian"
+    },
+    {
+     "id": "chn-adm2-wenshanxian",
+     "name": "Wenshanxian"
+    },
+    {
+     "id": "chn-adm2-wenshuixian",
+     "name": "Wenshuixian"
+    },
+    {
+     "id": "chn-adm2-wenshuxian",
+     "name": "Wenshuxian"
+    },
+    {
+     "id": "chn-adm2-wenxian",
+     "name": "Wenxian"
+    },
+    {
+     "id": "chn-adm2-wenxian-2",
+     "name": "Wenxian"
+    },
+    {
+     "id": "chn-adm2-wenxixian",
+     "name": "Wenxixian"
+    },
+    {
+     "id": "chn-adm2-wenzhoushi",
+     "name": "Wenzhoushi"
+    },
+    {
+     "id": "chn-adm2-wongyuanxian",
+     "name": "Wongyuanxian"
+    },
+    {
+     "id": "chn-adm2-woyangxian",
+     "name": "Woyangxian"
+    },
+    {
+     "id": "chn-adm2-wuanshi",
+     "name": "Wuanshi"
+    },
+    {
+     "id": "chn-adm2-wubaoxian",
+     "name": "Wubaoxian"
+    },
+    {
+     "id": "chn-adm2-wuchangshi",
+     "name": "Wuchangshi"
+    },
+    {
+     "id": "chn-adm2-wuchengxian",
+     "name": "Wuchengxian"
+    },
+    {
+     "id": "chn-adm2-wuchuangxian",
+     "name": "Wuchuangxian"
+    },
+    {
+     "id": "chn-adm2-wuchuankelaozhumiaozhuzizhixian",
+     "name": "Wuchuankelaozhumiaozhuzizhixian"
+    },
+    {
+     "id": "chn-adm2-wuchuanshi",
+     "name": "Wuchuanshi"
+    },
+    {
+     "id": "chn-adm2-wudalianchishi",
+     "name": "Wudalianchishi"
+    },
+    {
+     "id": "chn-adm2-wudingxian",
+     "name": "Wudingxian"
+    },
+    {
+     "id": "chn-adm2-wuduxian",
+     "name": "Wuduxian"
+    },
+    {
+     "id": "chn-adm2-wufengtujiazuzizhixian",
+     "name": "Wufengtujiazuzizhixian"
+    },
+    {
+     "id": "chn-adm2-wugangshi",
+     "name": "Wugangshi"
+    },
+    {
+     "id": "chn-adm2-wugangshi-2",
+     "name": "Wugangshi"
+    },
+    {
+     "id": "chn-adm2-wugongxian",
+     "name": "Wugongxian"
+    },
+    {
+     "id": "chn-adm2-wuhaishi",
+     "name": "Wuhaishi"
+    },
+    {
+     "id": "chn-adm2-wuhanshi",
+     "name": "Wuhanshi"
+    },
+    {
+     "id": "chn-adm2-wuhexian",
+     "name": "Wuhexian"
+    },
+    {
+     "id": "chn-adm2-wuhuaxian",
+     "name": "Wuhuaxian"
+    },
+    {
+     "id": "chn-adm2-wuhushi",
+     "name": "Wuhushi"
+    },
+    {
+     "id": "chn-adm2-wuhuxian",
+     "name": "Wuhuxian"
+    },
+    {
+     "id": "chn-adm2-wujiangshi",
+     "name": "Wujiangshi"
+    },
+    {
+     "id": "chn-adm2-wujinxian",
+     "name": "Wujinxian"
+    },
+    {
+     "id": "chn-adm2-wujixian",
+     "name": "Wujixian"
+    },
+    {
+     "id": "chn-adm2-wulanhaoteshi",
+     "name": "Wulanhaoteshi"
+    },
+    {
+     "id": "chn-adm2-wulanxian",
+     "name": "Wulanxian"
+    },
+    {
+     "id": "chn-adm2-wulatehouqi",
+     "name": "Wulatehouqi"
+    },
+    {
+     "id": "chn-adm2-wulateqianqi",
+     "name": "Wulateqianqi"
+    },
+    {
+     "id": "chn-adm2-wulatezhongqi",
+     "name": "Wulatezhongqi"
+    },
+    {
+     "id": "chn-adm2-wulianxian",
+     "name": "Wulianxian"
+    },
+    {
+     "id": "chn-adm2-wulixian",
+     "name": "Wulixian"
+    },
+    {
+     "id": "chn-adm2-wulongxian",
+     "name": "Wulongxian"
+    },
+    {
+     "id": "chn-adm2-wulumuqishi",
+     "name": "Wulumuqishi"
+    },
+    {
+     "id": "chn-adm2-wulumuqixian",
+     "name": "Wulumuqixian"
+    },
+    {
+     "id": "chn-adm2-wumingxian",
+     "name": "Wumingxian"
+    },
+    {
+     "id": "chn-adm2-wuningxian",
+     "name": "Wuningxian"
+    },
+    {
+     "id": "chn-adm2-wupingxian",
+     "name": "Wupingxian"
+    },
+    {
+     "id": "chn-adm2-wuqiangxian",
+     "name": "Wuqiangxian"
+    },
+    {
+     "id": "chn-adm2-wuqiaoxian",
+     "name": "Wuqiaoxian"
+    },
+    {
+     "id": "chn-adm2-wuqiaxian",
+     "name": "Wuqiaxian"
+    },
+    {
+     "id": "chn-adm2-wuqingxian",
+     "name": "Wuqingxian"
+    },
+    {
+     "id": "chn-adm2-wuqixian",
+     "name": "Wuqixian"
+    },
+    {
+     "id": "chn-adm2-wushanxian",
+     "name": "Wushanxian"
+    },
+    {
+     "id": "chn-adm2-wushanxian-2",
+     "name": "Wushanxian"
+    },
+    {
+     "id": "chn-adm2-wushengxian",
+     "name": "Wushengxian"
+    },
+    {
+     "id": "chn-adm2-wushenqi",
+     "name": "Wushenqi"
+    },
+    {
+     "id": "chn-adm2-wushenxian",
+     "name": "Wushenxian"
+    },
+    {
+     "id": "chn-adm2-wushixian",
+     "name": "Wushixian"
+    },
+    {
+     "id": "chn-adm2-wushongxian",
+     "name": "Wushongxian"
+    },
+    {
+     "id": "chn-adm2-wushuxian",
+     "name": "Wushuxian"
+    },
+    {
+     "id": "chn-adm2-wutaixian",
+     "name": "Wutaixian"
+    },
+    {
+     "id": "chn-adm2-wuweishi",
+     "name": "Wuweishi"
+    },
+    {
+     "id": "chn-adm2-wuweixian",
+     "name": "Wuweixian"
+    },
+    {
+     "id": "chn-adm2-wuxiangxian",
+     "name": "Wuxiangxian"
+    },
+    {
+     "id": "chn-adm2-wuxianshi",
+     "name": "Wuxianshi"
+    },
+    {
+     "id": "chn-adm2-wuxishi",
+     "name": "Wuxishi"
+    },
+    {
+     "id": "chn-adm2-wuxixian",
+     "name": "Wuxixian"
+    },
+    {
+     "id": "chn-adm2-wuxixian-2",
+     "name": "Wuxixian"
+    },
+    {
+     "id": "chn-adm2-wuxuanxian",
+     "name": "Wuxuanxian"
+    },
+    {
+     "id": "chn-adm2-wuxueshi",
+     "name": "Wuxueshi"
+    },
+    {
+     "id": "chn-adm2-wuyishanshi",
+     "name": "Wuyishanshi"
+    },
+    {
+     "id": "chn-adm2-wuyixian",
+     "name": "Wuyixian"
+    },
+    {
+     "id": "chn-adm2-wuyixian-2",
+     "name": "Wuyixian"
+    },
+    {
+     "id": "chn-adm2-wuyuanxian",
+     "name": "Wuyuanxian"
+    },
+    {
+     "id": "chn-adm2-wuyuanxian-2",
+     "name": "Wuyuanxian"
+    },
+    {
+     "id": "chn-adm2-wuzaixian",
+     "name": "Wuzaixian"
+    },
+    {
+     "id": "chn-adm2-wuzhongshi",
+     "name": "Wuzhongshi"
+    },
+    {
+     "id": "chn-adm2-wuzhoushi",
+     "name": "Wuzhoushi"
+    },
+    {
+     "id": "chn-adm2-xangyunxian",
+     "name": "Xangyunxian"
+    },
+    {
+     "id": "chn-adm2-xiahexian",
+     "name": "Xiahexian"
+    },
+    {
+     "id": "chn-adm2-xiajiangxian",
+     "name": "Xiajiangxian"
+    },
+    {
+     "id": "chn-adm2-xiajinxian",
+     "name": "Xiajinxian"
+    },
+    {
+     "id": "chn-adm2-xiamenshi",
+     "name": "Xiamenshi"
+    },
+    {
+     "id": "chn-adm2-xianfengxian",
+     "name": "Xianfengxian"
+    },
+    {
+     "id": "chn-adm2-xiangchengshi",
+     "name": "Xiangchengshi"
+    },
+    {
+     "id": "chn-adm2-xiangchengxian",
+     "name": "Xiangchengxian"
+    },
+    {
+     "id": "chn-adm2-xiangchengxian-2",
+     "name": "Xiangchengxian"
+    },
+    {
+     "id": "chn-adm2-xiangfanshi",
+     "name": "Xiangfanshi"
+    },
+    {
+     "id": "chn-adm2-xiangfenxian",
+     "name": "Xiangfenxian"
+    },
+    {
+     "id": "chn-adm2-xianggang",
+     "name": "Xianggang"
+    },
+    {
+     "id": "chn-adm2-xianghuangqi",
+     "name": "Xianghuangqi"
+    },
+    {
+     "id": "chn-adm2-xiangningxian",
+     "name": "Xiangningxian"
+    },
+    {
+     "id": "chn-adm2-xiangshanxian",
+     "name": "Xiangshanxian"
+    },
+    {
+     "id": "chn-adm2-xiangshuixian",
+     "name": "Xiangshuixian"
+    },
+    {
+     "id": "chn-adm2-xiangtanshi",
+     "name": "Xiangtanshi"
+    },
+    {
+     "id": "chn-adm2-xiangtanxian",
+     "name": "Xiangtanxian"
+    },
+    {
+     "id": "chn-adm2-xiangxiangshi",
+     "name": "Xiangxiangshi"
+    },
+    {
+     "id": "chn-adm2-xiangyangxian",
+     "name": "Xiangyangxian"
+    },
+    {
+     "id": "chn-adm2-xiangyinxian",
+     "name": "Xiangyinxian"
+    },
+    {
+     "id": "chn-adm2-xiangyuanxian",
+     "name": "Xiangyuanxian"
+    },
+    {
+     "id": "chn-adm2-xiangzhouxian",
+     "name": "Xiangzhouxian"
+    },
+    {
+     "id": "chn-adm2-xianhaexian",
+     "name": "Xianhaexian"
+    },
+    {
+     "id": "chn-adm2-xianjuxian",
+     "name": "Xianjuxian"
+    },
+    {
+     "id": "chn-adm2-xianningshi",
+     "name": "Xianningshi"
+    },
+    {
+     "id": "chn-adm2-xianshi",
+     "name": "Xianshi"
+    },
+    {
+     "id": "chn-adm2-xiantaoshi",
+     "name": "Xiantaoshi"
+    },
+    {
+     "id": "chn-adm2-xianxian",
+     "name": "Xianxian"
+    },
+    {
+     "id": "chn-adm2-xianyangshi",
+     "name": "Xianyangshi"
+    },
+    {
+     "id": "chn-adm2-xianyouxian",
+     "name": "Xianyouxian"
+    },
+    {
+     "id": "chn-adm2-xiaoganshi",
+     "name": "Xiaoganshi"
+    },
+    {
+     "id": "chn-adm2-xiaojinxian",
+     "name": "Xiaojinxian"
+    },
+    {
+     "id": "chn-adm2-xiaoshanshi",
+     "name": "Xiaoshanshi"
+    },
+    {
+     "id": "chn-adm2-xiaoxian",
+     "name": "Xiaoxian"
+    },
+    {
+     "id": "chn-adm2-xiaoyishi",
+     "name": "Xiaoyishi"
+    },
+    {
+     "id": "chn-adm2-xiapuxian",
+     "name": "Xiapuxian"
+    },
+    {
+     "id": "chn-adm2-xiaxian",
+     "name": "Xiaxian"
+    },
+    {
+     "id": "chn-adm2-xiayixian",
+     "name": "Xiayixian"
+    },
+    {
+     "id": "chn-adm2-xichangshi",
+     "name": "Xichangshi"
+    },
+    {
+     "id": "chn-adm2-xichongxian",
+     "name": "Xichongxian"
+    },
+    {
+     "id": "chn-adm2-xichouxian",
+     "name": "Xichouxian"
+    },
+    {
+     "id": "chn-adm2-xichuanxian",
+     "name": "Xichuanxian"
+    },
+    {
+     "id": "chn-adm2-xidexian",
+     "name": "Xidexian"
+    },
+    {
+     "id": "chn-adm2-xietongmenxian",
+     "name": "Xietongmenxian"
+    },
+    {
+     "id": "chn-adm2-xifengshi",
+     "name": "Xifengshi"
+    },
+    {
+     "id": "chn-adm2-xifengxian",
+     "name": "Xifengxian"
+    },
+    {
+     "id": "chn-adm2-xifengxian-2",
+     "name": "Xifengxian"
+    },
+    {
+     "id": "chn-adm2-xiheixian",
+     "name": "Xiheixian"
+    },
+    {
+     "id": "chn-adm2-xihuaxian",
+     "name": "Xihuaxian"
+    },
+    {
+     "id": "chn-adm2-xijixian",
+     "name": "Xijixian"
+    },
+    {
+     "id": "chn-adm2-xilinhaoteshi",
+     "name": "Xilinhaoteshi"
+    },
+    {
+     "id": "chn-adm2-xilinxian",
+     "name": "Xilinxian"
+    },
+    {
+     "id": "chn-adm2-ximengwazuzizhixian",
+     "name": "Ximengwazuzizhixian"
+    },
+    {
+     "id": "chn-adm2-xinanxian",
+     "name": "Xinanxian"
+    },
+    {
+     "id": "chn-adm2-xinbaerhuyouqi",
+     "name": "Xinbaerhuyouqi"
+    },
+    {
+     "id": "chn-adm2-xinbaerhuzuoqi",
+     "name": "Xinbaerhuzuoqi"
+    },
+    {
+     "id": "chn-adm2-xinbinmanzuzizhixian",
+     "name": "Xinbinmanzuzizhixian"
+    },
+    {
+     "id": "chn-adm2-xincaixian",
+     "name": "Xincaixian"
+    },
+    {
+     "id": "chn-adm2-xinchangxian",
+     "name": "Xinchangxian"
+    },
+    {
+     "id": "chn-adm2-xinchengxian",
+     "name": "Xinchengxian"
+    },
+    {
+     "id": "chn-adm2-xinchengxian-2",
+     "name": "Xinchengxian"
+    },
+    {
+     "id": "chn-adm2-xinduxian",
+     "name": "Xinduxian"
+    },
+    {
+     "id": "chn-adm2-xinfengxian",
+     "name": "Xinfengxian"
+    },
+    {
+     "id": "chn-adm2-xinfengxian-2",
+     "name": "Xinfengxian"
+    },
+    {
+     "id": "chn-adm2-xinganxian",
+     "name": "Xinganxian"
+    },
+    {
+     "id": "chn-adm2-xinganxian-2",
+     "name": "Xinganxian"
+    },
+    {
+     "id": "chn-adm2-xingchengshi",
+     "name": "Xingchengshi"
+    },
+    {
+     "id": "chn-adm2-xingguoxian",
+     "name": "Xingguoxian"
+    },
+    {
+     "id": "chn-adm2-xinghaixian",
+     "name": "Xinghaixian"
+    },
+    {
+     "id": "chn-adm2-xinghexian",
+     "name": "Xinghexian"
+    },
+    {
+     "id": "chn-adm2-xinghuashi",
+     "name": "Xinghuashi"
+    },
+    {
+     "id": "chn-adm2-xinglongxian",
+     "name": "Xinglongxian"
+    },
+    {
+     "id": "chn-adm2-xingningshi",
+     "name": "Xingningshi"
+    },
+    {
+     "id": "chn-adm2-xingpingshi",
+     "name": "Xingpingshi"
+    },
+    {
+     "id": "chn-adm2-xingrenxian",
+     "name": "Xingrenxian"
+    },
+    {
+     "id": "chn-adm2-xingshanxian",
+     "name": "Xingshanxian"
+    },
+    {
+     "id": "chn-adm2-xingtaishi",
+     "name": "Xingtaishi"
+    },
+    {
+     "id": "chn-adm2-xingtaixian",
+     "name": "Xingtaixian"
+    },
+    {
+     "id": "chn-adm2-xingtangxian",
+     "name": "Xingtangxian"
+    },
+    {
+     "id": "chn-adm2-xingwenxian",
+     "name": "Xingwenxian"
+    },
+    {
+     "id": "chn-adm2-xingxian",
+     "name": "Xingxian"
+    },
+    {
+     "id": "chn-adm2-xingyangxian",
+     "name": "Xingyangxian"
+    },
+    {
+     "id": "chn-adm2-xingyishi",
+     "name": "Xingyishi"
+    },
+    {
+     "id": "chn-adm2-xingzixian",
+     "name": "Xingzixian"
+    },
+    {
+     "id": "chn-adm2-xinhexian",
+     "name": "Xinhexian"
+    },
+    {
+     "id": "chn-adm2-xinhexian-2",
+     "name": "Xinhexian"
+    },
+    {
+     "id": "chn-adm2-xinhuangdongzuzizhixian",
+     "name": "Xinhuangdongzuzizhixian"
+    },
+    {
+     "id": "chn-adm2-xinhuaxian",
+     "name": "Xinhuaxian"
+    },
+    {
+     "id": "chn-adm2-xinhuishi",
+     "name": "Xinhuishi"
+    },
+    {
+     "id": "chn-adm2-xiningshi",
+     "name": "Xiningshi"
+    },
+    {
+     "id": "chn-adm2-xinjiangxian",
+     "name": "Xinjiangxian"
+    },
+    {
+     "id": "chn-adm2-xinjianxian",
+     "name": "Xinjianxian"
+    },
+    {
+     "id": "chn-adm2-xinjianxian-2",
+     "name": "Xinjianxian"
+    },
+    {
+     "id": "chn-adm2-xinjinxian",
+     "name": "Xinjinxian"
+    },
+    {
+     "id": "chn-adm2-xinjinxian-2",
+     "name": "Xinjinxian"
+    },
+    {
+     "id": "chn-adm2-xinjishi",
+     "name": "Xinjishi"
+    },
+    {
+     "id": "chn-adm2-xinleshi",
+     "name": "Xinleshi"
+    },
+    {
+     "id": "chn-adm2-xinlingxian",
+     "name": "Xinlingxian"
+    },
+    {
+     "id": "chn-adm2-xinlongxian",
+     "name": "Xinlongxian"
+    },
+    {
+     "id": "chn-adm2-xinminxian",
+     "name": "Xinminxian"
+    },
+    {
+     "id": "chn-adm2-xinpingyizhudaizuzizhixian",
+     "name": "Xinpingyizhudaizuzizhixian"
+    },
+    {
+     "id": "chn-adm2-xintaishi",
+     "name": "Xintaishi"
+    },
+    {
+     "id": "chn-adm2-xintianxian",
+     "name": "Xintianxian"
+    },
+    {
+     "id": "chn-adm2-xinxian",
+     "name": "Xinxian"
+    },
+    {
+     "id": "chn-adm2-xinxian-2",
+     "name": "Xinxian"
+    },
+    {
+     "id": "chn-adm2-xinxiangshi",
+     "name": "Xinxiangshi"
+    },
+    {
+     "id": "chn-adm2-xinxiangxian",
+     "name": "Xinxiangxian"
+    },
+    {
+     "id": "chn-adm2-xinxingxian",
+     "name": "Xinxingxian"
+    },
+    {
+     "id": "chn-adm2-xinyangshi",
+     "name": "Xinyangshi"
+    },
+    {
+     "id": "chn-adm2-xinyexian",
+     "name": "Xinyexian"
+    },
+    {
+     "id": "chn-adm2-xinyishi",
+     "name": "Xinyishi"
+    },
+    {
+     "id": "chn-adm2-xinyixian",
+     "name": "Xinyixian"
+    },
+    {
+     "id": "chn-adm2-xinyuanxian",
+     "name": "Xinyuanxian"
+    },
+    {
+     "id": "chn-adm2-xinyushi",
+     "name": "Xinyushi"
+    },
+    {
+     "id": "chn-adm2-xinzhaoxian",
+     "name": "Xinzhaoxian"
+    },
+    {
+     "id": "chn-adm2-xinzhengxian",
+     "name": "Xinzhengxian"
+    },
+    {
+     "id": "chn-adm2-xinzhouxian",
+     "name": "Xinzhouxian"
+    },
+    {
+     "id": "chn-adm2-xinzhuxian",
+     "name": "Xinzhuxian"
+    },
+    {
+     "id": "chn-adm2-xiongxian",
+     "name": "Xiongxian"
+    },
+    {
+     "id": "chn-adm2-xipingxian",
+     "name": "Xipingxian"
+    },
+    {
+     "id": "chn-adm2-xishuixian",
+     "name": "Xishuixian"
+    },
+    {
+     "id": "chn-adm2-xishuixian-2",
+     "name": "Xishuixian"
+    },
+    {
+     "id": "chn-adm2-xiuningxian",
+     "name": "Xiuningxian"
+    },
+    {
+     "id": "chn-adm2-xiushantujiazumiaozuzizhixian",
+     "name": "Xiushantujiazumiaozuzizhixian"
+    },
+    {
+     "id": "chn-adm2-xiushuixian",
+     "name": "Xiushuixian"
+    },
+    {
+     "id": "chn-adm2-xiuwenxian",
+     "name": "Xiuwenxian"
+    },
+    {
+     "id": "chn-adm2-xiuwuxian",
+     "name": "Xiuwuxian"
+    },
+    {
+     "id": "chn-adm2-xiwuzhumuqinqi",
+     "name": "Xiwuzhumuqinqi"
+    },
+    {
+     "id": "chn-adm2-xixian",
+     "name": "Xixian"
+    },
+    {
+     "id": "chn-adm2-xixiangxian",
+     "name": "Xixiangxian"
+    },
+    {
+     "id": "chn-adm2-xixiaxian",
+     "name": "Xixiaxian"
+    },
+    {
+     "id": "chn-adm2-xiyangxian",
+     "name": "Xiyangxian"
+    },
+    {
+     "id": "chn-adm2-xuanenxian",
+     "name": "Xuanenxian"
+    },
+    {
+     "id": "chn-adm2-xuanhanxian",
+     "name": "Xuanhanxian"
+    },
+    {
+     "id": "chn-adm2-xuanhuaxian",
+     "name": "Xuanhuaxian"
+    },
+    {
+     "id": "chn-adm2-xuanweishi",
+     "name": "Xuanweishi"
+    },
+    {
+     "id": "chn-adm2-xuanzhoushi",
+     "name": "Xuanzhoushi"
+    },
+    {
+     "id": "chn-adm2-xuchangshi",
+     "name": "Xuchangshi"
+    },
+    {
+     "id": "chn-adm2-xuchangxian",
+     "name": "Xuchangxian"
+    },
+    {
+     "id": "chn-adm2-xundianhuizuyizuzizhixian",
+     "name": "Xundianhuizuyizuzizhixian"
+    },
+    {
+     "id": "chn-adm2-xunhuasalazuzizhixian",
+     "name": "Xunhuasalazuzizhixian"
+    },
+    {
+     "id": "chn-adm2-xunkexian",
+     "name": "Xunkexian"
+    },
+    {
+     "id": "chn-adm2-xunwuxian",
+     "name": "Xunwuxian"
+    },
+    {
+     "id": "chn-adm2-xunyangxian",
+     "name": "Xunyangxian"
+    },
+    {
+     "id": "chn-adm2-xunyixian",
+     "name": "Xunyixian"
+    },
+    {
+     "id": "chn-adm2-xupuxian",
+     "name": "Xupuxian"
+    },
+    {
+     "id": "chn-adm2-xushuixian",
+     "name": "Xushuixian"
+    },
+    {
+     "id": "chn-adm2-xuwenxian",
+     "name": "Xuwenxian"
+    },
+    {
+     "id": "chn-adm2-xuyongxian",
+     "name": "Xuyongxian"
+    },
+    {
+     "id": "chn-adm2-xuyuxian",
+     "name": "Xuyuxian"
+    },
+    {
+     "id": "chn-adm2-xuzhoushi",
+     "name": "Xuzhoushi"
+    },
+    {
+     "id": "chn-adm2-yaanshi",
+     "name": "Yaanshi"
+    },
+    {
+     "id": "chn-adm2-yadongxian",
+     "name": "Yadongxian"
+    },
+    {
+     "id": "chn-adm2-yajiangxian",
+     "name": "Yajiangxian"
+    },
+    {
+     "id": "chn-adm2-yakesheishi",
+     "name": "Yakesheishi"
+    },
+    {
+     "id": "chn-adm2-yananshi",
+     "name": "Yananshi"
+    },
+    {
+     "id": "chn-adm2-yanbianxian",
+     "name": "Yanbianxian"
+    },
+    {
+     "id": "chn-adm2-yanchangxian",
+     "name": "Yanchangxian"
+    },
+    {
+     "id": "chn-adm2-yanchengshi",
+     "name": "Yanchengshi"
+    },
+    {
+     "id": "chn-adm2-yanchengxian",
+     "name": "Yanchengxian"
+    },
+    {
+     "id": "chn-adm2-yanchixian",
+     "name": "Yanchixian"
+    },
+    {
+     "id": "chn-adm2-yanchuanxian",
+     "name": "Yanchuanxian"
+    },
+    {
+     "id": "chn-adm2-yangbiyizuzizhixian",
+     "name": "Yangbiyizuzizhixian"
+    },
+    {
+     "id": "chn-adm2-yangchengxian",
+     "name": "Yangchengxian"
+    },
+    {
+     "id": "chn-adm2-yangchushi",
+     "name": "Yangchushi"
+    },
+    {
+     "id": "chn-adm2-yanggaoxian",
+     "name": "Yanggaoxian"
+    },
+    {
+     "id": "chn-adm2-yangguxian",
+     "name": "Yangguxian"
+    },
+    {
+     "id": "chn-adm2-yangquanshi",
+     "name": "Yangquanshi"
+    },
+    {
+     "id": "chn-adm2-yangquxian",
+     "name": "Yangquxian"
+    },
+    {
+     "id": "chn-adm2-yangshanxian",
+     "name": "Yangshanxian"
+    },
+    {
+     "id": "chn-adm2-yangsuoxian",
+     "name": "Yangsuoxian"
+    },
+    {
+     "id": "chn-adm2-yangxian",
+     "name": "Yangxian"
+    },
+    {
+     "id": "chn-adm2-yangxinxian",
+     "name": "Yangxinxian"
+    },
+    {
+     "id": "chn-adm2-yangxinxian-2",
+     "name": "Yangxinxian"
+    },
+    {
+     "id": "chn-adm2-yangxixian",
+     "name": "Yangxixian"
+    },
+    {
+     "id": "chn-adm2-yangyuanxian",
+     "name": "Yangyuanxian"
+    },
+    {
+     "id": "chn-adm2-yangzhong",
+     "name": "Yangzhong"
+    },
+    {
+     "id": "chn-adm2-yangzhoushi",
+     "name": "Yangzhoushi"
+    },
+    {
+     "id": "chn-adm2-yanhetujiazuzizhixian",
+     "name": "Yanhetujiazuzizhixian"
+    },
+    {
+     "id": "chn-adm2-yanjingxian",
+     "name": "Yanjingxian"
+    },
+    {
+     "id": "chn-adm2-yanjinxian",
+     "name": "Yanjinxian"
+    },
+    {
+     "id": "chn-adm2-yanjishi",
+     "name": "Yanjishi"
+    },
+    {
+     "id": "chn-adm2-yanlingxian",
+     "name": "Yanlingxian"
+    },
+    {
+     "id": "chn-adm2-yanqihuizuzizhixian",
+     "name": "Yanqihuizuzizhixian"
+    },
+    {
+     "id": "chn-adm2-yanqingxian",
+     "name": "Yanqingxian"
+    },
+    {
+     "id": "chn-adm2-yanshanxian",
+     "name": "Yanshanxian"
+    },
+    {
+     "id": "chn-adm2-yanshishi",
+     "name": "Yanshishi"
+    },
+    {
+     "id": "chn-adm2-yanshouxian",
+     "name": "Yanshouxian"
+    },
+    {
+     "id": "chn-adm2-yantaishi",
+     "name": "Yantaishi"
+    },
+    {
+     "id": "chn-adm2-yantingxian",
+     "name": "Yantingxian"
+    },
+    {
+     "id": "chn-adm2-yanyuanxian",
+     "name": "Yanyuanxian"
+    },
+    {
+     "id": "chn-adm2-yanzhoushi",
+     "name": "Yanzhoushi"
+    },
+    {
+     "id": "chn-adm2-yaoanxian",
+     "name": "Yaoanxian"
+    },
+    {
+     "id": "chn-adm2-yaoxian",
+     "name": "Yaoxian"
+    },
+    {
+     "id": "chn-adm2-yechengxian",
+     "name": "Yechengxian"
+    },
+    {
+     "id": "chn-adm2-yexian",
+     "name": "Yexian"
+    },
+    {
+     "id": "chn-adm2-yianxian",
+     "name": "Yianxian"
+    },
+    {
+     "id": "chn-adm2-yibinshi",
+     "name": "Yibinshi"
+    },
+    {
+     "id": "chn-adm2-yibinxian",
+     "name": "Yibinxian"
+    },
+    {
+     "id": "chn-adm2-yichangshi",
+     "name": "Yichangshi"
+    },
+    {
+     "id": "chn-adm2-yichangxian",
+     "name": "Yichangxian"
+    },
+    {
+     "id": "chn-adm2-yichengshi",
+     "name": "Yichengshi"
+    },
+    {
+     "id": "chn-adm2-yichengxian",
+     "name": "Yichengxian"
+    },
+    {
+     "id": "chn-adm2-yichuanxian",
+     "name": "Yichuanxian"
+    },
+    {
+     "id": "chn-adm2-yichuanxian-2",
+     "name": "Yichuanxian"
+    },
+    {
+     "id": "chn-adm2-yichunshi",
+     "name": "Yichunshi"
+    },
+    {
+     "id": "chn-adm2-yichunshi-2",
+     "name": "Yichunshi"
+    },
+    {
+     "id": "chn-adm2-yihuangxian",
+     "name": "Yihuangxian"
+    },
+    {
+     "id": "chn-adm2-yijinhuoluoqi",
+     "name": "Yijinhuoluoqi"
+    },
+    {
+     "id": "chn-adm2-yijunxian",
+     "name": "Yijunxian"
+    },
+    {
+     "id": "chn-adm2-yilanxian",
+     "name": "Yilanxian"
+    },
+    {
+     "id": "chn-adm2-yilanxian-2",
+     "name": "Yilanxian"
+    },
+    {
+     "id": "chn-adm2-yiliangxian",
+     "name": "Yiliangxian"
+    },
+    {
+     "id": "chn-adm2-yiliangxian-2",
+     "name": "Yiliangxian"
+    },
+    {
+     "id": "chn-adm2-yilongxian",
+     "name": "Yilongxian"
+    },
+    {
+     "id": "chn-adm2-yimashi",
+     "name": "Yimashi"
+    },
+    {
+     "id": "chn-adm2-yimenxian",
+     "name": "Yimenxian"
+    },
+    {
+     "id": "chn-adm2-yinanxian",
+     "name": "Yinanxian"
+    },
+    {
+     "id": "chn-adm2-yinchuanshi",
+     "name": "Yinchuanshi"
+    },
+    {
+     "id": "chn-adm2-yingchengshi",
+     "name": "Yingchengshi"
+    },
+    {
+     "id": "chn-adm2-yingdeshi",
+     "name": "Yingdeshi"
+    },
+    {
+     "id": "chn-adm2-yingjiangxian",
+     "name": "Yingjiangxian"
+    },
+    {
+     "id": "chn-adm2-yingjishaxian",
+     "name": "Yingjishaxian"
+    },
+    {
+     "id": "chn-adm2-yingkoushi",
+     "name": "Yingkoushi"
+    },
+    {
+     "id": "chn-adm2-yingkoushi-2",
+     "name": "Yingkoushi"
+    },
+    {
+     "id": "chn-adm2-yingshangxian",
+     "name": "Yingshangxian"
+    },
+    {
+     "id": "chn-adm2-yingshanxian",
+     "name": "Yingshanxian"
+    },
+    {
+     "id": "chn-adm2-yingshanxian-2",
+     "name": "Yingshanxian"
+    },
+    {
+     "id": "chn-adm2-yingtanshi",
+     "name": "Yingtanshi"
+    },
+    {
+     "id": "chn-adm2-yingxian",
+     "name": "Yingxian"
+    },
+    {
+     "id": "chn-adm2-yingxian-2",
+     "name": "Yingxian"
+    },
+    {
+     "id": "chn-adm2-yiningshi",
+     "name": "Yiningshi"
+    },
+    {
+     "id": "chn-adm2-yiningxian",
+     "name": "Yiningxian"
+    },
+    {
+     "id": "chn-adm2-yinjiangtujiazumiaozuzizhixian",
+     "name": "Yinjiangtujiazumiaozuzizhixian"
+    },
+    {
+     "id": "chn-adm2-yinxian",
+     "name": "Yinxian"
+    },
+    {
+     "id": "chn-adm2-yishuixian",
+     "name": "Yishuixian"
+    },
+    {
+     "id": "chn-adm2-yitongmazuzizixian",
+     "name": "Yitongmazuzizixian"
+    },
+    {
+     "id": "chn-adm2-yiwushi",
+     "name": "Yiwushi"
+    },
+    {
+     "id": "chn-adm2-yiwuxian",
+     "name": "Yiwuxian"
+    },
+    {
+     "id": "chn-adm2-yixian",
+     "name": "Yixian"
+    },
+    {
+     "id": "chn-adm2-yixian-2",
+     "name": "Yixian"
+    },
+    {
+     "id": "chn-adm2-yixian-3",
+     "name": "Yixian"
+    },
+    {
+     "id": "chn-adm2-yixingshi",
+     "name": "Yixingshi"
+    },
+    {
+     "id": "chn-adm2-yiyangshi",
+     "name": "Yiyangshi"
+    },
+    {
+     "id": "chn-adm2-yiyangshi-2",
+     "name": "Yiyangshi"
+    },
+    {
+     "id": "chn-adm2-yiyangxian",
+     "name": "Yiyangxian"
+    },
+    {
+     "id": "chn-adm2-yiyangxian-2",
+     "name": "Yiyangxian"
+    },
+    {
+     "id": "chn-adm2-yiyuanxian",
+     "name": "Yiyuanxian"
+    },
+    {
+     "id": "chn-adm2-yizhangxian",
+     "name": "Yizhangxian"
+    },
+    {
+     "id": "chn-adm2-yizhengshi",
+     "name": "Yizhengshi"
+    },
+    {
+     "id": "chn-adm2-yizhoushi",
+     "name": "Yizhoushi"
+    },
+    {
+     "id": "chn-adm2-yonganshi",
+     "name": "Yonganshi"
+    },
+    {
+     "id": "chn-adm2-yongchangxian",
+     "name": "Yongchangxian"
+    },
+    {
+     "id": "chn-adm2-yongchengxian",
+     "name": "Yongchengxian"
+    },
+    {
+     "id": "chn-adm2-yongchuanshi",
+     "name": "Yongchuanshi"
+    },
+    {
+     "id": "chn-adm2-yongchunxian",
+     "name": "Yongchunxian"
+    },
+    {
+     "id": "chn-adm2-yongdengxian",
+     "name": "Yongdengxian"
+    },
+    {
+     "id": "chn-adm2-yongdexian",
+     "name": "Yongdexian"
+    },
+    {
+     "id": "chn-adm2-yongdingxian",
+     "name": "Yongdingxian"
+    },
+    {
+     "id": "chn-adm2-yongfengxian",
+     "name": "Yongfengxian"
+    },
+    {
+     "id": "chn-adm2-yongfuxian",
+     "name": "Yongfuxian"
+    },
+    {
+     "id": "chn-adm2-yonghexian",
+     "name": "Yonghexian"
+    },
+    {
+     "id": "chn-adm2-yongjiaxian",
+     "name": "Yongjiaxian"
+    },
+    {
+     "id": "chn-adm2-yongjingxian",
+     "name": "Yongjingxian"
+    },
+    {
+     "id": "chn-adm2-yongjingxian-2",
+     "name": "Yongjingxian"
+    },
+    {
+     "id": "chn-adm2-yongjishi",
+     "name": "Yongjishi"
+    },
+    {
+     "id": "chn-adm2-yongjixian",
+     "name": "Yongjixian"
+    },
+    {
+     "id": "chn-adm2-yongkangshi",
+     "name": "Yongkangshi"
+    },
+    {
+     "id": "chn-adm2-yongnianxian",
+     "name": "Yongnianxian"
+    },
+    {
+     "id": "chn-adm2-yongningxian",
+     "name": "Yongningxian"
+    },
+    {
+     "id": "chn-adm2-yongningxian-2",
+     "name": "Yongningxian"
+    },
+    {
+     "id": "chn-adm2-yongpingxian",
+     "name": "Yongpingxian"
+    },
+    {
+     "id": "chn-adm2-yongqingxian",
+     "name": "Yongqingxian"
+    },
+    {
+     "id": "chn-adm2-yongrenxian",
+     "name": "Yongrenxian"
+    },
+    {
+     "id": "chn-adm2-yongshanxian",
+     "name": "Yongshanxian"
+    },
+    {
+     "id": "chn-adm2-yongshengxian",
+     "name": "Yongshengxian"
+    },
+    {
+     "id": "chn-adm2-yongshouxian",
+     "name": "Yongshouxian"
+    },
+    {
+     "id": "chn-adm2-yongshunxian",
+     "name": "Yongshunxian"
+    },
+    {
+     "id": "chn-adm2-yongtaixian",
+     "name": "Yongtaixian"
+    },
+    {
+     "id": "chn-adm2-yongxingxian",
+     "name": "Yongxingxian"
+    },
+    {
+     "id": "chn-adm2-yongxinxian",
+     "name": "Yongxinxian"
+    },
+    {
+     "id": "chn-adm2-yongxiuxian",
+     "name": "Yongxiuxian"
+    },
+    {
+     "id": "chn-adm2-yongzhoushi",
+     "name": "Yongzhoushi"
+    },
+    {
+     "id": "chn-adm2-youxian",
+     "name": "Youxian"
+    },
+    {
+     "id": "chn-adm2-youxixian",
+     "name": "Youxixian"
+    },
+    {
+     "id": "chn-adm2-youyanmanzuzizhixian",
+     "name": "Youyanmanzuzizhixian"
+    },
+    {
+     "id": "chn-adm2-youyixian",
+     "name": "Youyixian"
+    },
+    {
+     "id": "chn-adm2-youyuxian",
+     "name": "Youyuxian"
+    },
+    {
+     "id": "chn-adm2-yuananxian",
+     "name": "Yuananxian"
+    },
+    {
+     "id": "chn-adm2-yuanjianghanizhudaizuzizhixian",
+     "name": "Yuanjianghanizhudaizuzizhixian"
+    },
+    {
+     "id": "chn-adm2-yuanjiangshi",
+     "name": "Yuanjiangshi"
+    },
+    {
+     "id": "chn-adm2-yuanjinxian",
+     "name": "Yuanjinxian"
+    },
+    {
+     "id": "chn-adm2-yuanlingxian",
+     "name": "Yuanlingxian"
+    },
+    {
+     "id": "chn-adm2-yuanmouxian",
+     "name": "Yuanmouxian"
+    },
+    {
+     "id": "chn-adm2-yuanpingshi",
+     "name": "Yuanpingshi"
+    },
+    {
+     "id": "chn-adm2-yuanquxian",
+     "name": "Yuanquxian"
+    },
+    {
+     "id": "chn-adm2-yuanshixian",
+     "name": "Yuanshixian"
+    },
+    {
+     "id": "chn-adm2-yuanyangshi",
+     "name": "Yuanyangshi"
+    },
+    {
+     "id": "chn-adm2-yuanyangxian",
+     "name": "Yuanyangxian"
+    },
+    {
+     "id": "chn-adm2-yuchengxian",
+     "name": "Yuchengxian"
+    },
+    {
+     "id": "chn-adm2-yuchengxian-2",
+     "name": "Yuchengxian"
+    },
+    {
+     "id": "chn-adm2-yucishi",
+     "name": "Yucishi"
+    },
+    {
+     "id": "chn-adm2-yuduxian",
+     "name": "Yuduxian"
+    },
+    {
+     "id": "chn-adm2-yuechixian",
+     "name": "Yuechixian"
+    },
+    {
+     "id": "chn-adm2-yuepuhuxian",
+     "name": "Yuepuhuxian"
+    },
+    {
+     "id": "chn-adm2-yuexixian",
+     "name": "Yuexixian"
+    },
+    {
+     "id": "chn-adm2-yuexixian-2",
+     "name": "Yuexixian"
+    },
+    {
+     "id": "chn-adm2-yueyangshi",
+     "name": "Yueyangshi"
+    },
+    {
+     "id": "chn-adm2-yueyangxian",
+     "name": "Yueyangxian"
+    },
+    {
+     "id": "chn-adm2-yuganxian",
+     "name": "Yuganxian"
+    },
+    {
+     "id": "chn-adm2-yuhangxian",
+     "name": "Yuhangxian"
+    },
+    {
+     "id": "chn-adm2-yuhuanxian",
+     "name": "Yuhuanxian"
+    },
+    {
+     "id": "chn-adm2-yujiangxian",
+     "name": "Yujiangxian"
+    },
+    {
+     "id": "chn-adm2-yulinshi",
+     "name": "Yulinshi"
+    },
+    {
+     "id": "chn-adm2-yulinshi-2",
+     "name": "Yulinshi"
+    },
+    {
+     "id": "chn-adm2-yulinxian",
+     "name": "Yulinxian"
+    },
+    {
+     "id": "chn-adm2-yumenshi",
+     "name": "Yumenshi"
+    },
+    {
+     "id": "chn-adm2-yuminxian",
+     "name": "Yuminxian"
+    },
+    {
+     "id": "chn-adm2-yunanxian",
+     "name": "Yunanxian"
+    },
+    {
+     "id": "chn-adm2-yunchengshi",
+     "name": "Yunchengshi"
+    },
+    {
+     "id": "chn-adm2-yunchengxian",
+     "name": "Yunchengxian"
+    },
+    {
+     "id": "chn-adm2-yunchengxian-2",
+     "name": "Yunchengxian"
+    },
+    {
+     "id": "chn-adm2-yunfushi",
+     "name": "Yunfushi"
+    },
+    {
+     "id": "chn-adm2-yunhexian",
+     "name": "Yunhexian"
+    },
+    {
+     "id": "chn-adm2-yunlongxian",
+     "name": "Yunlongxian"
+    },
+    {
+     "id": "chn-adm2-yunmengxian",
+     "name": "Yunmengxian"
+    },
+    {
+     "id": "chn-adm2-yunxian",
+     "name": "Yunxian"
+    },
+    {
+     "id": "chn-adm2-yunxian-2",
+     "name": "Yunxian"
+    },
+    {
+     "id": "chn-adm2-yunxiaoxian",
+     "name": "Yunxiaoxian"
+    },
+    {
+     "id": "chn-adm2-yunxixian",
+     "name": "Yunxixian"
+    },
+    {
+     "id": "chn-adm2-yunyangxian",
+     "name": "Yunyangxian"
+    },
+    {
+     "id": "chn-adm2-yupingdongzuzizhixian",
+     "name": "Yupingdongzuzizhixian"
+    },
+    {
+     "id": "chn-adm2-yuqingxian",
+     "name": "Yuqingxian"
+    },
+    {
+     "id": "chn-adm2-yushanxian",
+     "name": "Yushanxian"
+    },
+    {
+     "id": "chn-adm2-yushexian",
+     "name": "Yushexian"
+    },
+    {
+     "id": "chn-adm2-yushushi",
+     "name": "Yushushi"
+    },
+    {
+     "id": "chn-adm2-yushuxian",
+     "name": "Yushuxian"
+    },
+    {
+     "id": "chn-adm2-yutaixian",
+     "name": "Yutaixian"
+    },
+    {
+     "id": "chn-adm2-yutianxian",
+     "name": "Yutianxian"
+    },
+    {
+     "id": "chn-adm2-yutianxian-2",
+     "name": "Yutianxian"
+    },
+    {
+     "id": "chn-adm2-yuxishi",
+     "name": "Yuxishi"
+    },
+    {
+     "id": "chn-adm2-yuyaoshi",
+     "name": "Yuyaoshi"
+    },
+    {
+     "id": "chn-adm2-yuzhongxian",
+     "name": "Yuzhongxian"
+    },
+    {
+     "id": "chn-adm2-yuzhoushi",
+     "name": "Yuzhoushi"
+    },
+    {
+     "id": "chn-adm2-zaduoxian",
+     "name": "Zaduoxian"
+    },
+    {
+     "id": "chn-adm2-zalantunshi",
+     "name": "Zalantunshi"
+    },
+    {
+     "id": "chn-adm2-zaluteqi",
+     "name": "Zaluteqi"
+    },
+    {
+     "id": "chn-adm2-zekuxian",
+     "name": "Zekuxian"
+    },
+    {
+     "id": "chn-adm2-zengchengshi",
+     "name": "Zengchengshi"
+    },
+    {
+     "id": "chn-adm2-zepuxian",
+     "name": "Zepuxian"
+    },
+    {
+     "id": "chn-adm2-zhadaxian",
+     "name": "Zhadaxian"
+    },
+    {
+     "id": "chn-adm2-zhafente",
+     "name": "Zhafente"
+    },
+    {
+     "id": "chn-adm2-zhangbeixian",
+     "name": "Zhangbeixian"
+    },
+    {
+     "id": "chn-adm2-zhanghuaxian",
+     "name": "Zhanghuaxian"
+    },
+    {
+     "id": "chn-adm2-zhangjiachuanhuizuzizhixian",
+     "name": "Zhangjiachuanhuizuzizhixian"
+    },
+    {
+     "id": "chn-adm2-zhangjiagangshi",
+     "name": "Zhangjiagangshi"
+    },
+    {
+     "id": "chn-adm2-zhangjiakoushi",
+     "name": "Zhangjiakoushi"
+    },
+    {
+     "id": "chn-adm2-zhangpingxian",
+     "name": "Zhangpingxian"
+    },
+    {
+     "id": "chn-adm2-zhangpuxian",
+     "name": "Zhangpuxian"
+    },
+    {
+     "id": "chn-adm2-zhangqiushi",
+     "name": "Zhangqiushi"
+    },
+    {
+     "id": "chn-adm2-zhangshushi",
+     "name": "Zhangshushi"
+    },
+    {
+     "id": "chn-adm2-zhangwuxian",
+     "name": "Zhangwuxian"
+    },
+    {
+     "id": "chn-adm2-zhangxian",
+     "name": "Zhangxian"
+    },
+    {
+     "id": "chn-adm2-zhangyeshi",
+     "name": "Zhangyeshi"
+    },
+    {
+     "id": "chn-adm2-zhangzhoushi",
+     "name": "Zhangzhoushi"
+    },
+    {
+     "id": "chn-adm2-zhanhuangxian",
+     "name": "Zhanhuangxian"
+    },
+    {
+     "id": "chn-adm2-zhanhuaxian",
+     "name": "Zhanhuaxian"
+    },
+    {
+     "id": "chn-adm2-zhanjianghsi",
+     "name": "Zhanjianghsi"
+    },
+    {
+     "id": "chn-adm2-zhaoanxian",
+     "name": "Zhaoanxian"
+    },
+    {
+     "id": "chn-adm2-zhaodongshi",
+     "name": "Zhaodongshi"
+    },
+    {
+     "id": "chn-adm2-zhaodongxian",
+     "name": "Zhaodongxian"
+    },
+    {
+     "id": "chn-adm2-zhaojuexian",
+     "name": "Zhaojuexian"
+    },
+    {
+     "id": "chn-adm2-zhaopingxian",
+     "name": "Zhaopingxian"
+    },
+    {
+     "id": "chn-adm2-zhaopingxian-2",
+     "name": "Zhaopingxian"
+    },
+    {
+     "id": "chn-adm2-zhaoqianxian",
+     "name": "Zhaoqianxian"
+    },
+    {
+     "id": "chn-adm2-zhaoqingshi",
+     "name": "Zhaoqingshi"
+    },
+    {
+     "id": "chn-adm2-zhaoshuxian",
+     "name": "Zhaoshuxian"
+    },
+    {
+     "id": "chn-adm2-zhaotongshi",
+     "name": "Zhaotongshi"
+    },
+    {
+     "id": "chn-adm2-zhaowushi",
+     "name": "Zhaowushi"
+    },
+    {
+     "id": "chn-adm2-zhaoxian",
+     "name": "Zhaoxian"
+    },
+    {
+     "id": "chn-adm2-zhaoyangshi",
+     "name": "Zhaoyangshi"
+    },
+    {
+     "id": "chn-adm2-zhaoyangxian",
+     "name": "Zhaoyangxian"
+    },
+    {
+     "id": "chn-adm2-zhaoyuanshi",
+     "name": "Zhaoyuanshi"
+    },
+    {
+     "id": "chn-adm2-zhaoyuanxian",
+     "name": "Zhaoyuanxian"
+    },
+    {
+     "id": "chn-adm2-zhaozhouxian",
+     "name": "Zhaozhouxian"
+    },
+    {
+     "id": "chn-adm2-zhaozhuangshi",
+     "name": "Zhaozhuangshi"
+    },
+    {
+     "id": "chn-adm2-zhaxiangxian",
+     "name": "Zhaxiangxian"
+    },
+    {
+     "id": "chn-adm2-zhenanxian",
+     "name": "Zhenanxian"
+    },
+    {
+     "id": "chn-adm2-zhenbaxian",
+     "name": "Zhenbaxian"
+    },
+    {
+     "id": "chn-adm2-zhenchengxian",
+     "name": "Zhenchengxian"
+    },
+    {
+     "id": "chn-adm2-zhenfengxian",
+     "name": "Zhenfengxian"
+    },
+    {
+     "id": "chn-adm2-zhenganxian",
+     "name": "Zhenganxian"
+    },
+    {
+     "id": "chn-adm2-zhengdingxian",
+     "name": "Zhengdingxian"
+    },
+    {
+     "id": "chn-adm2-zhenghexian",
+     "name": "Zhenghexian"
+    },
+    {
+     "id": "chn-adm2-zhenglanqi",
+     "name": "Zhenglanqi"
+    },
+    {
+     "id": "chn-adm2-zhengningxian",
+     "name": "Zhengningxian"
+    },
+    {
+     "id": "chn-adm2-zhengxiangbaiqi",
+     "name": "Zhengxiangbaiqi"
+    },
+    {
+     "id": "chn-adm2-zhengyangxian",
+     "name": "Zhengyangxian"
+    },
+    {
+     "id": "chn-adm2-zhengzhoushi",
+     "name": "Zhengzhoushi"
+    },
+    {
+     "id": "chn-adm2-zhenjiangshi",
+     "name": "Zhenjiangshi"
+    },
+    {
+     "id": "chn-adm2-zhenkangxian",
+     "name": "Zhenkangxian"
+    },
+    {
+     "id": "chn-adm2-zhenlaixian",
+     "name": "Zhenlaixian"
+    },
+    {
+     "id": "chn-adm2-zhenningbuyizumiaozuzizhixian",
+     "name": "Zhenningbuyizumiaozuzizhixian"
+    },
+    {
+     "id": "chn-adm2-zhenpingxian",
+     "name": "Zhenpingxian"
+    },
+    {
+     "id": "chn-adm2-zhenpingxian-2",
+     "name": "Zhenpingxian"
+    },
+    {
+     "id": "chn-adm2-zhenxiongxian",
+     "name": "Zhenxiongxian"
+    },
+    {
+     "id": "chn-adm2-zhenyuanxian",
+     "name": "Zhenyuanxian"
+    },
+    {
+     "id": "chn-adm2-zhenyuanxian-2",
+     "name": "Zhenyuanxian"
+    },
+    {
+     "id": "chn-adm2-zhenyuanyizhuhanizhulahuzuzizhixain",
+     "name": "Zhenyuanyizhuhanizhulahuzuzizhixain"
+    },
+    {
+     "id": "chn-adm2-zhichengshi",
+     "name": "Zhichengshi"
+    },
+    {
+     "id": "chn-adm2-zhidanxian",
+     "name": "Zhidanxian"
+    },
+    {
+     "id": "chn-adm2-zhiduoxian",
+     "name": "Zhiduoxian"
+    },
+    {
+     "id": "chn-adm2-zhiguixian",
+     "name": "Zhiguixian"
+    },
+    {
+     "id": "chn-adm2-zhijiangdongzuzizhixain",
+     "name": "Zhijiangdongzuzizhixain"
+    },
+    {
+     "id": "chn-adm2-zhijiangxian",
+     "name": "Zhijiangxian"
+    },
+    {
+     "id": "chn-adm2-zhijinxian",
+     "name": "Zhijinxian"
+    },
+    {
+     "id": "chn-adm2-zhijinxian-2",
+     "name": "Zhijinxian"
+    },
+    {
+     "id": "chn-adm2-zhitongxian",
+     "name": "Zhitongxian"
+    },
+    {
+     "id": "chn-adm2-zhiyangxian",
+     "name": "Zhiyangxian"
+    },
+    {
+     "id": "chn-adm2-zhiyunmiaozubuyizuzizhixian",
+     "name": "Zhiyunmiaozubuyizuzizhixian"
+    },
+    {
+     "id": "chn-adm2-zhongbaxian",
+     "name": "Zhongbaxian"
+    },
+    {
+     "id": "chn-adm2-zhongdianxian",
+     "name": "Zhongdianxian"
+    },
+    {
+     "id": "chn-adm2-zhongjiangxian",
+     "name": "Zhongjiangxian"
+    },
+    {
+     "id": "chn-adm2-zhongmouxian",
+     "name": "Zhongmouxian"
+    },
+    {
+     "id": "chn-adm2-zhongningxian",
+     "name": "Zhongningxian"
+    },
+    {
+     "id": "chn-adm2-zhongshanshi",
+     "name": "Zhongshanshi"
+    },
+    {
+     "id": "chn-adm2-zhongshanxian",
+     "name": "Zhongshanxian"
+    },
+    {
+     "id": "chn-adm2-zhongweixian",
+     "name": "Zhongweixian"
+    },
+    {
+     "id": "chn-adm2-zhongxian",
+     "name": "Zhongxian"
+    },
+    {
+     "id": "chn-adm2-zhongxiangshi",
+     "name": "Zhongxiangshi"
+    },
+    {
+     "id": "chn-adm2-zhongyanxian",
+     "name": "Zhongyanxian"
+    },
+    {
+     "id": "chn-adm2-zhouchengshi",
+     "name": "Zhouchengshi"
+    },
+    {
+     "id": "chn-adm2-zhoukoushi",
+     "name": "Zhoukoushi"
+    },
+    {
+     "id": "chn-adm2-zhouningxian",
+     "name": "Zhouningxian"
+    },
+    {
+     "id": "chn-adm2-zhoupingxian",
+     "name": "Zhoupingxian"
+    },
+    {
+     "id": "chn-adm2-zhouquxian",
+     "name": "Zhouquxian"
+    },
+    {
+     "id": "chn-adm2-zhoushanshi",
+     "name": "Zhoushanshi"
+    },
+    {
+     "id": "chn-adm2-zhouzhixian",
+     "name": "Zhouzhixian"
+    },
+    {
+     "id": "chn-adm2-zhuangheshi",
+     "name": "Zhuangheshi"
+    },
+    {
+     "id": "chn-adm2-zhuanglangxian",
+     "name": "Zhuanglangxian"
+    },
+    {
+     "id": "chn-adm2-zhuanjiangxian",
+     "name": "Zhuanjiangxian"
+    },
+    {
+     "id": "chn-adm2-zhuchengshi",
+     "name": "Zhuchengshi"
+    },
+    {
+     "id": "chn-adm2-zhuhaishi",
+     "name": "Zhuhaishi"
+    },
+    {
+     "id": "chn-adm2-zhujishi",
+     "name": "Zhujishi"
+    },
+    {
+     "id": "chn-adm2-zhumadianshi",
+     "name": "Zhumadianshi"
+    },
+    {
+     "id": "chn-adm2-zhunhuashi",
+     "name": "Zhunhuashi"
+    },
+    {
+     "id": "chn-adm2-zhunyishi",
+     "name": "Zhunyishi"
+    },
+    {
+     "id": "chn-adm2-zhunyixian",
+     "name": "Zhunyixian"
+    },
+    {
+     "id": "chn-adm2-zhuoluxian",
+     "name": "Zhuoluxian"
+    },
+    {
+     "id": "chn-adm2-zhuozhoushi",
+     "name": "Zhuozhoushi"
+    },
+    {
+     "id": "chn-adm2-zhushanxian",
+     "name": "Zhushanxian"
+    },
+    {
+     "id": "chn-adm2-zhuxixian",
+     "name": "Zhuxixian"
+    },
+    {
+     "id": "chn-adm2-zhuzhoushi",
+     "name": "Zhuzhoushi"
+    },
+    {
+     "id": "chn-adm2-zhuzhouxian",
+     "name": "Zhuzhouxian"
+    },
+    {
+     "id": "chn-adm2-ziboshi",
+     "name": "Ziboshi"
+    },
+    {
+     "id": "chn-adm2-zichangxian",
+     "name": "Zichangxian"
+    },
+    {
+     "id": "chn-adm2-zigongshi",
+     "name": "Zigongshi"
+    },
+    {
+     "id": "chn-adm2-zixingshi",
+     "name": "Zixingshi"
+    },
+    {
+     "id": "chn-adm2-zixixian",
+     "name": "Zixixian"
+    },
+    {
+     "id": "chn-adm2-ziyangshi",
+     "name": "Ziyangshi"
+    },
+    {
+     "id": "chn-adm2-ziyuanxian",
+     "name": "Ziyuanxian"
+    },
+    {
+     "id": "chn-adm2-zizhongxian",
+     "name": "Zizhongxian"
+    },
+    {
+     "id": "chn-adm2-zizhouxian",
+     "name": "Zizhouxian"
+    },
+    {
+     "id": "chn-adm2-zongyangxian",
+     "name": "Zongyangxian"
+    },
+    {
+     "id": "chn-adm2-zungeerqi",
+     "name": "Zungeerqi"
+    },
+    {
+     "id": "chn-adm2-zuogongxian",
+     "name": "Zuogongxian"
+    },
+    {
+     "id": "chn-adm2-zuonixian",
+     "name": "Zuonixian"
+    },
+    {
+     "id": "chn-adm2-zuoquanxian",
+     "name": "Zuoquanxian"
+    },
+    {
+     "id": "chn-adm2-zuoshuixian",
+     "name": "Zuoshuixian"
+    },
+    {
+     "id": "chn-adm2-zuoyunxian",
+     "name": "Zuoyunxian"
+    },
+    {
+     "id": "chn-adm2-zuozixian",
+     "name": "Zuozixian"
+    },
+    {
+     "id": "chn-adm2-ｚuichangxian",
+     "name": "Ｚuichangxian"
+    }
+   ]
+  }
+ },
+ "name": "China",
+ "nameBn": "China"
+}

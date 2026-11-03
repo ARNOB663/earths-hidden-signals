@@ -1,0 +1,343 @@
+{
+ "code": "ESP",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Unknown",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2017",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Unknown",
+   "code": "ADM1",
+   "count": 19,
+   "name": "ADM1 areas",
+   "nameBn": "ADM1 এলাকা",
+   "representedYear": "2017",
+   "sourceCount": 19,
+   "units": [
+    {
+     "id": "esp-adm1-andalucía",
+     "name": "Andalucía",
+     "shapeISO": "ESP"
+    },
+    {
+     "id": "esp-adm1-aragón",
+     "name": "Aragón",
+     "shapeISO": "ESP"
+    },
+    {
+     "id": "esp-adm1-canarias",
+     "name": "Canarias",
+     "shapeISO": "ESP"
+    },
+    {
+     "id": "esp-adm1-cantabria",
+     "name": "Cantabria",
+     "shapeISO": "ESP"
+    },
+    {
+     "id": "esp-adm1-castilla-y-león",
+     "name": "Castilla y León",
+     "shapeISO": "ESP"
+    },
+    {
+     "id": "esp-adm1-castilla-la-mancha",
+     "name": "Castilla-La Mancha",
+     "shapeISO": "ESP"
+    },
+    {
+     "id": "esp-adm1-cataluña-catalunya",
+     "name": "Cataluña/Catalunya",
+     "shapeISO": "ESP"
+    },
+    {
+     "id": "esp-adm1-ciudad-autónoma-de-ceuta",
+     "name": "Ciudad Autónoma de Ceuta",
+     "shapeISO": "ESP"
+    },
+    {
+     "id": "esp-adm1-ciudad-autónoma-de-melilla",
+     "name": "Ciudad Autónoma de Melilla",
+     "shapeISO": "ESP"
+    },
+    {
+     "id": "esp-adm1-comunidad-de-madrid",
+     "name": "Comunidad de Madrid",
+     "shapeISO": "ESP"
+    },
+    {
+     "id": "esp-adm1-comunidad-foral-de-navarra",
+     "name": "Comunidad Foral de Navarra",
+     "shapeISO": "ESP"
+    },
+    {
+     "id": "esp-adm1-comunitat-valenciana",
+     "name": "Comunitat Valenciana",
+     "shapeISO": "ESP"
+    },
+    {
+     "id": "esp-adm1-extremadura",
+     "name": "Extremadura",
+     "shapeISO": "ESP"
+    },
+    {
+     "id": "esp-adm1-galicia",
+     "name": "Galicia",
+     "shapeISO": "ESP"
+    },
+    {
+     "id": "esp-adm1-illes-balears",
+     "name": "Illes Balears",
+     "shapeISO": "ESP"
+    },
+    {
+     "id": "esp-adm1-la-rioja",
+     "name": "La Rioja",
+     "shapeISO": "ESP"
+    },
+    {
+     "id": "esp-adm1-país-vasco-euskadi",
+     "name": "País Vasco/Euskadi",
+     "shapeISO": "ESP"
+    },
+    {
+     "id": "esp-adm1-principado-de-asturias",
+     "name": "Principado de Asturias",
+     "shapeISO": "ESP"
+    },
+    {
+     "id": "esp-adm1-región-de-murcia",
+     "name": "Región de Murcia",
+     "shapeISO": "ESP"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Province",
+   "code": "ADM2",
+   "count": 52,
+   "name": "Province",
+   "nameBn": "প্রদেশ",
+   "representedYear": "2018",
+   "sourceCount": 52,
+   "units": [
+    {
+     "id": "esp-adm2-alava",
+     "name": "Alava"
+    },
+    {
+     "id": "esp-adm2-albacete",
+     "name": "Albacete"
+    },
+    {
+     "id": "esp-adm2-alicante",
+     "name": "Alicante"
+    },
+    {
+     "id": "esp-adm2-almeria",
+     "name": "Almeria"
+    },
+    {
+     "id": "esp-adm2-asturias",
+     "name": "Asturias"
+    },
+    {
+     "id": "esp-adm2-avila",
+     "name": "Avila"
+    },
+    {
+     "id": "esp-adm2-badajoz",
+     "name": "Badajoz"
+    },
+    {
+     "id": "esp-adm2-balears-illes",
+     "name": "Balears, Illes"
+    },
+    {
+     "id": "esp-adm2-barcelona",
+     "name": "Barcelona"
+    },
+    {
+     "id": "esp-adm2-bizkaia",
+     "name": "Bizkaia"
+    },
+    {
+     "id": "esp-adm2-burgos",
+     "name": "Burgos"
+    },
+    {
+     "id": "esp-adm2-caceres",
+     "name": "Caceres"
+    },
+    {
+     "id": "esp-adm2-cadiz",
+     "name": "Cadiz"
+    },
+    {
+     "id": "esp-adm2-cantabria",
+     "name": "Cantabria"
+    },
+    {
+     "id": "esp-adm2-castellon",
+     "name": "Castellon"
+    },
+    {
+     "id": "esp-adm2-ceuta",
+     "name": "Ceuta"
+    },
+    {
+     "id": "esp-adm2-ciudad-real",
+     "name": "Ciudad Real"
+    },
+    {
+     "id": "esp-adm2-cordoba",
+     "name": "Cordoba"
+    },
+    {
+     "id": "esp-adm2-coruna",
+     "name": "Coruna"
+    },
+    {
+     "id": "esp-adm2-cuenca",
+     "name": "Cuenca"
+    },
+    {
+     "id": "esp-adm2-gipuzkoa",
+     "name": "Gipuzkoa"
+    },
+    {
+     "id": "esp-adm2-girona",
+     "name": "Girona"
+    },
+    {
+     "id": "esp-adm2-granada",
+     "name": "Granada"
+    },
+    {
+     "id": "esp-adm2-guadalajara",
+     "name": "Guadalajara"
+    },
+    {
+     "id": "esp-adm2-huelva",
+     "name": "Huelva"
+    },
+    {
+     "id": "esp-adm2-huesca",
+     "name": "Huesca"
+    },
+    {
+     "id": "esp-adm2-jaen",
+     "name": "Jaen"
+    },
+    {
+     "id": "esp-adm2-leon",
+     "name": "Leon"
+    },
+    {
+     "id": "esp-adm2-lleida",
+     "name": "Lleida"
+    },
+    {
+     "id": "esp-adm2-lugo",
+     "name": "Lugo"
+    },
+    {
+     "id": "esp-adm2-madrid",
+     "name": "Madrid"
+    },
+    {
+     "id": "esp-adm2-malaga",
+     "name": "Malaga"
+    },
+    {
+     "id": "esp-adm2-melilla",
+     "name": "Melilla"
+    },
+    {
+     "id": "esp-adm2-murcia",
+     "name": "Murcia"
+    },
+    {
+     "id": "esp-adm2-navarra",
+     "name": "Navarra"
+    },
+    {
+     "id": "esp-adm2-ourense",
+     "name": "Ourense"
+    },
+    {
+     "id": "esp-adm2-palencia",
+     "name": "Palencia"
+    },
+    {
+     "id": "esp-adm2-palmas-las",
+     "name": "Palmas, Las"
+    },
+    {
+     "id": "esp-adm2-pontevedra",
+     "name": "Pontevedra"
+    },
+    {
+     "id": "esp-adm2-rioja-la",
+     "name": "Rioja, La"
+    },
+    {
+     "id": "esp-adm2-salamanca",
+     "name": "Salamanca"
+    },
+    {
+     "id": "esp-adm2-santa-cruz-de-tenerife",
+     "name": "Santa Cruz de Tenerife"
+    },
+    {
+     "id": "esp-adm2-segovia",
+     "name": "Segovia"
+    },
+    {
+     "id": "esp-adm2-sevilla",
+     "name": "Sevilla"
+    },
+    {
+     "id": "esp-adm2-soria",
+     "name": "Soria"
+    },
+    {
+     "id": "esp-adm2-tarragona",
+     "name": "Tarragona"
+    },
+    {
+     "id": "esp-adm2-teruel",
+     "name": "Teruel"
+    },
+    {
+     "id": "esp-adm2-toledo",
+     "name": "Toledo"
+    },
+    {
+     "id": "esp-adm2-valencia",
+     "name": "Valencia"
+    },
+    {
+     "id": "esp-adm2-valladolid",
+     "name": "Valladolid"
+    },
+    {
+     "id": "esp-adm2-zamora",
+     "name": "Zamora"
+    },
+    {
+     "id": "esp-adm2-zaragoza",
+     "name": "Zaragoza"
+    }
+   ]
+  }
+ },
+ "name": "Spain",
+ "nameBn": "Spain"
+}

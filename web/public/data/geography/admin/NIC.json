@@ -1,0 +1,737 @@
+{
+ "code": "NIC",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "The Republic of Nicaragua",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2007",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Departamentos",
+   "code": "ADM1",
+   "count": 17,
+   "name": "Departamentos",
+   "nameBn": "Departamentos",
+   "representedYear": "2017",
+   "sourceCount": 17,
+   "units": [
+    {
+     "id": "nic-adm1-boaco",
+     "name": "Boaco",
+     "shapeISO": "NI-BO"
+    },
+    {
+     "id": "nic-adm1-carazo",
+     "name": "Carazo",
+     "shapeISO": "NI-CA"
+    },
+    {
+     "id": "nic-adm1-chinandega",
+     "name": "Chinandega",
+     "shapeISO": "NI-CI"
+    },
+    {
+     "id": "nic-adm1-chontales",
+     "name": "Chontales",
+     "shapeISO": "NI-CO"
+    },
+    {
+     "id": "nic-adm1-estelí",
+     "name": "Estelí",
+     "shapeISO": "NI-ES"
+    },
+    {
+     "id": "nic-adm1-granada",
+     "name": "Granada",
+     "shapeISO": "NI-GR"
+    },
+    {
+     "id": "nic-adm1-jinotega-departamento",
+     "name": "Jinotega (Departamento)",
+     "shapeISO": "NI-JI"
+    },
+    {
+     "id": "nic-adm1-leon",
+     "name": "Leon",
+     "shapeISO": "NI-LE"
+    },
+    {
+     "id": "nic-adm1-madriz",
+     "name": "Madriz",
+     "shapeISO": "NI-MD"
+    },
+    {
+     "id": "nic-adm1-managua",
+     "name": "Managua",
+     "shapeISO": "NI-MN"
+    },
+    {
+     "id": "nic-adm1-masaya",
+     "name": "Masaya",
+     "shapeISO": "NI-MS"
+    },
+    {
+     "id": "nic-adm1-matagalpa-departemento",
+     "name": "Matagalpa (Departemento)",
+     "shapeISO": "NI-MT"
+    },
+    {
+     "id": "nic-adm1-north-carribean-coast-autonomous-region",
+     "name": "North Carribean Coast Autonomous Region",
+     "shapeISO": "NI-AN"
+    },
+    {
+     "id": "nic-adm1-nueva-segovia",
+     "name": "Nueva Segovia",
+     "shapeISO": "NI-NS"
+    },
+    {
+     "id": "nic-adm1-rio-san-juan",
+     "name": "Rio San Juan",
+     "shapeISO": "NI-SJ"
+    },
+    {
+     "id": "nic-adm1-rivas",
+     "name": "Rivas",
+     "shapeISO": "NI-RI"
+    },
+    {
+     "id": "nic-adm1-south-atlantic-autonomous-region",
+     "name": "South Atlantic Autonomous Region",
+     "shapeISO": "NI-AS"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Unknown",
+   "code": "ADM2",
+   "count": 153,
+   "name": "ADM2 areas",
+   "nameBn": "ADM2 এলাকা",
+   "representedYear": "2017",
+   "sourceCount": 153,
+   "units": [
+    {
+     "id": "nic-adm2-acoyapa",
+     "name": "Acoyapa"
+    },
+    {
+     "id": "nic-adm2-altagracia-municipio",
+     "name": "Altagracia (Municipio)"
+    },
+    {
+     "id": "nic-adm2-belén-municipio",
+     "name": "Belén (Municipio)"
+    },
+    {
+     "id": "nic-adm2-buenos-aires-municipio",
+     "name": "Buenos Aires (Municipio)"
+    },
+    {
+     "id": "nic-adm2-catarina-municipio",
+     "name": "Catarina (Municipio)"
+    },
+    {
+     "id": "nic-adm2-chichigalpa-municipio",
+     "name": "Chichigalpa (Municipio)"
+    },
+    {
+     "id": "nic-adm2-chinandega-municipio",
+     "name": "Chinandega (Municipio)"
+    },
+    {
+     "id": "nic-adm2-ciudad-sandino-municipio",
+     "name": "Ciudad Sandino (Municipio)"
+    },
+    {
+     "id": "nic-adm2-comalapa-municipio",
+     "name": "Comalapa (Municipio)"
+    },
+    {
+     "id": "nic-adm2-corinto-municipio",
+     "name": "Corinto (Municipio)"
+    },
+    {
+     "id": "nic-adm2-corn-island",
+     "name": "Corn Island"
+    },
+    {
+     "id": "nic-adm2-cárdenas",
+     "name": "Cárdenas"
+    },
+    {
+     "id": "nic-adm2-diriamba-municipio",
+     "name": "Diriamba (Municipio)"
+    },
+    {
+     "id": "nic-adm2-diriomo-municipio",
+     "name": "Diriomo (Municipio)"
+    },
+    {
+     "id": "nic-adm2-diriá-municipio",
+     "name": "Diriá (Municipio)"
+    },
+    {
+     "id": "nic-adm2-dolores-municipio",
+     "name": "Dolores (Municipio)"
+    },
+    {
+     "id": "nic-adm2-el-castillo-municipio",
+     "name": "El Castillo (Municipio)"
+    },
+    {
+     "id": "nic-adm2-el-crucero-municipio",
+     "name": "El Crucero (Municipio)"
+    },
+    {
+     "id": "nic-adm2-el-jicaral-municipio",
+     "name": "El Jicaral (Municipio)"
+    },
+    {
+     "id": "nic-adm2-el-realejo-municipio",
+     "name": "El Realejo (Municipio)"
+    },
+    {
+     "id": "nic-adm2-el-rosario-municipio",
+     "name": "El Rosario (Municipio)"
+    },
+    {
+     "id": "nic-adm2-el-viejo-municipio",
+     "name": "El Viejo (Municipio)"
+    },
+    {
+     "id": "nic-adm2-granada-municipio",
+     "name": "Granada (Municipio)"
+    },
+    {
+     "id": "nic-adm2-jinotepe-municipio",
+     "name": "Jinotepe (Municipio)"
+    },
+    {
+     "id": "nic-adm2-juigalpa-municipio",
+     "name": "Juigalpa (Municipio)"
+    },
+    {
+     "id": "nic-adm2-la-concepción-municipio",
+     "name": "La Concepción (Municipio)"
+    },
+    {
+     "id": "nic-adm2-la-conquista-municipio",
+     "name": "La Conquista (Municipio)"
+    },
+    {
+     "id": "nic-adm2-la-paz-centro-municipio",
+     "name": "La Paz Centro (Municipio)"
+    },
+    {
+     "id": "nic-adm2-la-paz-de-carazo-municipio",
+     "name": "La Paz de Carazo (Municipio)"
+    },
+    {
+     "id": "nic-adm2-managua-municipio",
+     "name": "Managua (Municipio)"
+    },
+    {
+     "id": "nic-adm2-masatepe-municipio",
+     "name": "Masatepe (Municipio)"
+    },
+    {
+     "id": "nic-adm2-masaya-municipio",
+     "name": "Masaya (Municipio)"
+    },
+    {
+     "id": "nic-adm2-mateare-municipio",
+     "name": "Mateare (Municipio)"
+    },
+    {
+     "id": "nic-adm2-morrito-municipio",
+     "name": "Morrito (Municipio)"
+    },
+    {
+     "id": "nic-adm2-moyagalpa-muncipio",
+     "name": "Moyagalpa (Muncipio)"
+    },
+    {
+     "id": "nic-adm2-muncipio-san-sebastián-de-yalí",
+     "name": "Muncipio San Sebastián de Yalí"
+    },
+    {
+     "id": "nic-adm2-municipio-achuapa",
+     "name": "Municipio Achuapa"
+    },
+    {
+     "id": "nic-adm2-municipio-bluefields",
+     "name": "Municipio Bluefields"
+    },
+    {
+     "id": "nic-adm2-municipio-boaco",
+     "name": "Municipio Boaco"
+    },
+    {
+     "id": "nic-adm2-municipio-bonanza",
+     "name": "Municipio Bonanza"
+    },
+    {
+     "id": "nic-adm2-municipio-camoapa",
+     "name": "Municipio Camoapa"
+    },
+    {
+     "id": "nic-adm2-municipio-ciudad-antigua",
+     "name": "Municipio Ciudad Antigua"
+    },
+    {
+     "id": "nic-adm2-municipio-ciudad-darco",
+     "name": "Municipio Ciudad Darco"
+    },
+    {
+     "id": "nic-adm2-municipio-condega",
+     "name": "Municipio Condega"
+    },
+    {
+     "id": "nic-adm2-municipio-de-jinotega",
+     "name": "Municipio de Jinotega"
+    },
+    {
+     "id": "nic-adm2-municipio-desembocadura-de-cruz-río-grande",
+     "name": "Municipio Desembocadura de Cruz Río Grande"
+    },
+    {
+     "id": "nic-adm2-municipio-dipilito",
+     "name": "Municipio Dipilito"
+    },
+    {
+     "id": "nic-adm2-municipio-el-almendro",
+     "name": "Municipio El Almendro"
+    },
+    {
+     "id": "nic-adm2-municipio-el-ayote",
+     "name": "Municipio El Ayote"
+    },
+    {
+     "id": "nic-adm2-municipio-el-coral",
+     "name": "Municipio El Coral"
+    },
+    {
+     "id": "nic-adm2-municipio-el-cuá",
+     "name": "Municipio El Cuá"
+    },
+    {
+     "id": "nic-adm2-municipio-el-jacaro",
+     "name": "Municipio El Jacaro"
+    },
+    {
+     "id": "nic-adm2-municipio-el-rama",
+     "name": "Municipio El Rama"
+    },
+    {
+     "id": "nic-adm2-municipio-el-sauce",
+     "name": "Municipio El Sauce"
+    },
+    {
+     "id": "nic-adm2-municipio-el-tortugero",
+     "name": "Municipio El Tortugero"
+    },
+    {
+     "id": "nic-adm2-municipio-el-tuma-la-dalia",
+     "name": "Municipio El Tuma - La Dalia"
+    },
+    {
+     "id": "nic-adm2-municipio-esquipulas",
+     "name": "Municipio Esquipulas"
+    },
+    {
+     "id": "nic-adm2-municipio-estelí",
+     "name": "Municipio Estelí"
+    },
+    {
+     "id": "nic-adm2-municipio-jalapa",
+     "name": "Municipio Jalapa"
+    },
+    {
+     "id": "nic-adm2-municipio-kukra-hill",
+     "name": "Municipio Kukra Hill"
+    },
+    {
+     "id": "nic-adm2-municipio-la-concordia",
+     "name": "Municipio La Concordia"
+    },
+    {
+     "id": "nic-adm2-municipio-la-cruz-de-río-grande",
+     "name": "Municipio La Cruz de Río Grande"
+    },
+    {
+     "id": "nic-adm2-municipio-la-libertad",
+     "name": "Municipio La Libertad"
+    },
+    {
+     "id": "nic-adm2-municipio-la-trinidad",
+     "name": "Municipio La Trinidad"
+    },
+    {
+     "id": "nic-adm2-municipio-laguna-de-perlas",
+     "name": "Municipio Laguna de Perlas"
+    },
+    {
+     "id": "nic-adm2-municipio-larreynaga",
+     "name": "Municipio Larreynaga"
+    },
+    {
+     "id": "nic-adm2-municipio-las-sabanas",
+     "name": "Municipio Las Sabanas"
+    },
+    {
+     "id": "nic-adm2-municipio-león",
+     "name": "Municipio León"
+    },
+    {
+     "id": "nic-adm2-municipio-macuelizo",
+     "name": "Municipio Macuelizo"
+    },
+    {
+     "id": "nic-adm2-municipio-matagalpa",
+     "name": "Municipio Matagalpa"
+    },
+    {
+     "id": "nic-adm2-municipio-matiguás",
+     "name": "Municipio Matiguás"
+    },
+    {
+     "id": "nic-adm2-municipio-monzonte",
+     "name": "Municipio Monzonte"
+    },
+    {
+     "id": "nic-adm2-municipio-muelle-de-los-bueyes",
+     "name": "Municipio Muelle de los Bueyes"
+    },
+    {
+     "id": "nic-adm2-municipio-mulukukú",
+     "name": "Municipio Mulukukú"
+    },
+    {
+     "id": "nic-adm2-municipio-murra",
+     "name": "Municipio Murra"
+    },
+    {
+     "id": "nic-adm2-municipio-muy-muy",
+     "name": "Municipio Muy Muy"
+    },
+    {
+     "id": "nic-adm2-municipio-nueva-guinea",
+     "name": "Municipio Nueva Guinea"
+    },
+    {
+     "id": "nic-adm2-municipio-paiwas",
+     "name": "Municipio Paiwas"
+    },
+    {
+     "id": "nic-adm2-municipio-prinzapolka",
+     "name": "Municipio Prinzapolka"
+    },
+    {
+     "id": "nic-adm2-municipio-pueblo-nuevo",
+     "name": "Municipio Pueblo Nuevo"
+    },
+    {
+     "id": "nic-adm2-municipio-puerto-cabezas",
+     "name": "Municipio Puerto Cabezas"
+    },
+    {
+     "id": "nic-adm2-municipio-quilalí",
+     "name": "Municipio Quilalí"
+    },
+    {
+     "id": "nic-adm2-municipio-rancho-grande",
+     "name": "Municipio Rancho Grande"
+    },
+    {
+     "id": "nic-adm2-municipio-rosita",
+     "name": "Municipio Rosita"
+    },
+    {
+     "id": "nic-adm2-municipio-río-blanco",
+     "name": "Municipio Río Blanco"
+    },
+    {
+     "id": "nic-adm2-municipio-san-dionisio",
+     "name": "Municipio San Dionisio"
+    },
+    {
+     "id": "nic-adm2-municipio-san-fernando",
+     "name": "Municipio San Fernando"
+    },
+    {
+     "id": "nic-adm2-municipio-san-francisco-de-cuapa",
+     "name": "Municipio San Francisco de Cuapa"
+    },
+    {
+     "id": "nic-adm2-municipio-san-isidro",
+     "name": "Municipio San Isidro"
+    },
+    {
+     "id": "nic-adm2-municipio-san-josé-de-bocay",
+     "name": "Municipio San José de Bocay"
+    },
+    {
+     "id": "nic-adm2-municipio-san-josé-de-cusmapa",
+     "name": "Municipio San José de Cusmapa"
+    },
+    {
+     "id": "nic-adm2-municipio-san-josé-de-los-remates",
+     "name": "Municipio San José de Los Remates"
+    },
+    {
+     "id": "nic-adm2-municipio-san-juan-de-limay",
+     "name": "Municipio San Juan de Limay"
+    },
+    {
+     "id": "nic-adm2-municipio-san-juan-de-nicaragua",
+     "name": "Municipio San Juan de Nicaragua"
+    },
+    {
+     "id": "nic-adm2-municipio-san-juan-de-río-coco",
+     "name": "Municipio San Juan de Río Coco"
+    },
+    {
+     "id": "nic-adm2-municipio-san-lucas",
+     "name": "Municipio San Lucas"
+    },
+    {
+     "id": "nic-adm2-municipio-san-nicolas",
+     "name": "Municipio San Nicolas"
+    },
+    {
+     "id": "nic-adm2-municipio-san-pedro-de-lóvago",
+     "name": "Municipio San Pedro de Lóvago"
+    },
+    {
+     "id": "nic-adm2-municipio-san-rafael-del-norte",
+     "name": "Municipio San Rafael del Norte"
+    },
+    {
+     "id": "nic-adm2-municipio-san-ramon",
+     "name": "Municipio San Ramon"
+    },
+    {
+     "id": "nic-adm2-municipio-santa-lucía",
+     "name": "Municipio Santa Lucía"
+    },
+    {
+     "id": "nic-adm2-municipio-santa-maría",
+     "name": "Municipio Santa María"
+    },
+    {
+     "id": "nic-adm2-municipio-santa-maría-de-pantasma",
+     "name": "Municipio Santa María de Pantasma"
+    },
+    {
+     "id": "nic-adm2-municipio-santa-rosa-del-peñón",
+     "name": "Municipio Santa Rosa del Peñón"
+    },
+    {
+     "id": "nic-adm2-municipio-santo-domingo",
+     "name": "Municipio Santo Domingo"
+    },
+    {
+     "id": "nic-adm2-municipio-santo-tomás",
+     "name": "Municipio Santo Tomás"
+    },
+    {
+     "id": "nic-adm2-municipio-sebaco",
+     "name": "Municipio Sebaco"
+    },
+    {
+     "id": "nic-adm2-municipio-siuna",
+     "name": "Municipio Siuna"
+    },
+    {
+     "id": "nic-adm2-municipio-telica",
+     "name": "Municipio Telica"
+    },
+    {
+     "id": "nic-adm2-municipio-telpaneca",
+     "name": "Municipio Telpaneca"
+    },
+    {
+     "id": "nic-adm2-municipio-terrabona",
+     "name": "Municipio Terrabona"
+    },
+    {
+     "id": "nic-adm2-municipio-teustepe",
+     "name": "Municipio Teustepe"
+    },
+    {
+     "id": "nic-adm2-municipio-villa-sandino",
+     "name": "Municipio Villa Sandino"
+    },
+    {
+     "id": "nic-adm2-municipio-waslala",
+     "name": "Municipio Waslala"
+    },
+    {
+     "id": "nic-adm2-municipio-waspán",
+     "name": "Municipio Waspán"
+    },
+    {
+     "id": "nic-adm2-municipio-wiwilí-de-jinotega",
+     "name": "Municipio Wiwilí de Jinotega"
+    },
+    {
+     "id": "nic-adm2-municipio-wiwilí-de-nueva-segovia",
+     "name": "Municipio Wiwilí de Nueva Segovia"
+    },
+    {
+     "id": "nic-adm2-municipio-yalagüina",
+     "name": "Municipio Yalagüina"
+    },
+    {
+     "id": "nic-adm2-nagarote-municipio",
+     "name": "Nagarote (Municipio)"
+    },
+    {
+     "id": "nic-adm2-nandaime-municipio",
+     "name": "Nandaime (Municipio)"
+    },
+    {
+     "id": "nic-adm2-nandasmo-muncipio",
+     "name": "Nandasmo (Muncipio)"
+    },
+    {
+     "id": "nic-adm2-nindirí-municipio",
+     "name": "Nindirí (Municipio)"
+    },
+    {
+     "id": "nic-adm2-niquinohomo-municipio",
+     "name": "Niquinohomo (Municipio)"
+    },
+    {
+     "id": "nic-adm2-ocotal-municipio",
+     "name": "Ocotal (Municipio)"
+    },
+    {
+     "id": "nic-adm2-palacagüina-municipio",
+     "name": "Palacagüina (Municipio)"
+    },
+    {
+     "id": "nic-adm2-posoltega-municipio",
+     "name": "Posoltega (Municipio)"
+    },
+    {
+     "id": "nic-adm2-potosí-municipio",
+     "name": "Potosí (Municipio)"
+    },
+    {
+     "id": "nic-adm2-puerto-morazán-municipio",
+     "name": "Puerto Morazán (Municipio)"
+    },
+    {
+     "id": "nic-adm2-quezalguaque-municipio",
+     "name": "Quezalguaque (Municipio)"
+    },
+    {
+     "id": "nic-adm2-rivas-municipio",
+     "name": "Rivas (Municipio)"
+    },
+    {
+     "id": "nic-adm2-san-carlos-municipio",
+     "name": "San Carlos (Municipio)"
+    },
+    {
+     "id": "nic-adm2-san-francisco-del-norte-municipio",
+     "name": "San Francisco del Norte (Municipio)"
+    },
+    {
+     "id": "nic-adm2-san-francisco-libre-municipio",
+     "name": "San Francisco Libre (Municipio)"
+    },
+    {
+     "id": "nic-adm2-san-jorge-municipio",
+     "name": "San Jorge (Municipio)"
+    },
+    {
+     "id": "nic-adm2-san-juan-de-cinco-pinos-municipio",
+     "name": "San Juan de Cinco Pinos (Municipio)"
+    },
+    {
+     "id": "nic-adm2-san-juan-de-oriente-municipio",
+     "name": "San Juan de Oriente (Municipio)"
+    },
+    {
+     "id": "nic-adm2-san-juan-del-sur-municipio",
+     "name": "San Juan del Sur (Municipio)"
+    },
+    {
+     "id": "nic-adm2-san-lorenzo-municipio",
+     "name": "San Lorenzo (Municipio)"
+    },
+    {
+     "id": "nic-adm2-san-marcos-municipio",
+     "name": "San Marcos (Municipio)"
+    },
+    {
+     "id": "nic-adm2-san-miguelito-municipio",
+     "name": "San Miguelito (Municipio)"
+    },
+    {
+     "id": "nic-adm2-san-pedro-del-norte-municipio",
+     "name": "San Pedro del Norte (Municipio)"
+    },
+    {
+     "id": "nic-adm2-san-rafael-del-sur-municipio",
+     "name": "San Rafael del Sur (Municipio)"
+    },
+    {
+     "id": "nic-adm2-santa-teresa-municipio",
+     "name": "Santa Teresa (Municipio)"
+    },
+    {
+     "id": "nic-adm2-santo-tomás-del-norte-municipio",
+     "name": "Santo Tomás del Norte (Municipio)"
+    },
+    {
+     "id": "nic-adm2-somotillo-municipio",
+     "name": "Somotillo (Municipio)"
+    },
+    {
+     "id": "nic-adm2-somoto-municipio",
+     "name": "Somoto (Municipio)"
+    },
+    {
+     "id": "nic-adm2-ticuantepe-municipio",
+     "name": "Ticuantepe (Municipio)"
+    },
+    {
+     "id": "nic-adm2-tipitapa-municipio",
+     "name": "Tipitapa (Municipio)"
+    },
+    {
+     "id": "nic-adm2-tisma-municipio",
+     "name": "Tisma (Municipio)"
+    },
+    {
+     "id": "nic-adm2-tola-municipio",
+     "name": "Tola (Municipio)"
+    },
+    {
+     "id": "nic-adm2-totogalpa-municipio",
+     "name": "Totogalpa (Municipio)"
+    },
+    {
+     "id": "nic-adm2-villa-el-carmen-municipio",
+     "name": "Villa El Carmen (Municipio)"
+    },
+    {
+     "id": "nic-adm2-villanueva-municipio",
+     "name": "Villanueva (Municipio)"
+    }
+   ]
+  }
+ },
+ "name": "Nicaragua",
+ "nameBn": "Nicaragua"
+}

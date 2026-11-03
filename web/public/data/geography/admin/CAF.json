@@ -1,0 +1,413 @@
+{
+ "code": "CAF",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "the Central African Republic",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2006",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Prefecture and Commune",
+   "code": "ADM1",
+   "count": 17,
+   "name": "Prefecture and Commune",
+   "nameBn": "Prefecture and Commune",
+   "representedYear": "2006",
+   "sourceCount": 17,
+   "units": [
+    {
+     "id": "caf-adm1-bamingui-bangoran",
+     "name": "Bamingui-Bangoran",
+     "shapeISO": "CF-BB"
+    },
+    {
+     "id": "caf-adm1-bangui",
+     "name": "Bangui",
+     "shapeISO": "CF-BGF"
+    },
+    {
+     "id": "caf-adm1-basse-kotto",
+     "name": "Basse-Kotto",
+     "shapeISO": "CF-BK"
+    },
+    {
+     "id": "caf-adm1-haut-mbomou",
+     "name": "Haut-Mbomou",
+     "shapeISO": "CF-HM"
+    },
+    {
+     "id": "caf-adm1-haute-kotto",
+     "name": "Haute-Kotto",
+     "shapeISO": "CF-HK"
+    },
+    {
+     "id": "caf-adm1-kémo",
+     "name": "Kémo",
+     "shapeISO": "CF-KG"
+    },
+    {
+     "id": "caf-adm1-lobaye",
+     "name": "Lobaye",
+     "shapeISO": "CF-LB"
+    },
+    {
+     "id": "caf-adm1-mambéré-kadéï",
+     "name": "Mambéré-Kadéï",
+     "shapeISO": "CF-HS"
+    },
+    {
+     "id": "caf-adm1-mbomou",
+     "name": "Mbomou",
+     "shapeISO": "CF-MB"
+    },
+    {
+     "id": "caf-adm1-nana-grébizi",
+     "name": "Nana-Grébizi",
+     "shapeISO": "CF-KB"
+    },
+    {
+     "id": "caf-adm1-nana-mambéré",
+     "name": "Nana-Mambéré",
+     "shapeISO": "CF-NM"
+    },
+    {
+     "id": "caf-adm1-ombella-m-poko",
+     "name": "Ombella-M'Poko",
+     "shapeISO": "CF-MP"
+    },
+    {
+     "id": "caf-adm1-ouaka",
+     "name": "Ouaka",
+     "shapeISO": "CF-UK"
+    },
+    {
+     "id": "caf-adm1-ouham",
+     "name": "Ouham",
+     "shapeISO": "CF-AC"
+    },
+    {
+     "id": "caf-adm1-ouham-pendé",
+     "name": "Ouham-Pendé",
+     "shapeISO": "CF=OP"
+    },
+    {
+     "id": "caf-adm1-sangha-mbaéré",
+     "name": "Sangha-Mbaéré",
+     "shapeISO": "CF-HS"
+    },
+    {
+     "id": "caf-adm1-vakaga",
+     "name": "Vakaga",
+     "shapeISO": "CF-VK"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Sub-Prefectures",
+   "code": "ADM2",
+   "count": 72,
+   "name": "Sub-Prefectures",
+   "nameBn": "Sub-Prefectures",
+   "representedYear": "2015",
+   "sourceCount": 72,
+   "units": [
+    {
+     "id": "caf-adm2-abba",
+     "name": "Abba"
+    },
+    {
+     "id": "caf-adm2-alindao",
+     "name": "Alindao"
+    },
+    {
+     "id": "caf-adm2-amada-gaza",
+     "name": "Amada-Gaza"
+    },
+    {
+     "id": "caf-adm2-baboua",
+     "name": "Baboua"
+    },
+    {
+     "id": "caf-adm2-bakala",
+     "name": "Bakala"
+    },
+    {
+     "id": "caf-adm2-bakouma",
+     "name": "Bakouma"
+    },
+    {
+     "id": "caf-adm2-bambari",
+     "name": "Bambari"
+    },
+    {
+     "id": "caf-adm2-bambio",
+     "name": "Bambio"
+    },
+    {
+     "id": "caf-adm2-bambouti",
+     "name": "Bambouti"
+    },
+    {
+     "id": "caf-adm2-bamingui",
+     "name": "Bamingui"
+    },
+    {
+     "id": "caf-adm2-bangassou",
+     "name": "Bangassou"
+    },
+    {
+     "id": "caf-adm2-bangui",
+     "name": "Bangui"
+    },
+    {
+     "id": "caf-adm2-baoro",
+     "name": "Baoro"
+    },
+    {
+     "id": "caf-adm2-batangafo",
+     "name": "Batangafo"
+    },
+    {
+     "id": "caf-adm2-bayanga",
+     "name": "Bayanga"
+    },
+    {
+     "id": "caf-adm2-berbérati",
+     "name": "Berbérati"
+    },
+    {
+     "id": "caf-adm2-bimbo",
+     "name": "Bimbo"
+    },
+    {
+     "id": "caf-adm2-birao",
+     "name": "Birao"
+    },
+    {
+     "id": "caf-adm2-boali",
+     "name": "Boali"
+    },
+    {
+     "id": "caf-adm2-bocaranga",
+     "name": "Bocaranga"
+    },
+    {
+     "id": "caf-adm2-boda",
+     "name": "Boda"
+    },
+    {
+     "id": "caf-adm2-boganangone",
+     "name": "Boganangone"
+    },
+    {
+     "id": "caf-adm2-boganda",
+     "name": "Boganda"
+    },
+    {
+     "id": "caf-adm2-bogangolo",
+     "name": "Bogangolo"
+    },
+    {
+     "id": "caf-adm2-bossangoa",
+     "name": "Bossangoa"
+    },
+    {
+     "id": "caf-adm2-bossembélé",
+     "name": "Bossembélé"
+    },
+    {
+     "id": "caf-adm2-bossemtélé",
+     "name": "Bossemtélé"
+    },
+    {
+     "id": "caf-adm2-bouar",
+     "name": "Bouar"
+    },
+    {
+     "id": "caf-adm2-bouca",
+     "name": "Bouca"
+    },
+    {
+     "id": "caf-adm2-bozoum",
+     "name": "Bozoum"
+    },
+    {
+     "id": "caf-adm2-bria",
+     "name": "Bria"
+    },
+    {
+     "id": "caf-adm2-carnot",
+     "name": "Carnot"
+    },
+    {
+     "id": "caf-adm2-damara",
+     "name": "Damara"
+    },
+    {
+     "id": "caf-adm2-djoukou",
+     "name": "Djoukou"
+    },
+    {
+     "id": "caf-adm2-djéma",
+     "name": "Djéma"
+    },
+    {
+     "id": "caf-adm2-dédé-mokouba",
+     "name": "Dédé-Mokouba"
+    },
+    {
+     "id": "caf-adm2-dékoa",
+     "name": "Dékoa"
+    },
+    {
+     "id": "caf-adm2-gadzi",
+     "name": "Gadzi"
+    },
+    {
+     "id": "caf-adm2-gambo",
+     "name": "Gambo"
+    },
+    {
+     "id": "caf-adm2-gamboula",
+     "name": "Gamboula"
+    },
+    {
+     "id": "caf-adm2-grimari",
+     "name": "Grimari"
+    },
+    {
+     "id": "caf-adm2-ippy",
+     "name": "Ippy"
+    },
+    {
+     "id": "caf-adm2-kabo",
+     "name": "Kabo"
+    },
+    {
+     "id": "caf-adm2-kaga-bandoro",
+     "name": "Kaga-Bandoro"
+    },
+    {
+     "id": "caf-adm2-kembé",
+     "name": "Kembé"
+    },
+    {
+     "id": "caf-adm2-kouango",
+     "name": "Kouango"
+    },
+    {
+     "id": "caf-adm2-koui",
+     "name": "Koui"
+    },
+    {
+     "id": "caf-adm2-mala",
+     "name": "Mala"
+    },
+    {
+     "id": "caf-adm2-markounda",
+     "name": "Markounda"
+    },
+    {
+     "id": "caf-adm2-mbaïki",
+     "name": "Mbaïki"
+    },
+    {
+     "id": "caf-adm2-mbrès",
+     "name": "Mbrès"
+    },
+    {
+     "id": "caf-adm2-mingala",
+     "name": "Mingala"
+    },
+    {
+     "id": "caf-adm2-mobaye",
+     "name": "Mobaye"
+    },
+    {
+     "id": "caf-adm2-mongoumba",
+     "name": "Mongoumba"
+    },
+    {
+     "id": "caf-adm2-nagha-boguila",
+     "name": "Nagha Boguila"
+    },
+    {
+     "id": "caf-adm2-nana-bakassa",
+     "name": "Nana-Bakassa"
+    },
+    {
+     "id": "caf-adm2-ndélé",
+     "name": "Ndélé"
+    },
+    {
+     "id": "caf-adm2-ngaoundaye",
+     "name": "Ngaoundaye"
+    },
+    {
+     "id": "caf-adm2-nola",
+     "name": "Nola"
+    },
+    {
+     "id": "caf-adm2-obo",
+     "name": "Obo"
+    },
+    {
+     "id": "caf-adm2-ouadda",
+     "name": "Ouadda"
+    },
+    {
+     "id": "caf-adm2-ouanda-djallé",
+     "name": "Ouanda-Djallé"
+    },
+    {
+     "id": "caf-adm2-ouango",
+     "name": "Ouango"
+    },
+    {
+     "id": "caf-adm2-paoua",
+     "name": "Paoua"
+    },
+    {
+     "id": "caf-adm2-rafaï",
+     "name": "Rafaï"
+    },
+    {
+     "id": "caf-adm2-satéma",
+     "name": "Satéma"
+    },
+    {
+     "id": "caf-adm2-sibut",
+     "name": "Sibut"
+    },
+    {
+     "id": "caf-adm2-sosso-nakombo",
+     "name": "Sosso-Nakombo"
+    },
+    {
+     "id": "caf-adm2-yalinga",
+     "name": "Yalinga"
+    },
+    {
+     "id": "caf-adm2-yaloké",
+     "name": "Yaloké"
+    },
+    {
+     "id": "caf-adm2-zangba",
+     "name": "Zangba"
+    },
+    {
+     "id": "caf-adm2-zémio",
+     "name": "Zémio"
+    }
+   ]
+  }
+ },
+ "name": "Central African Republic",
+ "nameBn": "Central African Republic"
+}

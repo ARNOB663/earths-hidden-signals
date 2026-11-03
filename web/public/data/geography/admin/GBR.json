@@ -1,0 +1,924 @@
+{
+ "code": "GBR",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Country",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2021",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Country",
+   "code": "ADM1",
+   "count": 4,
+   "name": "ADM1 areas",
+   "nameBn": "ADM1 এলাকা",
+   "representedYear": "2021",
+   "sourceCount": 4,
+   "units": [
+    {
+     "id": "gbr-adm1-england",
+     "name": "England",
+     "shapeISO": "GB-ENG"
+    },
+    {
+     "id": "gbr-adm1-northern-ireland",
+     "name": "Northern Ireland",
+     "shapeISO": "GB-NIR"
+    },
+    {
+     "id": "gbr-adm1-scotland",
+     "name": "Scotland",
+     "shapeISO": "GB-SCT"
+    },
+    {
+     "id": "gbr-adm1-wales",
+     "name": "Wales",
+     "shapeISO": "GB-WLS"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Counties and Unitary Authorities",
+   "code": "ADM2",
+   "count": 216,
+   "name": "Counties and Unitary Authorities",
+   "nameBn": "Counties and Unitary Authorities",
+   "representedYear": "2019",
+   "sourceCount": 216,
+   "units": [
+    {
+     "id": "gbr-adm2-aberdeen-city",
+     "name": "Aberdeen City"
+    },
+    {
+     "id": "gbr-adm2-aberdeenshire",
+     "name": "Aberdeenshire"
+    },
+    {
+     "id": "gbr-adm2-angus",
+     "name": "Angus"
+    },
+    {
+     "id": "gbr-adm2-antrim-and-newtownabbey",
+     "name": "Antrim and Newtownabbey"
+    },
+    {
+     "id": "gbr-adm2-ards-and-north-down",
+     "name": "Ards and North Down"
+    },
+    {
+     "id": "gbr-adm2-argyll-and-bute",
+     "name": "Argyll and Bute"
+    },
+    {
+     "id": "gbr-adm2-armagh-city-banbridge-and-craigavon",
+     "name": "Armagh City, Banbridge and Craigavon"
+    },
+    {
+     "id": "gbr-adm2-barking-and-dagenham",
+     "name": "Barking and Dagenham"
+    },
+    {
+     "id": "gbr-adm2-barnet",
+     "name": "Barnet"
+    },
+    {
+     "id": "gbr-adm2-barnsley",
+     "name": "Barnsley"
+    },
+    {
+     "id": "gbr-adm2-bath-and-north-east-somerset",
+     "name": "Bath and North East Somerset"
+    },
+    {
+     "id": "gbr-adm2-bedford",
+     "name": "Bedford"
+    },
+    {
+     "id": "gbr-adm2-belfast",
+     "name": "Belfast"
+    },
+    {
+     "id": "gbr-adm2-bexley",
+     "name": "Bexley"
+    },
+    {
+     "id": "gbr-adm2-birmingham",
+     "name": "Birmingham"
+    },
+    {
+     "id": "gbr-adm2-blackburn-with-darwen",
+     "name": "Blackburn with Darwen"
+    },
+    {
+     "id": "gbr-adm2-blackpool",
+     "name": "Blackpool"
+    },
+    {
+     "id": "gbr-adm2-blaenau-gwent",
+     "name": "Blaenau Gwent"
+    },
+    {
+     "id": "gbr-adm2-bolton",
+     "name": "Bolton"
+    },
+    {
+     "id": "gbr-adm2-bournemouth-christchurch-and-poole",
+     "name": "Bournemouth, Christchurch and Poole"
+    },
+    {
+     "id": "gbr-adm2-bracknell-forest",
+     "name": "Bracknell Forest"
+    },
+    {
+     "id": "gbr-adm2-bradford",
+     "name": "Bradford"
+    },
+    {
+     "id": "gbr-adm2-brent",
+     "name": "Brent"
+    },
+    {
+     "id": "gbr-adm2-bridgend",
+     "name": "Bridgend"
+    },
+    {
+     "id": "gbr-adm2-brighton-and-hove",
+     "name": "Brighton and Hove"
+    },
+    {
+     "id": "gbr-adm2-bristol-city-of",
+     "name": "Bristol, City of"
+    },
+    {
+     "id": "gbr-adm2-bromley",
+     "name": "Bromley"
+    },
+    {
+     "id": "gbr-adm2-buckinghamshire",
+     "name": "Buckinghamshire"
+    },
+    {
+     "id": "gbr-adm2-bury",
+     "name": "Bury"
+    },
+    {
+     "id": "gbr-adm2-caerphilly",
+     "name": "Caerphilly"
+    },
+    {
+     "id": "gbr-adm2-calderdale",
+     "name": "Calderdale"
+    },
+    {
+     "id": "gbr-adm2-cambridgeshire",
+     "name": "Cambridgeshire"
+    },
+    {
+     "id": "gbr-adm2-camden",
+     "name": "Camden"
+    },
+    {
+     "id": "gbr-adm2-cardiff",
+     "name": "Cardiff"
+    },
+    {
+     "id": "gbr-adm2-carmarthenshire",
+     "name": "Carmarthenshire"
+    },
+    {
+     "id": "gbr-adm2-causeway-coast-and-glens",
+     "name": "Causeway Coast and Glens"
+    },
+    {
+     "id": "gbr-adm2-central-bedfordshire",
+     "name": "Central Bedfordshire"
+    },
+    {
+     "id": "gbr-adm2-ceredigion",
+     "name": "Ceredigion"
+    },
+    {
+     "id": "gbr-adm2-cheshire-east",
+     "name": "Cheshire East"
+    },
+    {
+     "id": "gbr-adm2-cheshire-west-and-chester",
+     "name": "Cheshire West and Chester"
+    },
+    {
+     "id": "gbr-adm2-city-of-edinburgh",
+     "name": "City of Edinburgh"
+    },
+    {
+     "id": "gbr-adm2-city-of-london",
+     "name": "City of London"
+    },
+    {
+     "id": "gbr-adm2-clackmannanshire",
+     "name": "Clackmannanshire"
+    },
+    {
+     "id": "gbr-adm2-conwy",
+     "name": "Conwy"
+    },
+    {
+     "id": "gbr-adm2-cornwall",
+     "name": "Cornwall"
+    },
+    {
+     "id": "gbr-adm2-county-durham",
+     "name": "County Durham"
+    },
+    {
+     "id": "gbr-adm2-coventry",
+     "name": "Coventry"
+    },
+    {
+     "id": "gbr-adm2-croydon",
+     "name": "Croydon"
+    },
+    {
+     "id": "gbr-adm2-cumbria",
+     "name": "Cumbria"
+    },
+    {
+     "id": "gbr-adm2-darlington",
+     "name": "Darlington"
+    },
+    {
+     "id": "gbr-adm2-denbighshire",
+     "name": "Denbighshire"
+    },
+    {
+     "id": "gbr-adm2-derby",
+     "name": "Derby"
+    },
+    {
+     "id": "gbr-adm2-derbyshire",
+     "name": "Derbyshire"
+    },
+    {
+     "id": "gbr-adm2-derry-city-and-strabane",
+     "name": "Derry City and Strabane"
+    },
+    {
+     "id": "gbr-adm2-devon",
+     "name": "Devon"
+    },
+    {
+     "id": "gbr-adm2-doncaster",
+     "name": "Doncaster"
+    },
+    {
+     "id": "gbr-adm2-dorset",
+     "name": "Dorset"
+    },
+    {
+     "id": "gbr-adm2-dudley",
+     "name": "Dudley"
+    },
+    {
+     "id": "gbr-adm2-dumfries-and-galloway",
+     "name": "Dumfries and Galloway"
+    },
+    {
+     "id": "gbr-adm2-dundee-city",
+     "name": "Dundee City"
+    },
+    {
+     "id": "gbr-adm2-ealing",
+     "name": "Ealing"
+    },
+    {
+     "id": "gbr-adm2-east-ayrshire",
+     "name": "East Ayrshire"
+    },
+    {
+     "id": "gbr-adm2-east-dunbartonshire",
+     "name": "East Dunbartonshire"
+    },
+    {
+     "id": "gbr-adm2-east-lothian",
+     "name": "East Lothian"
+    },
+    {
+     "id": "gbr-adm2-east-renfrewshire",
+     "name": "East Renfrewshire"
+    },
+    {
+     "id": "gbr-adm2-east-riding-of-yorkshire",
+     "name": "East Riding of Yorkshire"
+    },
+    {
+     "id": "gbr-adm2-east-sussex",
+     "name": "East Sussex"
+    },
+    {
+     "id": "gbr-adm2-enfield",
+     "name": "Enfield"
+    },
+    {
+     "id": "gbr-adm2-essex",
+     "name": "Essex"
+    },
+    {
+     "id": "gbr-adm2-falkirk",
+     "name": "Falkirk"
+    },
+    {
+     "id": "gbr-adm2-fermanagh-and-omagh",
+     "name": "Fermanagh and Omagh"
+    },
+    {
+     "id": "gbr-adm2-fife",
+     "name": "Fife"
+    },
+    {
+     "id": "gbr-adm2-flintshire",
+     "name": "Flintshire"
+    },
+    {
+     "id": "gbr-adm2-gateshead",
+     "name": "Gateshead"
+    },
+    {
+     "id": "gbr-adm2-glasgow-city",
+     "name": "Glasgow City"
+    },
+    {
+     "id": "gbr-adm2-gloucestershire",
+     "name": "Gloucestershire"
+    },
+    {
+     "id": "gbr-adm2-greenwich",
+     "name": "Greenwich"
+    },
+    {
+     "id": "gbr-adm2-gwynedd",
+     "name": "Gwynedd"
+    },
+    {
+     "id": "gbr-adm2-hackney",
+     "name": "Hackney"
+    },
+    {
+     "id": "gbr-adm2-halton",
+     "name": "Halton"
+    },
+    {
+     "id": "gbr-adm2-hammersmith-and-fulham",
+     "name": "Hammersmith and Fulham"
+    },
+    {
+     "id": "gbr-adm2-hampshire",
+     "name": "Hampshire"
+    },
+    {
+     "id": "gbr-adm2-haringey",
+     "name": "Haringey"
+    },
+    {
+     "id": "gbr-adm2-harrow",
+     "name": "Harrow"
+    },
+    {
+     "id": "gbr-adm2-hartlepool",
+     "name": "Hartlepool"
+    },
+    {
+     "id": "gbr-adm2-havering",
+     "name": "Havering"
+    },
+    {
+     "id": "gbr-adm2-herefordshire-county-of",
+     "name": "Herefordshire, County of"
+    },
+    {
+     "id": "gbr-adm2-hertfordshire",
+     "name": "Hertfordshire"
+    },
+    {
+     "id": "gbr-adm2-highland",
+     "name": "Highland"
+    },
+    {
+     "id": "gbr-adm2-hillingdon",
+     "name": "Hillingdon"
+    },
+    {
+     "id": "gbr-adm2-hounslow",
+     "name": "Hounslow"
+    },
+    {
+     "id": "gbr-adm2-inverclyde",
+     "name": "Inverclyde"
+    },
+    {
+     "id": "gbr-adm2-isle-of-anglesey",
+     "name": "Isle of Anglesey"
+    },
+    {
+     "id": "gbr-adm2-isle-of-wight",
+     "name": "Isle of Wight"
+    },
+    {
+     "id": "gbr-adm2-isles-of-scilly",
+     "name": "Isles of Scilly"
+    },
+    {
+     "id": "gbr-adm2-islington",
+     "name": "Islington"
+    },
+    {
+     "id": "gbr-adm2-kensington-and-chelsea",
+     "name": "Kensington and Chelsea"
+    },
+    {
+     "id": "gbr-adm2-kent",
+     "name": "Kent"
+    },
+    {
+     "id": "gbr-adm2-kingston-upon-hull-city-of",
+     "name": "Kingston upon Hull, City of"
+    },
+    {
+     "id": "gbr-adm2-kingston-upon-thames",
+     "name": "Kingston upon Thames"
+    },
+    {
+     "id": "gbr-adm2-kirklees",
+     "name": "Kirklees"
+    },
+    {
+     "id": "gbr-adm2-knowsley",
+     "name": "Knowsley"
+    },
+    {
+     "id": "gbr-adm2-lambeth",
+     "name": "Lambeth"
+    },
+    {
+     "id": "gbr-adm2-lancashire",
+     "name": "Lancashire"
+    },
+    {
+     "id": "gbr-adm2-leeds",
+     "name": "Leeds"
+    },
+    {
+     "id": "gbr-adm2-leicester",
+     "name": "Leicester"
+    },
+    {
+     "id": "gbr-adm2-leicestershire",
+     "name": "Leicestershire"
+    },
+    {
+     "id": "gbr-adm2-lewisham",
+     "name": "Lewisham"
+    },
+    {
+     "id": "gbr-adm2-lincolnshire",
+     "name": "Lincolnshire"
+    },
+    {
+     "id": "gbr-adm2-lisburn-and-castlereagh",
+     "name": "Lisburn and Castlereagh"
+    },
+    {
+     "id": "gbr-adm2-liverpool",
+     "name": "Liverpool"
+    },
+    {
+     "id": "gbr-adm2-luton",
+     "name": "Luton"
+    },
+    {
+     "id": "gbr-adm2-manchester",
+     "name": "Manchester"
+    },
+    {
+     "id": "gbr-adm2-medway",
+     "name": "Medway"
+    },
+    {
+     "id": "gbr-adm2-merthyr-tydfil",
+     "name": "Merthyr Tydfil"
+    },
+    {
+     "id": "gbr-adm2-merton",
+     "name": "Merton"
+    },
+    {
+     "id": "gbr-adm2-mid-and-east-antrim",
+     "name": "Mid and East Antrim"
+    },
+    {
+     "id": "gbr-adm2-mid-ulster",
+     "name": "Mid Ulster"
+    },
+    {
+     "id": "gbr-adm2-middlesbrough",
+     "name": "Middlesbrough"
+    },
+    {
+     "id": "gbr-adm2-midlothian",
+     "name": "Midlothian"
+    },
+    {
+     "id": "gbr-adm2-milton-keynes",
+     "name": "Milton Keynes"
+    },
+    {
+     "id": "gbr-adm2-monmouthshire",
+     "name": "Monmouthshire"
+    },
+    {
+     "id": "gbr-adm2-moray",
+     "name": "Moray"
+    },
+    {
+     "id": "gbr-adm2-na-h-eileanan-siar",
+     "name": "Na h-Eileanan Siar"
+    },
+    {
+     "id": "gbr-adm2-neath-port-talbot",
+     "name": "Neath Port Talbot"
+    },
+    {
+     "id": "gbr-adm2-newcastle-upon-tyne",
+     "name": "Newcastle upon Tyne"
+    },
+    {
+     "id": "gbr-adm2-newham",
+     "name": "Newham"
+    },
+    {
+     "id": "gbr-adm2-newport",
+     "name": "Newport"
+    },
+    {
+     "id": "gbr-adm2-newry-mourne-and-down",
+     "name": "Newry, Mourne and Down"
+    },
+    {
+     "id": "gbr-adm2-norfolk",
+     "name": "Norfolk"
+    },
+    {
+     "id": "gbr-adm2-north-ayrshire",
+     "name": "North Ayrshire"
+    },
+    {
+     "id": "gbr-adm2-north-east-lincolnshire",
+     "name": "North East Lincolnshire"
+    },
+    {
+     "id": "gbr-adm2-north-lanarkshire",
+     "name": "North Lanarkshire"
+    },
+    {
+     "id": "gbr-adm2-north-lincolnshire",
+     "name": "North Lincolnshire"
+    },
+    {
+     "id": "gbr-adm2-north-somerset",
+     "name": "North Somerset"
+    },
+    {
+     "id": "gbr-adm2-north-tyneside",
+     "name": "North Tyneside"
+    },
+    {
+     "id": "gbr-adm2-north-yorkshire",
+     "name": "North Yorkshire"
+    },
+    {
+     "id": "gbr-adm2-northamptonshire",
+     "name": "Northamptonshire"
+    },
+    {
+     "id": "gbr-adm2-northumberland",
+     "name": "Northumberland"
+    },
+    {
+     "id": "gbr-adm2-nottingham",
+     "name": "Nottingham"
+    },
+    {
+     "id": "gbr-adm2-nottinghamshire",
+     "name": "Nottinghamshire"
+    },
+    {
+     "id": "gbr-adm2-oldham",
+     "name": "Oldham"
+    },
+    {
+     "id": "gbr-adm2-orkney-islands",
+     "name": "Orkney Islands"
+    },
+    {
+     "id": "gbr-adm2-oxfordshire",
+     "name": "Oxfordshire"
+    },
+    {
+     "id": "gbr-adm2-pembrokeshire",
+     "name": "Pembrokeshire"
+    },
+    {
+     "id": "gbr-adm2-perth-and-kinross",
+     "name": "Perth and Kinross"
+    },
+    {
+     "id": "gbr-adm2-peterborough",
+     "name": "Peterborough"
+    },
+    {
+     "id": "gbr-adm2-plymouth",
+     "name": "Plymouth"
+    },
+    {
+     "id": "gbr-adm2-portsmouth",
+     "name": "Portsmouth"
+    },
+    {
+     "id": "gbr-adm2-powys",
+     "name": "Powys"
+    },
+    {
+     "id": "gbr-adm2-reading",
+     "name": "Reading"
+    },
+    {
+     "id": "gbr-adm2-redbridge",
+     "name": "Redbridge"
+    },
+    {
+     "id": "gbr-adm2-redcar-and-cleveland",
+     "name": "Redcar and Cleveland"
+    },
+    {
+     "id": "gbr-adm2-renfrewshire",
+     "name": "Renfrewshire"
+    },
+    {
+     "id": "gbr-adm2-rhondda-cynon-taf",
+     "name": "Rhondda Cynon Taf"
+    },
+    {
+     "id": "gbr-adm2-richmond-upon-thames",
+     "name": "Richmond upon Thames"
+    },
+    {
+     "id": "gbr-adm2-rochdale",
+     "name": "Rochdale"
+    },
+    {
+     "id": "gbr-adm2-rotherham",
+     "name": "Rotherham"
+    },
+    {
+     "id": "gbr-adm2-rutland",
+     "name": "Rutland"
+    },
+    {
+     "id": "gbr-adm2-salford",
+     "name": "Salford"
+    },
+    {
+     "id": "gbr-adm2-sandwell",
+     "name": "Sandwell"
+    },
+    {
+     "id": "gbr-adm2-scottish-borders",
+     "name": "Scottish Borders"
+    },
+    {
+     "id": "gbr-adm2-sefton",
+     "name": "Sefton"
+    },
+    {
+     "id": "gbr-adm2-sheffield",
+     "name": "Sheffield"
+    },
+    {
+     "id": "gbr-adm2-shetland-islands",
+     "name": "Shetland Islands"
+    },
+    {
+     "id": "gbr-adm2-shropshire",
+     "name": "Shropshire"
+    },
+    {
+     "id": "gbr-adm2-slough",
+     "name": "Slough"
+    },
+    {
+     "id": "gbr-adm2-solihull",
+     "name": "Solihull"
+    },
+    {
+     "id": "gbr-adm2-somerset",
+     "name": "Somerset"
+    },
+    {
+     "id": "gbr-adm2-south-ayrshire",
+     "name": "South Ayrshire"
+    },
+    {
+     "id": "gbr-adm2-south-gloucestershire",
+     "name": "South Gloucestershire"
+    },
+    {
+     "id": "gbr-adm2-south-lanarkshire",
+     "name": "South Lanarkshire"
+    },
+    {
+     "id": "gbr-adm2-south-tyneside",
+     "name": "South Tyneside"
+    },
+    {
+     "id": "gbr-adm2-southampton",
+     "name": "Southampton"
+    },
+    {
+     "id": "gbr-adm2-southend-on-sea",
+     "name": "Southend-on-Sea"
+    },
+    {
+     "id": "gbr-adm2-southwark",
+     "name": "Southwark"
+    },
+    {
+     "id": "gbr-adm2-st-helens",
+     "name": "St. Helens"
+    },
+    {
+     "id": "gbr-adm2-staffordshire",
+     "name": "Staffordshire"
+    },
+    {
+     "id": "gbr-adm2-stirling",
+     "name": "Stirling"
+    },
+    {
+     "id": "gbr-adm2-stockport",
+     "name": "Stockport"
+    },
+    {
+     "id": "gbr-adm2-stockton-on-tees",
+     "name": "Stockton-on-Tees"
+    },
+    {
+     "id": "gbr-adm2-stoke-on-trent",
+     "name": "Stoke-on-Trent"
+    },
+    {
+     "id": "gbr-adm2-suffolk",
+     "name": "Suffolk"
+    },
+    {
+     "id": "gbr-adm2-sunderland",
+     "name": "Sunderland"
+    },
+    {
+     "id": "gbr-adm2-surrey",
+     "name": "Surrey"
+    },
+    {
+     "id": "gbr-adm2-sutton",
+     "name": "Sutton"
+    },
+    {
+     "id": "gbr-adm2-swansea",
+     "name": "Swansea"
+    },
+    {
+     "id": "gbr-adm2-swindon",
+     "name": "Swindon"
+    },
+    {
+     "id": "gbr-adm2-tameside",
+     "name": "Tameside"
+    },
+    {
+     "id": "gbr-adm2-telford-and-wrekin",
+     "name": "Telford and Wrekin"
+    },
+    {
+     "id": "gbr-adm2-thurrock",
+     "name": "Thurrock"
+    },
+    {
+     "id": "gbr-adm2-torbay",
+     "name": "Torbay"
+    },
+    {
+     "id": "gbr-adm2-torfaen",
+     "name": "Torfaen"
+    },
+    {
+     "id": "gbr-adm2-tower-hamlets",
+     "name": "Tower Hamlets"
+    },
+    {
+     "id": "gbr-adm2-trafford",
+     "name": "Trafford"
+    },
+    {
+     "id": "gbr-adm2-vale-of-glamorgan",
+     "name": "Vale of Glamorgan"
+    },
+    {
+     "id": "gbr-adm2-wakefield",
+     "name": "Wakefield"
+    },
+    {
+     "id": "gbr-adm2-walsall",
+     "name": "Walsall"
+    },
+    {
+     "id": "gbr-adm2-waltham-forest",
+     "name": "Waltham Forest"
+    },
+    {
+     "id": "gbr-adm2-wandsworth",
+     "name": "Wandsworth"
+    },
+    {
+     "id": "gbr-adm2-warrington",
+     "name": "Warrington"
+    },
+    {
+     "id": "gbr-adm2-warwickshire",
+     "name": "Warwickshire"
+    },
+    {
+     "id": "gbr-adm2-west-berkshire",
+     "name": "West Berkshire"
+    },
+    {
+     "id": "gbr-adm2-west-dunbartonshire",
+     "name": "West Dunbartonshire"
+    },
+    {
+     "id": "gbr-adm2-west-lothian",
+     "name": "West Lothian"
+    },
+    {
+     "id": "gbr-adm2-west-sussex",
+     "name": "West Sussex"
+    },
+    {
+     "id": "gbr-adm2-westminster",
+     "name": "Westminster"
+    },
+    {
+     "id": "gbr-adm2-wigan",
+     "name": "Wigan"
+    },
+    {
+     "id": "gbr-adm2-wiltshire",
+     "name": "Wiltshire"
+    },
+    {
+     "id": "gbr-adm2-windsor-and-maidenhead",
+     "name": "Windsor and Maidenhead"
+    },
+    {
+     "id": "gbr-adm2-wirral",
+     "name": "Wirral"
+    },
+    {
+     "id": "gbr-adm2-wokingham",
+     "name": "Wokingham"
+    },
+    {
+     "id": "gbr-adm2-wolverhampton",
+     "name": "Wolverhampton"
+    },
+    {
+     "id": "gbr-adm2-worcestershire",
+     "name": "Worcestershire"
+    },
+    {
+     "id": "gbr-adm2-wrexham",
+     "name": "Wrexham"
+    },
+    {
+     "id": "gbr-adm2-york",
+     "name": "York"
+    }
+   ]
+  }
+ },
+ "name": "United Kingdom",
+ "nameBn": "United Kingdom"
+}

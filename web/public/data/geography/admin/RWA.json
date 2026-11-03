@@ -1,0 +1,185 @@
+{
+ "code": "RWA",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "The Republic of Rwanda",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2021",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Province",
+   "code": "ADM1",
+   "count": 5,
+   "name": "Province",
+   "nameBn": "প্রদেশ",
+   "representedYear": "2020",
+   "sourceCount": 5,
+   "units": [
+    {
+     "id": "rwa-adm1-city-of-kigali",
+     "name": "City of Kigali",
+     "shapeISO": "RW-01"
+    },
+    {
+     "id": "rwa-adm1-eastern-province",
+     "name": "Eastern Province",
+     "shapeISO": "RW-02"
+    },
+    {
+     "id": "rwa-adm1-northern-province",
+     "name": "Northern Province",
+     "shapeISO": "RW-03"
+    },
+    {
+     "id": "rwa-adm1-southern-province",
+     "name": "Southern Province",
+     "shapeISO": "RW-05"
+    },
+    {
+     "id": "rwa-adm1-western-province",
+     "name": "Western Province",
+     "shapeISO": "RW-04"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Unknown",
+   "code": "ADM2",
+   "count": 30,
+   "name": "ADM2 areas",
+   "nameBn": "ADM2 এলাকা",
+   "representedYear": "2012",
+   "sourceCount": 30,
+   "units": [
+    {
+     "id": "rwa-adm2-bugesera",
+     "name": "Bugesera"
+    },
+    {
+     "id": "rwa-adm2-burera",
+     "name": "Burera"
+    },
+    {
+     "id": "rwa-adm2-gakenke",
+     "name": "Gakenke"
+    },
+    {
+     "id": "rwa-adm2-gasabo",
+     "name": "Gasabo"
+    },
+    {
+     "id": "rwa-adm2-gatsibo",
+     "name": "Gatsibo"
+    },
+    {
+     "id": "rwa-adm2-gicumbi",
+     "name": "Gicumbi"
+    },
+    {
+     "id": "rwa-adm2-gisagara",
+     "name": "Gisagara"
+    },
+    {
+     "id": "rwa-adm2-huye",
+     "name": "Huye"
+    },
+    {
+     "id": "rwa-adm2-kamonyi",
+     "name": "Kamonyi"
+    },
+    {
+     "id": "rwa-adm2-karongi",
+     "name": "Karongi"
+    },
+    {
+     "id": "rwa-adm2-kayonza",
+     "name": "Kayonza"
+    },
+    {
+     "id": "rwa-adm2-kicukiro",
+     "name": "Kicukiro"
+    },
+    {
+     "id": "rwa-adm2-kirehe",
+     "name": "Kirehe"
+    },
+    {
+     "id": "rwa-adm2-muhanga",
+     "name": "Muhanga"
+    },
+    {
+     "id": "rwa-adm2-musanze",
+     "name": "Musanze"
+    },
+    {
+     "id": "rwa-adm2-ngoma",
+     "name": "Ngoma"
+    },
+    {
+     "id": "rwa-adm2-ngororero",
+     "name": "Ngororero"
+    },
+    {
+     "id": "rwa-adm2-nyabihu",
+     "name": "Nyabihu"
+    },
+    {
+     "id": "rwa-adm2-nyagatare",
+     "name": "Nyagatare"
+    },
+    {
+     "id": "rwa-adm2-nyamagabe",
+     "name": "Nyamagabe"
+    },
+    {
+     "id": "rwa-adm2-nyamasheke",
+     "name": "Nyamasheke"
+    },
+    {
+     "id": "rwa-adm2-nyanza",
+     "name": "Nyanza"
+    },
+    {
+     "id": "rwa-adm2-nyarugenge",
+     "name": "Nyarugenge"
+    },
+    {
+     "id": "rwa-adm2-nyaruguru",
+     "name": "Nyaruguru"
+    },
+    {
+     "id": "rwa-adm2-rubavu",
+     "name": "Rubavu"
+    },
+    {
+     "id": "rwa-adm2-ruhango",
+     "name": "Ruhango"
+    },
+    {
+     "id": "rwa-adm2-rulindo",
+     "name": "Rulindo"
+    },
+    {
+     "id": "rwa-adm2-rusizi",
+     "name": "Rusizi"
+    },
+    {
+     "id": "rwa-adm2-rutsiro",
+     "name": "Rutsiro"
+    },
+    {
+     "id": "rwa-adm2-rwamagana",
+     "name": "Rwamagana"
+    }
+   ]
+  }
+ },
+ "name": "Rwanda",
+ "nameBn": "Rwanda"
+}

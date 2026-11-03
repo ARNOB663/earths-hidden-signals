@@ -1,0 +1,114 @@
+{
+ "code": "DJI",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Republic of Djibouti",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2021",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Regions",
+   "code": "ADM1",
+   "count": 6,
+   "name": "Regions",
+   "nameBn": "অঞ্চল",
+   "representedYear": "2021",
+   "sourceCount": 6,
+   "units": [
+    {
+     "id": "dji-adm1-ali-sabieh",
+     "name": "Ali Sabieh",
+     "shapeISO": "DJ-AS"
+    },
+    {
+     "id": "dji-adm1-arta",
+     "name": "Arta",
+     "shapeISO": "DJ-AR"
+    },
+    {
+     "id": "dji-adm1-dikhil",
+     "name": "Dikhil",
+     "shapeISO": "DJ-DI"
+    },
+    {
+     "id": "dji-adm1-djibouti",
+     "name": "Djibouti",
+     "shapeISO": "DJ-DJ"
+    },
+    {
+     "id": "dji-adm1-obock",
+     "name": "Obock",
+     "shapeISO": "DJ-OB"
+    },
+    {
+     "id": "dji-adm1-tadjourah",
+     "name": "Tadjourah",
+     "shapeISO": "DJ-TA"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Districts",
+   "code": "ADM2",
+   "count": 11,
+   "name": "Districts",
+   "nameBn": "জেলা",
+   "representedYear": "2020",
+   "sourceCount": 11,
+   "units": [
+    {
+     "id": "dji-adm2-alaili-dadda",
+     "name": "Alaili Dadda"
+    },
+    {
+     "id": "dji-adm2-ali-sabeh",
+     "name": "Ali Sabeh"
+    },
+    {
+     "id": "dji-adm2-as-eyla",
+     "name": "As Eyla"
+    },
+    {
+     "id": "dji-adm2-balha",
+     "name": "Balha"
+    },
+    {
+     "id": "dji-adm2-dilkhil",
+     "name": "Dilkhil"
+    },
+    {
+     "id": "dji-adm2-djibouti",
+     "name": "Djibouti"
+    },
+    {
+     "id": "dji-adm2-dorra",
+     "name": "Dorra"
+    },
+    {
+     "id": "dji-adm2-obock",
+     "name": "Obock"
+    },
+    {
+     "id": "dji-adm2-randa",
+     "name": "Randa"
+    },
+    {
+     "id": "dji-adm2-tadjourah",
+     "name": "Tadjourah"
+    },
+    {
+     "id": "dji-adm2-yobokii",
+     "name": "YobokiI"
+    }
+   ]
+  }
+ },
+ "name": "Djibouti",
+ "nameBn": "Djibouti"
+}

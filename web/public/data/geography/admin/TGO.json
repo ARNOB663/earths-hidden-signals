@@ -1,0 +1,213 @@
+{
+ "code": "TGO",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Unknown",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2017",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Regions",
+   "code": "ADM1",
+   "count": 5,
+   "name": "Regions",
+   "nameBn": "অঞ্চল",
+   "representedYear": "2017",
+   "sourceCount": 5,
+   "units": [
+    {
+     "id": "tgo-adm1-centrale-region",
+     "name": "Centrale Region",
+     "shapeISO": "TG-C"
+    },
+    {
+     "id": "tgo-adm1-kara-region",
+     "name": "Kara Region",
+     "shapeISO": "TG-K"
+    },
+    {
+     "id": "tgo-adm1-maritime-region",
+     "name": "Maritime Region",
+     "shapeISO": "TG-M"
+    },
+    {
+     "id": "tgo-adm1-plateaux-region",
+     "name": "Plateaux Region",
+     "shapeISO": "TG-P"
+    },
+    {
+     "id": "tgo-adm1-savanes-region",
+     "name": "Savanes Region",
+     "shapeISO": "TG-S"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Prefectures",
+   "code": "ADM2",
+   "count": 37,
+   "name": "Prefectures",
+   "nameBn": "প্রিফেকচার",
+   "representedYear": "2017",
+   "sourceCount": 37,
+   "units": [
+    {
+     "id": "tgo-adm2-agou",
+     "name": "Agou"
+    },
+    {
+     "id": "tgo-adm2-akébou",
+     "name": "Akébou"
+    },
+    {
+     "id": "tgo-adm2-amou",
+     "name": "Amou"
+    },
+    {
+     "id": "tgo-adm2-anié",
+     "name": "Anié"
+    },
+    {
+     "id": "tgo-adm2-assoli",
+     "name": "Assoli"
+    },
+    {
+     "id": "tgo-adm2-ave",
+     "name": "Ave"
+    },
+    {
+     "id": "tgo-adm2-bas-mono",
+     "name": "Bas-Mono"
+    },
+    {
+     "id": "tgo-adm2-bassar",
+     "name": "Bassar"
+    },
+    {
+     "id": "tgo-adm2-binah",
+     "name": "Binah"
+    },
+    {
+     "id": "tgo-adm2-blitta",
+     "name": "Blitta"
+    },
+    {
+     "id": "tgo-adm2-cinkassé",
+     "name": "Cinkassé"
+    },
+    {
+     "id": "tgo-adm2-dankpen",
+     "name": "Dankpen"
+    },
+    {
+     "id": "tgo-adm2-danyi",
+     "name": "Danyi"
+    },
+    {
+     "id": "tgo-adm2-doufelgou",
+     "name": "Doufelgou"
+    },
+    {
+     "id": "tgo-adm2-est-mono",
+     "name": "Est-Mono"
+    },
+    {
+     "id": "tgo-adm2-golfe",
+     "name": "Golfe"
+    },
+    {
+     "id": "tgo-adm2-haho",
+     "name": "Haho"
+    },
+    {
+     "id": "tgo-adm2-keran",
+     "name": "Keran"
+    },
+    {
+     "id": "tgo-adm2-kloto",
+     "name": "Kloto"
+    },
+    {
+     "id": "tgo-adm2-kozah",
+     "name": "Kozah"
+    },
+    {
+     "id": "tgo-adm2-kpendjal",
+     "name": "Kpendjal"
+    },
+    {
+     "id": "tgo-adm2-kpélé",
+     "name": "Kpélé"
+    },
+    {
+     "id": "tgo-adm2-lacs",
+     "name": "Lacs"
+    },
+    {
+     "id": "tgo-adm2-lome-commune",
+     "name": "Lome Commune"
+    },
+    {
+     "id": "tgo-adm2-moyen-mono",
+     "name": "Moyen-Mono"
+    },
+    {
+     "id": "tgo-adm2-ogou",
+     "name": "Ogou"
+    },
+    {
+     "id": "tgo-adm2-oti",
+     "name": "Oti"
+    },
+    {
+     "id": "tgo-adm2-plaine-de-mô",
+     "name": "Plaine de Mô"
+    },
+    {
+     "id": "tgo-adm2-sotouboua",
+     "name": "Sotouboua"
+    },
+    {
+     "id": "tgo-adm2-tandjouare",
+     "name": "Tandjouare"
+    },
+    {
+     "id": "tgo-adm2-tchamba",
+     "name": "Tchamba"
+    },
+    {
+     "id": "tgo-adm2-tchaoudjo",
+     "name": "Tchaoudjo"
+    },
+    {
+     "id": "tgo-adm2-tone",
+     "name": "Tone"
+    },
+    {
+     "id": "tgo-adm2-vo",
+     "name": "Vo"
+    },
+    {
+     "id": "tgo-adm2-wawa",
+     "name": "Wawa"
+    },
+    {
+     "id": "tgo-adm2-yoto",
+     "name": "Yoto"
+    },
+    {
+     "id": "tgo-adm2-zio",
+     "name": "Zio"
+    }
+   ]
+  }
+ },
+ "name": "Togo",
+ "nameBn": "Togo"
+}

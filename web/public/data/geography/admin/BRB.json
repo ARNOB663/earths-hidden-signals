@@ -1,0 +1,84 @@
+{
+ "code": "BRB",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Barbados",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2005",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Parish",
+   "code": "ADM1",
+   "count": 11,
+   "name": "Parish",
+   "nameBn": "Parish",
+   "representedYear": "2005",
+   "sourceCount": 11,
+   "units": [
+    {
+     "id": "brb-adm1-christ-church",
+     "name": "Christ Church",
+     "shapeISO": "BB-01"
+    },
+    {
+     "id": "brb-adm1-saint-andrew",
+     "name": "Saint Andrew",
+     "shapeISO": "BB-02"
+    },
+    {
+     "id": "brb-adm1-saint-george",
+     "name": "Saint George",
+     "shapeISO": "BB-03"
+    },
+    {
+     "id": "brb-adm1-saint-james",
+     "name": "Saint James",
+     "shapeISO": "BB-04"
+    },
+    {
+     "id": "brb-adm1-saint-john",
+     "name": "Saint John",
+     "shapeISO": "BB-05"
+    },
+    {
+     "id": "brb-adm1-saint-joseph",
+     "name": "Saint Joseph",
+     "shapeISO": "BB-06"
+    },
+    {
+     "id": "brb-adm1-saint-lucy",
+     "name": "Saint Lucy",
+     "shapeISO": "BB-07"
+    },
+    {
+     "id": "brb-adm1-saint-michael",
+     "name": "Saint Michael",
+     "shapeISO": "BB-08"
+    },
+    {
+     "id": "brb-adm1-saint-peter",
+     "name": "Saint Peter",
+     "shapeISO": "BB-09"
+    },
+    {
+     "id": "brb-adm1-saint-philip",
+     "name": "Saint Philip",
+     "shapeISO": "BB-10"
+    },
+    {
+     "id": "brb-adm1-saint-thomas",
+     "name": "Saint Thomas",
+     "shapeISO": "BB-11"
+    }
+   ]
+  }
+ },
+ "name": "Barbados",
+ "nameBn": "Barbados"
+}

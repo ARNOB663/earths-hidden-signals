@@ -1,21 +1,16 @@
 {
  "code": "LKA",
- "flag": "🇱🇰",
+ "flag": "",
  "levels": {
   "ADM0": {
    "canonical": "Unknown",
    "code": "ADM0",
    "count": 1,
-   "name": "National boundary",
-   "nameBn": "জাতীয় সীমানা",
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
    "representedYear": "2017",
-   "units": [
-    {
-     "id": "lka-adm0-sri-lanka",
-     "name": "Sri Lanka",
-     "shapeISO": "LKA"
-    }
-   ]
+   "sourceCount": 1,
+   "units": []
   },
   "ADM1": {
    "canonical": "Unknown",
@@ -24,6 +19,7 @@
    "name": "ADM1 areas",
    "nameBn": "ADM1 এলাকা",
    "representedYear": "2017",
+   "sourceCount": 9,
    "units": [
     {
      "id": "lka-adm1-central-province",
@@ -79,6 +75,7 @@
    "name": "ADM2 areas",
    "nameBn": "ADM2 এলাকা",
    "representedYear": "2017",
+   "sourceCount": 25,
    "units": [
     {
      "id": "lka-adm2-ampara-district",
@@ -209,5 +206,5 @@
   }
  },
  "name": "Sri Lanka",
- "nameBn": "শ্রীলঙ্কা"
+ "nameBn": "Sri Lanka"
 }

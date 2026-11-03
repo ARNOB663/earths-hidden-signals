@@ -1,0 +1,272 @@
+{
+ "code": "DEU",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "the Federal Republic of Germany",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2021",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Länder",
+   "code": "ADM1",
+   "count": 16,
+   "name": "Länder",
+   "nameBn": "Länder",
+   "representedYear": "2021",
+   "sourceCount": 16,
+   "units": [
+    {
+     "id": "deu-adm1-baden-württemberg",
+     "name": "Baden-Württemberg",
+     "shapeISO": "DE-BW"
+    },
+    {
+     "id": "deu-adm1-bayern",
+     "name": "Bayern",
+     "shapeISO": "DE-BY"
+    },
+    {
+     "id": "deu-adm1-berlin",
+     "name": "Berlin",
+     "shapeISO": "DE-BE"
+    },
+    {
+     "id": "deu-adm1-brandenburg",
+     "name": "Brandenburg",
+     "shapeISO": "DE-BB"
+    },
+    {
+     "id": "deu-adm1-bremen",
+     "name": "Bremen",
+     "shapeISO": "DE-HB"
+    },
+    {
+     "id": "deu-adm1-hamburg",
+     "name": "Hamburg",
+     "shapeISO": "DE-HH"
+    },
+    {
+     "id": "deu-adm1-hessen",
+     "name": "Hessen",
+     "shapeISO": "DE-HE"
+    },
+    {
+     "id": "deu-adm1-mecklenburg-vorpommern",
+     "name": "Mecklenburg-Vorpommern",
+     "shapeISO": "DE-MV"
+    },
+    {
+     "id": "deu-adm1-niedersachsen",
+     "name": "Niedersachsen",
+     "shapeISO": "DE-NI"
+    },
+    {
+     "id": "deu-adm1-nordrhein-westfalen",
+     "name": "Nordrhein-Westfalen",
+     "shapeISO": "DE-NW"
+    },
+    {
+     "id": "deu-adm1-rheinland-pfalz",
+     "name": "Rheinland-Pfalz",
+     "shapeISO": "DE-RP"
+    },
+    {
+     "id": "deu-adm1-saarland",
+     "name": "Saarland",
+     "shapeISO": "DE-SL"
+    },
+    {
+     "id": "deu-adm1-sachsen",
+     "name": "Sachsen",
+     "shapeISO": "DE-SN"
+    },
+    {
+     "id": "deu-adm1-sachsen-anhalt",
+     "name": "Sachsen-Anhalt",
+     "shapeISO": "DE-ST"
+    },
+    {
+     "id": "deu-adm1-schleswig-holstein",
+     "name": "Schleswig-Holstein",
+     "shapeISO": "DE-SH"
+    },
+    {
+     "id": "deu-adm1-thüringen",
+     "name": "Thüringen",
+     "shapeISO": "DE-TH"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Government District",
+   "code": "ADM2",
+   "count": 38,
+   "name": "Government District",
+   "nameBn": "Government District",
+   "representedYear": "2021",
+   "sourceCount": 38,
+   "units": [
+    {
+     "id": "deu-adm2-arnsberg",
+     "name": "Arnsberg"
+    },
+    {
+     "id": "deu-adm2-berlin",
+     "name": "Berlin"
+    },
+    {
+     "id": "deu-adm2-brandenburg",
+     "name": "Brandenburg"
+    },
+    {
+     "id": "deu-adm2-braunschweig",
+     "name": "Braunschweig"
+    },
+    {
+     "id": "deu-adm2-bremen",
+     "name": "Bremen"
+    },
+    {
+     "id": "deu-adm2-chemnitz",
+     "name": "Chemnitz"
+    },
+    {
+     "id": "deu-adm2-darmstadt",
+     "name": "Darmstadt"
+    },
+    {
+     "id": "deu-adm2-detmold",
+     "name": "Detmold"
+    },
+    {
+     "id": "deu-adm2-dresden",
+     "name": "Dresden"
+    },
+    {
+     "id": "deu-adm2-düsseldorf",
+     "name": "Düsseldorf"
+    },
+    {
+     "id": "deu-adm2-freiburg",
+     "name": "Freiburg"
+    },
+    {
+     "id": "deu-adm2-gießen",
+     "name": "Gießen"
+    },
+    {
+     "id": "deu-adm2-hamburg",
+     "name": "Hamburg"
+    },
+    {
+     "id": "deu-adm2-hannover",
+     "name": "Hannover"
+    },
+    {
+     "id": "deu-adm2-karlsruhe",
+     "name": "Karlsruhe"
+    },
+    {
+     "id": "deu-adm2-kassel",
+     "name": "Kassel"
+    },
+    {
+     "id": "deu-adm2-koblenz",
+     "name": "Koblenz"
+    },
+    {
+     "id": "deu-adm2-köln",
+     "name": "Köln"
+    },
+    {
+     "id": "deu-adm2-leipzig",
+     "name": "Leipzig"
+    },
+    {
+     "id": "deu-adm2-lüneburg",
+     "name": "Lüneburg"
+    },
+    {
+     "id": "deu-adm2-mecklenburg-vorpommern",
+     "name": "Mecklenburg-Vorpommern"
+    },
+    {
+     "id": "deu-adm2-mittelfranken",
+     "name": "Mittelfranken"
+    },
+    {
+     "id": "deu-adm2-münster",
+     "name": "Münster"
+    },
+    {
+     "id": "deu-adm2-niederbayern",
+     "name": "Niederbayern"
+    },
+    {
+     "id": "deu-adm2-oberbayern",
+     "name": "Oberbayern"
+    },
+    {
+     "id": "deu-adm2-oberfranken",
+     "name": "Oberfranken"
+    },
+    {
+     "id": "deu-adm2-oberpfalz",
+     "name": "Oberpfalz"
+    },
+    {
+     "id": "deu-adm2-rheinhessen-pfalz",
+     "name": "Rheinhessen-Pfalz"
+    },
+    {
+     "id": "deu-adm2-saarland",
+     "name": "Saarland"
+    },
+    {
+     "id": "deu-adm2-sachsen-anhalt",
+     "name": "Sachsen-Anhalt"
+    },
+    {
+     "id": "deu-adm2-schleswig-holstein",
+     "name": "Schleswig-Holstein"
+    },
+    {
+     "id": "deu-adm2-schwaben",
+     "name": "Schwaben"
+    },
+    {
+     "id": "deu-adm2-stuttgart",
+     "name": "Stuttgart"
+    },
+    {
+     "id": "deu-adm2-thüringen",
+     "name": "Thüringen"
+    },
+    {
+     "id": "deu-adm2-trier",
+     "name": "Trier"
+    },
+    {
+     "id": "deu-adm2-tübingen",
+     "name": "Tübingen"
+    },
+    {
+     "id": "deu-adm2-unterfranken",
+     "name": "Unterfranken"
+    },
+    {
+     "id": "deu-adm2-weser-ems",
+     "name": "Weser-Ems"
+    }
+   ]
+  }
+ },
+ "name": "Germany",
+ "nameBn": "Germany"
+}

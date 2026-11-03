@@ -1,0 +1,105 @@
+{
+ "code": "GUM",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "The Territory of Guam",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2021",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM2": {
+   "canonical": "Village",
+   "code": "ADM2",
+   "count": 19,
+   "name": "Village",
+   "nameBn": "Village",
+   "representedYear": "2021",
+   "sourceCount": 19,
+   "units": [
+    {
+     "id": "gum-adm2-agana-heights",
+     "name": "Agana Heights"
+    },
+    {
+     "id": "gum-adm2-agat",
+     "name": "Agat"
+    },
+    {
+     "id": "gum-adm2-asan",
+     "name": "Asan"
+    },
+    {
+     "id": "gum-adm2-barrigada",
+     "name": "Barrigada"
+    },
+    {
+     "id": "gum-adm2-chalan-pago-ordot",
+     "name": "Chalan Pago-Ordot"
+    },
+    {
+     "id": "gum-adm2-dededo",
+     "name": "Dededo"
+    },
+    {
+     "id": "gum-adm2-hagåtña",
+     "name": "Hagåtña"
+    },
+    {
+     "id": "gum-adm2-inarajan",
+     "name": "Inarajan"
+    },
+    {
+     "id": "gum-adm2-mangilao",
+     "name": "Mangilao"
+    },
+    {
+     "id": "gum-adm2-merizo",
+     "name": "Merizo"
+    },
+    {
+     "id": "gum-adm2-mongmong-toto-maite",
+     "name": "Mongmong-Toto-Maite"
+    },
+    {
+     "id": "gum-adm2-piti",
+     "name": "Piti"
+    },
+    {
+     "id": "gum-adm2-santa-rita",
+     "name": "Santa Rita"
+    },
+    {
+     "id": "gum-adm2-sinajana",
+     "name": "Sinajana"
+    },
+    {
+     "id": "gum-adm2-talofofo",
+     "name": "Talofofo"
+    },
+    {
+     "id": "gum-adm2-tamuning",
+     "name": "Tamuning"
+    },
+    {
+     "id": "gum-adm2-umatac",
+     "name": "Umatac"
+    },
+    {
+     "id": "gum-adm2-yigo",
+     "name": "Yigo"
+    },
+    {
+     "id": "gum-adm2-yona",
+     "name": "Yona"
+    }
+   ]
+  }
+ },
+ "name": "Guam",
+ "nameBn": "Guam"
+}

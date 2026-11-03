@@ -1,0 +1,49 @@
+{
+ "code": "BHR",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Unknown",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2017",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Unknown",
+   "code": "ADM1",
+   "count": 4,
+   "name": "ADM1 areas",
+   "nameBn": "ADM1 এলাকা",
+   "representedYear": "2017",
+   "sourceCount": 4,
+   "units": [
+    {
+     "id": "bhr-adm1-capital-governorate",
+     "name": "Capital Governorate",
+     "shapeISO": "BH-13"
+    },
+    {
+     "id": "bhr-adm1-muharraq-governorate",
+     "name": "Muharraq Governorate",
+     "shapeISO": "BH-15"
+    },
+    {
+     "id": "bhr-adm1-northern-governorate",
+     "name": "Northern Governorate",
+     "shapeISO": "BH-17"
+    },
+    {
+     "id": "bhr-adm1-southern-governorate",
+     "name": "Southern Governorate",
+     "shapeISO": "BH-14"
+    }
+   ]
+  }
+ },
+ "name": "Bahrain",
+ "nameBn": "Bahrain"
+}

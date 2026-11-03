@@ -1,29 +1,25 @@
 {
  "code": "IND",
- "flag": "🇮🇳",
+ "flag": "",
  "levels": {
   "ADM0": {
    "canonical": "India",
    "code": "ADM0",
    "count": 1,
-   "name": "India",
-   "nameBn": "ভারত",
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
    "representedYear": "2014",
-   "units": [
-    {
-     "id": "ind-adm0-india",
-     "name": "India",
-     "shapeISO": "IND"
-    }
-   ]
+   "sourceCount": 1,
+   "units": []
   },
   "ADM1": {
    "canonical": "State / Union Territory",
    "code": "ADM1",
    "count": 36,
-   "name": "State / Union Territory",
-   "nameBn": "রাজ্য / কেন্দ্রশাসিত অঞ্চল",
+   "name": "ADM1 areas",
+   "nameBn": "ADM1 এলাকা",
    "representedYear": "2011",
+   "sourceCount": 36,
    "units": [
     {
      "id": "ind-adm1-andaman-and-nicobar-islands",
@@ -212,3687 +208,2953 @@
    "code": "ADM2",
    "count": 735,
    "name": "District",
-   "nameBn": "District",
+   "nameBn": "জেলা",
    "representedYear": "2021",
+   "sourceCount": 736,
    "units": [
     {
      "id": "ind-adm2-adilabad",
-     "name": "Adilabad",
-     "shapeISO": null
+     "name": "Adilabad"
     },
     {
      "id": "ind-adm2-agar",
-     "name": "Agar",
-     "shapeISO": null
+     "name": "Agar"
     },
     {
      "id": "ind-adm2-agra",
-     "name": "Agra",
-     "shapeISO": null
+     "name": "Agra"
     },
     {
      "id": "ind-adm2-ahmadabad",
-     "name": "Ahmadabad",
-     "shapeISO": null
+     "name": "Ahmadabad"
     },
     {
      "id": "ind-adm2-ahmadnagar",
-     "name": "Ahmadnagar",
-     "shapeISO": null
+     "name": "Ahmadnagar"
     },
     {
      "id": "ind-adm2-aizawl",
-     "name": "Aizawl",
-     "shapeISO": null
+     "name": "Aizawl"
     },
     {
      "id": "ind-adm2-ajmer",
-     "name": "Ajmer",
-     "shapeISO": null
+     "name": "Ajmer"
     },
     {
      "id": "ind-adm2-akola",
-     "name": "Akola",
-     "shapeISO": null
+     "name": "Akola"
     },
     {
      "id": "ind-adm2-alappuzha",
-     "name": "Alappuzha",
-     "shapeISO": null
+     "name": "Alappuzha"
     },
     {
      "id": "ind-adm2-aligarh",
-     "name": "Aligarh",
-     "shapeISO": null
+     "name": "Aligarh"
     },
     {
      "id": "ind-adm2-alipurduar",
-     "name": "Alipurduar",
-     "shapeISO": null
+     "name": "Alipurduar"
     },
     {
      "id": "ind-adm2-alirajpur",
-     "name": "Alirajpur",
-     "shapeISO": null
+     "name": "Alirajpur"
     },
     {
      "id": "ind-adm2-allahabad",
-     "name": "Allahabad",
-     "shapeISO": null
+     "name": "Allahabad"
     },
     {
      "id": "ind-adm2-almora",
-     "name": "Almora",
-     "shapeISO": null
+     "name": "Almora"
     },
     {
      "id": "ind-adm2-alwar",
-     "name": "Alwar",
-     "shapeISO": null
+     "name": "Alwar"
     },
     {
      "id": "ind-adm2-ambala",
-     "name": "Ambala",
-     "shapeISO": null
+     "name": "Ambala"
     },
     {
      "id": "ind-adm2-ambedkar-nagar",
-     "name": "Ambedkar Nagar",
-     "shapeISO": null
+     "name": "Ambedkar Nagar"
     },
     {
      "id": "ind-adm2-amethi",
-     "name": "Amethi",
-     "shapeISO": null
+     "name": "Amethi"
     },
     {
      "id": "ind-adm2-amravati",
-     "name": "Amravati",
-     "shapeISO": null
+     "name": "Amravati"
     },
     {
      "id": "ind-adm2-amreli",
-     "name": "Amreli",
-     "shapeISO": null
+     "name": "Amreli"
     },
     {
      "id": "ind-adm2-amritsar",
-     "name": "Amritsar",
-     "shapeISO": null
+     "name": "Amritsar"
     },
     {
      "id": "ind-adm2-anand",
-     "name": "Anand",
-     "shapeISO": null
+     "name": "Anand"
     },
     {
      "id": "ind-adm2-anantapur",
-     "name": "Anantapur",
-     "shapeISO": null
+     "name": "Anantapur"
     },
     {
      "id": "ind-adm2-anantnag",
-     "name": "Anantnag",
-     "shapeISO": null
+     "name": "Anantnag"
     },
     {
      "id": "ind-adm2-anjaw",
-     "name": "Anjaw",
-     "shapeISO": null
+     "name": "Anjaw"
     },
     {
      "id": "ind-adm2-anugul",
-     "name": "Anugul",
-     "shapeISO": null
+     "name": "Anugul"
     },
     {
      "id": "ind-adm2-anuppur",
-     "name": "Anuppur",
-     "shapeISO": null
+     "name": "Anuppur"
     },
     {
      "id": "ind-adm2-araria",
-     "name": "Araria",
-     "shapeISO": null
+     "name": "Araria"
     },
     {
      "id": "ind-adm2-aravali",
-     "name": "Aravali",
-     "shapeISO": null
+     "name": "Aravali"
     },
     {
      "id": "ind-adm2-ariyalur",
-     "name": "Ariyalur",
-     "shapeISO": null
+     "name": "Ariyalur"
     },
     {
      "id": "ind-adm2-arwal",
-     "name": "Arwal",
-     "shapeISO": null
+     "name": "Arwal"
     },
     {
      "id": "ind-adm2-ashoknagar",
-     "name": "Ashoknagar",
-     "shapeISO": null
+     "name": "Ashoknagar"
     },
     {
      "id": "ind-adm2-auraiya",
-     "name": "Auraiya",
-     "shapeISO": null
+     "name": "Auraiya"
     },
     {
      "id": "ind-adm2-aurangabad",
-     "name": "Aurangabad",
-     "shapeISO": null
+     "name": "Aurangabad"
     },
     {
      "id": "ind-adm2-aurangabad-2",
-     "name": "Aurangabad",
-     "shapeISO": null
+     "name": "Aurangabad"
     },
     {
      "id": "ind-adm2-azamgarh",
-     "name": "Azamgarh",
-     "shapeISO": null
+     "name": "Azamgarh"
     },
     {
      "id": "ind-adm2-badgam",
-     "name": "Badgam",
-     "shapeISO": null
+     "name": "Badgam"
     },
     {
      "id": "ind-adm2-bagalkot",
-     "name": "Bagalkot",
-     "shapeISO": null
+     "name": "Bagalkot"
     },
     {
      "id": "ind-adm2-bageshwar",
-     "name": "Bageshwar",
-     "shapeISO": null
+     "name": "Bageshwar"
     },
     {
      "id": "ind-adm2-baghpat",
-     "name": "Baghpat",
-     "shapeISO": null
+     "name": "Baghpat"
     },
     {
      "id": "ind-adm2-bahraich",
-     "name": "Bahraich",
-     "shapeISO": null
+     "name": "Bahraich"
     },
     {
      "id": "ind-adm2-baksa",
-     "name": "Baksa",
-     "shapeISO": null
+     "name": "Baksa"
     },
     {
      "id": "ind-adm2-balaghat",
-     "name": "Balaghat",
-     "shapeISO": null
+     "name": "Balaghat"
     },
     {
      "id": "ind-adm2-balangir",
-     "name": "Balangir",
-     "shapeISO": null
+     "name": "Balangir"
     },
     {
      "id": "ind-adm2-baleshwar",
-     "name": "Baleshwar",
-     "shapeISO": null
+     "name": "Baleshwar"
     },
     {
      "id": "ind-adm2-ballia",
-     "name": "Ballia",
-     "shapeISO": null
+     "name": "Ballia"
     },
     {
      "id": "ind-adm2-balod",
-     "name": "Balod",
-     "shapeISO": null
+     "name": "Balod"
     },
     {
      "id": "ind-adm2-baloda-bazar",
-     "name": "Baloda Bazar",
-     "shapeISO": null
+     "name": "Baloda Bazar"
     },
     {
      "id": "ind-adm2-balrampur",
-     "name": "Balrampur",
-     "shapeISO": null
+     "name": "Balrampur"
     },
     {
      "id": "ind-adm2-balrampur-2",
-     "name": "Balrampur",
-     "shapeISO": null
+     "name": "Balrampur"
     },
     {
      "id": "ind-adm2-banas-kantha",
-     "name": "Banas Kantha",
-     "shapeISO": null
+     "name": "Banas Kantha"
     },
     {
      "id": "ind-adm2-banda",
-     "name": "Banda",
-     "shapeISO": null
+     "name": "Banda"
     },
     {
      "id": "ind-adm2-bandipore",
-     "name": "Bandipore",
-     "shapeISO": null
+     "name": "Bandipore"
     },
     {
      "id": "ind-adm2-bangalore",
-     "name": "Bangalore",
-     "shapeISO": null
+     "name": "Bangalore"
     },
     {
      "id": "ind-adm2-bangalore-rural",
-     "name": "Bangalore Rural",
-     "shapeISO": null
+     "name": "Bangalore Rural"
     },
     {
      "id": "ind-adm2-banka",
-     "name": "Banka",
-     "shapeISO": null
+     "name": "Banka"
     },
     {
      "id": "ind-adm2-bankura",
-     "name": "Bankura",
-     "shapeISO": null
+     "name": "Bankura"
     },
     {
      "id": "ind-adm2-banswara",
-     "name": "Banswara",
-     "shapeISO": null
+     "name": "Banswara"
     },
     {
      "id": "ind-adm2-bara-banki",
-     "name": "Bara Banki",
-     "shapeISO": null
+     "name": "Bara Banki"
     },
     {
      "id": "ind-adm2-baramula",
-     "name": "Baramula",
-     "shapeISO": null
+     "name": "Baramula"
     },
     {
      "id": "ind-adm2-baran",
-     "name": "Baran",
-     "shapeISO": null
+     "name": "Baran"
     },
     {
      "id": "ind-adm2-barddhaman",
-     "name": "Barddhaman",
-     "shapeISO": null
+     "name": "Barddhaman"
     },
     {
      "id": "ind-adm2-bareilly",
-     "name": "Bareilly",
-     "shapeISO": null
+     "name": "Bareilly"
     },
     {
      "id": "ind-adm2-bargarh",
-     "name": "Bargarh",
-     "shapeISO": null
+     "name": "Bargarh"
     },
     {
      "id": "ind-adm2-barmer",
-     "name": "Barmer",
-     "shapeISO": null
+     "name": "Barmer"
     },
     {
      "id": "ind-adm2-barnala",
-     "name": "Barnala",
-     "shapeISO": null
+     "name": "Barnala"
     },
     {
      "id": "ind-adm2-barpeta",
-     "name": "Barpeta",
-     "shapeISO": null
+     "name": "Barpeta"
     },
     {
      "id": "ind-adm2-barwani",
-     "name": "Barwani",
-     "shapeISO": null
+     "name": "Barwani"
     },
     {
      "id": "ind-adm2-bastar",
-     "name": "Bastar",
-     "shapeISO": null
+     "name": "Bastar"
     },
     {
      "id": "ind-adm2-basti",
-     "name": "Basti",
-     "shapeISO": null
+     "name": "Basti"
     },
     {
      "id": "ind-adm2-bathinda",
-     "name": "Bathinda",
-     "shapeISO": null
+     "name": "Bathinda"
     },
     {
      "id": "ind-adm2-batod",
-     "name": "Batod",
-     "shapeISO": null
+     "name": "Batod"
     },
     {
      "id": "ind-adm2-baudh",
-     "name": "Baudh",
-     "shapeISO": null
+     "name": "Baudh"
     },
     {
      "id": "ind-adm2-begusarai",
-     "name": "Begusarai",
-     "shapeISO": null
+     "name": "Begusarai"
     },
     {
      "id": "ind-adm2-belgaum",
-     "name": "Belgaum",
-     "shapeISO": null
+     "name": "Belgaum"
     },
     {
      "id": "ind-adm2-bellary",
-     "name": "Bellary",
-     "shapeISO": null
+     "name": "Bellary"
     },
     {
      "id": "ind-adm2-bemetra",
-     "name": "Bemetra",
-     "shapeISO": null
+     "name": "Bemetra"
     },
     {
      "id": "ind-adm2-betul",
-     "name": "Betul",
-     "shapeISO": null
+     "name": "Betul"
     },
     {
      "id": "ind-adm2-bhadradri",
-     "name": "Bhadradri",
-     "shapeISO": null
+     "name": "Bhadradri"
     },
     {
      "id": "ind-adm2-bhadrak",
-     "name": "Bhadrak",
-     "shapeISO": null
+     "name": "Bhadrak"
     },
     {
      "id": "ind-adm2-bhagalpur",
-     "name": "Bhagalpur",
-     "shapeISO": null
+     "name": "Bhagalpur"
     },
     {
      "id": "ind-adm2-bhandara",
-     "name": "Bhandara",
-     "shapeISO": null
+     "name": "Bhandara"
     },
     {
      "id": "ind-adm2-bharatpur",
-     "name": "Bharatpur",
-     "shapeISO": null
+     "name": "Bharatpur"
     },
     {
      "id": "ind-adm2-bharuch",
-     "name": "Bharuch",
-     "shapeISO": null
+     "name": "Bharuch"
     },
     {
      "id": "ind-adm2-bhavnagar",
-     "name": "Bhavnagar",
-     "shapeISO": null
+     "name": "Bhavnagar"
     },
     {
      "id": "ind-adm2-bhilwara",
-     "name": "Bhilwara",
-     "shapeISO": null
+     "name": "Bhilwara"
     },
     {
      "id": "ind-adm2-bhind",
-     "name": "Bhind",
-     "shapeISO": null
+     "name": "Bhind"
     },
     {
      "id": "ind-adm2-bhiwani",
-     "name": "Bhiwani",
-     "shapeISO": null
+     "name": "Bhiwani"
     },
     {
      "id": "ind-adm2-bhojpur",
-     "name": "Bhojpur",
-     "shapeISO": null
+     "name": "Bhojpur"
     },
     {
      "id": "ind-adm2-bhopal",
-     "name": "Bhopal",
-     "shapeISO": null
+     "name": "Bhopal"
     },
     {
      "id": "ind-adm2-bid",
-     "name": "Bid",
-     "shapeISO": null
+     "name": "Bid"
     },
     {
      "id": "ind-adm2-bidar",
-     "name": "Bidar",
-     "shapeISO": null
+     "name": "Bidar"
     },
     {
      "id": "ind-adm2-bijapur",
-     "name": "Bijapur",
-     "shapeISO": null
+     "name": "Bijapur"
     },
     {
      "id": "ind-adm2-bijapur-2",
-     "name": "Bijapur",
-     "shapeISO": null
+     "name": "Bijapur"
     },
     {
      "id": "ind-adm2-bijnor",
-     "name": "Bijnor",
-     "shapeISO": null
+     "name": "Bijnor"
     },
     {
      "id": "ind-adm2-bikaner",
-     "name": "Bikaner",
-     "shapeISO": null
+     "name": "Bikaner"
     },
     {
      "id": "ind-adm2-bilaspur",
-     "name": "Bilaspur",
-     "shapeISO": null
+     "name": "Bilaspur"
     },
     {
      "id": "ind-adm2-bilaspur-2",
-     "name": "Bilaspur",
-     "shapeISO": null
+     "name": "Bilaspur"
     },
     {
      "id": "ind-adm2-birbhum",
-     "name": "Birbhum",
-     "shapeISO": null
+     "name": "Birbhum"
     },
     {
      "id": "ind-adm2-bishnupur",
-     "name": "Bishnupur",
-     "shapeISO": null
+     "name": "Bishnupur"
     },
     {
      "id": "ind-adm2-biswanath",
-     "name": "Biswanath",
-     "shapeISO": null
+     "name": "Biswanath"
     },
     {
      "id": "ind-adm2-bokaro",
-     "name": "Bokaro",
-     "shapeISO": null
+     "name": "Bokaro"
     },
     {
      "id": "ind-adm2-bongaigaon",
-     "name": "Bongaigaon",
-     "shapeISO": null
+     "name": "Bongaigaon"
     },
     {
      "id": "ind-adm2-budaun",
-     "name": "Budaun",
-     "shapeISO": null
+     "name": "Budaun"
     },
     {
      "id": "ind-adm2-bulandshahr",
-     "name": "Bulandshahr",
-     "shapeISO": null
+     "name": "Bulandshahr"
     },
     {
      "id": "ind-adm2-buldana",
-     "name": "Buldana",
-     "shapeISO": null
+     "name": "Buldana"
     },
     {
      "id": "ind-adm2-bundi",
-     "name": "Bundi",
-     "shapeISO": null
+     "name": "Bundi"
     },
     {
      "id": "ind-adm2-burhanpur",
-     "name": "Burhanpur",
-     "shapeISO": null
+     "name": "Burhanpur"
     },
     {
      "id": "ind-adm2-buxar",
-     "name": "Buxar",
-     "shapeISO": null
+     "name": "Buxar"
     },
     {
      "id": "ind-adm2-cachar",
-     "name": "Cachar",
-     "shapeISO": null
+     "name": "Cachar"
     },
     {
      "id": "ind-adm2-central",
-     "name": "Central",
-     "shapeISO": null
+     "name": "Central"
     },
     {
      "id": "ind-adm2-chamarajanagar",
-     "name": "Chamarajanagar",
-     "shapeISO": null
+     "name": "Chamarajanagar"
     },
     {
      "id": "ind-adm2-chamba",
-     "name": "Chamba",
-     "shapeISO": null
+     "name": "Chamba"
     },
     {
      "id": "ind-adm2-chamoli",
-     "name": "Chamoli",
-     "shapeISO": null
+     "name": "Chamoli"
     },
     {
      "id": "ind-adm2-champawat",
-     "name": "Champawat",
-     "shapeISO": null
+     "name": "Champawat"
     },
     {
      "id": "ind-adm2-champhai",
-     "name": "Champhai",
-     "shapeISO": null
+     "name": "Champhai"
     },
     {
      "id": "ind-adm2-chandauli",
-     "name": "Chandauli",
-     "shapeISO": null
+     "name": "Chandauli"
     },
     {
      "id": "ind-adm2-chandel",
-     "name": "Chandel",
-     "shapeISO": null
+     "name": "Chandel"
     },
     {
      "id": "ind-adm2-chandigarh",
-     "name": "Chandigarh",
-     "shapeISO": null
+     "name": "Chandigarh"
     },
     {
      "id": "ind-adm2-chandrapur",
-     "name": "Chandrapur",
-     "shapeISO": null
+     "name": "Chandrapur"
     },
     {
      "id": "ind-adm2-changlang",
-     "name": "Changlang",
-     "shapeISO": null
+     "name": "Changlang"
     },
     {
      "id": "ind-adm2-charaideo",
-     "name": "Charaideo",
-     "shapeISO": null
+     "name": "Charaideo"
     },
     {
      "id": "ind-adm2-chatra",
-     "name": "Chatra",
-     "shapeISO": null
+     "name": "Chatra"
     },
     {
      "id": "ind-adm2-chengalputtu",
-     "name": "Chengalputtu",
-     "shapeISO": null
+     "name": "Chengalputtu"
     },
     {
      "id": "ind-adm2-chennai",
-     "name": "Chennai",
-     "shapeISO": null
+     "name": "Chennai"
     },
     {
      "id": "ind-adm2-chhatarpur",
-     "name": "Chhatarpur",
-     "shapeISO": null
+     "name": "Chhatarpur"
     },
     {
      "id": "ind-adm2-chhindwara",
-     "name": "Chhindwara",
-     "shapeISO": null
+     "name": "Chhindwara"
     },
     {
      "id": "ind-adm2-chhota-udaipur",
-     "name": "Chhota Udaipur",
-     "shapeISO": null
+     "name": "Chhota Udaipur"
     },
     {
      "id": "ind-adm2-chikkaballapura",
-     "name": "Chikkaballapura",
-     "shapeISO": null
+     "name": "Chikkaballapura"
     },
     {
      "id": "ind-adm2-chikmagalur",
-     "name": "Chikmagalur",
-     "shapeISO": null
+     "name": "Chikmagalur"
     },
     {
      "id": "ind-adm2-chirang",
-     "name": "Chirang",
-     "shapeISO": null
+     "name": "Chirang"
     },
     {
      "id": "ind-adm2-chitradurga",
-     "name": "Chitradurga",
-     "shapeISO": null
+     "name": "Chitradurga"
     },
     {
      "id": "ind-adm2-chitrakoot",
-     "name": "Chitrakoot",
-     "shapeISO": null
+     "name": "Chitrakoot"
     },
     {
      "id": "ind-adm2-chittaurgarh",
-     "name": "Chittaurgarh",
-     "shapeISO": null
+     "name": "Chittaurgarh"
     },
     {
      "id": "ind-adm2-chittoor",
-     "name": "Chittoor",
-     "shapeISO": null
+     "name": "Chittoor"
     },
     {
      "id": "ind-adm2-churachandpur",
-     "name": "Churachandpur",
-     "shapeISO": null
+     "name": "Churachandpur"
     },
     {
      "id": "ind-adm2-churu",
-     "name": "Churu",
-     "shapeISO": null
+     "name": "Churu"
     },
     {
      "id": "ind-adm2-coimbatore",
-     "name": "Coimbatore",
-     "shapeISO": null
+     "name": "Coimbatore"
     },
     {
      "id": "ind-adm2-cuddalore",
-     "name": "Cuddalore",
-     "shapeISO": null
+     "name": "Cuddalore"
     },
     {
      "id": "ind-adm2-cuttack",
-     "name": "Cuttack",
-     "shapeISO": null
+     "name": "Cuttack"
     },
     {
      "id": "ind-adm2-dadra-nagar-haveli",
-     "name": "Dadra & Nagar Haveli",
-     "shapeISO": null
+     "name": "Dadra & Nagar Haveli"
     },
     {
      "id": "ind-adm2-dakshin-bastar-dantewada",
-     "name": "Dakshin Bastar Dantewada",
-     "shapeISO": null
+     "name": "Dakshin Bastar Dantewada"
     },
     {
      "id": "ind-adm2-dakshin-dinajpur",
-     "name": "Dakshin Dinajpur",
-     "shapeISO": null
+     "name": "Dakshin Dinajpur"
     },
     {
      "id": "ind-adm2-dakshina-kannada",
-     "name": "Dakshina Kannada",
-     "shapeISO": null
+     "name": "Dakshina Kannada"
     },
     {
      "id": "ind-adm2-daman",
-     "name": "Daman",
-     "shapeISO": null
+     "name": "Daman"
     },
     {
      "id": "ind-adm2-damoh",
-     "name": "Damoh",
-     "shapeISO": null
+     "name": "Damoh"
     },
     {
      "id": "ind-adm2-darbhanga",
-     "name": "Darbhanga",
-     "shapeISO": null
+     "name": "Darbhanga"
     },
     {
      "id": "ind-adm2-darjiling",
-     "name": "Darjiling",
-     "shapeISO": null
+     "name": "Darjiling"
     },
     {
      "id": "ind-adm2-darrang",
-     "name": "Darrang",
-     "shapeISO": null
+     "name": "Darrang"
     },
     {
      "id": "ind-adm2-data-not-available",
-     "name": "DATA NOT AVAILABLE",
-     "shapeISO": null
+     "name": "DATA NOT AVAILABLE"
     },
     {
      "id": "ind-adm2-datia",
-     "name": "Datia",
-     "shapeISO": null
+     "name": "Datia"
     },
     {
      "id": "ind-adm2-dausa",
-     "name": "Dausa",
-     "shapeISO": null
+     "name": "Dausa"
     },
     {
      "id": "ind-adm2-davanagere",
-     "name": "Davanagere",
-     "shapeISO": null
+     "name": "Davanagere"
     },
     {
      "id": "ind-adm2-debagarh",
-     "name": "Debagarh",
-     "shapeISO": null
+     "name": "Debagarh"
     },
     {
      "id": "ind-adm2-dehradun",
-     "name": "Dehradun",
-     "shapeISO": null
+     "name": "Dehradun"
     },
     {
      "id": "ind-adm2-deoghar",
-     "name": "Deoghar",
-     "shapeISO": null
+     "name": "Deoghar"
     },
     {
      "id": "ind-adm2-deoria",
-     "name": "Deoria",
-     "shapeISO": null
+     "name": "Deoria"
     },
     {
      "id": "ind-adm2-devbhumi-dwarka",
-     "name": "Devbhumi Dwarka",
-     "shapeISO": null
+     "name": "Devbhumi Dwarka"
     },
     {
      "id": "ind-adm2-dewas",
-     "name": "Dewas",
-     "shapeISO": null
+     "name": "Dewas"
     },
     {
      "id": "ind-adm2-dhalai",
-     "name": "Dhalai",
-     "shapeISO": null
+     "name": "Dhalai"
     },
     {
      "id": "ind-adm2-dhamtari",
-     "name": "Dhamtari",
-     "shapeISO": null
+     "name": "Dhamtari"
     },
     {
      "id": "ind-adm2-dhanbad",
-     "name": "Dhanbad",
-     "shapeISO": null
+     "name": "Dhanbad"
     },
     {
      "id": "ind-adm2-dhar",
-     "name": "Dhar",
-     "shapeISO": null
+     "name": "Dhar"
     },
     {
      "id": "ind-adm2-dharmapuri",
-     "name": "Dharmapuri",
-     "shapeISO": null
+     "name": "Dharmapuri"
     },
     {
      "id": "ind-adm2-dharwad",
-     "name": "Dharwad",
-     "shapeISO": null
+     "name": "Dharwad"
     },
     {
      "id": "ind-adm2-dhaulpur",
-     "name": "Dhaulpur",
-     "shapeISO": null
+     "name": "Dhaulpur"
     },
     {
      "id": "ind-adm2-dhemaji",
-     "name": "Dhemaji",
-     "shapeISO": null
+     "name": "Dhemaji"
     },
     {
      "id": "ind-adm2-dhenkanal",
-     "name": "Dhenkanal",
-     "shapeISO": null
+     "name": "Dhenkanal"
     },
     {
      "id": "ind-adm2-dhubri",
-     "name": "Dhubri",
-     "shapeISO": null
+     "name": "Dhubri"
     },
     {
      "id": "ind-adm2-dhule",
-     "name": "Dhule",
-     "shapeISO": null
+     "name": "Dhule"
     },
     {
      "id": "ind-adm2-dibang-valley",
-     "name": "Dibang Valley",
-     "shapeISO": null
+     "name": "Dibang Valley"
     },
     {
      "id": "ind-adm2-dibrugarh",
-     "name": "Dibrugarh",
-     "shapeISO": null
+     "name": "Dibrugarh"
     },
     {
      "id": "ind-adm2-dima-hasao",
-     "name": "Dima Hasao",
-     "shapeISO": null
+     "name": "Dima Hasao"
     },
     {
      "id": "ind-adm2-dimapur",
-     "name": "Dimapur",
-     "shapeISO": null
+     "name": "Dimapur"
     },
     {
      "id": "ind-adm2-dindigul",
-     "name": "Dindigul",
-     "shapeISO": null
+     "name": "Dindigul"
     },
     {
      "id": "ind-adm2-dindori",
-     "name": "Dindori",
-     "shapeISO": null
+     "name": "Dindori"
     },
     {
      "id": "ind-adm2-diu",
-     "name": "Diu",
-     "shapeISO": null
+     "name": "Diu"
     },
     {
      "id": "ind-adm2-doda",
-     "name": "Doda",
-     "shapeISO": null
+     "name": "Doda"
     },
     {
      "id": "ind-adm2-dohad",
-     "name": "Dohad",
-     "shapeISO": null
+     "name": "Dohad"
     },
     {
      "id": "ind-adm2-dumka",
-     "name": "Dumka",
-     "shapeISO": null
+     "name": "Dumka"
     },
     {
      "id": "ind-adm2-dungarpur",
-     "name": "Dungarpur",
-     "shapeISO": null
+     "name": "Dungarpur"
     },
     {
      "id": "ind-adm2-durg",
-     "name": "Durg",
-     "shapeISO": null
+     "name": "Durg"
     },
     {
      "id": "ind-adm2-east",
-     "name": "East",
-     "shapeISO": null
+     "name": "East"
     },
     {
      "id": "ind-adm2-east-district",
-     "name": "East District",
-     "shapeISO": null
+     "name": "East District"
     },
     {
      "id": "ind-adm2-east-garo-hills",
-     "name": "East Garo Hills",
-     "shapeISO": null
+     "name": "East Garo Hills"
     },
     {
      "id": "ind-adm2-east-godavari",
-     "name": "East Godavari",
-     "shapeISO": null
+     "name": "East Godavari"
     },
     {
      "id": "ind-adm2-east-jaintia-hills",
-     "name": "East Jaintia Hills",
-     "shapeISO": null
+     "name": "East Jaintia Hills"
     },
     {
      "id": "ind-adm2-east-kameng",
-     "name": "East Kameng",
-     "shapeISO": null
+     "name": "East Kameng"
     },
     {
      "id": "ind-adm2-east-khasi-hills",
-     "name": "East Khasi Hills",
-     "shapeISO": null
+     "name": "East Khasi Hills"
     },
     {
      "id": "ind-adm2-east-siang",
-     "name": "East Siang",
-     "shapeISO": null
+     "name": "East Siang"
     },
     {
      "id": "ind-adm2-ernakulam",
-     "name": "Ernakulam",
-     "shapeISO": null
+     "name": "Ernakulam"
     },
     {
      "id": "ind-adm2-erode",
-     "name": "Erode",
-     "shapeISO": null
+     "name": "Erode"
     },
     {
      "id": "ind-adm2-etah",
-     "name": "Etah",
-     "shapeISO": null
+     "name": "Etah"
     },
     {
      "id": "ind-adm2-etawah",
-     "name": "Etawah",
-     "shapeISO": null
+     "name": "Etawah"
     },
     {
      "id": "ind-adm2-faizabad",
-     "name": "Faizabad",
-     "shapeISO": null
+     "name": "Faizabad"
     },
     {
      "id": "ind-adm2-faridabad",
-     "name": "Faridabad",
-     "shapeISO": null
+     "name": "Faridabad"
     },
     {
      "id": "ind-adm2-faridkot",
-     "name": "Faridkot",
-     "shapeISO": null
+     "name": "Faridkot"
     },
     {
      "id": "ind-adm2-farrukhabad",
-     "name": "Farrukhabad",
-     "shapeISO": null
+     "name": "Farrukhabad"
     },
     {
      "id": "ind-adm2-fatehabad",
-     "name": "Fatehabad",
-     "shapeISO": null
+     "name": "Fatehabad"
     },
     {
      "id": "ind-adm2-fatehgarh-sahib",
-     "name": "Fatehgarh Sahib",
-     "shapeISO": null
+     "name": "Fatehgarh Sahib"
     },
     {
      "id": "ind-adm2-fatehpur",
-     "name": "Fatehpur",
-     "shapeISO": null
+     "name": "Fatehpur"
     },
     {
      "id": "ind-adm2-fazilka",
-     "name": "Fazilka",
-     "shapeISO": null
+     "name": "Fazilka"
     },
     {
      "id": "ind-adm2-firozabad",
-     "name": "Firozabad",
-     "shapeISO": null
+     "name": "Firozabad"
     },
     {
      "id": "ind-adm2-firozpur",
-     "name": "Firozpur",
-     "shapeISO": null
+     "name": "Firozpur"
     },
     {
      "id": "ind-adm2-gadag",
-     "name": "Gadag",
-     "shapeISO": null
+     "name": "Gadag"
     },
     {
      "id": "ind-adm2-gadchiroli",
-     "name": "Gadchiroli",
-     "shapeISO": null
+     "name": "Gadchiroli"
     },
     {
      "id": "ind-adm2-gajapati",
-     "name": "Gajapati",
-     "shapeISO": null
+     "name": "Gajapati"
     },
     {
      "id": "ind-adm2-ganderbal",
-     "name": "Ganderbal",
-     "shapeISO": null
+     "name": "Ganderbal"
     },
     {
      "id": "ind-adm2-gandhinagar",
-     "name": "Gandhinagar",
-     "shapeISO": null
+     "name": "Gandhinagar"
     },
     {
      "id": "ind-adm2-ganganagar",
-     "name": "Ganganagar",
-     "shapeISO": null
+     "name": "Ganganagar"
     },
     {
      "id": "ind-adm2-ganjam",
-     "name": "Ganjam",
-     "shapeISO": null
+     "name": "Ganjam"
     },
     {
      "id": "ind-adm2-garhwa",
-     "name": "Garhwa",
-     "shapeISO": null
+     "name": "Garhwa"
     },
     {
      "id": "ind-adm2-garhwal",
-     "name": "Garhwal",
-     "shapeISO": null
+     "name": "Garhwal"
     },
     {
      "id": "ind-adm2-gariaband",
-     "name": "Gariaband",
-     "shapeISO": null
+     "name": "Gariaband"
     },
     {
      "id": "ind-adm2-gaurella-pendra-marwahi",
-     "name": "Gaurella Pendra Marwahi",
-     "shapeISO": null
+     "name": "Gaurella Pendra Marwahi"
     },
     {
      "id": "ind-adm2-gautam-buddha-nagar",
-     "name": "Gautam Buddha Nagar",
-     "shapeISO": null
+     "name": "Gautam Buddha Nagar"
     },
     {
      "id": "ind-adm2-gaya",
-     "name": "Gaya",
-     "shapeISO": null
+     "name": "Gaya"
     },
     {
      "id": "ind-adm2-ghaziabad",
-     "name": "Ghaziabad",
-     "shapeISO": null
+     "name": "Ghaziabad"
     },
     {
      "id": "ind-adm2-ghazipur",
-     "name": "Ghazipur",
-     "shapeISO": null
+     "name": "Ghazipur"
     },
     {
      "id": "ind-adm2-gir-somnath",
-     "name": "Gir Somnath",
-     "shapeISO": null
+     "name": "Gir Somnath"
     },
     {
      "id": "ind-adm2-giridih",
-     "name": "Giridih",
-     "shapeISO": null
+     "name": "Giridih"
     },
     {
      "id": "ind-adm2-goalpara",
-     "name": "Goalpara",
-     "shapeISO": null
+     "name": "Goalpara"
     },
     {
      "id": "ind-adm2-godda",
-     "name": "Godda",
-     "shapeISO": null
+     "name": "Godda"
     },
     {
      "id": "ind-adm2-golaghat",
-     "name": "Golaghat",
-     "shapeISO": null
+     "name": "Golaghat"
     },
     {
      "id": "ind-adm2-gomati",
-     "name": "Gomati",
-     "shapeISO": null
+     "name": "Gomati"
     },
     {
      "id": "ind-adm2-gonda",
-     "name": "Gonda",
-     "shapeISO": null
+     "name": "Gonda"
     },
     {
      "id": "ind-adm2-gondiya",
-     "name": "Gondiya",
-     "shapeISO": null
+     "name": "Gondiya"
     },
     {
      "id": "ind-adm2-gopalganj",
-     "name": "Gopalganj",
-     "shapeISO": null
+     "name": "Gopalganj"
     },
     {
      "id": "ind-adm2-gorakhpur",
-     "name": "Gorakhpur",
-     "shapeISO": null
+     "name": "Gorakhpur"
     },
     {
      "id": "ind-adm2-gulbarga",
-     "name": "Gulbarga",
-     "shapeISO": null
+     "name": "Gulbarga"
     },
     {
      "id": "ind-adm2-gumla",
-     "name": "Gumla",
-     "shapeISO": null
+     "name": "Gumla"
     },
     {
      "id": "ind-adm2-guna",
-     "name": "Guna",
-     "shapeISO": null
+     "name": "Guna"
     },
     {
      "id": "ind-adm2-guntur",
-     "name": "Guntur",
-     "shapeISO": null
+     "name": "Guntur"
     },
     {
      "id": "ind-adm2-gurdaspur",
-     "name": "Gurdaspur",
-     "shapeISO": null
+     "name": "Gurdaspur"
     },
     {
      "id": "ind-adm2-gurgaon",
-     "name": "Gurgaon",
-     "shapeISO": null
+     "name": "Gurgaon"
     },
     {
      "id": "ind-adm2-gwalior",
-     "name": "Gwalior",
-     "shapeISO": null
+     "name": "Gwalior"
     },
     {
      "id": "ind-adm2-hailakandi",
-     "name": "Hailakandi",
-     "shapeISO": null
+     "name": "Hailakandi"
     },
     {
      "id": "ind-adm2-hamirpur",
-     "name": "Hamirpur",
-     "shapeISO": null
+     "name": "Hamirpur"
     },
     {
      "id": "ind-adm2-hamirpur-2",
-     "name": "Hamirpur",
-     "shapeISO": null
+     "name": "Hamirpur"
     },
     {
      "id": "ind-adm2-hanumangarh",
-     "name": "Hanumangarh",
-     "shapeISO": null
+     "name": "Hanumangarh"
     },
     {
      "id": "ind-adm2-haora",
-     "name": "Haora",
-     "shapeISO": null
+     "name": "Haora"
     },
     {
      "id": "ind-adm2-hapur",
-     "name": "Hapur",
-     "shapeISO": null
+     "name": "Hapur"
     },
     {
      "id": "ind-adm2-harda",
-     "name": "Harda",
-     "shapeISO": null
+     "name": "Harda"
     },
     {
      "id": "ind-adm2-hardoi",
-     "name": "Hardoi",
-     "shapeISO": null
+     "name": "Hardoi"
     },
     {
      "id": "ind-adm2-hardwar",
-     "name": "Hardwar",
-     "shapeISO": null
+     "name": "Hardwar"
     },
     {
      "id": "ind-adm2-hassan",
-     "name": "Hassan",
-     "shapeISO": null
+     "name": "Hassan"
     },
     {
      "id": "ind-adm2-haveri",
-     "name": "Haveri",
-     "shapeISO": null
+     "name": "Haveri"
     },
     {
      "id": "ind-adm2-hazaribagh",
-     "name": "Hazaribagh",
-     "shapeISO": null
+     "name": "Hazaribagh"
     },
     {
      "id": "ind-adm2-hingoli",
-     "name": "Hingoli",
-     "shapeISO": null
+     "name": "Hingoli"
     },
     {
      "id": "ind-adm2-hisar",
-     "name": "Hisar",
-     "shapeISO": null
+     "name": "Hisar"
     },
     {
      "id": "ind-adm2-hnahthial",
-     "name": "Hnahthial",
-     "shapeISO": null
+     "name": "Hnahthial"
     },
     {
      "id": "ind-adm2-hojai",
-     "name": "Hojai",
-     "shapeISO": null
+     "name": "Hojai"
     },
     {
      "id": "ind-adm2-hoshangabad",
-     "name": "Hoshangabad",
-     "shapeISO": null
+     "name": "Hoshangabad"
     },
     {
      "id": "ind-adm2-hoshiarpur",
-     "name": "Hoshiarpur",
-     "shapeISO": null
+     "name": "Hoshiarpur"
     },
     {
      "id": "ind-adm2-hugli",
-     "name": "Hugli",
-     "shapeISO": null
+     "name": "Hugli"
     },
     {
      "id": "ind-adm2-hydrabad",
-     "name": "Hydrabad",
-     "shapeISO": null
+     "name": "Hydrabad"
     },
     {
      "id": "ind-adm2-idukki",
-     "name": "Idukki",
-     "shapeISO": null
+     "name": "Idukki"
     },
     {
      "id": "ind-adm2-imphal-east",
-     "name": "Imphal East",
-     "shapeISO": null
+     "name": "Imphal East"
     },
     {
      "id": "ind-adm2-imphal-west",
-     "name": "Imphal West",
-     "shapeISO": null
+     "name": "Imphal West"
     },
     {
      "id": "ind-adm2-indore",
-     "name": "Indore",
-     "shapeISO": null
+     "name": "Indore"
     },
     {
      "id": "ind-adm2-jabalpur",
-     "name": "Jabalpur",
-     "shapeISO": null
+     "name": "Jabalpur"
     },
     {
      "id": "ind-adm2-jagatsinghapur",
-     "name": "Jagatsinghapur",
-     "shapeISO": null
+     "name": "Jagatsinghapur"
     },
     {
      "id": "ind-adm2-jagtial",
-     "name": "Jagtial",
-     "shapeISO": null
+     "name": "Jagtial"
     },
     {
      "id": "ind-adm2-jaipur",
-     "name": "Jaipur",
-     "shapeISO": null
+     "name": "Jaipur"
     },
     {
      "id": "ind-adm2-jaisalmer",
-     "name": "Jaisalmer",
-     "shapeISO": null
+     "name": "Jaisalmer"
     },
     {
      "id": "ind-adm2-jajapur",
-     "name": "Jajapur",
-     "shapeISO": null
+     "name": "Jajapur"
     },
     {
      "id": "ind-adm2-jalandhar",
-     "name": "Jalandhar",
-     "shapeISO": null
+     "name": "Jalandhar"
     },
     {
      "id": "ind-adm2-jalaun",
-     "name": "Jalaun",
-     "shapeISO": null
+     "name": "Jalaun"
     },
     {
      "id": "ind-adm2-jalgaon",
-     "name": "Jalgaon",
-     "shapeISO": null
+     "name": "Jalgaon"
     },
     {
      "id": "ind-adm2-jalna",
-     "name": "Jalna",
-     "shapeISO": null
+     "name": "Jalna"
     },
     {
      "id": "ind-adm2-jalor",
-     "name": "Jalor",
-     "shapeISO": null
+     "name": "Jalor"
     },
     {
      "id": "ind-adm2-jalpaiguri",
-     "name": "Jalpaiguri",
-     "shapeISO": null
+     "name": "Jalpaiguri"
     },
     {
      "id": "ind-adm2-jammu",
-     "name": "Jammu",
-     "shapeISO": null
+     "name": "Jammu"
     },
     {
      "id": "ind-adm2-jamnagar",
-     "name": "Jamnagar",
-     "shapeISO": null
+     "name": "Jamnagar"
     },
     {
      "id": "ind-adm2-jamtara",
-     "name": "Jamtara",
-     "shapeISO": null
+     "name": "Jamtara"
     },
     {
      "id": "ind-adm2-jamui",
-     "name": "Jamui",
-     "shapeISO": null
+     "name": "Jamui"
     },
     {
      "id": "ind-adm2-jangaon",
-     "name": "Jangaon",
-     "shapeISO": null
+     "name": "Jangaon"
     },
     {
      "id": "ind-adm2-janjgir-champa",
-     "name": "Janjgir-Champa",
-     "shapeISO": null
+     "name": "Janjgir-Champa"
     },
     {
      "id": "ind-adm2-jashpur",
-     "name": "Jashpur",
-     "shapeISO": null
+     "name": "Jashpur"
     },
     {
      "id": "ind-adm2-jaunpur",
-     "name": "Jaunpur",
-     "shapeISO": null
+     "name": "Jaunpur"
     },
     {
      "id": "ind-adm2-jayashankar",
-     "name": "Jayashankar",
-     "shapeISO": null
+     "name": "Jayashankar"
     },
     {
      "id": "ind-adm2-jehanabad",
-     "name": "Jehanabad",
-     "shapeISO": null
+     "name": "Jehanabad"
     },
     {
      "id": "ind-adm2-jhabua",
-     "name": "Jhabua",
-     "shapeISO": null
+     "name": "Jhabua"
     },
     {
      "id": "ind-adm2-jhajjar",
-     "name": "Jhajjar",
-     "shapeISO": null
+     "name": "Jhajjar"
     },
     {
      "id": "ind-adm2-jhalawar",
-     "name": "Jhalawar",
-     "shapeISO": null
+     "name": "Jhalawar"
     },
     {
      "id": "ind-adm2-jhansi",
-     "name": "Jhansi",
-     "shapeISO": null
+     "name": "Jhansi"
     },
     {
      "id": "ind-adm2-jhargram",
-     "name": "Jhargram",
-     "shapeISO": null
+     "name": "Jhargram"
     },
     {
      "id": "ind-adm2-jharsuguda",
-     "name": "Jharsuguda",
-     "shapeISO": null
+     "name": "Jharsuguda"
     },
     {
      "id": "ind-adm2-jhunjhunun",
-     "name": "Jhunjhunun",
-     "shapeISO": null
+     "name": "Jhunjhunun"
     },
     {
      "id": "ind-adm2-jind",
-     "name": "Jind",
-     "shapeISO": null
+     "name": "Jind"
     },
     {
      "id": "ind-adm2-jiribam",
-     "name": "Jiribam",
-     "shapeISO": null
+     "name": "Jiribam"
     },
     {
      "id": "ind-adm2-jodhpur",
-     "name": "Jodhpur",
-     "shapeISO": null
+     "name": "Jodhpur"
     },
     {
      "id": "ind-adm2-jogulamba",
-     "name": "Jogulamba",
-     "shapeISO": null
+     "name": "Jogulamba"
     },
     {
      "id": "ind-adm2-jorhat",
-     "name": "Jorhat",
-     "shapeISO": null
+     "name": "Jorhat"
     },
     {
      "id": "ind-adm2-junagadh",
-     "name": "Junagadh",
-     "shapeISO": null
+     "name": "Junagadh"
     },
     {
      "id": "ind-adm2-jyotiba-phule-nagar",
-     "name": "Jyotiba Phule Nagar",
-     "shapeISO": null
+     "name": "Jyotiba Phule Nagar"
     },
     {
      "id": "ind-adm2-kabeerdham",
-     "name": "Kabeerdham",
-     "shapeISO": null
+     "name": "Kabeerdham"
     },
     {
      "id": "ind-adm2-kachchh",
-     "name": "Kachchh",
-     "shapeISO": null
+     "name": "Kachchh"
     },
     {
      "id": "ind-adm2-kadapa-ysr",
-     "name": "Kadapa(YSR)",
-     "shapeISO": null
+     "name": "Kadapa(YSR)"
     },
     {
      "id": "ind-adm2-kaimur-bhabua",
-     "name": "Kaimur (Bhabua)",
-     "shapeISO": null
+     "name": "Kaimur (Bhabua)"
     },
     {
      "id": "ind-adm2-kaithal",
-     "name": "Kaithal",
-     "shapeISO": null
+     "name": "Kaithal"
     },
     {
      "id": "ind-adm2-kakching",
-     "name": "Kakching",
-     "shapeISO": null
+     "name": "Kakching"
     },
     {
      "id": "ind-adm2-kalahandi",
-     "name": "Kalahandi",
-     "shapeISO": null
+     "name": "Kalahandi"
     },
     {
      "id": "ind-adm2-kalimpong",
-     "name": "Kalimpong",
-     "shapeISO": null
+     "name": "Kalimpong"
     },
     {
      "id": "ind-adm2-kallakurichi",
-     "name": "Kallakurichi",
-     "shapeISO": null
+     "name": "Kallakurichi"
     },
     {
      "id": "ind-adm2-kamareddy",
-     "name": "Kamareddy",
-     "shapeISO": null
+     "name": "Kamareddy"
     },
     {
      "id": "ind-adm2-kamjong",
-     "name": "Kamjong",
-     "shapeISO": null
+     "name": "Kamjong"
     },
     {
      "id": "ind-adm2-kamle",
-     "name": "Kamle",
-     "shapeISO": null
+     "name": "Kamle"
     },
     {
      "id": "ind-adm2-kamrup",
-     "name": "Kamrup",
-     "shapeISO": null
+     "name": "Kamrup"
     },
     {
      "id": "ind-adm2-kamrup-metropolitan",
-     "name": "Kamrup Metropolitan",
-     "shapeISO": null
+     "name": "Kamrup Metropolitan"
     },
     {
      "id": "ind-adm2-kancheepuram",
-     "name": "Kancheepuram",
-     "shapeISO": null
+     "name": "Kancheepuram"
     },
     {
      "id": "ind-adm2-kandhamal",
-     "name": "Kandhamal",
-     "shapeISO": null
+     "name": "Kandhamal"
     },
     {
      "id": "ind-adm2-kangpokpi",
-     "name": "Kangpokpi",
-     "shapeISO": null
+     "name": "Kangpokpi"
     },
     {
      "id": "ind-adm2-kangra",
-     "name": "Kangra",
-     "shapeISO": null
+     "name": "Kangra"
     },
     {
      "id": "ind-adm2-kannauj",
-     "name": "Kannauj",
-     "shapeISO": null
+     "name": "Kannauj"
     },
     {
      "id": "ind-adm2-kanniyakumari",
-     "name": "Kanniyakumari",
-     "shapeISO": null
+     "name": "Kanniyakumari"
     },
     {
      "id": "ind-adm2-kannur",
-     "name": "Kannur",
-     "shapeISO": null
+     "name": "Kannur"
     },
     {
      "id": "ind-adm2-kanpur-dehat",
-     "name": "Kanpur Dehat",
-     "shapeISO": null
+     "name": "Kanpur Dehat"
     },
     {
      "id": "ind-adm2-kanpur-nagar",
-     "name": "Kanpur Nagar",
-     "shapeISO": null
+     "name": "Kanpur Nagar"
     },
     {
      "id": "ind-adm2-kanshiram-nagar",
-     "name": "Kanshiram Nagar",
-     "shapeISO": null
+     "name": "Kanshiram Nagar"
     },
     {
      "id": "ind-adm2-kapurthala",
-     "name": "Kapurthala",
-     "shapeISO": null
+     "name": "Kapurthala"
     },
     {
      "id": "ind-adm2-karaikal",
-     "name": "Karaikal",
-     "shapeISO": null
+     "name": "Karaikal"
     },
     {
      "id": "ind-adm2-karauli",
-     "name": "Karauli",
-     "shapeISO": null
+     "name": "Karauli"
     },
     {
      "id": "ind-adm2-karbi-anglong-east",
-     "name": "Karbi Anglong East",
-     "shapeISO": null
+     "name": "Karbi Anglong East"
     },
     {
      "id": "ind-adm2-karbi-anglong-west",
-     "name": "Karbi Anglong West",
-     "shapeISO": null
+     "name": "Karbi Anglong West"
     },
     {
      "id": "ind-adm2-kargil",
-     "name": "Kargil",
-     "shapeISO": null
+     "name": "Kargil"
     },
     {
      "id": "ind-adm2-karimganj",
-     "name": "Karimganj",
-     "shapeISO": null
+     "name": "Karimganj"
     },
     {
      "id": "ind-adm2-karimnagar",
-     "name": "Karimnagar",
-     "shapeISO": null
+     "name": "Karimnagar"
     },
     {
      "id": "ind-adm2-karnal",
-     "name": "Karnal",
-     "shapeISO": null
+     "name": "Karnal"
     },
     {
      "id": "ind-adm2-karur",
-     "name": "Karur",
-     "shapeISO": null
+     "name": "Karur"
     },
     {
      "id": "ind-adm2-kasaragod",
-     "name": "Kasaragod",
-     "shapeISO": null
+     "name": "Kasaragod"
     },
     {
      "id": "ind-adm2-kathua",
-     "name": "Kathua",
-     "shapeISO": null
+     "name": "Kathua"
     },
     {
      "id": "ind-adm2-katihar",
-     "name": "Katihar",
-     "shapeISO": null
+     "name": "Katihar"
     },
     {
      "id": "ind-adm2-katni",
-     "name": "Katni",
-     "shapeISO": null
+     "name": "Katni"
     },
     {
      "id": "ind-adm2-kaushambi",
-     "name": "Kaushambi",
-     "shapeISO": null
+     "name": "Kaushambi"
     },
     {
      "id": "ind-adm2-kendrapara",
-     "name": "Kendrapara",
-     "shapeISO": null
+     "name": "Kendrapara"
     },
     {
      "id": "ind-adm2-kendujhar",
-     "name": "Kendujhar",
-     "shapeISO": null
+     "name": "Kendujhar"
     },
     {
      "id": "ind-adm2-khagaria",
-     "name": "Khagaria",
-     "shapeISO": null
+     "name": "Khagaria"
     },
     {
      "id": "ind-adm2-khammam",
-     "name": "Khammam",
-     "shapeISO": null
+     "name": "Khammam"
     },
     {
      "id": "ind-adm2-khandwa-east-nimar",
-     "name": "Khandwa (East Nimar)",
-     "shapeISO": null
+     "name": "Khandwa (East Nimar)"
     },
     {
      "id": "ind-adm2-khargone-west-nimar",
-     "name": "Khargone (West Nimar)",
-     "shapeISO": null
+     "name": "Khargone (West Nimar)"
     },
     {
      "id": "ind-adm2-khawzawl",
-     "name": "Khawzawl",
-     "shapeISO": null
+     "name": "Khawzawl"
     },
     {
      "id": "ind-adm2-kheda",
-     "name": "Kheda",
-     "shapeISO": null
+     "name": "Kheda"
     },
     {
      "id": "ind-adm2-kheri",
-     "name": "Kheri",
-     "shapeISO": null
+     "name": "Kheri"
     },
     {
      "id": "ind-adm2-khordha",
-     "name": "Khordha",
-     "shapeISO": null
+     "name": "Khordha"
     },
     {
      "id": "ind-adm2-khowai",
-     "name": "Khowai",
-     "shapeISO": null
+     "name": "Khowai"
     },
     {
      "id": "ind-adm2-khunti",
-     "name": "Khunti",
-     "shapeISO": null
+     "name": "Khunti"
     },
     {
      "id": "ind-adm2-kinnaur",
-     "name": "Kinnaur",
-     "shapeISO": null
+     "name": "Kinnaur"
     },
     {
      "id": "ind-adm2-kiphire",
-     "name": "Kiphire",
-     "shapeISO": null
+     "name": "Kiphire"
     },
     {
      "id": "ind-adm2-kishanganj",
-     "name": "Kishanganj",
-     "shapeISO": null
+     "name": "Kishanganj"
     },
     {
      "id": "ind-adm2-kishtwar",
-     "name": "Kishtwar",
-     "shapeISO": null
+     "name": "Kishtwar"
     },
     {
      "id": "ind-adm2-koch-bihar",
-     "name": "Koch Bihar",
-     "shapeISO": null
+     "name": "Koch Bihar"
     },
     {
      "id": "ind-adm2-kodagu",
-     "name": "Kodagu",
-     "shapeISO": null
+     "name": "Kodagu"
     },
     {
      "id": "ind-adm2-kodarma",
-     "name": "Kodarma",
-     "shapeISO": null
+     "name": "Kodarma"
     },
     {
      "id": "ind-adm2-kohima",
-     "name": "Kohima",
-     "shapeISO": null
+     "name": "Kohima"
     },
     {
      "id": "ind-adm2-kokrajhar",
-     "name": "Kokrajhar",
-     "shapeISO": null
+     "name": "Kokrajhar"
     },
     {
      "id": "ind-adm2-kolar",
-     "name": "Kolar",
-     "shapeISO": null
+     "name": "Kolar"
     },
     {
      "id": "ind-adm2-kolasib",
-     "name": "Kolasib",
-     "shapeISO": null
+     "name": "Kolasib"
     },
     {
      "id": "ind-adm2-kolhapur",
-     "name": "Kolhapur",
-     "shapeISO": null
+     "name": "Kolhapur"
     },
     {
      "id": "ind-adm2-kolkata",
-     "name": "Kolkata",
-     "shapeISO": null
+     "name": "Kolkata"
     },
     {
      "id": "ind-adm2-kollam",
-     "name": "Kollam",
-     "shapeISO": null
+     "name": "Kollam"
     },
     {
      "id": "ind-adm2-komaram-bheem",
-     "name": "Komaram Bheem",
-     "shapeISO": null
+     "name": "Komaram Bheem"
     },
     {
      "id": "ind-adm2-kondagaon",
-     "name": "Kondagaon",
-     "shapeISO": null
+     "name": "Kondagaon"
     },
     {
      "id": "ind-adm2-koppal",
-     "name": "Koppal",
-     "shapeISO": null
+     "name": "Koppal"
     },
     {
      "id": "ind-adm2-koraput",
-     "name": "Koraput",
-     "shapeISO": null
+     "name": "Koraput"
     },
     {
      "id": "ind-adm2-korba",
-     "name": "Korba",
-     "shapeISO": null
+     "name": "Korba"
     },
     {
      "id": "ind-adm2-koriya",
-     "name": "Koriya",
-     "shapeISO": null
+     "name": "Koriya"
     },
     {
      "id": "ind-adm2-kota",
-     "name": "Kota",
-     "shapeISO": null
+     "name": "Kota"
     },
     {
      "id": "ind-adm2-kottayam",
-     "name": "Kottayam",
-     "shapeISO": null
+     "name": "Kottayam"
     },
     {
      "id": "ind-adm2-kozhikode",
-     "name": "Kozhikode",
-     "shapeISO": null
+     "name": "Kozhikode"
     },
     {
      "id": "ind-adm2-kra-daadi",
-     "name": "Kra Daadi",
-     "shapeISO": null
+     "name": "Kra Daadi"
     },
     {
      "id": "ind-adm2-krishna",
-     "name": "Krishna",
-     "shapeISO": null
+     "name": "Krishna"
     },
     {
      "id": "ind-adm2-krishnagiri",
-     "name": "Krishnagiri",
-     "shapeISO": null
+     "name": "Krishnagiri"
     },
     {
      "id": "ind-adm2-kulgam",
-     "name": "Kulgam",
-     "shapeISO": null
+     "name": "Kulgam"
     },
     {
      "id": "ind-adm2-kullu",
-     "name": "Kullu",
-     "shapeISO": null
+     "name": "Kullu"
     },
     {
      "id": "ind-adm2-kupwara",
-     "name": "Kupwara",
-     "shapeISO": null
+     "name": "Kupwara"
     },
     {
      "id": "ind-adm2-kurnool",
-     "name": "Kurnool",
-     "shapeISO": null
+     "name": "Kurnool"
     },
     {
      "id": "ind-adm2-kurukshetra",
-     "name": "Kurukshetra",
-     "shapeISO": null
+     "name": "Kurukshetra"
     },
     {
      "id": "ind-adm2-kurung-kumey",
-     "name": "Kurung Kumey",
-     "shapeISO": null
+     "name": "Kurung Kumey"
     },
     {
      "id": "ind-adm2-kushinagar",
-     "name": "Kushinagar",
-     "shapeISO": null
+     "name": "Kushinagar"
     },
     {
      "id": "ind-adm2-lahul-spiti",
-     "name": "Lahul & Spiti",
-     "shapeISO": null
+     "name": "Lahul & Spiti"
     },
     {
      "id": "ind-adm2-lakhimpur",
-     "name": "Lakhimpur",
-     "shapeISO": null
+     "name": "Lakhimpur"
     },
     {
      "id": "ind-adm2-lakhisarai",
-     "name": "Lakhisarai",
-     "shapeISO": null
+     "name": "Lakhisarai"
     },
     {
      "id": "ind-adm2-lakshadweep",
-     "name": "Lakshadweep",
-     "shapeISO": null
+     "name": "Lakshadweep"
     },
     {
      "id": "ind-adm2-lalitpur",
-     "name": "Lalitpur",
-     "shapeISO": null
+     "name": "Lalitpur"
     },
     {
      "id": "ind-adm2-latehar",
-     "name": "Latehar",
-     "shapeISO": null
+     "name": "Latehar"
     },
     {
      "id": "ind-adm2-latur",
-     "name": "Latur",
-     "shapeISO": null
+     "name": "Latur"
     },
     {
      "id": "ind-adm2-lawngtlai",
-     "name": "Lawngtlai",
-     "shapeISO": null
+     "name": "Lawngtlai"
     },
     {
      "id": "ind-adm2-leh-ladakh",
-     "name": "Leh(Ladakh)",
-     "shapeISO": null
+     "name": "Leh(Ladakh)"
     },
     {
      "id": "ind-adm2-leparada",
-     "name": "Leparada",
-     "shapeISO": null
+     "name": "Leparada"
     },
     {
      "id": "ind-adm2-lohardaga",
-     "name": "Lohardaga",
-     "shapeISO": null
+     "name": "Lohardaga"
     },
     {
      "id": "ind-adm2-lohit",
-     "name": "Lohit",
-     "shapeISO": null
+     "name": "Lohit"
     },
     {
      "id": "ind-adm2-longding",
-     "name": "Longding",
-     "shapeISO": null
+     "name": "Longding"
     },
     {
      "id": "ind-adm2-longleng",
-     "name": "Longleng",
-     "shapeISO": null
+     "name": "Longleng"
     },
     {
      "id": "ind-adm2-lower-dibang-valley",
-     "name": "Lower Dibang Valley",
-     "shapeISO": null
+     "name": "Lower Dibang Valley"
     },
     {
      "id": "ind-adm2-lower-siang",
-     "name": "Lower Siang",
-     "shapeISO": null
+     "name": "Lower Siang"
     },
     {
      "id": "ind-adm2-lower-subansiri",
-     "name": "Lower Subansiri",
-     "shapeISO": null
+     "name": "Lower Subansiri"
     },
     {
      "id": "ind-adm2-lucknow",
-     "name": "Lucknow",
-     "shapeISO": null
+     "name": "Lucknow"
     },
     {
      "id": "ind-adm2-ludhiana",
-     "name": "Ludhiana",
-     "shapeISO": null
+     "name": "Ludhiana"
     },
     {
      "id": "ind-adm2-lunglei",
-     "name": "Lunglei",
-     "shapeISO": null
+     "name": "Lunglei"
     },
     {
      "id": "ind-adm2-madhepura",
-     "name": "Madhepura",
-     "shapeISO": null
+     "name": "Madhepura"
     },
     {
      "id": "ind-adm2-madhubani",
-     "name": "Madhubani",
-     "shapeISO": null
+     "name": "Madhubani"
     },
     {
      "id": "ind-adm2-madurai",
-     "name": "Madurai",
-     "shapeISO": null
+     "name": "Madurai"
     },
     {
      "id": "ind-adm2-mahabubabad",
-     "name": "Mahabubabad",
-     "shapeISO": null
+     "name": "Mahabubabad"
     },
     {
      "id": "ind-adm2-mahabubnagar",
-     "name": "Mahabubnagar",
-     "shapeISO": null
+     "name": "Mahabubnagar"
     },
     {
      "id": "ind-adm2-mahamaya-nagar",
-     "name": "Mahamaya Nagar",
-     "shapeISO": null
+     "name": "Mahamaya Nagar"
     },
     {
      "id": "ind-adm2-mahasamund",
-     "name": "Mahasamund",
-     "shapeISO": null
+     "name": "Mahasamund"
     },
     {
      "id": "ind-adm2-mahe",
-     "name": "Mahe",
-     "shapeISO": null
+     "name": "Mahe"
     },
     {
      "id": "ind-adm2-mahendragarh",
-     "name": "Mahendragarh",
-     "shapeISO": null
+     "name": "Mahendragarh"
     },
     {
      "id": "ind-adm2-mahesana",
-     "name": "Mahesana",
-     "shapeISO": null
+     "name": "Mahesana"
     },
     {
      "id": "ind-adm2-mahisagar",
-     "name": "Mahisagar",
-     "shapeISO": null
+     "name": "Mahisagar"
     },
     {
      "id": "ind-adm2-mahoba",
-     "name": "Mahoba",
-     "shapeISO": null
+     "name": "Mahoba"
     },
     {
      "id": "ind-adm2-mahrajganj",
-     "name": "Mahrajganj",
-     "shapeISO": null
+     "name": "Mahrajganj"
     },
     {
      "id": "ind-adm2-mainpuri",
-     "name": "Mainpuri",
-     "shapeISO": null
+     "name": "Mainpuri"
     },
     {
      "id": "ind-adm2-majuli",
-     "name": "Majuli",
-     "shapeISO": null
+     "name": "Majuli"
     },
     {
      "id": "ind-adm2-malappuram",
-     "name": "Malappuram",
-     "shapeISO": null
+     "name": "Malappuram"
     },
     {
      "id": "ind-adm2-maldah",
-     "name": "Maldah",
-     "shapeISO": null
+     "name": "Maldah"
     },
     {
      "id": "ind-adm2-malkangiri",
-     "name": "Malkangiri",
-     "shapeISO": null
+     "name": "Malkangiri"
     },
     {
      "id": "ind-adm2-mamit",
-     "name": "Mamit",
-     "shapeISO": null
+     "name": "Mamit"
     },
     {
      "id": "ind-adm2-mancherial",
-     "name": "Mancherial",
-     "shapeISO": null
+     "name": "Mancherial"
     },
     {
      "id": "ind-adm2-mandi",
-     "name": "Mandi",
-     "shapeISO": null
+     "name": "Mandi"
     },
     {
      "id": "ind-adm2-mandla",
-     "name": "Mandla",
-     "shapeISO": null
+     "name": "Mandla"
     },
     {
      "id": "ind-adm2-mandsaur",
-     "name": "Mandsaur",
-     "shapeISO": null
+     "name": "Mandsaur"
     },
     {
      "id": "ind-adm2-mandya",
-     "name": "Mandya",
-     "shapeISO": null
+     "name": "Mandya"
     },
     {
      "id": "ind-adm2-mansa",
-     "name": "Mansa",
-     "shapeISO": null
+     "name": "Mansa"
     },
     {
      "id": "ind-adm2-mathura",
-     "name": "Mathura",
-     "shapeISO": null
+     "name": "Mathura"
     },
     {
      "id": "ind-adm2-mau",
-     "name": "Mau",
-     "shapeISO": null
+     "name": "Mau"
     },
     {
      "id": "ind-adm2-mayiladuthurai",
-     "name": "Mayiladuthurai",
-     "shapeISO": null
+     "name": "Mayiladuthurai"
     },
     {
      "id": "ind-adm2-mayurbhanj",
-     "name": "Mayurbhanj",
-     "shapeISO": null
+     "name": "Mayurbhanj"
     },
     {
      "id": "ind-adm2-medak",
-     "name": "Medak",
-     "shapeISO": null
+     "name": "Medak"
     },
     {
      "id": "ind-adm2-medchal",
-     "name": "Medchal",
-     "shapeISO": null
+     "name": "Medchal"
     },
     {
      "id": "ind-adm2-meerut",
-     "name": "Meerut",
-     "shapeISO": null
+     "name": "Meerut"
     },
     {
      "id": "ind-adm2-mewat",
-     "name": "Mewat",
-     "shapeISO": null
+     "name": "Mewat"
     },
     {
      "id": "ind-adm2-mirzapur",
-     "name": "Mirzapur",
-     "shapeISO": null
+     "name": "Mirzapur"
     },
     {
      "id": "ind-adm2-moga",
-     "name": "Moga",
-     "shapeISO": null
+     "name": "Moga"
     },
     {
      "id": "ind-adm2-mokokchung",
-     "name": "Mokokchung",
-     "shapeISO": null
+     "name": "Mokokchung"
     },
     {
      "id": "ind-adm2-mon",
-     "name": "Mon",
-     "shapeISO": null
+     "name": "Mon"
     },
     {
      "id": "ind-adm2-moradabad",
-     "name": "Moradabad",
-     "shapeISO": null
+     "name": "Moradabad"
     },
     {
      "id": "ind-adm2-morbi",
-     "name": "Morbi",
-     "shapeISO": null
+     "name": "Morbi"
     },
     {
      "id": "ind-adm2-morena",
-     "name": "Morena",
-     "shapeISO": null
+     "name": "Morena"
     },
     {
      "id": "ind-adm2-morigaon",
-     "name": "Morigaon",
-     "shapeISO": null
+     "name": "Morigaon"
     },
     {
      "id": "ind-adm2-muktsar",
-     "name": "Muktsar",
-     "shapeISO": null
+     "name": "Muktsar"
     },
     {
      "id": "ind-adm2-mulugu",
-     "name": "Mulugu",
-     "shapeISO": null
+     "name": "Mulugu"
     },
     {
      "id": "ind-adm2-mumbai",
-     "name": "Mumbai",
-     "shapeISO": null
+     "name": "Mumbai"
     },
     {
      "id": "ind-adm2-mumbai-suburban",
-     "name": "Mumbai Suburban",
-     "shapeISO": null
+     "name": "Mumbai Suburban"
     },
     {
      "id": "ind-adm2-mungeli",
-     "name": "Mungeli",
-     "shapeISO": null
+     "name": "Mungeli"
     },
     {
      "id": "ind-adm2-munger",
-     "name": "Munger",
-     "shapeISO": null
+     "name": "Munger"
     },
     {
      "id": "ind-adm2-murshidabad",
-     "name": "Murshidabad",
-     "shapeISO": null
+     "name": "Murshidabad"
     },
     {
      "id": "ind-adm2-muzaffarnagar",
-     "name": "Muzaffarnagar",
-     "shapeISO": null
+     "name": "Muzaffarnagar"
     },
     {
      "id": "ind-adm2-muzaffarpur",
-     "name": "Muzaffarpur",
-     "shapeISO": null
+     "name": "Muzaffarpur"
     },
     {
      "id": "ind-adm2-mysore",
-     "name": "Mysore",
-     "shapeISO": null
+     "name": "Mysore"
     },
     {
      "id": "ind-adm2-nabarangapur",
-     "name": "Nabarangapur",
-     "shapeISO": null
+     "name": "Nabarangapur"
     },
     {
      "id": "ind-adm2-nadia",
-     "name": "Nadia",
-     "shapeISO": null
+     "name": "Nadia"
     },
     {
      "id": "ind-adm2-nagaon",
-     "name": "Nagaon",
-     "shapeISO": null
+     "name": "Nagaon"
     },
     {
      "id": "ind-adm2-nagapattinam",
-     "name": "Nagapattinam",
-     "shapeISO": null
+     "name": "Nagapattinam"
     },
     {
      "id": "ind-adm2-nagarkurnool",
-     "name": "Nagarkurnool",
-     "shapeISO": null
+     "name": "Nagarkurnool"
     },
     {
      "id": "ind-adm2-nagaur",
-     "name": "Nagaur",
-     "shapeISO": null
+     "name": "Nagaur"
     },
     {
      "id": "ind-adm2-nagpur",
-     "name": "Nagpur",
-     "shapeISO": null
+     "name": "Nagpur"
     },
     {
      "id": "ind-adm2-nainital",
-     "name": "Nainital",
-     "shapeISO": null
+     "name": "Nainital"
     },
     {
      "id": "ind-adm2-nalanda",
-     "name": "Nalanda",
-     "shapeISO": null
+     "name": "Nalanda"
     },
     {
      "id": "ind-adm2-nalbari",
-     "name": "Nalbari",
-     "shapeISO": null
+     "name": "Nalbari"
     },
     {
      "id": "ind-adm2-nalgonda",
-     "name": "Nalgonda",
-     "shapeISO": null
+     "name": "Nalgonda"
     },
     {
      "id": "ind-adm2-namakkal",
-     "name": "Namakkal",
-     "shapeISO": null
+     "name": "Namakkal"
     },
     {
      "id": "ind-adm2-namsai",
-     "name": "Namsai",
-     "shapeISO": null
+     "name": "Namsai"
     },
     {
      "id": "ind-adm2-nanded",
-     "name": "Nanded",
-     "shapeISO": null
+     "name": "Nanded"
     },
     {
      "id": "ind-adm2-nandurbar",
-     "name": "Nandurbar",
-     "shapeISO": null
+     "name": "Nandurbar"
     },
     {
      "id": "ind-adm2-narayanpet",
-     "name": "Narayanpet",
-     "shapeISO": null
+     "name": "Narayanpet"
     },
     {
      "id": "ind-adm2-narayanpur",
-     "name": "Narayanpur",
-     "shapeISO": null
+     "name": "Narayanpur"
     },
     {
      "id": "ind-adm2-narmada",
-     "name": "Narmada",
-     "shapeISO": null
+     "name": "Narmada"
     },
     {
      "id": "ind-adm2-narsimhapur",
-     "name": "Narsimhapur",
-     "shapeISO": null
+     "name": "Narsimhapur"
     },
     {
      "id": "ind-adm2-nashik",
-     "name": "Nashik",
-     "shapeISO": null
+     "name": "Nashik"
     },
     {
      "id": "ind-adm2-navsari",
-     "name": "Navsari",
-     "shapeISO": null
+     "name": "Navsari"
     },
     {
      "id": "ind-adm2-nawada",
-     "name": "Nawada",
-     "shapeISO": null
+     "name": "Nawada"
     },
     {
      "id": "ind-adm2-nayagarh",
-     "name": "Nayagarh",
-     "shapeISO": null
+     "name": "Nayagarh"
     },
     {
      "id": "ind-adm2-neemuch",
-     "name": "Neemuch",
-     "shapeISO": null
+     "name": "Neemuch"
     },
     {
      "id": "ind-adm2-new-delhi",
-     "name": "New Delhi",
-     "shapeISO": null
+     "name": "New Delhi"
     },
     {
      "id": "ind-adm2-nicobars",
-     "name": "Nicobars",
-     "shapeISO": null
+     "name": "Nicobars"
     },
     {
      "id": "ind-adm2-nirmal",
-     "name": "Nirmal",
-     "shapeISO": null
+     "name": "Nirmal"
     },
     {
      "id": "ind-adm2-niwari",
-     "name": "Niwari",
-     "shapeISO": null
+     "name": "Niwari"
     },
     {
      "id": "ind-adm2-nizamabad",
-     "name": "Nizamabad",
-     "shapeISO": null
+     "name": "Nizamabad"
     },
     {
      "id": "ind-adm2-noney",
-     "name": "Noney",
-     "shapeISO": null
+     "name": "Noney"
     },
     {
      "id": "ind-adm2-north",
-     "name": "North",
-     "shapeISO": null
+     "name": "North"
     },
     {
      "id": "ind-adm2-north-middle-andaman",
-     "name": "North  & Middle Andaman",
-     "shapeISO": null
+     "name": "North  & Middle Andaman"
     },
     {
      "id": "ind-adm2-north-district",
-     "name": "North District",
-     "shapeISO": null
+     "name": "North District"
     },
     {
      "id": "ind-adm2-north-east",
-     "name": "North East",
-     "shapeISO": null
+     "name": "North East"
     },
     {
      "id": "ind-adm2-north-garo-hills",
-     "name": "North Garo Hills",
-     "shapeISO": null
+     "name": "North Garo Hills"
     },
     {
      "id": "ind-adm2-north-goa",
-     "name": "North Goa",
-     "shapeISO": null
+     "name": "North Goa"
     },
     {
      "id": "ind-adm2-north-tripura",
-     "name": "North Tripura",
-     "shapeISO": null
+     "name": "North Tripura"
     },
     {
      "id": "ind-adm2-north-twenty-four-parganas",
-     "name": "North Twenty Four Parganas",
-     "shapeISO": null
+     "name": "North Twenty Four Parganas"
     },
     {
      "id": "ind-adm2-north-west",
-     "name": "North West",
-     "shapeISO": null
+     "name": "North West"
     },
     {
      "id": "ind-adm2-nuapada",
-     "name": "Nuapada",
-     "shapeISO": null
+     "name": "Nuapada"
     },
     {
      "id": "ind-adm2-osmanabad",
-     "name": "Osmanabad",
-     "shapeISO": null
+     "name": "Osmanabad"
     },
     {
      "id": "ind-adm2-pakke-kessang",
-     "name": "Pakke Kessang",
-     "shapeISO": null
+     "name": "Pakke Kessang"
     },
     {
      "id": "ind-adm2-pakur",
-     "name": "Pakur",
-     "shapeISO": null
+     "name": "Pakur"
     },
     {
      "id": "ind-adm2-palakkad",
-     "name": "Palakkad",
-     "shapeISO": null
+     "name": "Palakkad"
     },
     {
      "id": "ind-adm2-palamu",
-     "name": "Palamu",
-     "shapeISO": null
+     "name": "Palamu"
     },
     {
      "id": "ind-adm2-palghar",
-     "name": "Palghar",
-     "shapeISO": null
+     "name": "Palghar"
     },
     {
      "id": "ind-adm2-pali",
-     "name": "Pali",
-     "shapeISO": null
+     "name": "Pali"
     },
     {
      "id": "ind-adm2-palwal",
-     "name": "Palwal",
-     "shapeISO": null
+     "name": "Palwal"
     },
     {
      "id": "ind-adm2-panch-mahals",
-     "name": "Panch Mahals",
-     "shapeISO": null
+     "name": "Panch Mahals"
     },
     {
      "id": "ind-adm2-panchkula",
-     "name": "Panchkula",
-     "shapeISO": null
+     "name": "Panchkula"
     },
     {
      "id": "ind-adm2-panipat",
-     "name": "Panipat",
-     "shapeISO": null
+     "name": "Panipat"
     },
     {
      "id": "ind-adm2-panna",
-     "name": "Panna",
-     "shapeISO": null
+     "name": "Panna"
     },
     {
      "id": "ind-adm2-papum-pare",
-     "name": "Papum Pare",
-     "shapeISO": null
+     "name": "Papum Pare"
     },
     {
      "id": "ind-adm2-parbhani",
-     "name": "Parbhani",
-     "shapeISO": null
+     "name": "Parbhani"
     },
     {
      "id": "ind-adm2-paschim-barddhaman",
-     "name": "Paschim Barddhaman",
-     "shapeISO": null
+     "name": "Paschim Barddhaman"
     },
     {
      "id": "ind-adm2-paschim-medinipur",
-     "name": "Paschim Medinipur",
-     "shapeISO": null
+     "name": "Paschim Medinipur"
     },
     {
      "id": "ind-adm2-pashchim-champaran",
-     "name": "Pashchim Champaran",
-     "shapeISO": null
+     "name": "Pashchim Champaran"
     },
     {
      "id": "ind-adm2-pashchimi-singhbhum",
-     "name": "Pashchimi Singhbhum",
-     "shapeISO": null
+     "name": "Pashchimi Singhbhum"
     },
     {
      "id": "ind-adm2-patan",
-     "name": "Patan",
-     "shapeISO": null
+     "name": "Patan"
     },
     {
      "id": "ind-adm2-pathanamthitta",
-     "name": "Pathanamthitta",
-     "shapeISO": null
+     "name": "Pathanamthitta"
     },
     {
      "id": "ind-adm2-pathankot",
-     "name": "Pathankot",
-     "shapeISO": null
+     "name": "Pathankot"
     },
     {
      "id": "ind-adm2-patiala",
-     "name": "Patiala",
-     "shapeISO": null
+     "name": "Patiala"
     },
     {
      "id": "ind-adm2-patna",
-     "name": "Patna",
-     "shapeISO": null
+     "name": "Patna"
     },
     {
      "id": "ind-adm2-peddapalli",
-     "name": "Peddapalli",
-     "shapeISO": null
+     "name": "Peddapalli"
     },
     {
      "id": "ind-adm2-perambalur",
-     "name": "Perambalur",
-     "shapeISO": null
+     "name": "Perambalur"
     },
     {
      "id": "ind-adm2-peren",
-     "name": "Peren",
-     "shapeISO": null
+     "name": "Peren"
     },
     {
      "id": "ind-adm2-phek",
-     "name": "Phek",
-     "shapeISO": null
+     "name": "Phek"
     },
     {
      "id": "ind-adm2-pherzawl",
-     "name": "Pherzawl",
-     "shapeISO": null
+     "name": "Pherzawl"
     },
     {
      "id": "ind-adm2-pilibhit",
-     "name": "Pilibhit",
-     "shapeISO": null
+     "name": "Pilibhit"
     },
     {
      "id": "ind-adm2-pithoragarh",
-     "name": "Pithoragarh",
-     "shapeISO": null
+     "name": "Pithoragarh"
     },
     {
      "id": "ind-adm2-porbandar",
-     "name": "Porbandar",
-     "shapeISO": null
+     "name": "Porbandar"
     },
     {
      "id": "ind-adm2-prakasam",
-     "name": "Prakasam",
-     "shapeISO": null
+     "name": "Prakasam"
     },
     {
      "id": "ind-adm2-pratapgarh",
-     "name": "Pratapgarh",
-     "shapeISO": null
+     "name": "Pratapgarh"
     },
     {
      "id": "ind-adm2-pratapgarh-2",
-     "name": "Pratapgarh",
-     "shapeISO": null
+     "name": "Pratapgarh"
     },
     {
      "id": "ind-adm2-puducherry",
-     "name": "Puducherry",
-     "shapeISO": null
+     "name": "Puducherry"
     },
     {
      "id": "ind-adm2-pudukkottai",
-     "name": "Pudukkottai",
-     "shapeISO": null
+     "name": "Pudukkottai"
     },
     {
      "id": "ind-adm2-pulwama",
-     "name": "Pulwama",
-     "shapeISO": null
+     "name": "Pulwama"
     },
     {
      "id": "ind-adm2-punch",
-     "name": "Punch",
-     "shapeISO": null
+     "name": "Punch"
     },
     {
      "id": "ind-adm2-pune",
-     "name": "Pune",
-     "shapeISO": null
+     "name": "Pune"
     },
     {
      "id": "ind-adm2-purba-champaran",
-     "name": "Purba Champaran",
-     "shapeISO": null
+     "name": "Purba Champaran"
     },
     {
      "id": "ind-adm2-purba-medinipur",
-     "name": "Purba Medinipur",
-     "shapeISO": null
+     "name": "Purba Medinipur"
     },
     {
      "id": "ind-adm2-purbi-singhbhum",
-     "name": "Purbi Singhbhum",
-     "shapeISO": null
+     "name": "Purbi Singhbhum"
     },
     {
      "id": "ind-adm2-puri",
-     "name": "Puri",
-     "shapeISO": null
+     "name": "Puri"
     },
     {
      "id": "ind-adm2-purnia",
-     "name": "Purnia",
-     "shapeISO": null
+     "name": "Purnia"
     },
     {
      "id": "ind-adm2-puruliya",
-     "name": "Puruliya",
-     "shapeISO": null
+     "name": "Puruliya"
     },
     {
      "id": "ind-adm2-rae-bareli",
-     "name": "Rae Bareli",
-     "shapeISO": null
+     "name": "Rae Bareli"
     },
     {
      "id": "ind-adm2-raichur",
-     "name": "Raichur",
-     "shapeISO": null
+     "name": "Raichur"
     },
     {
      "id": "ind-adm2-raigarh",
-     "name": "Raigarh",
-     "shapeISO": null
+     "name": "Raigarh"
     },
     {
      "id": "ind-adm2-raigarh-2",
-     "name": "Raigarh",
-     "shapeISO": null
+     "name": "Raigarh"
     },
     {
      "id": "ind-adm2-raipur",
-     "name": "Raipur",
-     "shapeISO": null
+     "name": "Raipur"
     },
     {
      "id": "ind-adm2-raisen",
-     "name": "Raisen",
-     "shapeISO": null
+     "name": "Raisen"
     },
     {
      "id": "ind-adm2-rajanna-sircilla",
-     "name": "Rajanna Sircilla",
-     "shapeISO": null
+     "name": "Rajanna Sircilla"
     },
     {
      "id": "ind-adm2-rajgarh",
-     "name": "Rajgarh",
-     "shapeISO": null
+     "name": "Rajgarh"
     },
     {
      "id": "ind-adm2-rajkot",
-     "name": "Rajkot",
-     "shapeISO": null
+     "name": "Rajkot"
     },
     {
      "id": "ind-adm2-rajnandgaon",
-     "name": "Rajnandgaon",
-     "shapeISO": null
+     "name": "Rajnandgaon"
     },
     {
      "id": "ind-adm2-rajouri",
-     "name": "Rajouri",
-     "shapeISO": null
+     "name": "Rajouri"
     },
     {
      "id": "ind-adm2-rajsamand",
-     "name": "Rajsamand",
-     "shapeISO": null
+     "name": "Rajsamand"
     },
     {
      "id": "ind-adm2-ramanagara",
-     "name": "Ramanagara",
-     "shapeISO": null
+     "name": "Ramanagara"
     },
     {
      "id": "ind-adm2-ramanathapuram",
-     "name": "Ramanathapuram",
-     "shapeISO": null
+     "name": "Ramanathapuram"
     },
     {
      "id": "ind-adm2-ramban",
-     "name": "Ramban",
-     "shapeISO": null
+     "name": "Ramban"
     },
     {
      "id": "ind-adm2-ramgarh",
-     "name": "Ramgarh",
-     "shapeISO": null
+     "name": "Ramgarh"
     },
     {
      "id": "ind-adm2-rampur",
-     "name": "Rampur",
-     "shapeISO": null
+     "name": "Rampur"
     },
     {
      "id": "ind-adm2-ranchi",
-     "name": "Ranchi",
-     "shapeISO": null
+     "name": "Ranchi"
     },
     {
      "id": "ind-adm2-rangareddy",
-     "name": "Rangareddy",
-     "shapeISO": null
+     "name": "Rangareddy"
     },
     {
      "id": "ind-adm2-ranipet",
-     "name": "Ranipet",
-     "shapeISO": null
+     "name": "Ranipet"
     },
     {
      "id": "ind-adm2-ratlam",
-     "name": "Ratlam",
-     "shapeISO": null
+     "name": "Ratlam"
     },
     {
      "id": "ind-adm2-ratnagiri",
-     "name": "Ratnagiri",
-     "shapeISO": null
+     "name": "Ratnagiri"
     },
     {
      "id": "ind-adm2-rayagada",
-     "name": "Rayagada",
-     "shapeISO": null
+     "name": "Rayagada"
     },
     {
      "id": "ind-adm2-reasi",
-     "name": "Reasi",
-     "shapeISO": null
+     "name": "Reasi"
     },
     {
      "id": "ind-adm2-rewa",
-     "name": "Rewa",
-     "shapeISO": null
+     "name": "Rewa"
     },
     {
      "id": "ind-adm2-rewari",
-     "name": "Rewari",
-     "shapeISO": null
+     "name": "Rewari"
     },
     {
      "id": "ind-adm2-ribhoi",
-     "name": "Ribhoi",
-     "shapeISO": null
+     "name": "Ribhoi"
     },
     {
      "id": "ind-adm2-rohtak",
-     "name": "Rohtak",
-     "shapeISO": null
+     "name": "Rohtak"
     },
     {
      "id": "ind-adm2-rohtas",
-     "name": "Rohtas",
-     "shapeISO": null
+     "name": "Rohtas"
     },
     {
      "id": "ind-adm2-rudraprayag",
-     "name": "Rudraprayag",
-     "shapeISO": null
+     "name": "Rudraprayag"
     },
     {
      "id": "ind-adm2-rupnagar",
-     "name": "Rupnagar",
-     "shapeISO": null
+     "name": "Rupnagar"
     },
     {
      "id": "ind-adm2-sabar-kantha",
-     "name": "Sabar Kantha",
-     "shapeISO": null
+     "name": "Sabar Kantha"
     },
     {
      "id": "ind-adm2-sagar",
-     "name": "Sagar",
-     "shapeISO": null
+     "name": "Sagar"
     },
     {
      "id": "ind-adm2-saharanpur",
-     "name": "Saharanpur",
-     "shapeISO": null
+     "name": "Saharanpur"
     },
     {
      "id": "ind-adm2-saharsa",
-     "name": "Saharsa",
-     "shapeISO": null
+     "name": "Saharsa"
     },
     {
      "id": "ind-adm2-sahibganj",
-     "name": "Sahibganj",
-     "shapeISO": null
+     "name": "Sahibganj"
     },
     {
      "id": "ind-adm2-sahibzada-ajit-singh-nagar",
-     "name": "Sahibzada Ajit Singh Nagar",
-     "shapeISO": null
+     "name": "Sahibzada Ajit Singh Nagar"
     },
     {
      "id": "ind-adm2-saiha",
-     "name": "Saiha",
-     "shapeISO": null
+     "name": "Saiha"
     },
     {
      "id": "ind-adm2-saitual",
-     "name": "Saitual",
-     "shapeISO": null
+     "name": "Saitual"
     },
     {
      "id": "ind-adm2-salem",
-     "name": "Salem",
-     "shapeISO": null
+     "name": "Salem"
     },
     {
      "id": "ind-adm2-samastipur",
-     "name": "Samastipur",
-     "shapeISO": null
+     "name": "Samastipur"
     },
     {
      "id": "ind-adm2-samba",
-     "name": "Samba",
-     "shapeISO": null
+     "name": "Samba"
     },
     {
      "id": "ind-adm2-sambalpur",
-     "name": "Sambalpur",
-     "shapeISO": null
+     "name": "Sambalpur"
     },
     {
      "id": "ind-adm2-sambhal",
-     "name": "Sambhal",
-     "shapeISO": null
+     "name": "Sambhal"
     },
     {
      "id": "ind-adm2-samli",
-     "name": "Samli",
-     "shapeISO": null
+     "name": "Samli"
     },
     {
      "id": "ind-adm2-sangareddy",
-     "name": "Sangareddy",
-     "shapeISO": null
+     "name": "Sangareddy"
     },
     {
      "id": "ind-adm2-sangli",
-     "name": "Sangli",
-     "shapeISO": null
+     "name": "Sangli"
     },
     {
      "id": "ind-adm2-sangrur",
-     "name": "Sangrur",
-     "shapeISO": null
+     "name": "Sangrur"
     },
     {
      "id": "ind-adm2-sant-kabir-nagar",
-     "name": "Sant Kabir Nagar",
-     "shapeISO": null
+     "name": "Sant Kabir Nagar"
     },
     {
      "id": "ind-adm2-sant-ravidas-nagar-bhadohi",
-     "name": "Sant Ravidas Nagar (Bhadohi)",
-     "shapeISO": null
+     "name": "Sant Ravidas Nagar (Bhadohi)"
     },
     {
      "id": "ind-adm2-saraikela-kharsawan",
-     "name": "Saraikela-Kharsawan",
-     "shapeISO": null
+     "name": "Saraikela-Kharsawan"
     },
     {
      "id": "ind-adm2-saran",
-     "name": "Saran",
-     "shapeISO": null
+     "name": "Saran"
     },
     {
      "id": "ind-adm2-satara",
-     "name": "Satara",
-     "shapeISO": null
+     "name": "Satara"
     },
     {
      "id": "ind-adm2-satna",
-     "name": "Satna",
-     "shapeISO": null
+     "name": "Satna"
     },
     {
      "id": "ind-adm2-sawai-madhopur",
-     "name": "Sawai Madhopur",
-     "shapeISO": null
+     "name": "Sawai Madhopur"
     },
     {
      "id": "ind-adm2-sehore",
-     "name": "Sehore",
-     "shapeISO": null
+     "name": "Sehore"
     },
     {
      "id": "ind-adm2-senapati",
-     "name": "Senapati",
-     "shapeISO": null
+     "name": "Senapati"
     },
     {
      "id": "ind-adm2-seoni",
-     "name": "Seoni",
-     "shapeISO": null
+     "name": "Seoni"
     },
     {
      "id": "ind-adm2-serchhip",
-     "name": "Serchhip",
-     "shapeISO": null
+     "name": "Serchhip"
     },
     {
      "id": "ind-adm2-shahdara",
-     "name": "Shahdara",
-     "shapeISO": null
+     "name": "Shahdara"
     },
     {
      "id": "ind-adm2-shahdol",
-     "name": "Shahdol",
-     "shapeISO": null
+     "name": "Shahdol"
     },
     {
      "id": "ind-adm2-shahid-bhagat-singh-nagar",
-     "name": "Shahid Bhagat Singh Nagar",
-     "shapeISO": null
+     "name": "Shahid Bhagat Singh Nagar"
     },
     {
      "id": "ind-adm2-shahjahanpur",
-     "name": "Shahjahanpur",
-     "shapeISO": null
+     "name": "Shahjahanpur"
     },
     {
      "id": "ind-adm2-shajapur",
-     "name": "Shajapur",
-     "shapeISO": null
+     "name": "Shajapur"
     },
     {
      "id": "ind-adm2-sheikhpura",
-     "name": "Sheikhpura",
-     "shapeISO": null
+     "name": "Sheikhpura"
     },
     {
      "id": "ind-adm2-sheohar",
-     "name": "Sheohar",
-     "shapeISO": null
+     "name": "Sheohar"
     },
     {
      "id": "ind-adm2-sheopur",
-     "name": "Sheopur",
-     "shapeISO": null
+     "name": "Sheopur"
     },
     {
      "id": "ind-adm2-shi-yomi",
-     "name": "Shi Yomi",
-     "shapeISO": null
+     "name": "Shi Yomi"
     },
     {
      "id": "ind-adm2-shimla",
-     "name": "Shimla",
-     "shapeISO": null
+     "name": "Shimla"
     },
     {
      "id": "ind-adm2-shimoga",
-     "name": "Shimoga",
-     "shapeISO": null
+     "name": "Shimoga"
     },
     {
      "id": "ind-adm2-shivpuri",
-     "name": "Shivpuri",
-     "shapeISO": null
+     "name": "Shivpuri"
     },
     {
      "id": "ind-adm2-shrawasti",
-     "name": "Shrawasti",
-     "shapeISO": null
+     "name": "Shrawasti"
     },
     {
      "id": "ind-adm2-shupiyan",
-     "name": "Shupiyan",
-     "shapeISO": null
+     "name": "Shupiyan"
     },
     {
      "id": "ind-adm2-siang",
-     "name": "Siang",
-     "shapeISO": null
+     "name": "Siang"
     },
     {
      "id": "ind-adm2-siddharthnagar",
-     "name": "Siddharthnagar",
-     "shapeISO": null
+     "name": "Siddharthnagar"
     },
     {
      "id": "ind-adm2-siddipet",
-     "name": "Siddipet",
-     "shapeISO": null
+     "name": "Siddipet"
     },
     {
      "id": "ind-adm2-sidhi",
-     "name": "Sidhi",
-     "shapeISO": null
+     "name": "Sidhi"
     },
     {
      "id": "ind-adm2-sikar",
-     "name": "Sikar",
-     "shapeISO": null
+     "name": "Sikar"
     },
     {
      "id": "ind-adm2-simdega",
-     "name": "Simdega",
-     "shapeISO": null
+     "name": "Simdega"
     },
     {
      "id": "ind-adm2-sindhudurg",
-     "name": "Sindhudurg",
-     "shapeISO": null
+     "name": "Sindhudurg"
     },
     {
      "id": "ind-adm2-singrauli",
-     "name": "Singrauli",
-     "shapeISO": null
+     "name": "Singrauli"
     },
     {
      "id": "ind-adm2-sipahijula",
-     "name": "Sipahijula",
-     "shapeISO": null
+     "name": "Sipahijula"
     },
     {
      "id": "ind-adm2-sirmaur",
-     "name": "Sirmaur",
-     "shapeISO": null
+     "name": "Sirmaur"
     },
     {
      "id": "ind-adm2-sirohi",
-     "name": "Sirohi",
-     "shapeISO": null
+     "name": "Sirohi"
     },
     {
      "id": "ind-adm2-sirsa",
-     "name": "Sirsa",
-     "shapeISO": null
+     "name": "Sirsa"
     },
     {
      "id": "ind-adm2-sitamarhi",
-     "name": "Sitamarhi",
-     "shapeISO": null
+     "name": "Sitamarhi"
     },
     {
      "id": "ind-adm2-sitapur",
-     "name": "Sitapur",
-     "shapeISO": null
+     "name": "Sitapur"
     },
     {
      "id": "ind-adm2-sivaganga",
-     "name": "Sivaganga",
-     "shapeISO": null
+     "name": "Sivaganga"
     },
     {
      "id": "ind-adm2-sivasagar",
-     "name": "Sivasagar",
-     "shapeISO": null
+     "name": "Sivasagar"
     },
     {
      "id": "ind-adm2-siwan",
-     "name": "Siwan",
-     "shapeISO": null
+     "name": "Siwan"
     },
     {
      "id": "ind-adm2-solan",
-     "name": "Solan",
-     "shapeISO": null
+     "name": "Solan"
     },
     {
      "id": "ind-adm2-solapur",
-     "name": "Solapur",
-     "shapeISO": null
+     "name": "Solapur"
     },
     {
      "id": "ind-adm2-sonbhadra",
-     "name": "Sonbhadra",
-     "shapeISO": null
+     "name": "Sonbhadra"
     },
     {
      "id": "ind-adm2-sonipat",
-     "name": "Sonipat",
-     "shapeISO": null
+     "name": "Sonipat"
     },
     {
      "id": "ind-adm2-sonitpur",
-     "name": "Sonitpur",
-     "shapeISO": null
+     "name": "Sonitpur"
     },
     {
      "id": "ind-adm2-south",
-     "name": "South",
-     "shapeISO": null
+     "name": "South"
     },
     {
      "id": "ind-adm2-south-andaman",
-     "name": "South Andaman",
-     "shapeISO": null
+     "name": "South Andaman"
     },
     {
      "id": "ind-adm2-south-district",
-     "name": "South District",
-     "shapeISO": null
+     "name": "South District"
     },
     {
      "id": "ind-adm2-south-east",
-     "name": "South East",
-     "shapeISO": null
+     "name": "South East"
     },
     {
      "id": "ind-adm2-south-garo-hills",
-     "name": "South Garo Hills",
-     "shapeISO": null
+     "name": "South Garo Hills"
     },
     {
      "id": "ind-adm2-south-goa",
-     "name": "South Goa",
-     "shapeISO": null
+     "name": "South Goa"
     },
     {
      "id": "ind-adm2-south-salmara-mankachar",
-     "name": "South Salmara-Mankachar",
-     "shapeISO": null
+     "name": "South Salmara-Mankachar"
     },
     {
      "id": "ind-adm2-south-tripura",
-     "name": "South Tripura",
-     "shapeISO": null
+     "name": "South Tripura"
     },
     {
      "id": "ind-adm2-south-twenty-four-parganas",
-     "name": "South Twenty Four Parganas",
-     "shapeISO": null
+     "name": "South Twenty Four Parganas"
     },
     {
      "id": "ind-adm2-south-west",
-     "name": "South West",
-     "shapeISO": null
+     "name": "South West"
     },
     {
      "id": "ind-adm2-south-west-garo-hills",
-     "name": "South West Garo Hills",
-     "shapeISO": null
+     "name": "South West Garo Hills"
     },
     {
      "id": "ind-adm2-south-west-khasi-hills",
-     "name": "South West Khasi Hills",
-     "shapeISO": null
+     "name": "South West Khasi Hills"
     },
     {
      "id": "ind-adm2-sri-potti-sriramulu-nellore",
-     "name": "Sri Potti Sriramulu Nellore",
-     "shapeISO": null
+     "name": "Sri Potti Sriramulu Nellore"
     },
     {
      "id": "ind-adm2-srikakulam",
-     "name": "Srikakulam",
-     "shapeISO": null
+     "name": "Srikakulam"
     },
     {
      "id": "ind-adm2-srinagar",
-     "name": "Srinagar",
-     "shapeISO": null
+     "name": "Srinagar"
     },
     {
      "id": "ind-adm2-subarnapur",
-     "name": "Subarnapur",
-     "shapeISO": null
+     "name": "Subarnapur"
     },
     {
      "id": "ind-adm2-sukma",
-     "name": "Sukma",
-     "shapeISO": null
+     "name": "Sukma"
     },
     {
      "id": "ind-adm2-sultanpur",
-     "name": "Sultanpur",
-     "shapeISO": null
+     "name": "Sultanpur"
     },
     {
      "id": "ind-adm2-sundargarh",
-     "name": "Sundargarh",
-     "shapeISO": null
+     "name": "Sundargarh"
     },
     {
      "id": "ind-adm2-supaul",
-     "name": "Supaul",
-     "shapeISO": null
+     "name": "Supaul"
     },
     {
      "id": "ind-adm2-surajpur",
-     "name": "Surajpur",
-     "shapeISO": null
+     "name": "Surajpur"
     },
     {
      "id": "ind-adm2-surat",
-     "name": "Surat",
-     "shapeISO": null
+     "name": "Surat"
     },
     {
      "id": "ind-adm2-surendranagar",
-     "name": "Surendranagar",
-     "shapeISO": null
+     "name": "Surendranagar"
     },
     {
      "id": "ind-adm2-surguja",
-     "name": "Surguja",
-     "shapeISO": null
+     "name": "Surguja"
     },
     {
      "id": "ind-adm2-suryapet",
-     "name": "Suryapet",
-     "shapeISO": null
+     "name": "Suryapet"
     },
     {
      "id": "ind-adm2-tamenglong",
-     "name": "Tamenglong",
-     "shapeISO": null
+     "name": "Tamenglong"
     },
     {
      "id": "ind-adm2-tapi",
-     "name": "Tapi",
-     "shapeISO": null
+     "name": "Tapi"
     },
     {
      "id": "ind-adm2-tarn-taran",
-     "name": "Tarn Taran",
-     "shapeISO": null
+     "name": "Tarn Taran"
     },
     {
      "id": "ind-adm2-tawang",
-     "name": "Tawang",
-     "shapeISO": null
+     "name": "Tawang"
     },
     {
      "id": "ind-adm2-tehri-garhwal",
-     "name": "Tehri Garhwal",
-     "shapeISO": null
+     "name": "Tehri Garhwal"
     },
     {
      "id": "ind-adm2-tengnoupal",
-     "name": "Tengnoupal",
-     "shapeISO": null
+     "name": "Tengnoupal"
     },
     {
      "id": "ind-adm2-tenkasi",
-     "name": "Tenkasi",
-     "shapeISO": null
+     "name": "Tenkasi"
     },
     {
      "id": "ind-adm2-thane",
-     "name": "Thane",
-     "shapeISO": null
+     "name": "Thane"
     },
     {
      "id": "ind-adm2-thanjavur",
-     "name": "Thanjavur",
-     "shapeISO": null
+     "name": "Thanjavur"
     },
     {
      "id": "ind-adm2-the-dangs",
-     "name": "The Dangs",
-     "shapeISO": null
+     "name": "The Dangs"
     },
     {
      "id": "ind-adm2-the-nilgiris",
-     "name": "The Nilgiris",
-     "shapeISO": null
+     "name": "The Nilgiris"
     },
     {
      "id": "ind-adm2-theni",
-     "name": "Theni",
-     "shapeISO": null
+     "name": "Theni"
     },
     {
      "id": "ind-adm2-thiruvallur",
-     "name": "Thiruvallur",
-     "shapeISO": null
+     "name": "Thiruvallur"
     },
     {
      "id": "ind-adm2-thiruvananthapuram",
-     "name": "Thiruvananthapuram",
-     "shapeISO": null
+     "name": "Thiruvananthapuram"
     },
     {
      "id": "ind-adm2-thiruvarur",
-     "name": "Thiruvarur",
-     "shapeISO": null
+     "name": "Thiruvarur"
     },
     {
      "id": "ind-adm2-thoothukkudi",
-     "name": "Thoothukkudi",
-     "shapeISO": null
+     "name": "Thoothukkudi"
     },
     {
      "id": "ind-adm2-thoubal",
-     "name": "Thoubal",
-     "shapeISO": null
+     "name": "Thoubal"
     },
     {
      "id": "ind-adm2-thrissur",
-     "name": "Thrissur",
-     "shapeISO": null
+     "name": "Thrissur"
     },
     {
      "id": "ind-adm2-tikamgarh",
-     "name": "Tikamgarh",
-     "shapeISO": null
+     "name": "Tikamgarh"
     },
     {
      "id": "ind-adm2-tinsukia",
-     "name": "Tinsukia",
-     "shapeISO": null
+     "name": "Tinsukia"
     },
     {
      "id": "ind-adm2-tirap",
-     "name": "Tirap",
-     "shapeISO": null
+     "name": "Tirap"
     },
     {
      "id": "ind-adm2-tiruchirappalli",
-     "name": "Tiruchirappalli",
-     "shapeISO": null
+     "name": "Tiruchirappalli"
     },
     {
      "id": "ind-adm2-tirunelveli",
-     "name": "Tirunelveli",
-     "shapeISO": null
+     "name": "Tirunelveli"
     },
     {
      "id": "ind-adm2-tirupathur",
-     "name": "Tirupathur",
-     "shapeISO": null
+     "name": "Tirupathur"
     },
     {
      "id": "ind-adm2-tiruppur",
-     "name": "Tiruppur",
-     "shapeISO": null
+     "name": "Tiruppur"
     },
     {
      "id": "ind-adm2-tiruvannamalai",
-     "name": "Tiruvannamalai",
-     "shapeISO": null
+     "name": "Tiruvannamalai"
     },
     {
      "id": "ind-adm2-tonk",
-     "name": "Tonk",
-     "shapeISO": null
+     "name": "Tonk"
     },
     {
      "id": "ind-adm2-tuensang",
-     "name": "Tuensang",
-     "shapeISO": null
+     "name": "Tuensang"
     },
     {
      "id": "ind-adm2-tumkur",
-     "name": "Tumkur",
-     "shapeISO": null
+     "name": "Tumkur"
     },
     {
      "id": "ind-adm2-udaipur",
-     "name": "Udaipur",
-     "shapeISO": null
+     "name": "Udaipur"
     },
     {
      "id": "ind-adm2-udalguri",
-     "name": "Udalguri",
-     "shapeISO": null
+     "name": "Udalguri"
     },
     {
      "id": "ind-adm2-udham-singh-nagar",
-     "name": "Udham Singh Nagar",
-     "shapeISO": null
+     "name": "Udham Singh Nagar"
     },
     {
      "id": "ind-adm2-udhampur",
-     "name": "Udhampur",
-     "shapeISO": null
+     "name": "Udhampur"
     },
     {
      "id": "ind-adm2-udupi",
-     "name": "Udupi",
-     "shapeISO": null
+     "name": "Udupi"
     },
     {
      "id": "ind-adm2-ujjain",
-     "name": "Ujjain",
-     "shapeISO": null
+     "name": "Ujjain"
     },
     {
      "id": "ind-adm2-ukhrul",
-     "name": "Ukhrul",
-     "shapeISO": null
+     "name": "Ukhrul"
     },
     {
      "id": "ind-adm2-umaria",
-     "name": "Umaria",
-     "shapeISO": null
+     "name": "Umaria"
     },
     {
      "id": "ind-adm2-una",
-     "name": "Una",
-     "shapeISO": null
+     "name": "Una"
     },
     {
      "id": "ind-adm2-unnao",
-     "name": "Unnao",
-     "shapeISO": null
+     "name": "Unnao"
     },
     {
      "id": "ind-adm2-unokoti",
-     "name": "Unokoti",
-     "shapeISO": null
+     "name": "Unokoti"
     },
     {
      "id": "ind-adm2-upper-siang",
-     "name": "Upper Siang",
-     "shapeISO": null
+     "name": "Upper Siang"
     },
     {
      "id": "ind-adm2-upper-subansiri",
-     "name": "Upper Subansiri",
-     "shapeISO": null
+     "name": "Upper Subansiri"
     },
     {
      "id": "ind-adm2-uttar-bastar-kanker",
-     "name": "Uttar Bastar Kanker",
-     "shapeISO": null
+     "name": "Uttar Bastar Kanker"
     },
     {
      "id": "ind-adm2-uttar-dinajpur",
-     "name": "Uttar Dinajpur",
-     "shapeISO": null
+     "name": "Uttar Dinajpur"
     },
     {
      "id": "ind-adm2-uttara-kannada",
-     "name": "Uttara Kannada",
-     "shapeISO": null
+     "name": "Uttara Kannada"
     },
     {
      "id": "ind-adm2-uttarkashi",
-     "name": "Uttarkashi",
-     "shapeISO": null
+     "name": "Uttarkashi"
     },
     {
      "id": "ind-adm2-vadodara",
-     "name": "Vadodara",
-     "shapeISO": null
+     "name": "Vadodara"
     },
     {
      "id": "ind-adm2-vaishali",
-     "name": "Vaishali",
-     "shapeISO": null
+     "name": "Vaishali"
     },
     {
      "id": "ind-adm2-valsad",
-     "name": "Valsad",
-     "shapeISO": null
+     "name": "Valsad"
     },
     {
      "id": "ind-adm2-varanasi",
-     "name": "Varanasi",
-     "shapeISO": null
+     "name": "Varanasi"
     },
     {
      "id": "ind-adm2-vellore",
-     "name": "Vellore",
-     "shapeISO": null
+     "name": "Vellore"
     },
     {
      "id": "ind-adm2-vidisha",
-     "name": "Vidisha",
-     "shapeISO": null
+     "name": "Vidisha"
     },
     {
      "id": "ind-adm2-vikarabad",
-     "name": "Vikarabad",
-     "shapeISO": null
+     "name": "Vikarabad"
     },
     {
      "id": "ind-adm2-viluppuram",
-     "name": "Viluppuram",
-     "shapeISO": null
+     "name": "Viluppuram"
     },
     {
      "id": "ind-adm2-virudhunagar",
-     "name": "Virudhunagar",
-     "shapeISO": null
+     "name": "Virudhunagar"
     },
     {
      "id": "ind-adm2-visakhapatnam",
-     "name": "Visakhapatnam",
-     "shapeISO": null
+     "name": "Visakhapatnam"
     },
     {
      "id": "ind-adm2-vizianagaram",
-     "name": "Vizianagaram",
-     "shapeISO": null
+     "name": "Vizianagaram"
     },
     {
      "id": "ind-adm2-wanaparthy",
-     "name": "Wanaparthy",
-     "shapeISO": null
+     "name": "Wanaparthy"
     },
     {
      "id": "ind-adm2-warangal-r",
-     "name": "Warangal (R)",
-     "shapeISO": null
+     "name": "Warangal (R)"
     },
     {
      "id": "ind-adm2-warangal-u",
-     "name": "Warangal (U)",
-     "shapeISO": null
+     "name": "Warangal (U)"
     },
     {
      "id": "ind-adm2-wardha",
-     "name": "Wardha",
-     "shapeISO": null
+     "name": "Wardha"
     },
     {
      "id": "ind-adm2-washim",
-     "name": "Washim",
-     "shapeISO": null
+     "name": "Washim"
     },
     {
      "id": "ind-adm2-wayanad",
-     "name": "Wayanad",
-     "shapeISO": null
+     "name": "Wayanad"
     },
     {
      "id": "ind-adm2-west",
-     "name": "West",
-     "shapeISO": null
+     "name": "West"
     },
     {
      "id": "ind-adm2-west-district",
-     "name": "West District",
-     "shapeISO": null
+     "name": "West District"
     },
     {
      "id": "ind-adm2-west-garo-hills",
-     "name": "West Garo Hills",
-     "shapeISO": null
+     "name": "West Garo Hills"
     },
     {
      "id": "ind-adm2-west-godavari",
-     "name": "West Godavari",
-     "shapeISO": null
+     "name": "West Godavari"
     },
     {
      "id": "ind-adm2-west-jaintia-hills",
-     "name": "West Jaintia Hills",
-     "shapeISO": null
+     "name": "West Jaintia Hills"
     },
     {
      "id": "ind-adm2-west-kameng",
-     "name": "West Kameng",
-     "shapeISO": null
+     "name": "West Kameng"
     },
     {
      "id": "ind-adm2-west-khasi-hills",
-     "name": "West Khasi Hills",
-     "shapeISO": null
+     "name": "West Khasi Hills"
     },
     {
      "id": "ind-adm2-west-siang",
-     "name": "West Siang",
-     "shapeISO": null
+     "name": "West Siang"
     },
     {
      "id": "ind-adm2-west-tripura",
-     "name": "West Tripura",
-     "shapeISO": null
+     "name": "West Tripura"
     },
     {
      "id": "ind-adm2-wokha",
-     "name": "Wokha",
-     "shapeISO": null
+     "name": "Wokha"
     },
     {
      "id": "ind-adm2-yadadri-bhongiri",
-     "name": "Yadadri Bhongiri",
-     "shapeISO": null
+     "name": "Yadadri Bhongiri"
     },
     {
      "id": "ind-adm2-yadgir",
-     "name": "Yadgir",
-     "shapeISO": null
+     "name": "Yadgir"
     },
     {
      "id": "ind-adm2-yamunanagar",
-     "name": "Yamunanagar",
-     "shapeISO": null
+     "name": "Yamunanagar"
     },
     {
      "id": "ind-adm2-yanam",
-     "name": "Yanam",
-     "shapeISO": null
+     "name": "Yanam"
     },
     {
      "id": "ind-adm2-yavatmal",
-     "name": "Yavatmal",
-     "shapeISO": null
+     "name": "Yavatmal"
     },
     {
      "id": "ind-adm2-zunheboto",
-     "name": "Zunheboto",
-     "shapeISO": null
+     "name": "Zunheboto"
     }
    ]
   }
  },
  "name": "India",
- "nameBn": "ভারত"
+ "nameBn": "India"
 }

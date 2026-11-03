@@ -1,0 +1,140 @@
+{
+ "code": "ITA",
+ "flag": "",
+ "levels": {
+  "ADM0": {
+   "canonical": "Unknown",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Country / territory",
+   "nameBn": "দেশ / অঞ্চল",
+   "representedYear": "2023",
+   "sourceCount": 1,
+   "units": []
+  },
+  "ADM1": {
+   "canonical": "Unknown",
+   "code": "ADM1",
+   "count": 5,
+   "name": "ADM1 areas",
+   "nameBn": "ADM1 এলাকা",
+   "representedYear": "2023",
+   "sourceCount": 5,
+   "units": [
+    {
+     "id": "ita-adm1-centro",
+     "name": "Centro"
+    },
+    {
+     "id": "ita-adm1-isole",
+     "name": "Isole"
+    },
+    {
+     "id": "ita-adm1-nord-est",
+     "name": "Nord-Est"
+    },
+    {
+     "id": "ita-adm1-nord-ovest",
+     "name": "Nord-Ovest"
+    },
+    {
+     "id": "ita-adm1-sud",
+     "name": "Sud"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Unknown",
+   "code": "ADM2",
+   "count": 20,
+   "name": "ADM2 areas",
+   "nameBn": "ADM2 এলাকা",
+   "representedYear": "2023",
+   "sourceCount": 20,
+   "units": [
+    {
+     "id": "ita-adm2-abruzzo",
+     "name": "Abruzzo"
+    },
+    {
+     "id": "ita-adm2-basilicata",
+     "name": "Basilicata"
+    },
+    {
+     "id": "ita-adm2-calabria",
+     "name": "Calabria"
+    },
+    {
+     "id": "ita-adm2-campania",
+     "name": "Campania"
+    },
+    {
+     "id": "ita-adm2-emilia-romagna",
+     "name": "Emilia-Romagna"
+    },
+    {
+     "id": "ita-adm2-friuli-venezia-giulia",
+     "name": "Friuli Venezia Giulia"
+    },
+    {
+     "id": "ita-adm2-lazio",
+     "name": "Lazio"
+    },
+    {
+     "id": "ita-adm2-liguria",
+     "name": "Liguria"
+    },
+    {
+     "id": "ita-adm2-lombardia",
+     "name": "Lombardia"
+    },
+    {
+     "id": "ita-adm2-marche",
+     "name": "Marche"
+    },
+    {
+     "id": "ita-adm2-molise",
+     "name": "Molise"
+    },
+    {
+     "id": "ita-adm2-piemonte",
+     "name": "Piemonte"
+    },
+    {
+     "id": "ita-adm2-puglia",
+     "name": "Puglia"
+    },
+    {
+     "id": "ita-adm2-sardegna",
+     "name": "Sardegna"
+    },
+    {
+     "id": "ita-adm2-sicilia",
+     "name": "Sicilia"
+    },
+    {
+     "id": "ita-adm2-toscana",
+     "name": "Toscana"
+    },
+    {
+     "id": "ita-adm2-trentino-alto-adige",
+     "name": "Trentino-Alto Adige"
+    },
+    {
+     "id": "ita-adm2-umbria",
+     "name": "Umbria"
+    },
+    {
+     "id": "ita-adm2-valle-d-aosta",
+     "name": "Valle d'Aosta"
+    },
+    {
+     "id": "ita-adm2-veneto",
+     "name": "Veneto"
+    }
+   ]
+  }
+ },
+ "name": "Italy",
+ "nameBn": "Italy"
+}
