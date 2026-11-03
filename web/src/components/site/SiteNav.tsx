@@ -5,12 +5,10 @@ import {
   ChartLine,
   FlaskConical,
   House,
-  MapPin,
   Menu,
   Monitor,
   Moon,
   Satellite,
-  ShieldCheck,
   Sun,
   TriangleAlert,
   X,
@@ -32,11 +30,9 @@ import {
 export const TABS = [
   { href: "/", label: "Home", short: "Home", bn: "হোম", shortBn: "হোম", Icon: House },
   { href: "/monitoring", label: "Monitoring", short: "Monitor", bn: "পর্যবেক্ষণ", shortBn: "পর্যবেক্ষণ", Icon: Activity },
-  { href: "/locations", label: "Locations", short: "Places", bn: "স্থান", shortBn: "স্থান", Icon: MapPin, also: ["/location/"] },
   { href: "/hazards", label: "Hazard intelligence", short: "Hazards", bn: "দুর্যোগ বিশ্লেষণ", shortBn: "দুর্যোগ", Icon: TriangleAlert },
   { href: "/trends", label: "Climate trends", short: "Trends", bn: "জলবায়ুর প্রবণতা", shortBn: "প্রবণতা", Icon: ChartLine },
   { href: "/explore", label: "Satellite map", short: "Map", bn: "স্যাটেলাইট মানচিত্র", shortBn: "মানচিত্র", Icon: Satellite },
-  { href: "/countries", label: "Resilience: country dashboards", short: "Resilience", bn: "সহনশীলতা: দেশের ড্যাশবোর্ড", shortBn: "সহনশীলতা", Icon: ShieldCheck, also: ["/country/"] },
   { href: "/methods", label: "Methodology", short: "Methods", bn: "পদ্ধতি", shortBn: "পদ্ধতি", Icon: FlaskConical },
 ];
 
