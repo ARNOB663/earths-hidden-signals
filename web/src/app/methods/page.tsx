@@ -495,6 +495,33 @@ export default async function MethodsPage() {
           <MethodsIntelligence thresholds={thresholds} sources={sources} evaluation={evaluation} />
         </Section>
 
+        <Section id="signals" n="7b" title="Rain signals">
+          <p>
+            The Signals pages compare today&apos;s rain with the same season in past years, using
+            IMERG satellite rainfall on a 0.1° grid. For each place and for 1, 3 and 7-day windows
+            we take every year&apos;s value for the same 31 calendar days, keep zeros, and compute
+            the share of those past values at or below today&apos;s. That share is the percentile.
+          </p>
+          <p>
+            &quot;Times normal for this date&quot; is today&apos;s total divided by the median of
+            past wet days (at least 1 mm) in that window. Where fewer than 30 wet days exist — arid
+            places — no ratio is shown, and the status rests on the percentile and a millimetre
+            floor. Yellow needs the 85th percentile, twice the normal and at least 10 mm. Red needs
+            the 96th percentile, three times the normal and at least 25 mm, and stays labelled
+            provisional until the backtest is large enough. A place needs 15 years and 300
+            reference values, otherwise it is shown grey.
+          </p>
+          <p>
+            Grey means missing or unusable data, never safety: no data, data older than the
+            staleness limit, too few valid cells, too short a baseline, or outside the covered
+            tiles. The 7-day outlook is an external public forecast shown for context and never
+            changes a status.{" "}
+            <Link href="/signals" className="underline decoration-line underline-offset-2 hover:text-ink">
+              Open Signals
+            </Link>
+          </p>
+        </Section>
+
         <Section id="limitations" n="8" title="Limitations">
           <ol className="list-decimal space-y-2 pl-5 marker:text-ink-3">
             <li>
