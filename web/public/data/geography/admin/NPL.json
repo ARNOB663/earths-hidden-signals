@@ -1,0 +1,453 @@
+{
+ "code": "NPL",
+ "flag": "🇳🇵",
+ "levels": {
+  "ADM0": {
+   "canonical": "Federal Democratic Republic of Nepal",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Federal Democratic Republic of Nepal",
+   "nameBn": "সংযুক্ত নেপাল",
+   "representedYear": "2019",
+   "units": [
+    {
+     "id": "npl-adm0-nepal",
+     "name": "NEPAL",
+     "shapeISO": null
+    }
+   ]
+  },
+  "ADM1": {
+   "canonical": "Provinces",
+   "code": "ADM1",
+   "count": 7,
+   "name": "Provinces",
+   "nameBn": "প্রদেশ",
+   "representedYear": "2020",
+   "units": [
+    {
+     "id": "npl-adm1-bagmati",
+     "name": "Bagmati",
+     "shapeISO": "NP-P3"
+    },
+    {
+     "id": "npl-adm1-gandaki",
+     "name": "Gandaki",
+     "shapeISO": "NP-P4"
+    },
+    {
+     "id": "npl-adm1-karnali",
+     "name": "Karnali",
+     "shapeISO": "NP-P6"
+    },
+    {
+     "id": "npl-adm1-lumbini",
+     "name": "Lumbini",
+     "shapeISO": "NP-P5"
+    },
+    {
+     "id": "npl-adm1-province-1",
+     "name": "Province 1",
+     "shapeISO": "NP-P1"
+    },
+    {
+     "id": "npl-adm1-province-2",
+     "name": "Province 2",
+     "shapeISO": "NP-P2"
+    },
+    {
+     "id": "npl-adm1-sudurpaschim",
+     "name": "Sudurpaschim",
+     "shapeISO": "NP-P7"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Districts",
+   "code": "ADM2",
+   "count": 75,
+   "name": "Districts",
+   "nameBn": "জেলা",
+   "representedYear": "2006",
+   "units": [
+    {
+     "id": "npl-adm2-achham",
+     "name": "Achham",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-arghakhanchi",
+     "name": "Arghakhanchi",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-baglung",
+     "name": "Baglung",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-baijura",
+     "name": "Baijura",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-baitadi",
+     "name": "Baitadi",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-bajhang",
+     "name": "Bajhang",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-banke",
+     "name": "Banke",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-bara",
+     "name": "Bara",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-bara-2",
+     "name": "Bara",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-bardiya",
+     "name": "Bardiya",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-bhaktapur",
+     "name": "Bhaktapur",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-bhojpur",
+     "name": "Bhojpur",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-chitawan",
+     "name": "Chitawan",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-dadeidhura",
+     "name": "Dadeidhura",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-dang",
+     "name": "Dang",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-darchula",
+     "name": "Darchula",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-dhading",
+     "name": "Dhading",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-dhankuta",
+     "name": "Dhankuta",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-dhanusha",
+     "name": "Dhanusha",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-dolakha",
+     "name": "Dolakha",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-dolpa",
+     "name": "Dolpa",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-doti",
+     "name": "Doti",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-gorkha",
+     "name": "Gorkha",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-gulmi",
+     "name": "Gulmi",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-humla",
+     "name": "Humla",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-ilam",
+     "name": "Ilam",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-jajarkot",
+     "name": "Jajarkot",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-jhapa",
+     "name": "Jhapa",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-jumla",
+     "name": "Jumla",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-kabherepalanchok",
+     "name": "Kabherepalanchok",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-kailali",
+     "name": "Kailali",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-kalikot",
+     "name": "Kalikot",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-kanchanpur",
+     "name": "Kanchanpur",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-kapilbastu",
+     "name": "Kapilbastu",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-kaski",
+     "name": "Kaski",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-kathmandu",
+     "name": "Kathmandu",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-khotang",
+     "name": "Khotang",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-lalitpur",
+     "name": "Lalitpur",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-lamjung",
+     "name": "Lamjung",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-mahottari",
+     "name": "Mahottari",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-makawanpur",
+     "name": "Makawanpur",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-manang",
+     "name": "Manang",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-morang",
+     "name": "Morang",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-mugu",
+     "name": "Mugu",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-mustang",
+     "name": "Mustang",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-myagdi",
+     "name": "Myagdi",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-nawalapur",
+     "name": "Nawalapur",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-nawalparasi",
+     "name": "Nawalparasi",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-nuwakot",
+     "name": "Nuwakot",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-okhaldhunga",
+     "name": "Okhaldhunga",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-palpa",
+     "name": "Palpa",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-panchthar",
+     "name": "Panchthar",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-parbat",
+     "name": "Parbat",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-pyuthan",
+     "name": "Pyuthan",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-ramechhap",
+     "name": "Ramechhap",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-rasuwa",
+     "name": "Rasuwa",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-rautahat",
+     "name": "Rautahat",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-rolpa",
+     "name": "Rolpa",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-rukum-e",
+     "name": "Rukum_E",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-rukum-w",
+     "name": "Rukum_W",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-salyan",
+     "name": "Salyan",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-sankhuwasabha",
+     "name": "Sankhuwasabha",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-saptari",
+     "name": "Saptari",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-saptari-2",
+     "name": "Saptari",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-sarlahi",
+     "name": "Sarlahi",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-sindhuli",
+     "name": "Sindhuli",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-sindhupalchok",
+     "name": "Sindhupalchok",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-solukhumbu",
+     "name": "Solukhumbu",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-sunsari",
+     "name": "Sunsari",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-surkhet",
+     "name": "Surkhet",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-synagja",
+     "name": "Synagja",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-tanahu",
+     "name": "Tanahu",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-taplejung",
+     "name": "Taplejung",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-terhathum",
+     "name": "Terhathum",
+     "shapeISO": null
+    },
+    {
+     "id": "npl-adm2-udayapur",
+     "name": "Udayapur",
+     "shapeISO": null
+    }
+   ]
+  }
+ },
+ "name": "Nepal",
+ "nameBn": "নেপাল"
+}

@@ -3,15 +3,7 @@
 
 import { readFile } from "node:fs/promises";
 import path from "node:path";
-import type {
-  AccuracyPayload,
-  SignalsConfig,
-  SignalsMeta,
-  SourcesFile,
-  TileGrid,
-  TopList,
-  WatchPayload,
-} from "./types";
+import type { AccuracyPayload, SignalsConfig, SignalsMeta, SourcesFile, WatchPayload } from "./types";
 
 const ROOT = path.join(process.cwd(), "public", "data", "signals");
 
@@ -45,12 +37,6 @@ export async function readSignalsConfig(): Promise<SignalsConfig> {
   );
 }
 
-export async function readTop(): Promise<TopList> {
-  const top = await readJson<TopList>("top.json");
-  if (!Array.isArray(top.rows)) throw new Error("signals data: top.json has no rows array");
-  return top;
-}
-
 export async function readSources(): Promise<SourcesFile> {
   return readJson<SourcesFile>("sources.json");
 }
@@ -66,34 +52,4 @@ export async function readAccuracy(): Promise<AccuracyPayload> {
   const accuracy = await assertKeys(await readJson<AccuracyPayload>("accuracy.json"), ["events", "notEnough"], "accuracy.json");
   if (!Array.isArray(accuracy.events)) throw new Error("signals data: accuracy.json has no events array");
   return accuracy;
-}
-
-export async function readTileGrid(tile: string): Promise<TileGrid> {
-  const grid = await readJson<TileGrid>("grid", `${tile}.json`);
-  if (!Array.isArray(grid.cells)) throw new Error(`signals data: grid/${tile}.json has no cells array`);
-  return grid;
-}
-
-/** Nearest cell in a tile grid to a coordinate (the place page's lookup). */
-export function nearestCell(grid: TileGrid, lat: number, lon: number) {
-  let best = grid.cells[0];
-  let bestDistance = Number.POSITIVE_INFINITY;
-  for (const cell of grid.cells) {
-    const dLat = cell.lat - lat;
-    const dLon = cell.lon - lon;
-    const d = dLat * dLat + dLon * dLon;
-    if (d < bestDistance) {
-      best = cell;
-      bestDistance = d;
-    }
-  }
-  return best;
-}
-
-export function tileForPoint(config: SignalsConfig, lat: number, lon: number) {
-  return (
-    config.enabledTiles.find(
-      (tile) => lat >= tile.south && lat < tile.north && lon >= tile.west && lon < tile.east,
-    ) ?? null
-  );
 }

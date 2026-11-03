@@ -1,108 +1,123 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { T } from "@/lib/i18n";
-import { ageOf } from "@/lib/signals/age";
-import { readSignalsConfig, readSignalsMeta, readTop } from "@/lib/signals/data";
-import type { Status } from "@/lib/signals/types";
-import { PlaceSearch } from "@/components/signals/PlaceSearch";
-import { SignalsList } from "@/components/signals/SignalsList";
-import { SignalsMap } from "@/components/signals/SignalsMap";
-import { UseMyLocation } from "@/components/signals/UseMyLocation";
-import { DataProvenance, NotCovered, SampleBanner } from "@/components/signals/parts";
+import { countSignalRows, loadSignalDirectory } from "@/lib/geography/data";
+import { CountrySignalList } from "@/components/signals/CountrySignalList";
+import { DemoNotice, SignalLegend } from "@/components/signals/Legend";
 
 export const revalidate = 86400;
-
-/** Strongest first: a tile's colour is the strongest status any of its listed cells carries. */
-const BEST_STATUS: Status[] = ["red", "yellow"];
 
 export const metadata: Metadata = {
   title: "Signals · Earth's Hidden Signals",
   description:
-    "Is today's rain unusual for this time of year? Rain measured by NASA satellites, with the reason, the past years to compare, and a link to official warnings. Not a forecast.",
+    "Green, Yellow and Red signals for South Asian countries and their local administrative areas, built on NASA Earth-observation data, with fixed demo scores clearly labelled as samples.",
 };
 
 export default async function SignalsPage() {
-  const [meta, config, top] = await Promise.all([readSignalsMeta(), readSignalsConfig(), readTop()]);
-  const age = ageOf(meta.measurementTime, new Date(meta.generatedAt), config.staleHours, meta.sampleData);
-  // The top list only carries Red and Yellow rows, so a tile absent from it is Green: its grid
-  // holds no unusual signal. A stale build paints every tile Grey.
-  const tileStatus = Object.fromEntries(
-    config.enabledTiles.map((tile) => {
-      const rows = top.rows.filter((row) => row.tile === tile.id);
-      const best = BEST_STATUS.find((status) => rows.some((row) => row.status === status));
-      return [tile.id, age.stale ? "grey" : (best ?? "green")];
-    }),
-  ) as Record<string, Status>;
+  const directory = await loadSignalDirectory();
+  const { countries, demo, coverage } = directory;
+  const { counts, levels } = countSignalRows(countries);
 
-  // Tiles with an enabled region but no grid file are genuinely "not yet covered"; the three
-  // launch tiles are listed under "Strongest signals now" and are never shown as uncovered.
-  const covered = new Set(meta.tiles);
-  const notCovered = config.enabledTiles.filter((tile) => !covered.has(tile.id)).map((tile) => tile.label);
+  const countryCount = countries.length;
+  const adm1Count = levels.ADM1 ?? 0;
+  const adm2Count = levels.ADM2 ?? 0;
+  // Each country names its own levels; group countries by the ADM2 name they publish.
+  const adm2Names = [
+    ...new Set(countries.map((country) => country.areaName).filter((name) => !/^ADM2 areas$/i.test(name))),
+  ];
+  // Every variable uses the same rule; read it from the file rather than restating the numbers.
+  const coverageRule = Object.values(coverage.variables)[0]?.rule ?? "";
 
   return (
     <main className="mx-auto w-full max-w-5xl px-4 pb-16 pt-6 sm:px-6">
-      {meta.sampleData && <SampleBanner clock={meta.clock} />}
-      <header className="mt-4">
+      <header>
         <h1 className="text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
           <T en="Signals" bn="সংকেত" />
         </h1>
         <p className="mt-2 max-w-2xl text-sm text-ink-2">
           <T
-            en="Is today's rain unusual for this time of year? Measured by NASA satellites. This is a preparedness signal, not a forecast."
-            bn="এই মৌসুমে আজকের বৃষ্টি কি অস্বাভাবিক? নাসার স্যাটেলাইট থেকে মাপা। এটি প্রস্তুতির সংকেত, পূর্বাভাস নয়।"
+            en="One preparedness view across South Asia: every country and its local administrative areas, each with a signal colour, a percentage score and how much of it NASA data actually covers."
+            bn="দক্ষিণ এশিয়ার এক প্রস্তুতি-দৃশ্য: প্রতিটি দেশ ও তার স্থানীয় প্রশাসনিক এলাকা, প্রতিটির সংকেত রং, শতাংশ স্কোর এবং কতটা নাসা তথ্যে আচ্ছাদিত।"
           />
         </p>
       </header>
 
-      <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-start">
-        <PlaceSearch />
-        <UseMyLocation />
+      <div className="mt-4 space-y-3">
+        <DemoNotice event={demo.event} eventPeriod={demo.eventPeriod} />
+        <SignalLegend bands={demo.signalBands} />
       </div>
 
-      <div className="mt-4 grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,26rem)]">
-        <div className="min-w-0">
-          <SignalsMap config={config} tileStatus={tileStatus} />
-          {notCovered.length > 0 && (
-            <div className="mt-3 space-y-2">
-              <p className="text-xs font-medium text-ink-3">
-                <T en="Not yet covered" bn="এখনো অন্তর্ভুক্ত নয়" />
-              </p>
-              {notCovered.map((label) => (
-                <NotCovered key={label} label={label} />
-              ))}
-            </div>
-          )}
-        </div>
-        <SignalsList rows={top.rows} />
-      </div>
+      <dl className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-4">
+        {(
+          [
+            ["green", counts.green, "Green", "সবুজ"],
+            ["yellow", counts.yellow, "Yellow", "হলুদ"],
+            ["red", counts.red, "Red", "লাল"],
+            ["no-data", counts["no-data"], "No data", "তথ্য নেই"],
+          ] as const
+        ).map(([state, value, en, bn]) => (
+          <div key={state} className="rounded-xl border border-line bg-card px-3 py-2">
+            <dt className="text-xs text-ink-3">
+              <T en={en} bn={bn} />
+            </dt>
+            <dd className="text-xl font-semibold tabular-nums text-ink">{value}</dd>
+          </div>
+        ))}
+      </dl>
 
-      <div className="mt-6 space-y-3">
-        <DataProvenance
-          source={meta.sampleData ? "IMERG Late (sample)" : `IMERG ${meta.product}`}
-          measurementTime={meta.measurementTime}
-          ageLabel={age.label}
-          ageStale={age.stale}
-          wmoUrl={config.official.wmo}
-          disclaimer={config.official.line}
+      <p className="mt-2 text-xs text-ink-3">
+        <T
+          en={`Data coverage: ${coverageRule} Coverage counts the NASA series that qualify (Temperature, Rainfall, Hot months, Heavy-rain days, Dry spells, Wettest day).`}
+          bn={`তথ্যের আচ্ছাদন: ${coverageRule} আচ্ছাদনে যোগ্য নাসা সিরিজ (তাপমাত্রা, বৃষ্টিপাত, উষ্ণ মাস, ভারী বৃষ্টির দিন, খরা কাল, সর্বোচ্চ বৃষ্টির দিন) গণনা করা হয়।`}
         />
-        <p className="flex flex-wrap gap-x-3 text-sm text-ink-2">
-          <Link href="/accuracy" className="underline decoration-line underline-offset-2 hover:text-ink">
-            <T en="How well does this work? See the accuracy page" bn="এটি কতটা কাজে লাগে? নির্ভুলতার পাতা দেখুন" />
-          </Link>
-          <Link href="/signals/evidence" className="underline decoration-line underline-offset-2 hover:text-ink">
-            <T en="Evidence and checks" bn="প্রমাণ ও যাচাই" />
-          </Link>
-          <Link href="/about" className="underline decoration-line underline-offset-2 hover:text-ink">
-            <T en="About the signals" bn="সংকেত সম্পর্কে" />
-          </Link>
-        </p>
-        <p className="text-xs text-ink-3">
-          <T
-            en="Grey means no usable data for that area, not that the area is safe. Coverage grows tile by tile."
-            bn="ধূসর মানে ওই এলাকার ব্যবহারযোগ্য তথ্য নেই, এলাকাটি নিরাপদ নয়। আচ্ছাদন ধীরে ধীরে বাড়ছে।"
-          />
-        </p>
-      </div>
+      </p>
+
+      <CountrySignalList countries={countries} />
+
+      <p className="mt-6 rounded-2xl border border-line bg-card p-4 text-sm text-ink-2">
+        <T
+          en={`Areas covered here: ${countryCount} countries (geoBoundaries ADM0), ${adm1Count} ADM1 areas and ${adm2Count} ADM2 areas. geoBoundaries names and publishes levels differently in each country (ADM2 is called ${adm2Names.join(", ")} here), and the index lists only the levels it actually has. Coverage is measured per country and ADM1 area; ADM2 areas are usually smaller than the analysis grids, so they show No data until a finer dataset exists.`}
+          bn={`এখানে অন্তর্ভুক্ত: ${countryCount} দেশ (geoBoundaries ADM0), ${adm1Count} ADM1 এলাকা এবং ${adm2Count} ADM2 এলাকা। geoBoundaries প্রতিটি দেশে স্তরের নাম ও উপলভ্যতা আলাদাভাবে দেয় (এখানে ADM2: ${adm2Names.join(", ")}), এবং তালিকায় কেবল সত্যিকার উপলভ্য স্তরই আছে। আচ্ছাদন দেশ ও ADM1 এলাকার জন্য মাপা; ADM2 এলাকা সাধারণত বিশ্লেষণ গ্রিডের চেয়ে ছোট, তাই সূক্ষ্ম তথ্য না আসা পর্যন্ত তথ্য নেই দেখায়।`}
+        />
+      </p>
+
+      <section aria-labelledby="next" className="mt-6 grid gap-3 sm:grid-cols-2">
+        <h2 id="next" className="sr-only">
+          <T en="Related pages" bn="সম্পর্কিত পাতা" />
+        </h2>
+        <Link
+          href="/methods"
+          className="group flex items-center justify-between gap-3 rounded-2xl border border-line bg-card p-4 transition-colors hover:border-ink-3"
+        >
+          <span>
+            <span className="block text-sm font-medium text-ink">
+              <T en="How the signals are built" bn="সংকেত কীভাবে তৈরি" />
+            </span>
+            <span className="mt-0.5 block text-sm text-ink-2">
+              <T
+                en="Geographic levels, coverage rule, demo-data status and credits."
+                bn="ভৌগোলিক স্তর, আচ্ছাদনের নিয়ম, ডেমো তথ্যের অবস্থা ও স্বীকৃতি।"
+              />
+            </span>
+          </span>
+          <ArrowRight size={18} aria-hidden className="shrink-0 text-ink-3 transition-transform group-hover:translate-x-0.5" />
+        </Link>
+        <Link
+          href="/explore"
+          className="group flex items-center justify-between gap-3 rounded-2xl border border-line bg-card p-4 transition-colors hover:border-ink-3"
+        >
+          <span>
+            <span className="block text-sm font-medium text-ink">
+              <T en="Satellite map" bn="স্যাটেলাইট মানচিত্র" />
+            </span>
+            <span className="mt-0.5 block text-sm text-ink-2">
+              <T en="The NASA imagery behind the measurements." bn="পরিমাপের পেছনের নাসা চিত্র।" />
+            </span>
+          </span>
+          <ArrowRight size={18} aria-hidden className="shrink-0 text-ink-3 transition-transform group-hover:translate-x-0.5" />
+        </Link>
+      </section>
     </main>
   );
 }

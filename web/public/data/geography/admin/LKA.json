@@ -1,0 +1,213 @@
+{
+ "code": "LKA",
+ "flag": "🇱🇰",
+ "levels": {
+  "ADM0": {
+   "canonical": "Unknown",
+   "code": "ADM0",
+   "count": 1,
+   "name": "National boundary",
+   "nameBn": "জাতীয় সীমানা",
+   "representedYear": "2017",
+   "units": [
+    {
+     "id": "lka-adm0-sri-lanka",
+     "name": "Sri Lanka",
+     "shapeISO": "LKA"
+    }
+   ]
+  },
+  "ADM1": {
+   "canonical": "Unknown",
+   "code": "ADM1",
+   "count": 9,
+   "name": "ADM1 areas",
+   "nameBn": "ADM1 এলাকা",
+   "representedYear": "2017",
+   "units": [
+    {
+     "id": "lka-adm1-central-province",
+     "name": "Central Province",
+     "shapeISO": "LK-2"
+    },
+    {
+     "id": "lka-adm1-eastern-province",
+     "name": "Eastern Province",
+     "shapeISO": "LK-5"
+    },
+    {
+     "id": "lka-adm1-north-central-province",
+     "name": "North Central Province",
+     "shapeISO": "LK-7"
+    },
+    {
+     "id": "lka-adm1-north-western-province",
+     "name": "North Western Province",
+     "shapeISO": "LK-6"
+    },
+    {
+     "id": "lka-adm1-northern-province",
+     "name": "Northern Province",
+     "shapeISO": "LK-4"
+    },
+    {
+     "id": "lka-adm1-sabaragamuwa-province",
+     "name": "Sabaragamuwa Province",
+     "shapeISO": "LK-9"
+    },
+    {
+     "id": "lka-adm1-southern-province",
+     "name": "Southern Province",
+     "shapeISO": "LK-3"
+    },
+    {
+     "id": "lka-adm1-uva-province",
+     "name": "Uva Province",
+     "shapeISO": "LK-8"
+    },
+    {
+     "id": "lka-adm1-western-province",
+     "name": "Western Province",
+     "shapeISO": "LK-1"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Unknown",
+   "code": "ADM2",
+   "count": 25,
+   "name": "ADM2 areas",
+   "nameBn": "ADM2 এলাকা",
+   "representedYear": "2017",
+   "units": [
+    {
+     "id": "lka-adm2-ampara-district",
+     "name": "Ampara District",
+     "shapeISO": "LK-52"
+    },
+    {
+     "id": "lka-adm2-anuradhapura-district",
+     "name": "Anuradhapura District",
+     "shapeISO": "LK-71"
+    },
+    {
+     "id": "lka-adm2-badulla-district",
+     "name": "Badulla District",
+     "shapeISO": "LK-81"
+    },
+    {
+     "id": "lka-adm2-batticaloa-district",
+     "name": "Batticaloa District",
+     "shapeISO": "LK-51"
+    },
+    {
+     "id": "lka-adm2-colombo-district",
+     "name": "Colombo District",
+     "shapeISO": "LK-11"
+    },
+    {
+     "id": "lka-adm2-galle-district",
+     "name": "Galle District",
+     "shapeISO": "LK-31"
+    },
+    {
+     "id": "lka-adm2-gampaha-district",
+     "name": "Gampaha District",
+     "shapeISO": "LK-12"
+    },
+    {
+     "id": "lka-adm2-hambantota-district",
+     "name": "Hambantota District",
+     "shapeISO": "LK-33"
+    },
+    {
+     "id": "lka-adm2-jaffna-district",
+     "name": "Jaffna District",
+     "shapeISO": "LK-41"
+    },
+    {
+     "id": "lka-adm2-kalutara-district",
+     "name": "Kalutara District",
+     "shapeISO": "LK-13"
+    },
+    {
+     "id": "lka-adm2-kandy-district",
+     "name": "Kandy District",
+     "shapeISO": "LK-21"
+    },
+    {
+     "id": "lka-adm2-kegalle-district",
+     "name": "Kegalle District",
+     "shapeISO": "LK-92"
+    },
+    {
+     "id": "lka-adm2-kilinochchi-district",
+     "name": "Kilinochchi District",
+     "shapeISO": "LK-42"
+    },
+    {
+     "id": "lka-adm2-kurunegala-district",
+     "name": "Kurunegala District",
+     "shapeISO": "LK-61"
+    },
+    {
+     "id": "lka-adm2-mannar-district",
+     "name": "Mannar District",
+     "shapeISO": "LK-43"
+    },
+    {
+     "id": "lka-adm2-matale-district",
+     "name": "Matale District",
+     "shapeISO": "LK-22"
+    },
+    {
+     "id": "lka-adm2-matara-district",
+     "name": "Matara District",
+     "shapeISO": "LK-32"
+    },
+    {
+     "id": "lka-adm2-monaragala-district",
+     "name": "Monaragala District",
+     "shapeISO": "LK-82"
+    },
+    {
+     "id": "lka-adm2-mullaitivu-district",
+     "name": "Mullaitivu District",
+     "shapeISO": "LK-45"
+    },
+    {
+     "id": "lka-adm2-nuwara-eliya-district",
+     "name": "Nuwara Eliya District",
+     "shapeISO": "LK-23"
+    },
+    {
+     "id": "lka-adm2-polonnaruwa-district",
+     "name": "Polonnaruwa District",
+     "shapeISO": "LK-72"
+    },
+    {
+     "id": "lka-adm2-puttalam-district",
+     "name": "Puttalam District",
+     "shapeISO": "LK-62"
+    },
+    {
+     "id": "lka-adm2-ratnapura-district",
+     "name": "Ratnapura District",
+     "shapeISO": "LK-91"
+    },
+    {
+     "id": "lka-adm2-trincomalee-district",
+     "name": "Trincomalee District",
+     "shapeISO": "LK-53"
+    },
+    {
+     "id": "lka-adm2-vavuniya-district",
+     "name": "Vavuniya District",
+     "shapeISO": "LK-44"
+    }
+   ]
+  }
+ },
+ "name": "Sri Lanka",
+ "nameBn": "শ্রীলঙ্কা"
+}

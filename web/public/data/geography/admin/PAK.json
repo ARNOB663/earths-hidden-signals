@@ -1,0 +1,708 @@
+{
+ "code": "PAK",
+ "flag": "🇵🇰",
+ "levels": {
+  "ADM0": {
+   "canonical": "Unknown",
+   "code": "ADM0",
+   "count": 1,
+   "name": "National boundary",
+   "nameBn": "জাতীয় সীমানা",
+   "representedYear": "2017",
+   "units": [
+    {
+     "id": "pak-adm0-pakistan",
+     "name": "Pakistan",
+     "shapeISO": "PAK"
+    }
+   ]
+  },
+  "ADM1": {
+   "canonical": "Province",
+   "code": "ADM1",
+   "count": 7,
+   "name": "Province",
+   "nameBn": "প্রদেশ",
+   "representedYear": "2019",
+   "units": [
+    {
+     "id": "pak-adm1-azad-kashmir",
+     "name": "Azad Kashmir",
+     "shapeISO": "PK-JK"
+    },
+    {
+     "id": "pak-adm1-balochistan",
+     "name": "Balochistan",
+     "shapeISO": "PK-BA"
+    },
+    {
+     "id": "pak-adm1-gilgit-baltistan",
+     "name": "Gilgit-Baltistan",
+     "shapeISO": "PK-GB"
+    },
+    {
+     "id": "pak-adm1-islamabad-capital-territory",
+     "name": "Islamabad Capital Territory",
+     "shapeISO": "PK-IS"
+    },
+    {
+     "id": "pak-adm1-khyber-pakhtunkhwa",
+     "name": "Khyber Pakhtunkhwa",
+     "shapeISO": "PK-KP"
+    },
+    {
+     "id": "pak-adm1-punjab",
+     "name": "Punjab",
+     "shapeISO": "PK-PB"
+    },
+    {
+     "id": "pak-adm1-sindh",
+     "name": "Sindh",
+     "shapeISO": "PK-SD"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "Districts",
+   "code": "ADM2",
+   "count": 126,
+   "name": "Districts",
+   "nameBn": "জেলা",
+   "representedYear": "2019",
+   "units": [
+    {
+     "id": "pak-adm2-abbottabad",
+     "name": "Abbottabad",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-astore",
+     "name": "Astore",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-attock",
+     "name": "Attock",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-awaran",
+     "name": "Awaran",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-azad-kashmir",
+     "name": "Azad Kashmir",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-badin",
+     "name": "Badin",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-bahawalnagar",
+     "name": "Bahawalnagar",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-bahawalpur",
+     "name": "Bahawalpur",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-bajaur",
+     "name": "Bajaur",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-bannu",
+     "name": "Bannu",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-barkhan",
+     "name": "Barkhan",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-battagram",
+     "name": "Battagram",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-bhakkar",
+     "name": "Bhakkar",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-buner",
+     "name": "Buner",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-chagai",
+     "name": "Chagai",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-chakwal",
+     "name": "Chakwal",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-charsadda",
+     "name": "Charsadda",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-chitral",
+     "name": "Chitral",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-dadu",
+     "name": "Dadu",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-dera-bugti",
+     "name": "Dera Bugti",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-dera-ghazi-khan",
+     "name": "Dera Ghazi Khan",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-dera-ismail-khan",
+     "name": "Dera Ismail Khan",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-diamer",
+     "name": "Diamer",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-faisalabad",
+     "name": "Faisalabad",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-ghanche",
+     "name": "Ghanche",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-ghizer",
+     "name": "Ghizer",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-ghotki",
+     "name": "Ghotki",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-gilgit",
+     "name": "Gilgit",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-gujranwala",
+     "name": "Gujranwala",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-gujrat",
+     "name": "Gujrat",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-gwadar",
+     "name": "Gwadar",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-hafizabad",
+     "name": "Hafizabad",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-hangu",
+     "name": "Hangu",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-haripur",
+     "name": "Haripur",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-hunza",
+     "name": "Hunza",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-hyderabad",
+     "name": "Hyderabad",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-islamabad-capital-territory",
+     "name": "Islamabad Capital Territory",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-jacobabad",
+     "name": "Jacobabad",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-jafarabad",
+     "name": "Jafarabad",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-jamshoro",
+     "name": "Jamshoro",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-jhal-magsi",
+     "name": "Jhal Magsi",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-jhang",
+     "name": "Jhang",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-jhelum",
+     "name": "Jhelum",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-kachhi",
+     "name": "Kachhi",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-kalat",
+     "name": "Kalat",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-karachi",
+     "name": "Karachi",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-karak",
+     "name": "Karak",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-kashmore",
+     "name": "Kashmore",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-kasur",
+     "name": "Kasur",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-kech",
+     "name": "Kech",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-khairpur",
+     "name": "Khairpur",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-khanewal",
+     "name": "Khanewal",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-kharan",
+     "name": "Kharan",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-kharmang",
+     "name": "Kharmang",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-khushab",
+     "name": "Khushab",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-khuzdar",
+     "name": "Khuzdar",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-khyber",
+     "name": "Khyber",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-kohat",
+     "name": "Kohat",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-kohistan",
+     "name": "Kohistan",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-kohlu",
+     "name": "Kohlu",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-kurram",
+     "name": "Kurram",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-lahore",
+     "name": "Lahore",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-lakki-marwat",
+     "name": "Lakki Marwat",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-lasbela",
+     "name": "Lasbela",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-layyah",
+     "name": "Layyah",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-lodhran",
+     "name": "Lodhran",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-loralai",
+     "name": "Loralai",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-lower-dir",
+     "name": "Lower Dir",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-malakand",
+     "name": "Malakand",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-mandi-bahauddin",
+     "name": "Mandi Bahauddin",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-mansehra",
+     "name": "Mansehra",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-mardan",
+     "name": "Mardan",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-mastung",
+     "name": "Mastung",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-matiari",
+     "name": "Matiari",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-mianwali",
+     "name": "Mianwali",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-mirpurkhas",
+     "name": "Mirpurkhas",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-mohmand",
+     "name": "Mohmand",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-multan",
+     "name": "Multan",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-musakhel",
+     "name": "Musakhel",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-muzaffargarh",
+     "name": "Muzaffargarh",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-nagar",
+     "name": "Nagar",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-narowal",
+     "name": "Narowal",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-nasirabad",
+     "name": "Nasirabad",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-naushehro-feroze",
+     "name": "Naushehro Feroze",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-nawabshah",
+     "name": "Nawabshah",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-north-waziristan",
+     "name": "North Waziristan",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-nowshera",
+     "name": "Nowshera",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-nushki",
+     "name": "Nushki",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-okara",
+     "name": "Okara",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-orakzai",
+     "name": "Orakzai",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-pakpattan",
+     "name": "Pakpattan",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-panjgur",
+     "name": "Panjgur",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-peshawar",
+     "name": "Peshawar",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-pishin",
+     "name": "Pishin",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-qambar-shahdadkot",
+     "name": "Qambar Shahdadkot",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-qilla-abdullah",
+     "name": "Qilla Abdullah",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-qilla-saifullah",
+     "name": "Qilla Saifullah",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-quetta",
+     "name": "Quetta",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-rahim-yar-khan",
+     "name": "Rahim Yar Khan",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-rajanpur",
+     "name": "Rajanpur",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-rawalpindi",
+     "name": "Rawalpindi",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-sahiwal",
+     "name": "Sahiwal",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-sanghar",
+     "name": "Sanghar",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-sargodha",
+     "name": "Sargodha",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-shangla",
+     "name": "Shangla",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-sheikhpura",
+     "name": "Sheikhpura",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-shigar",
+     "name": "Shigar",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-shikarpur",
+     "name": "Shikarpur",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-sialkot",
+     "name": "Sialkot",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-sibi",
+     "name": "Sibi",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-skardu",
+     "name": "Skardu",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-south-waziristan",
+     "name": "South Waziristan",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-sukkur",
+     "name": "Sukkur",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-swabi",
+     "name": "Swabi",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-swat",
+     "name": "Swat",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-tando-allahyar",
+     "name": "Tando Allahyar",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-tando-muhammad-khan",
+     "name": "Tando Muhammad Khan",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-tank",
+     "name": "Tank",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-tharparkar",
+     "name": "Tharparkar",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-thatta",
+     "name": "Thatta",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-toba-tek-singh",
+     "name": "Toba Tek Singh",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-umerkot",
+     "name": "Umerkot",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-upper-dir",
+     "name": "Upper Dir",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-vihari",
+     "name": "Vihari",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-zhob",
+     "name": "Zhob",
+     "shapeISO": null
+    },
+    {
+     "id": "pak-adm2-ziarat",
+     "name": "Ziarat",
+     "shapeISO": null
+    }
+   ]
+  }
+ },
+ "name": "Pakistan",
+ "nameBn": "পাকিস্তান"
+}

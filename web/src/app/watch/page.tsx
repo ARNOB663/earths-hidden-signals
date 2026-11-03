@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { T } from "@/lib/i18n";
 import { ageOf } from "@/lib/signals/age";
 import { readSignalsConfig, readSignalsMeta, readWatch } from "@/lib/signals/data";
@@ -77,12 +76,9 @@ export default async function WatchPage() {
             {watch.rises.map((rise) => (
               <li key={`${rise.lat},${rise.lon}`} className="rounded-xl border border-line bg-card p-3">
                 <div className="flex flex-wrap items-center justify-between gap-2">
-                  <Link
-                    href={`/signals/place?lat=${rise.lat}&lon=${rise.lon}`}
-                    className="text-sm font-medium tabular-nums text-ink underline decoration-line underline-offset-2"
-                  >
+                  <span className="text-sm font-medium tabular-nums text-ink">
                     {rise.lat.toFixed(2)}, {rise.lon.toFixed(2)}
-                  </Link>
+                  </span>
                   <StatusBadge status={rise.status} />
                 </div>
                 <p className="mt-1 text-xs text-ink-3">

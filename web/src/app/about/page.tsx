@@ -172,10 +172,6 @@ export default async function AboutPage() {
           <Link href="/methods" className="underline decoration-line underline-offset-2 hover:text-ink">
             <T en="Read the full methods" bn="সম্পূর্ণ পদ্ধতি পড়ুন" />
           </Link>
-          {" · "}
-          <Link href="/signals/evidence" className="underline decoration-line underline-offset-2 hover:text-ink">
-            <T en="Evidence and checks" bn="প্রমাণ ও যাচাই" />
-          </Link>
         </p>
       </section>
 

@@ -5,6 +5,7 @@ import { readCrosscheck, readManifest, readTrendZones } from "@/lib/data";
 import { T } from "@/lib/i18n";
 import { MethodsIntelligence } from "@/components/intelligence/MethodsIntelligence";
 import { readEvaluation, readSources, readThresholds } from "@/lib/intelligence/data";
+import { readGeographyIndex } from "@/lib/geography/data";
 import {
   agreement,
   formatSigned,
@@ -112,13 +113,14 @@ function Cite({ keys }: { keys: string[] }) {
 }
 
 export default async function MethodsPage() {
-  const [manifest, crosscheck, trendZones, thresholds, sources, evaluation] = await Promise.all([
+  const [manifest, crosscheck, trendZones, thresholds, sources, evaluation, geography] = await Promise.all([
     readManifest(),
     readCrosscheck(),
     readTrendZones(),
     readThresholds(),
     readSources(),
     readEvaluation(),
+    readGeographyIndex(),
   ]);
   const [first, last] = [
     manifest.years[0],
@@ -497,28 +499,60 @@ export default async function MethodsPage() {
 
         <Section id="signals" n="7b" title="Rain signals">
           <p>
-            The Signals pages compare today&apos;s rain with the same season in past years, using
-            IMERG satellite rainfall on a 0.1° grid. For each place and for 1, 3 and 7-day windows
-            we take every year&apos;s value for the same 31 calendar days, keep zeros, and compute
-            the share of those past values at or below today&apos;s. That share is the percentile.
+            The Signals page lists {geography.countries.length} countries and their published local
+            administrative areas. Boundaries come from geoBoundaries{" "}
+            <span className="whitespace-nowrap">gbOpen</span> at ADM0 (country), ADM1 and ADM2; each
+            level keeps the source&apos;s own name (Division, State / Union Territory, district,
+            Province, Dzongdeys, Gewog, …) and availability differs by country. geoBoundaries
+            provides geography only: no weather data and no scores.{" "}
+            <Link href="/methods#signals-geography" className="underline decoration-line underline-offset-2 hover:text-ink">
+              See how the levels and coverage are handled
+            </Link>
+            .
           </p>
           <p>
-            &quot;Times normal for this date&quot; is today&apos;s total divided by the median of
-            past wet days (at least 1 mm) in that window. Where fewer than 30 wet days exist — arid
-            places — no ratio is shown, and the status rests on the percentile and a millimetre
-            floor. Yellow needs the 85th percentile, twice the normal and at least 10 mm. Red needs
-            the 96th percentile, three times the normal and at least 25 mm, and stays labelled
-            provisional until the backtest is large enough. A place needs 15 years and 300
-            reference values, otherwise it is shown grey.
-          </p>
-          <p>
-            Grey means missing or unusable data, never safety: no data, data older than the
-            staleness limit, too few valid cells, too short a baseline, or outside the covered
-            tiles. The 7-day outlook is an external public forecast shown for context and never
-            changes a status.{" "}
-            <Link href="/signals" className="underline decoration-line underline-offset-2 hover:text-ink">
+            A signal colour (Green, Yellow, Red) is a screen for preparedness, not a forecast or an
+            official warning. Coverage is measured from the committed NASA analysis grids: a
+            variable counts for an area when at least half of that variable&apos;s grid cells in the
+            area&apos;s bounding box fall inside its boundary and carry a usable series. Where no
+            variable qualifies, the area is shown as <strong>No data</strong> — a gap, never a safe
+            area. <Link href="/signals" className="underline decoration-line underline-offset-2 hover:text-ink">
               Open Signals
             </Link>
+          </p>
+          <p>
+            <strong>Scores on the Signals page are demo values.</strong> They are fixed sample
+            numbers stored in their own file, not predictions, measurements or alerts, and no model
+            accuracy is claimed. When prediction output exists it replaces that file in place.
+          </p>
+          <p id="signals-geography" className="scroll-mt-24">
+            <span className="font-medium text-ink">Geographic levels.</span> ADM0 is the country;
+            ADM1 and ADM2 are its local levels, and the deepest published level is not always a
+            district (Sri Lanka&apos;s gbOpen ADM1 and ADM2 labels are unset in the source, so the
+            page says &ldquo;ADM1 areas&rdquo; and &ldquo;ADM2 areas&rdquo; rather than inventing a
+            name). The reusable identifier is stable per boundary: {" "}
+            <code className="rounded bg-sunken px-1 text-xs">{"{iso}"}-adm0</code> for a country,{" "}
+            <code className="rounded bg-sunken px-1 text-xs">{"{iso}"}-adm1-{"{slug}"}</code> and{" "}
+            <code className="rounded bg-sunken px-1 text-xs">{"{iso}"}-adm2-{"{slug}"}</code> for
+            areas, e.g. <code className="rounded bg-sunken px-1 text-xs">bgd-adm2-dhaka</code>.
+            Every page that references a location can use the same ID.
+          </p>
+          <p>
+            <span className="font-medium text-ink">Boundary provenance.</span> The committed record
+            in <code className="rounded bg-sunken px-1 text-xs">public/data/geography/license.json</code>{" "}
+            names the geoBoundaries boundary ID, represented year, license and upstream source for
+            every country and level, alongside the dataset credits in{" "}
+            <code className="rounded bg-sunken px-1 text-xs">public/data/signals/provenance.json</code>.
+            Licenses differ by file (for example CC0 for Bangladesh ADM0/ADM1, CC BY 3.0 IGO for its
+            ADM2), so credit is given per boundary, not once for the whole map.
+          </p>
+          <p>
+            <span className="font-medium text-ink">Rebuild.</span>{" "}
+            <code className="rounded bg-sunken px-1 text-xs">python build_geography.py</code> then{" "}
+            <code className="rounded bg-sunken px-1 text-xs">python build_signal_scores.py</code>{" "}
+            after <code className="rounded bg-sunken px-1 text-xs">build.py</code>. Both run offline
+            from <code className="rounded bg-sunken px-1 text-xs">analysis/raw/</code> and write the
+            committed files; the Signals page always labels the score file as demo.
           </p>
         </Section>
 

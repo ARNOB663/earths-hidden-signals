@@ -1,0 +1,403 @@
+{
+ "code": "BGD",
+ "flag": "🇧🇩",
+ "levels": {
+  "ADM0": {
+   "canonical": "Bangladesh",
+   "code": "ADM0",
+   "count": 1,
+   "name": "Bangladesh",
+   "nameBn": "বাংলাদেশ",
+   "representedYear": "2015",
+   "units": [
+    {
+     "id": "bgd-adm0-bangledesh",
+     "name": "Bangledesh",
+     "shapeISO": "BGD"
+    }
+   ]
+  },
+  "ADM1": {
+   "canonical": "Division",
+   "code": "ADM1",
+   "count": 8,
+   "name": "Division",
+   "nameBn": "বিভাগ",
+   "representedYear": "2015",
+   "units": [
+    {
+     "id": "bgd-adm1-barisal",
+     "name": "Barisal",
+     "shapeISO": "BD-A"
+    },
+    {
+     "id": "bgd-adm1-chittagong",
+     "name": "Chittagong",
+     "shapeISO": "BD-B"
+    },
+    {
+     "id": "bgd-adm1-dhaka",
+     "name": "Dhaka",
+     "shapeISO": "BD-C"
+    },
+    {
+     "id": "bgd-adm1-khulna",
+     "name": "Khulna",
+     "shapeISO": "BD-D"
+    },
+    {
+     "id": "bgd-adm1-mymensingh",
+     "name": "Mymensingh",
+     "shapeISO": "BD-H"
+    },
+    {
+     "id": "bgd-adm1-rajshani",
+     "name": "Rajshani",
+     "shapeISO": "BD-E"
+    },
+    {
+     "id": "bgd-adm1-rangpur",
+     "name": "Rangpur",
+     "shapeISO": "BD-F"
+    },
+    {
+     "id": "bgd-adm1-sylhet",
+     "name": "Sylhet",
+     "shapeISO": "BD-G"
+    }
+   ]
+  },
+  "ADM2": {
+   "canonical": "district",
+   "code": "ADM2",
+   "count": 64,
+   "name": "district",
+   "nameBn": "জেলা",
+   "representedYear": "2020",
+   "units": [
+    {
+     "id": "bgd-adm2-bagerhat",
+     "name": "Bagerhat",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-bandarban",
+     "name": "Bandarban",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-barguna",
+     "name": "Barguna",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-barisal",
+     "name": "Barisal",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-bhola",
+     "name": "Bhola",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-bogra",
+     "name": "Bogra",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-brahamanbaria",
+     "name": "Brahamanbaria",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-chandpur",
+     "name": "Chandpur",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-chittagong",
+     "name": "Chittagong",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-chuadanga",
+     "name": "Chuadanga",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-comilla",
+     "name": "Comilla",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-cox-s-bazar",
+     "name": "Cox's Bazar",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-dhaka",
+     "name": "Dhaka",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-dinajpur",
+     "name": "Dinajpur",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-faridpur",
+     "name": "Faridpur",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-feni",
+     "name": "Feni",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-gaibandha",
+     "name": "Gaibandha",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-gazipur",
+     "name": "Gazipur",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-gopalganj",
+     "name": "Gopalganj",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-habiganj",
+     "name": "Habiganj",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-jamalpur",
+     "name": "Jamalpur",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-jessore",
+     "name": "Jessore",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-jhalokati",
+     "name": "Jhalokati",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-jhenaidah",
+     "name": "Jhenaidah",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-joypurhat",
+     "name": "Joypurhat",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-khagrachhari",
+     "name": "Khagrachhari",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-khulna",
+     "name": "Khulna",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-kishoreganj",
+     "name": "Kishoreganj",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-kurigram",
+     "name": "Kurigram",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-kushtia",
+     "name": "Kushtia",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-lakshmipur",
+     "name": "Lakshmipur",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-lalmonirhat",
+     "name": "Lalmonirhat",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-madaripur",
+     "name": "Madaripur",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-magura",
+     "name": "Magura",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-manikganj",
+     "name": "Manikganj",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-maulvibazar",
+     "name": "Maulvibazar",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-meherpur",
+     "name": "Meherpur",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-munshiganj",
+     "name": "Munshiganj",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-mymensingh",
+     "name": "Mymensingh",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-naogaon",
+     "name": "Naogaon",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-narail",
+     "name": "Narail",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-narayanganj",
+     "name": "Narayanganj",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-narsingdi",
+     "name": "Narsingdi",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-natore",
+     "name": "Natore",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-nawabganj",
+     "name": "Nawabganj",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-netrakona",
+     "name": "Netrakona",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-nilphamari",
+     "name": "Nilphamari",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-noakhali",
+     "name": "Noakhali",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-pabna",
+     "name": "Pabna",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-panchagarh",
+     "name": "Panchagarh",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-patuakhali",
+     "name": "Patuakhali",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-pirojpur",
+     "name": "Pirojpur",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-rajbari",
+     "name": "Rajbari",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-rajshahi",
+     "name": "Rajshahi",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-rangamati",
+     "name": "Rangamati",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-rangpur",
+     "name": "Rangpur",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-satkhira",
+     "name": "Satkhira",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-shariatpur",
+     "name": "Shariatpur",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-sherpur",
+     "name": "Sherpur",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-sirajganj",
+     "name": "Sirajganj",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-sunamganj",
+     "name": "Sunamganj",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-sylhet",
+     "name": "Sylhet",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-tangail",
+     "name": "Tangail",
+     "shapeISO": null
+    },
+    {
+     "id": "bgd-adm2-thakurgaon",
+     "name": "Thakurgaon",
+     "shapeISO": null
+    }
+   ]
+  }
+ },
+ "name": "Bangladesh",
+ "nameBn": "বাংলাদেশ"
+}

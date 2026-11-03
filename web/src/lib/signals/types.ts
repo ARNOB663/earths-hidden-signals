@@ -19,21 +19,6 @@ export interface SignalCell {
   sample?: boolean;
 }
 
-export interface TileGrid {
-  tile: string;
-  cells: SignalCell[];
-}
-
-export interface TopRow extends SignalCell {
-  tile: string;
-  tileLabel: string;
-}
-
-export interface TopList {
-  generatedAt: string | null;
-  rows: TopRow[];
-}
-
 export interface SignalsMeta {
   sampleData: boolean;
   basis: "sample" | "real";

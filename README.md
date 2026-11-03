@@ -10,7 +10,7 @@ The same global warming shows up differently across South Asia: heavier rain in 
 
 | Folder | What it is |
 |---|---|
-| [`web/`](web/) | Next.js + TypeScript website: Overview, Map Explorer (NASA GIBS imagery + Landsat forest loss), Trend Analysis, Hazard Signals, Methods |
+| [`web/`](web/) | Next.js + TypeScript website: Overview, Signals, Map Explorer (NASA GIBS imagery + Landsat forest loss), Trend Analysis, Hazard Signals, Methods |
 | [`analysis/`](analysis/) | Python pipeline: downloads NASA records, runs the trend tests, writes JSON for the website |
 
 ## Data
@@ -20,6 +20,13 @@ The same global warming shows up differently across South Asia: heavier rain in 
 - **Map imagery:** NASA GIBS, from MODIS land surface temperature, MODIS NDVI, MERRA-2 and GLDAS
 - **Forest loss:** Hansen/UMD Global Forest Change, built from NASA/USGS Landsat
 - **Hazard events:** NASA FIRMS MODIS fires, NASA Global Landslide Catalog, GDACS flood alerts
+- **Administrative geography (Signals):** geoBoundaries `gbOpen` ADM0/ADM1/ADM2 boundaries — geography
+  only, no weather data. Records the boundary ID, year, license and upstream source for every level.
+
+The Signals page's Signal codes and percentages are **fixed demo scores**, stored in
+`web/public/data/signals/demo-scores.json` and labelled as samples. They are not predictions,
+measurements or alerts, and no model accuracy is claimed. Data coverage per area is measured from the
+NASA analysis grids (`analysis/build_signal_scores.py`).
 
 ## Method
 
@@ -42,6 +49,8 @@ Details are in [`analysis/README.md`](analysis/README.md).
 cd analysis
 pip install -r requirements.txt
 python build.py
+python build_geography.py        # geoBoundaries gbOpen boundaries (network; then --offline)
+python build_signal_scores.py    # Signals coverage and demo scores
 python build_hazards.py
 
 # website

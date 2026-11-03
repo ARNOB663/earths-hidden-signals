@@ -1,8 +1,7 @@
 // Presentational pieces for the Signals pages. Icon + word for every status, so colour is never
 // the only cue. All text is inline EN/বাং.
 
-import { CircleAlert, CircleCheck, CircleHelp, MinusCircle, TriangleAlert } from "lucide-react";
-import Link from "next/link";
+import { CircleAlert, CircleCheck, MinusCircle, TriangleAlert } from "lucide-react";
 import { T } from "@/lib/i18n";
 import type { Confidence, Status } from "@/lib/signals/types";
 
@@ -29,11 +28,6 @@ export function StatusBadge({ status, large = false }: { status: Status; large?:
       <T en={word.en} bn={word.bn} />
     </span>
   );
-}
-
-export function ConfidenceLabel({ confidence }: { confidence: Confidence }) {
-  const word = CONFIDENCE_WORD[confidence];
-  return <T en={word.en} bn={word.bn} />;
 }
 
 export function SampleBanner({ clock }: { clock: string }) {
@@ -95,41 +89,6 @@ export function DataProvenance({
           <T en={disclaimer} bn="এটি পূর্বাভাস বা সরকারি সতর্কবার্তা নয়।" />
         </span>
       </p>
-    </div>
-  );
-}
-
-export function TileLink({
-  lat,
-  lon,
-  tileLabel,
-  title,
-  children,
-}: {
-  lat: number;
-  lon: number;
-  /** Localised, already-resolved label: this is a server component and cannot read the language. */
-  tileLabel: string;
-  /** Localised link text for screen readers; the caller resolves the language. */
-  title: string;
-  children?: React.ReactNode;
-}) {
-  const href = `/signals/place?lat=${lat}&lon=${lon}`;
-  return (
-    <Link href={href} title={title} className="block rounded-xl border border-line bg-card p-3 transition-colors hover:bg-sunken">
-      {children}
-      <span className="mt-1 block text-xs text-ink-3">
-        {tileLabel} · {lat.toFixed(2)}, {lon.toFixed(2)}
-      </span>
-    </Link>
-  );
-}
-
-export function NotCovered({ label }: { label: string }) {
-  return (
-    <div className="rounded-xl border border-dashed border-line bg-sunken p-3 text-sm text-ink-3">
-      <CircleHelp size={16} className="mr-1 inline" aria-hidden />
-      <T en="Not yet covered" bn="এখনো অন্তর্ভুক্ত নয়" /> · {label}
     </div>
   );
 }
