@@ -59,12 +59,22 @@ export function createBaseMap(
   /** Put the zoom buttons on the side the page's panel doesn't cover. */
   zoomPosition: L.ControlPosition = "topright",
 ): BaseMap {
-  const map = L.map(container, { ...view, minZoom: 2, maxZoom: 12, zoomControl: false, worldCopyJump: true });
+  const map = L.map(container, { ...view, minZoom: 2, maxZoom: 12, zoomControl: false, worldCopyJump: true, trackResize: false });
   L.control.zoom({ position: zoomPosition }).addTo(map);
   L.control.scale({ position: "bottomright", imperial: false }).addTo(map);
 
-  map.createPane("data").style.zIndex = "350";
+  // Custom panes must also carry leaflet-pane: only .leaflet-pane is positioned absolutely, and a
+  // pane without it renders its layer in normal flow at the top of the map.
+  // Trend background (360) sits under this pane (380), which sits under the Esri labels (450).
+  const rasterPane = map.createPane("dataRaster");
+  rasterPane.classList.add("leaflet-pane");
+  rasterPane.style.zIndex = "360";
+  rasterPane.style.pointerEvents = "none";
+  const dataPane = map.createPane("data");
+  dataPane.classList.add("leaflet-pane");
+  dataPane.style.zIndex = "380";
   const refPane = map.createPane("reference");
+  refPane.classList.add("leaflet-pane");
   refPane.style.zIndex = "450";
   refPane.style.pointerEvents = "none";
 

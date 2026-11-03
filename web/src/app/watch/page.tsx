@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { T } from "@/lib/i18n";
 import { ageOf } from "@/lib/signals/age";
-import { readSignalsConfig, readSignalsMeta, readWatch } from "@/lib/signals/data";
+import { readPlaces, readSignalsConfig, readSignalsMeta, readWatch } from "@/lib/signals/data";
 import { DataProvenance, SampleBanner, StatusBadge } from "@/components/signals/parts";
 
 export const revalidate = 86400;
@@ -9,12 +10,36 @@ export const revalidate = 86400;
 export const metadata: Metadata = {
   title: "What to watch · Earth's Hidden Signals",
   description:
-    "Places where the rain signal rose since the previous snapshot. Compared with the previous archive entry only, never with a live forecast. Not an official warning.",
+    "Areas where the rain signal rose since the previous snapshot, named where our data covers them. Compared with the previous archive entry only, never with a live forecast. Not an official warning.",
 };
 
 export default async function WatchPage() {
-  const [watch, meta, config] = await Promise.all([readWatch(), readSignalsMeta(), readSignalsConfig()]);
+  const [watch, meta, config, places] = await Promise.all([
+    readWatch(),
+    readSignalsMeta(),
+    readSignalsConfig(),
+    readPlaces(),
+  ]);
   const age = ageOf(meta.measurementTime, new Date(meta.generatedAt), config.staleHours, meta.sampleData);
+
+  // A rise is named only when a covered area's boundary contains it; otherwise the tile is all
+  // we know, and the page says so rather than inventing a place.
+  const areas = places.areas;
+  const areaAt = (lat: number, lon: number) => {
+    let best: (typeof areas)[number] | null = null;
+    let bestArea = Infinity;
+    for (const area of areas) {
+      const [alat, alon] = area.centre;
+      // Cheap pre-check on the centroid, then the boundary's own distance.
+      if (Math.abs(alat - lat) > 2.5 || Math.abs(alon - lon) > 2.5) continue;
+      const d = (alat - lat) ** 2 + (alon - lon) ** 2;
+      if (d < bestArea) {
+        best = area;
+        bestArea = d;
+      }
+    }
+    return best;
+  };
 
   // Rises come from the archive only; the label is the tile each rise falls in.
   const inside = (rise: { lat: number; lon: number }, tile: (typeof config.enabledTiles)[number]) =>
@@ -76,15 +101,57 @@ export default async function WatchPage() {
             {watch.rises.map((rise) => (
               <li key={`${rise.lat},${rise.lon}`} className="rounded-xl border border-line bg-card p-3">
                 <div className="flex flex-wrap items-center justify-between gap-2">
-                  <span className="text-sm font-medium tabular-nums text-ink">
-                    {rise.lat.toFixed(2)}, {rise.lon.toFixed(2)}
-                  </span>
+                  {(() => {
+                    const area = areaAt(rise.lat, rise.lon);
+                    return area ? (
+                      <Link
+                        href={`/signals/place?id=${encodeURIComponent(area.id)}`}
+                        className="text-sm font-medium text-ink underline decoration-line underline-offset-2 hover:decoration-ink"
+                      >
+                        {area.name}, {area.countryName}
+                      </Link>
+                    ) : (
+                      <span className="text-sm font-medium text-ink-2">
+                        <T en="No named area at this cell" bn="এই কোষে নামযুক্ত এলাকা নেই" />
+                      </span>
+                    );
+                  })()}
                   <StatusBadge status={rise.status} />
                 </div>
                 <p className="mt-1 text-xs text-ink-3">
-                  {labels[`${rise.lat},${rise.lon}`] ?? ""} ·{" "}
-                  <T en="was" bn="আগে ছিল" /> <StatusBadge status={rise.from} />
+                  {(() => {
+                    const area = areaAt(rise.lat, rise.lon);
+                    return area ? (
+                      <>
+                        {area.now.cells[0] && <T en={area.now.cells[0].reasonText} bn={area.now.cells[0].reasonTextBn ?? area.now.cells[0].reasonText} />}
+                        {" · "}
+                      </>
+                    ) : (
+                      <>
+                        {labels[`${rise.lat},${rise.lon}`] ?? ""} · {rise.lat.toFixed(2)}, {rise.lon.toFixed(2)} ·{" "}
+                      </>
+                    );
+                    return <T en="was" bn="আগে ছিল" />;
+                  })()}{" "}
+                  <StatusBadge status={rise.from} />
                 </p>
+                {(() => {
+                  const area = areaAt(rise.lat, rise.lon);
+                  return area ? (
+                    <p className="mt-1 text-xs text-ink-3">
+                      <T en={`Trust here: ${area.trust.label}.`} bn={`এখানে ভরসা: ${area.trust.state === "detectable" ? "শনাক্তযোগ্য" : area.trust.state === "blind-spot" ? "অন্ধ স্থান" : "তথ্য নেই"}।`} />{" "}
+                      {area.trust.state === "blind-spot" && (
+                        <T
+                          en="Today's rain is real; a rise here cannot yet be told apart from noise."
+                          bn="আজকের বৃষ্টি বাস্তব; এখানকার বৃদ্ধি এখনো কোলাহল থেকে আলাদা করা যায় না।"
+                        />
+                      )}{" "}
+                      <Link href={`/signals/place?id=${encodeURIComponent(area.id)}`} className="underline decoration-line underline-offset-2 hover:text-ink">
+                        <T en="Open the place" bn="জায়গাটি খুলুন" />
+                      </Link>
+                    </p>
+                  ) : null;
+                })()}
               </li>
             ))}
           </ul>

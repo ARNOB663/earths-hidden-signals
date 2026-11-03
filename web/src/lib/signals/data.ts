@@ -3,7 +3,7 @@
 
 import { readFile } from "node:fs/promises";
 import path from "node:path";
-import type { AccuracyPayload, SignalsConfig, SignalsMeta, SourcesFile, WatchPayload } from "./types";
+import type { AccuracyPayload, PlaceExtras, PlacesFile, SignalsConfig, SignalsMeta, SourcesFile, WatchPayload } from "./types";
 
 const ROOT = path.join(process.cwd(), "public", "data", "signals");
 
@@ -52,4 +52,23 @@ export async function readAccuracy(): Promise<AccuracyPayload> {
   const accuracy = await assertKeys(await readJson<AccuracyPayload>("accuracy.json"), ["events", "notEnough"], "accuracy.json");
   if (!Array.isArray(accuracy.events)) throw new Error("signals data: accuracy.json has no events array");
   return accuracy;
+}
+
+export async function readPlaces(): Promise<PlacesFile> {
+  return assertKeys(
+    await readJson<PlacesFile>("places.json"),
+    ["areas", "levels", "sample", "tiles"],
+    "places.json",
+  );
+}
+
+/** Optional per-place extras (Next outlook, Evidence years). Absent until `place.py --refresh` runs. */
+export async function readPlaceExtras(id: string): Promise<PlaceExtras | null> {
+  if (!/^[a-z0-9-]+$/.test(id)) return null;
+  try {
+    return await readJson<PlaceExtras>("places", `${id}.json`);
+  } catch {
+    // The refresh step is optional; without it the Next and Evidence strips are omitted.
+    return null;
+  }
 }

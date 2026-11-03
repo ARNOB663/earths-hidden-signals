@@ -561,6 +561,42 @@ export default async function MethodsPage() {
           </p>
         </Section>
 
+        <Section id="trust" n="7c" title="Trust, Before, Now, Next and Evidence">
+          <p>
+            Each covered place opens a page of five strips. <strong className="font-semibold text-ink">Before</strong>{" "}
+            is the analysis pipeline&apos;s own Sen slope and 95% interval, averaged over the grid
+            cells whose centre lies inside the area&apos;s boundary (the same containment rule as the
+            coverage measurement). <strong className="font-semibold text-ink">Now</strong> is the
+            latest IMERG reading for the cell nearest the area&apos;s centre, compared with the same
+            date in past years, with the engine&apos;s own confidence word. A Green place reads
+            &ldquo;No unusual signal in our data. Always follow official warnings.&rdquo; — never
+            &ldquo;safe&rdquo;.
+          </p>
+          <p>
+            <strong className="font-semibold text-ink">Next</strong> is rain from Open-Meteo, an
+            external public source, labelled as such and never allowed to change a Now status; when
+            the provider is unreachable the strip is omitted rather than extrapolated.{" "}
+            <strong className="font-semibold text-ink">Trust</strong> reuses only the interval above:
+            an area is <em>Detectable</em> when the area-mean 95% interval leaves zero in at least
+            one variable, a <em>blind spot</em> when none does, and <em>no history</em> when no
+            gridded cells fall inside it. It is not a probability and not a confidence percentage.
+          </p>
+          <p>
+            <strong className="font-semibold text-ink">Evidence</strong> plots the last 15 years of
+            rain at the place from Open-Meteo&apos;s historical archive — a different product from
+            IMERG — and marks flood years from the GDACS flood catalogue. Missing years stay visible
+            as gaps. The file is written by{" "}
+            <code className="rounded bg-sunken px-1 text-xs">python place.py --refresh</code>; the
+            offline build stays deterministic and leaves it untouched.
+          </p>
+          <p>
+            <Link href="/signals/evidence" className="underline decoration-line underline-offset-2 hover:text-ink">
+              Trust and evidence
+            </Link>{" "}
+            shows the replayed flood events (misses included) and the leads we do not measure yet.
+          </p>
+        </Section>
+
         <Section id="limitations" n="8" title="Limitations">
           <ol className="list-decimal space-y-2 pl-5 marker:text-ink-3">
             <li>

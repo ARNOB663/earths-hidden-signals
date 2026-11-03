@@ -8,10 +8,12 @@
 // publishes it for that country; nothing is invented.
 
 import { ChevronDown, Search, X } from "lucide-react";
+import Link from "next/link";
 import { useDeferredValue, useEffect, useId, useMemo, useRef, useState } from "react";
 import type { CompactAreaRow, SignalCountryHeader } from "@/lib/geography/data";
 import { T, useLang, useT } from "@/lib/i18n";
 import { percentLabel, ROW_STATE, SIGNAL_ORDER, type RowSignal } from "@/lib/signals/states";
+import type { CoveredLink } from "@/lib/signals/places";
 
 type Filter = RowSignal | "all";
 type AreaKey = "ADM1" | "ADM2";
@@ -92,6 +94,15 @@ function AreaCells({ row, totalLayers }: { row: CompactAreaRow; totalLayers: num
   );
 }
 
+/**
+ * The covered places, so a demo row can open the same real place page the Signals list does.
+ * Only the areas with a measured Now reading or a readable history are linked; the rest stay
+ * demo-labelled, as the plan requires.
+ */
+function coveredPlaceIds(places: CoveredLink[]): Set<string> {
+  return new Set(places.filter((place) => place.nowState === "measured" || place.trust !== "no-data").map((place) => place.id));
+}
+
 /** "ADM1: 8 Divisions · ADM2: 64 districts", listing only the levels that exist. */
 function levelLine(country: SignalCountryHeader): string {
   const parts: string[] = [];
@@ -107,10 +118,13 @@ function levelLine(country: SignalCountryHeader): string {
 export function CountrySignalList({
   countries,
   totalLayers,
+  places,
 }: {
   countries: SignalCountryHeader[];
   totalLayers: number;
+  places?: CoveredLink[];
 }) {
+  const covered = useMemo(() => coveredPlaceIds(places ?? []), [places]);
   const t = useT();
   const lang = useLang();
   const searchId = useId();
@@ -481,7 +495,18 @@ export function CountrySignalList({
                               key={row[0]}
                               className="flex min-h-11 flex-col gap-1 rounded-lg bg-card px-3 py-2 sm:flex-row sm:items-center sm:justify-between"
                             >
-                              <span className="min-w-0 break-words text-sm text-ink">{row[1]}</span>
+                              <span className="min-w-0 break-words text-sm text-ink">
+                                {covered.has(row[0]) ? (
+                                  <Link
+                                    href={`/signals/place?id=${encodeURIComponent(row[0])}`}
+                                    className="underline decoration-line underline-offset-2 hover:decoration-ink"
+                                  >
+                                    {row[1]}
+                                  </Link>
+                                ) : (
+                                  row[1]
+                                )}
+                              </span>
                               <AreaCells row={row} totalLayers={totalLayers} />
                             </li>
                           ))}

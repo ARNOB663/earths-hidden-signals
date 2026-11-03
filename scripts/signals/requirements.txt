@@ -4,3 +4,5 @@ requests>=2.31
 numpy>=2.0
 tifffile>=2024.9.20
 pytest>=8
+# place.py reads the committed grids with numpy and tests containment with shapely.
+shapely>=2.0

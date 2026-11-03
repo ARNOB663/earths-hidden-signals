@@ -92,21 +92,19 @@ def test_no_frozen_page_or_component_changed() -> None:
     assert not offenders, "Existing files must not change:\n" + "\n".join(offenders)
 
 
-# The three rev. 8 tabs were staged before the rev. 9 plan added /about; the guard checks the
-# final set and order rather than how many rounds of edits produced it.
-# The nav the rev. 9 plan ships, in order. Monitoring loses its tab (it stays at /monitoring)
-# and About is not a tab (it stays at /about, linked from the Signals footer).
+# The nav as shipped. Watch is the /explore map relabelled; /watch and /monitoring keep their
+# routes but no tab. About is the /methods page. Labels are the short `label:` strings in the
+# TABS entries. This list is a product decision, not a refactor target.
 NAV_TABS = (
     ("/", "Home"),
     ("/signals", "Signals"),
-    ("/watch", "What to watch"),
     ("/accuracy", "Accuracy"),
-    ("/hazards", "Hazard intelligence"),
-    ("/trends", "Climate trends"),
-    ("/explore", "Satellite map"),
-    ("/methods", "Methodology"),
+    ("/hazards", "Hazards"),
+    ("/trends", "Trends"),
+    ("/explore", "Watch"),
+    ("/methods", "About"),
 )
-NO_TAB_ROUTES = ("/monitoring", "/about")
+NO_TAB_ROUTES = ("/monitoring", "/watch")
 
 
 def test_site_nav_has_exactly_the_planned_tabs() -> None:

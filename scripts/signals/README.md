@@ -111,3 +111,30 @@ cd scripts/signals && python3 -m venv .venv && .venv/bin/pip install -r requirem
 
 Outlook source verified 2026-11-03: Open-Meteo at api.open-meteo.com/v1/forecast returns seven daily
 precipitation_sum values, CC-BY 4.0, no key, and every stored payload carries usedInStatus: false.
+
+## Per-place payloads (Before / Now / Next / Trust / Action)
+
+`place.py` turns the committed files into the place record the website reads. It needs no network,
+so it is safe to run in CI and its output is byte-stable:
+
+    python place.py            # places.json + places-map/{ISO}.json + index.json
+
+It runs from `analysis/.venv` (it imports `numpy` and `shapely`) and reads:
+
+* `web/public/data/trends/*.json` — the analysis pipeline's own Sen slope and 95% interval, averaged
+  over the grid cells whose centre lies inside each administrative boundary (Before, Trust).
+* `web/public/data/signals/grid/*.json` — the engine's cells for the tile containing the area (Now).
+* `analysis/raw/geoboundaries/{ISO}/ADM1|ADM2.geojson` — the boundary itself.
+
+Optional network step, never part of the offline build:
+
+    python place.py --refresh  # places/{area}.json: Open-Meteo 7-day outlook (Next) and the
+                               # historical rain archive + GDACS flood years (Evidence)
+
+The map's trend background (`web/public/data/signals/south-asia/`) is built offline from the
+committed trend files by `python scripts/signals/build_south_asia.py` (repo root, analysis venv);
+it draws the analysis cells at their own spacing, so the grid stays visible as a grid.
+
+Cached downloads live in `scripts/signals/raw/places/` (gitignored). The refresh step resumes, so an
+interrupted run continues where it stopped. `test_place.py` checks the Trust rule, the five strips and
+the byte-identical rebuild.

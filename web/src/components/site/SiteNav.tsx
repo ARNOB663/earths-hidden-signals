@@ -9,6 +9,7 @@ import {
   Monitor,
   Moon,
   Satellite,
+  SearchCheck,
   Sun,
   TriangleAlert,
   X,
@@ -30,11 +31,10 @@ import {
 export const TABS = [
   { href: "/", label: "Home", short: "Home", bn: "হোম", shortBn: "হোম", Icon: House },
   { href: "/signals", label: "Signals", short: "Signals", bn: "সংকেত", shortBn: "সংকেত", Icon: Activity },
-  { href: "/watch", label: "Watch", short: "Watch", bn: "কী দেখবেন", shortBn: "দেখুন", Icon: ChartLine },
-  { href: "/accuracy", label: "Accuracy", short: "Accuracy", bn: "নির্ভুলতা", shortBn: "নির্ভুলতা", Icon: TriangleAlert },
   { href: "/hazards", label: "Hazards", short: "Hazards", bn: "দুর্যোগ", shortBn: "দুর্যোগ", Icon: TriangleAlert },
   { href: "/trends", label: "Trends", short: "Trends", bn: "প্রবণতা", shortBn: "প্রবণতা", Icon: ChartLine },
-  { href: "/explore", label: "Map", short: "Map", bn: "মানচিত্র", shortBn: "মানচিত্র", Icon: Satellite },
+  { href: "/explore", label: "Watch", short: "Watch", bn: "কী দেখবেন", shortBn: "দেখুন", Icon: Satellite },
+  { href: "/accuracy", label: "Evidence", short: "Evidence", bn: "প্রমাণ", shortBn: "প্রমাণ", Icon: SearchCheck },
   { href: "/methods", label: "About", short: "About", bn: "সম্পর্কে", shortBn: "সম্পর্কে", Icon: FlaskConical },
 ];
 

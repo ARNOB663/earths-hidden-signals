@@ -286,7 +286,11 @@ export default function LeafletMap({
     const paddingTopLeft: L.PointExpression = desktop && !panelHiddenRef.current ? [380, 76] : [20, 76];
     const paddingBottomRight: L.PointExpression = desktop ? [24, 36] : [20, 200];
     if (selectedPlace) {
-      if (!map.getPane("selection")) map.createPane("selection").style.zIndex = "480";
+      if (!map.getPane("selection")) {
+        const pane = map.createPane("selection");
+        pane.classList.add("leaflet-pane");
+        pane.style.zIndex = "480";
+      }
       const feature = { type: "Feature" as const, properties: {}, geometry: selectedPlace.geometry };
       const outline = L.geoJSON(feature, { pane: "selection", interactive: false, style: { color: "#111111", weight: 4, fill: false } });
       const highlight = L.geoJSON(feature, { pane: "selection", style: { color: "#5098ea", weight: 2, fillOpacity: 0.04, dashArray: selectedPlace.type === "region" ? "6 4" : undefined } });
