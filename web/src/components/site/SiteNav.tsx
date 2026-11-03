@@ -37,9 +37,7 @@ export const TABS = [
 ];
 
 const isActive = (pathname: string, tab: (typeof TABS)[number]) =>
-  tab.href === "/"
-    ? pathname === "/"
-    : pathname.startsWith(tab.href) || ("also" in tab && (tab.also ?? []).some((p) => pathname.startsWith(p)));
+  tab.href === "/" ? pathname === "/" : pathname.startsWith(tab.href);
 
 export function SiteNav({ countries }: { countries: Pick<Country, "slug" | "name" | "nameBn" | "flag">[] }) {
   const pathname = usePathname();
