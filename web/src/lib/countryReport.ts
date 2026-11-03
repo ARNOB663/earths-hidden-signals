@@ -5,8 +5,7 @@
 // Nothing here estimates a value that is not in the data. A section whose dataset does not
 // cover the country reports "not available" rather than a placeholder number.
 
-import { readFile } from "node:fs/promises";
-import path from "node:path";
+import { readData } from "./data";
 import { boxOverlap, pointInCountry } from "./geo";
 import {
   type CycloneTrack,
@@ -19,13 +18,6 @@ import {
 import type { Country, CountrySignal } from "./countries";
 import { PLACES, type Place } from "./places";
 import { formatSigned, type TrendSummary } from "./trends";
-
-const cache = new Map<string, Promise<unknown>>();
-function readData<T>(...parts: string[]): Promise<T> {
-  const file = path.join(process.cwd(), "public", "data", ...parts);
-  if (!cache.has(file)) cache.set(file, readFile(file, "utf-8").then((t) => JSON.parse(t)));
-  return cache.get(file) as Promise<T>;
-}
 
 /** How much of the country a hazard region must cover to count as part of it. */
 const REGION_SHARE = 0.02;

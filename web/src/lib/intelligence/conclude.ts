@@ -94,6 +94,11 @@ export function periodLabel(period: string): { en: string; bn: string } {
   return PERIOD_LABEL[period] ?? { en: period, bn: period };
 }
 
+/** A 0–1 share as a whole percentage, or an em dash when the pipeline left it empty. */
+export function pct(value: number | null | undefined): string {
+  return value == null ? "—" : `${Math.round(value * 100)}%`;
+}
+
 /** "+0.72" with a real minus sign, for values the pipeline already rounded. */
 export function signed(value: number, decimals: number): string {
   const s = value.toFixed(decimals);

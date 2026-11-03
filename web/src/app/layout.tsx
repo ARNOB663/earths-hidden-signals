@@ -5,9 +5,7 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { TourBar } from "@/components/site/Tour";
 import { ToasterHost } from "@/components/ui/ToasterHost";
 import { Logo, SiteNav } from "@/components/site/SiteNav";
-import { countriesFrom } from "@/lib/countries";
-import { readFile } from "node:fs/promises";
-import path from "node:path";
+import { readCountries } from "@/lib/data";
 import { LANG_INIT_SCRIPT, THEME_INIT_SCRIPT } from "@/lib/bootScripts";
 import { T } from "@/lib/i18n";
 import "./globals.css";
@@ -53,9 +51,7 @@ export const viewport: Viewport = {
 
 export default async function RootLayout({ children }: LayoutProps<"/">) {
   // The navbar country search is server-rendered, so the list must also work without JS.
-  const countries = countriesFrom(
-    JSON.parse(await readFile(path.join(process.cwd(), "public/data/maps/place-signals.json"), "utf-8")),
-  ).map(({ slug, name, nameBn, flag }) => ({ slug, name, nameBn, flag }));
+  const countries = (await readCountries()).map(({ slug, name, nameBn, flag }) => ({ slug, name, nameBn, flag }));
 
   return (
     <html

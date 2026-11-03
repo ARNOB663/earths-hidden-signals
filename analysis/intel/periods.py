@@ -87,17 +87,6 @@ def label(period: str, year: int, lang: str = "en") -> str:
     return f"{MONTHS_EN[int(period) - 1]} {year}"
 
 
-def period_name(period: str, lang: str = "en") -> str:
-    """The calendar period without a year, e.g. 'monsoon (Jun–Sep)'."""
-    if lang == "bn":
-        return {"annual": "পুরো বছর", "pre-monsoon": "প্রাক-বর্ষা (মার্চ–মে)", "monsoon": "বর্ষা (জুন–সেপ্টেম্বর)"}.get(
-            period, MONTHS_BN[int(period) - 1] if period in MONTH_KEYS else period
-        )
-    return {"annual": "whole year", "pre-monsoon": "pre-monsoon (Mar–May)", "monsoon": "monsoon (Jun–Sep)"}.get(
-        period, MONTHS_EN[int(period) - 1] if period in MONTH_KEYS else period
-    )
-
-
 def chronological(observations: list[tuple[int, str]]) -> list[tuple[int, str]]:
     """Sort (year, period) pairs by the period's end date."""
     return sorted(observations, key=lambda yp: (period_end(*yp), -len(months_of(yp[1]))))

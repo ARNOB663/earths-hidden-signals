@@ -2,12 +2,12 @@
 // thresholds.json, sources.json and evaluation.json (written by the Python pipeline); nothing
 // is restated by hand, so the page cannot drift from the code.
 
+import { pct } from "@/lib/intelligence/conclude";
 import { FORECAST_FIELDS, FORECAST_GAP } from "@/lib/intelligence/forecast";
 import type { Evaluation, Sources, Thresholds } from "@/lib/intelligence/types";
 
 const th = "px-4 py-2.5 text-left text-xs font-medium uppercase tracking-wide text-ink-3";
 const td = "px-4 py-2.5 align-top";
-const pct = (v: number | null | undefined) => (v == null ? "—" : `${Math.round(v * 100)}%`);
 
 function Block({ title, children }: { title: string; children: React.ReactNode }) {
   return (

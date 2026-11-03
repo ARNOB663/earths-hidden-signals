@@ -36,11 +36,6 @@ class DaySeries:
         return total
 
 
-def doy_window(doy: int, half: int) -> list[int]:
-    """Day-of-year numbers within +/- half of `doy` in a non-leap year, wrapping at the ends."""
-    return sorted({((doy - 1 + shift) % 365) + 1 for shift in range(-half, half + 1)})
-
-
 def season_days(year: int, doy: int, half: int, *, include_leap_day: bool = True) -> list[dt.date]:
     """The same calendar days in `year`, matched by (month, day) so leap years line up.
 
@@ -90,10 +85,6 @@ class WindowStats:
     sample_count: int
     year_count: int
     percentiles: dict[int, float] = field(default_factory=dict)
-
-    @property
-    def enough_years(self) -> bool:
-        return self.year_count
 
     def as_dict(self) -> dict:
         return {

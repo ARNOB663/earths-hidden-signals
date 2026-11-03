@@ -4,15 +4,7 @@
 
 import { slug } from "./download";
 import { COUNTRY_BN } from "./names";
-import type { TrendSummary, VariableId } from "./trends";
-
-export type CountrySlug =
-  | "bangladesh"
-  | "bhutan"
-  | "india"
-  | "nepal"
-  | "pakistan"
-  | "sri-lanka";
+import type { TrendSummary } from "./trends";
 
 export interface CountrySignal {
   years: number[];
@@ -103,5 +95,3 @@ export const COUNTRY_TREND_KEYS = {
   rainfall: ["rainfall_annual", "rainfall_pre-monsoon", "rainfall_monsoon"],
   extremes: ["hot-months_annual", "dry-spell_annual", "heavy-rain_annual", "wettest-day_annual"],
 } as const;
-
-export const keyVariable = (key: string) => key.split("_")[0] as VariableId;

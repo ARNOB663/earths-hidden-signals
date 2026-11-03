@@ -259,15 +259,11 @@ def build_sample(config: dict) -> None:
         config,
     )
     # What-to-watch reads the whole archive: one entry, so the page must say "no rise recorded yet".
-    write_watch(config)
-    writer.write_demo({"snapshot.json": {"sampleData": True, "clock": clock}}, config)
-    print(f"sample build written to {writer.OUT}")
-
-
-def write_watch(config: dict) -> None:
     import watch as watch_mod
 
     writer.write_watch(watch_mod.summary(watch_mod.read_archive(writer.OUT / "archive")), config)
+    writer.write_demo({"snapshot.json": {"sampleData": True, "clock": clock}}, config)
+    print(f"sample build written to {writer.OUT}")
 
 
 def build_demo(config: dict) -> None:

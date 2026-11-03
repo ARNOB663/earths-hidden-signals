@@ -16,8 +16,3 @@ export function lossYearColor(t: number): [number, number, number] {
   const b = COLOR_STOPS[i + 1];
   return [0, 1, 2].map((k) => Math.round(a[k] + (b[k] - a[k]) * f)) as [number, number, number];
 }
-
-export function lossYearGradient(): string {
-  const stops = COLOR_STOPS.map((c, i) => `rgb(${c.join(",")}) ${(i / (COLOR_STOPS.length - 1)) * 100}%`);
-  return `linear-gradient(to right, ${stops.join(", ")})`;
-}

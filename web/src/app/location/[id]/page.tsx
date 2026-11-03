@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { readFile } from "node:fs/promises";
-import path from "node:path";
 import { AlertPreferences } from "@/components/intelligence/AlertPreferences";
 import { Locator } from "@/components/intelligence/Locator";
 import {
@@ -26,7 +24,7 @@ import { bnNum } from "@/lib/bn";
 import { T } from "@/lib/i18n";
 import { KIND_LABEL } from "@/lib/intelligence/conclude";
 import { readAlerts, readCurrent, readHistory, readLocation, readLocations } from "@/lib/intelligence/data";
-import type { PlaceSignals } from "@/lib/countries";
+import { readPlaceSignals } from "@/lib/data";
 
 export const dynamicParams = false;
 // Data pages re-render daily, so a pipeline refresh shows up without a redeploy.
@@ -53,7 +51,7 @@ const QUESTIONS = [
 ] as const;
 
 async function countryShapes() {
-  const data = JSON.parse(await readFile(path.join(process.cwd(), "public/data/maps/place-signals.json"), "utf-8")) as PlaceSignals;
+  const data = await readPlaceSignals();
   return data.places.filter((p) => p.type === "country").map((p) => ({ id: p.id, geometry: p.geometry as { type: "Polygon" | "MultiPolygon"; coordinates: unknown } }));
 }
 

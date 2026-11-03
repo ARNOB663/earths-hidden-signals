@@ -19,8 +19,6 @@ import time
 from datetime import date
 from pathlib import Path
 
-from shapely.geometry import shape
-
 from intel import confidence as conf
 from intel import geography, inputs, thresholds, validation
 from intel.alerts import lifecycle, official_alerts

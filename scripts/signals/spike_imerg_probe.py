@@ -21,13 +21,11 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
-import json
 import math
 import os
 import re
 import sys
 import time
-import urllib.parse
 from dataclasses import dataclass, field
 
 try:
@@ -311,7 +309,7 @@ def probe_geotiff(session_: requests.Session, day: dt.date | None = None) -> Tim
                 except Exception as error:  # noqa: BLE001 - probe only
                     note += f"; tifffile read failed ({type(error).__name__})"
                 return Timing(route="PPS GeoTIFF 1-day", ok=True, seconds=seconds, byte_count=written, note=note)
-        except requests.RequestException as error:
+        except requests.RequestException:
             continue
     return Timing(route="PPS GeoTIFF 1-day", ok=False, note=f"no file for {day}; check product path in README.GIS")
 
@@ -400,8 +398,8 @@ def projected_sizes(session_: requests.Session, lat: float, lon: float, cell_deg
             rows.append([product, start_year, resolution, cells, f"{human(compressed * cells)}", human(total)])
     return (
         table(rows, ["baseline product", "start year", "grid deg", "cells/tile", "bytes/tile", "total (all enabled tiles)"])
-        + f"\n\nBudget (rev. 7 §5d): 25 MB total, 8 MB per tile. Cell size assumption: 2-byte uint16 mm/day,"
-        f" zlib ratio 0.45. If a row exceeds the budget, store weekly sums or 0.5 deg cells.\n"
+        + "\n\nBudget (rev. 7 §5d): 25 MB total, 8 MB per tile. Cell size assumption: 2-byte uint16 mm/day,"
+        " zlib ratio 0.45. If a row exceeds the budget, store weekly sums or 0.5 deg cells.\n"
     )
 
 

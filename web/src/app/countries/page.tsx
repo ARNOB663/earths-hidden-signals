@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { readFile } from "node:fs/promises";
-import path from "node:path";
 import { Suspense } from "react";
 import { CountrySearch } from "@/components/site/CountrySearch";
-import { countriesFrom } from "@/lib/countries";
+import { readCountries } from "@/lib/data";
 import { T } from "@/lib/i18n";
 
 export const metadata: Metadata = {
@@ -12,13 +10,8 @@ export const metadata: Metadata = {
   description: "Country dashboards for South Asia: observed climate trends, hazard records and NASA satellite layers.",
 };
 
-async function loadCountries() {
-  const data = JSON.parse(await readFile(path.join(process.cwd(), "public/data/maps/place-signals.json"), "utf-8"));
-  return countriesFrom(data);
-}
-
 export default async function CountriesPage() {
-  const countries = await loadCountries();
+  const countries = await readCountries();
   return (
     <div className="mx-auto w-full max-w-[1100px] px-4 pb-24 pt-12 sm:px-6">
       <h1 className="text-4xl font-semibold tracking-tight text-ink sm:text-5xl">

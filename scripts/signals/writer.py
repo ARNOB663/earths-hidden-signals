@@ -58,11 +58,6 @@ def write_grid(tile_id: str, cells: list[dict], config: dict) -> int:
     return size
 
 
-def write_evidence(tile_id: str, payload: dict, config: dict) -> None:
-    size = _dump(OUT / "evidence" / f"{tile_id}.json", payload)
-    check_budget(f"evidence/{tile_id}.json", size, config["budgets"]["evidenceBytes"])
-
-
 def write_replay(event_id: str, payload: dict, config: dict) -> None:
     size = _dump(OUT / "replay" / f"{event_id}.json", payload)
     check_budget(f"replay/{event_id}.json", size, config["budgets"]["replayBytes"])
@@ -84,13 +79,3 @@ def write_demo(files: dict[str, dict], config: dict) -> None:
         path = OUT / "demo" / name
         total += _dump(path, payload)
     check_budget("demo/", total, config["budgets"]["demoBytes"])
-
-
-def previous_archive(config: dict) -> dict | None:
-    folder = OUT / "archive"
-    if not folder.exists():
-        return None
-    files = sorted(folder.glob("*.json"))
-    if not files:
-        return None
-    return json.loads(files[-1].read_text(encoding="utf-8"))

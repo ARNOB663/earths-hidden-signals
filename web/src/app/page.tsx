@@ -18,8 +18,6 @@ import { Sparkline } from "@/components/findings/parts";
 import EvidenceStory from "@/components/home/EvidenceStory";
 import HeroClimateStory from "@/components/hero/HeroClimateStory";
 import HeroImageSlideshow from "@/components/hero/HeroImageSlideshow";
-import { readFile } from "node:fs/promises";
-import path from "node:path";
 import { CountrySearch } from "@/components/site/CountrySearch";
 import { IntelligenceStrip } from "@/components/intelligence/IntelligenceStrip";
 import { LevelBadge } from "@/components/intelligence/parts";
@@ -27,6 +25,7 @@ import { readAlerts, readIndex, readLocation } from "@/lib/intelligence/data";
 import { StartTourButton } from "@/components/site/Tour";
 import { bnMonth, bnNum } from "@/lib/bn";
 import {
+  readCountries,
   readHazardZones,
   readLatest,
   readManifest,
@@ -37,7 +36,7 @@ import { preparednessSignal } from "@/lib/hazards";
 import { T } from "@/lib/i18n";
 import { zoneNameBn } from "@/lib/names";
 import { buildCountryReport } from "@/lib/countryReport";
-import { countriesFrom, countryBySlug } from "@/lib/countries";
+import { countryBySlug } from "@/lib/countries";
 
 import { formatSigned, type Zone } from "@/lib/trends";
 
@@ -138,9 +137,7 @@ const TOOLS: Tool[] = [
 ];
 
 export default async function Home() {
-  const countries = countriesFrom(
-    JSON.parse(await readFile(path.join(process.cwd(), "public/data/maps/place-signals.json"), "utf-8")),
-  );
+  const countries = await readCountries();
   const bangladesh = countryBySlug(countries, "bangladesh")!;
   const [studyScreening, intelAlerts, intelIndex] = await Promise.all([
     readLocation("study-area"),
@@ -151,15 +148,9 @@ export default async function Home() {
     level: l,
     n: intelIndex.filter((e) => e.kind !== "city" && e.level === l).length,
   }));
-  const [manifest, trendZones, hazardZones, latest, countryReport, rainfallGrid] =
-    await Promise.all([
-      readManifest(),
-      readTrendZones(),
-      readHazardZones(),
-      readLatest(),
-      buildCountryReport(bangladesh),
-      readTrendGrid("rainfall_monsoon"),
-    ]);
+  const [manifest, trendZones, hazardZones, latest, countryReport, rainfallGrid] = await Promise.all([
+    readManifest(), readTrendZones(), readHazardZones(), readLatest(), buildCountryReport(bangladesh), readTrendGrid("rainfall_monsoon"),
+  ]);
   const monthName = (ym: string) =>
     new Date(`${ym}-01T00:00:00`).toLocaleDateString("en-GB", {
       month: "long",

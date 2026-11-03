@@ -42,9 +42,6 @@ class Tile:
                 out.append((round(lat, 4), round(lon, 4)))
         return out
 
-    def area_deg2(self) -> float:
-        return (self.north - self.south) * (self.east - self.west)
-
 
 def load_config(path: Path = CONFIG_PATH) -> dict:
     with open(path, encoding="utf-8") as handle:

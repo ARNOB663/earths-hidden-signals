@@ -3,7 +3,7 @@ import Link from "next/link";
 import { AlertCard, Disclaimer, LevelBadge, OfficialAlertCard, Section } from "@/components/intelligence/parts";
 import { bnNum } from "@/lib/bn";
 import { T } from "@/lib/i18n";
-import { classLabel } from "@/lib/intelligence/conclude";
+import { classLabel, pct } from "@/lib/intelligence/conclude";
 import { readAlerts, readCurrent, readEvaluation, readIndex, readSources } from "@/lib/intelligence/data";
 
 export const metadata: Metadata = {
@@ -13,8 +13,6 @@ export const metadata: Metadata = {
 
 // Data pages re-render daily, so a pipeline refresh shows up without a redeploy.
 export const revalidate = 86400;
-
-const pct = (v: number | null | undefined) => (v == null ? "—" : `${Math.round(v * 100)}%`);
 
 export default async function MonitoringPage() {
   const [sources, alerts, current, index, evaluation] = await Promise.all([readSources(), readAlerts(), readCurrent(), readIndex(), readEvaluation()]);

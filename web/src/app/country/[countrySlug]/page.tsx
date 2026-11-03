@@ -16,20 +16,20 @@ import { ShareButton } from "@/components/ui/ShareButton";
 import { HAZARD_ICONS } from "@/components/ui/icons";
 import { Sureness } from "@/components/ui";
 import { bnNum } from "@/lib/bn";
-import {
-  countriesFrom,
-  countryBySlug,
-  type Country,
-  type CountrySignal,
-} from "@/lib/countries";
+import { countryBySlug, type Country, type CountrySignal } from "@/lib/countries";
 import { buildCountryReport, type CountryHazard } from "@/lib/countryReport";
-import { readFile } from "node:fs/promises";
-import path from "node:path";
-import { readManifest, readTrendGrid } from "@/lib/data";
+import {
+  readCountries,
+  readFireGrid,
+  readFloods,
+  readHazardZones,
+  readLandslides,
+  readManifest,
+  readTrendGrid,
+} from "@/lib/data";
 import { getGibsCatalog } from "@/lib/gibs";
 import { T } from "@/lib/i18n";
 import { HAZARD_META } from "@/lib/hazards";
-import type { FireGrid, FloodEvent, HazardZone, LandslideEvent } from "@/lib/hazards";
 import { HAZARD_BN, ZONE_BN } from "@/lib/names";
 import { colorLimit, formatSigned } from "@/lib/trends";
 
@@ -37,19 +37,12 @@ export const dynamicParams = false;
 // Re-check NASA's catalog daily, like the satellite explorer.
 export const revalidate = 86400;
 
-async function allCountries() {
-  const data = JSON.parse(
-    await readFile(path.join(process.cwd(), "public/data/maps/place-signals.json"), "utf-8"),
-  );
-  return countriesFrom(data);
-}
-
 export async function generateStaticParams() {
-  return (await allCountries()).map((c) => ({ countrySlug: c.slug }));
+  return (await readCountries()).map((c) => ({ countrySlug: c.slug }));
 }
 
 export async function generateMetadata({ params }: PageProps<"/country/[countrySlug]">): Promise<Metadata> {
-  const country = countryBySlug(await allCountries(), (await params).countrySlug);
+  const country = countryBySlug(await readCountries(), (await params).countrySlug);
   if (!country) return {};
   return {
     title: `${country.name} · Country dashboard · Earth's Hidden Signals`,
@@ -67,7 +60,7 @@ const TREND_LAYER_KEYS = [
 
 
 export default async function CountryPage({ params }: PageProps<"/country/[countrySlug]">) {
-  const country = countryBySlug(await allCountries(), (await params).countrySlug);
+  const country = countryBySlug(await readCountries(), (await params).countrySlug);
   if (!country) notFound();
 
   const [screening, alertData, report, manifest, catalog, hazardZones, slides, floods, fires] = await Promise.all([
@@ -76,10 +69,10 @@ export default async function CountryPage({ params }: PageProps<"/country/[count
     buildCountryReport(country),
     readManifest(),
     getGibsCatalog(),
-    readFile(path.join(process.cwd(), "public/data/hazards/zones.json"), "utf-8").then((t) => (JSON.parse(t) as { zones: HazardZone[] }).zones),
-    readFile(path.join(process.cwd(), "public/data/hazards/landslides.json"), "utf-8").then((t) => JSON.parse(t) as LandslideEvent[]),
-    readFile(path.join(process.cwd(), "public/data/hazards/floods.json"), "utf-8").then((t) => JSON.parse(t) as FloodEvent[]),
-    readFile(path.join(process.cwd(), "public/data/hazards/fires_grid.json"), "utf-8").then((t) => JSON.parse(t) as FireGrid),
+    readHazardZones(),
+    readLandslides(),
+    readFloods(),
+    readFireGrid(),
   ]);
 
   const trendLayers = await Promise.all(
@@ -103,7 +96,7 @@ export default async function CountryPage({ params }: PageProps<"/country/[count
   const regionIds = new Set(report.regions.map((r) => r.zone.id));
   const mapZones = hazardZones.filter((z) => z.id === "study-area" || regionIds.has(z.id));
 
-  const countries = await allCountries();
+  const countries = await readCountries();
   const neighbours = countries.filter((c) => c.slug !== country.slug);
 
   const [first, last] = report.years;

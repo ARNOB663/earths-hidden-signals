@@ -13,22 +13,8 @@ export const DIFF_ENDS: Record<DiffKind, { less: RGB; more: RGB }> = {
   soil: { less: [140, 81, 10], more: [33, 102, 172] },
 };
 
-/** What "less" and "more" mean for each scheme, in English and Bangla. */
-export const DIFF_WORDS: Record<DiffKind, { less: [string, string]; more: [string, string] }> = {
-  temp: { less: ["Colder", "ঠান্ডা"], more: ["Hotter", "গরম"] },
-  rain: { less: ["Drier", "শুষ্ক"], more: ["Wetter", "ভেজা"] },
-  green: { less: ["Less green", "কম সবুজ"], more: ["Greener", "বেশি সবুজ"] },
-  soil: { less: ["Drier soil", "শুকনো মাটি"], more: ["Wetter soil", "ভেজা মাটি"] },
-};
-
 export function hexToRgb(hex: string): RGB {
   const h = hex.trim().replace("#", "");
   const n = parseInt(h.length === 3 ? h.replace(/./g, (c) => c + c) : h, 16);
   return Number.isFinite(n) ? [(n >> 16) & 255, (n >> 8) & 255, n & 255] : [200, 200, 200];
-}
-
-/** CSS gradient for the colour key: "less" on the left, no change in the middle, "more" on the right. */
-export function diffGradient(kind: DiffKind, mid: string): string {
-  const { less, more } = DIFF_ENDS[kind];
-  return `linear-gradient(to right, rgb(${less.join(",")}), ${mid}, rgb(${more.join(",")}))`;
 }
