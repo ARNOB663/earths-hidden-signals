@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { T } from "@/lib/i18n";
-import { SampleBanner } from "@/components/signals/parts";
+import { bnNum } from "@/lib/bn";
+import { DataProvenance, SampleBanner } from "@/components/signals/parts";
 import { ageOf } from "@/lib/signals/age";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { readAccuracy, readPlaces, readSignalsConfig, readSignalsMeta } from "@/lib/signals/data";
+import type { SignalsConfig } from "@/lib/signals/types";
 
 /**
  * The measured finding from analysis/evaluation_baseline.json, read rather than retyped. When the
@@ -29,7 +31,7 @@ export const revalidate = 86400;
 export const metadata: Metadata = {
   title: "Trust and evidence · Earth's Hidden Signals",
   description:
-    "What we can measure about our own rain signal: how often it rose before a verified flood (misses included), which places can be warned at all, and the leads that go unmeasured. Historical replay, never a live warning.",
+    "Our rain signal tested against the flood catalogue, and the places that can be warned at all. The replay is not built yet. Not a forecast or an official warning.",
 };
 
 /** Replay outcome words. A replay that is not built yet is neutral, never the Grey "no data". */
@@ -67,6 +69,77 @@ function Counter({ value, en, bn }: { value: number | null; en: string; bn: stri
       </p>
       <p className="mt-1 text-2xl font-semibold tabular-nums text-ink">{value === null ? "—" : value}</p>
     </div>
+  );
+}
+
+/** The covered tiles beside the replay events: the events sit in a separate strip so a point far
+ *  outside coverage is visible as "far away" instead of stretching the map into empty space. */
+function CoverageMiniMap({
+  tiles,
+  events,
+}: {
+  tiles: SignalsConfig["enabledTiles"];
+  events: { id: string; lat: number; lon: number; inCoverage: boolean }[];
+}) {
+  const [left, right] = [Math.min(...tiles.map((t) => t.west)), Math.max(...tiles.map((t) => t.east))];
+  const [top, bottom] = [Math.max(...tiles.map((t) => t.north)), Math.min(...tiles.map((t) => t.south))];
+  const plot = (lat: number, lon: number) => ({
+    top: `${((top - lat) / (top - bottom)) * 100}%`,
+    left: `${((lon - left) / (right - left)) * 100}%`,
+  });
+  return (
+    <figure className="mt-3 rounded-xl border border-line bg-card p-3">
+      <div className="relative aspect-[3/2] w-full rounded-lg bg-sunken" role="img" aria-label="Covered tiles and replay events">
+        {tiles.map((tile) => (
+          <div
+            key={tile.id}
+            className="absolute rounded-sm border border-accent bg-accent-soft"
+            style={{
+              ...plot(tile.north, tile.west),
+              width: `${((tile.east - tile.west) / (right - left)) * 100}%`,
+              height: `${((tile.north - tile.south) / (top - bottom)) * 100}%`,
+            }}
+          >
+            <span className="absolute left-1 top-0.5 max-w-full truncate text-[10px] text-ink-3">{tile.label}</span>
+          </div>
+        ))}
+        {events.map((event) => (
+          <span
+            key={event.id}
+            title={`${event.lat.toFixed(2)}, ${event.lon.toFixed(2)}`}
+            className={`absolute z-10 h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full ring-2 ring-card ${event.inCoverage ? "bg-accent-strong" : "bg-watch"}`}
+            style={plot(event.lat, event.lon)}
+          />
+        ))}
+      </div>
+      <figcaption className="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-xs text-ink-3">
+        <span className="inline-flex items-center gap-1.5">
+          <span className="h-2.5 w-2.5 rounded-sm border border-accent bg-accent-soft" aria-hidden />
+          <T en="Covered tile" bn="আচ্ছাদিত টাইল" />
+        </span>
+        <span className="inline-flex items-center gap-1.5">
+          <span className="h-2.5 w-2.5 rounded-full bg-accent-strong" aria-hidden />
+          <T en="Event inside coverage" bn="আচ্ছাদনার ভেতরের ঘটনা" />
+        </span>
+        <span className="inline-flex items-center gap-1.5">
+          <span className="h-2.5 w-2.5 rounded-full bg-watch" aria-hidden />
+          <T en="Event outside coverage" bn="আচ্ছাদনার বাইরের ঘটনা" />
+        </span>
+      </figcaption>
+      <p className="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-xs text-ink-3">
+        <T
+          en="Events outside coverage (not drawn on the map; the three tiles cover only part of South Asia):"
+          bn="আচ্ছাদনার বাইরের ঘটনা (মানচিত্রে আঁকা হয়নি; তিনটি টাইল দক্ষিণ এশিয়ার কেবল একটি অংশ ঢাকে):"
+        />
+        {events
+          .filter((event) => !event.inCoverage)
+          .map((event) => (
+            <span key={event.id} className="tabular-nums text-ink-2">
+              {event.lat.toFixed(2)}, {event.lon.toFixed(2)}
+            </span>
+          ))}
+      </p>
+    </figure>
   );
 }
 
@@ -117,6 +190,10 @@ export default async function AccuracyPage() {
     { detectable: 0, "blind-spot": 0, "no-data": 0 } as Record<string, number>,
   );
   const measured = (accuracy.hits ?? 0) + (accuracy.misses ?? 0);
+  const checkable = trustCounts.detectable;
+  const unseparable = trustCounts["blind-spot"];
+  const blank = trustCounts["no-data"];
+  const outsideCoverage = accuracy.events.filter((event) => !event.inCoverage).length;
 
   return (
     <main className="mx-auto w-full max-w-3xl px-4 pb-16 pt-6 sm:px-6">
@@ -126,58 +203,131 @@ export default async function AccuracyPage() {
       </h1>
       <p className="mt-2 text-sm text-ink-2">
         <T
-          en="This page shows what we can measure about our own signal and where it stops. That is a different question from accuracy: how often the rain signal rose before a verified flood (misses included), which places can be warned at all, and what we do not measure yet. It is a historical replay, never a live warning."
-          bn="এই পাতায় দেখানো হয় আমাদের নিজের সংকেত সম্পর্কে আমরা কী মাপতে পারি আর কোথায় থামে। এটি নির্ভুলতা থেকে আলাদা প্রশ্ন: যাচাইকৃত বন্যার আগে বৃষ্টির সংকেত কতবার বেড়েছে (বাদ পড়াগুলোসহ), কোন জায়গাগুলোকে আদৌ সতর্ক করা যায়, আর আমরা এখনো কী মাপি না। এটি ঐতিহাসিক পুনরাবৃত্তি, কখনো সরাসরি সতর্কবার্তা নয়।"
+          en="Every district page ends on a Trust label. This page explains what that label means, how many places carry each one, and why we measure instead of warn. The historical replay against real floods is not built yet. Not a forecast or an official warning."
+          bn="প্রতিটি জেলার পাতা শেষ হয় একটি ভরসা-লেবেল দিয়ে। এই পাতায় বলা হয় সেই লেবেলের অর্থ কী, কতটি জায়গা কোনটি বহন করে, আর কেন আমরা সতর্ক করার বদলে মাপি। বাস্তব বন্যার সাথে ঐতিহাসিক পুনরাবৃত্তি এখনো তৈরি হয়নি। এটি পূর্বাভাস বা সরকারি সতর্কবার্তা নয়।"
         />
       </p>
 
+      <section aria-labelledby="trust" className="mt-6 rounded-2xl border border-line bg-card p-4">
+        <h2 id="trust" className="text-base font-semibold text-ink">
+          <T en="Trust: where the signal can be checked" bn="ভরসা: কোথায় সংকেত যাচাই করা যায়" />
+        </h2>
+        <p className="mt-2 text-lg font-medium leading-snug text-ink">
+          <T
+            en={`${checkable} of ${places.areas.length} covered areas can be checked against history. ${unseparable} cannot be separated from noise.`}
+            bn={`${places.areas.length}টি আচ্ছাদিত এলাকার মধ্যে ${bnNum(checkable)}টির ইতিহাসের সাথে যাচাই করা যায়। ${bnNum(unseparable)}টিকে কোলাহল থেকে আলাদা করা যায় না।`}
+          />
+        </p>
+        <p className="mt-1 text-sm text-ink-2">
+          <T
+            en={`Each covered area carries one Trust label, taken from the same 95% interval as its Before strip. Of ${places.areas.length} areas: ${checkable} detectable, ${unseparable} blind spots, ${blank} with no history.`}
+            bn={`প্রতিটি আচ্ছাদিত এলাকার একটি ভরসা-লেবেল আছে, যা তার ‘আগে’ স্তরের একই ৯৫% ব্যবধান থেকে আসে। ${bnNum(places.areas.length)}টি এলাকার মধ্যে: ${bnNum(checkable)}টি শনাক্তযোগ্য, ${bnNum(unseparable)}টি অন্ধ স্থান, ${bnNum(blank)}টির ইতিহাস নেই।`}
+          />
+        </p>
+        <dl className="mt-3 space-y-2">
+          {TRUST_STATES.map((state) => (
+            <div key={state.key} className="rounded-xl border border-line bg-card p-3">
+              <dt className={`text-sm font-semibold ${state.cls}`}>
+                <T en={state.en} bn={state.bn} />{" "}
+                <span className="font-normal tabular-nums text-ink-3">{trustCounts[state.key]}</span>
+              </dt>
+              <dd className="mt-1 text-sm text-ink-2">
+                <T en={state.body.en} bn={state.body.bn} />
+              </dd>
+            </div>
+          ))}
+        </dl>
+        <p className="mt-2 text-xs text-ink-3">
+          <T
+            en="Trust is not a probability and not a confidence percentage. It answers one question: can the data here tell a change from noise?"
+            bn="ভরসা কোনো সম্ভাবনা নয়, শতাংশও নয়। এটি একটাই প্রশ্নের উত্তর দেয়: এখানকার তথ্য কি পরিবর্তনকে কোলাহল থেকে আলাদা করতে পারে?"
+          />
+        </p>
+      </section>
+
       {(baseline.floodFalseAlarm !== null || baseline.missed !== null) && (
-        <section aria-labelledby="finding" className="mt-6 rounded-2xl border border-line bg-card p-4">
+        <section aria-labelledby="finding" className="mt-6">
           <h2 id="finding" className="text-base font-semibold text-ink">
-            <T en="What the backtest measured" bn="ব্যাকটেস্টে যা মাপা হয়েছে" />
+            <T en="Why Trust and not a forecast" bn="কেন পূর্বাভাস নয়, ভরসা" />
           </h2>
-          <dl className="mt-2 grid grid-cols-2 gap-3">
-            {baseline.floodFalseAlarm !== null && (
-              <div>
-                <dt className="text-xs text-ink-3">
-                  <T en="Flood alerts with no flood in the backtest" bn="ব্যাকটেস্টে বন্যা-হীন বন্যা-সংকেত" />
-                </dt>
-                <dd className="text-2xl font-semibold tabular-nums text-ink">{Math.round(baseline.floodFalseAlarm * 100)}%</dd>
-              </div>
-            )}
-            {baseline.missed !== null && (
-              <div>
-                <dt className="text-xs text-ink-3">
-                  <T en="Events missed" bn="বাদ পড়া ঘটনা" />
-                </dt>
-                <dd className="text-2xl font-semibold tabular-nums text-ink">{Math.round(baseline.missed * 100)}%</dd>
-              </div>
-            )}
-          </dl>
-          <p className="mt-2 text-sm text-ink-2">
+          <p className="mt-1 text-sm text-ink-2">
             <T
-              en={`These are the numbers behind the Trust axis, and they are the finding, not a bug to hide: on the backtest the edge-case alert rule fires where no flood was recorded (${Math.round((baseline.floodFalseAlarm ?? 0) * 100)}%) and misses most events that were (${Math.round((baseline.missed ?? 0) * 100)}%). A genuinely destructive flood can still have no alert or a missed one, so nothing here claims to warn people in time. Each place instead says whether its history can be checked at all.`}
-              bn={`এগুলোই ভরসার অক্ষের পেছনের সংখ্যা, এবং এগুলোই ফলাফল, লুকানোর মতো ত্রুটি নয়: ব্যাকটেস্টে যেখানে বন্যা নথিভুক্ত নেই সেখানেও সংকেত ওঠে (${Math.round((baseline.floodFalseAlarm ?? 0) * 100)}%) এবং যেখানে বন্যা ছিল তার বেশিরভাগই বাদ পড়ে (${Math.round((baseline.missed ?? 0) * 100)}%)। তাই এখানে কিছুই সময়মতো সতর্ক করার দাবি করে না; বদলে প্রতিটি জায়গা বলে তার ইতিহাস আদৌ যাচাই করা যায় কি না।`}
+              en="We tried alerting on this data first. This is why we measure instead of warn."
+              bn="আমরা প্রথমে এই তথ্যে সতর্ক করার চেষ্টা করেছিলাম। এ কারণেই আমরা সতর্ক করার বদলে মাপি।"
             />
           </p>
-          <p className="mt-1 text-xs text-ink-3">
-            <T
-              en="From analysis/evaluation_baseline.json. It measures the earlier hazard alerts on the backtest, not the rain signal replayed below."
-              bn="analysis/evaluation_baseline.json থেকে। এটি নিচে পুনরাবৃত্ত বৃষ্টির সংকেত নয়, আগের বিপদ-সতর্কতাগুলোকে ব্যাকটেস্টে মাপে।"
-            />
-          </p>
+          <div className="mt-3 rounded-2xl border border-line bg-card p-4">
+            <h3 className="text-sm font-semibold text-ink">
+              <T
+                en="The analysis pipeline's hazard-alert backtest (not this feature's score)"
+                bn="বিশ্লেষণ পাইপলাইনের বিপদ-সতর্কতা ব্যাকটেস্ট (এই ফিচারের স্কোর নয়)"
+              />
+            </h3>
+            <dl className="mt-2 grid grid-cols-2 gap-3">
+              {baseline.floodFalseAlarm !== null && (
+                <div>
+                  <dt className="text-xs text-ink-3">
+                    <T en="Flood alerts with no flood in the backtest" bn="ব্যাকটেস্টে বন্যা-হীন বন্যা-সংকেত" />
+                  </dt>
+                  <dd className="text-2xl font-semibold tabular-nums text-ink">
+                    {Math.round(baseline.floodFalseAlarm * 100)}%
+                  </dd>
+                </div>
+              )}
+              {baseline.missed !== null && (
+                <div>
+                  <dt className="text-xs text-ink-3">
+                    <T en="Events missed" bn="বাদ পড়া ঘটনা" />
+                  </dt>
+                  <dd className="text-2xl font-semibold tabular-nums text-ink">{Math.round(baseline.missed * 100)}%</dd>
+                </div>
+              )}
+            </dl>
+            <p className="mt-2 text-sm text-ink-2">
+              <T
+                en={`On that backtest the edge-case alert rule fires where no flood was recorded (${Math.round(baseline.floodFalseAlarm ?? 0) * 100}%) and misses most events that were (${Math.round(baseline.missed ?? 0) * 100}%). A genuinely destructive flood can still have no alert or a missed one, so nothing here claims to warn people in time. Each place instead says whether its history can be checked at all.`}
+                bn={`সেই ব্যাকটেস্টে যেখানে বন্যা নথিভুক্ত নেই সেখানেও সংকেত ওঠে (${bnNum(Math.round((baseline.floodFalseAlarm ?? 0) * 100))}%) এবং যেখানে বন্যা ছিল তার বেশিরভাগই বাদ পড়ে (${bnNum(Math.round((baseline.missed ?? 0) * 100))}%)। তাই এখানে কিছুই সময়মতো সতর্ক করার দাবি করে না; বদলে প্রতিটি জায়গা বলে তার ইতিহাস আদৌ যাচাই করা যায় কি না।`}
+              />
+            </p>
+            <p className="mt-1 text-xs text-ink-3">
+              <T
+                en="From analysis/evaluation_baseline.json. It measures the earlier hazard alerts on the backtest, not the rain signal replayed below."
+                bn="analysis/evaluation_baseline.json থেকে। এটি নিচে পুনরাবৃত্ত বৃষ্টির সংকেত নয়, আগের বিপদ-সতর্কতাগুলোকে ব্যাকটেস্টে মাপে।"
+              />
+            </p>
+          </div>
         </section>
       )}
 
       <section aria-labelledby="replay" className="mt-6">
         <h2 id="replay" className="text-base font-semibold text-ink">
-          <T en="Does the signal rise before real floods?" bn="বাস্তব বন্যার আগে সংকেত কি বেড়েছে?" />
+          <T
+            en="The honest gap: the signal has not been measured against floods yet"
+            bn="সৎ ফাঁক: সংকেত এখনো বন্যাকে কেন্দ্র করে মাপা হয়নি"
+          />
         </h2>
-        {accuracy.notEnough ? (
-          <p className="mt-2 rounded-xl border border-line bg-card p-4 text-sm text-ink">
-            <T en={accuracy.notEnoughText} bn="এখনো যথেষ্ট ঘটনা নেই।" />
+        <div className="mt-2 rounded-xl border border-line bg-sunken p-4 text-sm text-ink-2">
+          <p className="font-medium text-ink">
+            <T
+              en={`${measured} of ${accuracy.reportingEvents} reporting events replayed.`}
+              bn={`${bnNum(accuracy.reportingEvents)}টি রিপোর্টিং ঘটনার মধ্যে ${bnNum(measured)}টি পুনরাবৃত্তি করা হয়েছে।`}
+            />
           </p>
-        ) : null}
+          <p className="mt-1">
+            <T
+              en={`A replay replays the same ${accuracy.leadDays}-day lead rule on real IMERG rain and compares it to the GDACS flood record. Until IMERG credentials are available the replay series are empty, so no hit or miss is counted and none is invented.`}
+              bn={`পুনরাবৃত্তি একই ${bnNum(accuracy.leadDays)}-দিনের আগাম সংকেত নিয়ম বাস্তব IMERG বৃষ্টিতে চালিয়ে GDACS বন্যা-রেকর্ডের সাথে তুলনা করে। IMERG ক্রেডেনশিয়াল পাওয়ার আগে পুনরাবৃত্তির ধারা খালি, তাই কোনো হিট বা মিস গোনা হয় না, বানানোও হয় না।`}
+            />
+          </p>
+          {accuracy.notEnough ? (
+            <p className="mt-2 rounded-lg border border-line bg-card p-3 text-ink">
+              <T en={accuracy.notEnoughText} bn="এখনো যথেষ্ট ঘটনা নেই।" />
+            </p>
+          ) : null}
+          <p className="mt-2 text-xs text-ink-3">
+            <T en={accuracy.unmatchedText} bn="ক্যাটালগভুক্ত ঘটনা ছাড়া সংকেত (ঊর্ধ্বসীমা; বন্যার ক্যাটালগ অসম্পূর্ণ)।" />
+          </p>
+        </div>
 
         <div className="mt-3 grid grid-cols-3 gap-3">
           <Counter value={accuracy.hits} en="Caught" bn="ধরা পড়েছে" />
@@ -190,16 +340,26 @@ export default async function AccuracyPage() {
               {Math.round(((accuracy.hits ?? 0) / measured) * 100)}%{" "}
               <T
                 en={`of the ${measured} events we could measure. A rate below 100% is shown, not hidden: a miss is the part of the record we most need.`}
-                bn={`মাপার যোগ্য ${measured}টি ঘটনার। ১০০%-এর নিচের হারও দেখানো হয়, লুকানো হয় না: বাদ পড়া ঘটনাই আমাদের রেকর্ডের সবচেয়ে জরুরি অংশ।`}
+                bn={`মাপার যোগ্য ${bnNum(measured)}টি ঘটনার। ১০০%-এর নিচের হারও দেখানো হয়, লুকানো হয় না: বাদ পড়া ঘটনাই আমাদের রেকর্ডের সবচেয়ে জরুরি অংশ।`}
               />
             </>
           ) : (
             <T en="No event has been replayed yet." bn="এখনো কোনো ঘটনা পুনরাবৃত্তি করা হয়নি।" />
           )}
         </p>
-        <p className="mt-2 text-xs text-ink-3">
-          <T en={accuracy.unmatchedText} bn="ক্যাটালগভুক্ত ঘটনা ছাড়া সংকেত (ঊর্ধ্বসীমা; বন্যার ক্যাটালগ অসম্পূর্ণ)।" />
+      </section>
+
+      <section aria-labelledby="replay-set" className="mt-8">
+        <h2 id="replay-set" className="text-base font-semibold text-ink">
+          <T en="The replay set" bn="পুনরাবৃত্তির সেট" />
+        </h2>
+        <p className="mt-1 text-sm text-ink-2">
+          <T
+            en={`These are the ${accuracy.reportingEvents} GDACS reporting events chosen for replay. ${outsideCoverage} of ${accuracy.reportingEvents} fall outside the covered tiles, so even when the replay is built they cannot test the rain signal this site shows.`}
+            bn={`এগুলো পুনরাবৃত্তির জন্য বাছাই করা ${bnNum(accuracy.reportingEvents)}টি GDACS রিপোর্টিং ঘটনা। ${bnNum(accuracy.reportingEvents)}টির মধ্যে ${bnNum(outsideCoverage)}টি আচ্ছাদিত টাইলের বাইরে, তাই পুনরাবৃত্তি তৈরি হলেও সেগুলো এই সাইটে দেখানো বৃষ্টির সংকেত পরীক্ষা করতে পারবে না।`}
+          />
         </p>
+        {accuracy.events.length > 0 && <CoverageMiniMap tiles={config.enabledTiles} events={accuracy.events} />}
 
         <ul className="mt-3 space-y-2">
           {accuracy.events.map((event) => (
@@ -231,37 +391,6 @@ export default async function AccuracyPage() {
         </ul>
       </section>
 
-      <section aria-labelledby="trust" className="mt-8">
-        <h2 id="trust" className="text-base font-semibold text-ink">
-          <T en="Where the signal can be checked at all" bn="কোথায় সংকেত যাচাই করা যায়" />
-        </h2>
-        <p className="mt-1 text-sm text-ink-2">
-          <T
-            en={`Each covered area carries one Trust label, taken from the same 95% interval as its Before strip. Of ${places.areas.length} areas: ${trustCounts.detectable} detectable, ${trustCounts["blind-spot"]} blind spots, ${trustCounts["no-data"]} with no history.`}
-            bn={`প্রতিটি আচ্ছাদিত এলাকার একটি ভরসা-লেবেল আছে, যা তার ‘আগে’ স্তরের একই ৯৫% ব্যবধান থেকে আসে। ${places.areas.length}টি এলাকার মধ্যে: ${trustCounts.detectable}টি শনাক্তযোগ্য, ${trustCounts["blind-spot"]}টি অন্ধ স্থান, ${trustCounts["no-data"]}টির ইতিহাস নেই।`}
-          />
-        </p>
-        <dl className="mt-3 space-y-2">
-          {TRUST_STATES.map((state) => (
-            <div key={state.key} className="rounded-xl border border-line bg-card p-3">
-              <dt className={`text-sm font-semibold ${state.cls}`}>
-                <T en={state.en} bn={state.bn} />{" "}
-                <span className="font-normal tabular-nums text-ink-3">{trustCounts[state.key]}</span>
-              </dt>
-              <dd className="mt-1 text-sm text-ink-2">
-                <T en={state.body.en} bn={state.body.bn} />
-              </dd>
-            </div>
-          ))}
-        </dl>
-        <p className="mt-2 text-xs text-ink-3">
-          <T
-            en="Trust is not a probability and not a confidence percentage. It answers one question: can the data here tell a change from noise?"
-            bn="ভরসা কোনো সম্ভাবনা নয়, শতাংশও নয়। এটি একটাই প্রশ্নের উত্তর দেয়: এখানকার তথ্য কি পরিবর্তনকে কোলাহল থেকে আলাদা করতে পারে?"
-          />
-        </p>
-      </section>
-
       <section aria-labelledby="leads" className="mt-8 rounded-xl border border-line bg-sunken p-4">
         <h2 id="leads" className="text-base font-semibold text-ink">
           <T en="Leads we do not measure yet" bn="যে সূত্র আমরা এখনো মাপি না" />
@@ -270,7 +399,7 @@ export default async function AccuracyPage() {
           <li>
             <T
               en={`First 48 hours: the outcome tested here is a ${accuracy.leadDays}-day lead (a Yellow or Red cell within ${accuracy.radiusKm} km of the event, in the days before it started). The in-tile flood record is too sparse for a separate 48-hour rate to be anything but noise, so we do not publish one.`}
-              bn={`প্রথম ৪৮ ঘণ্টা: এখানে যাচাই করা ফলটি ${accuracy.leadDays} দিনের আগাম সংকেত (ঘটনার আগের দিনগুলোয়, ঘটনার ${accuracy.radiusKm} কিমি মধ্যে হলুদ বা লাল কোষ)। টাইলের বন্যা-রেকর্ড এতই পাতলা যে আলাদা ৪৮-ঘণ্টার হার কোলাহল ছাড়া আর কিছু হবে না, তাই আমরা তা প্রকাশ করি না।`}
+              bn={`প্রথম ৪৮ ঘণ্টা: এখানে যাচাই করা ফলটি ${bnNum(accuracy.leadDays)} দিনের আগাম সংকেত (ঘটনার আগের দিনগুলোয়, ঘটনার ${bnNum(accuracy.radiusKm)} কিমি মধ্যে হলুদ বা লাল কোষ)। টাইলের বন্যা-রেকর্ড এতই পাতলা যে আলাদা ৪৮-ঘণ্টার হার কোলাহল ছাড়া আর কিছু হবে না, তাই আমরা তা প্রকাশ করি না।`}
             />
           </li>
           <li>
@@ -288,7 +417,7 @@ export default async function AccuracyPage() {
           <li>
             <T
               en={age.stale ? "The measurement is older than the freshness limit, so it is shown as Grey." : `Freshness: a reading older than ${config.staleHours} hours is shown as Grey rather than used.`}
-              bn={age.stale ? "পরিমাপটি সতেজতার সীমার চেয়ে পুরোনো, তাই ধূসর দেখানো হয়েছে।" : `সতেজতা: ${config.staleHours} ঘণ্টার বেশি পুরোনো পাঠ ব্যবহার না করে ধূসর দেখানো হয়।`}
+              bn={age.stale ? "পরিমাপটি সতেজতার সীমার চেয়ে পুরোনো, তাই ধূসর দেখানো হয়েছে।" : `সতেজতা: ${bnNum(config.staleHours)} ঘণ্টার বেশি পুরোনো পাঠ ব্যবহার না করে ধূসর দেখানো হয়।`}
             />
           </li>
         </ul>
@@ -302,7 +431,7 @@ export default async function AccuracyPage() {
           <li>
             <T
               en={`A hit is a Yellow or Red cell within ${accuracy.radiusKm} km of the event, in the ${accuracy.leadDays} days before it started.`}
-              bn={`হিট হলো ঘটনার ${accuracy.radiusKm} কিমি মধ্যে, শুরুর আগের ${accuracy.leadDays} দিনে হলুদ বা লাল কোষ।`}
+              bn={`হিট হলো ঘটনার ${bnNum(accuracy.radiusKm)} কিমি মধ্যে, শুরুর আগের ${bnNum(accuracy.leadDays)} দিনে হলুদ বা লাল কোষ।`}
             />
           </li>
           <li>
@@ -319,7 +448,6 @@ export default async function AccuracyPage() {
           </li>
         </ul>
         <p className="mt-3 text-xs text-ink-3">
-          {age.label} ·{" "}
           <Link href="/methods#signals" className="underline decoration-line underline-offset-2 hover:text-ink">
             <T en="Methods" bn="পদ্ধতি" />
           </Link>{" "}
@@ -329,6 +457,21 @@ export default async function AccuracyPage() {
           </Link>
         </p>
       </section>
+
+      <div className="mt-4">
+        <DataProvenance
+          source={
+            meta.sampleData
+              ? "IMERG Late (sample); Trust from NASA GISTEMP / GPCP; backtest from analysis/evaluation_baseline.json"
+              : `IMERG ${meta.product}; Trust from NASA GISTEMP / GPCP; backtest from analysis/evaluation_baseline.json`
+          }
+          measurementTime={meta.measurementTime}
+          ageLabel={age.label}
+          ageStale={age.stale}
+          wmoUrl={config.official.wmo}
+          disclaimer={config.official.line}
+        />
+      </div>
     </main>
   );
 }
