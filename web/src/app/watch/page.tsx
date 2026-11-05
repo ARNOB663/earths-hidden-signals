@@ -1,194 +1,140 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ArrowRight, BellOff, CalendarClock, CloudSun, Database } from "lucide-react";
+import { WatchManager } from "@/components/signal/WatchManager";
+import { CoverageBadge, Pill, WatchBadge } from "@/components/signal/levels";
 import { T } from "@/lib/i18n";
-import { ageOf } from "@/lib/signals/age";
-import { readPlaces, readSignalsConfig, readSignalsMeta, readWatch } from "@/lib/signals/data";
-import { DataProvenance, SampleBanner, StatusBadge } from "@/components/signals/parts";
+import { loadModel } from "@/lib/signals/model";
 
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "What to watch · Earth's Hidden Signals",
+  title: "Watch · Earth's Hidden Signals",
   description:
-    "Areas where the rain signal rose since the previous snapshot, compared with our own previous reading only — never a forecast. The archive is not deep enough for a rise to be recorded yet. Not a forecast or an official warning.",
+    "Save the locations you care about and choose what you would want to be told. Preferences are stored in your own browser; there are no server-side notifications.",
 };
 
 export default async function WatchPage() {
-  const [watch, meta, config, places] = await Promise.all([
-    readWatch(),
-    readSignalsMeta(),
-    readSignalsConfig(),
-    readPlaces(),
-  ]);
-  const age = ageOf(meta.measurementTime, new Date(meta.generatedAt), config.staleHours, meta.sampleData);
-
-  // A rise is named only when a covered area's boundary contains it; otherwise the tile is all
-  // we know, and the page says so rather than inventing a place.
-  const areas = places.areas;
-  const areaAt = (lat: number, lon: number) => {
-    let best: (typeof areas)[number] | null = null;
-    let bestArea = Infinity;
-    for (const area of areas) {
-      const [alat, alon] = area.centre;
-      // Cheap pre-check on the centroid, then the boundary's own distance.
-      if (Math.abs(alat - lat) > 2.5 || Math.abs(alon - lon) > 2.5) continue;
-      const d = (alat - lat) ** 2 + (alon - lon) ** 2;
-      if (d < bestArea) {
-        best = area;
-        bestArea = d;
-      }
-    }
-    return best;
-  };
-
-  // Rises come from the archive only; the label is the tile each rise falls in.
-  const inside = (rise: { lat: number; lon: number }, tile: (typeof config.enabledTiles)[number]) =>
-    rise.lat >= tile.south && rise.lat < tile.north && rise.lon >= tile.west && rise.lon < tile.east;
-  const labels: Record<string, string> = {};
-  for (const rise of watch.rises) {
-    const tile = config.enabledTiles.find((candidate) => inside(rise, candidate));
-    if (tile) labels[`${rise.lat},${rise.lon}`] = tile.label;
-  }
+  const model = await loadModel();
+  const { rows, brief, counts } = model;
+  // Only the fields the browser needs: no weather values are stored in the browser.
+  const options = rows.map((row) => ({
+    id: row.id,
+    name: row.name,
+    countryName: row.countryName,
+    coverage: row.coverage,
+    watch: row.watch,
+    trust: row.trust,
+    tileLabel: row.tileLabel,
+  }));
+  const example = rows.find((row) => row.coverage === "live") ?? null;
 
   return (
-    <main className="mx-auto w-full max-w-3xl px-4 pb-16 pt-6 sm:px-6">
-      {meta.sampleData && <SampleBanner clock={meta.clock} />}
-      <h1 className="mt-4 text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
-        <T en="What to watch" bn="কী দেখবেন" />
-      </h1>
-      <p className="mt-2 text-sm text-ink-2">
-        <T
-          en="Places where the rain signal rose since the previous snapshot. We compare with our own previous reading, never with a forecast."
-          bn="আগের স্ন্যাপশটের পর যেখানে বৃষ্টির সংকেত বেড়েছে। আমরা শুধু আমাদের আগের পাঠের সাথে তুলনা করি, পূর্বাভাসের সাথে নয়।"
-        />
-      </p>
-
-      <section aria-labelledby="rises" className="mt-5">
-        <h2 id="rises" className="text-base font-semibold text-ink">
-          <T en="Rises since the previous snapshot" bn="আগের স্ন্যাপশটের পর বৃদ্ধি" />
-        </h2>
-        <p className="mt-1 text-xs text-ink-3">
-          {watch.latest ? (
-            <>
-              <T en="Latest snapshot" bn="সর্বশেষ স্ন্যাপশট" />: <time dateTime={watch.latest}>{watch.latest}</time>
-              {watch.previous ? (
-                <>
-                  {" · "}
-                  <T en="Previous" bn="আগের" />: <time dateTime={watch.previous}>{watch.previous}</time>
-                </>
-              ) : null}
-            </>
-          ) : (
-            <T en="No snapshot stored yet." bn="এখনো কোনো স্ন্যাপশট সংরক্ষিত নেই।" />
-          )}
+    <main className="mx-auto w-full max-w-4xl px-4 pb-16 pt-6 sm:px-6">
+      <header>
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+          <T en="Watch" bn="নজর" />
         </p>
+        <h1 className="mt-2 text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
+          <T en="Keep an eye on the places you care about" bn="আপনার প্রিয় স্থানগুলোয় নজর রাখুন" />
+        </h1>
+        <p className="mt-2 max-w-3xl text-sm leading-relaxed text-ink-2">
+          <T
+            en="Save locations, choose which Watch Level and Trust Grade you want to be told about, and add a calendar reminder. Everything here is stored in this browser only."
+            bn="স্থান সংরক্ষণ করুন, কোন সতর্কতার মাত্রা ও ভরসার গ্রেড সম্পর্কে জানতে চান তা বাছুন, এবং ক্যালেন্ডার রিমাইন্ডার যোগ করুন। এখানকার সবকিছু কেবল এই ব্রাউজারে সংরক্ষিত।"
+          />
+        </p>
+      </header>
 
-        {watch.rises.length === 0 ? (
-          <p className="mt-3 rounded-xl border border-dashed border-line bg-sunken p-4 text-sm text-ink-2">
-            <T en="No rise recorded yet." bn="এখনো কোনো বৃদ্ধি নথিভুক্ত হয়নি।" />
-            {watch.entries < 2 && (
-              <>
-                {" "}
-                <T
-                  en="There is one snapshot so far; a rise needs two to compare."
-                  bn="এখন পর্যন্ত একটি স্ন্যাপশট আছে; বৃদ্ধি দেখতে দুটি লাগে।"
-                />
-              </>
-            )}
-          </p>
-        ) : (
-          <ul className="mt-3 space-y-2">
-            {watch.rises.map((rise) => (
-              <li key={`${rise.lat},${rise.lon}`} className="rounded-xl border border-line bg-card p-3">
-                <div className="flex flex-wrap items-center justify-between gap-2">
-                  {(() => {
-                    const area = areaAt(rise.lat, rise.lon);
-                    return area ? (
-                      <Link
-                        href={`/signals/place?id=${encodeURIComponent(area.id)}`}
-                        className="text-sm font-medium text-ink underline decoration-line underline-offset-2 hover:decoration-ink"
-                      >
-                        {area.name}, {area.countryName}
-                      </Link>
-                    ) : (
-                      <span className="text-sm font-medium text-ink-2">
-                        <T en="No named area at this cell" bn="এই কোষে নামযুক্ত এলাকা নেই" />
-                      </span>
-                    );
-                  })()}
-                  <StatusBadge status={rise.status} />
-                </div>
-                <p className="mt-1 text-xs text-ink-3">
-                  {(() => {
-                    const area = areaAt(rise.lat, rise.lon);
-                    return area ? (
-                      <>
-                        {area.now.cells[0] && <T en={area.now.cells[0].reasonText} bn={area.now.cells[0].reasonTextBn ?? area.now.cells[0].reasonText} />}
-                        {" · "}
-                      </>
-                    ) : (
-                      <>
-                        {labels[`${rise.lat},${rise.lon}`] ?? ""} · {rise.lat.toFixed(2)}, {rise.lon.toFixed(2)} ·{" "}
-                      </>
-                    );
-                    return <T en="was" bn="আগে ছিল" />;
-                  })()}{" "}
-                  <StatusBadge status={rise.from} />
-                </p>
-                {(() => {
-                  const area = areaAt(rise.lat, rise.lon);
-                  return area ? (
-                    <p className="mt-1 text-xs text-ink-3">
-                      <T en={`Trust here: ${area.trust.label}.`} bn={`এখানে ভরসা: ${area.trust.state === "detectable" ? "শনাক্তযোগ্য" : area.trust.state === "blind-spot" ? "অন্ধ স্থান" : "তথ্য নেই"}।`} />{" "}
-                      {area.trust.state === "blind-spot" && (
-                        <T
-                          en="Today's rain is real; a rise here cannot yet be told apart from noise."
-                          bn="আজকের বৃষ্টি বাস্তব; এখানকার বৃদ্ধি এখনো কোলাহল থেকে আলাদা করা যায় না।"
-                        />
-                      )}{" "}
-                      <Link href={`/signals/place?id=${encodeURIComponent(area.id)}`} className="underline decoration-line underline-offset-2 hover:text-ink">
-                        <T en="Open the place" bn="জায়গাটি খুলুন" />
-                      </Link>
-                    </p>
-                  ) : null;
-                })()}
-              </li>
-            ))}
-          </ul>
+      <section aria-labelledby="limits" className="mt-5 rounded-2xl border border-watch bg-watch-soft p-4">
+        <h2 id="limits" className="flex items-center gap-2 text-sm font-semibold text-watch">
+          <BellOff size={16} aria-hidden />
+          <T en="What this does not do" bn="এটি যা করে না" />
+        </h2>
+        <ul className="mt-2 space-y-1.5 text-sm leading-relaxed text-ink-2">
+          <li>
+            <T
+              en="There are no server-side notifications and no push notifications. Nothing is sent to us, and nothing will arrive while this site is closed."
+              bn="কোনো সার্ভার-ভিত্তিক বিজ্ঞপ্তি বা পুশ বিজ্ঞপ্তি নেই। আমাদের কাছে কিছু পাঠানো হয় না, আর এই সাইট বন্ধ থাকলে কিছু পৌঁছাবে না।"
+            />
+          </li>
+          <li>
+            <T
+              en="The saved list is a personal checklist for your next visit. To be reminded, use the calendar reminder (.ics) the page generates; it opens in your own calendar app."
+              bn="সংরক্ষিত তালিকা আপনার পরবর্তী ভিজিটের জন্য ব্যক্তিগত চেকলিস্ট। মনে করিয়ে দিতে পাতাটি যে ক্যালেন্ডার রিমাইন্ডার (.ics) তৈরি করে তা ব্যবহার করুন; এটি আপনার নিজের ক্যালেন্ডার অ্যাপে খোলে।"
+            />
+          </li>
+          <li>
+            <T
+              en="Notification preferences are part of the planned roadmap and are labelled as such below; they do not change what is shown today."
+              bn="বিজ্ঞপ্তি-পছন্দ পরিকল্পিত রোডম্যাপের অংশ এবং নিচে তা-ই লেখা; এগুলো আজ যা দেখানো হয় তা বদলায় না।"
+            />
+          </li>
+        </ul>
+      </section>
+
+      <WatchManager locations={options} />
+
+      <section aria-labelledby="what" className="mt-8">
+        <h2 id="what" className="text-lg font-semibold text-ink">
+          <T en="What a watched location shows" bn="নজরে থাকা স্থান কী দেখায়" />
+        </h2>
+        <p className="mt-1 text-sm text-ink-2">
+          <T
+            en={`Each saved location opens its full Signal: observation date, source, resolution, baseline, value, percentile, Watch Level and Data Trust Grade. Today ${counts.live} of ${counts.places} covered locations carry a current reading; the other ${counts.seasonal + counts.cantTell} say why they cannot.`}
+            bn={`প্রতিটি সংরক্ষিত স্থান তার সম্পূর্ণ সংকেত খোলে: পর্যবেক্ষণের তারিখ, উৎস, রেজোলিউশন, ভিত্তি, মান, শতকরা স্থান, সতর্কতার মাত্রা ও তথ্য-ভরসার গ্রেড। আজ ${counts.places}টি আচ্ছাদিত স্থানের ${counts.live}টিতে সাম্প্রতিক পাঠ আছে; বাকি ${counts.seasonal + counts.cantTell}টি কেন পারে না তা বলে।`}
+          />
+        </p>
+        {example && (
+          <div className="mt-3 flex flex-wrap items-center justify-between gap-2 rounded-xl border border-line bg-card p-3">
+            <div className="flex flex-wrap items-center gap-1.5">
+              <span className="text-sm font-medium text-ink">
+                {example.name}, {example.countryName}
+              </span>
+              <CoverageBadge state={example.coverage} />
+              <WatchBadge level={example.watch} compact />
+            </div>
+            <Link href={`/signal/${example.id}`} className="inline-flex min-h-9 items-center gap-1 text-sm text-accent-strong underline decoration-line underline-offset-2">
+              <T en="Open" bn="খুলুন" />
+              <ArrowRight size={14} aria-hidden />
+            </Link>
+          </div>
         )}
       </section>
 
-      <section aria-labelledby="outlook" className="mt-5 rounded-2xl border border-line bg-card p-4">
-        <h2 id="outlook" className="text-base font-semibold text-ink">
-          <T en={`${config.outlook.days}-day outlook`} bn={`${config.outlook.days} দিনের পরিপ্রেক্ষিত`} />
+      <section aria-labelledby="roadmap" className="mt-8 rounded-2xl border border-line bg-sunken p-4">
+        <h2 id="roadmap" className="text-lg font-semibold text-ink">
+          <T en="Planned — not implemented" bn="পরিকল্পিত — বাস্তবায়িত নয়" />
         </h2>
-        <p className="mt-2 text-sm text-ink-2">
+        <p className="mt-1 text-sm text-ink-2">
           <T
-            en="Outlook is off in sample mode. On the place page it comes from an external public source and is labelled as such."
-            bn="নমুনা মোডে পরিপ্রেক্ষিত বন্ধ। জায়গার পাতায় এটি একটি বহিরাগত সর্বজনীন উৎস থেকে আসে এবং সেটি স্পষ্টভাবে লেখা থাকে।"
+            en="These are the notification features the project intends to build. They are listed as planned so nobody expects them today."
+            bn="এগুলো সেই বিজ্ঞপ্তি-সুবিধা যা প্রকল্পটি তৈরি করতে চায়। আজ কেউ যেন এগুলো প্রত্যাশা না করে সেজন্যপরিকল্পিত হিসেবে তালিকাভুক্ত।"
           />
         </p>
-        <p className="mt-1 text-xs text-ink-3">{config.outlook.label}</p>
-        <a
-          href={config.official.wmo}
-          target="_blank"
-          rel="noreferrer"
-          className="mt-2 inline-block text-sm underline decoration-line underline-offset-2 hover:text-ink"
-        >
-          <T en="Official warnings (WMO SWIC)" bn="সরকারি সতর্কবার্তা (WMO SWIC)" />
-        </a>
+        <ul className="mt-2 grid gap-2 sm:grid-cols-2">
+          {[
+            { Icon: CloudSun, en: "Rain outlook for saved locations, when it meets the evidence rules on the Accuracy page.", bn: "সংরক্ষিত স্থানের বৃষ্টির পূর্বাভাস, যখন তা নির্ভুলতা পাতার প্রমাণ-শর্ত পূরণ করবে।" },
+            { Icon: Database, en: "A dataset-freshness alert that tells you when a reading for a saved place is stale.", bn: "তথ্যসেট-সতেজতার সতর্কতা, যা জানায় সংরক্ষিত স্থানের পাঠ পুরোনো হয়ে গেছে।" },
+            { Icon: CalendarClock, en: "Weekly digest email through a dedicated mailing service.", bn: "নিবেদিত মেইলিং সেবার মাধ্যমে সাপ্তাহিক সারসংক্ষেপ ইমেইল।" },
+            { Icon: BellOff, en: "Official-warning links for each saved location's national agency.", bn: "প্রতিটি সংরক্ষিত স্থানের জাতীয় সংস্থার সরকারি সতর্কবার্তার লিঙ্ক।" },
+          ].map((item) => (
+            <li key={item.en} className="flex gap-2 rounded-xl border border-line bg-card p-3 text-sm text-ink-2">
+              <item.Icon size={16} aria-hidden className="mt-0.5 shrink-0 text-ink-3" />
+              <span>
+                <Pill tone="muted" className="mb-1">
+                  <T en="Planned" bn="পরিকল্পিত" />
+                </Pill>
+                <T en={item.en} bn={item.bn} />
+              </span>
+            </li>
+          ))}
+        </ul>
       </section>
 
-      <div className="mt-4">
-        <DataProvenance
-          source={meta.sampleData ? "IMERG Late (sample)" : `IMERG ${meta.product}`}
-          measurementTime={meta.measurementTime}
-          ageLabel={age.label}
-          ageStale={age.stale}
-          wmoUrl={config.official.wmo}
-          disclaimer={config.official.line}
-        />
-      </div>
+      <p className="mt-6 text-xs text-ink-3">
+        <T en={brief.official.line} bn="এটি পূর্বাভাস বা সরকারি সতর্কবার্তা নয়।" />
+      </p>
     </main>
   );
 }

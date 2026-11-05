@@ -316,15 +316,6 @@ def test_status_is_never_written_without_the_engine() -> None:
     assert not re.search(r"(set|write)_?status", source)
 
 
-def test_top_json_mixes_red_and_yellow_and_all_tiles() -> None:
-    top = json.loads((writer.OUT / "top.json").read_text())
-    rows = top["rows"]
-    assert {"red", "yellow"} <= {row["status"] for row in rows}
-    assert {row["tile"] for row in rows} == {tile.id for tile in tiles_mod.tiles(CONFIG)}
-    assert rows[0]["status"] == "red"
-    assert len(rows) <= 24
-
-
 def test_sample_meta_is_not_ahead_of_any_tile() -> None:
     import build
 

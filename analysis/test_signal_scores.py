@@ -1,31 +1,31 @@
-"""Signals data: reusable geography identifiers, demo labels and measured coverage."""
+"""Signals data: reusable geography identifiers and measured coverage."""
+
+import json
 
 import build_geography
 import build_signal_scores
 
 
 def test_geography_ids_are_unique_and_level_tagged():
-    ids = []
-    for country in build_geography.COUNTRIES:
+    """Every committed area ID is unique and carries its ISO code and level prefix."""
+    index = json.loads((build_geography.OUT / "index.json").read_text(encoding="utf-8"))
+    ids: list[str] = []
+    for country in index["countries"]:
+        iso = country["code"].lower()
         for level in ("ADM1", "ADM2"):
-            path = build_geography.geo_path(country, level)
-            if not path.exists():
-                continue
-            geo = build_geography.json.loads(path.read_text(encoding="utf-8"))
-            used: dict[str, int] = {}
-            for feature in geo["features"]:
-                name, _ = build_geography.feature_names(feature)
-                area_id = build_geography.level_key(country, level, name, used)
-                assert area_id.startswith(f"{country.lower()}-{level.lower()}-")
+            for area in country.get("areas", {}).get(level, []):
+                area_id = area["id"]
+                assert area_id.startswith(f"{iso}-{level.lower()}-"), area_id
                 ids.append(area_id)
+    assert ids, "the geography index carries no area ids"
     assert len(ids) == len(set(ids)), "area identifiers must be stable and unique"
 
 
-def test_demo_scores_are_deterministic_and_separately_labelled():
-    first = build_signal_scores.demo_score("bgd-adm2-dhaka")
-    assert first == build_signal_scores.demo_score("bgd-adm2-dhaka")
-    assert first["signal"] in ("green", "yellow", "red")
-    assert 0.0 <= first["probability"] <= 1.0
-    assert 0.0 <= first["modelConfidence"] <= 1.0
-    # Confidence is generated separately: it is not the score under another name.
-    assert first["probability"] != first["modelConfidence"]
+def test_no_score_or_probability_is_published():
+    """The demo scores are gone: coverage files carry measured cell counts, never a score."""
+    data = build_signal_scores.json.loads((build_signal_scores.OUT / "coverage.json").read_text(encoding="utf-8"))
+    for area in data["areas"]:
+        for cell in area["cells"].values():
+            assert set(cell) == {"areaCells", "coveredCells", "covered"}
+            assert cell["coveredCells"] <= cell["areaCells"]
+    assert not (build_signal_scores.OUT / "demo-scores.json").exists()

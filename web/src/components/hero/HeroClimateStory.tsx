@@ -229,7 +229,7 @@ export default function HeroClimateStory({ zones }: { zones: Zone[] }) {
           />
         </p>
         <Link
-          href="/trends?var=temperature&season=annual&zone=study-area"
+          href="/methods#trend-magnitude"
           className="mt-3 inline-flex items-center gap-1 text-xs font-medium text-(--hero-link) hover:text-(--hero-link-hover)"
         >
           <T en="Explore the full trend" bn="সম্পূর্ণ প্রবণতা দেখুন" />

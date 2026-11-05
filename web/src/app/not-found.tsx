@@ -26,8 +26,8 @@ export default function NotFound() {
         >
           <T en="Go to the home page" bn="প্রথম পাতায় যান" />
         </Link>
-        <Link href="/findings" className="inline-flex min-h-10 items-center font-medium text-accent hover:underline">
-          <T en="Read the story" bn="গল্পটা পড়ুন" />
+        <Link href="/signal" className="inline-flex min-h-10 items-center font-medium text-accent hover:underline">
+          <T en="Open the Signal" bn="সংকেত খুলুন" />
         </Link>
       </div>
     </div>

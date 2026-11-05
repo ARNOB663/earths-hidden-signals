@@ -48,10 +48,6 @@ def write_sources(sources: dict) -> None:
     _dump(OUT / "sources.json", sources)
 
 
-def write_top(rows: list[dict]) -> None:
-    _dump(OUT / "top.json", {"generatedAt": None, "rows": rows})
-
-
 def write_grid(tile_id: str, cells: list[dict], config: dict) -> int:
     size = _dump(OUT / "grid" / f"{tile_id}.json", {"tile": tile_id, "cells": cells})
     check_budget(f"grid/{tile_id}.json", size, config["budgets"]["gridBytes"])
@@ -73,9 +69,3 @@ def write_watch(payload: dict, config: dict) -> None:
     check_budget("watch.json", size, config["budgets"]["watchBytes"])
 
 
-def write_demo(files: dict[str, dict], config: dict) -> None:
-    total = 0
-    for name, payload in files.items():
-        path = OUT / "demo" / name
-        total += _dump(path, payload)
-    check_budget("demo/", total, config["budgets"]["demoBytes"])

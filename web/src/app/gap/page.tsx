@@ -42,6 +42,72 @@ export default async function GapPage() {
   );
   const withReading = places.areas.filter((area) => area.now.state === "measured").length;
 
+  // Per-dataset coverage with its own denominators, computed from the coverage file. "Covered"
+  // is the number of listed areas the variable actually reaches; the share is always shown beside
+  // the areas that were examined, so a percentage is never printed without its sample size.
+  const datasets = Object.entries(coverage.variables).map(([key, variable]) => {
+    let covered = 0;
+    let examined = 0;
+    let coveredCells = 0;
+    for (const area of coverage.areas) {
+      const cell = area.cells[key];
+      if (!cell) continue;
+      examined += 1;
+      if (cell.covered) covered += 1;
+      coveredCells += cell.coveredCells;
+    }
+    return {
+      key,
+      name: variable.name,
+      nameBn: variable.nameBn,
+      dataset: variable.dataset,
+      unit: variable.unit,
+      gridDegrees: variable.gridDegrees,
+      observedThrough: variable.observedThrough,
+      years: variable.years,
+      unusableRows: variable.unusableRows,
+      covered,
+      examined,
+      coveredCells,
+      missing: examined - covered,
+    };
+  });
+  // Datasets the pipeline does not yet carry, stated as a gap rather than filled in.
+  const MISSING_DATASETS = [
+    {
+      en: "Daily satellite rain (NASA IMERG)",
+      bn: "দৈনিক স্যাটেলাইট বৃষ্টি (নাসা IMERG)",
+      why: {
+        en: "The daily screen runs on fixed sample readings on this site; real IMERG replays have not been built, so no day-level flood screen is shown as a current result.",
+        bn: "এই সাইটে দৈনিক স্ক্রিনিং স্থির নমুনা পাঠে চলে; বাস্তব IMERG পুনরাবৃত্তি তৈরি হয়নি, তাই কোনো দৈনিক বন্যা-স্ক্রিনিং বর্তমান ফলাফল হিসেবে দেখানো হয় না।",
+      },
+    },
+    {
+      en: "Soil moisture and river levels (SMAP, discharge gauges)",
+      bn: "মাটির আর্দ্রতা ও নদীর জলস্তর (SMAP, ডিসচার্জ গেজ)",
+      why: {
+        en: "Not integrated. A rain anomaly is not a flood measurement, and without soil or river data the screen cannot tell when rain becomes water on the ground.",
+        bn: "সংযুক্ত নয়। বৃষ্টির অস্বাভাবিকতা বন্যার পরিমাপ নয়, আর মাটি বা নদীর তথ্য ছাড়া স্ক্রিনিং বুঝতে পারে না কখন বৃষ্টি মাটিতে পানি হয়ে ওঠে।",
+      },
+    },
+    {
+      en: "Observed flood extent (radar / optical flood water)",
+      bn: "পর্যবেক্ষিত বন্যার বিস্তার (রাডার / অপটিক্যাল বন্যার পানি)",
+      why: {
+        en: "No committed flood-extent layer. Floods enter only as catalogue records (GDACS), not as mapped water.",
+        bn: "কোনো সংরক্ষিত বন্যা-বিস্তারের স্তর নেই। বন্যা কেবল ক্যাটালগ-রেকর্ড (GDACS) হিসেবে আসে, মানচিত্রিত পানি হিসেবে নয়।",
+      },
+    },
+    {
+      en: "Outlook (7-day rainfall forecast)",
+      bn: "পূর্বাভাস (৭ দিনের বৃষ্টির পূর্বাভাস)",
+      why: {
+        en: "An external forecast exists, but it is withheld until it meets the evidence conditions on the Accuracy page. It is not shown.",
+        bn: "একটি বাহ্যিক পূর্বাভাস আছে, কিন্তু নির্ভুলতা পাতার প্রমাণ-শর্ত পূরণ না হওয়া পর্যন্ত তা দেখানো হয় না।",
+      },
+    },
+  ];
+
   const pct = (part: number, whole: number) => (whole === 0 ? "0" : Math.round((part / whole) * 1000) / 10);
   const rungs = [
     {
@@ -198,6 +264,81 @@ export default async function GapPage() {
         </p>
       </section>
 
+      {/* Which datasets exist, how far each one reaches, and which are missing entirely. */}
+      <section aria-labelledby="datasets" className="mt-10">
+        <h2 id="datasets" className="text-2xl font-semibold tracking-tight text-ink">
+          <T en="Datasets: how far each one reaches" bn="তথ্যসেট: প্রতিটি কতদূর পৌঁছায়" />
+        </h2>
+        <p className="mt-2 max-w-3xl text-sm leading-relaxed text-ink-2">
+          <T
+            en="Six NASA analysis grids are committed. For each, the table counts the listed areas it actually reaches and the areas it was checked against — the sample size behind every share."
+            bn="ছয়টি নাসা বিশ্লেষণ-গ্রিড সংরক্ষিত আছে। প্রতিটির জন্য ছকটি দেখায় তালিকাভুক্ত কতটি এলাকায় তা পৌঁছায় এবং কতটি এলাকার বিপরীতে যাচাই করা হয়েছে — প্রতিটি অনুপাতের পেছনের নমুনার আকার।"
+          />
+        </p>
+        <div className="mt-3 overflow-x-auto">
+          <table className="w-full min-w-[720px] text-left text-sm">
+            <caption className="sr-only">
+              <T en="Per-dataset coverage with area counts and observation end year" bn="এলাকা-সংখ্যা ও পর্যবেক্ষণশেষ বছর সহ প্রতিটি তথ্যসেটের আচ্ছাদন" />
+            </caption>
+            <thead>
+              <tr className="text-xs text-ink-3">
+                <th scope="col" className="py-1.5 pr-3 font-medium"><T en="Dataset" bn="তথ্যসেট" /></th>
+                <th scope="col" className="py-1.5 text-right font-medium"><T en="Resolution" bn="রেজোলিউশন" /></th>
+                <th scope="col" className="py-1.5 text-right font-medium"><T en="Covered areas" bn="আচ্ছাদিত এলাকা" /></th>
+                <th scope="col" className="py-1.5 text-right font-medium"><T en="Cells" bn="কোষ" /></th>
+                <th scope="col" className="py-1.5 text-right font-medium"><T en="Observed through" bn="পর্যবেক্ষণশেষ" /></th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-line">
+              {datasets.map((entry) => (
+                <tr key={entry.key}>
+                  <th scope="row" className="py-2 pr-3 font-normal text-ink">
+                    <T en={entry.name} bn={entry.nameBn} />
+                    <span className="block text-xs text-ink-3">{entry.dataset}</span>
+                  </th>
+                  <td className="py-2 text-right tabular-nums text-ink-2">{entry.gridDegrees}°</td>
+                  <td className="py-2 text-right tabular-nums text-ink">
+                    {entry.covered.toLocaleString("en-US")}
+                    <span className="text-xs text-ink-3"> / {entry.examined.toLocaleString("en-US")}</span>
+                  </td>
+                  <td className="py-2 text-right tabular-nums text-ink-2">{entry.coveredCells.toLocaleString("en-US")}</td>
+                  <td className="py-2 text-right tabular-nums text-ink-2">
+                    {entry.observedThrough ?? "–"}
+                    {entry.unusableRows > 0 && (
+                      <span className="block text-xs text-ink-3">
+                        <T en={`${entry.unusableRows} unusable rows`} bn={`${entry.unusableRows}টি অব্যবহারযোগ্য সারি`} />
+                      </span>
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="mt-2 text-xs text-ink-3">
+          <T
+            en="'Covered areas' is out of every listed area checked for that variable; a share without that denominator would overstate coverage."
+            bn="‘আচ্ছাদিত এলাকা’ হলো সেই ভেরিয়েবলের জন্য যাচাই করা প্রতিটি তালিকাভুক্ত এলাকার মধ্যে; সেই হর ছাড়া অনুপাত আচ্ছাদনকে অতিরঞ্জিত করবে।"
+          />
+        </p>
+
+        <h3 className="mt-6 text-lg font-semibold text-ink">
+          <T en="Datasets that are missing" bn="যেসব তথ্যসেট অনুপস্থিত" />
+        </h3>
+        <ul className="mt-2 grid gap-2 sm:grid-cols-2">
+          {MISSING_DATASETS.map((item) => (
+            <li key={item.en} className="rounded-xl border border-watch bg-watch-soft p-3 text-sm">
+              <p className="font-semibold text-ink">
+                <T en={item.en} bn={item.bn} />
+              </p>
+              <p className="mt-1 leading-relaxed text-ink-2">
+                <T en={item.why.en} bn={item.why.bn} />
+              </p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
       {/* What this reframes: the site's honest position. */}
       <section aria-labelledby="why" className="mt-10 rounded-2xl border border-line bg-sunken p-5">
         <h2 id="why" className="text-lg font-semibold text-ink">
@@ -211,7 +352,7 @@ export default async function GapPage() {
         </p>
         <div className="mt-4 flex flex-wrap gap-3">
           <Link
-            href="/signals"
+            href="/signal"
             className="inline-flex min-h-10 items-center gap-2 rounded-full bg-accent-strong px-5 text-sm font-medium text-accent-ink hover:bg-accent-hover"
           >
             <T en="See the covered areas" bn="আচ্ছাদিত এলাকা দেখুন" />

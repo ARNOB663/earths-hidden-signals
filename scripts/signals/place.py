@@ -608,6 +608,57 @@ def build_place(config: dict) -> None:
     print(f"places: {len(items)} areas -> {target} ({len(serialised) / 1024:.0f} KB)")
 
 
+def write_area_index() -> None:
+    """One {ISO}.json per country of every listed area, for the search page.
+
+    [id, name, centre lat, centre lon, level]. The centre is the boundary's centroid, never a
+    weather value; the search page reads only ids, names and centres from this file.
+    """
+    out = SIGNALS / "areas"
+    out.mkdir(parents=True, exist_ok=True)
+    written = 0
+    for country in country_records():
+        iso = country["code"]
+        names = {unit["id"]: unit["name"] for level in LEVELS for unit in country["areas"].get(level, [])}
+        levels: dict[str, dict] = {}
+        rows = []
+        for level in ("ADM1", "ADM2"):
+            for area_id, geometry in load_geometry(iso, level):
+                if area_id not in names:
+                    continue
+                rows.append(
+                    [
+                        area_id,
+                        names[area_id],
+                        level,
+                        round(geometry.centroid.y, 2),
+                        round(geometry.centroid.x, 2),
+                    ]
+                )
+        if not rows:
+            continue
+        for level in ("ADM1", "ADM2"):
+            level_rows = [row for row in rows if row[2] == level]
+            if level_rows:
+                levels[level] = {"name": level, "rows": level_rows}
+        (out / f"{iso}.json").write_text(
+            json.dumps(
+                {
+                    "schema": "signals-area-index-v1",
+                    "country": iso,
+                    "name": country.get("name"),
+                    "nameBn": country.get("nameBn"),
+                    "levels": levels,
+                },
+                separators=(",", ":"),
+                sort_keys=True,
+            ),
+            encoding="utf-8",
+        )
+        written += len(rows)
+    print(f"area index: {written} areas -> {out}")
+
+
 def main(argv: list[str] | None = None) -> int:
     import argparse
 
@@ -619,6 +670,7 @@ def main(argv: list[str] | None = None) -> int:
     config = tiles_mod.load_config()
     build_place(config)
     build_map(build_areas(config))
+    write_area_index()
     if args.refresh:
         import places_network
 

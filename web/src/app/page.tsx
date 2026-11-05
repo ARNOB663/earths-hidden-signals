@@ -1,209 +1,45 @@
 import {
   ArrowRight,
-  BookOpen,
-  ChartLine,
-  CircleAlert,
   CloudRain,
-  FlaskConical,
-  Globe,
-  Map,
-  MapPin,
+  ExternalLink,
+  Gauge,
+  Microscope,
+  Radio,
   ScanEye,
-  Thermometer,
-  TriangleAlert,
-  type LucideIcon,
+  ShieldAlert,
+  ShieldCheck,
 } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
-import { Sparkline } from "@/components/findings/parts";
-import EvidenceStory from "@/components/home/EvidenceStory";
-import HeroClimateStory from "@/components/hero/HeroClimateStory";
 import HeroImageSlideshow from "@/components/hero/HeroImageSlideshow";
-import { CountrySearch } from "@/components/site/CountrySearch";
-import { IntelligenceStrip } from "@/components/intelligence/IntelligenceStrip";
-import { LevelBadge } from "@/components/intelligence/parts";
-import { readAlerts, readIndex, readLocation } from "@/lib/intelligence/data";
-import { StartTourButton } from "@/components/site/Tour";
-import { bnMonth, bnNum } from "@/lib/bn";
-import {
-  readCountries,
-  readHazardZones,
-  readLatest,
-  readManifest,
-  readTrendGrid,
-  readTrendZones,
-} from "@/lib/data";
-import { preparednessSignal } from "@/lib/hazards";
+import { SignalSearch } from "@/components/signal/SignalSearch";
+import { CoverageBadge, Stat, WatchBadge } from "@/components/signal/levels";
 import { T } from "@/lib/i18n";
-import { zoneNameBn } from "@/lib/names";
-import { buildCountryReport } from "@/lib/countryReport";
-import { countryBySlug } from "@/lib/countries";
+import { bnNum } from "@/lib/bn";
+import { loadModel } from "@/lib/signals/model";
 
-import { formatSigned, type Zone } from "@/lib/trends";
+export const revalidate = 86400;
 
-interface Tool {
-  href: string;
-  Icon: LucideIcon;
-  question: [string, string];
-  title: [string, string];
-  text: [string, string];
-  shot?: { name: string; alt: string };
-  tries: { href: string; label: [string, string] }[];
-}
-
-const TOOLS: Tool[] = [
-  {
-    href: "/explore",
-    Icon: Map,
-    question: ["What does space see?", "মহাকাশ থেকে কী দেখা যায়?"],
-    title: ["Satellite map", "স্যাটেলাইট মানচিত্র"],
-    text: [
-      "NASA satellite images of heat, rain, greenness and forest loss, month by month since 2000. Slide between two years to compare them.",
-      "২০০০ সাল থেকে মাসে মাসে তাপ, বৃষ্টি, সবুজের পরিমাণ ও বন উজাড়ের নাসার স্যাটেলাইট ছবি। দুই বছর পাশাপাশি রেখে তুলনা করুন।",
-    ],
-    shot: {
-      name: "explore",
-      alt: "Satellite map of ground heat over South Asia in May 2024",
-    },
-    tries: [
-      {
-        href: "/explore?layer=lst-day&date=2024-05-01&compare=2001&view=diff",
-        label: ["May heat: 2024 vs 2001", "মে মাসের তাপ: ২০২৪ বনাম ২০০১"],
-      },
-      {
-        href: "/explore?layer=forest-loss",
-        label: ["Forest loss since 2001", "২০০১ থেকে বন উজাড়"],
-      },
-    ],
-  },
-  {
-    href: "/trends",
-    Icon: ChartLine,
-    question: ["Is it really changing here?", "এখানে কি সত্যিই বদলাচ্ছে?"],
-    title: ["Climate trends", "জলবায়ুর প্রবণতা"],
-    text: [
-      "Click any square of South Asia to see whether heat, rain, very hot months or dry spells are rising, by how much, and how sure we are.",
-      "দক্ষিণ এশিয়ার যেকোনো বর্গে ক্লিক করে দেখুন তাপ, বৃষ্টি, খুব গরম মাস বা টানা শুকনো দিন বাড়ছে কি না, কতটা, আর আমরা কতটা নিশ্চিত।",
-    ],
-    tries: [
-      {
-        href: "/trends?var=rainfall&season=monsoon",
-        label: ["Where monsoon rain is moving", "বর্ষার বৃষ্টি কোথায় সরছে"],
-      },
-      {
-        href: "/trends?var=hot-months&season=annual",
-        label: ["Very hot months", "খুব গরম মাস"],
-      },
-    ],
-  },
-  {
-    href: "/hazards",
-    Icon: TriangleAlert,
-    question: ["Should we get ready?", "প্রস্তুতি কি দরকার?"],
-    title: ["Disaster risk", "দুর্যোগের ঝুঁকি"],
-    text: [
-      "Past floods, landslides, fires and cyclones on the map, whether the weather explains them, and which regions look like past disaster years.",
-      "মানচিত্রে আগের বন্যা, ভূমিধস, আগুন ও ঘূর্ণিঝড়; আবহাওয়া এগুলো ব্যাখ্যা করে কি না; আর কোন অঞ্চল আগের দুর্যোগের বছরের মতো দেখাচ্ছে।",
-    ],
-    shot: {
-      name: "hazards",
-      alt: "Cyclone tracks crossing the Bay of Bengal since 1981",
-    },
-    tries: [
-      {
-        href: "/hazards?hazard=cyclone&zone=bay-of-bengal",
-        label: ["Bay of Bengal cyclones", "বঙ্গোপসাগরের ঘূর্ণিঝড়"],
-      },
-      {
-        href: "/hazards?hazard=flood&zone=indus-plain",
-        label: ["This year's flood signal", "এ বছরের বন্যা সংকেত"],
-      },
-    ],
-  },
-  {
-    href: "/countries",
-    Icon: MapPin,
-    question: ["What about my country?", "আমার দেশের কী অবস্থা?"],
-    title: ["Country dashboards", "দেশের ড্যাশবোর্ড"],
-    text: [
-      "A dashboard for each country in the study: an interactive map with NASA layers, the observed climate trends, hazard records and the regions that carry the most risk.",
-      "গবেষণা এলাকার প্রতিটি দেশের জন্য ড্যাশবোর্ড: নাসার স্তরসহ ইন্টারঅ্যাকটিভ মানচিত্র, পর্যবেক্ষিত প্রবণতা, দুর্যোগের তথ্য ও সবচেয়ে ঝুঁকিপূর্ণ অঞ্চল।",
-    ],
-    tries: [
-      { href: "/country/bangladesh", label: ["Bangladesh", "বাংলাদেশ"] },
-      { href: "/country/india", label: ["India", "ভারত"] },
-      { href: "/countries", label: ["All countries", "সব দেশ"] },
-    ],
-  },
-];
+export const metadata = {
+  title: "Earth's Hidden Signals",
+  description:
+    "What the rain is doing in each covered district of South Asia, whether it is unusual for the date, what historical evidence exists, and where the data cannot answer. Observational screening, never a forecast or an official warning.",
+};
 
 export default async function Home() {
-  const countries = await readCountries();
-  const bangladesh = countryBySlug(countries, "bangladesh")!;
-  const [studyScreening, intelAlerts, intelIndex] = await Promise.all([
-    readLocation("study-area"),
-    readAlerts(),
-    readIndex(),
-  ]);
-  const levelCounts = (["high", "elevated", "notable", "quiet"] as const).map((l) => ({
-    level: l,
-    n: intelIndex.filter((e) => e.kind !== "city" && e.level === l).length,
-  }));
-  const [manifest, trendZones, hazardZones, latest, countryReport, rainfallGrid] = await Promise.all([
-    readManifest(), readTrendZones(), readHazardZones(), readLatest(), buildCountryReport(bangladesh), readTrendGrid("rainfall_monsoon"),
-  ]);
-  const monthName = (ym: string) =>
-    new Date(`${ym}-01T00:00:00`).toLocaleDateString("en-GB", {
-      month: "long",
-      year: "numeric",
-    });
-  const ordinalRank = (r: number) =>
-    r === 1 ? "" : `${r}${r === 2 ? "nd" : r === 3 ? "rd" : "th"} `;
-  const lt = latest.temperature.zones["study-area"];
-  const lr = latest.rainfall.zones["study-area"];
-  const years = manifest.years;
-  const [first, last] = [years[0], years[years.length - 1]];
-  const zone = (id: string) => trendZones.find((z) => z.id === id)!;
+  const model = await loadModel();
+  const { rows, counts, brief, sample } = model;
 
-  const study = zone("study-area");
-  const tTrend = study.results["temperature_annual"].trend!;
-  const tSeries = study.results["temperature_annual"].series as number[];
-  const warmer = (tTrend.slopePerDecade * (last - first)) / 10;
-  const temp = manifest.summaries["temperature_annual"];
-  const spring = formatSigned(
-    manifest.summaries["temperature_pre-monsoon"].medianSlopePerDecade,
-    2,
-  );
-
-  const rainPct = (z: Zone) => {
-    const r = z.results["rainfall_monsoon"];
-    return (r.trend!.slopePerDecade / r.mean) * 100;
-  };
-  const rainIndus = `${formatSigned(rainPct(zone("indus-plain")), 0)}%`;
-  const rainDelta = `${formatSigned(rainPct(zone("bengal-delta")), 0)}%`;
-  const watch = hazardZones.filter(
-    (h) => preparednessSignal(h).kind === "resembles",
-  );
-  const rainWord =
-    lr.percentOfNormal < 90 ? 0 : lr.percentOfNormal > 110 ? 2 : 1;
+  // One worked example for the "what a signal says" strip, chosen from the data rather than typed
+  // in: the row with a real reading whose rain is furthest above its own date normal. A row is
+  // eligible when it has a measured reading and an anomaly, whether or not that reading is still
+  // current — a stale reading is shown with its age, not hidden, so the strip is never a stand-in.
+  const measured = rows.filter((row) => row.rain.day1 !== null && row.ratio !== null);
+  const example = [...measured].sort((a, b) => (b.ratio ?? 0) - (a.ratio ?? 0))[0] ?? null;
 
   return (
     <>
-      {/* ===== HERO =====
-       * -mt-16 pulls the section 64 px upward so its atmospheric gradient covers the
-       * navbar area. pt-16 compensates inside the section so the grid content stays
-       * at the same absolute position it occupied before. The navbar itself becomes
-       * transparent on the homepage (see SiteNav), completing the seamless look.
-       */}
-      <section
-        className="home-hero relative overflow-hidden -mt-16 pt-16"
-        aria-labelledby="hero-hdg"
-      >
-        {/* Decorative atmospheric blob */}
-        <div
-          className="pointer-events-none absolute inset-0 overflow-hidden"
-          aria-hidden
-        >
+      <section className="home-hero relative -mt-16 overflow-hidden pt-16" aria-labelledby="hero-hdg">
+        <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
           <div
             className="absolute right-0 top-0 h-200 w-200 opacity-50"
             style={{
@@ -214,789 +50,326 @@ export default async function Home() {
           />
         </div>
 
-        <style>{`
-          .scan-line {
-            animation: scan 12s linear infinite;
-          }
-          @keyframes scan {
-            0% { y: -2; }
-            100% { y: 302; }
-          }
-          @media (prefers-reduced-motion: reduce) {
-            .scan-line { animation: none; }
-          }
-        `}</style>
-
         <HeroImageSlideshow />
 
-        <div className="relative mx-auto max-w-384 px-6 pb-20 pt-14 sm:px-8 lg:min-h-[86vh] lg:px-12 lg:pb-28 lg:pt-20 xl:pr-12">
-          {/* ── Left: text ── */}
+        <div className="relative mx-auto max-w-384 px-6 pb-20 pt-14 sm:px-8 lg:min-h-[86vh] lg:px-12 lg:pb-28 lg:pt-20">
           <div className="relative z-10 max-w-3xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent-soft px-4 py-1.5 text-sm font-medium text-accent">
-              <Globe size={14} aria-hidden />
-              NASA Space Apps Challenge 2026
-            </div>
+            <p className="inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent-soft px-4 py-1.5 text-sm font-medium text-accent">
+              <Radio size={14} aria-hidden />
+              <T en="Observational screening · not a forecast" bn="পর্যবেক্ষণভিত্তিক স্ক্রিনিং · পূর্বাভাস নয়" />
+            </p>
 
             <h1
               id="hero-hdg"
               className="mt-5 text-[2.6rem] font-semibold leading-[1.07] tracking-tight text-white sm:text-6xl lg:text-[3.25rem] xl:text-[3.75rem]"
             >
               <T
-                en="The signal is not the flood. It is the gap in who is watching."
-                bn="সংকেত বন্যা নয়। সংকেত হলো কে দেখছে সেই ফাঁকটাই।"
+                en="Is today normal where you live — and where can nobody say?"
+                bn="আপনার এলাকায় আজ কি স্বাভাবিক — আর কোথায় কেউ বলতে পারে না?"
               />
             </h1>
 
-            <p className="mt-5 max-w-[50ch] text-lg leading-[1.6] text-white/85">
+            <p className="mt-5 max-w-[52ch] text-lg leading-[1.6] text-white/85">
               <T
-                en={`${years.length} years of NASA data, used to answer one question honestly: where can Earth observation actually support a decision, and where is nobody watching? We show the coverage, and we show where it stops.`}
-                bn={`নাসার ${bnNum(years.length)} বছরের তথ্য দিয়ে একটাই প্রশ্ন সৎভাবে উত্তর দেওয়া: ভূ-পর্যবেক্ষণ কোথায় সত্যিই একটি সিদ্ধান্তে সহায়তা করতে পারে, আর কোথায় কেউ দেখছে না? আমরা আচ্ছাদন দেখাই, আর দেখাই কোথায় তা থেমে যায়।`}
+                en={`We compare today's satellite rain with the same date in ${counts.places.toLocaleString("en")} districts and states of South Asia. Every location states what was observed, whether it is unusual, what history says, how far its data can be trusted — and where it cannot answer at all.`}
+                bn={`আমরা আজকের স্যাটেলাইট-বৃষ্টিকে দক্ষিণ এশিয়ার ${bnNum(counts.places.toLocaleString("en"))}টি জেলা ও রাজ্যের একই তারিখের সাথে মিলিয়ে দেখি। প্রতিটি স্থান বলে কী পর্যবেক্ষণ করা হয়েছে, তা অস্বাভাবিক কি না, ইতিহাস কী বলে, তথ্য কতটা ভরসাযোগ্য — আর কোথায় তা আদৌ উত্তর দিতে পারে না।`}
               />
             </p>
 
-            <div className="mt-8 flex flex-wrap items-center gap-3">
+            <div className="mt-7 max-w-md">
+              <SignalSearch rows={rows} />
+              <p className="mt-2 text-sm text-white/75">
+                <T en="Search a country, state or district." bn="দেশ, রাজ্য বা জেলা খুঁজুন।" />
+              </p>
+            </div>
+
+            <div className="mt-7 flex flex-wrap items-center gap-3">
+              <Link
+                href="/signal"
+                className="inline-flex min-h-12 items-center gap-2 rounded-full bg-accent-strong px-6 font-medium text-accent-ink transition-colors duration-150 hover:bg-accent-hover"
+                style={{ boxShadow: "0 4px 18px color-mix(in srgb, var(--accent) 38%, transparent)" }}
+              >
+                <Gauge size={18} aria-hidden />
+                <T en="Open the Signal" bn="সংকেত খুলুন" />
+              </Link>
               <Link
                 href="/gap"
-                className="inline-flex min-h-12 items-center gap-2 rounded-full bg-accent-strong px-6 font-medium text-accent-ink transition-colors duration-150 hover:bg-accent-hover"
-                style={{
-                  boxShadow:
-                    "0 4px 18px color-mix(in srgb, var(--accent) 38%, transparent)",
-                }}
-              >
-                <ScanEye size={18} aria-hidden />
-                <T en="See where we can see" bn="দেখুন কোথায় আমরা দেখতে পাই" />
-              </Link>
-              <Link
-                href="/findings"
                 className="inline-flex min-h-12 items-center gap-2 rounded-full border border-white/25 bg-white/15 px-6 font-medium text-white backdrop-blur-sm transition-colors duration-150 hover:bg-white/22"
               >
-                <BookOpen size={18} aria-hidden />
-                <T en="Discover the story" bn="মূল গল্প পড়ুন" />
+                <ScanEye size={18} aria-hidden />
+                <T en="See where the data stops" bn="দেখুন তথ্য কোথায় শেষ" />
               </Link>
             </div>
 
-            <div className="mt-3">
-              <StartTourButton className="text-[#58A6FF] hover:text-[#8CC4FF]" />
-            </div>
-
-            <div className="mt-8">
-              <p className="mb-2 text-sm text-white/80">
-                <T en="Or open your country" bn="অথবা আপনার দেশ খুলুন" />
-              </p>
-              <div className="max-w-md">
-                <CountrySearch countries={countries.map(({ slug, name, nameBn, flag }) => ({ slug, name, nameBn, flag }))} large />
-              </div>
-            </div>
+            <a
+              href={brief.official.wmo}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-5 inline-flex items-center gap-1.5 text-sm text-white/80 hover:text-white"
+            >
+              <ShieldAlert size={15} aria-hidden />
+              <T en="Official warnings (WMO SWIC)" bn="সরকারি সতর্কবার্তা (WMO SWIC)" />
+              <ExternalLink size={13} aria-hidden />
+            </a>
           </div>
-
-          <HeroClimateStory
-            zones={trendZones}
-          />
         </div>
 
-
-        {/* Scientific overlay visualization */}
-        
-        {/* Photo credit for the Wikimedia Commons flood photographs */}
-        <p className="absolute bottom-2 right-3 z-10 text-[10px] text-white/55 select-none">
+        <p className="absolute bottom-2 right-3 z-10 select-none text-[10px] text-white/55">
           Photos: Wikimedia Commons / Bangladesh flood series
         </p>
       </section>
 
-      {/* ===== CONTENT ===== */}
       <div className="mx-auto w-full max-w-384 px-6 pb-24 sm:px-8 lg:px-12">
-        {/* ── Intelligence strip: the latest screening for the whole study area ── */}
-        {studyScreening && (
-          <section aria-labelledby="intelligence-hdg" className="mt-16 mb-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-              <T en="Climate hazard intelligence" bn="জলবায়ু দুর্যোগ বিশ্লেষণ" />
-            </p>
-            <h2 id="intelligence-hdg" className="mt-2 text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
-              <T en="What the latest observations mean" bn="সর্বশেষ পর্যবেক্ষণের অর্থ" />
-            </h2>
-            <div className="mt-6 grid gap-5 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)]">
-              <IntelligenceStrip loc={studyScreening} alerts={intelAlerts.computed} asOf={intelAlerts.asOf} />
-              <div className="rounded-2xl border border-line bg-card p-5">
-                <p className="text-sm font-medium text-ink">
-                  <T en="Countries and research regions by screening level" bn="স্ক্রিনিং স্তর অনুযায়ী দেশ ও গবেষণা অঞ্চল" />
-                </p>
-                <ul className="mt-3 space-y-2">
-                  {levelCounts.map(({ level, n }) => (
-                    <li key={level} className="flex items-center justify-between gap-3">
-                      <Link href={`/locations?level=${level}`} className="hover:underline">
-                        <LevelBadge level={level} />
-                      </Link>
-                      <span className="tabular-nums text-ink">{n}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-4 flex flex-wrap gap-3 text-sm">
-                  <Link href="/monitoring" className="font-medium text-accent hover:underline">
-                    <T en="Monitoring" bn="পর্যবেক্ষণ" />
-                  </Link>
-                  <Link href="/locations" className="font-medium text-accent hover:underline">
-                    <T en="Find a location" bn="স্থান খুঁজুন" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </section>
+        {sample && (
+          <p role="status" className="mt-8 rounded-xl border border-watch bg-watch-soft px-4 py-3 text-sm text-watch">
+            <T
+              en="SAMPLE DATA — the rain readings behind this site are fixed samples, not real observations. Coverage counts and the backtest on /accuracy come from real datasets."
+              bn="নমুনা তথ্য — এই সাইটের পেছনের বৃষ্টির পাঠ স্থির নমুনা, বাস্তব পর্যবেক্ষণ নয়। আচ্ছাদনের সংখ্যা এবং /accuracy-এর ব্যাকটেস্ট বাস্তব তথ্যসেট থেকে।"
+            />
+          </p>
         )}
 
-        <EvidenceStory
-          zones={trendZones}
-          rainfallGrid={rainfallGrid}
-          hazardZones={hazardZones}
-          warmingCells={temp.cells}
-          first={first}
-          last={last}
-        />
-
-        {/* ── The latest month ── */}
-        <section aria-labelledby="latest" className="mb-24">
+        {/* ── What the platform answers today, in counts ── */}
+        <section aria-labelledby="coverage-hdg" className="mt-14">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-            <T en="Latest conditions" bn="সর্বশেষ অবস্থা" />
+            <T en="Coverage at a glance" bn="এক নজরে আচ্ছাদন" />
           </p>
-          <h2
-            id="latest"
-            className="mt-2 text-3xl font-semibold tracking-tight text-ink sm:text-4xl"
-          >
-            <T en="The latest month" bn="সর্বশেষ মাস" />
+          <h2 id="coverage-hdg" className="mt-2 text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+            <T en="What we can answer, and what we cannot" bn="আমরা কী উত্তর দিতে পারি, আর কী পারি না" />
           </h2>
           <p className="mt-3 max-w-[68ch] text-base leading-relaxed text-ink-2">
             <T
-              en={`How recent observations compare with the long-term normal: ${latest.temperature.baseline} for temperature and ${latest.rainfall.baseline} for rain.`}
-              bn={`"স্বাভাবিক" মানে ওই মাসের দীর্ঘমেয়াদি গড়: তাপমাত্রার জন্য ${bnNum(latest.temperature.baseline)}, বৃষ্টির জন্য ${bnNum(latest.rainfall.baseline)}।`}
+              en="Every covered location falls into one of three states. The number of locations in each state is computed from the data on every build, never typed in."
+              bn="প্রতিটি আচ্ছাদিত স্থান তিনটি অবস্থার একটিতে পড়ে। প্রতিটি অবস্থায় কতটি স্থান আছে, তা প্রতিবার গড়ার সময় তথ্য থেকে গণনা করা হয়, হাতে লেখা নয়।"
             />
           </p>
-          <div className="mt-8 grid gap-5 md:grid-cols-2">
-            {/* Temperature */}
-            <div className="rounded-2xl border border-line bg-card p-6 shadow-soft sm:p-8">
-              <div className="flex items-center gap-2 text-sm text-ink-3">
-                <Thermometer
-                  size={15}
-                  style={{ color: "var(--warm-3)" }}
-                  aria-hidden
-                />
-                <span>
-                  <T
-                    en={monthName(latest.temperature.month)}
-                    bn={bnMonth(latest.temperature.month)}
-                  />
-                </span>
-                <span aria-hidden>·</span>
-                <T en="Temperature" bn="তাপমাত্রা" />
-              </div>
-              <div className="mt-5">
-                <span className="text-5xl font-semibold tracking-tight tabular-nums text-ink sm:text-6xl">
-                  <T
-                    en={`${formatSigned(lt.anomaly, 1)} °C`}
-                    bn={`${bnNum(formatSigned(lt.anomaly, 1))} °সে`}
-                  />
-                </span>
-                <p className="mt-2 text-base text-ink-2">
-                  <T en="warmer than normal" bn="স্বাভাবিকের চেয়ে বেশি গরম" />
-                </p>
-              </div>
-              <p className="mt-5 leading-relaxed text-ink-2">
-                <T
-                  en={`The ${ordinalRank(lt.rank)}hottest ${monthName(latest.temperature.month).split(" ")[0]} across South Asia since ${years[0]} (${lt.of} years on record).`}
-                  bn={`${bnNum(years[0])} সাল থেকে (${bnNum(lt.of)} বছরের রেকর্ডে) দক্ষিণ এশিয়ায় ${lt.rank === 1 ? "সবচেয়ে গরম" : `${bnNum(lt.rank)}তম গরম`} ${bnMonth(latest.temperature.month).split(" ")[0]} মাস।`}
-                />
-              </p>
-            </div>
-
-            {/* Rainfall */}
-            <div className="rounded-2xl border border-line bg-card p-6 shadow-soft sm:p-8">
-              <div className="flex items-center gap-2 text-sm text-ink-3">
-                <CloudRain
-                  size={15}
-                  style={{ color: "var(--cool-3)" }}
-                  aria-hidden
-                />
-                <span>
-                  <T
-                    en={monthName(latest.rainfall.month)}
-                    bn={bnMonth(latest.rainfall.month)}
-                  />
-                </span>
-                <span aria-hidden>·</span>
-                <T en="Rainfall" bn="বৃষ্টিপাত" />
-              </div>
-              <div className="mt-5">
-                <span className="text-5xl font-semibold tracking-tight tabular-nums text-ink sm:text-6xl">
-                  <T
-                    en={`${lr.percentOfNormal}%`}
-                    bn={`${bnNum(lr.percentOfNormal)}%`}
-                  />
-                </span>
-                <p className="mt-2 text-base text-ink-2">
-                  <T en="of usual rainfall" bn="স্বাভাবিক বৃষ্টিপাতের" />
-                </p>
-              </div>
-              <p className="mt-5 leading-relaxed text-ink-2">
-                <T
-                  en={`${["Clearly drier than usual", "Close to usual", "Clearly wetter than usual"][rainWord]} for ${monthName(latest.rainfall.month).split(" ")[0]}, compared with the ${latest.rainfall.baseline} average. Rain data is published a few months after temperature.`}
-                  bn={`${bnNum(latest.rainfall.baseline)} গড়ের তুলনায় ${bnMonth(latest.rainfall.month).split(" ")[0]} মাসের জন্য ${["স্পষ্টভাবে কম বৃষ্টি", "প্রায় স্বাভাবিক", "স্পষ্টভাবে বেশি বৃষ্টি"][rainWord]}। বৃষ্টির তথ্য তাপমাত্রার কয়েক মাস পরে প্রকাশিত হয়।`}
-                />
-              </p>
-            </div>
-          </div>
+          <dl className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
+            <Stat
+              label="Covered locations"
+              labelBn="আচ্ছাদিত স্থান"
+              value={counts.places.toLocaleString("en")}
+              hint={`${counts.countries} countries`}
+              hintBn={`${bnNum(counts.countries)} দেশ`}
+            />
+            <Stat
+              label="Live Signal"
+              labelBn="সরাসরি সংকেত"
+              value={counts.live.toLocaleString("en")}
+              hint="current rain observation"
+              hintBn="সাম্প্রতিক বৃষ্টি-পর্যবেক্ষণ"
+            />
+            <Stat
+              label="Seasonal Context Only"
+              labelBn="কেবল মৌসুমি প্রেক্ষাপট"
+              value={counts.seasonal.toLocaleString("en")}
+              hint="no current reading"
+              hintBn="সাম্প্রতিক পাঠ নেই"
+            />
+            <Stat
+              label="Can’t Tell Here"
+              labelBn="এখানে বলা সম্ভব নয়"
+              value={counts.cantTell.toLocaleString("en")}
+              hint="missing, sparse or stale data"
+              hintBn="অনুপস্থিত, বিরল বা পুরোনো তথ্য"
+            />
+          </dl>
         </section>
 
-        {/* ── In one minute: three key findings ── */}
-        <section aria-labelledby="minute" className="mb-24">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-            <T en="45-year findings" bn="৪৫ বছরের ফলাফল" />
-          </p>
-          <h2
-            id="minute"
-            className="mt-2 text-3xl font-semibold tracking-tight text-ink sm:text-4xl"
-          >
-            <T en="In one minute" bn="এক মিনিটে" />
-          </h2>
-          <p className="mt-3 max-w-[60ch] text-base text-ink-2">
-            <T en="Three things our analysis revealed." bn="আমাদের বিশ্লেষণে প্রকাশিত তিনটি বিষয়।" />
-          </p>
-          <div className="mt-7 grid gap-5 md:grid-cols-3">
-            <Fact
-              href="/findings#spring"
-              label={
-                <T
-                  en="Spring heats fastest"
-                  bn="বসন্তে গরম বাড়ছে সবচেয়ে দ্রুত"
-                />
-              }
-              value={<T en={`${spring} °C`} bn={`${bnNum(spring)} °সে`} />}
-              icon={
-                <Thermometer size={18} className="text-accent" aria-hidden />
-              }
-              note={
-                <T
-                  en="every 10 years in March–May, the hot weeks before the monsoon, and faster still in the mountains."
-                  bn="প্রতি ১০ বছরে, মার্চ–মে মাসে, অর্থাৎ বর্ষার আগের গরম সপ্তাহগুলোতে; পাহাড়ে আরও দ্রুত।"
-                />
-              }
-            />
-            <Fact
-              href="/findings#rain"
-              label={<T en="The rain is moving" bn="বৃষ্টি জায়গা বদলাচ্ছে" />}
-              value={
-                <span className="flex flex-wrap gap-x-5 gap-y-2">
-                  <span>
-                    <T en={rainIndus} bn={bnNum(rainIndus)} />
-                    <span className="block text-sm font-normal tracking-normal text-ink-3">
-                      <T en="Indus plain" bn="সিন্ধু সমভূমি" />
-                    </span>
-                  </span>
-                  <span>
-                    <T en={rainDelta} bn={bnNum(rainDelta)} />
-                    <span className="block text-sm font-normal tracking-normal text-ink-3">
-                      <T en="Bengal delta" bn="বাংলার ব-দ্বীপ" />
-                    </span>
-                  </span>
-                </span>
-              }
-              note={
-                <T
-                  en="monsoon rain every 10 years: the dry Indus plain gets more, the Bengal delta gets less. Two independent records agree."
-                  bn="প্রতি ১০ বছরে বর্ষার বৃষ্টি: শুষ্ক সিন্ধু সমভূমিতে বাড়ছে, বাংলার ব-দ্বীপে কমছে। দুটি আলাদা তথ্যসূত্র একমত।"
-                />
-              }
-              icon={<CloudRain size={18} className="text-accent" aria-hidden />}
-            />
-            <Fact
-              href="/hazards"
-              label={
-                <T
-                  en={`Places to watch in ${last}`}
-                  bn={`${bnNum(last)} সালে যেসব জায়গায় নজর দরকার`}
-                />
-              }
-              value={
-                <T
-                  en={`${watch.length} regions`}
-                  bn={`${bnNum(watch.length)}টি অঞ্চল`}
-                />
-              }
-              note={
-                <T
-                  en={`${watch.map((w) => w.name).join(" and ")} had weather like past disaster years.`}
-                  bn={`${watch.map((w) => zoneNameBn(w.id, w.name)).join(" ও ")}-এর আবহাওয়া আগের দুর্যোগের বছরগুলোর মতো ছিল।`}
-                />
-              }
-              icon={
-                <CircleAlert size={18} className="text-watch" aria-hidden />
-              }
-            />
-          </div>
-        </section>
+        {/* ── A worked example, read from the data ── */}
+        {example && (
+          <section aria-labelledby="example-hdg" className="mt-14">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+              <T en="What one signal says" bn="একটি সংকেত কী বলে" />
+            </p>
+            <h2 id="example-hdg" className="mt-2 text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
+              {example.name}, {example.countryName}
+            </h2>
+            <div className="mt-3 flex flex-wrap gap-1.5">
+              <CoverageBadge state={example.coverage} />
+              <WatchBadge level={example.watch} />
+            </div>
+            <p className="mt-3 max-w-[72ch] text-sm leading-relaxed text-ink-2">
+              <T
+                en={`The nearest satellite cell recorded ${example.rain.day1?.toFixed(1) ?? "–"} mm of rain, ${example.ratio?.toFixed(1) ?? "–"}× the usual amount for this date in its own record${example.percentile !== null ? `, at the ${example.percentile.toFixed(0)}th percentile` : ""}. Observed ${example.observed?.slice(0, 10) ?? "–"}. ${
+                  example.frequency.state === "ok" && example.frequency.level
+                    ? `At or above this rainfall level, floods were catalogued in ${example.frequency.level.floods} of ${example.frequency.level.cases} historical cases (95% interval ${(example.frequency.level.low * 100).toFixed(0)}–${(example.frequency.level.high * 100).toFixed(0)}%).`
+                    : "Not enough historical evidence to calculate a reliable frequency here."
+                }`}
+                bn={`নিকটতম স্যাটেলাইট-কোষে বৃষ্টি হয়েছে ${bnNum(example.rain.day1?.toFixed(1) ?? "–")} মিমি, যা এই তারিখের নিজস্ব রেকর্ডে স্বাভাবিকের ${bnNum(example.ratio?.toFixed(1) ?? "–")} গুণ${example.percentile !== null ? `, ${bnNum(example.percentile.toFixed(0))}তম শতকাংশে` : ""}। পর্যবেক্ষণ ${example.observed?.slice(0, 10) ?? "–"}। ${
+                  example.frequency.state === "ok" && example.frequency.level
+                    ? `এই মাত্রার বৃষ্টিতে ${bnNum(example.frequency.level.cases)}টি ঐতিহাসিক ক্ষেত্রে ${bnNum(example.frequency.level.floods)}টিতে বন্যা নথিভুক্ত (৯৫% ব্যবধান ${bnNum((example.frequency.level.low * 100).toFixed(0))}–${bnNum((example.frequency.level.high * 100).toFixed(0))}%)।`
+                    : "নির্ভরযোগ্য ফ্রিকোয়েন্সি গণনার জন্য যথেষ্ট ঐতিহাসিক প্রমাণ নেই।"
+                }`}
+              />
+            </p>
+            <Link
+              href={`/signal/${example.id}`}
+              className="mt-3 inline-flex min-h-9 items-center gap-1 text-sm font-medium text-accent-strong underline decoration-line underline-offset-2 hover:decoration-current"
+            >
+              <T en="Open this Signal" bn="এই সংকেত খুলুন" />
+              <ArrowRight size={15} aria-hidden />
+            </Link>
+          </section>
+        )}
 
-        {/* ── How it works ── */}
-        <section aria-labelledby="how" className="mb-24">
+        {/* ── How it works: the three steps, same words the Signal page uses ── */}
+        <section aria-labelledby="how-hdg" className="mt-14">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
             <T en="Method" bn="পদ্ধতি" />
           </p>
-          <h2
-            id="how"
-            className="mt-2 text-3xl font-semibold tracking-tight text-ink sm:text-4xl"
-          >
-            <T en="How it works" bn="কীভাবে কাজ করে" />
+          <h2 id="how-hdg" className="mt-2 text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+            <T en="How a signal is made" bn="সংকেত কীভাবে তৈরি হয়" />
           </h2>
-          <ol className="mt-10 grid gap-8 md:grid-cols-3">
+          <ol className="mt-8 grid gap-8 md:grid-cols-3">
             {[
               {
-                Icon: Globe,
-                title: <T en="Satellites measure" bn="স্যাটেলাইট মাপে" />,
-                text: (
-                  <T
-                    en={`NASA satellites and records track temperature, rain, forests and fires across South Asia since ${first}.`}
-                    bn={`নাসার স্যাটেলাইট ও রেকর্ড ${bnNum(first)} সাল থেকে দক্ষিণ এশিয়ার তাপমাত্রা, বৃষ্টি, বন ও আগুন পর্যবেক্ষণ করছে।`}
-                  />
-                ),
+                Icon: Radio,
+                en: { t: "Satellites observe", b: "NASA IMERG measures rain; GISTEMP and GPCP give the long historical record each location is compared against." },
+                bn: { t: "স্যাটেলাইট পর্যবেক্ষণ করে", b: "নাসার IMERG বৃষ্টি মাপে; GISTEMP ও GPCP সেই দীর্ঘ ঐতিহাসিক রেকর্ড দেয়, যার সাথে প্রতিটি স্থান মেলানো হয়।" },
               },
               {
-                Icon: ChartLine,
-                title: (
-                  <T
-                    en="We check what is real"
-                    bn="আমরা যাচাই করি কোনটা সত্যি"
-                  />
-                ),
-                text: (
-                  <T
-                    en="Statistics separate a real long-term change from the normal ups and downs of the weather."
-                    bn="পরিসংখ্যান আবহাওয়ার স্বাভাবিক ওঠানামা থেকে সত্যিকারের দীর্ঘমেয়াদি পরিবর্তনকে আলাদা করে।"
-                  />
-                ),
+                Icon: Microscope,
+                en: { t: "We ask if it is unusual", b: "The reading is set against the same date in every past year of that area's own record, and a Watch Level follows." },
+                bn: { t: "আমরা দেখি এটি অস্বাভাবিক কি না", b: "পাঠটিকে ওই এলাকার নিজস্ব রেকর্ডের প্রতিটি আগের বছরের একই তারিখের সাথে মেলানো হয়, তারপর সতর্কতার মাত্রা নির্ধারিত হয়।" },
               },
               {
-                Icon: TriangleAlert,
-                title: (
-                  <T
-                    en="We link it to disasters"
-                    bn="আমরা দুর্যোগের সাথে মেলাই"
-                  />
-                ),
-                text: (
-                  <T
-                    en="We compare the weather with past floods, landslides, fires and cyclones, to show where to prepare."
-                    bn="আগের বন্যা, ভূমিধস, আগুন ও ঘূর্ণিঝড়ের সাথে আবহাওয়া মিলিয়ে দেখাই কোথায় প্রস্তুতি দরকার।"
-                  />
-                ),
+                Icon: CloudRain,
+                en: { t: "History is shown with its sample size", b: "Where past years carry this much rain, we report how often floods were catalogued — always with the number of cases." },
+                bn: { t: "ইতিহাস নমুনার আকারসহ দেখানো হয়", b: "যেসব আগের বছরে এই পরিমাণ বৃষ্টি ছিল, সেখানে কতবার বন্যা নথিভুক্ত হয়েছে তা জানাই — সবসময় কতটি ক্ষেত্রে, তা সহ।" },
               },
-            ].map(({ Icon, title, text }, i) => (
-              <li key={i} className="flex gap-5">
+            ].map(({ Icon, en, bn }, index) => (
+              <li key={index} className="flex gap-5">
                 <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-accent-soft text-accent">
                   <Icon size={22} aria-hidden />
                 </span>
                 <div>
-                  <div className="text-xs font-medium text-ink-3">
-                    <T en={`Step ${i + 1}`} bn={`ধাপ ${bnNum(i + 1)}`} />
-                  </div>
-                  <div className="mt-0.5 font-semibold text-ink">{title}</div>
-                  <p className="mt-2 leading-relaxed text-ink-2">{text}</p>
+                  <p className="text-xs font-medium text-ink-3">
+                    <T en={`Step ${index + 1}`} bn={`ধাপ ${bnNum(index + 1)}`} />
+                  </p>
+                  <p className="mt-0.5 font-semibold text-ink">
+                    <T en={en.t} bn={bn.t} />
+                  </p>
+                  <p className="mt-2 leading-relaxed text-ink-2">
+                    <T en={en.b} bn={bn.b} />
+                  </p>
                 </div>
               </li>
             ))}
           </ol>
           <div className="mt-8 flex justify-end">
-            <Link
-              href="/methods"
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:underline"
-            >
-              <FlaskConical size={15} aria-hidden />
+            <Link href="/methods" className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:underline">
+              <ShieldCheck size={15} aria-hidden />
               <T en="Read the full methodology" bn="পুরো পদ্ধতি পড়ুন" />
               <ArrowRight size={14} aria-hidden />
             </Link>
           </div>
         </section>
 
-        {/* ── Explore: destination cards ── */}
-        <section aria-labelledby="explore-hdg" className="mb-24">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-            <T en="Explore" bn="অনুসন্ধান" />
-          </p>
-          <h2
-            id="explore-hdg"
-            className="mt-2 text-3xl font-semibold tracking-tight text-ink sm:text-4xl"
-          >
-            <T en="Explore the data" bn="তথ্য অনুসন্ধান করুন" />
+        {/* ── Destinations ── */}
+        <section aria-labelledby="pages-hdg" className="mt-14">
+          <h2 id="pages-hdg" className="text-xl font-semibold tracking-tight text-ink">
+            <T en="Where to go next" bn="এরপর কোথায় যাবেন" />
           </h2>
-          <p className="mt-3 max-w-[60ch] text-base leading-relaxed text-ink-2">
-            <T
-              en="Four tools, each answering one question. Pick the one that matches yours."
-              bn="চারটি টুল, প্রতিটি একটি প্রশ্নের উত্তর দেয়। আপনার প্রশ্নের সাথে মেলে এমনটি বেছে নিন।"
-            />
-          </p>
-
-          {/* Asymmetric grid: 3 columns on desktop */}
-          <div className="mt-7 grid grid-cols-1 gap-5 md:grid-cols-2">
-            {/* Satellite Map — large (2/3) */}
-            <ToolCard tool={TOOLS[0]} />
-            {/* Climate Trends — small (1/3) */}
-            <ToolCard
-              tool={TOOLS[1]}
-              preview={
-                <TrendPreview
-                  series={tSeries}
-                  warmed={warmer}
-                  rainPct={rainPct(zone("bengal-delta"))}
-                  first={first}
-                  last={last}
-                />
-              }
-            />
-            {/* Disaster Risk — small (1/3) */}
-            <ToolCard tool={TOOLS[2]} />
-            {/* Country dashboards — large (2/3) with live preview */}
-            <ToolCard
-              tool={TOOLS[3]}
-              preview={
-                <CountryPreview
-                  name={bangladesh.name}
-                  flag={bangladesh.flag}
-                  warmed={
-                    countryReport.temperature?.trend
-                      ? (countryReport.temperature.trend.slopePerDecade *
-                          (last - first)) /
-                        10
-                      : null
-                  }
-                  series={countryReport.temperature?.series ?? []}
-                  rainPct={
-                    countryReport.rainfall?.trend && countryReport.rainfall.series.length
-                      ? (countryReport.rainfall.trend.slopePerDecade /
-                          (countryReport.rainfall.series.reduce((a, v) => a + v, 0) /
-                            countryReport.rainfall.series.length)) *
-                        100
-                      : null
-                  }
-                  regions={countryReport.regions.length}
-                  floods={countryReport.hazards.find((h) => h.id === "flood")?.events.count ?? null}
-                  first={first}
-                />
-              }
-            />
-          </div>
-
-          {/* Secondary links */}
           <div className="mt-5 grid gap-4 sm:grid-cols-2">
-            <Link
-              href="/findings"
-              className="group flex items-center gap-4 rounded-2xl bg-card p-5 shadow-soft transition-transform hover:-translate-y-0.5"
-            >
-              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-accent-soft text-accent">
-                <BookOpen size={22} aria-hidden />
-              </span>
-              <span className="min-w-0 flex-1">
-                <span className="block font-semibold text-ink">
-                  <T en="The story" bn="মূল গল্প" />
+            {DESTINATIONS.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="group flex items-start gap-4 rounded-2xl border border-line bg-card p-5 shadow-soft transition-transform hover:-translate-y-0.5"
+              >
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-accent-soft text-accent">
+                  <item.Icon size={22} aria-hidden />
                 </span>
-                <span className="block text-sm leading-relaxed text-ink-2">
-                  <T
-                    en="Our five main findings, in plain words with charts."
-                    bn="আমাদের পাঁচটি মূল ফলাফল, সহজ ভাষায়, চার্টসহ।"
-                  />
+                <span className="min-w-0 flex-1">
+                  <span className="block font-semibold text-ink">
+                    <T en={item.en} bn={item.bn} />
+                  </span>
+                  <span className="mt-0.5 block text-sm leading-relaxed text-ink-2">
+                    <T en={item.text.en} bn={item.text.bn} />
+                  </span>
                 </span>
-              </span>
-              <ArrowRight
-                size={18}
-                className="shrink-0 text-accent transition-transform group-hover:translate-x-0.5"
-                aria-hidden
-              />
-            </Link>
-            <Link
-              href="/methods"
-              className="group flex items-center gap-4 rounded-2xl bg-card p-5 shadow-soft transition-transform hover:-translate-y-0.5"
-            >
-              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-accent-soft text-accent">
-                <FlaskConical size={22} aria-hidden />
-              </span>
-              <span className="min-w-0 flex-1">
-                <span className="block font-semibold text-ink">
-                  <T en="How it works" bn="কীভাবে কাজ করে" />
-                </span>
-                <span className="block text-sm leading-relaxed text-ink-2">
-                  <T
-                    en="The NASA data we use and how we test that a change is real."
-                    bn="আমরা নাসার কোন তথ্য ব্যবহার করি, আর পরিবর্তন সত্যি কি না কীভাবে যাচাই করি।"
-                  />
-                </span>
-              </span>
-              <ArrowRight
-                size={18}
-                className="shrink-0 text-accent transition-transform group-hover:translate-x-0.5"
-                aria-hidden
-              />
-            </Link>
+                <ArrowRight size={18} className="mt-1 shrink-0 text-accent transition-transform group-hover:translate-x-0.5" aria-hidden />
+              </Link>
+            ))}
           </div>
         </section>
+
+        <p className="mt-14 border-t border-line pt-6 text-sm leading-relaxed text-ink-3">
+          <T
+            en="This site is observational screening: it shows what environmental signals are occurring and what historical evidence exists. It is not a forecast and not an official warning. Official warnings come from national meteorological and disaster agencies."
+            bn="এই সাইট পর্যবেক্ষণভিত্তিক স্ক্রিনিং: এটি দেখায় কী পরিবেশগত সংকেত ঘটছে এবং কী ঐতিহাসিক প্রমাণ আছে। এটি পূর্বাভাস নয়, সরকারি সতর্কবার্তাও নয়। সরকারি সতর্কবার্তা আসে জাতীয় আবহাওয়া ও দুর্যোগ সংস্থা থেকে।"
+          />
+        </p>
       </div>
     </>
   );
 }
 
-/* ─── Tool card ─────────────────────────────────────────────────────── */
-
-function ToolCard({
-  tool,
-  preview,
-  className = "",
-}: {
-  tool: Tool;
-  preview?: React.ReactNode;
-  className?: string;
-}) {
-  const { href, Icon, question, title, text, shot, tries } = tool;
-  return (
-    <article
-      className={`group/card flex flex-col rounded-2xl border border-line bg-card p-2 shadow-soft transition-transform hover:-translate-y-0.5 ${className}`}
-    >
-      <Link
-        href={href}
-        className="relative block aspect-16/10 overflow-hidden rounded-xl bg-sunken"
-        aria-label={title[0]}
-        tabIndex={-1}
-      >
-        {shot ? (
-          <>
-            <Image
-              src={`/features/${shot.name}-light.webp`}
-              alt={shot.alt}
-              fill
-              sizes="(min-width: 1200px) 780px, (min-width: 768px) 66vw, 100vw"
-              className="object-cover transition-transform duration-500 group-hover/card:scale-[1.03] dark:hidden"
-            />
-            <Image
-              src={`/features/${shot.name}-dark.webp`}
-              alt={shot.alt}
-              fill
-              sizes="(min-width: 1200px) 780px, (min-width: 768px) 66vw, 100vw"
-              className="hidden object-cover transition-transform duration-500 group-hover/card:scale-[1.03] dark:block"
-            />
-          </>
-        ) : (
-          preview
-        )}
-      </Link>
-      <div className="flex flex-1 flex-col p-5 sm:p-6">
-        <div className="flex items-center gap-2 text-sm font-medium text-accent">
-          <Icon size={18} aria-hidden />
-          <T en={question[0]} bn={question[1]} />
-        </div>
-        <h3 className="mt-2 text-xl font-semibold tracking-tight text-ink">
-          <Link
-            href={href}
-            className="inline-flex min-h-10 items-center gap-1.5 hover:text-accent"
-          >
-            <T en={title[0]} bn={title[1]} />
-            <ArrowRight
-              size={17}
-              className="transition-transform group-hover/card:translate-x-0.5"
-              aria-hidden
-            />
-          </Link>
-        </h3>
-        <p className="mt-1.5 flex-1 leading-relaxed text-ink-2">
-          <T en={text[0]} bn={text[1]} />
-        </p>
-        <div className="mt-4 flex flex-wrap items-center gap-2">
-          <span className="text-sm text-ink-3">
-            <T en="Try:" bn="দেখুন:" />
-          </span>
-          {tries.map((t) => (
-            <Link
-              key={t.href}
-              href={t.href}
-              className="rounded-full bg-sunken px-3 py-1.5 text-sm text-ink transition-colors hover:bg-accent-soft hover:text-accent"
-            >
-              <T en={t.label[0]} bn={t.label[1]} />
-            </Link>
-          ))}
-        </div>
-      </div>
-    </article>
-  );
-}
-
-/* ─── Homepage trend preview ───────────────────────────────────────── */
-
-function TrendPreview({
-  series,
-  warmed,
-  rainPct,
-  first,
-  last,
-}: {
-  series: number[];
-  warmed: number;
-  rainPct: number;
-  first: number;
-  last: number;
-}) {
-  const warmedText = formatSigned(warmed, 1);
-  const rainText = formatSigned(rainPct, 0);
-
-  return (
-    <div className="flex h-full flex-col justify-between p-5 sm:p-6">
-      <div>
-        <div className="flex items-center justify-between gap-3 text-sm text-ink-3">
-          <span>
-            <T en="South Asia trend" bn="দক্ষিণ এশিয়ার প্রবণতা" />
-          </span>
-          <span className="tabular-nums">
-            <T en={`${first}–${last}`} bn={`${bnNum(first)}–${bnNum(last)}`} />
-          </span>
-        </div>
-        <div className="mt-2 text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
-          <T en={`${warmedText} °C`} bn={`${bnNum(warmedText)} °সে`} />
-        </div>
-        <div className="mt-1 text-sm text-ink-3">
-          <T en={`warmer since ${first}`} bn={`${bnNum(first)} থেকে বেশি গরম`} />
-        </div>
-      </div>
-
-      {series.length > 1 && (
-        <div className="py-2">
-          <Sparkline values={series} color="var(--warm-3)" />
-          <div className="mt-1 flex justify-between text-xs tabular-nums text-ink-3">
-            <span>{first}</span>
-            <span>{last}</span>
-          </div>
-        </div>
-      )}
-
-      <dl className="grid grid-cols-2 gap-3 text-sm">
-        <div className="rounded-2xl bg-card/70 p-3">
-          <dt className="text-ink-3">
-            <T en="Heat trend" bn="তাপের প্রবণতা" />
-          </dt>
-          <dd
-            className="mt-1 font-semibold tabular-nums"
-            style={{ color: "var(--warm-4)" }}
-          >
-            <T en="Rising" bn="বাড়ছে" />
-          </dd>
-        </div>
-        <div className="rounded-2xl bg-card/70 p-3">
-          <dt className="text-ink-3">
-            <T en="Delta rain" bn="ডেল্টার বৃষ্টি" />
-          </dt>
-          <dd className="mt-1 font-semibold tabular-nums text-[var(--cool-4)]">
-            <T en={`${rainText}%/decade`} bn={`${bnNum(rainText)}%/দশক`} />
-          </dd>
-        </div>
-      </dl>
-    </div>
-  );
-}
-
-/* ─── Dhaka live preview (place reports card) ─────────────────────── */
-
-function CountryPreview({
-  name,
-  flag,
-  warmed,
-  series,
-  rainPct,
-  regions,
-  floods,
-  first,
-}: {
-  name: string;
-  flag: string;
-  warmed: number | null;
-  series: number[];
-  rainPct: number | null;
-  regions: number;
-  floods: number | null;
-  first: number;
-}) {
-  const w = warmed !== null ? formatSigned(warmed, 1) : null;
-  const r = rainPct !== null ? formatSigned(rainPct, 0) : null;
-  return (
-    <div className="flex h-full flex-col justify-between p-5 sm:p-7">
-      <div>
-        <div className="flex items-center gap-2 text-sm text-ink-3">
-          <MapPin size={16} className="text-accent" aria-hidden />
-          <T en="Country dashboard" bn="দেশের ড্যাশবোর্ড" />
-        </div>
-        <div className="mt-1 flex items-center gap-3">
-          {flag && (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img src={`https://flagcdn.com/w40/${flag}.png`} alt="" width={26} height={19} className="rounded-sm border border-line" />
-          )}
-          <span className="text-3xl font-semibold tracking-tight text-ink sm:text-4xl">{name}</span>
-        </div>
-      </div>
-      {series.length > 1 && <Sparkline values={series} color="var(--warm-3)" />}
-      <dl className="grid grid-cols-3 gap-3 text-sm">
-        {w && (
-          <div>
-            <dt className="text-ink-3">
-              <T en={`Since ${first}`} bn={`${bnNum(first)} থেকে`} />
-            </dt>
-            <dd className="text-lg font-semibold tabular-nums text-ink">
-              <T en={`${w} °C`} bn={`${bnNum(w)} °সে`} />
-            </dd>
-          </div>
-        )}
-        {r && (
-          <div>
-            <dt className="text-ink-3">
-              <T en="Annual rain" bn="বার্ষিক বৃষ্টি" />
-            </dt>
-            <dd className="text-lg font-semibold tabular-nums text-ink">
-              <T en={`${r}%/decade`} bn={`${bnNum(r)}%/দশক`} />
-            </dd>
-          </div>
-        )}
-        <div>
-          <dt className="text-ink-3">
-            <T en={floods === null ? "Hazard regions" : "Flood alerts"} bn={floods === null ? "দুর্যোগ অঞ্চল" : "বন্যা সতর্কতা"} />
-          </dt>
-          <dd className="text-lg font-semibold tabular-nums text-ink">
-            <T en={String(floods ?? regions)} bn={bnNum(floods ?? regions)} />
-          </dd>
-        </div>
-      </dl>
-    </div>
-  );
-}
-
-/* ─── Key finding card ───────────────────────────────────────────────── */
-
-function Fact({
-  href,
-  label,
-  value,
-  note,
-  icon,
-}: {
+const DESTINATIONS: {
   href: string;
-  label: React.ReactNode;
-  value: React.ReactNode;
-  note: React.ReactNode;
-  icon?: React.ReactNode;
-}) {
-  return (
-    <Link
-      href={href}
-      className="group flex flex-col rounded-2xl border border-line bg-card p-6 shadow-soft transition-transform hover:-translate-y-0.5 sm:p-7"
-    >
-      <div className="flex items-center gap-2 text-sm font-medium text-ink-2">
-        {icon}
-        {label}
-      </div>
-      <div className="mt-4 text-3xl font-semibold tracking-tight tabular-nums text-ink">
-        {value}
-      </div>
-      <p className="mt-3 flex-1 leading-relaxed text-ink-2">{note}</p>
-      <span className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-accent group-hover:underline">
-        <T en="Learn more" bn="আরও জানুন" />
-        <ArrowRight size={14} strokeWidth={2} className="transition-transform duration-150 group-hover:translate-x-0.5" aria-hidden />
-      </span>
-    </Link>
-  );
-}
+  Icon: typeof Gauge;
+  en: string;
+  bn: string;
+  text: { en: string; bn: string };
+}[] = [
+  {
+    href: "/signal",
+    Icon: Gauge,
+    en: "Signal",
+    bn: "সংকেত",
+    text: {
+      en: "The central page: search a country or district, see its observation, Watch Level, Data Trust Grade and the limits of its data.",
+      bn: "মূল পাতা: দেশ বা জেলা খুঁজুন, তার পর্যবেক্ষণ, সতর্কতার মাত্রা, তথ্য-ভরসার গ্রেড ও তথ্যের সীমা দেখুন।",
+    },
+  },
+  {
+    href: "/gap",
+    Icon: ScanEye,
+    en: "Gap",
+    bn: "ফাঁক",
+    text: {
+      en: "Where the map is listed but not measured, which datasets are missing, and why a location cannot receive a reliable signal.",
+      bn: "কোথায় মানচিত্র আছে কিন্তু মাপা হয়নি, কোন তথ্যসেট অনুপস্থিত, আর কেন একটি স্থান নির্ভরযোগ্য সংকেত পায় না।",
+    },
+  },
+  {
+    href: "/replay",
+    Icon: Microscope,
+    en: "Replay",
+    bn: "পুনরাবৃত্তি",
+    text: {
+      en: "Every year from 2000 replayed against catalogued floods: the rain, the threshold, the hits and the misses.",
+      bn: "২০০০ থেকে প্রতিটি বছর নথিভুক্ত বন্যার সাথে পুনরাবৃত্ত: বৃষ্টি, সীমা, হিট ও বাদ পড়া।",
+    },
+  },
+  {
+    href: "/accuracy",
+    Icon: ShieldCheck,
+    en: "Accuracy",
+    bn: "নির্ভুলতা",
+    text: {
+      en: "The backtest behind the Data Trust Grade: how the screen performed, and the tests that failed.",
+      bn: "তথ্য-ভরসার গ্রেডের পেছনের ব্যাকটেস্ট: স্ক্রিনিং কেমন করেছে, আর কোন পরীক্ষাগুলো ব্যর্থ হয়েছে।",
+    },
+  },
+  {
+    href: "/act",
+    Icon: CloudRain,
+    en: "Act",
+    bn: "প্রস্তুতি",
+    text: {
+      en: "Preparedness guidance in English and Bangla, checklists and shareable evidence cards.",
+      bn: "ইংরেজি ও বাংলায় প্রস্তুতির নির্দেশনা, চেকলিস্ট ও শেয়ারযোগ্য প্রমাণ-কার্ড।",
+    },
+  },
+  {
+    href: "/watch",
+    Icon: Radio,
+    en: "Watch",
+    bn: "নজর",
+    text: {
+      en: "Save the places you care about and choose what you would want to be told. Stored in your browser only.",
+      bn: "আপনার প্রিয় স্থান সংরক্ষণ করুন ও কী জানতে চান তা বাছুন। কেবল আপনার ব্রাউজারে সংরক্ষিত।",
+    },
+  },
+];

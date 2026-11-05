@@ -21,3 +21,6 @@ scripts/signals/derived/
 scripts/signals/logs/
 scripts/signals/.venv/
 .venv/
+
+# generated per-place frequency series (rebuilt by scripts/signals)
+web/public/data/signals/frequency/

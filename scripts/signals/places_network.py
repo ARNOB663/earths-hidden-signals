@@ -178,7 +178,7 @@ def refresh(config: dict, *, limit: int | None = None, resume: bool = True) -> N
                 "gaps": [y["year"] for y in years if y["mm"] is None],
                 "floodYears": [y for y in event_years if years and years[0]["year"] <= y <= years[-1]["year"]],
                 "floodEvents": [e for e in events.values() if years and years[0]["year"] <= int(e["start"][:4]) <= years[-1]["year"]],
-                "floodNote": "Flood years come from the GDACS flood catalogue. A missing year is a gap in the catalogue, not a year without floods.",
+                "floodNote": "Flood records come from the GDACS flood catalogue. A missing year is a gap in the catalogue, not a year without floods.",
             },
         }
         target.write_text(json.dumps(payload, separators=(",", ":"), sort_keys=True), encoding="utf-8")

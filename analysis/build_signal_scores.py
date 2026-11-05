@@ -1,34 +1,33 @@
-"""Data coverage and DEMO signal scores for every administrative area.
+"""Data coverage and the area index for every administrative area.
 
-Run after build_geography.py and build.py. Writes three files:
+Run after build_geography.py and build.py. Writes:
 
     web/public/data/signals/coverage.json     REAL data coverage per area, measured from the
                                               committed NASA analysis grids (see below)
-    web/public/data/signals/demo-scores.json  FIXED DEMO scores, clearly labelled sample data.
-                                              No measurement, prediction or evaluation feeds them.
+    web/public/data/signals/areas/{ISO}.json  one compact index per country: the area ids, names,
+                                              coverage state and boundary centre the Search, Gap and
+                                              Frequency pages share
+    web/public/data/signals/area-search.json  the same rows flattened for client-side search
     web/public/data/signals/provenance.json   dataset provenance, credits, versions and how each
-                                              dataset is used. Deliberately NOT sources.json:
-                                              that name belongs to the legacy rain-signal
-                                              pipeline (scripts/signals/writer.py) and is read
-                                              by /about, which expects a different shape.
+                                              dataset is used.
 
 Coverage is measured, not asserted. An area counts as covered by a variable when the area's land
 carries usable values in at least half of the variable's own grid cells inside the area's
 bounding box (and at least one cell), where a usable value covers 2014 onward with 10+ years
-present. The trend grids
-place cell centres at lat0 + i * dLat, so a cell is attributed to an area when its centre lies
-inside the area's boundary.
+present. The trend grids place cell centres at lat0 + i * dLat, so a cell is attributed to an
+area when its centre lies inside the area's boundary. ADM2 boundaries are usually smaller than
+the grids, so an ADM2 area is covered when at least one grid cell centre falls inside it and
+that cell carries a usable series.
 
-Demo scores are a pure function of the area identifier (SHA-256 of schema + event + level + id),
-so they are identical on every machine and every rerun. They exist only to show the workflow
-until prediction output replaces them; the Signals page always labels them as demo.
+No score, band, probability or confidence number is produced here. The former demo scores were
+removed: a fixed hash of an area id presented as a flood probability is not a measurement, a
+model output or an evaluation.
 
     python build_signal_scores.py
 """
 
 from __future__ import annotations
 
-import hashlib
 import json
 from pathlib import Path
 
@@ -59,10 +58,6 @@ VARIABLES = [
     ("wettest-day", "Wettest day", "সর্বোচ্চ বৃষ্টির দিন", "NASA GSFC GPCP 1DD v1.3", "wettest-day_annual_series.json", "W",
      "Wettest day each year"),
 ]
-
-DEMO_SCHEMA = "signals-demo-v1"
-DEMO_EVENT = "Flood-related event reaching the area in the next 7 days"
-
 
 def json_write(path: Path, data) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -127,19 +122,6 @@ def intersects(geometry, bounds: tuple[float, float, float, float]) -> bool:
     return not (maxx < bounds[0] or minx > bounds[2] or maxy < bounds[1] or miny > bounds[3])
 
 
-def demo_score(area_id: str) -> dict:
-    digest = hashlib.sha256(f"{DEMO_SCHEMA}|{DEMO_EVENT}|{area_id}".encode("utf-8")).digest()
-    value = int.from_bytes(digest[:4], "big") / 0xFFFFFFFF
-    score = round(value, 4)
-    signal = "red" if score >= 0.75 else "yellow" if score >= 0.5 else "green"
-    second = int.from_bytes(digest[4:8], "big") / 0xFFFFFFFF
-    return {
-        "signal": signal,
-        "probability": score,
-        "modelConfidence": round(0.3 + 0.6 * second, 2),
-    }
-
-
 def main() -> None:
     manifest = json.loads((DATA / "trends" / "manifest.json").read_text(encoding="utf-8"))
     index = json.loads((GEO / "index.json").read_text(encoding="utf-8"))
@@ -175,45 +157,50 @@ def main() -> None:
             }
 
     coverage_areas = []
-    demo_areas = []
+    centres: dict[str, list[float]] = {}
 
-    def area_coverage(geometry) -> dict[str, dict]:
+    def cell_stats(geometry) -> tuple[dict[str, dict], int]:
+        """Per-variable cell counts, and how many of the finest grid's cells lie inside."""
         cells: dict[str, dict] = {}
+        inside = 0
         if geometry is None or geometry.is_empty:
-            return cells
+            return cells, inside
         for var, grid in grids.items():
             indices = cell_cells(grid, geometry)
             covered = len([k for k in indices if k in grid["usable"]])
             share = covered / len(indices) if indices else 0.0
-            cells[var] = {"areaCells": len(indices), "coveredCells": covered,
-                          "covered": bool(indices) and covered > 0 and share >= MIN_COVERED_SHARE}
-        return cells
+            # ADM0 and ADM1 keep the 50% rule; an ADM2 polygon is usually smaller than the grid,
+            # so it is covered when one cell centre falls inside and carries a usable series.
+            enough = covered > 0 and (share >= MIN_COVERED_SHARE or level == "ADM2")
+            cells[var] = {"areaCells": len(indices), "coveredCells": covered, "covered": bool(indices) and enough}
+            if var == "heavy-rain":
+                inside = len(indices)
+        return cells, inside
 
     for country in index["countries"]:
         iso = country["code"]
         admin = json.loads((GEO / "admin" / f"{iso}.json").read_text(encoding="utf-8"))
         country_id = f"{iso.lower()}-adm0"
-        coverage_areas.append({"id": country_id, "country": iso, "level": "ADM0",
-                               "cells": area_coverage(admin_geoms.get(iso))})
+        adm0_geometry = admin_geoms.get(iso)
+        cells, _ = cell_stats(adm0_geometry)
+        coverage_areas.append({"id": country_id, "country": iso, "level": "ADM0", "cells": cells})
+        if adm0_geometry is not None:
+            point = adm0_geometry.representative_point()
+            centres[country_id] = [round(point.y, 2), round(point.x, 2)]
         # A country's own grid cells are too coarse to speak for its districts, so the country row
         # also records how many of its published ADM1 areas carry coverage. That is what keeps a
         # country with partial area data from contradicting the list underneath it.
-        demo_areas.append({"id": country_id, **demo_score(country_id)})
         for level in ("ADM1", "ADM2"):
             if level not in admin["levels"]:
                 continue
             level_geoms = geoms.get((iso, level), {})
             for unit in admin["levels"][level]["units"]:
-                area_id = unit["id"]
-                if level == "ADM1":
-                    # ADM2 coverage is not published: those polygons are smaller than the grids.
-                    coverage_areas.append({
-                        "id": area_id,
-                        "country": iso,
-                        "level": level,
-                        "cells": area_coverage(level_geoms.get(unit["name"])),
-                    })
-                demo_areas.append({"id": area_id, **demo_score(area_id)})
+                geometry = level_geoms.get(unit["name"])
+                cells, _ = cell_stats(geometry)
+                coverage_areas.append({"id": unit["id"], "country": iso, "level": level, "cells": cells})
+                if geometry is not None and not geometry.is_empty:
+                    point = geometry.representative_point()
+                    centres[unit["id"]] = [round(point.y, 2), round(point.x, 2)]
 
     coverage_vars = {}
     for var, name, name_bn, dataset, series_file, letter, _use in VARIABLES:
@@ -233,7 +220,8 @@ def main() -> None:
             "letter": letter,
             "rule": f"Covered when at least {int(MIN_COVERED_SHARE * 100)}% of the variable's grid "
                     f"cells in the area's bounding box lie inside the boundary and carry a value for "
-                    f"{MIN_VALUE_YEARS}+ years from {COVERAGE_START_YEAR}.",
+                    f"{MIN_VALUE_YEARS}+ years from {COVERAGE_START_YEAR}. An ADM2 area is covered "
+                    f"when at least one such cell centre falls inside it.",
             "unusableRows": sum(1 for row in rows if row is None or
                                 len([v for v in row[grid["years"].index(COVERAGE_START_YEAR)
                                                    if COVERAGE_START_YEAR in grid["years"] else 0:]
@@ -241,34 +229,36 @@ def main() -> None:
         }
 
     json_write(OUT / "coverage.json", {
-        "schema": "signals-coverage-v3",
+        "schema": "signals-coverage-v4",
         "generatedFrom": {"trends": manifest["generated"]},
         "measuredCountries": sorted(measured_countries),
         "gridExtent": {"lon": [grid_bounds[0], grid_bounds[2]], "lat": [grid_bounds[1], grid_bounds[3]]},
         "method": "A grid cell belongs to the area whose geoBoundaries boundary contains the "
                   "cell centre. A variable is covered when at least 50% of the variable's cells "
-                  "in the area's bounding box belong to the area and carry a usable series. "
-                  "The NASA analysis grids used here cover South Asia only, so countries outside "
-                  "their extent have no measured coverage and show 'No data'. Coverage is also "
-                  "measured only for ADM0 countries and ADM1 areas; ADM2 polygons are usually "
-                  "smaller than these grids. No weather value is invented for an area that lacks one.",
+                  "in the area's bounding box belong to the area and carry a usable series (an "
+                  "ADM2 area needs one such cell, since those polygons are usually smaller than "
+                  "the grids). The NASA analysis grids used here cover South Asia only, so "
+                  "countries outside their extent have no measured coverage. Coverage is not a "
+                  "weather value and no weather value is invented for an area that lacks one.",
         "variables": coverage_vars,
         "areas": sorted(coverage_areas, key=lambda a: a["id"]),
     })
 
-    # Per-country area lists, fetched by the page when a country is opened, so the country
-    # directory stays small enough to ship to the client. Each file holds compact rows:
-    # [id, name, signal, probability, layers, cellShare].
+    # Per-country area index: [id, name, centre lat, centre lon, layers, cellShare]. One file per
+    # country keeps the directory small; the Search page loads one country's file at a time.
     areas_dir = OUT / "areas"
     areas_dir.mkdir(parents=True, exist_ok=True)
     index_by_iso = {country["code"]: country for country in index["countries"]}
     coverage_by_id = {area["id"]: area for area in coverage_areas}
-    paths = sorted(p for p in areas_dir.glob("*.json"))
-    for path in paths:
+    for path in areas_dir.glob("*.json"):
         path.unlink()
     for iso, country in index_by_iso.items():
         admin = json.loads((GEO / "admin" / f"{iso}.json").read_text(encoding="utf-8"))
-        payload: dict[str, list] = {}
+        payload: dict[str, object] = {
+            "name": country.get("name"),
+            "nameBn": country.get("nameBn"),
+            "levels": {},
+        }
         for level in ("ADM1", "ADM2"):
             units = admin["levels"].get(level, {}).get("units") or []
             if not units:
@@ -285,58 +275,31 @@ def main() -> None:
                     if counted:
                         cell_share = round(sum(c["coveredCells"] for c in counted)
                                            / sum(c["areaCells"] for c in counted), 4)
-                score = demo_score(unit["id"]) if layers > 0 else None
+                centre = centres.get(unit["id"])
                 rows.append([
                     unit["id"],
                     unit["name"],
-                    score["signal"] if score else "no-data",
-                    score["probability"] if score else None,
+                    centre[0] if centre else None,
+                    centre[1] if centre else None,
                     layers,
                     cell_share,
                 ])
-            payload[level] = {
+            payload["levels"][level] = {
                 "name": summary["name"],
                 "nameBn": summary["nameBn"],
                 "rows": rows,
             }
         json_write(areas_dir / f"{iso}.json", payload)
 
-    # A compact index for the client: [iso, level, name, id, signal, layers]. It lets the page search
-    # and filter any of the ~52,000 areas without shipping every area row up front. Signal and layer
-    # count are copied from the same score data the rows use, so filters cannot disagree with rows.
-    search_rows = []
-    for iso, country in sorted(index_by_iso.items()):
-        admin = json.loads((GEO / "admin" / f"{iso}.json").read_text(encoding="utf-8"))
-        for level in ("ADM1", "ADM2"):
-            for unit in admin["levels"].get(level, {}).get("units") or []:
-                area = coverage_by_id.get(unit["id"])
-                layers = sum(1 for c in (area["cells"].values() if area else []) if c["covered"])
-                signal = demo_score(unit["id"])["signal"] if layers > 0 else "no-data"
-                search_rows.append([iso, level, unit["name"], unit["id"], signal, layers])
-    json_write(OUT / "area-search.json", {"schema": "signals-area-search-v2", "areas": search_rows})
-
-    json_write(OUT / "demo-scores.json", {
-        "schema": DEMO_SCHEMA,
-        "status": "demo",
-        "notReal": True,
-        "event": DEMO_EVENT,
-        "eventPeriod": "Next 7 days",
-        "scoreField": "probability",
-        "scoreMeaning": "DEMO ONLY. A fixed sample percentage standing in for the share of "
-                        "comparable weeks with a flood-related event. It is not a prediction, "
-                        "measurement, alert or model output.",
-        "modelConfidenceMeaning": "DEMO ONLY. Separately generated sample number, not derived from "
-                                  "any evaluation and not a measure of accuracy.",
-        "bandMeaning": "Illustrative demo thresholds only. They are not calibrated against "
-                       "outcomes and must not be read as an official risk scale.",
-        "signalBands": [
-            {"signal": "red", "min": 0.75, "max": 1.0},
-            {"signal": "yellow", "min": 0.5, "max": 0.75},
-            {"signal": "green", "min": 0.0, "max": 0.5},
-        ],
-        "generator": "sha256(schema|event|area id) -> uniform in [0,1); deterministic, no data used",
-        "areas": sorted(demo_areas, key=lambda a: a["id"]),
-    })
+    # A compact index for client-side search: [iso, level, name, id, layers]. Coverage, not a
+    # score, so a filter can only answer "is there data here", never "is it dangerous".
+    search_rows = [
+        [iso, level, row[1], row[0], row[4]]
+        for iso in sorted(index_by_iso)
+        for level in ("ADM1", "ADM2")
+        for row in (json.loads((areas_dir / f"{iso}.json").read_text(encoding="utf-8")).get("levels", {}).get(level, {}).get("rows") or [])
+    ]
+    json_write(OUT / "area-search.json", {"schema": "signals-area-search-v3", "areas": search_rows})
 
     json_write(OUT / "provenance.json", {
         "schema": "signals-sources-v1",
@@ -348,20 +311,18 @@ def main() -> None:
             "licenseFile": "geography/license.json",
             "indexFile": "geography/index.json",
             "use": "Administrative geography only: country and area boundaries, names and "
-                   "identifiers. Provides no weather data and no scores.",
+                   "identifiers. Provides no weather data and no signal.",
         },
         "data": [
             {"variable": var, "name": name, "dataset": dataset, "use": use,
              "file": f"trends/{series_file}"}
             for var, name, _, dataset, series_file, _, use in VARIABLES
         ],
-        "demo": {
-            "file": "signals/demo-scores.json",
-            "status": "demo",
-            "replacedBy": "Prediction output with the same schema; the page reads this file only.",
-        },
     })
-    print(f"coverage: {len(coverage_areas)} areas; demo: {len(demo_areas)} areas")
+    demo_path = OUT / "demo-scores.json"
+    if demo_path.exists():
+        demo_path.unlink()
+    print(f"coverage: {len(coverage_areas)} areas; index: {len(search_rows)} rows")
 
 
 if __name__ == "__main__":

@@ -191,15 +191,21 @@ def slug(text: str) -> str:
 
 def unit_ids(iso: str, level: str, rows: list[dict[str, str]]) -> list[dict]:
     """Stable {iso}-adm{level}-{slug} identifiers, suffixed only when two names collide."""
-    used: dict[str, int] = {}
+    taken: set[str] = set()
     units = []
     for row in rows:
         name = row.get("shapeName") or ""
         if not name:
             continue
         base = f"{iso.lower()}-{level.lower()}-{slug(name)}"
-        used[base] = used.get(base, 0) + 1
-        area_id = base if used[base] == 1 else f"{base}-{used[base]}"
+        # A suffixed id can collide with a real name (e.g. two "Suhag" areas and a literal
+        # "Suhag-2"), so keep bumping the suffix until the id is free rather than trusting a count.
+        area_id = base
+        suffix = 1
+        while area_id in taken:
+            suffix += 1
+            area_id = f"{base}-{suffix}"
+        taken.add(area_id)
         unit = {"id": area_id, "name": name}
         shape_iso = row.get("shapeISO") or None
         if shape_iso:

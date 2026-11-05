@@ -134,7 +134,7 @@ export default function EvidenceStory({ zones, rainfallGrid, hazardZones, warmin
               {hoveredYear !== null && <div className="pointer-events-none absolute right-4 top-4 rounded-lg border border-line bg-card px-3 py-2 text-xs text-ink shadow-soft"><strong>{first + hoveredYear}</strong><span className="ml-2 text-ink-2">{formatSigned(hoveredValue ?? 0, 2)}°C</span></div>}
             </div>
             <p className="mt-5 leading-relaxed text-ink-2"><T en={`The year-to-year temperature moves up and down, but the long-term direction is clear: South Asia is getting warmer. Every area we analyzed warmed (${warmingCells} of ${warmingCells}).`} bn={`বছরভেদে তাপমাত্রা ওঠানামা করে, কিন্তু দীর্ঘমেয়াদি দিক স্পষ্ট: দক্ষিণ এশিয়া উষ্ণ হচ্ছে। আমরা যে প্রতিটি এলাকা বিশ্লেষণ করেছি, সবগুলোই উষ্ণ হয়েছে।`} /></p>
-            <Link href="/trends?var=temperature&season=annual&zone=study-area" className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-hover"><T en="Explore climate trends" bn="জলবায়ুর প্রবণতা দেখুন" /><ArrowRight size={15} aria-hidden /></Link>
+            <Link href="/methods#trend-magnitude" className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-hover"><T en="Read the trend method" bn="প্রবণতার পদ্ধতি পড়ুন" /><ArrowRight size={15} aria-hidden /></Link>
           </article>
 
           <article className="rounded-2xl border border-line bg-card p-6 shadow-soft sm:p-8">
@@ -149,7 +149,7 @@ export default function EvidenceStory({ zones, rainfallGrid, hazardZones, warmin
               {examples.map((zone) => <RainExample key={zone.id} zone={zone} />)}
             </div>
             <p className="mt-5 leading-relaxed text-ink-2"><T en="Rainfall is not changing uniformly — some places are getting wetter while others are getting drier." bn="বৃষ্টিপাত একইভাবে বদলাচ্ছে না — কিছু জায়গায় বৃষ্টি বাড়ছে, অন্য জায়গায় কমছে।" /></p>
-            <Link href="/trends?var=rainfall&season=monsoon" className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-hover"><T en="See where rainfall is changing" bn="বৃষ্টি কোথায় বদলাচ্ছে দেখুন" /><ArrowRight size={15} aria-hidden /></Link>
+            <Link href="/methods#data" className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-hover"><T en="See the rainfall records" bn="বৃষ্টির রেকর্ড দেখুন" /><ArrowRight size={15} aria-hidden /></Link>
           </article>
         </div>
 
@@ -165,7 +165,7 @@ export default function EvidenceStory({ zones, rainfallGrid, hazardZones, warmin
             {impacts.map((zone) => <ImpactSignal key={zone.id} zone={zone} />)}
           </div>
           <p className="mt-6 max-w-3xl leading-relaxed text-ink-2"><T en="These changes do not predict disasters, but they can show where preparedness deserves attention." bn="এই পরিবর্তন দুর্যোগের পূর্বাভাস দেয় না, তবে কোথায় প্রস্তুতিতে মনোযোগ দেওয়া দরকার তা দেখাতে পারে।" /></p>
-          <Link href="/hazards" className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-hover"><T en="Explore disaster risk" bn="দুর্যোগের ঝুঁকি দেখুন" /><ArrowRight size={15} aria-hidden /></Link>
+          <Link href="/signal" className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-hover"><T en="Open the Signal" bn="সংকেত খুলুন" /><ArrowRight size={15} aria-hidden /></Link>
         </article>
       </section>
     </>
@@ -180,7 +180,7 @@ function RainExample({ zone }: { zone: Zone }) {
   const rain = zone.results.rainfall_monsoon;
   const value = rain.trend && rain.mean ? (rain.trend.slopePerDecade / rain.mean) * 100 : 0;
   const wetter = value > 0;
-  return <Link href={`/trends?var=rainfall&season=monsoon&zone=${zone.id}`} className="flex items-center justify-between gap-3 rounded-xl px-2 py-1.5 transition-colors hover:bg-sunken"><span className="font-medium text-ink">{zone.name}</span><span className={wetter ? "text-[var(--cool-4)]" : "text-[var(--warm-4)]"}>{wetter ? "↑ Wetter" : "↓ Drier"} <span className="text-ink-3">{formatSigned(value, 0)}%</span></span></Link>;
+  return <Link href="/methods#data" className="flex items-center justify-between gap-3 rounded-xl px-2 py-1.5 transition-colors hover:bg-sunken"><span className="font-medium text-ink">{zone.name}</span><span className={wetter ? "text-[var(--cool-4)]" : "text-[var(--warm-4)]"}>{wetter ? "↑ Wetter" : "↓ Drier"} <span className="text-ink-3">{formatSigned(value, 0)}%</span></span></Link>;
 }
 
 function ImpactSignal({ zone }: { zone: HazardZone }) {

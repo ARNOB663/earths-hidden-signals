@@ -1,0 +1,8186 @@
+{
+ "baselineMinValues": 8,
+ "episodeGapDays": 10,
+ "episodeRadiusKm": 150,
+ "generated": "2026-11-05",
+ "geometry": {
+  "cells": {
+   "bengal": {
+    "cells": [
+     {
+      "lat": 21.25,
+      "lon": 86.25
+     },
+     {
+      "lat": 21.25,
+      "lon": 88.75
+     },
+     {
+      "lat": 21.25,
+      "lon": 91.25
+     },
+     {
+      "lat": 21.25,
+      "lon": 93.75
+     },
+     {
+      "lat": 23.75,
+      "lon": 86.25
+     },
+     {
+      "lat": 23.75,
+      "lon": 88.75
+     },
+     {
+      "lat": 23.75,
+      "lon": 91.25
+     },
+     {
+      "lat": 23.75,
+      "lon": 93.75
+     },
+     {
+      "lat": 26.25,
+      "lon": 86.25
+     },
+     {
+      "lat": 26.25,
+      "lon": 88.75
+     },
+     {
+      "lat": 26.25,
+      "lon": 91.25
+     },
+     {
+      "lat": 26.25,
+      "lon": 93.75
+     },
+     {
+      "lat": 28.75,
+      "lon": 86.25
+     },
+     {
+      "lat": 28.75,
+      "lon": 88.75
+     },
+     {
+      "lat": 28.75,
+      "lon": 91.25
+     },
+     {
+      "lat": 28.75,
+      "lon": 93.75
+     }
+    ],
+    "label": "Bengal delta"
+   },
+   "indus": {
+    "cells": [
+     {
+      "lat": 21.25,
+      "lon": 66.25
+     },
+     {
+      "lat": 21.25,
+      "lon": 68.75
+     },
+     {
+      "lat": 21.25,
+      "lon": 71.25
+     },
+     {
+      "lat": 21.25,
+      "lon": 73.75
+     },
+     {
+      "lat": 23.75,
+      "lon": 66.25
+     },
+     {
+      "lat": 23.75,
+      "lon": 68.75
+     },
+     {
+      "lat": 23.75,
+      "lon": 71.25
+     },
+     {
+      "lat": 23.75,
+      "lon": 73.75
+     },
+     {
+      "lat": 26.25,
+      "lon": 66.25
+     },
+     {
+      "lat": 26.25,
+      "lon": 68.75
+     },
+     {
+      "lat": 26.25,
+      "lon": 71.25
+     },
+     {
+      "lat": 26.25,
+      "lon": 73.75
+     },
+     {
+      "lat": 28.75,
+      "lon": 66.25
+     },
+     {
+      "lat": 28.75,
+      "lon": 68.75
+     },
+     {
+      "lat": 28.75,
+      "lon": 71.25
+     },
+     {
+      "lat": 28.75,
+      "lon": 73.75
+     }
+    ],
+    "label": "Indus plain"
+   },
+   "western-himalaya": {
+    "cells": [
+     {
+      "lat": 31.25,
+      "lon": 71.25
+     },
+     {
+      "lat": 31.25,
+      "lon": 73.75
+     },
+     {
+      "lat": 31.25,
+      "lon": 76.25
+     },
+     {
+      "lat": 31.25,
+      "lon": 78.75
+     },
+     {
+      "lat": 33.75,
+      "lon": 71.25
+     },
+     {
+      "lat": 33.75,
+      "lon": 73.75
+     },
+     {
+      "lat": 33.75,
+      "lon": 76.25
+     },
+     {
+      "lat": 33.75,
+      "lon": 78.75
+     },
+     {
+      "lat": 36.25,
+      "lon": 71.25
+     },
+     {
+      "lat": 36.25,
+      "lon": 73.75
+     },
+     {
+      "lat": 36.25,
+      "lon": 76.25
+     },
+     {
+      "lat": 36.25,
+      "lon": 78.75
+     }
+    ],
+    "label": "Western Himalaya"
+   }
+  },
+  "grid": {
+   "dLat": 2.5,
+   "dLon": 2.5,
+   "lat0": 6.25,
+   "lon0": 61.25,
+   "nLat": 13,
+   "nLon": 16
+  }
+ },
+ "metrics": {
+  "baseRate": {
+   "high": 0.8227,
+   "low": 0.6903,
+   "n": 156,
+   "value": 0.7628
+  },
+  "correctRejectionRate": {
+   "high": 0.8861,
+   "low": 0.628,
+   "n": 37,
+   "value": 0.7838
+  },
+  "eventYears": 119,
+  "falseAlarmRate": {
+   "high": 0.372,
+   "low": 0.1139,
+   "n": 37,
+   "value": 0.2162
+  },
+  "flags": 36,
+  "fn": 91,
+  "fp": 8,
+  "hitRate": {
+   "high": 0.319,
+   "low": 0.1681,
+   "n": 119,
+   "value": 0.2353
+  },
+  "lift": 1.02,
+  "liftExcludesOne": false,
+  "liftInterval": {
+   "high": 1.279,
+   "low": 0.753
+  },
+  "precision": {
+   "high": 0.8828,
+   "low": 0.6191,
+   "n": 36,
+   "value": 0.7778
+  },
+  "tested": 156,
+  "tn": 29,
+  "tp": 28
+ },
+ "percentile": 80,
+ "reliability": [
+  {
+   "band": "below the baseline median",
+   "high": 0.8274,
+   "low": 0.6369,
+   "n": 78,
+   "value": 0.7436
+  },
+  {
+   "band": "median to the 80th percentile",
+   "high": 0.8829,
+   "low": 0.6406,
+   "n": 42,
+   "value": 0.7857
+  },
+  {
+   "band": "80th percentile or above (flagged)",
+   "high": 0.8828,
+   "low": 0.6191,
+   "n": 36,
+   "value": 0.7778
+  }
+ ],
+ "replay": [
+  {
+   "episodeTotal": 153,
+   "episodes": [
+    {
+     "alert": "Green",
+     "end": "2000-06-19",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2000-001",
+     "lat": 23.507,
+     "lead": null,
+     "lon": 91.712,
+     "section": "pre-monsoon",
+     "start": "2000-05-27",
+     "year": 2000
+    },
+    {
+     "alert": "Green",
+     "end": "2000-06-10",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2000-002",
+     "lat": 27.426,
+     "lead": null,
+     "lon": 94.798,
+     "section": "pre-monsoon",
+     "start": "2000-06-10",
+     "year": 2000
+    },
+    {
+     "alert": "Green",
+     "end": "2000-06-26",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2000-003",
+     "lat": 25.557,
+     "lead": null,
+     "lon": 89.736,
+     "section": "pre-monsoon",
+     "start": "2000-06-19",
+     "year": 2000
+    },
+    {
+     "alert": "Red",
+     "end": "2001-06-22",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2001-007",
+     "lat": 24.446,
+     "lead": null,
+     "lon": 92.006,
+     "section": "pre-monsoon",
+     "start": "2001-06-05",
+     "year": 2001
+    },
+    {
+     "alert": "Green",
+     "end": "2002-04-29",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2002-011",
+     "lat": 24.982,
+     "lead": null,
+     "lon": 91.52,
+     "section": "pre-monsoon",
+     "start": "2002-04-18",
+     "year": 2002
+    },
+    {
+     "alert": "Green",
+     "end": "2002-05-31",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2002-012",
+     "lat": 24.496,
+     "lead": null,
+     "lon": 91.775,
+     "section": "pre-monsoon",
+     "start": "2002-05-23",
+     "year": 2002
+    },
+    {
+     "alert": "Green",
+     "end": "2002-06-24",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2002-013",
+     "lat": 25.223,
+     "lead": null,
+     "lon": 90.992,
+     "section": "pre-monsoon",
+     "start": "2002-06-18",
+     "year": 2002
+    },
+    {
+     "alert": "Red",
+     "end": "2002-08-28",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2002-014",
+     "lat": 25.842,
+     "lead": null,
+     "lon": 89.27,
+     "section": "pre-monsoon",
+     "start": "2002-06-21",
+     "year": 2002
+    },
+    {
+     "alert": "Green",
+     "end": "2002-06-26",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2002-015",
+     "lat": 22.342,
+     "lead": null,
+     "lon": 88.935,
+     "section": "pre-monsoon",
+     "start": "2002-06-25",
+     "year": 2002
+    },
+    {
+     "alert": "Red",
+     "end": "2003-10-10",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2003-018",
+     "lat": 26.171,
+     "lead": null,
+     "lon": 90.854,
+     "section": "pre-monsoon",
+     "start": "2003-06-11",
+     "year": 2003
+    },
+    {
+     "alert": "Green",
+     "end": "2003-07-03",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2003-019",
+     "lat": 21.924,
+     "lead": null,
+     "lon": 91.933,
+     "section": "pre-monsoon",
+     "start": "2003-06-19",
+     "year": 2003
+    },
+    {
+     "alert": "Green",
+     "end": "2004-05-03",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2004-021",
+     "lat": 24.894,
+     "lead": null,
+     "lon": 91.695,
+     "section": "pre-monsoon",
+     "start": "2004-04-14",
+     "year": 2004
+    },
+    {
+     "alert": "Red",
+     "end": "2004-10-07",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2004-022",
+     "lat": 25.499,
+     "lead": null,
+     "lon": 85.892,
+     "section": "pre-monsoon",
+     "start": "2004-06-20",
+     "year": 2004
+    },
+    {
+     "alert": "Green",
+     "end": "2005-05-28",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2005-025",
+     "lat": 24.598,
+     "lead": null,
+     "lon": 91.642,
+     "section": "pre-monsoon",
+     "start": "2005-05-25",
+     "year": 2005
+    },
+    {
+     "alert": "Green",
+     "end": "2005-06-30",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2005-026",
+     "lat": 25.961,
+     "lead": null,
+     "lon": 89.115,
+     "section": "pre-monsoon",
+     "start": "2005-06-23",
+     "year": 2005
+    },
+    {
+     "alert": "Orange",
+     "end": "2005-07-03",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2005-027",
+     "lat": 20.977,
+     "lead": null,
+     "lon": 86.43,
+     "section": "pre-monsoon",
+     "start": "2005-06-29",
+     "year": 2005
+    },
+    {
+     "alert": "Orange",
+     "end": "2006-05-31",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2006-032",
+     "lat": 26.6,
+     "lead": null,
+     "lon": 94.02,
+     "section": "pre-monsoon",
+     "start": "2006-05-31",
+     "year": 2006
+    },
+    {
+     "alert": "Orange",
+     "end": "2007-06-11",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2007-035",
+     "lat": 22.397,
+     "lead": null,
+     "lon": 91.954,
+     "section": "pre-monsoon",
+     "start": "2007-06-11",
+     "year": 2007
+    },
+    {
+     "alert": "Green",
+     "end": "2007-06-15",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2007-036",
+     "lat": 26.948,
+     "lead": null,
+     "lon": 85.863,
+     "section": "pre-monsoon",
+     "start": "2007-06-15",
+     "year": 2007
+    },
+    {
+     "alert": "Orange",
+     "end": "2007-06-18",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2007-037",
+     "lat": 26.256,
+     "lead": null,
+     "lon": 94.019,
+     "section": "pre-monsoon",
+     "start": "2007-06-18",
+     "year": 2007
+    },
+    {
+     "alert": "Green",
+     "end": "2008-05-24",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2008-044",
+     "lat": 26.4,
+     "lead": null,
+     "lon": 93.75,
+     "section": "pre-monsoon",
+     "start": "2008-05-24",
+     "year": 2008
+    },
+    {
+     "alert": "Orange",
+     "end": "2008-06-20",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2008-045",
+     "lat": 25.183,
+     "lead": null,
+     "lon": 91.542,
+     "section": "pre-monsoon",
+     "start": "2008-06-11",
+     "year": 2008
+    },
+    {
+     "alert": "Green",
+     "end": "2009-04-20",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2009-050",
+     "lat": 22.164,
+     "lead": null,
+     "lon": 89.086,
+     "section": "pre-monsoon",
+     "start": "2009-04-20",
+     "year": 2009
+    },
+    {
+     "alert": "Green",
+     "end": "2010-03-24",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2010-058",
+     "lat": 27.25,
+     "lead": null,
+     "lon": 94.612,
+     "section": "pre-monsoon",
+     "start": "2010-03-24",
+     "year": 2010
+    },
+    {
+     "alert": "Orange",
+     "end": "2010-03-27",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2010-059",
+     "lat": 22.152,
+     "lead": null,
+     "lon": 89.509,
+     "section": "pre-monsoon",
+     "start": "2010-03-27",
+     "year": 2010
+    },
+    {
+     "alert": "Green",
+     "end": "2010-04-18",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2010-060",
+     "lat": 26.316,
+     "lead": null,
+     "lon": 91.862,
+     "section": "pre-monsoon",
+     "start": "2010-04-18",
+     "year": 2010
+    },
+    {
+     "alert": "Green",
+     "end": "2010-05-15",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2010-061",
+     "lat": 26.638,
+     "lead": null,
+     "lon": 93.122,
+     "section": "pre-monsoon",
+     "start": "2010-05-15",
+     "year": 2010
+    },
+    {
+     "alert": "Green",
+     "end": "2010-06-15",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2010-062",
+     "lat": 22.28,
+     "lead": null,
+     "lon": 94.01,
+     "section": "pre-monsoon",
+     "start": "2010-06-15",
+     "year": 2010
+    },
+    {
+     "alert": "Green",
+     "end": "2011-06-21",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2011-069",
+     "lat": 20.793,
+     "lead": null,
+     "lon": 85.872,
+     "section": "pre-monsoon",
+     "start": "2011-06-18",
+     "year": 2011
+    },
+    {
+     "alert": "Orange",
+     "end": "2012-07-16",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2012-077",
+     "lat": 26.565,
+     "lead": null,
+     "lon": 92.435,
+     "section": "pre-monsoon",
+     "start": "2012-06-06",
+     "year": 2012
+    },
+    {
+     "alert": "Orange",
+     "end": "2012-07-02",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2012-078",
+     "lat": 22.172,
+     "lead": null,
+     "lon": 92.098,
+     "section": "pre-monsoon",
+     "start": "2012-06-24",
+     "year": 2012
+    },
+    {
+     "alert": "Red",
+     "end": "2013-05-16",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2013-081",
+     "lat": 23.638,
+     "lead": null,
+     "lon": 91.194,
+     "section": "pre-monsoon",
+     "start": "2013-05-14",
+     "year": 2013
+    },
+    {
+     "alert": "Red",
+     "end": "2013-07-15",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2013-082",
+     "lat": 27.387,
+     "lead": null,
+     "lon": 94.918,
+     "section": "pre-monsoon",
+     "start": "2013-06-23",
+     "year": 2013
+    },
+    {
+     "alert": "Green",
+     "end": "2014-06-25",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2014-084",
+     "lat": 27.811,
+     "lead": null,
+     "lon": 94.716,
+     "section": "pre-monsoon",
+     "start": "2014-06-23",
+     "year": 2014
+    },
+    {
+     "alert": "Green",
+     "end": "2015-06-29",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2015-090",
+     "lat": 26.919,
+     "lead": null,
+     "lon": 93.875,
+     "section": "pre-monsoon",
+     "start": "2015-06-02",
+     "year": 2015
+    },
+    {
+     "alert": "Green",
+     "end": "2015-06-15",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2015-091",
+     "lat": 27.468,
+     "lead": null,
+     "lon": 87.391,
+     "section": "pre-monsoon",
+     "start": "2015-06-10",
+     "year": 2015
+    },
+    {
+     "alert": "Green",
+     "end": "2015-06-29",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2015-092",
+     "lat": 22.408,
+     "lead": null,
+     "lon": 91.994,
+     "section": "pre-monsoon",
+     "start": "2015-06-24",
+     "year": 2015
+    },
+    {
+     "alert": "Green",
+     "end": "2016-08-26",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2016-094",
+     "lat": 27.068,
+     "lead": null,
+     "lon": 93.949,
+     "section": "pre-monsoon",
+     "start": "2016-06-29",
+     "year": 2016
+    },
+    {
+     "alert": "Green",
+     "end": "2017-06-01",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2017-099",
+     "lat": 22.121,
+     "lead": null,
+     "lon": 91.963,
+     "section": "pre-monsoon",
+     "start": "2017-05-30",
+     "year": 2017
+    },
+    {
+     "alert": "Green",
+     "end": "2017-06-16",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2017-100",
+     "lat": 25.633,
+     "lead": null,
+     "lon": 93.192,
+     "section": "pre-monsoon",
+     "start": "2017-06-06",
+     "year": 2017
+    },
+    {
+     "alert": "Orange",
+     "end": "2017-06-14",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2017-101",
+     "lat": 22.283,
+     "lead": null,
+     "lon": 92.089,
+     "section": "pre-monsoon",
+     "start": "2017-06-12",
+     "year": 2017
+    },
+    {
+     "alert": "Green",
+     "end": "2018-05-23",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2018-104",
+     "lat": 23.746,
+     "lead": null,
+     "lon": 91.732,
+     "section": "pre-monsoon",
+     "start": "2018-05-21",
+     "year": 2018
+    },
+    {
+     "alert": "Green",
+     "end": "2018-06-13",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2018-105",
+     "lat": 21.44,
+     "lead": null,
+     "lon": 92.024,
+     "section": "pre-monsoon",
+     "start": "2018-06-09",
+     "year": 2018
+    },
+    {
+     "alert": "Green",
+     "end": "2020-06-27",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2020-109",
+     "lat": 26.33,
+     "lead": null,
+     "lon": 91.005,
+     "section": "pre-monsoon",
+     "start": "2020-06-20",
+     "year": 2020
+    },
+    {
+     "alert": "Green",
+     "end": "2020-07-10",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2020-110",
+     "lat": 24.848,
+     "lead": null,
+     "lon": 89.373,
+     "section": "pre-monsoon",
+     "start": "2020-06-28",
+     "year": 2020
+    },
+    {
+     "alert": "Green",
+     "end": "2021-05-24",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2021-117",
+     "lat": 27.776,
+     "lead": null,
+     "lon": 85.714,
+     "section": "pre-monsoon",
+     "start": "2021-05-22",
+     "year": 2021
+    },
+    {
+     "alert": "Red",
+     "end": "2021-05-31",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2021-118",
+     "lat": 23.456,
+     "lead": null,
+     "lon": 85.256,
+     "section": "pre-monsoon",
+     "start": "2021-05-24",
+     "year": 2021
+    },
+    {
+     "alert": "Green",
+     "end": "2022-04-05",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2022-122",
+     "lat": 25.41,
+     "lead": null,
+     "lon": 92.02,
+     "section": "pre-monsoon",
+     "start": "2022-04-03",
+     "year": 2022
+    },
+    {
+     "alert": "Green",
+     "end": "2022-05-11",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2022-123",
+     "lat": 24.493,
+     "lead": null,
+     "lon": 91.709,
+     "section": "pre-monsoon",
+     "start": "2022-05-09",
+     "year": 2022
+    },
+    {
+     "alert": "Green",
+     "end": "2022-06-12",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2022-124",
+     "lat": 25.834,
+     "lead": null,
+     "lon": 88.994,
+     "section": "pre-monsoon",
+     "start": "2022-06-06",
+     "year": 2022
+    },
+    {
+     "alert": "Green",
+     "end": "2022-06-13",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2022-125",
+     "lat": 26.407,
+     "lead": null,
+     "lon": 93.255,
+     "section": "pre-monsoon",
+     "start": "2022-06-08",
+     "year": 2022
+    },
+    {
+     "alert": "Red",
+     "end": "2023-05-15",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2023-127",
+     "lat": 20.15,
+     "lead": null,
+     "lon": 92.9,
+     "section": "pre-monsoon",
+     "start": "2023-05-13",
+     "year": 2023
+    },
+    {
+     "alert": "Green",
+     "end": "2023-06-19",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2023-128",
+     "lat": 27.23,
+     "lead": null,
+     "lon": 87.177,
+     "section": "pre-monsoon",
+     "start": "2023-06-17",
+     "year": 2023
+    },
+    {
+     "alert": "Green",
+     "end": "2023-06-23",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2023-129",
+     "lat": 25.813,
+     "lead": null,
+     "lon": 89.643,
+     "section": "pre-monsoon",
+     "start": "2023-06-21",
+     "year": 2023
+    },
+    {
+     "alert": "Green",
+     "end": "2024-05-30",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2024-136",
+     "lat": 22.997,
+     "lead": null,
+     "lon": 87.686,
+     "section": "pre-monsoon",
+     "start": "2024-05-26",
+     "year": 2024
+    },
+    {
+     "alert": "Green",
+     "end": "2024-05-31",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2024-137",
+     "lat": 24.736,
+     "lead": null,
+     "lon": 91.685,
+     "section": "pre-monsoon",
+     "start": "2024-05-26",
+     "year": 2024
+    },
+    {
+     "alert": "Green",
+     "end": "2024-06-19",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2024-138",
+     "lat": 24.736,
+     "lead": null,
+     "lon": 91.685,
+     "section": "pre-monsoon",
+     "start": "2024-06-17",
+     "year": 2024
+    },
+    {
+     "alert": "Green",
+     "end": "2025-04-27",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2025-146",
+     "lat": 27.812,
+     "lead": null,
+     "lon": 88.521,
+     "section": "pre-monsoon",
+     "start": "2025-04-24",
+     "year": 2025
+    },
+    {
+     "alert": "Green",
+     "end": "2025-06-01",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2025-147",
+     "lat": 27.731,
+     "lead": null,
+     "lon": 88.549,
+     "section": "pre-monsoon",
+     "start": "2025-05-18",
+     "year": 2025
+    },
+    {
+     "alert": "Green",
+     "end": "2025-06-04",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2025-148",
+     "lat": 23.215,
+     "lead": null,
+     "lon": 91.959,
+     "section": "pre-monsoon",
+     "start": "2025-05-30",
+     "year": 2025
+    },
+    {
+     "alert": "Green",
+     "end": "2025-06-26",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2025-149",
+     "lat": 26.407,
+     "lead": null,
+     "lon": 93.255,
+     "section": "pre-monsoon",
+     "start": "2025-06-16",
+     "year": 2025
+    },
+    {
+     "alert": "Red",
+     "end": "2000-08-30",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2000-004",
+     "lat": 27.094,
+     "lead": null,
+     "lon": 94.643,
+     "section": "monsoon",
+     "start": "2000-08-02",
+     "year": 2000
+    },
+    {
+     "alert": "Green",
+     "end": "2000-09-05",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2000-005",
+     "lat": 28.996,
+     "lead": null,
+     "lon": 89.385,
+     "section": "monsoon",
+     "start": "2000-08-28",
+     "year": 2000
+    },
+    {
+     "alert": "Red",
+     "end": "2000-10-21",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2000-006",
+     "lat": 24.084,
+     "lead": null,
+     "lon": 88.545,
+     "section": "monsoon",
+     "start": "2000-09-18",
+     "year": 2000
+    },
+    {
+     "alert": "Red",
+     "end": "2001-07-31",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2001-008",
+     "lat": 25.93,
+     "lead": null,
+     "lon": 89.573,
+     "section": "monsoon",
+     "start": "2001-07-31",
+     "year": 2001
+    },
+    {
+     "alert": "Green",
+     "end": "2001-10-07",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2001-009",
+     "lat": 26.667,
+     "lead": null,
+     "lon": 87.121,
+     "section": "monsoon",
+     "start": "2001-10-05",
+     "year": 2001
+    },
+    {
+     "alert": "Green",
+     "end": "2001-10-19",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2001-010",
+     "lat": 22.648,
+     "lead": null,
+     "lon": 89.169,
+     "section": "monsoon",
+     "start": "2001-10-17",
+     "year": 2001
+    },
+    {
+     "alert": "Green",
+     "end": "2002-07-16",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2002-016",
+     "lat": 27.293,
+     "lead": null,
+     "lon": 86.88,
+     "section": "monsoon",
+     "start": "2002-07-14",
+     "year": 2002
+    },
+    {
+     "alert": "Orange",
+     "end": "2002-08-15",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2002-017",
+     "lat": 27.696,
+     "lead": null,
+     "lon": 85.307,
+     "section": "monsoon",
+     "start": "2002-07-21",
+     "year": 2002
+    },
+    {
+     "alert": "Red",
+     "end": "2003-10-20",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2003-020",
+     "lat": 20.626,
+     "lead": null,
+     "lon": 85.894,
+     "section": "monsoon",
+     "start": "2003-08-27",
+     "year": 2003
+    },
+    {
+     "alert": "Orange",
+     "end": "2004-08-11",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2004-023",
+     "lat": 27.086,
+     "lead": null,
+     "lon": 86.252,
+     "section": "monsoon",
+     "start": "2004-07-05",
+     "year": 2004
+    },
+    {
+     "alert": "Orange",
+     "end": "2004-10-18",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2004-024",
+     "lat": 24.686,
+     "lead": null,
+     "lon": 89.4,
+     "section": "monsoon",
+     "start": "2004-10-07",
+     "year": 2004
+    },
+    {
+     "alert": "Red",
+     "end": "2005-07-27",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2005-028",
+     "lat": 27.436,
+     "lead": null,
+     "lon": 87.013,
+     "section": "monsoon",
+     "start": "2005-07-07",
+     "year": 2005
+    },
+    {
+     "alert": "Orange",
+     "end": "2005-08-03",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2005-029",
+     "lat": 20.991,
+     "lead": null,
+     "lon": 86.276,
+     "section": "monsoon",
+     "start": "2005-07-30",
+     "year": 2005
+    },
+    {
+     "alert": "Orange",
+     "end": "2005-10-22",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2005-030",
+     "lat": 25.641,
+     "lead": null,
+     "lon": 88.977,
+     "section": "monsoon",
+     "start": "2005-10-03",
+     "year": 2005
+    },
+    {
+     "alert": "Red",
+     "end": "2005-10-28",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2005-031",
+     "lat": 21.941,
+     "lead": null,
+     "lon": 87.935,
+     "section": "monsoon",
+     "start": "2005-10-21",
+     "year": 2005
+    },
+    {
+     "alert": "Green",
+     "end": "2006-08-24",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2006-033",
+     "lat": 23.229,
+     "lead": null,
+     "lon": 89.273,
+     "section": "monsoon",
+     "start": "2006-08-24",
+     "year": 2006
+    },
+    {
+     "alert": "Green",
+     "end": "2006-09-25",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2006-034",
+     "lat": 27.257,
+     "lead": null,
+     "lon": 85.944,
+     "section": "monsoon",
+     "start": "2006-09-25",
+     "year": 2006
+    },
+    {
+     "alert": "Red",
+     "end": "2007-07-03",
+     "events": 1,
+     "hit": true,
+     "id": "bengal-2007-038",
+     "lat": 22.631,
+     "lead": {
+      "days": 2,
+      "issued": "2007-07-01",
+      "section": "monsoon"
+     },
+     "lon": 88.487,
+     "section": "monsoon",
+     "start": "2007-07-03",
+     "year": 2007
+    },
+    {
+     "alert": "Red",
+     "end": "2007-07-21",
+     "events": 1,
+     "hit": true,
+     "id": "bengal-2007-039",
+     "lat": 23.916,
+     "lead": {
+      "days": 20,
+      "issued": "2007-07-01",
+      "section": "monsoon"
+     },
+     "lon": 91.234,
+     "section": "monsoon",
+     "start": "2007-07-21",
+     "year": 2007
+    },
+    {
+     "alert": "Green",
+     "end": "2007-08-03",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2007-040",
+     "lat": 20.452,
+     "lead": null,
+     "lon": 86.198,
+     "section": "monsoon",
+     "start": "2007-08-03",
+     "year": 2007
+    },
+    {
+     "alert": "Orange",
+     "end": "2007-09-22",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2007-041",
+     "lat": 20.91,
+     "lead": null,
+     "lon": 86.403,
+     "section": "monsoon",
+     "start": "2007-09-22",
+     "year": 2007
+    },
+    {
+     "alert": "Green",
+     "end": "2007-10-17",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2007-042",
+     "lat": 24.721,
+     "lead": null,
+     "lon": 93.97,
+     "section": "monsoon",
+     "start": "2007-10-17",
+     "year": 2007
+    },
+    {
+     "alert": "Red",
+     "end": "2007-11-15",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2007-043",
+     "lat": 22.61,
+     "lead": null,
+     "lon": 90.151,
+     "section": "monsoon",
+     "start": "2007-11-15",
+     "year": 2007
+    },
+    {
+     "alert": "Orange",
+     "end": "2008-07-05",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2008-046",
+     "lat": 25.241,
+     "lead": null,
+     "lon": 90.12,
+     "section": "monsoon",
+     "start": "2008-07-05",
+     "year": 2008
+    },
+    {
+     "alert": "Orange",
+     "end": "2008-07-20",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2008-047",
+     "lat": 27.5,
+     "lead": null,
+     "lon": 89.79,
+     "section": "monsoon",
+     "start": "2008-07-20",
+     "year": 2008
+    },
+    {
+     "alert": "Orange",
+     "end": "2008-08-30",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2008-048",
+     "lat": 21.02,
+     "lead": null,
+     "lon": 90.21,
+     "section": "monsoon",
+     "start": "2008-08-30",
+     "year": 2008
+    },
+    {
+     "alert": "Red",
+     "end": "2008-08-30",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2008-049",
+     "lat": 27.044,
+     "lead": null,
+     "lon": 94.55,
+     "section": "monsoon",
+     "start": "2008-08-30",
+     "year": 2008
+    },
+    {
+     "alert": "Orange",
+     "end": "2009-07-03",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2009-051",
+     "lat": 25.256,
+     "lead": null,
+     "lon": 89.086,
+     "section": "monsoon",
+     "start": "2009-07-03",
+     "year": 2009
+    },
+    {
+     "alert": "Green",
+     "end": "2009-07-03",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2009-052",
+     "lat": 27.481,
+     "lead": null,
+     "lon": 93.821,
+     "section": "monsoon",
+     "start": "2009-07-03",
+     "year": 2009
+    },
+    {
+     "alert": "Green",
+     "end": "2009-07-26",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2009-053",
+     "lat": 28.001,
+     "lead": null,
+     "lon": 85.708,
+     "section": "monsoon",
+     "start": "2009-07-26",
+     "year": 2009
+    },
+    {
+     "alert": "Green",
+     "end": "2009-08-01",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2009-054",
+     "lat": 26.5,
+     "lead": null,
+     "lon": 85.5,
+     "section": "monsoon",
+     "start": "2009-08-01",
+     "year": 2009
+    },
+    {
+     "alert": "Green",
+     "end": "2009-08-16",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2009-055",
+     "lat": 27.016,
+     "lead": null,
+     "lon": 88.131,
+     "section": "monsoon",
+     "start": "2009-08-16",
+     "year": 2009
+    },
+    {
+     "alert": "Orange",
+     "end": "2009-08-18",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2009-056",
+     "lat": 26.817,
+     "lead": null,
+     "lon": 94.143,
+     "section": "monsoon",
+     "start": "2009-08-18",
+     "year": 2009
+    },
+    {
+     "alert": "Green",
+     "end": "2009-09-06",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2009-057",
+     "lat": 22.526,
+     "lead": null,
+     "lon": 88.06,
+     "section": "monsoon",
+     "start": "2009-09-06",
+     "year": 2009
+    },
+    {
+     "alert": "Orange",
+     "end": "2010-07-01",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2010-063",
+     "lat": 23.994,
+     "lead": null,
+     "lon": 90.035,
+     "section": "monsoon",
+     "start": "2010-07-01",
+     "year": 2010
+    },
+    {
+     "alert": "Green",
+     "end": "2010-07-12",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2010-064",
+     "lat": 25.586,
+     "lead": null,
+     "lon": 86.198,
+     "section": "monsoon",
+     "start": "2010-07-12",
+     "year": 2010
+    },
+    {
+     "alert": "Green",
+     "end": "2010-09-05",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2010-065",
+     "lat": 26.235,
+     "lead": null,
+     "lon": 92.25,
+     "section": "monsoon",
+     "start": "2010-09-05",
+     "year": 2010
+    },
+    {
+     "alert": "Orange",
+     "end": "2010-09-09",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2010-066",
+     "lat": 25.425,
+     "lead": null,
+     "lon": 89.64,
+     "section": "monsoon",
+     "start": "2010-09-09",
+     "year": 2010
+    },
+    {
+     "alert": "Green",
+     "end": "2010-09-18",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2010-067",
+     "lat": 25.695,
+     "lead": null,
+     "lon": 87.75,
+     "section": "monsoon",
+     "start": "2010-09-18",
+     "year": 2010
+    },
+    {
+     "alert": "Orange",
+     "end": "2010-10-01",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2010-068",
+     "lat": 24.21,
+     "lead": null,
+     "lon": 91.035,
+     "section": "monsoon",
+     "start": "2010-10-01",
+     "year": 2010
+    },
+    {
+     "alert": "Green",
+     "end": "2011-07-22",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2011-070",
+     "lat": 26.084,
+     "lead": null,
+     "lon": 86.196,
+     "section": "monsoon",
+     "start": "2011-07-01",
+     "year": 2011
+    },
+    {
+     "alert": "Green",
+     "end": "2011-07-22",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2011-071",
+     "lat": 27.362,
+     "lead": null,
+     "lon": 94.034,
+     "section": "monsoon",
+     "start": "2011-07-01",
+     "year": 2011
+    },
+    {
+     "alert": "Green",
+     "end": "2011-07-29",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2011-072",
+     "lat": 22.564,
+     "lead": null,
+     "lon": 89.046,
+     "section": "monsoon",
+     "start": "2011-07-21",
+     "year": 2011
+    },
+    {
+     "alert": "Orange",
+     "end": "2011-09-13",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2011-073",
+     "lat": 22.305,
+     "lead": null,
+     "lon": 88.345,
+     "section": "monsoon",
+     "start": "2011-08-10",
+     "year": 2011
+    },
+    {
+     "alert": "Orange",
+     "end": "2011-10-02",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2011-074",
+     "lat": 26.375,
+     "lead": null,
+     "lon": 86.242,
+     "section": "monsoon",
+     "start": "2011-08-15",
+     "year": 2011
+    },
+    {
+     "alert": "Green",
+     "end": "2011-09-08",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2011-075",
+     "lat": 26.589,
+     "lead": null,
+     "lon": 92.181,
+     "section": "monsoon",
+     "start": "2011-08-15",
+     "year": 2011
+    },
+    {
+     "alert": "Green",
+     "end": "2011-10-02",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2011-076",
+     "lat": 20.651,
+     "lead": null,
+     "lon": 86.002,
+     "section": "monsoon",
+     "start": "2011-09-05",
+     "year": 2011
+    },
+    {
+     "alert": "Green",
+     "end": "2012-07-23",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2012-079",
+     "lat": 26.109,
+     "lead": null,
+     "lon": 86.557,
+     "section": "monsoon",
+     "start": "2012-07-04",
+     "year": 2012
+    },
+    {
+     "alert": "Red",
+     "end": "2012-10-15",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2012-080",
+     "lat": 26.803,
+     "lead": null,
+     "lon": 93.637,
+     "section": "monsoon",
+     "start": "2012-09-19",
+     "year": 2012
+    },
+    {
+     "alert": "Green",
+     "end": "2013-11-10",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2013-083",
+     "lat": 24.717,
+     "lead": null,
+     "lon": 85.932,
+     "section": "monsoon",
+     "start": "2013-10-12",
+     "year": 2013
+    },
+    {
+     "alert": "Green",
+     "end": "2014-07-14",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2014-085",
+     "lat": 22.331,
+     "lead": null,
+     "lon": 90.549,
+     "section": "monsoon",
+     "start": "2014-07-13",
+     "year": 2014
+    },
+    {
+     "alert": "Green",
+     "end": "2014-09-08",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2014-086",
+     "lat": 26.179,
+     "lead": null,
+     "lon": 86.253,
+     "section": "monsoon",
+     "start": "2014-08-14",
+     "year": 2014
+    },
+    {
+     "alert": "Green",
+     "end": "2014-09-08",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2014-087",
+     "lat": 27.613,
+     "lead": null,
+     "lon": 94.654,
+     "section": "monsoon",
+     "start": "2014-08-15",
+     "year": 2014
+    },
+    {
+     "alert": "Orange",
+     "end": "2014-09-08",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2014-088",
+     "lat": 24.566,
+     "lead": null,
+     "lon": 90.633,
+     "section": "monsoon",
+     "start": "2014-08-20",
+     "year": 2014
+    },
+    {
+     "alert": "Green",
+     "end": "2014-10-11",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2014-089",
+     "lat": 26.746,
+     "lead": null,
+     "lon": 92.489,
+     "section": "monsoon",
+     "start": "2014-09-24",
+     "year": 2014
+    },
+    {
+     "alert": "Green",
+     "end": "2015-09-11",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2015-093",
+     "lat": 26.895,
+     "lead": null,
+     "lon": 93.751,
+     "section": "monsoon",
+     "start": "2015-08-13",
+     "year": 2015
+    },
+    {
+     "alert": "Green",
+     "end": "2016-08-03",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2016-095",
+     "lat": 27.58,
+     "lead": null,
+     "lon": 86.031,
+     "section": "monsoon",
+     "start": "2016-07-04",
+     "year": 2016
+    },
+    {
+     "alert": "Orange",
+     "end": "2016-09-22",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2016-096",
+     "lat": 25.61,
+     "lead": null,
+     "lon": 85.19,
+     "section": "monsoon",
+     "start": "2016-07-15",
+     "year": 2016
+    },
+    {
+     "alert": "Green",
+     "end": "2016-08-03",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2016-097",
+     "lat": 27.169,
+     "lead": null,
+     "lon": 90.534,
+     "section": "monsoon",
+     "start": "2016-07-21",
+     "year": 2016
+    },
+    {
+     "alert": "Green",
+     "end": "2016-08-26",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2016-098",
+     "lat": 24.095,
+     "lead": null,
+     "lon": 90.04,
+     "section": "monsoon",
+     "start": "2016-07-25",
+     "year": 2016
+    },
+    {
+     "alert": "Green",
+     "end": "2017-07-11",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2017-102",
+     "lat": 27.218,
+     "lead": null,
+     "lon": 93.634,
+     "section": "monsoon",
+     "start": "2017-07-11",
+     "year": 2017
+    },
+    {
+     "alert": "Green",
+     "end": "2017-07-25",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2017-103",
+     "lat": 21.7,
+     "lead": null,
+     "lon": 92.263,
+     "section": "monsoon",
+     "start": "2017-07-24",
+     "year": 2017
+    },
+    {
+     "alert": "Orange",
+     "end": "2019-07-23",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2019-106",
+     "lat": 24.477,
+     "lead": null,
+     "lon": 90.293,
+     "section": "monsoon",
+     "start": "2019-07-08",
+     "year": 2019
+    },
+    {
+     "alert": "Green",
+     "end": "2019-10-25",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2019-107",
+     "lat": 26.535,
+     "lead": null,
+     "lon": 93.964,
+     "section": "monsoon",
+     "start": "2019-10-25",
+     "year": 2019
+    },
+    {
+     "alert": "Red",
+     "end": "2019-11-12",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2019-108",
+     "lat": 22.701,
+     "lead": null,
+     "lon": 90.354,
+     "section": "monsoon",
+     "start": "2019-11-09",
+     "year": 2019
+    },
+    {
+     "alert": "Green",
+     "end": "2020-07-09",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2020-111",
+     "lat": 27.946,
+     "lead": null,
+     "lon": 85.65,
+     "section": "monsoon",
+     "start": "2020-07-02",
+     "year": 2020
+    },
+    {
+     "alert": "Green",
+     "end": "2020-07-13",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2020-112",
+     "lat": 26.589,
+     "lead": null,
+     "lon": 85.5,
+     "section": "monsoon",
+     "start": "2020-07-04",
+     "year": 2020
+    },
+    {
+     "alert": "Green",
+     "end": "2020-09-22",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2020-113",
+     "lat": 26.349,
+     "lead": null,
+     "lon": 92.682,
+     "section": "monsoon",
+     "start": "2020-09-12",
+     "year": 2020
+    },
+    {
+     "alert": "Green",
+     "end": "2020-09-14",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2020-114",
+     "lat": 27.798,
+     "lead": null,
+     "lon": 85.916,
+     "section": "monsoon",
+     "start": "2020-09-12",
+     "year": 2020
+    },
+    {
+     "alert": "Green",
+     "end": "2020-09-30",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2020-115",
+     "lat": 25.934,
+     "lead": null,
+     "lon": 88.841,
+     "section": "monsoon",
+     "start": "2020-09-24",
+     "year": 2020
+    },
+    {
+     "alert": "Green",
+     "end": "2020-10-26",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2020-116",
+     "lat": 22.653,
+     "lead": null,
+     "lon": 89.766,
+     "section": "monsoon",
+     "start": "2020-10-22",
+     "year": 2020
+    },
+    {
+     "alert": "Green",
+     "end": "2021-07-28",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2021-119",
+     "lat": 21.166,
+     "lead": null,
+     "lon": 92.04,
+     "section": "monsoon",
+     "start": "2021-07-26",
+     "year": 2021
+    },
+    {
+     "alert": "Green",
+     "end": "2021-09-20",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2021-120",
+     "lat": 23.503,
+     "lead": null,
+     "lon": 90.004,
+     "section": "monsoon",
+     "start": "2021-08-20",
+     "year": 2021
+    },
+    {
+     "alert": "Green",
+     "end": "2021-09-24",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2021-121",
+     "lat": 22.602,
+     "lead": null,
+     "lon": 88.415,
+     "section": "monsoon",
+     "start": "2021-09-22",
+     "year": 2021
+    },
+    {
+     "alert": "Orange",
+     "end": "2022-10-29",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2022-126",
+     "lat": 24.477,
+     "lead": null,
+     "lon": 90.293,
+     "section": "monsoon",
+     "start": "2022-10-24",
+     "year": 2022
+    },
+    {
+     "alert": "Green",
+     "end": "2023-07-17",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2023-130",
+     "lat": 26.61,
+     "lead": null,
+     "lon": 87.473,
+     "section": "monsoon",
+     "start": "2023-07-15",
+     "year": 2023
+    },
+    {
+     "alert": "Green",
+     "end": "2023-07-23",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2023-131",
+     "lat": 27.729,
+     "lead": null,
+     "lon": 91.136,
+     "section": "monsoon",
+     "start": "2023-07-20",
+     "year": 2023
+    },
+    {
+     "alert": "Green",
+     "end": "2023-08-08",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2023-132",
+     "lat": 21.177,
+     "lead": null,
+     "lon": 92.004,
+     "section": "monsoon",
+     "start": "2023-08-06",
+     "year": 2023
+    },
+    {
+     "alert": "Green",
+     "end": "2023-09-14",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2023-133",
+     "lat": 22.953,
+     "lead": null,
+     "lon": 94.444,
+     "section": "monsoon",
+     "start": "2023-09-06",
+     "year": 2023
+    },
+    {
+     "alert": "Orange",
+     "end": "2023-10-26",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2023-134",
+     "lat": 21.177,
+     "lead": null,
+     "lon": 92.004,
+     "section": "monsoon",
+     "start": "2023-10-24",
+     "year": 2023
+    },
+    {
+     "alert": "Green",
+     "end": "2023-11-21",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2023-135",
+     "lat": 21.177,
+     "lead": null,
+     "lon": 92.004,
+     "section": "monsoon",
+     "start": "2023-11-17",
+     "year": 2023
+    },
+    {
+     "alert": "Green",
+     "end": "2024-07-06",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2024-139",
+     "lat": 23.788,
+     "lead": null,
+     "lon": 90.424,
+     "section": "monsoon",
+     "start": "2024-07-01",
+     "year": 2024
+    },
+    {
+     "alert": "Green",
+     "end": "2024-07-31",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2024-140",
+     "lat": 27.694,
+     "lead": null,
+     "lon": 85.326,
+     "section": "monsoon",
+     "start": "2024-07-30",
+     "year": 2024
+    },
+    {
+     "alert": "Green",
+     "end": "2024-08-12",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2024-141",
+     "lat": 27.521,
+     "lead": null,
+     "lon": 89.636,
+     "section": "monsoon",
+     "start": "2024-08-10",
+     "year": 2024
+    },
+    {
+     "alert": "Green",
+     "end": "2024-08-26",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2024-142",
+     "lat": 27.547,
+     "lead": null,
+     "lon": 85.921,
+     "section": "monsoon",
+     "start": "2024-08-16",
+     "year": 2024
+    },
+    {
+     "alert": "Green",
+     "end": "2024-08-20",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2024-143",
+     "lat": 22.68,
+     "lead": null,
+     "lon": 91.884,
+     "section": "monsoon",
+     "start": "2024-08-18",
+     "year": 2024
+    },
+    {
+     "alert": "Green",
+     "end": "2024-09-14",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2024-144",
+     "lat": 21.177,
+     "lead": null,
+     "lon": 92.004,
+     "section": "monsoon",
+     "start": "2024-09-12",
+     "year": 2024
+    },
+    {
+     "alert": "Green",
+     "end": "2024-10-07",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2024-145",
+     "lat": 24.477,
+     "lead": null,
+     "lon": 90.293,
+     "section": "monsoon",
+     "start": "2024-10-05",
+     "year": 2024
+    },
+    {
+     "alert": "Green",
+     "end": "2025-07-07",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2025-150",
+     "lat": 25.912,
+     "lead": null,
+     "lon": 93.722,
+     "section": "monsoon",
+     "start": "2025-07-05",
+     "year": 2025
+    },
+    {
+     "alert": "Green",
+     "end": "2025-07-15",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2025-151",
+     "lat": 28.175,
+     "lead": null,
+     "lon": 85.478,
+     "section": "monsoon",
+     "start": "2025-07-08",
+     "year": 2025
+    },
+    {
+     "alert": "Green",
+     "end": "2025-09-20",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2025-152",
+     "lat": 25.093,
+     "lead": null,
+     "lon": 90.098,
+     "section": "monsoon",
+     "start": "2025-09-18",
+     "year": 2025
+    },
+    {
+     "alert": "Orange",
+     "end": "2025-10-06",
+     "events": 1,
+     "hit": false,
+     "id": "bengal-2025-153",
+     "lat": 26.94,
+     "lead": null,
+     "lon": 87.925,
+     "section": "monsoon",
+     "start": "2025-10-03",
+     "year": 2025
+    }
+   ],
+   "label": "Bengal delta",
+   "leads": [
+    {
+     "days": 1,
+     "detectedShare": 0.0,
+     "episodes": 153,
+     "hit": 0
+    },
+    {
+     "days": 2,
+     "detectedShare": 0.0065,
+     "episodes": 153,
+     "hit": 1
+    },
+    {
+     "days": 3,
+     "detectedShare": 0.0065,
+     "episodes": 153,
+     "hit": 1
+    },
+    {
+     "days": 4,
+     "detectedShare": 0.0065,
+     "episodes": 153,
+     "hit": 1
+    },
+    {
+     "days": 5,
+     "detectedShare": 0.0065,
+     "episodes": 153,
+     "hit": 1
+    },
+    {
+     "days": 6,
+     "detectedShare": 0.0065,
+     "episodes": 153,
+     "hit": 1
+    },
+    {
+     "days": 7,
+     "detectedShare": 0.0065,
+     "episodes": 153,
+     "hit": 1
+    },
+    {
+     "days": 8,
+     "detectedShare": 0.0065,
+     "episodes": 153,
+     "hit": 1
+    },
+    {
+     "days": 9,
+     "detectedShare": 0.0065,
+     "episodes": 153,
+     "hit": 1
+    },
+    {
+     "days": 10,
+     "detectedShare": 0.0065,
+     "episodes": 153,
+     "hit": 1
+    },
+    {
+     "days": 11,
+     "detectedShare": 0.0065,
+     "episodes": 153,
+     "hit": 1
+    },
+    {
+     "days": 12,
+     "detectedShare": 0.0065,
+     "episodes": 153,
+     "hit": 1
+    },
+    {
+     "days": 13,
+     "detectedShare": 0.0065,
+     "episodes": 153,
+     "hit": 1
+    },
+    {
+     "days": 14,
+     "detectedShare": 0.0065,
+     "episodes": 153,
+     "hit": 1
+    },
+    {
+     "days": 15,
+     "detectedShare": 0.0065,
+     "episodes": 153,
+     "hit": 1
+    },
+    {
+     "days": 16,
+     "detectedShare": 0.0065,
+     "episodes": 153,
+     "hit": 1
+    },
+    {
+     "days": 17,
+     "detectedShare": 0.0065,
+     "episodes": 153,
+     "hit": 1
+    },
+    {
+     "days": 18,
+     "detectedShare": 0.0065,
+     "episodes": 153,
+     "hit": 1
+    },
+    {
+     "days": 19,
+     "detectedShare": 0.0065,
+     "episodes": 153,
+     "hit": 1
+    },
+    {
+     "days": 20,
+     "detectedShare": 0.0131,
+     "episodes": 153,
+     "hit": 2
+    },
+    {
+     "days": 21,
+     "detectedShare": 0.0131,
+     "episodes": 153,
+     "hit": 2
+    },
+    {
+     "days": 22,
+     "detectedShare": 0.0131,
+     "episodes": 153,
+     "hit": 2
+    },
+    {
+     "days": 23,
+     "detectedShare": 0.0131,
+     "episodes": 153,
+     "hit": 2
+    },
+    {
+     "days": 24,
+     "detectedShare": 0.0131,
+     "episodes": 153,
+     "hit": 2
+    },
+    {
+     "days": 25,
+     "detectedShare": 0.0131,
+     "episodes": 153,
+     "hit": 2
+    },
+    {
+     "days": 26,
+     "detectedShare": 0.0131,
+     "episodes": 153,
+     "hit": 2
+    },
+    {
+     "days": 27,
+     "detectedShare": 0.0131,
+     "episodes": 153,
+     "hit": 2
+    },
+    {
+     "days": 28,
+     "detectedShare": 0.0131,
+     "episodes": 153,
+     "hit": 2
+    },
+    {
+     "days": 29,
+     "detectedShare": 0.0131,
+     "episodes": 153,
+     "hit": 2
+    },
+    {
+     "days": 30,
+     "detectedShare": 0.0131,
+     "episodes": 153,
+     "hit": 2
+    }
+   ],
+   "sections": {
+    "monsoon": {
+     "covers": "July to December",
+     "series": [
+      {
+       "value": 1259.2,
+       "year": 1981
+      },
+      {
+       "value": 1292.2,
+       "year": 1982
+      },
+      {
+       "value": 1329.2,
+       "year": 1983
+      },
+      {
+       "value": 1547.0,
+       "year": 1984
+      },
+      {
+       "value": 1384.5,
+       "year": 1985
+      },
+      {
+       "value": 1283.4,
+       "year": 1986
+      },
+      {
+       "value": 1543.5,
+       "year": 1987
+      },
+      {
+       "value": 1460.4,
+       "year": 1988
+      },
+      {
+       "value": 1330.6,
+       "year": 1989
+      },
+      {
+       "value": 1330.8,
+       "year": 1990
+      },
+      {
+       "value": 1349.2,
+       "year": 1991
+      },
+      {
+       "value": 1179.2,
+       "year": 1992
+      },
+      {
+       "value": 1445.9,
+       "year": 1993
+      },
+      {
+       "value": 1204.6,
+       "year": 1994
+      },
+      {
+       "value": 1445.1,
+       "year": 1995
+      },
+      {
+       "value": 1307.9,
+       "year": 1996
+      },
+      {
+       "value": 1453.2,
+       "year": 1997
+      },
+      {
+       "value": 1458.2,
+       "year": 1998
+      },
+      {
+       "value": 1509.0,
+       "year": 1999
+      },
+      {
+       "value": 1367.0,
+       "year": 2000
+      },
+      {
+       "value": 1309.2,
+       "year": 2001
+      },
+      {
+       "value": 1384.6,
+       "year": 2002
+      },
+      {
+       "value": 1323.8,
+       "year": 2003
+      },
+      {
+       "value": 1437.5,
+       "year": 2004
+      },
+      {
+       "value": 1233.1,
+       "year": 2005
+      },
+      {
+       "value": 1222.4,
+       "year": 2006
+      },
+      {
+       "value": 1512.6,
+       "year": 2007
+      },
+      {
+       "value": 1349.2,
+       "year": 2008
+      },
+      {
+       "value": 1164.3,
+       "year": 2009
+      },
+      {
+       "value": 1194.6,
+       "year": 2010
+      },
+      {
+       "value": 1402.7,
+       "year": 2011
+      },
+      {
+       "value": 1259.1,
+       "year": 2012
+      },
+      {
+       "value": 1120.6,
+       "year": 2013
+      },
+      {
+       "value": 1248.0,
+       "year": 2014
+      },
+      {
+       "value": 1421.4,
+       "year": 2015
+      },
+      {
+       "value": 1207.9,
+       "year": 2016
+      },
+      {
+       "value": 1344.4,
+       "year": 2017
+      },
+      {
+       "value": 1167.2,
+       "year": 2018
+      },
+      {
+       "value": 1218.0,
+       "year": 2019
+      },
+      {
+       "value": 1333.2,
+       "year": 2020
+      },
+      {
+       "value": 1317.5,
+       "year": 2021
+      },
+      {
+       "value": 1078.8,
+       "year": 2022
+      },
+      {
+       "value": 1191.7,
+       "year": 2023
+      },
+      {
+       "value": 1380.6,
+       "year": 2024
+      },
+      {
+       "value": 1268.1,
+       "year": 2025
+      }
+     ],
+     "source": "GPCP v2.3 monthly precipitation (NASA GSFC / NOAA), 2.5\u00b0 grid",
+     "sourceLabel": "Rainfall, monsoon",
+     "unit": "mm",
+     "years": [
+      {
+       "baselineMedian": 1349.2,
+       "baselineYears": 19,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 1460.4,
+       "value": 1367.0,
+       "year": 2000
+      },
+      {
+       "baselineMedian": 1367.0,
+       "baselineYears": 20,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 1458.2,
+       "value": 1309.2,
+       "year": 2001
+      },
+      {
+       "baselineMedian": 1349.2,
+       "baselineYears": 21,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 1458.2,
+       "value": 1384.6,
+       "year": 2002
+      },
+      {
+       "baselineMedian": 1367.0,
+       "baselineYears": 22,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 1458.2,
+       "value": 1323.8,
+       "year": 2003
+      },
+      {
+       "baselineMedian": 1349.2,
+       "baselineYears": 23,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 1458.2,
+       "value": 1437.5,
+       "year": 2004
+      },
+      {
+       "baselineMedian": 1367.0,
+       "baselineYears": 24,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 1458.2,
+       "value": 1233.1,
+       "year": 2005
+      },
+      {
+       "baselineMedian": 1349.2,
+       "baselineYears": 25,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 1453.2,
+       "value": 1222.4,
+       "year": 2006
+      },
+      {
+       "baselineMedian": 1349.2,
+       "baselineYears": 26,
+       "event": true,
+       "flagged": true,
+       "state": "tested",
+       "threshold": 1453.2,
+       "value": 1512.6,
+       "year": 2007
+      },
+      {
+       "baselineMedian": 1349.2,
+       "baselineYears": 27,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 1458.2,
+       "value": 1349.2,
+       "year": 2008
+      },
+      {
+       "baselineMedian": 1349.2,
+       "baselineYears": 28,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 1458.2,
+       "value": 1164.3,
+       "year": 2009
+      },
+      {
+       "baselineMedian": 1349.2,
+       "baselineYears": 29,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 1458.2,
+       "value": 1194.6,
+       "year": 2010
+      },
+      {
+       "baselineMedian": 1349.2,
+       "baselineYears": 30,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 1453.2,
+       "value": 1402.7,
+       "year": 2011
+      },
+      {
+       "baselineMedian": 1349.2,
+       "baselineYears": 31,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 1453.2,
+       "value": 1259.1,
+       "year": 2012
+      },
+      {
+       "baselineMedian": 1349.2,
+       "baselineYears": 32,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 1453.2,
+       "value": 1120.6,
+       "year": 2013
+      },
+      {
+       "baselineMedian": 1330.8,
+       "baselineYears": 33,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 1453.2,
+       "value": 1248.0,
+       "year": 2014
+      },
+      {
+       "baselineMedian": 1330.8,
+       "baselineYears": 34,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 1453.2,
+       "value": 1421.4,
+       "year": 2015
+      },
+      {
+       "baselineMedian": 1330.8,
+       "baselineYears": 35,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 1445.9,
+       "value": 1207.9,
+       "year": 2016
+      },
+      {
+       "baselineMedian": 1330.8,
+       "baselineYears": 36,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 1445.9,
+       "value": 1344.4,
+       "year": 2017
+      },
+      {
+       "baselineMedian": 1330.8,
+       "baselineYears": 37,
+       "event": false,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 1445.9,
+       "value": 1167.2,
+       "year": 2018
+      },
+      {
+       "baselineMedian": 1330.8,
+       "baselineYears": 38,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 1445.9,
+       "value": 1218.0,
+       "year": 2019
+      },
+      {
+       "baselineMedian": 1330.6,
+       "baselineYears": 39,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 1445.9,
+       "value": 1333.2,
+       "year": 2020
+      },
+      {
+       "baselineMedian": 1330.8,
+       "baselineYears": 40,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 1445.1,
+       "value": 1317.5,
+       "year": 2021
+      },
+      {
+       "baselineMedian": 1330.6,
+       "baselineYears": 41,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 1445.1,
+       "value": 1078.8,
+       "year": 2022
+      },
+      {
+       "baselineMedian": 1330.6,
+       "baselineYears": 42,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 1445.1,
+       "value": 1191.7,
+       "year": 2023
+      },
+      {
+       "baselineMedian": 1329.2,
+       "baselineYears": 43,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 1445.1,
+       "value": 1380.6,
+       "year": 2024
+      },
+      {
+       "baselineMedian": 1330.6,
+       "baselineYears": 44,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 1445.1,
+       "value": 1268.1,
+       "year": 2025
+      }
+     ]
+    },
+    "pre-monsoon": {
+     "covers": "January to June",
+     "series": [
+      {
+       "value": 405.9,
+       "year": 1981
+      },
+      {
+       "value": 250.9,
+       "year": 1982
+      },
+      {
+       "value": 348.4,
+       "year": 1983
+      },
+      {
+       "value": 347.2,
+       "year": 1984
+      },
+      {
+       "value": 323.9,
+       "year": 1985
+      },
+      {
+       "value": 250.9,
+       "year": 1986
+      },
+      {
+       "value": 262.8,
+       "year": 1987
+      },
+      {
+       "value": 371.8,
+       "year": 1988
+      },
+      {
+       "value": 279.2,
+       "year": 1989
+      },
+      {
+       "value": 415.1,
+       "year": 1990
+      },
+      {
+       "value": 355.4,
+       "year": 1991
+      },
+      {
+       "value": 220.6,
+       "year": 1992
+      },
+      {
+       "value": 387.2,
+       "year": 1993
+      },
+      {
+       "value": 337.2,
+       "year": 1994
+      },
+      {
+       "value": 277.1,
+       "year": 1995
+      },
+      {
+       "value": 314.4,
+       "year": 1996
+      },
+      {
+       "value": 282.9,
+       "year": 1997
+      },
+      {
+       "value": 370.4,
+       "year": 1998
+      },
+      {
+       "value": 331.0,
+       "year": 1999
+      },
+      {
+       "value": 426.7,
+       "year": 2000
+      },
+      {
+       "value": 323.7,
+       "year": 2001
+      },
+      {
+       "value": 368.6,
+       "year": 2002
+      },
+      {
+       "value": 288.7,
+       "year": 2003
+      },
+      {
+       "value": 382.6,
+       "year": 2004
+      },
+      {
+       "value": 315.0,
+       "year": 2005
+      },
+      {
+       "value": 362.4,
+       "year": 2006
+      },
+      {
+       "value": 296.6,
+       "year": 2007
+      },
+      {
+       "value": 234.6,
+       "year": 2008
+      },
+      {
+       "value": 256.3,
+       "year": 2009
+      },
+      {
+       "value": 392.8,
+       "year": 2010
+      },
+      {
+       "value": 298.1,
+       "year": 2011
+      },
+      {
+       "value": 285.3,
+       "year": 2012
+      },
+      {
+       "value": 376.6,
+       "year": 2013
+      },
+      {
+       "value": 241.0,
+       "year": 2014
+      },
+      {
+       "value": 301.9,
+       "year": 2015
+      },
+      {
+       "value": 351.0,
+       "year": 2016
+      },
+      {
+       "value": 397.4,
+       "year": 2017
+      },
+      {
+       "value": 332.7,
+       "year": 2018
+      },
+      {
+       "value": 265.3,
+       "year": 2019
+      },
+      {
+       "value": 350.4,
+       "year": 2020
+      },
+      {
+       "value": 251.4,
+       "year": 2021
+      },
+      {
+       "value": 334.5,
+       "year": 2022
+      },
+      {
+       "value": 223.8,
+       "year": 2023
+      },
+      {
+       "value": 284.4,
+       "year": 2024
+      },
+      {
+       "value": 395.9,
+       "year": 2025
+      }
+     ],
+     "source": "GPCP v2.3 monthly precipitation (NASA GSFC / NOAA), 2.5\u00b0 grid",
+     "sourceLabel": "Rainfall, pre-monsoon",
+     "unit": "mm",
+     "years": [
+      {
+       "baselineMedian": 331.0,
+       "baselineYears": 19,
+       "event": true,
+       "flagged": true,
+       "state": "tested",
+       "threshold": 371.8,
+       "value": 426.7,
+       "year": 2000
+      },
+      {
+       "baselineMedian": 337.2,
+       "baselineYears": 20,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 371.8,
+       "value": 323.7,
+       "year": 2001
+      },
+      {
+       "baselineMedian": 331.0,
+       "baselineYears": 21,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 371.8,
+       "value": 368.6,
+       "year": 2002
+      },
+      {
+       "baselineMedian": 337.2,
+       "baselineYears": 22,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 371.8,
+       "value": 288.7,
+       "year": 2003
+      },
+      {
+       "baselineMedian": 331.0,
+       "baselineYears": 23,
+       "event": true,
+       "flagged": true,
+       "state": "tested",
+       "threshold": 371.8,
+       "value": 382.6,
+       "year": 2004
+      },
+      {
+       "baselineMedian": 337.2,
+       "baselineYears": 24,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 382.6,
+       "value": 315.0,
+       "year": 2005
+      },
+      {
+       "baselineMedian": 331.0,
+       "baselineYears": 25,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 371.8,
+       "value": 362.4,
+       "year": 2006
+      },
+      {
+       "baselineMedian": 337.2,
+       "baselineYears": 26,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 371.8,
+       "value": 296.6,
+       "year": 2007
+      },
+      {
+       "baselineMedian": 331.0,
+       "baselineYears": 27,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 371.8,
+       "value": 234.6,
+       "year": 2008
+      },
+      {
+       "baselineMedian": 331.0,
+       "baselineYears": 28,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 371.8,
+       "value": 256.3,
+       "year": 2009
+      },
+      {
+       "baselineMedian": 323.9,
+       "baselineYears": 29,
+       "event": true,
+       "flagged": true,
+       "state": "tested",
+       "threshold": 371.8,
+       "value": 392.8,
+       "year": 2010
+      },
+      {
+       "baselineMedian": 331.0,
+       "baselineYears": 30,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 371.8,
+       "value": 298.1,
+       "year": 2011
+      },
+      {
+       "baselineMedian": 323.9,
+       "baselineYears": 31,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 371.8,
+       "value": 285.3,
+       "year": 2012
+      },
+      {
+       "baselineMedian": 323.9,
+       "baselineYears": 32,
+       "event": true,
+       "flagged": true,
+       "state": "tested",
+       "threshold": 371.8,
+       "value": 376.6,
+       "year": 2013
+      },
+      {
+       "baselineMedian": 323.9,
+       "baselineYears": 33,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 376.6,
+       "value": 241.0,
+       "year": 2014
+      },
+      {
+       "baselineMedian": 323.9,
+       "baselineYears": 34,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 376.6,
+       "value": 301.9,
+       "year": 2015
+      },
+      {
+       "baselineMedian": 323.7,
+       "baselineYears": 35,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 371.8,
+       "value": 351.0,
+       "year": 2016
+      },
+      {
+       "baselineMedian": 323.9,
+       "baselineYears": 36,
+       "event": true,
+       "flagged": true,
+       "state": "tested",
+       "threshold": 371.8,
+       "value": 397.4,
+       "year": 2017
+      },
+      {
+       "baselineMedian": 323.9,
+       "baselineYears": 37,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 376.6,
+       "value": 332.7,
+       "year": 2018
+      },
+      {
+       "baselineMedian": 331.0,
+       "baselineYears": 38,
+       "event": false,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 376.6,
+       "value": 265.3,
+       "year": 2019
+      },
+      {
+       "baselineMedian": 323.9,
+       "baselineYears": 39,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 376.6,
+       "value": 350.4,
+       "year": 2020
+      },
+      {
+       "baselineMedian": 331.0,
+       "baselineYears": 40,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 371.8,
+       "value": 251.4,
+       "year": 2021
+      },
+      {
+       "baselineMedian": 323.9,
+       "baselineYears": 41,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 371.8,
+       "value": 334.5,
+       "year": 2022
+      },
+      {
+       "baselineMedian": 331.0,
+       "baselineYears": 42,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 371.8,
+       "value": 223.8,
+       "year": 2023
+      },
+      {
+       "baselineMedian": 323.9,
+       "baselineYears": 43,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 371.8,
+       "value": 284.4,
+       "year": 2024
+      },
+      {
+       "baselineMedian": 323.9,
+       "baselineYears": 44,
+       "event": true,
+       "flagged": true,
+       "state": "tested",
+       "threshold": 371.8,
+       "value": 395.9,
+       "year": 2025
+      }
+     ]
+    }
+   },
+   "tile": "bengal"
+  },
+  {
+   "episodeTotal": 42,
+   "episodes": [
+    {
+     "alert": "Green",
+     "end": "2001-06-21",
+     "events": 1,
+     "hit": false,
+     "id": "indus-2001-001",
+     "lat": 22.828,
+     "lead": null,
+     "lon": 71.287,
+     "section": "pre-monsoon",
+     "start": "2001-06-20",
+     "year": 2001
+    },
+    {
+     "alert": "Orange",
+     "end": "2002-07-03",
+     "events": 1,
+     "hit": false,
+     "id": "indus-2002-002",
+     "lat": 20.868,
+     "lead": null,
+     "lon": 73.662,
+     "section": "pre-monsoon",
+     "start": "2002-06-26",
+     "year": 2002
+    },
+    {
+     "alert": "Green",
+     "end": "2003-02-22",
+     "events": 1,
+     "hit": false,
+     "id": "indus-2003-004",
+     "lat": 27.525,
+     "lead": null,
+     "lon": 68.068,
+     "section": "pre-monsoon",
+     "start": "2003-02-16",
+     "year": 2003
+    },
+    {
+     "alert": "Green",
+     "end": "2003-06-26",
+     "events": 1,
+     "hit": false,
+     "id": "indus-2003-005",
+     "lat": 21.396,
+     "lead": null,
+     "lon": 73.44,
+     "section": "pre-monsoon",
+     "start": "2003-06-20",
+     "year": 2003
+    },
+    {
+     "alert": "Green",
+     "end": "2005-03-24",
+     "events": 1,
+     "hit": false,
+     "id": "indus-2005-009",
+     "lat": 29.518,
+     "lead": null,
+     "lon": 68.372,
+     "section": "pre-monsoon",
+     "start": "2005-03-20",
+     "year": 2005
+    },
+    {
+     "alert": "Orange",
+     "end": "2005-07-15",
+     "events": 1,
+     "hit": false,
+     "id": "indus-2005-010",
+     "lat": 21.433,
+     "lead": null,
+     "lon": 73.074,
+     "section": "pre-monsoon",
+     "start": "2005-06-28",
+     "year": 2005
+    },
+    {
+     "alert": "Orange",
+     "end": "2007-06-26",
+     "events": 1,
+     "hit": false,
+     "id": "indus-2007-016",
+     "lat": 24.994,
+     "lead": null,
+     "lon": 67.135,
+     "section": "pre-monsoon",
+     "start": "2007-06-23",
+     "year": 2007
+    },
+    {
+     "alert": "Green",
+     "end": "2010-06-06",
+     "events": 1,
+     "hit": false,
+     "id": "indus-2010-021",
+     "lat": 25.117,
+     "lead": null,
+     "lon": 67.905,
+     "section": "pre-monsoon",
+     "start": "2010-06-06",
+     "year": 2010
+    },
+    {
+     "alert": "Green",
+     "end": "2011-06-21",
+     "events": 1,
+     "hit": false,
+     "id": "indus-2011-022",
+     "lat": 27.931,
+     "lead": null,
+     "lon": 69.709,
+     "section": "pre-monsoon",
+     "start": "2011-06-16",
+     "year": 2011
+    },
+    {
+     "alert": "Green",
+     "end": "2015-06-29",
+     "events": 1,
+     "hit": false,
+     "id": "indus-2015-027",
+     "lat": 21.873,
+     "lead": null,
+     "lon": 70.764,
+     "section": "pre-monsoon",
+     "start": "2015-06-24",
+     "year": 2015
+    },
+    {
+     "alert": "Green",
+     "end": "2017-07-12",
+     "events": 1,
+     "hit": false,
+     "id": "indus-2017-029",
+     "lat": 29.438,
+     "lead": null,
+     "lon": 69.236,
+     "section": "pre-monsoon",
+     "start": "2017-06-26",
+     "year": 2017
+    },
+    {
+     "alert": "Green",
+     "end": "2019-03-07",
+     "events": 1,
+     "hit": false,
+     "id": "indus-2019-031",
+     "lat": 28.366,
+     "lead": null,
+     "lon": 65.797,
+     "section": "pre-monsoon",
+     "start": "2019-03-01",
+     "year": 2019
+    },
+    {
+     "alert": "Green",
+     "end": "2023-05-02",
+     "events": 1,
+     "hit": false,
+     "id": "indus-2023-037",
+     "lat": 28.0,
+     "lead": null,
+     "lon": 66.0,
+     "section": "pre-monsoon",
+     "start": "2023-04-30",
+     "year": 2023
+    },
+    {
+     "alert": "Green",
+     "end": "2023-06-01",
+     "events": 1,
+     "hit": false,
+     "id": "indus-2023-038",
+     "lat": 25.363,
+     "lead": null,
+     "lon": 68.307,
+     "section": "pre-monsoon",
+     "start": "2023-05-30",
+     "year": 2023
+    },
+    {
+     "alert": "Orange",
+     "end": "2023-06-16",
+     "events": 1,
+     "hit": false,
+     "id": "indus-2023-039",
+     "lat": 22.385,
+     "lead": null,
+     "lon": 71.745,
+     "section": "pre-monsoon",
+     "start": "2023-06-14",
+     "year": 2023
+    },
+    {
+     "alert": "Green",
+     "end": "2024-02-05",
+     "events": 1,
+     "hit": false,
+     "id": "indus-2024-040",
+     "lat": 24.855,
+     "lead": null,
+     "lon": 67.021,
+     "section": "pre-monsoon",
+     "start": "2024-02-03",
+     "year": 2024
+    },
+    {
+     "alert": "Green",
+     "end": "2025-06-30",
+     "events": 1,
+     "hit": false,
+     "id": "indus-2025-042",
+     "lat": 28.0,
+     "lead": null,
+     "lon": 66.0,
+     "section": "pre-monsoon",
+     "start": "2025-06-26",
+     "year": 2025
+    },
+    {
+     "alert": "Green",
+     "end": "2002-09-06",
+     "events": 1,
+     "hit": false,
+     "id": "indus-2002-003",
+     "lat": 21.539,
+     "lead": null,
+     "lon": 73.22,
+     "section": "monsoon",
+     "start": "2002-09-03",
+     "year": 2002
+    },
+    {
+     "alert": "Red",
+     "end": "2003-09-01",
+     "events": 1,
+     "hit": true,
+     "id": "indus-2003-006",
+     "lat": 28.732,
+     "lead": {
+      "days": 14,
+      "issued": "2003-07-01",
+      "section": "monsoon"
+     },
+     "lon": 72.21,
+     "section": "monsoon",
+     "start": "2003-07-15",
+     "year": 2003
+    },
+    {
+     "alert": "Green",
+     "end": "2003-08-02",
+     "events": 1,
+     "hit": true,
+     "id": "indus-2003-007",
+     "lat": 21.981,
+     "lead": {
+      "days": 28,
+      "issued": "2003-07-01",
+      "section": "monsoon"
+     },
+     "lon": 73.96,
+     "section": "monsoon",
+     "start": "2003-07-29",
+     "year": 2003
+    },
+    {
+     "alert": "Orange",
+     "end": "2004-09-08",
+     "events": 1,
+     "hit": false,
+     "id": "indus-2004-008",
+     "lat": 21.025,
+     "lead": null,
+     "lon": 73.764,
+     "section": "monsoon",
+     "start": "2004-08-01",
+     "year": 2004
+    },
+    {
+     "alert": "Green",
+     "end": "2005-10-11",
+     "events": 1,
+     "hit": false,
+     "id": "indus-2005-011",
+     "lat": 21.714,
+     "lead": null,
+     "lon": 73.473,
+     "section": "monsoon",
+     "start": "2005-09-22",
+     "year": 2005
+    },
+    {
+     "alert": "Green",
+     "end": "2006-07-04",
+     "events": 1,
+     "hit": true,
+     "id": "indus-2006-012",
+     "lat": 22.41,
+     "lead": {
+      "days": 3,
+      "issued": "2006-07-01",
+      "section": "monsoon"
+     },
+     "lon": 71.31,
+     "section": "monsoon",
+     "start": "2006-07-04",
+     "year": 2006
+    },
+    {
+     "alert": "Orange",
+     "end": "2006-07-28",
+     "events": 1,
+     "hit": true,
+     "id": "indus-2006-013",
+     "lat": 20.194,
+     "lead": {
+      "days": 27,
+      "issued": "2006-07-01",
+      "section": "monsoon"
+     },
+     "lon": 73.824,
+     "section": "monsoon",
+     "start": "2006-07-28",
+     "year": 2006
+    },
+    {
+     "alert": "Green",
+     "end": "2006-08-01",
+     "events": 1,
+     "hit": false,
+     "id": "indus-2006-014",
+     "lat": 25.028,
+     "lead": null,
+     "lon": 67.122,
+     "section": "monsoon",
+     "start": "2006-08-01",
+     "year": 2006
+    },
+    {
+     "alert": "Green",
+     "end": "2006-12-04",
+     "events": 1,
+     "hit": false,
+     "id": "indus-2006-015",
+     "lat": 28.036,
+     "lead": null,
+     "lon": 66.517,
+     "section": "monsoon",
+     "start": "2006-12-04",
+     "year": 2006
+    },
+    {
+     "alert": "Orange",
+     "end": "2007-07-01",
+     "events": 1,
+     "hit": false,
+     "id": "indus-2007-017",
+     "lat": 22.023,
+     "lead": null,
+     "lon": 72.25,
+     "section": "monsoon",
+     "start": "2007-07-01",
+     "year": 2007
+    },
+    {
+     "alert": "Green",
+     "end": "2007-08-08",
+     "events": 1,
+     "hit": false,
+     "id": "indus-2007-018",
+     "lat": 22.682,
+     "lead": null,
+     "lon": 70.925,
+     "section": "monsoon",
+     "start": "2007-08-08",
+     "year": 2007
+    },
+    {
+     "alert": "Green",
+     "end": "2007-08-10",
+     "events": 1,
+     "hit": false,
+     "id": "indus-2007-019",
+     "lat": 26.019,
+     "lead": null,
+     "lon": 68.826,
+     "section": "monsoon",
+     "start": "2007-08-10",
+     "year": 2007
+    },
+    {
+     "alert": "Green",
+     "end": "2009-07-17",
+     "events": 1,
+     "hit": false,
+     "id": "indus-2009-020",
+     "lat": 24.878,
+     "lead": null,
+     "lon": 67.185,
+     "section": "monsoon",
+     "start": "2009-07-17",
+     "year": 2009
+    },
+    {
+     "alert": "Orange",
+     "end": "2011-11-01",
+     "events": 1,
+     "hit": false,
+     "id": "indus-2011-023",
+     "lat": 25.012,
+     "lead": null,
+     "lon": 69.066,
+     "section": "monsoon",
+     "start": "2011-08-12",
+     "year": 2011
+    },
+    {
+     "alert": "Green",
+     "end": "2011-09-13",
+     "events": 1,
+     "hit": false,
+     "id": "indus-2011-024",
+     "lat": 22.302,
+     "lead": null,
+     "lon": 73.953,
+     "section": "monsoon",
+     "start": "2011-08-25",
+     "year": 2011
+    },
+    {
+     "alert": "Orange",
+     "end": "2012-10-29",
+     "events": 1,
+     "hit": false,
+     "id": "indus-2012-025",
+     "lat": 28.044,
+     "lead": null,
+     "lon": 68.775,
+     "section": "monsoon",
+     "start": "2012-09-10",
+     "year": 2012
+    },
+    {
+     "alert": "Green",
+     "end": "2013-08-21",
+     "events": 1,
+     "hit": false,
+     "id": "indus-2013-026",
+     "lat": 28.74,
+     "lead": null,
+     "lon": 69.106,
+     "section": "monsoon",
+     "start": "2013-08-07",
+     "year": 2013
+    },
+    {
+     "alert": "Green",
+     "end": "2016-08-03",
+     "events": 1,
+     "hit": false,
+     "id": "indus-2016-028",
+     "lat": 21.748,
+     "lead": null,
+     "lon": 73.412,
+     "section": "monsoon",
+     "start": "2016-08-01",
+     "year": 2016
+    },
+    {
+     "alert": "Green",
+     "end": "2017-09-01",
+     "events": 1,
+     "hit": false,
+     "id": "indus-2017-030",
+     "lat": 24.927,
+     "lead": null,
+     "lon": 67.173,
+     "section": "monsoon",
+     "start": "2017-08-31",
+     "year": 2017
+    },
+    {
+     "alert": "Green",
+     "end": "2019-08-13",
+     "events": 1,
+     "hit": false,
+     "id": "indus-2019-032",
+     "lat": 25.5,
+     "lead": null,
+     "lon": 69.0,
+     "section": "monsoon",
+     "start": "2019-08-09",
+     "year": 2019
+    },
+    {
+     "alert": "Green",
+     "end": "2020-07-28",
+     "events": 1,
+     "hit": true,
+     "id": "indus-2020-033",
+     "lat": 24.86,
+     "lead": {
+      "days": 25,
+      "issued": "2020-07-01",
+      "section": "monsoon"
+     },
+     "lon": 67.0,
+     "section": "monsoon",
+     "start": "2020-07-26",
+     "year": 2020
+    },
+    {
+     "alert": "Green",
+     "end": "2020-08-07",
+     "events": 1,
+     "hit": false,
+     "id": "indus-2020-034",
+     "lat": 28.0,
+     "lead": null,
+     "lon": 66.0,
+     "section": "monsoon",
+     "start": "2020-08-07",
+     "year": 2020
+    },
+    {
+     "alert": "Green",
+     "end": "2020-08-29",
+     "events": 1,
+     "hit": false,
+     "id": "indus-2020-035",
+     "lat": 21.17,
+     "lead": null,
+     "lon": 72.832,
+     "section": "monsoon",
+     "start": "2020-08-14",
+     "year": 2020
+    },
+    {
+     "alert": "Green",
+     "end": "2021-09-01",
+     "events": 1,
+     "hit": false,
+     "id": "indus-2021-036",
+     "lat": 21.192,
+     "lead": null,
+     "lon": 72.954,
+     "section": "monsoon",
+     "start": "2021-09-28",
+     "year": 2021
+    },
+    {
+     "alert": "Green",
+     "end": "2024-08-07",
+     "events": 1,
+     "hit": true,
+     "id": "indus-2024-041",
+     "lat": 28.0,
+     "lead": {
+      "days": 28,
+      "issued": "2024-07-01",
+      "section": "monsoon"
+     },
+     "lon": 66.0,
+     "section": "monsoon",
+     "start": "2024-07-29",
+     "year": 2024
+    }
+   ],
+   "label": "Indus plain",
+   "leads": [
+    {
+     "days": 1,
+     "detectedShare": 0.0,
+     "episodes": 42,
+     "hit": 0
+    },
+    {
+     "days": 2,
+     "detectedShare": 0.0,
+     "episodes": 42,
+     "hit": 0
+    },
+    {
+     "days": 3,
+     "detectedShare": 0.0238,
+     "episodes": 42,
+     "hit": 1
+    },
+    {
+     "days": 4,
+     "detectedShare": 0.0238,
+     "episodes": 42,
+     "hit": 1
+    },
+    {
+     "days": 5,
+     "detectedShare": 0.0238,
+     "episodes": 42,
+     "hit": 1
+    },
+    {
+     "days": 6,
+     "detectedShare": 0.0238,
+     "episodes": 42,
+     "hit": 1
+    },
+    {
+     "days": 7,
+     "detectedShare": 0.0238,
+     "episodes": 42,
+     "hit": 1
+    },
+    {
+     "days": 8,
+     "detectedShare": 0.0238,
+     "episodes": 42,
+     "hit": 1
+    },
+    {
+     "days": 9,
+     "detectedShare": 0.0238,
+     "episodes": 42,
+     "hit": 1
+    },
+    {
+     "days": 10,
+     "detectedShare": 0.0238,
+     "episodes": 42,
+     "hit": 1
+    },
+    {
+     "days": 11,
+     "detectedShare": 0.0238,
+     "episodes": 42,
+     "hit": 1
+    },
+    {
+     "days": 12,
+     "detectedShare": 0.0238,
+     "episodes": 42,
+     "hit": 1
+    },
+    {
+     "days": 13,
+     "detectedShare": 0.0238,
+     "episodes": 42,
+     "hit": 1
+    },
+    {
+     "days": 14,
+     "detectedShare": 0.0476,
+     "episodes": 42,
+     "hit": 2
+    },
+    {
+     "days": 15,
+     "detectedShare": 0.0476,
+     "episodes": 42,
+     "hit": 2
+    },
+    {
+     "days": 16,
+     "detectedShare": 0.0476,
+     "episodes": 42,
+     "hit": 2
+    },
+    {
+     "days": 17,
+     "detectedShare": 0.0476,
+     "episodes": 42,
+     "hit": 2
+    },
+    {
+     "days": 18,
+     "detectedShare": 0.0476,
+     "episodes": 42,
+     "hit": 2
+    },
+    {
+     "days": 19,
+     "detectedShare": 0.0476,
+     "episodes": 42,
+     "hit": 2
+    },
+    {
+     "days": 20,
+     "detectedShare": 0.0476,
+     "episodes": 42,
+     "hit": 2
+    },
+    {
+     "days": 21,
+     "detectedShare": 0.0476,
+     "episodes": 42,
+     "hit": 2
+    },
+    {
+     "days": 22,
+     "detectedShare": 0.0476,
+     "episodes": 42,
+     "hit": 2
+    },
+    {
+     "days": 23,
+     "detectedShare": 0.0476,
+     "episodes": 42,
+     "hit": 2
+    },
+    {
+     "days": 24,
+     "detectedShare": 0.0476,
+     "episodes": 42,
+     "hit": 2
+    },
+    {
+     "days": 25,
+     "detectedShare": 0.0714,
+     "episodes": 42,
+     "hit": 3
+    },
+    {
+     "days": 26,
+     "detectedShare": 0.0714,
+     "episodes": 42,
+     "hit": 3
+    },
+    {
+     "days": 27,
+     "detectedShare": 0.0952,
+     "episodes": 42,
+     "hit": 4
+    },
+    {
+     "days": 28,
+     "detectedShare": 0.1429,
+     "episodes": 42,
+     "hit": 6
+    },
+    {
+     "days": 29,
+     "detectedShare": 0.1429,
+     "episodes": 42,
+     "hit": 6
+    },
+    {
+     "days": 30,
+     "detectedShare": 0.1429,
+     "episodes": 42,
+     "hit": 6
+    }
+   ],
+   "sections": {
+    "monsoon": {
+     "covers": "July to December",
+     "series": [
+      {
+       "value": 387.5,
+       "year": 1981
+      },
+      {
+       "value": 262.0,
+       "year": 1982
+      },
+      {
+       "value": 537.4,
+       "year": 1983
+      },
+      {
+       "value": 375.5,
+       "year": 1984
+      },
+      {
+       "value": 244.1,
+       "year": 1985
+      },
+      {
+       "value": 256.6,
+       "year": 1986
+      },
+      {
+       "value": 150.8,
+       "year": 1987
+      },
+      {
+       "value": 452.8,
+       "year": 1988
+      },
+      {
+       "value": 353.3,
+       "year": 1989
+      },
+      {
+       "value": 402.9,
+       "year": 1990
+      },
+      {
+       "value": 221.8,
+       "year": 1991
+      },
+      {
+       "value": 455.5,
+       "year": 1992
+      },
+      {
+       "value": 284.2,
+       "year": 1993
+      },
+      {
+       "value": 637.4,
+       "year": 1994
+      },
+      {
+       "value": 344.2,
+       "year": 1995
+      },
+      {
+       "value": 382.1,
+       "year": 1996
+      },
+      {
+       "value": 433.7,
+       "year": 1997
+      },
+      {
+       "value": 374.5,
+       "year": 1998
+      },
+      {
+       "value": 200.2,
+       "year": 1999
+      },
+      {
+       "value": 245.6,
+       "year": 2000
+      },
+      {
+       "value": 294.2,
+       "year": 2001
+      },
+      {
+       "value": 192.9,
+       "year": 2002
+      },
+      {
+       "value": 486.8,
+       "year": 2003
+      },
+      {
+       "value": 333.8,
+       "year": 2004
+      },
+      {
+       "value": 439.1,
+       "year": 2005
+      },
+      {
+       "value": 538.0,
+       "year": 2006
+      },
+      {
+       "value": 562.6,
+       "year": 2007
+      },
+      {
+       "value": 377.9,
+       "year": 2008
+      },
+      {
+       "value": 381.3,
+       "year": 2009
+      },
+      {
+       "value": 628.2,
+       "year": 2010
+      },
+      {
+       "value": 603.3,
+       "year": 2011
+      },
+      {
+       "value": 397.5,
+       "year": 2012
+      },
+      {
+       "value": 476.0,
+       "year": 2013
+      },
+      {
+       "value": 350.2,
+       "year": 2014
+      },
+      {
+       "value": 415.2,
+       "year": 2015
+      },
+      {
+       "value": 396.2,
+       "year": 2016
+      },
+      {
+       "value": 487.4,
+       "year": 2017
+      },
+      {
+       "value": 287.6,
+       "year": 2018
+      },
+      {
+       "value": 565.9,
+       "year": 2019
+      },
+      {
+       "value": 611.6,
+       "year": 2020
+      },
+      {
+       "value": 447.9,
+       "year": 2021
+      },
+      {
+       "value": 770.7,
+       "year": 2022
+      },
+      {
+       "value": 506.4,
+       "year": 2023
+      },
+      {
+       "value": 632.2,
+       "year": 2024
+      },
+      {
+       "value": 601.0,
+       "year": 2025
+      }
+     ],
+     "source": "GPCP v2.3 monthly precipitation (NASA GSFC / NOAA), 2.5\u00b0 grid",
+     "sourceLabel": "Rainfall, monsoon",
+     "unit": "mm",
+     "years": [
+      {
+       "baselineMedian": 374.5,
+       "baselineYears": 19,
+       "event": false,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 452.8,
+       "value": 245.6,
+       "year": 2000
+      },
+      {
+       "baselineMedian": 374.5,
+       "baselineYears": 20,
+       "event": false,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 433.7,
+       "value": 294.2,
+       "year": 2001
+      },
+      {
+       "baselineMedian": 353.3,
+       "baselineYears": 21,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 433.7,
+       "value": 192.9,
+       "year": 2002
+      },
+      {
+       "baselineMedian": 353.3,
+       "baselineYears": 22,
+       "event": true,
+       "flagged": true,
+       "state": "tested",
+       "threshold": 433.7,
+       "value": 486.8,
+       "year": 2003
+      },
+      {
+       "baselineMedian": 353.3,
+       "baselineYears": 23,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 452.8,
+       "value": 333.8,
+       "year": 2004
+      },
+      {
+       "baselineMedian": 353.3,
+       "baselineYears": 24,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 452.8,
+       "value": 439.1,
+       "year": 2005
+      },
+      {
+       "baselineMedian": 353.3,
+       "baselineYears": 25,
+       "event": true,
+       "flagged": true,
+       "state": "tested",
+       "threshold": 439.1,
+       "value": 538.0,
+       "year": 2006
+      },
+      {
+       "baselineMedian": 374.5,
+       "baselineYears": 26,
+       "event": true,
+       "flagged": true,
+       "state": "tested",
+       "threshold": 452.8,
+       "value": 562.6,
+       "year": 2007
+      },
+      {
+       "baselineMedian": 374.5,
+       "baselineYears": 27,
+       "event": false,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 455.5,
+       "value": 377.9,
+       "year": 2008
+      },
+      {
+       "baselineMedian": 375.5,
+       "baselineYears": 28,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 455.5,
+       "value": 381.3,
+       "year": 2009
+      },
+      {
+       "baselineMedian": 375.5,
+       "baselineYears": 29,
+       "event": false,
+       "flagged": true,
+       "state": "tested",
+       "threshold": 455.5,
+       "value": 628.2,
+       "year": 2010
+      },
+      {
+       "baselineMedian": 377.9,
+       "baselineYears": 30,
+       "event": true,
+       "flagged": true,
+       "state": "tested",
+       "threshold": 455.5,
+       "value": 603.3,
+       "year": 2011
+      },
+      {
+       "baselineMedian": 377.9,
+       "baselineYears": 31,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 486.8,
+       "value": 397.5,
+       "year": 2012
+      },
+      {
+       "baselineMedian": 381.3,
+       "baselineYears": 32,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 486.8,
+       "value": 476.0,
+       "year": 2013
+      },
+      {
+       "baselineMedian": 381.3,
+       "baselineYears": 33,
+       "event": false,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 486.8,
+       "value": 350.2,
+       "year": 2014
+      },
+      {
+       "baselineMedian": 381.3,
+       "baselineYears": 34,
+       "event": false,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 486.8,
+       "value": 415.2,
+       "year": 2015
+      },
+      {
+       "baselineMedian": 381.3,
+       "baselineYears": 35,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 476.0,
+       "value": 396.2,
+       "year": 2016
+      },
+      {
+       "baselineMedian": 382.1,
+       "baselineYears": 36,
+       "event": true,
+       "flagged": true,
+       "state": "tested",
+       "threshold": 476.0,
+       "value": 487.4,
+       "year": 2017
+      },
+      {
+       "baselineMedian": 382.1,
+       "baselineYears": 37,
+       "event": false,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 486.8,
+       "value": 287.6,
+       "year": 2018
+      },
+      {
+       "baselineMedian": 382.1,
+       "baselineYears": 38,
+       "event": true,
+       "flagged": true,
+       "state": "tested",
+       "threshold": 486.8,
+       "value": 565.9,
+       "year": 2019
+      },
+      {
+       "baselineMedian": 382.1,
+       "baselineYears": 39,
+       "event": true,
+       "flagged": true,
+       "state": "tested",
+       "threshold": 487.4,
+       "value": 611.6,
+       "year": 2020
+      },
+      {
+       "baselineMedian": 387.5,
+       "baselineYears": 40,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 487.4,
+       "value": 447.9,
+       "year": 2021
+      },
+      {
+       "baselineMedian": 387.5,
+       "baselineYears": 41,
+       "event": false,
+       "flagged": true,
+       "state": "tested",
+       "threshold": 487.4,
+       "value": 770.7,
+       "year": 2022
+      },
+      {
+       "baselineMedian": 396.2,
+       "baselineYears": 42,
+       "event": false,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 537.4,
+       "value": 506.4,
+       "year": 2023
+      },
+      {
+       "baselineMedian": 396.2,
+       "baselineYears": 43,
+       "event": true,
+       "flagged": true,
+       "state": "tested",
+       "threshold": 537.4,
+       "value": 632.2,
+       "year": 2024
+      },
+      {
+       "baselineMedian": 397.5,
+       "baselineYears": 44,
+       "event": false,
+       "flagged": true,
+       "state": "tested",
+       "threshold": 538.0,
+       "value": 601.0,
+       "year": 2025
+      }
+     ]
+    },
+    "pre-monsoon": {
+     "covers": "January to June",
+     "series": [
+      {
+       "value": 21.6,
+       "year": 1981
+      },
+      {
+       "value": 56.0,
+       "year": 1982
+      },
+      {
+       "value": 41.6,
+       "year": 1983
+      },
+      {
+       "value": 5.4,
+       "year": 1984
+      },
+      {
+       "value": 23.1,
+       "year": 1985
+      },
+      {
+       "value": 12.8,
+       "year": 1986
+      },
+      {
+       "value": 29.2,
+       "year": 1987
+      },
+      {
+       "value": 14.3,
+       "year": 1988
+      },
+      {
+       "value": 17.2,
+       "year": 1989
+      },
+      {
+       "value": 22.9,
+       "year": 1990
+      },
+      {
+       "value": 26.4,
+       "year": 1991
+      },
+      {
+       "value": 19.4,
+       "year": 1992
+      },
+      {
+       "value": 14.9,
+       "year": 1993
+      },
+      {
+       "value": 14.9,
+       "year": 1994
+      },
+      {
+       "value": 17.6,
+       "year": 1995
+      },
+      {
+       "value": 20.8,
+       "year": 1996
+      },
+      {
+       "value": 45.0,
+       "year": 1997
+      },
+      {
+       "value": 21.6,
+       "year": 1998
+      },
+      {
+       "value": 40.8,
+       "year": 1999
+      },
+      {
+       "value": 13.9,
+       "year": 2000
+      },
+      {
+       "value": 25.7,
+       "year": 2001
+      },
+      {
+       "value": 12.2,
+       "year": 2002
+      },
+      {
+       "value": 11.8,
+       "year": 2003
+      },
+      {
+       "value": 16.1,
+       "year": 2004
+      },
+      {
+       "value": 31.9,
+       "year": 2005
+      },
+      {
+       "value": 27.8,
+       "year": 2006
+      },
+      {
+       "value": 26.6,
+       "year": 2007
+      },
+      {
+       "value": 22.3,
+       "year": 2008
+      },
+      {
+       "value": 23.9,
+       "year": 2009
+      },
+      {
+       "value": 7.9,
+       "year": 2010
+      },
+      {
+       "value": 25.1,
+       "year": 2011
+      },
+      {
+       "value": 25.4,
+       "year": 2012
+      },
+      {
+       "value": 32.3,
+       "year": 2013
+      },
+      {
+       "value": 44.9,
+       "year": 2014
+      },
+      {
+       "value": 53.6,
+       "year": 2015
+      },
+      {
+       "value": 23.4,
+       "year": 2016
+      },
+      {
+       "value": 18.3,
+       "year": 2017
+      },
+      {
+       "value": 14.0,
+       "year": 2018
+      },
+      {
+       "value": 35.2,
+       "year": 2019
+      },
+      {
+       "value": 38.1,
+       "year": 2020
+      },
+      {
+       "value": 37.7,
+       "year": 2021
+      },
+      {
+       "value": 6.8,
+       "year": 2022
+      },
+      {
+       "value": 78.6,
+       "year": 2023
+      },
+      {
+       "value": 30.3,
+       "year": 2024
+      },
+      {
+       "value": 48.6,
+       "year": 2025
+      }
+     ],
+     "source": "GPCP v2.3 monthly precipitation (NASA GSFC / NOAA), 2.5\u00b0 grid",
+     "sourceLabel": "Rainfall, pre-monsoon",
+     "unit": "mm",
+     "years": [
+      {
+       "baselineMedian": 21.6,
+       "baselineYears": 19,
+       "event": false,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 40.8,
+       "value": 13.9,
+       "year": 2000
+      },
+      {
+       "baselineMedian": 21.6,
+       "baselineYears": 20,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 29.2,
+       "value": 25.7,
+       "year": 2001
+      },
+      {
+       "baselineMedian": 21.6,
+       "baselineYears": 21,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 29.2,
+       "value": 12.2,
+       "year": 2002
+      },
+      {
+       "baselineMedian": 21.6,
+       "baselineYears": 22,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 29.2,
+       "value": 11.8,
+       "year": 2003
+      },
+      {
+       "baselineMedian": 20.8,
+       "baselineYears": 23,
+       "event": false,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 29.2,
+       "value": 16.1,
+       "year": 2004
+      },
+      {
+       "baselineMedian": 20.8,
+       "baselineYears": 24,
+       "event": true,
+       "flagged": true,
+       "state": "tested",
+       "threshold": 29.2,
+       "value": 31.9,
+       "year": 2005
+      },
+      {
+       "baselineMedian": 20.8,
+       "baselineYears": 25,
+       "event": false,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 29.2,
+       "value": 27.8,
+       "year": 2006
+      },
+      {
+       "baselineMedian": 21.6,
+       "baselineYears": 26,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 29.2,
+       "value": 26.6,
+       "year": 2007
+      },
+      {
+       "baselineMedian": 21.6,
+       "baselineYears": 27,
+       "event": false,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 29.2,
+       "value": 22.3,
+       "year": 2008
+      },
+      {
+       "baselineMedian": 21.6,
+       "baselineYears": 28,
+       "event": false,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 29.2,
+       "value": 23.9,
+       "year": 2009
+      },
+      {
+       "baselineMedian": 21.6,
+       "baselineYears": 29,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 29.2,
+       "value": 7.9,
+       "year": 2010
+      },
+      {
+       "baselineMedian": 21.6,
+       "baselineYears": 30,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 27.8,
+       "value": 25.1,
+       "year": 2011
+      },
+      {
+       "baselineMedian": 21.6,
+       "baselineYears": 31,
+       "event": false,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 27.8,
+       "value": 25.4,
+       "year": 2012
+      },
+      {
+       "baselineMedian": 22.3,
+       "baselineYears": 32,
+       "event": false,
+       "flagged": true,
+       "state": "tested",
+       "threshold": 27.8,
+       "value": 32.3,
+       "year": 2013
+      },
+      {
+       "baselineMedian": 22.3,
+       "baselineYears": 33,
+       "event": false,
+       "flagged": true,
+       "state": "tested",
+       "threshold": 29.2,
+       "value": 44.9,
+       "year": 2014
+      },
+      {
+       "baselineMedian": 22.9,
+       "baselineYears": 34,
+       "event": true,
+       "flagged": true,
+       "state": "tested",
+       "threshold": 31.9,
+       "value": 53.6,
+       "year": 2015
+      },
+      {
+       "baselineMedian": 22.9,
+       "baselineYears": 35,
+       "event": false,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 31.9,
+       "value": 23.4,
+       "year": 2016
+      },
+      {
+       "baselineMedian": 23.1,
+       "baselineYears": 36,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 31.9,
+       "value": 18.3,
+       "year": 2017
+      },
+      {
+       "baselineMedian": 22.9,
+       "baselineYears": 37,
+       "event": false,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 31.9,
+       "value": 14.0,
+       "year": 2018
+      },
+      {
+       "baselineMedian": 22.9,
+       "baselineYears": 38,
+       "event": true,
+       "flagged": true,
+       "state": "tested",
+       "threshold": 31.9,
+       "value": 35.2,
+       "year": 2019
+      },
+      {
+       "baselineMedian": 22.9,
+       "baselineYears": 39,
+       "event": false,
+       "flagged": true,
+       "state": "tested",
+       "threshold": 32.3,
+       "value": 38.1,
+       "year": 2020
+      },
+      {
+       "baselineMedian": 23.1,
+       "baselineYears": 40,
+       "event": false,
+       "flagged": true,
+       "state": "tested",
+       "threshold": 32.3,
+       "value": 37.7,
+       "year": 2021
+      },
+      {
+       "baselineMedian": 23.1,
+       "baselineYears": 41,
+       "event": false,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 35.2,
+       "value": 6.8,
+       "year": 2022
+      },
+      {
+       "baselineMedian": 23.1,
+       "baselineYears": 42,
+       "event": true,
+       "flagged": true,
+       "state": "tested",
+       "threshold": 35.2,
+       "value": 78.6,
+       "year": 2023
+      },
+      {
+       "baselineMedian": 23.1,
+       "baselineYears": 43,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 37.7,
+       "value": 30.3,
+       "year": 2024
+      },
+      {
+       "baselineMedian": 23.4,
+       "baselineYears": 44,
+       "event": true,
+       "flagged": true,
+       "state": "tested",
+       "threshold": 37.7,
+       "value": 48.6,
+       "year": 2025
+      }
+     ]
+    }
+   },
+   "tile": "indus"
+  },
+  {
+   "episodeTotal": 117,
+   "episodes": [
+    {
+     "alert": "Green",
+     "end": "2003-02-24",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2003-010",
+     "lat": 34.404,
+     "lead": null,
+     "lon": 73.775,
+     "section": "pre-monsoon",
+     "start": "2003-02-15",
+     "year": 2003
+    },
+    {
+     "alert": "Green",
+     "end": "2003-06-21",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2003-011",
+     "lat": 37.87,
+     "lead": null,
+     "lon": 70.615,
+     "section": "pre-monsoon",
+     "start": "2003-06-16",
+     "year": 2003
+    },
+    {
+     "alert": "Green",
+     "end": "2005-07-21",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2005-015",
+     "lat": 37.18,
+     "lead": null,
+     "lon": 70.799,
+     "section": "pre-monsoon",
+     "start": "2005-06-15",
+     "year": 2005
+    },
+    {
+     "alert": "Green",
+     "end": "2005-08-05",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2005-016",
+     "lat": 34.272,
+     "lead": null,
+     "lon": 71.508,
+     "section": "pre-monsoon",
+     "start": "2005-06-21",
+     "year": 2005
+    },
+    {
+     "alert": "Green",
+     "end": "2005-06-29",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2005-017",
+     "lat": 31.672,
+     "lead": null,
+     "lon": 78.442,
+     "section": "pre-monsoon",
+     "start": "2005-06-26",
+     "year": 2005
+    },
+    {
+     "alert": "Green",
+     "end": "2007-03-20",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2007-024",
+     "lat": 33.482,
+     "lead": null,
+     "lon": 74.216,
+     "section": "pre-monsoon",
+     "start": "2007-03-20",
+     "year": 2007
+    },
+    {
+     "alert": "Green",
+     "end": "2007-04-23",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2007-025",
+     "lat": 37.006,
+     "lead": null,
+     "lon": 70.732,
+     "section": "pre-monsoon",
+     "start": "2007-04-23",
+     "year": 2007
+    },
+    {
+     "alert": "Green",
+     "end": "2007-05-14",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2007-026",
+     "lat": 36.525,
+     "lead": null,
+     "lon": 70.6,
+     "section": "pre-monsoon",
+     "start": "2007-05-14",
+     "year": 2007
+    },
+    {
+     "alert": "Green",
+     "end": "2007-06-24",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2007-027",
+     "lat": 34.976,
+     "lead": null,
+     "lon": 72.226,
+     "section": "pre-monsoon",
+     "start": "2007-06-16",
+     "year": 2007
+    },
+    {
+     "alert": "Orange",
+     "end": "2007-06-28",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2007-028",
+     "lat": 34.275,
+     "lead": null,
+     "lon": 71.87,
+     "section": "pre-monsoon",
+     "start": "2007-06-28",
+     "year": 2007
+    },
+    {
+     "alert": "Green",
+     "end": "2010-05-08",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2010-035",
+     "lat": 35.588,
+     "lead": null,
+     "lon": 73.385,
+     "section": "pre-monsoon",
+     "start": "2010-05-08",
+     "year": 2010
+    },
+    {
+     "alert": "Green",
+     "end": "2010-06-22",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2010-036",
+     "lat": 36.027,
+     "lead": null,
+     "lon": 72.079,
+     "section": "pre-monsoon",
+     "start": "2010-06-22",
+     "year": 2010
+    },
+    {
+     "alert": "Green",
+     "end": "2012-05-16",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2012-041",
+     "lat": 37.052,
+     "lead": null,
+     "lon": 70.004,
+     "section": "pre-monsoon",
+     "start": "2012-05-12",
+     "year": 2012
+    },
+    {
+     "alert": "Red",
+     "end": "2013-06-27",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2013-045",
+     "lat": 32.713,
+     "lead": null,
+     "lon": 76.613,
+     "section": "pre-monsoon",
+     "start": "2013-06-12",
+     "year": 2013
+    },
+    {
+     "alert": "Green",
+     "end": "2015-03-31",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2015-048",
+     "lat": 33.176,
+     "lead": null,
+     "lon": 76.405,
+     "section": "pre-monsoon",
+     "start": "2015-03-20",
+     "year": 2015
+    },
+    {
+     "alert": "Green",
+     "end": "2015-04-28",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2015-049",
+     "lat": 33.513,
+     "lead": null,
+     "lon": 71.89,
+     "section": "pre-monsoon",
+     "start": "2015-04-26",
+     "year": 2015
+    },
+    {
+     "alert": "Green",
+     "end": "2015-05-21",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2015-050",
+     "lat": 37.814,
+     "lead": null,
+     "lon": 73.263,
+     "section": "pre-monsoon",
+     "start": "2015-05-11",
+     "year": 2015
+    },
+    {
+     "alert": "Green",
+     "end": "2015-06-29",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2015-051",
+     "lat": 35.013,
+     "lead": null,
+     "lon": 72.843,
+     "section": "pre-monsoon",
+     "start": "2015-06-25",
+     "year": 2015
+    },
+    {
+     "alert": "Orange",
+     "end": "2016-04-13",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2016-053",
+     "lat": 33.054,
+     "lead": null,
+     "lon": 71.779,
+     "section": "pre-monsoon",
+     "start": "2016-03-12",
+     "year": 2016
+    },
+    {
+     "alert": "Green",
+     "end": "2017-06-13",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2017-055",
+     "lat": 31.562,
+     "lead": null,
+     "lon": 74.38,
+     "section": "pre-monsoon",
+     "start": "2017-06-10",
+     "year": 2017
+    },
+    {
+     "alert": "Green",
+     "end": "2018-05-17",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2018-059",
+     "lat": 36.21,
+     "lead": null,
+     "lon": 70.463,
+     "section": "pre-monsoon",
+     "start": "2018-05-12",
+     "year": 2018
+    },
+    {
+     "alert": "Green",
+     "end": "2018-06-01",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2018-060",
+     "lat": 35.222,
+     "lead": null,
+     "lon": 73.57,
+     "section": "pre-monsoon",
+     "start": "2018-05-30",
+     "year": 2018
+    },
+    {
+     "alert": "Green",
+     "end": "2020-03-05",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2020-065",
+     "lat": 34.94,
+     "lead": null,
+     "lon": 72.347,
+     "section": "pre-monsoon",
+     "start": "2020-03-05",
+     "year": 2020
+    },
+    {
+     "alert": "Green",
+     "end": "2020-03-24",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2020-066",
+     "lat": 34.94,
+     "lead": null,
+     "lon": 72.347,
+     "section": "pre-monsoon",
+     "start": "2020-03-24",
+     "year": 2020
+    },
+    {
+     "alert": "Green",
+     "end": "2020-03-31",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2020-067",
+     "lat": 33.241,
+     "lead": null,
+     "lon": 75.239,
+     "section": "pre-monsoon",
+     "start": "2020-03-27",
+     "year": 2020
+    },
+    {
+     "alert": "Green",
+     "end": "2020-04-14",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2020-068",
+     "lat": 34.806,
+     "lead": null,
+     "lon": 72.356,
+     "section": "pre-monsoon",
+     "start": "2020-04-14",
+     "year": 2020
+    },
+    {
+     "alert": "Green",
+     "end": "2020-05-13",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2020-069",
+     "lat": 34.406,
+     "lead": null,
+     "lon": 72.555,
+     "section": "pre-monsoon",
+     "start": "2020-05-11",
+     "year": 2020
+    },
+    {
+     "alert": "Green",
+     "end": "2020-06-11",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2020-070",
+     "lat": 34.406,
+     "lead": null,
+     "lon": 72.555,
+     "section": "pre-monsoon",
+     "start": "2020-06-02",
+     "year": 2020
+    },
+    {
+     "alert": "Orange",
+     "end": "2021-02-07",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2021-074",
+     "lat": 30.298,
+     "lead": null,
+     "lon": 79.567,
+     "section": "pre-monsoon",
+     "start": "2021-02-07",
+     "year": 2021
+    },
+    {
+     "alert": "Green",
+     "end": "2021-04-09",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2021-075",
+     "lat": 34.776,
+     "lead": null,
+     "lon": 71.514,
+     "section": "pre-monsoon",
+     "start": "2021-04-06",
+     "year": 2021
+    },
+    {
+     "alert": "Green",
+     "end": "2021-04-19",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2021-076",
+     "lat": 32.518,
+     "lead": null,
+     "lon": 76.231,
+     "section": "pre-monsoon",
+     "start": "2021-04-18",
+     "year": 2021
+    },
+    {
+     "alert": "Green",
+     "end": "2022-01-24",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2022-083",
+     "lat": 33.713,
+     "lead": null,
+     "lon": 71.268,
+     "section": "pre-monsoon",
+     "start": "2022-01-21",
+     "year": 2022
+    },
+    {
+     "alert": "Green",
+     "end": "2022-03-21",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2022-084",
+     "lat": 33.713,
+     "lead": null,
+     "lon": 71.268,
+     "section": "pre-monsoon",
+     "start": "2022-03-17",
+     "year": 2022
+    },
+    {
+     "alert": "Green",
+     "end": "2022-05-09",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2022-085",
+     "lat": 36.277,
+     "lead": null,
+     "lon": 74.725,
+     "section": "pre-monsoon",
+     "start": "2022-05-07",
+     "year": 2022
+    },
+    {
+     "alert": "Green",
+     "end": "2022-05-31",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2022-086",
+     "lat": 32.576,
+     "lead": null,
+     "lon": 75.12,
+     "section": "pre-monsoon",
+     "start": "2022-05-30",
+     "year": 2022
+    },
+    {
+     "alert": "Red",
+     "end": "2022-08-31",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2022-087",
+     "lat": 36.0,
+     "lead": null,
+     "lon": 75.0,
+     "section": "pre-monsoon",
+     "start": "2022-06-14",
+     "year": 2022
+    },
+    {
+     "alert": "Green",
+     "end": "2022-06-20",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2022-088",
+     "lat": 33.713,
+     "lead": null,
+     "lon": 71.268,
+     "section": "pre-monsoon",
+     "start": "2022-06-18",
+     "year": 2022
+    },
+    {
+     "alert": "Green",
+     "end": "2023-04-03",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2023-090",
+     "lat": 33.713,
+     "lead": null,
+     "lon": 71.268,
+     "section": "pre-monsoon",
+     "start": "2023-03-17",
+     "year": 2023
+    },
+    {
+     "alert": "Green",
+     "end": "2023-04-20",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2023-091",
+     "lat": 34.121,
+     "lead": null,
+     "lon": 71.102,
+     "section": "pre-monsoon",
+     "start": "2023-04-18",
+     "year": 2023
+    },
+    {
+     "alert": "Green",
+     "end": "2023-05-07",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2023-092",
+     "lat": 34.443,
+     "lead": null,
+     "lon": 70.656,
+     "section": "pre-monsoon",
+     "start": "2023-05-05",
+     "year": 2023
+    },
+    {
+     "alert": "Green",
+     "end": "2023-06-11",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2023-093",
+     "lat": 33.713,
+     "lead": null,
+     "lon": 71.268,
+     "section": "pre-monsoon",
+     "start": "2023-06-10",
+     "year": 2023
+    },
+    {
+     "alert": "Green",
+     "end": "2023-06-27",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2023-094",
+     "lat": 31.566,
+     "lead": null,
+     "lon": 74.314,
+     "section": "pre-monsoon",
+     "start": "2023-06-26",
+     "year": 2023
+    },
+    {
+     "alert": "Green",
+     "end": "2024-02-19",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2024-100",
+     "lat": 33.713,
+     "lead": null,
+     "lon": 71.268,
+     "section": "pre-monsoon",
+     "start": "2024-02-17",
+     "year": 2024
+    },
+    {
+     "alert": "Green",
+     "end": "2024-03-03",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2024-101",
+     "lat": 33.713,
+     "lead": null,
+     "lon": 71.268,
+     "section": "pre-monsoon",
+     "start": "2024-03-01",
+     "year": 2024
+    },
+    {
+     "alert": "Green",
+     "end": "2024-03-31",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2024-102",
+     "lat": 33.713,
+     "lead": null,
+     "lon": 71.268,
+     "section": "pre-monsoon",
+     "start": "2024-03-29",
+     "year": 2024
+    },
+    {
+     "alert": "Green",
+     "end": "2024-04-14",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2024-103",
+     "lat": 36.063,
+     "lead": null,
+     "lon": 71.866,
+     "section": "pre-monsoon",
+     "start": "2024-04-12",
+     "year": 2024
+    },
+    {
+     "alert": "Green",
+     "end": "2024-05-01",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2024-104",
+     "lat": 33.239,
+     "lead": null,
+     "lon": 75.24,
+     "section": "pre-monsoon",
+     "start": "2024-04-25",
+     "year": 2024
+    },
+    {
+     "alert": "Green",
+     "end": "2024-07-07",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2024-105",
+     "lat": 33.713,
+     "lead": null,
+     "lon": 71.268,
+     "section": "pre-monsoon",
+     "start": "2024-06-24",
+     "year": 2024
+    },
+    {
+     "alert": "Green",
+     "end": "2025-02-28",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2025-109",
+     "lat": 33.713,
+     "lead": null,
+     "lon": 71.268,
+     "section": "pre-monsoon",
+     "start": "2025-02-26",
+     "year": 2025
+    },
+    {
+     "alert": "Green",
+     "end": "2025-03-03",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2025-110",
+     "lat": 32.053,
+     "lead": null,
+     "lon": 77.073,
+     "section": "pre-monsoon",
+     "start": "2025-02-27",
+     "year": 2025
+    },
+    {
+     "alert": "Green",
+     "end": "2025-04-10",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2025-111",
+     "lat": 37.341,
+     "lead": null,
+     "lon": 70.135,
+     "section": "pre-monsoon",
+     "start": "2025-04-08",
+     "year": 2025
+    },
+    {
+     "alert": "Green",
+     "end": "2025-05-05",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2025-112",
+     "lat": 33.116,
+     "lead": null,
+     "lon": 71.095,
+     "section": "pre-monsoon",
+     "start": "2025-05-04",
+     "year": 2025
+    },
+    {
+     "alert": "Green",
+     "end": "2025-07-07",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2025-113",
+     "lat": 34.22,
+     "lead": null,
+     "lon": 70.38,
+     "section": "pre-monsoon",
+     "start": "2025-06-27",
+     "year": 2025
+    },
+    {
+     "alert": "Orange",
+     "end": "2000-08-04",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2000-001",
+     "lat": 31.806,
+     "lead": null,
+     "lon": 77.692,
+     "section": "monsoon",
+     "start": "2000-07-31",
+     "year": 2000
+    },
+    {
+     "alert": "Green",
+     "end": "2001-07-16",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2001-002",
+     "lat": 30.774,
+     "lead": null,
+     "lon": 79.858,
+     "section": "monsoon",
+     "start": "2001-07-16",
+     "year": 2001
+    },
+    {
+     "alert": "Orange",
+     "end": "2001-07-25",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2001-003",
+     "lat": 34.989,
+     "lead": null,
+     "lon": 73.261,
+     "section": "monsoon",
+     "start": "2001-07-22",
+     "year": 2001
+    },
+    {
+     "alert": "Green",
+     "end": "2001-08-15",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2001-004",
+     "lat": 32.606,
+     "lead": null,
+     "lon": 76.148,
+     "section": "monsoon",
+     "start": "2001-08-14",
+     "year": 2001
+    },
+    {
+     "alert": "Green",
+     "end": "2001-08-16",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2001-005",
+     "lat": 30.069,
+     "lead": null,
+     "lon": 70.726,
+     "section": "monsoon",
+     "start": "2001-08-16",
+     "year": 2001
+    },
+    {
+     "alert": "Green",
+     "end": "2002-08-07",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2002-006",
+     "lat": 30.017,
+     "lead": null,
+     "lon": 71.206,
+     "section": "monsoon",
+     "start": "2002-08-03",
+     "year": 2002
+    },
+    {
+     "alert": "Green",
+     "end": "2002-08-08",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2002-007",
+     "lat": 37.266,
+     "lead": null,
+     "lon": 72.022,
+     "section": "monsoon",
+     "start": "2002-08-07",
+     "year": 2002
+    },
+    {
+     "alert": "Green",
+     "end": "2002-08-13",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2002-008",
+     "lat": 30.562,
+     "lead": null,
+     "lon": 78.523,
+     "section": "monsoon",
+     "start": "2002-08-11",
+     "year": 2002
+    },
+    {
+     "alert": "Green",
+     "end": "2002-08-28",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2002-009",
+     "lat": 34.492,
+     "lead": null,
+     "lon": 72.027,
+     "section": "monsoon",
+     "start": "2002-08-22",
+     "year": 2002
+    },
+    {
+     "alert": "Green",
+     "end": "2003-07-30",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2003-012",
+     "lat": 35.842,
+     "lead": null,
+     "lon": 70.588,
+     "section": "monsoon",
+     "start": "2003-07-29",
+     "year": 2003
+    },
+    {
+     "alert": "Green",
+     "end": "2003-09-06",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2003-013",
+     "lat": 35.233,
+     "lead": null,
+     "lon": 72.052,
+     "section": "monsoon",
+     "start": "2003-09-05",
+     "year": 2003
+    },
+    {
+     "alert": "Green",
+     "end": "2003-09-22",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2003-014",
+     "lat": 34.986,
+     "lead": null,
+     "lon": 71.04,
+     "section": "monsoon",
+     "start": "2003-09-19",
+     "year": 2003
+    },
+    {
+     "alert": "Orange",
+     "end": "2005-08-14",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2005-018",
+     "lat": 30.923,
+     "lead": null,
+     "lon": 73.564,
+     "section": "monsoon",
+     "start": "2005-07-05",
+     "year": 2005
+    },
+    {
+     "alert": "Green",
+     "end": "2005-09-12",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2005-019",
+     "lat": 34.931,
+     "lead": null,
+     "lon": 71.085,
+     "section": "monsoon",
+     "start": "2005-09-11",
+     "year": 2005
+    },
+    {
+     "alert": "Green",
+     "end": "2006-07-11",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2006-020",
+     "lat": 35.35,
+     "lead": null,
+     "lon": 72.62,
+     "section": "monsoon",
+     "start": "2006-07-03",
+     "year": 2006
+    },
+    {
+     "alert": "Orange",
+     "end": "2006-07-24",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2006-021",
+     "lat": 34.61,
+     "lead": null,
+     "lon": 73.2,
+     "section": "monsoon",
+     "start": "2006-07-24",
+     "year": 2006
+    },
+    {
+     "alert": "Green",
+     "end": "2006-08-31",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2006-022",
+     "lat": 32.886,
+     "lead": null,
+     "lon": 73.884,
+     "section": "monsoon",
+     "start": "2006-08-31",
+     "year": 2006
+    },
+    {
+     "alert": "Green",
+     "end": "2006-11-10",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2006-023",
+     "lat": 34.22,
+     "lead": null,
+     "lon": 70.791,
+     "section": "monsoon",
+     "start": "2006-11-10",
+     "year": 2006
+    },
+    {
+     "alert": "Green",
+     "end": "2007-08-12",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2007-029",
+     "lat": 31.239,
+     "lead": null,
+     "lon": 76.527,
+     "section": "monsoon",
+     "start": "2007-08-12",
+     "year": 2007
+    },
+    {
+     "alert": "Green",
+     "end": "2007-08-12",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2007-030",
+     "lat": 35.951,
+     "lead": null,
+     "lon": 74.338,
+     "section": "monsoon",
+     "start": "2007-08-12",
+     "year": 2007
+    },
+    {
+     "alert": "Orange",
+     "end": "2008-08-02",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2008-031",
+     "lat": 33.92,
+     "lead": null,
+     "lon": 71.7,
+     "section": "monsoon",
+     "start": "2008-08-02",
+     "year": 2008
+    },
+    {
+     "alert": "Orange",
+     "end": "2008-08-09",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2008-032",
+     "lat": 30.74,
+     "lead": null,
+     "lon": 72.63,
+     "section": "monsoon",
+     "start": "2008-08-09",
+     "year": 2008
+    },
+    {
+     "alert": "Green",
+     "end": "2008-09-22",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2008-033",
+     "lat": 30.521,
+     "lead": null,
+     "lon": 78.938,
+     "section": "monsoon",
+     "start": "2008-09-22",
+     "year": 2008
+    },
+    {
+     "alert": "Green",
+     "end": "2009-08-15",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2009-034",
+     "lat": 33.92,
+     "lead": null,
+     "lon": 72.247,
+     "section": "monsoon",
+     "start": "2009-08-15",
+     "year": 2009
+    },
+    {
+     "alert": "Orange",
+     "end": "2010-07-05",
+     "events": 1,
+     "hit": true,
+     "id": "western-himalaya-2010-037",
+     "lat": 30.189,
+     "lead": {
+      "days": 4,
+      "issued": "2010-07-01",
+      "section": "monsoon"
+     },
+     "lon": 74.778,
+     "section": "monsoon",
+     "start": "2010-07-05",
+     "year": 2010
+    },
+    {
+     "alert": "Red",
+     "end": "2010-07-27",
+     "events": 1,
+     "hit": true,
+     "id": "western-himalaya-2010-038",
+     "lat": 33.363,
+     "lead": {
+      "days": 26,
+      "issued": "2010-07-01",
+      "section": "monsoon"
+     },
+     "lon": 73.257,
+     "section": "monsoon",
+     "start": "2010-07-27",
+     "year": 2010
+    },
+    {
+     "alert": "Orange",
+     "end": "2010-08-06",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2010-039",
+     "lat": 33.526,
+     "lead": null,
+     "lon": 76.125,
+     "section": "monsoon",
+     "start": "2010-08-06",
+     "year": 2010
+    },
+    {
+     "alert": "Green",
+     "end": "2011-08-09",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2011-040",
+     "lat": 35.221,
+     "lead": null,
+     "lon": 70.545,
+     "section": "monsoon",
+     "start": "2011-08-05",
+     "year": 2011
+    },
+    {
+     "alert": "Green",
+     "end": "2012-08-06",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2012-042",
+     "lat": 30.113,
+     "lead": null,
+     "lon": 78.852,
+     "section": "monsoon",
+     "start": "2012-08-04",
+     "year": 2012
+    },
+    {
+     "alert": "Green",
+     "end": "2012-08-29",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2012-043",
+     "lat": 35.03,
+     "lead": null,
+     "lon": 73.522,
+     "section": "monsoon",
+     "start": "2012-08-23",
+     "year": 2012
+    },
+    {
+     "alert": "Green",
+     "end": "2012-09-18",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2012-044",
+     "lat": 31.306,
+     "lead": null,
+     "lon": 76.856,
+     "section": "monsoon",
+     "start": "2012-09-16",
+     "year": 2012
+    },
+    {
+     "alert": "Orange",
+     "end": "2013-08-07",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2013-046",
+     "lat": 32.814,
+     "lead": null,
+     "lon": 70.637,
+     "section": "monsoon",
+     "start": "2013-08-01",
+     "year": 2013
+    },
+    {
+     "alert": "Orange",
+     "end": "2014-10-11",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2014-047",
+     "lat": 33.944,
+     "lead": null,
+     "lon": 75.341,
+     "section": "monsoon",
+     "start": "2014-09-01",
+     "year": 2014
+    },
+    {
+     "alert": "Red",
+     "end": "2015-08-19",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2015-052",
+     "lat": 34.343,
+     "lead": null,
+     "lon": 72.274,
+     "section": "monsoon",
+     "start": "2015-07-15",
+     "year": 2015
+    },
+    {
+     "alert": "Green",
+     "end": "2016-07-06",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2016-054",
+     "lat": 36.104,
+     "lead": null,
+     "lon": 72.793,
+     "section": "monsoon",
+     "start": "2016-07-03",
+     "year": 2016
+    },
+    {
+     "alert": "Green",
+     "end": "2017-07-18",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2017-056",
+     "lat": 37.494,
+     "lead": null,
+     "lon": 72.35,
+     "section": "monsoon",
+     "start": "2017-07-17",
+     "year": 2017
+    },
+    {
+     "alert": "Green",
+     "end": "2017-09-13",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2017-057",
+     "lat": 31.704,
+     "lead": null,
+     "lon": 76.967,
+     "section": "monsoon",
+     "start": "2017-09-13",
+     "year": 2017
+    },
+    {
+     "alert": "Green",
+     "end": "2017-11-06",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2017-058",
+     "lat": 34.673,
+     "lead": null,
+     "lon": 71.22,
+     "section": "monsoon",
+     "start": "2017-11-04",
+     "year": 2017
+    },
+    {
+     "alert": "Green",
+     "end": "2019-07-09",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2019-061",
+     "lat": 36.25,
+     "lead": null,
+     "lon": 72.25,
+     "section": "monsoon",
+     "start": "2019-07-07",
+     "year": 2019
+    },
+    {
+     "alert": "Orange",
+     "end": "2019-07-29",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2019-062",
+     "lat": 33.681,
+     "lead": null,
+     "lon": 70.324,
+     "section": "monsoon",
+     "start": "2019-07-14",
+     "year": 2019
+    },
+    {
+     "alert": "Green",
+     "end": "2019-08-22",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2019-063",
+     "lat": 34.731,
+     "lead": null,
+     "lon": 71.514,
+     "section": "monsoon",
+     "start": "2019-08-14",
+     "year": 2019
+    },
+    {
+     "alert": "Green",
+     "end": "2019-09-30",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2019-064",
+     "lat": 34.911,
+     "lead": null,
+     "lon": 71.812,
+     "section": "monsoon",
+     "start": "2019-09-30",
+     "year": 2019
+    },
+    {
+     "alert": "Green",
+     "end": "2020-07-15",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2020-071",
+     "lat": 35.766,
+     "lead": null,
+     "lon": 71.773,
+     "section": "monsoon",
+     "start": "2020-07-06",
+     "year": 2020
+    },
+    {
+     "alert": "Green",
+     "end": "2020-07-30",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2020-072",
+     "lat": 34.57,
+     "lead": null,
+     "lon": 70.571,
+     "section": "monsoon",
+     "start": "2020-07-30",
+     "year": 2020
+    },
+    {
+     "alert": "Green",
+     "end": "2020-09-01",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2020-073",
+     "lat": 34.745,
+     "lead": null,
+     "lon": 72.356,
+     "section": "monsoon",
+     "start": "2020-08-20",
+     "year": 2020
+    },
+    {
+     "alert": "Green",
+     "end": "2021-07-28",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2021-077",
+     "lat": 33.694,
+     "lead": null,
+     "lon": 72.976,
+     "section": "monsoon",
+     "start": "2021-07-11",
+     "year": 2021
+    },
+    {
+     "alert": "Red",
+     "end": "2021-10-01",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2021-078",
+     "lat": 31.24,
+     "lead": null,
+     "lon": 77.72,
+     "section": "monsoon",
+     "start": "2021-07-24",
+     "year": 2021
+    },
+    {
+     "alert": "Orange",
+     "end": "2021-07-31",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2021-079",
+     "lat": 35.483,
+     "lead": null,
+     "lon": 71.314,
+     "section": "monsoon",
+     "start": "2021-07-28",
+     "year": 2021
+    },
+    {
+     "alert": "Green",
+     "end": "2021-08-24",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2021-080",
+     "lat": 34.054,
+     "lead": null,
+     "lon": 77.432,
+     "section": "monsoon",
+     "start": "2021-08-22",
+     "year": 2021
+    },
+    {
+     "alert": "Green",
+     "end": "2021-09-10",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2021-081",
+     "lat": 34.012,
+     "lead": null,
+     "lon": 71.579,
+     "section": "monsoon",
+     "start": "2021-08-30",
+     "year": 2021
+    },
+    {
+     "alert": "Orange",
+     "end": "2021-10-19",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2021-082",
+     "lat": 30.042,
+     "lead": null,
+     "lon": 79.09,
+     "section": "monsoon",
+     "start": "2021-10-12",
+     "year": 2021
+    },
+    {
+     "alert": "Green",
+     "end": "2022-07-03",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2022-089",
+     "lat": 36.149,
+     "lead": null,
+     "lon": 73.853,
+     "section": "monsoon",
+     "start": "2022-07-01",
+     "year": 2022
+    },
+    {
+     "alert": "Green",
+     "end": "2023-07-08",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2023-095",
+     "lat": 34.957,
+     "lead": null,
+     "lon": 72.848,
+     "section": "monsoon",
+     "start": "2023-07-05",
+     "year": 2023
+    },
+    {
+     "alert": "Orange",
+     "end": "2023-07-10",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2023-096",
+     "lat": 31.817,
+     "lead": null,
+     "lon": 77.349,
+     "section": "monsoon",
+     "start": "2023-07-07",
+     "year": 2023
+    },
+    {
+     "alert": "Green",
+     "end": "2023-08-18",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2023-097",
+     "lat": 31.25,
+     "lead": null,
+     "lon": 75.25,
+     "section": "monsoon",
+     "start": "2023-08-09",
+     "year": 2023
+    },
+    {
+     "alert": "Orange",
+     "end": "2023-08-18",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2023-098",
+     "lat": 31.0,
+     "lead": null,
+     "lon": 72.0,
+     "section": "monsoon",
+     "start": "2023-08-16",
+     "year": 2023
+    },
+    {
+     "alert": "Green",
+     "end": "2023-11-11",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2023-099",
+     "lat": 34.052,
+     "lead": null,
+     "lon": 73.153,
+     "section": "monsoon",
+     "start": "2023-11-09",
+     "year": 2023
+    },
+    {
+     "alert": "Green",
+     "end": "2024-07-17",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2024-106",
+     "lat": 34.868,
+     "lead": null,
+     "lon": 71.13,
+     "section": "monsoon",
+     "start": "2024-07-15",
+     "year": 2024
+    },
+    {
+     "alert": "Green",
+     "end": "2024-08-06",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2024-107",
+     "lat": 36.727,
+     "lead": null,
+     "lon": 71.614,
+     "section": "monsoon",
+     "start": "2024-08-04",
+     "year": 2024
+    },
+    {
+     "alert": "Green",
+     "end": "2024-10-10",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2024-108",
+     "lat": 33.713,
+     "lead": null,
+     "lon": 71.268,
+     "section": "monsoon",
+     "start": "2024-10-07",
+     "year": 2024
+    },
+    {
+     "alert": "Orange",
+     "end": "2025-07-17",
+     "events": 1,
+     "hit": true,
+     "id": "western-himalaya-2025-114",
+     "lat": 33.713,
+     "lead": {
+      "days": 13,
+      "issued": "2025-07-01",
+      "section": "monsoon"
+     },
+     "lon": 71.268,
+     "section": "monsoon",
+     "start": "2025-07-14",
+     "year": 2025
+    },
+    {
+     "alert": "Orange",
+     "end": "2025-08-26",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2025-115",
+     "lat": 34.002,
+     "lead": null,
+     "lon": 71.481,
+     "section": "monsoon",
+     "start": "2025-08-14",
+     "year": 2025
+    },
+    {
+     "alert": "Orange",
+     "end": "2025-10-09",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2025-116",
+     "lat": 31.368,
+     "lead": null,
+     "lon": 76.62,
+     "section": "monsoon",
+     "start": "2025-08-16",
+     "year": 2025
+    },
+    {
+     "alert": "Green",
+     "end": "2025-08-31",
+     "events": 1,
+     "hit": false,
+     "id": "western-himalaya-2025-117",
+     "lat": 34.22,
+     "lead": null,
+     "lon": 70.38,
+     "section": "monsoon",
+     "start": "2025-08-29",
+     "year": 2025
+    }
+   ],
+   "label": "Western Himalaya",
+   "leads": [
+    {
+     "days": 1,
+     "detectedShare": 0.0,
+     "episodes": 117,
+     "hit": 0
+    },
+    {
+     "days": 2,
+     "detectedShare": 0.0,
+     "episodes": 117,
+     "hit": 0
+    },
+    {
+     "days": 3,
+     "detectedShare": 0.0,
+     "episodes": 117,
+     "hit": 0
+    },
+    {
+     "days": 4,
+     "detectedShare": 0.0085,
+     "episodes": 117,
+     "hit": 1
+    },
+    {
+     "days": 5,
+     "detectedShare": 0.0085,
+     "episodes": 117,
+     "hit": 1
+    },
+    {
+     "days": 6,
+     "detectedShare": 0.0085,
+     "episodes": 117,
+     "hit": 1
+    },
+    {
+     "days": 7,
+     "detectedShare": 0.0085,
+     "episodes": 117,
+     "hit": 1
+    },
+    {
+     "days": 8,
+     "detectedShare": 0.0085,
+     "episodes": 117,
+     "hit": 1
+    },
+    {
+     "days": 9,
+     "detectedShare": 0.0085,
+     "episodes": 117,
+     "hit": 1
+    },
+    {
+     "days": 10,
+     "detectedShare": 0.0085,
+     "episodes": 117,
+     "hit": 1
+    },
+    {
+     "days": 11,
+     "detectedShare": 0.0085,
+     "episodes": 117,
+     "hit": 1
+    },
+    {
+     "days": 12,
+     "detectedShare": 0.0085,
+     "episodes": 117,
+     "hit": 1
+    },
+    {
+     "days": 13,
+     "detectedShare": 0.0171,
+     "episodes": 117,
+     "hit": 2
+    },
+    {
+     "days": 14,
+     "detectedShare": 0.0171,
+     "episodes": 117,
+     "hit": 2
+    },
+    {
+     "days": 15,
+     "detectedShare": 0.0171,
+     "episodes": 117,
+     "hit": 2
+    },
+    {
+     "days": 16,
+     "detectedShare": 0.0171,
+     "episodes": 117,
+     "hit": 2
+    },
+    {
+     "days": 17,
+     "detectedShare": 0.0171,
+     "episodes": 117,
+     "hit": 2
+    },
+    {
+     "days": 18,
+     "detectedShare": 0.0171,
+     "episodes": 117,
+     "hit": 2
+    },
+    {
+     "days": 19,
+     "detectedShare": 0.0171,
+     "episodes": 117,
+     "hit": 2
+    },
+    {
+     "days": 20,
+     "detectedShare": 0.0171,
+     "episodes": 117,
+     "hit": 2
+    },
+    {
+     "days": 21,
+     "detectedShare": 0.0171,
+     "episodes": 117,
+     "hit": 2
+    },
+    {
+     "days": 22,
+     "detectedShare": 0.0171,
+     "episodes": 117,
+     "hit": 2
+    },
+    {
+     "days": 23,
+     "detectedShare": 0.0171,
+     "episodes": 117,
+     "hit": 2
+    },
+    {
+     "days": 24,
+     "detectedShare": 0.0171,
+     "episodes": 117,
+     "hit": 2
+    },
+    {
+     "days": 25,
+     "detectedShare": 0.0171,
+     "episodes": 117,
+     "hit": 2
+    },
+    {
+     "days": 26,
+     "detectedShare": 0.0256,
+     "episodes": 117,
+     "hit": 3
+    },
+    {
+     "days": 27,
+     "detectedShare": 0.0256,
+     "episodes": 117,
+     "hit": 3
+    },
+    {
+     "days": 28,
+     "detectedShare": 0.0256,
+     "episodes": 117,
+     "hit": 3
+    },
+    {
+     "days": 29,
+     "detectedShare": 0.0256,
+     "episodes": 117,
+     "hit": 3
+    },
+    {
+     "days": 30,
+     "detectedShare": 0.0256,
+     "episodes": 117,
+     "hit": 3
+    }
+   ],
+   "sections": {
+    "monsoon": {
+     "covers": "July to December",
+     "series": [
+      {
+       "value": 297.6,
+       "year": 1981
+      },
+      {
+       "value": 224.0,
+       "year": 1982
+      },
+      {
+       "value": 322.7,
+       "year": 1983
+      },
+      {
+       "value": 314.5,
+       "year": 1984
+      },
+      {
+       "value": 297.0,
+       "year": 1985
+      },
+      {
+       "value": 305.4,
+       "year": 1986
+      },
+      {
+       "value": 192.4,
+       "year": 1987
+      },
+      {
+       "value": 464.3,
+       "year": 1988
+      },
+      {
+       "value": 306.2,
+       "year": 1989
+      },
+      {
+       "value": 342.5,
+       "year": 1990
+      },
+      {
+       "value": 257.2,
+       "year": 1991
+      },
+      {
+       "value": 366.8,
+       "year": 1992
+      },
+      {
+       "value": 305.5,
+       "year": 1993
+      },
+      {
+       "value": 374.7,
+       "year": 1994
+      },
+      {
+       "value": 415.9,
+       "year": 1995
+      },
+      {
+       "value": 379.2,
+       "year": 1996
+      },
+      {
+       "value": 364.9,
+       "year": 1997
+      },
+      {
+       "value": 317.0,
+       "year": 1998
+      },
+      {
+       "value": 294.8,
+       "year": 1999
+      },
+      {
+       "value": 296.4,
+       "year": 2000
+      },
+      {
+       "value": 285.0,
+       "year": 2001
+      },
+      {
+       "value": 233.9,
+       "year": 2002
+      },
+      {
+       "value": 291.3,
+       "year": 2003
+      },
+      {
+       "value": 260.5,
+       "year": 2004
+      },
+      {
+       "value": 249.8,
+       "year": 2005
+      },
+      {
+       "value": 319.3,
+       "year": 2006
+      },
+      {
+       "value": 297.5,
+       "year": 2007
+      },
+      {
+       "value": 362.7,
+       "year": 2008
+      },
+      {
+       "value": 195.9,
+       "year": 2009
+      },
+      {
+       "value": 449.6,
+       "year": 2010
+      },
+      {
+       "value": 370.2,
+       "year": 2011
+      },
+      {
+       "value": 304.4,
+       "year": 2012
+      },
+      {
+       "value": 384.3,
+       "year": 2013
+      },
+      {
+       "value": 296.3,
+       "year": 2014
+      },
+      {
+       "value": 363.1,
+       "year": 2015
+      },
+      {
+       "value": 286.5,
+       "year": 2016
+      },
+      {
+       "value": 276.6,
+       "year": 2017
+      },
+      {
+       "value": 320.9,
+       "year": 2018
+      },
+      {
+       "value": 277.1,
+       "year": 2019
+      },
+      {
+       "value": 263.3,
+       "year": 2020
+      },
+      {
+       "value": 290.3,
+       "year": 2021
+      },
+      {
+       "value": 390.4,
+       "year": 2022
+      },
+      {
+       "value": 323.7,
+       "year": 2023
+      },
+      {
+       "value": 300.9,
+       "year": 2024
+      },
+      {
+       "value": 421.0,
+       "year": 2025
+      }
+     ],
+     "source": "GPCP v2.3 monthly precipitation (NASA GSFC / NOAA), 2.5\u00b0 grid",
+     "sourceLabel": "Rainfall, monsoon",
+     "unit": "mm",
+     "years": [
+      {
+       "baselineMedian": 314.5,
+       "baselineYears": 19,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 374.7,
+       "value": 296.4,
+       "year": 2000
+      },
+      {
+       "baselineMedian": 314.5,
+       "baselineYears": 20,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 366.8,
+       "value": 285.0,
+       "year": 2001
+      },
+      {
+       "baselineMedian": 306.2,
+       "baselineYears": 21,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 366.8,
+       "value": 233.9,
+       "year": 2002
+      },
+      {
+       "baselineMedian": 306.2,
+       "baselineYears": 22,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 366.8,
+       "value": 291.3,
+       "year": 2003
+      },
+      {
+       "baselineMedian": 305.5,
+       "baselineYears": 23,
+       "event": false,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 366.8,
+       "value": 260.5,
+       "year": 2004
+      },
+      {
+       "baselineMedian": 305.5,
+       "baselineYears": 24,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 366.8,
+       "value": 249.8,
+       "year": 2005
+      },
+      {
+       "baselineMedian": 305.4,
+       "baselineYears": 25,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 364.9,
+       "value": 319.3,
+       "year": 2006
+      },
+      {
+       "baselineMedian": 305.5,
+       "baselineYears": 26,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 364.9,
+       "value": 297.5,
+       "year": 2007
+      },
+      {
+       "baselineMedian": 305.4,
+       "baselineYears": 27,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 364.9,
+       "value": 362.7,
+       "year": 2008
+      },
+      {
+       "baselineMedian": 305.5,
+       "baselineYears": 28,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 364.9,
+       "value": 195.9,
+       "year": 2009
+      },
+      {
+       "baselineMedian": 305.4,
+       "baselineYears": 29,
+       "event": true,
+       "flagged": true,
+       "state": "tested",
+       "threshold": 364.9,
+       "value": 449.6,
+       "year": 2010
+      },
+      {
+       "baselineMedian": 305.5,
+       "baselineYears": 30,
+       "event": true,
+       "flagged": true,
+       "state": "tested",
+       "threshold": 364.9,
+       "value": 370.2,
+       "year": 2011
+      },
+      {
+       "baselineMedian": 305.5,
+       "baselineYears": 31,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 366.8,
+       "value": 304.4,
+       "year": 2012
+      },
+      {
+       "baselineMedian": 305.5,
+       "baselineYears": 32,
+       "event": true,
+       "flagged": true,
+       "state": "tested",
+       "threshold": 366.8,
+       "value": 384.3,
+       "year": 2013
+      },
+      {
+       "baselineMedian": 305.5,
+       "baselineYears": 33,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 370.2,
+       "value": 296.3,
+       "year": 2014
+      },
+      {
+       "baselineMedian": 305.5,
+       "baselineYears": 34,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 370.2,
+       "value": 363.1,
+       "year": 2015
+      },
+      {
+       "baselineMedian": 305.5,
+       "baselineYears": 35,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 366.8,
+       "value": 286.5,
+       "year": 2016
+      },
+      {
+       "baselineMedian": 305.5,
+       "baselineYears": 36,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 366.8,
+       "value": 276.6,
+       "year": 2017
+      },
+      {
+       "baselineMedian": 305.4,
+       "baselineYears": 37,
+       "event": false,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 366.8,
+       "value": 320.9,
+       "year": 2018
+      },
+      {
+       "baselineMedian": 305.5,
+       "baselineYears": 38,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 366.8,
+       "value": 277.1,
+       "year": 2019
+      },
+      {
+       "baselineMedian": 305.4,
+       "baselineYears": 39,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 366.8,
+       "value": 263.3,
+       "year": 2020
+      },
+      {
+       "baselineMedian": 305.4,
+       "baselineYears": 40,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 364.9,
+       "value": 290.3,
+       "year": 2021
+      },
+      {
+       "baselineMedian": 304.4,
+       "baselineYears": 41,
+       "event": true,
+       "flagged": true,
+       "state": "tested",
+       "threshold": 364.9,
+       "value": 390.4,
+       "year": 2022
+      },
+      {
+       "baselineMedian": 305.4,
+       "baselineYears": 42,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 366.8,
+       "value": 323.7,
+       "year": 2023
+      },
+      {
+       "baselineMedian": 305.4,
+       "baselineYears": 43,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 366.8,
+       "value": 300.9,
+       "year": 2024
+      },
+      {
+       "baselineMedian": 305.4,
+       "baselineYears": 44,
+       "event": true,
+       "flagged": true,
+       "state": "tested",
+       "threshold": 366.8,
+       "value": 421.0,
+       "year": 2025
+      }
+     ]
+    },
+    "pre-monsoon": {
+     "covers": "January to June",
+     "series": [
+      {
+       "value": 168.9,
+       "year": 1981
+      },
+      {
+       "value": 234.8,
+       "year": 1982
+      },
+      {
+       "value": 238.1,
+       "year": 1983
+      },
+      {
+       "value": 102.3,
+       "year": 1984
+      },
+      {
+       "value": 84.5,
+       "year": 1985
+      },
+      {
+       "value": 163.0,
+       "year": 1986
+      },
+      {
+       "value": 204.6,
+       "year": 1987
+      },
+      {
+       "value": 164.2,
+       "year": 1988
+      },
+      {
+       "value": 111.4,
+       "year": 1989
+      },
+      {
+       "value": 141.4,
+       "year": 1990
+      },
+      {
+       "value": 186.9,
+       "year": 1991
+      },
+      {
+       "value": 154.4,
+       "year": 1992
+      },
+      {
+       "value": 160.6,
+       "year": 1993
+      },
+      {
+       "value": 117.8,
+       "year": 1994
+      },
+      {
+       "value": 122.9,
+       "year": 1995
+      },
+      {
+       "value": 174.1,
+       "year": 1996
+      },
+      {
+       "value": 165.4,
+       "year": 1997
+      },
+      {
+       "value": 155.5,
+       "year": 1998
+      },
+      {
+       "value": 100.8,
+       "year": 1999
+      },
+      {
+       "value": 59.5,
+       "year": 2000
+      },
+      {
+       "value": 89.2,
+       "year": 2001
+      },
+      {
+       "value": 108.0,
+       "year": 2002
+      },
+      {
+       "value": 151.1,
+       "year": 2003
+      },
+      {
+       "value": 99.3,
+       "year": 2004
+      },
+      {
+       "value": 153.4,
+       "year": 2005
+      },
+      {
+       "value": 103.9,
+       "year": 2006
+      },
+      {
+       "value": 137.2,
+       "year": 2007
+      },
+      {
+       "value": 115.9,
+       "year": 2008
+      },
+      {
+       "value": 128.3,
+       "year": 2009
+      },
+      {
+       "value": 110.3,
+       "year": 2010
+      },
+      {
+       "value": 113.8,
+       "year": 2011
+      },
+      {
+       "value": 121.2,
+       "year": 2012
+      },
+      {
+       "value": 130.1,
+       "year": 2013
+      },
+      {
+       "value": 188.3,
+       "year": 2014
+      },
+      {
+       "value": 231.1,
+       "year": 2015
+      },
+      {
+       "value": 185.2,
+       "year": 2016
+      },
+      {
+       "value": 119.5,
+       "year": 2017
+      },
+      {
+       "value": 142.7,
+       "year": 2018
+      },
+      {
+       "value": 118.8,
+       "year": 2019
+      },
+      {
+       "value": 211.5,
+       "year": 2020
+      },
+      {
+       "value": 148.8,
+       "year": 2021
+      },
+      {
+       "value": 68.3,
+       "year": 2022
+      },
+      {
+       "value": 168.7,
+       "year": 2023
+      },
+      {
+       "value": 162.3,
+       "year": 2024
+      },
+      {
+       "value": 108.4,
+       "year": 2025
+      }
+     ],
+     "source": "GPCP v2.3 monthly precipitation (NASA GSFC / NOAA), 2.5\u00b0 grid",
+     "sourceLabel": "Rainfall, pre-monsoon",
+     "unit": "mm",
+     "years": [
+      {
+       "baselineMedian": 160.6,
+       "baselineYears": 19,
+       "event": false,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 186.9,
+       "value": 59.5,
+       "year": 2000
+      },
+      {
+       "baselineMedian": 160.6,
+       "baselineYears": 20,
+       "event": false,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 174.1,
+       "value": 89.2,
+       "year": 2001
+      },
+      {
+       "baselineMedian": 155.5,
+       "baselineYears": 21,
+       "event": false,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 174.1,
+       "value": 108.0,
+       "year": 2002
+      },
+      {
+       "baselineMedian": 155.5,
+       "baselineYears": 22,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 174.1,
+       "value": 151.1,
+       "year": 2003
+      },
+      {
+       "baselineMedian": 154.4,
+       "baselineYears": 23,
+       "event": false,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 174.1,
+       "value": 99.3,
+       "year": 2004
+      },
+      {
+       "baselineMedian": 154.4,
+       "baselineYears": 24,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 174.1,
+       "value": 153.4,
+       "year": 2005
+      },
+      {
+       "baselineMedian": 153.4,
+       "baselineYears": 25,
+       "event": false,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 168.9,
+       "value": 103.9,
+       "year": 2006
+      },
+      {
+       "baselineMedian": 153.4,
+       "baselineYears": 26,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 168.9,
+       "value": 137.2,
+       "year": 2007
+      },
+      {
+       "baselineMedian": 151.1,
+       "baselineYears": 27,
+       "event": false,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 168.9,
+       "value": 115.9,
+       "year": 2008
+      },
+      {
+       "baselineMedian": 151.1,
+       "baselineYears": 28,
+       "event": false,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 168.9,
+       "value": 128.3,
+       "year": 2009
+      },
+      {
+       "baselineMedian": 141.4,
+       "baselineYears": 29,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 168.9,
+       "value": 110.3,
+       "year": 2010
+      },
+      {
+       "baselineMedian": 141.4,
+       "baselineYears": 30,
+       "event": false,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 165.4,
+       "value": 113.8,
+       "year": 2011
+      },
+      {
+       "baselineMedian": 137.2,
+       "baselineYears": 31,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 165.4,
+       "value": 121.2,
+       "year": 2012
+      },
+      {
+       "baselineMedian": 137.2,
+       "baselineYears": 32,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 165.4,
+       "value": 130.1,
+       "year": 2013
+      },
+      {
+       "baselineMedian": 130.1,
+       "baselineYears": 33,
+       "event": false,
+       "flagged": true,
+       "state": "tested",
+       "threshold": 165.4,
+       "value": 188.3,
+       "year": 2014
+      },
+      {
+       "baselineMedian": 137.2,
+       "baselineYears": 34,
+       "event": true,
+       "flagged": true,
+       "state": "tested",
+       "threshold": 168.9,
+       "value": 231.1,
+       "year": 2015
+      },
+      {
+       "baselineMedian": 137.2,
+       "baselineYears": 35,
+       "event": true,
+       "flagged": true,
+       "state": "tested",
+       "threshold": 168.9,
+       "value": 185.2,
+       "year": 2016
+      },
+      {
+       "baselineMedian": 141.4,
+       "baselineYears": 36,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 174.1,
+       "value": 119.5,
+       "year": 2017
+      },
+      {
+       "baselineMedian": 137.2,
+       "baselineYears": 37,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 174.1,
+       "value": 142.7,
+       "year": 2018
+      },
+      {
+       "baselineMedian": 141.4,
+       "baselineYears": 38,
+       "event": false,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 174.1,
+       "value": 118.8,
+       "year": 2019
+      },
+      {
+       "baselineMedian": 137.2,
+       "baselineYears": 39,
+       "event": true,
+       "flagged": true,
+       "state": "tested",
+       "threshold": 174.1,
+       "value": 211.5,
+       "year": 2020
+      },
+      {
+       "baselineMedian": 141.4,
+       "baselineYears": 40,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 174.1,
+       "value": 148.8,
+       "year": 2021
+      },
+      {
+       "baselineMedian": 141.4,
+       "baselineYears": 41,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 174.1,
+       "value": 68.3,
+       "year": 2022
+      },
+      {
+       "baselineMedian": 141.4,
+       "baselineYears": 42,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 174.1,
+       "value": 168.7,
+       "year": 2023
+      },
+      {
+       "baselineMedian": 141.4,
+       "baselineYears": 43,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 174.1,
+       "value": 162.3,
+       "year": 2024
+      },
+      {
+       "baselineMedian": 142.7,
+       "baselineYears": 44,
+       "event": true,
+       "flagged": false,
+       "state": "tested",
+       "threshold": 174.1,
+       "value": 108.4,
+       "year": 2025
+      }
+     ]
+    }
+   },
+   "tile": "western-himalaya"
+  }
+ ],
+ "rule": "Screens are split into a pre-monsoon (January-June) and a monsoon (July-December) calendar; an episode belongs to the calendar of its start month. A calendar is flagged in a year when its rainfall is at or above the 80th percentile of that calendar's rainfall in every earlier year with a value (at least 8 earlier years). Rainfall is the analysis pipeline's own gridded series, averaged over the tile's cells; the pre-monsoon values are the pipeline's Jan-May totals because no June-only series exists.",
+ "schema": "signals-backtest-v1",
+ "scoringDays": 30,
+ "screens": [
+  {
+   "counts": {
+    "fn": 19,
+    "fp": 0,
+    "tested": 26,
+    "tn": 1,
+    "tp": 6
+   },
+   "details": {
+    "baseRate": {
+     "high": 0.9932,
+     "low": 0.8111,
+     "n": 26,
+     "value": 0.9615
+    },
+    "correctRejectionRate": {
+     "high": 1.0,
+     "low": 0.2065,
+     "n": 1,
+     "value": 1.0
+    },
+    "eventYears": 25,
+    "falseAlarmRate": {
+     "high": 0.7935,
+     "low": 0.0,
+     "n": 1,
+     "value": 0.0
+    },
+    "flags": 6,
+    "fn": 19,
+    "fp": 0,
+    "hitRate": {
+     "high": 0.4343,
+     "low": 0.115,
+     "n": 25,
+     "value": 0.24
+    },
+    "lift": 1.04,
+    "liftExcludesOne": false,
+    "liftInterval": {
+     "high": 1.233,
+     "low": 0.614
+    },
+    "precision": {
+     "high": 1.0,
+     "low": 0.6097,
+     "n": 6,
+     "value": 1.0
+    },
+    "tested": 26,
+    "tn": 1,
+    "tp": 6
+   },
+   "id": "bengal:pre-monsoon",
+   "reliability": [
+    {
+     "band": "below the baseline median",
+     "high": 0.9873,
+     "low": 0.6853,
+     "n": 14,
+     "value": 0.9286
+    },
+    {
+     "band": "median to the 80th percentile",
+     "high": 1.0,
+     "low": 0.6097,
+     "n": 6,
+     "value": 1.0
+    },
+    {
+     "band": "80th percentile or above (flagged)",
+     "high": 1.0,
+     "low": 0.6097,
+     "n": 6,
+     "value": 1.0
+    }
+   ],
+   "section": "pre-monsoon",
+   "tile": "bengal",
+   "tileLabel": "Bengal delta"
+  },
+  {
+   "counts": {
+    "fn": 24,
+    "fp": 0,
+    "tested": 26,
+    "tn": 1,
+    "tp": 1
+   },
+   "details": {
+    "baseRate": {
+     "high": 0.9932,
+     "low": 0.8111,
+     "n": 26,
+     "value": 0.9615
+    },
+    "correctRejectionRate": {
+     "high": 1.0,
+     "low": 0.2065,
+     "n": 1,
+     "value": 1.0
+    },
+    "eventYears": 25,
+    "falseAlarmRate": {
+     "high": 0.7935,
+     "low": 0.0,
+     "n": 1,
+     "value": 0.0
+    },
+    "flags": 1,
+    "fn": 24,
+    "fp": 0,
+    "hitRate": {
+     "high": 0.1954,
+     "low": 0.0071,
+     "n": 25,
+     "value": 0.04
+    },
+    "lift": 1.04,
+    "liftExcludesOne": false,
+    "liftInterval": {
+     "high": 1.233,
+     "low": 0.208
+    },
+    "precision": {
+     "high": 1.0,
+     "low": 0.2065,
+     "n": 1,
+     "value": 1.0
+    },
+    "tested": 26,
+    "tn": 1,
+    "tp": 1
+   },
+   "id": "bengal:monsoon",
+   "reliability": [
+    {
+     "band": "below the baseline median",
+     "high": 0.9889,
+     "low": 0.7167,
+     "n": 16,
+     "value": 0.9375
+    },
+    {
+     "band": "median to the 80th percentile",
+     "high": 1.0,
+     "low": 0.7008,
+     "n": 9,
+     "value": 1.0
+    },
+    {
+     "band": "80th percentile or above (flagged)",
+     "high": 1.0,
+     "low": 0.2065,
+     "n": 1,
+     "value": 1.0
+    }
+   ],
+   "section": "monsoon",
+   "tile": "bengal",
+   "tileLabel": "Bengal delta"
+  },
+  {
+   "counts": {
+    "fn": 8,
+    "fp": 4,
+    "tested": 26,
+    "tn": 9,
+    "tp": 5
+   },
+   "details": {
+    "baseRate": {
+     "high": 0.6794,
+     "low": 0.3206,
+     "n": 26,
+     "value": 0.5
+    },
+    "correctRejectionRate": {
+     "high": 0.8732,
+     "low": 0.4237,
+     "n": 13,
+     "value": 0.6923
+    },
+    "eventYears": 13,
+    "falseAlarmRate": {
+     "high": 0.5763,
+     "low": 0.1268,
+     "n": 13,
+     "value": 0.3077
+    },
+    "flags": 9,
+    "fn": 8,
+    "fp": 4,
+    "hitRate": {
+     "high": 0.6448,
+     "low": 0.1771,
+     "n": 13,
+     "value": 0.3846
+    },
+    "lift": 1.111,
+    "liftExcludesOne": false,
+    "liftInterval": {
+     "high": 2.53,
+     "low": 0.392
+    },
+    "precision": {
+     "high": 0.8112,
+     "low": 0.2666,
+     "n": 9,
+     "value": 0.5556
+    },
+    "tested": 26,
+    "tn": 9,
+    "tp": 5
+   },
+   "id": "indus:pre-monsoon",
+   "reliability": [
+    {
+     "band": "below the baseline median",
+     "high": 0.7848,
+     "low": 0.2152,
+     "n": 8,
+     "value": 0.5
+    },
+    {
+     "band": "median to the 80th percentile",
+     "high": 0.7334,
+     "low": 0.1888,
+     "n": 9,
+     "value": 0.4444
+    },
+    {
+     "band": "80th percentile or above (flagged)",
+     "high": 0.8112,
+     "low": 0.2666,
+     "n": 9,
+     "value": 0.5556
+    }
+   ],
+   "section": "pre-monsoon",
+   "tile": "indus",
+   "tileLabel": "Indus plain"
+  },
+  {
+   "counts": {
+    "fn": 8,
+    "fp": 3,
+    "tested": 26,
+    "tn": 7,
+    "tp": 8
+   },
+   "details": {
+    "baseRate": {
+     "high": 0.7757,
+     "low": 0.4253,
+     "n": 26,
+     "value": 0.6154
+    },
+    "correctRejectionRate": {
+     "high": 0.8922,
+     "low": 0.3968,
+     "n": 10,
+     "value": 0.7
+    },
+    "eventYears": 16,
+    "falseAlarmRate": {
+     "high": 0.6032,
+     "low": 0.1078,
+     "n": 10,
+     "value": 0.3
+    },
+    "flags": 11,
+    "fn": 8,
+    "fp": 3,
+    "hitRate": {
+     "high": 0.72,
+     "low": 0.28,
+     "n": 16,
+     "value": 0.5
+    },
+    "lift": 1.182,
+    "liftExcludesOne": false,
+    "liftInterval": {
+     "high": 2.122,
+     "low": 0.56
+    },
+    "precision": {
+     "high": 0.9025,
+     "low": 0.4343,
+     "n": 11,
+     "value": 0.7273
+    },
+    "tested": 26,
+    "tn": 7,
+    "tp": 8
+   },
+   "id": "indus:monsoon",
+   "reliability": [
+    {
+     "band": "below the baseline median",
+     "high": 0.7,
+     "low": 0.0968,
+     "n": 6,
+     "value": 0.3333
+    },
+    {
+     "band": "median to the 80th percentile",
+     "high": 0.8794,
+     "low": 0.3542,
+     "n": 9,
+     "value": 0.6667
+    },
+    {
+     "band": "80th percentile or above (flagged)",
+     "high": 0.9025,
+     "low": 0.4343,
+     "n": 11,
+     "value": 0.7273
+    }
+   ],
+   "section": "monsoon",
+   "tile": "indus",
+   "tileLabel": "Indus plain"
+  },
+  {
+   "counts": {
+    "fn": 13,
+    "fp": 1,
+    "tested": 26,
+    "tn": 9,
+    "tp": 3
+   },
+   "details": {
+    "baseRate": {
+     "high": 0.7757,
+     "low": 0.4253,
+     "n": 26,
+     "value": 0.6154
+    },
+    "correctRejectionRate": {
+     "high": 0.9821,
+     "low": 0.5958,
+     "n": 10,
+     "value": 0.9
+    },
+    "eventYears": 16,
+    "falseAlarmRate": {
+     "high": 0.4042,
+     "low": 0.0179,
+     "n": 10,
+     "value": 0.1
+    },
+    "flags": 4,
+    "fn": 13,
+    "fp": 1,
+    "hitRate": {
+     "high": 0.4301,
+     "low": 0.0659,
+     "n": 16,
+     "value": 0.1875
+    },
+    "lift": 1.219,
+    "liftExcludesOne": false,
+    "liftInterval": {
+     "high": 2.244,
+     "low": 0.388
+    },
+    "precision": {
+     "high": 0.9544,
+     "low": 0.3006,
+     "n": 4,
+     "value": 0.75
+    },
+    "tested": 26,
+    "tn": 9,
+    "tp": 3
+   },
+   "id": "western-himalaya:pre-monsoon",
+   "reliability": [
+    {
+     "band": "below the baseline median",
+     "high": 0.7097,
+     "low": 0.2903,
+     "n": 18,
+     "value": 0.5
+    },
+    {
+     "band": "median to the 80th percentile",
+     "high": 1.0,
+     "low": 0.5101,
+     "n": 4,
+     "value": 1.0
+    },
+    {
+     "band": "80th percentile or above (flagged)",
+     "high": 0.9544,
+     "low": 0.3006,
+     "n": 4,
+     "value": 0.75
+    }
+   ],
+   "section": "pre-monsoon",
+   "tile": "western-himalaya",
+   "tileLabel": "Western Himalaya"
+  },
+  {
+   "counts": {
+    "fn": 19,
+    "fp": 0,
+    "tested": 26,
+    "tn": 2,
+    "tp": 5
+   },
+   "details": {
+    "baseRate": {
+     "high": 0.9786,
+     "low": 0.7586,
+     "n": 26,
+     "value": 0.9231
+    },
+    "correctRejectionRate": {
+     "high": 1.0,
+     "low": 0.3424,
+     "n": 2,
+     "value": 1.0
+    },
+    "eventYears": 24,
+    "falseAlarmRate": {
+     "high": 0.6576,
+     "low": 0.0,
+     "n": 2,
+     "value": 0.0
+    },
+    "flags": 5,
+    "fn": 19,
+    "fp": 0,
+    "hitRate": {
+     "high": 0.4047,
+     "low": 0.0924,
+     "n": 24,
+     "value": 0.2083
+    },
+    "lift": 1.083,
+    "liftExcludesOne": false,
+    "liftInterval": {
+     "high": 1.318,
+     "low": 0.578
+    },
+    "precision": {
+     "high": 1.0,
+     "low": 0.5655,
+     "n": 5,
+     "value": 1.0
+    },
+    "tested": 26,
+    "tn": 2,
+    "tp": 5
+   },
+   "id": "western-himalaya:monsoon",
+   "reliability": [
+    {
+     "band": "below the baseline median",
+     "high": 0.9889,
+     "low": 0.7167,
+     "n": 16,
+     "value": 0.9375
+    },
+    {
+     "band": "median to the 80th percentile",
+     "high": 0.9638,
+     "low": 0.3755,
+     "n": 5,
+     "value": 0.8
+    },
+    {
+     "band": "80th percentile or above (flagged)",
+     "high": 1.0,
+     "low": 0.5655,
+     "n": 5,
+     "value": 1.0
+    }
+   ],
+   "section": "monsoon",
+   "tile": "western-himalaya",
+   "tileLabel": "Western Himalaya"
+  }
+ ],
+ "sources": {
+  "episodeRule": "Catalogue records inside a tile that start within 10 days of an episode's first record and within 150 km of it join that episode.",
+  "events": "GDACS flood alerts (UN/EU), every alert level, inside the three tiles.",
+  "rain": {
+   "monsoon": "GPCP v2.3 monthly precipitation (NASA GSFC / NOAA), 2.5\u00b0 grid",
+   "note": "The analysis pipeline's own gridded series, averaged over each tile's cells with cos(latitude) weights.",
+   "pre-monsoon": "GPCP v2.3 monthly precipitation (NASA GSFC / NOAA), 2.5\u00b0 grid"
+  }
+ },
+ "tiles": [
+  {
+   "east": 95,
+   "id": "bengal",
+   "label": "Bengal delta",
+   "north": 30,
+   "south": 20,
+   "west": 85
+  },
+  {
+   "east": 75,
+   "id": "indus",
+   "label": "Indus plain",
+   "north": 30,
+   "south": 20,
+   "west": 65
+  },
+  {
+   "east": 80,
+   "id": "western-himalaya",
+   "label": "Western Himalaya",
+   "north": 40,
+   "south": 30,
+   "west": 70
+  }
+ ],
+ "totals": {
+  "episodes": 312
+ },
+ "window": [
+  2000,
+  2025
+ ]
+}

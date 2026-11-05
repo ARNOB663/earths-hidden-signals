@@ -1,136 +1,102 @@
-"""Guard: existing pages are frozen (plan rev. 7b, step 1).
+"""Guard: the seven-page navigation contract, redirects and data budgets.
 
-Diff against the pre-step-1 commit — not against main, which moves when ananda is merged. The
-only existing files that may change are:
-
-  * ``web/src/components/site/SiteNav.tsx``  — added lines inside the ``TABS`` array only
-  * ``web/src/app/methods/page.tsx``         — one appended "Signals" section, no other hunk
-
-Everything else must be a new file in one of the allowed folders. Run from the repo root:
+These tests guard the structure the platform now promises: exactly seven primary pages, permanent
+redirects for every retired route, no internal link pointing at a retired route, and the budgets
+that keep the committed signal files small. Run from the repo root:
 
     python3 -m pytest -q scripts/signals/tests/test_guardrails.py
-
-CI must check out with ``fetch-depth: 0`` or the baseline commit is missing.
 """
 
 from __future__ import annotations
 
-import subprocess
 from pathlib import Path
 
-import pytest
-
-BASELINE = "93812d033fd8c476413c119f11e3bb44ec8cb21d"
 ROOT = Path(__file__).resolve().parents[3]
-
-ALLOWED_NEW_PREFIXES = (
-    "scripts/signals/",
-    "web/src/app/signals/",
-    "web/src/app/watch/",
-    "web/src/app/accuracy/",
-    "web/src/app/about/",
-    "web/src/app/signals/evidence/",
-    "web/src/components/signals/",
-    "web/src/lib/signals/",
-    "web/public/data/signals/",
-    "docs/",
-    ".github/workflows/",
-)
-ALLOWED_NEW_FILES = {".gitignore", "PLAN.md"}
-# Allowed to change as a whole (not frozen): the ignore list, the plan folder, and tsconfig so the
-# node:test files (which must import "./x.ts") can be excluded from Next's type check.
-ALLOWED_MODIFY_PATHS = {".gitignore", "web/tsconfig.json"}
-ALLOWED_MODIFY_PREFIXES = (".kilo/plans/",)
 NAV_FILE = "web/src/components/site/SiteNav.tsx"
-METHODS_FILE = "web/src/app/methods/page.tsx"
-METHODS_MARKER = "Signals"
 
-
-def git(*args: str) -> str:
-    result = subprocess.run(["git", *args], cwd=ROOT, capture_output=True, text=True)
-    if result.returncode != 0:
-        pytest.skip(f"git {args[0]} unavailable: {result.stderr.strip()[:200]}")
-    return result.stdout
-
-
-def changed_paths() -> dict[str, str]:
-    """name-status for everything from the baseline to the working tree (staged + unstaged)."""
-    out: dict[str, str] = {}
-    tracked = git("diff", "--name-status", "--no-renames", BASELINE, "HEAD")
-    for line in tracked.splitlines():
-        if line.strip():
-            status, path = line.split("\t", 1)
-            out[path] = status
-    for line in git("status", "--porcelain", "--untracked-files=all").splitlines():
-        if not line.strip():
-            continue
-        status, path = line[:2].strip(), line[3:]
-        if status == "??":
-            out[path] = "A"
-        elif path not in out:
-            out[path] = "M" if status.startswith("M") else status
-    return out
-
-
-def patch_of(path: str) -> str:
-    return git("diff", BASELINE, "--", path) + git("diff", "--", path)
-
-
-def test_baseline_commit_exists() -> None:
-    assert "commit" in git("cat-file", "-t", BASELINE)
-
-
-def test_no_frozen_page_or_component_changed() -> None:
-    offenders = []
-    for path, status in changed_paths().items():
-        if path in (NAV_FILE, METHODS_FILE):
-            continue
-        if path in ALLOWED_MODIFY_PATHS or path.startswith(ALLOWED_MODIFY_PREFIXES):
-            continue
-        if not path.startswith(ALLOWED_NEW_PREFIXES) and path not in ALLOWED_NEW_FILES:
-            offenders.append(f"{status} {path} (outside allowed folders)")
-    assert not offenders, "Existing files must not change:\n" + "\n".join(offenders)
-
-
-# The nav as shipped. Watch is the /explore map relabelled; /watch and /monitoring keep their
-# routes but no tab. About is the /methods page. Labels are the short `label:` strings in the
-# TABS entries. This list is a product decision, not a refactor target.
+# The shipped navigation contract: exactly these seven pages, in this order. Changing this list is
+# a product decision, not a refactor target. Labels are the short `label:` strings in TABS.
 NAV_TABS = (
     ("/", "Home"),
-    ("/signals", "Signals"),
+    ("/signal", "Signal"),
+    ("/gap", "Gap"),
+    ("/replay", "Replay"),
     ("/accuracy", "Accuracy"),
-    ("/hazards", "Hazards"),
-    ("/trends", "Trends"),
-    ("/explore", "Watch"),
-    ("/methods", "About"),
+    ("/act", "Act"),
+    ("/watch", "Watch"),
 )
-NO_TAB_ROUTES = ("/monitoring", "/watch")
+
+# Routes retired when the seven-page structure landed. Each must redirect, and no internal link may
+# still point at one. `:slug` / `:id` stand for a dynamic segment in next.config.ts.
+RETIRED_ROUTES = (
+    "/trends",
+    "/hazards",
+    "/monitoring",
+    "/locations",
+    "/countries",
+    "/country/:slug",
+    "/location/:id",
+    "/explore",
+    "/findings",
+    "/signals",
+    "/signals/place",
+    "/signals/evidence",
+    "/about",
+)
+# Files that reference a retired route legitimately: the redirect table itself.
+REDIRECT_FILE = ROOT / "web" / "next.config.ts"
 
 
-def test_site_nav_has_exactly_the_planned_tabs() -> None:
+def _nav_block() -> str:
     nav = (ROOT / NAV_FILE).read_text(encoding="utf-8")
-    block = nav[nav.index("export const TABS = [") : nav.index("];", nav.index("export const TABS = ["))]
+    start = nav.index("export const TABS = [")
+    return nav[start : nav.index("];", start)]
+
+
+def test_required_nav_tabs_are_exactly_the_seven_pages() -> None:
+    block = _nav_block()
     entries = [line.strip() for line in block.splitlines() if line.strip().startswith("{ href:")]
     got = [line.split('href: "', 1)[1].split('"', 1)[0] for line in entries]
     assert tuple(got) == tuple(href for href, _ in NAV_TABS), f"Tabs are {got}"
-    for (href, label), entry in zip(NAV_TABS, entries):
+    for (_, label), entry in zip(NAV_TABS, entries):
         assert f'label: "{label}"' in entry, entry
-    for route in NO_TAB_ROUTES:
-        assert f'href: "{route}"' not in block, f"{route} must not be a tab"
-    # Only TABS may change: the rest of the nav is frozen against the baseline commit.
-    changed = [line[1:] for line in patch_of(NAV_FILE).splitlines() if line.startswith(("+", "-")) and line[:3] not in ("+++", "---")]
-    outside = [line for line in changed if '{ href: "' not in line]
-    assert not outside, "Only TABS entries may change in SiteNav.tsx: " + repr(outside[:3])
 
 
-def test_methods_only_gains_the_signals_section() -> None:
-    patch = patch_of(METHODS_FILE)
-    if not patch.strip():
-        return
-    added = [line[1:] for line in patch.splitlines() if line.startswith("+") and not line.startswith("+++")]
-    removed = [line[1:] for line in patch.splitlines() if line.startswith("-") and not line.startswith("---")]
-    assert not removed, "Methods page may only gain its Signals section: removed " + repr(removed[:3])
-    assert any(METHODS_MARKER in line for line in added), "Methods addition must be the Signals section"
+def test_retired_routes_are_not_navigation_tabs() -> None:
+    block = _nav_block()
+    for route in RETIRED_ROUTES:
+        literal = route.replace("/:slug", "").replace("/:id", "")
+        assert f'href: "{literal}"' not in block, f"{route} is retired and must not be a tab"
+
+
+def test_retired_routes_have_permanent_redirects() -> None:
+    config = REDIRECT_FILE.read_text(encoding="utf-8")
+    for route in RETIRED_ROUTES:
+        assert f'source: "{route}"' in config, f"{route} has no redirect in next.config.ts"
+    assert "permanent: true" in config, "retired-route redirects must be permanent (308)"
+
+
+def test_no_internal_links_point_at_retired_routes() -> None:
+    src = ROOT / "web" / "src"
+    offenders = []
+    for path in src.rglob("*.tsx"):
+        text = path.read_text(encoding="utf-8", errors="ignore")
+        for route in RETIRED_ROUTES:
+            if ":" in route:
+                continue  # dynamic segments are only ever patterns in next.config.ts
+            if f'href="{route}"' in text or f'href="{route}/' in text or f'href={{`{route}/' in text:
+                offenders.append(f"{path.relative_to(ROOT)} -> {route}")
+    assert not offenders, "Internal links to retired routes:\n" + "\n".join(offenders)
+
+
+def test_footer_links_target_live_pages_or_external_urls() -> None:
+    layout = (ROOT / "web" / "src" / "app" / "layout.tsx").read_text(encoding="utf-8")
+    for href in ("/methods", "/for-organizations", "/methods#data"):
+        assert f'href="{href}"' in layout, f"footer is missing {href}"
+    assert "https://github.com/" in layout, "footer is missing the GitHub link"
+    for route in ("/methods", "/for-organizations"):
+        page = ROOT / "web" / "src" / "app" / route.strip("/") / "page.tsx"
+        assert page.exists(), f"footer target {route} has no page"
 
 
 def test_baseline_folder_is_allowed_and_budgeted() -> None:

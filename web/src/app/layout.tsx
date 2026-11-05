@@ -2,41 +2,25 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Noto_Sans_Bengali } from "next/font/google";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
-import { TourBar } from "@/components/site/Tour";
 import { ToasterHost } from "@/components/ui/ToasterHost";
 import { Logo, SiteNav } from "@/components/site/SiteNav";
-import { readCountries } from "@/lib/data";
 import { LANG_INIT_SCRIPT, THEME_INIT_SCRIPT } from "@/lib/bootScripts";
 import { T } from "@/lib/i18n";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
+const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
+const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 // Geist has no Bangla letters; this font takes over for Bangla text.
-const notoBengali = Noto_Sans_Bengali({
-  variable: "--font-bn",
-  subsets: ["bengali"],
-  weight: ["400", "500", "600"],
-});
+const notoBengali = Noto_Sans_Bengali({ variable: "--font-bn", subsets: ["bengali"], weight: ["400", "500", "600"] });
 
 export const metadata: Metadata = {
-  // Social previews need absolute image URLs.
   metadataBase: new URL("https://earths-hidden-signals.vercel.app"),
   title: "Earth's Hidden Signals",
   description:
-    "How South Asia's climate is changing, and what it means for floods, landslides and wildfires, told with 45 years of NASA data.",
+    "A climate-hazard intelligence platform for South Asia: what environmental signals are occurring, whether they are unusual, what historical evidence exists, and where the data cannot answer. Observational screening, never a forecast or an official warning.",
   openGraph: {
     title: "Earth's Hidden Signals",
-    description:
-      "How South Asia's climate is changing, told with 45 years of NASA data. NASA Space Apps 2026.",
+    description: "What the rain is doing, what history says, and where the data cannot answer. NASA Space Apps 2026.",
     type: "website",
   },
   twitter: { card: "summary_large_image" },
@@ -49,10 +33,9 @@ export const viewport: Viewport = {
   ],
 };
 
-export default async function RootLayout({ children }: LayoutProps<"/">) {
-  // The navbar country search is server-rendered, so the list must also work without JS.
-  const countries = (await readCountries()).map(({ slug, name, nameBn, flag }) => ({ slug, name, nameBn, flag }));
+const GITHUB = "https://github.com/ARNOB663/earths-hidden-signals";
 
+export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
@@ -60,11 +43,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} ${notoBengali.variable} h-full antialiased`}
     >
       <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: THEME_INIT_SCRIPT + LANG_INIT_SCRIPT,
-          }}
-        />
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT + LANG_INIT_SCRIPT }} />
       </head>
       <body className="flex min-h-full flex-col">
         <a
@@ -73,139 +52,67 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
         >
           <T en="Skip to content" bn="মূল অংশে যান" />
         </a>
-        <SiteNav countries={countries} />
-        <TourBar />
+        <SiteNav />
         <ToasterHost />
         <main id="main" className="flex flex-1 flex-col">
           {children}
         </main>
         <footer className="site-footer">
-          <div className="mx-auto max-w-384 px-6 pb-16 pt-20 sm:px-8 lg:px-12">
-            <div className="grid gap-12 lg:grid-cols-[minmax(0,1.5fr)_minmax(8rem,0.7fr)_minmax(8rem,0.7fr)_minmax(9rem,0.8fr)] lg:gap-10">
+          <div className="mx-auto max-w-384 px-6 pb-14 pt-16 sm:px-8 lg:px-12">
+            <div className="grid gap-10 lg:grid-cols-[minmax(0,1.6fr)_minmax(10rem,0.6fr)_minmax(10rem,0.7fr)]">
               <div className="max-w-md">
                 <div className="flex items-center gap-2.5 text-[19px] font-semibold tracking-tight text-(--footer-fg)">
                   <Logo />
                   <span>Earth&apos;s Hidden Signals</span>
                 </div>
-                <p className="mt-6 max-w-[34ch] text-xl font-medium leading-relaxed text-(--footer-fg-2)">
+                <p className="mt-5 max-w-[36ch] text-lg font-medium leading-relaxed text-(--footer-fg-2)">
                   <T
-                    en="The hidden signal is not the flood. It is the gap in who is watching."
-                    bn="লুকানো সংকেত বন্যা নয়। লুকানো সংকেত হলো কে দেখছে সেই ফাঁকটাই।"
+                    en="Understand what the environment is doing, whether it is unusual, and where the data cannot answer."
+                    bn="পরিবেশ কী করছে, তা অস্বাভাবিক কি না, আর কোথায় তথ্য উত্তর দিতে পারে না — তা বুঝুন।"
                   />
                 </p>
                 <p className="mt-3 text-sm text-(--footer-fg-3)">
-                  <T
-                    en="Preparedness, not prediction."
-                    bn="প্রস্তুতি, পূর্বাভাস নয়।"
-                  />
+                  <T en="Observational screening. Not a forecast, not an official warning." bn="পর্যবেক্ষণভিত্তিক স্ক্রিনিং। পূর্বাভাস নয়, সরকারি সতর্কবার্তা নয়।" />
                 </p>
-                <Link
-                  href="/gap"
-                  className="site-footer-cta mt-7 inline-flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold transition-colors"
-                >
-                  <T en="See the monitoring gap" bn="পর্যবেক্ষণের ফাঁক দেখুন" />
+                <Link href="/signal" className="site-footer-cta mt-6 inline-flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold transition-colors">
+                  <T en="Open the Signal" bn="সংকেত খুলুন" />
                   <ArrowRight size={16} strokeWidth={2} aria-hidden />
                 </Link>
               </div>
 
-              {/* The footer mirrors the header journey: signals, then their context, then the
-                  project itself. Secondary routes stay reachable under "More" rather than
-                  implying a second, parallel information architecture. */}
-              <FooterColumn title="Signals" titleBn="সংকেত">
-                <FooterLink href="/gap" en="The monitoring gap" bn="পর্যবেক্ষণের ফাঁক" />
-                <FooterLink href="/signals" en="Signals map" bn="সংকেত মানচিত্র" />
-                <FooterLink href="/accuracy" en="Evidence and limits" bn="প্রমাণ ও সীমা" />
-              </FooterColumn>
-
-              <FooterColumn title="Context" titleBn="প্রেক্ষাপট">
-                <FooterLink href="/trends" en="Climate trends" bn="জলবায়ুর প্রবণতা" />
-                <FooterLink href="/hazards" en="Disaster risk" bn="দুর্যোগের ঝুঁকি" />
-                <FooterLink href="/explore" en="Satellite map" bn="স্যাটেলাইট মানচিত্র" />
-              </FooterColumn>
-
-              <FooterColumn title="More" titleBn="আরও">
-                <FooterLink href="/findings" en="The story" bn="মূল গল্প" />
-                <FooterLink href="/methods" en="How it works" bn="কীভাবে কাজ করে" />
-                <FooterLink href="/monitoring" en="Data freshness" bn="তথ্যের সতেজতা" />
-                <FooterLink href="/countries" en="Country dashboards" bn="দেশের ড্যাশবোর্ড" />
-                <FooterLink href="/locations" en="Screening reports" bn="স্ক্রিনিং প্রতিবেদন" />
-                <a
-                  href="https://github.com/ARNOB663/earths-hidden-signals"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="site-footer-link inline-flex items-center gap-1.5 text-sm"
-                >
+              <nav aria-labelledby="footer-pages" className="flex flex-col items-start gap-3">
+                <h2 id="footer-pages" className="mb-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-(--footer-fg-3)">
+                  <T en="Pages" bn="পাতা" />
+                </h2>
+                <FooterLink href="/methods" en="Methods" bn="পদ্ধতি" />
+                <FooterLink href="/for-organizations" en="Organizations" bn="প্রতিষ্ঠান" />
+                <FooterLink href="/methods#data" en="Data Sources" bn="তথ্যসূত্র" />
+                <a href={GITHUB} target="_blank" rel="noreferrer" className="site-footer-link inline-flex items-center gap-1.5 text-sm">
                   <T en="GitHub" bn="গিটহাব" />
                   <ArrowUpRight size={14} strokeWidth={2} aria-hidden />
                 </a>
-              </FooterColumn>
-            </div>
+              </nav>
 
-            <div className="mt-14 border-t border-(--footer-line) pt-6">
-              <div className="flex flex-col gap-4 text-xs text-(--footer-fg-3) md:flex-row md:items-center md:justify-between">
-                <p>
-                  <T
-                    en="Built for NASA Space Apps Challenge 2026 using open Earth data."
-                    bn="উন্মুক্ত Earth data দিয়ে NASA Space Apps Challenge 2026-এর জন্য তৈরি।"
-                  />
+              <div className="text-sm text-(--footer-fg-3)">
+                <h2 className="mb-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-(--footer-fg-3)">
+                  <T en="Built with" bn="তৈরি হয়েছে" />
+                </h2>
+                <p className="leading-relaxed">
+                  GISTEMP · GPCP · IMERG · GDACS · FIRMS · GLC · GIBS · geoBoundaries · Open-Meteo · WMO SWIC
                 </p>
-                <p className="max-w-2xl leading-relaxed md:text-right">
-                  DATA FROM{" "}
-                  <a
-                    href="https://data.giss.nasa.gov/gistemp/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="site-footer-link"
-                  >
-                    GISTEMP
-                  </a>{" "}
-                  ·{" "}
-                  <a
-                    href="https://www.ncei.noaa.gov/products/climate-data-records/precipitation-gpcp-monthly"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="site-footer-link"
-                  >
-                    GPCP
-                  </a>{" "}
-                  ·{" "}
-                  <a
-                    href="https://firms.modaps.eosdis.nasa.gov/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="site-footer-link"
-                  >
-                    FIRMS
-                  </a>{" "}
-                  ·{" "}
-                  <a
-                    href="https://data.nasa.gov/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="site-footer-link"
-                  >
-                    GLC
-                  </a>{" "}
-                  ·{" "}
-                  <a
-                    href="https://www.gdacs.org/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="site-footer-link"
-                  >
-                    GDACS
-                  </a>{" "}
-                  ·{" "}
-                  <a
-                    href="https://earthdata.nasa.gov/gibs"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="site-footer-link"
-                  >
-                    GIBS
-                  </a>
+                <p className="mt-4 leading-relaxed">
+                  <T en="NASA Space Apps Challenge 2026. Open data, open methods." bn="NASA Space Apps Challenge 2026। উন্মুক্ত তথ্য, উন্মুক্ত পদ্ধতি।" />
                 </p>
               </div>
+            </div>
+
+            <div className="mt-12 border-t border-(--footer-line) pt-6 text-xs leading-relaxed text-(--footer-fg-3)">
+              <p>
+                <T
+                  en="Official warnings come from national meteorological and disaster agencies. This site helps people understand environmental signals and prepare; it does not replace them."
+                  bn="সরকারি সতর্কবার্তা আসে জাতীয় আবহাওয়া ও দুর্যোগ সংস্থা থেকে। এই সাইট পরিবেশগত সংকেত বুঝতে ও প্রস্তুতি নিতে সাহায্য করে; তাদের বিকল্প নয়।"
+                />
+              </p>
             </div>
           </div>
         </footer>
@@ -214,34 +121,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
   );
 }
 
-function FooterColumn({
-  title,
-  titleBn,
-  children,
-}: {
-  title: string;
-  titleBn: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <div>
-      <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.18em] text-(--footer-fg-3)">
-        <T en={title} bn={titleBn} />
-      </p>
-      <nav className="flex flex-col items-start gap-3">{children}</nav>
-    </div>
-  );
-}
-
-function FooterLink({
-  href,
-  en,
-  bn,
-}: {
-  href: string;
-  en: string;
-  bn: string;
-}) {
+function FooterLink({ href, en, bn }: { href: string; en: string; bn: string }) {
   return (
     <Link href={href} className="site-footer-link text-sm">
       <T en={en} bn={bn} />

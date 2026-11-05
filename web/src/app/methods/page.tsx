@@ -479,17 +479,21 @@ export default async function MethodsPage() {
             sign (more fires with more heat, more landslides with more rain).
           </p>
           <p>
-            Where a relationship is established, the{" "}
+            The relationship work is a research result, not an alerting product.
+            The former{" "}
             <strong className="font-semibold text-ink">
               preparedness signal
             </strong>{" "}
-            compares the latest season with the conditions recorded in past
-            high-event years. A close match is a basis for raising monitoring,
-            staging resources and warning vulnerable districts.{" "}
+            that compared a season with past high-event years was withdrawn: it
+            was never validated against held-out events, so presenting it would
+            have been a prediction without evidence. What the site shows today is
+            only{" "}
             <strong className="font-semibold text-ink">
-              It is not a forecast that a disaster will occur.
+              observational screening
             </strong>{" "}
-            Where no relationship is established, no signal is issued.
+            — the rain against its own history — plus the historical frequency of
+            catalogued floods at that rain level, each with its sample size. It
+            never warns a district to prepare and it is never an official warning.
           </p>
         </Section>
 
@@ -514,20 +518,29 @@ export default async function MethodsPage() {
             .
           </p>
           <p>
-            A signal colour (Green, Yellow, Red) is a raised sample score, not a forecast or an
-            official warning. Coverage is measured from the committed NASA analysis grids: a
-            variable counts for an area when at least half of that variable&apos;s grid cells in the
-            area&apos;s bounding box fall inside its boundary and carry a usable series. Those grids
-            cover South Asia only, so countries outside that extent, and any area whose boundary
-            holds no grid-cell centre, are shown as <strong>No data</strong> — a gap, never a safe
-            area and never a Green. <Link href="/signals" className="underline decoration-line underline-offset-2 hover:text-ink">
-              Open Signals
+            The Signal page no longer uses a green/yellow/red danger scale. Each location instead
+            carries three readable words: a <strong>Coverage state</strong> (Live Signal, Seasonal
+            Context Only, or Can&apos;t Tell Here), a <strong>Watch Level</strong> (not elevated,
+            elevated, high, or can&apos;t tell) and a <strong>Data Trust Grade</strong> (high, medium,
+            low). A calm Watch Level means the rain is not unusual for the date — it never means the
+            place is safe. Coverage is measured from the committed NASA analysis grids: a variable
+            counts for an area when at least half of that variable&apos;s grid cells in the area&apos;s
+            bounding box fall inside its boundary and carry a usable series. Those grids cover South
+            Asia only, so countries outside that extent, and any area whose boundary holds no
+            grid-cell centre, are shown as <strong>Can&apos;t Tell Here</strong> — a gap, never a calm
+            or safe area.{" "}
+            <Link href="/signal" className="underline decoration-line underline-offset-2 hover:text-ink">
+              Open the Signal
             </Link>
           </p>
           <p>
-            <strong>Scores on the Signals page are demo values.</strong> They are fixed sample
-            numbers stored in their own file, not predictions, measurements or alerts, and no model
-            accuracy is claimed. When prediction output exists it replaces that file in place.
+            <strong>The daily rain readings on this site are currently fixed samples.</strong> They
+            are labelled as such wherever they appear, on a fixed clock date, and are not presented
+            as a live observation. The coverage counts, historical case sizes and the Accuracy
+            backtest are computed from real committed datasets; when real IMERG readings replace the
+            sample, the same files carry them and the sample label disappears. No probability,
+            confidence percentage or accuracy score is shown anywhere unless it is computed from
+            those data.
           </p>
           <p id="signals-geography" className="scroll-mt-24">
             <span className="font-medium text-ink">Geographic levels.</span> ADM0 is the country;
@@ -557,7 +570,7 @@ export default async function MethodsPage() {
             <code className="rounded bg-sunken px-1 text-xs">python build_signal_scores.py</code>{" "}
             after <code className="rounded bg-sunken px-1 text-xs">build.py</code>. Both run offline
             from <code className="rounded bg-sunken px-1 text-xs">analysis/raw/</code> and write the
-            committed files; the Signals page always labels the score file as demo.
+            committed files.
           </p>
         </Section>
 
@@ -568,14 +581,17 @@ export default async function MethodsPage() {
             cells whose centre lies inside the area&apos;s boundary (the same containment rule as the
             coverage measurement). <strong className="font-semibold text-ink">Now</strong> is the
             latest IMERG reading for the cell nearest the area&apos;s centre, compared with the same
-            date in past years, with the engine&apos;s own confidence word. A Green place reads
-            &ldquo;No unusual signal in our data. Always follow official warnings.&rdquo; — never
-            &ldquo;safe&rdquo;.
+            date in past years. A location with no elevated Watch Level reads &ldquo;No unusual
+            signal in our data. This is not an all-clear.&rdquo; — never &ldquo;safe&rdquo;. The
+            daily reading is a fixed sample on this site today, and is labelled as such.{" "}
           </p>
           <p>
-            <strong className="font-semibold text-ink">Next</strong> is rain from Open-Meteo, an
-            external public source, labelled as such and never allowed to change a Now status; when
-            the provider is unreachable the strip is omitted rather than extrapolated.{" "}
+            <strong className="font-semibold text-ink">Next</strong> — a 7-day rain outlook from
+            Open-Meteo — is withheld entirely unless it passes the evidence rules on the Accuracy
+            page (a named external forecast, a historical sample of at least 10, backtest lift above
+            1, and a statistical interval that excludes 1). While it fails those rules the site
+            shows &ldquo;Not enough evidence here&rdquo; instead of a forecast, and the outlook can
+            never change a Watch Level.{" "}
             <strong className="font-semibold text-ink">Trust</strong> reuses only the interval above:
             an area is <em>Detectable</em> when the area-mean 95% interval leaves zero in at least
             one variable, a <em>blind spot</em> when none does, and <em>no history</em> when no
@@ -590,7 +606,7 @@ export default async function MethodsPage() {
             offline build stays deterministic and leaves it untouched.
           </p>
           <p>
-            <Link href="/signals/evidence" className="underline decoration-line underline-offset-2 hover:text-ink">
+            <Link href="/accuracy" className="underline decoration-line underline-offset-2 hover:text-ink">
               Trust and evidence
             </Link>{" "}
             shows the replayed flood events (misses included) and the leads we do not measure yet.
@@ -702,32 +718,32 @@ python evaluate.py       # backtest and evaluation metrics`}</code>
           <ul className="mt-3 grid gap-3 sm:grid-cols-2">
             <li>
               <Link
-                href="/trends"
+                href="/replay"
                 className="block rounded-lg border border-line bg-card p-4 transition-colors hover:border-ink-3"
               >
                 <span className="text-sm font-medium text-ink">
-                  <T en="Climate trends" bn="জলবায়ুর প্রবণতা" /> →
+                  <T en="Replay" bn="পুনরাবৃত্তি" /> →
                 </span>
                 <span className="mt-1 block text-sm text-ink-3">
                   <T
-                    en="Maps and tables for every trend described here."
-                    bn="এখানে বর্ণিত প্রতিটি প্রবণতার মানচিত্র ও সারণি।"
+                    en="The historical rain record replayed against catalogued floods."
+                    bn="নথিভুক্ত বন্যার সাথে ঐতিহাসিক বৃষ্টির রেকর্ড পুনরাবৃত্ত।"
                   />
                 </span>
               </Link>
             </li>
             <li>
               <Link
-                href="/hazards"
+                href="/accuracy"
                 className="block rounded-lg border border-line bg-card p-4 transition-colors hover:border-ink-3"
               >
                 <span className="text-sm font-medium text-ink">
-                  <T en="Disaster risk" bn="দুর্যোগের ঝুঁকি" /> →
+                  <T en="Accuracy" bn="নির্ভুলতা" /> →
                 </span>
                 <span className="mt-1 block text-sm text-ink-3">
                   <T
-                    en="Regional hazard records and preparedness signals."
-                    bn="আঞ্চলিক দুর্যোগের তথ্য ও প্রস্তুতি-সংকেত।"
+                    en="The backtest behind the Data Trust Grade, and the tests that failed."
+                    bn="তথ্য-ভরসার গ্রেডের পেছনের ব্যাকটেস্ট, ও যেসব পরীক্ষা ব্যর্থ হয়েছে।"
                   />
                 </span>
               </Link>

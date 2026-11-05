@@ -2,7 +2,6 @@
 
     python3 scripts/signals/build.py --seeded-sample     # deterministic sample, no network
     python3 scripts/signals/build.py --replay-events     # replay JSON for verified GDACS events
-    python3 scripts/signals/build.py --demo              # copy the committed snapshot into demo/
 
 Real runs arrive in step 3b once credentials and the one-day timing are confirmed; until then a
 real build refuses to invent numbers.
@@ -237,8 +236,6 @@ def build_sample(config: dict) -> None:
             rows.append(row)
             red_per_tile[row["tile"]] = red_per_tile.get(row["tile"], 0) + 1
     rows.sort(key=lambda r: (STATUS_RANK.get(r["status"], 3), -(r["day3"] or 0)))
-    writer.write_top(rows)
-    print(f"top signals: {len(rows)} of {len(top)}")
     writer.write_meta(
         {
             "sampleData": True,
@@ -262,20 +259,7 @@ def build_sample(config: dict) -> None:
     import watch as watch_mod
 
     writer.write_watch(watch_mod.summary(watch_mod.read_archive(writer.OUT / "archive")), config)
-    writer.write_demo({"snapshot.json": {"sampleData": True, "clock": clock}}, config)
     print(f"sample build written to {writer.OUT}")
-
-
-def build_demo(config: dict) -> None:
-    files: dict[str, dict] = {}
-    meta = json.loads((writer.OUT / "meta.json").read_text())
-    files["snapshot.json"] = meta
-    for path in (writer.OUT / "grid").glob("*.json"):
-        files[f"grid/{path.name}"] = json.loads(path.read_text())
-    for path in (writer.OUT / "replay").glob("*.json"):
-        files[f"replay/{path.name}"] = json.loads(path.read_text())
-    writer.write_demo(files, config)
-    print(f"demo written: {', '.join(sorted(files))}")
 
 
 def build_replays(config: dict) -> None:
@@ -303,7 +287,6 @@ def build_replays(config: dict) -> None:
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Build signals outputs.")
     parser.add_argument("--seeded-sample", action="store_true", help="deterministic sample build, no network")
-    parser.add_argument("--demo", action="store_true", help="copy committed outputs into demo/")
     parser.add_argument("--replay-events", action="store_true", help="write replay records for verified events")
     args = parser.parse_args(argv)
     config = tiles_mod.load_config()
@@ -311,9 +294,7 @@ def main(argv: list[str] | None = None) -> int:
         build_sample(config)
     if args.replay_events:
         build_replays(config)
-    if args.demo:
-        build_demo(config)
-    if not any((args.seeded_sample, args.demo, args.replay_events)):
+    if not any((args.seeded_sample, args.replay_events)):
         parser.print_help()
     return 0
 
