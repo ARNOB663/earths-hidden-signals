@@ -1,0 +1,140 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "Earth's Hidden Signals, home" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e10]: Earth's Hidden Signals
+      - generic [ref=e11]:
+        - search [ref=e13]:
+          - button "Search countries" [ref=e14]
+          - combobox "Search countries"
+        - radiogroup "Language / ভাষা" [ref=e18]:
+          - radio "English" [checked] [ref=e19]: EN
+          - radio "বাংলা" [ref=e20]: বাং
+        - radiogroup "Colour theme" [ref=e21]:
+          - radio "Match my device" [checked] [ref=e22]
+          - radio "Light" [ref=e25]
+          - radio "Dark" [ref=e32]
+        - button "Open menu" [ref=e35]
+  - region "Notifications alt+T"
+  - main [ref=e37]:
+    - main [ref=e38]:
+      - status [ref=e39]: SAMPLE DATA — the counts below are real; the readings behind them are fixed samples.
+      - generic [ref=e40]:
+        - paragraph [ref=e41]: The monitoring gap
+        - heading "Satellites cover the planet. Decisions happen in districts." [level=1] [ref=e42]
+        - paragraph [ref=e43]: "Most maps show where water goes. This one starts a step earlier: where can Earth observation actually support a decision — and where is nobody watching? Every number below is computed from the files this site ships, not quoted."
+      - region [ref=e44]:
+        - heading "From listed to decision-ready" [level=2] [ref=e45]
+        - list [ref=e46]:
+          - listitem [ref=e47]:
+            - generic [ref=e48]:
+              - generic [ref=e49]: Listed
+              - generic [ref=e50]: 1/3
+            - paragraph [ref=e51]: "231"
+            - paragraph [ref=e52]: countries
+            - paragraph [ref=e53]: "Every country and territory geoBoundaries publishes boundaries for. This is geography, not measurement: a name and a line on a map."
+          - listitem [ref=e54]:
+            - generic [ref=e55]:
+              - generic [ref=e56]: Measured
+              - generic [ref=e57]: 2/3
+            - paragraph [ref=e58]: "6"
+            - paragraph [ref=e59]: countries
+            - paragraph [ref=e60]: Countries whose boundaries overlap the NASA analysis grids (60–100°E, 5–38°N). Here we have a satellite record to compare against.
+          - listitem [ref=e61]:
+            - generic [ref=e62]:
+              - generic [ref=e63]: Decision-ready
+              - generic [ref=e64]: 3/3
+            - paragraph [ref=e65]: "422"
+            - paragraph [ref=e66]: areas
+            - paragraph [ref=e67]: "Administrative areas with a place record: today's rain against its own history, and a Trust label saying whether that history can be checked at all."
+        - paragraph [ref=e68]: That is 2.6% of listed countries measured, and 13% of listed first-level areas reaching a decision-ready record. The fall from 231 countries listed to 422 areas we can actually stand behind is not a failure of the data — it is the finding.
+      - region [ref=e69]:
+        - heading "Inside the covered area, most places still cannot be checked" [level=2] [ref=e70]
+        - paragraph [ref=e71]: Coverage is only the first barrier. The map lists 3,236 first-level and 49,193 second-level administrative areas; 422 of them reach a decision-ready record. And even where we have 45 years of history, a place can be unreadable if no trend in it stands out from year-to-year noise. Trust says which is which.
+        - generic [ref=e72]:
+          - generic [ref=e73]:
+            - term [ref=e74]: Detectable
+            - definition [ref=e75]: "171"
+            - definition [ref=e76]: A trend here is separated from noise, so a raised signal can be checked against history.
+          - generic [ref=e77]:
+            - term [ref=e78]: Blind spot
+            - definition [ref=e79]: "251"
+            - definition [ref=e80]: We have the rain, but no trend here can yet be told apart from noise — so a signal cannot be checked.
+          - generic [ref=e81]:
+            - term [ref=e82]: No history
+            - definition [ref=e83]: "0"
+            - definition [ref=e84]: No gridded history covers the area. It shows No data rather than a colour.
+        - paragraph [ref=e85]: "Of 422 decision-ready areas, 312 carry a live reading today and 251 (59.5%) are blind spots: we can show the rain, but we cannot yet say it is a change."
+      - region [ref=e86]:
+        - heading "Why we map the gap instead of the flood" [level=2] [ref=e87]
+        - paragraph [ref=e88]: "A flood map that looks confident where it has no data is worse than no map: it spends trust it has not earned. So this project reports the two things it can stand behind — where observation exists, and whether a place can be checked — and leaves the decision to people who know the ground."
+        - generic [ref=e89]:
+          - link "See the covered areas" [ref=e90] [cursor=pointer]:
+            - /url: /signals
+          - link "How far the signal can be checked" [ref=e91] [cursor=pointer]:
+            - /url: /accuracy
+      - generic [ref=e92]:
+        - generic [ref=e93]: "Geography: geoBoundaries gbOpen, current release (as served by the geoBoundaries API) · Coverage: A grid cell belongs to the area whose geoBoundaries boundary contains the cell centre. A variable is covered when at least 50% of the variable's cells in the area's bounding box belong to the area and carry a usable series. The NASA analysis grids used here cover South Asia only, so countries outside their extent have no measured coverage and show 'No data'. Coverage is also measured only for ADM0 countries and ADM1 areas; ADM2 polygons are usually smaller than these grids. No weather value is invented for an area that lacks one."
+        - link "Official warnings (WMO SWIC)" [ref=e94] [cursor=pointer]:
+          - /url: https://severeweather.wmo.int/
+        - generic [ref=e95]: Not a forecast or an official warning.
+  - contentinfo [ref=e96]:
+    - generic [ref=e97]:
+      - generic [ref=e98]:
+        - generic [ref=e99]:
+          - generic [ref=e100]: Earth's Hidden Signals
+          - paragraph [ref=e106]: 45 years of Earth data reveal signals we normally cannot see.
+          - paragraph [ref=e107]: Preparedness, not prediction.
+          - link "Explore the map" [ref=e108] [cursor=pointer]:
+            - /url: /explore
+        - generic [ref=e111]:
+          - paragraph [ref=e112]: Explore
+          - navigation [ref=e113]:
+            - link "Monitoring" [ref=e114] [cursor=pointer]:
+              - /url: /monitoring
+            - link "Locations" [ref=e115] [cursor=pointer]:
+              - /url: /locations
+            - link "Satellite map" [ref=e116] [cursor=pointer]:
+              - /url: /explore
+            - link "Climate trends" [ref=e117] [cursor=pointer]:
+              - /url: /trends
+            - link "Disaster risk" [ref=e118] [cursor=pointer]:
+              - /url: /hazards
+            - link "Country dashboards" [ref=e119] [cursor=pointer]:
+              - /url: /countries
+        - generic [ref=e120]:
+          - paragraph [ref=e121]: Project
+          - navigation [ref=e122]:
+            - link "The story" [ref=e123] [cursor=pointer]:
+              - /url: /findings
+            - link "How it works" [ref=e124] [cursor=pointer]:
+              - /url: /methods
+            - link "Classes, alerts and evaluation" [ref=e125] [cursor=pointer]:
+              - /url: /methods#intelligence
+            - link "GitHub" [ref=e126] [cursor=pointer]:
+              - /url: https://github.com/ARNOB663/earths-hidden-signals
+      - generic [ref=e131]:
+        - paragraph [ref=e132]: Built for NASA Space Apps Challenge 2026 using open Earth data.
+        - paragraph [ref=e133]:
+          - text: DATA FROM
+          - link "GISTEMP" [ref=e134] [cursor=pointer]:
+            - /url: https://data.giss.nasa.gov/gistemp/
+          - text: ·
+          - link "GPCP" [ref=e135] [cursor=pointer]:
+            - /url: https://www.ncei.noaa.gov/products/climate-data-records/precipitation-gpcp-monthly
+          - text: ·
+          - link "FIRMS" [ref=e136] [cursor=pointer]:
+            - /url: https://firms.modaps.eosdis.nasa.gov/
+          - text: ·
+          - link "GLC" [ref=e137] [cursor=pointer]:
+            - /url: https://data.nasa.gov/
+          - text: ·
+          - link "GDACS" [ref=e138] [cursor=pointer]:
+            - /url: https://www.gdacs.org/
+          - text: ·
+          - link "GIBS" [ref=e139] [cursor=pointer]:
+            - /url: https://earthdata.nasa.gov/gibs
+  - button "Open Next.js Dev Tools" [ref=e145] [cursor=pointer]
