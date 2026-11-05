@@ -16,6 +16,9 @@ import type { SignalRow } from "@/lib/signals/model";
 import type { SignalMapArea } from "./SignalMap";
 import { CoverageBadge, TrustBadge, WatchBadge } from "./levels";
 
+// A definite height, not a percentage. Leaflet measures its container when the map is created, so
+// the map's own box must have a pixel height the first time it paints; otherwise its canvas is
+// sized against zero and stays blank. Both the loading placeholder and the map share this box.
 const MAP_BOX = "h-[380px] w-full sm:h-[440px]";
 const SignalMap = dynamic(() => import("./SignalMap"), {
   ssr: false,
@@ -126,28 +129,26 @@ export function SignalExplorer({
     [filtered],
   );
   const shown = ordered.slice(0, page);
-  // The map draws the boundaries this set has (ADM1 and the smaller ADM2), capped to the page. A
-  // state already gives its districts their geographic place on the map, so districts whose state
-  // is drawn are not drawn twice; districts of a state that is not drawn get that state's outline
-  // instead, so the map never shows a district floating on an empty base map.
+  // The map draws exactly the boundaries of the rows on the current page (state rings and the
+  // smaller district fills). A filtered page of districts from a state that itself isn't listed
+  // draws that state's ring, so the page's locations never hover over an empty base map.
   const mapAreas = useMemo(() => {
-    const shownIdSet = new Set(shown.map((row) => row.id));
-    const drawnStates = new Set(shown.filter((row) => row.level === "ADM1").map((row) => row.name));
-    const sampleIds = new Set(shown.filter((row) => row.sample).map((row) => row.id));
+    const shownIds = new Set(shown.map((row) => row.id));
+    const states = new Set(shown.filter((row) => row.level === "ADM1").map((row) => row.name.split(" · ")[0]));
+    const byName = new Map(areas.map((area) => [`${area.level}:${area.name}`, area]));
+    const samples = new Set(shown.filter((row) => row.sample).map((row) => row.id));
     const out: SignalMapArea[] = [];
-    const borrowedStates = new Set<string>();
+    const usedStates = new Set<string>();
     for (const area of areas) {
-      if (!shownIdSet.has(area.id)) continue;
-      if (area.level === "ADM2" && drawnStates.has(area.name.split(" · ")[0])) continue;
-      out.push({ ...area, sample: sampleIds.has(area.id) });
+      if (shownIds.has(area.id)) out.push({ ...area, sample: samples.has(area.id) });
     }
-    const byId = new Map(areas.map((area) => [area.id, area]));
     for (const row of shown) {
-      if (row.level === "ADM1" || byId.has(row.id) || drawnStates.has(row.name)) continue;
+      if (row.level === "ADM1") continue;
       const state = row.name.split(" · ")[0];
-      const parent = areas.find((area) => area.level === "ADM1" && area.name === state);
-      if (!parent || borrowedStates.has(parent.id)) continue;
-      borrowedStates.add(parent.id);
+      if (states.has(state) || usedStates.has(state)) continue;
+      const parent = byName.get(`ADM1:${state}`);
+      if (!parent) continue;
+      usedStates.add(state);
       out.push({ ...parent, outlineOf: { id: parent.id, name: parent.name, level: parent.level }, sample: row.sample });
     }
     return out;
@@ -343,14 +344,14 @@ export function SignalExplorer({
         </div>
 
         <div>
-          <div className={MAP_BOX}>
+          <div className={`${MAP_BOX} overflow-hidden rounded-2xl border border-line`}>
             <SignalMap
               areas={mapAreas}
               selected={selected}
               onSelect={(id) => setSelected(id || null)}
               focus={focus}
               home={home?.bounds ?? null}
-              height="h-full"
+              height="h-[380px] sm:h-[440px]"
             />
           </div>
           <p className="mt-1 flex items-center gap-1.5 text-xs text-ink-3">

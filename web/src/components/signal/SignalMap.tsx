@@ -67,13 +67,12 @@ export default function SignalMap({ areas, selected, onSelect, focus, home, heig
   const host = useRef<HTMLDivElement | null>(null);
   const base = useRef<BaseMap | null>(null);
   const layer = useRef<L.LayerGroup | null>(null);
+  const rendererRef = useRef<L.Canvas | null>(null);
   const theme = useTheme();
   const lang = useLang();
   const t = useT();
   const selectRef = useRef(onSelect);
   const latest = useRef({ areas, lang });
-  const homeRef = useRef(home);
-  homeRef.current = home;
 
   useEffect(() => {
     selectRef.current = onSelect;
@@ -81,10 +80,17 @@ export default function SignalMap({ areas, selected, onSelect, focus, home, heig
   }, [areas, lang, onSelect]);
 
   const draw = (list: SignalMapArea[], language: "en" | "bn", current: string | null) => {
-    const group = layer.current;
-    if (!group) return;
-    group.clearLayers();
-    const renderer = createCanvasRenderer({ padding: 0.5, pane: "data" });
+    const base = base.current;
+    if (!base) return;
+    // A fresh group per draw: Leaflet projects a shape's rings when it is added to a map. Reusing
+    // a group whose shapes were projected at an earlier view leaves them measured against that
+    // older view, and they paint outside the canvas.
+    if (layer.current) base.map.removeLayer(layer.current);
+    const group = L.layerGroup().addTo(base.map);
+    layer.current = group;
+    // The map's own renderer, created with the map. A renderer built during render belongs to no
+    // map, so its canvas is never sized or painted.
+    const renderer = rendererRef.current;
     // ADM1 first, so the smaller ADM2 fills sit on top. A district drawn with its parent's
     // outline sinks below every area that has its own boundary, so it never paints over one.
     const ordered = [...list].sort(
@@ -95,7 +101,7 @@ export default function SignalMap({ areas, selected, onSelect, focus, home, heig
       const isSelected = current === area.id;
       const borrowed = area.outlineOf !== undefined;
       const shape = L.polygon(area.rings, {
-        renderer,
+        ...(renderer ? { renderer } : {}),
         pane: "data",
         color: isSelected ? "var(--accent-strong)" : stroke.color,
         dashArray: isSelected ? undefined : stroke.dashArray,
@@ -132,21 +138,29 @@ export default function SignalMap({ areas, selected, onSelect, focus, home, heig
       map = createBaseMap(container, { center: [25, 79], zoom: 4.2 }, theme, "topright");
       base.current = map;
       map.map.attributionControl.addAttribution('Areas &copy; <a href="https://www.geoboundaries.org/">geoBoundaries</a>');
-      layer.current = L.layerGroup().addTo(map.map);
       map.map.on("click", () => selectRef.current?.(""));
-      draw(latest.current.areas, latest.current.lang, null);
-      // Open on where the boundaries are, so the covered region fills the frame rather than a
-      // wide world view. Only the first frame moves; later data changes are drawn in place.
-      if (homeRef.current) {
-        const [[south, west], [north, east]] = homeRef.current;
+      rendererRef.current = createCanvasRenderer({ padding: 0.05, pane: "data" });
+      // Size the canvas and the view first, then draw: Leaflet paints on the next animation frame,
+      // and a resize after the first draw would clear it.
+      if (home) {
+        const [[south, west], [north, east]] = home;
         map.map.fitBounds([[south, west], [north, east]], { padding: [16, 16], maxZoom: 8, animate: false });
       }
+      map.map.invalidateSize({ animate: false });
+
+      // Draw only after the view is final: a path projects its rings against the map's view at
+      // the moment it is added, and Leaflet does not re-project them on the first view reset.
+      // Replacing the group's layers after the moveend guarantees each ring is measured against
+      // the view that is actually on screen.
+      map.map.once("moveend", () => draw(latest.current.areas, latest.current.lang, null));
+      if (!home) draw(latest.current.areas, latest.current.lang, null);
     });
     return () => {
       cancelAnimationFrame(frame);
       map?.dispose();
       base.current = null;
       layer.current = null;
+      rendererRef.current = null;
     };
     // The map is created once; the draw effect handles later data changes.
     // eslint-disable-next-line react-hooks/exhaustive-deps
