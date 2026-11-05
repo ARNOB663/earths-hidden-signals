@@ -12,6 +12,8 @@ export interface MapOutline {
   name: string;
   level: "ADM1" | "ADM2";
   rings: [number, number][][];
+  /** True when the boundary is smaller than the outline resolution and is drawn as one cell. */
+  marker?: boolean;
 }
 
 export interface MapBundle {

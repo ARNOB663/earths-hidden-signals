@@ -70,3 +70,40 @@ def test_bangla_reason_matches_the_engine_numbers(built):
                 assert place._bn(cell["ratio"]) in cell["reasonTextBn"]
                 return
     pytest.skip("no non-green cell in the sample clock")
+
+
+def test_outline_covers_the_whole_boundary_not_its_first_points():
+    """A map ring is the whole boundary: taking the first N points leaves an open slice.
+
+    The Signal map draws these rings, so a truncated ring shows a fragment of a state instead of
+    the state. The sampled ring must span the boundary's full longitude and latitude extent.
+    """
+    from shapely.geometry import box
+
+    # A large square whose first 30 ring points all sit on one edge: the truncation bug this
+    # guards against produced exactly that.
+    square = box(70.0, 10.0, 80.0, 20.0)
+    rings = place._outline(square)
+    assert rings, "no ring produced"
+    ring = rings[0]
+    assert len(ring) <= place.MAP_MAX_POINTS + 1
+    lons = [point[0] for point in ring]
+    lats = [point[1] for point in ring]
+    assert max(lons) - min(lons) >= 9.8, "ring does not span the boundary's longitude"
+    assert max(lats) - min(lats) >= 9.8, "ring does not span the boundary's latitude"
+
+
+def test_every_committed_map_ring_spans_its_boundary():
+    """The committed outlines must be whole boundaries, not the old truncated slices."""
+    index = json.loads((place.SIGNALS / "places-map" / "index.json").read_text())
+    checked = 0
+    for iso in index["countries"]:
+        payload = json.loads((place.SIGNALS / "places-map" / f"{iso}.json").read_text())
+        for area in payload["areas"]:
+            main = max(area["rings"], key=len)
+            lons = [lon for lon, _ in main]
+            lats = [lat for _, lat in main]
+            # A ring that never moves in one axis is a line, which the old 90-point cut produced.
+            assert max(lons) > min(lons) and max(lats) > min(lats), f"{area['id']} ring is degenerate"
+            checked += 1
+    assert checked > 100, f"only {checked} outlines checked"

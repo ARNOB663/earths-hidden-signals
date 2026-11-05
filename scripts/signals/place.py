@@ -403,13 +403,40 @@ def _simplify(geometry):
     return set_precision(geometry, 0.05)
 
 
+def _has_area(ring: list[list[float]]) -> bool:
+    """True when a rounded ring still encloses area: both axes must move by at least 0.1°."""
+    lons = [lon for lon, _ in ring]
+    lats = [lat for _, lat in ring]
+    return max(lons) > min(lons) and max(lats) > min(lats)
+
+
+def _cell_marker(centre: tuple[float, float]) -> list[list[float]]:
+    """A one-grid-cell ring for a boundary smaller than the outline resolution.
+
+    A district narrower than 0.1° rounds to a line, and a line cannot be drawn or clicked. The
+    smallest honest mark is the grid cell the centre falls in, marked on the map as the boundary
+    that could not be drawn rather than as a boundary that exists.
+    """
+    lat, lon = centre
+    south = math.floor(lat * 10) / 10
+    west = math.floor(lon * 10) / 10
+    return [[west, south], [west + 0.1, south], [west + 0.1, south + 0.1], [west, south + 0.1]]
+
+
 def _outline(geometry) -> list[list[list[float]]]:
     geometry = _simplify(geometry)
     rings = []
     polygons = [geometry] if geometry.geom_type == "Polygon" else list(getattr(geometry, "geoms", []))
     for polygon in polygons:
-        exterior = [[round(x, 1), round(y, 1)] for x, y in polygon.exterior.coords[:MAP_MAX_POINTS]]
-        if len(exterior) >= 3:
+        # Sample the whole ring, not its first points: a boundary keeps its shape only when every
+        # side is represented. Rounding to 0.1° first keeps the sampling even.
+        coords = [[round(x, 1), round(y, 1)] for x, y in polygon.exterior.coords]
+        if len(coords) > MAP_MAX_POINTS:
+            step = len(coords) / (MAP_MAX_POINTS - 1)
+            exterior = [coords[int(index * step)] for index in range(MAP_MAX_POINTS - 1)]
+        else:
+            exterior = coords[:-1]
+        if len(exterior) >= 3 and _has_area(exterior):
             rings.append(exterior)
     return rings
 
@@ -434,19 +461,23 @@ def build_map(places: dict) -> None:
                 if item is None or item["level"] != level:
                     continue
                 rings = _outline(geometry)
-                if not rings:
-                    continue
-                outlines.append(
-                    {
-                        "id": area_id,
-                        "name": item["name"],
-                        "level": level,
-                        "status": _row_status(item["now"]["cells"][0]["status"]) if item["now"]["cells"] else "no-data",
-                        "trust": item["trust"]["state"],
-                        "centre": item["centre"],
-                        "rings": rings,
-                    }
-                )
+                # A boundary smaller than the outline resolution still gets a mark, so it stays on
+                # the map as a listed area instead of vanishing from it.
+                marker = not rings
+                if marker:
+                    rings = [_cell_marker(item["centre"])]
+                record = {
+                    "id": area_id,
+                    "name": item["name"],
+                    "level": level,
+                    "status": _row_status(item["now"]["cells"][0]["status"]) if item["now"]["cells"] else "no-data",
+                    "trust": item["trust"]["state"],
+                    "centre": item["centre"],
+                    "rings": rings,
+                }
+                if marker:
+                    record["marker"] = True
+                outlines.append(record)
         if not outlines:
             continue
         # The tile outlines travel with the country so the map can show where coverage ends.

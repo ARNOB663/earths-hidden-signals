@@ -65,14 +65,15 @@ export function createBaseMap(
 
   // Custom panes must also carry leaflet-pane: only .leaflet-pane is positioned absolutely, and a
   // pane without it renders its layer in normal flow at the top of the map.
-  // Trend background (360) sits under this pane (380), which sits under the Esri labels (450).
+  // Trend background (360) sits under this pane (380). Data draws above the Esri labels (450):
+  // a boundary fill is the page's message and must not be dimmed by a name layer.
   const rasterPane = map.createPane("dataRaster");
   rasterPane.classList.add("leaflet-pane");
   rasterPane.style.zIndex = "360";
   rasterPane.style.pointerEvents = "none";
   const dataPane = map.createPane("data");
   dataPane.classList.add("leaflet-pane");
-  dataPane.style.zIndex = "380";
+  dataPane.style.zIndex = "460";
   const refPane = map.createPane("reference");
   refPane.classList.add("leaflet-pane");
   refPane.style.zIndex = "450";

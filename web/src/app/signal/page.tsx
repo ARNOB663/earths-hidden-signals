@@ -20,11 +20,11 @@ export const metadata: Metadata = {
 export default async function SignalPage() {
   const [model, map] = await Promise.all([loadModel(), readMapAreas()]);
   const { rows, brief, counts, sample } = model;
-  const areas: SignalMapArea[] = rows
-    .map((row) => {
-      const outline = map.areas[row.id];
-      if (!outline) return null;
-      return {
+  const areas: SignalMapArea[] = rows.flatMap((row): SignalMapArea[] => {
+    const outline = map.areas[row.id];
+    if (!outline) return [];
+    return [
+      {
         id: row.id,
         name: row.name,
         level: row.level,
@@ -32,9 +32,10 @@ export default async function SignalPage() {
         coverage: row.coverage,
         trust: row.trust,
         rings: outline.rings,
-      };
-    })
-    .filter((area): area is SignalMapArea => area !== null);
+        ...(outline.marker ? { marker: true } : {}),
+      },
+    ];
+  });
 
   // The two worked examples are chosen from the data, never typed in: the one with the largest
   // case set, and the one whose spacing leaves out most of its districts.

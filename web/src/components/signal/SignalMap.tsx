@@ -9,7 +9,7 @@
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { useEffect, useRef } from "react";
-import { createBaseMap, createCanvasRenderer, type BaseMap } from "@/components/map/baseMap";
+import { createBaseMap, type BaseMap } from "@/components/map/baseMap";
 import { T, useLang, useT } from "@/lib/i18n";
 import { useTheme } from "@/lib/theme";
 
@@ -20,11 +20,14 @@ export interface SignalMapArea {
   watch: "none" | "elevated" | "high" | "unknown";
   coverage: "live" | "seasonal" | "cant-tell";
   trust: "high" | "medium" | "low";
+  /** Exterior rings as [lon, lat] pairs, as the pipeline writes them. */
   rings: [number, number][][];
   /** Set when this area has no boundary of its own and is drawn by its parent state's outline. */
   outlineOf?: { id: string; name: string; level: "ADM1" | "ADM2" };
   /** Set when the reading itself is a fixed sample rather than an observation. */
   sample?: boolean;
+  /** Set when the boundary is smaller than the outline resolution and is drawn as one cell. */
+  marker?: boolean;
 }
 
 interface Props {
@@ -67,7 +70,6 @@ export default function SignalMap({ areas, selected, onSelect, focus, home, heig
   const host = useRef<HTMLDivElement | null>(null);
   const base = useRef<BaseMap | null>(null);
   const layer = useRef<L.LayerGroup | null>(null);
-  const rendererRef = useRef<L.Canvas | null>(null);
   const theme = useTheme();
   const lang = useLang();
   const t = useT();
@@ -80,17 +82,13 @@ export default function SignalMap({ areas, selected, onSelect, focus, home, heig
   }, [areas, lang, onSelect]);
 
   const draw = (list: SignalMapArea[], language: "en" | "bn", current: string | null) => {
-    const base = base.current;
-    if (!base) return;
-    // A fresh group per draw: Leaflet projects a shape's rings when it is added to a map. Reusing
-    // a group whose shapes were projected at an earlier view leaves them measured against that
-    // older view, and they paint outside the canvas.
-    if (layer.current) base.map.removeLayer(layer.current);
-    const group = L.layerGroup().addTo(base.map);
+    const map = base.current;
+    if (!map) return;
+    // A fresh group per draw: Leaflet projects a shape's rings when it is added to a map, so a
+    // shape added to a group from an earlier view keeps that view's pixel bounds.
+    layer.current?.remove();
+    const group = L.layerGroup().addTo(map.map);
     layer.current = group;
-    // The map's own renderer, created with the map. A renderer built during render belongs to no
-    // map, so its canvas is never sized or painted.
-    const renderer = rendererRef.current;
     // ADM1 first, so the smaller ADM2 fills sit on top. A district drawn with its parent's
     // outline sinks below every area that has its own boundary, so it never paints over one.
     const ordered = [...list].sort(
@@ -100,15 +98,18 @@ export default function SignalMap({ areas, selected, onSelect, focus, home, heig
       const stroke = STROKE[area.trust];
       const isSelected = current === area.id;
       const borrowed = area.outlineOf !== undefined;
-      const shape = L.polygon(area.rings, {
-        ...(renderer ? { renderer } : {}),
-        pane: "data",
-        color: isSelected ? "var(--accent-strong)" : stroke.color,
-        dashArray: isSelected ? undefined : stroke.dashArray,
-        weight: isSelected ? 2.5 : area.level === "ADM1" ? 1.2 : 0.6,
-        fillColor: FILL[area.watch],
-        fillOpacity: area.coverage === "live" ? (borrowed ? 0.2 : 0.32) : 0.1,
-      });
+      // The pipeline writes [lon, lat]; Leaflet reads [lat, lng]. Swap once, here.
+      const shape = L.polygon(
+        area.rings.map((ring) => ring.map(([lon, lat]) => [lat, lon] as [number, number])),
+        {
+          pane: "data",
+          color: isSelected ? "var(--accent-strong)" : stroke.color,
+          dashArray: isSelected ? undefined : stroke.dashArray,
+          weight: isSelected ? 2.5 : area.level === "ADM1" ? 1 : 0.4,
+          fillColor: FILL[area.watch],
+          fillOpacity: area.coverage === "live" ? (borrowed ? 0.35 : 0.5) : 0.22,
+        },
+      );
       const word = language === "bn" ? WORD[area.watch].bn : WORD[area.watch].en;
       const coverage = language === "bn" ? COVERAGE_WORD[area.coverage].bn : COVERAGE_WORD[area.coverage].en;
       const borrowedNote = !borrowed
@@ -117,7 +118,12 @@ export default function SignalMap({ areas, selected, onSelect, focus, home, heig
           ? ` · সীমানা: ${area.outlineOf!.name} (${area.outlineOf!.level})`
           : ` · outline: ${area.outlineOf!.name} (${area.outlineOf!.level})`;
       const sampleNote = area.sample ? (language === "bn" ? " · নমুনা পাঠ" : " · sample reading") : "";
-      shape.bindTooltip(`${area.name} — ${word} · ${coverage}${borrowedNote}${sampleNote}`, { sticky: true });
+      const markerNote = area.marker
+        ? language === "bn"
+          ? " · সীমানা কোষের চেয়ে ছোট, একটি ঘর হিসেবে দেখানো"
+          : " · boundary smaller than a cell, shown as one cell"
+        : "";
+      shape.bindTooltip(`${area.name} — ${word} · ${coverage}${borrowedNote}${sampleNote}${markerNote}`, { sticky: true });
       shape.on("click", (event) => {
         L.DomEvent.stopPropagation(event);
         selectRef.current?.(area.id);
@@ -139,28 +145,23 @@ export default function SignalMap({ areas, selected, onSelect, focus, home, heig
       base.current = map;
       map.map.attributionControl.addAttribution('Areas &copy; <a href="https://www.geoboundaries.org/">geoBoundaries</a>');
       map.map.on("click", () => selectRef.current?.(""));
-      rendererRef.current = createCanvasRenderer({ padding: 0.05, pane: "data" });
-      // Size the canvas and the view first, then draw: Leaflet paints on the next animation frame,
-      // and a resize after the first draw would clear it.
+      // Size the view first, then draw: a draw before the view is final projects every ring
+      // against a view that is about to change.
       if (home) {
         const [[south, west], [north, east]] = home;
         map.map.fitBounds([[south, west], [north, east]], { padding: [16, 16], maxZoom: 8, animate: false });
       }
       map.map.invalidateSize({ animate: false });
 
-      // Draw only after the view is final: a path projects its rings against the map's view at
-      // the moment it is added, and Leaflet does not re-project them on the first view reset.
-      // Replacing the group's layers after the moveend guarantees each ring is measured against
-      // the view that is actually on screen.
-      map.map.once("moveend", () => draw(latest.current.areas, latest.current.lang, null));
-      if (!home) draw(latest.current.areas, latest.current.lang, null);
+      // Two animation frames: the first lets Leaflet settle the view and size its panes, the
+      // second draws against the view that is on screen.
+      requestAnimationFrame(() => requestAnimationFrame(() => draw(latest.current.areas, latest.current.lang, null)));
     });
     return () => {
       cancelAnimationFrame(frame);
       map?.dispose();
       base.current = null;
       layer.current = null;
-      rendererRef.current = null;
     };
     // The map is created once; the draw effect handles later data changes.
     // eslint-disable-next-line react-hooks/exhaustive-deps

@@ -129,20 +129,23 @@ export function SignalExplorer({
     [filtered],
   );
   const shown = ordered.slice(0, page);
-  // The map draws exactly the boundaries of the rows on the current page (state rings and the
-  // smaller district fills). A filtered page of districts from a state that itself isn't listed
-  // draws that state's ring, so the page's locations never hover over an empty base map.
+  // The map shows every area that passes the filters, not just the rows on the current page: a
+  // page of 40 rows would leave most of the covered region blank and make the map look sparse when
+  // the filters actually match hundreds of areas. Filters still narrow it; paging only shortens the
+  // list.
   const mapAreas = useMemo(() => {
-    const shownIds = new Set(shown.map((row) => row.id));
-    const states = new Set(shown.filter((row) => row.level === "ADM1").map((row) => row.name.split(" · ")[0]));
+    const filteredIds = new Set(filtered.map((row) => row.id));
+    const samples = new Set(filtered.filter((row) => row.sample).map((row) => row.id));
+    const states = new Set(filtered.filter((row) => row.level === "ADM1").map((row) => row.name.split(" · ")[0]));
     const byName = new Map(areas.map((area) => [`${area.level}:${area.name}`, area]));
-    const samples = new Set(shown.filter((row) => row.sample).map((row) => row.id));
     const out: SignalMapArea[] = [];
     const usedStates = new Set<string>();
     for (const area of areas) {
-      if (shownIds.has(area.id)) out.push({ ...area, sample: samples.has(area.id) });
+      if (filteredIds.has(area.id)) out.push({ ...area, sample: samples.has(area.id) });
     }
-    for (const row of shown) {
+    // A filtered set of districts from a state that is not itself listed still gets that state's
+    // ring, so the result never floats on an empty base map.
+    for (const row of filtered) {
       if (row.level === "ADM1") continue;
       const state = row.name.split(" · ")[0];
       if (states.has(state) || usedStates.has(state)) continue;
@@ -152,7 +155,7 @@ export function SignalExplorer({
       out.push({ ...parent, outlineOf: { id: parent.id, name: parent.name, level: parent.level }, sample: row.sample });
     }
     return out;
-  }, [areas, shown]);
+  }, [areas, filtered]);
   const focus = useMemo<[number, number] | null>(() => {
     const row = rows.find((candidate) => candidate.id === selected);
     return row ? row.centre : null;
@@ -357,8 +360,8 @@ export function SignalExplorer({
           <p className="mt-1 flex items-center gap-1.5 text-xs text-ink-3">
             <MapPin size={12} aria-hidden />
             {t(
-              `Coverage: ${rows.length} areas on a ${home ? "map zoomed to their bounds" : "map"} · sample readings are labelled on hover`,
-              `আচ্ছাদন: ${bnNum(rows.length)}টি এলাকা${home ? " তাদের সীমার ভেতরে জুম করা মানচিত্রে" : " মানচিত্রে"} · নমুনা পাঠ হোভারে চিহ্নিত`,
+              `Map: ${mapAreas.length} of ${rows.length} areas shown for the current filters · sample readings are labelled on hover`,
+              `মানচিত্র: বর্তমান ফিল্টারে ${bnNum(rows.length)}টির মধ্যে ${bnNum(mapAreas.length)}টি এলাকা · নমুনা পাঠ হোভারে চিহ্নিত`,
             )}
           </p>
         </div>
