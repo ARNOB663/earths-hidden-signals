@@ -4,16 +4,7 @@
 
 import { readFile } from "node:fs/promises";
 import path from "node:path";
-import type {
-  Alerts,
-  Current,
-  Evaluation,
-  History,
-  IndexEntry,
-  Location,
-  Sources,
-  Thresholds,
-} from "./types";
+import type { Evaluation, Sources, Thresholds } from "./types";
 
 const DIR = path.join(process.cwd(), "public", "data", "intelligence");
 const memo = new Map<string, Promise<unknown>>();
@@ -34,54 +25,6 @@ export function requireKeys(obj: unknown, keys: string[], where: string, nullabl
   const rec = obj as Record<string, unknown>;
   const missing = keys.filter((k) => !(k in rec) || ((rec[k] === null || rec[k] === "") && !nullable.includes(k)));
   if (missing.length) throw new Error(`${where}: missing ${missing.join(", ")}`);
-}
-
-const CONCLUSION_KEYS = ["level", "headline", "situation", "normality", "magnitude", "development", "hazards", "reliability", "actions", "evidenceIds", "thresholdsId"];
-
-function checkLocation(l: Location): Location {
-  requireKeys(l, ["id", "kind", "name", "nameBn", "geography", "conclusion", "hazards", "confidences", "validation", "asOf", "thresholdsId"], `location ${l?.id}`);
-  requireKeys(l.conclusion, CONCLUSION_KEYS, `conclusion ${l.id}`);
-  for (const f of ["headline", "situation", "normality", "magnitude", "development", "reliability"] as const) {
-    requireKeys(l.conclusion[f], ["en", "bn"], `conclusion ${l.id}.${f}`);
-  }
-  requireKeys(l.confidences, ["observation", "anomaly", "hazard", "validation"], `confidences ${l.id}`);
-  requireKeys(l.geography, ["kind", "sourceId", "spatialResolution", "coveragePct", "fallback"], `geography ${l.id}`);
-  return l;
-}
-
-export async function readLocations(): Promise<Location[]> {
-  const data = await read<{ schema: string; locations: Location[] }>("locations.json");
-  requireKeys(data, ["schema", "locations"], "locations.json");
-  return data.locations.map(checkLocation);
-}
-
-export async function readLocation(id: string): Promise<Location | undefined> {
-  return (await readLocations()).find((l) => l.id === id);
-}
-
-export async function readIndex(): Promise<IndexEntry[]> {
-  const data = await read<{ locations: IndexEntry[] }>("index.json");
-  requireKeys(data, ["locations"], "index.json");
-  for (const e of data.locations) requireKeys(e, ["id", "kind", "name", "level", "headline"], `index ${e.id}`);
-  return data.locations;
-}
-
-export async function readCurrent(): Promise<Current> {
-  const data = await read<Current>("current.json");
-  requireKeys(data, ["schema", "asOf", "thresholdsId", "baselineId", "indicators", "composites"], "current.json");
-  return data;
-}
-
-export async function readAlerts(): Promise<Alerts> {
-  const data = await read<Alerts>("alerts.json");
-  requireKeys(data, ["computed", "reconstructed", "official", "asOf"], "alerts.json");
-  return data;
-}
-
-export async function readHistory(): Promise<History> {
-  const data = await read<History>("history.json");
-  requireKeys(data, ["runs", "periods"], "history.json");
-  return data;
 }
 
 export async function readSources(): Promise<Sources> {

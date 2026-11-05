@@ -4,6 +4,8 @@
 import { T } from "@/lib/i18n";
 import type { SignalRow } from "@/lib/signals/model";
 import { ageWords } from "@/lib/signals/model";
+import { FREQUENCY_UNKNOWN, formatFrequency } from "@/lib/signals/level";
+import { bnNum } from "@/lib/bn";
 import { CoverageBadge, TrustBadge, WatchBadge } from "./levels";
 
 export function SignalEvidence({ row }: { row: SignalRow }) {
@@ -113,8 +115,8 @@ export function SignalEvidence({ row }: { row: SignalRow }) {
         {row.frequency.state !== "ok" ? (
           <p className="mt-1 text-sm text-ink-2">
             <T
-              en="Not enough historical evidence to calculate a reliable frequency."
-              bn="নির্ভরযোগ্য ফ্রিকোয়েন্সি গণনার জন্য যথেষ্ট ঐতিহাসিক প্রমাণ নেই।"
+              en={FREQUENCY_UNKNOWN.en}
+              bn={FREQUENCY_UNKNOWN.bn}
             />
             {row.frequency.reason && (
               <span className="mt-1 block text-xs text-ink-3">{row.frequency.reason}</span>
@@ -124,8 +126,8 @@ export function SignalEvidence({ row }: { row: SignalRow }) {
           <>
             <p className="mt-1 text-sm text-ink">
               <T
-                en={`At this rainfall level (${level.mm.toFixed(0)} mm annual rain or more), floods were catalogued in ${level.floods} of ${level.cases} historical cases.`}
-                bn={`এই বৃষ্টির মাত্রায় (বছরে ${level.mm.toFixed(0)} মিমি বা তার বেশি), ${level.cases}টি ঐতিহাসিক ক্ষেত্রে ${level.floods}টিতে বন্যা নথিভুক্ত।`}
+                en={`At this rainfall level (${level.mm.toFixed(0)} mm annual rain or more), floods were catalogued in ${formatFrequency(level).en}.`}
+                bn={`এই বৃষ্টির মাত্রায় (বছরে ${level.mm.toFixed(0)} মিমি বা তার বেশি), ${bnNum(formatFrequency(level).bn)}।`}
               />
             </p>
             <p className="mt-1 text-xs tabular-nums text-ink-2">

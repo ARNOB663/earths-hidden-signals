@@ -12,10 +12,13 @@ import {
 import Link from "next/link";
 import HeroImageSlideshow from "@/components/hero/HeroImageSlideshow";
 import { SignalSearch } from "@/components/signal/SignalSearch";
-import { CoverageBadge, Stat, WatchBadge } from "@/components/signal/levels";
+import { CoverageBadge, CoverageStats, WatchBadge } from "@/components/signal/levels";
+import { SampleNotice } from "@/components/signal/SampleNotice";
 import { T } from "@/lib/i18n";
 import { bnNum } from "@/lib/bn";
+import { FREQUENCY_UNKNOWN, formatFrequency } from "@/lib/signals/level";
 import { loadModel } from "@/lib/signals/model";
+import { Eyebrow } from "@/components/ui/primitive";
 
 export const revalidate = 86400;
 
@@ -121,19 +124,14 @@ export default async function Home() {
 
       <div className="mx-auto w-full max-w-384 px-6 pb-24 sm:px-8 lg:px-12">
         {sample && (
-          <p role="status" className="mt-8 rounded-xl border border-watch bg-watch-soft px-4 py-3 text-sm text-watch">
-            <T
-              en="SAMPLE DATA — the rain readings behind this site are fixed samples, not real observations. Coverage counts and the backtest on /accuracy come from real datasets."
-              bn="নমুনা তথ্য — এই সাইটের পেছনের বৃষ্টির পাঠ স্থির নমুনা, বাস্তব পর্যবেক্ষণ নয়। আচ্ছাদনের সংখ্যা এবং /accuracy-এর ব্যাকটেস্ট বাস্তব তথ্যসেট থেকে।"
-            />
-          </p>
+          <div className="mt-8">
+            <SampleNotice where="behind this site" scope="elsewhere" />
+          </div>
         )}
 
         {/* ── What the platform answers today, in counts ── */}
         <section aria-labelledby="coverage-hdg" className="mt-14">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-            <T en="Coverage at a glance" bn="এক নজরে আচ্ছাদন" />
-          </p>
+          <Eyebrow en="Coverage at a glance" bn="এক নজরে আচ্ছাদন" />
           <h2 id="coverage-hdg" className="mt-2 text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
             <T en="What we can answer, and what we cannot" bn="আমরা কী উত্তর দিতে পারি, আর কী পারি না" />
           </h2>
@@ -144,43 +142,14 @@ export default async function Home() {
             />
           </p>
           <dl className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
-            <Stat
-              label="Covered locations"
-              labelBn="আচ্ছাদিত স্থান"
-              value={counts.places.toLocaleString("en")}
-              hint={`${counts.countries} countries`}
-              hintBn={`${bnNum(counts.countries)} দেশ`}
-            />
-            <Stat
-              label="Live Signal"
-              labelBn="সরাসরি সংকেত"
-              value={counts.live.toLocaleString("en")}
-              hint="current rain observation"
-              hintBn="সাম্প্রতিক বৃষ্টি-পর্যবেক্ষণ"
-            />
-            <Stat
-              label="Seasonal Context Only"
-              labelBn="কেবল মৌসুমি প্রেক্ষাপট"
-              value={counts.seasonal.toLocaleString("en")}
-              hint="no current reading"
-              hintBn="সাম্প্রতিক পাঠ নেই"
-            />
-            <Stat
-              label="Can’t Tell Here"
-              labelBn="এখানে বলা সম্ভব নয়"
-              value={counts.cantTell.toLocaleString("en")}
-              hint="missing, sparse or stale data"
-              hintBn="অনুপস্থিত, বিরল বা পুরোনো তথ্য"
-            />
+            <CoverageStats counts={counts} placesLabel="Covered locations" placesLabelBn="আচ্ছাদিত স্থান" />
           </dl>
         </section>
 
         {/* ── A worked example, read from the data ── */}
         {example && (
           <section aria-labelledby="example-hdg" className="mt-14">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-              <T en="What one signal says" bn="একটি সংকেত কী বলে" />
-            </p>
+            <Eyebrow en="What one signal says" bn="একটি সংকেত কী বলে" />
             <h2 id="example-hdg" className="mt-2 text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
               {example.name}, {example.countryName}
             </h2>
@@ -192,13 +161,12 @@ export default async function Home() {
               <T
                 en={`The nearest satellite cell recorded ${example.rain.day1?.toFixed(1) ?? "–"} mm of rain, ${example.ratio?.toFixed(1) ?? "–"}× the usual amount for this date in its own record${example.percentile !== null ? `, at the ${example.percentile.toFixed(0)}th percentile` : ""}. Observed ${example.observed?.slice(0, 10) ?? "–"}. ${
                   example.frequency.state === "ok" && example.frequency.level
-                    ? `At or above this rainfall level, floods were catalogued in ${example.frequency.level.floods} of ${example.frequency.level.cases} historical cases (95% interval ${(example.frequency.level.low * 100).toFixed(0)}–${(example.frequency.level.high * 100).toFixed(0)}%).`
-                    : "Not enough historical evidence to calculate a reliable frequency here."
+                    ? `At or above this rainfall level, floods were catalogued in ${formatFrequency(example.frequency.level).en}.`
+                    : FREQUENCY_UNKNOWN.en
                 }`}
                 bn={`নিকটতম স্যাটেলাইট-কোষে বৃষ্টি হয়েছে ${bnNum(example.rain.day1?.toFixed(1) ?? "–")} মিমি, যা এই তারিখের নিজস্ব রেকর্ডে স্বাভাবিকের ${bnNum(example.ratio?.toFixed(1) ?? "–")} গুণ${example.percentile !== null ? `, ${bnNum(example.percentile.toFixed(0))}তম শতকাংশে` : ""}। পর্যবেক্ষণ ${example.observed?.slice(0, 10) ?? "–"}। ${
                   example.frequency.state === "ok" && example.frequency.level
-                    ? `এই মাত্রার বৃষ্টিতে ${bnNum(example.frequency.level.cases)}টি ঐতিহাসিক ক্ষেত্রে ${bnNum(example.frequency.level.floods)}টিতে বন্যা নথিভুক্ত (৯৫% ব্যবধান ${bnNum((example.frequency.level.low * 100).toFixed(0))}–${bnNum((example.frequency.level.high * 100).toFixed(0))}%)।`
-                    : "নির্ভরযোগ্য ফ্রিকোয়েন্সি গণনার জন্য যথেষ্ট ঐতিহাসিক প্রমাণ নেই।"
+                    ? `এই মাত্রার বৃষ্টিতে ${bnNum(formatFrequency(example.frequency.level).bn)}।`                    : FREQUENCY_UNKNOWN.bn
                 }`}
               />
             </p>
@@ -214,9 +182,7 @@ export default async function Home() {
 
         {/* ── How it works: the three steps, same words the Signal page uses ── */}
         <section aria-labelledby="how-hdg" className="mt-14">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-            <T en="Method" bn="পদ্ধতি" />
-          </p>
+          <Eyebrow en="Method" bn="পদ্ধতি" />
           <h2 id="how-hdg" className="mt-2 text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
             <T en="How a signal is made" bn="সংকেত কীভাবে তৈরি হয়" />
           </h2>

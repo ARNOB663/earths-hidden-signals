@@ -8,6 +8,7 @@ import { Check, Copy } from "lucide-react";
 import { useRef, useState } from "react";
 import { T, useT } from "@/lib/i18n";
 import type { SignalRow } from "@/lib/signals/model";
+import { formatFrequency } from "@/lib/signals/level";
 
 export function ShareCard({ row }: { row: SignalRow }) {
   const t = useT();
@@ -25,7 +26,7 @@ export function ShareCard({ row }: { row: SignalRow }) {
         : "Observed: no current reading",
     `${levelWord}`,
     `Data Trust Grade: ${row.trust === "high" ? "High" : row.trust === "medium" ? "Medium" : "Low"}`,
-    level ? `Historical frequency: floods in ${level.floods} of ${level.cases} years at ≥${level.mm.toFixed(0)} mm (95% ${(level.low * 100).toFixed(0)}–${(level.high * 100).toFixed(0)}%)` : "Historical frequency: not enough historical evidence",
+    level ? `Historical frequency at ≥${level.mm.toFixed(0)} mm: ${formatFrequency(level).en}` : "Historical frequency: not enough historical evidence",
     "Observational screening. Not a forecast. Not an official warning.",
   ].filter(Boolean);
 

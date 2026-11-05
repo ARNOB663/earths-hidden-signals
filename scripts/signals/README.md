@@ -1,8 +1,17 @@
 # Signals pipeline — catalogue and how to run it
 
-Status: **step 1 of 11** (plan rev. 7b, `.kilo/plans/1793705663794-signals-plan.md`).
-Nothing here produces data yet. This file is the catalogue of record: every source, its tier,
-auth, expected latency, failure mode and the date it was last checked.
+Status: **shipped.** The pipeline builds `web/public/data/signals/` (places, areas, coverage,
+frequency, backtest, accuracy, provenance) that power `/signal`, `/accuracy`, `/gap`, `/replay`,
+`/act` and `/watch`. Run it from this directory with `python build.py` (see the root `AGENTS.md` for
+the full order and the determinism gates); `python -m pytest -q tests` runs the guardrail and
+inventory tests.
+
+Daily rain readings are currently **fixed samples** (`sample: true`, `meta.json` → `"basis":
+"sample"`), not live IMERG observations. Coverage counts, historical case sizes and the backtest are
+computed from real datasets.
+
+This file is the catalogue of record: every source, its tier, auth, expected latency, failure mode
+and the date it was last checked.
 
 Spike state on 2026-11-03:
 
@@ -34,7 +43,7 @@ Spike state on 2026-11-03:
 | A7 | GDACS — the **only working historical** catalogue | replay/backtest events | https://www.gdacs.org/gdacsapi/api/events/geteventlist/SEARCH | none | ~1 day | non-JSON for wide windows → query in ≤ 3-month chunks, retry once | 2026-11-03 [V] |
 | A7b | WMO SWIC | one official-warning link | https://severeweather.wmo.int/ | none | — | link-out only | 2026-11-03 [V] |
 | A7c | Open-Meteo geocoding | submit-only place search | https://geocoding-api.open-meteo.com/v1/search | none | — | no match → coordinates only; CC-BY 4.0 attribution | 2026-11-03 [V] |
-| A7d | Open-Meteo forecast | **7-day outlook, external, never in the status** | https://api.open-meteo.com/v1/forecast | none | hourly model | unavailable → outlook omitted, `/accuracy` says so | [M] verify in step 2 |
+| A7d | Open-Meteo forecast | **7-day outlook, external, never in the status** | https://api.open-meteo.com/v1/forecast | none | hourly model | unavailable → outlook omitted, `/accuracy` says so | verified |
 
 ### Tier B — probe only, adopt only with approval
 

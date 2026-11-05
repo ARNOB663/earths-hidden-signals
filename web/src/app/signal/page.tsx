@@ -6,8 +6,11 @@ import { bnNum } from "@/lib/bn";
 import { loadModel } from "@/lib/signals/model";
 import type { SignalMapArea } from "@/components/signal/SignalMap";
 import { SignalExplorer } from "@/components/signal/SignalExplorer";
-import { CoverageBadge, Stat, WatchBadge } from "@/components/signal/levels";
+import { CoverageBadge, CoverageStats, WatchBadge } from "@/components/signal/levels";
+import { SampleNotice } from "@/components/signal/SampleNotice";
+import { formatFrequency } from "@/lib/signals/level";
 import { readMapAreas } from "@/lib/signals/map";
+import { Eyebrow } from "@/components/ui/primitive";
 
 export const revalidate = 86400;
 
@@ -76,9 +79,7 @@ export default async function SignalPage() {
   return (
     <main className="mx-auto w-full max-w-5xl px-4 pb-16 pt-6 sm:px-6">
       <header>
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-          <T en="Signal Watch" bn="সংকেত পর্যবেক্ষণ" />
-        </p>
+        <Eyebrow en="Signal Watch" bn="সংকেত পর্যবেক্ষণ" />
         <h1 className="mt-2 text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
           <T en="Is today normal here?" bn="আজ এখানে কি স্বাভাবিক?" />
         </h1>
@@ -110,31 +111,13 @@ export default async function SignalPage() {
       </header>
 
       {sample && (
-        <p role="status" className="mt-4 rounded-xl border border-watch bg-watch-soft px-4 py-2 text-sm text-watch">
-          <T
-            en="SAMPLE DATA — the rain readings behind this page are fixed samples, not real observations. Coverage counts, historical case sizes and the backtest on /accuracy come from real datasets."
-            bn="নমুনা তথ্য — এই পাতার বৃষ্টির পাঠ স্থির নমুনা, বাস্তব পর্যবেক্ষণ নয়। আচ্ছাদনের সংখ্যা, ঐতিহাসিক নমুনার আকার এবং /accuracy-এর ব্যাকটেস্ট বাস্তব তথ্যসেট থেকে।"
-          />
-        </p>
+        <div className="mt-4">
+          <SampleNotice where="behind this page" scope="elsewhere" />
+        </div>
       )}
 
       <dl className="mt-5 grid grid-cols-2 gap-2 sm:grid-cols-4">
-        <Stat label="Locations" labelBn="স্থান" value={counts.places.toLocaleString("en")} hint={`${counts.countries} countries`} hintBn={`${bnNum(counts.countries)} দেশ`} />
-        <Stat label="Live Signal" labelBn="সরাসরি সংকেত" value={counts.live.toLocaleString("en")} hint="current rain observation" hintBn="সাম্প্রতিক বৃষ্টি-পর্যবেক্ষণ" />
-        <Stat
-          label="Seasonal Context Only"
-          labelBn="কেবল মৌসুমি প্রেক্ষাপট"
-          value={counts.seasonal.toLocaleString("en")}
-          hint="no current reading"
-          hintBn="সাম্প্রতিক পাঠ নেই"
-        />
-        <Stat
-          label="Can’t Tell Here"
-          labelBn="এখানে বলা সম্ভব নয়"
-          value={counts.cantTell.toLocaleString("en")}
-          hint="missing, sparse or stale data"
-          hintBn="অনুপস্থিত, বিরল বা পুরোনো তথ্য"
-        />
+        <CoverageStats counts={counts} placesLabel="Locations" placesLabelBn="স্থান" />
       </dl>
 
       <section aria-labelledby="coverage-by-country" className="mt-6">
@@ -246,8 +229,8 @@ export default async function SignalPage() {
               </div>
               <p className="mt-2 text-sm leading-relaxed text-ink-2">
                 <T
-                  en={`${exemplar.frequency.counts.cases} years have both a rain total and a catalogue query. At or above ${exemplar.frequency.level?.mm ?? "–"} mm of annual rain, floods were catalogued in ${exemplar.frequency.level?.floods ?? "–"} of those ${exemplar.frequency.level?.cases ?? "–"} years (95% interval ${((exemplar.frequency.level?.low ?? 0) * 100).toFixed(0)}–${((exemplar.frequency.level?.high ?? 0) * 100).toFixed(0)}%).`}
-                  bn={`${bnNum(exemplar.frequency.counts.cases)} বছরে বৃষ্টির মোট ও ক্যাটালগ-অনুসন্ধান দুটোই আছে। বছরে ${exemplar.frequency.level?.mm ?? "–"} মিমি বা তার বেশি বৃষ্টিতে ${exemplar.frequency.level?.cases ?? "–"} বছরের মধ্যে ${exemplar.frequency.level?.floods ?? "–"}টিতে বন্যা নথিভুক্ত (৯৫% ব্যবধান ${((exemplar.frequency.level?.low ?? 0) * 100).toFixed(0)}–${((exemplar.frequency.level?.high ?? 0) * 100).toFixed(0)}%)।`}
+                  en={`${exemplar.frequency.counts.cases} years have both a rain total and a catalogue query. At or above ${exemplar.frequency.level?.mm ?? "–"} mm of annual rain, floods were catalogued in ${exemplar.frequency.level ? formatFrequency(exemplar.frequency.level).en : "no intervals"}.`}
+                  bn={`${bnNum(exemplar.frequency.counts.cases)} বছরে বৃষ্টির মোট ও ক্যাটালগ-অনুসন্ধান দুটোই আছে। বছরে ${exemplar.frequency.level?.mm ?? "–"} মিমি বা তার বেশি বৃষ্টিতে ${exemplar.frequency.level ? bnNum(formatFrequency(exemplar.frequency.level).bn) : "কোনো ব্যবধান নেই"}।`}
                 />
               </p>
               <Link href={`/signal/${exemplar.id}`} className="mt-2 inline-flex min-h-9 items-center gap-1 text-sm font-medium text-accent-strong underline decoration-line underline-offset-2">

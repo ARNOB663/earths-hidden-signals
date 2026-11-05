@@ -3,6 +3,7 @@
 
 import { ArrowDown, ArrowUp, CircleAlert, CircleQuestionMark, Gauge, MapPin, Minus, ShieldCheck, TriangleAlert } from "lucide-react";
 import { T } from "@/lib/i18n";
+import { bnNum } from "@/lib/bn";
 import type { WatchLevel } from "@/lib/signals/level";
 
 export const WATCH_ICON: Record<WatchLevel, typeof CircleAlert> = {
@@ -101,19 +102,24 @@ export function Stat({
   value,
   hint,
   hintBn,
+  size = "md",
 }: {
   label: string;
   labelBn: string;
   value: React.ReactNode;
   hint?: string;
   hintBn?: string;
+  /** "lg" for headline counts (2xl value); the default tile uses the lg value text. */
+  size?: "md" | "lg";
 }) {
+  const pad = size === "lg" ? "px-3 py-2.5" : "px-3 py-2";
+  const valueClass = size === "lg" ? "text-2xl" : "text-lg";
   return (
-    <div className="rounded-xl border border-line bg-card px-3 py-2">
+    <div className={`rounded-xl border border-line bg-card ${pad}`}>
       <dt className="text-xs text-ink-3">
         <T en={label} bn={labelBn} />
       </dt>
-      <dd className="mt-0.5 text-lg font-semibold tabular-nums text-ink">{value}</dd>
+      <dd className={`mt-0.5 ${valueClass} font-semibold tabular-nums text-ink`}>{value}</dd>
       {hint && (
         <dd className="mt-0.5 text-[11px] leading-snug text-ink-3">
           <T en={hint} bn={hintBn ?? hint} />
@@ -125,4 +131,48 @@ export function Stat({
 
 export function pct(value: number | null | undefined, digits = 0): string {
   return value === null || value === undefined ? "–" : `${(value * 100).toFixed(digits)}%`;
+}
+
+/** The four coverage tiles shown on Home and /signal; the counts are computed on every build. */
+export function CoverageStats({
+  counts,
+  placesLabel,
+  placesLabelBn,
+}: {
+  counts: { places: number; countries: number; live: number; seasonal: number; cantTell: number };
+  placesLabel: string;
+  placesLabelBn: string;
+}) {
+  return (
+    <>
+      <Stat
+        label={placesLabel}
+        labelBn={placesLabelBn}
+        value={counts.places.toLocaleString("en")}
+        hint={`${counts.countries} countries`}
+        hintBn={`${bnNum(counts.countries)} দেশ`}
+      />
+      <Stat
+        label="Live Signal"
+        labelBn="সরাসরি সংকেত"
+        value={counts.live.toLocaleString("en")}
+        hint="current rain observation"
+        hintBn="সাম্প্রতিক বৃষ্টি-পর্যবেক্ষণ"
+      />
+      <Stat
+        label="Seasonal Context Only"
+        labelBn="কেবল মৌসুমি প্রেক্ষাপট"
+        value={counts.seasonal.toLocaleString("en")}
+        hint="no current reading"
+        hintBn="সাম্প্রতিক পাঠ নেই"
+      />
+      <Stat
+        label="Can’t Tell Here"
+        labelBn="এখানে বলা সম্ভব নয়"
+        value={counts.cantTell.toLocaleString("en")}
+        hint="missing, sparse or stale data"
+        hintBn="অনুপস্থিত, বিরল বা পুরোনো তথ্য"
+      />
+    </>
+  );
 }

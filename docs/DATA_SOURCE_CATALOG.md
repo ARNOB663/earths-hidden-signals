@@ -251,7 +251,7 @@ Six layers defined in `web/src/lib/layers.ts`:
 | Temporal coverage | Per layer; catalog read at runtime (1-day revalidation) |
 | Licence | **unrecorded in repo** — NASA open data; cite GIBS |
 | Freshness | Catalog queried live; 1-day revalidate; `fallbackTimes` if unreachable |
-| Current usage | **Dormant** — Map Explorer has no current route |
+| Current usage | **Context** — layer definitions remain in `layers.ts`; only the base map renders tiles |
 | Limitations | Pre-rendered colours, not raw values; a coarse visual context layer only |
 
 ### D15 — Hansen/UMD Global Forest Change v1.13
@@ -265,8 +265,8 @@ Six layers defined in `web/src/lib/layers.ts`:
 | Coverage | Global; 2001–2025 |
 | Licence | **unrecorded in repo** — CC BY 4.0 (Hansen et al.); verify |
 | Frequency | Annual product |
-| Current usage | **Dormant** with Map Explorer |
-| Limitations | 30 m annual loss, not live; encoded values need the decoder in `forestLossLayer.ts` |
+| Current usage | **Dormant** — tile URL retained in `layers.ts`; no decoder is committed |
+| Limitations | 30 m annual loss, not live; the tiles are encoded and need a client-side decoder (removed 2026-11-06, see `CODEBASE_AUDIT.md`; recoverable from git) |
 
 ## Probed, not integrated
 

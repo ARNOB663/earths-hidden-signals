@@ -57,17 +57,17 @@ contextual layers**, not deleting them.
 
 | Resource | Original surface | Data it renders | Planned home | Status |
 |---|---|---|---|---|
-| `components/hazards/*`, `lib/hazards.ts` | `/hazards` | `hazards/{floods,landslides,fires_grid,cyclones,zones}.json` | Contextual hazard section on `/signal` or dedicated hazard panel in the Signal detail | Context |
-| `components/trends/*`, `lib/trends.ts`, `lib/countryReport.ts` | `/trends`, `/country/[slug]` | `trends/*_series.json`, `maps/place-signals.json` | Historical trend context per place (Before band already reads the same series) | Context |
-| `components/country/*` | `/country/[slug]` | area trend summary | Superseded by `/signal/[id]`; keep charts for reuse | Dormant |
-| `components/map/*`, `lib/gibs.ts`, `lib/layers.ts` | `/explore` (Map Explorer) | GIBS WMTS, forest-loss tiles | Optional context map on `/signal`; keep decoder and layer defs | Dormant |
-| `components/findings/*` | `/findings` | story narratives | Retire UI; keep data story text if reused | Dormant |
-| `components/intelligence/{IntelligenceStrip,Locator,LocationsBrowser,AlertPreferences}`, `lib/intelligence/{forecast,guidance}.ts` | `/monitoring`, `/locations` | `intelligence/{current,alerts,locations,history}.json` | Contextual intelligence strip; forecast contract stays a documented gap | Dormant |
-| `hazards/cyclones.json` | `/hazards` | IBTrACS tracks | Cyclone context layer | Context |
-| `hazards/landslides.json`, `hazards/fires_grid.json` | `/hazards` | GLC, FIRMS | Heat/wildfire/landslide context layers | Context |
+| `hazards/{floods,landslides,fires_grid,cyclones,zones}.json` | `/hazards` | GDACS, GLC, FIRMS, IBTrACS | Contextual hazard section on `/signal` or a hazard panel in the Signal detail | Context |
+| `trends/*_series.json`, `maps/place-signals.json` | `/trends`, `/country/[slug]` | trend series | Historical trend context per place (Before band already reads the same series) | Context |
+| GIBS roots + layer defs (`lib/layers.ts`), `components/map/baseMap.ts` | `/explore` | GIBS WMTS tiles | Base map for the Signal maps; layer defs kept for a future context map | Live (base map) / Context (layer defs) |
+| `intelligence/{current,alerts,locations,history}.json` | `/monitoring`, `/locations` | intel records | Contextual intelligence strip; the forecast contract stays a documented gap (`lib/intelligence/forecast.ts`) | Context |
 | `geography/admin/*` ADM2 (179 countries) | full coverage map | geoBoundaries | Keep; used by Signal search/coverage | Live |
 | `analysis/power.py`, `raw/PRECTOTCORR` | spike | NASA POWER | Scale-check reference only | Dormant |
 | `scripts/signals/spike*`, `spike_report.md` | evidence | measured gates | Documentation of record | Dormant (keep) |
+
+The unused component code behind these surfaces (Map Explorer, trend/hazard/country explorers,
+findings stories, the `home/` story, `HeroClimateStory` and most of `intelligence/`) was removed on
+2026-11-06. It is recoverable from git history; the rule below is unchanged for data.
 
 **Rule:** no dataset in §3 may be deleted because its page was removed. A replacement surface must be
 committed in the same change that retires the last reader.

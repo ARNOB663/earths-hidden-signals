@@ -7,6 +7,7 @@ import { ShareCard } from "@/components/signal/ShareCard";
 import { CoverageBadge, WatchBadge } from "@/components/signal/levels";
 import { T } from "@/lib/i18n";
 import { loadModel } from "@/lib/signals/model";
+import { Eyebrow } from "@/components/ui/primitive";
 
 export const revalidate = 86400;
 
@@ -35,9 +36,7 @@ export default async function ActPage() {
   return (
     <main className="mx-auto w-full max-w-4xl px-4 pb-16 pt-6 sm:px-6">
       <header>
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-          <T en="Preparedness" bn="প্রস্তুতি" />
-        </p>
+        <Eyebrow en="Preparedness" bn="প্রস্তুতি" />
         <h1 className="mt-2 text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
           <T en="What to do when a watch is raised" bn="সতর্কতা দেখা দিলে কী করবেন" />
         </h1>

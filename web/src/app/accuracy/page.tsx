@@ -4,7 +4,8 @@ import { AlertTriangle, ArrowRight, Info } from "lucide-react";
 import { T } from "@/lib/i18n";
 import { bnNum } from "@/lib/bn";
 import { readAccuracyFile, readBacktest } from "@/lib/signals/backtest";
-import { pct } from "@/components/signal/levels";
+import { Stat, pct } from "@/components/signal/levels";
+import { Eyebrow } from "@/components/ui/primitive";
 
 export const revalidate = 86400;
 
@@ -13,18 +14,6 @@ export const metadata: Metadata = {
   description:
     "A year-by-year backtest of the rain screen against the GDACS flood catalogue: true positives, false positives, false negatives, true negatives, lift over random years, reliability and the tests that failed.",
 };
-
-function MetricCell({ label, value, labelBn, hint }: { label: string; value: string; labelBn: string; hint: string }) {
-  return (
-    <div className="rounded-xl border border-line bg-card px-3 py-2.5">
-      <dt className="text-xs text-ink-3">
-        <T en={label} bn={labelBn} />
-      </dt>
-      <dd className="mt-0.5 text-2xl font-semibold tabular-nums text-ink">{value}</dd>
-      <dd className="mt-0.5 text-[11px] leading-snug text-ink-3">{hint}</dd>
-    </div>
-  );
-}
 
 export default async function AccuracyPage() {
   const [audit, accuracy] = await Promise.all([readBacktest(), readAccuracyFile()]);
@@ -37,9 +26,7 @@ export default async function AccuracyPage() {
   return (
     <main className="mx-auto w-full max-w-4xl px-4 pb-16 pt-6 sm:px-6">
       <header>
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-          <T en="Evaluation" bn="মূল্যায়ন" />
-        </p>
+        <Eyebrow en="Evaluation" bn="মূল্যায়ন" />
         <h1 className="mt-2 text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
           <T en="Does the screen work?" bn="স্ক্রিনিং কি কাজ করে?" />
         </h1>
@@ -104,10 +91,10 @@ export default async function AccuracyPage() {
           <T en="The results" bn="ফলাফল" />
         </h2>
         <dl className="mt-2 grid grid-cols-2 gap-2 sm:grid-cols-4">
-          <MetricCell label="True positives" labelBn="সত্য-ধনাত্মক" value={String(m.tp)} hint={`of ${m.eventYears} flood years`} />
-          <MetricCell label="False positives" labelBn="মিথ্যা-ধনাত্মক" value={String(m.fp)} hint={`of ${m.tested - m.eventYears} quiet years`} />
-          <MetricCell label="False negatives (misses)" labelBn="মিথ্যা-ঋণাত্মক (বাদ)" value={String(m.fn)} hint={`of ${m.eventYears} flood years`} />
-          <MetricCell label="True negatives" labelBn="সত্য-ঋণাত্মক" value={String(m.tn)} hint={`of ${m.tested - m.eventYears} quiet years`} />
+          <Stat size="lg" label="True positives" labelBn="সত্য-ধনাত্মক" value={String(m.tp)} hint={`of ${m.eventYears} flood years`} hintBn={`${bnNum(m.eventYears)}টি বন্যা-বছরের মধ্যে`} />
+          <Stat size="lg" label="False positives" labelBn="মিথ্যা-ধনাত্মক" value={String(m.fp)} hint={`of ${m.tested - m.eventYears} quiet years`} hintBn={`${bnNum(m.tested - m.eventYears)}টি শান্ত বছরের মধ্যে`} />
+          <Stat size="lg" label="False negatives (misses)" labelBn="মিথ্যা-ঋণাত্মক (বাদ)" value={String(m.fn)} hint={`of ${m.eventYears} flood years`} hintBn={`${bnNum(m.eventYears)}টি বন্যা-বছরের মধ্যে`} />
+          <Stat size="lg" label="True negatives" labelBn="সত্য-ঋণাত্মক" value={String(m.tn)} hint={`of ${m.tested - m.eventYears} quiet years`} hintBn={`${bnNum(m.tested - m.eventYears)}টি শান্ত বছরের মধ্যে`} />
         </dl>
         <p className="mt-2 text-xs tabular-nums text-ink-3">
           <T
@@ -190,7 +177,7 @@ export default async function AccuracyPage() {
               {frameworks.map(([section, counts], index) => (
                 <span key={section} className="tabular-nums">
                   {index > 0 && " · "}
-                  {section === "monsoon" ? "monsoon" : "pre-monsoon"} TP {counts.tp} / FP {counts.fp} / FN {counts.fn} / TN {counts.tn}
+                  {section === "monsoon" ? <T en="monsoon" bn="মৌসুমি" /> : <T en="pre-monsoon" bn="প্রাক-মৌসুমি" />} TP {counts.tp} / FP {counts.fp} / FN {counts.fn} / TN {counts.tn}
                 </span>
               ))}
             </p>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { T } from "@/lib/i18n";
 import { readCoverage, readGeographyIndex } from "@/lib/geography/data";
 import { readPlaces, readSignalsConfig, readSignalsMeta } from "@/lib/signals/data";
+import { Eyebrow } from "@/components/ui/primitive";
 
 export const revalidate = 86400;
 
@@ -155,9 +156,7 @@ export default async function GapPage() {
       )}
 
       <header className="max-w-3xl">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-          <T en="The monitoring gap" bn="পর্যবেক্ষণের ফাঁক" />
-        </p>
+        <Eyebrow en="The monitoring gap" bn="পর্যবেক্ষণের ফাঁক" />
         <h1 className="mt-2 text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
           <T
             en="Satellites cover the planet. Decisions happen in districts."

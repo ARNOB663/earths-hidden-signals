@@ -9,6 +9,7 @@
 // The pipeline maps statuses to these values (scripts/signals/level.py); this file only renders
 // them, so the two languages of the site cannot drift apart.
 
+import type { FrequencyLevel } from "./model";
 import type { Status, TrustState } from "./types";
 
 export type CoverageState = "live" | "seasonal" | "cant-tell";
@@ -149,3 +150,19 @@ export function coverageOf(record: { coverageState?: string } | null | undefined
   const value = record?.coverageState;
   return value === "live" || value === "seasonal" ? value : "cant-tell";
 }
+
+/** "floods in 3 of 26 years (95% 4–28%)" — the interval wording every surface shares. */
+export function formatFrequency(level: FrequencyLevel): { en: string; bn: string } {
+  const low = (level.low * 100).toFixed(0);
+  const high = (level.high * 100).toFixed(0);
+  return {
+    en: `${level.floods} of ${level.cases} historical cases (95% interval ${low}–${high}%)`,
+    bn: `${level.cases}টি ঐতিহাসিক ক্ষেত্রে ${level.floods}টিতে বন্যা নথিভুক্ত (৯৫% ব্যবধান ${low}–${high}%)`,
+  };
+}
+
+/** The sentence used wherever a frequency cannot be read out, with its Bangla pair. */
+export const FREQUENCY_UNKNOWN = {
+  en: "Not enough historical evidence to calculate a reliable frequency.",
+  bn: "নির্ভরযোগ্য ফ্রিকোয়েন্সি গণনার জন্য যথেষ্ট ঐতিহাসিক প্রমাণ নেই।",
+} as const;

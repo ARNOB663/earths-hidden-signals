@@ -6,6 +6,7 @@ import { T } from "@/lib/i18n";
 import { bnNum } from "@/lib/bn";
 import { readBacktest } from "@/lib/signals/backtest";
 import { pct } from "@/components/signal/levels";
+import { Eyebrow } from "@/components/ui/primitive";
 
 export const revalidate = 86400;
 
@@ -24,9 +25,7 @@ export default async function ReplayPage() {
   return (
     <main className="mx-auto w-full max-w-4xl px-4 pb-16 pt-6 sm:px-6">
       <header>
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-          <T en="History, replayed" bn="ইতিহাস, পুনরাবৃত্ত" />
-        </p>
+        <Eyebrow en="History, replayed" bn="ইতিহাস, পুনরাবৃত্ত" />
         <h1 className="mt-2 text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
           <T en="Replay: could this have been seen?" bn="পুনরাবৃত্তি: এটি কি আগে বোঝা যেত?" />
         </h1>

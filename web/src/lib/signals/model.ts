@@ -8,7 +8,7 @@
 
 import { readFile } from "node:fs/promises";
 import path from "node:path";
-import type { CoverageState, TrustGrade, WatchLevel } from "./level";
+import { FREQUENCY_UNKNOWN, type CoverageState, type TrustGrade, type WatchLevel } from "./level";
 import type { PlaceArea, Status } from "./types";
 
 const DATA = path.join(process.cwd(), "public", "data", "signals");
@@ -346,7 +346,7 @@ function frequencyFor(freq: FrequencyFile | null, observedMm: number | null): Fr
   if (!freq || freq.state !== "ok" || !freq.floodsAtLeast?.length) {
     return {
       state: freq?.state === "insufficient" ? "insufficient" : "unavailable",
-      reason: freq?.reason || "Not enough historical evidence to calculate a reliable frequency.",
+      reason: freq?.reason || FREQUENCY_UNKNOWN.en,
       minCases,
       level: null,
       floodsAtLeast: [],

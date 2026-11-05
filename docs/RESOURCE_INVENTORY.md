@@ -10,8 +10,10 @@ Status vocabulary used below:
 - **Live** — read by a page or by a pipeline step that writes a page input on every build.
 - **Context** — computed and committed, but no current primary route reads it directly. Keep it; it
   is the raw material for the contextual hazard layers the product plan asks for.
-- **Dormant** — a working implementation whose caller or UI was retired. Keep the code and data;
-  re-wire rather than rewrite when a surface needs it again.
+- **Dormant** — a working dataset whose caller or UI was retired. Keep the data (it is the raw
+  material for future surfaces); re-wire rather than recompute. Code that has no route, no reader and
+  no consumer is **removed**, not kept: it is recoverable from git history. See
+  [`CODEBASE_AUDIT.md`](CODEBASE_AUDIT.md) for the 2026-11-06 removal.
 - **Generated** — an output file; its source is the pipeline step named beside it. Never edit by hand.
 - **Local only** — code or data that exists on disk but is gitignored (raw downloads, caches).
 
@@ -53,8 +55,8 @@ table is in [`DATA_SOURCE_CATALOG.md`](DATA_SOURCE_CATALOG.md); this list is the
 | D11 | Open-Meteo forecast (7-day outlook) | `scripts/signals/outlook.py`, `places_network.py` | `signals/places/*.json` (`next`), `signals/brief.json` (`outlook`) | Context, external, never in status |
 | D12 | Open-Meteo historical archive (ERA5-class) | `scripts/signals/places_network.py` | `signals/places/*.json`, `signals/backtest.json` frequency cases | Live (frequency) |
 | D13 | Open-Meteo geocoding | `scripts/signals/places_network.py` (place search) | `signals/area-search.json` (name index) | Live |
-| D14 | NASA GIBS WMTS (6 imagery layers) | `web/src/lib/gibs.ts`, `layers.ts` | fetched at build/request (1-day revalidate) | Live |
-| D15 | Hansen/UMD Global Forest Change v1.13 tiles | `web/src/components/map/forestLossLayer.ts` | decoded in browser | Dormant with the Map Explorer |
+| D14 | NASA GIBS WMTS (6 imagery layers) | `web/src/lib/layers.ts`, `components/map/baseMap.ts` | base-map tiles only | Context (layer defs) |
+| D15 | Hansen/UMD Global Forest Change v1.13 tiles | `web/src/lib/layers.ts` (tile URL only) | not rendered | Dormant (decoder removed) |
 | D16 | NASA POWER / MERRA-2 monthly (scale check) | `analysis/power.py` | `analysis/raw/PRECTOTCORR` | Dormant (spike only) |
 | D17 | GHCN-Daily station data | `scripts/signals/spike_imerg_probe.py` | `scripts/signals/spike_report.md` | Dormant (spike only) |
 | D18 | EONET v3 events | `scripts/signals/` spike + `raw/eonet_*.json` | `spike_report.md` | Dormant (cross-check only) |
@@ -189,31 +191,29 @@ Retired routes (redirected 308 in `web/next.config.ts`): `/trends`, `/hazards`, 
 
 | Folder | Components | Reads | Status |
 |---|---|---|---|
-| `signal/` | `SignalExplorer`, `SignalMap`, `SignalSearch`, `History`, `ReplayExplorer`, `ReplayMap`, `SampleNotice`, `WatchManager`, `ShareCard`, `ActionMessages`, `levels`, `observation` | signals data | Live |
-| `map/` | `MapExplorer`, `LeafletMap`, `CompareDivider`, `differenceLayer`, `forestLossLayer`, `ForestLossChart`, `lossColors`, `diffColors`, `baseMap`, `MapPlaceSearch`, `MapSheet`, `MapLoading`, `PlaceClimateContext` | GIBS catalog, trends | **Dormant** with Map Explorer (no current route) |
-| `hazards/` | `HazardExplorer`, `HazardMap`, `YearBars`, `hazardColors` | `hazards/*` | **Dormant** with `/hazards` — reusable for contextual hazards |
-| `trends/` | `TrendExplorer`, `TrendMap`, `SeriesChart` | `trends/*` | **Dormant** with `/trends` — reusable charts |
-| `country/` | `CountryMap`, `CountryMapClient`, `CountryTrends` | area trends | **Dormant** with `/country` |
-| `findings/` | `MiniGridMap`, `StoryNav`, `parts`, `visuals` | findings data | **Dormant** with `/findings` |
-| `intelligence/` | `IntelligenceStrip`, `LocationsBrowser`, `Locator`, `MethodsIntelligence`, `AlertPreferences`, `parts` | `intelligence/*` | Dormant (pages repurposed) |
-| `hero/` | `HeroClimateStory`, `HeroImageSlideshow` | static | Live (Home) |
-| `home/` | `EvidenceStory` | brief | Live |
+| `signal/` | `SignalExplorer`, `SignalMap`, `SignalSearch`, `History`, `ReplayExplorer`, `ReplayMap`, `MapLoading`, `SampleNotice`, `WatchManager`, `ShareCard`, `ActionMessages`, `levels`, `observation` | signals data | Live |
+| `map/` | `baseMap` | — | Live (shared Leaflet setup for `SignalMap`/`ReplayMap`) |
+| `hero/` | `HeroImageSlideshow` | static | Live (Home) |
 | `site/` | `SiteNav` | — | Live |
-| `ui/` | `icons`, `motion-icons`, `toast`, `ToasterHost`, `DataActions`, `ShareButton`, `index` | — | Live |
+| `intelligence/` | `MethodsIntelligence` | `intelligence/*` | Live (`/methods`) |
+| `ui/` | `icons`, `motion-icons`, `toast`, `ToasterHost`, `DataActions`, `ShareButton`, `primitive`, `index` | — | Live |
+
+The Map Explorer, trend and hazard explorers, country pages and findings stories were removed on
+2026-11-06; their datasets stay (see §3). Restore any component from git history if a surface returns.
 
 ### 6.3 Libraries (`web/src/lib/`)
 
 | File | Purpose | Status |
 |---|---|---|
-| `data.ts` | Server JSON readers with caching. | Live |
+| `data.ts` | Server JSON readers for the trend files (`manifest`, `zones`, `crosscheck`), cached. | Live |
 | `signals/{model,level,backtest,data,map,age,types}.ts` | Signal model, Watch Level, backtest readers, age helper. | Live |
 | `geography/{data,index,types}.ts` | Shared geo identifiers/readers. | Live |
-| `intelligence/{data,conclude,types,forecast,guidance}.ts` | Intel readers and render-only mappings. | Live |
-| `gibs.ts`, `layers.ts` | GIBS catalog fetch + 6 layer definitions. | Dormant (map) |
-| `hazards.ts` | Types + hazard meta (labels, Bangla). | Dormant |
-| `trends.ts`, `countryReport.ts`, `places.ts`, `mapPlaces.ts`, `geo.ts` | Trend types, country report, named places, map places. | Live/Context |
-| `i18n.tsx`, `bn.ts`, `names.ts` | English/Bangla switch, numerals, place names. | Live |
-| `theme.ts`, `bootScripts.ts`, `dates.ts`, `download.ts`, `plain.ts`, `countries.ts` | Design tokens, theme flash guard, date/format helpers. | Live |
+| `intelligence/{data,conclude,types,forecast}.ts` | Intel readers, render-only helpers and the documented forecast gap. | Live |
+| `layers.ts` | GIBS WMTS root and layer definitions; `baseMap.ts` uses the root. | Live |
+| `trends.ts` | Trend types read by `/methods`. | Live |
+| `i18n.tsx`, `bn.ts` | English/Bangla switch and numerals. | Live |
+| `theme.ts`, `bootScripts.ts`, `download.ts` | Design tokens, theme flash guard, citation/CSV helpers. | Live |
+| `places.ts`, `names.ts`, `hazards.ts` | City list, Bangla name tables and hazard ids; parsed by `analysis/intel/names.py`, so a data source for the pipeline even with no component importer. | Data (pipeline input) |
 
 ---
 
@@ -223,8 +223,8 @@ Retired routes (redirected 308 in `web/next.config.ts`): `/trends`, `/hazards`, 
 |---|---|---|
 | English inline strings | Every page via `<T en=… bn=…>` | Live |
 | Bangla strings | Same components + `lib/bn.ts` (digits, numerals) | Live |
-| Bangla place/level names | `lib/names.ts`, `geography/index.json` (`nameBn`) | Live |
-| Hazard labels (en/bn) | `lib/hazards.ts`, `lib/intelligence/conclude.ts` | Live |
+| Bangla place/level names | `geography/index.json` (`nameBn`), `lib/signals/level.ts`, `lib/names.ts` (parsed by `analysis/intel/names.py`) | Live |
+| Hazard labels (en/bn) | `lib/names.ts` `HAZARD_BN`, pipeline JSON | Live |
 | Design tokens | `web/src/app/globals.css` (Tailwind v4 `@theme`, `ink/line/sunken/accent` tones) | Live |
 | Theme handling | `lib/theme.ts`, `lib/bootScripts.ts` | Live |
 | Icons | `lucide-react`, `components/ui/icons.tsx`, `motion-icons.tsx` | Live |
@@ -261,10 +261,10 @@ Retired routes (redirected 308 in `web/next.config.ts`): `/trends`, `/hazards`, 
 
 ## 10. Known gaps and stale statements
 
-- `README.md` still describes the removed demo scores; it predates the coverage rewrite.
-- The Map Explorer (GIBS + forest loss) has no route but all of its code and layer definitions remain.
-- Hazard contextual components (`components/hazards`, `components/trends`, `components/country`)
-  have no live route but their committed data is current.
+- The Map Explorer, trend/hazard explorers, country and findings components were removed on
+  2026-11-06 (`docs/CODEBASE_AUDIT.md`); their datasets and layer definitions remain committed.
+- `scripts/signals/README.md` describes a ten-step plan that has since shipped and a plan file that
+  no longer exists.
 - `signals/frequency/` is generated, not committed: a fresh clone has no frequency files until
   `scripts/signals/backtest.py` runs.
 - IMERG integration is **sample mode only**; no real IMERG observation is committed

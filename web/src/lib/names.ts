@@ -1,5 +1,8 @@
 // Bangla names and short descriptions for regions, hazards and well-known places.
 // Plain data, usable on server and client.
+//
+// The Python pipeline parses these Record tables directly (analysis/intel/names.py) for the Bangla
+// city/zone names, so this is a data source even though no component imports it. Keep the shape.
 
 import type { HazardId } from "./hazards";
 

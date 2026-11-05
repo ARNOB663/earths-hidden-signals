@@ -1,4 +1,7 @@
 // Well-known places: used to name clicked map squares ("Around Dhaka") and for place reports.
+//
+// The Python pipeline parses this file directly (analysis/intel/names.py) for the city list, so it is
+// a data source even though no component imports it. Keep the `P("Name", "Country", lat, lon)` shape.
 
 export interface Place {
   id: string;

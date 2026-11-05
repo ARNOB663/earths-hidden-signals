@@ -5,6 +5,8 @@ import { T } from "@/lib/i18n";
 import { bnNum } from "@/lib/bn";
 import { readCoverage, readGeographyIndex } from "@/lib/geography/data";
 import { loadModel } from "@/lib/signals/model";
+import { Eyebrow } from "@/components/ui/primitive";
+import { Stat } from "@/components/signal/levels";
 
 export const revalidate = 86400;
 
@@ -39,9 +41,7 @@ export default async function ForOrganizationsPage() {
   return (
     <main className="mx-auto w-full max-w-4xl px-4 pb-16 pt-6 sm:px-6">
       <header>
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-          <T en="For organizations" bn="প্রতিষ্ঠানের জন্য" />
-        </p>
+        <Eyebrow en="For organizations" bn="প্রতিষ্ঠানের জন্য" />
         <h1 className="mt-2 text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
           <T en="A coverage audit you can act on" bn="কাজে লাগানোর মতো আচ্ছাদন-নিরীক্ষা" />
         </h1>
@@ -95,15 +95,7 @@ export default async function ForOrganizationsPage() {
             { label: "Decision-ready", labelBn: "সিদ্ধান্তযোগ্য", value: ready, hint: `${countries} countries`, hintBn: `${bnNum(countries)} দেশ` },
             { label: "Live Signal", labelBn: "সরাসরি সংকেত", value: live, hint: "current rain observation", hintBn: "সাম্প্রতিক বৃষ্টি-পর্যবেক্ষণ" },
           ].map((item) => (
-            <div key={item.label} className="rounded-xl border border-line bg-card px-3 py-2.5">
-              <dt className="text-xs text-ink-3">
-                <T en={item.label} bn={item.labelBn} />
-              </dt>
-              <dd className="mt-0.5 text-2xl font-semibold tabular-nums text-ink">{item.value.toLocaleString("en-US")}</dd>
-              <dd className="mt-0.5 text-[11px] leading-snug text-ink-3">
-                <T en={item.hint} bn={item.hintBn} />
-              </dd>
-            </div>
+            <Stat key={item.label} size="lg" label={item.label} labelBn={item.labelBn} value={item.value.toLocaleString("en-US")} hint={item.hint} hintBn={item.hintBn} />
           ))}
         </dl>
         <p className="mt-3 text-sm leading-relaxed text-ink-2">

@@ -24,3 +24,6 @@ scripts/signals/.venv/
 
 # generated per-place frequency series (rebuilt by scripts/signals)
 web/public/data/signals/frequency/
+
+# tool output: Playwright MCP session dumps (screenshots, page YAML, logs)
+.playwright-mcp/

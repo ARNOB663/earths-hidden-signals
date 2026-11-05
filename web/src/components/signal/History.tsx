@@ -4,6 +4,7 @@
 
 import { T } from "@/lib/i18n";
 import type { SignalRow } from "@/lib/signals/model";
+import { FREQUENCY_UNKNOWN } from "@/lib/signals/level";
 
 export function SignalLevelHistory({ row }: { row: SignalRow }) {
   const freq = row.frequency;
@@ -14,7 +15,7 @@ export function SignalLevelHistory({ row }: { row: SignalRow }) {
           <T en="Historical record" bn="ঐতিহাসিক রেকর্ড" />
         </h2>
         <p className="mt-1 text-sm text-ink-2">
-          <T en="Not enough historical evidence to calculate a reliable frequency." bn="নির্ভরযোগ্য ফ্রিকোয়েন্সি গণনার জন্য যথেষ্ট ঐতিহাসিক প্রমাণ নেই।" />
+          <T en={FREQUENCY_UNKNOWN.en} bn={FREQUENCY_UNKNOWN.bn} />
         </p>
         <p className="mt-1 text-xs text-ink-3">{freq.reason}</p>
       </section>

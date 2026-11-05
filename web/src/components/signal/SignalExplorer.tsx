@@ -8,10 +8,10 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { ChevronRight, LocateFixed, MapPin, Search, X } from "lucide-react";
 import { useDeferredValue, useEffect, useId, useMemo, useRef, useState } from "react";
-import { MapLoading } from "@/components/map/MapLoading";
+import { MapLoading } from "./MapLoading";
 import { bnNum } from "@/lib/bn";
 import { T, useLang, useT } from "@/lib/i18n";
-import type { CoverageState, WatchLevel } from "@/lib/signals/level";
+import { formatFrequency, type CoverageState, type WatchLevel } from "@/lib/signals/level";
 import type { SignalRow } from "@/lib/signals/model";
 import type { SignalMapArea } from "./SignalMap";
 import { CoverageBadge, TrustBadge, WatchBadge } from "./levels";
@@ -487,8 +487,8 @@ function RowDetail({ row }: { row: SignalRow }) {
       {row.frequency.state === "ok" && row.frequency.level && (
         <p className="mt-1 text-xs text-ink-2">
           <T
-            en={`Historical frequency at or above ${row.frequency.level.mm} mm: floods catalogued in ${row.frequency.level.floods} of ${row.frequency.level.cases} cases (95% interval ${(row.frequency.level.low * 100).toFixed(0)}–${(row.frequency.level.high * 100).toFixed(0)}%).`}
-            bn={`${row.frequency.level.mm} মিমি বা তার বেশি বৃষ্টিতে: ${row.frequency.level.cases}টি ক্ষেত্রে ${row.frequency.level.floods}টিতে বন্যা নথিভুক্ত (৯৫% ব্যবধান ${(row.frequency.level.low * 100).toFixed(0)}–${(row.frequency.level.high * 100).toFixed(0)}%)।`}
+            en={`Historical frequency at or above ${row.frequency.level.mm} mm: floods catalogued in ${formatFrequency(row.frequency.level).en}.`}
+            bn={`${row.frequency.level.mm} মিমি বা তার বেশি বৃষ্টিতে: ${formatFrequency(row.frequency.level).bn}।`}
           />
         </p>
       )}
