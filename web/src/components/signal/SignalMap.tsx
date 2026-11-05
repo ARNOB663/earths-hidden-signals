@@ -21,6 +21,10 @@ export interface SignalMapArea {
   coverage: "live" | "seasonal" | "cant-tell";
   trust: "high" | "medium" | "low";
   rings: [number, number][][];
+  /** Set when this area has no boundary of its own and is drawn by its parent state's outline. */
+  outlineOf?: { id: string; name: string; level: "ADM1" | "ADM2" };
+  /** Set when the reading itself is a fixed sample rather than an observation. */
+  sample?: boolean;
 }
 
 interface Props {
@@ -28,6 +32,8 @@ interface Props {
   selected: string | null;
   onSelect?: (id: string) => void;
   focus?: [number, number] | null;
+  /** Bounding box the map opens on, as [[south, west], [north, east]]. */
+  home?: [[number, number], [number, number]] | null;
   height?: string;
 }
 
@@ -57,7 +63,7 @@ const COVERAGE_WORD: Record<SignalMapArea["coverage"], { en: string; bn: string 
   "cant-tell": { en: "Can't Tell Here", bn: "এখানে বলা সম্ভব নয়" },
 };
 
-export default function SignalMap({ areas, selected, onSelect, focus, height = "h-[420px]" }: Props) {
+export default function SignalMap({ areas, selected, onSelect, focus, home, height = "h-[420px]" }: Props) {
   const host = useRef<HTMLDivElement | null>(null);
   const base = useRef<BaseMap | null>(null);
   const layer = useRef<L.LayerGroup | null>(null);
@@ -66,6 +72,8 @@ export default function SignalMap({ areas, selected, onSelect, focus, height = "
   const t = useT();
   const selectRef = useRef(onSelect);
   const latest = useRef({ areas, lang });
+  const homeRef = useRef(home);
+  homeRef.current = home;
 
   useEffect(() => {
     selectRef.current = onSelect;
@@ -77,11 +85,15 @@ export default function SignalMap({ areas, selected, onSelect, focus, height = "
     if (!group) return;
     group.clearLayers();
     const renderer = createCanvasRenderer({ padding: 0.5, pane: "data" });
-    // ADM1 first, so the smaller ADM2 fills sit on top.
-    const ordered = [...list].sort((a, b) => a.level.localeCompare(b.level));
+    // ADM1 first, so the smaller ADM2 fills sit on top. A district drawn with its parent's
+    // outline sinks below every area that has its own boundary, so it never paints over one.
+    const ordered = [...list].sort(
+      (a, b) => Number(Boolean(a.outlineOf)) - Number(Boolean(b.outlineOf)) || a.level.localeCompare(b.level),
+    );
     for (const area of ordered) {
       const stroke = STROKE[area.trust];
       const isSelected = current === area.id;
+      const borrowed = area.outlineOf !== undefined;
       const shape = L.polygon(area.rings, {
         renderer,
         pane: "data",
@@ -89,11 +101,17 @@ export default function SignalMap({ areas, selected, onSelect, focus, height = "
         dashArray: isSelected ? undefined : stroke.dashArray,
         weight: isSelected ? 2.5 : area.level === "ADM1" ? 1.2 : 0.6,
         fillColor: FILL[area.watch],
-        fillOpacity: area.coverage === "live" ? 0.32 : 0.1,
+        fillOpacity: area.coverage === "live" ? (borrowed ? 0.2 : 0.32) : 0.1,
       });
       const word = language === "bn" ? WORD[area.watch].bn : WORD[area.watch].en;
       const coverage = language === "bn" ? COVERAGE_WORD[area.coverage].bn : COVERAGE_WORD[area.coverage].en;
-      shape.bindTooltip(`${area.name} — ${word} · ${coverage}`, { sticky: true });
+      const borrowedNote = !borrowed
+        ? ""
+        : language === "bn"
+          ? ` · সীমানা: ${area.outlineOf!.name} (${area.outlineOf!.level})`
+          : ` · outline: ${area.outlineOf!.name} (${area.outlineOf!.level})`;
+      const sampleNote = area.sample ? (language === "bn" ? " · নমুনা পাঠ" : " · sample reading") : "";
+      shape.bindTooltip(`${area.name} — ${word} · ${coverage}${borrowedNote}${sampleNote}`, { sticky: true });
       shape.on("click", (event) => {
         L.DomEvent.stopPropagation(event);
         selectRef.current?.(area.id);
@@ -117,6 +135,12 @@ export default function SignalMap({ areas, selected, onSelect, focus, height = "
       layer.current = L.layerGroup().addTo(map.map);
       map.map.on("click", () => selectRef.current?.(""));
       draw(latest.current.areas, latest.current.lang, null);
+      // Open on where the boundaries are, so the covered region fills the frame rather than a
+      // wide world view. Only the first frame moves; later data changes are drawn in place.
+      if (homeRef.current) {
+        const [[south, west], [north, east]] = homeRef.current;
+        map.map.fitBounds([[south, west], [north, east]], { padding: [16, 16], maxZoom: 8, animate: false });
+      }
     });
     return () => {
       cancelAnimationFrame(frame);
@@ -167,6 +191,12 @@ export default function SignalMap({ areas, selected, onSelect, focus, height = "
         </span>
         <span className="text-ink-3">
           <T en="Outline: solid = trust high · dashed = medium · dotted = low" bn="রূপরেখা: অবিচ্ছিন্ন = ভরসা উচ্চ · ড্যাশ = মাঝারি · বিন্দু = নিম্ন" />
+        </span>
+        <span className="basis-full text-ink-3">
+          <T
+            en="A district with no boundary of its own is drawn inside its parent state's outline and says so in its tooltip. Sample readings are labelled in the tooltip."
+            bn="নিজস্ব সীমানা নেই এমন জেলা তার মূল রাজ্যের রূপরেখার ভিতরে আঁকা হয় এবং টুলটিপে তা বলা হয়। নমুনা পাঠ টুলটিপে চিহ্নিত।"
+          />
         </span>
       </figcaption>
     </figure>

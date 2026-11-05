@@ -75,6 +75,27 @@ export function SignalExplorer({
   const deferred = useDeferredValue(query);
   const listRef = useRef<HTMLOListElement | null>(null);
 
+  // The map opens on where the data actually is: the bounding box of the listed boundaries, not a
+  // fixed view. It is computed from the outlines the server already sent, so no extra request.
+  const home = useMemo<{ bounds: [[number, number], [number, number]] } | null>(() => {
+    let south = 90;
+    let north = -90;
+    let west = 180;
+    let east = -180;
+    for (const area of areas) {
+      for (const ring of area.rings) {
+        for (const [lon, lat] of ring) {
+          if (lat < south) south = lat;
+          if (lat > north) north = lat;
+          if (lon < west) west = lon;
+          if (lon > east) east = lon;
+        }
+      }
+    }
+    if (south > north || west > east) return null;
+    return { bounds: [[south, west], [north, east]] };
+  }, [areas]);
+
   const counts = useMemo(() => {
     const out = { live: 0, seasonal: 0, "cant-tell": 0, high: 0, elevated: 0, none: 0, unknown: 0 };
     for (const row of rows) {
@@ -105,9 +126,32 @@ export function SignalExplorer({
     [filtered],
   );
   const shown = ordered.slice(0, page);
-  // The map draws only boundaries this set has (ADM1 and the smaller ADM2), capped to the page.
-  const shownIds = useMemo(() => new Set(shown.map((row) => row.id)), [shown]);
-  const mapAreas = useMemo(() => areas.filter((area) => shownIds.has(area.id)), [areas, shownIds]);
+  // The map draws the boundaries this set has (ADM1 and the smaller ADM2), capped to the page. A
+  // state already gives its districts their geographic place on the map, so districts whose state
+  // is drawn are not drawn twice; districts of a state that is not drawn get that state's outline
+  // instead, so the map never shows a district floating on an empty base map.
+  const mapAreas = useMemo(() => {
+    const shownIdSet = new Set(shown.map((row) => row.id));
+    const drawnStates = new Set(shown.filter((row) => row.level === "ADM1").map((row) => row.name));
+    const sampleIds = new Set(shown.filter((row) => row.sample).map((row) => row.id));
+    const out: SignalMapArea[] = [];
+    const borrowedStates = new Set<string>();
+    for (const area of areas) {
+      if (!shownIdSet.has(area.id)) continue;
+      if (area.level === "ADM2" && drawnStates.has(area.name.split(" · ")[0])) continue;
+      out.push({ ...area, sample: sampleIds.has(area.id) });
+    }
+    const byId = new Map(areas.map((area) => [area.id, area]));
+    for (const row of shown) {
+      if (row.level === "ADM1" || byId.has(row.id) || drawnStates.has(row.name)) continue;
+      const state = row.name.split(" · ")[0];
+      const parent = areas.find((area) => area.level === "ADM1" && area.name === state);
+      if (!parent || borrowedStates.has(parent.id)) continue;
+      borrowedStates.add(parent.id);
+      out.push({ ...parent, outlineOf: { id: parent.id, name: parent.name, level: parent.level }, sample: row.sample });
+    }
+    return out;
+  }, [areas, shown]);
   const focus = useMemo<[number, number] | null>(() => {
     const row = rows.find((candidate) => candidate.id === selected);
     return row ? row.centre : null;
@@ -300,8 +344,22 @@ export function SignalExplorer({
 
         <div>
           <div className={MAP_BOX}>
-            <SignalMap areas={mapAreas} selected={selected} onSelect={(id) => setSelected(id || null)} focus={focus} height="h-full" />
+            <SignalMap
+              areas={mapAreas}
+              selected={selected}
+              onSelect={(id) => setSelected(id || null)}
+              focus={focus}
+              home={home?.bounds ?? null}
+              height="h-full"
+            />
           </div>
+          <p className="mt-1 flex items-center gap-1.5 text-xs text-ink-3">
+            <MapPin size={12} aria-hidden />
+            {t(
+              `Coverage: ${rows.length} areas on a ${home ? "map zoomed to their bounds" : "map"} · sample readings are labelled on hover`,
+              `আচ্ছাদন: ${bnNum(rows.length)}টি এলাকা${home ? " তাদের সীমার ভেতরে জুম করা মানচিত্রে" : " মানচিত্রে"} · নমুনা পাঠ হোভারে চিহ্নিত`,
+            )}
+          </p>
         </div>
       </div>
 
