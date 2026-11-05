@@ -8,10 +8,12 @@ export const revalidate = 86400;
 export const metadata: Metadata = {
   title: "Evidence · Earth's Hidden Signals",
   description:
-    "Past years' rain for one place, with flood years from the GDACS catalogue marked and gaps left visible. A different product from our IMERG signal. Historical record, never a forecast or an official warning.",
+    "Past years' rain for one place, with flood years from the GDACS catalogue marked and gaps left visible. A different product from our IMERG signal. Historical record, not a forecast or an official warning.",
 };
 
-const DEFAULT_PLACE = "pak-adm1-punjab";
+// A place with a built evidence file today. pak-adm1-punjab was the old default but carries no
+// extras, so /signals/evidence with no ?id= landed on the "not built yet" state.
+const DEFAULT_PLACE = "bgd-adm1-dhaka";
 const WMO = "https://severeweather.wmo.int/";
 
 export default async function EvidencePage({ searchParams }: PageProps<"/signals/evidence">) {
@@ -34,11 +36,14 @@ export default async function EvidencePage({ searchParams }: PageProps<"/signals
   const evidence = extras?.evidence ?? null;
   const years = evidence?.years ?? [];
   const max = Math.max(1, ...years.map((year) => year.mm ?? 0));
-  const floodYears = new Set(evidence?.floodYears ?? []);
   // The catalogue lists every flood in the tiles, so most are far from this place. Only events
   // inside the place's own tile within its years are "here"; the page says how many were left.
   const localEvents = (evidence?.floodEvents ?? []).filter((event) => event.tile === area.tile);
   const otherEvents = (evidence?.floodEvents ?? []).length - localEvents.length;
+  // A flood year is only marked when a flood fell in this place's own tile. evidence.floodYears is
+  // the union across all three tiles, so using it directly would mark a year here whose flood was
+  // in another country.
+  const floodYears = new Set(localEvents.map((event) => Number(event.start.slice(0, 4))));
   const gaps = years.filter((year) => year.mm === null);
 
   return (
@@ -115,7 +120,7 @@ export default async function EvidencePage({ searchParams }: PageProps<"/signals
               </span>
               <span className="inline-flex items-center gap-1.5">
                 <span aria-hidden className="h-2.5 w-2.5 rounded-sm bg-alert" />
-                <T en="flood year in the catalogue" bn="ক্যাটালগে বন্যাবছর" />
+                <T en={`flood year in ${area.tileLabel}`} bn={`${area.tileLabel}-এ বন্যাবছর`} />
               </span>
               <span className="inline-flex items-center gap-1.5">
                 <span aria-hidden className="h-2.5 w-6 rounded-sm border border-dashed border-ink-3" />

@@ -10,7 +10,7 @@ export const revalidate = 86400;
 export const metadata: Metadata = {
   title: "What to watch · Earth's Hidden Signals",
   description:
-    "Areas where the rain signal rose since the previous snapshot, named where our data covers them. Compared with the previous archive entry only, never with a live forecast. Not an official warning.",
+    "Areas where the rain signal rose since the previous snapshot, compared with our own previous reading only — never a forecast. The archive is not deep enough for a rise to be recorded yet. Not a forecast or an official warning.",
 };
 
 export default async function WatchPage() {

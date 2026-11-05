@@ -8,6 +8,7 @@ import {
   Globe,
   Map,
   MapPin,
+  ScanEye,
   Thermometer,
   TriangleAlert,
   type LucideIcon,
@@ -241,29 +242,29 @@ export default async function Home() {
               className="mt-5 text-[2.6rem] font-semibold leading-[1.07] tracking-tight text-white sm:text-6xl lg:text-[3.25rem] xl:text-[3.75rem]"
             >
               <T
-                en="See how South Asia's climate is changing."
-                bn="দেখুন দক্ষিণ এশিয়ার জলবায়ু কীভাবে বদলাচ্ছে।"
+                en="The signal is not the flood. It is the gap in who is watching."
+                bn="সংকেত বন্যা নয়। সংকেত হলো কে দেখছে সেই ফাঁকটাই।"
               />
             </h1>
 
             <p className="mt-5 max-w-[50ch] text-lg leading-[1.6] text-white/85">
               <T
-                en={`${years.length} years of NASA data, explained simply: where it is getting hotter, where the rain is moving, and which places should get ready for floods, landslides and fires.`}
-                bn={`নাসার ${bnNum(years.length)} বছরের তথ্য, সহজ ভাষায়: কোথায় গরম বাড়ছে, বৃষ্টি কোন দিকে সরছে, আর কোন জায়গাগুলোকে বন্যা, ভূমিধস ও আগুনের জন্য প্রস্তুত থাকতে হবে।`}
+                en={`${years.length} years of NASA data, used to answer one question honestly: where can Earth observation actually support a decision, and where is nobody watching? We show the coverage, and we show where it stops.`}
+                bn={`নাসার ${bnNum(years.length)} বছরের তথ্য দিয়ে একটাই প্রশ্ন সৎভাবে উত্তর দেওয়া: ভূ-পর্যবেক্ষণ কোথায় সত্যিই একটি সিদ্ধান্তে সহায়তা করতে পারে, আর কোথায় কেউ দেখছে না? আমরা আচ্ছাদন দেখাই, আর দেখাই কোথায় তা থেমে যায়।`}
               />
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <Link
-                href="/explore"
+                href="/gap"
                 className="inline-flex min-h-12 items-center gap-2 rounded-full bg-accent-strong px-6 font-medium text-accent-ink transition-colors duration-150 hover:bg-accent-hover"
                 style={{
                   boxShadow:
                     "0 4px 18px color-mix(in srgb, var(--accent) 38%, transparent)",
                 }}
               >
-                <Map size={18} aria-hidden />
-                <T en="Explore the map" bn="মানচিত্র দেখুন" />
+                <ScanEye size={18} aria-hidden />
+                <T en="See where we can see" bn="দেখুন কোথায় আমরা দেখতে পাই" />
               </Link>
               <Link
                 href="/findings"

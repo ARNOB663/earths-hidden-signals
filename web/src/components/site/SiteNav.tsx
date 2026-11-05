@@ -9,6 +9,7 @@ import {
   Monitor,
   Moon,
   Satellite,
+  ScanEye,
   SearchCheck,
   Sun,
   TriangleAlert,
@@ -28,13 +29,16 @@ import {
 } from "@/lib/theme";
 
 // Each tab keeps a short label for the tab bar and a full one for phones and screen readers.
+// Order follows the one journey: the gap (why), the signals (where), the evidence (can it be
+// checked), then the 45-year context, the hazards, and the method.
 export const TABS = [
   { href: "/", label: "Home", short: "Home", bn: "হোম", shortBn: "হোম", Icon: House },
+  { href: "/gap", label: "The gap", short: "Gap", bn: "ফাঁক", shortBn: "ফাঁক", Icon: ScanEye },
   { href: "/signals", label: "Signals", short: "Signals", bn: "সংকেত", shortBn: "সংকেত", Icon: Activity },
-  { href: "/hazards", label: "Hazards", short: "Hazards", bn: "দুর্যোগ", shortBn: "দুর্যোগ", Icon: TriangleAlert },
-  { href: "/trends", label: "Trends", short: "Trends", bn: "প্রবণতা", shortBn: "প্রবণতা", Icon: ChartLine },
-  { href: "/explore", label: "Watch", short: "Watch", bn: "কী দেখবেন", shortBn: "দেখুন", Icon: Satellite },
   { href: "/accuracy", label: "Evidence", short: "Evidence", bn: "প্রমাণ", shortBn: "প্রমাণ", Icon: SearchCheck },
+  { href: "/trends", label: "Trends", short: "Trends", bn: "প্রবণতা", shortBn: "প্রবণতা", Icon: ChartLine },
+  { href: "/hazards", label: "Hazards", short: "Hazards", bn: "দুর্যোগ", shortBn: "দুর্যোগ", Icon: TriangleAlert },
+  { href: "/explore", label: "Watch", short: "Watch", bn: "কী দেখবেন", shortBn: "দেখুন", Icon: Satellite },
   { href: "/methods", label: "About", short: "About", bn: "সম্পর্কে", shortBn: "সম্পর্কে", Icon: FlaskConical },
 ];
 

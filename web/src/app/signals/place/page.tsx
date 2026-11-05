@@ -13,8 +13,9 @@ export const metadata: Metadata = {
     "Before, Now, Next, Trust and Action for one district: 45 years of NASA history, today's rain against its date, an external 7-day outlook, and whether the place can be warned at all. Not a forecast or an official warning.",
 };
 
-// A place with a readable record today; the picker reaches every covered area from /signals.
-const DEFAULT_PLACE = "pak-adm1-punjab";
+// A place with a readable record today, including a built extras file. The old default
+// (pak-adm1-punjab) had no extras, so the Next strip and the picker's first hit showed empty.
+const DEFAULT_PLACE = "bgd-adm1-dhaka";
 
 export default async function PlacePage({ searchParams }: PageProps<"/signals/place">) {
   const params = await searchParams;

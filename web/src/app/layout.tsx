@@ -81,7 +81,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
         </main>
         <footer className="site-footer">
           <div className="mx-auto max-w-384 px-6 pb-16 pt-20 sm:px-8 lg:px-12">
-            <div className="grid gap-12 lg:grid-cols-[minmax(0,1.6fr)_minmax(10rem,0.7fr)_minmax(10rem,0.7fr)] lg:gap-16">
+            <div className="grid gap-12 lg:grid-cols-[minmax(0,1.5fr)_minmax(8rem,0.7fr)_minmax(8rem,0.7fr)_minmax(9rem,0.8fr)] lg:gap-10">
               <div className="max-w-md">
                 <div className="flex items-center gap-2.5 text-[19px] font-semibold tracking-tight text-(--footer-fg)">
                   <Logo />
@@ -89,8 +89,8 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
                 </div>
                 <p className="mt-6 max-w-[34ch] text-xl font-medium leading-relaxed text-(--footer-fg-2)">
                   <T
-                    en="45 years of Earth data reveal signals we normally cannot see."
-                    bn="পৃথিবীর ৪৫ বছরের তথ্য এমন সংকেত প্রকাশ করে যা আমরা সাধারণত দেখতে পাই না।"
+                    en="The hidden signal is not the flood. It is the gap in who is watching."
+                    bn="লুকানো সংকেত বন্যা নয়। লুকানো সংকেত হলো কে দেখছে সেই ফাঁকটাই।"
                   />
                 </p>
                 <p className="mt-3 text-sm text-(--footer-fg-3)">
@@ -100,47 +100,35 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
                   />
                 </p>
                 <Link
-                  href="/explore"
+                  href="/gap"
                   className="site-footer-cta mt-7 inline-flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold transition-colors"
                 >
-                  <T en="Explore the map" bn="মানচিত্র দেখুন" />
+                  <T en="See the monitoring gap" bn="পর্যবেক্ষণের ফাঁক দেখুন" />
                   <ArrowRight size={16} strokeWidth={2} aria-hidden />
                 </Link>
               </div>
 
-              <FooterColumn title="Explore" titleBn="অনুসন্ধান">
-                <FooterLink href="/monitoring" en="Monitoring" bn="পর্যবেক্ষণ" />
-                <FooterLink href="/locations" en="Locations" bn="স্থান" />
-                <FooterLink
-                  href="/explore"
-                  en="Satellite map"
-                  bn="স্যাটেলাইট মানচিত্র"
-                />
-                <FooterLink
-                  href="/trends"
-                  en="Climate trends"
-                  bn="জলবায়ুর প্রবণতা"
-                />
-                <FooterLink
-                  href="/hazards"
-                  en="Disaster risk"
-                  bn="দুর্যোগের ঝুঁকি"
-                />
-                <FooterLink
-                  href="/countries"
-                  en="Country dashboards"
-                  bn="দেশের ড্যাশবোর্ড"
-                />
+              {/* The footer mirrors the header journey: signals, then their context, then the
+                  project itself. Secondary routes stay reachable under "More" rather than
+                  implying a second, parallel information architecture. */}
+              <FooterColumn title="Signals" titleBn="সংকেত">
+                <FooterLink href="/gap" en="The monitoring gap" bn="পর্যবেক্ষণের ফাঁক" />
+                <FooterLink href="/signals" en="Signals map" bn="সংকেত মানচিত্র" />
+                <FooterLink href="/accuracy" en="Evidence and limits" bn="প্রমাণ ও সীমা" />
               </FooterColumn>
 
-              <FooterColumn title="Project" titleBn="প্রকল্প">
+              <FooterColumn title="Context" titleBn="প্রেক্ষাপট">
+                <FooterLink href="/trends" en="Climate trends" bn="জলবায়ুর প্রবণতা" />
+                <FooterLink href="/hazards" en="Disaster risk" bn="দুর্যোগের ঝুঁকি" />
+                <FooterLink href="/explore" en="Satellite map" bn="স্যাটেলাইট মানচিত্র" />
+              </FooterColumn>
+
+              <FooterColumn title="More" titleBn="আরও">
                 <FooterLink href="/findings" en="The story" bn="মূল গল্প" />
-                <FooterLink
-                  href="/methods"
-                  en="How it works"
-                  bn="কীভাবে কাজ করে"
-                />
-                <FooterLink href="/methods#intelligence" en="Classes, alerts and evaluation" bn="শ্রেণি, সতর্কতা ও মূল্যায়ন" />
+                <FooterLink href="/methods" en="How it works" bn="কীভাবে কাজ করে" />
+                <FooterLink href="/monitoring" en="Data freshness" bn="তথ্যের সতেজতা" />
+                <FooterLink href="/countries" en="Country dashboards" bn="দেশের ড্যাশবোর্ড" />
+                <FooterLink href="/locations" en="Screening reports" bn="স্ক্রিনিং প্রতিবেদন" />
                 <a
                   href="https://github.com/ARNOB663/earths-hidden-signals"
                   target="_blank"
