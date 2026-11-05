@@ -1,0 +1,173 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "Earth's Hidden Signals, home" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e10]: Earth's Hidden Signals
+      - navigation "Main" [ref=e11]:
+        - link "Home" [ref=e12] [cursor=pointer]:
+          - /url: /
+        - link "Signal" [ref=e17] [cursor=pointer]:
+          - /url: /signal
+        - link "Gap" [ref=e21] [cursor=pointer]:
+          - /url: /gap
+        - link "Replay" [ref=e30] [cursor=pointer]:
+          - /url: /replay
+        - link "Accuracy" [ref=e34] [cursor=pointer]:
+          - /url: /accuracy
+        - link "Act" [ref=e37] [cursor=pointer]:
+          - /url: /act
+        - link "Watch" [ref=e42] [cursor=pointer]:
+          - /url: /watch
+      - generic [ref=e47]:
+        - radiogroup "Language / ভাষা" [ref=e48]:
+          - radio "English" [checked] [ref=e49]: EN
+          - radio "বাংলা" [ref=e50]: বাং
+        - radiogroup "Colour theme" [ref=e51]:
+          - radio "Match my device" [checked] [ref=e52]
+          - radio "Light" [ref=e55]
+          - radio "Dark" [ref=e62]
+  - region "Notifications alt+T"
+  - main [ref=e65]:
+    - region [ref=e66]:
+      - generic "Hero image carousel" [ref=e67]:
+        - img "Bangladesh floodwater surrounding homes and boats" [ref=e70]
+        - generic:
+          - button "Previous slide" [ref=e71]
+          - button "Next slide" [ref=e74]
+        - generic:
+          - button "Go to slide 1" [ref=e77]
+          - button "Go to slide 2" [ref=e79]
+          - button "Go to slide 3" [ref=e81]
+          - button "Go to slide 4" [ref=e83]
+          - button "Go to slide 5" [ref=e85]
+      - generic [ref=e88]:
+        - paragraph [ref=e89]: Observational screening · not a forecast
+        - heading "Is today normal where you live — and where can nobody say?" [level=1] [ref=e96]
+        - paragraph [ref=e97]: We compare today's satellite rain with the same date in 422 districts and states of South Asia. Every location states what was observed, whether it is unusual, what history says, how far its data can be trusted — and where it cannot answer at all.
+        - generic [ref=e98]:
+          - search [ref=e100]:
+            - combobox "Type a country, state or district" [ref=e105]
+          - paragraph [ref=e106]: Search a country, state or district.
+        - generic [ref=e107]:
+          - link "Open the Signal" [ref=e108] [cursor=pointer]:
+            - /url: /signal
+          - link "See where the data stops" [ref=e112] [cursor=pointer]:
+            - /url: /gap
+        - link "Official warnings (WMO SWIC)" [ref=e120] [cursor=pointer]:
+          - /url: https://severeweather.wmo.int/
+      - paragraph [ref=e127]: "Photos: Wikimedia Commons / Bangladesh flood series"
+    - generic [ref=e128]:
+      - status [ref=e129]: SAMPLE DATA — the rain readings behind this site are fixed samples, not real observations. Coverage counts and the backtest on /accuracy come from real datasets.
+      - region [ref=e130]:
+        - paragraph [ref=e131]: Coverage at a glance
+        - heading "What we can answer, and what we cannot" [level=2] [ref=e132]
+        - paragraph [ref=e133]: Every covered location falls into one of three states. The number of locations in each state is computed from the data on every build, never typed in.
+        - generic [ref=e134]:
+          - generic [ref=e135]:
+            - term [ref=e136]: Covered locations
+            - definition [ref=e137]: "422"
+            - definition [ref=e138]: 5 countries
+          - generic [ref=e139]:
+            - term [ref=e140]: Live Signal
+            - definition [ref=e141]: "0"
+            - definition [ref=e142]: current rain observation
+          - generic [ref=e143]:
+            - term [ref=e144]: Seasonal Context Only
+            - definition [ref=e145]: "110"
+            - definition [ref=e146]: no current reading
+          - generic [ref=e147]:
+            - term [ref=e148]: Can’t Tell Here
+            - definition [ref=e149]: "312"
+            - definition [ref=e150]: missing, sparse or stale data
+      - region [ref=e151]:
+        - paragraph [ref=e152]: What one signal says
+        - heading "Kachchh, India" [level=2] [ref=e153]
+        - generic [ref=e154]:
+          - generic [ref=e155]: Can’t Tell Here
+          - generic [ref=e159]: "Watch Level: Can’t tell"
+        - paragraph [ref=e163]: The nearest satellite cell recorded 100.6 mm of rain, 8.3× the usual amount for this date in its own record, at the 100th percentile. Observed 2025-09-10. At or above this rainfall level, floods were catalogued in 0 of 10 historical cases (95% interval 0–28%).
+        - link "Open this Signal" [ref=e164] [cursor=pointer]:
+          - /url: /signal/ind-adm2-kachchh
+      - region [ref=e167]:
+        - paragraph [ref=e168]: Method
+        - heading "How a signal is made" [level=2] [ref=e169]
+        - list [ref=e170]:
+          - listitem [ref=e171]:
+            - generic [ref=e179]:
+              - paragraph [ref=e180]: Step 1
+              - paragraph [ref=e181]: Satellites observe
+              - paragraph [ref=e182]: NASA IMERG measures rain; GISTEMP and GPCP give the long historical record each location is compared against.
+          - listitem [ref=e183]:
+            - generic [ref=e189]:
+              - paragraph [ref=e190]: Step 2
+              - paragraph [ref=e191]: We ask if it is unusual
+              - paragraph [ref=e192]: The reading is set against the same date in every past year of that area's own record, and a Watch Level follows.
+          - listitem [ref=e193]:
+            - generic [ref=e197]:
+              - paragraph [ref=e198]: Step 3
+              - paragraph [ref=e199]: History is shown with its sample size
+              - paragraph [ref=e200]: Where past years carry this much rain, we report how often floods were catalogued — always with the number of cases.
+        - link "Read the full methodology" [ref=e202] [cursor=pointer]:
+          - /url: /methods
+      - region [ref=e208]:
+        - heading "Where to go next" [level=2] [ref=e209]
+        - generic [ref=e210]:
+          - 'link "Signal The central page: search a country or district, see its observation, Watch Level, Data Trust Grade and the limits of its data." [ref=e211] [cursor=pointer]':
+            - /url: /signal
+            - generic [ref=e216]:
+              - generic [ref=e217]: Signal
+              - generic [ref=e218]: "The central page: search a country or district, see its observation, Watch Level, Data Trust Grade and the limits of its data."
+          - link "Gap Where the map is listed but not measured, which datasets are missing, and why a location cannot receive a reliable signal." [ref=e221] [cursor=pointer]:
+            - /url: /gap
+            - generic [ref=e230]:
+              - generic [ref=e231]: Gap
+              - generic [ref=e232]: Where the map is listed but not measured, which datasets are missing, and why a location cannot receive a reliable signal.
+          - 'link "Replay Every year from 2000 replayed against catalogued floods: the rain, the threshold, the hits and the misses." [ref=e235] [cursor=pointer]':
+            - /url: /replay
+            - generic [ref=e241]:
+              - generic [ref=e242]: Replay
+              - generic [ref=e243]: "Every year from 2000 replayed against catalogued floods: the rain, the threshold, the hits and the misses."
+          - 'link "Accuracy The backtest behind the Data Trust Grade: how the screen performed, and the tests that failed." [ref=e246] [cursor=pointer]':
+            - /url: /accuracy
+            - generic [ref=e251]:
+              - generic [ref=e252]: Accuracy
+              - generic [ref=e253]: "The backtest behind the Data Trust Grade: how the screen performed, and the tests that failed."
+          - link "Act Preparedness guidance in English and Bangla, checklists and shareable evidence cards." [ref=e256] [cursor=pointer]:
+            - /url: /act
+            - generic [ref=e260]:
+              - generic [ref=e261]: Act
+              - generic [ref=e262]: Preparedness guidance in English and Bangla, checklists and shareable evidence cards.
+          - link "Watch Save the places you care about and choose what you would want to be told. Stored in your browser only." [ref=e265] [cursor=pointer]:
+            - /url: /watch
+            - generic [ref=e273]:
+              - generic [ref=e274]: Watch
+              - generic [ref=e275]: Save the places you care about and choose what you would want to be told. Stored in your browser only.
+      - paragraph [ref=e278]: "This site is observational screening: it shows what environmental signals are occurring and what historical evidence exists. It is not a forecast and not an official warning. Official warnings come from national meteorological and disaster agencies."
+  - contentinfo [ref=e279]:
+    - generic [ref=e280]:
+      - generic [ref=e281]:
+        - generic [ref=e282]:
+          - generic [ref=e283]: Earth's Hidden Signals
+          - paragraph [ref=e289]: Understand what the environment is doing, whether it is unusual, and where the data cannot answer.
+          - paragraph [ref=e290]: Observational screening. Not a forecast, not an official warning.
+          - link "Open the Signal" [ref=e291] [cursor=pointer]:
+            - /url: /signal
+        - navigation [ref=e294]:
+          - heading "Pages" [level=2] [ref=e295]
+          - link "Methods" [ref=e296] [cursor=pointer]:
+            - /url: /methods
+          - link "Organizations" [ref=e297] [cursor=pointer]:
+            - /url: /for-organizations
+          - link "Data Sources" [ref=e298] [cursor=pointer]:
+            - /url: /methods#data
+          - link "GitHub" [ref=e299] [cursor=pointer]:
+            - /url: https://github.com/ARNOB663/earths-hidden-signals
+        - generic [ref=e303]:
+          - heading "Built with" [level=2] [ref=e304]
+          - paragraph [ref=e305]: GISTEMP · GPCP · IMERG · GDACS · FIRMS · GLC · GIBS · geoBoundaries · Open-Meteo · WMO SWIC
+          - paragraph [ref=e306]: NASA Space Apps Challenge 2026. Open data, open methods.
+      - paragraph [ref=e308]: Official warnings come from national meteorological and disaster agencies. This site helps people understand environmental signals and prepare; it does not replace them.
+  - alert [ref=e309]
