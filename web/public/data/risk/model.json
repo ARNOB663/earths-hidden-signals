@@ -9,7 +9,10 @@
  "models": [
   "MRI-ESM2-0",
   "ACCESS-CM2",
-  "EC-Earth3"
+  "EC-Earth3",
+  "IITM-ESM",
+  "MPI-ESM1-2-HR",
+  "NorESM2-MM"
  ],
  "future": [
   2041,
