@@ -3,6 +3,7 @@
 import { useLayoutEffect, useMemo, useRef, useState } from "react";
 import { downloadCsv, slug } from "@/lib/download";
 import { DataActions } from "@/components/ui/DataActions";
+import { bnNum } from "@/lib/bn";
 import { T } from "@/lib/i18n";
 import { senIntercept } from "@/lib/trends";
 
@@ -166,7 +167,7 @@ export function SeriesChart({
         {split && (
           <span className="flex items-center gap-1.5">
             <span className="w-4 border-t-2" style={{ borderColor: "var(--warm-3)" }} />{" "}
-            <T en={`Average before / after ${split.year}`} bn={`${split.year}-এর আগে / পরে গড়`} />
+            <T en={`Average before / after ${split.year}`} bn={`${bnNum(split.year)}-এর আগে / পরে গড়`} />
           </span>
         )}
       </div>

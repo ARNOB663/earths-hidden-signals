@@ -196,19 +196,19 @@ export default function TwinExplorer({
 
           <div className="mt-5 grid gap-6 lg:grid-cols-2">
             {/* Fingerprint side by side */}
-            <div>
+            <div className="min-w-0">
               <h4 className="text-sm font-semibold text-ink">
                 <T en="Trend fingerprint, 1981–2025" bn="প্রবণতার ছাপ, ১৯৮১–২০২৫" />
               </h4>
               <div className="mt-2 overflow-x-auto">
-                <table className="w-full min-w-[420px] text-sm">
+                <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b border-line text-left text-xs text-ink-3">
                       <th scope="col" className="py-2 pr-2 font-medium">
                         <T en="Feature" bn="বৈশিষ্ট্য" />
                       </th>
                       <th scope="col" className="py-2 pr-2 text-right font-medium">
-                        {regionName}
+                        <T en="Region" bn="অঞ্চল" />
                       </th>
                       <th scope="col" className="py-2 pr-2 text-right font-medium">
                         <T en="Twin" bn="যমজ" />
@@ -247,7 +247,7 @@ export default function TwinExplorer({
             </div>
 
             {/* Rain records side by side */}
-            <div>
+            <div className="min-w-0">
               <h4 className="text-sm font-semibold text-ink">
                 <T en="Yearly rain, as % of each place's 1981–2010 average" bn="বার্ষিক বৃষ্টি, প্রতিটি জায়গার ১৯৮১–২০১০ গড়ের % হিসেবে" />
               </h4>

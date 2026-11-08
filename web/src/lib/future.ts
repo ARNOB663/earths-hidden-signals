@@ -116,16 +116,19 @@ export const SCENARIO_WORDS: Record<ScenarioKey, { en: string; bn: string; hint:
   },
 };
 
-/** 0.25 -> "1 in 4"; rounds to a whole "1 in N", and says "every year" / "almost never" at the ends. */
+/**
+ * A yearly rate in words that matches the 10-dot rows: "2 in 10 years". Rare rates (below 1 in 10)
+ * read "1 in 20 years"; the ends read "almost never" / "almost every year".
+ */
 export function oneIn(rate: number): { en: string; bn: string } {
   if (rate >= 0.95) return { en: "almost every year", bn: "প্রায় প্রতি বছর" };
   if (rate <= 0.02) return { en: "almost never", bn: "প্রায় কখনোই না" };
-  if (rate > 0.5) {
-    const k = Math.round(rate * 10);
-    return { en: `${k} in 10 years`, bn: `১০ বছরে ${toBn(k)} বার` };
+  if (rate < 0.095) {
+    const n = Math.round(1 / rate);
+    return { en: `1 in ${n} years`, bn: `${toBn(n)} বছরে ১ বার` };
   }
-  const n = Math.max(2, Math.round(1 / rate));
-  return { en: `1 in ${n} years`, bn: `${toBn(n)} বছরে ১ বার` };
+  const k = Math.round(rate * 10);
+  return { en: `${k} in 10 years`, bn: `১০ বছরে ${toBn(k)} বার` };
 }
 
 const BN_DIGITS = "০১২৩৪৫৬৭৮৯";

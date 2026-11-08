@@ -9,7 +9,7 @@ import { useState } from "react";
 import { CONTROL } from "@/components/ui";
 import { bnNum } from "@/lib/bn";
 import { T, useLang } from "@/lib/i18n";
-import { ZONE_BN } from "@/lib/names";
+import { unitBn, ZONE_BN } from "@/lib/names";
 import {
   EXCEED_ORDER,
   EXCEED_WORDS,
@@ -214,11 +214,11 @@ export default function FutureExplorer({ outlook, observed }: { outlook: Outlook
                     </th>
                     <td className="px-3 py-2.5 text-right tabular-nums text-ink-2">
                       {bnOr(bn, region.present[k].toLocaleString("en-US", { maximumFractionDigits: meta.decimals }))}{" "}
-                      <span className="text-xs text-ink-3">{meta.unit}</span>
+                      <span className="text-xs text-ink-3">{bn ? unitBn(meta.unit) : meta.unit}</span>
                     </td>
                     <td className={`px-3 py-2.5 text-right font-semibold tabular-nums ${strong ? "text-ink" : "text-ink-3"}`}>
                       {bnOr(bn, signedChange(m.median, meta.kind, meta.decimals))}
-                      {meta.kind === "abs" && <span className="ml-1 text-xs font-normal text-ink-3">{meta.unit}</span>}
+                      {meta.kind === "abs" && <span className="ml-1 text-xs font-normal text-ink-3">{bn ? unitBn(meta.unit) : meta.unit}</span>}
                     </td>
                     <td className="px-3 py-2.5 text-right text-xs tabular-nums text-ink-3">
                       {bnOr(bn, `${signedChange(m.min, meta.kind, meta.decimals)} … ${signedChange(m.max, meta.kind, meta.decimals)}`)}
@@ -245,7 +245,7 @@ export default function FutureExplorer({ outlook, observed }: { outlook: Outlook
             median={sc.metrics[activeMetric].median}
             kind={outlook.metrics[activeMetric].kind}
             decimals={outlook.metrics[activeMetric].decimals}
-            unit={outlook.metrics[activeMetric].unit}
+            unit={bn ? unitBn(outlook.metrics[activeMetric].unit) : outlook.metrics[activeMetric].unit}
           />
           <p className="mt-2 text-xs text-ink-3">
             <T
