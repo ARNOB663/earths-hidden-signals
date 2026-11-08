@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CITATION } from "@/lib/download";
-import { readCrosscheck, readManifest, readTrendZones } from "@/lib/data";
+import { readCrosscheck, readData, readManifest, readTrendZones } from "@/lib/data";
+import type { Outlook } from "@/lib/future";
 import { T } from "@/lib/i18n";
 import { MethodsIntelligence } from "@/components/intelligence/MethodsIntelligence";
 import { readEvaluation, readSources, readThresholds } from "@/lib/intelligence/data";
@@ -29,6 +30,8 @@ const KEYWORDS = [
   "GISTEMP",
   "GPCP",
   "CRU TS 4.10",
+  "Pettitt",
+  "NEX-GDDP-CMIP6",
   "South Asia",
 ];
 
@@ -38,6 +41,10 @@ const REFERENCES: Ref[] = [
   {
     en: "Adler, R. F. et al. (2018). The Global Precipitation Climatology Project (GPCP) monthly analysis (new version 2.3) and a review of 2017 global precipitation. Atmosphere 9(4), 138.",
     url: "https://doi.org/10.3390/atmos9040138",
+  },
+  {
+    en: "Airola, A. et al. (2011). An experimental comparison of cross-validation techniques for estimating the area under the ROC curve. Comput. Stat. Data Anal. 55(4), 1828–1844.",
+    url: "https://doi.org/10.1016/j.csda.2010.11.018",
   },
   {
     en: "Benjamini, Y. & Hochberg, Y. (1995). Controlling the false discovery rate: a practical and powerful approach to multiple testing. J. R. Stat. Soc. B 57(1), 289–300.",
@@ -72,8 +79,16 @@ const REFERENCES: Ref[] = [
     url: "https://doi.org/10.1029/2018JD029522",
   },
   {
+    en: "Pettitt, A. N. (1979). A non-parametric approach to the change-point problem. J. R. Stat. Soc. C 28(2), 126–135.",
+    url: "https://doi.org/10.2307/2346729",
+  },
+  {
     en: "Sen, P. K. (1968). Estimates of the regression coefficient based on Kendall's tau. J. Am. Stat. Assoc. 63(324), 1379–1389.",
     url: "https://doi.org/10.1080/01621459.1968.10480934",
+  },
+  {
+    en: "Thrasher, B. et al. (2022). NASA Global Daily Downscaled Projections, CMIP6. Sci. Data 9, 262.",
+    url: "https://doi.org/10.1038/s41597-022-01393-4",
   },
   {
     en: "Wilks, D. S. (2016). “The stippling shows statistically significant grid points”: how research results are routinely overstated and overinterpreted. Bull. Am. Meteorol. Soc. 97(12), 2263–2273.",
@@ -113,7 +128,7 @@ function Cite({ keys }: { keys: string[] }) {
 }
 
 export default async function MethodsPage() {
-  const [manifest, crosscheck, trendZones, thresholds, sources, evaluation, geography] = await Promise.all([
+  const [manifest, crosscheck, trendZones, thresholds, sources, evaluation, geography, twins, outlook, risk] = await Promise.all([
     readManifest(),
     readCrosscheck(),
     readTrendZones(),
@@ -121,7 +136,12 @@ export default async function MethodsPage() {
     readSources(),
     readEvaluation(),
     readGeographyIndex(),
+    readData<{ blocks: unknown[]; regions: unknown[]; block: number }>("twins", "twins.json"),
+    readData<Outlook>("future", "outlook.json"),
+    readData<{ regions: { skillful: boolean; n: number }[]; skillRule: { bss: number; auc: number; p: number } }>("risk", "model.json"),
   ]);
+  const riskPassed = risk.regions.filter((r) => r.skillful).length;
+  const riskYears = risk.regions.map((r) => r.n);
   const [first, last] = [
     manifest.years[0],
     manifest.years[manifest.years.length - 1],
@@ -407,6 +427,24 @@ export default async function MethodsPage() {
           </Note>
         </Section>
 
+        <Section id="turning-points" n="4b" title="Turning points">
+          <p>
+            For every region and series we also ask where the record splits most sharply into a
+            &ldquo;before&rdquo; and an &ldquo;after&rdquo;, using{" "}
+            <strong className="font-semibold text-ink">Pettitt&apos;s test</strong>, a rank-based
+            change-point test with no assumption about the shape of the data <Cite keys={["Pettitt"]} />.
+            The statistic is the largest absolute value of U<sub>t</sub> = Σ<sub>i≤t</sub>Σ<sub>j&gt;t</sub>{" "}
+            sign(x<sub>j</sub> − x<sub>i</sub>), with the approximate p-value 2·exp(−6K²/(n³+n²)). A split
+            is reported only at p &lt; 0.05, with the averages before and after it.
+          </p>
+          <p>
+            A steady trend also produces a split near the middle of the record, so the site words the
+            result as &ldquo;the record splits most sharply around this year&rdquo;, never as &ldquo;the
+            change began in this year&rdquo;. Output: <code className="rounded bg-sunken px-1.5 text-ink">trends/turning.json</code>{" "}
+            (<code className="rounded bg-sunken px-1.5 text-ink">analysis/turning.py</code>).
+          </p>
+        </Section>
+
         <Section id="validation" n="5" title="Validation">
           <p>
             All primary trends were recomputed with a completely independent
@@ -613,6 +651,70 @@ export default async function MethodsPage() {
           </p>
         </Section>
 
+        <Section id="twins" n="7d" title="Climate twins">
+          <p>
+            Global land between 55°S and 75°N is divided into {twins.block}° × {twins.block}° blocks; the{" "}
+            {twins.blocks.length} blocks with at least 35% land and complete records are kept. Each block
+            and each South Asian region receives the same tests as Sections 3–4 on the same records
+            (GISTEMP, GPCP), giving a five-part fingerprint: warming rate (°C per decade), yearly and
+            local rainy-season rain trends (% of the mean per decade; the rainy season is each place&apos;s
+            four consecutive wettest months), log mean yearly rain, and the share of rain falling in the
+            rainy season. The last two keep a desert from matching a delta merely because both trends are
+            flat.
+          </p>
+          <p>
+            Features are standardised robustly (median and interquartile range over global land, clipped
+            at ±4), weighted (rainy-season trend 1.5, seasonality 0.75, others 1) and compared by
+            Euclidean distance: a nearest-neighbour search. Twins must lie outside the study area and at
+            least 10° apart. Disasters per block come from GDACS flood, drought and tropical-cyclone
+            alerts (2000–2025) and the NASA Global Landslide Catalog <Cite keys={["Kirschbaum"]} />; GDACS
+            points lying more than 3° from every country the record itself names are discarded. A shared
+            trend is not a shared fate: exposure, terrain and reporting differ between twins.
+          </p>
+        </Section>
+
+        <Section id="projections" n="7e" title="Future projections">
+          <p>
+            Projections come from NASA&apos;s{" "}
+            <strong className="font-semibold text-ink">NEX-GDDP-CMIP6</strong> <Cite keys={["Thrasher"]} />:
+            daily CMIP6 temperature and precipitation, bias-corrected and downscaled to 0.25°. We use
+            {" "}{outlook.models.length} models from different centres ({outlook.models.join(", ")}), the
+            historical run {outlook.present[0]}–{outlook.present[1]} and the SSP2-4.5 and SSP5-8.5 runs for{" "}
+            {outlook.future[0]}–{outlook.future[1]}, subset to the study area at 1° through NASA NCCS THREDDS.
+          </p>
+          <p>
+            Every change is computed for each model against its own historical run, so model bias cancels;
+            we report the ensemble median, the model range and how many models agree on the sign
+            (two-thirds or more is treated as agreement). Very heavy rain days use each grid square&apos;s
+            95th percentile of wet days (≥ 1 mm) in the historical run; unusually hot days use the 95th
+            percentile of the same calendar month. The site&apos;s future-risk number is a count, not a
+            model: each model&apos;s own 1-in-10 level in {outlook.present[0]}–{outlook.present[1]} (its
+            90th percentile, or 10th for dry monsoons) and the share of {outlook.future[0]}–
+            {outlook.future[1]} years beyond it.
+          </p>
+        </Section>
+
+        <Section id="disaster-model" n="7f" title="Disaster-year model">
+          <p>
+            Before turning projections into disaster odds we test whether a year&apos;s climate can tell a
+            high-event year (at or above a region&apos;s 75th-percentile event count) from an ordinary one.
+            Each region gets an L2 logistic regression on the drivers the hazard pipeline had already
+            assigned to it (Section 6), so the inputs were not chosen for the score. Evaluation uses only
+            unseen years: leave-one-year-out Brier skill against the base rate, leave-pair-out AUC (pooled
+            leave-one-out AUC is biased towards 0 on small samples <Cite keys={["Airola"]} />), a
+            label-permutation test, and Benjamini–Hochberg adjustment across regions{" "}
+            <Cite keys={["Benjamini"]} />. A region passes only with Brier skill &gt; {risk.skillRule.bss},
+            AUC ≥ {risk.skillRule.auc} and adjusted p ≤ {risk.skillRule.p}; only passing regions would have
+            projected odds.
+          </p>
+          <p>
+            Result: {riskPassed} of {risk.regions.length} regions pass, on {Math.min(...riskYears)}–
+            {Math.max(...riskYears)} years of records each. {riskPassed === 0
+              ? "The Future Outlook therefore uses the model-free counts of Section 7e, and the scorecard is published as a negative result."
+              : "Only those regions carry projected odds; the rest use the model-free counts of Section 7e."}
+          </p>
+        </Section>
+
         <Section id="limitations" n="8" title="Limitations">
           <ol className="list-decimal space-y-2 pl-5 marker:text-ink-3">
             <li>
@@ -641,6 +743,21 @@ export default async function MethodsPage() {
               Cross-check agreement is a consistency test, not an independent
               validation of every grid cell.
             </li>
+            <li>
+              Climate twins share a trend fingerprint, not a fate; disaster
+              catalogues under-report poorer and remote places, so differences in
+              recorded events between twins are partly differences in reporting.
+            </li>
+            <li>
+              Projections use {outlook.models.length} models at 1°; rainfall
+              changes are less certain than temperature changes, and local
+              extremes are sharper than any 1° average.
+            </li>
+            <li>
+              Disaster records of 11–26 years are too short for the disaster-year
+              model to show skill; a longer, consistently reported record would be
+              needed before projecting disaster odds.
+            </li>
           </ol>
         </Section>
 
@@ -664,7 +781,12 @@ python cyclones.py       # cyclone tracks and basin sea warmth
 python crosscheck.py     # CRU TS 4.10 replication
 python latest.py         # latest month vs normal
 python intelligence.py   # conclusions, alerts, confidence, history
-python evaluate.py       # backtest and evaluation metrics`}</code>
+python evaluate.py       # backtest and evaluation metrics
+python turning.py        # Pettitt turning points
+python twins.py          # climate twins (global blocks, disasters)
+python cmip6_download.py # NEX-GDDP-CMIP6 subsets (no login)
+python future.py         # future outlook
+python risk.py           # disaster-year model scorecard`}</code>
           </pre>
           <p>
             Python tests cover the statistical procedures (
