@@ -9,41 +9,42 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { useEffect, useRef } from "react";
 import { createBaseMap, createCanvasRenderer, type BaseMap } from "@/components/map/baseMap";
-import { useLang } from "@/lib/i18n";
 import { cssVar, useTheme } from "@/lib/theme";
 
 export interface TwinMapBlock {
   id: string;
   bbox: [number, number, number, number];
   name: string;
+  /** Warming and rainy-season rain trends per decade, with whether each is clear after FDR control. */
+  warming: number;
+  wetTrend: number;
+  warmingClear: boolean;
+  wetClear: boolean;
+}
+
+/** How one block is drawn: a colour token, an opacity and its tooltip line (already in the page language). */
+export interface Shade {
+  tok: string;
+  opacity: number;
+  tip: string;
 }
 
 interface Props {
   blocks: TwinMapBlock[];
-  similarity: number[];
+  shade: (Shade | null)[];
   region: { name: string; bbox: [number, number, number, number] };
   twins: string[];
   active: string | null;
   onSelect: (id: string) => void;
 }
 
-/** Similarity percentile -> colour step; below the 80th percentile a block stays unshaded. */
-function step(p: number): string | null {
-  if (p >= 99) return "--cool-4";
-  if (p >= 95) return "--cool-3";
-  if (p >= 90) return "--cool-2";
-  if (p >= 80) return "--cool-1";
-  return null;
-}
-
-export default function TwinMap({ blocks, similarity, region, twins, active, onSelect }: Props) {
+export default function TwinMap({ blocks, shade, region, twins, active, onSelect }: Props) {
   const host = useRef<HTMLDivElement>(null);
   const base = useRef<BaseMap | null>(null);
   const layer = useRef<L.LayerGroup | null>(null);
   const renderer = useRef<L.Canvas | null>(null);
   const select = useRef(onSelect);
   const theme = useTheme();
-  const lang = useLang();
 
   useEffect(() => {
     select.current = onSelect;
@@ -74,26 +75,20 @@ export default function TwinMap({ blocks, similarity, region, twins, active, onS
     const r = renderer.current;
     if (!group || !r) return;
     group.clearLayers();
-    const bn = lang === "bn";
     const edge = cssVar("--page");
 
     blocks.forEach((blk, k) => {
-      const tok = step(similarity[k]);
-      if (!tok) return;
+      const sh = shade[k];
+      if (!sh) return;
       const [la0, la1, lo0, lo1] = blk.bbox;
       const rect = L.rectangle(
         [
           [la0, lo0],
           [la1, lo1],
         ],
-        { renderer: r, color: edge, weight: 0.5, fillColor: cssVar(tok), fillOpacity: 0.9 },
+        { renderer: r, color: edge, weight: 0.5, fillColor: cssVar(sh.tok), fillOpacity: sh.opacity },
       );
-      rect.bindTooltip(
-        bn
-          ? `<strong>${blk.name}</strong><br>মিলের দিক থেকে পৃথিবীর স্থলভাগের শীর্ষ ${Math.max(1, Math.ceil(100 - similarity[k]))}%-এ`
-          : `<strong>${blk.name}</strong><br>In the top ${Math.max(1, Math.ceil(100 - similarity[k]))}% of Earth's land for this match`,
-        { sticky: true, className: "map-tooltip" },
-      );
+      rect.bindTooltip(`<strong>${blk.name}</strong><br>${sh.tip}`, { sticky: true, className: "map-tooltip" });
       if (twins.includes(blk.id)) rect.on("click", () => select.current(blk.id));
       group.addLayer(rect);
     });
@@ -128,7 +123,7 @@ export default function TwinMap({ blocks, similarity, region, twins, active, onS
       marker.on("click", () => select.current(id));
       group.addLayer(marker);
     });
-  }, [blocks, similarity, region, twins, active, theme, lang]);
+  }, [blocks, shade, region, twins, active, theme]);
 
   return <div ref={host} className="h-full w-full bg-sunken" />;
 }

@@ -22,7 +22,19 @@ export default async function ClimateTwinsPage() {
     readData<TwinSeries>("twins", "series.json"),
   ]);
   // The map needs only outlines; full details travel only for the blocks that are someone's twin.
-  const mapBlocks = data.blocks.map(({ id, bbox, name }) => ({ id, bbox, name }));
+  // Global trend view: a block's trend counts as clear only after Benjamini–Hochberg control across
+  // all blocks (alpha 0.10), the same rule as the South Asia trend map.
+  const warmClear = fdr(data.blocks.map((b) => b.tests.warming?.p ?? 1));
+  const wetClear = fdr(data.blocks.map((b) => b.tests.wetTrend?.p ?? 1));
+  const mapBlocks = data.blocks.map(({ id, bbox, name, features }, k) => ({
+    id,
+    bbox,
+    name,
+    warming: features.warming,
+    wetTrend: features.wetTrend,
+    warmingClear: warmClear[k],
+    wetClear: wetClear[k],
+  }));
   const wanted = new Set(data.regions.flatMap((r) => r.twins.map((t) => t.id)));
   const twinBlocks: Record<string, Block> = Object.fromEntries(data.blocks.filter((b) => wanted.has(b.id)).map((b) => [b.id, b]));
   const countries = new Set(Object.values(twinBlocks).flatMap((b) => b.countries));
@@ -134,6 +146,16 @@ export default async function ClimateTwinsPage() {
       </section>
     </div>
   );
+}
+
+/** Benjamini–Hochberg: which p-values stay significant across the whole map. */
+function fdr(p: number[], alpha = 0.1): boolean[] {
+  const order = p.map((v, i) => [v, i] as const).sort((a, b) => a[0] - b[0]);
+  let cutoff = -1;
+  order.forEach(([v], rank) => {
+    if (v <= (alpha * (rank + 1)) / p.length) cutoff = v;
+  });
+  return p.map((v) => v <= cutoff);
 }
 
 function Stat({ value, en, bn }: { value: number | string; en: string; bn: string }) {

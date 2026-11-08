@@ -22,7 +22,8 @@ import {
   type Region,
   type TwinSeries,
 } from "@/lib/twins";
-import type { TwinMapBlock } from "./TwinMap";
+import { trendLegendTokens, trendToken } from "@/lib/trends";
+import type { Shade, TwinMapBlock } from "./TwinMap";
 
 const TwinMap = dynamic(() => import("./TwinMap"), { ssr: false, loading: () => <MapLoading /> });
 
@@ -30,6 +31,25 @@ const KEYS: FeatureKey[] = ["warming", "rainTrend", "wetTrend", "wetness", "seas
 const TRENDS = new Set<FeatureKey>(["warming", "rainTrend", "wetTrend"]);
 const TYPES: EventType[] = ["flood", "landslide", "cyclone", "drought"];
 const ALPHA = 0.05;
+
+type View = "match" | "warming" | "wet";
+
+const VIEWS: { id: View; en: string; bn: string }[] = [
+  { id: "match", en: "Match to region", bn: "অঞ্চলের সাথে মিল" },
+  { id: "warming", en: "Warming worldwide", bn: "বিশ্বজুড়ে উষ্ণতা" },
+  { id: "wet", en: "Rainy-season rain worldwide", bn: "বিশ্বজুড়ে বর্ষার বৃষ্টি" },
+];
+const WARM_LIMIT = 0.6; // °C per decade at the end of the colour scale
+const WET_LIMIT = 10; // % per decade
+
+/** Similarity percentile -> colour step; below the 80th percentile a block stays unshaded. */
+function matchStep(p: number): string | null {
+  if (p >= 99) return "--cool-4";
+  if (p >= 95) return "--cool-3";
+  if (p >= 90) return "--cool-2";
+  if (p >= 80) return "--cool-1";
+  return null;
+}
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -61,6 +81,7 @@ export default function TwinExplorer({
   const [regionId, setRegionId] = useState(regions[0]?.id ?? "");
   const region = regions.find((r) => r.id === regionId) ?? regions[0];
   const [picked, setPicked] = useState<string | null>(null);
+  const [view, setView] = useState<View>("match");
   const activeId = picked && region.twins.some((t) => t.id === picked) ? picked : region.twins[0]?.id ?? null;
   const twin = activeId ? twinBlocks[activeId] : null;
   const twinMeta = region.twins.find((t) => t.id === activeId) ?? null;
@@ -73,6 +94,44 @@ export default function TwinExplorer({
   };
 
   const twinIds = useMemo(() => region.twins.map((t) => t.id), [region]);
+
+  // How each block is drawn in the chosen view. Trend views: colour = rate, solid = clear after FDR.
+  const shade: (Shade | null)[] = useMemo(
+    () =>
+      mapBlocks.map((b, k) => {
+        if (view === "match") {
+          const tok = matchStep(region.similarity[k]);
+          if (!tok) return null;
+          const top = Math.max(1, Math.ceil(100 - region.similarity[k]));
+          return {
+            tok,
+            opacity: 0.9,
+            tip: bn ? `মিলের দিক থেকে পৃথিবীর স্থলভাগের শীর্ষ ${bnNum(top)}%-এ` : `In the top ${top}% of Earth's land for this match`,
+          };
+        }
+        const warm = view === "warming";
+        const v = warm ? b.warming : b.wetTrend;
+        const clear = warm ? b.warmingClear : b.wetClear;
+        const shown = featureValue(warm ? "warming" : "wetTrend", v);
+        const unit = warm ? (bn ? "°সে" : "°C") : "%";
+        return {
+          tok: trendToken(v, warm ? WARM_LIMIT : WET_LIMIT, warm ? "temperature" : "rainfall"),
+          opacity: clear ? 0.9 : 0.25,
+          tip: bn
+            ? `প্রতি ১০ বছরে ${bnNum(shown)} ${unit} · ${clear ? "স্পষ্ট পরিবর্তন" : "স্পষ্ট পরিবর্তন নেই"}`
+            : `${shown} ${unit} per 10 years · ${clear ? "clear change" : "no clear change"}`,
+        };
+      }),
+    [mapBlocks, view, region, bn],
+  );
+
+  const globalCounts = useMemo(() => {
+    const wetter = mapBlocks.filter((b) => b.wetClear && b.wetTrend > 0).length;
+    const drier = mapBlocks.filter((b) => b.wetClear && b.wetTrend < 0).length;
+    const warming = mapBlocks.filter((b) => b.warmingClear && b.warming > 0).length;
+    const cooling = mapBlocks.filter((b) => b.warmingClear && b.warming < 0).length;
+    return { wetter, drier, warming, cooling, n: mapBlocks.length };
+  }, [mapBlocks]);
 
   // The fingerprint headline for the chosen region, in words.
   const wt = region.tests.wetTrend;
@@ -109,19 +168,75 @@ export default function TwinExplorer({
 
       <p className="mt-4 text-base leading-relaxed text-ink">{lead}</p>
 
+      <fieldset className="mt-4">
+        <legend className="text-xs font-medium text-ink-3">
+          <T en="Colour the map by" bn="মানচিত্রের রং" />
+        </legend>
+        <div className="mt-1.5 inline-flex flex-wrap rounded-2xl border border-line bg-card p-1">
+          {VIEWS.map((v) => (
+            <button
+              key={v.id}
+              type="button"
+              aria-pressed={view === v.id}
+              onClick={() => setView(v.id)}
+              className={`${CONTROL.segment} ${CONTROL.transition} ${CONTROL.focusRing} whitespace-nowrap rounded-full px-3 text-sm font-medium ${
+                view === v.id ? "bg-accent-strong text-accent-ink" : "text-ink-2 hover:text-ink"
+              }`}
+            >
+              <T en={v.en} bn={v.bn} />
+            </button>
+          ))}
+        </div>
+      </fieldset>
+      {view !== "match" && (
+        <p className="mt-3 max-w-[75ch] text-sm leading-relaxed text-ink-2">
+          {view === "warming" ? (
+            <T
+              en={`Across ${globalCounts.n} land blocks, ${globalCounts.warming} warmed clearly since ${years[0]} and ${globalCounts.cooling} cooled clearly. Warming is the one signal almost everywhere agrees on.`}
+              bn={`${bnNum(globalCounts.n)}টি স্থলখণ্ডের মধ্যে ${bnNum(years[0])} থেকে ${bnNum(globalCounts.warming)}টি স্পষ্টভাবে উষ্ণ হয়েছে, ${bnNum(globalCounts.cooling)}টি স্পষ্টভাবে শীতল। উষ্ণতাই সেই সংকেত যেখানে প্রায় সবখানে মিল।`}
+            />
+          ) : (
+            <T
+              en={`The same warming, opposite rain: ${globalCounts.wetter} blocks got clearly wetter in their own rainy season and ${globalCounts.drier} clearly drier, while most show no clear change yet. This is why a single global number cannot tell a region what to prepare for.`}
+              bn={`একই উষ্ণতা, বিপরীত বৃষ্টি: ${bnNum(globalCounts.wetter)}টি খণ্ড নিজের বর্ষা মৌসুমে স্পষ্টভাবে ভেজা হয়েছে আর ${bnNum(globalCounts.drier)}টি স্পষ্টভাবে শুষ্ক, বেশিরভাগে এখনো স্পষ্ট পরিবর্তন নেই। তাই একটি বৈশ্বিক সংখ্যা কোনো অঞ্চলকে বলতে পারে না কীসের জন্য প্রস্তুত হতে হবে।`}
+            />
+          )}
+        </p>
+      )}
+
       <div className="mt-5 grid gap-5 lg:grid-cols-[minmax(0,1fr)_340px]">
         <div className="min-w-0">
           <div className="relative isolate h-[320px] overflow-hidden rounded-2xl border border-line bg-sunken sm:h-[440px]">
             <TwinMap
               blocks={mapBlocks}
-              similarity={region.similarity}
+              shade={shade}
               region={{ name: region.name, bbox: region.bbox }}
               twins={twinIds}
               active={activeId}
               onSelect={setPicked}
             />
           </div>
-          <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-ink-2">
+          {view !== "match" && (
+            <div className="mt-2 flex items-center gap-2 text-xs text-ink-2">
+              <span className="shrink-0">
+                {view === "warming" ? <T en="cooling" bn="শীতল" /> : <T en="drier" bn="শুষ্ক" />}
+              </span>
+              <span aria-hidden className="flex h-3 flex-1 overflow-hidden rounded-full border border-line">
+                {trendLegendTokens(view === "warming" ? "temperature" : "rainfall").map((tok) => (
+                  <span key={tok} className="flex-1" style={{ background: `var(${tok})` }} />
+                ))}
+              </span>
+              <span className="shrink-0">
+                {view === "warming" ? <T en="warming" bn="উষ্ণ" /> : <T en="wetter" bn="ভেজা" />}
+              </span>
+              <span className="shrink-0 tabular-nums text-ink-3">
+                ±{bn ? bnNum(view === "warming" ? WARM_LIMIT : WET_LIMIT) : view === "warming" ? WARM_LIMIT : WET_LIMIT}
+                {view === "warming" ? (bn ? " °সে" : " °C") : "%"}
+                <T en=" / 10 yr · faded = not clear" bn=" / ১০ বছর · হালকা = স্পষ্ট নয়" />
+              </span>
+            </div>
+          )}
+          <div className={`mt-2 flex-wrap items-center gap-x-4 gap-y-1 text-xs text-ink-2 ${view === "match" ? "flex" : "hidden"}`}>
             {[
               ["--cool-4", "Top 1%", "শীর্ষ ১%"],
               ["--cool-3", "Top 5%", "শীর্ষ ৫%"],
