@@ -3,6 +3,7 @@ import {
   CloudRain,
   ExternalLink,
   Gauge,
+  Globe,
   Microscope,
   Radio,
   ScanEye,
@@ -374,6 +375,16 @@ const DESTINATIONS: {
     text: {
       en: "45 years of NASA temperature and rain records: what is changing, where, by how much, and whether it is statistically significant.",
       bn: "নাসার ৪৫ বছরের তাপমাত্রা ও বৃষ্টির রেকর্ড: কী বদলাচ্ছে, কোথায়, কতটা, আর তা পরিসংখ্যানগতভাবে তাৎপর্যপূর্ণ কি না।",
+    },
+  },
+  {
+    href: "/climate-twins",
+    Icon: Globe,
+    en: "Climate Twins",
+    bn: "জলবায়ু যমজ",
+    text: {
+      en: "Places elsewhere on Earth changing the same way as our regions, and the disasters they have already recorded.",
+      bn: "পৃথিবীর অন্য যেসব জায়গা আমাদের অঞ্চলের মতোই বদলাচ্ছে, আর সেখানে ইতিমধ্যে কী দুর্যোগ নথিভুক্ত হয়েছে।",
     },
   },
   {

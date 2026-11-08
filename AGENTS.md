@@ -20,6 +20,7 @@ Pipeline order matters (later steps read earlier outputs):
 output (CI checks it), and `--refresh` adds monthly series (network). All thresholds live in `analysis/intel/thresholds.py`;
 never duplicate a threshold in TypeScript. `analysis/intel/` is a package on purpose: a top-level `calendar.py` would shadow
 the standard library module that `build.py` and `latest.py` import.
+`twins.py` (Climate Twins, offline after the first run) reads the global `raw/gistemp` + `raw/gpcp` files, Natural Earth outlines in `raw/naturalearth/`, cached GDACS FL/DR/TC and `raw/events/glc.csv`, and writes `web/public/data/twins/{twins,series}.json` for `/climate-twins`; tests in `test_twins.py`. `cmip6_download.py` fetches NASA NEX-GDDP-CMIP6 South Asia subsets (6 models; historical 1995–2014, SSP2-4.5/SSP5-8.5 2041–2060) into `raw/cmip6/` via NCCS THREDDS NCSS (no login).
 `build.py` itself also runs `build_country_signals.py`, writing `web/public/data/maps/place-signals.json`. `build_hazards.py`, `latest.py`, and `crosscheck.py` all depend on `build.py` output; `crosscheck.py` re-reads `trends/zones.json`.
 
 ## Web notes
