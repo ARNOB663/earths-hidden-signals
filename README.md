@@ -10,7 +10,7 @@ The same global warming shows up differently across South Asia: heavier rain in 
 
 | Folder | What it is |
 |---|---|
-| [`web/`](web/) | Next.js + TypeScript website: Home, Signal (search, map, coverage, Watch Level, historical frequency), Gap, Replay, Accuracy, Act, Watch, plus Climate Trends (trend map, per-region and per-square Mann–Kendall / Sen's slope results), Climate Twins (places worldwide with the same trend fingerprint and the disasters they recorded), Methods and For Organizations |
+| [`web/`](web/) | Next.js + TypeScript website: Home, Signal (search, map, coverage, Watch Level, historical frequency), Gap, Replay, Accuracy, Act, Watch, plus Climate Trends (trend map, per-region and per-square Mann–Kendall / Sen's slope results), Climate Twins (places worldwide with the same trend fingerprint and the disasters they recorded), Future Outlook (NASA NEX-GDDP-CMIP6 projections for 2041–2060), Methods and For Organizations |
 | [`analysis/`](analysis/) | Python pipeline: downloads NASA records, runs the trend tests, writes JSON for the website |
 
 AGENTS.md (root) is the authoritative guide to the code layout, commands and data contracts. The
@@ -66,6 +66,7 @@ python build_geography.py        # geoBoundaries gbOpen boundaries (network; the
 python build_signal_scores.py    # Signals coverage and demo scores
 python build_hazards.py
 python twins.py                  # Climate Twins: global trend fingerprints + GDACS / landslide records
+python cmip6_download.py && python future.py   # Future Outlook: NASA NEX-GDDP-CMIP6 (no login)
 
 # website
 cd web

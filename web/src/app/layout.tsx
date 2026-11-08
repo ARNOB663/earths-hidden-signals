@@ -86,6 +86,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                 </h2>
                 <FooterLink href="/climate-trends" en="Climate Trends" bn="জলবায়ু প্রবণতা" />
                 <FooterLink href="/climate-twins" en="Climate Twins" bn="জলবায়ু যমজ" />
+                <FooterLink href="/future-outlook" en="Future Outlook" bn="ভবিষ্যতের চিত্র" />
                 <FooterLink href="/methods" en="Methods" bn="পদ্ধতি" />
                 <FooterLink href="/for-organizations" en="Organizations" bn="প্রতিষ্ঠান" />
                 <FooterLink href="/methods#data" en="Data Sources" bn="তথ্যসূত্র" />

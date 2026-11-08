@@ -9,6 +9,7 @@ import {
   ScanEye,
   ShieldAlert,
   ShieldCheck,
+  Telescope,
   TrendingUp,
 } from "lucide-react";
 import { readManifest, readTrendZones } from "@/lib/data";
@@ -385,6 +386,16 @@ const DESTINATIONS: {
     text: {
       en: "Places elsewhere on Earth changing the same way as our regions, and the disasters they have already recorded.",
       bn: "পৃথিবীর অন্য যেসব জায়গা আমাদের অঞ্চলের মতোই বদলাচ্ছে, আর সেখানে ইতিমধ্যে কী দুর্যোগ নথিভুক্ত হয়েছে।",
+    },
+  },
+  {
+    href: "/future-outlook",
+    Icon: Telescope,
+    en: "Future Outlook",
+    bn: "ভবিষ্যতের চিত্র",
+    text: {
+      en: "NASA climate projections for 2041–2060: how often today's rare wet, dry and hot years would happen, and how far the models agree.",
+      bn: "২০৪১–২০৬০ সালের জন্য নাসার জলবায়ু অনুমান: আজকের বিরল ভেজা, শুকনো ও গরম বছর কত ঘন ঘন হবে, আর মডেলগুলো কতটা একমত।",
     },
   },
   {

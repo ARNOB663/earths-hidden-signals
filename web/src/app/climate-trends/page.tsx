@@ -257,6 +257,10 @@ export default async function ClimateTrendsPage() {
               <T en="Full methods" bn="পুরো পদ্ধতি" />
               <ArrowRight size={14} aria-hidden />
             </Link>
+            <Link href="/future-outlook" className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:underline">
+              <T en="Where it could go: Future outlook" bn="কোথায় যেতে পারে: ভবিষ্যতের চিত্র" />
+              <ArrowRight size={14} aria-hidden />
+            </Link>
             <Link href="/climate-twins" className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:underline">
               <T en="Who else is changing the same way? Climate twins" bn="আর কোথায় একইভাবে বদলাচ্ছে? জলবায়ু যমজ" />
               <ArrowRight size={14} aria-hidden />

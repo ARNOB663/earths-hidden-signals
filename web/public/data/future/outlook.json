@@ -1,0 +1,2565 @@
+{
+ "generated": "2026-11-08",
+ "dataset": "NASA NEX-GDDP-CMIP6 (Thrasher et al. 2022), daily, bias-corrected and downscaled to 0.25°, used at 1°",
+ "datasetUrl": "https://www.nccs.nasa.gov/services/data-collections/land-based-products/nex-gddp-cmip6",
+ "models": [
+  "MRI-ESM2-0",
+  "ACCESS-CM2",
+  "EC-Earth3"
+ ],
+ "present": [
+  1995,
+  2014
+ ],
+ "future": [
+  2041,
+  2060
+ ],
+ "scenarios": {
+  "ssp245": "Middle road (SSP2-4.5)",
+  "ssp585": "High emissions (SSP5-8.5)"
+ },
+ "metrics": {
+  "tMean": {
+   "label": "Average temperature",
+   "unit": "°C",
+   "kind": "abs",
+   "decimals": 1
+  },
+  "hotDays": {
+   "label": "Unusually hot days per year (for the time of year)",
+   "unit": "days",
+   "kind": "abs",
+   "decimals": 0
+  },
+  "annualRain": {
+   "label": "Yearly rain",
+   "unit": "mm",
+   "kind": "pct",
+   "decimals": 0
+  },
+  "monsoonRain": {
+   "label": "Monsoon rain (Jun–Sep)",
+   "unit": "mm",
+   "kind": "pct",
+   "decimals": 0
+  },
+  "heavyDays": {
+   "label": "Very heavy rain days per year",
+   "unit": "days",
+   "kind": "abs",
+   "decimals": 1
+  },
+  "wettestDay": {
+   "label": "Rain on the wettest day",
+   "unit": "mm",
+   "kind": "pct",
+   "decimals": 0
+  },
+  "drySpell": {
+   "label": "Longest monsoon dry spell",
+   "unit": "days",
+   "kind": "abs",
+   "decimals": 1
+  }
+ },
+ "exceedance": {
+  "wetMonsoon": {
+   "metric": "monsoonRain",
+   "tail": "high",
+   "label": "A monsoon as wet as today's 1-in-10 wettest"
+  },
+  "dryMonsoon": {
+   "metric": "monsoonRain",
+   "tail": "low",
+   "label": "A monsoon as dry as today's 1-in-10 driest"
+  },
+  "heavyYear": {
+   "metric": "heavyDays",
+   "tail": "high",
+   "label": "A year with as many very heavy rain days as today's 1-in-10"
+  },
+  "hotYear": {
+   "metric": "tMean",
+   "tail": "high",
+   "label": "A year as hot as today's 1-in-10 hottest"
+  }
+ },
+ "regions": [
+  {
+   "id": "study-area",
+   "name": "Whole study area",
+   "hazard": null,
+   "focus": [
+    "tMean",
+    "monsoonRain",
+    "heavyDays"
+   ],
+   "scenarios": {
+    "ssp245": {
+     "metrics": {
+      "tMean": {
+       "median": 1.59,
+       "min": 1.47,
+       "max": 2.04,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 1.59,
+        "ACCESS-CM2": 2.04,
+        "EC-Earth3": 1.47
+       }
+      },
+      "hotDays": {
+       "median": 75.8,
+       "min": 62.7,
+       "max": 116.3,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 75.8,
+        "ACCESS-CM2": 116.3,
+        "EC-Earth3": 62.7
+       }
+      },
+      "annualRain": {
+       "median": 9.6,
+       "min": 2.1,
+       "max": 11.9,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 2.1,
+        "ACCESS-CM2": 11.9,
+        "EC-Earth3": 9.6
+       }
+      },
+      "monsoonRain": {
+       "median": 10.6,
+       "min": 4.2,
+       "max": 10.6,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 4.2,
+        "ACCESS-CM2": 10.6,
+        "EC-Earth3": 10.6
+       }
+      },
+      "heavyDays": {
+       "median": 1.4,
+       "min": 0.67,
+       "max": 1.67,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 0.67,
+        "ACCESS-CM2": 1.67,
+        "EC-Earth3": 1.4
+       }
+      },
+      "wettestDay": {
+       "median": 12.1,
+       "min": 3.7,
+       "max": 13.2,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 3.7,
+        "ACCESS-CM2": 12.1,
+        "EC-Earth3": 13.2
+       }
+      },
+      "drySpell": {
+       "median": -0.69,
+       "min": -1.7,
+       "max": -0.3,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": -0.3,
+        "ACCESS-CM2": -0.69,
+        "EC-Earth3": -1.7
+       }
+      }
+     },
+     "exceedance": {
+      "wetMonsoon": {
+       "today": 0.1,
+       "median": 0.45,
+       "min": 0.05,
+       "max": 0.45,
+       "perModel": {
+        "MRI-ESM2-0": 0.05,
+        "ACCESS-CM2": 0.45,
+        "EC-Earth3": 0.45
+       }
+      },
+      "dryMonsoon": {
+       "today": 0.1,
+       "median": 0.0,
+       "min": 0.0,
+       "max": 0.1,
+       "perModel": {
+        "MRI-ESM2-0": 0.0,
+        "ACCESS-CM2": 0.0,
+        "EC-Earth3": 0.1
+       }
+      },
+      "heavyYear": {
+       "today": 0.1,
+       "median": 0.95,
+       "min": 0.45,
+       "max": 0.95,
+       "perModel": {
+        "MRI-ESM2-0": 0.45,
+        "ACCESS-CM2": 0.95,
+        "EC-Earth3": 0.95
+       }
+      },
+      "hotYear": {
+       "today": 0.1,
+       "median": 1.0,
+       "min": 1.0,
+       "max": 1.0,
+       "perModel": {
+        "MRI-ESM2-0": 1.0,
+        "ACCESS-CM2": 1.0,
+        "EC-Earth3": 1.0
+       }
+      }
+     }
+    },
+    "ssp585": {
+     "metrics": {
+      "tMean": {
+       "median": 2.42,
+       "min": 2.08,
+       "max": 2.43,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 2.42,
+        "ACCESS-CM2": 2.43,
+        "EC-Earth3": 2.08
+       }
+      },
+      "hotDays": {
+       "median": 124.7,
+       "min": 103.1,
+       "max": 143.8,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 124.7,
+        "ACCESS-CM2": 143.8,
+        "EC-Earth3": 103.1
+       }
+      },
+      "annualRain": {
+       "median": 8.4,
+       "min": 1.1,
+       "max": 16.1,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 1.1,
+        "ACCESS-CM2": 8.4,
+        "EC-Earth3": 16.1
+       }
+      },
+      "monsoonRain": {
+       "median": 7.7,
+       "min": 2.6,
+       "max": 16.5,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 2.6,
+        "ACCESS-CM2": 7.7,
+        "EC-Earth3": 16.5
+       }
+      },
+      "heavyDays": {
+       "median": 1.47,
+       "min": 1.0,
+       "max": 2.27,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 1.0,
+        "ACCESS-CM2": 1.47,
+        "EC-Earth3": 2.27
+       }
+      },
+      "wettestDay": {
+       "median": 10.3,
+       "min": 5.0,
+       "max": 18.5,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 5.0,
+        "ACCESS-CM2": 10.3,
+        "EC-Earth3": 18.5
+       }
+      },
+      "drySpell": {
+       "median": -0.91,
+       "min": -2.02,
+       "max": 0.01,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": 0.01,
+        "ACCESS-CM2": -0.91,
+        "EC-Earth3": -2.02
+       }
+      }
+     },
+     "exceedance": {
+      "wetMonsoon": {
+       "today": 0.1,
+       "median": 0.35,
+       "min": 0.1,
+       "max": 0.7,
+       "perModel": {
+        "MRI-ESM2-0": 0.1,
+        "ACCESS-CM2": 0.35,
+        "EC-Earth3": 0.7
+       }
+      },
+      "dryMonsoon": {
+       "today": 0.1,
+       "median": 0.05,
+       "min": 0.0,
+       "max": 0.1,
+       "perModel": {
+        "MRI-ESM2-0": 0.0,
+        "ACCESS-CM2": 0.1,
+        "EC-Earth3": 0.05
+       }
+      },
+      "heavyYear": {
+       "today": 0.1,
+       "median": 0.85,
+       "min": 0.55,
+       "max": 1.0,
+       "perModel": {
+        "MRI-ESM2-0": 0.55,
+        "ACCESS-CM2": 0.85,
+        "EC-Earth3": 1.0
+       }
+      },
+      "hotYear": {
+       "today": 0.1,
+       "median": 1.0,
+       "min": 1.0,
+       "max": 1.0,
+       "perModel": {
+        "MRI-ESM2-0": 1.0,
+        "ACCESS-CM2": 1.0,
+        "EC-Earth3": 1.0
+       }
+      }
+     }
+    }
+   },
+   "present": {
+    "tMean": 16.9,
+    "hotDays": 18.0,
+    "annualRain": 929.0,
+    "monsoonRain": 658.0,
+    "heavyDays": 4.3,
+    "wettestDay": 42.0,
+    "drySpell": 29.7
+   }
+  },
+  {
+   "id": "bengal-delta",
+   "name": "Ganges-Brahmaputra-Meghna delta",
+   "hazard": "flood",
+   "focus": [
+    "monsoonRain",
+    "heavyDays",
+    "wettestDay"
+   ],
+   "scenarios": {
+    "ssp245": {
+     "metrics": {
+      "tMean": {
+       "median": 1.5,
+       "min": 0.94,
+       "max": 1.54,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 1.54,
+        "ACCESS-CM2": 1.5,
+        "EC-Earth3": 0.94
+       }
+      },
+      "hotDays": {
+       "median": 132.8,
+       "min": 74.4,
+       "max": 139.6,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 132.8,
+        "ACCESS-CM2": 139.6,
+        "EC-Earth3": 74.4
+       }
+      },
+      "annualRain": {
+       "median": 2.2,
+       "min": -16.4,
+       "max": 20.1,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": -16.4,
+        "ACCESS-CM2": 20.1,
+        "EC-Earth3": 2.2
+       }
+      },
+      "monsoonRain": {
+       "median": -0.6,
+       "min": -15.2,
+       "max": 16.0,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": -15.2,
+        "ACCESS-CM2": 16.0,
+        "EC-Earth3": -0.6
+       }
+      },
+      "heavyDays": {
+       "median": 0.68,
+       "min": -1.79,
+       "max": 5.56,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": -1.79,
+        "ACCESS-CM2": 5.56,
+        "EC-Earth3": 0.68
+       }
+      },
+      "wettestDay": {
+       "median": 12.5,
+       "min": -2.0,
+       "max": 20.2,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": -2.0,
+        "ACCESS-CM2": 20.2,
+        "EC-Earth3": 12.5
+       }
+      },
+      "drySpell": {
+       "median": 0.95,
+       "min": -0.18,
+       "max": 1.11,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": 1.11,
+        "ACCESS-CM2": -0.18,
+        "EC-Earth3": 0.95
+       }
+      }
+     },
+     "exceedance": {
+      "wetMonsoon": {
+       "today": 0.1,
+       "median": 0.15,
+       "min": 0.05,
+       "max": 0.3,
+       "perModel": {
+        "MRI-ESM2-0": 0.05,
+        "ACCESS-CM2": 0.3,
+        "EC-Earth3": 0.15
+       }
+      },
+      "dryMonsoon": {
+       "today": 0.1,
+       "median": 0.15,
+       "min": 0.0,
+       "max": 0.35,
+       "perModel": {
+        "MRI-ESM2-0": 0.35,
+        "ACCESS-CM2": 0.0,
+        "EC-Earth3": 0.15
+       }
+      },
+      "heavyYear": {
+       "today": 0.1,
+       "median": 0.2,
+       "min": 0.05,
+       "max": 0.65,
+       "perModel": {
+        "MRI-ESM2-0": 0.05,
+        "ACCESS-CM2": 0.65,
+        "EC-Earth3": 0.2
+       }
+      },
+      "hotYear": {
+       "today": 0.1,
+       "median": 1.0,
+       "min": 0.85,
+       "max": 1.0,
+       "perModel": {
+        "MRI-ESM2-0": 1.0,
+        "ACCESS-CM2": 1.0,
+        "EC-Earth3": 0.85
+       }
+      }
+     }
+    },
+    "ssp585": {
+     "metrics": {
+      "tMean": {
+       "median": 2.03,
+       "min": 1.34,
+       "max": 2.1,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 2.1,
+        "ACCESS-CM2": 2.03,
+        "EC-Earth3": 1.34
+       }
+      },
+      "hotDays": {
+       "median": 174.8,
+       "min": 117.8,
+       "max": 185.8,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 174.8,
+        "ACCESS-CM2": 185.8,
+        "EC-Earth3": 117.8
+       }
+      },
+      "annualRain": {
+       "median": 9.8,
+       "min": -15.0,
+       "max": 10.1,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": -15.0,
+        "ACCESS-CM2": 10.1,
+        "EC-Earth3": 9.8
+       }
+      },
+      "monsoonRain": {
+       "median": 7.9,
+       "min": -12.1,
+       "max": 8.7,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": -12.1,
+        "ACCESS-CM2": 7.9,
+        "EC-Earth3": 8.7
+       }
+      },
+      "heavyDays": {
+       "median": 2.77,
+       "min": -1.0,
+       "max": 2.8,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": -1.0,
+        "ACCESS-CM2": 2.77,
+        "EC-Earth3": 2.8
+       }
+      },
+      "wettestDay": {
+       "median": 19.9,
+       "min": 3.1,
+       "max": 20.6,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 3.1,
+        "ACCESS-CM2": 19.9,
+        "EC-Earth3": 20.6
+       }
+      },
+      "drySpell": {
+       "median": 1.12,
+       "min": 0.11,
+       "max": 1.72,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 1.72,
+        "ACCESS-CM2": 0.11,
+        "EC-Earth3": 1.12
+       }
+      }
+     },
+     "exceedance": {
+      "wetMonsoon": {
+       "today": 0.1,
+       "median": 0.3,
+       "min": 0.05,
+       "max": 0.35,
+       "perModel": {
+        "MRI-ESM2-0": 0.05,
+        "ACCESS-CM2": 0.3,
+        "EC-Earth3": 0.35
+       }
+      },
+      "dryMonsoon": {
+       "today": 0.1,
+       "median": 0.15,
+       "min": 0.05,
+       "max": 0.35,
+       "perModel": {
+        "MRI-ESM2-0": 0.35,
+        "ACCESS-CM2": 0.15,
+        "EC-Earth3": 0.05
+       }
+      },
+      "heavyYear": {
+       "today": 0.1,
+       "median": 0.35,
+       "min": 0.1,
+       "max": 0.75,
+       "perModel": {
+        "MRI-ESM2-0": 0.1,
+        "ACCESS-CM2": 0.35,
+        "EC-Earth3": 0.75
+       }
+      },
+      "hotYear": {
+       "today": 0.1,
+       "median": 1.0,
+       "min": 1.0,
+       "max": 1.0,
+       "perModel": {
+        "MRI-ESM2-0": 1.0,
+        "ACCESS-CM2": 1.0,
+        "EC-Earth3": 1.0
+       }
+      }
+     }
+    }
+   },
+   "present": {
+    "tMean": 25.6,
+    "hotDays": 18.0,
+    "annualRain": 2437.0,
+    "monsoonRain": 1755.0,
+    "heavyDays": 6.5,
+    "wettestDay": 87.0,
+    "drySpell": 7.4
+   }
+  },
+  {
+   "id": "indus-plain",
+   "name": "Indus plain",
+   "hazard": "flood",
+   "focus": [
+    "monsoonRain",
+    "heavyDays",
+    "wettestDay"
+   ],
+   "scenarios": {
+    "ssp245": {
+     "metrics": {
+      "tMean": {
+       "median": 1.75,
+       "min": 1.48,
+       "max": 2.24,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 1.75,
+        "ACCESS-CM2": 2.24,
+        "EC-Earth3": 1.48
+       }
+      },
+      "hotDays": {
+       "median": 62.6,
+       "min": 55.4,
+       "max": 108.7,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 62.6,
+        "ACCESS-CM2": 108.7,
+        "EC-Earth3": 55.4
+       }
+      },
+      "annualRain": {
+       "median": 16.1,
+       "min": -1.8,
+       "max": 29.8,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": -1.8,
+        "ACCESS-CM2": 16.1,
+        "EC-Earth3": 29.8
+       }
+      },
+      "monsoonRain": {
+       "median": 8.1,
+       "min": -2.1,
+       "max": 41.4,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": -2.1,
+        "ACCESS-CM2": 8.1,
+        "EC-Earth3": 41.4
+       }
+      },
+      "heavyDays": {
+       "median": 0.33,
+       "min": -0.1,
+       "max": 0.62,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": -0.1,
+        "ACCESS-CM2": 0.33,
+        "EC-Earth3": 0.62
+       }
+      },
+      "wettestDay": {
+       "median": 3.2,
+       "min": 1.0,
+       "max": 21.5,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 1.0,
+        "ACCESS-CM2": 3.2,
+        "EC-Earth3": 21.5
+       }
+      },
+      "drySpell": {
+       "median": -2.76,
+       "min": -5.34,
+       "max": 0.1,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": -2.76,
+        "ACCESS-CM2": 0.1,
+        "EC-Earth3": -5.34
+       }
+      }
+     },
+     "exceedance": {
+      "wetMonsoon": {
+       "today": 0.1,
+       "median": 0.3,
+       "min": 0.0,
+       "max": 0.3,
+       "perModel": {
+        "MRI-ESM2-0": 0.0,
+        "ACCESS-CM2": 0.3,
+        "EC-Earth3": 0.3
+       }
+      },
+      "dryMonsoon": {
+       "today": 0.1,
+       "median": 0.05,
+       "min": 0.0,
+       "max": 0.15,
+       "perModel": {
+        "MRI-ESM2-0": 0.0,
+        "ACCESS-CM2": 0.05,
+        "EC-Earth3": 0.15
+       }
+      },
+      "heavyYear": {
+       "today": 0.1,
+       "median": 0.15,
+       "min": 0.1,
+       "max": 0.25,
+       "perModel": {
+        "MRI-ESM2-0": 0.1,
+        "ACCESS-CM2": 0.15,
+        "EC-Earth3": 0.25
+       }
+      },
+      "hotYear": {
+       "today": 0.1,
+       "median": 1.0,
+       "min": 0.95,
+       "max": 1.0,
+       "perModel": {
+        "MRI-ESM2-0": 1.0,
+        "ACCESS-CM2": 1.0,
+        "EC-Earth3": 0.95
+       }
+      }
+     }
+    },
+    "ssp585": {
+     "metrics": {
+      "tMean": {
+       "median": 2.66,
+       "min": 2.17,
+       "max": 2.67,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 2.66,
+        "ACCESS-CM2": 2.67,
+        "EC-Earth3": 2.17
+       }
+      },
+      "hotDays": {
+       "median": 106.1,
+       "min": 91.1,
+       "max": 135.3,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 106.1,
+        "ACCESS-CM2": 135.3,
+        "EC-Earth3": 91.1
+       }
+      },
+      "annualRain": {
+       "median": 26.9,
+       "min": -4.2,
+       "max": 35.2,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": -4.2,
+        "ACCESS-CM2": 26.9,
+        "EC-Earth3": 35.2
+       }
+      },
+      "monsoonRain": {
+       "median": 20.8,
+       "min": -2.5,
+       "max": 41.6,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": -2.5,
+        "ACCESS-CM2": 20.8,
+        "EC-Earth3": 41.6
+       }
+      },
+      "heavyDays": {
+       "median": 0.65,
+       "min": -0.14,
+       "max": 0.76,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": -0.14,
+        "ACCESS-CM2": 0.65,
+        "EC-Earth3": 0.76
+       }
+      },
+      "wettestDay": {
+       "median": 3.8,
+       "min": 1.0,
+       "max": 20.1,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 1.0,
+        "ACCESS-CM2": 3.8,
+        "EC-Earth3": 20.1
+       }
+      },
+      "drySpell": {
+       "median": -2.8,
+       "min": -3.26,
+       "max": -0.72,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": -0.72,
+        "ACCESS-CM2": -2.8,
+        "EC-Earth3": -3.26
+       }
+      }
+     },
+     "exceedance": {
+      "wetMonsoon": {
+       "today": 0.1,
+       "median": 0.15,
+       "min": 0.0,
+       "max": 0.35,
+       "perModel": {
+        "MRI-ESM2-0": 0.0,
+        "ACCESS-CM2": 0.15,
+        "EC-Earth3": 0.35
+       }
+      },
+      "dryMonsoon": {
+       "today": 0.1,
+       "median": 0.1,
+       "min": 0.05,
+       "max": 0.1,
+       "perModel": {
+        "MRI-ESM2-0": 0.05,
+        "ACCESS-CM2": 0.1,
+        "EC-Earth3": 0.1
+       }
+      },
+      "heavyYear": {
+       "today": 0.1,
+       "median": 0.15,
+       "min": 0.0,
+       "max": 0.4,
+       "perModel": {
+        "MRI-ESM2-0": 0.0,
+        "ACCESS-CM2": 0.15,
+        "EC-Earth3": 0.4
+       }
+      },
+      "hotYear": {
+       "today": 0.1,
+       "median": 1.0,
+       "min": 1.0,
+       "max": 1.0,
+       "perModel": {
+        "MRI-ESM2-0": 1.0,
+        "ACCESS-CM2": 1.0,
+        "EC-Earth3": 1.0
+       }
+      }
+     }
+    }
+   },
+   "present": {
+    "tMean": 24.9,
+    "hotDays": 18.0,
+    "annualRain": 237.0,
+    "monsoonRain": 193.0,
+    "heavyDays": 1.2,
+    "wettestDay": 34.0,
+    "drySpell": 42.7
+   }
+  },
+  {
+   "id": "central-himalaya",
+   "name": "Central Himalaya",
+   "hazard": "landslide",
+   "focus": [
+    "heavyDays",
+    "wettestDay",
+    "monsoonRain"
+   ],
+   "scenarios": {
+    "ssp245": {
+     "metrics": {
+      "tMean": {
+       "median": 1.67,
+       "min": 1.61,
+       "max": 1.9,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 1.67,
+        "ACCESS-CM2": 1.9,
+        "EC-Earth3": 1.61
+       }
+      },
+      "hotDays": {
+       "median": 87.7,
+       "min": 72.2,
+       "max": 119.2,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 87.7,
+        "ACCESS-CM2": 119.2,
+        "EC-Earth3": 72.2
+       }
+      },
+      "annualRain": {
+       "median": 10.1,
+       "min": 1.1,
+       "max": 22.9,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 1.1,
+        "ACCESS-CM2": 22.9,
+        "EC-Earth3": 10.1
+       }
+      },
+      "monsoonRain": {
+       "median": 11.0,
+       "min": 5.0,
+       "max": 16.7,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 5.0,
+        "ACCESS-CM2": 16.7,
+        "EC-Earth3": 11.0
+       }
+      },
+      "heavyDays": {
+       "median": 2.06,
+       "min": 1.67,
+       "max": 3.78,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 1.67,
+        "ACCESS-CM2": 3.78,
+        "EC-Earth3": 2.06
+       }
+      },
+      "wettestDay": {
+       "median": 10.4,
+       "min": -8.3,
+       "max": 24.0,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": -8.3,
+        "ACCESS-CM2": 24.0,
+        "EC-Earth3": 10.4
+       }
+      },
+      "drySpell": {
+       "median": 0.31,
+       "min": -2.77,
+       "max": 0.51,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": 0.31,
+        "ACCESS-CM2": -2.77,
+        "EC-Earth3": 0.51
+       }
+      }
+     },
+     "exceedance": {
+      "wetMonsoon": {
+       "today": 0.1,
+       "median": 0.25,
+       "min": 0.0,
+       "max": 0.25,
+       "perModel": {
+        "MRI-ESM2-0": 0.0,
+        "ACCESS-CM2": 0.25,
+        "EC-Earth3": 0.25
+       }
+      },
+      "dryMonsoon": {
+       "today": 0.1,
+       "median": 0.0,
+       "min": 0.0,
+       "max": 0.05,
+       "perModel": {
+        "MRI-ESM2-0": 0.0,
+        "ACCESS-CM2": 0.0,
+        "EC-Earth3": 0.05
+       }
+      },
+      "heavyYear": {
+       "today": 0.1,
+       "median": 0.55,
+       "min": 0.35,
+       "max": 0.8,
+       "perModel": {
+        "MRI-ESM2-0": 0.35,
+        "ACCESS-CM2": 0.8,
+        "EC-Earth3": 0.55
+       }
+      },
+      "hotYear": {
+       "today": 0.1,
+       "median": 1.0,
+       "min": 1.0,
+       "max": 1.0,
+       "perModel": {
+        "MRI-ESM2-0": 1.0,
+        "ACCESS-CM2": 1.0,
+        "EC-Earth3": 1.0
+       }
+      }
+     }
+    },
+    "ssp585": {
+     "metrics": {
+      "tMean": {
+       "median": 2.48,
+       "min": 2.17,
+       "max": 2.52,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 2.52,
+        "ACCESS-CM2": 2.48,
+        "EC-Earth3": 2.17
+       }
+      },
+      "hotDays": {
+       "median": 134.5,
+       "min": 113.1,
+       "max": 159.6,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 134.5,
+        "ACCESS-CM2": 159.6,
+        "EC-Earth3": 113.1
+       }
+      },
+      "annualRain": {
+       "median": 8.1,
+       "min": 4.1,
+       "max": 19.7,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 8.1,
+        "ACCESS-CM2": 4.1,
+        "EC-Earth3": 19.7
+       }
+      },
+      "monsoonRain": {
+       "median": 11.1,
+       "min": 0.2,
+       "max": 20.3,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 11.1,
+        "ACCESS-CM2": 0.2,
+        "EC-Earth3": 20.3
+       }
+      },
+      "heavyDays": {
+       "median": 2.83,
+       "min": 1.68,
+       "max": 4.08,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 2.83,
+        "ACCESS-CM2": 1.68,
+        "EC-Earth3": 4.08
+       }
+      },
+      "wettestDay": {
+       "median": 12.4,
+       "min": -7.6,
+       "max": 27.7,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": -7.6,
+        "ACCESS-CM2": 12.4,
+        "EC-Earth3": 27.7
+       }
+      },
+      "drySpell": {
+       "median": 0.62,
+       "min": 0.12,
+       "max": 1.68,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 0.12,
+        "ACCESS-CM2": 1.68,
+        "EC-Earth3": 0.62
+       }
+      }
+     },
+     "exceedance": {
+      "wetMonsoon": {
+       "today": 0.1,
+       "median": 0.15,
+       "min": 0.1,
+       "max": 0.5,
+       "perModel": {
+        "MRI-ESM2-0": 0.1,
+        "ACCESS-CM2": 0.15,
+        "EC-Earth3": 0.5
+       }
+      },
+      "dryMonsoon": {
+       "today": 0.1,
+       "median": 0.0,
+       "min": 0.0,
+       "max": 0.25,
+       "perModel": {
+        "MRI-ESM2-0": 0.0,
+        "ACCESS-CM2": 0.25,
+        "EC-Earth3": 0.0
+       }
+      },
+      "heavyYear": {
+       "today": 0.1,
+       "median": 0.45,
+       "min": 0.35,
+       "max": 0.85,
+       "perModel": {
+        "MRI-ESM2-0": 0.35,
+        "ACCESS-CM2": 0.45,
+        "EC-Earth3": 0.85
+       }
+      },
+      "hotYear": {
+       "today": 0.1,
+       "median": 1.0,
+       "min": 1.0,
+       "max": 1.0,
+       "perModel": {
+        "MRI-ESM2-0": 1.0,
+        "ACCESS-CM2": 1.0,
+        "EC-Earth3": 1.0
+       }
+      }
+     }
+    }
+   },
+   "present": {
+    "tMean": 9.5,
+    "hotDays": 18.0,
+    "annualRain": 1220.0,
+    "monsoonRain": 948.0,
+    "heavyDays": 5.5,
+    "wettestDay": 57.0,
+    "drySpell": 12.7
+   }
+  },
+  {
+   "id": "western-himalaya",
+   "name": "Western Himalaya",
+   "hazard": "landslide",
+   "focus": [
+    "heavyDays",
+    "wettestDay",
+    "monsoonRain"
+   ],
+   "scenarios": {
+    "ssp245": {
+     "metrics": {
+      "tMean": {
+       "median": 1.8,
+       "min": 1.57,
+       "max": 2.0,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 1.8,
+        "ACCESS-CM2": 2.0,
+        "EC-Earth3": 1.57
+       }
+      },
+      "hotDays": {
+       "median": 59.0,
+       "min": 49.6,
+       "max": 89.0,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 59.0,
+        "ACCESS-CM2": 89.0,
+        "EC-Earth3": 49.6
+       }
+      },
+      "annualRain": {
+       "median": 15.0,
+       "min": 3.4,
+       "max": 17.3,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 3.4,
+        "ACCESS-CM2": 17.3,
+        "EC-Earth3": 15.0
+       }
+      },
+      "monsoonRain": {
+       "median": 8.3,
+       "min": 4.9,
+       "max": 23.7,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 4.9,
+        "ACCESS-CM2": 8.3,
+        "EC-Earth3": 23.7
+       }
+      },
+      "heavyDays": {
+       "median": 1.43,
+       "min": 0.18,
+       "max": 1.46,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 0.18,
+        "ACCESS-CM2": 1.43,
+        "EC-Earth3": 1.46
+       }
+      },
+      "wettestDay": {
+       "median": 11.6,
+       "min": 8.3,
+       "max": 15.5,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 8.3,
+        "ACCESS-CM2": 15.5,
+        "EC-Earth3": 11.6
+       }
+      },
+      "drySpell": {
+       "median": 0.39,
+       "min": -1.35,
+       "max": 1.02,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": 0.39,
+        "ACCESS-CM2": 1.02,
+        "EC-Earth3": -1.35
+       }
+      }
+     },
+     "exceedance": {
+      "wetMonsoon": {
+       "today": 0.1,
+       "median": 0.35,
+       "min": 0.0,
+       "max": 0.5,
+       "perModel": {
+        "MRI-ESM2-0": 0.0,
+        "ACCESS-CM2": 0.35,
+        "EC-Earth3": 0.5
+       }
+      },
+      "dryMonsoon": {
+       "today": 0.1,
+       "median": 0.15,
+       "min": 0.0,
+       "max": 0.2,
+       "perModel": {
+        "MRI-ESM2-0": 0.0,
+        "ACCESS-CM2": 0.2,
+        "EC-Earth3": 0.15
+       }
+      },
+      "heavyYear": {
+       "today": 0.1,
+       "median": 0.2,
+       "min": 0.0,
+       "max": 0.7,
+       "perModel": {
+        "MRI-ESM2-0": 0.0,
+        "ACCESS-CM2": 0.2,
+        "EC-Earth3": 0.7
+       }
+      },
+      "hotYear": {
+       "today": 0.1,
+       "median": 1.0,
+       "min": 1.0,
+       "max": 1.0,
+       "perModel": {
+        "MRI-ESM2-0": 1.0,
+        "ACCESS-CM2": 1.0,
+        "EC-Earth3": 1.0
+       }
+      }
+     }
+    },
+    "ssp585": {
+     "metrics": {
+      "tMean": {
+       "median": 2.35,
+       "min": 2.32,
+       "max": 2.83,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 2.83,
+        "ACCESS-CM2": 2.35,
+        "EC-Earth3": 2.32
+       }
+      },
+      "hotDays": {
+       "median": 111.8,
+       "min": 88.4,
+       "max": 115.0,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 115.0,
+        "ACCESS-CM2": 111.8,
+        "EC-Earth3": 88.4
+       }
+      },
+      "annualRain": {
+       "median": 10.3,
+       "min": 0.2,
+       "max": 19.6,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 0.2,
+        "ACCESS-CM2": 10.3,
+        "EC-Earth3": 19.6
+       }
+      },
+      "monsoonRain": {
+       "median": 0.1,
+       "min": -0.6,
+       "max": 27.1,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": 0.1,
+        "ACCESS-CM2": -0.6,
+        "EC-Earth3": 27.1
+       }
+      },
+      "heavyDays": {
+       "median": 0.94,
+       "min": 0.13,
+       "max": 1.76,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 0.13,
+        "ACCESS-CM2": 0.94,
+        "EC-Earth3": 1.76
+       }
+      },
+      "wettestDay": {
+       "median": 4.0,
+       "min": -0.5,
+       "max": 10.7,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": -0.5,
+        "ACCESS-CM2": 10.7,
+        "EC-Earth3": 4.0
+       }
+      },
+      "drySpell": {
+       "median": -0.38,
+       "min": -2.41,
+       "max": 1.69,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": 1.69,
+        "ACCESS-CM2": -0.38,
+        "EC-Earth3": -2.41
+       }
+      }
+     },
+     "exceedance": {
+      "wetMonsoon": {
+       "today": 0.1,
+       "median": 0.15,
+       "min": 0.05,
+       "max": 0.5,
+       "perModel": {
+        "MRI-ESM2-0": 0.05,
+        "ACCESS-CM2": 0.15,
+        "EC-Earth3": 0.5
+       }
+      },
+      "dryMonsoon": {
+       "today": 0.1,
+       "median": 0.15,
+       "min": 0.05,
+       "max": 0.15,
+       "perModel": {
+        "MRI-ESM2-0": 0.05,
+        "ACCESS-CM2": 0.15,
+        "EC-Earth3": 0.15
+       }
+      },
+      "heavyYear": {
+       "today": 0.1,
+       "median": 0.2,
+       "min": 0.1,
+       "max": 0.6,
+       "perModel": {
+        "MRI-ESM2-0": 0.1,
+        "ACCESS-CM2": 0.2,
+        "EC-Earth3": 0.6
+       }
+      },
+      "hotYear": {
+       "today": 0.1,
+       "median": 1.0,
+       "min": 1.0,
+       "max": 1.0,
+       "perModel": {
+        "MRI-ESM2-0": 1.0,
+        "ACCESS-CM2": 1.0,
+        "EC-Earth3": 1.0
+       }
+      }
+     }
+    }
+   },
+   "present": {
+    "tMean": 14.4,
+    "hotDays": 18.0,
+    "annualRain": 673.0,
+    "monsoonRain": 465.0,
+    "heavyDays": 3.6,
+    "wettestDay": 44.0,
+    "drySpell": 22.4
+   }
+  },
+  {
+   "id": "western-ghats",
+   "name": "Western Ghats",
+   "hazard": "landslide",
+   "focus": [
+    "heavyDays",
+    "wettestDay",
+    "monsoonRain"
+   ],
+   "scenarios": {
+    "ssp245": {
+     "metrics": {
+      "tMean": {
+       "median": 1.08,
+       "min": 1.03,
+       "max": 1.84,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 1.08,
+        "ACCESS-CM2": 1.84,
+        "EC-Earth3": 1.03
+       }
+      },
+      "hotDays": {
+       "median": 97.2,
+       "min": 96.2,
+       "max": 205.5,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 96.2,
+        "ACCESS-CM2": 205.5,
+        "EC-Earth3": 97.2
+       }
+      },
+      "annualRain": {
+       "median": 13.8,
+       "min": 9.0,
+       "max": 14.0,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 14.0,
+        "ACCESS-CM2": 9.0,
+        "EC-Earth3": 13.8
+       }
+      },
+      "monsoonRain": {
+       "median": 14.5,
+       "min": 9.9,
+       "max": 19.3,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 19.3,
+        "ACCESS-CM2": 9.9,
+        "EC-Earth3": 14.5
+       }
+      },
+      "heavyDays": {
+       "median": 2.27,
+       "min": 0.79,
+       "max": 2.37,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 2.27,
+        "ACCESS-CM2": 0.79,
+        "EC-Earth3": 2.37
+       }
+      },
+      "wettestDay": {
+       "median": 16.7,
+       "min": 15.3,
+       "max": 29.2,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 15.3,
+        "ACCESS-CM2": 16.7,
+        "EC-Earth3": 29.2
+       }
+      },
+      "drySpell": {
+       "median": -2.26,
+       "min": -2.3,
+       "max": -0.42,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": -2.3,
+        "ACCESS-CM2": -0.42,
+        "EC-Earth3": -2.26
+       }
+      }
+     },
+     "exceedance": {
+      "wetMonsoon": {
+       "today": 0.1,
+       "median": 0.35,
+       "min": 0.25,
+       "max": 0.45,
+       "perModel": {
+        "MRI-ESM2-0": 0.45,
+        "ACCESS-CM2": 0.25,
+        "EC-Earth3": 0.35
+       }
+      },
+      "dryMonsoon": {
+       "today": 0.1,
+       "median": 0.0,
+       "min": 0.0,
+       "max": 0.05,
+       "perModel": {
+        "MRI-ESM2-0": 0.0,
+        "ACCESS-CM2": 0.0,
+        "EC-Earth3": 0.05
+       }
+      },
+      "heavyYear": {
+       "today": 0.1,
+       "median": 0.2,
+       "min": 0.15,
+       "max": 0.3,
+       "perModel": {
+        "MRI-ESM2-0": 0.2,
+        "ACCESS-CM2": 0.15,
+        "EC-Earth3": 0.3
+       }
+      },
+      "hotYear": {
+       "today": 0.1,
+       "median": 1.0,
+       "min": 0.8,
+       "max": 1.0,
+       "perModel": {
+        "MRI-ESM2-0": 1.0,
+        "ACCESS-CM2": 1.0,
+        "EC-Earth3": 0.8
+       }
+      }
+     }
+    },
+    "ssp585": {
+     "metrics": {
+      "tMean": {
+       "median": 1.5,
+       "min": 1.47,
+       "max": 2.13,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 1.5,
+        "ACCESS-CM2": 2.13,
+        "EC-Earth3": 1.47
+       }
+      },
+      "hotDays": {
+       "median": 146.9,
+       "min": 145.4,
+       "max": 232.0,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 146.9,
+        "ACCESS-CM2": 232.0,
+        "EC-Earth3": 145.4
+       }
+      },
+      "annualRain": {
+       "median": 15.2,
+       "min": 13.2,
+       "max": 18.3,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 15.2,
+        "ACCESS-CM2": 18.3,
+        "EC-Earth3": 13.2
+       }
+      },
+      "monsoonRain": {
+       "median": 18.9,
+       "min": 15.0,
+       "max": 19.5,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 19.5,
+        "ACCESS-CM2": 18.9,
+        "EC-Earth3": 15.0
+       }
+      },
+      "heavyDays": {
+       "median": 2.99,
+       "min": 2.63,
+       "max": 3.1,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 2.99,
+        "ACCESS-CM2": 3.1,
+        "EC-Earth3": 2.63
+       }
+      },
+      "wettestDay": {
+       "median": 9.4,
+       "min": 1.4,
+       "max": 17.9,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 1.4,
+        "ACCESS-CM2": 17.9,
+        "EC-Earth3": 9.4
+       }
+      },
+      "drySpell": {
+       "median": -1.52,
+       "min": -2.64,
+       "max": -1.16,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": -1.52,
+        "ACCESS-CM2": -1.16,
+        "EC-Earth3": -2.64
+       }
+      }
+     },
+     "exceedance": {
+      "wetMonsoon": {
+       "today": 0.1,
+       "median": 0.5,
+       "min": 0.45,
+       "max": 0.6,
+       "perModel": {
+        "MRI-ESM2-0": 0.5,
+        "ACCESS-CM2": 0.45,
+        "EC-Earth3": 0.6
+       }
+      },
+      "dryMonsoon": {
+       "today": 0.1,
+       "median": 0.05,
+       "min": 0.0,
+       "max": 0.15,
+       "perModel": {
+        "MRI-ESM2-0": 0.0,
+        "ACCESS-CM2": 0.05,
+        "EC-Earth3": 0.15
+       }
+      },
+      "heavyYear": {
+       "today": 0.1,
+       "median": 0.4,
+       "min": 0.3,
+       "max": 0.4,
+       "perModel": {
+        "MRI-ESM2-0": 0.3,
+        "ACCESS-CM2": 0.4,
+        "EC-Earth3": 0.4
+       }
+      },
+      "hotYear": {
+       "today": 0.1,
+       "median": 1.0,
+       "min": 1.0,
+       "max": 1.0,
+       "perModel": {
+        "MRI-ESM2-0": 1.0,
+        "ACCESS-CM2": 1.0,
+        "EC-Earth3": 1.0
+       }
+      }
+     }
+    }
+   },
+   "present": {
+    "tMean": 26.0,
+    "hotDays": 18.0,
+    "annualRain": 1760.0,
+    "monsoonRain": 1285.0,
+    "heavyDays": 6.4,
+    "wettestDay": 81.0,
+    "drySpell": 13.2
+   }
+  },
+  {
+   "id": "sri-lanka-hills",
+   "name": "Sri Lanka central highlands",
+   "hazard": "landslide",
+   "focus": [
+    "heavyDays",
+    "wettestDay",
+    "monsoonRain"
+   ],
+   "scenarios": {
+    "ssp245": {
+     "metrics": {
+      "tMean": {
+       "median": 0.99,
+       "min": 0.88,
+       "max": 1.42,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 0.99,
+        "ACCESS-CM2": 1.42,
+        "EC-Earth3": 0.88
+       }
+      },
+      "hotDays": {
+       "median": 102.6,
+       "min": 75.4,
+       "max": 192.8,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 102.6,
+        "ACCESS-CM2": 192.8,
+        "EC-Earth3": 75.4
+       }
+      },
+      "annualRain": {
+       "median": 7.8,
+       "min": 5.1,
+       "max": 12.4,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 12.4,
+        "ACCESS-CM2": 5.1,
+        "EC-Earth3": 7.8
+       }
+      },
+      "monsoonRain": {
+       "median": 21.6,
+       "min": 18.7,
+       "max": 38.3,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 21.6,
+        "ACCESS-CM2": 38.3,
+        "EC-Earth3": 18.7
+       }
+      },
+      "heavyDays": {
+       "median": 0.83,
+       "min": 0.78,
+       "max": 2.38,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 2.38,
+        "ACCESS-CM2": 0.78,
+        "EC-Earth3": 0.83
+       }
+      },
+      "wettestDay": {
+       "median": 11.0,
+       "min": 8.6,
+       "max": 14.9,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 14.9,
+        "ACCESS-CM2": 11.0,
+        "EC-Earth3": 8.6
+       }
+      },
+      "drySpell": {
+       "median": -1.8,
+       "min": -3.9,
+       "max": 0.08,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": 0.08,
+        "ACCESS-CM2": -3.9,
+        "EC-Earth3": -1.8
+       }
+      }
+     },
+     "exceedance": {
+      "wetMonsoon": {
+       "today": 0.1,
+       "median": 0.35,
+       "min": 0.3,
+       "max": 0.5,
+       "perModel": {
+        "MRI-ESM2-0": 0.35,
+        "ACCESS-CM2": 0.5,
+        "EC-Earth3": 0.3
+       }
+      },
+      "dryMonsoon": {
+       "today": 0.1,
+       "median": 0.0,
+       "min": 0.0,
+       "max": 0.05,
+       "perModel": {
+        "MRI-ESM2-0": 0.05,
+        "ACCESS-CM2": 0.0,
+        "EC-Earth3": 0.0
+       }
+      },
+      "heavyYear": {
+       "today": 0.1,
+       "median": 0.25,
+       "min": 0.15,
+       "max": 0.4,
+       "perModel": {
+        "MRI-ESM2-0": 0.4,
+        "ACCESS-CM2": 0.25,
+        "EC-Earth3": 0.15
+       }
+      },
+      "hotYear": {
+       "today": 0.1,
+       "median": 0.9,
+       "min": 0.7,
+       "max": 1.0,
+       "perModel": {
+        "MRI-ESM2-0": 0.9,
+        "ACCESS-CM2": 1.0,
+        "EC-Earth3": 0.7
+       }
+      }
+     }
+    },
+    "ssp585": {
+     "metrics": {
+      "tMean": {
+       "median": 1.43,
+       "min": 1.36,
+       "max": 1.65,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 1.36,
+        "ACCESS-CM2": 1.65,
+        "EC-Earth3": 1.43
+       }
+      },
+      "hotDays": {
+       "median": 154.7,
+       "min": 134.3,
+       "max": 230.6,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 154.7,
+        "ACCESS-CM2": 230.6,
+        "EC-Earth3": 134.3
+       }
+      },
+      "annualRain": {
+       "median": 7.5,
+       "min": 4.7,
+       "max": 15.5,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 15.5,
+        "ACCESS-CM2": 4.7,
+        "EC-Earth3": 7.5
+       }
+      },
+      "monsoonRain": {
+       "median": 40.9,
+       "min": 13.5,
+       "max": 41.9,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 40.9,
+        "ACCESS-CM2": 41.9,
+        "EC-Earth3": 13.5
+       }
+      },
+      "heavyDays": {
+       "median": 1.51,
+       "min": 0.99,
+       "max": 2.99,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 2.99,
+        "ACCESS-CM2": 0.99,
+        "EC-Earth3": 1.51
+       }
+      },
+      "wettestDay": {
+       "median": 10.4,
+       "min": 7.9,
+       "max": 10.6,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 10.6,
+        "ACCESS-CM2": 7.9,
+        "EC-Earth3": 10.4
+       }
+      },
+      "drySpell": {
+       "median": -1.73,
+       "min": -3.3,
+       "max": -0.56,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": -3.3,
+        "ACCESS-CM2": -1.73,
+        "EC-Earth3": -0.56
+       }
+      }
+     },
+     "exceedance": {
+      "wetMonsoon": {
+       "today": 0.1,
+       "median": 0.5,
+       "min": 0.2,
+       "max": 0.5,
+       "perModel": {
+        "MRI-ESM2-0": 0.5,
+        "ACCESS-CM2": 0.5,
+        "EC-Earth3": 0.2
+       }
+      },
+      "dryMonsoon": {
+       "today": 0.1,
+       "median": 0.0,
+       "min": 0.0,
+       "max": 0.1,
+       "perModel": {
+        "MRI-ESM2-0": 0.0,
+        "ACCESS-CM2": 0.0,
+        "EC-Earth3": 0.1
+       }
+      },
+      "heavyYear": {
+       "today": 0.1,
+       "median": 0.2,
+       "min": 0.15,
+       "max": 0.5,
+       "perModel": {
+        "MRI-ESM2-0": 0.5,
+        "ACCESS-CM2": 0.15,
+        "EC-Earth3": 0.2
+       }
+      },
+      "hotYear": {
+       "today": 0.1,
+       "median": 1.0,
+       "min": 0.85,
+       "max": 1.0,
+       "perModel": {
+        "MRI-ESM2-0": 1.0,
+        "ACCESS-CM2": 1.0,
+        "EC-Earth3": 0.85
+       }
+      }
+     }
+    }
+   },
+   "present": {
+    "tMean": 26.8,
+    "hotDays": 18.0,
+    "annualRain": 1822.0,
+    "monsoonRain": 436.0,
+    "heavyDays": 9.5,
+    "wettestDay": 41.0,
+    "drySpell": 17.2
+   }
+  },
+  {
+   "id": "central-india-forests",
+   "name": "Central Indian forest belt",
+   "hazard": "wildfire",
+   "focus": [
+    "hotDays",
+    "drySpell",
+    "tMean"
+   ],
+   "scenarios": {
+    "ssp245": {
+     "metrics": {
+      "tMean": {
+       "median": 1.16,
+       "min": 0.86,
+       "max": 1.99,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 1.16,
+        "ACCESS-CM2": 1.99,
+        "EC-Earth3": 0.86
+       }
+      },
+      "hotDays": {
+       "median": 51.1,
+       "min": 49.3,
+       "max": 97.8,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 51.1,
+        "ACCESS-CM2": 97.8,
+        "EC-Earth3": 49.3
+       }
+      },
+      "annualRain": {
+       "median": 9.3,
+       "min": 4.6,
+       "max": 16.4,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 9.3,
+        "ACCESS-CM2": 16.4,
+        "EC-Earth3": 4.6
+       }
+      },
+      "monsoonRain": {
+       "median": 11.1,
+       "min": 4.6,
+       "max": 12.1,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 12.1,
+        "ACCESS-CM2": 11.1,
+        "EC-Earth3": 4.6
+       }
+      },
+      "heavyDays": {
+       "median": 0.66,
+       "min": 0.29,
+       "max": 1.6,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 0.66,
+        "ACCESS-CM2": 1.6,
+        "EC-Earth3": 0.29
+       }
+      },
+      "wettestDay": {
+       "median": 6.4,
+       "min": 2.3,
+       "max": 15.2,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 2.3,
+        "ACCESS-CM2": 6.4,
+        "EC-Earth3": 15.2
+       }
+      },
+      "drySpell": {
+       "median": -0.49,
+       "min": -1.59,
+       "max": 0.36,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": 0.36,
+        "ACCESS-CM2": -1.59,
+        "EC-Earth3": -0.49
+       }
+      }
+     },
+     "exceedance": {
+      "wetMonsoon": {
+       "today": 0.1,
+       "median": 0.15,
+       "min": 0.1,
+       "max": 0.3,
+       "perModel": {
+        "MRI-ESM2-0": 0.15,
+        "ACCESS-CM2": 0.3,
+        "EC-Earth3": 0.1
+       }
+      },
+      "dryMonsoon": {
+       "today": 0.1,
+       "median": 0.0,
+       "min": 0.0,
+       "max": 0.15,
+       "perModel": {
+        "MRI-ESM2-0": 0.0,
+        "ACCESS-CM2": 0.0,
+        "EC-Earth3": 0.15
+       }
+      },
+      "heavyYear": {
+       "today": 0.1,
+       "median": 0.25,
+       "min": 0.0,
+       "max": 0.35,
+       "perModel": {
+        "MRI-ESM2-0": 0.25,
+        "ACCESS-CM2": 0.35,
+        "EC-Earth3": 0.0
+       }
+      },
+      "hotYear": {
+       "today": 0.1,
+       "median": 1.0,
+       "min": 0.8,
+       "max": 1.0,
+       "perModel": {
+        "MRI-ESM2-0": 1.0,
+        "ACCESS-CM2": 1.0,
+        "EC-Earth3": 0.8
+       }
+      }
+     }
+    },
+    "ssp585": {
+     "metrics": {
+      "tMean": {
+       "median": 1.88,
+       "min": 1.3,
+       "max": 2.51,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 1.88,
+        "ACCESS-CM2": 2.51,
+        "EC-Earth3": 1.3
+       }
+      },
+      "hotDays": {
+       "median": 100.9,
+       "min": 91.7,
+       "max": 140.6,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 100.9,
+        "ACCESS-CM2": 140.6,
+        "EC-Earth3": 91.7
+       }
+      },
+      "annualRain": {
+       "median": 8.0,
+       "min": -5.2,
+       "max": 14.0,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": -5.2,
+        "ACCESS-CM2": 8.0,
+        "EC-Earth3": 14.0
+       }
+      },
+      "monsoonRain": {
+       "median": 3.4,
+       "min": 2.6,
+       "max": 10.7,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 2.6,
+        "ACCESS-CM2": 3.4,
+        "EC-Earth3": 10.7
+       }
+      },
+      "heavyDays": {
+       "median": 0.78,
+       "min": -0.41,
+       "max": 1.81,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": -0.41,
+        "ACCESS-CM2": 0.78,
+        "EC-Earth3": 1.81
+       }
+      },
+      "wettestDay": {
+       "median": 3.3,
+       "min": -13.5,
+       "max": 27.0,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": -13.5,
+        "ACCESS-CM2": 3.3,
+        "EC-Earth3": 27.0
+       }
+      },
+      "drySpell": {
+       "median": -1.02,
+       "min": -1.21,
+       "max": -0.76,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": -1.02,
+        "ACCESS-CM2": -0.76,
+        "EC-Earth3": -1.21
+       }
+      }
+     },
+     "exceedance": {
+      "wetMonsoon": {
+       "today": 0.1,
+       "median": 0.15,
+       "min": 0.1,
+       "max": 0.3,
+       "perModel": {
+        "MRI-ESM2-0": 0.1,
+        "ACCESS-CM2": 0.15,
+        "EC-Earth3": 0.3
+       }
+      },
+      "dryMonsoon": {
+       "today": 0.1,
+       "median": 0.1,
+       "min": 0.0,
+       "max": 0.1,
+       "perModel": {
+        "MRI-ESM2-0": 0.0,
+        "ACCESS-CM2": 0.1,
+        "EC-Earth3": 0.1
+       }
+      },
+      "heavyYear": {
+       "today": 0.1,
+       "median": 0.2,
+       "min": 0.1,
+       "max": 0.2,
+       "perModel": {
+        "MRI-ESM2-0": 0.1,
+        "ACCESS-CM2": 0.2,
+        "EC-Earth3": 0.2
+       }
+      },
+      "hotYear": {
+       "today": 0.1,
+       "median": 1.0,
+       "min": 0.9,
+       "max": 1.0,
+       "perModel": {
+        "MRI-ESM2-0": 1.0,
+        "ACCESS-CM2": 1.0,
+        "EC-Earth3": 0.9
+       }
+      }
+     }
+    }
+   },
+   "present": {
+    "tMean": 26.2,
+    "hotDays": 18.0,
+    "annualRain": 1238.0,
+    "monsoonRain": 1054.0,
+    "heavyDays": 4.3,
+    "wettestDay": 57.0,
+    "drySpell": 16.4
+   }
+  },
+  {
+   "id": "northeast-hills",
+   "name": "Northeast India and Myanmar hills",
+   "hazard": "wildfire",
+   "focus": [
+    "hotDays",
+    "drySpell",
+    "tMean"
+   ],
+   "scenarios": {
+    "ssp245": {
+     "metrics": {
+      "tMean": {
+       "median": 1.41,
+       "min": 1.21,
+       "max": 1.72,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 1.41,
+        "ACCESS-CM2": 1.72,
+        "EC-Earth3": 1.21
+       }
+      },
+      "hotDays": {
+       "median": 119.3,
+       "min": 86.3,
+       "max": 154.2,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 119.3,
+        "ACCESS-CM2": 154.2,
+        "EC-Earth3": 86.3
+       }
+      },
+      "annualRain": {
+       "median": 2.9,
+       "min": -9.8,
+       "max": 19.8,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": -9.8,
+        "ACCESS-CM2": 19.8,
+        "EC-Earth3": 2.9
+       }
+      },
+      "monsoonRain": {
+       "median": 2.4,
+       "min": -6.8,
+       "max": 21.4,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": -6.8,
+        "ACCESS-CM2": 21.4,
+        "EC-Earth3": 2.4
+       }
+      },
+      "heavyDays": {
+       "median": 0.93,
+       "min": -0.72,
+       "max": 5.75,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": -0.72,
+        "ACCESS-CM2": 5.75,
+        "EC-Earth3": 0.93
+       }
+      },
+      "wettestDay": {
+       "median": 8.1,
+       "min": -7.9,
+       "max": 21.7,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": -7.9,
+        "ACCESS-CM2": 21.7,
+        "EC-Earth3": 8.1
+       }
+      },
+      "drySpell": {
+       "median": 0.85,
+       "min": -0.21,
+       "max": 0.86,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": 0.86,
+        "ACCESS-CM2": -0.21,
+        "EC-Earth3": 0.85
+       }
+      }
+     },
+     "exceedance": {
+      "wetMonsoon": {
+       "today": 0.1,
+       "median": 0.1,
+       "min": 0.05,
+       "max": 0.65,
+       "perModel": {
+        "MRI-ESM2-0": 0.05,
+        "ACCESS-CM2": 0.65,
+        "EC-Earth3": 0.1
+       }
+      },
+      "dryMonsoon": {
+       "today": 0.1,
+       "median": 0.1,
+       "min": 0.0,
+       "max": 0.25,
+       "perModel": {
+        "MRI-ESM2-0": 0.25,
+        "ACCESS-CM2": 0.0,
+        "EC-Earth3": 0.1
+       }
+      },
+      "heavyYear": {
+       "today": 0.1,
+       "median": 0.3,
+       "min": 0.1,
+       "max": 0.65,
+       "perModel": {
+        "MRI-ESM2-0": 0.1,
+        "ACCESS-CM2": 0.65,
+        "EC-Earth3": 0.3
+       }
+      },
+      "hotYear": {
+       "today": 0.1,
+       "median": 1.0,
+       "min": 0.95,
+       "max": 1.0,
+       "perModel": {
+        "MRI-ESM2-0": 1.0,
+        "ACCESS-CM2": 1.0,
+        "EC-Earth3": 0.95
+       }
+      }
+     }
+    },
+    "ssp585": {
+     "metrics": {
+      "tMean": {
+       "median": 1.99,
+       "min": 1.66,
+       "max": 2.09,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 1.99,
+        "ACCESS-CM2": 2.09,
+        "EC-Earth3": 1.66
+       }
+      },
+      "hotDays": {
+       "median": 169.3,
+       "min": 132.1,
+       "max": 185.4,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 169.3,
+        "ACCESS-CM2": 185.4,
+        "EC-Earth3": 132.1
+       }
+      },
+      "annualRain": {
+       "median": 11.3,
+       "min": -9.2,
+       "max": 12.8,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": -9.2,
+        "ACCESS-CM2": 12.8,
+        "EC-Earth3": 11.3
+       }
+      },
+      "monsoonRain": {
+       "median": 14.3,
+       "min": -5.3,
+       "max": 14.3,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": -5.3,
+        "ACCESS-CM2": 14.3,
+        "EC-Earth3": 14.3
+       }
+      },
+      "heavyDays": {
+       "median": 2.86,
+       "min": -0.02,
+       "max": 3.99,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": -0.02,
+        "ACCESS-CM2": 3.99,
+        "EC-Earth3": 2.86
+       }
+      },
+      "wettestDay": {
+       "median": 19.8,
+       "min": 7.7,
+       "max": 20.1,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 7.7,
+        "ACCESS-CM2": 19.8,
+        "EC-Earth3": 20.1
+       }
+      },
+      "drySpell": {
+       "median": 0.26,
+       "min": -0.1,
+       "max": 2.28,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": 2.28,
+        "ACCESS-CM2": -0.1,
+        "EC-Earth3": 0.26
+       }
+      }
+     },
+     "exceedance": {
+      "wetMonsoon": {
+       "today": 0.1,
+       "median": 0.4,
+       "min": 0.1,
+       "max": 0.4,
+       "perModel": {
+        "MRI-ESM2-0": 0.1,
+        "ACCESS-CM2": 0.4,
+        "EC-Earth3": 0.4
+       }
+      },
+      "dryMonsoon": {
+       "today": 0.1,
+       "median": 0.0,
+       "min": 0.0,
+       "max": 0.35,
+       "perModel": {
+        "MRI-ESM2-0": 0.35,
+        "ACCESS-CM2": 0.0,
+        "EC-Earth3": 0.0
+       }
+      },
+      "heavyYear": {
+       "today": 0.1,
+       "median": 0.45,
+       "min": 0.05,
+       "max": 0.65,
+       "perModel": {
+        "MRI-ESM2-0": 0.05,
+        "ACCESS-CM2": 0.45,
+        "EC-Earth3": 0.65
+       }
+      },
+      "hotYear": {
+       "today": 0.1,
+       "median": 1.0,
+       "min": 1.0,
+       "max": 1.0,
+       "perModel": {
+        "MRI-ESM2-0": 1.0,
+        "ACCESS-CM2": 1.0,
+        "EC-Earth3": 1.0
+       }
+      }
+     }
+    }
+   },
+   "present": {
+    "tMean": 23.6,
+    "hotDays": 18.0,
+    "annualRain": 2354.0,
+    "monsoonRain": 1627.0,
+    "heavyDays": 7.1,
+    "wettestDay": 89.0,
+    "drySpell": 7.4
+   }
+  }
+ ]
+}
