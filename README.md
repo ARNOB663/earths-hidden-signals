@@ -67,6 +67,7 @@ python build_signal_scores.py    # Signals coverage and demo scores
 python build_hazards.py
 python twins.py                  # Climate Twins: global trend fingerprints + GDACS / landslide records
 python cmip6_download.py && python future.py   # Future Outlook: NASA NEX-GDDP-CMIP6 (no login)
+python risk.py                   # hazard risk model, scored on unseen years (published even when it fails)
 
 # website
 cd web

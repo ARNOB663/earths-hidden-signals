@@ -312,6 +312,9 @@ export default async function AccuracyPage() {
         <Link href="/methods#validation" className="inline-flex min-h-10 items-center rounded-full border border-line bg-card px-4 text-ink-2 hover:text-ink">
           <T en="Full methods" bn="সম্পূর্ণ পদ্ধতি" />
         </Link>
+        <Link href="/future-outlook#risk-hdg" className="inline-flex min-h-10 items-center rounded-full border border-line bg-card px-4 text-ink-2 hover:text-ink">
+          <T en="Disaster-year model scorecard" bn="দুর্যোগ-বছর মডেলের স্কোরকার্ড" />
+        </Link>
       </nav>
     </main>
   );

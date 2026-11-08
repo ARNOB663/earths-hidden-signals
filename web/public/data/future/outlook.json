@@ -61,6 +61,18 @@
    "unit": "days",
    "kind": "abs",
    "decimals": 1
+  },
+  "preTemp": {
+   "label": "Hot-season temperature (Mar–May)",
+   "unit": "°C",
+   "kind": "abs",
+   "decimals": 1
+  },
+  "preRain": {
+   "label": "Hot-season rain (Mar–May)",
+   "unit": "mm",
+   "kind": "pct",
+   "decimals": 0
   }
  },
  "exceedance": {
@@ -173,6 +185,28 @@
         "MRI-ESM2-0": -0.3,
         "ACCESS-CM2": -0.69,
         "EC-Earth3": -1.7
+       }
+      },
+      "preTemp": {
+       "median": 1.76,
+       "min": 1.62,
+       "max": 1.93,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 1.76,
+        "ACCESS-CM2": 1.93,
+        "EC-Earth3": 1.62
+       }
+      },
+      "preRain": {
+       "median": 4.2,
+       "min": -15.3,
+       "max": 16.8,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": -15.3,
+        "ACCESS-CM2": 16.8,
+        "EC-Earth3": 4.2
        }
       }
      },
@@ -301,6 +335,28 @@
         "ACCESS-CM2": -0.91,
         "EC-Earth3": -2.02
        }
+      },
+      "preTemp": {
+       "median": 2.48,
+       "min": 2.16,
+       "max": 2.64,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 2.64,
+        "ACCESS-CM2": 2.48,
+        "EC-Earth3": 2.16
+       }
+      },
+      "preRain": {
+       "median": 8.2,
+       "min": -14.1,
+       "max": 9.4,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": -14.1,
+        "ACCESS-CM2": 9.4,
+        "EC-Earth3": 8.2
+       }
       }
      },
      "exceedance": {
@@ -358,7 +414,9 @@
     "monsoonRain": 658.0,
     "heavyDays": 4.3,
     "wettestDay": 42.0,
-    "drySpell": 29.7
+    "drySpell": 29.7,
+    "preTemp": 18.2,
+    "preRain": 135.0
    }
   },
   {
@@ -448,6 +506,28 @@
         "MRI-ESM2-0": 1.11,
         "ACCESS-CM2": -0.18,
         "EC-Earth3": 0.95
+       }
+      },
+      "preTemp": {
+       "median": 1.46,
+       "min": 0.85,
+       "max": 1.77,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 1.77,
+        "ACCESS-CM2": 1.46,
+        "EC-Earth3": 0.85
+       }
+      },
+      "preRain": {
+       "median": 8.1,
+       "min": -27.0,
+       "max": 28.0,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": -27.0,
+        "ACCESS-CM2": 28.0,
+        "EC-Earth3": 8.1
        }
       }
      },
@@ -576,6 +656,28 @@
         "ACCESS-CM2": 0.11,
         "EC-Earth3": 1.12
        }
+      },
+      "preTemp": {
+       "median": 2.1,
+       "min": 1.06,
+       "max": 2.38,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 2.38,
+        "ACCESS-CM2": 2.1,
+        "EC-Earth3": 1.06
+       }
+      },
+      "preRain": {
+       "median": 6.6,
+       "min": -29.8,
+       "max": 14.1,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": -29.8,
+        "ACCESS-CM2": 14.1,
+        "EC-Earth3": 6.6
+       }
       }
      },
      "exceedance": {
@@ -633,7 +735,9 @@
     "monsoonRain": 1755.0,
     "heavyDays": 6.5,
     "wettestDay": 87.0,
-    "drySpell": 7.4
+    "drySpell": 7.4,
+    "preTemp": 27.1,
+    "preRain": 470.0
    }
   },
   {
@@ -723,6 +827,28 @@
         "MRI-ESM2-0": -2.76,
         "ACCESS-CM2": 0.1,
         "EC-Earth3": -5.34
+       }
+      },
+      "preTemp": {
+       "median": 1.8,
+       "min": 1.77,
+       "max": 2.28,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 1.77,
+        "ACCESS-CM2": 2.28,
+        "EC-Earth3": 1.8
+       }
+      },
+      "preRain": {
+       "median": 3.1,
+       "min": -9.8,
+       "max": 63.3,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": 3.1,
+        "ACCESS-CM2": 63.3,
+        "EC-Earth3": -9.8
        }
       }
      },
@@ -851,6 +977,28 @@
         "ACCESS-CM2": -2.8,
         "EC-Earth3": -3.26
        }
+      },
+      "preTemp": {
+       "median": 2.78,
+       "min": 2.41,
+       "max": 2.97,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 2.78,
+        "ACCESS-CM2": 2.97,
+        "EC-Earth3": 2.41
+       }
+      },
+      "preRain": {
+       "median": 8.0,
+       "min": 2.4,
+       "max": 59.3,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 2.4,
+        "ACCESS-CM2": 59.3,
+        "EC-Earth3": 8.0
+       }
       }
      },
      "exceedance": {
@@ -908,7 +1056,9 @@
     "monsoonRain": 193.0,
     "heavyDays": 1.2,
     "wettestDay": 34.0,
-    "drySpell": 42.7
+    "drySpell": 42.7,
+    "preTemp": 26.9,
+    "preRain": 30.0
    }
   },
   {
@@ -998,6 +1148,28 @@
         "MRI-ESM2-0": 0.31,
         "ACCESS-CM2": -2.77,
         "EC-Earth3": 0.51
+       }
+      },
+      "preTemp": {
+       "median": 1.73,
+       "min": 1.73,
+       "max": 2.15,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 2.15,
+        "ACCESS-CM2": 1.73,
+        "EC-Earth3": 1.73
+       }
+      },
+      "preRain": {
+       "median": 6.3,
+       "min": -27.1,
+       "max": 73.2,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": -27.1,
+        "ACCESS-CM2": 73.2,
+        "EC-Earth3": 6.3
        }
       }
      },
@@ -1126,6 +1298,28 @@
         "ACCESS-CM2": 1.68,
         "EC-Earth3": 0.62
        }
+      },
+      "preTemp": {
+       "median": 2.62,
+       "min": 2.34,
+       "max": 3.12,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 3.12,
+        "ACCESS-CM2": 2.62,
+        "EC-Earth3": 2.34
+       }
+      },
+      "preRain": {
+       "median": 18.4,
+       "min": -5.8,
+       "max": 46.8,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": -5.8,
+        "ACCESS-CM2": 46.8,
+        "EC-Earth3": 18.4
+       }
       }
      },
      "exceedance": {
@@ -1183,7 +1377,9 @@
     "monsoonRain": 948.0,
     "heavyDays": 5.5,
     "wettestDay": 57.0,
-    "drySpell": 12.7
+    "drySpell": 12.7,
+    "preTemp": 10.1,
+    "preRain": 166.0
    }
   },
   {
@@ -1273,6 +1469,28 @@
         "MRI-ESM2-0": 0.39,
         "ACCESS-CM2": 1.02,
         "EC-Earth3": -1.35
+       }
+      },
+      "preTemp": {
+       "median": 1.78,
+       "min": 1.71,
+       "max": 1.82,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 1.82,
+        "ACCESS-CM2": 1.78,
+        "EC-Earth3": 1.71
+       }
+      },
+      "preRain": {
+       "median": -0.1,
+       "min": -9.0,
+       "max": 47.0,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": -9.0,
+        "ACCESS-CM2": 47.0,
+        "EC-Earth3": -0.1
        }
       }
      },
@@ -1401,6 +1619,28 @@
         "ACCESS-CM2": -0.38,
         "EC-Earth3": -2.41
        }
+      },
+      "preTemp": {
+       "median": 2.62,
+       "min": 2.23,
+       "max": 2.83,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 2.83,
+        "ACCESS-CM2": 2.62,
+        "EC-Earth3": 2.23
+       }
+      },
+      "preRain": {
+       "median": 6.2,
+       "min": 3.5,
+       "max": 34.0,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 6.2,
+        "ACCESS-CM2": 34.0,
+        "EC-Earth3": 3.5
+       }
       }
      },
      "exceedance": {
@@ -1458,7 +1698,9 @@
     "monsoonRain": 465.0,
     "heavyDays": 3.6,
     "wettestDay": 44.0,
-    "drySpell": 22.4
+    "drySpell": 22.4,
+    "preTemp": 15.1,
+    "preRain": 118.0
    }
   },
   {
@@ -1548,6 +1790,28 @@
         "MRI-ESM2-0": -2.3,
         "ACCESS-CM2": -0.42,
         "EC-Earth3": -2.26
+       }
+      },
+      "preTemp": {
+       "median": 1.38,
+       "min": 1.15,
+       "max": 1.81,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 1.38,
+        "ACCESS-CM2": 1.81,
+        "EC-Earth3": 1.15
+       }
+      },
+      "preRain": {
+       "median": 4.7,
+       "min": -14.8,
+       "max": 12.3,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": -14.8,
+        "ACCESS-CM2": 4.7,
+        "EC-Earth3": 12.3
        }
       }
      },
@@ -1676,6 +1940,28 @@
         "ACCESS-CM2": -1.16,
         "EC-Earth3": -2.64
        }
+      },
+      "preTemp": {
+       "median": 1.84,
+       "min": 1.69,
+       "max": 2.15,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 1.84,
+        "ACCESS-CM2": 2.15,
+        "EC-Earth3": 1.69
+       }
+      },
+      "preRain": {
+       "median": -19.5,
+       "min": -27.1,
+       "max": 23.6,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": -27.1,
+        "ACCESS-CM2": 23.6,
+        "EC-Earth3": -19.5
+       }
       }
      },
      "exceedance": {
@@ -1733,7 +2019,9 @@
     "monsoonRain": 1285.0,
     "heavyDays": 6.4,
     "wettestDay": 81.0,
-    "drySpell": 13.2
+    "drySpell": 13.2,
+    "preTemp": 28.4,
+    "preRain": 219.0
    }
   },
   {
@@ -1823,6 +2111,28 @@
         "MRI-ESM2-0": 0.08,
         "ACCESS-CM2": -3.9,
         "EC-Earth3": -1.8
+       }
+      },
+      "preTemp": {
+       "median": 1.08,
+       "min": 1.02,
+       "max": 1.4,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 1.02,
+        "ACCESS-CM2": 1.4,
+        "EC-Earth3": 1.08
+       }
+      },
+      "preRain": {
+       "median": -12.1,
+       "min": -14.5,
+       "max": 4.4,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": -14.5,
+        "ACCESS-CM2": -12.1,
+        "EC-Earth3": 4.4
        }
       }
      },
@@ -1951,6 +2261,28 @@
         "ACCESS-CM2": -1.73,
         "EC-Earth3": -0.56
        }
+      },
+      "preTemp": {
+       "median": 1.58,
+       "min": 1.4,
+       "max": 1.66,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 1.4,
+        "ACCESS-CM2": 1.66,
+        "EC-Earth3": 1.58
+       }
+      },
+      "preRain": {
+       "median": -14.7,
+       "min": -32.7,
+       "max": -12.3,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": -32.7,
+        "ACCESS-CM2": -12.3,
+        "EC-Earth3": -14.7
+       }
       }
      },
      "exceedance": {
@@ -2008,7 +2340,9 @@
     "monsoonRain": 436.0,
     "heavyDays": 9.5,
     "wettestDay": 41.0,
-    "drySpell": 17.2
+    "drySpell": 17.2,
+    "preTemp": 27.6,
+    "preRain": 397.0
    }
   },
   {
@@ -2016,9 +2350,9 @@
    "name": "Central Indian forest belt",
    "hazard": "wildfire",
    "focus": [
-    "hotDays",
-    "drySpell",
-    "tMean"
+    "preTemp",
+    "preRain",
+    "hotDays"
    ],
    "scenarios": {
     "ssp245": {
@@ -2098,6 +2432,28 @@
         "MRI-ESM2-0": 0.36,
         "ACCESS-CM2": -1.59,
         "EC-Earth3": -0.49
+       }
+      },
+      "preTemp": {
+       "median": 1.81,
+       "min": 1.31,
+       "max": 2.08,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 1.81,
+        "ACCESS-CM2": 2.08,
+        "EC-Earth3": 1.31
+       }
+      },
+      "preRain": {
+       "median": -10.9,
+       "min": -31.3,
+       "max": 36.3,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": -31.3,
+        "ACCESS-CM2": 36.3,
+        "EC-Earth3": -10.9
        }
       }
      },
@@ -2226,6 +2582,28 @@
         "ACCESS-CM2": -0.76,
         "EC-Earth3": -1.21
        }
+      },
+      "preTemp": {
+       "median": 2.64,
+       "min": 1.59,
+       "max": 2.91,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 2.91,
+        "ACCESS-CM2": 2.64,
+        "EC-Earth3": 1.59
+       }
+      },
+      "preRain": {
+       "median": 21.5,
+       "min": -51.1,
+       "max": 23.8,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": -51.1,
+        "ACCESS-CM2": 23.8,
+        "EC-Earth3": 21.5
+       }
       }
      },
      "exceedance": {
@@ -2283,7 +2661,9 @@
     "monsoonRain": 1054.0,
     "heavyDays": 4.3,
     "wettestDay": 57.0,
-    "drySpell": 16.4
+    "drySpell": 16.4,
+    "preTemp": 30.3,
+    "preRain": 80.0
    }
   },
   {
@@ -2291,9 +2671,9 @@
    "name": "Northeast India and Myanmar hills",
    "hazard": "wildfire",
    "focus": [
-    "hotDays",
-    "drySpell",
-    "tMean"
+    "preTemp",
+    "preRain",
+    "hotDays"
    ],
    "scenarios": {
     "ssp245": {
@@ -2373,6 +2753,28 @@
         "MRI-ESM2-0": 0.86,
         "ACCESS-CM2": -0.21,
         "EC-Earth3": 0.85
+       }
+      },
+      "preTemp": {
+       "median": 1.6,
+       "min": 1.33,
+       "max": 1.73,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 1.6,
+        "ACCESS-CM2": 1.73,
+        "EC-Earth3": 1.33
+       }
+      },
+      "preRain": {
+       "median": 4.9,
+       "min": -22.8,
+       "max": 14.7,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": -22.8,
+        "ACCESS-CM2": 14.7,
+        "EC-Earth3": 4.9
        }
       }
      },
@@ -2501,6 +2903,28 @@
         "ACCESS-CM2": -0.1,
         "EC-Earth3": 0.26
        }
+      },
+      "preTemp": {
+       "median": 2.16,
+       "min": 1.63,
+       "max": 2.17,
+       "agree": 3,
+       "perModel": {
+        "MRI-ESM2-0": 2.17,
+        "ACCESS-CM2": 2.16,
+        "EC-Earth3": 1.63
+       }
+      },
+      "preRain": {
+       "median": 3.5,
+       "min": -28.0,
+       "max": 5.1,
+       "agree": 2,
+       "perModel": {
+        "MRI-ESM2-0": -28.0,
+        "ACCESS-CM2": 5.1,
+        "EC-Earth3": 3.5
+       }
       }
      },
      "exceedance": {
@@ -2558,7 +2982,9 @@
     "monsoonRain": 1627.0,
     "heavyDays": 7.1,
     "wettestDay": 89.0,
-    "drySpell": 7.4
+    "drySpell": 7.4,
+    "preTemp": 24.7,
+    "preRain": 496.0
    }
   }
  ]

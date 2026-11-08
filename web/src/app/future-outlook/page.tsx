@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import FutureExplorer, { type ObservedTrends } from "@/components/future/FutureExplorer";
+import { RiskScorecard, type RiskModel } from "@/components/future/RiskScorecard";
 import { Eyebrow } from "@/components/ui/primitive";
 import { bnNum } from "@/lib/bn";
 import { readData, readTrendZones } from "@/lib/data";
@@ -17,7 +18,11 @@ export const metadata: Metadata = {
 };
 
 export default async function FutureOutlookPage() {
-  const [outlook, zones] = await Promise.all([readData<Outlook>("future", "outlook.json"), readTrendZones()]);
+  const [outlook, zones, risk] = await Promise.all([
+    readData<Outlook>("future", "outlook.json"),
+    readTrendZones(),
+    readData<RiskModel>("risk", "model.json"),
+  ]);
   const observed: Record<string, ObservedTrends> = Object.fromEntries(
     zones.map((z) => [
       z.id,
@@ -52,6 +57,8 @@ export default async function FutureOutlookPage() {
       <section aria-label="Explorer" className="mt-10">
         <FutureExplorer outlook={outlook} observed={observed} />
       </section>
+
+      <RiskScorecard model={risk} />
 
       <section className="mt-14 grid gap-6 md:grid-cols-2">
         <div className="rounded-2xl border border-line bg-card p-6">

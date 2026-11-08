@@ -1,7 +1,16 @@
 // Types and wording for public/data/future/outlook.json (produced by analysis/future.py).
 // No server imports, so client components can use it.
 
-export type MetricKey = "tMean" | "hotDays" | "annualRain" | "monsoonRain" | "heavyDays" | "wettestDay" | "drySpell";
+export type MetricKey =
+  | "tMean"
+  | "hotDays"
+  | "annualRain"
+  | "monsoonRain"
+  | "heavyDays"
+  | "wettestDay"
+  | "drySpell"
+  | "preTemp"
+  | "preRain";
 export type ExceedKey = "wetMonsoon" | "dryMonsoon" | "heavyYear" | "hotYear";
 export type ScenarioKey = "ssp245" | "ssp585";
 
@@ -40,7 +49,17 @@ export interface Outlook {
   regions: OutlookRegion[];
 }
 
-export const METRIC_ORDER: MetricKey[] = ["tMean", "hotDays", "annualRain", "monsoonRain", "heavyDays", "wettestDay", "drySpell"];
+export const METRIC_ORDER: MetricKey[] = [
+  "tMean",
+  "preTemp",
+  "hotDays",
+  "annualRain",
+  "monsoonRain",
+  "preRain",
+  "heavyDays",
+  "wettestDay",
+  "drySpell",
+];
 export const EXCEED_ORDER: ExceedKey[] = ["wetMonsoon", "heavyYear", "dryMonsoon", "hotYear"];
 
 export const METRIC_BN: Record<MetricKey, string> = {
@@ -51,6 +70,8 @@ export const METRIC_BN: Record<MetricKey, string> = {
   heavyDays: "বছরে অতি ভারী বৃষ্টির দিন",
   wettestDay: "সবচেয়ে বৃষ্টির দিনে বৃষ্টি",
   drySpell: "বর্ষায় দীর্ঘতম শুকনো সময়",
+  preTemp: "গরমের মৌসুমের তাপমাত্রা (মার্চ–মে)",
+  preRain: "গরমের মৌসুমের বৃষ্টি (মার্চ–মে)",
 };
 
 export const EXCEED_WORDS: Record<ExceedKey, { en: string; bn: string; short: string; shortBn: string }> = {

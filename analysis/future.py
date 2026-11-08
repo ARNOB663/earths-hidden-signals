@@ -32,6 +32,7 @@ RAW = ROOT / "raw" / "cmip6"
 OUT = ROOT.parent / "web" / "public" / "data" / "future"
 SCENARIOS = {"ssp245": "Middle road (SSP2-4.5)", "ssp585": "High emissions (SSP5-8.5)"}
 MONSOON = (6, 7, 8, 9)
+PRE_MONSOON = (3, 4, 5)
 WET_DAY = 1.0  # mm
 
 METRICS = {
@@ -43,6 +44,8 @@ METRICS = {
     "heavyDays": ("Very heavy rain days per year", "days", "abs", 1),
     "wettestDay": ("Rain on the wettest day", "mm", "pct", 0),
     "drySpell": ("Longest monsoon dry spell", "days", "abs", 1),
+    "preTemp": ("Hot-season temperature (Mar–May)", "°C", "abs", 1),
+    "preRain": ("Hot-season rain (Mar–May)", "mm", "pct", 0),
 }
 # Today's 1-in-10 events: metric, which tail, plain name.
 EXCEEDANCE = {
@@ -54,7 +57,7 @@ EXCEEDANCE = {
 HAZARD_FOCUS = {
     "flood": ["monsoonRain", "heavyDays", "wettestDay"],
     "landslide": ["heavyDays", "wettestDay", "monsoonRain"],
-    "wildfire": ["hotDays", "drySpell", "tMean"],
+    "wildfire": ["preTemp", "preRain", "hotDays"],
     None: ["tMean", "monsoonRain", "heavyDays"],
 }
 
@@ -116,6 +119,7 @@ def model_metrics(model: str, zones: list[dict]) -> dict:
             _, _, months, pr = read_year(model, period, "pr", y)
             _, _, _, tas = read_year(model, period, "tas", y)
             mon = np.isin(months, MONSOON)
+            pre = np.isin(months, PRE_MONSOON)
             with warnings.catch_warnings():
                 warnings.simplefilter("ignore", RuntimeWarning)
                 cell = {
@@ -126,6 +130,8 @@ def model_metrics(model: str, zones: list[dict]) -> dict:
                     "heavyDays": (pr > heavy_thr).sum(axis=0).astype(float),
                     "wettestDay": np.nanmax(pr, axis=0),
                     "drySpell": longest_dry(pr[mon]),
+                    "preTemp": np.nanmean(tas[pre], axis=0),
+                    "preRain": np.nansum(pr[pre], axis=0),
                 }
             for zid, w in weights.items():
                 tot = w.sum()
