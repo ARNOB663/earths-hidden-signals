@@ -8,7 +8,7 @@ import type { NextConfig } from "next";
  * Query strings pass through automatically, so /signals/place?id=… keeps its selection at /signal.
  */
 const RETIRED: { source: string; destination: string }[] = [
-  { source: "/trends", destination: "/signal" },
+  { source: "/trends", destination: "/climate-trends" },
   { source: "/hazards", destination: "/signal" },
   { source: "/monitoring", destination: "/signal" },
   { source: "/locations", destination: "/signal" },

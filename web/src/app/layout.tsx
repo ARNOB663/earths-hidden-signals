@@ -84,6 +84,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                 <h2 id="footer-pages" className="mb-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-(--footer-fg-3)">
                   <T en="Pages" bn="পাতা" />
                 </h2>
+                <FooterLink href="/climate-trends" en="Climate Trends" bn="জলবায়ু প্রবণতা" />
                 <FooterLink href="/methods" en="Methods" bn="পদ্ধতি" />
                 <FooterLink href="/for-organizations" en="Organizations" bn="প্রতিষ্ঠান" />
                 <FooterLink href="/methods#data" en="Data Sources" bn="তথ্যসূত্র" />

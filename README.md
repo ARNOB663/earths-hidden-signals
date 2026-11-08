@@ -10,7 +10,7 @@ The same global warming shows up differently across South Asia: heavier rain in 
 
 | Folder | What it is |
 |---|---|
-| [`web/`](web/) | Next.js + TypeScript website: Home, Signal (search, map, coverage, Watch Level, historical frequency), Gap, Replay, Accuracy, Act, Watch, plus Methods and For Organizations |
+| [`web/`](web/) | Next.js + TypeScript website: Home, Signal (search, map, coverage, Watch Level, historical frequency), Gap, Replay, Accuracy, Act, Watch, plus Climate Trends (trend map, per-region and per-square Mann–Kendall / Sen's slope results), Methods and For Organizations |
 | [`analysis/`](analysis/) | Python pipeline: downloads NASA records, runs the trend tests, writes JSON for the website |
 
 AGENTS.md (root) is the authoritative guide to the code layout, commands and data contracts. The

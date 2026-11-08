@@ -8,7 +8,10 @@ import {
   ScanEye,
   ShieldAlert,
   ShieldCheck,
+  TrendingUp,
 } from "lucide-react";
+import { readManifest, readTrendZones } from "@/lib/data";
+import { ALPHA, formatSigned } from "@/lib/trends";
 import Link from "next/link";
 import HeroImageSlideshow from "@/components/hero/HeroImageSlideshow";
 import { SignalSearch } from "@/components/signal/SignalSearch";
@@ -29,8 +32,20 @@ export const metadata = {
 };
 
 export default async function Home() {
-  const model = await loadModel();
+  const [model, manifest, trendZones] = await Promise.all([loadModel(), readManifest(), readTrendZones()]);
   const { rows, counts, brief, sample } = model;
+
+  // The long-term picture behind every signal, read from the committed trend results.
+  const warming = trendZones.find((z) => z.id === "study-area")?.results["temperature_annual"]?.trend ?? null;
+  const warmSummary = manifest.summaries["temperature_annual"];
+  const monsoonTrends = trendZones
+    .filter((z) => z.id !== "study-area")
+    .map((z) => z.results["rainfall_monsoon"]?.trend)
+    .filter((t) => t && t.p < ALPHA);
+  const wetterRegions = monsoonTrends.filter((t) => t!.slopePerDecade > 0).length;
+  const drierRegions = monsoonTrends.filter((t) => t!.slopePerDecade < 0).length;
+  const trendFirst = manifest.years[0];
+  const trendLast = manifest.years[manifest.years.length - 1];
 
   // One worked example for the "what a signal says" strip, chosen from the data rather than typed
   // in: the row with a real reading whose rain is furthest above its own date normal. A row is
@@ -128,6 +143,59 @@ export default async function Home() {
             <SampleNotice where="behind this site" scope="elsewhere" />
           </div>
         )}
+
+        {/* ── The long-term trends: what, where, how much, and is it real ── */}
+        <section aria-labelledby="trends-hdg" className="mt-14">
+          <Eyebrow en="The long view" bn="দীর্ঘমেয়াদি চিত্র" />
+          <h2 id="trends-hdg" className="mt-2 text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+            <T
+              en={`What has changed since ${trendFirst}`}
+              bn={`${bnNum(trendFirst)} থেকে কী বদলেছে`}
+            />
+          </h2>
+          <p className="mt-3 max-w-[68ch] text-base leading-relaxed text-ink-2">
+            <T
+              en={`Every signal is read against ${trendLast - trendFirst + 1} years of NASA records. Tested for statistical significance, the same warming shows up as heavier rain in some regions and drier monsoons in others.`}
+              bn={`প্রতিটি সংকেত নাসার ${bnNum(trendLast - trendFirst + 1)} বছরের রেকর্ডের সাথে মেলানো হয়। পরিসংখ্যানগত তাৎপর্য পরীক্ষায় দেখা যায়, একই উষ্ণতা কোথাও বৃষ্টি বাড়ায়, কোথাও বর্ষা শুষ্ক করে।`}
+            />
+          </p>
+          <dl className="mt-6 grid gap-2 sm:grid-cols-3">
+            <div className="rounded-2xl border border-line bg-card p-4">
+              <dt className="text-sm text-ink-2">
+                <T en="Warming, whole study area" bn="উষ্ণতা, পুরো এলাকা" />
+              </dt>
+              <dd className="mt-1 text-2xl font-semibold tabular-nums text-ink">
+                {warming ? `${formatSigned(warming.slopePerDecade, 2)} °C` : "–"}
+                <span className="ml-1 text-sm font-normal text-ink-3">
+                  <T en="/ 10 years" bn="/ ১০ বছর" />
+                </span>
+              </dd>
+            </div>
+            <div className="rounded-2xl border border-line bg-card p-4">
+              <dt className="text-sm text-ink-2">
+                <T en="Land squares clearly warming" bn="স্পষ্টভাবে উষ্ণ স্থলবর্গ" />
+              </dt>
+              <dd className="mt-1 text-2xl font-semibold tabular-nums text-ink">
+                {warmSummary.significantIncrease} / {warmSummary.cells}
+              </dd>
+            </div>
+            <div className="rounded-2xl border border-line bg-card p-4">
+              <dt className="text-sm text-ink-2">
+                <T en="Monsoon rain: regions clearly wetter · drier" bn="বর্ষার বৃষ্টি: অঞ্চল স্পষ্ট ভেজা · শুষ্ক" />
+              </dt>
+              <dd className="mt-1 text-2xl font-semibold tabular-nums text-ink">
+                {wetterRegions} ↑ · {drierRegions} ↓
+              </dd>
+            </div>
+          </dl>
+          <Link
+            href="/climate-trends"
+            className="mt-4 inline-flex min-h-9 items-center gap-1 text-sm font-medium text-accent-strong underline decoration-line underline-offset-2 hover:decoration-current"
+          >
+            <T en="Explore the climate trends" bn="জলবায়ু প্রবণতা দেখুন" />
+            <ArrowRight size={15} aria-hidden />
+          </Link>
+        </section>
 
         {/* ── What the platform answers today, in counts ── */}
         <section aria-labelledby="coverage-hdg" className="mt-14">
@@ -296,6 +364,16 @@ const DESTINATIONS: {
     text: {
       en: "Where the map is listed but not measured, which datasets are missing, and why a location cannot receive a reliable signal.",
       bn: "কোথায় মানচিত্র আছে কিন্তু মাপা হয়নি, কোন তথ্যসেট অনুপস্থিত, আর কেন একটি স্থান নির্ভরযোগ্য সংকেত পায় না।",
+    },
+  },
+  {
+    href: "/climate-trends",
+    Icon: TrendingUp,
+    en: "Climate Trends",
+    bn: "জলবায়ু প্রবণতা",
+    text: {
+      en: "45 years of NASA temperature and rain records: what is changing, where, by how much, and whether it is statistically significant.",
+      bn: "নাসার ৪৫ বছরের তাপমাত্রা ও বৃষ্টির রেকর্ড: কী বদলাচ্ছে, কোথায়, কতটা, আর তা পরিসংখ্যানগতভাবে তাৎপর্যপূর্ণ কি না।",
     },
   },
   {
