@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import TrendExplorer from "@/components/trends/TrendExplorer";
+import TrendExplorer, { type Turning } from "@/components/trends/TrendExplorer";
 import { Eyebrow } from "@/components/ui/primitive";
 import { bnNum } from "@/lib/bn";
-import { readCrosscheck, readManifest, readTrendZones } from "@/lib/data";
+import { readCrosscheck, readData, readManifest, readTrendZones } from "@/lib/data";
 import { T } from "@/lib/i18n";
 import { ZONE_BN } from "@/lib/names";
 import { ALPHA, formatP, formatSigned, type TrendSummary, type Zone } from "@/lib/trends";
@@ -29,7 +29,12 @@ const COLUMNS = [
 const zoneName = (z: Zone) => ({ en: z.name, bn: ZONE_BN[z.id]?.name ?? z.name });
 
 export default async function ClimateTrendsPage() {
-  const [manifest, zones, crosscheck] = await Promise.all([readManifest(), readTrendZones(), readCrosscheck()]);
+  const [manifest, zones, crosscheck, turning] = await Promise.all([
+    readManifest(),
+    readTrendZones(),
+    readCrosscheck(),
+    readData<Turning>("trends", "turning.json"),
+  ]);
   const first = manifest.years[0];
   const last = manifest.years[manifest.years.length - 1];
 
@@ -124,7 +129,7 @@ export default async function ClimateTrendsPage() {
           />
         </p>
         <div className="mt-6">
-          <TrendExplorer manifest={manifest} zones={zones} crosscheck={crosscheck} />
+          <TrendExplorer manifest={manifest} zones={zones} crosscheck={crosscheck} turning={turning} />
         </div>
       </section>
 

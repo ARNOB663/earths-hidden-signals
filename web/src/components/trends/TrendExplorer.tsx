@@ -42,6 +42,9 @@ const TrendMap = dynamic(() => import("./TrendMap"), { ssr: false, loading: () =
 
 type Selection = { kind: "zone"; id: string } | { kind: "point"; lat: number; lon: number };
 
+/** Pettitt turning points per region and result key (analysis/turning.py). */
+export type Turning = Record<string, Record<string, { year: number; before: number; after: number; p: number }>>;
+
 type Words = { label: string; up: string; down: string; axis: string };
 
 const WORDS: Record<VariableId, Words> = {
@@ -95,16 +98,20 @@ interface Reading {
   /** A map square whose own p-value passes but the map-wide check does not. */
   passesAloneOnly: boolean;
   check: { ours: TrendSummary | null; cru: TrendSummary | null } | null;
+  /** A clear turning point (p < 0.05) in this region's record, if any. */
+  split: { year: number; before: number; after: number; p: number } | null;
 }
 
 export default function TrendExplorer({
   manifest,
   zones,
   crosscheck,
+  turning,
 }: {
   manifest: Manifest;
   zones: Zone[];
   crosscheck: Crosscheck;
+  turning: Turning;
 }) {
   const lang = useLang();
   const bn = lang === "bn";
@@ -169,6 +176,10 @@ export default function TrendExplorer({
         clear: !!result.trend && result.trend.p < ALPHA,
         passesAloneOnly: false,
         check: crosscheck.zones[zone.id]?.[key] ?? null,
+        split: (() => {
+          const t = turning[zone.id]?.[key];
+          return t && t.p < ALPHA ? t : null;
+        })(),
       };
     }
     if (!stats || !loaded || !selectedCell) return null;
@@ -199,8 +210,9 @@ export default function TrendExplorer({
       clear,
       passesAloneOnly: !clear && p < ALPHA,
       check: null,
+      split: null,
     };
-  }, [selection, zones, key, crosscheck, stats, loaded, selectedCell, grid]);
+  }, [selection, zones, key, crosscheck, turning, stats, loaded, selectedCell, grid]);
 
   const onSelectCell = (lat: number, lon: number) => setSelection({ kind: "point", lat, lon });
 
@@ -478,8 +490,21 @@ function ReadingPanel({
           axisLabelBn={WORDS_BN[variable].axis}
           zeroLine={meta.anomaly}
           title={`${reading.title} ${meta.label}, ${manifest.seasons[season].label}`}
+          split={reading.split}
         />
       </div>
+
+      {reading.split && (
+        <p className="mt-3 text-sm leading-relaxed text-ink-2">
+          <span className="font-semibold text-ink">
+            <T en="Turning point: " bn="মোড় পরিবর্তন: " />
+          </span>
+          <T
+            en={`the record splits most sharply around ${reading.split.year}. Average ${reading.split.before.toFixed(meta.decimals)} ${meta.unit} before, ${reading.split.after.toFixed(meta.decimals)} ${meta.unit} from then on (Pettitt test, ${formatP(reading.split.p)}). A steady trend also splits near its middle, so this says when the record is most different, not that the change switched on that year.`}
+            bn={`রেকর্ডটি সবচেয়ে স্পষ্টভাবে ভাগ হয় ${bnNum(reading.split.year)}-এর কাছে। আগে গড় ${bnNum(reading.split.before.toFixed(meta.decimals))} ${unit}, তারপর থেকে ${bnNum(reading.split.after.toFixed(meta.decimals))} ${unit} (পেটিট পরীক্ষা, ${bnNum(formatP(reading.split.p))})। স্থির প্রবণতাও মাঝামাঝি ভাগ হয়, তাই এটি বলে রেকর্ড কখন সবচেয়ে আলাদা, পরিবর্তন ঠিক সেই বছরে শুরু হয়েছে তা নয়।`}
+          />
+        </p>
+      )}
 
       {agree && (
         <p className="mt-3 rounded-lg border border-line px-3 py-2 text-xs leading-relaxed text-ink-2">

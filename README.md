@@ -46,6 +46,7 @@ The global directory is split so the page stays light: `geography/index.json` pl
 - Autocorrelation-corrected (Hamed–Rao) Mann–Kendall test for significance
 - Sen's slope with a 95% confidence interval for the rate of change
 - Benjamini–Hochberg false-discovery-rate control for the map-wide results
+- Pettitt change-point test for where each region's record splits into "before" and "after"
 
 Details are in [`analysis/README.md`](analysis/README.md).
 
@@ -65,6 +66,7 @@ python build.py
 python build_geography.py        # geoBoundaries gbOpen boundaries (network; then --offline)
 python build_signal_scores.py    # Signals coverage and demo scores
 python build_hazards.py
+python turning.py                # turning points (Pettitt) for each region's record
 python twins.py                  # Climate Twins: global trend fingerprints + GDACS / landslide records
 python cmip6_download.py && python future.py   # Future Outlook: NASA NEX-GDDP-CMIP6 (no login)
 python risk.py                   # hazard risk model, scored on unseen years (published even when it fails)

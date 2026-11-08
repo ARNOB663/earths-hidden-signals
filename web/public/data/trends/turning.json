@@ -1,0 +1,560 @@
+{
+ "study-area": {
+  "temperature_annual": {
+   "year": 1998,
+   "before": 0.2,
+   "after": 0.971,
+   "p": 0.0
+  },
+  "temperature_pre-monsoon": {
+   "year": 1999,
+   "before": 0.079,
+   "after": 0.996,
+   "p": 0.0
+  },
+  "temperature_monsoon": {
+   "year": 2005,
+   "before": 0.292,
+   "after": 0.95,
+   "p": 0.0
+  },
+  "rainfall_annual": {
+   "year": 2019,
+   "before": 1000.553,
+   "after": 1051.286,
+   "p": 0.49721
+  },
+  "rainfall_pre-monsoon": {
+   "year": 1999,
+   "before": 145.333,
+   "after": 155.815,
+   "p": 0.14441
+  },
+  "rainfall_monsoon": {
+   "year": 2019,
+   "before": 682.605,
+   "after": 711.571,
+   "p": 0.73103
+  },
+  "hot-months_annual": {
+   "year": 1998,
+   "before": 1.382,
+   "after": 5.364,
+   "p": 0.0
+  },
+  "heavy-rain_annual": {
+   "year": 2003,
+   "before": 3.917,
+   "after": 4.287,
+   "p": 0.37349
+  },
+  "dry-spell_annual": {
+   "year": 2019,
+   "before": 23.518,
+   "after": 21.943,
+   "p": 0.82551
+  },
+  "wettest-day_annual": {
+   "year": 2003,
+   "before": 47.617,
+   "after": 51.035,
+   "p": 0.03822
+  }
+ },
+ "bengal-delta": {
+  "temperature_annual": {
+   "year": 2005,
+   "before": 0.337,
+   "after": 1.1,
+   "p": 0.0
+  },
+  "temperature_pre-monsoon": {
+   "year": 2004,
+   "before": 0.125,
+   "after": 0.86,
+   "p": 0.00013
+  },
+  "temperature_monsoon": {
+   "year": 2005,
+   "before": 0.345,
+   "after": 1.173,
+   "p": 0.0
+  },
+  "rainfall_annual": {
+   "year": 2008,
+   "before": 2482.852,
+   "after": 2194.889,
+   "p": 0.00607
+  },
+  "rainfall_pre-monsoon": {
+   "year": 2007,
+   "before": 496.538,
+   "after": 436.158,
+   "p": 0.39248
+  },
+  "rainfall_monsoon": {
+   "year": 2009,
+   "before": 1737.107,
+   "after": 1539.0,
+   "p": 0.01428
+  },
+  "hot-months_annual": {
+   "year": 2005,
+   "before": 1.408,
+   "after": 6.724,
+   "p": 0.0
+  },
+  "heavy-rain_annual": {
+   "year": 2008,
+   "before": 8.027,
+   "after": 6.072,
+   "p": 0.03594
+  },
+  "dry-spell_annual": {
+   "year": 2016,
+   "before": 5.532,
+   "after": 5.2,
+   "p": 0.92357
+  },
+  "wettest-day_annual": {
+   "year": 2008,
+   "before": 86.109,
+   "after": 82.111,
+   "p": 0.16846
+  }
+ },
+ "indus-plain": {
+  "temperature_annual": {
+   "year": 1998,
+   "before": 0.053,
+   "after": 0.853,
+   "p": 2e-05
+  },
+  "temperature_pre-monsoon": {
+   "year": 1999,
+   "before": -0.047,
+   "after": 1.214,
+   "p": 0.00023
+  },
+  "temperature_monsoon": {
+   "year": 2009,
+   "before": 0.156,
+   "after": 0.698,
+   "p": 0.00014
+  },
+  "rainfall_annual": {
+   "year": 2005,
+   "before": 301.875,
+   "after": 425.143,
+   "p": 0.00213
+  },
+  "rainfall_pre-monsoon": {
+   "year": 2005,
+   "before": 38.708,
+   "after": 52.429,
+   "p": 0.06625
+  },
+  "rainfall_monsoon": {
+   "year": 2006,
+   "before": 224.12,
+   "after": 332.95,
+   "p": 0.00273
+  },
+  "hot-months_annual": {
+   "year": 1999,
+   "before": 1.517,
+   "after": 4.837,
+   "p": 8e-05
+  },
+  "heavy-rain_annual": {
+   "year": 2006,
+   "before": 1.111,
+   "after": 2.34,
+   "p": 0.02623
+  },
+  "dry-spell_annual": {
+   "year": 2017,
+   "before": 29.435,
+   "after": 24.2,
+   "p": 0.10679
+  },
+  "wettest-day_annual": {
+   "year": 2006,
+   "before": 36.156,
+   "after": 45.68,
+   "p": 0.05476
+  }
+ },
+ "central-himalaya": {
+  "temperature_annual": {
+   "year": 1998,
+   "before": 0.152,
+   "after": 0.887,
+   "p": 0.0
+  },
+  "temperature_pre-monsoon": {
+   "year": 2002,
+   "before": 0.036,
+   "after": 0.778,
+   "p": 0.00322
+  },
+  "temperature_monsoon": {
+   "year": 2009,
+   "before": 0.315,
+   "after": 1.047,
+   "p": 1e-05
+  },
+  "rainfall_annual": {
+   "year": 2004,
+   "before": 1156.087,
+   "after": 963.636,
+   "p": 5e-05
+  },
+  "rainfall_pre-monsoon": {
+   "year": 2003,
+   "before": 134.318,
+   "after": 119.957,
+   "p": 0.54571
+  },
+  "rainfall_monsoon": {
+   "year": 2004,
+   "before": 908.783,
+   "after": 752.091,
+   "p": 7e-05
+  },
+  "hot-months_annual": {
+   "year": 1998,
+   "before": 1.141,
+   "after": 5.164,
+   "p": 1e-05
+  },
+  "heavy-rain_annual": {
+   "year": 2005,
+   "before": 5.312,
+   "after": 4.09,
+   "p": 0.18545
+  },
+  "dry-spell_annual": {
+   "year": 2009,
+   "before": 11.733,
+   "after": 13.0,
+   "p": 0.45337
+  },
+  "wettest-day_annual": {
+   "year": 2014,
+   "before": 50.894,
+   "after": 48.975,
+   "p": 0.45337
+  }
+ },
+ "western-himalaya": {
+  "temperature_annual": {
+   "year": 1999,
+   "before": 0.188,
+   "after": 1.005,
+   "p": 1e-05
+  },
+  "temperature_pre-monsoon": {
+   "year": 1999,
+   "before": -0.058,
+   "after": 1.314,
+   "p": 2e-05
+  },
+  "temperature_monsoon": {
+   "year": 2009,
+   "before": 0.27,
+   "after": 0.842,
+   "p": 5e-05
+  },
+  "rainfall_annual": {
+   "year": 1999,
+   "before": 883.111,
+   "after": 739.074,
+   "p": 0.00297
+  },
+  "rainfall_pre-monsoon": {
+   "year": 1999,
+   "before": 178.444,
+   "after": 131.074,
+   "p": 0.08853
+  },
+  "rainfall_monsoon": {
+   "year": 1999,
+   "before": 510.444,
+   "after": 464.444,
+   "p": 0.43411
+  },
+  "hot-months_annual": {
+   "year": 1999,
+   "before": 2.167,
+   "after": 5.559,
+   "p": 0.00014
+  },
+  "heavy-rain_annual": {
+   "year": 2010,
+   "before": 2.985,
+   "after": 4.7,
+   "p": 0.00883
+  },
+  "dry-spell_annual": {
+   "year": 2009,
+   "before": 14.983,
+   "after": 18.259,
+   "p": 0.13139
+  },
+  "wettest-day_annual": {
+   "year": 2010,
+   "before": 40.546,
+   "after": 48.119,
+   "p": 0.03822
+  }
+ },
+ "western-ghats": {
+  "temperature_annual": {
+   "year": 2001,
+   "before": 0.289,
+   "after": 0.728,
+   "p": 1e-05
+  },
+  "temperature_pre-monsoon": {
+   "year": 2002,
+   "before": 0.352,
+   "after": 0.688,
+   "p": 0.01428
+  },
+  "temperature_monsoon": {
+   "year": 2002,
+   "before": 0.236,
+   "after": 0.668,
+   "p": 0.00054
+  },
+  "rainfall_annual": {
+   "year": 2001,
+   "before": 1829.05,
+   "after": 1632.28,
+   "p": 0.05048
+  },
+  "rainfall_pre-monsoon": {
+   "year": 1999,
+   "before": 171.0,
+   "after": 235.259,
+   "p": 0.03239
+  },
+  "rainfall_monsoon": {
+   "year": 2001,
+   "before": 1341.1,
+   "after": 1102.28,
+   "p": 0.00117
+  },
+  "hot-months_annual": {
+   "year": 2009,
+   "before": 0.793,
+   "after": 3.547,
+   "p": 0.00017
+  },
+  "heavy-rain_annual": {
+   "year": 2008,
+   "before": 6.655,
+   "after": 5.244,
+   "p": 0.2791
+  },
+  "dry-spell_annual": {
+   "year": 2005,
+   "before": 14.012,
+   "after": 11.243,
+   "p": 0.42015
+  },
+  "wettest-day_annual": {
+   "year": 2008,
+   "before": 63.455,
+   "after": 59.678,
+   "p": 0.62367
+  }
+ },
+ "sri-lanka-hills": {
+  "temperature_annual": {
+   "year": 2001,
+   "before": 0.333,
+   "after": 0.717,
+   "p": 4e-05
+  },
+  "temperature_pre-monsoon": {
+   "year": 2009,
+   "before": 0.476,
+   "after": 0.779,
+   "p": 0.02098
+  },
+  "temperature_monsoon": {
+   "year": 2001,
+   "before": 0.262,
+   "after": 0.71,
+   "p": 7e-05
+  },
+  "rainfall_annual": {
+   "year": 2006,
+   "before": 1588.64,
+   "after": 1758.8,
+   "p": 0.06432
+  },
+  "rainfall_pre-monsoon": {
+   "year": 2008,
+   "before": 362.074,
+   "after": 413.778,
+   "p": 0.24243
+  },
+  "rainfall_monsoon": {
+   "year": 1999,
+   "before": 418.056,
+   "after": 336.148,
+   "p": 0.05533
+  },
+  "hot-months_annual": {
+   "year": 2010,
+   "before": 0.448,
+   "after": 3.294,
+   "p": 0.00041
+  },
+  "heavy-rain_annual": {
+   "year": 2004,
+   "before": 5.771,
+   "after": 8.159,
+   "p": 0.43655
+  },
+  "dry-spell_annual": {
+   "year": 2009,
+   "before": 19.658,
+   "after": 17.159,
+   "p": 0.94873
+  },
+  "wettest-day_annual": {
+   "year": 2017,
+   "before": 57.8,
+   "after": 53.367,
+   "p": 1.0
+  }
+ },
+ "central-india-forests": {
+  "temperature_annual": {
+   "year": 2001,
+   "before": 0.221,
+   "after": 0.772,
+   "p": 0.0
+  },
+  "temperature_pre-monsoon": {
+   "year": 1999,
+   "before": 0.01,
+   "after": 0.574,
+   "p": 0.01704
+  },
+  "temperature_monsoon": {
+   "year": 2002,
+   "before": 0.259,
+   "after": 0.771,
+   "p": 0.00034
+  },
+  "rainfall_annual": {
+   "year": 2019,
+   "before": 1346.789,
+   "after": 1426.857,
+   "p": 0.82812
+  },
+  "rainfall_pre-monsoon": {
+   "year": 2006,
+   "before": 82.4,
+   "after": 109.9,
+   "p": 0.06625
+  },
+  "rainfall_monsoon": {
+   "year": 2005,
+   "before": 1115.667,
+   "after": 1137.095,
+   "p": 0.87868
+  },
+  "hot-months_annual": {
+   "year": 1998,
+   "before": 0.741,
+   "after": 4.239,
+   "p": 0.0
+  },
+  "heavy-rain_annual": {
+   "year": 2017,
+   "before": 5.005,
+   "after": 4.567,
+   "p": 0.80171
+  },
+  "dry-spell_annual": {
+   "year": 2007,
+   "before": 10.91,
+   "after": 9.5,
+   "p": 0.20376
+  },
+  "wettest-day_annual": {
+   "year": 2001,
+   "before": 66.425,
+   "after": 73.516,
+   "p": 0.97411
+  }
+ },
+ "northeast-hills": {
+  "temperature_annual": {
+   "year": 2005,
+   "before": 0.345,
+   "after": 1.207,
+   "p": 0.0
+  },
+  "temperature_pre-monsoon": {
+   "year": 2004,
+   "before": 0.153,
+   "after": 0.98,
+   "p": 1e-05
+  },
+  "temperature_monsoon": {
+   "year": 2005,
+   "before": 0.342,
+   "after": 1.239,
+   "p": 0.0
+  },
+  "rainfall_annual": {
+   "year": 2005,
+   "before": 2326.333,
+   "after": 2120.905,
+   "p": 0.01479
+  },
+  "rainfall_pre-monsoon": {
+   "year": 2008,
+   "before": 471.185,
+   "after": 424.556,
+   "p": 0.58654
+  },
+  "rainfall_monsoon": {
+   "year": 2005,
+   "before": 1600.333,
+   "after": 1458.762,
+   "p": 0.00824
+  },
+  "hot-months_annual": {
+   "year": 2005,
+   "before": 1.479,
+   "after": 7.624,
+   "p": 0.0
+  },
+  "heavy-rain_annual": {
+   "year": 2005,
+   "before": 8.137,
+   "after": 6.733,
+   "p": 0.20376
+  },
+  "dry-spell_annual": {
+   "year": 2016,
+   "before": 5.542,
+   "after": 5.01,
+   "p": 0.80171
+  },
+  "wettest-day_annual": {
+   "year": 2005,
+   "before": 75.85,
+   "after": 71.824,
+   "p": 0.54383
+  }
+ }
+}
