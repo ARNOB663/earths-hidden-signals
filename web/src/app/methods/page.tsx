@@ -37,6 +37,9 @@ const QUESTIONS = [
 ];
 
 const REFERENCES = [
+  "Thrasher, B. et al. (2022). NASA Global Daily Downscaled Projections, CMIP6. Sci. Data 9, 262.",
+  "Pettitt, A. N. (1979). A non-parametric approach to the change-point problem. J. R. Stat. Soc. C 28(2).",
+  "Airola, A. et al. (2011). An experimental comparison of cross-validation techniques for estimating the area under the ROC curve. Comput. Stat. Data Anal. 55(4).",
   "Lenssen, N. et al. (2019). Improvements in the GISTEMP uncertainty model. J. Geophys. Res. Atmos. 124.",
   "Adler, R. F. et al. (2018). The Global Precipitation Climatology Project (GPCP) monthly analysis (new version 2.3). Atmosphere 9(4).",
   "Hamed, K. H. & Rao, A. R. (1998). A modified Mann–Kendall trend test for autocorrelated data. J. Hydrology 204.",
@@ -207,7 +210,38 @@ export default async function MethodsPage() {
         </p>
       </Section>
 
-      <Section title="5. Limitations">
+      <Section title="5. The world, turning points and the future">
+        <ul className="list-disc space-y-2 pl-5">
+          <li>
+            <strong className="font-semibold text-ink">World view.</strong> The same tests run on every land grid cell from 55°S to
+            75°N (GISTEMP 2°, GPCP 2.5°). Rain trends are shown as % of each place&apos;s own average, and the rainy season is each
+            cell&apos;s four wettest consecutive months, so the north and south of the planet compare fairly.
+          </li>
+          <li>
+            <strong className="font-semibold text-ink">Disaster hotspots.</strong> 14 regions on every continent, drawn by geography.
+            Recorded events come from GDACS (floods, droughts, tropical cyclones, 2000–2025) and NASA&apos;s Global Landslide Catalog
+            (2007–2017). A hotspot&apos;s disasters &ldquo;follow the weather&rdquo; only if yearly event counts correlate with its rainy
+            season (detrended Spearman, p &lt; 0.05) in the expected direction.
+          </li>
+          <li>
+            <strong className="font-semibold text-ink">Turning points.</strong> Pettitt&apos;s rank test finds the year where a record
+            splits most sharply into &ldquo;before&rdquo; and &ldquo;after&rdquo; (shown only at p &lt; 0.05). A steady trend also splits
+            near its middle, so we say where the record changes most, not when the change began.
+          </li>
+          <li>
+            <strong className="font-semibold text-ink">2041–2060.</strong> NASA NEX-GDDP-CMIP6 daily projections from six climate models
+            (1° for South Asia, 2° worldwide), each compared only with its own 1995–2014 run. We report how often today&apos;s 1-in-10
+            wet, dry or hot year would come, and how many models agree. A projection, not a forecast.
+          </li>
+          <li>
+            <strong className="font-semibold text-ink">An AI test.</strong> We trained a small machine-learning model (logistic
+            regression) to tell disaster years from ordinary ones in each South Asian region, scored only on years it never saw. None
+            beat simple guessing after correcting for testing eight regions, so we never turn projections into disaster odds.
+          </li>
+        </ul>
+      </Section>
+
+      <Section title="6. Limitations">
         <ul className="list-disc space-y-1.5 pl-5">
           <li>Grids are coarse (2°–2.5°, about 200–280 km), so local extremes are smoothed out.</li>
           <li>Hazard regions are approximate rectangles, not exact watersheds or forest boundaries.</li>
@@ -217,7 +251,7 @@ export default async function MethodsPage() {
         </ul>
       </Section>
 
-      <Section title="6. Reproduce it">
+      <Section title="7. Reproduce it">
         <p>
           Everything is open source at{" "}
           <a href={REPO} className="text-accent hover:underline">
