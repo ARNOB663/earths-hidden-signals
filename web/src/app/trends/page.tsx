@@ -8,18 +8,19 @@ import { readCrosscheck, readData, readManifest, readTrendZones } from "@/lib/da
 export const metadata: Metadata = { title: "Climate trends · Earth's Hidden Signals" };
 
 export default async function TrendsPage() {
-  const [manifest, zones, crosscheck, world] = await Promise.all([
+  const [manifest, zones, crosscheck, world, turning] = await Promise.all([
     readManifest(),
     readTrendZones(),
     readCrosscheck(),
     readData<WorldCounts>("global", "summary.json"),
+    readData<Record<string, Record<string, { year: number; before: number; after: number; p: number }>>>("trends", "turning.json"),
   ]);
   return (
     <div className="h-[calc(100svh-4rem)] lg:h-[calc(100dvh-4rem)]">
       {/* Both views read the URL's search params, which needs a Suspense boundary on a static page. */}
       <Suspense>
         <TrendsScope counts={{ temperature: world.temperature, rainfall: world.rainfall, wetSeason: world.wetSeason }}>
-          <TrendExplorer manifest={manifest} zones={zones} crosscheck={crosscheck} />
+          <TrendExplorer manifest={manifest} zones={zones} crosscheck={crosscheck} turning={turning} />
         </TrendsScope>
       </Suspense>
     </div>

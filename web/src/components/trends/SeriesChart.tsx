@@ -23,6 +23,8 @@ interface Props {
   upperPerDecade?: number | null;
   /** Shown in the CSV file name and header, e.g. "Around Dhaka rain, rainy season". */
   title?: string;
+  /** A clear turning point (Pettitt): drawn as the averages before and after the split year. */
+  split?: { year: number; before: number; after: number } | null;
 }
 
 const HEIGHT = 230;
@@ -64,6 +66,7 @@ export function SeriesChart({
   lowerPerDecade = null,
   upperPerDecade = null,
   title,
+  split = null,
 }: Props) {
   const [wrapRef, width] = useWidth<HTMLDivElement>();
   const [hover, setHover] = useState<number | null>(null);
@@ -106,6 +109,7 @@ export function SeriesChart({
   if (trendAt) vals.push(trendAt(0), trendAt(values.length - 1));
   if (band) vals.push(band[0][0], band[0][1], band[n - 1][0], band[n - 1][1]);
   if (zeroLine) vals.push(0);
+  if (split) vals.push(split.before, split.after);
   let lo = Math.min(...vals);
   let hi = Math.max(...vals);
   const padY = (hi - lo) * 0.08 || 1;
@@ -198,6 +202,14 @@ export function SeriesChart({
 
           {bandPath && <path d={bandPath} fill="var(--accent)" opacity={0.14} />}
           <path d={path} fill="none" stroke="var(--ink)" strokeWidth={2} strokeLinejoin="round" />
+          {split && years.includes(split.year) && (
+            <path
+              d={`M${x(0)},${y(split.before)}H${x(years.indexOf(split.year) - 0.5)}V${y(split.after)}H${x(years.length - 1)}`}
+              fill="none"
+              stroke="var(--warm-3)"
+              strokeWidth={2}
+            />
+          )}
           {trendAt && (
             <line
               x1={x(0)}

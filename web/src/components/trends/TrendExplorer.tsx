@@ -148,10 +148,12 @@ export default function TrendExplorer({
   manifest,
   zones,
   crosscheck,
+  turning,
 }: {
   manifest: Manifest;
   zones: Zone[];
   crosscheck: Crosscheck;
+  turning: Record<string, Record<string, { year: number; before: number; after: number; p: number }>>;
 }) {
   const params = useSearchParams();
   const [variable, setVariable] = useState<VariableId>(() => {
@@ -489,6 +491,7 @@ export default function TrendExplorer({
             words={words}
             wordsBn={wordsBn}
             seasonLabel={SEASON_PLAIN[effSeason].label}
+            split={zone && turning[zone.id]?.[key] && turning[zone.id][key].p < 0.05 ? turning[zone.id][key] : null}
           />
         ) : (
           <p className="text-sm text-ink-3">
@@ -541,6 +544,7 @@ function Answer({
   words,
   wordsBn,
   seasonLabel,
+  split,
 }: {
   detail: Detail;
   meta: VariableMeta;
@@ -548,6 +552,7 @@ function Answer({
   words: Words;
   wordsBn: Words;
   seasonLabel: string;
+  split: { year: number; before: number; after: number; p: number } | null;
 }) {
   const t = useT();
   const u = meta.unit;
@@ -657,9 +662,21 @@ function Answer({
           lowerPerDecade={trend?.lowerPerDecade ?? null}
           upperPerDecade={trend?.upperPerDecade ?? null}
           title={`${detail.titleEn} ${words.label.toLowerCase()} ${seasonLabel.toLowerCase()}`}
+          split={split}
         />
       ) : (
         trend && <div className="h-56 animate-pulse rounded-xl bg-sunken" aria-label={t("Loading chart", "চার্ট লোড হচ্ছে")} />
+      )}
+      {split && (
+        <p className="text-sm text-ink-2">
+          <span className="font-medium text-ink">
+            <T en="Turning point: " bn="মোড় পরিবর্তন: " />
+          </span>
+          <T
+            en={`the record changes most around ${split.year} (red line: average before and after).`}
+            bn={`রেকর্ড সবচেয়ে বেশি বদলায় ${bnNum(split.year)}-এর কাছে (লাল রেখা: আগে ও পরে গড়)।`}
+          />
+        </p>
       )}
 
       {trend && (
