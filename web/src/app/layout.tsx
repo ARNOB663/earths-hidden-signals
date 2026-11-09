@@ -29,10 +29,10 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://earths-hidden-signals.vercel.app"),
   title: "Earth's Hidden Signals",
   description:
-    "How South Asia's climate is changing, and what it means for floods, landslides and wildfires, told with 45 years of NASA data.",
+    "How Earth's climate is changing, told with 45 years of NASA data for every land area, with a close look at South Asia's floods, landslides and wildfires.",
   openGraph: {
     title: "Earth's Hidden Signals",
-    description: "How South Asia's climate is changing, told with 45 years of NASA data. NASA Space Apps 2026.",
+    description: "How Earth's climate is changing, told with 45 years of NASA data. NASA Space Apps 2026.",
     type: "website",
   },
   twitter: { card: "summary_large_image" },

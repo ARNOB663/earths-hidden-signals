@@ -127,7 +127,7 @@ export default async function StoryPage() {
           {tx(`The story · ${first} to ${last}`, `গল্পটা · ${firstBn} থেকে ${lastBn}`)}
         </p>
         <h1 className="mt-2 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
-          {tx("Five things NASA data tell us about South Asia", "নাসার তথ্য দক্ষিণ এশিয়া নিয়ে যে পাঁচটি কথা বলে")}
+          {tx("Zoom in: five things NASA data tell us about South Asia", "কাছ থেকে: নাসার তথ্য দক্ষিণ এশিয়া নিয়ে যে পাঁচটি কথা বলে")}
         </h1>
         <p className="mt-4 text-lg leading-relaxed text-ink-2">
           {tx(

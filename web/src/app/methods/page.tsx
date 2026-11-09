@@ -18,9 +18,9 @@ const QUESTIONS = [
   },
   {
     q: "Where?",
-    a: "Every land grid cell in South Asia (5–38°N, 60–100°E), and eight hazard regions drawn by geography, not borders.",
+    a: "Every land grid cell on Earth from 55°S to 75°N for the world view and story; South Asia (5–38°N, 60–100°E) in full detail, with eight hazard regions drawn by geography, not borders.",
     qBn: "কোথায়?",
-    aBn: "দক্ষিণ এশিয়ার (৫–৩৮° উ, ৬০–১০০° পূ) প্রতিটি স্থলভাগের বর্গ, আর দেশের সীমানা নয়, ভূগোল দেখে আঁকা আটটি দুর্যোগ-অঞ্চল।",
+    aBn: "বিশ্ব-দৃশ্য ও গল্পের জন্য পৃথিবীর ৫৫° দ থেকে ৭৫° উ পর্যন্ত প্রতিটি স্থলভাগের বর্গ; আর বিস্তারিতভাবে দক্ষিণ এশিয়া (৫–৩৮° উ, ৬০–১০০° পূ), দেশের সীমানা নয়, ভূগোল ধরে আঁকা আটটি দুর্যোগ-অঞ্চলসহ।",
   },
   {
     q: "How much?",

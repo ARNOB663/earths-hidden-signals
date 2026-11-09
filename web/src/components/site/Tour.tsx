@@ -20,8 +20,8 @@ const STOPS: { href: string; title: [string, string]; text: [string, string] }[]
     href: "/trends?var=temperature&season=annual",
     title: ["Climate trends: warming everywhere", "জলবায়ুর প্রবণতা: সবখানে উষ্ণতা"],
     text: [
-      "Every square of South Asia has warmed since 1981, by about 0.3 °C every 10 years. Tap any square to read its own story.",
-      "১৯৮১ সাল থেকে দক্ষিণ এশিয়ার প্রতিটি বর্গ গরম হয়েছে, প্রতি ১০ বছরে প্রায় ০.৩ °সে। যেকোনো বর্গে ট্যাপ করে তার নিজের গল্প পড়ুন।",
+      "Almost all of Earth's land has warmed since 1981. Switch to South Asia for the full detail, and tap any square to read its own story.",
+      "১৯৮১ সাল থেকে পৃথিবীর প্রায় সব স্থলভাগ গরম হয়েছে। সম্পূর্ণ বিবরণের জন্য দক্ষিণ এশিয়ায় যান, আর যেকোনো বর্গে ট্যাপ করে তার নিজের গল্প পড়ুন।",
     ],
   },
   {
