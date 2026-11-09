@@ -1,7 +1,4 @@
 // Well-known places: used to name clicked map squares ("Around Dhaka") and for place reports.
-//
-// The Python pipeline parses this file directly (analysis/intel/names.py) for the city list, so it is
-// a data source even though no component imports it. Keep the `P("Name", "Country", lat, lon)` shape.
 
 export interface Place {
   id: string;
@@ -86,6 +83,8 @@ export const PLACES: Place[] = [
   P("Lhasa", "China", 29.65, 91.1),
 ];
 
+export const placeById = (id: string) => PLACES.find((p) => p.id === id);
+
 export function distanceKm(lat1: number, lon1: number, lat2: number, lon2: number): number {
   const dx = (lon2 - lon1) * Math.cos((((lat1 + lat2) / 2) * Math.PI) / 180);
   return Math.hypot(lat2 - lat1, dx) * 111.2;
@@ -100,4 +99,11 @@ export function nearestPlace(lat: number, lon: number): { place: Place; close: b
   }
   if (!best || best[1] > 350) return null;
   return { place: best[0], close: best[1] < 120 };
+}
+
+/** "Around Dhaka" (or "Near Dhaka") for a point, or its coordinates if nothing is near. */
+export function describePlace(lat: number, lon: number): string {
+  const n = nearestPlace(lat, lon);
+  if (!n) return `${lat.toFixed(1)}°N, ${lon.toFixed(1)}°E`;
+  return n.close ? `Around ${n.place.name}` : `Near ${n.place.name}`;
 }

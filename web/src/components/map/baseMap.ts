@@ -40,18 +40,6 @@ function referenceLayers(theme: Theme): L.Layer[] {
   ];
 }
 
-/**
- * A canvas renderer for layers that draw many shapes: one canvas per pane instead of a DOM element
- * per shape. Leaflet's overlay pane redraws its canvas on every mouse move, so pages with thousands
- * of rectangles turn that redraw off and one canvas serves them all.
- */
-export function createCanvasRenderer(options: L.RendererOptions = {}): L.Canvas {
-  const renderer = L.canvas(options);
-  const internals = renderer as unknown as { _updateHoverStyle?: () => void };
-  internals._updateHoverStyle = () => {};
-  return renderer;
-}
-
 export function createBaseMap(
   container: HTMLElement,
   view: { center: L.LatLngExpression; zoom: number },
@@ -59,23 +47,12 @@ export function createBaseMap(
   /** Put the zoom buttons on the side the page's panel doesn't cover. */
   zoomPosition: L.ControlPosition = "topright",
 ): BaseMap {
-  const map = L.map(container, { ...view, minZoom: 2, maxZoom: 12, zoomControl: false, worldCopyJump: true, trackResize: false });
+  const map = L.map(container, { ...view, minZoom: 2, maxZoom: 12, zoomControl: false, worldCopyJump: true });
   L.control.zoom({ position: zoomPosition }).addTo(map);
   L.control.scale({ position: "bottomright", imperial: false }).addTo(map);
 
-  // Custom panes must also carry leaflet-pane: only .leaflet-pane is positioned absolutely, and a
-  // pane without it renders its layer in normal flow at the top of the map.
-  // Trend background (360) sits under this pane (380). Data draws above the Esri labels (450):
-  // a boundary fill is the page's message and must not be dimmed by a name layer.
-  const rasterPane = map.createPane("dataRaster");
-  rasterPane.classList.add("leaflet-pane");
-  rasterPane.style.zIndex = "360";
-  rasterPane.style.pointerEvents = "none";
-  const dataPane = map.createPane("data");
-  dataPane.classList.add("leaflet-pane");
-  dataPane.style.zIndex = "460";
+  map.createPane("data").style.zIndex = "350";
   const refPane = map.createPane("reference");
-  refPane.classList.add("leaflet-pane");
   refPane.style.zIndex = "450";
   refPane.style.pointerEvents = "none";
 

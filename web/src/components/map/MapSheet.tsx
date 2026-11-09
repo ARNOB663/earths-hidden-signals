@@ -122,7 +122,7 @@ export function MapSheet({ id, label, className, bodyClassName, peek, snap, onSn
       id={id}
       aria-label={label}
       style={height !== null ? ({ "--sheet-h": `${height}px` } as React.CSSProperties) : undefined}
-      className={`max-lg:absolute max-lg:inset-x-0 max-lg:bottom-0 max-lg:z-[var(--z-sheet)] max-lg:flex max-lg:h-[var(--sheet-h,9rem)] max-lg:flex-col max-lg:rounded-t-3xl max-lg:border-t max-lg:border-line max-lg:bg-card max-lg:shadow-[0_-10px_30px_rgb(0_0_0/0.14)] ${
+      className={`max-lg:absolute max-lg:inset-x-0 max-lg:bottom-0 max-lg:z-[900] max-lg:flex max-lg:h-[var(--sheet-h,9rem)] max-lg:flex-col max-lg:rounded-t-3xl max-lg:border-t max-lg:border-line max-lg:bg-card max-lg:shadow-[0_-10px_30px_rgb(0_0_0/0.14)] ${
         dragH === null ? "max-lg:transition-[height] max-lg:duration-300 max-lg:ease-out" : ""
       } ${className}`}
     >

@@ -1,23 +1,35 @@
 "use client";
 
-// Climate trend explorer: pick a measure and a season, see where it is changing on the map, then
-// pick a region or a map square to read what is changing, by how much, and whether the change is
-// statistically clear. Every number comes from the committed analysis output in /data/trends/;
-// nothing is computed here beyond formatting and the total-change arithmetic (rate × years).
-
+import {
+  Cactus,
+  CaretDown,
+  CloudLightning,
+  CloudRain,
+  HandPointing,
+  Minus,
+  Thermometer,
+  ThermometerHot,
+  TrendDown,
+  TrendUp,
+  Umbrella,
+} from "@phosphor-icons/react";
 import dynamic from "next/dynamic";
-import { useEffect, useMemo, useState } from "react";
-import { MapLoading } from "@/components/signal/MapLoading";
-import { CONTROL } from "@/components/ui";
+import { useSearchParams } from "next/navigation";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { Numbers, Segmented, Stat, Sureness, TrendLegend } from "@/components/ui";
+import { MapLoading } from "@/components/map/MapLoading";
+import { MapSheet, type SheetSnap } from "@/components/map/MapSheet";
+import { QuickGuide } from "@/components/ui/QuickGuide";
+import { ShareButton } from "@/components/ui/ShareButton";
 import { bnNum } from "@/lib/bn";
-import { downloadCsv, slug } from "@/lib/download";
-import { T, useLang } from "@/lib/i18n";
+import { T, useT } from "@/lib/i18n";
 import { AGREEMENT_BN, DEFINITION_BN, PLACE_BN, unitBn, ZONE_BN } from "@/lib/names";
 import { nearestPlace } from "@/lib/places";
+import { SEASON_PLAIN, sureness } from "@/lib/plain";
 import {
   AGREEMENT_TEXT,
-  ALPHA,
   agreement,
+  ALPHA,
   cellAt,
   cellCenter,
   colorLimit,
@@ -25,7 +37,6 @@ import {
   formatSigned,
   resultKey,
   SEASON_ORDER,
-  trendLegendTokens,
   VARIABLE_ORDER,
   type Crosscheck,
   type Manifest,
@@ -34,530 +45,642 @@ import {
   type TrendGrid,
   type TrendSummary,
   type VariableId,
+  type VariableMeta,
   type Zone,
 } from "@/lib/trends";
 import { SeriesChart } from "./SeriesChart";
 
-const TrendMap = dynamic(() => import("./TrendMap"), { ssr: false, loading: () => <MapLoading /> });
+const TrendMap = dynamic(() => import("./TrendMap"), {
+  ssr: false,
+  loading: () => <MapLoading />,
+});
 
 type Selection = { kind: "zone"; id: string } | { kind: "point"; lat: number; lon: number };
-
-/** Pettitt turning points per region and result key (analysis/turning.py). */
-export type Turning = Record<string, Record<string, { year: number; before: number; after: number; p: number }>>;
-
-type Words = { label: string; up: string; down: string; axis: string };
-
-const WORDS: Record<VariableId, Words> = {
-  temperature: { label: "Temperature", up: "warmed", down: "cooled", axis: "°C above the 1951–1980 average" },
-  rainfall: { label: "Rainfall", up: "got wetter", down: "got drier", axis: "Season total rain (mm)" },
-  "hot-months": { label: "Very hot months", up: "has more very hot months", down: "has fewer very hot months", axis: "Very hot months per year" },
-  "heavy-rain": { label: "Very heavy rain days", up: "has more very heavy rain days", down: "has fewer very heavy rain days", axis: "Very heavy rain days per year" },
-  "wettest-day": { label: "Wettest day", up: "has a wetter wettest day", down: "has a less wet wettest day", axis: "Rain on the wettest day (mm)" },
-  "dry-spell": { label: "Monsoon dry spell", up: "has longer monsoon dry spells", down: "has shorter monsoon dry spells", axis: "Longest monsoon dry spell (days)" },
-};
-
-const WORDS_BN: Record<VariableId, Words> = {
-  temperature: { label: "তাপমাত্রা", up: "উষ্ণ হয়েছে", down: "শীতল হয়েছে", axis: "১৯৫১–১৯৮০ সালের গড়ের চেয়ে কত °সে বেশি" },
-  rainfall: { label: "বৃষ্টি", up: "বেশি ভেজা হয়েছে", down: "শুষ্ক হয়েছে", axis: "মৌসুমে মোট বৃষ্টি (মিমি)" },
-  "hot-months": { label: "অতিরিক্ত গরম মাস", up: "অতিরিক্ত গরম মাস বেড়েছে", down: "অতিরিক্ত গরম মাস কমেছে", axis: "বছরে অতিরিক্ত গরম মাস" },
-  "heavy-rain": { label: "অতি ভারী বৃষ্টির দিন", up: "অতি ভারী বৃষ্টির দিন বেড়েছে", down: "অতি ভারী বৃষ্টির দিন কমেছে", axis: "বছরে অতি ভারী বৃষ্টির দিন" },
-  "wettest-day": { label: "সবচেয়ে বৃষ্টির দিন", up: "সবচেয়ে বৃষ্টির দিনে বৃষ্টি বেড়েছে", down: "সবচেয়ে বৃষ্টির দিনে বৃষ্টি কমেছে", axis: "সবচেয়ে বৃষ্টির দিনে বৃষ্টি (মিমি)" },
-  "dry-spell": { label: "বর্ষায় শুকনো সময়", up: "বর্ষার শুকনো সময় দীর্ঘ হয়েছে", down: "বর্ষার শুকনো সময় ছোট হয়েছে", axis: "বর্ষায় দীর্ঘতম শুকনো সময় (দিন)" },
-};
-
-const SEASON_WORDS: Record<SeasonId, { en: string; bn: string; hint: string; hintBn: string }> = {
-  annual: { en: "Whole year", bn: "সারা বছর", hint: "Jan–Dec", hintBn: "জানু–ডিসে" },
-  "pre-monsoon": { en: "Hot season", bn: "গরমের মৌসুম", hint: "Mar–May", hintBn: "মার্চ–মে" },
-  monsoon: { en: "Rainy season", bn: "বর্ষাকাল", hint: "Jun–Sep", hintBn: "জুন–সেপ্টে" },
-};
 
 const HAZARD_WORD = {
   flood: ["Flood-prone", "বন্যাপ্রবণ"],
   landslide: ["Landslide-prone", "ভূমিধসপ্রবণ"],
   wildfire: ["Wildfire-prone", "দাবানলপ্রবণ"],
+  cyclone: ["Cyclone-prone", "ঘূর্ণিঝড়প্রবণ"],
 } as const;
 
-interface Loaded {
-  key: string;
-  stats: TrendGrid;
-  series: SeriesGrid;
-}
+type Words = { up: string; down: string; less: string; more: string; label: string; axis: string };
 
-interface Reading {
-  kind: "zone" | "point";
-  title: string;
-  /** How the place reads mid-sentence: "across the whole study area", "in the Indus plain", "around Dhaka". */
-  where: string;
-  titleBn: string;
-  subtitle: string;
-  subtitleBn: string;
-  values: (number | null)[];
-  trend: TrendSummary | null;
-  /** Map squares are judged by the map-wide (FDR) test; regions by their own p-value. */
-  clear: boolean;
-  /** A map square whose own p-value passes but the map-wide check does not. */
-  passesAloneOnly: boolean;
-  check: { ours: TrendSummary | null; cru: TrendSummary | null } | null;
-  /** A clear turning point (p < 0.05) in this region's record, if any. */
-  split: { year: number; before: number; after: number; p: number } | null;
+/** English words, then the same in Bangla. */
+const WORDS_BN: Record<VariableId, Words> = {
+  temperature: { up: "গরম বাড়ছে", down: "ঠান্ডা হচ্ছে", less: "ঠান্ডা", more: "গরম", label: "তাপমাত্রা", axis: "১৯৫১–১৯৮০ সালের গড়ের চেয়ে কত °সে বেশি" },
+  rainfall: { up: "বৃষ্টি বাড়ছে", down: "শুষ্ক হচ্ছে", less: "শুষ্ক", more: "ভেজা", label: "বৃষ্টি", axis: "মৌসুমে মোট বৃষ্টি (মিমি)" },
+  "hot-months": { up: "অতিরিক্ত গরম মাস বাড়ছে", down: "অতিরিক্ত গরম মাস কমছে", less: "কম", more: "বেশি", label: "অতিরিক্ত গরম মাস", axis: "বছরে অতিরিক্ত গরম মাস" },
+  "heavy-rain": { up: "অতি ভারী বৃষ্টির দিন বাড়ছে", down: "অতি ভারী বৃষ্টির দিন কমছে", less: "কম", more: "বেশি", label: "অতি ভারী বৃষ্টির দিন", axis: "বছরে অতি ভারী বৃষ্টির দিন" },
+  "dry-spell": { up: "শুকনো সময় দীর্ঘ হচ্ছে", down: "শুকনো সময় ছোট হচ্ছে", less: "ছোট", more: "দীর্ঘ", label: "বর্ষায় শুকনো সময়", axis: "বর্ষায় দীর্ঘতম শুকনো সময় (দিন)" },
+  "wettest-day": { up: "প্রবল বর্ষণ বাড়ছে", down: "প্রবল বর্ষণ কমছে", less: "কম", more: "বেশি", label: "সবচেয়ে বৃষ্টির দিন", axis: "সবচেয়ে বৃষ্টির দিনে বৃষ্টি (মিমি)" },
+};
+
+const WORDS: Record<VariableId, Words> = {
+  temperature: {
+    up: "Getting warmer",
+    down: "Getting cooler",
+    less: "Cooling",
+    more: "Warming",
+    label: "Temperature",
+    axis: "°C warmer than the 1951–1980 average",
+  },
+  rainfall: { up: "Getting wetter", down: "Getting drier", less: "Drier", more: "Wetter", label: "Rain", axis: "mm of rain in the season" },
+  "hot-months": {
+    up: "More very hot months",
+    down: "Fewer very hot months",
+    less: "Fewer",
+    more: "More",
+    label: "Very hot months",
+    axis: "very hot months in the year",
+  },
+  "heavy-rain": {
+    up: "More heavy-rain days",
+    down: "Fewer heavy-rain days",
+    less: "Fewer",
+    more: "More",
+    label: "Heavy-rain days",
+    axis: "very heavy rain days in the year",
+  },
+  "dry-spell": {
+    up: "Longer dry spells",
+    down: "Shorter dry spells",
+    less: "Shorter",
+    more: "Longer",
+    label: "Monsoon dry spells",
+    axis: "longest dry spell in the monsoon (days)",
+  },
+  "wettest-day": {
+    up: "Heavier downpours",
+    down: "Lighter downpours",
+    less: "Lighter",
+    more: "Heavier",
+    label: "Wettest day",
+    axis: "mm of rain on the wettest day",
+  },
+};
+
+const VARIABLE_ICON: Record<VariableId, React.ReactNode> = {
+  temperature: <Thermometer size={16} />,
+  rainfall: <CloudRain size={16} />,
+  "hot-months": <ThermometerHot size={16} />,
+  "heavy-rain": <CloudLightning size={16} />,
+  "wettest-day": <Umbrella size={16} />,
+  "dry-spell": <Cactus size={16} />,
+};
+
+// Small in-memory cache so switching back and forth doesn't refetch.
+const cache = new Map<string, Promise<unknown>>();
+function fetchJson<T>(url: string): Promise<T> {
+  if (!cache.has(url)) {
+    cache.set(
+      url,
+      fetch(url).then((r) => {
+        if (!r.ok) throw new Error(`${r.status} ${url}`);
+        return r.json();
+      }),
+    );
+  }
+  return cache.get(url) as Promise<T>;
 }
 
 export default function TrendExplorer({
   manifest,
   zones,
   crosscheck,
-  turning,
 }: {
   manifest: Manifest;
   zones: Zone[];
   crosscheck: Crosscheck;
-  turning: Turning;
 }) {
-  const lang = useLang();
-  const bn = lang === "bn";
-  const [variable, setVariable] = useState<VariableId>("temperature");
-  const [season, setSeason] = useState<SeasonId>("annual");
-  const [selection, setSelection] = useState<Selection>({ kind: "zone", id: "study-area" });
-  const [loaded, setLoaded] = useState<Loaded | null>(null);
-  const [failed, setFailed] = useState<string | null>(null);
+  const params = useSearchParams();
+  const [variable, setVariable] = useState<VariableId>(() => {
+    const v = params.get("var") as VariableId;
+    return VARIABLE_ORDER.includes(v) ? v : "temperature";
+  });
+  const [season, setSeason] = useState<SeasonId>(() => {
+    const s = params.get("season") as SeasonId;
+    return SEASON_ORDER.includes(s) ? s : "annual";
+  });
+  const [selection, setSelection] = useState<Selection>(() => {
+    const z = params.get("zone");
+    const lat = Number(params.get("lat"));
+    const lon = Number(params.get("lon"));
+    if (params.has("lat") && Number.isFinite(lat) && Number.isFinite(lon)) return { kind: "point", lat, lon };
+    return { kind: "zone", id: zones.some((zone) => zone.id === z) ? z! : "study-area" };
+  });
+  const [stats, setStats] = useState<{ key: string; data: TrendGrid } | null>(null);
+  const [series, setSeries] = useState<{ key: string; data: SeriesGrid } | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   const meta = manifest.variables[variable];
+  // Extremes exist only for the whole year; remember the chosen season for when the user switches back.
   const seasons = meta.seasons ?? SEASON_ORDER;
-  const activeSeason: SeasonId = seasons.includes(season) ? season : "annual";
-  const key = resultKey(variable, activeSeason);
-  const years = meta.years ?? manifest.years;
+  const effSeason: SeasonId = seasons.includes(season) ? season : "annual";
+  const key = resultKey(variable, effSeason);
   const grid = manifest.grids[variable];
-  const unit = bn ? unitBn(meta.unit) : meta.unit;
-  const num = (s: string) => (bn ? bnNum(s) : s);
+  const summary = manifest.summaries[key];
+  const currentStats = stats?.key === key ? stats.data : null;
+  const words = WORDS[variable];
+  const wordsBn = WORDS_BN[variable];
+  const t = useT();
 
-  // Per-square results and series for the chosen measure. Small files (≤ 150 KB), fetched on demand.
   useEffect(() => {
-    let cancelled = false;
-    Promise.all([
-      fetch(`/data/trends/${key}.json`).then((r) => (r.ok ? r.json() : Promise.reject(r.status))),
-      fetch(`/data/trends/${key}_series.json`).then((r) => (r.ok ? r.json() : Promise.reject(r.status))),
-    ])
-      .then(([stats, series]: [TrendGrid, SeriesGrid]) => {
-        if (!cancelled) {
-          setLoaded({ key, stats, series });
-          setFailed(null);
-        }
-      })
-      .catch(() => {
-        if (!cancelled) setFailed(key);
-      });
+    let alive = true;
+    fetchJson<TrendGrid>(`/data/trends/${key}.json`)
+      .then((data) => alive && setStats({ key, data }))
+      .catch((e) => alive && setError(String(e)));
     return () => {
-      cancelled = true;
+      alive = false;
     };
   }, [key]);
 
-  const stats = loaded?.key === key ? loaded.stats : null;
-  const limit = useMemo(() => (stats ? colorLimit(stats.slopePerDecade) : 1), [stats]);
-  const summary = manifest.summaries[key];
+  // A square's yearly values are only needed once someone clicks it.
+  useEffect(() => {
+    if (selection.kind !== "point") return;
+    let alive = true;
+    fetchJson<SeriesGrid>(`/data/trends/${key}_series.json`)
+      .then((data) => alive && setSeries({ key, data }))
+      .catch((e) => alive && setError(String(e)));
+    return () => {
+      alive = false;
+    };
+  }, [key, selection.kind]);
 
-  const selectedCell = selection.kind === "point" ? cellAt(grid, selection.lat, selection.lon) : null;
-  const selectedZone = selection.kind === "zone" ? selection.id : null;
+  // Shareable address: ?var=…&season=…&zone=… or &lat=…&lon=…
+  const firstSync = useRef(true);
+  useEffect(() => {
+    const q = new URLSearchParams({ var: variable, season: effSeason });
+    if (selection.kind === "zone") q.set("zone", selection.id);
+    else {
+      q.set("lat", selection.lat.toFixed(2));
+      q.set("lon", selection.lon.toFixed(2));
+    }
+    if (firstSync.current && !window.location.search) {
+      firstSync.current = false;
+      return;
+    }
+    firstSync.current = false;
+    window.history.replaceState(null, "", `?${q}`);
+  }, [variable, effSeason, selection]);
 
-  const reading: Reading | null = useMemo(() => {
-    if (selection.kind === "zone") {
-      const zone = zones.find((z) => z.id === selection.id);
-      const result = zone?.results[key];
-      if (!zone || !result) return null;
-      const hazard = zone.hazard ? HAZARD_WORD[zone.hazard] : null;
+  const limit = useMemo(() => (currentStats ? colorLimit(currentStats.slopePerDecade) : 1), [currentStats]);
+
+  const cell = selection.kind === "point" ? cellAt(grid, selection.lat, selection.lon) : null;
+  const cellIndex = cell ? cell.i * grid.nLon + cell.j : null;
+  const zone = selection.kind === "zone" ? zones.find((z) => z.id === selection.id)! : null;
+
+  // What the answer panel shows for the current selection.
+  const detail = useMemo((): Detail | null => {
+    if (zone) {
+      const r = zone.results[key];
+      const titleEn = zone.id === "study-area" ? "All of South Asia" : zone.name;
       return {
-        kind: "zone",
-        title: zone.name,
-        where: zone.id === "study-area" ? "across the whole study area" : `in the ${zone.name}`,
-        titleBn: ZONE_BN[zone.id]?.name ?? zone.name,
-        subtitle: hazard ? `${hazard[0]} region · average of its land squares` : "Average of every land square on the map",
-        subtitleBn: hazard ? `${hazard[1]} অঞ্চল · এর স্থলভাগের বর্গগুলোর গড়` : "মানচিত্রের সব স্থলবর্গের গড়",
-        values: result.series,
-        trend: result.trend,
-        clear: !!result.trend && result.trend.p < ALPHA,
-        passesAloneOnly: false,
-        check: crosscheck.zones[zone.id]?.[key] ?? null,
-        split: (() => {
-          const t = turning[zone.id]?.[key];
-          return t && t.p < ALPHA ? t : null;
-        })(),
+        titleEn,
+        title: <T en={titleEn} bn={ZONE_BN[zone.id]?.name ?? titleEn} />,
+        subtitle: (
+          <T
+            en={zone.id === "study-area" ? "The average of every land square on the map." : zone.description}
+            bn={ZONE_BN[zone.id]?.description ?? zone.description}
+          />
+        ),
+        values: r.series,
+        trend: r.trend,
+        mean: r.mean,
+        clear: null,
+        check: crosscheck.zones[zone.id]?.[key]?.cru ?? null,
       };
     }
-    if (!stats || !loaded || !selectedCell) return null;
-    const k = selectedCell.i * grid.nLon + selectedCell.j;
-    const slope = stats.slopePerDecade[k];
-    const p = stats.p[k];
-    const values = loaded.series[k];
-    if (slope === null || p === null || !values) return null;
-    const { lat, lon } = cellCenter(grid, selectedCell.i, selectedCell.j);
+    if (cellIndex === null || !cell) return null;
+    const { lat, lon } = cellCenter(grid, cell.i, cell.j);
     const near = nearestPlace(lat, lon);
     const coords = `${lat.toFixed(1)}°N, ${lon.toFixed(1)}°E`;
-    const placeBn = near ? (PLACE_BN[near.place.id] ?? near.place.name) : "";
-    const clear = stats.significant[k] === 1;
-    return {
-      kind: "point",
-      title: near ? `${near.close ? "Around" : "Near"} ${near.place.name}` : `Square at ${coords}`,
-      where: near ? `${near.close ? "around" : "near"} ${near.place.name}` : `in the square at ${coords}`,
-      titleBn: near ? `${placeBn}-এর ${near.close ? "আশেপাশে" : "কাছে"}` : `${bnNum(coords)}-এর বর্গ`,
-      subtitle: `Map square centred on ${coords} (${grid.dLat}° × ${grid.dLon}°)`,
-      subtitleBn: `${bnNum(coords)} কেন্দ্রিক মানচিত্র-বর্গ (${bnNum(grid.dLat)}° × ${bnNum(grid.dLon)}°)`,
-      values,
-      trend: {
-        slopePerDecade: slope,
-        lowerPerDecade: stats.lowerPerDecade[k] ?? slope,
-        upperPerDecade: stats.upperPerDecade[k] ?? slope,
-        p,
-      },
-      clear,
-      passesAloneOnly: !clear && p < ALPHA,
-      check: null,
-      split: null,
-    };
-  }, [selection, zones, key, crosscheck, turning, stats, loaded, selectedCell, grid]);
-
-  const onSelectCell = (lat: number, lon: number) => setSelection({ kind: "point", lat, lon });
-
-  const download = () => {
-    if (!stats) return;
-    const rows: (string | number | null)[][] = [];
-    stats.slopePerDecade.forEach((s, k) => {
-      if (s === null) return;
-      const { lat, lon } = cellCenter(grid, Math.floor(k / grid.nLon), k % grid.nLon);
-      rows.push([lat, lon, s, stats.lowerPerDecade[k], stats.upperPerDecade[k], stats.p[k], stats.significant[k]]);
-    });
-    downloadCsv(
-      `trend-map-${slug(key)}.csv`,
-      ["lat", "lon", `slope_${meta.unit}_per_decade`, "lower95", "upper95", "p", "significant_fdr"],
-      rows,
-      `${meta.label}, ${manifest.seasons[activeSeason].label}, ${years[0]}–${years[years.length - 1]}. ${meta.dataset}. ${manifest.method.test}; ${manifest.method.slope}; ${manifest.method.multipleTesting}.`,
+    const titleEn = near ? `${near.close ? "Around" : "Near"} ${near.place.name}` : coords;
+    const nameBn = near ? (PLACE_BN[near.place.id] ?? near.place.name) : "";
+    const title = <T en={titleEn} bn={near ? `${nameBn}${near.close ? "র আশপাশে" : "র কাছে"}` : bnNum(coords)} />;
+    const km = Math.round(grid.dLat * 111);
+    const subtitle = (
+      <T
+        en={`One map square, about ${km} km across (${coords}).`}
+        bn={`একটি মানচিত্র-বর্গ, প্রায় ${bnNum(km)} কিমি চওড়া (${bnNum(coords)})।`}
+      />
     );
-  };
+    if (!currentStats || currentStats.slopePerDecade[cellIndex] === null) {
+      return { titleEn, title, subtitle, values: null, trend: null, mean: null, clear: null, sea: !!currentStats };
+    }
+    const trend: TrendSummary = {
+      slopePerDecade: currentStats.slopePerDecade[cellIndex]!,
+      lowerPerDecade: currentStats.lowerPerDecade[cellIndex]!,
+      upperPerDecade: currentStats.upperPerDecade[cellIndex]!,
+      p: currentStats.p[cellIndex]!,
+    };
+    return {
+      titleEn,
+      title,
+      subtitle,
+      values: series?.key === key ? series.data[cellIndex] : null,
+      trend,
+      mean: currentStats.mean[cellIndex],
+      clear: currentStats.significant[cellIndex] === 1,
+    };
+  }, [zone, key, cellIndex, cell, grid, currentStats, series, crosscheck]);
 
-  return (
-    <div>
-      {/* ── Controls ── */}
-      <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
-        <fieldset>
-          <legend className="text-xs font-medium text-ink-3">
-            <T en="What to look at" bn="কী দেখবেন" />
-          </legend>
-          <div className="mt-1.5 flex flex-wrap gap-1.5">
-            {VARIABLE_ORDER.map((v) => {
-              const active = v === variable;
-              return (
-                <button
-                  key={v}
-                  type="button"
-                  aria-pressed={active}
-                  onClick={() => setVariable(v)}
-                  className={`${CONTROL.button} ${CONTROL.transition} ${CONTROL.focusRing} rounded-full border px-3.5 text-sm font-medium ${
-                    active ? "border-transparent bg-accent-strong text-accent-ink" : "border-line bg-card text-ink-2 hover:text-ink"
-                  }`}
-                >
-                  {bn ? WORDS_BN[v].label : WORDS[v].label}
-                </button>
-              );
-            })}
-          </div>
-        </fieldset>
-        <fieldset>
-          <legend className="text-xs font-medium text-ink-3">
-            <T en="Time of year" bn="বছরের কোন সময়" />
-          </legend>
-          <div className="mt-1.5 inline-flex rounded-full border border-line bg-card p-1">
-            {SEASON_ORDER.map((s) => {
-              const available = seasons.includes(s);
-              const active = s === activeSeason;
-              return (
-                <button
-                  key={s}
-                  type="button"
-                  disabled={!available}
-                  aria-pressed={active}
-                  onClick={() => setSeason(s)}
-                  title={available ? undefined : bn ? "এই পরিমাপ শুধু সারা বছরের জন্য" : "This measure is whole-year only"}
-                  className={`${CONTROL.segment} ${CONTROL.transition} ${CONTROL.focusRing} rounded-full px-3 text-sm font-medium disabled:cursor-not-allowed disabled:opacity-40 ${
-                    active ? "bg-accent-strong text-accent-ink" : "text-ink-2 hover:text-ink"
-                  }`}
-                >
-                  {bn ? SEASON_WORDS[s].bn : SEASON_WORDS[s].en}
-                  <span className="ml-1 hidden text-xs opacity-75 sm:inline">({bn ? SEASON_WORDS[s].hintBn : SEASON_WORDS[s].hint})</span>
-                </button>
-              );
-            })}
-          </div>
-        </fieldset>
+  const years = meta.years ?? manifest.years;
+  const up = summary.significantIncrease;
+  const down = summary.significantDecrease;
+
+  // Phones: the one-glance answer shown in the panel's summary, above the full details.
+  const [snap, setSnap] = useState<SheetSnap>("peek");
+  const peekTrend = detail?.trend ?? null;
+  const peekReal = peekTrend ? peekTrend.p < ALPHA : false;
+  const peekUp = peekTrend ? peekTrend.slopePerDecade > 0 : false;
+  const PeekArrow = !peekReal ? Minus : peekUp ? TrendUp : TrendDown;
+  const peekRate = peekTrend ? formatSigned(peekTrend.slopePerDecade, meta.decimals) : "";
+  const peek = (
+    <div className="min-w-0">
+      <div className="flex items-baseline justify-between gap-3">
+        <div className="min-w-0 truncate font-semibold text-ink">{detail?.title}</div>
+        <div className="shrink-0 text-xs text-ink-3">
+          <T en={words.label} bn={wordsBn.label} />
+        </div>
       </div>
-
-      {meta.definition && (
-        <p className="mt-3 text-sm text-ink-3">
-          <T en={meta.definition} bn={DEFINITION_BN[variable] ?? meta.definition} />
+      {peekTrend ? (
+        <div className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-0.5">
+          <PeekArrow size={20} weight="bold" className={peekReal ? "text-accent" : "text-ink-3"} />
+          <span className="text-2xl font-semibold tabular-nums tracking-tight text-ink">
+            <T en={`${peekRate} ${meta.unit}`} bn={`${bnNum(peekRate)} ${unitBn(meta.unit)}`} />
+          </span>
+          <span className="text-sm text-ink-2">
+            <T
+              en={`every 10 years · ${sureness(peekTrend.p).short}`}
+              bn={`প্রতি ১০ বছরে · ${sureness(peekTrend.p).shortBn}`}
+            />
+          </span>
+        </div>
+      ) : (
+        <p className="mt-1 text-sm text-ink-2">
+          <T en="No data for this place." bn="এই জায়গার কোনো তথ্য নেই।" />
         </p>
       )}
+      <p className="mt-1.5 flex items-center gap-1.5 text-xs text-ink-3">
+        <HandPointing size={14} className="text-accent" />
+        <T en="Tap any square on the map · drag up for details" bn="মানচিত্রের যেকোনো বর্গে ট্যাপ করুন · বিস্তারিত দেখতে উপরে টানুন" />
+      </p>
+    </div>
+  );
 
-      <div className="mt-5 grid gap-5 lg:grid-cols-[minmax(0,1fr)_420px]">
-        {/* ── Map ── */}
-        <div className="min-w-0">
-          <div className="relative isolate h-[380px] overflow-hidden rounded-2xl border border-line bg-sunken sm:h-[480px] lg:h-[560px]">
-            <TrendMap
-              grid={grid}
-              stats={stats}
-              variable={variable}
-              meta={meta}
-              limit={limit}
-              zones={zones}
-              selectedZone={selectedZone}
-              selectedCell={selectedCell}
-              onSelectCell={onSelectCell}
-            />
-            {failed === key && (
-              <p role="alert" className="absolute inset-x-4 top-4 z-[500] rounded-lg bg-card px-3 py-2 text-sm text-ink shadow-soft">
-                <T en="The trend map could not be loaded. Try reloading the page." bn="প্রবণতার মানচিত্র লোড করা যায়নি। পাতাটি আবার লোড করুন।" />
-              </p>
-            )}
-          </div>
-
-          {/* Colour key: words at both ends, the numeric limit, and what faded squares mean. */}
-          <div className="mt-3 text-xs text-ink-2">
-            <div className="flex items-center gap-2">
-              <span className="w-28 shrink-0 text-right sm:w-36">{bn ? WORDS_BN[variable].down : WORDS[variable].down}</span>
-              <span aria-hidden className="flex h-3 flex-1 overflow-hidden rounded-full border border-line">
-                {trendLegendTokens(variable).map((tok) => (
-                  <span key={tok} className="flex-1" style={{ background: `var(${tok})` }} />
-                ))}
-              </span>
-              <span className="w-28 shrink-0 sm:w-36">{bn ? WORDS_BN[variable].up : WORDS[variable].up}</span>
-            </div>
-            <p className="mt-1 text-center tabular-nums text-ink-3">
-              {num(formatSigned(-limit, meta.decimals + 1))} … 0 … {num(formatSigned(limit, meta.decimals + 1))} {unit}{" "}
-              <T en="per 10 years" bn="প্রতি ১০ বছরে" />
-            </p>
-            <p className="mt-2 text-ink-3">
-              <T
-                en="Solid squares: a clear change that passes the map-wide significance check. Faded squares: no clear change. Dashed boxes are the hazard regions. Click any square or pick a region."
-                bn="গাঢ় বর্গ: স্পষ্ট পরিবর্তন, যা পুরো মানচিত্রের তাৎপর্য-পরীক্ষায় উত্তীর্ণ। হালকা বর্গ: স্পষ্ট পরিবর্তন নেই। ড্যাশ-রেখার বাক্স হলো দুর্যোগ অঞ্চল। যেকোনো বর্গে ক্লিক করুন বা একটি অঞ্চল বেছে নিন।"
-              />
-            </p>
-            {summary && (
-              <p className="mt-2 rounded-lg border border-line bg-card px-3 py-2 text-ink-2">
-                <T
-                  en={`Across ${summary.cells} land squares: ${summary.significantIncrease} show a clear ${meta.increase}, ${summary.significantDecrease} a clear ${meta.decrease}, and ${summary.cells - summary.significantIncrease - summary.significantDecrease} no clear change.`}
-                  bn={`${bnNum(summary.cells)}টি স্থলবর্গের মধ্যে: ${bnNum(summary.significantIncrease)}টিতে স্পষ্ট বৃদ্ধি, ${bnNum(summary.significantDecrease)}টিতে স্পষ্ট হ্রাস, আর ${bnNum(summary.cells - summary.significantIncrease - summary.significantDecrease)}টিতে স্পষ্ট পরিবর্তন নেই।`}
-                />{" "}
-                <button type="button" onClick={download} disabled={!stats} className="font-medium text-accent underline-offset-2 hover:underline disabled:opacity-50">
-                  <T en="Download this map (CSV)" bn="এই মানচিত্র ডাউনলোড (CSV)" />
-                </button>
-              </p>
-            )}
-          </div>
+  return (
+    <div className="map-shell relative h-full overflow-hidden">
+      {/* Its own stacking layer, so Leaflet's controls and the map keys stay under the phone panel. */}
+      <div className="absolute inset-0 isolate">
+        <TrendMap
+          grid={grid}
+          stats={currentStats}
+          variable={variable}
+          meta={meta}
+          limit={limit}
+          zones={zones}
+          selectedZone={zone?.id ?? null}
+          selectedCell={cell}
+          onSelectCell={(lat, lon) => setSelection({ kind: "point", lat, lon })}
+        />
+        <div className="pointer-events-none absolute left-[58px] top-3 z-[500] hidden items-center gap-2 rounded-full bg-card px-4 py-2 text-sm text-ink-2 shadow-soft lg:flex">
+          <HandPointing size={18} className="text-accent" />
+          <T en="Click any square to see its story" bn="যেকোনো বর্গে ক্লিক করে তার গল্প দেখুন" />
         </div>
-
-        {/* ── Reading for the selected region or square ── */}
-        <aside aria-live="polite" className="min-w-0 rounded-2xl border border-line bg-card p-5 shadow-soft">
-          <label className="text-xs font-medium text-ink-3" htmlFor="trend-region">
-            <T en="Region" bn="অঞ্চল" />
-          </label>
-          <select
-            id="trend-region"
-            value={selectedZone ?? ""}
-            onChange={(e) => setSelection({ kind: "zone", id: e.target.value })}
-            className={`${CONTROL.button} ${CONTROL.focusRing} mt-1 w-full rounded-lg border border-line bg-page px-3 text-sm text-ink`}
-          >
-            {selectedZone === null && <option value="">{bn ? "মানচিত্রের বর্গ (নিচে)" : "Map square (below)"}</option>}
-            {zones.map((z) => (
-              <option key={z.id} value={z.id}>
-                {bn ? (ZONE_BN[z.id]?.name ?? z.name) : z.name}
-              </option>
-            ))}
-          </select>
-
-          {!reading ? (
-            <p className="mt-6 text-sm text-ink-3">
-              {selection.kind === "point" && stats ? (
-                <T en="No land data in this square. Pick a coloured square." bn="এই বর্গে স্থলভাগের তথ্য নেই। একটি রঙিন বর্গ বেছে নিন।" />
-              ) : (
-                <T en="Loading…" bn="লোড হচ্ছে…" />
-              )}
-            </p>
-          ) : (
-            <ReadingPanel reading={reading} variable={variable} season={activeSeason} manifest={manifest} years={years} />
-          )}
-        </aside>
+        <QuickGuide
+          id="trends"
+          title={<T en="How to use Climate trends" bn="জলবায়ুর প্রবণতা পাতা কীভাবে ব্যবহার করবেন" />}
+          steps={[
+            <T key="1" en="Choose temperature or rain, and a time of year." bn="তাপমাত্রা বা বৃষ্টি বেছে নিন, আর বছরের কোন সময় তা বেছে নিন।" />,
+            <T key="2" en="Pick a region from the list, or click any square on the map." bn="তালিকা থেকে একটি অঞ্চল বেছে নিন, অথবা মানচিত্রের যেকোনো বর্গে ক্লিক করুন।" />,
+            <T key="3" en="Read the answer: is it really changing, how fast, and how sure we are." bn="উত্তর পড়ুন: সত্যিই বদলাচ্ছে কি না, কত দ্রুত, আর আমরা কতটা নিশ্চিত।" />,
+          ]}
+          buttonClassName="absolute left-3 top-3 lg:left-[58px] lg:top-[60px]"
+          cardClassName="lg:left-[58px] lg:top-[108px]"
+        />
+        <div className="absolute bottom-[calc(var(--sheet-peek,9rem)+0.75rem)] left-3 z-[500] w-[min(320px,calc(100%-6rem))] rounded-2xl bg-card p-3 shadow-soft sm:p-4 lg:bottom-10">
+          <div className="mb-2 text-sm font-medium text-ink">
+            <T en={`Change every 10 years (${meta.unit})`} bn={`প্রতি ১০ বছরে পরিবর্তন (${unitBn(meta.unit)})`} />
+          </div>
+          <TrendLegend
+            variable={variable}
+            limit={limit}
+            decimals={meta.decimals}
+            decreaseWord={<T en={words.less} bn={wordsBn.less} />}
+            increaseWord={<T en={words.more} bn={wordsBn.more} />}
+            mobileCompact
+          />
+        </div>
+        {error && (
+          <div className="absolute inset-x-3 top-16 z-[500] rounded-xl bg-card px-4 py-3 text-sm text-ink shadow-soft">
+            <T en="Couldn't load the results. Please refresh the page." bn="ফলাফল লোড করা যায়নি। পাতাটি আবার লোড করুন।" />
+          </div>
+        )}
       </div>
+
+      <MapSheet
+        id="trend-panel"
+        label={t("Trend details", "প্রবণতার বিস্তারিত")}
+        className="lg:absolute lg:bottom-4 lg:right-4 lg:top-4 lg:z-[600] lg:w-[400px] lg:overflow-y-auto lg:rounded-2xl lg:border lg:border-line lg:bg-card lg:shadow-soft"
+        bodyClassName="flex flex-col gap-5 p-5"
+        peek={peek}
+        snap={snap}
+        onSnapChange={setSnap}
+        scrollKey={JSON.stringify(selection)}
+        scrollTargetId="trend-answer"
+      >
+        <section className="space-y-3">
+          <div className="flex items-start justify-between gap-2">
+            <h1 className="text-lg font-semibold text-ink">
+              <T en="How is the climate changing?" bn="জলবায়ু কীভাবে বদলাচ্ছে?" />
+            </h1>
+            <ShareButton className="-mr-2 -mt-1.5" />
+          </div>
+          <Step n={1} label={<T en="What to look at" bn="কী দেখবেন" />}>
+            <div role="radiogroup" aria-label={t("What to look at", "কী দেখবেন")} className="space-y-2">
+              {(["average", "extreme"] as const).map((kind) => (
+                <div key={kind}>
+                  <div className="mb-1 text-xs text-ink-3">
+                    {kind === "average" ? <T en="Averages" bn="গড়" /> : <T en="Extremes" bn="চরম অবস্থা" />}
+                  </div>
+                  <div className="flex flex-wrap gap-1.5">
+                    {VARIABLE_ORDER.filter((v) => (manifest.variables[v]?.kind ?? "average") === kind).map((v) => (
+                      <button
+                        key={v}
+                        type="button"
+                        role="radio"
+                        aria-checked={variable === v}
+                        onClick={() => setVariable(v)}
+                        className={`flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm transition-all active:scale-[0.98] ${
+                          variable === v ? "border-accent bg-accent-soft font-medium text-ink" : "border-line text-ink-2 hover:text-ink"
+                        }`}
+                      >
+                        {VARIABLE_ICON[v]}
+                        <T en={WORDS[v].label} bn={WORDS_BN[v].label} />
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Step>
+          {seasons.length > 1 ? (
+            <Step n={2} label={<T en="Which time of year" bn="বছরের কোন সময়" />}>
+              <Segmented
+                label={t("Which time of year", "বছরের কোন সময়")}
+                value={effSeason}
+                onChange={setSeason}
+                options={SEASON_ORDER.map((s) => ({ id: s, label: <T en={SEASON_PLAIN[s].label} bn={SEASON_PLAIN[s].bn} /> }))}
+              />
+              <p className="mt-1.5 text-xs text-ink-3">
+                <T en={SEASON_PLAIN[effSeason].hint} bn={SEASON_PLAIN[effSeason].hintBn} />
+              </p>
+            </Step>
+          ) : (
+            <Step n={2} label={<T en="What this counts" bn="এটি কী গোনে" />}>
+              <p className="rounded-xl bg-sunken p-3 text-sm leading-relaxed text-ink-2">
+                <T
+                  en={`${meta.definition} Counted over the whole year, ${years[0]}–${years[years.length - 1]}.`}
+                  bn={`${DEFINITION_BN[variable] ?? meta.definition} সারা বছর ধরে গোনা, ${bnNum(years[0])}–${bnNum(years[years.length - 1])}।`}
+                />
+              </p>
+            </Step>
+          )}
+          <Step n={3} label={<T en="Which place" bn="কোন জায়গা" />}>
+            <label className="relative block">
+              <span className="sr-only">
+                <T en="Choose a region" bn="একটি অঞ্চল বেছে নিন" />
+              </span>
+              <select
+                value={selection.kind === "zone" ? selection.id : ""}
+                onChange={(e) => setSelection({ kind: "zone", id: e.target.value })}
+                className="w-full appearance-none rounded-xl border border-line bg-card py-2.5 pl-3.5 pr-10 text-sm text-ink"
+              >
+                {selection.kind === "point" && (
+                  <option value="">{t(`${detail?.titleEn ?? "A map square"} (clicked)`, "মানচিত্রে ক্লিক করা বর্গ")}</option>
+                )}
+                {zones.map((z) => (
+                  <option key={z.id} value={z.id}>
+                    {z.id === "study-area"
+                      ? t("All of South Asia", "সমগ্র দক্ষিণ এশিয়া")
+                      : t(
+                          `${z.name}${z.hazard ? ` · ${HAZARD_WORD[z.hazard][0]}` : ""}`,
+                          `${ZONE_BN[z.id]?.name ?? z.name}${z.hazard ? ` · ${HAZARD_WORD[z.hazard][1]}` : ""}`,
+                        )}
+                  </option>
+                ))}
+              </select>
+              <CaretDown size={16} className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 text-ink-3" />
+            </label>
+            <p className="mt-1.5 text-xs text-ink-3">
+              <T en="Or click any square on the map." bn="অথবা মানচিত্রের যেকোনো বর্গে ক্লিক করুন।" />
+            </p>
+          </Step>
+        </section>
+
+        <div className="h-px bg-line" />
+
+        {detail ? (
+          <Answer
+            detail={detail}
+            meta={meta}
+            years={years}
+            words={words}
+            wordsBn={wordsBn}
+            seasonLabel={SEASON_PLAIN[effSeason].label}
+          />
+        ) : (
+          <p className="text-sm text-ink-3">
+            <T en="Pick a place to see its story." bn="একটি জায়গা বেছে নিয়ে তার গল্প দেখুন।" />
+          </p>
+        )}
+
+        <p className="rounded-xl bg-sunken p-3.5 text-sm leading-relaxed text-ink-2">
+          <T
+            en={`Across the whole map, ${up} of ${summary.cells} squares show a clear rise${down > 0 ? ` and ${down} a clear fall` : " and none a clear fall"}.${summary.cells - up - down > 0 ? ` The other ${summary.cells - up - down} show no clear change.` : ""}`}
+            bn={`পুরো মানচিত্রে ${bnNum(summary.cells)}টি বর্গের মধ্যে ${bnNum(up)}টিতে স্পষ্ট বৃদ্ধি${down > 0 ? ` এবং ${bnNum(down)}টিতে স্পষ্ট হ্রাস` : ", কোনোটিতেই স্পষ্ট হ্রাস নেই"}।${summary.cells - up - down > 0 ? ` বাকি ${bnNum(summary.cells - up - down)}টিতে স্পষ্ট পরিবর্তন নেই।` : ""}`}
+          />
+        </p>
+      </MapSheet>
     </div>
   );
 }
 
-function ReadingPanel({
-  reading,
-  variable,
-  season,
-  manifest,
+interface Detail {
+  /** English title, used for file names. */
+  titleEn: string;
+  title: React.ReactNode;
+  subtitle: React.ReactNode;
+  values: (number | null)[] | null;
+  trend: TrendSummary | null;
+  mean: number | null;
+  /** Passed the map-wide check (single squares only). */
+  clear: boolean | null;
+  sea?: boolean;
+  /** The same trend from the independent CRU TS record (regions only). */
+  check?: TrendSummary | null;
+}
+
+function Step({ n, label, children }: { n: number; label: React.ReactNode; children: React.ReactNode }) {
+  return (
+    <div>
+      <div className="mb-1.5 flex items-center gap-2 text-sm font-medium text-ink-2">
+        <span className="grid h-5 w-5 place-items-center rounded-full bg-accent-soft text-xs font-semibold text-accent">{n}</span>
+        {label}
+      </div>
+      {children}
+    </div>
+  );
+}
+
+function Answer({
+  detail,
+  meta,
   years,
+  words,
+  wordsBn,
+  seasonLabel,
 }: {
-  reading: Reading;
-  variable: VariableId;
-  season: SeasonId;
-  manifest: Manifest;
+  detail: Detail;
+  meta: VariableMeta;
   years: number[];
+  words: Words;
+  wordsBn: Words;
+  seasonLabel: string;
 }) {
-  const bn = useLang() === "bn";
-  const meta = manifest.variables[variable];
-  const words = bn ? WORDS_BN[variable] : WORDS[variable];
-  const unit = bn ? unitBn(meta.unit) : meta.unit;
-  const num = (s: string) => (bn ? bnNum(s) : s);
-  const d = meta.decimals + 1;
-  const tr = reading.trend;
-  const first = years[0];
-  const last = years[years.length - 1];
-  const seasonName = bn ? SEASON_WORDS[season].bn : SEASON_WORDS[season].en;
-
-  let verdict: { en: string; bn: string; tone: string };
-  if (!tr) verdict = { en: "Not enough data", bn: "যথেষ্ট তথ্য নেই", tone: "bg-sunken text-ink-2" };
-  else if (!reading.clear) verdict = { en: "No clear trend", bn: "স্পষ্ট প্রবণতা নেই", tone: "bg-sunken text-ink-2" };
-  else if (tr.slopePerDecade > 0) verdict = { en: "Clear increase", bn: "স্পষ্ট বৃদ্ধি", tone: "bg-accent-soft text-accent" };
-  else verdict = { en: "Clear decrease", bn: "স্পষ্ট হ্রাস", tone: "bg-accent-soft text-accent" };
-
-  const total = tr ? (tr.slopePerDecade / 10) * (last - first) : 0;
-  const place = bn ? reading.titleBn : reading.title;
-  const seasonEn = season === "annual" ? "" : season === "monsoon" ? " in the rainy season" : " in the hot season";
-  const seasonBn = season === "annual" ? "" : `${seasonName}-এ `;
-  // Singular subjects, so "… has risen" reads correctly for every measure.
-  const measureEn = {
-    temperature: "Temperature",
-    rainfall: "Rainfall",
-    "hot-months": "The number of very hot months",
-    "heavy-rain": "The number of very heavy rain days",
-    "wettest-day": "Rain on the wettest day",
-    "dry-spell": "The longest monsoon dry spell",
-  }[variable];
-
-  let story: string;
-  if (!tr) {
-    story = bn ? "এখানে প্রবণতা নির্ণয়ের মতো যথেষ্ট বছর নেই।" : "There are not enough years here to test for a trend.";
-  } else if (reading.clear) {
-    const rising = tr.slopePerDecade > 0;
-    const dir = rising ? words.up : words.down;
-    story = bn
-      ? `${bnNum(first)} থেকে ${place}-এ ${seasonBn}${words.label} প্রতি ১০ বছরে ${bnNum(Math.abs(tr.slopePerDecade).toFixed(d))} ${unit} ${rising ? "বেড়েছে" : "কমেছে"} (${dir}), ${bnNum(last - first)} বছরে মোট প্রায় ${bnNum(Math.abs(total).toFixed(meta.decimals))} ${unit}। এমন স্থির পরিবর্তন কাকতালীয়ভাবে খুব কমই দেখা যায় (${bnNum(formatP(tr.p))})।`
-      : `${measureEn}${seasonEn} ${reading.where} has ${rising ? "risen" : "fallen"} by ${Math.abs(tr.slopePerDecade).toFixed(d)} ${unit} every 10 years since ${first}, about ${Math.abs(total).toFixed(meta.decimals)} ${unit} over ${last - first} years. A change this steady would very rarely appear by chance (${formatP(tr.p)}).`;
-  } else {
-    story = bn
-      ? `${place}-এ ${seasonBn}${words.label} নিয়ে স্পষ্ট প্রবণতা নেই। হিসাবটি প্রতি ১০ বছরে ${bnNum(formatSigned(tr.slopePerDecade, d))} ${unit}, কিন্তু বছর-বছর ওঠানামা এত বড় যে এটি কাকতালীয়ও হতে পারে (${bnNum(formatP(tr.p))})। "প্রবণতা নেই" বলাটাও একটি ফলাফল।`
-      : `No clear trend in ${measureEn.toLowerCase()}${seasonEn} ${reading.where}. The best estimate is ${formatSigned(tr.slopePerDecade, d)} ${unit} every 10 years, but year-to-year swings are large enough that this could be chance (${formatP(tr.p)}). "No clear trend" is a result too.`;
-  }
-
-  const agree = reading.check?.ours && reading.check.cru ? agreement(reading.check.ours, reading.check.cru) : null;
+  const t = useT();
+  const u = meta.unit;
+  const ub = unitBn(meta.unit);
+  const { trend } = detail;
+  const [first, last] = [years[0], years[years.length - 1]];
+  const real = trend ? trend.p < ALPHA : false;
+  const upward = trend ? trend.slopePerDecade > 0 : false;
+  // Headline numbers are rounded for reading; "Show the numbers" keeps one more digit.
+  const d = meta.decimals;
+  const dd = meta.decimals + 1;
+  const total = trend ? (trend.slopePerDecade * (last - first)) / 10 : 0;
+  // "% of the usual amount" only makes sense for amounts like rain, not for counts of extreme events.
+  const pct = trend && !meta.anomaly && meta.kind !== "extreme" && detail.mean ? (trend.slopePerDecade / detail.mean) * 100 : null;
+  const Arrow = !real ? Minus : upward ? TrendUp : TrendDown;
 
   return (
-    <div className="mt-5">
-      <h3 className="text-xl font-semibold tracking-tight text-ink">{place}</h3>
-      <p className="mt-0.5 text-xs text-ink-3">{bn ? reading.subtitleBn : reading.subtitle}</p>
-
-      <div className="mt-4 flex flex-wrap items-baseline gap-x-3 gap-y-1">
-        <span className={`rounded-full px-2.5 py-1 text-xs font-semibold ${verdict.tone}`}>
-          <T en={verdict.en} bn={verdict.bn} />
-        </span>
-        {tr && (
-          <span className="text-2xl font-semibold tabular-nums text-ink">
-            {num(formatSigned(tr.slopePerDecade, d))} <span className="text-base font-medium text-ink-2">{unit}</span>
-            <span className="ml-1 text-sm font-normal text-ink-3">
-              <T en="/ 10 years" bn="/ ১০ বছর" />
-            </span>
-          </span>
-        )}
+    <section id="trend-answer" className="scroll-mt-4 space-y-4" aria-live="polite">
+      <div>
+        <h2 className="text-xl font-semibold text-ink">{detail.title}</h2>
+        <p className="mt-1 text-sm leading-relaxed text-ink-2">{detail.subtitle}</p>
       </div>
 
-      <p className="mt-3 text-sm leading-relaxed text-ink-2">{story}</p>
-      {reading.passesAloneOnly && (
-        <p className="mt-2 text-xs leading-relaxed text-ink-3">
+      {detail.sea && (
+        <p className="text-sm text-ink-2">
           <T
-            en="This square passes the test on its own, but not the stricter map-wide check that guards against false alarms when hundreds of squares are tested at once, so we don't call it clear."
-            bn="এই বর্গটি নিজে পরীক্ষায় উত্তীর্ণ, কিন্তু শত শত বর্গ একসাথে পরীক্ষা করলে ভুল সংকেত ঠেকাতে যে কঠোর পরীক্ষা লাগে তাতে নয়, তাই আমরা একে স্পষ্ট বলি না।"
+            en="This square is mostly sea, so we don't analyse it. Try a land square."
+            bn="এই বর্গের বেশিরভাগই সাগর, তাই আমরা এটি বিশ্লেষণ করি না। একটি স্থলভাগের বর্গ বেছে নিন।"
           />
         </p>
       )}
 
-      <div className="mt-4">
+      {trend && (
+        <div className="rounded-2xl bg-sunken p-4">
+          <div className="flex items-center gap-2 text-base font-semibold text-ink">
+            <Arrow size={22} weight="bold" className={real ? "text-accent" : "text-ink-3"} />
+            {real ? (
+              <T en={upward ? words.up : words.down} bn={upward ? wordsBn.up : wordsBn.down} />
+            ) : (
+              <T en="No clear change" bn="স্পষ্ট পরিবর্তন নেই" />
+            )}
+          </div>
+          <div className="mt-2 text-3xl font-semibold tabular-nums tracking-tight text-ink">
+            <T
+              en={`${formatSigned(trend.slopePerDecade, d)} ${u}`}
+              bn={`${bnNum(formatSigned(trend.slopePerDecade, d))} ${ub}`}
+            />
+          </div>
+          <div className="text-sm text-ink-2">
+            <T
+              en={`every 10 years${pct !== null ? ` (${formatSigned(pct, 1)}% of the usual amount)` : ""}`}
+              bn={`প্রতি ১০ বছরে${pct !== null ? ` (স্বাভাবিক পরিমাণের ${bnNum(formatSigned(pct, 1))}%)` : ""}`}
+            />
+          </div>
+          {real && (
+            <p className="mt-2 text-sm text-ink-2">
+              <T
+                en={
+                  <>
+                    That adds up to about{" "}
+                    <strong className="font-semibold text-ink">
+                      {formatSigned(total, meta.decimals)} {u}
+                    </strong>{" "}
+                    since {first}.
+                  </>
+                }
+                bn={
+                  <>
+                    {bnNum(first)} সাল থেকে মোট প্রায়{" "}
+                    <strong className="font-semibold text-ink">
+                      {bnNum(formatSigned(total, meta.decimals))} {ub}
+                    </strong>
+                    ।
+                  </>
+                }
+              />
+            </p>
+          )}
+          <div className="mt-3 flex flex-wrap gap-2">
+            <Sureness p={trend.p} />
+            {detail.check && (
+              <span className="inline-flex items-center rounded-full bg-sunken px-3 py-1.5 text-sm text-ink-2">
+                <T en={AGREEMENT_TEXT[agreement(trend, detail.check)]} bn={AGREEMENT_BN[agreement(trend, detail.check)]} />
+              </span>
+            )}
+          </div>
+          {!real && (
+            <p className="mt-3 text-sm leading-relaxed text-ink-2">
+              <T
+                en="The ups and downs from year to year are bigger than any steady change, so we can't say it is really changing. That doesn't prove nothing is happening; the record just can't show it clearly."
+                bn="বছরে বছরে ওঠানামা যেকোনো স্থির পরিবর্তনের চেয়ে বড়, তাই আমরা বলতে পারি না যে এটি সত্যিই বদলাচ্ছে। এর মানে এই নয় যে কিছুই ঘটছে না; শুধু এই রেকর্ড তা স্পষ্টভাবে দেখাতে পারে না।"
+              />
+            </p>
+          )}
+        </div>
+      )}
+
+      {detail.values ? (
         <SeriesChart
           years={years}
-          values={reading.values}
-          slopePerDecade={tr?.slopePerDecade ?? null}
-          lowerPerDecade={tr?.lowerPerDecade ?? null}
-          upperPerDecade={tr?.upperPerDecade ?? null}
+          values={detail.values}
+          slopePerDecade={trend?.slopePerDecade ?? null}
           unit={meta.unit}
           decimals={meta.decimals}
-          axisLabel={WORDS[variable].axis}
-          axisLabelBn={WORDS_BN[variable].axis}
+          axisLabel={t(words.axis, wordsBn.axis)}
           zeroLine={meta.anomaly}
-          title={`${reading.title} ${meta.label}, ${manifest.seasons[season].label}`}
-          split={reading.split}
+          lowerPerDecade={trend?.lowerPerDecade ?? null}
+          upperPerDecade={trend?.upperPerDecade ?? null}
+          title={`${detail.titleEn} ${words.label.toLowerCase()} ${seasonLabel.toLowerCase()}`}
         />
-      </div>
-
-      {reading.split && (
-        <p className="mt-3 text-sm leading-relaxed text-ink-2">
-          <span className="font-semibold text-ink">
-            <T en="Turning point: " bn="মোড় পরিবর্তন: " />
-          </span>
-          <T
-            en={`the record splits most sharply around ${reading.split.year}. Average ${reading.split.before.toFixed(meta.decimals)} ${meta.unit} before, ${reading.split.after.toFixed(meta.decimals)} ${meta.unit} from then on (Pettitt test, ${formatP(reading.split.p)}). A steady trend also splits near its middle, so this says when the record is most different, not that the change switched on that year.`}
-            bn={`রেকর্ডটি সবচেয়ে স্পষ্টভাবে ভাগ হয় ${bnNum(reading.split.year)}-এর কাছে। আগে গড় ${bnNum(reading.split.before.toFixed(meta.decimals))} ${unit}, তারপর থেকে ${bnNum(reading.split.after.toFixed(meta.decimals))} ${unit} (পেটিট পরীক্ষা, ${bnNum(formatP(reading.split.p))})। স্থির প্রবণতাও মাঝামাঝি ভাগ হয়, তাই এটি বলে রেকর্ড কখন সবচেয়ে আলাদা, পরিবর্তন ঠিক সেই বছরে শুরু হয়েছে তা নয়।`}
-          />
-        </p>
+      ) : (
+        trend && <div className="h-56 animate-pulse rounded-xl bg-sunken" aria-label={t("Loading chart", "চার্ট লোড হচ্ছে")} />
       )}
 
-      {agree && (
-        <p className="mt-3 rounded-lg border border-line px-3 py-2 text-xs leading-relaxed text-ink-2">
-          <span className="font-semibold text-ink">{bn ? AGREEMENT_BN[agree] : AGREEMENT_TEXT[agree]}</span>
-          {" · "}
-          <T
-            en={`CRU TS (University of East Anglia), built from weather stations: ${formatSigned(reading.check!.cru!.slopePerDecade, d)} ${meta.unit} / 10 years, ${formatP(reading.check!.cru!.p)}.`}
-            bn={`CRU TS (ইউনিভার্সিটি অব ইস্ট অ্যাংলিয়া), আবহাওয়া কেন্দ্রের তথ্য থেকে: প্রতি ১০ বছরে ${bnNum(formatSigned(reading.check!.cru!.slopePerDecade, d))} ${unit}, ${bnNum(formatP(reading.check!.cru!.p))}।`}
-          />
-        </p>
+      {trend && (
+        <Numbers>
+          <dl>
+            <Stat label="Rate (Sen's slope)" value={`${formatSigned(trend.slopePerDecade, dd)} ${meta.unit}/decade`} />
+            <Stat label="95% range of the rate" value={`${formatSigned(trend.lowerPerDecade, dd)} to ${formatSigned(trend.upperPerDecade, dd)}`} />
+            <Stat label="p-value (Mann–Kendall, autocorrelation-corrected)" value={formatP(trend.p)} />
+            <Stat label="How sure" value={<T en={sureness(trend.p).short} bn={sureness(trend.p).shortBn} />} />
+            {detail.clear !== null && <Stat label="Passes the map-wide check (FDR)" value={detail.clear ? "Yes" : "No"} />}
+            {!meta.anomaly && detail.mean !== null && <Stat label="Average" value={`${detail.mean.toFixed(meta.decimals)} ${meta.unit}`} />}
+            <Stat label="Data" value={meta.dataset} />
+            {detail.check && (
+              <Stat
+                label="Same trend in CRU TS 4.10 (independent)"
+                value={`${formatSigned(detail.check.slopePerDecade, dd)} ${meta.unit}/decade (${formatP(detail.check.p)})`}
+              />
+            )}
+          </dl>
+        </Numbers>
       )}
-
-      <details className="group mt-4 rounded-lg border border-line">
-        <summary className="cursor-pointer select-none px-3 py-2 text-sm font-medium text-ink">
-          <T en="Show the numbers" bn="সংখ্যাগুলো দেখুন" />
-        </summary>
-        <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1.5 border-t border-line px-3 py-3 text-xs">
-          {tr && (
-            <>
-              <dt className="text-ink-3">Sen&apos;s slope</dt>
-              <dd className="tabular-nums text-ink">
-                {formatSigned(tr.slopePerDecade, d)} {meta.unit} / decade
-              </dd>
-              <dt className="text-ink-3">95% CI</dt>
-              <dd className="tabular-nums text-ink">
-                {formatSigned(tr.lowerPerDecade, d)} to {formatSigned(tr.upperPerDecade, d)}
-              </dd>
-              <dt className="text-ink-3">Mann–Kendall</dt>
-              <dd className="tabular-nums text-ink">
-                {formatP(tr.p)} {reading.clear ? "(significant)" : "(not significant)"}
-              </dd>
-            </>
-          )}
-          <dt className="text-ink-3">Test</dt>
-          <dd className="text-ink">{manifest.method.test}</dd>
-          {reading.kind === "point" && (
-            <>
-              <dt className="text-ink-3">Map-wide</dt>
-              <dd className="text-ink">{manifest.method.multipleTesting}</dd>
-            </>
-          )}
-          <dt className="text-ink-3">Period</dt>
-          <dd className="tabular-nums text-ink">
-            {first}–{last} ({years.length} years)
-          </dd>
-          <dt className="text-ink-3">Data</dt>
-          <dd className="text-ink">
-            <a href={meta.datasetUrl} target="_blank" rel="noreferrer" className="text-accent underline-offset-2 hover:underline">
-              {meta.dataset}
-            </a>
-          </dd>
-        </dl>
-      </details>
-    </div>
+    </section>
   );
 }

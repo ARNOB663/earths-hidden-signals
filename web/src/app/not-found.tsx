@@ -22,12 +22,12 @@ export default function NotFound() {
       <div className="mt-8 flex flex-wrap items-center gap-5">
         <Link
           href="/"
-          className="inline-flex min-h-10 items-center rounded-full bg-accent-strong px-6 font-medium text-accent-ink transition-colors duration-150 hover:bg-accent-hover"
+          className="rounded-full bg-accent-strong px-6 py-3 font-medium text-accent-ink transition-all hover:bg-accent-hover active:scale-[0.98]"
         >
           <T en="Go to the home page" bn="প্রথম পাতায় যান" />
         </Link>
-        <Link href="/signal" className="inline-flex min-h-10 items-center font-medium text-accent hover:underline">
-          <T en="Open the Signal" bn="সংকেত খুলুন" />
+        <Link href="/findings" className="inline-flex min-h-10 items-center font-medium text-accent hover:underline">
+          <T en="Read the story" bn="গল্পটা পড়ুন" />
         </Link>
       </div>
     </div>

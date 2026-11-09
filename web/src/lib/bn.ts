@@ -28,8 +28,3 @@ export const BN_MONTHS = [
 export function bnMonth(isoDate: string): string {
   return `${BN_MONTHS[Number(isoDate.slice(5, 7)) - 1]} ${bnNum(isoDate.slice(0, 4))}`;
 }
-
-/** Bangla date with the day of the month, for daily layers. */
-export function bnDay(isoDate: string): string {
-  return `${bnNum(Number(isoDate.slice(8, 10)))} ${BN_MONTHS[Number(isoDate.slice(5, 7)) - 1]} ${bnNum(isoDate.slice(0, 4))}`;
-}

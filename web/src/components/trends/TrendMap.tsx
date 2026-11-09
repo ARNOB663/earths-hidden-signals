@@ -65,14 +65,16 @@ export default function TrendMap({
       "topleft",
     );
     baseRef.current = base;
-    // Frame the whole study area. The details panel sits beside (or below) the map, not over it.
-    base.map.invalidateSize({ animate: false });
+    // Frame the whole study area, leaving room for the details panel (beside the map on wide screens,
+    // over its lower part on phones) and the colour key.
     base.map.fitBounds(
       [
         [6, 61],
         [37, 99],
       ],
-      { padding: [8, 8], animate: false },
+      window.innerWidth >= 1024
+        ? { paddingTopLeft: [16, 56], paddingBottomRight: [430, 16] }
+        : { paddingTopLeft: [8, 60], paddingBottomRight: [8, 250] },
     );
     rendererRef.current = L.canvas({ pane: "data", padding: 0.5 });
     cellsRef.current = L.layerGroup().addTo(base.map);

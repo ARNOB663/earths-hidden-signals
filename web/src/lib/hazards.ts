@@ -76,8 +76,6 @@ export interface HazardZone {
     mean: number;
   } | null;
   drivers: DriverResult[];
-  /** Published per-variable trends for this region (analysis/build.py, via trends/zones.json). */
-  results: Record<string, { series: number[]; mean: number; trend: TrendSummary | null }>;
   /** Cyclones only: how many reached 64 knots or more. */
   severe?: number;
 }

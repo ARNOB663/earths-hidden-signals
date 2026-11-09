@@ -1,5 +1,13 @@
 # AGENTS.md
 
+> **2026-11-09: the website (`web/`) was rolled back to its 2026-11-06 version (commit `6c94c4d`)** at the
+> project owner's request: Home, The story (`/findings`), Satellite map (`/explore`), Climate trends
+> (`/trends`), Disaster risk (`/hazards`), Places and How it works (`/methods`). The signal-first site
+> described below (seven tabs, `/signal`, `/gap`, `/replay`, `/accuracy`, `/act`, `/watch`) and the
+> 2026-11-08/09 pages (`/climate-trends`, `/climate-twins`, `/future-outlook`, `/satellite-map`) are no
+> longer in `web/`; recover them from the commit before the rollback. The `analysis/` and
+> `scripts/signals/` code is unchanged; CI now runs only the analysis tests and the web lint/build.
+
 Two independent parts: `analysis/` (Python pipeline) writes committed JSON into `web/public/data/`; `web/` (Next.js 16) reads it at build/request time. The website works without rerunning the pipeline.
 
 ## Commands

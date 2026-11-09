@@ -1,10 +1,7 @@
 "use client";
 
-import { Share2 } from "lucide-react";
+import { Check, ShareNetwork } from "@phosphor-icons/react";
 import { useState } from "react";
-import { GIcon } from "@/components/ui/icons";
-import { SuccessCheck } from "@/components/ui/motion-icons";
-import { toast } from "@/components/ui/toast";
 import { T, useT } from "@/lib/i18n";
 
 /**
@@ -25,10 +22,8 @@ export function ShareButton({ variant = "icon", className = "" }: { variant?: "i
       await navigator.clipboard.writeText(url);
       setCopied(true);
       setTimeout(() => setCopied(false), 2200);
-      toast.success(t("Link copied", "লিংক কপি হয়েছে"), t("It opens this exact view.", "এটি ঠিক এই দৃশ্যটিই খুলবে।"));
     } catch {
-      // Dismissing the share sheet is not a failure; only a blocked clipboard is.
-      if (!navigator.share) toast.error(t("Could not copy the link", "লিংক কপি করা যায়নি"), t("Your browser blocked the clipboard.", "আপনার ব্রাউজার ক্লিপবোর্ড আটকে দিয়েছে।"));
+      // The person closed the share sheet, or the browser blocked the clipboard: nothing to do.
     }
   };
 
@@ -44,9 +39,17 @@ export function ShareButton({ variant = "icon", className = "" }: { variant?: "i
           variant === "icon" ? "min-w-10" : "px-3"
         }`}
       >
-        {copied ? <SuccessCheck size={17} className="text-good" /> : <GIcon icon={Share2} size="md" />}
+        {copied ? <Check size={17} className="text-good" /> : <ShareNetwork size={17} />}
         {variant === "label" && <T en="Share" bn="শেয়ার" />}
       </button>
+      <span
+        role="status"
+        className={`pointer-events-none absolute right-0 top-full z-[1000] mt-1 whitespace-nowrap rounded-lg bg-ink px-2.5 py-1 text-xs text-page shadow-soft transition-opacity ${
+          copied ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        {copied && <T en="Link copied" bn="লিংক কপি হয়েছে" />}
+      </span>
     </span>
   );
 }

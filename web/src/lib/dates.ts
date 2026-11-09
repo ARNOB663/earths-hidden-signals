@@ -30,32 +30,6 @@ export function formatMonth(isoDate: string): string {
   return `${MONTHS[Number(isoDate.slice(5, 7)) - 1]} ${isoDate.slice(0, 4)}`;
 }
 
-/** "5 Jun 2025" — used by daily layers, where the day of the month matters. */
-export function formatDay(isoDate: string): string {
-  return `${Number(isoDate.slice(8, 10))} ${MONTHS[Number(isoDate.slice(5, 7)) - 1]} ${isoDate.slice(0, 4)}`;
-}
-
-const DAY_MS = 24 * 60 * 60 * 1000;
-
-/**
- * Expands daily GIBS intervals like "2015-03-31/2026-10-28/P1D" into a sorted, de-duplicated
- * list of "YYYY-MM-DD" dates. NASA omits days without imagery, but publishes gaps as separate
- * intervals, so the result is sparse on purpose.
- */
-export function expandDailyIntervals(intervals: string[]): string[] {
-  const days = new Set<string>();
-  for (const interval of intervals) {
-    const [start, end, period] = interval.split("/");
-    if (!start || !end || period !== "P1D") continue;
-    const last = Date.parse(`${end}T00:00:00Z`);
-    if (!Number.isFinite(last)) continue;
-    for (let t = Date.parse(`${start}T00:00:00Z`); t <= last; t += DAY_MS) {
-      days.add(new Date(t).toISOString().slice(0, 10));
-    }
-  }
-  return [...days].sort();
-}
-
 /** Index of the date closest to `target` (dates must be sorted ISO strings). */
 export function nearestDateIndex(dates: string[], target: string): number {
   if (dates.length === 0) return -1;
