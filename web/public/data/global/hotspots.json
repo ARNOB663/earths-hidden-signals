@@ -1,6 +1,8 @@
 {
  "generated": "2026-11-10",
- "models": [],
+ "models": [
+  "MRI-ESM2-0"
+ ],
  "present": [
   1995,
   2014
@@ -152,7 +154,72 @@
     "n": 26,
     "linked": false
    },
-   "future": null
+   "future": {
+    "ssp245": {
+     "tMean": {
+      "median": 1.482,
+      "min": 1.482,
+      "max": 1.482,
+      "agree": 1
+     },
+     "wetSeason": {
+      "median": -12.829,
+      "min": -12.829,
+      "max": -12.829,
+      "agree": 1
+     },
+     "wetYear": {
+      "median": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "agree": null
+     },
+     "dryYear": {
+      "median": 0.2,
+      "min": 0.2,
+      "max": 0.2,
+      "agree": null
+     },
+     "hotYear": {
+      "median": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "agree": null
+     }
+    },
+    "ssp585": {
+     "tMean": {
+      "median": 2.035,
+      "min": 2.035,
+      "max": 2.035,
+      "agree": 1
+     },
+     "wetSeason": {
+      "median": -8.891,
+      "min": -8.891,
+      "max": -8.891,
+      "agree": 1
+     },
+     "wetYear": {
+      "median": 0.05,
+      "min": 0.05,
+      "max": 0.05,
+      "agree": null
+     },
+     "dryYear": {
+      "median": 0.2,
+      "min": 0.2,
+      "max": 0.2,
+      "agree": null
+     },
+     "hotYear": {
+      "median": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "agree": null
+     }
+    }
+   }
   },
   {
    "id": "indus-plain",
@@ -293,7 +360,72 @@
     "n": 26,
     "linked": true
    },
-   "future": null
+   "future": {
+    "ssp245": {
+     "tMean": {
+      "median": 1.717,
+      "min": 1.717,
+      "max": 1.717,
+      "agree": 1
+     },
+     "wetSeason": {
+      "median": -4.234,
+      "min": -4.234,
+      "max": -4.234,
+      "agree": 1
+     },
+     "wetYear": {
+      "median": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "agree": null
+     },
+     "dryYear": {
+      "median": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "agree": null
+     },
+     "hotYear": {
+      "median": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "agree": null
+     }
+    },
+    "ssp585": {
+     "tMean": {
+      "median": 2.564,
+      "min": 2.564,
+      "max": 2.564,
+      "agree": 1
+     },
+     "wetSeason": {
+      "median": -1.371,
+      "min": -1.371,
+      "max": -1.371,
+      "agree": 1
+     },
+     "wetYear": {
+      "median": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "agree": null
+     },
+     "dryYear": {
+      "median": 0.05,
+      "min": 0.05,
+      "max": 0.05,
+      "agree": null
+     },
+     "hotYear": {
+      "median": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "agree": null
+     }
+    }
+   }
   },
   {
    "id": "yangtze",
@@ -434,7 +566,72 @@
     "n": 26,
     "linked": true
    },
-   "future": null
+   "future": {
+    "ssp245": {
+     "tMean": {
+      "median": 1.962,
+      "min": 1.962,
+      "max": 1.962,
+      "agree": 1
+     },
+     "wetSeason": {
+      "median": 13.125,
+      "min": 13.125,
+      "max": 13.125,
+      "agree": 1
+     },
+     "wetYear": {
+      "median": 0.4,
+      "min": 0.4,
+      "max": 0.4,
+      "agree": null
+     },
+     "dryYear": {
+      "median": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "agree": null
+     },
+     "hotYear": {
+      "median": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "agree": null
+     }
+    },
+    "ssp585": {
+     "tMean": {
+      "median": 2.492,
+      "min": 2.492,
+      "max": 2.492,
+      "agree": 1
+     },
+     "wetSeason": {
+      "median": 10.482,
+      "min": 10.482,
+      "max": 10.482,
+      "agree": 1
+     },
+     "wetYear": {
+      "median": 0.4,
+      "min": 0.4,
+      "max": 0.4,
+      "agree": null
+     },
+     "dryYear": {
+      "median": 0.05,
+      "min": 0.05,
+      "max": 0.05,
+      "agree": null
+     },
+     "hotYear": {
+      "median": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "agree": null
+     }
+    }
+   }
   },
   {
    "id": "sahel-niger",
@@ -576,7 +773,72 @@
     "n": 26,
     "linked": true
    },
-   "future": null
+   "future": {
+    "ssp245": {
+     "tMean": {
+      "median": 1.489,
+      "min": 1.489,
+      "max": 1.489,
+      "agree": 1
+     },
+     "wetSeason": {
+      "median": 9.166,
+      "min": 9.166,
+      "max": 9.166,
+      "agree": 1
+     },
+     "wetYear": {
+      "median": 0.2,
+      "min": 0.2,
+      "max": 0.2,
+      "agree": null
+     },
+     "dryYear": {
+      "median": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "agree": null
+     },
+     "hotYear": {
+      "median": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "agree": null
+     }
+    },
+    "ssp585": {
+     "tMean": {
+      "median": 1.948,
+      "min": 1.948,
+      "max": 1.948,
+      "agree": 1
+     },
+     "wetSeason": {
+      "median": 19.203,
+      "min": 19.203,
+      "max": 19.203,
+      "agree": 1
+     },
+     "wetYear": {
+      "median": 0.45,
+      "min": 0.45,
+      "max": 0.45,
+      "agree": null
+     },
+     "dryYear": {
+      "median": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "agree": null
+     },
+     "hotYear": {
+      "median": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "agree": null
+     }
+    }
+   }
   },
   {
    "id": "central-europe",
@@ -717,7 +979,72 @@
     "n": 26,
     "linked": false
    },
-   "future": null
+   "future": {
+    "ssp245": {
+     "tMean": {
+      "median": 1.231,
+      "min": 1.231,
+      "max": 1.231,
+      "agree": 1
+     },
+     "wetSeason": {
+      "median": -0.397,
+      "min": -0.397,
+      "max": -0.397,
+      "agree": 1
+     },
+     "wetYear": {
+      "median": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "agree": null
+     },
+     "dryYear": {
+      "median": 0.15,
+      "min": 0.15,
+      "max": 0.15,
+      "agree": null
+     },
+     "hotYear": {
+      "median": 0.7,
+      "min": 0.7,
+      "max": 0.7,
+      "agree": null
+     }
+    },
+    "ssp585": {
+     "tMean": {
+      "median": 1.683,
+      "min": 1.683,
+      "max": 1.683,
+      "agree": 1
+     },
+     "wetSeason": {
+      "median": 3.052,
+      "min": 3.052,
+      "max": 3.052,
+      "agree": 1
+     },
+     "wetYear": {
+      "median": 0.2,
+      "min": 0.2,
+      "max": 0.2,
+      "agree": null
+     },
+     "dryYear": {
+      "median": 0.05,
+      "min": 0.05,
+      "max": 0.05,
+      "agree": null
+     },
+     "hotYear": {
+      "median": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "agree": null
+     }
+    }
+   }
   },
   {
    "id": "mississippi",
@@ -855,7 +1182,72 @@
     "n": 26,
     "linked": false
    },
-   "future": null
+   "future": {
+    "ssp245": {
+     "tMean": {
+      "median": 1.752,
+      "min": 1.752,
+      "max": 1.752,
+      "agree": 1
+     },
+     "wetSeason": {
+      "median": 7.969,
+      "min": 7.969,
+      "max": 7.969,
+      "agree": 1
+     },
+     "wetYear": {
+      "median": 0.05,
+      "min": 0.05,
+      "max": 0.05,
+      "agree": null
+     },
+     "dryYear": {
+      "median": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "agree": null
+     },
+     "hotYear": {
+      "median": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "agree": null
+     }
+    },
+    "ssp585": {
+     "tMean": {
+      "median": 2.099,
+      "min": 2.099,
+      "max": 2.099,
+      "agree": 1
+     },
+     "wetSeason": {
+      "median": 4.354,
+      "min": 4.354,
+      "max": 4.354,
+      "agree": 1
+     },
+     "wetYear": {
+      "median": 0.15,
+      "min": 0.15,
+      "max": 0.15,
+      "agree": null
+     },
+     "dryYear": {
+      "median": 0.05,
+      "min": 0.05,
+      "max": 0.05,
+      "agree": null
+     },
+     "hotYear": {
+      "median": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "agree": null
+     }
+    }
+   }
   },
   {
    "id": "horn-of-africa",
@@ -1000,7 +1392,72 @@
     "n": 26,
     "linked": false
    },
-   "future": null
+   "future": {
+    "ssp245": {
+     "tMean": {
+      "median": 1.237,
+      "min": 1.237,
+      "max": 1.237,
+      "agree": 1
+     },
+     "wetSeason": {
+      "median": -0.067,
+      "min": -0.067,
+      "max": -0.067,
+      "agree": 1
+     },
+     "wetYear": {
+      "median": 0.1,
+      "min": 0.1,
+      "max": 0.1,
+      "agree": null
+     },
+     "dryYear": {
+      "median": 0.2,
+      "min": 0.2,
+      "max": 0.2,
+      "agree": null
+     },
+     "hotYear": {
+      "median": 0.95,
+      "min": 0.95,
+      "max": 0.95,
+      "agree": null
+     }
+    },
+    "ssp585": {
+     "tMean": {
+      "median": 1.742,
+      "min": 1.742,
+      "max": 1.742,
+      "agree": 1
+     },
+     "wetSeason": {
+      "median": -12.014,
+      "min": -12.014,
+      "max": -12.014,
+      "agree": 1
+     },
+     "wetYear": {
+      "median": 0.05,
+      "min": 0.05,
+      "max": 0.05,
+      "agree": null
+     },
+     "dryYear": {
+      "median": 0.35,
+      "min": 0.35,
+      "max": 0.35,
+      "agree": null
+     },
+     "hotYear": {
+      "median": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "agree": null
+     }
+    }
+   }
   },
   {
    "id": "southern-africa",
@@ -1155,7 +1612,72 @@
     "n": 26,
     "linked": false
    },
-   "future": null
+   "future": {
+    "ssp245": {
+     "tMean": {
+      "median": 1.586,
+      "min": 1.586,
+      "max": 1.586,
+      "agree": 1
+     },
+     "wetSeason": {
+      "median": 1.689,
+      "min": 1.689,
+      "max": 1.689,
+      "agree": 1
+     },
+     "wetYear": {
+      "median": 0.25,
+      "min": 0.25,
+      "max": 0.25,
+      "agree": null
+     },
+     "dryYear": {
+      "median": 0.25,
+      "min": 0.25,
+      "max": 0.25,
+      "agree": null
+     },
+     "hotYear": {
+      "median": 0.95,
+      "min": 0.95,
+      "max": 0.95,
+      "agree": null
+     }
+    },
+    "ssp585": {
+     "tMean": {
+      "median": 2.4,
+      "min": 2.4,
+      "max": 2.4,
+      "agree": 1
+     },
+     "wetSeason": {
+      "median": -11.188,
+      "min": -11.188,
+      "max": -11.188,
+      "agree": 1
+     },
+     "wetYear": {
+      "median": 0.1,
+      "min": 0.1,
+      "max": 0.1,
+      "agree": null
+     },
+     "dryYear": {
+      "median": 0.65,
+      "min": 0.65,
+      "max": 0.65,
+      "agree": null
+     },
+     "hotYear": {
+      "median": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "agree": null
+     }
+    }
+   }
   },
   {
    "id": "philippines",
@@ -1294,7 +1816,72 @@
     "wetMeanMm": 999
    },
    "link": null,
-   "future": null
+   "future": {
+    "ssp245": {
+     "tMean": {
+      "median": 1.025,
+      "min": 1.025,
+      "max": 1.025,
+      "agree": 1
+     },
+     "wetSeason": {
+      "median": 4.996,
+      "min": 4.996,
+      "max": 4.996,
+      "agree": 1
+     },
+     "wetYear": {
+      "median": 0.25,
+      "min": 0.25,
+      "max": 0.25,
+      "agree": null
+     },
+     "dryYear": {
+      "median": 0.1,
+      "min": 0.1,
+      "max": 0.1,
+      "agree": null
+     },
+     "hotYear": {
+      "median": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "agree": null
+     }
+    },
+    "ssp585": {
+     "tMean": {
+      "median": 1.404,
+      "min": 1.404,
+      "max": 1.404,
+      "agree": 1
+     },
+     "wetSeason": {
+      "median": 6.427,
+      "min": 6.427,
+      "max": 6.427,
+      "agree": 1
+     },
+     "wetYear": {
+      "median": 0.35,
+      "min": 0.35,
+      "max": 0.35,
+      "agree": null
+     },
+     "dryYear": {
+      "median": 0.1,
+      "min": 0.1,
+      "max": 0.1,
+      "agree": null
+     },
+     "hotYear": {
+      "median": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "agree": null
+     }
+    }
+   }
   },
   {
    "id": "caribbean-gulf",
@@ -1431,7 +2018,72 @@
     "wetMeanMm": 757
    },
    "link": null,
-   "future": null
+   "future": {
+    "ssp245": {
+     "tMean": {
+      "median": 1.529,
+      "min": 1.529,
+      "max": 1.529,
+      "agree": 1
+     },
+     "wetSeason": {
+      "median": -8.811,
+      "min": -8.811,
+      "max": -8.811,
+      "agree": 1
+     },
+     "wetYear": {
+      "median": 0.05,
+      "min": 0.05,
+      "max": 0.05,
+      "agree": null
+     },
+     "dryYear": {
+      "median": 0.2,
+      "min": 0.2,
+      "max": 0.2,
+      "agree": null
+     },
+     "hotYear": {
+      "median": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "agree": null
+     }
+    },
+    "ssp585": {
+     "tMean": {
+      "median": 1.881,
+      "min": 1.881,
+      "max": 1.881,
+      "agree": 1
+     },
+     "wetSeason": {
+      "median": -12.577,
+      "min": -12.577,
+      "max": -12.577,
+      "agree": 1
+     },
+     "wetYear": {
+      "median": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "agree": null
+     },
+     "dryYear": {
+      "median": 0.3,
+      "min": 0.3,
+      "max": 0.3,
+      "agree": null
+     },
+     "hotYear": {
+      "median": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "agree": null
+     }
+    }
+   }
   },
   {
    "id": "mozambique-madagascar",
@@ -1570,7 +2222,72 @@
     "wetMeanMm": 886
    },
    "link": null,
-   "future": null
+   "future": {
+    "ssp245": {
+     "tMean": {
+      "median": 1.337,
+      "min": 1.337,
+      "max": 1.337,
+      "agree": 1
+     },
+     "wetSeason": {
+      "median": -3.406,
+      "min": -3.406,
+      "max": -3.406,
+      "agree": 1
+     },
+     "wetYear": {
+      "median": 0.1,
+      "min": 0.1,
+      "max": 0.1,
+      "agree": null
+     },
+     "dryYear": {
+      "median": 0.3,
+      "min": 0.3,
+      "max": 0.3,
+      "agree": null
+     },
+     "hotYear": {
+      "median": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "agree": null
+     }
+    },
+    "ssp585": {
+     "tMean": {
+      "median": 1.853,
+      "min": 1.853,
+      "max": 1.853,
+      "agree": 1
+     },
+     "wetSeason": {
+      "median": -7.209,
+      "min": -7.209,
+      "max": -7.209,
+      "agree": 1
+     },
+     "wetYear": {
+      "median": 0.05,
+      "min": 0.05,
+      "max": 0.05,
+      "agree": null
+     },
+     "dryYear": {
+      "median": 0.4,
+      "min": 0.4,
+      "max": 0.4,
+      "agree": null
+     },
+     "hotYear": {
+      "median": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "agree": null
+     }
+    }
+   }
   },
   {
    "id": "central-america",
@@ -1677,7 +2394,72 @@
     "n": 11,
     "linked": false
    },
-   "future": null
+   "future": {
+    "ssp245": {
+     "tMean": {
+      "median": 1.295,
+      "min": 1.295,
+      "max": 1.295,
+      "agree": 1
+     },
+     "wetSeason": {
+      "median": -5.469,
+      "min": -5.469,
+      "max": -5.469,
+      "agree": 1
+     },
+     "wetYear": {
+      "median": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "agree": null
+     },
+     "dryYear": {
+      "median": 0.25,
+      "min": 0.25,
+      "max": 0.25,
+      "agree": null
+     },
+     "hotYear": {
+      "median": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "agree": null
+     }
+    },
+    "ssp585": {
+     "tMean": {
+      "median": 1.784,
+      "min": 1.784,
+      "max": 1.784,
+      "agree": 1
+     },
+     "wetSeason": {
+      "median": -5.698,
+      "min": -5.698,
+      "max": -5.698,
+      "agree": 1
+     },
+     "wetYear": {
+      "median": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "agree": null
+     },
+     "dryYear": {
+      "median": 0.25,
+      "min": 0.25,
+      "max": 0.25,
+      "agree": null
+     },
+     "hotYear": {
+      "median": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "agree": null
+     }
+    }
+   }
   },
   {
    "id": "northern-andes",
@@ -1784,7 +2566,72 @@
     "n": 11,
     "linked": false
    },
-   "future": null
+   "future": {
+    "ssp245": {
+     "tMean": {
+      "median": 1.169,
+      "min": 1.169,
+      "max": 1.169,
+      "agree": 1
+     },
+     "wetSeason": {
+      "median": -1.471,
+      "min": -1.471,
+      "max": -1.471,
+      "agree": 1
+     },
+     "wetYear": {
+      "median": 0.1,
+      "min": 0.1,
+      "max": 0.1,
+      "agree": null
+     },
+     "dryYear": {
+      "median": 0.25,
+      "min": 0.25,
+      "max": 0.25,
+      "agree": null
+     },
+     "hotYear": {
+      "median": 0.95,
+      "min": 0.95,
+      "max": 0.95,
+      "agree": null
+     }
+    },
+    "ssp585": {
+     "tMean": {
+      "median": 1.679,
+      "min": 1.679,
+      "max": 1.679,
+      "agree": 1
+     },
+     "wetSeason": {
+      "median": 3.552,
+      "min": 3.552,
+      "max": 3.552,
+      "agree": 1
+     },
+     "wetYear": {
+      "median": 0.25,
+      "min": 0.25,
+      "max": 0.25,
+      "agree": null
+     },
+     "dryYear": {
+      "median": 0.2,
+      "min": 0.2,
+      "max": 0.2,
+      "agree": null
+     },
+     "hotYear": {
+      "median": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "agree": null
+     }
+    }
+   }
   },
   {
    "id": "himalaya",
@@ -1891,7 +2738,72 @@
     "n": 11,
     "linked": true
    },
-   "future": null
+   "future": {
+    "ssp245": {
+     "tMean": {
+      "median": 1.801,
+      "min": 1.801,
+      "max": 1.801,
+      "agree": 1
+     },
+     "wetSeason": {
+      "median": 11.769,
+      "min": 11.769,
+      "max": 11.769,
+      "agree": 1
+     },
+     "wetYear": {
+      "median": 0.15,
+      "min": 0.15,
+      "max": 0.15,
+      "agree": null
+     },
+     "dryYear": {
+      "median": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "agree": null
+     },
+     "hotYear": {
+      "median": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "agree": null
+     }
+    },
+    "ssp585": {
+     "tMean": {
+      "median": 2.823,
+      "min": 2.823,
+      "max": 2.823,
+      "agree": 1
+     },
+     "wetSeason": {
+      "median": 9.774,
+      "min": 9.774,
+      "max": 9.774,
+      "agree": 1
+     },
+     "wetYear": {
+      "median": 0.2,
+      "min": 0.2,
+      "max": 0.2,
+      "agree": null
+     },
+     "dryYear": {
+      "median": 0.05,
+      "min": 0.05,
+      "max": 0.05,
+      "agree": null
+     },
+     "hotYear": {
+      "median": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "agree": null
+     }
+    }
+   }
   }
  ]
 }
