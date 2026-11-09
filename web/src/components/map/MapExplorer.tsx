@@ -349,15 +349,15 @@ export default function MapExplorer({ catalog }: { catalog: GibsCatalog }) {
         className={`lg:absolute lg:bottom-4 lg:left-4 lg:top-4 lg:z-[600] lg:w-[360px] lg:overflow-y-auto lg:rounded-2xl lg:border lg:border-line lg:bg-card lg:shadow-soft lg:transition-[translate,visibility] lg:duration-300 ${
           panelHidden ? "lg:invisible lg:-translate-x-[calc(100%+2rem)]" : ""
         }`}
-        bodyClassName="flex flex-col gap-6 p-5"
+        bodyClassName="flex flex-col gap-5 p-5"
         peek={peek}
         snap={snap}
         onSnapChange={setSnap}
       >
         <section>
           <div className="flex items-start justify-between gap-3">
-            <h1 className="text-lg font-semibold text-ink">
-              <T en="What do you want to see?" bn="কী দেখতে চান?" />
+            <h1 className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-3">
+              <T en="Show on the map" bn="মানচিত্রে দেখান" />
             </h1>
             <button
               onClick={() => setPanelHidden(true)}
@@ -370,7 +370,7 @@ export default function MapExplorer({ catalog }: { catalog: GibsCatalog }) {
               <T en="Hide" bn="লুকান" />
             </button>
           </div>
-          <div className="mt-3 grid grid-cols-2 gap-2">
+          <div className="mt-2 grid grid-cols-3 gap-1.5">
             {LAYERS.map((l) => {
               const active = l.id === layerId;
               const LayerIcon = LAYER_ICON[l.id];
@@ -379,11 +379,12 @@ export default function MapExplorer({ catalog }: { catalog: GibsCatalog }) {
                   key={l.id}
                   onClick={() => selectLayer(l)}
                   aria-pressed={active}
-                  className={`flex items-center gap-2.5 rounded-xl border px-3 py-2.5 text-left text-sm transition-all active:scale-[0.98] ${
+                  title={t(l.title, l.bn.shortTitle)}
+                  className={`flex flex-col items-center gap-1 rounded-xl border px-1.5 py-2 text-center text-xs leading-tight transition-all active:scale-[0.98] ${
                     active
                       ? "border-accent bg-accent-soft font-medium text-ink"
                       : "border-line text-ink-2 hover:border-ink-3 hover:text-ink"
-                  } ${l.id === "forest-loss" ? "col-span-2" : ""}`}
+                  }`}
                 >
                   <LayerIcon size={20} weight={active ? "fill" : "regular"} className={active ? "text-accent" : ""} />
                   <T en={l.shortTitle} bn={l.bn.shortTitle} />
@@ -391,14 +392,11 @@ export default function MapExplorer({ catalog }: { catalog: GibsCatalog }) {
               );
             })}
           </div>
-          <p className="mt-3 text-sm leading-relaxed text-ink-2">
-            <T en={layer.description} bn={layer.bn.description} />
-          </p>
         </section>
 
         <section>
-          <h2 className="text-lg font-semibold text-ink">
-            <T en="When?" bn="কখন?" />
+          <h2 className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-3">
+            <T en="When" bn="কখন" />
           </h2>
           {layer.kind === "gibs" && date ? (
             <div className="mt-3 space-y-3">
@@ -444,22 +442,11 @@ export default function MapExplorer({ catalog }: { catalog: GibsCatalog }) {
                   <CaretDown size={14} className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 text-ink-3" />
                 </label>
               </div>
-              <p className="text-xs leading-relaxed text-ink-3">
-                <T
-                  en="Play shows the same month in every year, so you can see the long-term change without the seasons getting in the way."
-                  bn="প্লে চাপলে প্রতি বছরের একই মাস দেখানো হয়, যাতে ঋতুর পার্থক্য বাদ দিয়ে দীর্ঘমেয়াদি পরিবর্তনটা দেখা যায়।"
-                />
-              </p>
 
               <div className="rounded-xl border border-line p-3.5">
                 <label className="flex cursor-pointer items-center justify-between gap-3">
-                  <span>
-                    <span className="block text-sm font-medium text-ink">
-                      <T en="Compare two years" bn="দুই বছর তুলনা" />
-                    </span>
-                    <span className="block text-xs text-ink-3">
-                      <T en="See a place then and now, side by side" bn="একই জায়গা আগে ও এখন, পাশাপাশি" />
-                    </span>
+                  <span className="text-sm font-medium text-ink">
+                    <T en="Compare two years" bn="দুই বছর তুলনা" />
                   </span>
                   <input
                     type="checkbox"
@@ -514,16 +501,11 @@ export default function MapExplorer({ catalog }: { catalog: GibsCatalog }) {
                       {diffSettings ? <T en="Now" bn="এখন" /> : <T en="Right side" bn="ডান পাশ" />}
                       <span className="font-medium text-ink">{month(date)}</span>
                     </div>
-                    <p className="text-xs leading-relaxed text-ink-3">
-                      {diffSettings ? (
-                        <T
-                          en={`Each colour shows how ${month(date)} differed from ${month(compareDate!)} at that spot. A single month can be unusual, so try a few years.`}
-                          bn={`প্রতিটি রঙ দেখায় ওই জায়গায় ${month(date)} ${month(compareDate!)}-এর চেয়ে কতটা আলাদা ছিল। একটি মাস অস্বাভাবিক হতে পারে, তাই কয়েকটি বছর দেখুন।`}
-                        />
-                      ) : (
-                        <T en="Drag the round handle on the map to slide between them." bn="মানচিত্রের গোল হাতলটি টেনে দুটির মধ্যে সরান।" />
-                      )}
-                    </p>
+                    {!diffSettings && (
+                      <p className="text-xs text-ink-3">
+                        <T en="Drag the handle on the map." bn="মানচিত্রের হাতলটি টানুন।" />
+                      </p>
+                    )}
                   </div>
                 )}
               </div>
@@ -548,47 +530,39 @@ export default function MapExplorer({ catalog }: { catalog: GibsCatalog }) {
                 onChange={(v) => setYearRange(([start]) => [Math.min(start, v), v])}
               />
               <PlayButton playing={playing} onClick={togglePlay} />
-              <p className="text-xs leading-relaxed text-ink-3">
-                <T
-                  en="Play adds one year at a time, so you can watch forest loss spread."
-                  bn="প্লে চাপলে এক এক বছর যোগ হয়, ফলে বন উজাড় কীভাবে ছড়াচ্ছে দেখা যায়।"
-                />
-              </p>
             </div>
           ) : null}
         </section>
 
         <section>
-          <h2 className="text-lg font-semibold text-ink">
+          <h2 className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-3">
             <T en="Colour key" bn="রঙের অর্থ" />
           </h2>
-          <div className="mt-3">
+          <div className="mt-2">
             <ColourKey layer={layer} info={info} diff={diffSettings && compareDate && date ? { then: month(compareDate), now: month(date) } : null} />
           </div>
         </section>
 
         {layer.kind === "forest-loss" && (
           <section>
-            <h2 className="text-lg font-semibold text-ink">
-              <T en="Forest lost each year" bn="প্রতি বছর কতটা বন উজাড়" />
+            <h2 className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-3">
+              <T en="Forest lost each year (area in view)" bn="প্রতি বছর বন উজাড় (দেখা এলাকায়)" />
             </h2>
-            <p className="mt-1 text-sm text-ink-2">
-              <T
-                en="For the area you can see on the map. Move or zoom the map to compare places."
-                bn="মানচিত্রে এখন যে এলাকা দেখা যাচ্ছে তার জন্য। জায়গা তুলনা করতে মানচিত্র সরান বা বড়-ছোট করুন।"
-              />
-            </p>
             <div className="mt-3">
               <ForestLossChart totals={forestTotals} firstYear={layer.firstYear} yearRange={yearRange} />
             </div>
           </section>
         )}
 
-        <section className="rounded-xl bg-sunken p-4">
-          <h2 className="text-sm font-semibold text-ink">
-            <T en="Why it matters" bn="কেন গুরুত্বপূর্ণ" />
-          </h2>
+        <details className="group -mb-3 border-t border-line pt-1">
+          <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between text-sm font-medium text-ink-2 hover:text-ink">
+            <T en="About this layer" bn="এই স্তর সম্পর্কে" />
+            <CaretDown size={16} className="transition-transform group-open:rotate-180" />
+          </summary>
           <p className="mt-1 text-sm leading-relaxed text-ink-2">
+            <T en={layer.description} bn={layer.bn.description} />
+          </p>
+          <p className="mt-2 text-sm leading-relaxed text-ink-2">
             <T en={layer.relevance} bn={layer.bn.relevance} />
           </p>
           <a href={layer.sourceUrl} target="_blank" rel="noreferrer" className="mt-1 inline-flex min-h-10 items-center text-sm text-accent hover:underline">
@@ -602,9 +576,9 @@ export default function MapExplorer({ catalog }: { catalog: GibsCatalog }) {
               />
             </p>
           )}
-        </section>
+        </details>
 
-        <details className="group">
+        <details className="group border-t border-line pt-1">
           <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between text-sm font-medium text-ink-2 hover:text-ink">
             <T en="Map settings" bn="মানচিত্রের সেটিংস" />
             <CaretDown size={16} className="transition-transform group-open:rotate-180" />
