@@ -5,7 +5,7 @@ import path from "node:path";
 import type { HazardZone } from "./hazards";
 import type { Crosscheck, Manifest, TrendGrid, Zone } from "./trends";
 
-async function readData<T>(...parts: string[]): Promise<T> {
+export async function readData<T>(...parts: string[]): Promise<T> {
   return JSON.parse(await readFile(path.join(process.cwd(), "public", "data", ...parts), "utf-8")) as T;
 }
 
@@ -30,3 +30,23 @@ export const readLatest = () => readData<LatestMonth>("latest.json");
 
 /** Per-cell trend results for one variable and season, e.g. "temperature_annual". */
 export const readTrendGrid = (key: string) => readData<TrendGrid>("trends", `${key}.json`);
+
+/** Per-region summary of NASA NEX-GDDP-CMIP6 projections (analysis/future.py); only the fields the site reads. */
+export interface OutlookSummary {
+  models: string[];
+  present: [number, number];
+  future: [number, number];
+  regions: {
+    id: string;
+    name: string;
+    present: Record<string, number>;
+    scenarios: Record<
+      "ssp245" | "ssp585",
+      {
+        metrics: Record<string, { median: number; min: number; max: number; agree: number }>;
+        exceedance: Record<string, { today: number; median: number; min: number; max: number }>;
+      }
+    >;
+  }[];
+}
+export const readOutlook = () => readData<OutlookSummary>("future", "outlook.json");
