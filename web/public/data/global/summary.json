@@ -1,0 +1,97 @@
+{
+ "generated": "2026-11-09",
+ "years": [
+  1981,
+  2025
+ ],
+ "method": "Hamed-Rao Mann-Kendall, Sen's slope, Benjamini-Hochberg (alpha_FDR 0.10) across land cells; NASA GISTEMP v4, GPCP v2.3",
+ "landMean": {
+  "series": [
+   0.524,
+   0.106,
+   0.499,
+   0.055,
+   0.071,
+   0.294,
+   0.444,
+   0.581,
+   0.363,
+   0.698,
+   0.535,
+   0.253,
+   0.316,
+   0.516,
+   0.802,
+   0.311,
+   0.672,
+   1.013,
+   0.779,
+   0.65,
+   0.86,
+   0.993,
+   0.968,
+   0.842,
+   1.111,
+   0.995,
+   1.141,
+   0.885,
+   0.896,
+   1.148,
+   0.905,
+   0.995,
+   1.034,
+   1.05,
+   1.466,
+   1.562,
+   1.429,
+   1.208,
+   1.444,
+   1.613,
+   1.39,
+   1.318,
+   1.794,
+   2.001,
+   1.763
+  ],
+  "perDecade": 0.336,
+  "p": 0.0,
+  "total": 1.48
+ },
+ "temperature": {
+  "cells": 3912,
+  "increase": 3848,
+  "decrease": 10
+ },
+ "rainfall": {
+  "cells": 2444,
+  "increase": 458,
+  "decrease": 288
+ },
+ "wetSeason": {
+  "cells": 2446,
+  "increase": 235,
+  "decrease": 216
+ },
+ "events": {
+  "all": {
+   "flood": 6308,
+   "drought": 255,
+   "cyclone": 1182,
+   "landslide": 11033
+  },
+  "severe": {
+   "flood": 533,
+   "drought": 41,
+   "cyclone": 228,
+   "landslide": 2442
+  },
+  "years": [
+   2000,
+   2025
+  ],
+  "landslideYears": [
+   2007,
+   2017
+  ]
+ }
+}

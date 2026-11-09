@@ -1,18 +1,27 @@
 import { ArrowRight, ChartLineUp, MapPin, MapTrifold, Warning } from "@phosphor-icons/react/ssr";
 import type { Icon } from "@phosphor-icons/react";
 import Link from "next/link";
-import { Sparkline } from "@/components/findings/parts";
 import { Reveal } from "@/components/home/Reveal";
 import { WarmingStripes } from "@/components/home/WarmingStripes";
+import { WorldTrendMap } from "@/components/home/WorldTrendMap";
 import { PlaceSearch } from "@/components/places/PlaceSearch";
 import { StartTourButton } from "@/components/site/Tour";
 import { bnNum } from "@/lib/bn";
-import { readHazardZones, readManifest, readOutlook, readTrendZones } from "@/lib/data";
+import { readData, readManifest, readOutlook, readTrendZones } from "@/lib/data";
 import { T } from "@/lib/i18n";
 import { formatSigned, type Zone } from "@/lib/trends";
 
-// The front page tells the story in four short chapters (one idea, one number each), opened by
-// warming stripes. Every number is read from the committed data, never typed in.
+// The front page tells a global story in five short chapters (one idea, one number each), opened
+// by warming stripes for Earth's land, then zooms into South Asia. Every number is read from the
+// committed data, never typed in.
+
+interface GlobalSummary {
+  years: [number, number];
+  landMean: { series: number[]; perDecade: number; total: number };
+  temperature: { cells: number; increase: number; decrease: number };
+  wetSeason: { cells: number; increase: number; decrease: number };
+  events: { all: Record<string, number>; years: [number, number] };
+}
 
 const TOOLS: { href: string; Icon: Icon; title: [string, string]; text: [string, string] }[] = [
   { href: "/explore", Icon: MapTrifold, title: ["Satellite map", "স্যাটেলাইট মানচিত্র"], text: ["See it from space, month by month", "মহাকাশ থেকে দেখুন, মাসে মাসে"] },
@@ -22,22 +31,27 @@ const TOOLS: { href: string; Icon: Icon; title: [string, string]; text: [string,
 ];
 
 export default async function Home() {
-  const [manifest, trendZones, hazardZones, outlook] = await Promise.all([
+  const [manifest, trendZones, outlook, world] = await Promise.all([
     readManifest(),
     readTrendZones(),
-    readHazardZones(),
     readOutlook(),
+    readData<GlobalSummary>("global", "summary.json"),
   ]);
   const years = manifest.years;
   const [first, last] = [years[0], years[years.length - 1]];
   const zone = (id: string) => trendZones.find((z) => z.id === id)!;
 
-  // Chapter 1: heat
+  // Chapters 1-3: the whole planet
+  const landWarmer = formatSigned(world.landMean.total, 1);
+  const tw = world.temperature;
+  const ws = world.wetSeason;
+  const ev = world.events.all;
+  const fmt = (n: number) => n.toLocaleString("en-US");
+
+  // Chapter 4: South Asia zoom-in
   const study = zone("study-area");
   const tTrend = study.results["temperature_annual"].trend!;
-  const tSeries = study.results["temperature_annual"].series as number[];
   const warmer = formatSigned((tTrend.slopePerDecade * (last - first)) / 10, 1);
-  const temp = manifest.summaries["temperature_annual"];
 
   // Chapter 2: rain moving
   const rainPct = (z: Zone) => {
@@ -47,13 +61,7 @@ export default async function Home() {
   const indus = rainPct(zone("indus-plain"));
   const delta = rainPct(zone("bengal-delta"));
 
-  // Chapter 3: disasters recorded in the hazard regions
-  const events = (h: string) => hazardZones.filter((z) => z.hazard === h).reduce((s, z) => s + z.counts.reduce((a, b) => a + b, 0), 0);
-  const floods = events("flood");
-  const landslides = events("landslide");
-  const cyclones = events("cyclone");
-
-  // Chapter 4: NASA projections, middle-road pathway
+  // Chapter 5: NASA projections for South Asia, middle-road pathway
   const future = outlook.regions.find((r) => r.id === "study-area")!.scenarios.ssp245;
   const moreWarming = formatSigned(future.metrics.tMean.median, 1);
   const hotYears = Math.round(future.exceedance.hotYear.median * 10);
@@ -64,12 +72,12 @@ export default async function Home() {
       <section className="mx-auto w-full max-w-[1200px] px-4 pb-12 pt-14 sm:px-6 lg:pt-20">
         <p className="text-sm font-medium text-accent">NASA Space Apps Challenge 2026</p>
         <h1 className="mt-3 max-w-[16ch] text-4xl font-semibold leading-[1.08] tracking-tight text-ink sm:text-6xl">
-          <T en="South Asia's climate is changing. Here is the evidence." bn="দক্ষিণ এশিয়ার জলবায়ু বদলাচ্ছে। এই তার প্রমাণ।" />
+          <T en="Earth's climate is changing. Here is the evidence." bn="পৃথিবীর জলবায়ু বদলাচ্ছে। এই তার প্রমাণ।" />
         </h1>
         <p className="mt-5 max-w-[48ch] text-lg leading-relaxed text-ink-2">
           <T
-            en={`${years.length} years of NASA satellite data, told as one short story.`}
-            bn={`নাসার ${bnNum(years.length)} বছরের স্যাটেলাইট তথ্য, একটি ছোট গল্পে।`}
+            en={`${years.length} years of NASA data for every land area on Earth, told as one short story.`}
+            bn={`পৃথিবীর প্রতিটি স্থলভাগের জন্য নাসার ${bnNum(years.length)} বছরের তথ্য, একটি ছোট গল্পে।`}
           />
         </p>
         <div className="mt-8 flex flex-wrap items-center gap-5">
@@ -87,14 +95,14 @@ export default async function Home() {
       <section aria-labelledby="stripes" className="w-full">
         <div className="h-36 w-full sm:h-48">
           <WarmingStripes
-            values={tSeries}
-            label={`South Asia temperature, one stripe per year from ${first} to ${last}: blue years were cooler, red years warmer.`}
+            values={world.landMean.series}
+            label={`Temperature of Earth's land, one stripe per year from ${first} to ${last}: blue years were cooler, red years warmer.`}
           />
         </div>
         <div className="mx-auto flex w-full max-w-[1200px] items-baseline justify-between gap-4 px-4 pt-3 text-sm text-ink-2 sm:px-6">
           <span className="tabular-nums">{first}</span>
           <h2 id="stripes" className="text-center">
-            <T en="Each stripe is one year of South Asia's temperature." bn="প্রতিটি দাগ দক্ষিণ এশিয়ার এক বছরের তাপমাত্রা।" />
+            <T en="Each stripe is one year of Earth's land temperature." bn="প্রতিটি দাগ পৃথিবীর স্থলভাগের এক বছরের তাপমাত্রা।" />
           </h2>
           <span className="tabular-nums">{last}</span>
         </div>
@@ -104,24 +112,16 @@ export default async function Home() {
       <div id="story" className="mx-auto mt-20 w-full max-w-[1000px] scroll-mt-20 space-y-24 px-4 sm:mt-28 sm:space-y-32 sm:px-6">
         <Chapter
           n={1}
-          title={<T en="It is getting hotter" bn="গরম বাড়ছে" />}
-          big={<T en={`${warmer} °C`} bn={`${bnNum(warmer)} °সে`} />}
+          title={<T en="Hotter almost everywhere" bn="প্রায় সবখানে গরম বাড়ছে" />}
+          big={<T en={`${landWarmer} °C`} bn={`${bnNum(landWarmer)} °সে`} />}
           line={
             <T
-              en={`since ${first}. All ${temp.cells} squares of our map got warmer. Not one got cooler.`}
-              bn={`${bnNum(first)} থেকে। আমাদের মানচিত্রের ${bnNum(temp.cells)}টি বর্গের সবগুলোই উষ্ণ হয়েছে। একটিও ঠান্ডা হয়নি।`}
+              en={`on Earth's land since ${first}. ${fmt(tw.increase)} of ${fmt(tw.cells)} land areas clearly warmed; only ${tw.decrease} cooled.`}
+              bn={`${bnNum(first)} থেকে পৃথিবীর স্থলভাগে। ${bnNum(fmt(tw.cells))}টি স্থল-এলাকার ${bnNum(fmt(tw.increase))}টি স্পষ্টভাবে উষ্ণ হয়েছে; মাত্র ${bnNum(tw.decrease)}টি শীতল।`}
             />
           }
-          href="/trends?var=temperature&season=annual&zone=study-area"
-          visual={
-            <div>
-              <Sparkline values={tSeries} color="var(--warm-3)" />
-              <div className="mt-1 flex justify-between text-xs text-ink-3">
-                <span>{first}</span>
-                <span>{last}</span>
-              </div>
-            </div>
-          }
+          href="/trends"
+          visual={<WorldTrendMap file="temperature" limit={0.6} increaseIsRed label="World map of temperature trends since 1981: almost all land is red (warming)." />}
         />
 
         <Chapter
@@ -130,8 +130,50 @@ export default async function Home() {
           big={<T en="Wetter here, drier there" bn="কোথাও ভেজা, কোথাও শুষ্ক" />}
           line={
             <T
-              en="The same warming brings more monsoon rain to the dry Indus plain and less to the Bengal delta."
-              bn="একই উষ্ণতা শুকনো সিন্ধু সমভূমিতে বর্ষার বৃষ্টি বাড়ায়, আর বাংলার ব-দ্বীপে কমায়।"
+              en={`The same warming pushes rain both ways: ${ws.increase} land areas got a clearly wetter rainy season, ${ws.decrease} a clearly drier one.`}
+              bn={`একই উষ্ণতা বৃষ্টিকে দুই দিকে ঠেলে: ${bnNum(ws.increase)}টি স্থল-এলাকার বর্ষা স্পষ্টভাবে ভেজা হয়েছে, ${bnNum(ws.decrease)}টির স্পষ্টভাবে শুষ্ক।`}
+            />
+          }
+          href="/trends"
+          visual={
+            <div>
+              <WorldTrendMap file="wet-season" limit={10} increaseIsRed={false} label="World map of rainy-season rain trends: blue got wetter, red got drier." />
+              <p className="mt-2 text-xs text-ink-3">
+                <T en="Blue: wetter · Red: drier · Faded: no clear change" bn="নীল: ভেজা · লাল: শুষ্ক · হালকা: স্পষ্ট পরিবর্তন নেই" />
+              </p>
+            </div>
+          }
+        />
+
+        <Chapter
+          n={3}
+          title={<T en="Disasters everywhere" bn="সবখানে দুর্যোগ" />}
+          big={<T en={`${fmt(ev.flood + ev.cyclone + ev.drought)} alerts`} bn={`${bnNum(fmt(ev.flood + ev.cyclone + ev.drought))}টি সতর্কতা`} />}
+          line={
+            <T
+              en={`for floods, cyclones and droughts worldwide since ${world.events.years[0]}, plus ${fmt(ev.landslide)} catalogued landslides. We map them against the climate.`}
+              bn={`${bnNum(world.events.years[0])} থেকে সারা বিশ্বে বন্যা, ঘূর্ণিঝড় ও খরার, সাথে ${bnNum(fmt(ev.landslide))}টি নথিভুক্ত ভূমিধস। আমরা এগুলো জলবায়ুর সাথে মানচিত্রে মেলাই।`}
+            />
+          }
+          href="/hazards"
+          visual={
+            <dl className="grid grid-cols-2 gap-4 text-center sm:grid-cols-4">
+              <Count value={ev.flood} label={<T en="flood alerts" bn="বন্যা সতর্কতা" />} />
+              <Count value={ev.cyclone} label={<T en="cyclones" bn="ঘূর্ণিঝড়" />} />
+              <Count value={ev.drought} label={<T en="droughts" bn="খরা" />} />
+              <Count value={ev.landslide} label={<T en="landslides" bn="ভূমিধস" />} />
+            </dl>
+          }
+        />
+
+        <Chapter
+          n={4}
+          title={<T en="Zoom in: South Asia" bn="কাছ থেকে: দক্ষিণ এশিয়া" />}
+          big={<T en={`${warmer} °C`} bn={`${bnNum(warmer)} °সে`} />}
+          line={
+            <T
+              en="warmer since 1981, where nearly two billion people live with the monsoon. Here the rain splits: the dry Indus plain gets more, the Bengal delta gets less."
+              bn="বেশি গরম ১৯৮১ থেকে, যেখানে প্রায় দুইশো কোটি মানুষ বর্ষার ওপর নির্ভর করে। এখানে বৃষ্টি ভাগ হচ্ছে: শুকনো সিন্ধু সমভূমি বেশি পায়, বাংলার ব-দ্বীপ কম।"
             />
           }
           href="/trends?var=rainfall&season=monsoon"
@@ -147,36 +189,16 @@ export default async function Home() {
         />
 
         <Chapter
-          n={3}
-          title={<T en="Disasters follow" bn="দুর্যোগ পিছু নেয়" />}
-          big={<T en={`${(floods + landslides + cyclones).toLocaleString("en-US")} events`} bn={`${bnNum((floods + landslides + cyclones).toLocaleString("en-US"))}টি ঘটনা`} />}
-          line={
-            <T
-              en="recorded in the regions where heat and rain are shifting most. We map each one against the climate."
-              bn="নথিভুক্ত হয়েছে সেই অঞ্চলগুলোতে, যেখানে তাপ ও বৃষ্টি সবচেয়ে বেশি বদলাচ্ছে। প্রতিটি আমরা জলবায়ুর সাথে মানচিত্রে মেলাই।"
-            />
-          }
-          href="/hazards"
-          visual={
-            <dl className="grid grid-cols-3 gap-3 text-center">
-              <Count value={floods} label={<T en="flood alerts" bn="বন্যা সতর্কতা" />} />
-              <Count value={landslides} label={<T en="landslides" bn="ভূমিধস" />} />
-              <Count value={cyclones} label={<T en="cyclones" bn="ঘূর্ণিঝড়" />} />
-            </dl>
-          }
-        />
-
-        <Chapter
-          n={4}
+          n={5}
           title={<T en="What comes next" bn="এরপর কী" />}
           big={<T en={`${moreWarming} °C more`} bn={`আরও ${bnNum(moreWarming)} °সে`} />}
           line={
             <T
-              en={`by ${outlook.future[0]}–${outlook.future[1]} on a middle-road path, say NASA's climate projections. Today's 1-in-10 hottest year would come ${hotYears >= 10 ? "almost every year" : `${hotYears} years in 10`}.`}
-              bn={`${bnNum(outlook.future[0])}–${bnNum(outlook.future[1])} সালের মধ্যে, মাঝামাঝি পথে, বলছে নাসার জলবায়ু অনুমান। আজকের ১০ বছরে ১ বারের সবচেয়ে গরম বছর আসবে ${hotYears >= 10 ? "প্রায় প্রতি বছর" : `১০ বছরে ${bnNum(hotYears)} বার`}।`}
+              en={`in South Asia by ${outlook.future[0]}–${outlook.future[1]} on a middle-road path, say NASA's climate projections. Today's 1-in-10 hottest year would come ${hotYears >= 10 ? "almost every year" : `${hotYears} years in 10`}.`}
+              bn={`দক্ষিণ এশিয়ায় ${bnNum(outlook.future[0])}–${bnNum(outlook.future[1])} সালের মধ্যে, মাঝামাঝি পথে, বলছে নাসার জলবায়ু অনুমান। আজকের ১০ বছরে ১ বারের সবচেয়ে গরম বছর আসবে ${hotYears >= 10 ? "প্রায় প্রতি বছর" : `১০ বছরে ${bnNum(hotYears)} বার`}।`}
             />
           }
-          href="/hazards#future"
+          href="/hazards"
           visual={
             <div className="space-y-3 text-sm">
               <DotRow label={<T en="Today" bn="আজ" />} filled={1} />
