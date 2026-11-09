@@ -15,7 +15,7 @@ const RETIRED: { source: string; destination: string }[] = [
   { source: "/countries", destination: "/signal" },
   { source: "/country/:slug", destination: "/signal" },
   { source: "/location/:id", destination: "/signal" },
-  { source: "/explore", destination: "/signal" },
+  { source: "/explore", destination: "/satellite-map" },
   { source: "/findings", destination: "/" },
   { source: "/signals", destination: "/signal" },
   { source: "/signals/place", destination: "/signal" },

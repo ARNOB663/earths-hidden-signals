@@ -4,6 +4,7 @@ import {
   ExternalLink,
   Gauge,
   Globe,
+  Map as MapIcon,
   Microscope,
   Radio,
   ScanEye,
@@ -376,6 +377,16 @@ const DESTINATIONS: {
     text: {
       en: "45 years of NASA temperature and rain records: what is changing, where, by how much, and whether it is statistically significant.",
       bn: "নাসার ৪৫ বছরের তাপমাত্রা ও বৃষ্টির রেকর্ড: কী বদলাচ্ছে, কোথায়, কতটা, আর তা পরিসংখ্যানগতভাবে তাৎপর্যপূর্ণ কি না।",
+    },
+  },
+  {
+    href: "/satellite-map",
+    Icon: MapIcon,
+    en: "Satellite Map",
+    bn: "স্যাটেলাইট মানচিত্র",
+    text: {
+      en: "A world map of NASA satellite data you can drag and zoom: heat, rain, soil water, greenness and forest loss, month by month, with a compare slider.",
+      bn: "নাসার স্যাটেলাইট তথ্যের বিশ্ব মানচিত্র, টেনে ও বড় করে দেখুন: তাপ, বৃষ্টি, মাটির পানি, সবুজতা ও বন হারানো, মাসে মাসে, তুলনার স্লাইডারসহ।",
     },
   },
   {

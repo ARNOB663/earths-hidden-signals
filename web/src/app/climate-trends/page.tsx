@@ -262,6 +262,10 @@ export default async function ClimateTrendsPage() {
               <T en="Full methods" bn="পুরো পদ্ধতি" />
               <ArrowRight size={14} aria-hidden />
             </Link>
+            <Link href="/satellite-map" className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:underline">
+              <T en="See the satellite layers month by month: Satellite map" bn="মাসে মাসে স্যাটেলাইট স্তর দেখুন: স্যাটেলাইট মানচিত্র" />
+              <ArrowRight size={14} aria-hidden />
+            </Link>
             <Link href="/future-outlook" className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:underline">
               <T en="Where it could go: Future outlook" bn="কোথায় যেতে পারে: ভবিষ্যতের চিত্র" />
               <ArrowRight size={14} aria-hidden />

@@ -2,6 +2,7 @@
 
 import { readFile } from "node:fs/promises";
 import path from "node:path";
+import type { MapPlaceData } from "./mapPlaces";
 import type { Crosscheck, Manifest, Zone } from "./trends";
 
 const cache = new Map<string, Promise<unknown>>();
@@ -18,3 +19,6 @@ export const readTrendZones = async () => (await readData<{ zones: Zone[] }>("tr
 
 /** Trends repeated with an independent record, CRU TS (analysis/crosscheck.py). */
 export const readCrosscheck = () => readData<Crosscheck>("trends", "crosscheck.json");
+
+/** Climate context for map places (built by analysis/build_country_signals.py). */
+export const readMapPlaces = () => readData<MapPlaceData>("maps", "place-signals.json");

@@ -37,7 +37,7 @@ the standard library module that `build.py` and `latest.py` import.
 - Server-side JSON reads go through `web/src/lib/data.ts` (Node `fs`, `process.cwd()/public/data/...`; only the trend manifest/zones/crosscheck readers), `lib/signals/{model,data,backtest}.ts`, `lib/intelligence/data.ts` and `lib/geography/data.ts`, not fetch. Large per-cell series files are fetched from `/data/...` by client components.
 - i18n (English/Bangla) lives in `web/src/lib/i18n.tsx` (`<T>`), `bn.ts`, plus `lib/signals/level.ts` (level vocabulary) and `geography/index.json` (`nameBn`). There is no `names.ts`.
 - Shared page primitives: `components/ui/primitive.tsx` (`Eyebrow`), `components/signal/levels.tsx` (`Stat`, `CoverageStats`, badges, `formatFrequency` is in `lib/signals/level.ts`). Do not re-declare these per page.
-- `web/src/lib/layers.ts` holds the GIBS WMTS root and the (currently unrendered) layer definitions; `components/map/baseMap.ts` is the only live map module (used by `SignalMap`/`ReplayMap`). The Map Explorer UI and forest-loss decoder were removed on 2026-11-06 — see `docs/CODEBASE_AUDIT.md` and recover from git history if needed.
+- `web/src/lib/layers.ts` holds the GIBS WMTS root and the (currently unrendered) layer definitions; `components/map/baseMap.ts` is shared by every map. The Map Explorer (GIBS heat/rain/soil/greenness/forest-loss layers, time slider, compare and difference views) was removed on 2026-11-06 and restored on 2026-11-09 as `/satellite-map` (footer + Home link, not a tab); the retired `/explore` redirects there. Its place figures read `maps/place-signals.json` keys like `temperature_annual`.
 - `web/next.config.ts` holds the retired-route redirects (all `permanent: true`); images/metadata are defined per route.
 
 ## Data

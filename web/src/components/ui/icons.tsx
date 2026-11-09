@@ -1,7 +1,7 @@
 // One source for icon size and stroke weight. Every icon on the site comes from lucide and is
 // drawn through GIcon (or with the ICON sizes), so no two icons disagree about weight.
 
-import { type LucideIcon } from "lucide-react";
+import { Droplet, Droplets, Leaf, Sun, Thermometer, TreePine, type LucideIcon } from "lucide-react";
 
 export const ICON = { sm: 14, md: 16, lg: 20, xl: 22 } as const;
 export type IconSize = keyof typeof ICON;
@@ -31,3 +31,13 @@ export function GIcon({
     />
   );
 }
+
+/** One glyph per satellite-map layer (the Satellite Map page). */
+export const LAYER_ICONS: Record<string, LucideIcon> = {
+  "lst-day": Sun,
+  "air-temp": Thermometer,
+  precip: Droplets,
+  "soil-moisture": Droplet,
+  ndvi: Leaf,
+  "forest-loss": TreePine,
+};
