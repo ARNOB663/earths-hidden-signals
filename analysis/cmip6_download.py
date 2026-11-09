@@ -101,7 +101,12 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--check", action="store_true")
     ap.add_argument("--workers", type=int, default=5)
+    ap.add_argument("--global", dest="glob", action="store_true", help="whole globe (55S-75N) at 2 degrees into raw/cmip6_global/")
     args = ap.parse_args()
+    if args.glob:
+        global OUT
+        OUT = Path(__file__).parent / "raw" / "cmip6_global"
+        BOX.update({"north": 75, "south": -56, "west": -180, "east": 180, "horizStride": 8})
 
     jobs, missing_upstream = [], []
     for model in MODELS:
