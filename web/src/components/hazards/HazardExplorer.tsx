@@ -1,5 +1,7 @@
 "use client";
 
+import { FutureBlock, type RiskRow } from "@/components/hazards/FutureBlock";
+import type { OutlookSummary } from "@/lib/data";
 import { ArrowRight, CheckCircle, Fire, HandPointing, Hurricane, Mountains, Question, Warning, Waves, X } from "@phosphor-icons/react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
@@ -65,7 +67,17 @@ function useJson<T>(url: string | null): T | null {
   return data && data.url === url ? data.value : null;
 }
 
-export default function HazardExplorer({ zones, manifest }: { zones: HazardZone[]; manifest: Manifest }) {
+export default function HazardExplorer({
+  zones,
+  manifest,
+  outlook,
+  risk,
+}: {
+  zones: HazardZone[];
+  manifest: Manifest;
+  outlook: OutlookSummary;
+  risk: RiskRow[];
+}) {
   const params = useSearchParams();
   const [hazard, setHazard] = useState<HazardId>(() => {
     const h = params.get("hazard") as HazardId;
@@ -115,8 +127,8 @@ export default function HazardExplorer({ zones, manifest }: { zones: HazardZone[
       <p className="mt-1 text-sm leading-snug text-ink-2">
         {signal === "resembles" ? (
           <T
-            en={`${thisYear} weather looked like the ${EVENTS[hazard].bigYears} of the past. A good time to prepare early.`}
-            bn={`${bnNum(thisYear)} সালের আবহাওয়া আগের ${HAZARD_BN[hazard].bigYears}গুলোর মতো। আগেভাগে প্রস্তুতির ভালো সময়।`}
+            en={`${thisYear} weather looked like the ${EVENTS[hazard].bigYears} of the past.`}
+            bn={`${bnNum(thisYear)} সালের আবহাওয়া আগের ${HAZARD_BN[hazard].bigYears}গুলোর মতো।`}
           />
         ) : signal === "not-resembling" ? (
           <T
@@ -265,7 +277,7 @@ export default function HazardExplorer({ zones, manifest }: { zones: HazardZone[
 
         <div className="h-px bg-line" />
         <div id="zone-answer" className="scroll-mt-4">
-          <ZoneAnswer zone={zone} manifest={manifest} />
+          <ZoneAnswer zone={zone} manifest={manifest} outlook={outlook} risk={risk.find((r) => r.id === zone.id)} />
         </div>
       </MapSheet>
     </div>
@@ -293,7 +305,17 @@ function SignalBadge({ zone }: { zone: HazardZone }) {
   );
 }
 
-function ZoneAnswer({ zone, manifest }: { zone: HazardZone; manifest: Manifest }) {
+function ZoneAnswer({
+  zone,
+  manifest,
+  outlook,
+  risk,
+}: {
+  zone: HazardZone;
+  manifest: Manifest;
+  outlook: OutlookSummary;
+  risk: RiskRow | undefined;
+}) {
   const meta = HAZARD_META[zone.hazard];
   const bn = HAZARD_BN[zone.hazard];
   const ev = EVENTS[zone.hazard];
@@ -321,7 +343,7 @@ function ZoneAnswer({ zone, manifest }: { zone: HazardZone; manifest: Manifest }
         <div className="rounded-2xl bg-watch-soft p-4">
           <div className="flex items-center gap-2 font-semibold text-ink">
             <Warning size={22} weight="fill" className="text-watch" />
-            <T en={`Watch this year (${thisYear})`} bn={`এই বছর নজর দিন (${bnNum(thisYear)})`} />
+            <T en={`This year looks like past bad years (${thisYear})`} bn={`এই বছর আগের খারাপ বছরগুলোর মতো (${bnNum(thisYear)})`} />
           </div>
           {signal.drivers.map((d) => {
             const share = d.risk === "higher" ? d.latest.percentile : 100 - d.latest.percentile;
@@ -347,8 +369,8 @@ function ZoneAnswer({ zone, manifest }: { zone: HazardZone; manifest: Manifest }
           })}
           <p className="mt-2 text-sm leading-relaxed text-ink-2">
             <T
-              en="A good time to prepare early. This compares with history; it is not a forecast."
-              bn="আগেভাগে প্রস্তুতি নেওয়ার ভালো সময়। এটি অতীতের সাথে তুলনা; পূর্বাভাস নয়।"
+              en="A comparison with history, not a forecast. When we tested this kind of signal on past years, weather alone could not reliably pick out disaster years."
+              bn="অতীতের সাথে তুলনা, পূর্বাভাস নয়। অতীতের বছরে পরীক্ষা করে দেখা গেছে, শুধু আবহাওয়া দিয়ে নির্ভরযোগ্যভাবে দুর্যোগের বছর চেনা যায় না।"
             />
           </p>
         </div>
@@ -439,6 +461,8 @@ function ZoneAnswer({ zone, manifest }: { zone: HazardZone; manifest: Manifest }
           />
         </div>
       </div>
+
+      <FutureBlock hazard={zone.hazard} region={outlook.regions.find((r) => r.id === zone.id)} outlook={outlook} risk={risk} />
 
       {/* 3. What drives it */}
       <div>
