@@ -120,16 +120,20 @@ def summarise(results: dict, lats, lons, land, weights) -> dict:
         lw = np.array([results[m][sc]["landWarming"] for m in models])
         dw = np.stack([results[m][sc]["dw"] for m in models])
         hot = np.stack([results[m][sc]["hot"] for m in models])
+        dt = np.stack([results[m][sc]["dt"] for m in models])
         with warnings.catch_warnings():
             warnings.simplefilter("ignore", RuntimeWarning)
             dw_med = np.nanmedian(dw, axis=0)
             hot_med = np.nanmedian(hot, axis=0)
+            dt_med = np.nanmedian(dt, axis=0)
         agree = (np.sign(dw) == np.sign(dw_med)[None]).sum(axis=0)
         needed = int(np.ceil(2 * n / 3))
         ok = land & np.isfinite(dw_med)
         almost = (hot_med >= ALMOST_EVERY_YEAR) & land
         cells = [
-            [round(float(lats[i]), 2), round(float(lons[j] - 360 if lons[j] > 180 else lons[j]), 2), round(float(dw_med[i, j]), 1), int(agree[i, j] >= needed)]
+            # lat, lon, rainy-season change %, models agree (0/1), warming C, share of years beating today's 1-in-10 hot year
+            [round(float(lats[i]), 2), round(float(lons[j] - 360 if lons[j] > 180 else lons[j]), 2), round(float(dw_med[i, j]), 1), int(agree[i, j] >= needed),
+             round(float(dt_med[i, j]), 2), round(float(hot_med[i, j]), 2)]
             for i, j in zip(*np.nonzero(ok))
         ]
         wetter = int(((dw_med > 0) & (agree >= needed) & ok).sum())

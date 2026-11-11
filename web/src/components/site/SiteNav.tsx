@@ -75,7 +75,7 @@ export function SiteNav() {
 
         <div className="ml-auto flex items-center gap-2">
           <Link
-            href="/places"
+            href="/your-place"
             aria-label={t("Find a place", "জায়গা খুঁজুন")}
             title={t("Find a place", "জায়গা খুঁজুন")}
             className={`flex h-10 items-center gap-2 rounded-full px-3 text-sm transition-colors hover:bg-card ${
@@ -118,7 +118,7 @@ export function SiteNav() {
             );
           })}
           <Link
-            href="/places"
+            href="/your-place"
             aria-current={pathname.startsWith("/places") ? "page" : undefined}
             className={`mt-1 flex items-center gap-2 rounded-xl border-t border-line px-4 py-3 text-base ${
               pathname.startsWith("/places") ? "bg-card font-medium text-ink" : "text-ink-2"

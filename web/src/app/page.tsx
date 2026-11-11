@@ -4,7 +4,6 @@ import Link from "next/link";
 import { Reveal } from "@/components/home/Reveal";
 import { WarmingStripes } from "@/components/home/WarmingStripes";
 import { WorldTrendMap } from "@/components/home/WorldTrendMap";
-import { PlaceSearch } from "@/components/places/PlaceSearch";
 import { StartTourButton } from "@/components/site/Tour";
 import { bnNum } from "@/lib/bn";
 import { readData, readManifest, readTrendZones } from "@/lib/data";
@@ -33,7 +32,7 @@ const TOOLS: { href: string; Icon: Icon; title: [string, string]; text: [string,
   { href: "/explore", Icon: MapTrifold, title: ["Satellite map", "স্যাটেলাইট মানচিত্র"], text: ["See it from space, month by month", "মহাকাশ থেকে দেখুন, মাসে মাসে"] },
   { href: "/trends", Icon: ChartLineUp, title: ["Climate trends", "জলবায়ুর প্রবণতা"], text: ["Is it really changing here?", "এখানে কি সত্যিই বদলাচ্ছে?"] },
   { href: "/hazards", Icon: Warning, title: ["Disaster risk", "দুর্যোগের ঝুঁকি"], text: ["Floods, landslides, fires, cyclones", "বন্যা, ভূমিধস, আগুন, ঘূর্ণিঝড়"] },
-  { href: "/places", Icon: MapPin, title: ["Your city", "আপনার শহর"], text: ["A one-page climate report", "এক পাতার জলবায়ু রিপোর্ট"] },
+  { href: "/your-place", Icon: MapPin, title: ["Your place", "আপনার জায়গা"], text: ["Any town on Earth, past and future", "পৃথিবীর যেকোনো শহর, অতীত ও ভবিষ্যৎ"] },
 ];
 
 export default async function Home() {
@@ -225,9 +224,23 @@ export default async function Home() {
         <h2 id="explore-hdg" className="text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
           <T en="Explore it yourself" bn="নিজে দেখুন" />
         </h2>
-        <div className="mt-6 max-w-xl">
-          <PlaceSearch />
-        </div>
+        <form action="/your-place" method="get" role="search" className="mt-6 flex max-w-xl gap-2">
+          <label htmlFor="home-place" className="sr-only">
+            <T en="Town or city" bn="শহর বা এলাকা" />
+          </label>
+          <input
+            id="home-place"
+            name="q"
+            type="search"
+            autoComplete="off"
+            spellCheck={false}
+            placeholder="Any town on Earth, e.g. Nairobi…"
+            className="min-h-12 flex-1 rounded-full border border-line bg-card px-5 text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+          />
+          <button type="submit" className="min-h-12 rounded-full bg-accent-strong px-6 font-medium text-accent-ink transition-colors hover:bg-accent-hover">
+            <T en="Find your place" bn="আপনার জায়গা খুঁজুন" />
+          </button>
+        </form>
         <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {TOOLS.map(({ href, Icon, title, text }) => (
             <Link key={href} href={href} className="group flex items-center gap-3 rounded-2xl bg-card p-4 shadow-soft transition-transform hover:-translate-y-0.5">

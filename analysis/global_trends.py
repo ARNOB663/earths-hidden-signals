@@ -144,6 +144,32 @@ def main() -> None:
         "events": {"all": ev_counts, "severe": severe, "years": [2000, 2025], "landslideYears": [2007, 2017]},
     }
     (OUT / "summary.json").write_text(json.dumps(summary, indent=1), encoding="utf-8")
+
+    # Per-cell annual temperature series for each place's own warming stripes, in 30-degree tiles so a
+    # page loads only the tile it needs.
+    tiles: dict[str, dict[str, list]] = {}
+    for i, la in enumerate(t_lats):
+        for j, lo in enumerate(t_lons):
+            ser = t_annual[:, i, j]
+            if not np.isfinite(ser).all():
+                continue
+            tile = f"{int(np.floor(la / 30) * 30)}_{int(np.floor(lo / 30) * 30)}"
+            tiles.setdefault(tile, {})[f"{la:g},{lo:g}"] = [round(float(v), 2) for v in ser]
+    (OUT / "stripes").mkdir(exist_ok=True)
+    for tile, cells in tiles.items():
+        (OUT / "stripes" / f"{tile}.json").write_text(json.dumps(cells, separators=(",", ":")), encoding="utf-8")
+
+    # Recorded disasters on a 1-degree grid (cell centre, counts per type), for the place report.
+    kinds = ("flood", "cyclone", "drought", "landslide")
+    grid: dict[tuple[float, float], list[int]] = {}
+    for e in events:
+        key = (np.floor(e["lat"]) + 0.5, np.floor(e["lon"]) + 0.5)
+        grid.setdefault(key, [0, 0, 0, 0])[kinds.index(e["type"])] += 1
+    (OUT / "events-grid.json").write_text(
+        json.dumps({"kinds": kinds, "years": {"gdacs": [2000, 2025], "landslide": [2007, 2017]},
+                    "cells": [[float(k[0]), float(k[1]), *v] for k, v in sorted(grid.items())]}, separators=(",", ":")),
+        encoding="utf-8",
+    )
     for name, lats, lons, d, slope, sig, dec in (
         ("temperature", t_lats, t_lons, 2.0, t_slope, t_sig, 3),
         ("wet-season", r_lats, r_lons, 2.5, w_slope, w_sig, 2),

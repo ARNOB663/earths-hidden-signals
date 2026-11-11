@@ -11,7 +11,7 @@
 > **Global scripts (2026-11-09/11):** `analysis/global_trends.py` (per-cell global trends, land-mean stripes,
 > worldwide event counts), `global_hazards.py` (14 disaster hotspots: events, climate, weather link, 2041–60
 > outlook) and `global_future.py` (land-mean warming, hot-year recurrence and rainy-season change by 2041–60)
-> write `web/public/data/global/`. The latter two read NEX-GDDP-CMIP6 at 2° from `raw/cmip6_global/`
+> write `web/public/data/global/` (incl. `events-grid.json` and per-cell `stripes/` tiles used by `/your-place`, the any-place climate report). The latter two read NEX-GDDP-CMIP6 at 2° from `raw/cmip6_global/`
 > (`cmip6_download.py --global`, resume-safe) and use whichever models have complete files.
 
 
