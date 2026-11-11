@@ -1,80 +1,78 @@
-# earths-hidden-signals
+# Earth's Hidden Signals
 
-**Live site: https://earths-hidden-signals.vercel.app**
+**Live site: https://earths-hidden-signals.vercel.app** · NASA Space Apps Challenge 2026 · challenge *Be An Earth System Trend Detective!*
 
-**Earth's Hidden Signals: decoding NASA data before disaster.** Our project for the NASA Space Apps Challenge 2026 challenge *Be An Earth System Trend Detective!*
+Climate data usually stops at a chart. We turn 45 years of NASA records into answers a person can
+use: **what is changing, where, by how much, and is it real**, for every land area on Earth and for
+**any town you type in**. Then we show what that means for disasters, what NASA's climate projections
+say comes next, and what to prepare for. Everything is in English and Bangla.
 
-The same global warming shows up differently across South Asia: heavier rain in some places, drying in others, more heat everywhere. We use NASA Earth observation data to show **what** is changing, **where**, **by how much**, and **whether the change is statistically significant**. Then we link those trends to the floods, landslides and wildfires that follow.
+## What you can do
 
-## What's inside
-
-| Folder | What it is |
+| Page | Question it answers |
 |---|---|
-| [`web/`](web/) | Next.js + TypeScript website: Home, Signal (search, map, coverage, Watch Level, historical frequency), Gap, Replay, Accuracy, Act, Watch, plus Climate Trends (trend map, per-region and per-square Mann–Kendall / Sen's slope results), Climate Twins (places worldwide with the same trend fingerprint and the disasters they recorded), Future Outlook (NASA NEX-GDDP-CMIP6 projections for 2041–2060), Methods and For Organizations |
-| [`analysis/`](analysis/) | Python pipeline: downloads NASA records, runs the trend tests, writes JSON for the website |
+| [Home](https://earths-hidden-signals.vercel.app) | The global story in five chapters: warming stripes for Earth's land, rain moving in opposite directions, disasters worldwide, a zoom into South Asia, and 2041–2060. |
+| [Your place](https://earths-hidden-signals.vercel.app/your-place) | Type **any town on Earth**: its own warming stripes, the change since 1981, NASA projections for 2041–2060, floods, cyclones, droughts and landslides recorded within 300 km, and what to prepare for. Compare it with its **climate twin** elsewhere on Earth, and download the report as an image to share. |
+| [Climate trends](https://earths-hidden-signals.vercel.app/trends) | A world map of trends for temperature and rain, with a detailed South Asia view: every square's rate, its 95% range, whether it is significant, and where its record turned. |
+| [Disaster risk](https://earths-hidden-signals.vercel.app/hazards) | 14 disaster hotspots on every continent: recorded events, their climate trend, whether disasters follow the weather there, and the 2041–2060 outlook. South Asia's regions in full detail. |
+| [Satellite map](https://earths-hidden-signals.vercel.app/explore) | NASA satellite imagery (heat, rain, soil water, greenness, forest loss) month by month since 2000, with a compare slider. |
+| [How it works](https://earths-hidden-signals.vercel.app/methods) | Data, statistics, cross-checks and limits, written to be checked. |
 
-AGENTS.md (root) is the authoritative guide to the code layout, commands and data contracts. The
-audit and cleanup notes are in [`docs/CODEBASE_AUDIT.md`](docs/CODEBASE_AUDIT.md) and the resource
-inventory in [`docs/RESOURCE_INVENTORY.md`](docs/RESOURCE_INVENTORY.md). `CLAUDE.md` points at
-`AGENTS.md`.
+## What we found (1981–2025)
 
-## Data
+- **Hotter almost everywhere.** Earth's land warmed about **+1.5 °C** since 1981; about 3,850 of
+  3,900 land areas warmed significantly and only 10 cooled.
+- **The rain is moving both ways.** About 235 land areas got a clearly wetter rainy season and 216 a
+  clearly drier one, under the same warming. In South Asia the Indus plain got wetter while the
+  Bengal delta got drier.
+- **Disasters follow the weather in some places, not others.** Floods in the Yangtze, Sahel and
+  Indus plain and landslides in the Himalaya rise in wetter rainy seasons; Central Europe's and the
+  Mississippi's floods do not, a reminder that rivers, land use and protection matter.
+- **What comes next.** NASA's downscaled projections put most land's present 1-in-10 hottest year at
+  almost every year by 2041–2060 on a middle-road path (exact figures on the site, from up to six
+  climate models).
+- **An honest negative result.** A small machine-learning model could not tell disaster years from
+  ordinary ones better than chance once tested properly, so we never turn projections into disaster odds.
+
+## NASA data
 
 - **Temperature:** NASA GISTEMP v4 (GISS)
-- **Rainfall:** GPCP v2.3 (NASA GSFC / NOAA)
-- **Hazard events:** NASA FIRMS MODIS fires, NASA Global Landslide Catalog, GDACS flood alerts
-- **Administrative geography (Signal):** geoBoundaries `gbOpen` boundaries — **every** published
-  ADM0 country/territory (231 at the current release), plus ADM1 and ADM2 wherever the source
-  publishes them (198 and 179 countries respectively). Geography only: no weather data, no scores.
-  Each file's boundary ID, year, licence and upstream source is recorded. Unit names come from the
-  file's `.dbf` attribute table, not the multi-gigabyte geometry.
+- **Rainfall:** GPCP v2.3 monthly and 1DD daily (NASA GSFC / NOAA)
+- **Projections:** NASA NEX-GDDP-CMIP6 (six models, SSP2-4.5 and SSP5-8.5), downloaded without a login
+- **Satellite imagery:** NASA GIBS (MODIS, MERRA-2, SMAP, IMERG)
+- **Disasters:** NASA Global Landslide Catalog, NASA FIRMS fires (South Asia), GDACS floods, droughts and tropical cyclones, IBTrACS cyclone tracks
+- **Independent cross-check:** CRU TS 4.10 (University of East Anglia)
 
-Each Signal's **Watch Level** (how unusual today's rain is against the same date in the area's own
-record), **Data Trust Grade** and **historical flood frequency** are computed from the committed
-datasets. The daily rain readings themselves are currently **fixed samples** (`sample: true`), not
-live IMERG observations, and every surface that shows them says so. Coverage counts, historical case
-sizes and the Accuracy backtest are computed from real datasets.
+## How we know a change is real
 
-The global directory is split so the page stays light: `geography/index.json` plus
-`signals/areas/{ISO}.json` (one file per country, fetched when a country is opened) and
-`signals/area-search.json` (a compact name/signal index fetched on the first search). Per-boundary licences are recorded in
-`web/public/data/geography/license.json`; dataset credits are in
-`web/public/data/signals/provenance.json`.
-
-## Method
-
-- Autocorrelation-corrected (Hamed–Rao) Mann–Kendall test for significance
-- Sen's slope with a 95% confidence interval for the rate of change
-- Benjamini–Hochberg false-discovery-rate control for the map-wide results
-- Pettitt change-point test for where each region's record splits into "before" and "after"
-
-Details are in [`analysis/README.md`](analysis/README.md).
-
-## Key findings (1981–2025)
-
-- **Warming everywhere:** all 234 land cells warmed significantly, by about +0.31 °C per decade (+1.4 °C since 1981).
-- **Monsoon rain splits:** the Indus plain got wetter, while the Bengal delta, Central Himalaya, Western Ghats and Northeast hills got drier. Most cells show no detectable trend.
-- **2025 preparedness signals:** Indus plain floods and Western Himalaya landslides. In both regions, 2025 monsoon rain resembles past high-event years (evidence for readiness, not a forecast).
+- Hamed–Rao Mann–Kendall test (corrected for year-to-year memory) for significance
+- Sen's slope with a 95% confidence range for how much
+- Benjamini–Hochberg false-discovery control on every map, so testing thousands of squares does not create false alarms
+- Pettitt change-point test for where a record turns
+- Every result repeated against an independent station-based record (CRU TS)
+- Projections: each model compared only with its own 1995–2014 run; we report how many models agree
+- When a change is not significant, the site says so plainly
 
 ## Run it
 
 ```bash
-# analysis (optional: results are already in web/public/data)
-cd analysis
-pip install -r requirements.txt
-python build.py
-python build_geography.py        # geoBoundaries gbOpen boundaries (network; then --offline)
-python build_signal_scores.py    # Signals coverage and demo scores
-python build_hazards.py
-python turning.py                # turning points (Pettitt) for each region's record
-python twins.py                  # Climate Twins: global trend fingerprints + GDACS / landslide records
-python cmip6_download.py && python future.py   # Future Outlook: NASA NEX-GDDP-CMIP6 (no login)
-python risk.py                   # hazard risk model, scored on unseen years (published even when it fails)
-
-# website
+# website (all results are already committed in web/public/data)
 cd web
 npm install
-npm run dev    # http://localhost:3000
+npm run dev          # http://localhost:3000
+
+# analysis (optional: regenerates the data; Python 3.10+)
+cd analysis
+pip install -r requirements.txt
+python build.py && python build_hazards.py && python cyclones.py && python crosscheck.py && python latest.py
+python turning.py                          # turning points
+python cmip6_download.py && python future.py && python risk.py       # South Asia projections and model test
+python twins.py && python global_trends.py                           # global trends, place data, twins
+python cmip6_download.py --global && python global_future.py && python global_hazards.py   # global projections and hotspots
+python -m pytest -q                        # tests for the statistics and pipelines
 ```
 
-This project shows evidence-based trends to support preparedness. It is **not** a disaster prediction system.
+No account or API key is needed for any step. [`AGENTS.md`](AGENTS.md) describes the code layout and data files.
+
+This project shows evidence-based trends to help people prepare. It is **not** a disaster forecast;
+always follow official warnings.
