@@ -613,6 +613,13 @@ export default function MapExplorer({ catalog }: { catalog: GibsCatalog }) {
   );
 }
 
+/** Words for the two ends of a satellite colour key. */
+const ENDS: Record<DiffKind, [[string, string], [string, string]]> = {
+  temp: [["Cold", "ঠান্ডা"], ["Hot", "গরম"]],
+  rain: [["Dry", "শুষ্ক"], ["Wet", "ভেজা"]],
+  green: [["Bare", "খালি"], ["Green", "সবুজ"]],
+};
+
 function ColourKey({
   layer,
   info,
@@ -626,7 +633,14 @@ function ColourKey({
   const t = useT();
   if (layer.kind === "gibs" && diff) return <DiffLegend kind={layer.diff.kind} range={layer.diff.range} unit={[layer.diff.unit, layer.diff.unitBn]} {...diff} />;
   if (layer.kind === "gibs" && info?.legend)
-    return <LegendBar legend={info.legend} unit={t(layer.displayUnit, layer.bn.unit ?? layer.displayUnit)} />;
+    return (
+      <LegendBar
+        legend={info.legend}
+        unit={t(layer.displayUnit, layer.bn.unit ?? layer.displayUnit)}
+        ends={[t(...ENDS[layer.diff.kind][0]), t(...ENDS[layer.diff.kind][1])]}
+        digits={(x) => t(x, bnNum(x))}
+      />
+    );
   if (layer.kind === "forest-loss")
     return (
       <div>

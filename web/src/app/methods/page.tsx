@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { CaretDown } from "@phosphor-icons/react/ssr";
 import Link from "next/link";
 import { readCrosscheck, readManifest, readTrendZones } from "@/lib/data";
 import { CITATION } from "@/lib/download";
@@ -95,7 +96,8 @@ export default async function MethodsPage() {
         ))}
       </div>
 
-      <Section title="1. Data">
+      <div className="mt-12 border-t border-line" />
+      <Section title="1. Data" lede="NASA temperature, rain and projections, plus disaster records.">
         <div className="overflow-x-auto rounded-2xl bg-card shadow-soft">
           <table className="w-full min-w-[520px] text-left text-sm">
             <thead className="bg-sunken text-ink-3">
@@ -126,7 +128,7 @@ export default async function MethodsPage() {
         </Callout>
       </Section>
 
-      <Section title="2. How much is it changing?">
+      <Section title="2. How much is it changing?" lede="Sen's slope per decade, with a 95% range.">
         <p>
           We use <strong className="font-semibold text-ink">Sen&apos;s slope</strong>: the median of the slopes between every pair of
           years. Unlike a straight-line fit, one extreme year can&apos;t drag it. We report it per decade with a{" "}
@@ -135,7 +137,7 @@ export default async function MethodsPage() {
         </p>
       </Section>
 
-      <Section title="3. Is it significant?">
+      <Section title="3. Is it significant?" lede="Mann–Kendall, corrected for memory, with false-discovery control.">
         <p>
           The <strong className="font-semibold text-ink">Mann–Kendall test</strong> asks: if there were no trend, how likely would
           it be to see this many years higher than earlier years? A small p-value (below 0.05) means chance is an unlikely
@@ -158,7 +160,7 @@ export default async function MethodsPage() {
         </Callout>
       </Section>
 
-      <Section title="4. Do other datasets agree?">
+      <Section title="4. Do other datasets agree?" lede="Repeated against CRU TS, a station-based record.">
         <p>
           We repeated the main trends with a completely separate climate record, <strong className="font-semibold text-ink">CRU TS 4.10</strong>{" "}
           from the University of East Anglia, which is built from weather stations with its own methods. Where both records tell
@@ -195,7 +197,7 @@ export default async function MethodsPage() {
         </p>
       </Section>
 
-      <Section title="5. From trends to hazards">
+      <Section title="5. From trends to hazards" lede="Do disaster years line up with unusual weather?">
         <p>
           For each hazard region we count past events per year, then ask whether high-event years line up with unusual
           heat or rain. We use a Spearman correlation after removing each series&apos; long-term trend, so two things that
@@ -211,7 +213,7 @@ export default async function MethodsPage() {
         </p>
       </Section>
 
-      <Section title="6. The world, turning points and the future">
+      <Section title="6. The world, turning points and the future" lede="Global maps, hotspots, turning points and 2041–2060.">
         <ul className="list-disc space-y-2 pl-5">
           <li>
             <strong className="font-semibold text-ink">World view.</strong> The same tests run on every land grid cell from 55°S to
@@ -242,7 +244,7 @@ export default async function MethodsPage() {
         </ul>
       </Section>
 
-      <Section title="7. Limitations">
+      <Section title="7. Limitations" lede="What this data can't tell you.">
         <ul className="list-disc space-y-1.5 pl-5">
           <li>Grids are coarse (2°–2.5°, about 200–280 km), so local extremes are smoothed out.</li>
           <li>Hazard regions are approximate rectangles, not exact watersheds or forest boundaries.</li>
@@ -252,7 +254,7 @@ export default async function MethodsPage() {
         </ul>
       </Section>
 
-      <Section title="8. Reproduce it">
+      <Section title="8. Reproduce it" lede="Open code; every number rebuilds without a login.">
         <p>
           Everything is open source at{" "}
           <a href={REPO} className="text-accent hover:underline">
@@ -269,12 +271,12 @@ export default async function MethodsPage() {
         </p>
       </Section>
 
-      <Section title="9. How to cite this work">
+      <Section title="9. How to cite this work" lede="One line to cite the site and its data.">
         <p>Every chart on the site has a &ldquo;Download the data (CSV)&rdquo; button. If you use the data or the results, please cite:</p>
         <p className="rounded-2xl bg-card p-4 font-mono text-sm leading-relaxed text-ink shadow-soft">{CITATION}</p>
       </Section>
 
-      <Section title="References">
+      <Section title="References" lede="The papers behind every method.">
         <ol className="list-decimal space-y-1 pl-5 text-sm text-ink-3">
           {REFERENCES.map((ref) => (
             <li key={ref}>{ref}</li>
@@ -316,12 +318,19 @@ function CheckCell({ pair, decimals }: { pair?: { ours: TrendSummary | null; cru
   );
 }
 
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
+/** One method, closed by default: the heading and a one-line answer, the detail on click. */
+function Section({ title, lede, children }: { title: string; lede: string; children: React.ReactNode }) {
   return (
-    <section className="mt-14 space-y-3">
-      <h2 className="text-2xl font-semibold tracking-tight text-ink">{title}</h2>
-      {children}
-    </section>
+    <details className="group border-b border-line [&[open]]:pb-8">
+      <summary className="flex cursor-pointer list-none items-start justify-between gap-4 py-5 [&::-webkit-details-marker]:hidden">
+        <span>
+          <h2 className="text-xl font-semibold tracking-tight text-ink transition-colors group-hover:text-accent sm:text-2xl">{title}</h2>
+          <span className="mt-1 block text-sm text-ink-3">{lede}</span>
+        </span>
+        <CaretDown size={20} aria-hidden className="mt-1.5 shrink-0 text-ink-3 transition-transform group-open:rotate-180" />
+      </summary>
+      <div className="space-y-3">{children}</div>
+    </details>
   );
 }
 

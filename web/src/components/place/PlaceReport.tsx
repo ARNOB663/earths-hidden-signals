@@ -22,6 +22,7 @@ import {
   type Place,
   type Report,
   type Scenario,
+  type TrendCell,
 } from "./placeData";
 
 /** What a report holds, shown before anyone searches so the empty page says what it is for. */
@@ -285,10 +286,15 @@ export default function PlaceReport() {
           <p role="status" className="sr-only">
             {report ? (bn ? `${place.name || "এই জায়গা"}-এর রিপোর্ট তৈরি` : `Report for ${place.name || "this place"} ready`) : ""}
           </p>
-          <h2 id="report-title" className="text-5xl font-semibold leading-none tracking-tight text-ink sm:text-7xl">{place.name || (bn ? "এই জায়গা" : "This place")}</h2>
-          <p className="mt-2 text-sm text-ink-3">
-            {place.detail && `${place.detail} `}({n(place.lat.toFixed(2))}°, {n(place.lon.toFixed(2))}°)
-          </p>
+          <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+            <div className="min-w-0">
+              <h2 id="report-title" className="text-5xl font-semibold leading-none tracking-tight text-ink sm:text-7xl">{place.name || (bn ? "এই জায়গা" : "This place")}</h2>
+              <p className="mt-2 text-sm text-ink-3">
+                {place.detail && `${place.detail} `}({n(place.lat.toFixed(2))}°, {n(place.lon.toFixed(2))}°)
+              </p>
+            </div>
+            {data && <Locator cells={data.temp} pins={other ? [place, other] : [place]} label={bn ? "বিশ্ব মানচিত্রে অবস্থান" : "Where it is on the world map"} />}
+          </div>
 
           <div className="mt-6 h-28 w-full overflow-hidden rounded-xl sm:h-40">
             {stripes ? (
@@ -331,6 +337,7 @@ export default function PlaceReport() {
                   </h3>
                   <Fact
                     big={`${n(signed(report.temp[2] * 4.4, 1))} °${bn ? "সে" : "C"}`}
+                    tone={report.temp[3] ? (report.temp[2] > 0 ? "warm" : "cool") : null}
                     line={
                       report.temp[3] ? (
                         <T en="warmer, a clear change." bn="বেশি গরম, স্পষ্ট পরিবর্তন।" />
@@ -342,6 +349,7 @@ export default function PlaceReport() {
                   {report.wet && (
                     <Fact
                       big={`${n(signed(report.wet[2], 0))}%`}
+                      tone={report.wet[3] ? (report.wet[2] > 0 ? "cool" : "warm") : null}
                       line={
                         report.wet[3] ? (
                           <T
@@ -385,10 +393,12 @@ export default function PlaceReport() {
                     <>
                       <Fact
                         big={`${n(signed(report.fut[4], 1))} °${bn ? "সে" : "C"}`}
+                        tone={report.fut[4] > 0 ? "warm" : null}
                         line={<T en="warmer again, compared with 1995–2014." bn="আরও গরম, ১৯৯৫–২০১৪ সালের তুলনায়।" />}
                       />
                       <Fact
                         big={report.fut[5] >= 0.95 ? (bn ? "প্রতি বছর" : "Every year") : `${n(Math.max(1, Math.round(report.fut[5] * 10)))} ${bn ? "/ ১০ বছর" : "in 10 years"}`}
+                        tone={report.fut[5] >= 0.5 ? "warm" : null}
                         line={<T en="a year as hot as today's hottest in ten." bn="আজকের ১০ বছরে সবচেয়ে গরম বছরের মতো বছর।" />}
                       />
                       <p className="mt-4 text-sm text-ink-2">
@@ -536,10 +546,14 @@ export default function PlaceReport() {
   );
 }
 
-function Fact({ big, line }: { big: string; line: React.ReactNode }) {
+type Tone = "warm" | "cool" | null;
+const TONE: Record<string, string> = { warm: "text-[var(--warm-4)]", cool: "text-[var(--cool-4)]" };
+
+/** A headline number, coloured only when the change is clear: red for warmer or drier, blue for wetter. */
+function Fact({ big, line, tone = null }: { big: string; line: React.ReactNode; tone?: Tone }) {
   return (
     <p className="mt-5">
-      <span className="block text-4xl font-semibold tabular-nums tracking-tight text-ink">{big}</span>
+      <span className={`block text-4xl font-semibold tabular-nums tracking-tight ${tone ? TONE[tone] : "text-ink"}`}>{big}</span>
       <span className="mt-1 block text-ink-2">{line}</span>
     </p>
   );
@@ -683,5 +697,22 @@ function Compare({ a, b, bn, onClear }: { a: Side; b: Side; bn: boolean; onClear
         <T en="Compare with a different place" bn="অন্য জায়গার সাথে তুলনা করুন" />
       </button>
     </div>
+  );
+}
+
+/** A tiny world of land squares with the place pinned: where on Earth this report is. */
+function Locator({ cells, pins, label }: { cells: TrendCell[]; pins: Place[]; label: string }) {
+  return (
+    <svg viewBox="-180 -76 360 134" role="img" aria-label={label} className="h-auto w-[220px] shrink-0 sm:w-[280px]">
+      {cells.map(([lat, lon]) => (
+        <rect key={`${lat},${lon}`} x={lon - 0.9} y={-lat - 0.9} width={1.8} height={1.8} rx={0.4} fill="var(--ink-3)" opacity={0.28} />
+      ))}
+      {pins.map((p, i) => (
+        <g key={i}>
+          <circle cx={p.lon} cy={-p.lat} r={9} fill={i === 0 ? "var(--accent)" : "var(--ink-3)"} opacity={0.18} />
+          <circle cx={p.lon} cy={-p.lat} r={3.6} fill={i === 0 ? "var(--accent)" : "var(--ink-3)"} stroke="var(--page)" strokeWidth={1.4} />
+        </g>
+      ))}
+    </svg>
   );
 }

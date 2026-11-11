@@ -1,6 +1,7 @@
-import { ArrowRight, ChartLineUp, MapPin, MapTrifold, Warning } from "@phosphor-icons/react/ssr";
+import { ArrowRight, ChartLineUp, MapTrifold, Warning } from "@phosphor-icons/react/ssr";
 import type { Icon } from "@phosphor-icons/react";
 import Link from "next/link";
+import { HomeSearch } from "@/components/home/HomeSearch";
 import { Reveal } from "@/components/home/Reveal";
 import { WarmingStripes } from "@/components/home/WarmingStripes";
 import { WorldTrendMap } from "@/components/home/WorldTrendMap";
@@ -32,7 +33,6 @@ const TOOLS: { href: string; Icon: Icon; title: [string, string]; text: [string,
   { href: "/explore", Icon: MapTrifold, title: ["Satellite map", "স্যাটেলাইট মানচিত্র"], text: ["See it from space, month by month", "মহাকাশ থেকে দেখুন, মাসে মাসে"] },
   { href: "/trends", Icon: ChartLineUp, title: ["Climate trends", "জলবায়ুর প্রবণতা"], text: ["Is it really changing here?", "এখানে কি সত্যিই বদলাচ্ছে?"] },
   { href: "/hazards", Icon: Warning, title: ["Disaster risk", "দুর্যোগের ঝুঁকি"], text: ["Floods, landslides, fires, cyclones", "বন্যা, ভূমিধস, আগুন, ঘূর্ণিঝড়"] },
-  { href: "/your-place", Icon: MapPin, title: ["Your place", "আপনার জায়গা"], text: ["Any town on Earth, past and future", "পৃথিবীর যেকোনো শহর, অতীত ও ভবিষ্যৎ"] },
 ];
 
 export default async function Home() {
@@ -121,7 +121,7 @@ export default async function Home() {
       </section>
 
       {/* The story: four chapters, one idea each */}
-      <div id="story" className="mx-auto mt-20 w-full max-w-[1000px] scroll-mt-20 space-y-24 px-4 sm:mt-28 sm:space-y-32 sm:px-6">
+      <div id="story" className="mx-auto mt-16 w-full max-w-[1100px] scroll-mt-20 space-y-20 px-4 sm:mt-24 sm:space-y-24 sm:px-6">
         <Chapter
           n={1}
           title={<T en="Hotter almost everywhere" bn="প্রায় সবখানে গরম বাড়ছে" />}
@@ -133,7 +133,14 @@ export default async function Home() {
             />
           }
           href="/trends"
-          visual={<WorldTrendMap file="temperature" limit={0.6} increaseIsRed label="World map of temperature trends since 1981: almost all land is red (warming)." />}
+          visual={
+            <div>
+              <WorldTrendMap file="temperature" limit={0.6} increaseIsRed label="World map of temperature trends since 1981: almost all land is red (warming)." />
+              <p className="mt-2 text-xs text-ink-3">
+                <T en="Red: warmer · Blue: cooler · Faded: no clear change" bn="লাল: উষ্ণ · নীল: শীতল · হালকা: স্পষ্ট পরিবর্তন নেই" />
+              </p>
+            </div>
+          }
         />
 
         <Chapter
@@ -226,7 +233,7 @@ export default async function Home() {
       </div>
 
       {/* How we know: one line for validity */}
-      <p className="mx-auto mt-24 w-full max-w-[1000px] px-4 text-ink-2 sm:px-6">
+      <p className="mx-auto mt-20 w-full max-w-[1100px] px-4 text-ink-2 sm:px-6">
         <T
           en="How we know it's real: every trend passes a statistical test that rules out chance, is checked against an independent record, and we say plainly when a change is not yet clear."
           bn="আমরা কীভাবে জানি এটা সত্যি: প্রতিটি প্রবণতা এমন পরিসংখ্যানগত পরীক্ষায় উত্তীর্ণ যা কাকতালীয়তা বাদ দেয়, একটি স্বাধীন রেকর্ডের সাথে যাচাই করা হয়, আর পরিবর্তন স্পষ্ট না হলে আমরা সোজাসুজি বলি।"
@@ -237,28 +244,12 @@ export default async function Home() {
       </p>
 
       {/* Explore it yourself */}
-      <section aria-labelledby="explore-hdg" className="mx-auto mt-28 w-full max-w-[1200px] px-4 sm:px-6">
+      <section aria-labelledby="explore-hdg" className="mx-auto mt-20 w-full max-w-[1100px] px-4 sm:px-6">
         <h2 id="explore-hdg" className="text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
           <T en="Explore it yourself" bn="নিজে দেখুন" />
         </h2>
-        <form action="/your-place" method="get" role="search" className="mt-6 flex max-w-xl gap-2">
-          <label htmlFor="home-place" className="sr-only">
-            <T en="Town or city" bn="শহর বা এলাকা" />
-          </label>
-          <input
-            id="home-place"
-            name="q"
-            type="search"
-            autoComplete="off"
-            spellCheck={false}
-            placeholder="Any town on Earth, e.g. Nairobi…"
-            className="min-h-12 flex-1 rounded-full border border-line bg-card px-5 text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
-          />
-          <button type="submit" className="min-h-12 rounded-full bg-accent-strong px-6 font-medium text-accent-ink transition-colors hover:bg-accent-hover">
-            <T en="Find your place" bn="আপনার জায়গা খুঁজুন" />
-          </button>
-        </form>
-        <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <HomeSearch />
+        <div className="mt-6 grid gap-3 sm:grid-cols-3">
           {TOOLS.map(({ href, Icon, title, text }) => (
             <Link key={href} href={href} className="group flex items-center gap-3 rounded-2xl bg-card p-4 shadow-soft transition-transform hover:-translate-y-0.5">
               <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-accent-soft text-accent">
@@ -297,8 +288,8 @@ function Chapter({
 }) {
   return (
     <Reveal>
-      <section className={`grid items-center gap-8 md:grid-cols-2 md:gap-14 ${n % 2 === 0 ? "md:[&>*:first-child]:order-2" : ""}`}>
-        <div>
+      <section className={`grid items-center gap-8 md:grid-cols-5 md:gap-12 ${n % 2 === 0 ? "md:[&>*:first-child]:order-2" : ""}`}>
+        <div className="md:col-span-2">
           <p className="text-sm font-medium text-accent tabular-nums">
             <T en={`Chapter ${n}`} bn={`অধ্যায় ${bnNum(n)}`} />
           </p>
@@ -309,7 +300,7 @@ function Chapter({
             <T en="See it" bn="দেখুন" /> <ArrowRight size={16} />
           </Link>
         </div>
-        <div className="rounded-3xl bg-card p-6 shadow-soft">{visual}</div>
+        <div className="rounded-3xl bg-card p-4 shadow-soft sm:p-5 md:col-span-3">{visual}</div>
       </section>
     </Reveal>
   );
