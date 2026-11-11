@@ -356,7 +356,7 @@ export default function MapExplorer({ catalog }: { catalog: GibsCatalog }) {
       >
         <section>
           <div className="flex items-start justify-between gap-3">
-            <h1 className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-3">
+            <h1 className="text-sm font-semibold text-ink">
               <T en="Show on the map" bn="মানচিত্রে দেখান" />
             </h1>
             <button
@@ -395,7 +395,7 @@ export default function MapExplorer({ catalog }: { catalog: GibsCatalog }) {
         </section>
 
         <section>
-          <h2 className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-3">
+          <h2 className="text-sm font-semibold text-ink">
             <T en="When" bn="কখন" />
           </h2>
           {layer.kind === "gibs" && date ? (
@@ -535,7 +535,7 @@ export default function MapExplorer({ catalog }: { catalog: GibsCatalog }) {
         </section>
 
         <section>
-          <h2 className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-3">
+          <h2 className="text-sm font-semibold text-ink">
             <T en="Colour key" bn="রঙের অর্থ" />
           </h2>
           <div className="mt-2">
@@ -545,7 +545,7 @@ export default function MapExplorer({ catalog }: { catalog: GibsCatalog }) {
 
         {layer.kind === "forest-loss" && (
           <section>
-            <h2 className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-3">
+            <h2 className="text-sm font-semibold text-ink">
               <T en="Forest lost each year (area in view)" bn="প্রতি বছর বন উজাড় (দেখা এলাকায়)" />
             </h2>
             <div className="mt-3">

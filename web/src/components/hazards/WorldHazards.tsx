@@ -6,6 +6,7 @@
 
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
+import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { createBaseMap, type BaseMap } from "@/components/map/baseMap";
 import { bnNum } from "@/lib/bn";
@@ -58,7 +59,7 @@ export default function WorldHazards({ data, onZoomSouthAsia }: { data: Hotspots
     // Fit the hotspots into the part of the map the panel doesn't cover.
     const wide = window.innerWidth >= 640;
     b.map.setMinZoom(1); // phones need one more level out to see every continent
-    b.map.fitBounds([[-32, -100], [52, 130]], { animate: false, paddingTopLeft: [8, 56], paddingBottomRight: wide ? [400, 8] : [8, 260] });
+    b.map.fitBounds([[-32, -100], [52, 130]], { animate: false, paddingTopLeft: [8, 56], paddingBottomRight: wide ? [400, 8] : [8, Math.round(host.current!.clientHeight * 0.5)] });
     base.current = b;
     layer.current = L.layerGroup().addTo(b.map);
     return () => b.dispose();
@@ -96,7 +97,7 @@ export default function WorldHazards({ data, onZoomSouthAsia }: { data: Hotspots
     <div className="relative h-full">
       <div ref={host} className="absolute inset-0 bg-sunken" />
 
-      <aside className="absolute bottom-3 left-3 right-3 z-[500] max-h-[60%] overflow-y-auto rounded-2xl bg-card p-4 shadow-soft sm:bottom-auto sm:left-auto sm:right-3 sm:top-16 sm:max-h-[calc(100%-5rem)] sm:w-[380px]">
+      <aside className="absolute bottom-3 left-3 right-3 z-[500] max-h-[48%] overflow-y-auto overscroll-contain rounded-2xl bg-card p-4 shadow-soft sm:bottom-auto sm:left-auto sm:right-3 sm:top-16 sm:max-h-[calc(100%-5rem)] sm:w-[380px]">
         <div className="flex flex-wrap gap-1.5 text-xs">
           {(["all", ...ORDER] as const).map((h) => (
             <button
@@ -152,7 +153,7 @@ export default function WorldHazards({ data, onZoomSouthAsia }: { data: Hotspots
                 <li>
                   <T
                     en={`Warming ${region.climate.warming.perDecade > 0 ? "+" : ""}${region.climate.warming.perDecade.toFixed(2)} °C per decade${region.climate.warming.p < ALPHA ? " (clear)" : ""}.`}
-                    bn={`উষ্ণতা প্রতি দশকে ${bnNum(region.climate.warming.perDecade.toFixed(2))} °সে${region.climate.warming.p < ALPHA ? " (স্পষ্ট)" : ""}।`}
+                    bn={`উষ্ণতা প্রতি দশকে ${region.climate.warming.perDecade > 0 ? "+" : ""}${bnNum(region.climate.warming.perDecade.toFixed(2))} °সে${region.climate.warming.p < ALPHA ? " (স্পষ্ট)" : ""}।`}
                   />
                 </li>
               )}
@@ -160,7 +161,7 @@ export default function WorldHazards({ data, onZoomSouthAsia }: { data: Hotspots
                 <li>
                   <T
                     en={`Rainy season ${region.climate.wetSeason.perDecade > 0 ? "+" : ""}${region.climate.wetSeason.perDecade.toFixed(1)}% per decade${region.climate.wetSeason.p < ALPHA ? " (clear)" : " (no clear change)"}.`}
-                    bn={`বর্ষা মৌসুম প্রতি দশকে ${bnNum(region.climate.wetSeason.perDecade.toFixed(1))}%${region.climate.wetSeason.p < ALPHA ? " (স্পষ্ট)" : " (স্পষ্ট পরিবর্তন নেই)"}।`}
+                    bn={`বর্ষা মৌসুম প্রতি দশকে ${region.climate.wetSeason.perDecade > 0 ? "+" : ""}${bnNum(region.climate.wetSeason.perDecade.toFixed(1))}%${region.climate.wetSeason.p < ALPHA ? " (স্পষ্ট)" : " (স্পষ্ট পরিবর্তন নেই)"}।`}
                   />
                 </li>
               )}
@@ -179,6 +180,13 @@ export default function WorldHazards({ data, onZoomSouthAsia }: { data: Hotspots
             </ul>
 
             {region.future && <Future region={region} years={data.future} models={data.models.length} />}
+
+            <Link
+              href={`/your-place?lat=${((region.bbox[0] + region.bbox[1]) / 2).toFixed(2)}&lon=${((region.bbox[2] + region.bbox[3]) / 2).toFixed(2)}&name=${encodeURIComponent(region.name)}`}
+              className="inline-flex min-h-10 items-center text-sm font-medium text-accent hover:underline"
+            >
+              <T en="Open a full report for this area" bn="এই এলাকার পূর্ণ রিপোর্ট দেখুন" />
+            </Link>
 
             {region.events.notable.length > 0 && (
               <details className="rounded-xl border border-line">

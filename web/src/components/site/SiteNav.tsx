@@ -9,7 +9,7 @@ import { setThemePreference, systemTheme, useThemePreference, type ThemePreferen
 
 export const TABS = [
   { href: "/", label: "Home", bn: "হোম" },
-  { href: "/findings", label: "The story", bn: "মূল গল্প" },
+  { href: "/findings", label: "South Asia", bn: "দক্ষিণ এশিয়া" },
   { href: "/explore", label: "Satellite map", bn: "স্যাটেলাইট মানচিত্র" },
   { href: "/trends", label: "Climate trends", bn: "জলবায়ুর প্রবণতা" },
   { href: "/hazards", label: "Disaster risk", bn: "দুর্যোগের ঝুঁকি" },
@@ -40,6 +40,7 @@ export function SiteNav() {
     window.addEventListener("scroll", update, { passive: true });
     return () => window.removeEventListener("scroll", update);
   }, []);
+  const placeActive = pathname.startsWith("/your-place") || pathname.startsWith("/places");
   const mapPage = ["/explore", "/trends", "/hazards"].some((href) => pathname.startsWith(href));
   const separated = scrolled || open || mapPage;
 
@@ -79,7 +80,7 @@ export function SiteNav() {
             aria-label={t("Find a place", "জায়গা খুঁজুন")}
             title={t("Find a place", "জায়গা খুঁজুন")}
             className={`flex h-10 items-center gap-2 rounded-full px-3 text-sm transition-colors hover:bg-card ${
-              pathname.startsWith("/places") ? "bg-card font-medium text-ink shadow-soft" : "text-ink-2"
+              placeActive ? "bg-card font-medium text-ink shadow-soft" : "text-ink-2"
             }`}
           >
             <MagnifyingGlass size={18} />
@@ -119,9 +120,9 @@ export function SiteNav() {
           })}
           <Link
             href="/your-place"
-            aria-current={pathname.startsWith("/places") ? "page" : undefined}
+            aria-current={placeActive ? "page" : undefined}
             className={`mt-1 flex items-center gap-2 rounded-xl border-t border-line px-4 py-3 text-base ${
-              pathname.startsWith("/places") ? "bg-card font-medium text-ink" : "text-ink-2"
+              placeActive ? "bg-card font-medium text-ink" : "text-ink-2"
             }`}
           >
             <MagnifyingGlass size={18} />

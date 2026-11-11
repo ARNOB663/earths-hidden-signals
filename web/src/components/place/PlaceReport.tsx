@@ -4,6 +4,7 @@
 // NASA's projections say for 2041–2060, disasters recorded nearby, and what to prepare for.
 // Everything is read from the committed data in /data/global/; place names come from Open-Meteo.
 
+import { CalendarBlank, Globe, Thermometer, Warning } from "@phosphor-icons/react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { WarmingStripes } from "@/components/home/WarmingStripes";
 import { bnNum } from "@/lib/bn";
@@ -22,6 +23,14 @@ import {
   type Report,
   type Scenario,
 } from "./placeData";
+
+/** What a report holds, shown before anyone searches so the empty page says what it is for. */
+const PREVIEW = [
+  { Icon: Thermometer, en: "What changed since 1981", bn: "১৯৮১ থেকে কী বদলেছে", sub: "Its own warming stripes and rain trend.", subBn: "নিজস্ব উষ্ণতার রেখা আর বৃষ্টির প্রবণতা।" },
+  { Icon: CalendarBlank, en: "What comes by 2041–2060", bn: "২০৪১–২০৬০ সালে কী আসছে", sub: "NASA climate projections, two paths.", subBn: "নাসার জলবায়ু অনুমান, দুই পথে।" },
+  { Icon: Warning, en: "Disasters nearby", bn: "আশপাশের দুর্যোগ", sub: "Floods, cyclones, droughts, landslides since 2000.", subBn: "২০০০ থেকে বন্যা, ঘূর্ণিঝড়, খরা, ভূমিধস।" },
+  { Icon: Globe, en: "Its climate twin", bn: "তার জলবায়ু-যমজ", sub: "A faraway place with a similar climate and change.", subBn: "দূরের এক জায়গা, যার জলবায়ু আর পরিবর্তন একই রকম।" },
+];
 
 const QUICK: Place[] = [
   { name: "Dhaka", detail: "Bangladesh", lat: 23.81, lon: 90.41 },
@@ -232,6 +241,24 @@ export default function PlaceReport() {
                 <span className="font-medium text-ink">{p.name}</span>
                 <span className="truncate text-sm text-ink-3">{p.detail}</span>
               </button>
+            </li>
+          ))}
+        </ul>
+      )}
+
+      {!place && results.length === 0 && (
+        <ul className="mt-16 grid max-w-3xl gap-x-8 gap-y-6 sm:grid-cols-2">
+          {PREVIEW.map(({ Icon, en, bn: b, sub, subBn }) => (
+            <li key={en} className="flex gap-3">
+              <Icon size={24} className="mt-0.5 shrink-0 text-accent" aria-hidden />
+              <div>
+                <p className="font-medium text-ink">
+                  <T en={en} bn={b} />
+                </p>
+                <p className="text-sm text-ink-3">
+                  <T en={sub} bn={subBn} />
+                </p>
+              </div>
             </li>
           ))}
         </ul>

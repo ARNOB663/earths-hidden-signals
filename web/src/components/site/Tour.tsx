@@ -41,19 +41,19 @@ const STOPS: { href: string; title: [string, string]; text: [string, string] }[]
     ],
   },
   {
-    href: "/places/dhaka",
-    title: ["A report for your city", "আপনার শহরের রিপোর্ট"],
+    href: "/your-place?lat=23.81&lon=90.41&name=Dhaka&in=Bangladesh",
+    title: ["A report for your town", "আপনার শহরের রিপোর্ট"],
     text: [
-      "Each of 54 cities has a one-page climate report: how much warmer it got, how its rain changed, and which disasters happen nearby. Here is Dhaka.",
-      "৫৪টি শহরের প্রতিটির এক পাতার জলবায়ু রিপোর্ট আছে: কতটা গরম বেড়েছে, বৃষ্টি কীভাবে বদলেছে, আর আশপাশে কোন দুর্যোগ ঘটে। এই যে ঢাকা।",
+      "Type any town on Earth: its own warming stripes, what changed, NASA's outlook for 2041–2060 and disasters nearby. Here is Dhaka.",
+      "পৃথিবীর যেকোনো শহরের নাম লিখুন: তার নিজের উষ্ণতার রেখা, কী বদলেছে, ২০৪১–২০৬০ নিয়ে নাসার অনুমান আর আশপাশের দুর্যোগ। এই যে ঢাকা।",
     ],
   },
   {
     href: "/findings",
-    title: ["The whole story", "পুরো গল্প"],
+    title: ["Zoom in: South Asia", "কাছ থেকে: দক্ষিণ এশিয়া"],
     text: [
-      "Our five main findings in plain words, with charts and how sure we are. That's the tour. Explore anything you like from the menu.",
-      "আমাদের পাঁচটি মূল ফলাফল সহজ ভাষায়, চার্টসহ, আর আমরা কতটা নিশ্চিত তা-ও। ট্যুর শেষ। মেনু থেকে যা খুশি ঘুরে দেখুন।",
+      "Five findings for South Asia in plain words, with charts and how sure we are. That's the tour. Explore anything you like from the menu.",
+      "দক্ষিণ এশিয়ার পাঁচটি ফলাফল সহজ ভাষায়, চার্টসহ, আর আমরা কতটা নিশ্চিত তা-ও। ট্যুর শেষ। মেনু থেকে যা খুশি ঘুরে দেখুন।",
     ],
   },
 ];

@@ -6,6 +6,7 @@
 
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { createBaseMap, type BaseMap } from "@/components/map/baseMap";
 import { bnNum } from "@/lib/bn";
@@ -32,6 +33,7 @@ export default function WorldExplorer({ counts, onZoomSouthAsia }: { counts: Wor
   const host = useRef<HTMLDivElement>(null);
   const base = useRef<BaseMap | null>(null);
   const layer = useRef<L.LayerGroup | null>(null);
+  const mark = useRef<L.Rectangle | null>(null);
   const renderer = useRef<L.Canvas | null>(null);
   const theme = useTheme();
   const bn = useLang() === "bn";
@@ -90,6 +92,22 @@ export default function WorldExplorer({ counts, onZoomSouthAsia }: { counts: Wor
       group.addLayer(rect);
     }
   }, [cells, theme]);
+
+  // Outline the square the reader picked, so the number in the panel has a visible owner.
+  useEffect(() => {
+    mark.current?.remove();
+    mark.current = null;
+    const map = base.current?.map;
+    if (!map || !picked || !cells || cells.id !== measure) return;
+    const h = cells.d / 2;
+    mark.current = L.rectangle(
+      [
+        [picked[0] - h, picked[1] - h],
+        [picked[0] + h, picked[1] + h],
+      ],
+      { pane: "data", color: cssVar("--ink"), weight: 2.5, fill: false, interactive: false },
+    ).addTo(map);
+  }, [picked, cells, measure, theme]);
 
   const count = measure === "temperature" ? counts.temperature : measure === "rainfall" ? counts.rainfall : counts.wetSeason;
   const unit = bn ? m.unitBn : m.unit;
@@ -150,6 +168,12 @@ export default function WorldExplorer({ counts, onZoomSouthAsia }: { counts: Wor
             <span className="block text-xs text-ink-3 tabular-nums">
               {num(`${Math.abs(shown[0]).toFixed(1)}°${shown[0] >= 0 ? "N" : "S"}, ${Math.abs(shown[1]).toFixed(1)}°${shown[1] >= 0 ? "E" : "W"}`)}
             </span>
+            <Link
+              href={`/your-place?lat=${shown[0].toFixed(2)}&lon=${shown[1].toFixed(2)}`}
+              className="mt-1 inline-flex min-h-8 items-center text-sm font-medium text-accent hover:underline"
+            >
+              <T en="Open the full report for this place" bn="এই জায়গার পূর্ণ রিপোর্ট দেখুন" />
+            </Link>
           </p>
         ) : (
           <p className="mt-3 text-xs text-ink-3">

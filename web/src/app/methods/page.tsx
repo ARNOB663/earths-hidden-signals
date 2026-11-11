@@ -110,7 +110,8 @@ export default async function MethodsPage() {
               <Tr v="Rainfall" d={`${r.dataset}, ${first}–${last}`} u="Trend analysis (seasonal totals)" href={r.datasetUrl} />
               <Tr v="Wildfire" d="NASA FIRMS MODIS active fires (Terra + Aqua), 2003–2024" u="Hazard events" href="https://firms.modaps.eosdis.nasa.gov/" />
               <Tr v="Landslides" d="NASA Global Landslide Catalog, 2007–2017" u="Hazard events" href="https://data.nasa.gov/" />
-              <Tr v="Floods" d="GDACS flood alerts (UN/EU), 2000–2025" u="Hazard events" href="https://www.gdacs.org/" />
+              <Tr v="Floods, droughts, cyclones" d="GDACS alerts (UN/EU), 2000–2025" u="Hazard events" href="https://www.gdacs.org/" />
+              <Tr v="Projections" d="NASA NEX-GDDP-CMIP6 (SSP2-4.5, SSP5-8.5), 1995–2014 and 2041–2060" u="Outlook for 2041–2060" href="https://www.nccs.nasa.gov/services/data-collections/land-based-products/nex-gddp-cmip6" />
               <Tr v="Map imagery" d="NASA GIBS: MODIS surface temperature and NDVI, MERRA-2, GLDAS" u="Satellite map (visual only)" href="https://earthdata.nasa.gov/gibs" />
               <Tr v="Forest loss" d="Hansen/UMD Global Forest Change (Landsat), via Global Forest Watch" u="Satellite map" href="https://glad.earthengine.app/view/global-forest-change" />
             </tbody>
@@ -157,7 +158,7 @@ export default async function MethodsPage() {
         </Callout>
       </Section>
 
-      <Section title="Do other datasets agree?">
+      <Section title="4. Do other datasets agree?">
         <p>
           We repeated the main trends with a completely separate climate record, <strong className="font-semibold text-ink">CRU TS 4.10</strong>{" "}
           from the University of East Anglia, which is built from weather stations with its own methods. Where both records tell
@@ -194,7 +195,7 @@ export default async function MethodsPage() {
         </p>
       </Section>
 
-      <Section title="4. From trends to hazards">
+      <Section title="5. From trends to hazards">
         <p>
           For each hazard region we count past events per year, then ask whether high-event years line up with unusual
           heat or rain. We use a Spearman correlation after removing each series&apos; long-term trend, so two things that
@@ -210,7 +211,7 @@ export default async function MethodsPage() {
         </p>
       </Section>
 
-      <Section title="5. The world, turning points and the future">
+      <Section title="6. The world, turning points and the future">
         <ul className="list-disc space-y-2 pl-5">
           <li>
             <strong className="font-semibold text-ink">World view.</strong> The same tests run on every land grid cell from 55°S to
@@ -241,7 +242,7 @@ export default async function MethodsPage() {
         </ul>
       </Section>
 
-      <Section title="6. Limitations">
+      <Section title="7. Limitations">
         <ul className="list-disc space-y-1.5 pl-5">
           <li>Grids are coarse (2°–2.5°, about 200–280 km), so local extremes are smoothed out.</li>
           <li>Hazard regions are approximate rectangles, not exact watersheds or forest boundaries.</li>
@@ -251,7 +252,7 @@ export default async function MethodsPage() {
         </ul>
       </Section>
 
-      <Section title="7. Reproduce it">
+      <Section title="8. Reproduce it">
         <p>
           Everything is open source at{" "}
           <a href={REPO} className="text-accent hover:underline">
@@ -260,11 +261,15 @@ export default async function MethodsPage() {
           . The <code className="rounded bg-sunken px-1.5 text-ink">analysis/</code> folder rebuilds every number on
           this site from the public data with <code className="rounded bg-sunken px-1.5 text-ink">python build.py</code>{" "}
           and <code className="rounded bg-sunken px-1.5 text-ink">python build_hazards.py</code>. No login is needed.
-          Results generated {manifest.generated}.
+          The{" "}
+          <a href={`${REPO}#run-it`} className="text-accent hover:underline">
+            README
+          </a>{" "}
+          lists every step, including the global maps and projections.
         </p>
       </Section>
 
-      <Section title="How to cite this work">
+      <Section title="9. How to cite this work">
         <p>Every chart on the site has a &ldquo;Download the data (CSV)&rdquo; button. If you use the data or the results, please cite:</p>
         <p className="rounded-2xl bg-card p-4 font-mono text-sm leading-relaxed text-ink shadow-soft">{CITATION}</p>
       </Section>
