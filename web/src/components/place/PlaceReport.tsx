@@ -8,18 +8,20 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { WarmingStripes } from "@/components/home/WarmingStripes";
 import { bnNum } from "@/lib/bn";
 import { T, useLang } from "@/lib/i18n";
-
-type Place = { name: string; detail: string; lat: number; lon: number };
-type TrendCell = [number, number, number, number]; // lat, lon, slope/decade, clear
-type FutureCell = [number, number, number, number, number, number]; // lat, lon, rain %, agree, warming C, hot-year share
-type Scenario = "ssp245" | "ssp585";
-
-interface Data {
-  temp: TrendCell[];
-  wet: TrendCell[];
-  future: { models: string[]; future: [number, number]; scenarios: Record<Scenario, { cells: FutureCell[] }> };
-  events: { years: { gdacs: [number, number]; landslide: [number, number] }; cells: [number, number, number, number, number, number][] };
-}
+import { downloadCard } from "./drawCard";
+import {
+  computeReport,
+  findTwin,
+  geocode,
+  loadData,
+  loadStripes,
+  RADIUS_KM,
+  signed,
+  type Data,
+  type Place,
+  type Report,
+  type Scenario,
+} from "./placeData";
 
 const QUICK: Place[] = [
   { name: "Dhaka", detail: "Bangladesh", lat: 23.81, lon: 90.41 },
@@ -29,54 +31,6 @@ const QUICK: Place[] = [
   { name: "Madrid", detail: "Spain", lat: 40.42, lon: -3.7 },
   { name: "Lima", detail: "Peru", lat: -12.05, lon: -77.04 },
 ];
-const RADIUS_KM = 300;
-
-/** "+1.5" / "−2": a true minus sign, no sign on zero. */
-const signed = (v: number, d: number) => {
-  const t = Math.abs(v).toFixed(d);
-  return Number(t) === 0 ? t : `${v > 0 ? "+" : "−"}${t}`;
-};
-
-const cache: { data?: Promise<Data>; tiles: Map<string, Promise<Record<string, number[]>>> } = { tiles: new Map() };
-
-function loadData(): Promise<Data> {
-  if (!cache.data) {
-    const j = (f: string) => fetch(`/data/global/${f}.json`).then((r) => r.json());
-    cache.data = Promise.all([j("temperature"), j("wet-season"), j("future"), j("events-grid")]).then(([t, w, f, e]) => ({
-      temp: t.cells,
-      wet: w.cells,
-      future: f,
-      events: e,
-    }));
-  }
-  return cache.data;
-}
-
-function loadTile(tile: string) {
-  if (!cache.tiles.has(tile)) cache.tiles.set(tile, fetch(`/data/global/stripes/${tile}.json`).then((r) => (r.ok ? r.json() : {})));
-  return cache.tiles.get(tile)!;
-}
-
-function km(aLat: number, aLon: number, bLat: number, bLon: number) {
-  const r = Math.PI / 180;
-  const h = Math.sin(((bLat - aLat) * r) / 2) ** 2 + Math.cos(aLat * r) * Math.cos(bLat * r) * Math.sin(((bLon - aLon) * r) / 2) ** 2;
-  return 12742 * Math.asin(Math.sqrt(h));
-}
-
-/** The nearest land cell within 250 km, or null (sea, ice, or outside 55°S–75°N). */
-function nearest<C extends number[]>(cells: C[], lat: number, lon: number): C | null {
-  let best: C | null = null;
-  let bestD = 250;
-  for (const c of cells) {
-    if (Math.abs(c[0] - lat) > 3) continue;
-    const d = km(lat, lon, c[0], c[1]);
-    if (d < bestD) {
-      bestD = d;
-      best = c;
-    }
-  }
-  return best;
-}
 
 export default function PlaceReport() {
   const lang = useLang();
@@ -90,6 +44,11 @@ export default function PlaceReport() {
   const [stripes, setStripes] = useState<number[] | null>(null);
   const [scenario, setScenario] = useState<Scenario>("ssp245");
   const [copied, setCopied] = useState(false);
+  const [other, setOther] = useState<Place | null>(null);
+  const [otherStripes, setOtherStripes] = useState<number[] | null>(null);
+  const [cmpQuery, setCmpQuery] = useState("");
+  const [cmpResults, setCmpResults] = useState<Place[]>([]);
+  const [noTwin, setNoTwin] = useState(false);
   const reportRef = useRef<HTMLElement>(null);
 
   // Open a shared link: ?lat=..&lon=..&name=..
@@ -99,23 +58,44 @@ export default function PlaceReport() {
     const lon = Number(q.get("lon"));
     // eslint-disable-next-line react-hooks/set-state-in-effect -- read a shared link once on load
     if (q.has("lat") && Number.isFinite(lat) && Number.isFinite(lon)) setPlace({ name: q.get("name") || "", detail: q.get("in") || "", lat, lon });
+    const lat2 = Number(q.get("lat2"));
+    const lon2 = Number(q.get("lon2"));
+    if (q.has("lat2") && Number.isFinite(lat2) && Number.isFinite(lon2))
+      setOther({ name: q.get("name2") || "", detail: q.get("in2") || "", lat: lat2, lon: lon2, twin: q.get("twin") === "1" });
   }, []);
 
   useEffect(() => {
     if (!place) return;
     let cancelled = false;
     loadData().then((d) => !cancelled && setData(d));
-    const la = Math.round((place.lat - 1) / 2) * 2 + 1;
-    const lo = Math.round((place.lon - 1) / 2) * 2 + 1;
-    const tile = `${Math.floor(la / 30) * 30}_${Math.floor(lo / 30) * 30}`;
-    loadTile(tile).then((t) => !cancelled && setStripes(t[`${la},${lo}`] ?? null));
-    const q = new URLSearchParams({ lat: place.lat.toFixed(2), lon: place.lon.toFixed(2), name: place.name, in: place.detail });
-    window.history.replaceState(null, "", `?${q}`);
+    loadStripes(place.lat, place.lon).then((v) => !cancelled && setStripes(v));
     reportRef.current?.focus();
     return () => {
       cancelled = true;
     };
   }, [place]);
+
+  useEffect(() => {
+    if (!other) return;
+    let cancelled = false;
+    loadStripes(other.lat, other.lon).then((v) => !cancelled && setOtherStripes(v));
+    return () => {
+      cancelled = true;
+    };
+  }, [other]);
+
+  useEffect(() => {
+    if (!place) return;
+    const q = new URLSearchParams({ lat: place.lat.toFixed(2), lon: place.lon.toFixed(2), name: place.name, in: place.detail });
+    if (other) {
+      q.set("lat2", other.lat.toFixed(2));
+      q.set("lon2", other.lon.toFixed(2));
+      q.set("name2", other.name);
+      if (other.detail) q.set("in2", other.detail);
+      if (other.twin) q.set("twin", "1");
+    }
+    window.history.replaceState(null, "", `?${q}`);
+  }, [place, other]);
 
   const search = async (e?: React.FormEvent, given?: string) => {
     e?.preventDefault();
@@ -124,14 +104,7 @@ export default function PlaceReport() {
     setSearching(true);
     setSearchError(null);
     try {
-      const r = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(name)}&count=6&language=${bn ? "bn" : "en"}&format=json`);
-      const j = await r.json();
-      const list: Place[] = (j.results ?? []).map((p: { name: string; country?: string; admin1?: string; latitude: number; longitude: number }) => ({
-        name: p.name,
-        detail: [p.admin1, p.country].filter(Boolean).join(", "),
-        lat: p.latitude,
-        lon: p.longitude,
-      }));
+      const list = await geocode(name, bn ? "bn" : "en");
       setResults(list);
       if (list.length === 0) setSearchError(bn ? "কোনো জায়গা পাওয়া যায়নি। বানান দেখুন বা কাছের শহর লিখুন।" : "No place found. Check the spelling or try a nearby town.");
     } catch {
@@ -160,18 +133,25 @@ export default function PlaceReport() {
     );
   };
 
-  const report = useMemo(() => {
-    if (!place || !data) return null;
-    const temp = nearest(data.temp, place.lat, place.lon);
-    const wet = nearest(data.wet, place.lat, place.lon);
-    const fut = nearest(data.future.scenarios[scenario].cells, place.lat, place.lon);
-    const ev = [0, 0, 0, 0];
-    for (const c of data.events.cells) {
-      if (Math.abs(c[0] - place.lat) > 4) continue;
-      if (km(place.lat, place.lon, c[0], c[1]) <= RADIUS_KM) for (let k = 0; k < 4; k++) ev[k] += c[2 + k];
+  const report = useMemo(() => (place && data ? computeReport(place, data, scenario) : null), [place, data, scenario]);
+  const otherReport = useMemo(() => (other && data ? computeReport(other, data, scenario) : null), [other, data, scenario]);
+
+  const showTwin = () => {
+    if (!place || !data) return;
+    const t = findTwin(place, data);
+    setNoTwin(!t);
+    setOther(t);
+  };
+
+  const compareSearch = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (cmpQuery.trim().length < 2) return;
+    try {
+      setCmpResults(await geocode(cmpQuery.trim(), bn ? "bn" : "en"));
+    } catch {
+      setCmpResults([]);
     }
-    return { temp, wet, fut, ev };
-  }, [place, data, scenario]);
+  };
 
   const copy = async () => {
     try {
@@ -399,6 +379,78 @@ export default function PlaceReport() {
 
               <Prepare report={report} />
 
+              <section className="mt-14">
+                <h3 className="text-lg font-semibold text-ink">
+                  <T en="Compare with another place" bn="অন্য জায়গার সাথে তুলনা" />
+                </h3>
+                {!other ? (
+                  <>
+                    <div className="mt-4 flex flex-wrap items-center gap-3">
+                      <button
+                        type="button"
+                        onClick={showTwin}
+                        className="rounded-full bg-accent-strong px-5 py-2.5 text-sm font-medium text-accent-ink transition-colors hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+                      >
+                        <T en="Find its climate twin" bn="এর জলবায়ু-যমজ খুঁজুন" />
+                      </button>
+                      <form onSubmit={compareSearch} className="flex flex-1 gap-2" role="search">
+                        <label htmlFor="cmp-q" className="sr-only">
+                          <T en="Another town" bn="অন্য শহর" />
+                        </label>
+                        <input
+                          id="cmp-q"
+                          name="compare"
+                          type="search"
+                          autoComplete="off"
+                          spellCheck={false}
+                          value={cmpQuery}
+                          onChange={(e) => setCmpQuery(e.target.value)}
+                          placeholder={bn ? "অথবা অন্য শহর…" : "or another town…"}
+                          className="min-h-10 min-w-0 flex-1 rounded-full border border-line bg-card px-4 text-sm text-ink focus-visible:outline-2 focus-visible:outline-accent"
+                        />
+                        <button type="submit" className="rounded-full border border-line px-4 text-sm text-ink hover:bg-sunken focus-visible:outline-2 focus-visible:outline-accent">
+                          <T en="Compare" bn="তুলনা" />
+                        </button>
+                      </form>
+                    </div>
+                    {noTwin && (
+                      <p className="mt-3 text-sm text-ink-2">
+                        <T en="No twin for this spot: it has no land data." bn="এই জায়গার কোনো যমজ নেই: এখানে স্থলভাগের তথ্য নেই।" />
+                      </p>
+                    )}
+                    {cmpResults.length > 0 && (
+                      <ul className="mt-3 max-w-xl divide-y divide-line rounded-2xl border border-line bg-card">
+                        {cmpResults.map((p) => (
+                          <li key={`${p.lat},${p.lon}`}>
+                            <button
+                              type="button"
+                              onClick={() => {
+                                setCmpResults([]);
+                                setOther(p);
+                              }}
+                              className="flex w-full items-baseline justify-between gap-3 px-4 py-2.5 text-left text-sm hover:bg-sunken focus-visible:outline-2 focus-visible:outline-accent"
+                            >
+                              <span className="font-medium text-ink">{p.name}</span>
+                              <span className="truncate text-ink-3">{p.detail}</span>
+                            </button>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </>
+                ) : (
+                  <Compare
+                    a={{ place, report, stripes }}
+                    b={{ place: other, report: otherReport, stripes: otherStripes }}
+                    bn={bn}
+                    onClear={() => {
+                      setOther(null);
+                      setOtherStripes(null);
+                    }}
+                  />
+                )}
+              </section>
+
               <div className="mt-10 flex flex-wrap items-center gap-4 border-t border-line pt-6">
                 <button
                   type="button"
@@ -406,6 +458,13 @@ export default function PlaceReport() {
                   className="rounded-full border border-line px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:bg-sunken focus-visible:outline-2 focus-visible:outline-accent"
                 >
                   {copied ? <T en="Link copied" bn="লিংক কপি হয়েছে" /> : <T en="Copy link to this report" bn="এই রিপোর্টের লিংক কপি করুন" />}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => downloadCard({ place, report, stripes, future: data!.future.future, bn })}
+                  className="rounded-full bg-accent-strong px-5 py-2.5 text-sm font-medium text-accent-ink transition-colors hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+                >
+                  <T en="Download as image" bn="ছবি হিসেবে ডাউনলোড" />
                 </button>
                 <p className="text-xs text-ink-3">
                   <T
@@ -432,7 +491,7 @@ function Fact({ big, line }: { big: string; line: React.ReactNode }) {
 }
 
 /** Plain actions that follow from the evidence for this place. Preparation, never a forecast. */
-function Prepare({ report }: { report: { temp: TrendCell | null; wet: TrendCell | null; fut: FutureCell | null; ev: number[] } }) {
+function Prepare({ report }: { report: Report }) {
   const items: { en: string; bn: string }[] = [];
   const hot = report.fut ? report.fut[5] : 0;
   if ((report.temp && report.temp[3]) || hot >= 0.7)
@@ -482,5 +541,92 @@ function Prepare({ report }: { report: { temp: TrendCell | null; wet: TrendCell 
         />
       </p>
     </section>
+  );
+}
+
+type Side = { place: Place; report: Report | null; stripes: number[] | null };
+
+/** Two places side by side, row by row: the same facts, so the difference is easy to see. */
+function Compare({ a, b, bn, onClear }: { a: Side; b: Side; bn: boolean; onClear: () => void }) {
+  const n = (s: string) => (bn ? bnNum(s) : s);
+  const deg = bn ? "°সে" : "°C";
+  const name = (p: Place) => p.name || (bn ? "এই জায়গা" : "This place");
+  const rows: { en: string; bn: string; get: (r: Report) => string }[] = [
+    { en: "Warmer since 1981", bn: "১৯৮১ থেকে উষ্ণতা", get: (r) => (r.temp ? `${n(signed(r.temp[2] * 4.4, 1))} ${deg}` : "–") },
+    {
+      en: "Rainy season, per 10 years",
+      bn: "বর্ষা মৌসুম, প্রতি ১০ বছরে",
+      get: (r) => (r.wet ? `${n(signed(r.wet[2], 0))}%${r.wet[3] ? "" : bn ? " (অস্পষ্ট)" : " (not clear)"}` : "–"),
+    },
+    { en: "More warming by 2041–60", bn: "২০৪১–৬০ সালের মধ্যে আরও উষ্ণতা", get: (r) => (r.fut ? `${n(signed(r.fut[4], 1))} ${deg}` : "–") },
+    {
+      en: "Today's hottest year in ten, then",
+      bn: "আজকের ১০ বছরে সবচেয়ে গরম বছর, তখন",
+      get: (r) => (r.fut ? (r.fut[5] >= 0.95 ? (bn ? "প্রায় প্রতি বছর" : "almost every year") : bn ? `১০ বছরে ${bnNum(Math.max(1, Math.round(r.fut[5] * 10)))} বার` : `${Math.max(1, Math.round(r.fut[5] * 10))} in 10 years`) : "–"),
+    },
+    {
+      en: `Disasters within ${RADIUS_KM} km`,
+      bn: `${bnNum(RADIUS_KM)} কিমির মধ্যে দুর্যোগ`,
+      get: (r) => n(String(r.ev.reduce((x, y) => x + y, 0))),
+    },
+  ];
+  return (
+    <div className="mt-4">
+      {b.place.twin && (
+        <p className="max-w-[70ch] text-ink-2">
+          <T
+            en={`${name(b.place)} is ${name(a.place)}'s climate twin: of all land on Earth more than 1,500 km away, its 1981–2025 warming and rain changes are the closest match. Same trend, different place.`}
+            bn={`${name(b.place)} হলো ${name(a.place)}-এর জলবায়ু-যমজ: ১,৫০০ কিমির বেশি দূরের সব স্থলভাগের মধ্যে এর ১৯৮১–২০২৫ সালের উষ্ণতা ও বৃষ্টির পরিবর্তন সবচেয়ে বেশি মেলে। একই প্রবণতা, ভিন্ন জায়গা।`}
+          />
+        </p>
+      )}
+      <div className="mt-5 overflow-x-auto">
+        <table className="w-full min-w-[520px] text-left">
+          <thead>
+            <tr>
+              <th scope="col" className="w-1/3 pb-3" />
+              {[a, b].map((s) => (
+                <th key={`${s.place.lat},${s.place.lon}`} scope="col" className="pb-3 pr-4 align-bottom">
+                  <span className="block text-xl font-semibold text-ink">{name(s.place)}</span>
+                  <span className="mt-2 block h-8 overflow-hidden rounded-md">
+                    {s.stripes ? <WarmingStripes values={s.stripes} label={`${name(s.place)} warming stripes, 1981 to 2025`} /> : <span className="block h-full bg-sunken" />}
+                  </span>
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((row) => (
+              <tr key={row.en} className="border-t border-line">
+                <th scope="row" className="py-3 pr-4 text-sm font-normal text-ink-2">
+                  <T en={row.en} bn={row.bn} />
+                </th>
+                {[a, b].map((s) => (
+                  <td key={`${row.en}-${s.place.lat}`} className="py-3 pr-4 text-lg font-semibold tabular-nums text-ink">
+                    {s.report ? row.get(s.report) : "…"}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      {a.report && b.report && (() => {
+        const ta = a.report.ev.reduce((x, y) => x + y, 0);
+        const tb = b.report.ev.reduce((x, y) => x + y, 0);
+        if (Math.max(ta, tb) < 10 || Math.max(ta, tb) < 3 * Math.max(1, Math.min(ta, tb))) return null;
+        return (
+          <p className="mt-4 max-w-[70ch] text-ink-2">
+            <T
+              en="Similar climate change, very different disaster records: where people live and how well they are protected matters as much as the climate."
+              bn="একই রকম জলবায়ু পরিবর্তন, খুব ভিন্ন দুর্যোগের রেকর্ড: মানুষ কোথায় থাকে আর কতটা সুরক্ষিত, তা জলবায়ুর মতোই গুরুত্বপূর্ণ।"
+            />
+          </p>
+        );
+      })()}
+      <button type="button" onClick={onClear} className="mt-4 text-sm font-medium text-accent underline-offset-2 hover:underline focus-visible:outline-2 focus-visible:outline-accent">
+        <T en="Compare with a different place" bn="অন্য জায়গার সাথে তুলনা করুন" />
+      </button>
+    </div>
   );
 }

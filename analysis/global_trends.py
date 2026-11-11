@@ -145,6 +145,39 @@ def main() -> None:
     }
     (OUT / "summary.json").write_text(json.dumps(summary, indent=1), encoding="utf-8")
 
+    # Climate-twin fingerprint for every rain cell (2.5 degrees): warming (nearest temperature cell),
+    # yearly and rainy-season rain trends (% per decade), how wet (log10 mm) and how seasonal. Same
+    # features and weights as twins.py, robustly standardised over land; names via Natural Earth.
+    countries = twins.load_countries()
+    r_mean = r_annual.mean(axis=0)
+    w_mean = wet.mean(axis=0)
+    feats, where = [], []
+    for i, la in enumerate(r_lats):
+        for j, lo in enumerate(r_lons):
+            if not (np.isfinite(r_slope[i, j]) and np.isfinite(w_slope[i, j]) and r_mean[i, j] > 0):
+                continue
+            ti = int(np.argmin(np.abs(t_lats - la)))
+            tj = int(np.argmin(np.abs(t_lons - lo)))
+            if not np.isfinite(t_slope[ti, tj]):
+                continue
+            feats.append([t_slope[ti, tj], r_slope[i, j], w_slope[i, j], np.log10(r_mean[i, j]), w_mean[i, j] / r_mean[i, j]])
+            where.append((float(la), float(lo)))
+    F = np.array(feats)
+    med = np.median(F, axis=0)
+    scale = (np.percentile(F, 75, axis=0) - np.percentile(F, 25, axis=0)) / 1.349
+    scale = np.where(scale > 0, scale, 1.0)
+    weights = [w for *_, w in twins.FEATURES]
+    twin_cells = []
+    for (la, lo), f in zip(where, F):
+        name, _ = twins.block_name((la - 1.25, la + 1.25, lo - 1.25, lo + 1.25), countries)
+        twin_cells.append([la, lo, name, *[round(float(v), 3) for v in f]])
+    (OUT / "twins-grid.json").write_text(
+        json.dumps({"features": [k for k, *_ in twins.FEATURES], "weights": weights,
+                    "median": [round(float(v), 4) for v in med], "scale": [round(float(v), 4) for v in scale],
+                    "cells": twin_cells}, ensure_ascii=False, separators=(",", ":")),
+        encoding="utf-8",
+    )
+
     # Per-cell annual temperature series for each place's own warming stripes, in 30-degree tiles so a
     # page loads only the tile it needs.
     tiles: dict[str, dict[str, list]] = {}
