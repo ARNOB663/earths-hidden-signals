@@ -82,8 +82,8 @@ export default async function Home() {
         </h1>
         <p className="mt-5 max-w-[48ch] text-lg leading-relaxed text-ink-2">
           <T
-            en={`${years.length} years of NASA data for every land area on Earth, told as one short story.`}
-            bn={`পৃথিবীর প্রতিটি স্থলভাগের জন্য নাসার ${bnNum(years.length)} বছরের তথ্য, একটি ছোট গল্পে।`}
+            en={`What is changing, where, by how much, and is it real? ${years.length} years of NASA data for every land area on Earth, and for your own town.`}
+            bn={`কী বদলাচ্ছে, কোথায়, কতটা, আর তা কি সত্যি? পৃথিবীর প্রতিটি স্থলভাগ আর আপনার নিজের শহরের জন্য নাসার ${bnNum(years.length)} বছরের তথ্য।`}
           />
         </p>
         <div className="mt-8 flex flex-wrap items-center gap-5">
@@ -93,6 +93,12 @@ export default async function Home() {
           >
             <T en="Start the story" bn="গল্প শুরু করুন" /> <ArrowRight size={18} />
           </a>
+          <Link
+            href="/your-place"
+            className="inline-flex items-center gap-2 rounded-full border border-line bg-card px-6 py-3 font-medium text-ink transition hover:border-ink-3 active:scale-[0.98]"
+          >
+            <T en="Check your town" bn="আপনার শহর দেখুন" />
+          </Link>
           <StartTourButton />
         </div>
       </section>
@@ -218,6 +224,17 @@ export default async function Home() {
           }
         />
       </div>
+
+      {/* How we know: one line for validity */}
+      <p className="mx-auto mt-24 w-full max-w-[1000px] px-4 text-ink-2 sm:px-6">
+        <T
+          en="How we know it's real: every trend passes a statistical test that rules out chance, is checked against an independent record, and we say plainly when a change is not yet clear."
+          bn="আমরা কীভাবে জানি এটা সত্যি: প্রতিটি প্রবণতা এমন পরিসংখ্যানগত পরীক্ষায় উত্তীর্ণ যা কাকতালীয়তা বাদ দেয়, একটি স্বাধীন রেকর্ডের সাথে যাচাই করা হয়, আর পরিবর্তন স্পষ্ট না হলে আমরা সোজাসুজি বলি।"
+        />{" "}
+        <Link href="/methods" className="font-medium text-accent underline-offset-2 hover:underline">
+          <T en="See the methods" bn="পদ্ধতি দেখুন" />
+        </Link>
+      </p>
 
       {/* Explore it yourself */}
       <section aria-labelledby="explore-hdg" className="mx-auto mt-28 w-full max-w-[1200px] px-4 sm:px-6">
