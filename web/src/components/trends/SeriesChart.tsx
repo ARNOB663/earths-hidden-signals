@@ -168,7 +168,7 @@ export function SeriesChart({
         <svg
           width={width}
           height={HEIGHT}
-          className="block touch-none select-none"
+          className="block touch-pan-y select-none"
           onPointerMove={onMove}
           onPointerLeave={() => setHover(null)}
           role="img"

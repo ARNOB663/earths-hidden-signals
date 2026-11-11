@@ -207,6 +207,7 @@ export default function HazardMap({ hazard, zones, selectedZone, onSelectZone, l
           : { paddingTopLeft: [24, 64] as L.PointTuple, paddingBottomRight: [24, 200] as L.PointTuple }),
         maxZoom: 7,
         duration: 0.8,
+        animate: !window.matchMedia("(prefers-reduced-motion: reduce)").matches,
       },
     );
   }, [selectedZone, zones]);

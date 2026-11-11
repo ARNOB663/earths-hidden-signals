@@ -40,6 +40,13 @@ export function SiteNav() {
     window.addEventListener("scroll", update, { passive: true });
     return () => window.removeEventListener("scroll", update);
   }, []);
+  // Escape closes the phone menu.
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open]);
   const placeActive = pathname.startsWith("/your-place") || pathname.startsWith("/places");
   const mapPage = ["/explore", "/trends", "/hazards"].some((href) => pathname.startsWith(href));
   const separated = scrolled || open || mapPage;

@@ -51,20 +51,20 @@ const EVENTS: Record<HazardId, { plural: string; bigYears: string }> = {
   cyclone: { plural: "cyclones", bigYears: "busy cyclone years" },
 };
 
-function useJson<T>(url: string | null): T | null {
-  const [data, setData] = useState<{ url: string; value: T } | null>(null);
+function useJson<T>(url: string | null): { value: T | null; failed: boolean } {
+  const [data, setData] = useState<{ url: string; value: T | null; failed?: boolean } | null>(null);
   useEffect(() => {
     if (!url) return;
     let alive = true;
     fetch(url)
       .then((r) => r.json())
       .then((value) => alive && setData({ url, value }))
-      .catch(() => {});
+      .catch(() => alive && setData({ url, value: null, failed: true }));
     return () => {
       alive = false;
     };
   }, [url]);
-  return data && data.url === url ? data.value : null;
+  return data && data.url === url ? { value: data.value, failed: !!data.failed } : { value: null, failed: false };
 }
 
 export default function HazardExplorer({
@@ -90,11 +90,14 @@ export default function HazardExplorer({
   });
   const zone = hazardZones.find((z) => z.id === zoneId) ?? hazardZones[0];
 
-  const landslides = useJson<LandslideEvent[]>(hazard === "landslide" ? "/data/hazards/landslides.json" : null);
-  const floods = useJson<FloodEvent[]>(hazard === "flood" ? "/data/hazards/floods.json" : null);
-  const fires = useJson<FireGrid>(hazard === "wildfire" ? "/data/hazards/fires_grid.json" : null);
-  const cyclones = useJson<CycloneTrack[]>(hazard === "cyclone" ? "/data/hazards/cyclones.json" : null);
-  const eventsLoading = { landslide: landslides, flood: floods, wildfire: fires, cyclone: cyclones }[hazard] === null;
+  const ls = useJson<LandslideEvent[]>(hazard === "landslide" ? "/data/hazards/landslides.json" : null);
+  const fl = useJson<FloodEvent[]>(hazard === "flood" ? "/data/hazards/floods.json" : null);
+  const fi = useJson<FireGrid>(hazard === "wildfire" ? "/data/hazards/fires_grid.json" : null);
+  const cy = useJson<CycloneTrack[]>(hazard === "cyclone" ? "/data/hazards/cyclones.json" : null);
+  const [landslides, floods, fires, cyclones] = [ls.value, fl.value, fi.value, cy.value];
+  const current = { landslide: ls, flood: fl, wildfire: fi, cyclone: cy }[hazard];
+  const eventsFailed = current.failed;
+  const eventsLoading = current.value === null && !eventsFailed;
 
   useEffect(() => {
     window.history.replaceState(null, "", `?hazard=${hazard}&zone=${zone.id}`);
@@ -169,6 +172,14 @@ export default function HazardExplorer({
             <T en="Loading past events…" bn="আগের ঘটনাগুলো লোড হচ্ছে…" />
           </div>
         )}
+        {eventsFailed && (
+          <div
+            role="alert"
+            className="absolute left-1/2 top-16 z-[500] -translate-x-1/2 rounded-full bg-card px-4 py-1.5 text-sm text-ink shadow-soft lg:left-[calc(50%-218px)] lg:top-4"
+          >
+            <T en="Past events didn't load. Reload the page to try again." bn="আগের ঘটনাগুলো লোড হয়নি। আবার চেষ্টা করতে পাতাটি লোড করুন।" />
+          </div>
+        )}
         <div className="pointer-events-none absolute left-[58px] top-3 z-[500] hidden items-center gap-2 rounded-full bg-card px-4 py-2 text-sm text-ink-2 shadow-soft lg:flex">
           <HandPointing size={18} className="text-accent" />
           <T en="Click a dashed box to pick a region" bn="অঞ্চল বেছে নিতে ড্যাশ-দাগের বাক্সে ক্লিক করুন" />
@@ -189,8 +200,8 @@ export default function HazardExplorer({
               bn="&ldquo;এই বছর&rdquo; দেখুন: আবহাওয়া কি আগের দুর্যোগের বছরগুলোর মতো?"
             />,
           ]}
-          buttonClassName="absolute left-3 top-3 lg:left-[58px] lg:top-[60px]"
-          cardClassName="lg:left-[58px] lg:top-[108px]"
+          buttonClassName="absolute left-3 top-16 lg:left-[58px] lg:top-[60px]"
+          cardClassName="max-lg:top-16 lg:left-[58px] lg:top-[108px]"
         />
         <div className="absolute bottom-[calc(var(--sheet-peek,9rem)+0.75rem)] left-3 z-[500] w-[min(300px,calc(100%-1.5rem))] text-sm lg:bottom-10">
           {/* On phones the key folds into a small button so it doesn't cover the map. */}
@@ -328,9 +339,9 @@ function ZoneAnswer({
   const color = `var(${EVENT_TOKEN[zone.hazard]})`;
 
   return (
-    <section className="space-y-6" aria-live="polite">
+    <section className="space-y-6">
       <div>
-        <h2 className="text-xl font-semibold text-ink">
+        <h2 aria-live="polite" className="text-xl font-semibold text-ink">
           <T en={zone.name} bn={ZONE_BN[zone.id]?.name ?? zone.name} />
         </h2>
         <p className="mt-1 text-sm leading-relaxed text-ink-2">

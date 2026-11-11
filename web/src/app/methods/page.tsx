@@ -149,7 +149,7 @@ export default async function MethodsPage() {
         <p>
           A map tests hundreds of cells at once, so about 5% would look significant by luck alone. We apply a{" "}
           <strong className="font-semibold text-ink">false discovery rate</strong> check (Benjamini–Hochberg, α<sub>FDR</sub> = 0.10,
-          following Wilks 2016). Only cells that pass it are drawn solid with a dot.
+          following Wilks 2016). Only cells that pass it are drawn solid; the rest are faded.
         </p>
         <Callout title="When a result is not significant">
           We say so plainly: &ldquo;No statistically detectable trend.&rdquo; This means the ups and downs from year to year

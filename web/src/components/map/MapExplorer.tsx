@@ -416,6 +416,7 @@ export default function MapExplorer({ catalog }: { catalog: GibsCatalog }) {
                 value={idx}
                 onChange={(e) => setIdx(Number(e.target.value))}
                 aria-label={t("Choose a month", "একটি মাস বেছে নিন")}
+                aria-valuetext={month(date)}
                 className="h-8 w-full cursor-pointer accent-[var(--accent)]"
               />
               <div className="flex justify-between text-xs text-ink-3">

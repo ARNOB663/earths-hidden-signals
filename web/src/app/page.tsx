@@ -125,7 +125,7 @@ export default async function Home() {
         <Chapter
           n={1}
           title={<T en="Hotter almost everywhere" bn="প্রায় সবখানে গরম বাড়ছে" />}
-          big={<T en={`${landWarmer} °C`} bn={`${bnNum(landWarmer)} °সে`} />}
+          big={<T en={`${landWarmer} °C`} bn={`${bnNum(landWarmer)} °সে`} />}
           line={
             <T
               en={`on Earth's land since ${first}. ${fmt(tw.increase)} of ${fmt(tw.cells)} land areas clearly warmed; only ${tw.decrease} cooled.`}
@@ -181,7 +181,7 @@ export default async function Home() {
         <Chapter
           n={4}
           title={<T en="Zoom in: South Asia" bn="কাছ থেকে: দক্ষিণ এশিয়া" />}
-          big={<T en={`${warmer} °C`} bn={`${bnNum(warmer)} °সে`} />}
+          big={<T en={`${warmer} °C`} bn={`${bnNum(warmer)} °সে`} />}
           line={
             <T
               en="warmer since 1981, where nearly two billion people live with the monsoon. Here the rain splits: the dry Indus plain gets more, the Bengal delta gets less."
@@ -203,7 +203,7 @@ export default async function Home() {
         <Chapter
           n={5}
           title={<T en="What comes next" bn="এরপর কী" />}
-          big={<T en={`${moreWarming} °C more`} bn={`আরও ${bnNum(moreWarming)} °সে`} />}
+          big={<T en={`${moreWarming} °C more`} bn={`আরও ${bnNum(moreWarming)} °সে`} />}
           line={
             <T
               en={`on Earth's land by ${span[0]}–${span[1]} on a middle-road path, say NASA's climate projections. On ${hotShare}% of land, today's 1-in-10 hottest year would come almost every year.`}

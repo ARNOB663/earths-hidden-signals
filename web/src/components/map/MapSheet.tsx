@@ -65,7 +65,7 @@ export function MapSheet({ id, label, className, bodyClassName, peek, snap, onSn
     const body = bodyRef.current;
     const target = document.getElementById(scrollTargetId);
     if (body && target && body.contains(target)) {
-      body.scrollTo({ top: target.offsetTop - body.offsetTop - 12, behavior: "smooth" });
+      body.scrollTo({ top: target.offsetTop - body.offsetTop - 12, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
     }
     // Only when the key changes; the snap is read as it is at that moment.
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -157,6 +157,8 @@ export function MapSheet({ id, label, className, bodyClassName, peek, snap, onSn
       </div>
       <div
         ref={bodyRef}
+        // Keyboard focus must never land on controls hidden below a peeking sheet: open it instead.
+        onFocusCapture={() => snap === "peek" && !window.matchMedia(DESKTOP).matches && onSnapChange("half")}
         className={`max-lg:min-h-0 max-lg:flex-1 max-lg:overflow-y-auto max-lg:overscroll-contain max-lg:border-t max-lg:border-line max-lg:pb-[max(1.5rem,env(safe-area-inset-bottom))] ${bodyClassName}`}
       >
         {children}

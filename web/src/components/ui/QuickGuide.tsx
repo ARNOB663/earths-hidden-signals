@@ -1,7 +1,7 @@
 "use client";
 
 import { Question, X } from "@phosphor-icons/react";
-import { useState, useSyncExternalStore } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { T, useT } from "@/lib/i18n";
 
 // Remembers (per browser) that someone has seen a page's guide. Storage can be blocked,
@@ -48,23 +48,42 @@ export function QuickGuide({
   const t = useT();
   const open = state === "open" || (state === "auto" && !seen);
 
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
+
   const close = () => {
+    const hadFocus = dialogRef.current?.contains(document.activeElement);
     markSeen(id);
     setState("closed");
+    if (hadFocus) buttonRef.current?.focus(); // don't drop keyboard users on <body>
   };
+
+  // Opened on request: move focus in. Escape closes it either way.
+  useEffect(() => {
+    if (!open) return;
+    if (state === "open") dialogRef.current?.focus();
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && close();
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+    // close only reads refs and stable setters
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [open, state]);
 
   return (
     <>
       <button
+        ref={buttonRef}
         type="button"
         onClick={() => setState("open")}
         className={`z-[700] flex items-center gap-1.5 rounded-full bg-card px-3 py-2 text-sm text-ink-2 shadow-soft transition-colors hover:text-ink ${buttonClassName}`}
       >
-        <Question size={16} className="text-accent" />
+        <Question size={16} aria-hidden className="text-accent" />
         <T en="How to use this page" bn="এই পাতা কীভাবে ব্যবহার করবেন" />
       </button>
       {open && (
         <div
+          ref={dialogRef}
+          tabIndex={-1}
           role="dialog"
           aria-label={t("How to use this page", "এই পাতা কীভাবে ব্যবহার করবেন")}
           className={`absolute inset-x-3 top-3 z-[800] rounded-2xl border border-line bg-card p-5 shadow-soft lg:inset-x-auto lg:w-[340px] ${cardClassName}`}

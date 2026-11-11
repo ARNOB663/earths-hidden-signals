@@ -108,6 +108,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5rem; /* the sticky header must not cover what keyboard focus scrolls to */
 }
 
 body {

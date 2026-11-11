@@ -32,6 +32,8 @@ const PREVIEW = [
   { Icon: Globe, en: "Its climate twin", bn: "তার জলবায়ু-যমজ", sub: "A faraway place with a similar climate and change.", subBn: "দূরের এক জায়গা, যার জলবায়ু আর পরিবর্তন একই রকম।" },
 ];
 
+const QUICK_BN: Record<string, string> = { Dhaka: "ঢাকা", Lagos: "লাগোস", Jakarta: "জাকার্তা", Houston: "হিউস্টন", Madrid: "মাদ্রিদ", Lima: "লিমা" };
+
 const QUICK: Place[] = [
   { name: "Dhaka", detail: "Bangladesh", lat: 23.81, lon: 90.41 },
   { name: "Lagos", detail: "Nigeria", lat: 6.45, lon: 3.4 },
@@ -50,6 +52,8 @@ export default function PlaceReport() {
   const [searchError, setSearchError] = useState<string | null>(null);
   const [place, setPlace] = useState<Place | null>(null);
   const [data, setData] = useState<Data | null>(null);
+  const [loadFailed, setLoadFailed] = useState(false);
+  const [locating, setLocating] = useState(false);
   const [stripes, setStripes] = useState<number[] | null>(null);
   const [scenario, setScenario] = useState<Scenario>("ssp245");
   const [copied, setCopied] = useState(false);
@@ -76,7 +80,9 @@ export default function PlaceReport() {
   useEffect(() => {
     if (!place) return;
     let cancelled = false;
-    loadData().then((d) => !cancelled && setData(d));
+    loadData()
+      .then((d) => !cancelled && setData(d))
+      .catch(() => !cancelled && setLoadFailed(true));
     loadStripes(place.lat, place.lon).then((v) => !cancelled && setStripes(v));
     reportRef.current?.focus();
     return () => {
@@ -135,11 +141,18 @@ export default function PlaceReport() {
   }, []);
 
   const useMyLocation = () => {
-    if (!navigator.geolocation) return;
-    navigator.geolocation.getCurrentPosition(
-      (pos) => setPlace({ name: bn ? "আপনার অবস্থান" : "Your location", detail: "", lat: pos.coords.latitude, lon: pos.coords.longitude }),
-      () => setSearchError(bn ? "অবস্থান পাওয়া যায়নি। নাম লিখে খুঁজুন।" : "Your location isn't available. Search by name instead."),
-    );
+    const failed = () => {
+      setLocating(false);
+      setSearchError(bn ? "অবস্থান পাওয়া যায়নি। নাম লিখে খুঁজুন।" : "Your location isn't available. Search by name instead.");
+    };
+    if (!navigator.geolocation) return failed();
+    setSearchError("");
+    setLocating(true);
+    navigator.geolocation.getCurrentPosition((pos) => {
+      setLocating(false);
+      setResults([]);
+      setPlace({ name: bn ? "আপনার অবস্থান" : "Your location", detail: "", lat: pos.coords.latitude, lon: pos.coords.longitude });
+    }, failed);
   };
 
   const report = useMemo(() => (place && data ? computeReport(place, data, scenario) : null), [place, data, scenario]);
@@ -205,7 +218,7 @@ export default function PlaceReport() {
       </form>
       <div className="mt-3 flex flex-wrap items-center gap-2 text-sm">
         <button type="button" onClick={useMyLocation} className="rounded-full border border-line px-3 py-1.5 text-ink-2 transition-colors hover:text-ink focus-visible:outline-2 focus-visible:outline-accent">
-          <T en="Use my location" bn="আমার অবস্থান" />
+          {locating ? <T en="Finding you…" bn="অবস্থান খোঁজা হচ্ছে…" /> : <T en="Use my location" bn="আমার অবস্থান" />}
         </button>
         {QUICK.map((p) => (
           <button
@@ -213,11 +226,11 @@ export default function PlaceReport() {
             type="button"
             onClick={() => {
               setResults([]);
-              setPlace(p);
+              setPlace(bn && QUICK_BN[p.name] ? { ...p, name: QUICK_BN[p.name] } : p);
             }}
             className="rounded-full px-3 py-1.5 text-ink-2 transition-colors hover:bg-sunken hover:text-ink focus-visible:outline-2 focus-visible:outline-accent"
           >
-            {p.name}
+            {bn ? (QUICK_BN[p.name] ?? p.name) : p.name}
           </button>
         ))}
       </div>
@@ -226,6 +239,9 @@ export default function PlaceReport() {
           {searchError}
         </p>
       )}
+      <p role="status" className="sr-only">
+        {results.length > 0 ? (bn ? `${bnNum(results.length)}টি জায়গা পাওয়া গেছে` : `${results.length} places found`) : ""}
+      </p>
       {results.length > 0 && (
         <ul className="mt-3 max-w-2xl divide-y divide-line rounded-2xl border border-line bg-card" aria-label={bn ? "খোঁজার ফল" : "Search results"}>
           {results.map((p) => (
@@ -265,8 +281,11 @@ export default function PlaceReport() {
       )}
 
       {place && (
-        <article ref={reportRef} tabIndex={-1} aria-live="polite" className="mt-14">
-          <h2 className="text-5xl font-semibold leading-none tracking-tight text-ink sm:text-7xl">{place.name || (bn ? "এই জায়গা" : "This place")}</h2>
+        <article ref={reportRef} tabIndex={-1} aria-labelledby="report-title" className="mt-14">
+          <p role="status" className="sr-only">
+            {report ? (bn ? `${place.name || "এই জায়গা"}-এর রিপোর্ট তৈরি` : `Report for ${place.name || "this place"} ready`) : ""}
+          </p>
+          <h2 id="report-title" className="text-5xl font-semibold leading-none tracking-tight text-ink sm:text-7xl">{place.name || (bn ? "এই জায়গা" : "This place")}</h2>
           <p className="mt-2 text-sm text-ink-3">
             {place.detail && `${place.detail} `}({n(place.lat.toFixed(2))}°, {n(place.lon.toFixed(2))}°)
           </p>
@@ -287,9 +306,15 @@ export default function PlaceReport() {
           </div>
 
           {!report ? (
-            <p className="mt-10 text-ink-3">
-              <T en="Loading NASA data…" bn="নাসার তথ্য লোড হচ্ছে…" />
-            </p>
+            loadFailed ? (
+              <p role="alert" className="mt-10 text-ink">
+                <T en="NASA data didn't load. Check your connection and reload the page." bn="নাসার তথ্য লোড হয়নি। ইন্টারনেট সংযোগ দেখে পাতাটি আবার লোড করুন।" />
+              </p>
+            ) : (
+              <p className="mt-10 text-ink-3">
+                <T en="Loading NASA data…" bn="নাসার তথ্য লোড হচ্ছে…" />
+              </p>
+            )
           ) : !report.temp ? (
             <p className="mt-10 text-ink-2">
               <T
@@ -486,6 +511,9 @@ export default function PlaceReport() {
                 >
                   {copied ? <T en="Link copied" bn="লিংক কপি হয়েছে" /> : <T en="Copy link to this report" bn="এই রিপোর্টের লিংক কপি করুন" />}
                 </button>
+                <span role="status" className="sr-only">
+                  {copied ? (bn ? "লিংক কপি হয়েছে" : "Link copied") : ""}
+                </span>
                 <button
                   type="button"
                   onClick={() => downloadCard({ place, report, stripes, future: data!.future.future, bn })}
@@ -651,7 +679,7 @@ function Compare({ a, b, bn, onClear }: { a: Side; b: Side; bn: boolean; onClear
           </p>
         );
       })()}
-      <button type="button" onClick={onClear} className="mt-4 text-sm font-medium text-accent underline-offset-2 hover:underline focus-visible:outline-2 focus-visible:outline-accent">
+      <button type="button" onClick={onClear} className="mt-4 inline-flex min-h-10 items-center text-sm font-medium text-accent underline-offset-2 hover:underline focus-visible:outline-2 focus-visible:outline-accent">
         <T en="Compare with a different place" bn="অন্য জায়গার সাথে তুলনা করুন" />
       </button>
     </div>

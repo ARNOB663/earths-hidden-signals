@@ -24,6 +24,11 @@ export function TrendsScope({ counts, children }: { counts: WorldCounts; childre
 
   return (
     <div className="relative h-full">
+      {scope === "world" && (
+        <h1 className="sr-only">
+          <T en="Climate trends around the world" bn="বিশ্বজুড়ে জলবায়ুর প্রবণতা" />
+        </h1>
+      )}
       <div className="absolute left-1/2 top-3 z-[700] flex -translate-x-1/2 rounded-full bg-card p-1 text-sm shadow-soft">
         {(
           [

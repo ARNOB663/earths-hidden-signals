@@ -10,7 +10,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { createBaseMap, type BaseMap } from "@/components/map/baseMap";
 import { bnNum } from "@/lib/bn";
-import { T, useLang } from "@/lib/i18n";
+import { T, useLang, useT } from "@/lib/i18n";
 import { cssVar, useTheme } from "@/lib/theme";
 import { formatSigned, trendLegendTokens, trendToken, type VariableId } from "@/lib/trends";
 
@@ -40,6 +40,8 @@ export default function WorldExplorer({ counts, onZoomSouthAsia }: { counts: Wor
   const [measure, setMeasure] = useState<MeasureId>("temperature");
   const [cells, setCells] = useState<{ id: MeasureId; data: Cell[]; d: number } | null>(null);
   const [picked, setPicked] = useState<Cell | null>(null);
+  const [failed, setFailed] = useState(false);
+  const t = useT();
   const m = MEASURES[measure];
 
   useEffect(() => {
@@ -63,9 +65,12 @@ export default function WorldExplorer({ counts, onZoomSouthAsia }: { counts: Wor
     fetch(`/data/global/${measure}.json`)
       .then((r) => r.json())
       .then((data: { cell: number; cells: Cell[] }) => {
-        if (!cancelled) setCells({ id: measure, data: data.cells, d: data.cell });
+        if (!cancelled) {
+          setFailed(false);
+          setCells({ id: measure, data: data.cells, d: data.cell });
+        }
       })
-      .catch(() => {});
+      .catch(() => !cancelled && setFailed(true));
     return () => {
       cancelled = true;
     };
@@ -119,7 +124,7 @@ export default function WorldExplorer({ counts, onZoomSouthAsia }: { counts: Wor
       <div ref={host} className="absolute inset-0 bg-sunken" />
 
       <aside className="absolute bottom-3 left-3 right-3 z-[500] rounded-2xl bg-card p-4 shadow-soft sm:bottom-auto sm:right-auto sm:top-16 sm:w-[340px]">
-        <div role="radiogroup" aria-label="Measure" className="grid grid-cols-3 gap-1 rounded-xl bg-sunken p-1 text-xs">
+        <div role="radiogroup" aria-label={t("Measure", "পরিমাপ")} className="grid grid-cols-3 gap-1 rounded-xl bg-sunken p-1 text-xs">
           {(Object.keys(MEASURES) as MeasureId[]).map((id) => (
             <button
               key={id}
@@ -157,8 +162,13 @@ export default function WorldExplorer({ counts, onZoomSouthAsia }: { counts: Wor
           <T en="Faded squares: no clear change." bn="হালকা বর্গ: স্পষ্ট পরিবর্তন নেই।" />
         </p>
 
+        {failed && (
+          <p role="alert" className="mt-3 text-sm text-ink">
+            <T en="The map data didn't load. Check your connection and reload the page." bn="মানচিত্রের তথ্য লোড হয়নি। ইন্টারনেট সংযোগ দেখে পাতাটি আবার লোড করুন।" />
+          </p>
+        )}
         {shown ? (
-          <p className="mt-3 rounded-xl bg-sunken px-3 py-2 text-sm text-ink">
+          <p aria-live="polite" className="mt-3 rounded-xl bg-sunken px-3 py-2 text-sm text-ink">
             <span className="font-semibold tabular-nums">
               {num(formatSigned(shown[2], measure === "temperature" ? 2 : 1))} {unit}
             </span>{" "}
@@ -186,7 +196,7 @@ export default function WorldExplorer({ counts, onZoomSouthAsia }: { counts: Wor
           onClick={onZoomSouthAsia}
           className="mt-3 w-full rounded-full bg-accent-strong px-4 py-2 text-sm font-medium text-accent-ink transition-colors hover:bg-accent-hover"
         >
-          <T en="Zoom into South Asia for the full detail →" bn="সম্পূর্ণ বিবরণের জন্য দক্ষিণ এশিয়ায় যান →" />
+          <T en="Zoom into South Asia for the full detail" bn="সম্পূর্ণ বিবরণের জন্য দক্ষিণ এশিয়ায় যান" /> <span aria-hidden>→</span>
         </button>
       </aside>
     </div>

@@ -264,7 +264,8 @@ export default function LeafletMap({
   useEffect(() => {
     if (focus.nonce === 0) return;
     const { center, zoom } = FOCUS[focus.target];
-    mapRef.current?.flyTo(center, zoom, { duration: 1.2 });
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) mapRef.current?.setView(center, zoom);
+    else mapRef.current?.flyTo(center, zoom, { duration: 1.2 });
   }, [focus]);
 
   return <div ref={containerRef} className="h-full w-full bg-sunken" />;

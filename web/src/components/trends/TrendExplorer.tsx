@@ -358,8 +358,8 @@ export default function TrendExplorer({
             <T key="2" en="Pick a region from the list, or click any square on the map." bn="তালিকা থেকে একটি অঞ্চল বেছে নিন, অথবা মানচিত্রের যেকোনো বর্গে ক্লিক করুন।" />,
             <T key="3" en="Read the answer: is it really changing, how fast, and how sure we are." bn="উত্তর পড়ুন: সত্যিই বদলাচ্ছে কি না, কত দ্রুত, আর আমরা কতটা নিশ্চিত।" />,
           ]}
-          buttonClassName="absolute left-3 top-3 lg:left-[58px] lg:top-[60px]"
-          cardClassName="lg:left-[58px] lg:top-[108px]"
+          buttonClassName="absolute left-3 top-16 lg:left-[58px] lg:top-[60px]"
+          cardClassName="max-lg:top-16 lg:left-[58px] lg:top-[108px]"
         />
         <div className="absolute bottom-[calc(var(--sheet-peek,9rem)+0.75rem)] left-3 z-[500] w-[min(320px,calc(100%-6rem))] rounded-2xl bg-card p-3 shadow-soft sm:p-4 lg:bottom-10">
           <div className="mb-2 text-sm font-medium text-ink">
@@ -375,7 +375,7 @@ export default function TrendExplorer({
           />
         </div>
         {error && (
-          <div className="absolute inset-x-3 top-16 z-[500] rounded-xl bg-card px-4 py-3 text-sm text-ink shadow-soft">
+          <div role="alert" className="absolute inset-x-3 top-16 z-[500] rounded-xl bg-card px-4 py-3 text-sm text-ink shadow-soft">
             <T en="Couldn't load the results. Please refresh the page." bn="ফলাফল লোড করা যায়নি। পাতাটি আবার লোড করুন।" />
           </div>
         )}
@@ -570,9 +570,9 @@ function Answer({
   const Arrow = !real ? Minus : upward ? TrendUp : TrendDown;
 
   return (
-    <section id="trend-answer" className="scroll-mt-4 space-y-4" aria-live="polite">
+    <section id="trend-answer" className="scroll-mt-4 space-y-4">
       <div>
-        <h2 className="text-xl font-semibold text-ink">{detail.title}</h2>
+        <h2 aria-live="polite" className="text-xl font-semibold text-ink">{detail.title}</h2>
         <p className="mt-1 text-sm leading-relaxed text-ink-2">{detail.subtitle}</p>
       </div>
 

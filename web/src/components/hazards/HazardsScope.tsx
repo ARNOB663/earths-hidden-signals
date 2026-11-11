@@ -24,6 +24,11 @@ export function HazardsScope({ data, children }: { data: Hotspots; children: Rea
 
   return (
     <div className="relative h-full">
+      {scope === "world" && (
+        <h1 className="sr-only">
+          <T en="Disaster hotspots around the world" bn="বিশ্বজুড়ে দুর্যোগের ঝুঁকিপূর্ণ অঞ্চল" />
+        </h1>
+      )}
       <div className="absolute left-1/2 top-3 z-[700] flex -translate-x-1/2 rounded-full bg-card p-1 text-sm shadow-soft">
         {(
           [
