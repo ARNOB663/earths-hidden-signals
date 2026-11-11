@@ -18,7 +18,8 @@ export function WorldTrendMap({
   increaseIsRed,
   label,
 }: {
-  file: "temperature" | "wet-season";
+  /** "future": projected rainy-season change (global/future.json, middle-road path). */
+  file: "temperature" | "wet-season" | "future";
   limit: number;
   increaseIsRed: boolean;
   label: string;
@@ -30,7 +31,8 @@ export function WorldTrendMap({
     let cancelled = false;
     fetch(`/data/global/${file}.json`)
       .then((r) => r.json())
-      .then((data: { cell: number; cells: Cell[] }) => {
+      .then((raw: { cell: number; cells?: Cell[]; scenarios?: Record<string, { cells: Cell[] }> }) => {
+        const data = { cell: raw.cell, cells: raw.cells ?? raw.scenarios?.ssp245?.cells ?? [] };
         const canvas = ref.current;
         if (cancelled || !canvas) return;
         const W = canvas.clientWidth;

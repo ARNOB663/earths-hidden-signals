@@ -7,13 +7,19 @@ import { WorldTrendMap } from "@/components/home/WorldTrendMap";
 import { PlaceSearch } from "@/components/places/PlaceSearch";
 import { StartTourButton } from "@/components/site/Tour";
 import { bnNum } from "@/lib/bn";
-import { readData, readManifest, readOutlook, readTrendZones } from "@/lib/data";
+import { readData, readManifest, readTrendZones } from "@/lib/data";
 import { T } from "@/lib/i18n";
 import { formatSigned, type Zone } from "@/lib/trends";
 
 // The front page tells a global story in five short chapters (one idea, one number each), opened
 // by warming stripes for Earth's land, then zooms into South Asia. Every number is read from the
 // committed data, never typed in.
+
+interface GlobalFuture {
+  models: string[];
+  future: [number, number];
+  scenarios: Record<"ssp245" | "ssp585", { landWarming: { median: number; min: number; max: number }; hotEveryYearShare: number }>;
+}
 
 interface GlobalSummary {
   years: [number, number];
@@ -31,11 +37,11 @@ const TOOLS: { href: string; Icon: Icon; title: [string, string]; text: [string,
 ];
 
 export default async function Home() {
-  const [manifest, trendZones, outlook, world] = await Promise.all([
+  const [manifest, trendZones, world, globalFuture] = await Promise.all([
     readManifest(),
     readTrendZones(),
-    readOutlook(),
     readData<GlobalSummary>("global", "summary.json"),
+    readData<GlobalFuture>("global", "future.json"),
   ]);
   const years = manifest.years;
   const [first, last] = [years[0], years[years.length - 1]];
@@ -61,10 +67,11 @@ export default async function Home() {
   const indus = rainPct(zone("indus-plain"));
   const delta = rainPct(zone("bengal-delta"));
 
-  // Chapter 5: NASA projections for South Asia, middle-road pathway
-  const future = outlook.regions.find((r) => r.id === "study-area")!.scenarios.ssp245;
-  const moreWarming = formatSigned(future.metrics.tMean.median, 1);
-  const hotYears = Math.round(future.exceedance.hotYear.median * 10);
+  // Chapter 5: NASA projections for Earth's land, middle-road pathway
+  const gf = globalFuture.scenarios.ssp245;
+  const moreWarming = formatSigned(gf.landWarming.median, 1);
+  const hotShare = Math.round(gf.hotEveryYearShare * 100);
+  const span = globalFuture.future;
 
   return (
     <div className="pb-24">
@@ -194,17 +201,19 @@ export default async function Home() {
           big={<T en={`${moreWarming} °C more`} bn={`আরও ${bnNum(moreWarming)} °সে`} />}
           line={
             <T
-              en={`in South Asia by ${outlook.future[0]}–${outlook.future[1]} on a middle-road path, say NASA's climate projections. Today's 1-in-10 hottest year would come ${hotYears >= 10 ? "almost every year" : `${hotYears} years in 10`}.`}
-              bn={`দক্ষিণ এশিয়ায় ${bnNum(outlook.future[0])}–${bnNum(outlook.future[1])} সালের মধ্যে, মাঝামাঝি পথে, বলছে নাসার জলবায়ু অনুমান। আজকের ১০ বছরে ১ বারের সবচেয়ে গরম বছর আসবে ${hotYears >= 10 ? "প্রায় প্রতি বছর" : `১০ বছরে ${bnNum(hotYears)} বার`}।`}
+              en={`on Earth's land by ${span[0]}–${span[1]} on a middle-road path, say NASA's climate projections. On ${hotShare}% of land, today's 1-in-10 hottest year would come almost every year.`}
+              bn={`${bnNum(span[0])}–${bnNum(span[1])} সালের মধ্যে পৃথিবীর স্থলভাগে, মাঝামাঝি পথে, বলছে নাসার জলবায়ু অনুমান। ${bnNum(hotShare)}% স্থলভাগে আজকের ১০ বছরে ১ বারের সবচেয়ে গরম বছর আসবে প্রায় প্রতি বছর।`}
             />
           }
           href="/hazards"
           visual={
-            <div className="space-y-3 text-sm">
-              <DotRow label={<T en="Today" bn="আজ" />} filled={1} />
-              <DotRow label={<T en={`${outlook.future[0]}–${String(outlook.future[1]).slice(2)}`} bn={`${bnNum(outlook.future[0])}–${bnNum(String(outlook.future[1]).slice(2))}`} />} filled={Math.min(10, hotYears)} strong />
-              <p className="text-xs text-ink-3">
-                <T en="Very hot years, out of 10" bn="অতি গরম বছর, ১০টির মধ্যে" />
+            <div>
+              <WorldTrendMap file="future" limit={20} increaseIsRed={false} label="World map of projected rainy-season change by 2041-2060: blue wetter, red drier, faded where the models disagree." />
+              <p className="mt-2 text-xs text-ink-3">
+                <T
+                  en={`Rainy season by ${span[0]}–${span[1]}: blue wetter, red drier, faded where the ${globalFuture.models.length} models disagree.`}
+                  bn={`${bnNum(span[0])}–${bnNum(span[1])} সালের বর্ষা: নীল ভেজা, লাল শুষ্ক, হালকা যেখানে ${bnNum(globalFuture.models.length)}টি মডেল একমত নয়।`}
+                />
               </p>
             </div>
           }
@@ -310,20 +319,6 @@ function Count({ value, label }: { value: number; label: React.ReactNode }) {
       <dd className="text-2xl font-semibold tabular-nums text-ink">
         <T en={value.toLocaleString("en-US")} bn={bnNum(value.toLocaleString("en-US"))} />
       </dd>
-    </div>
-  );
-}
-
-function DotRow({ label, filled, strong }: { label: React.ReactNode; filled: number; strong?: boolean }) {
-  return (
-    <div className="flex items-center gap-3">
-      <span className="w-16 shrink-0 text-ink-2">{label}</span>
-      <span aria-hidden className="flex gap-1.5">
-        {Array.from({ length: 10 }, (_, i) => (
-          <span key={i} className={`h-3.5 w-3.5 rounded-full ${i < filled ? (strong ? "bg-[var(--warm-3)]" : "bg-ink-2") : "border border-line bg-sunken"}`} />
-        ))}
-      </span>
-      <span className="sr-only">{filled} of 10</span>
     </div>
   );
 }

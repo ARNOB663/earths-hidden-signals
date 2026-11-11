@@ -8,6 +8,13 @@
 > longer in `web/`; recover them from the commit before the rollback. The `analysis/` and
 > `scripts/signals/` code is unchanged; CI now runs only the analysis tests and the web lint/build.
 
+> **Global scripts (2026-11-09/11):** `analysis/global_trends.py` (per-cell global trends, land-mean stripes,
+> worldwide event counts), `global_hazards.py` (14 disaster hotspots: events, climate, weather link, 2041–60
+> outlook) and `global_future.py` (land-mean warming, hot-year recurrence and rainy-season change by 2041–60)
+> write `web/public/data/global/`. The latter two read NEX-GDDP-CMIP6 at 2° from `raw/cmip6_global/`
+> (`cmip6_download.py --global`, resume-safe) and use whichever models have complete files.
+
+
 Two independent parts: `analysis/` (Python pipeline) writes committed JSON into `web/public/data/`; `web/` (Next.js 16) reads it at build/request time. The website works without rerunning the pipeline.
 
 ## Commands
