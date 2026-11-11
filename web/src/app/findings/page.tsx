@@ -645,7 +645,7 @@ export default async function StoryPage() {
       <div className="mt-16 flex flex-wrap items-center gap-4">
         <Link
           href="/trends"
-          className="inline-flex items-center gap-2 rounded-full bg-accent-strong px-6 py-3 font-medium text-accent-ink transition-all hover:bg-accent-hover active:scale-[0.98]"
+          className="inline-flex items-center gap-2 rounded-full bg-accent-strong px-6 py-3 font-medium text-accent-ink transition hover:bg-accent-hover active:scale-[0.98]"
         >
           {tx("Explore the trends yourself", "নিজেই প্রবণতাগুলো ঘুরে দেখুন")} <ArrowRight size={18} />
         </Link>

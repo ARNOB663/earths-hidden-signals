@@ -228,7 +228,7 @@ export default async function PlacePage({ params }: PageProps<"/places/[id]">) {
       <section className="mt-12 flex flex-wrap items-center gap-4">
         <Link
           href={`/trends?var=temperature&season=annual&lat=${place.lat}&lon=${place.lon}`}
-          className="inline-flex items-center gap-2 rounded-full bg-accent-strong px-6 py-3 font-medium text-accent-ink transition-all hover:bg-accent-hover active:scale-[0.98]"
+          className="inline-flex items-center gap-2 rounded-full bg-accent-strong px-6 py-3 font-medium text-accent-ink transition hover:bg-accent-hover active:scale-[0.98]"
         >
           <T en={`See ${place.name} on the trends map`} bn={`প্রবণতার মানচিত্রে ${nameBn} দেখুন`} /> <ArrowRight size={18} />
         </Link>

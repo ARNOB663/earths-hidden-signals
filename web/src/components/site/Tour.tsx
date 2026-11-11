@@ -143,7 +143,7 @@ export function TourBar() {
       <div className="mt-3 flex items-center justify-between gap-3">
         <div className="flex gap-1.5" aria-hidden>
           {STOPS.map((_, i) => (
-            <span key={i} className={`h-1.5 rounded-full transition-all ${i === stop ? "w-5 bg-accent" : "w-1.5 bg-line"}`} />
+            <span key={i} className={`h-1.5 rounded-full transition ${i === stop ? "w-5 bg-accent" : "w-1.5 bg-line"}`} />
           ))}
         </div>
         <div className="flex gap-2">
@@ -160,7 +160,7 @@ export function TourBar() {
           <button
             type="button"
             onClick={() => (last ? writeStop(null) : go(stop + 1))}
-            className="inline-flex min-h-10 items-center gap-1.5 rounded-full bg-accent-strong px-4 text-sm font-medium text-accent-ink transition-all hover:bg-accent-hover active:scale-[0.98]"
+            className="inline-flex min-h-10 items-center gap-1.5 rounded-full bg-accent-strong px-4 text-sm font-medium text-accent-ink transition hover:bg-accent-hover active:scale-[0.98]"
           >
             {last ? <T en="Finish" bn="শেষ" /> : <T en="Next" bn="পরের" />}
             {!last && <ArrowRight size={15} />}

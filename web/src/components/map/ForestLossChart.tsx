@@ -10,7 +10,7 @@ interface Props {
 /** Bar chart of the relative tree-cover-loss index per year for the area in view. */
 export function ForestLossChart({ totals, firstYear, yearRange }: Props) {
   if (!totals) {
-    return <div className="h-24 animate-pulse rounded-lg bg-sunken" aria-label="Loading forest data" />;
+    return <div className="h-24 motion-safe:animate-pulse rounded-lg bg-sunken" aria-label="Loading forest data" />;
   }
   const max = Math.max(...totals);
   if (max === 0) {

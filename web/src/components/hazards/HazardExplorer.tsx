@@ -165,7 +165,7 @@ export default function HazardExplorer({
             role="status"
             className="pointer-events-none absolute left-1/2 top-16 z-[500] flex -translate-x-1/2 items-center gap-2 rounded-full bg-card px-4 py-1.5 text-sm text-ink-2 shadow-soft lg:left-[calc(50%-218px)] lg:top-4"
           >
-            <span className="h-2 w-2 animate-pulse rounded-full bg-accent" />
+            <span className="h-2 w-2 motion-safe:animate-pulse rounded-full bg-accent" />
             <T en="Loading past events…" bn="আগের ঘটনাগুলো লোড হচ্ছে…" />
           </div>
         )}
@@ -245,7 +245,7 @@ export default function HazardExplorer({
                   role="radio"
                   aria-checked={hazard === h}
                   onClick={() => selectHazard(h)}
-                  className={`flex items-center gap-2 rounded-xl border px-3 py-2.5 text-sm transition-all active:scale-[0.98] ${
+                  className={`flex items-center gap-2 rounded-xl border px-3 py-2.5 text-sm transition active:scale-[0.98] ${
                     hazard === h ? "border-accent bg-accent-soft font-medium text-ink" : "border-line text-ink-2 hover:text-ink"
                   }`}
                 >
@@ -264,7 +264,7 @@ export default function HazardExplorer({
                 key={z.id}
                 onClick={() => setZoneId(z.id)}
                 aria-pressed={z.id === zone.id}
-                className={`flex w-full items-center justify-between gap-3 rounded-xl border px-3.5 py-2.5 text-left text-sm transition-all active:scale-[0.99] ${
+                className={`flex w-full items-center justify-between gap-3 rounded-xl border px-3.5 py-2.5 text-left text-sm transition active:scale-[0.99] ${
                   z.id === zone.id ? "border-accent bg-accent-soft font-medium text-ink" : "border-line text-ink-2 hover:border-ink-3"
                 }`}
               >

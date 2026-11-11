@@ -89,7 +89,7 @@ export default async function Home() {
         <div className="mt-8 flex flex-wrap items-center gap-5">
           <a
             href="#story"
-            className="inline-flex items-center gap-2 rounded-full bg-accent-strong px-6 py-3 font-medium text-accent-ink transition-all hover:bg-accent-hover active:scale-[0.98]"
+            className="inline-flex items-center gap-2 rounded-full bg-accent-strong px-6 py-3 font-medium text-accent-ink transition hover:bg-accent-hover active:scale-[0.98]"
           >
             <T en="Start the story" bn="গল্প শুরু করুন" /> <ArrowRight size={18} />
           </a>

@@ -268,7 +268,7 @@ export default function PlaceReport() {
             {stripes ? (
               <WarmingStripes values={stripes} label={`${place.name}: one stripe per year of temperature, 1981 to 2025. Blue years were cooler, red warmer.`} />
             ) : (
-              <div className="h-full w-full animate-pulse bg-sunken" />
+              <div className="h-full w-full motion-safe:animate-pulse bg-sunken" />
             )}
           </div>
           <div className="mt-1.5 flex justify-between text-xs text-ink-3">

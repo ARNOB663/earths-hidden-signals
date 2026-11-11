@@ -32,7 +32,7 @@ export function Reveal({ children, className = "" }: { children: React.ReactNode
     <div
       ref={ref}
       className={`${className} ${
-        state === "static" ? "" : `transition-all duration-700 ease-out ${state === "hidden" ? "translate-y-6 opacity-0" : "translate-y-0 opacity-100"}`
+        state === "static" ? "" : `transition duration-700 ease-out ${state === "hidden" ? "translate-y-6 opacity-0" : "translate-y-0 opacity-100"}`
       }`}
     >
       {children}

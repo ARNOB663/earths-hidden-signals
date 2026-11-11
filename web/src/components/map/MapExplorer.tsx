@@ -231,7 +231,7 @@ export default function MapExplorer({ catalog }: { catalog: GibsCatalog }) {
         <button
           type="button"
           onClick={togglePlay}
-          className="inline-flex h-10 shrink-0 items-center gap-1.5 rounded-full bg-accent-strong px-4 text-sm font-medium text-accent-ink transition-all hover:bg-accent-hover active:scale-[0.98]"
+          className="inline-flex h-10 shrink-0 items-center gap-1.5 rounded-full bg-accent-strong px-4 text-sm font-medium text-accent-ink transition hover:bg-accent-hover active:scale-[0.98]"
         >
           {playing ? <Pause size={16} weight="fill" /> : <Play size={16} weight="fill" />}
           {playing ? <T en="Pause" bn="থামান" /> : <T en="Play" bn="চালান" />}
@@ -317,7 +317,7 @@ export default function MapExplorer({ catalog }: { catalog: GibsCatalog }) {
                 onClick={() => setPanelHidden(false)}
                 aria-expanded={false}
                 aria-controls="map-controls"
-                className="inline-flex items-center gap-2 rounded-full bg-accent-strong px-3.5 py-2 font-medium text-accent-ink transition-all hover:bg-accent-hover active:scale-[0.98]"
+                className="inline-flex items-center gap-2 rounded-full bg-accent-strong px-3.5 py-2 font-medium text-accent-ink transition hover:bg-accent-hover active:scale-[0.98]"
               >
                 <SidebarSimple size={16} weight="fill" />
                 <T en="Show controls" bn="নিয়ন্ত্রণ দেখান" />
@@ -380,7 +380,7 @@ export default function MapExplorer({ catalog }: { catalog: GibsCatalog }) {
                   onClick={() => selectLayer(l)}
                   aria-pressed={active}
                   title={t(l.title, l.bn.shortTitle)}
-                  className={`flex flex-col items-center gap-1 rounded-xl border px-1.5 py-2 text-center text-xs leading-tight transition-all active:scale-[0.98] ${
+                  className={`flex flex-col items-center gap-1 rounded-xl border px-1.5 py-2 text-center text-xs leading-tight transition active:scale-[0.98] ${
                     active
                       ? "border-accent bg-accent-soft font-medium text-ink"
                       : "border-line text-ink-2 hover:border-ink-3 hover:text-ink"
@@ -685,7 +685,7 @@ function IconButton({ label, onClick, children }: { label: string; onClick: () =
       onClick={onClick}
       title={label}
       aria-label={label}
-      className="grid h-10 w-10 place-items-center rounded-full border border-line text-ink-2 transition-all hover:bg-sunken hover:text-ink active:scale-95"
+      className="grid h-10 w-10 place-items-center rounded-full border border-line text-ink-2 transition hover:bg-sunken hover:text-ink active:scale-95"
     >
       {children}
     </button>
@@ -696,7 +696,7 @@ function PlayButton({ playing, onClick }: { playing: boolean; onClick: () => voi
   return (
     <button
       onClick={onClick}
-      className="inline-flex items-center gap-2 rounded-full bg-accent-strong px-5 py-2.5 text-sm font-medium text-accent-ink transition-all hover:bg-accent-hover active:scale-[0.98]"
+      className="inline-flex items-center gap-2 rounded-full bg-accent-strong px-5 py-2.5 text-sm font-medium text-accent-ink transition hover:bg-accent-hover active:scale-[0.98]"
     >
       {playing ? <Pause size={16} weight="fill" /> : <Play size={16} weight="fill" />}
       {playing ? <T en="Pause" bn="থামান" /> : <T en="Play through the years" bn="বছরগুলো চালান" />}

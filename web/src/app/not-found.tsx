@@ -22,7 +22,7 @@ export default function NotFound() {
       <div className="mt-8 flex flex-wrap items-center gap-5">
         <Link
           href="/"
-          className="rounded-full bg-accent-strong px-6 py-3 font-medium text-accent-ink transition-all hover:bg-accent-hover active:scale-[0.98]"
+          className="rounded-full bg-accent-strong px-6 py-3 font-medium text-accent-ink transition hover:bg-accent-hover active:scale-[0.98]"
         >
           <T en="Go to the home page" bn="প্রথম পাতায় যান" />
         </Link>

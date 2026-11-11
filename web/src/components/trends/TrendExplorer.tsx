@@ -414,7 +414,7 @@ export default function TrendExplorer({
                         role="radio"
                         aria-checked={variable === v}
                         onClick={() => setVariable(v)}
-                        className={`flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm transition-all active:scale-[0.98] ${
+                        className={`flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm transition active:scale-[0.98] ${
                           variable === v ? "border-accent bg-accent-soft font-medium text-ink" : "border-line text-ink-2 hover:text-ink"
                         }`}
                       >
@@ -665,7 +665,7 @@ function Answer({
           split={split}
         />
       ) : (
-        trend && <div className="h-56 animate-pulse rounded-xl bg-sunken" aria-label={t("Loading chart", "চার্ট লোড হচ্ছে")} />
+        trend && <div className="h-56 motion-safe:animate-pulse rounded-xl bg-sunken" aria-label={t("Loading chart", "চার্ট লোড হচ্ছে")} />
       )}
       {split && (
         <p className="text-sm text-ink-2">

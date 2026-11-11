@@ -93,7 +93,7 @@ export function QuickGuide({
           <button
             type="button"
             onClick={close}
-            className="mt-4 w-full rounded-full bg-accent-strong py-2.5 text-sm font-medium text-accent-ink transition-all hover:bg-accent-hover active:scale-[0.98]"
+            className="mt-4 w-full rounded-full bg-accent-strong py-2.5 text-sm font-medium text-accent-ink transition hover:bg-accent-hover active:scale-[0.98]"
           >
             <T en="Got it" bn="বুঝেছি" />
           </button>
