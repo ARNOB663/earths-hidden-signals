@@ -42,7 +42,8 @@ export default function WorldExplorer({ counts, onZoomSouthAsia }: { counts: Wor
 
   useEffect(() => {
     const b = createBaseMap(host.current!, { center: [20, 10], zoom: 2 }, theme, "topright");
-    b.map.fitBounds([[-50, -165], [72, 170]], { animate: false });
+    b.map.setMinZoom(1); // phones need one more level out to see every continent
+    b.map.fitBounds([[-50, -165], [72, 170]], { animate: false, paddingBottomRight: window.innerWidth < 640 ? [0, 220] : [0, 0] });
     base.current = b;
     renderer.current = L.canvas({ pane: "data", padding: 0.5 });
     layer.current = L.layerGroup().addTo(b.map);

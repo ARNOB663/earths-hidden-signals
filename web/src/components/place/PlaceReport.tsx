@@ -238,7 +238,7 @@ export default function PlaceReport() {
       )}
 
       {place && (
-        <article ref={reportRef} tabIndex={-1} aria-live="polite" className="mt-14 outline-none">
+        <article ref={reportRef} tabIndex={-1} aria-live="polite" className="mt-14">
           <h2 className="text-5xl font-semibold leading-none tracking-tight text-ink sm:text-7xl">{place.name || (bn ? "এই জায়গা" : "This place")}</h2>
           <p className="mt-2 text-sm text-ink-3">
             {place.detail && `${place.detail} `}({n(place.lat.toFixed(2))}°, {n(place.lon.toFixed(2))}°)

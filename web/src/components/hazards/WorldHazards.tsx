@@ -57,6 +57,7 @@ export default function WorldHazards({ data, onZoomSouthAsia }: { data: Hotspots
     const b = createBaseMap(host.current!, { center: [15, 20], zoom: 2 }, theme, "topright");
     // Fit the hotspots into the part of the map the panel doesn't cover.
     const wide = window.innerWidth >= 640;
+    b.map.setMinZoom(1); // phones need one more level out to see every continent
     b.map.fitBounds([[-32, -100], [52, 130]], { animate: false, paddingTopLeft: [8, 56], paddingBottomRight: wide ? [400, 8] : [8, 260] });
     base.current = b;
     layer.current = L.layerGroup().addTo(b.map);
