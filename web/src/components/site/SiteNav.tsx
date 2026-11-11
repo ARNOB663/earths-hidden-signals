@@ -9,7 +9,6 @@ import { setThemePreference, systemTheme, useThemePreference, type ThemePreferen
 
 export const TABS = [
   { href: "/", label: "Home", bn: "হোম" },
-  { href: "/findings", label: "South Asia", bn: "দক্ষিণ এশিয়া" },
   { href: "/explore", label: "Satellite map", bn: "স্যাটেলাইট মানচিত্র" },
   { href: "/trends", label: "Climate trends", bn: "জলবায়ুর প্রবণতা" },
   { href: "/hazards", label: "Disaster risk", bn: "দুর্যোগের ঝুঁকি" },
