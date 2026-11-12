@@ -42,6 +42,7 @@ say comes next, and what to prepare for. Everything is in English and Bangla.
 - **Projections:** NASA NEX-GDDP-CMIP6 (six models, SSP2-4.5 and SSP5-8.5), downloaded without a login
 - **Satellite map:** NASA GIBS (MODIS land temperature and NDVI, MERRA-2 air temperature, GLDAS rain) and Landsat-based forest loss (Hansen/UMD)
 - **Disasters:** NASA Global Landslide Catalog, NASA FIRMS fires (South Asia), GDACS floods, droughts and tropical cyclones, IBTrACS cyclone tracks
+- **Arctic sea ice and CO₂ (home page):** NSIDC Sea Ice Index v4 (September extent) and NOAA GML global CO₂, tested with the same Mann–Kendall and Sen's slope
 - **Independent cross-check:** CRU TS 4.10 (University of East Anglia)
 
 ## How we know a change is real
@@ -69,6 +70,7 @@ python build.py && python build_hazards.py && python cyclones.py && python cross
 python turning.py                          # turning points
 python cmip6_download.py && python future.py && python risk.py       # South Asia projections and model test
 python twins.py && python global_trends.py                           # global trends, place data, twins
+python global_signals.py                                             # Arctic sea ice and CO2 cards
 python cmip6_download.py --global && python global_future.py && python global_hazards.py   # global projections and hotspots
 python -m pytest -q                        # tests for the statistics and pipelines
 ```

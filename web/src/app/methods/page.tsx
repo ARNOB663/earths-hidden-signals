@@ -113,6 +113,8 @@ export default async function MethodsPage() {
               <Tr v="Wildfire" d="NASA FIRMS MODIS active fires (Terra + Aqua), 2003–2024" u="Hazard events" href="https://firms.modaps.eosdis.nasa.gov/" />
               <Tr v="Landslides" d="NASA Global Landslide Catalog, 2007–2017" u="Hazard events" href="https://data.nasa.gov/" />
               <Tr v="Floods, droughts, cyclones" d="GDACS alerts (UN/EU), 2000–2025" u="Hazard events" href="https://www.gdacs.org/" />
+              <Tr v="Arctic sea ice" d="NSIDC Sea Ice Index v4 (G02135), September extent, 1981–2025" u="Home page: the clearest effect" href="https://nsidc.org/data/g02135/versions/4" />
+              <Tr v="Carbon dioxide" d="NOAA Global Monitoring Laboratory, global monthly mean, 1981–2025" u="Home page: the cause" href="https://gml.noaa.gov/ccgg/trends/" />
               <Tr v="Projections" d="NASA NEX-GDDP-CMIP6 (SSP2-4.5, SSP5-8.5), 1995–2014 and 2041–2060" u="Outlook for 2041–2060" href="https://www.nccs.nasa.gov/services/data-collections/land-based-products/nex-gddp-cmip6" />
               <Tr v="Map imagery" d="NASA GIBS: MODIS surface temperature and NDVI, MERRA-2, GLDAS" u="Satellite map (visual only)" href="https://earthdata.nasa.gov/gibs" />
               <Tr v="Forest loss" d="Hansen/UMD Global Forest Change (Landsat), via Global Forest Watch" u="Satellite map" href="https://glad.earthengine.app/view/global-forest-change" />

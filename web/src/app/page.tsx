@@ -2,6 +2,7 @@ import { ArrowRight, ChartLineUp, MapTrifold, Warning } from "@phosphor-icons/re
 import type { Icon } from "@phosphor-icons/react";
 import Link from "next/link";
 import { HomeSearch } from "@/components/home/HomeSearch";
+import { PlanetSignals, type Signal } from "@/components/home/PlanetSignals";
 import { Reveal } from "@/components/home/Reveal";
 import { WarmingStripes } from "@/components/home/WarmingStripes";
 import { WorldTrendMap } from "@/components/home/WorldTrendMap";
@@ -36,11 +37,12 @@ const TOOLS: { href: string; Icon: Icon; title: [string, string]; text: [string,
 ];
 
 export default async function Home() {
-  const [manifest, trendZones, world, globalFuture] = await Promise.all([
+  const [manifest, trendZones, world, globalFuture, signals] = await Promise.all([
     readManifest(),
     readTrendZones(),
     readData<GlobalSummary>("global", "summary.json"),
     readData<GlobalFuture>("global", "future.json"),
+    readData<{ co2: Signal; seaIce: Signal }>("global", "signals.json"),
   ]);
   const years = manifest.years;
   const [first, last] = [years[0], years[years.length - 1]];
@@ -119,6 +121,8 @@ export default async function Home() {
           <span className="tabular-nums">{last}</span>
         </div>
       </section>
+
+      <PlanetSignals co2={signals.co2} seaIce={signals.seaIce} />
 
       {/* The story: four chapters, one idea each */}
       <div id="story" className="mx-auto mt-16 w-full max-w-[1100px] scroll-mt-20 space-y-20 px-4 sm:mt-24 sm:space-y-24 sm:px-6">
