@@ -8,7 +8,8 @@ import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { MapLoading } from "@/components/map/MapLoading";
 import { T } from "@/lib/i18n";
-import type { WorldCounts } from "./WorldExplorer";
+import { TrendsStart } from "./TrendsStart";
+import type { MeasureId, WorldCounts } from "./WorldExplorer";
 
 const WorldExplorer = dynamic(() => import("./WorldExplorer"), { ssr: false, loading: () => <MapLoading /> });
 
@@ -16,6 +17,7 @@ export function TrendsScope({ counts, children }: { counts: WorldCounts; childre
   const params = useSearchParams();
   const detailed = params.get("scope") === "south-asia" || ["var", "zone", "lat", "season"].some((k) => params.has(k));
   const [scope, setScope] = useState<"world" | "south-asia">(detailed ? "south-asia" : "world");
+  const [measure, setMeasure] = useState<MeasureId>("temperature");
 
   const choose = (s: "world" | "south-asia") => {
     setScope(s);
@@ -47,7 +49,8 @@ export function TrendsScope({ counts, children }: { counts: WorldCounts; childre
           </button>
         ))}
       </div>
-      {scope === "world" ? <WorldExplorer counts={counts} onZoomSouthAsia={() => choose("south-asia")} /> : children}
+      {scope === "world" ? <WorldExplorer key={measure} initial={measure} counts={counts} onZoomSouthAsia={() => choose("south-asia")} /> : children}
+      {scope === "world" && !detailed && <TrendsStart onWorld={setMeasure} />}
     </div>
   );
 }

@@ -16,7 +16,7 @@ import { formatSigned, trendLegendTokens, trendToken, type VariableId } from "@/
 
 /** Trend files: [lat, lon, slope per decade, clear]. future.json: [lat, lon, rain %, models agree, °C, hot-year share]. */
 type Cell = number[]; // a too-dry rain value arrives as null (see rainOf)
-type MeasureId = "temperature" | "wet-season" | "rainfall" | "future";
+export type MeasureId = "temperature" | "wet-season" | "rainfall" | "future";
 type Scenario = "ssp245" | "ssp585";
 type FutureSummary = { landWarming: { median: number; min: number; max: number }; hotEveryYearShare: number; models: number; years: [number, number] };
 
@@ -39,7 +39,7 @@ export interface WorldCounts {
   wetSeason: { cells: number; increase: number; decrease: number };
 }
 
-export default function WorldExplorer({ counts, onZoomSouthAsia }: { counts: WorldCounts; onZoomSouthAsia: () => void }) {
+export default function WorldExplorer({ counts, onZoomSouthAsia, initial = "temperature" }: { counts: WorldCounts; onZoomSouthAsia: () => void; initial?: MeasureId }) {
   const host = useRef<HTMLDivElement>(null);
   const base = useRef<BaseMap | null>(null);
   const layer = useRef<L.LayerGroup | null>(null);
@@ -47,7 +47,7 @@ export default function WorldExplorer({ counts, onZoomSouthAsia }: { counts: Wor
   const renderer = useRef<L.Canvas | null>(null);
   const theme = useTheme();
   const bn = useLang() === "bn";
-  const [measure, setMeasure] = useState<MeasureId>("temperature");
+  const [measure, setMeasure] = useState<MeasureId>(initial);
   const [cells, setCells] = useState<{ id: MeasureId; data: Cell[]; d: number } | null>(null);
   const [picked, setPicked] = useState<Cell | null>(null);
   const [failed, setFailed] = useState(false);
