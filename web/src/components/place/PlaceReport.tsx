@@ -18,6 +18,7 @@ import {
   loadStripes,
   RADIUS_KM,
   signed,
+  stripeKey,
   type Data,
   type Place,
   type Report,
@@ -310,6 +311,7 @@ export default function PlaceReport() {
             </span>
             <span>{n(2025)}</span>
           </div>
+          {stripes && <StripeKey values={stripes} bn={bn} />}
 
           {!report ? (
             loadFailed ? (
@@ -397,10 +399,11 @@ export default function PlaceReport() {
                         line={<T en="warmer again, compared with 1995–2014." bn="আরও গরম, ১৯৯৫–২০১৪ সালের তুলনায়।" />}
                       />
                       <Fact
-                        big={report.fut[5] >= 0.95 ? (bn ? "প্রতি বছর" : "Every year") : `${n(Math.max(1, Math.round(report.fut[5] * 10)))} ${bn ? "/ ১০ বছর" : "in 10 years"}`}
+                        big={report.fut[5] >= 0.95 ? (bn ? "প্রায় প্রতি বছর" : "Almost every year") : `${n(Math.max(1, Math.round(report.fut[5] * 10)))} ${bn ? "/ ১০ বছর" : "in 10 years"}`}
                         tone={report.fut[5] >= 0.5 ? "warm" : null}
                         line={<T en="a year as hot as today's hottest in ten." bn="আজকের ১০ বছরে সবচেয়ে গরম বছরের মতো বছর।" />}
                       />
+                      <HotYears share={report.fut[5]} bn={bn} />
                       <p className="mt-4 text-sm text-ink-2">
                         <T
                           en={report.fut[2] === null ? "Too dry here to measure a rainy-season change." : `Rainy season ${signed(report.fut[2], 0)}%${report.fut[3] ? ", and the climate models agree." : ", but the climate models disagree."}`}
@@ -537,6 +540,7 @@ export default function PlaceReport() {
                     bn={`নাসা GISTEMP, GPCP ও NEX-GDDP-CMIP6 (${n(data!.future.models.length)}টি মডেল); GDACS ও নাসার গ্লোবাল ল্যান্ডস্লাইড ক্যাটালগ। জায়গার নাম: Open-Meteo।`}
                   />
                 </p>
+              <WordsExplained />
               </div>
             </>
           )}
@@ -715,5 +719,92 @@ function Locator({ cells, pins, label }: { cells: TrendCell[]; pins: Place[]; la
         </g>
       ))}
     </svg>
+  );
+}
+
+/** The °C scale for a place's stripes: its coolest and warmest year. */
+function StripeKey({ values, bn }: { values: number[]; bn: boolean }) {
+  const k = stripeKey(values);
+  const n = (x: string | number) => (bn ? bnNum(String(x)) : String(x));
+  const deg = bn ? "°সে" : "°C";
+  return (
+    <p className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-ink-2">
+      <span className="inline-flex items-center gap-1.5">
+        <span aria-hidden className="h-2.5 w-2.5 rounded-sm bg-[var(--cool-3)]" />
+        <T en={`Coolest, ${k.coolYear}: ${signed(k.cool, 1)} ${deg}`} bn={`সবচেয়ে ঠান্ডা, ${n(k.coolYear)}: ${n(signed(k.cool, 1))} ${deg}`} />
+      </span>
+      <span className="inline-flex items-center gap-1.5">
+        <span aria-hidden className="h-2.5 w-2.5 rounded-sm bg-[var(--warm-3)]" />
+        <T en={`Warmest, ${k.warmYear}: ${signed(k.warm, 1)} ${deg}`} bn={`সবচেয়ে গরম, ${n(k.warmYear)}: ${n(signed(k.warm, 1))} ${deg}`} />
+      </span>
+      <span className="text-ink-3">
+        <T en="compared with the 1951–1980 average" bn="১৯৫১–১৯৮০ সালের গড়ের তুলনায়" />
+      </span>
+    </p>
+  );
+}
+
+/** Today's 1-in-10 hottest year as ten squares: one today, how many by 2041–2060. */
+function HotYears({ share, bn }: { share: number; bn: boolean }) {
+  const then = Math.min(10, Math.max(1, Math.round(share * 10)));
+  const row = (filled: number, warm: boolean) => (
+    <span aria-hidden className="flex gap-1">
+      {Array.from({ length: 10 }, (_, i) => (
+        <span key={i} className={`h-3.5 w-3.5 rounded-[3px] ${i < filled ? (warm ? "bg-[var(--warm-3)]" : "bg-ink-2") : "border border-line"}`} />
+      ))}
+    </span>
+  );
+  return (
+    <div className="mt-3 space-y-1.5 text-xs text-ink-2">
+      <p className="sr-only">
+        <T en={`Today 1 year in 10 is this hot; by 2041–2060, ${then} in 10.`} bn={`আজ ১০ বছরে ১ বছর এত গরম; ২০৪১–২০৬০ সালে ১০ বছরে ${bnNum(then)} বছর।`} />
+      </p>
+      <div className="flex items-center gap-3" aria-hidden>
+        <span className="w-16">
+          <T en="Today" bn="আজ" />
+        </span>
+        {row(1, false)}
+      </div>
+      <div className="flex items-center gap-3" aria-hidden>
+        <span className="w-16">
+          <T en="2041–60" bn="২০৪১–৬০" />
+        </span>
+        {row(then, true)}
+      </div>
+    </div>
+  );
+}
+
+const WORDS: [string, string, string, string][] = [
+  ["Warming stripes", "Each stripe is one year's temperature here: blue cooler, red warmer than usual.", "উষ্ণতার রেখা", "প্রতিটি দাগ এখানকার এক বছরের তাপমাত্রা: নীল ঠান্ডা, লাল স্বাভাবিকের চেয়ে গরম।"],
+  ["Clear change", "The trend passes a statistical test (Mann–Kendall, with false-discovery control across the map), so chance is an unlikely explanation.", "স্পষ্ট পরিবর্তন", "প্রবণতাটি পরিসংখ্যানগত পরীক্ষায় উত্তীর্ণ (ম্যান–কেনডাল, পুরো মানচিত্রে ভুল-আবিষ্কার নিয়ন্ত্রণসহ), তাই কাকতালীয় হওয়ার সম্ভাবনা কম।"],
+  ["Every 10 years", "How much the value changes on average each decade (Sen's slope).", "প্রতি ১০ বছরে", "প্রতি দশকে গড়ে কতটা বদলায় (সেনের ঢাল)।"],
+  ["Rainy season", "The four wettest months in a row at this place.", "বর্ষা মৌসুম", "এই জায়গার পরপর সবচেয়ে ভেজা চার মাস।"],
+  ["2041–2060", "Those years in NASA's climate projections (six models), each compared with its own 1995–2014.", "২০৪১–২০৬০", "নাসার জলবায়ু অনুমানে (ছয়টি মডেল) ওই বছরগুলো, প্রতিটি মডেল তার নিজের ১৯৯৫–২০১৪-এর সাথে তুলনা করে।"],
+  ["Middle road, high emissions", "Two paths for the world's emissions (SSP2-4.5 and SSP5-8.5).", "মাঝামাঝি পথ, উচ্চ নিঃসরণ", "বিশ্বের নিঃসরণের দুটি পথ (SSP2-4.5 ও SSP5-8.5)।"],
+  ["Climate twin", "The place more than 1,500 km away whose changes since 1981 match best.", "জলবায়ু-যমজ", "১,৫০০ কিমির বেশি দূরের সেই জায়গা, যার ১৯৮১ থেকে পরিবর্তন সবচেয়ে বেশি মেলে।"],
+];
+
+/** Plain definitions of the report's terms, closed until asked for. */
+function WordsExplained() {
+  return (
+    <details className="group mt-6 max-w-2xl rounded-2xl border border-line">
+      <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between px-4 text-sm font-medium text-ink-2 hover:text-ink [&::-webkit-details-marker]:hidden">
+        <T en="What do these words mean?" bn="এই শব্দগুলোর মানে কী?" />
+        <span aria-hidden className="text-ink-3 transition-transform group-open:rotate-180">⌄</span>
+      </summary>
+      <dl className="space-y-3 border-t border-line px-4 py-4 text-sm">
+        {WORDS.map(([term, def, termBn, defBn]) => (
+          <div key={term}>
+            <dt className="font-medium text-ink">
+              <T en={term} bn={termBn} />
+            </dt>
+            <dd className="text-ink-2">
+              <T en={def} bn={defBn} />
+            </dd>
+          </div>
+        ))}
+      </dl>
+    </details>
   );
 }

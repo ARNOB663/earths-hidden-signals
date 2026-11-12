@@ -51,6 +51,17 @@ export function loadStripes(lat: number, lon: number): Promise<number[] | null> 
   return cache.tiles.get(tile)!.then((t) => t[`${la},${lo}`] ?? null);
 }
 
+/** Coolest and warmest year of a stripes series (values are GISTEMP anomalies vs 1951–1980). */
+export function stripeKey(values: number[], first = 1981) {
+  let lo = 0;
+  let hi = 0;
+  values.forEach((v, i) => {
+    if (v < values[lo]) lo = i;
+    if (v > values[hi]) hi = i;
+  });
+  return { coolYear: first + lo, cool: values[lo], warmYear: first + hi, warm: values[hi] };
+}
+
 export function km(aLat: number, aLon: number, bLat: number, bLon: number) {
   const r = Math.PI / 180;
   const h = Math.sin(((bLat - aLat) * r) / 2) ** 2 + Math.cos(aLat * r) * Math.cos(bLat * r) * Math.sin(((bLon - aLon) * r) / 2) ** 2;

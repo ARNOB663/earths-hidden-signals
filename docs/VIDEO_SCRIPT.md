@@ -14,7 +14,7 @@ the data can be updated.
 | 0–4 s | Home page: the headline, then scroll to the full-width warming stripes | "Earth's land is one and a half degrees warmer than in 1981." |
 | 4–9 s | Climate trends, World: the red map; click one square so its number appears | "We tested every land area with NASA data. Almost all warmed — and we show where a change is real." |
 | 9–15 s | Your place: type **Khulna**, the report opens on its stripes and "+1.4 °C" | "Type your town. Khulna: one point four degrees warmer, a clear change." |
-| 15–20 s | Scroll to "By 2041–2060" (Every year) and "Recorded within 300 km" (51 floods, 10 cyclones) | "By mid-century, today's hottest year comes almost every year. Fifty-one floods and ten cyclones nearby." |
+| 15–20 s | Scroll to "By 2041–2060" (Almost every year) and "Recorded within 300 km" (51 flood alerts, 10 cyclones) | "By mid-century, today's hottest year comes almost every year. Fifty-one flood alerts and ten cyclones nearby." |
 | 20–24 s | Click **Find its climate twin**: the side-by-side with South-eastern Brazil | "Its climate twin is in Brazil: same change, half a world away." |
 | 24–28 s | Click **Download as image**, show the card; tap **বাং** to switch to Bangla | "Share it, in English or Bangla." |
 | 28–30 s | End card: "Earth's Hidden Signals · earths-hidden-signals.vercel.app" | "Earth's Hidden Signals." |

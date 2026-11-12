@@ -2,7 +2,7 @@
 // Uses the light theme's palette on purpose, so a shared card looks the same everywhere.
 
 import { bnNum } from "@/lib/bn";
-import { signed, type Place, type Report } from "./placeData";
+import { signed, stripeKey, type Place, type Report } from "./placeData";
 
 const COLORS = {
   page: "#f6f5f2",
@@ -92,6 +92,17 @@ export function downloadCard({
   ctx.fillText(right, W - P - ctx.measureText(right).width, sy + sh + 40);
   const mid = bn ? "প্রতিটি দাগ এখানকার এক বছরের তাপমাত্রা" : "Each stripe is one year of temperature here";
   ctx.fillText(mid, (W - ctx.measureText(mid).width) / 2, sy + sh + 40);
+  if (stripes && stripes.length) {
+    const k = stripeKey(stripes);
+    const key = bn
+      ? `সবচেয়ে ঠান্ডা ${n(String(k.coolYear))}: ${n(signed(k.cool, 1))} ${deg}  ·  সবচেয়ে গরম ${n(String(k.warmYear))}: ${n(signed(k.warm, 1))} ${deg}  (১৯৫১–১৯৮০-এর তুলনায়)`
+      : `Coolest ${k.coolYear}: ${signed(k.cool, 1)} ${deg}  ·  Warmest ${k.warmYear}: ${signed(k.warm, 1)} ${deg}  (vs 1951–1980)`;
+    ctx.fillStyle = COLORS.ink2;
+    let size = 26;
+    ctx.font = f(size);
+    while (ctx.measureText(key).width > W - 2 * P && size > 18) ctx.font = f(--size); // Bangla runs longer
+    ctx.fillText(key, (W - ctx.measureText(key).width) / 2, sy + sh + 82);
+  }
 
   // Two columns of facts.
   const col = (x: number, y: number, head: string, big: string, line: string) => {
