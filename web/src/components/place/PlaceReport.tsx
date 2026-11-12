@@ -640,8 +640,8 @@ function Compare({ a, b, bn, onClear }: { a: Side; b: Side; bn: boolean; onClear
       get: (r) => (r.fut ? (r.fut[5] >= 0.95 ? (bn ? "প্রায় প্রতি বছর" : "almost every year") : bn ? `১০ বছরে ${bnNum(Math.max(1, Math.round(r.fut[5] * 10)))} বার` : `${Math.max(1, Math.round(r.fut[5] * 10))} in 10 years`) : "–"),
     },
     {
-      en: "Days above 35 °C a year, then",
-      bn: "বছরে ৩৫ °সে-এর বেশি দিন, তখন",
+      en: "Very hot days a year, then",
+      bn: "বছরে খুব গরম দিন, তখন",
       get: (r) => (r.hot ? `${n(String(Math.round(r.hot.then)))} (${bn ? "আজ" : "now"} ${n(String(Math.round(r.hot.now)))})` : "–"),
     },
     {
@@ -816,21 +816,17 @@ function WordsExplained() {
 }
 
 /** Very hot days a year: today against 2041–2060, from NASA's daily projections. */
-function HotDays({ hot, bn }: { hot: { now: number; then: number; threshold: number }; bn: boolean }) {
+function HotDays({ hot, bn }: { hot: { now: number; then: number }; bn: boolean }) {
   const n = (x: number) => (bn ? bnNum(String(Math.round(x))) : String(Math.round(x)));
-  const t = bn ? bnNum(String(hot.threshold)) : String(hot.threshold);
-  if (Math.round(hot.then) === 0)
-    return (
-      <p className="mt-4 text-sm text-ink-2">
-        <T en={`Days above ${t} °C stay rare here.`} bn={`এখানে ${t} °সে-এর বেশি গরম দিন বিরল থাকবে।`} />
-      </p>
-    );
   return (
     <p className="mt-4 text-sm text-ink-2">
-      <T en={`Days above ${t} °C a year:`} bn={`বছরে ${t} °সে-এর বেশি গরম দিন:`} />{" "}
+      <T en="Very hot days a year:" bn="বছরে খুব গরম দিন:" />{" "}
       <span className="font-semibold tabular-nums text-ink">{n(hot.now)}</span> <T en="today" bn="আজ" />
       {" → "}
-      <span className="font-semibold tabular-nums text-[var(--warm-4)]">{n(hot.then)}</span> <T en="by 2041–2060." bn="২০৪১–২০৬০ সালে।" />
+      <span className="font-semibold tabular-nums text-[var(--warm-4)]">{n(hot.then)}</span> <T en="by 2041–2060" bn="২০৪১–২০৬০ সালে" />
+      <span className="block text-xs text-ink-3">
+        <T en="A very hot day here is one as hot as today's hottest 5% of days." bn="এখানে খুব গরম দিন মানে আজকের সবচেয়ে গরম ৫% দিনের মতো গরম দিন।" />
+      </span>
     </p>
   );
 }

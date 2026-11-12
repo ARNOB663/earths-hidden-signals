@@ -1,13 +1,14 @@
-"""Days above 35 C: how many very hot days a year each land cell had in 1995-2014 and will have in
-2041-2060, from NASA NEX-GDDP-CMIP6 daily maximum temperature (tasmax).
+"""Very hot days: how often each land cell gets a day as hot as its own hottest 5% of days in 1995-2014,
+by 2041-2060, from NASA NEX-GDDP-CMIP6 daily maximum temperature (tasmax).
 
-NEX-GDDP-CMIP6 is bias-corrected against observations, so an absolute threshold like 35 C is meaningful
-(that is the point of the dataset). Each model's 1995-2014 run gives its "today"; the site reports the
-median across models of the average number of days a year above 35 C, for today and for both paths,
-plus the lowest and highest model for the future.
+Why a local threshold and not a fixed one like 35 C: cells are sampled every 2 degrees (one grid point,
+not an area average), so a fixed threshold is very sensitive to whether the point sits on the coast, inland
+or on a mountain, and a town can be up to ~150 km from its point. Checked against known towns, a fixed
+35 C gave Lagos 78 hot days a year (it rarely passes 33 C) and Phoenix 51 (it has well over 100). The
+local threshold asks only how the point's own heat changes, which the data can answer: by construction
+today has about 18 such days a year (5% of 365), and the site reports how many each path brings.
 
-Cells are sampled every 2 degrees (horizStride 8 of the 0.25-degree grid), like global_future.py, so a
-value describes that point of the grid, not an area average.
+Each model is compared with its own 1995-2014 run; the site shows the median across models.
 
 Input: raw/cmip6_global/{model}/{scenario}/tasmax_{year}.nc  (cmip6_download.py --global --vars tasmax)
 Output: web/public/data/global/hotdays.json
@@ -27,7 +28,7 @@ from cmip6_download import MODELS, PERIODS
 ROOT = Path(__file__).parent
 RAW = ROOT / "raw" / "cmip6_global"
 OUT = ROOT.parent / "web" / "public" / "data" / "global" / "hotdays.json"
-THRESHOLD_C = 35.0
+PERCENTILE = 95.0
 SCENARIOS = ("ssp245", "ssp585")
 
 
@@ -35,20 +36,31 @@ def complete(model: str) -> bool:
     return all((RAW / model / s / f"tasmax_{y}.nc").exists() for s, ys in PERIODS.items() for y in ys)
 
 
-def hot_days(tasmax_k: np.ndarray, threshold_c: float = THRESHOLD_C) -> np.ndarray:
-    """[days, lat, lon] in kelvin -> [lat, lon] count of days above the threshold (NaN where no data)."""
-    count = (tasmax_k > threshold_c + 273.15).sum(axis=0).astype("f4")
-    return np.where(np.isfinite(tasmax_k).all(axis=0), count, np.nan)
-
-
-def period_mean(model: str, period: str):
-    """Average yearly count of hot days over a period, plus the grid."""
-    counts, lats, lons = [], None, None
+def read_period(model: str, period: str):
+    """All daily tasmax of a period, [days, lat, lon] in kelvin (NaN where no data), plus the grid."""
+    days, lats, lons = [], None, None
     for year in PERIODS[period]:
         with netCDF4.Dataset(RAW / model / period / f"tasmax_{year}.nc") as ds:
             lats, lons = ds["lat"][:].data, ds["lon"][:].data
-            counts.append(hot_days(np.ma.filled(ds["tasmax"][:].astype("f4"), np.nan)))
-    return lats, lons, np.mean(counts, axis=0)
+            days.append(np.ma.filled(ds["tasmax"][:].astype("f4"), np.nan))
+    return lats, lons, np.concatenate(days)
+
+
+def days_above(daily: np.ndarray, threshold: np.ndarray, years: int) -> np.ndarray:
+    """Average number of days a year above a per-cell threshold. daily [days, cells], threshold [cells]."""
+    return (daily > threshold[None, :]).sum(axis=0) / years
+
+
+def model_hot_days(model: str):
+    lats, lons, hist = read_period(model, "historical")
+    land = np.isfinite(hist).all(axis=0)
+    hl = hist[:, land]
+    thr = np.percentile(hl, PERCENTILE, axis=0)
+    out = {"historical": days_above(hl, thr, len(PERIODS["historical"]))}
+    for sc in SCENARIOS:
+        _, _, fut = read_period(model, sc)
+        out[sc] = days_above(fut[:, land], thr, len(PERIODS[sc]))
+    return lats, lons, land, out
 
 
 def main() -> None:
@@ -56,41 +68,42 @@ def main() -> None:
     if not models:
         raise SystemExit("No model has complete tasmax files; run cmip6_download.py --global --vars tasmax")
     print(f"Models: {', '.join(models)}")
+    lats = lons = land = None
     per = {p: [] for p in ("historical", *SCENARIOS)}
-    lats = lons = None
     for m in models:
         print(f"  {m}")
+        lats, lons, m_land, out = model_hot_days(m)
+        if land is None:
+            land = m_land
+        elif not np.array_equal(land, m_land):
+            raise SystemExit(f"{m}: land mask differs from the first model")
         for p in per:
-            lats, lons, mean = period_mean(m, p)
-            per[p].append(mean)
-    stack = {p: np.stack(v) for p, v in per.items()}
-    med = {p: np.median(v, axis=0) for p, v in stack.items()}
-    land = np.isfinite(med["historical"])
-    weights = np.cos(np.deg2rad(lats))[:, None] * land
+            per[p].append(out[p])
+    med = {p: np.median(np.stack(v), axis=0) for p, v in per.items()}
+    idx = np.argwhere(land)
+    w = np.cos(np.deg2rad(lats[idx[:, 0]]))
 
     cells = []
-    for i, j in zip(*np.nonzero(land)):
+    for k, (i, j) in enumerate(idx):
         lon = float(lons[j] - 360 if lons[j] > 180 else lons[j])
-        # lat, lon, days/yr 1995-2014, 2041-2060 middle road, 2041-2060 high emissions
-        cells.append([round(float(lats[i]), 2), round(lon, 2), round(float(med["historical"][i, j]), 1),
-                      round(float(med["ssp245"][i, j]), 1), round(float(med["ssp585"][i, j]), 1)])
-
-    def land_mean(a):
-        return round(float(np.nansum(a * weights) / weights.sum()), 1)
+        # lat, lon, very hot days a year by 2041-2060: middle road, high emissions (today is ~18 by construction)
+        cells.append([round(float(lats[i]), 2), round(lon, 2), round(float(med["ssp245"][k]), 1), round(float(med["ssp585"][k]), 1)])
 
     payload = {
         "generated": date.today().isoformat(),
         "dataset": "NASA NEX-GDDP-CMIP6 daily maximum temperature (tasmax), bias-corrected; sampled every 2 degrees, land only",
-        "thresholdC": THRESHOLD_C,
+        "definition": "days a year hotter than the cell's own hottest 5% of days in 1995-2014 (each model against its own run)",
+        "percentile": PERCENTILE,
+        "todayDays": round(float(np.median(med["historical"])), 1),
         "models": models,
         "present": [PERIODS["historical"][0], PERIODS["historical"][-1]],
         "future": [PERIODS["ssp245"][0], PERIODS["ssp245"][-1]],
         "cell": 2.0,
-        "landMeanDays": {p: land_mean(med[p]) for p in med},
+        "landMeanDays": {p: round(float((med[p] * w).sum() / w.sum()), 1) for p in med},
         "cells": cells,
     }
     OUT.write_text(json.dumps(payload, separators=(",", ":")))
-    print(f"Land average days above {THRESHOLD_C:.0f} C a year: " + ", ".join(f"{p} {v}" for p, v in payload["landMeanDays"].items()))
+    print("Land average very hot days a year: " + ", ".join(f"{p} {v}" for p, v in payload["landMeanDays"].items()))
     print(f"Wrote {OUT} ({OUT.stat().st_size // 1024} KB, {len(cells)} cells)")
 
 

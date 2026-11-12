@@ -5,7 +5,7 @@ export type Place = { name: string; detail: string; lat: number; lon: number; tw
 export type TrendCell = [number, number, number, number]; // lat, lon, slope/decade, clear
 export type FutureCell = [number, number, number | null, number, number, number]; // lat, lon, rain % (null: too dry), agree, warming C, hot-year share
 export type Scenario = "ssp245" | "ssp585";
-export type HotCell = [number, number, number, number, number]; // lat, lon, days above 35 °C a year: 1995–2014, 2041–60 middle road, 2041–60 high
+export type HotCell = [number, number, number, number]; // lat, lon, very hot days a year by 2041–60: middle road, high emissions
 type TwinCell = [number, number, string, number, number, number, number, number]; // lat, lon, name, 5 features
 
 export interface Data {
@@ -14,16 +14,16 @@ export interface Data {
   future: { models: string[]; future: [number, number]; scenarios: Record<Scenario, { cells: FutureCell[] }> };
   events: { years: { gdacs: [number, number]; landslide: [number, number] }; cells: [number, number, number, number, number, number][] };
   twins: { weights: number[]; median: number[]; scale: number[]; cells: TwinCell[] };
-  /** Days above 35 °C; null if the file is missing (the report then leaves the line out). */
-  hot: { thresholdC: number; cells: HotCell[] } | null;
+  /** Very hot days (hotter than the place's own hottest 5% of days in 1995–2014); null if the file is missing. */
+  hot: { todayDays: number; cells: HotCell[] } | null;
 }
 
 export interface Report {
   temp: TrendCell | null;
   wet: TrendCell | null;
   fut: FutureCell | null;
-  /** Days above 35 °C a year: today (1995–2014) and by 2041–2060 on the chosen path. */
-  hot: { now: number; then: number; threshold: number } | null;
+  /** Very hot days a year: today (1995–2014, about 18 by definition) and by 2041–2060 on the chosen path. */
+  hot: { now: number; then: number } | null;
   /** Events within the radius: floods, cyclones, droughts, landslides. */
   ev: number[];
 }
@@ -102,7 +102,7 @@ export function computeReport(place: Place, data: Data, scenario: Scenario): Rep
     temp: nearest(data.temp, place.lat, place.lon),
     wet: nearest(data.wet, place.lat, place.lon),
     fut: nearest(data.future.scenarios[scenario].cells, place.lat, place.lon),
-    hot: h && data.hot ? { now: h[2], then: scenario === "ssp245" ? h[3] : h[4], threshold: data.hot.thresholdC } : null,
+    hot: h && data.hot ? { now: data.hot.todayDays, then: scenario === "ssp245" ? h[2] : h[3] } : null,
     ev,
   };
 }

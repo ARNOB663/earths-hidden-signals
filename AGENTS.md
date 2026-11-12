@@ -14,9 +14,10 @@
 > write `web/public/data/global/` (incl. `events-grid.json` and per-cell `stripes/` tiles used by `/your-place`, the any-place climate report). The latter two read NEX-GDDP-CMIP6 at 2° from `raw/cmip6_global/`
 > (`cmip6_download.py --global`, resume-safe) and use whichever models have complete files.
 > Also: `global_signals.py` (CO₂ and September Arctic sea ice for the home page; small CSVs, no login) and
-> `global_hotdays.py` (days above 35 °C a year, today vs 2041–60, from daily `tasmax`:
-> `cmip6_download.py --global --vars tasmax`). `hotdays.json` is optional for the web: without it the town
-> report leaves that line out.
+> `global_hotdays.py` (very hot days a year by 2041–60, a day hotter than the cell's own hottest 5% in
+> 1995–2014, from daily `tasmax`: `cmip6_download.py --global --vars tasmax`; IITM-ESM publishes no tasmax).
+> A fixed 35 °C threshold was tried and dropped: 2° point sampling made it wrong for coastal and mountain
+> towns. `hotdays.json` is optional for the web: without it the town report leaves that line out.
 
 
 Two independent parts: `analysis/` (Python pipeline) writes committed JSON into `web/public/data/`; `web/` (Next.js 16) reads it at build/request time. The website works without rerunning the pipeline.

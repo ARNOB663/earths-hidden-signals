@@ -72,6 +72,7 @@ python cmip6_download.py && python future.py && python risk.py       # South Asi
 python twins.py && python global_trends.py                           # global trends, place data, twins
 python global_signals.py                                             # Arctic sea ice and CO2 cards
 python cmip6_download.py --global && python global_future.py && python global_hazards.py   # global projections and hotspots
+python cmip6_download.py --global --vars tasmax && python global_hotdays.py                  # very hot days by 2041-2060
 python -m pytest -q                        # tests for the statistics and pipelines
 ```
 
