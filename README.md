@@ -28,9 +28,10 @@ say comes next, and what to prepare for. Everything is in English and Bangla.
 - **Disasters follow the weather in some places, not others.** Floods in the Yangtze, Sahel and
   Indus plain and landslides in the Himalaya rise in wetter rainy seasons; Central Europe's and the
   Mississippi's floods do not, a reminder that rivers, land use and protection matter.
-- **What comes next.** NASA's downscaled projections put most land's present 1-in-10 hottest year at
-  almost every year by 2041–2060 on a middle-road path (exact figures on the site, from up to six
-  climate models).
+- **What comes next.** NASA's downscaled projections (six climate models) put Earth's land about
+  **+1.7 °C** warmer by 2041–2060 than in 1995–2014 on a middle-road path (models: 1.1 to 2.4 °C), and
+  +2.2 °C on a high-emissions path. Today's 1-in-10 hottest year would come almost every year on about
+  half of all land on the middle road, and on 82% of land with high emissions.
 - **An honest negative result.** A small machine-learning model could not tell disaster years from
   ordinary ones better than chance once tested properly, so we never turn projections into disaster odds.
 

@@ -1,9 +1,12 @@
 {
- "generated": "2026-11-11",
+ "generated": "2026-11-12",
  "models": [
   "MRI-ESM2-0",
   "ACCESS-CM2",
-  "IITM-ESM"
+  "EC-Earth3",
+  "IITM-ESM",
+  "MPI-ESM1-2-HR",
+  "NorESM2-MM"
  ],
  "present": [
   1995,
@@ -159,64 +162,64 @@
    "future": {
     "ssp245": {
      "tMean": {
-      "median": 1.482,
-      "min": 0.848,
+      "median": 1.163,
+      "min": 0.66,
       "max": 1.518,
-      "agree": 3
+      "agree": 6
      },
      "wetSeason": {
-      "median": 0.457,
+      "median": 0.094,
       "min": -12.829,
       "max": 15.716,
-      "agree": 2
+      "agree": 3
      },
      "wetYear": {
-      "median": 0.25,
+      "median": 0.1,
       "min": 0.0,
       "max": 0.3,
       "agree": null
      },
      "dryYear": {
-      "median": 0.2,
+      "median": 0.15,
       "min": 0.0,
       "max": 0.2,
       "agree": null
      },
      "hotYear": {
       "median": 1.0,
-      "min": 1.0,
+      "min": 0.9,
       "max": 1.0,
       "agree": null
      }
     },
     "ssp585": {
      "tMean": {
-      "median": 2.006,
-      "min": 1.146,
+      "median": 1.558,
+      "min": 0.774,
       "max": 2.035,
-      "agree": 3
+      "agree": 6
      },
      "wetSeason": {
-      "median": -5.122,
+      "median": 4.121,
       "min": -8.891,
-      "max": 7.515,
-      "agree": 2
+      "max": 9.397,
+      "agree": 4
      },
      "wetYear": {
-      "median": 0.1,
+      "median": 0.175,
       "min": 0.05,
-      "max": 0.2,
+      "max": 0.35,
       "agree": null
      },
      "dryYear": {
-      "median": 0.2,
-      "min": 0.15,
+      "median": 0.15,
+      "min": 0.0,
       "max": 0.45,
       "agree": null
      },
      "hotYear": {
       "median": 1.0,
-      "min": 0.9,
+      "min": 0.7,
       "max": 1.0,
       "agree": null
      }
@@ -365,19 +368,19 @@
    "future": {
     "ssp245": {
      "tMean": {
-      "median": 1.717,
+      "median": 1.547,
       "min": 0.549,
       "max": 2.214,
-      "agree": 3
+      "agree": 6
      },
      "wetSeason": {
-      "median": 10.321,
-      "min": -4.234,
-      "max": 53.273,
-      "agree": 2
+      "median": 28.061,
+      "min": -10.185,
+      "max": 69.459,
+      "agree": 4
      },
      "wetYear": {
-      "median": 0.35,
+      "median": 0.325,
       "min": 0.0,
       "max": 0.4,
       "agree": null
@@ -385,11 +388,11 @@
      "dryYear": {
       "median": 0.05,
       "min": 0.0,
-      "max": 0.05,
+      "max": 0.15,
       "agree": null
      },
      "hotYear": {
-      "median": 1.0,
+      "median": 0.975,
       "min": 0.55,
       "max": 1.0,
       "agree": null
@@ -397,19 +400,19 @@
     },
     "ssp585": {
      "tMean": {
-      "median": 2.564,
+      "median": 2.072,
       "min": 0.84,
       "max": 2.65,
-      "agree": 3
+      "agree": 6
      },
      "wetSeason": {
-      "median": 22.959,
+      "median": 34.627,
       "min": -1.371,
       "max": 73.743,
-      "agree": 2
+      "agree": 5
      },
      "wetYear": {
-      "median": 0.3,
+      "median": 0.325,
       "min": 0.0,
       "max": 0.5,
       "agree": null
@@ -571,27 +574,27 @@
    "future": {
     "ssp245": {
      "tMean": {
-      "median": 1.962,
+      "median": 1.819,
       "min": 0.824,
       "max": 2.347,
-      "agree": 3
+      "agree": 6
      },
      "wetSeason": {
-      "median": 7.625,
+      "median": 6.692,
       "min": 0.845,
       "max": 13.125,
-      "agree": 3
+      "agree": 6
      },
      "wetYear": {
-      "median": 0.2,
+      "median": 0.3,
       "min": 0.2,
-      "max": 0.4,
+      "max": 0.5,
       "agree": null
      },
      "dryYear": {
       "median": 0.05,
       "min": 0.0,
-      "max": 0.05,
+      "max": 0.1,
       "agree": null
      },
      "hotYear": {
@@ -603,26 +606,26 @@
     },
     "ssp585": {
      "tMean": {
-      "median": 2.492,
+      "median": 2.292,
       "min": 1.385,
       "max": 2.767,
-      "agree": 3
+      "agree": 6
      },
      "wetSeason": {
-      "median": 6.412,
+      "median": 6.128,
       "min": -2.135,
-      "max": 10.482,
-      "agree": 2
+      "max": 14.649,
+      "agree": 5
      },
      "wetYear": {
-      "median": 0.1,
+      "median": 0.175,
       "min": 0.05,
-      "max": 0.4,
+      "max": 0.75,
       "agree": null
      },
      "dryYear": {
       "median": 0.05,
-      "min": 0.05,
+      "min": 0.0,
       "max": 0.1,
       "agree": null
      },
@@ -778,16 +781,16 @@
    "future": {
     "ssp245": {
      "tMean": {
-      "median": 1.489,
+      "median": 1.334,
       "min": 0.901,
       "max": 2.203,
-      "agree": 3
+      "agree": 6
      },
      "wetSeason": {
-      "median": 9.166,
+      "median": 6.517,
       "min": -4.741,
-      "max": 24.502,
-      "agree": 2
+      "max": 41.699,
+      "agree": 5
      },
      "wetYear": {
       "median": 0.2,
@@ -796,35 +799,35 @@
       "agree": null
      },
      "dryYear": {
-      "median": 0.0,
+      "median": 0.025,
       "min": 0.0,
       "max": 0.3,
       "agree": null
      },
      "hotYear": {
-      "median": 1.0,
-      "min": 0.85,
+      "median": 0.85,
+      "min": 0.75,
       "max": 1.0,
       "agree": null
      }
     },
     "ssp585": {
      "tMean": {
-      "median": 1.948,
-      "min": 1.266,
+      "median": 1.767,
+      "min": 0.828,
       "max": 2.745,
-      "agree": 3
+      "agree": 6
      },
      "wetSeason": {
-      "median": 19.203,
+      "median": 20.994,
       "min": -8.021,
-      "max": 27.295,
-      "agree": 2
+      "max": 55.117,
+      "agree": 5
      },
      "wetYear": {
-      "median": 0.45,
+      "median": 0.35,
       "min": 0.0,
-      "max": 0.7,
+      "max": 0.8,
       "agree": null
      },
      "dryYear": {
@@ -834,8 +837,8 @@
       "agree": null
      },
      "hotYear": {
-      "median": 1.0,
-      "min": 0.95,
+      "median": 0.95,
+      "min": 0.6,
       "max": 1.0,
       "agree": null
      }
@@ -984,31 +987,31 @@
    "future": {
     "ssp245": {
      "tMean": {
-      "median": 1.231,
+      "median": 1.358,
       "min": 1.143,
       "max": 2.542,
-      "agree": 3
+      "agree": 6
      },
      "wetSeason": {
-      "median": -3.493,
-      "min": -4.127,
+      "median": -6.192,
+      "min": -12.88,
       "max": -0.397,
-      "agree": 3
+      "agree": 6
      },
      "wetYear": {
-      "median": 0.1,
+      "median": 0.075,
       "min": 0.0,
       "max": 0.1,
       "agree": null
      },
      "dryYear": {
-      "median": 0.15,
+      "median": 0.25,
       "min": 0.05,
-      "max": 0.2,
+      "max": 0.35,
       "agree": null
      },
      "hotYear": {
-      "median": 0.7,
+      "median": 0.9,
       "min": 0.65,
       "max": 1.0,
       "agree": null
@@ -1016,31 +1019,31 @@
     },
     "ssp585": {
      "tMean": {
-      "median": 1.683,
-      "min": 1.434,
-      "max": 2.439,
-      "agree": 3
+      "median": 1.746,
+      "min": 1.317,
+      "max": 3.009,
+      "agree": 6
      },
      "wetSeason": {
-      "median": -4.181,
-      "min": -6.84,
+      "median": -6.471,
+      "min": -11.667,
       "max": 3.052,
-      "agree": 2
+      "agree": 5
      },
      "wetYear": {
-      "median": 0.1,
-      "min": 0.05,
+      "median": 0.05,
+      "min": 0.0,
       "max": 0.2,
       "agree": null
      },
      "dryYear": {
-      "median": 0.25,
+      "median": 0.2,
       "min": 0.05,
-      "max": 0.3,
+      "max": 0.45,
       "agree": null
      },
      "hotYear": {
-      "median": 1.0,
+      "median": 0.975,
       "min": 0.75,
       "max": 1.0,
       "agree": null
@@ -1187,31 +1190,31 @@
    "future": {
     "ssp245": {
      "tMean": {
-      "median": 1.752,
-      "min": 1.307,
+      "median": 1.686,
+      "min": 1.302,
       "max": 2.042,
-      "agree": 3
+      "agree": 6
      },
      "wetSeason": {
-      "median": 7.969,
+      "median": 6.505,
       "min": 3.837,
       "max": 10.103,
-      "agree": 3
+      "agree": 6
      },
      "wetYear": {
-      "median": 0.2,
+      "median": 0.25,
       "min": 0.05,
-      "max": 0.3,
+      "max": 0.35,
       "agree": null
      },
      "dryYear": {
-      "median": 0.0,
+      "median": 0.025,
       "min": 0.0,
-      "max": 0.05,
+      "max": 0.2,
       "agree": null
      },
      "hotYear": {
-      "median": 1.0,
+      "median": 0.975,
       "min": 0.75,
       "max": 1.0,
       "agree": null
@@ -1219,19 +1222,19 @@
     },
     "ssp585": {
      "tMean": {
-      "median": 2.099,
+      "median": 1.979,
       "min": 1.562,
-      "max": 2.253,
-      "agree": 3
+      "max": 2.561,
+      "agree": 6
      },
      "wetSeason": {
-      "median": 8.357,
-      "min": 4.354,
+      "median": 7.084,
+      "min": -2.049,
       "max": 12.158,
-      "agree": 3
+      "agree": 5
      },
      "wetYear": {
-      "median": 0.4,
+      "median": 0.325,
       "min": 0.15,
       "max": 0.45,
       "agree": null
@@ -1239,11 +1242,11 @@
      "dryYear": {
       "median": 0.05,
       "min": 0.0,
-      "max": 0.05,
+      "max": 0.3,
       "agree": null
      },
      "hotYear": {
-      "median": 1.0,
+      "median": 0.975,
       "min": 0.7,
       "max": 1.0,
       "agree": null
@@ -1397,64 +1400,64 @@
    "future": {
     "ssp245": {
      "tMean": {
-      "median": 1.237,
+      "median": 1.207,
       "min": 0.994,
       "max": 1.936,
-      "agree": 3
+      "agree": 6
      },
      "wetSeason": {
-      "median": -0.067,
-      "min": -4.356,
-      "max": 9.963,
-      "agree": 2
+      "median": 1.221,
+      "min": -10.001,
+      "max": 25.952,
+      "agree": 3
      },
      "wetYear": {
       "median": 0.1,
       "min": 0.05,
-      "max": 0.1,
+      "max": 0.35,
       "agree": null
      },
      "dryYear": {
-      "median": 0.2,
+      "median": 0.1,
       "min": 0.0,
       "max": 0.3,
       "agree": null
      },
      "hotYear": {
-      "median": 1.0,
-      "min": 0.95,
+      "median": 0.975,
+      "min": 0.9,
       "max": 1.0,
       "agree": null
      }
     },
     "ssp585": {
      "tMean": {
-      "median": 1.742,
-      "min": 1.437,
+      "median": 1.731,
+      "min": 1.261,
       "max": 2.275,
-      "agree": 3
+      "agree": 6
      },
      "wetSeason": {
-      "median": -9.698,
-      "min": -12.014,
+      "median": -4.197,
+      "min": -13.387,
       "max": 21.506,
-      "agree": 2
+      "agree": 3
      },
      "wetYear": {
-      "median": 0.05,
+      "median": 0.15,
       "min": 0.05,
-      "max": 0.15,
+      "max": 0.3,
       "agree": null
      },
      "dryYear": {
-      "median": 0.25,
+      "median": 0.175,
       "min": 0.0,
       "max": 0.35,
       "agree": null
      },
      "hotYear": {
       "median": 1.0,
-      "min": 1.0,
+      "min": 0.95,
       "max": 1.0,
       "agree": null
      }
@@ -1617,64 +1620,64 @@
    "future": {
     "ssp245": {
      "tMean": {
-      "median": 1.586,
+      "median": 1.51,
       "min": 1.026,
       "max": 2.23,
-      "agree": 3
+      "agree": 6
      },
      "wetSeason": {
-      "median": 1.689,
-      "min": -0.472,
+      "median": 0.609,
+      "min": -11.792,
       "max": 12.219,
-      "agree": 2
+      "agree": 3
      },
      "wetYear": {
-      "median": 0.25,
-      "min": 0.1,
+      "median": 0.15,
+      "min": 0.0,
       "max": 0.3,
       "agree": null
      },
      "dryYear": {
       "median": 0.1,
-      "min": 0.05,
-      "max": 0.25,
+      "min": 0.0,
+      "max": 0.4,
       "agree": null
      },
      "hotYear": {
       "median": 0.95,
-      "min": 0.95,
+      "min": 0.8,
       "max": 1.0,
       "agree": null
      }
     },
     "ssp585": {
      "tMean": {
-      "median": 2.4,
+      "median": 1.998,
       "min": 1.792,
       "max": 2.669,
-      "agree": 3
+      "agree": 6
      },
      "wetSeason": {
-      "median": -4.149,
+      "median": -3.999,
       "min": -11.188,
-      "max": -3.85,
-      "agree": 3
+      "max": 10.266,
+      "agree": 5
      },
      "wetYear": {
       "median": 0.1,
       "min": 0.1,
-      "max": 0.15,
+      "max": 0.3,
       "agree": null
      },
      "dryYear": {
-      "median": 0.25,
-      "min": 0.1,
+      "median": 0.2,
+      "min": 0.0,
       "max": 0.65,
       "agree": null
      },
      "hotYear": {
       "median": 1.0,
-      "min": 1.0,
+      "min": 0.95,
       "max": 1.0,
       "agree": null
      }
@@ -1821,64 +1824,64 @@
    "future": {
     "ssp245": {
      "tMean": {
-      "median": 1.025,
-      "min": 0.943,
+      "median": 1.01,
+      "min": 0.774,
       "max": 1.455,
-      "agree": 3
+      "agree": 6
      },
      "wetSeason": {
-      "median": 2.41,
+      "median": 3.822,
       "min": -2.046,
-      "max": 4.996,
-      "agree": 2
+      "max": 8.346,
+      "agree": 5
      },
      "wetYear": {
-      "median": 0.2,
+      "median": 0.25,
       "min": 0.05,
-      "max": 0.25,
+      "max": 0.3,
       "agree": null
      },
      "dryYear": {
       "median": 0.1,
-      "min": 0.1,
+      "min": 0.0,
       "max": 0.15,
       "agree": null
      },
      "hotYear": {
       "median": 1.0,
-      "min": 1.0,
+      "min": 0.85,
       "max": 1.0,
       "agree": null
      }
     },
     "ssp585": {
      "tMean": {
-      "median": 1.404,
-      "min": 1.296,
+      "median": 1.368,
+      "min": 1.007,
       "max": 1.683,
-      "agree": 3
+      "agree": 6
      },
      "wetSeason": {
-      "median": 1.43,
+      "median": 4.232,
       "min": -6.701,
       "max": 6.427,
-      "agree": 2
+      "agree": 5
      },
      "wetYear": {
-      "median": 0.2,
+      "median": 0.15,
       "min": 0.0,
-      "max": 0.35,
+      "max": 0.45,
       "agree": null
      },
      "dryYear": {
-      "median": 0.1,
-      "min": 0.1,
+      "median": 0.075,
+      "min": 0.0,
       "max": 0.35,
       "agree": null
      },
      "hotYear": {
       "median": 1.0,
-      "min": 1.0,
+      "min": 0.95,
       "max": 1.0,
       "agree": null
      }
@@ -2023,27 +2026,27 @@
    "future": {
     "ssp245": {
      "tMean": {
-      "median": 1.529,
+      "median": 1.361,
       "min": 0.917,
       "max": 1.777,
-      "agree": 3
+      "agree": 6
      },
      "wetSeason": {
-      "median": -0.327,
-      "min": -8.811,
+      "median": -3.072,
+      "min": -10.677,
       "max": 6.52,
-      "agree": 2
+      "agree": 4
      },
      "wetYear": {
-      "median": 0.05,
+      "median": 0.075,
       "min": 0.05,
       "max": 0.2,
       "agree": null
      },
      "dryYear": {
-      "median": 0.15,
+      "median": 0.175,
       "min": 0.05,
-      "max": 0.2,
+      "max": 0.4,
       "agree": null
      },
      "hotYear": {
@@ -2055,27 +2058,27 @@
     },
     "ssp585": {
      "tMean": {
-      "median": 1.881,
-      "min": 1.363,
+      "median": 1.759,
+      "min": 1.202,
       "max": 2.071,
-      "agree": 3
+      "agree": 6
      },
      "wetSeason": {
-      "median": -8.672,
-      "min": -12.577,
+      "median": -8.516,
+      "min": -16.277,
       "max": 0.093,
-      "agree": 2
+      "agree": 5
      },
      "wetYear": {
-      "median": 0.05,
+      "median": 0.075,
       "min": 0.0,
       "max": 0.15,
       "agree": null
      },
      "dryYear": {
-      "median": 0.3,
+      "median": 0.325,
       "min": 0.2,
-      "max": 0.4,
+      "max": 0.5,
       "agree": null
      },
      "hotYear": {
@@ -2227,59 +2230,59 @@
    "future": {
     "ssp245": {
      "tMean": {
-      "median": 1.337,
-      "min": 1.008,
+      "median": 1.305,
+      "min": 0.932,
       "max": 1.973,
-      "agree": 3
+      "agree": 6
      },
      "wetSeason": {
-      "median": -1.961,
-      "min": -3.406,
+      "median": -2.23,
+      "min": -5.536,
       "max": 5.741,
-      "agree": 2
+      "agree": 4
      },
      "wetYear": {
       "median": 0.15,
-      "min": 0.1,
+      "min": 0.05,
       "max": 0.3,
       "agree": null
      },
      "dryYear": {
       "median": 0.3,
-      "min": 0.1,
+      "min": 0.0,
       "max": 0.3,
       "agree": null
      },
      "hotYear": {
-      "median": 1.0,
-      "min": 0.95,
+      "median": 0.95,
+      "min": 0.9,
       "max": 1.0,
       "agree": null
      }
     },
     "ssp585": {
      "tMean": {
-      "median": 1.853,
-      "min": 1.556,
+      "median": 1.743,
+      "min": 1.285,
       "max": 2.333,
-      "agree": 3
+      "agree": 6
      },
      "wetSeason": {
-      "median": -1.697,
-      "min": -7.209,
-      "max": -1.452,
-      "agree": 3
+      "median": -3.416,
+      "min": -7.393,
+      "max": 4.758,
+      "agree": 5
      },
      "wetYear": {
       "median": 0.1,
       "min": 0.05,
-      "max": 0.1,
+      "max": 0.15,
       "agree": null
      },
      "dryYear": {
-      "median": 0.2,
-      "min": 0.2,
-      "max": 0.4,
+      "median": 0.225,
+      "min": 0.05,
+      "max": 0.55,
       "agree": null
      },
      "hotYear": {
@@ -2399,64 +2402,64 @@
    "future": {
     "ssp245": {
      "tMean": {
-      "median": 1.295,
+      "median": 1.324,
       "min": 0.876,
       "max": 1.754,
-      "agree": 3
+      "agree": 6
      },
      "wetSeason": {
-      "median": 0.121,
-      "min": -5.469,
+      "median": -3.555,
+      "min": -6.43,
       "max": 1.569,
-      "agree": 2
+      "agree": 4
      },
      "wetYear": {
-      "median": 0.05,
+      "median": 0.125,
       "min": 0.0,
-      "max": 0.15,
+      "max": 0.3,
       "agree": null
      },
      "dryYear": {
-      "median": 0.2,
+      "median": 0.275,
       "min": 0.05,
-      "max": 0.25,
+      "max": 0.5,
       "agree": null
      },
      "hotYear": {
-      "median": 1.0,
-      "min": 1.0,
+      "median": 0.975,
+      "min": 0.85,
       "max": 1.0,
       "agree": null
      }
     },
     "ssp585": {
      "tMean": {
-      "median": 1.784,
-      "min": 1.348,
+      "median": 1.764,
+      "min": 1.209,
       "max": 2.184,
-      "agree": 3
+      "agree": 6
      },
      "wetSeason": {
-      "median": -5.698,
-      "min": -8.056,
-      "max": -0.163,
-      "agree": 3
+      "median": -6.877,
+      "min": -15.369,
+      "max": 2.471,
+      "agree": 5
      },
      "wetYear": {
-      "median": 0.05,
+      "median": 0.075,
       "min": 0.0,
-      "max": 0.1,
+      "max": 0.3,
       "agree": null
      },
      "dryYear": {
-      "median": 0.25,
+      "median": 0.375,
       "min": 0.15,
-      "max": 0.5,
+      "max": 0.55,
       "agree": null
      },
      "hotYear": {
       "median": 1.0,
-      "min": 1.0,
+      "min": 0.95,
       "max": 1.0,
       "agree": null
      }
@@ -2571,64 +2574,64 @@
    "future": {
     "ssp245": {
      "tMean": {
-      "median": 1.169,
-      "min": 1.019,
+      "median": 1.162,
+      "min": 0.875,
       "max": 2.012,
-      "agree": 3
+      "agree": 6
      },
      "wetSeason": {
-      "median": 3.324,
-      "min": -1.471,
+      "median": 2.987,
+      "min": -4.492,
       "max": 9.148,
-      "agree": 2
+      "agree": 4
      },
      "wetYear": {
       "median": 0.1,
-      "min": 0.1,
-      "max": 0.4,
+      "min": 0.0,
+      "max": 0.55,
       "agree": null
      },
      "dryYear": {
-      "median": 0.05,
+      "median": 0.075,
       "min": 0.0,
       "max": 0.25,
       "agree": null
      },
      "hotYear": {
-      "median": 1.0,
-      "min": 0.95,
+      "median": 0.9,
+      "min": 0.8,
       "max": 1.0,
       "agree": null
      }
     },
     "ssp585": {
      "tMean": {
-      "median": 1.679,
-      "min": 1.483,
+      "median": 1.704,
+      "min": 1.245,
       "max": 2.386,
-      "agree": 3
+      "agree": 6
      },
      "wetSeason": {
-      "median": 3.552,
-      "min": 0.405,
+      "median": 2.496,
+      "min": -1.0,
       "max": 9.867,
-      "agree": 3
+      "agree": 5
      },
      "wetYear": {
-      "median": 0.25,
-      "min": 0.15,
+      "median": 0.2,
+      "min": 0.05,
       "max": 0.5,
       "agree": null
      },
      "dryYear": {
-      "median": 0.1,
+      "median": 0.075,
       "min": 0.0,
       "max": 0.2,
       "agree": null
      },
      "hotYear": {
       "median": 1.0,
-      "min": 1.0,
+      "min": 0.95,
       "max": 1.0,
       "agree": null
      }
@@ -2743,27 +2746,27 @@
    "future": {
     "ssp245": {
      "tMean": {
-      "median": 1.801,
+      "median": 1.727,
       "min": 0.995,
       "max": 2.067,
-      "agree": 3
+      "agree": 6
      },
      "wetSeason": {
-      "median": 11.802,
-      "min": 11.769,
-      "max": 12.864,
-      "agree": 3
+      "median": 11.786,
+      "min": -8.882,
+      "max": 17.451,
+      "agree": 5
      },
      "wetYear": {
-      "median": 0.2,
-      "min": 0.15,
-      "max": 0.45,
+      "median": 0.3,
+      "min": 0.0,
+      "max": 0.75,
       "agree": null
      },
      "dryYear": {
-      "median": 0.0,
+      "median": 0.1,
       "min": 0.0,
-      "max": 0.05,
+      "max": 0.2,
       "agree": null
      },
      "hotYear": {
@@ -2775,25 +2778,25 @@
     },
     "ssp585": {
      "tMean": {
-      "median": 2.463,
+      "median": 2.296,
       "min": 1.383,
       "max": 2.823,
-      "agree": 3
+      "agree": 6
      },
      "wetSeason": {
-      "median": 5.16,
-      "min": 1.431,
-      "max": 9.774,
-      "agree": 3
+      "median": 6.543,
+      "min": -7.92,
+      "max": 26.306,
+      "agree": 5
      },
      "wetYear": {
-      "median": 0.25,
-      "min": 0.2,
-      "max": 0.3,
+      "median": 0.275,
+      "min": 0.1,
+      "max": 0.7,
       "agree": null
      },
      "dryYear": {
-      "median": 0.1,
+      "median": 0.075,
       "min": 0.05,
       "max": 0.25,
       "agree": null
