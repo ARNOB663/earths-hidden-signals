@@ -130,16 +130,20 @@ def summarise(results: dict, lats, lons, land, weights) -> dict:
         needed = int(np.ceil(2 * n / 3))
         ok = land & np.isfinite(dw_med)
         almost = (hot_med >= ALMOST_EVERY_YEAR) & land
+        # Every land cell gets its warming; the rain change is null where the rainy season is too dry
+        # (under 30 mm) for a percentage to mean anything.
+        has_t = land & np.isfinite(dt_med)
         cells = [
-            # lat, lon, rainy-season change %, models agree (0/1), warming C, share of years beating today's 1-in-10 hot year
-            [round(float(lats[i]), 2), round(float(lons[j] - 360 if lons[j] > 180 else lons[j]), 2), round(float(dw_med[i, j]), 1), int(agree[i, j] >= needed),
+            # lat, lon, rainy-season change % (or null), models agree (0/1), warming C, share of years beating today's 1-in-10 hot year
+            [round(float(lats[i]), 2), round(float(lons[j] - 360 if lons[j] > 180 else lons[j]), 2),
+             round(float(dw_med[i, j]), 1) if ok[i, j] else None, int(ok[i, j] and agree[i, j] >= needed),
              round(float(dt_med[i, j]), 2), round(float(hot_med[i, j]), 2)]
-            for i, j in zip(*np.nonzero(ok))
+            for i, j in zip(*np.nonzero(has_t))
         ]
         wetter = int(((dw_med > 0) & (agree >= needed) & ok).sum())
         drier = int(((dw_med < 0) & (agree >= needed) & ok).sum())
         payload["scenarios"][sc] = {
-            "landWarming": {"median": round(float(np.median(lw)), 2), "min": round(float(lw.min()), 2), "max": round(float(lw.max()), 2)},
+            "landWarming": {"median": round(float(np.median(lw)), 3), "min": round(float(lw.min()), 3), "max": round(float(lw.max()), 3)},
             "hotEveryYearShare": round(float((weights * almost).sum() / weights.sum()), 3),
             "wetSeason": {"cells": int(ok.sum()), "wetterAgreed": wetter, "drierAgreed": drier, "agreeNeeded": needed},
             "cells": cells,

@@ -403,8 +403,8 @@ export default function PlaceReport() {
                       />
                       <p className="mt-4 text-sm text-ink-2">
                         <T
-                          en={`Rainy season ${signed(report.fut[2], 0)}%${report.fut[3] ? ", and the climate models agree." : ", but the climate models disagree."}`}
-                          bn={`বর্ষা মৌসুম ${bnNum(signed(report.fut[2], 0))}%${report.fut[3] ? ", আর জলবায়ু মডেলগুলো একমত।" : ", তবে জলবায়ু মডেলগুলো একমত নয়।"}`}
+                          en={report.fut[2] === null ? "Too dry here to measure a rainy-season change." : `Rainy season ${signed(report.fut[2], 0)}%${report.fut[3] ? ", and the climate models agree." : ", but the climate models disagree."}`}
+                          bn={report.fut[2] === null ? "এখানে বর্ষার পরিবর্তন মাপার মতো বৃষ্টি হয় না।" : `বর্ষা মৌসুম ${bnNum(signed(report.fut[2], 0))}%${report.fut[3] ? ", আর জলবায়ু মডেলগুলো একমত।" : ", তবে জলবায়ু মডেলগুলো একমত নয়।"}`}
                         />
                       </p>
                     </>
@@ -568,8 +568,9 @@ function Prepare({ report }: { report: Report }) {
       en: "Heat: plan shade, water and cool rest for the hottest weeks, and check on older neighbours.",
       bn: "গরম: সবচেয়ে গরম সপ্তাহগুলোর জন্য ছায়া, পানি ও ঠান্ডা বিশ্রামের ব্যবস্থা রাখুন, আর বয়স্ক প্রতিবেশীদের খোঁজ নিন।",
     });
-  const wetter = report.fut && report.fut[3] && report.fut[2] >= 5;
-  const drier = report.fut && report.fut[3] && report.fut[2] <= -5;
+  const rain = report.fut ? report.fut[2] : null;
+  const wetter = !!report.fut?.[3] && rain !== null && rain >= 5;
+  const drier = !!report.fut?.[3] && rain !== null && rain <= -5;
   if (wetter || report.ev[0] >= 5)
     items.push({
       en: "Floods: know your nearest flood shelter and a raised route out, and keep drains clear before the rains.",

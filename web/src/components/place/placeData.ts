@@ -3,7 +3,7 @@
 
 export type Place = { name: string; detail: string; lat: number; lon: number; twin?: boolean };
 export type TrendCell = [number, number, number, number]; // lat, lon, slope/decade, clear
-export type FutureCell = [number, number, number, number, number, number]; // lat, lon, rain %, agree, warming C, hot-year share
+export type FutureCell = [number, number, number | null, number, number, number]; // lat, lon, rain % (null: too dry), agree, warming C, hot-year share
 export type Scenario = "ssp245" | "ssp585";
 type TwinCell = [number, number, string, number, number, number, number, number]; // lat, lon, name, 5 features
 

@@ -48,6 +48,7 @@ export function WorldTrendMap({
         const d = data.cell;
         const mid = cssVar("--mid");
         for (const [lat, lon, slope, clear] of data.cells) {
+          if (slope === null) continue; // too dry for a rainy-season change
           const t = Math.min(1, Math.abs(slope) / limit);
           const step = Math.min(3, Math.floor(t * 4));
           const warm = slope > 0 === increaseIsRed;

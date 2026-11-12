@@ -271,7 +271,20 @@ export default async function MethodsPage() {
         </p>
       </Section>
 
-      <Section title="9. How to cite this work" lede="One line to cite the site and its data.">
+      <Section title="9. How we used AI tools" lede="An AI assistant helped write code and text; the numbers come from the data.">
+        <p>
+          We used Anthropic&apos;s Claude, an AI assistant, to help write and review the code of this site and its analysis
+          pipeline, and to draft and translate some of its text. It did not produce any of the results: every number on the
+          site is computed by the open code in <code className="rounded bg-sunken px-1.5 text-ink">analysis/</code> from the
+          datasets listed above, and we checked the outputs ourselves.
+        </p>
+        <p>
+          The &ldquo;AI test&rdquo; in section 6 is different: it is a small statistical model (logistic regression) that we
+          trained and tested ourselves, and it found no skill.
+        </p>
+      </Section>
+
+      <Section title="10. How to cite this work" lede="One line to cite the site and its data.">
         <p>Every chart on the site has a &ldquo;Download the data (CSV)&rdquo; button. If you use the data or the results, please cite:</p>
         <p className="rounded-2xl bg-card p-4 font-mono text-sm leading-relaxed text-ink shadow-soft">{CITATION}</p>
       </Section>

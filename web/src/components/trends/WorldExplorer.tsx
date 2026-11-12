@@ -14,14 +14,24 @@ import { T, useLang, useT } from "@/lib/i18n";
 import { cssVar, useTheme } from "@/lib/theme";
 import { formatSigned, trendLegendTokens, trendToken, type VariableId } from "@/lib/trends";
 
-type Cell = [number, number, number, number];
-type MeasureId = "temperature" | "wet-season" | "rainfall";
+/** Trend files: [lat, lon, slope per decade, clear]. future.json: [lat, lon, rain %, models agree, °C, hot-year share]. */
+type Cell = number[]; // a too-dry rain value arrives as null (see rainOf)
+type MeasureId = "temperature" | "wet-season" | "rainfall" | "future";
+type Scenario = "ssp245" | "ssp585";
+type FutureSummary = { landWarming: { median: number; min: number; max: number }; hotEveryYearShare: number; models: number; years: [number, number] };
 
 const MEASURES: Record<MeasureId, { en: string; bn: string; unit: string; unitBn: string; limit: number; variable: VariableId; up: [string, string]; down: [string, string] }> = {
   temperature: { en: "Temperature", bn: "তাপমাত্রা", unit: "°C", unitBn: "°সে", limit: 0.6, variable: "temperature", up: ["warmer", "উষ্ণ"], down: ["cooler", "শীতল"] },
   "wet-season": { en: "Rainy-season rain", bn: "বর্ষা মৌসুমের বৃষ্টি", unit: "%", unitBn: "%", limit: 10, variable: "rainfall", up: ["wetter", "ভেজা"], down: ["drier", "শুষ্ক"] },
   rainfall: { en: "Yearly rain", bn: "বার্ষিক বৃষ্টি", unit: "%", unitBn: "%", limit: 10, variable: "rainfall", up: ["wetter", "ভেজা"], down: ["drier", "শুষ্ক"] },
+  future: { en: "2041–2060", bn: "২০৪১–২০৬০", unit: "°C", unitBn: "°সে", limit: 2.5, variable: "temperature", up: ["warmer", "উষ্ণ"], down: ["cooler", "শীতল"] },
 };
+
+/** The projected rainy-season change, or null where the season is too dry to measure. */
+const rainOf = (c: Cell): number | null => (c[2] as number | null) ?? null;
+
+/** Draw value and solidity of a cell: the projections colour by warming, every square solid. */
+const valueOf = (id: MeasureId, c: Cell): [number, boolean] => (id === "future" ? [c[4], true] : [c[2], !!c[3]]);
 
 export interface WorldCounts {
   temperature: { cells: number; increase: number; decrease: number };
@@ -41,6 +51,8 @@ export default function WorldExplorer({ counts, onZoomSouthAsia }: { counts: Wor
   const [cells, setCells] = useState<{ id: MeasureId; data: Cell[]; d: number } | null>(null);
   const [picked, setPicked] = useState<Cell | null>(null);
   const [failed, setFailed] = useState(false);
+  const [scenario, setScenario] = useState<Scenario>("ssp245");
+  const [future, setFuture] = useState<FutureSummary | null>(null);
   const t = useT();
   const m = MEASURES[measure];
 
@@ -64,17 +76,26 @@ export default function WorldExplorer({ counts, onZoomSouthAsia }: { counts: Wor
     let cancelled = false;
     fetch(`/data/global/${measure}.json`)
       .then((r) => r.json())
-      .then((data: { cell: number; cells: Cell[] }) => {
-        if (!cancelled) {
+      .then(
+        (data: {
+          cell: number;
+          cells?: Cell[];
+          models?: string[];
+          future?: [number, number];
+          scenarios?: Record<Scenario, { cells: Cell[]; landWarming: FutureSummary["landWarming"]; hotEveryYearShare: number }>;
+        }) => {
+          if (cancelled) return;
           setFailed(false);
-          setCells({ id: measure, data: data.cells, d: data.cell });
-        }
-      })
+          const sc = data.scenarios?.[scenario];
+          if (sc) setFuture({ landWarming: sc.landWarming, hotEveryYearShare: sc.hotEveryYearShare, models: data.models?.length ?? 0, years: data.future ?? [2041, 2060] });
+          setCells({ id: measure, data: sc ? sc.cells : (data.cells ?? []), d: data.cell });
+        },
+      )
       .catch(() => !cancelled && setFailed(true));
     return () => {
       cancelled = true;
     };
-  }, [measure]);
+  }, [measure, scenario]);
 
   useEffect(() => {
     const group = layer.current;
@@ -84,7 +105,8 @@ export default function WorldExplorer({ counts, onZoomSouthAsia }: { counts: Wor
     const meta = MEASURES[cells.id];
     const edge = cssVar("--page");
     for (const c of cells.data) {
-      const [lat, lon, slope, clear] = c;
+      const [lat, lon] = c;
+      const [slope, clear] = valueOf(cells.id, c);
       const h = cells.d / 2;
       const rect = L.rectangle(
         [
@@ -124,7 +146,7 @@ export default function WorldExplorer({ counts, onZoomSouthAsia }: { counts: Wor
       <div ref={host} className="absolute inset-0 bg-sunken" />
 
       <aside className="absolute bottom-3 left-3 right-3 z-[500] rounded-2xl bg-card p-4 shadow-soft sm:bottom-auto sm:right-auto sm:top-16 sm:w-[340px]">
-        <div role="radiogroup" aria-label={t("Measure", "পরিমাপ")} className="grid grid-cols-3 gap-1 rounded-xl bg-sunken p-1 text-xs">
+        <div role="radiogroup" aria-label={t("Measure", "পরিমাপ")} className="grid grid-cols-4 gap-1 rounded-xl bg-sunken p-1 text-xs">
           {(Object.keys(MEASURES) as MeasureId[]).map((id) => (
             <button
               key={id}
@@ -142,12 +164,44 @@ export default function WorldExplorer({ counts, onZoomSouthAsia }: { counts: Wor
           ))}
         </div>
 
-        <p className="mt-3 text-sm text-ink">
-          <T
-            en={`Since 1981: ${count.increase.toLocaleString("en-US")} land areas clearly ${m.up[0]}, ${count.decrease.toLocaleString("en-US")} clearly ${m.down[0]}.`}
-            bn={`১৯৮১ থেকে: ${bnNum(count.increase.toLocaleString("en-US"))}টি স্থল-এলাকা স্পষ্টভাবে ${m.up[1]}, ${bnNum(count.decrease.toLocaleString("en-US"))}টি স্পষ্টভাবে ${m.down[1]}।`}
-          />
-        </p>
+        {measure === "future" ? (
+          <>
+            <div role="radiogroup" aria-label={t("Emissions path", "নিঃসরণের পথ")} className="mt-3 flex rounded-full bg-sunken p-0.5 text-xs">
+              {(
+                [
+                  ["ssp245", "Middle road", "মাঝামাঝি পথ"],
+                  ["ssp585", "High emissions", "উচ্চ নিঃসরণ"],
+                ] as const
+              ).map(([id, en, bnl]) => (
+                <button
+                  key={id}
+                  type="button"
+                  role="radio"
+                  aria-checked={scenario === id}
+                  onClick={() => setScenario(id)}
+                  className={`min-h-8 flex-1 rounded-full px-2 transition-colors ${scenario === id ? "bg-card font-medium text-ink shadow-soft" : "text-ink-2 hover:text-ink"}`}
+                >
+                  <T en={en} bn={bnl} />
+                </button>
+              ))}
+            </div>
+            {future && (
+              <p className="mt-3 text-sm text-ink">
+                <T
+                  en={`By ${future.years[0]}–${future.years[1]}, Earth's land is ${formatSigned(future.landWarming.median, 1)} °C warmer than in 1995–2014 (models: ${future.landWarming.min.toFixed(1)} to ${future.landWarming.max.toFixed(1)}). On ${Math.round(future.hotEveryYearShare * 100)}% of land, today's 1-in-10 hottest year comes almost every year.`}
+                  bn={`${bnNum(future.years[0])}–${bnNum(future.years[1])} সালের মধ্যে পৃথিবীর স্থলভাগ ১৯৯৫–২০১৪-এর চেয়ে ${bnNum(formatSigned(future.landWarming.median, 1))} °সে বেশি গরম (মডেলভেদে ${bnNum(future.landWarming.min.toFixed(1))} থেকে ${bnNum(future.landWarming.max.toFixed(1))})। ${bnNum(Math.round(future.hotEveryYearShare * 100))}% স্থলভাগে আজকের ১০ বছরে ১ বারের সবচেয়ে গরম বছর আসবে প্রায় প্রতি বছর।`}
+                />
+              </p>
+            )}
+          </>
+        ) : (
+          <p className="mt-3 text-sm text-ink">
+            <T
+              en={`Since 1981: ${count.increase.toLocaleString("en-US")} land areas clearly ${m.up[0]}, ${count.decrease.toLocaleString("en-US")} clearly ${m.down[0]}.`}
+              bn={`১৯৮১ থেকে: ${bnNum(count.increase.toLocaleString("en-US"))}টি স্থল-এলাকা স্পষ্টভাবে ${m.up[1]}, ${bnNum(count.decrease.toLocaleString("en-US"))}টি স্পষ্টভাবে ${m.down[1]}।`}
+            />
+          </p>
+        )}
 
         <div className="mt-3 flex items-center gap-2 text-xs text-ink-2">
           <span>{bn ? m.down[1] : m.down[0]}</span>
@@ -159,7 +213,14 @@ export default function WorldExplorer({ counts, onZoomSouthAsia }: { counts: Wor
           <span>{bn ? m.up[1] : m.up[0]}</span>
         </div>
         <p className="mt-1 text-xs text-ink-3">
-          <T en="Faded squares: no clear change." bn="হালকা বর্গ: স্পষ্ট পরিবর্তন নেই।" />
+          {measure === "future" ? (
+            <T
+              en={`Warming compared with 1995–2014: the middle of ${future?.models ?? 6} NASA climate models.`}
+              bn={`১৯৯৫–২০১৪-এর তুলনায় উষ্ণতা: নাসার ${bnNum(future?.models ?? 6)}টি জলবায়ু মডেলের মাঝামাঝি মান।`}
+            />
+          ) : (
+            <T en="Faded squares: no clear change." bn="হালকা বর্গ: স্পষ্ট পরিবর্তন নেই।" />
+          )}
         </p>
 
         {failed && (
@@ -169,12 +230,35 @@ export default function WorldExplorer({ counts, onZoomSouthAsia }: { counts: Wor
         )}
         {shown ? (
           <p aria-live="polite" className="mt-3 rounded-xl bg-sunken px-3 py-2 text-sm text-ink">
-            <span className="font-semibold tabular-nums">
-              {num(formatSigned(shown[2], measure === "temperature" ? 2 : 1))} {unit}
-            </span>{" "}
-            <T en="per 10 years" bn="প্রতি ১০ বছরে" />
-            {" · "}
-            {shown[3] ? <T en="a clear change" bn="স্পষ্ট পরিবর্তন" /> : <T en="no clear change" bn="স্পষ্ট পরিবর্তন নেই" />}
+            {measure === "future" ? (
+              <>
+                <span className="font-semibold tabular-nums">
+                  {num(formatSigned(shown[4], 1))} {unit}
+                </span>{" "}
+                <T en="warmer than 1995–2014" bn="১৯৯৫–২০১৪-এর চেয়ে বেশি গরম" />
+                <span className="block">
+                  <T
+                    en={`Today's hottest-in-ten year: ${shown[5] >= 0.95 ? "every year" : `${Math.max(1, Math.round(shown[5] * 10))} in 10 years`}.`}
+                    bn={`আজকের ১০ বছরে সবচেয়ে গরম বছর: ${shown[5] >= 0.95 ? "প্রতি বছর" : `১০ বছরে ${bnNum(Math.max(1, Math.round(shown[5] * 10)))} বার`}।`}
+                  />
+                </span>
+                <span className="block">
+                  <T
+                    en={rainOf(shown) === null ? "Too dry to measure a rainy-season change." : `Rainy season ${formatSigned(shown[2], 0)}%${shown[3] ? ", models agree." : ", models disagree."}`}
+                    bn={rainOf(shown) === null ? "বর্ষার পরিবর্তন মাপার মতো বৃষ্টি হয় না।" : `বর্ষা মৌসুম ${bnNum(formatSigned(shown[2], 0))}%${shown[3] ? ", মডেলগুলো একমত।" : ", মডেলগুলো একমত নয়।"}`}
+                  />
+                </span>
+              </>
+            ) : (
+              <>
+                <span className="font-semibold tabular-nums">
+                  {num(formatSigned(shown[2], measure === "temperature" ? 2 : 1))} {unit}
+                </span>{" "}
+                <T en="per 10 years" bn="প্রতি ১০ বছরে" />
+                {" · "}
+                {shown[3] ? <T en="a clear change" bn="স্পষ্ট পরিবর্তন" /> : <T en="no clear change" bn="স্পষ্ট পরিবর্তন নেই" />}
+              </>
+            )}
             <span className="block text-xs text-ink-3 tabular-nums">
               {num(`${Math.abs(shown[0]).toFixed(1)}°${shown[0] >= 0 ? "N" : "S"}, ${Math.abs(shown[1]).toFixed(1)}°${shown[1] >= 0 ? "E" : "W"}`)}
             </span>
