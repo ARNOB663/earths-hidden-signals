@@ -4,7 +4,7 @@
 // NASA's projections say for 2041–2060, disasters recorded nearby, and what to prepare for.
 // Everything is read from the committed data in /data/global/; place names come from Open-Meteo.
 
-import { CalendarBlank, Globe, Thermometer, Warning } from "@phosphor-icons/react";
+import { CalendarBlank, Drop, Info, Globe, Hurricane, Mountains, ShieldCheck, Sun, Thermometer, TrendUp, Warning, Waves } from "@phosphor-icons/react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { WarmingStripes } from "@/components/home/WarmingStripes";
 import { bnNum } from "@/lib/bn";
@@ -332,9 +332,11 @@ export default function PlaceReport() {
             </p>
           ) : (
             <>
-              <div className="mt-12 grid gap-12 md:grid-cols-2 md:gap-16">
-                <section>
-                  <h3 className="text-lg font-semibold text-ink">
+              <AtAGlance place={place} report={report} bn={bn} />
+              <div className="mt-4 grid gap-4 md:grid-cols-2">
+                <section className="rounded-3xl bg-card p-6 shadow-soft">
+                  <h3 className="flex items-center gap-2 text-lg font-semibold text-ink">
+                    <Thermometer size={22} aria-hidden className="text-[var(--warm-3)]" />
                     <T en="Since 1981" bn="১৯৮১ থেকে" />
                   </h3>
                   <Fact
@@ -366,9 +368,10 @@ export default function PlaceReport() {
                   )}
                 </section>
 
-                <section>
-                  <div className="flex flex-wrap items-baseline justify-between gap-3">
-                    <h3 className="text-lg font-semibold text-ink">
+                <section className="rounded-3xl bg-card p-6 shadow-soft">
+                  <div className="flex flex-wrap items-center justify-between gap-3">
+                    <h3 className="flex items-center gap-2 text-lg font-semibold text-ink">
+                      <TrendUp size={22} aria-hidden className="text-accent" />
                       <T en={`By ${data!.future.future[0]}–${data!.future.future[1]}`} bn={`${n(data!.future.future[0])}–${n(data!.future.future[1])} সালের মধ্যে`} />
                     </h3>
                     <div role="radiogroup" aria-label={bn ? "নিঃসরণের পথ" : "Emissions path"} className="flex rounded-full bg-sunken p-0.5 text-xs">
@@ -420,27 +423,32 @@ export default function PlaceReport() {
                 </section>
               </div>
 
-              <section className="mt-14">
-                <h3 className="text-lg font-semibold text-ink">
+              <section className="mt-4 rounded-3xl bg-card p-6 shadow-soft">
+                <h3 className="flex items-center gap-2 text-lg font-semibold text-ink">
+                  <Warning size={22} aria-hidden className="text-[var(--warm-3)]" />
                   <T en={`Recorded within ${RADIUS_KM} km since ${data!.events.years.gdacs[0]}`} bn={`${n(RADIUS_KM)} কিমির মধ্যে নথিভুক্ত, ${n(data!.events.years.gdacs[0])} থেকে`} />
                 </h3>
-                <dl className="mt-4 flex flex-wrap gap-x-10 gap-y-4">
+                <dl className="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-4">
                   {(
                     [
-                      [0, "flood alerts", "বন্যা সতর্কতা"],
-                      [1, "cyclones", "ঘূর্ণিঝড়"],
-                      [2, "droughts", "খরা"],
-                      [3, "landslides", "ভূমিধস"],
+                      [0, "flood alerts", "বন্যা সতর্কতা", Waves],
+                      [1, "cyclones", "ঘূর্ণিঝড়", Hurricane],
+                      [2, "droughts", "খরা", Sun],
+                      [3, "landslides", "ভূমিধস", Mountains],
                     ] as const
-                  ).map(([k, en, bnl]) => (
-                    <div key={k} className="flex flex-col-reverse">
-                      <dt className="text-sm text-ink-3">
+                  ).map(([k, en, bnl, Icon]) => (
+                    <div key={k} className="flex flex-col items-start gap-1 rounded-2xl bg-sunken p-4">
+                      <Icon size={22} aria-hidden className="text-ink-3" />
+                      <dd className="text-3xl font-semibold tabular-nums text-ink">{n(report.ev[k])}</dd>
+                      <dt className="text-sm text-ink-2">
                         <T en={en} bn={bnl} />
                       </dt>
-                      <dd className="text-3xl font-semibold tabular-nums text-ink">{n(report.ev[k])}</dd>
                     </div>
                   ))}
                 </dl>
+                <p className="mt-3 text-xs text-ink-3">
+                  <T en="Recorded events, not proof that climate change caused them." bn="নথিভুক্ত ঘটনা; জলবায়ু পরিবর্তনই এগুলোর কারণ, এমন প্রমাণ নয়।" />
+                </p>
               </section>
 
               <Prepare report={report} />
@@ -530,7 +538,7 @@ export default function PlaceReport() {
                 </span>
                 <button
                   type="button"
-                  onClick={() => downloadCard({ place, report, stripes, future: data!.future.future, bn })}
+                  onClick={() => downloadCard({ place, report, stripes, future: data!.future.future, bn, scenario })}
                   className="rounded-full bg-accent-strong px-5 py-2.5 text-sm font-medium text-accent-ink transition-colors hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
                 >
                   <T en="Download as image" bn="ছবি হিসেবে ডাউনলোড" />
@@ -566,12 +574,13 @@ function Fact({ big, line, tone = null }: { big: string; line: React.ReactNode; 
 
 /** Plain actions that follow from the evidence for this place. Preparation, never a forecast. */
 function Prepare({ report }: { report: Report }) {
-  const items: { en: string; bn: string }[] = [];
+  const items: { en: string; bn: string; Icon: typeof Sun }[] = [];
   const hot = report.fut ? report.fut[5] : 0;
   if ((report.temp && report.temp[3]) || hot >= 0.7)
     items.push({
       en: "Heat: plan shade, water and cool rest for the hottest weeks, and check on older neighbours.",
       bn: "গরম: সবচেয়ে গরম সপ্তাহগুলোর জন্য ছায়া, পানি ও ঠান্ডা বিশ্রামের ব্যবস্থা রাখুন, আর বয়স্ক প্রতিবেশীদের খোঁজ নিন।",
+      Icon: Thermometer,
     });
   const rain = report.fut ? report.fut[2] : null;
   const wetter = !!report.fut?.[3] && rain !== null && rain >= 5;
@@ -580,32 +589,38 @@ function Prepare({ report }: { report: Report }) {
     items.push({
       en: "Floods: know your nearest flood shelter and a raised route out, and keep drains clear before the rains.",
       bn: "বন্যা: কাছের আশ্রয়কেন্দ্র ও উঁচু পথ জেনে রাখুন, আর বর্ষার আগে নালা পরিষ্কার রাখুন।",
+      Icon: Waves,
     });
   if (drier || report.ev[2] >= 2)
     items.push({
       en: "Dry spells: store water and consider crops that cope with less rain.",
       bn: "খরা: পানি সংরক্ষণ করুন এবং কম বৃষ্টিতে টিকে থাকে এমন ফসলের কথা ভাবুন।",
+      Icon: Drop,
     });
   if (report.ev[1] >= 3)
     items.push({
       en: "Cyclones: know your cyclone shelter and what each warning signal means.",
       bn: "ঘূর্ণিঝড়: আশ্রয়কেন্দ্র ও প্রতিটি সতর্ক সংকেতের অর্থ জেনে রাখুন।",
+      Icon: Hurricane,
     });
   if (report.ev[3] >= 10)
     items.push({
       en: "Landslides: on slopes, watch for new cracks and leaning trees after heavy rain.",
       bn: "ভূমিধস: ঢালু জায়গায় ভারী বৃষ্টির পর নতুন ফাটল ও হেলে পড়া গাছ খেয়াল করুন।",
+      Icon: Mountains,
     });
   if (items.length === 0) return null;
   return (
-    <section className="mt-14">
-      <h3 className="text-lg font-semibold text-ink">
+    <section className="mt-4 rounded-3xl bg-card p-6 shadow-soft">
+      <h3 className="flex items-center gap-2 text-lg font-semibold text-ink">
+        <ShieldCheck size={22} aria-hidden className="text-accent" />
         <T en="What to prepare for" bn="কীসের জন্য প্রস্তুত থাকবেন" />
       </h3>
-      <ul className="mt-4 max-w-[70ch] space-y-3">
-        {items.map((i) => (
-          <li key={i.en} className="border-l-2 border-accent pl-4 text-ink">
-            <T en={i.en} bn={i.bn} />
+      <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+        {items.map(({ en, bn, Icon }) => (
+          <li key={en} className="flex gap-3 rounded-2xl bg-sunken p-4 text-sm text-ink">
+            <Icon size={22} aria-hidden className="mt-0.5 shrink-0 text-accent" />
+            <T en={en} bn={bn} />
           </li>
         ))}
       </ul>
@@ -828,5 +843,82 @@ function HotDays({ hot, bn }: { hot: { now: number; then: number }; bn: boolean 
         <T en="A very hot day here is one as hot as today's hottest 5% of days." bn="এখানে খুব গরম দিন মানে আজকের সবচেয়ে গরম ৫% দিনের মতো গরম দিন।" />
       </span>
     </p>
+  );
+}
+
+type Chip = { label: [string, string]; value: [string, string]; tone: "warm" | "cool" | "dry" | "neutral" };
+const CHIP: Record<Chip["tone"], string> = {
+  warm: "bg-[color-mix(in_srgb,var(--warm-3)_16%,transparent)] text-[var(--warm-4)]",
+  cool: "bg-[color-mix(in_srgb,var(--cool-3)_16%,transparent)] text-[var(--cool-4)]",
+  dry: "bg-[color-mix(in_srgb,var(--warm-3)_16%,transparent)] text-[var(--warm-4)]", // drier is red, as on the maps
+  neutral: "bg-sunken text-ink-2",
+};
+
+/** The whole report in one sentence and four status chips, all from tested numbers. */
+function AtAGlance({ place, report, bn }: { place: Place; report: Report; bn: boolean }) {
+  const n = (x: string) => (bn ? bnNum(x) : x);
+  const name = place.name || (bn ? "এই জায়গা" : "This place");
+  const t = report.temp!;
+  const size = Math.abs(t[2] * 4.4).toFixed(1); // the sentence says "warmer" or "cooler", so no sign
+  const warm = `${size} °C`;
+  const warmBn = `${bnNum(size)} °সে`;
+  const chips: Chip[] = [
+    {
+      label: ["Temperature", "তাপমাত্রা"],
+      value: t[3] ? (t[2] > 0 ? ["Warming, clear", "উষ্ণ হচ্ছে, স্পষ্ট"] : ["Cooling, clear", "শীতল হচ্ছে, স্পষ্ট"]) : ["No clear change", "স্পষ্ট পরিবর্তন নেই"],
+      tone: t[3] ? (t[2] > 0 ? "warm" : "cool") : "neutral",
+    },
+  ];
+  if (report.wet)
+    chips.push({
+      label: ["Rainy season", "বর্ষা"],
+      value: report.wet[3] ? (report.wet[2] > 0 ? ["Wetter, clear", "ভেজা হচ্ছে, স্পষ্ট"] : ["Drier, clear", "শুষ্ক হচ্ছে, স্পষ্ট"]) : ["No clear change", "স্পষ্ট পরিবর্তন নেই"],
+      tone: report.wet[3] ? (report.wet[2] > 0 ? "cool" : "dry") : "neutral",
+    });
+  if (report.fut) {
+    const r = report.fut[2];
+    chips.push({
+      label: ["Rain by 2041–60", "২০৪১–৬০-এর বৃষ্টি"],
+      value: r === null ? ["Too dry to tell", "বলার মতো বৃষ্টি নেই"] : !report.fut[3] ? ["Models disagree", "মডেলগুলো একমত নয়"] : r > 0 ? ["Wetter", "বেশি ভেজা"] : ["Drier", "বেশি শুষ্ক"],
+      tone: r === null || !report.fut[3] ? "neutral" : r > 0 ? "cool" : "dry",
+    });
+  }
+  if (report.hot)
+    chips.push({
+      label: ["Very hot days", "খুব গরম দিন"],
+      value: [`${Math.round(report.hot.now)} → ${Math.round(report.hot.then)} a year`, `বছরে ${bnNum(String(Math.round(report.hot.now)))} → ${bnNum(String(Math.round(report.hot.then)))}`],
+      tone: report.hot.then > report.hot.now * 1.5 ? "warm" : "neutral",
+    });
+
+  const hotWords = report.fut
+    ? report.fut[5] >= 0.95
+      ? ["almost every year", "প্রায় প্রতি বছর"]
+      : [`${Math.max(1, Math.round(report.fut[5] * 10))} years in 10`, `১০ বছরে ${bnNum(Math.max(1, Math.round(report.fut[5] * 10)))} বার`]
+    : null;
+  const en = `${name} is ${warm} ${t[2] >= 0 ? "warmer" : "cooler"} than in 1981${t[3] ? ", a clear change" : ", not yet a clear change"}.${hotWords ? ` By 2041–2060, a year as hot as today's hottest in ten comes ${hotWords[0]}.` : ""}`;
+  const bnText = `${name} ১৯৮১-এর চেয়ে ${warmBn} ${t[2] >= 0 ? "বেশি গরম" : "বেশি ঠান্ডা"}${t[3] ? ", স্পষ্ট পরিবর্তন" : ", এখনো স্পষ্ট নয়"}।${hotWords ? ` ২০৪১–২০৬০ সালে আজকের ১০ বছরে সবচেয়ে গরম বছরের মতো বছর আসবে ${hotWords[1]}।` : ""}`;
+
+  return (
+    <section aria-labelledby="glance" className="mt-10 rounded-3xl bg-card p-6 shadow-soft">
+      <h3 id="glance" className="flex items-center gap-2 text-lg font-semibold text-ink">
+        <Info size={22} aria-hidden className="text-accent" />
+        <T en="At a glance" bn="এক নজরে" />
+      </h3>
+      <p className="mt-3 max-w-[70ch] text-ink">
+        <T en={en} bn={bnText} />
+      </p>
+      <ul className="mt-4 grid grid-cols-2 gap-2 lg:grid-cols-4">
+        {chips.map((c) => (
+          <li key={c.label[0]} className="rounded-2xl bg-sunken px-4 py-3">
+            <span className="block text-xs text-ink-3">
+              <T en={c.label[0]} bn={c.label[1]} />
+            </span>
+            <span className={`mt-1 inline-block rounded-full px-2.5 py-0.5 text-sm font-medium ${CHIP[c.tone]}`}>
+              <T en={c.value[0]} bn={n(c.value[1])} />
+            </span>
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 }

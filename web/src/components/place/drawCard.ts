@@ -10,6 +10,12 @@ const COLORS = {
   ink2: "#4f4e4a",
   ink3: "#6b6964",
   accent: "#1f66c1",
+  card: "#ffffff",
+  sunken: "#eeece6",
+  warmTint: "#fbe7e4",
+  warm: "#a8201f",
+  coolTint: "#e3eefb",
+  cool: "#184f95",
   steps: ["#184f95", "#3987e5", "#86b6ef", "#cfe0f7", "#e4e2dc", "#f6cfcb", "#ee9690", "#e34948", "#a8201f"],
 };
 
@@ -40,12 +46,14 @@ export function downloadCard({
   stripes,
   future,
   bn,
+  scenario = "ssp245",
 }: {
   place: Place;
   report: Report;
   stripes: number[] | null;
   future: [number, number];
   bn: boolean;
+  scenario?: "ssp245" | "ssp585";
 }) {
   const W = 1080;
   const H = 1350;
@@ -74,8 +82,8 @@ export function downloadCard({
   ctx.fillText(`${place.detail ? `${place.detail}  ` : ""}${n(place.lat.toFixed(2))}°, ${n(place.lon.toFixed(2))}°`, P, 300);
 
   // The place's own warming stripes.
-  const sy = 340;
-  const sh = 290;
+  const sy = 330;
+  const sh = 220;
   if (stripes && stripes.length) {
     const mean = stripes.reduce((a, b) => a + b, 0) / stripes.length;
     const span = Math.max(...stripes.map((v) => Math.abs(v - mean))) || 1;
@@ -104,47 +112,110 @@ export function downloadCard({
     ctx.fillText(key, (W - ctx.measureText(key).width) / 2, sy + sh + 82);
   }
 
-  // Two columns of facts.
-  const col = (x: number, y: number, head: string, big: string, line: string) => {
-    ctx.fillStyle = COLORS.ink2;
-    ctx.font = f(32, 600);
-    ctx.fillText(head, x, y);
-    ctx.fillStyle = COLORS.ink;
-    ctx.font = f(84, 700);
-    ctx.fillText(big, x, y + 100);
-    ctx.fillStyle = COLORS.ink2;
-    ctx.font = f(30);
-    return wrap(ctx, line, x, y + 150, (W - 3 * P) / 2, 40);
+  // Boxes, like the report on the site: since 1981, by 2041-2060, at a glance, disasters nearby.
+  const box = (x: number, y: number, w: number, h: number, fill: string) => {
+    ctx.fillStyle = fill;
+    ctx.beginPath();
+    if (ctx.roundRect) ctx.roundRect(x, y, w, h, 28);
+    else ctx.rect(x, y, w, h);
+    ctx.fill();
   };
-  const y0 = 790;
+  const half = (W - 2 * P - 24) / 2;
+  const fact = (x: number, y: number, fill: string, tone: string, head: string, big: string, line: string) => {
+    box(x, y, half, 250, fill);
+    ctx.fillStyle = COLORS.ink2;
+    ctx.font = f(28, 600);
+    ctx.fillText(head, x + 32, y + 52, half - 64);
+    ctx.fillStyle = tone;
+    ctx.font = f(76, 700);
+    ctx.fillText(big, x + 32, y + 136, half - 64);
+    ctx.fillStyle = COLORS.ink2;
+    ctx.font = f(27);
+    wrap(ctx, line, x + 32, y + 182, half - 64, 34);
+  };
+  const y1 = 668;
   if (report.temp) {
-    col(
+    const clear = report.temp[3];
+    fact(
       P,
-      y0,
+      y1,
+      clear ? COLORS.warmTint : COLORS.sunken,
+      clear ? COLORS.warm : COLORS.ink,
       bn ? "১৯৮১ থেকে" : "Since 1981",
       `${n(signed(report.temp[2] * 4.4, 1))} ${deg}`,
-      report.temp[3] ? (bn ? "বেশি গরম, স্পষ্ট পরিবর্তন" : "warmer, a clear change") : bn ? "এখনো স্পষ্ট নয়" : "not yet a clear change",
+      clear ? (bn ? "বেশি গরম, স্পষ্ট পরিবর্তন" : "warmer, a clear change") : bn ? "এখনো স্পষ্ট পরিবর্তন নয়" : "not yet a clear change",
     );
   }
   if (report.fut) {
     const hot = report.fut[5] >= 0.95 ? (bn ? "প্রায় প্রতি বছর" : "almost every year") : bn ? `১০ বছরে ${bnNum(Math.max(1, Math.round(report.fut[5] * 10)))} বার` : `${Math.max(1, Math.round(report.fut[5] * 10))} years in 10`;
-    col(
-      P + (W - P) / 2,
-      y0,
-      bn ? `${bnNum(future[0])}–${bnNum(future[1])} সালের মধ্যে` : `By ${future[0]}–${future[1]}`,
+    const path = scenario === "ssp245" ? (bn ? "মাঝামাঝি পথ" : "middle road") : bn ? "উচ্চ নিঃসরণ" : "high emissions";
+    fact(
+      P + half + 24,
+      y1,
+      COLORS.coolTint,
+      COLORS.warm,
+      bn ? `${bnNum(future[0])}–${bnNum(future[1])} (${path})` : `By ${future[0]}–${future[1]} (${path})`,
       `${n(signed(report.fut[4], 1))} ${deg}`,
-      bn ? `আরও গরম; আজকের সবচেয়ে গরম বছর আসবে ${hot}` : `warmer again; today's hottest year in ten would come ${hot}`,
+      bn ? `আরও গরম; আজকের সবচেয়ে গরম বছর আসবে ${hot}` : `more; today's hottest year in ten comes ${hot}`,
     );
   }
 
-  // Disasters nearby and the source line.
-  ctx.fillStyle = COLORS.ink;
-  ctx.font = f(30, 600);
+  // At a glance: three short statuses.
+  const y2 = y1 + 270;
+  const chips: [string, string][] = [];
+  if (report.wet)
+    chips.push([
+      bn ? "বর্ষা" : "Rainy season",
+      report.wet[3] ? (report.wet[2] > 0 ? (bn ? "ভেজা হচ্ছে" : "wetter, clear") : bn ? "শুষ্ক হচ্ছে" : "drier, clear") : bn ? "স্পষ্ট পরিবর্তন নেই" : "no clear change",
+    ]);
+  if (report.hot)
+    chips.push([
+      bn ? "খুব গরম দিন" : "Very hot days",
+      bn ? `বছরে ${bnNum(String(Math.round(report.hot.now)))} → ${bnNum(String(Math.round(report.hot.then)))}` : `${Math.round(report.hot.now)} → ${Math.round(report.hot.then)} a year`,
+    ]);
+  if (report.fut && report.fut[2] !== null)
+    chips.push([
+      bn ? "ভবিষ্যতের বৃষ্টি" : "Future rain",
+      !report.fut[3] ? (bn ? "মডেলগুলো একমত নয়" : "models disagree") : report.fut[2] > 0 ? (bn ? "বেশি ভেজা" : "wetter") : bn ? "বেশি শুষ্ক" : "drier",
+    ]);
+  if (chips.length) {
+    const cw = (W - 2 * P - 16 * (chips.length - 1)) / chips.length;
+    chips.forEach(([label, value], i) => {
+      const x = P + i * (cw + 16);
+      box(x, y2, cw, 104, COLORS.sunken);
+      ctx.fillStyle = COLORS.ink3;
+      ctx.font = f(24);
+      ctx.fillText(label, x + 24, y2 + 40, cw - 48);
+      ctx.fillStyle = COLORS.ink;
+      ctx.font = f(30, 600);
+      ctx.fillText(value, x + 24, y2 + 80, cw - 48);
+    });
+  }
+
+  // Disasters recorded nearby.
+  const y3 = y2 + 124;
+  box(P, y3, W - 2 * P, 140, COLORS.card);
+  ctx.fillStyle = COLORS.ink2;
+  ctx.font = f(26, 600);
+  ctx.fillText(bn ? "৩০০ কিমির মধ্যে নথিভুক্ত, ২০০০ থেকে" : "Recorded within 300 km since 2000", P + 32, y3 + 44);
   const ev = report.ev;
-  const nearby = bn
-    ? `৩০০ কিমির মধ্যে, ২০০০ থেকে: ${bnNum(ev[0])} বন্যা সতর্কতা, ${bnNum(ev[1])} ঘূর্ণিঝড়, ${bnNum(ev[3])} ভূমিধস`
-    : `Within 300 km since 2000: ${ev[0]} flood alerts, ${ev[1]} cyclones, ${ev[3]} landslides`;
-  wrap(ctx, nearby, P, 1160, W - 2 * P, 40);
+  const items: [number, string][] = [
+    [ev[0], bn ? "বন্যা সতর্কতা" : "flood alerts"],
+    [ev[1], bn ? "ঘূর্ণিঝড়" : "cyclones"],
+    [ev[2], bn ? "খরা" : "droughts"],
+    [ev[3], bn ? "ভূমিধস" : "landslides"],
+  ];
+  const iw = (W - 2 * P - 64) / 4;
+  items.forEach(([v, label], i) => {
+    const x = P + 32 + i * iw;
+    ctx.fillStyle = COLORS.ink;
+    ctx.font = f(48, 700);
+    ctx.fillText(n(String(v)), x, y3 + 98);
+    ctx.fillStyle = COLORS.ink3;
+    ctx.font = f(24);
+    ctx.fillText(label, x, y3 + 126, iw - 16);
+  });
+
   ctx.fillStyle = COLORS.ink3;
   ctx.font = f(24);
   ctx.fillText(bn ? "নাসার তথ্য · পূর্বাভাস নয়" : "NASA data · a trend, not a forecast", P, H - P);
