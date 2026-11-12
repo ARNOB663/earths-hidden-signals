@@ -403,7 +403,7 @@ export default function PlaceReport() {
                         tone={report.fut[5] >= 0.5 ? "warm" : null}
                         line={<T en="a year as hot as today's hottest in ten." bn="আজকের ১০ বছরে সবচেয়ে গরম বছরের মতো বছর।" />}
                       />
-                      <HotYears share={report.fut[5]} bn={bn} />
+                      <HotYears share={report.fut[5]} />
                       <p className="mt-4 text-sm text-ink-2">
                         <T
                           en={report.fut[2] === null ? "Too dry here to measure a rainy-season change." : `Rainy season ${signed(report.fut[2], 0)}%${report.fut[3] ? ", and the climate models agree." : ", but the climate models disagree."}`}
@@ -745,7 +745,7 @@ function StripeKey({ values, bn }: { values: number[]; bn: boolean }) {
 }
 
 /** Today's 1-in-10 hottest year as ten squares: one today, how many by 2041–2060. */
-function HotYears({ share, bn }: { share: number; bn: boolean }) {
+function HotYears({ share }: { share: number }) {
   const then = Math.min(10, Math.max(1, Math.round(share * 10)));
   const row = (filled: number, warm: boolean) => (
     <span aria-hidden className="flex gap-1">

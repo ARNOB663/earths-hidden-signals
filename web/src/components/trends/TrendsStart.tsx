@@ -74,6 +74,8 @@ export function TrendsStart({ onWorld }: { onWorld: (measure: What | "future") =
     if (where === "south-asia") {
       // The South Asia explorer reads its variable and season from the address.
       const q = what === "temperature" ? "var=temperature&season=annual" : what === "wet-season" ? "var=rainfall&season=monsoon" : "var=rainfall&season=annual";
+      // A full load on purpose: the scope and the South Asia explorer read the address only on mount.
+      // eslint-disable-next-line @next/next/no-location-assign-relative-destination
       window.location.assign(`/trends?${q}`);
       return;
     }
