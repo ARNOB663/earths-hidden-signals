@@ -16,7 +16,8 @@ import { formatSigned, trendLegendTokens, trendToken, type VariableId } from "@/
 
 /** Trend files: [lat, lon, slope per decade, clear]. future.json: [lat, lon, rain %, models agree, °C, hot-year share]. */
 type Cell = number[]; // a too-dry rain value arrives as null (see rainOf)
-export type MeasureId = "temperature" | "wet-season" | "rainfall" | "future";
+export type MeasureId = "temperature" | "wet-season" | "rainfall" | "compound" | "future";
+type CompoundTotals = { early: [number, number]; late: [number, number]; hotDry: [number, number] };
 type Scenario = "ssp245" | "ssp585";
 type FutureSummary = { landWarming: { median: number; min: number; max: number }; hotEveryYearShare: number; models: number; years: [number, number] };
 
@@ -24,6 +25,7 @@ const MEASURES: Record<MeasureId, { en: string; bn: string; unit: string; unitBn
   temperature: { en: "Temperature", bn: "তাপমাত্রা", unit: "°C", unitBn: "°সে", limit: 0.6, variable: "temperature", up: ["warmer", "উষ্ণ"], down: ["cooler", "শীতল"] },
   "wet-season": { en: "Rainy-season rain", bn: "বর্ষা মৌসুমের বৃষ্টি", unit: "%", unitBn: "%", limit: 10, variable: "rainfall", up: ["wetter", "ভেজা"], down: ["drier", "শুষ্ক"] },
   rainfall: { en: "Yearly rain", bn: "বার্ষিক বৃষ্টি", unit: "%", unitBn: "%", limit: 10, variable: "rainfall", up: ["wetter", "ভেজা"], down: ["drier", "শুষ্ক"] },
+  compound: { en: "Hot + dry", bn: "গরম + শুষ্ক", unit: "", unitBn: "", limit: 8, variable: "temperature", up: ["more often", "বেশি"], down: ["less often", "কম"] },
   future: { en: "2041–2060", bn: "২০৪১–২০৬০", unit: "°C", unitBn: "°সে", limit: 2.5, variable: "temperature", up: ["warmer", "উষ্ণ"], down: ["cooler", "শীতল"] },
 };
 
@@ -31,7 +33,8 @@ const MEASURES: Record<MeasureId, { en: string; bn: string; unit: string; unitBn
 const rainOf = (c: Cell): number | null => (c[2] as number | null) ?? null;
 
 /** Draw value and solidity of a cell: the projections colour by warming, every square solid. */
-const valueOf = (id: MeasureId, c: Cell): [number, boolean] => (id === "future" ? [c[4], true] : [c[2], !!c[3]]);
+const valueOf = (id: MeasureId, c: Cell): [number, boolean] =>
+  id === "future" ? [c[4], true] : id === "compound" ? [c[3] - c[2], true] : [c[2], !!c[3]];
 
 export interface WorldCounts {
   temperature: { cells: number; increase: number; decrease: number };
@@ -53,6 +56,7 @@ export default function WorldExplorer({ counts, onZoomSouthAsia, initial = "temp
   const [failed, setFailed] = useState(false);
   const [scenario, setScenario] = useState<Scenario>("ssp245");
   const [future, setFuture] = useState<FutureSummary | null>(null);
+  const [compound, setCompound] = useState<CompoundTotals | null>(null);
   const t = useT();
   const m = MEASURES[measure];
 
@@ -83,9 +87,13 @@ export default function WorldExplorer({ counts, onZoomSouthAsia, initial = "temp
           models?: string[];
           future?: [number, number];
           scenarios?: Record<Scenario, { cells: Cell[]; landWarming: FutureSummary["landWarming"]; hotEveryYearShare: number }>;
+          early?: [number, number];
+          late?: [number, number];
+          totals?: { hotDry: [number, number] };
         }) => {
           if (cancelled) return;
           setFailed(false);
+          if (data.totals && data.early && data.late) setCompound({ early: data.early, late: data.late, hotDry: data.totals.hotDry });
           const sc = data.scenarios?.[scenario];
           if (sc) setFuture({ landWarming: sc.landWarming, hotEveryYearShare: sc.hotEveryYearShare, models: data.models?.length ?? 0, years: data.future ?? [2041, 2060] });
           setCells({ id: measure, data: sc ? sc.cells : (data.cells ?? []), d: data.cell });
@@ -146,7 +154,7 @@ export default function WorldExplorer({ counts, onZoomSouthAsia, initial = "temp
       <div ref={host} className="absolute inset-0 bg-sunken" />
 
       <aside className="absolute bottom-3 left-3 right-3 z-[500] rounded-2xl bg-card p-4 shadow-soft sm:bottom-auto sm:right-auto sm:top-16 sm:w-[340px]">
-        <div role="radiogroup" aria-label={t("Measure", "পরিমাপ")} className="grid grid-cols-4 gap-1 rounded-xl bg-sunken p-1 text-xs">
+        <div role="radiogroup" aria-label={t("Measure", "পরিমাপ")} className="grid grid-cols-3 gap-1 rounded-xl bg-sunken p-1 text-xs">
           {(Object.keys(MEASURES) as MeasureId[]).map((id) => (
             <button
               key={id}
@@ -164,7 +172,16 @@ export default function WorldExplorer({ counts, onZoomSouthAsia, initial = "temp
           ))}
         </div>
 
-        {measure === "future" ? (
+        {measure === "compound" ? (
+          compound && (
+            <p className="mt-3 text-sm text-ink">
+              <T
+                en={`Months both among the hottest and the driest 10% for their time of year: ${compound.hotDry[0].toLocaleString("en-US")} over land in ${compound.early[0]}–${compound.early[1]}, ${compound.hotDry[1].toLocaleString("en-US")} in ${compound.late[0]}–${compound.late[1]}.`}
+                bn={`বছরের সেই সময়ের সবচেয়ে গরম ও সবচেয়ে শুষ্ক ১০%—দুটোই, এমন মাস: স্থলভাগে ${bnNum(compound.early[0])}–${bnNum(compound.early[1])} সালে ${bnNum(compound.hotDry[0].toLocaleString("en-US"))}টি, ${bnNum(compound.late[0])}–${bnNum(compound.late[1])} সালে ${bnNum(compound.hotDry[1].toLocaleString("en-US"))}টি।`}
+              />
+            </p>
+          )
+        ) : measure === "future" ? (
           <>
             <div role="radiogroup" aria-label={t("Emissions path", "নিঃসরণের পথ")} className="mt-3 flex rounded-full bg-sunken p-0.5 text-xs">
               {(
@@ -213,7 +230,9 @@ export default function WorldExplorer({ counts, onZoomSouthAsia, initial = "temp
           <span>{bn ? m.up[1] : m.up[0]}</span>
         </div>
         <p className="mt-1 text-xs text-ink-3">
-          {measure === "future" ? (
+          {measure === "compound" ? (
+            <T en="Change in hot-and-dry months, 2011–25 against 1981–95." bn="গরম-ও-শুষ্ক মাসের পরিবর্তন, ২০১১–২৫ বনাম ১৯৮১–৯৫।" />
+          ) : measure === "future" ? (
             <T
               en={`Warming compared with 1995–2014: the middle of ${future?.models ?? 6} NASA climate models.`}
               bn={`১৯৯৫–২০১৪-এর তুলনায় উষ্ণতা: নাসার ${bnNum(future?.models ?? 6)}টি জলবায়ু মডেলের মাঝামাঝি মান।`}
@@ -230,7 +249,20 @@ export default function WorldExplorer({ counts, onZoomSouthAsia, initial = "temp
         )}
         {shown ? (
           <p aria-live="polite" className="mt-3 rounded-xl bg-sunken px-3 py-2 text-sm text-ink">
-            {measure === "future" ? (
+            {measure === "compound" ? (
+              <>
+                <span className="font-semibold tabular-nums">
+                  {num(String(shown[2]))} → {num(String(shown[3]))}
+                </span>{" "}
+                <T en="hot-and-dry months, 1981–95 vs 2011–25" bn="গরম-ও-শুষ্ক মাস, ১৯৮১–৯৫ বনাম ২০১১–২৫" />
+                <span className="block">
+                  <T
+                    en={`Very wet on wet ground: ${shown[4]} → ${shown[5]}.`}
+                    bn={`ভেজা মাটিতে খুব বেশি বৃষ্টি: ${bnNum(String(shown[4]))} → ${bnNum(String(shown[5]))}।`}
+                  />
+                </span>
+              </>
+            ) : measure === "future" ? (
               <>
                 <span className="font-semibold tabular-nums">
                   {num(formatSigned(shown[4], 1))} {unit}
