@@ -13,6 +13,10 @@
 > outlook) and `global_future.py` (land-mean warming, hot-year recurrence and rainy-season change by 2041–60)
 > write `web/public/data/global/` (incl. `events-grid.json` and per-cell `stripes/` tiles used by `/your-place`, the any-place climate report). The latter two read NEX-GDDP-CMIP6 at 2° from `raw/cmip6_global/`
 > (`cmip6_download.py --global`, resume-safe) and use whichever models have complete files.
+> Also: `global_signals.py` (CO₂ and September Arctic sea ice for the home page; small CSVs, no login) and
+> `global_hotdays.py` (days above 35 °C a year, today vs 2041–60, from daily `tasmax`:
+> `cmip6_download.py --global --vars tasmax`). `hotdays.json` is optional for the web: without it the town
+> report leaves that line out.
 
 
 Two independent parts: `analysis/` (Python pipeline) writes committed JSON into `web/public/data/`; `web/` (Next.js 16) reads it at build/request time. The website works without rerunning the pipeline.
@@ -45,8 +49,8 @@ the standard library module that `build.py` and `latest.py` import.
 - `web/CLAUDE.md` imports `web/AGENTS.md`. Root `CLAUDE.md` is a longer, partly stale summary — prefer this file and the code when they disagree.
 - Pages: `/` (Home: the global story in five chapters), `/your-place` (any town on Earth: stripes, change since 1981, 2041–2060, disasters within 300 km, climate twin, shareable image; `components/place/`), `/trends` (World view `WorldExplorer` + South Asia `TrendExplorer`, switched by `TrendsScope`), `/hazards` (World hotspots `WorldHazards` + South Asia `HazardExplorer`, switched by `HazardsScope`), `/explore` (satellite map, `MapExplorer`), `/findings` (nav label "South Asia": the South Asia deep dive) and `/methods`. `/places` and `/places/[id]` (the older 54-city reports) still build but are no longer linked from the nav.
 - Server-side JSON reads go through `web/src/lib/data.ts` (Node `fs`, `process.cwd()/public/data/...`), not fetch. Large per-cell files (`/data/global/*`, trend grids and series) are fetched by client components.
-- i18n (English/Bangla) lives in `web/src/lib/i18n.tsx` (`<T>`), `bn.ts`, plus `lib/signals/level.ts` (level vocabulary) and `geography/index.json` (`nameBn`). There is no `names.ts`.
-- Shared page primitives: `components/ui/primitive.tsx` (`Eyebrow`), `components/signal/levels.tsx` (`Stat`, `CoverageStats`, badges, `formatFrequency` is in `lib/signals/level.ts`). Do not re-declare these per page.
+- i18n (English/Bangla) lives in `web/src/lib/i18n.tsx` (`<T en bn>`, `useT`, `useLang`) and `lib/bn.ts` (`bnNum`); place names in Bangla are in `lib/names.ts`. Every visible string has both languages.
+- Shared UI lives in `components/ui/` (`index.tsx` primitives, `QuickGuide`, `ShareButton`, `DataActions`); maps share `components/map/baseMap.ts`. Do not re-declare these per page.
 - `web/src/lib/layers.ts` holds the GIBS WMTS root and the (currently unrendered) layer definitions; `components/map/baseMap.ts` is shared by every map. The Map Explorer (GIBS heat/rain/soil/greenness/forest-loss layers, time slider, compare and difference views) was removed on 2026-11-06 and restored on 2026-11-09 as `/satellite-map` (footer + Home link, not a tab); the retired `/explore` redirects there. Its place figures read `maps/place-signals.json` keys like `temperature_annual`.
 - `web/next.config.ts` holds the retired-route redirects (all `permanent: true`); images/metadata are defined per route.
 

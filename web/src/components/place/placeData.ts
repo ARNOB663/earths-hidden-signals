@@ -5,6 +5,7 @@ export type Place = { name: string; detail: string; lat: number; lon: number; tw
 export type TrendCell = [number, number, number, number]; // lat, lon, slope/decade, clear
 export type FutureCell = [number, number, number | null, number, number, number]; // lat, lon, rain % (null: too dry), agree, warming C, hot-year share
 export type Scenario = "ssp245" | "ssp585";
+export type HotCell = [number, number, number, number, number]; // lat, lon, days above 35 °C a year: 1995–2014, 2041–60 middle road, 2041–60 high
 type TwinCell = [number, number, string, number, number, number, number, number]; // lat, lon, name, 5 features
 
 export interface Data {
@@ -13,12 +14,16 @@ export interface Data {
   future: { models: string[]; future: [number, number]; scenarios: Record<Scenario, { cells: FutureCell[] }> };
   events: { years: { gdacs: [number, number]; landslide: [number, number] }; cells: [number, number, number, number, number, number][] };
   twins: { weights: number[]; median: number[]; scale: number[]; cells: TwinCell[] };
+  /** Days above 35 °C; null if the file is missing (the report then leaves the line out). */
+  hot: { thresholdC: number; cells: HotCell[] } | null;
 }
 
 export interface Report {
   temp: TrendCell | null;
   wet: TrendCell | null;
   fut: FutureCell | null;
+  /** Days above 35 °C a year: today (1995–2014) and by 2041–2060 on the chosen path. */
+  hot: { now: number; then: number; threshold: number } | null;
   /** Events within the radius: floods, cyclones, droughts, landslides. */
   ev: number[];
 }
@@ -31,12 +36,14 @@ const cache: { data?: Promise<Data>; tiles: Map<string, Promise<Record<string, n
 export function loadData(): Promise<Data> {
   if (!cache.data) {
     const j = (f: string) => fetch(`/data/global/${f}.json`).then((r) => r.json());
-    cache.data = Promise.all([j("temperature"), j("wet-season"), j("future"), j("events-grid"), j("twins-grid")]).then(([t, w, f, e, tw]) => ({
+    const optional = (f: string) => j(f).catch(() => null);
+    cache.data = Promise.all([j("temperature"), j("wet-season"), j("future"), j("events-grid"), j("twins-grid"), optional("hotdays")]).then(([t, w, f, e, tw, h]) => ({
       temp: t.cells,
       wet: w.cells,
       future: f,
       events: e,
       twins: tw,
+      hot: h,
     }));
   }
   return cache.data;
@@ -90,10 +97,12 @@ export function computeReport(place: Place, data: Data, scenario: Scenario): Rep
     if (Math.abs(c[0] - place.lat) > 4) continue;
     if (km(place.lat, place.lon, c[0], c[1]) <= RADIUS_KM) for (let k = 0; k < 4; k++) ev[k] += c[2 + k];
   }
+  const h = data.hot ? nearest(data.hot.cells, place.lat, place.lon) : null;
   return {
     temp: nearest(data.temp, place.lat, place.lon),
     wet: nearest(data.wet, place.lat, place.lon),
     fut: nearest(data.future.scenarios[scenario].cells, place.lat, place.lon),
+    hot: h && data.hot ? { now: h[2], then: scenario === "ssp245" ? h[3] : h[4], threshold: data.hot.thresholdC } : null,
     ev,
   };
 }

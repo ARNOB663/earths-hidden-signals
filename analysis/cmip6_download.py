@@ -102,7 +102,12 @@ def main() -> int:
     ap.add_argument("--check", action="store_true")
     ap.add_argument("--workers", type=int, default=5)
     ap.add_argument("--global", dest="glob", action="store_true", help="whole globe (55S-75N) at 2 degrees into raw/cmip6_global/")
+    ap.add_argument("--vars", default=",".join(VARS), help="comma-separated variables, e.g. tasmax (default: pr,tas)")
+    ap.add_argument("--models", default="", help="comma-separated subset of models (default: all)")
     args = ap.parse_args()
+    VARS[:] = [v for v in args.vars.split(",") if v]
+    if args.models:
+        MODELS[:] = [m for m in MODELS if m in args.models.split(",")]
     if args.glob:
         global OUT
         OUT = Path(__file__).parent / "raw" / "cmip6_global"

@@ -404,6 +404,7 @@ export default function PlaceReport() {
                         line={<T en="a year as hot as today's hottest in ten." bn="আজকের ১০ বছরে সবচেয়ে গরম বছরের মতো বছর।" />}
                       />
                       <HotYears share={report.fut[5]} />
+                      {report.hot && <HotDays hot={report.hot} bn={bn} />}
                       <p className="mt-4 text-sm text-ink-2">
                         <T
                           en={report.fut[2] === null ? "Too dry here to measure a rainy-season change." : `Rainy season ${signed(report.fut[2], 0)}%${report.fut[3] ? ", and the climate models agree." : ", but the climate models disagree."}`}
@@ -639,6 +640,11 @@ function Compare({ a, b, bn, onClear }: { a: Side; b: Side; bn: boolean; onClear
       get: (r) => (r.fut ? (r.fut[5] >= 0.95 ? (bn ? "প্রায় প্রতি বছর" : "almost every year") : bn ? `১০ বছরে ${bnNum(Math.max(1, Math.round(r.fut[5] * 10)))} বার` : `${Math.max(1, Math.round(r.fut[5] * 10))} in 10 years`) : "–"),
     },
     {
+      en: "Days above 35 °C a year, then",
+      bn: "বছরে ৩৫ °সে-এর বেশি দিন, তখন",
+      get: (r) => (r.hot ? `${n(String(Math.round(r.hot.then)))} (${bn ? "আজ" : "now"} ${n(String(Math.round(r.hot.now)))})` : "–"),
+    },
+    {
       en: `Disasters within ${RADIUS_KM} km`,
       bn: `${bnNum(RADIUS_KM)} কিমির মধ্যে দুর্যোগ`,
       get: (r) => n(String(r.ev.reduce((x, y) => x + y, 0))),
@@ -806,5 +812,25 @@ function WordsExplained() {
         ))}
       </dl>
     </details>
+  );
+}
+
+/** Very hot days a year: today against 2041–2060, from NASA's daily projections. */
+function HotDays({ hot, bn }: { hot: { now: number; then: number; threshold: number }; bn: boolean }) {
+  const n = (x: number) => (bn ? bnNum(String(Math.round(x))) : String(Math.round(x)));
+  const t = bn ? bnNum(String(hot.threshold)) : String(hot.threshold);
+  if (Math.round(hot.then) === 0)
+    return (
+      <p className="mt-4 text-sm text-ink-2">
+        <T en={`Days above ${t} °C stay rare here.`} bn={`এখানে ${t} °সে-এর বেশি গরম দিন বিরল থাকবে।`} />
+      </p>
+    );
+  return (
+    <p className="mt-4 text-sm text-ink-2">
+      <T en={`Days above ${t} °C a year:`} bn={`বছরে ${t} °সে-এর বেশি গরম দিন:`} />{" "}
+      <span className="font-semibold tabular-nums text-ink">{n(hot.now)}</span> <T en="today" bn="আজ" />
+      {" → "}
+      <span className="font-semibold tabular-nums text-[var(--warm-4)]">{n(hot.then)}</span> <T en="by 2041–2060." bn="২০৪১–২০৬০ সালে।" />
+    </p>
   );
 }
