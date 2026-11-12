@@ -3,7 +3,8 @@
 import { useLayoutEffect, useMemo, useRef, useState } from "react";
 import { downloadCsv, slug } from "@/lib/download";
 import { DataActions } from "@/components/ui/DataActions";
-import { T } from "@/lib/i18n";
+import { bnNum } from "@/lib/bn";
+import { T, useLang } from "@/lib/i18n";
 import { senIntercept } from "@/lib/trends";
 
 interface Props {
@@ -69,6 +70,7 @@ export function SeriesChart({
   split = null,
 }: Props) {
   const [wrapRef, width] = useWidth<HTMLDivElement>();
+  const bnLang = useLang() === "bn";
   const [hover, setHover] = useState<number | null>(null);
 
   const points = useMemo(
@@ -172,7 +174,7 @@ export function SeriesChart({
           onPointerMove={onMove}
           onPointerLeave={() => setHover(null)}
           role="img"
-          aria-label={`Yearly ${axisLabel}, ${years[0]} to ${years[years.length - 1]}`}
+          aria-label={bnLang ? `বার্ষিক ${axisLabel}, ${bnNum(years[0])} থেকে ${bnNum(years[years.length - 1])}` : `Yearly ${axisLabel}, ${years[0]} to ${years[years.length - 1]}`}
         >
           {yTicks.map((t) => (
             <g key={t}>

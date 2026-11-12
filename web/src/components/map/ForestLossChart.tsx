@@ -1,4 +1,4 @@
-import { T } from "@/lib/i18n";
+import { T, useT } from "@/lib/i18n";
 import { lossYearColor } from "./lossColors";
 
 interface Props {
@@ -9,8 +9,9 @@ interface Props {
 
 /** Bar chart of the relative tree-cover-loss index per year for the area in view. */
 export function ForestLossChart({ totals, firstYear, yearRange }: Props) {
+  const t = useT();
   if (!totals) {
-    return <div className="h-24 motion-safe:animate-pulse rounded-lg bg-sunken" aria-label="Loading forest data" />;
+    return <div className="h-24 motion-safe:animate-pulse rounded-lg bg-sunken" role="status" aria-label={t("Loading forest data", "বনের তথ্য লোড হচ্ছে")} />;
   }
   const max = Math.max(...totals);
   if (max === 0) {
@@ -23,7 +24,7 @@ export function ForestLossChart({ totals, firstYear, yearRange }: Props) {
 
   return (
     <div>
-      <div className="flex h-24 items-end gap-[2px]" role="img" aria-label="Relative tree cover loss by year in the current view">
+      <div className="flex h-24 items-end gap-[2px]" role="img" aria-label={t("Relative tree cover loss by year in the current view", "দেখা এলাকায় প্রতি বছরের আপেক্ষিক বন উজাড়")}>
         {totals.map((v, i) => {
           const year = firstYear + i;
           const active = year >= yearRange[0] && year <= yearRange[1];

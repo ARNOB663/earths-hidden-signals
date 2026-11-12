@@ -7,7 +7,7 @@
 import { useState } from "react";
 import { bnNum } from "@/lib/bn";
 import type { OutlookSummary } from "@/lib/data";
-import { T } from "@/lib/i18n";
+import { T, useT } from "@/lib/i18n";
 
 export interface RiskRow {
   id: string;
@@ -42,6 +42,7 @@ export function FutureBlock({
   risk: RiskRow | undefined;
 }) {
   const [scenario, setScenario] = useState<Scenario>("ssp245");
+  const tx = useT();
   const event = EVENT[hazard];
   if (!region || !event) return null;
   const s = region.scenarios[scenario];
@@ -59,7 +60,7 @@ export function FutureBlock({
         <h3 className="font-semibold text-ink">
           <T en={`By ${span}`} bn={`${bnNum(outlook.future[0])}–${bnNum(outlook.future[1])} সালের মধ্যে`} />
         </h3>
-        <div role="radiogroup" aria-label="Emissions path" className="flex rounded-full bg-sunken p-0.5 text-xs">
+        <div role="radiogroup" aria-label={tx("Emissions path", "নিঃসরণের পথ")} className="flex rounded-full bg-sunken p-0.5 text-xs">
           {(
             [
               ["ssp245", "Middle road", "মাঝামাঝি পথ"],

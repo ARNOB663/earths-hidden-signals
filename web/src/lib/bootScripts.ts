@@ -5,4 +5,6 @@
 export const THEME_INIT_SCRIPT = `(function(){try{var p=localStorage.getItem("theme")||"system";var d=p==="dark"||(p==="system"&&matchMedia("(prefers-color-scheme: dark)").matches);var r=document.documentElement;r.dataset.themePref=p;r.dataset.theme=d?"dark":"light";}catch(e){document.documentElement.dataset.theme="light";}})();`;
 
 /** Runs before first paint, so a saved Bangla choice applies without a flash where possible. */
-export const LANG_INIT_SCRIPT = `(function(){try{if(localStorage.getItem("lang")==="bn")document.documentElement.lang="bn";}catch(e){}})();`;
+// The pre-rendered page is English, so for a Bangla reader it stays hidden until React has swapped the
+// text (LangReady removes the class); a timer reveals it anyway if scripts fail.
+export const LANG_INIT_SCRIPT = `(function(){try{if(localStorage.getItem("lang")==="bn"){var r=document.documentElement;r.lang="bn";r.classList.add("lang-pending");setTimeout(function(){r.classList.remove("lang-pending")},1500);}}catch(e){}})();`;

@@ -299,7 +299,7 @@ export default function PlaceReport() {
 
           <div className="mt-6 h-28 w-full overflow-hidden rounded-xl sm:h-40">
             {stripes ? (
-              <WarmingStripes values={stripes} label={`${place.name}: one stripe per year of temperature, 1981 to 2025. Blue years were cooler, red warmer.`} />
+              <WarmingStripes values={stripes} label={bn ? `${place.name}: প্রতি বছরের তাপমাত্রার একটি করে দাগ, ১৯৮১ থেকে ২০২৫। নীল বছর ঠান্ডা, লাল গরম।` : `${place.name}: one stripe per year of temperature, 1981 to 2025. Blue years were cooler, red warmer.`} />
             ) : (
               <div className="h-full w-full motion-safe:animate-pulse bg-sunken" />
             )}

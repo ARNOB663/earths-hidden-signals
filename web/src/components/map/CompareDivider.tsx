@@ -2,6 +2,7 @@
 
 import { ArrowsHorizontal } from "@phosphor-icons/react";
 import { useRef } from "react";
+import { useT } from "@/lib/i18n";
 
 /** Draggable vertical divider for comparing two dates on the map (left = then, right = now). */
 export function CompareDivider({
@@ -16,6 +17,7 @@ export function CompareDivider({
   rightLabel: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
+  const t = useT();
   const clamp = (v: number) => Math.min(0.95, Math.max(0.05, v));
 
   const onPointerMove = (e: React.PointerEvent) => {
@@ -36,7 +38,7 @@ export function CompareDivider({
       <button
         type="button"
         role="slider"
-        aria-label="Move the divider between the two years"
+        aria-label={t("Move the divider between the two years", "দুই বছরের মাঝের বিভাজক সরান")}
         aria-valuemin={5}
         aria-valuemax={95}
         aria-valuenow={Math.round(split * 100)}

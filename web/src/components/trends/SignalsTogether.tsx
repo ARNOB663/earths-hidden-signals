@@ -23,6 +23,7 @@ const DRY_LIGHT = "#ecd3a5";
 
 export function HotDryMap({ data }: { data: Compound }) {
   const ref = useRef<HTMLCanvasElement>(null);
+  const bn = useLang() === "bn";
   const theme = useTheme();
   useEffect(() => {
     const c = ref.current;
@@ -41,7 +42,7 @@ export function HotDryMap({ data }: { data: Compound }) {
       ctx.fillRect(x(cell[1] - 1), y(cell[0] + 1), (2 / 360) * W + 0.5, (2 / 130) * H + 0.5);
     }
   }, [data, theme]);
-  return <canvas ref={ref} role="img" aria-label="World map: where hot and dry months now come more often (red) than in 1981-1995." className="h-auto w-full" />;
+  return <canvas ref={ref} role="img" aria-label={bn ? "বিশ্ব মানচিত্র: ১৯৮১–১৯৯৫-এর চেয়ে কোথায় গরম-ও-শুষ্ক মাস এখন বেশি আসে (লাল)।" : "World map: where hot and dry months now come more often (red) than in 1981-1995."} className="h-auto w-full" />;
 }
 
 function Timeline({ e, bn }: { e: Event; bn: boolean }) {
