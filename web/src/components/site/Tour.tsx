@@ -49,6 +49,14 @@ const STOPS: { href: string; title: [string, string]; text: [string, string] }[]
     ],
   },
   {
+    href: "/trends?scope=together",
+    title: ["Signals together", "একসাথে একাধিক সংকেত"],
+    text: [
+      "Months that are both very hot and very dry now come almost four times as often. Pick a disaster to see its year before, month by month: in Pakistan in 2022, heat came first, then record rain.",
+      "খুব গরম আর খুব শুষ্ক—দুটোই একসাথে, এমন মাস এখন প্রায় চার গুণ বেশি আসে। একটি দুর্যোগ বেছে নিয়ে তার আগের বছর মাসে মাসে দেখুন: ২০২২ সালে পাকিস্তানে আগে এসেছিল গরম, তারপর রেকর্ড বৃষ্টি।",
+    ],
+  },
+  {
     href: "/findings",
     title: ["Zoom in: South Asia", "কাছ থেকে: দক্ষিণ এশিয়া"],
     text: [

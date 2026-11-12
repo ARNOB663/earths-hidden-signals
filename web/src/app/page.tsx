@@ -2,6 +2,7 @@ import { ArrowRight, ChartLineUp, MapTrifold, Warning } from "@phosphor-icons/re
 import type { Icon } from "@phosphor-icons/react";
 import Link from "next/link";
 import { HomeSearch } from "@/components/home/HomeSearch";
+import { HotDryMini } from "@/components/home/HotDryMini";
 import { PlanetSignals, type Signal } from "@/components/home/PlanetSignals";
 import { Reveal } from "@/components/home/Reveal";
 import { WarmingStripes } from "@/components/home/WarmingStripes";
@@ -37,12 +38,13 @@ const TOOLS: { href: string; Icon: Icon; title: [string, string]; text: [string,
 ];
 
 export default async function Home() {
-  const [manifest, trendZones, world, globalFuture, signals] = await Promise.all([
+  const [manifest, trendZones, world, globalFuture, signals, compound] = await Promise.all([
     readManifest(),
     readTrendZones(),
     readData<GlobalSummary>("global", "summary.json"),
     readData<GlobalFuture>("global", "future.json"),
     readData<{ co2: Signal; seaIce: Signal }>("global", "signals.json"),
+    readData<{ early: [number, number]; late: [number, number]; totals: { hotDry: [number, number] } }>("global", "compound.json"),
   ]);
   const years = manifest.years;
   const [first, last] = [years[0], years[years.length - 1]];
@@ -55,7 +57,10 @@ export default async function Home() {
   const ev = world.events.all;
   const fmt = (n: number) => n.toLocaleString("en-US");
 
-  // Chapter 4: South Asia zoom-in
+  // Chapter 3: hot and dry at once
+  const hdRatio = (compound.totals.hotDry[1] / Math.max(1, compound.totals.hotDry[0])).toFixed(1);
+
+  // Chapter 5: South Asia zoom-in
   const study = zone("study-area");
   const tTrend = study.results["temperature_annual"].trend!;
   const warmer = formatSigned((tTrend.slopePerDecade * (last - first)) / 10, 1);
@@ -124,7 +129,7 @@ export default async function Home() {
 
       <PlanetSignals co2={signals.co2} seaIce={signals.seaIce} />
 
-      {/* The story: four chapters, one idea each */}
+      {/* The story: six chapters, one idea each */}
       <div id="story" className="mx-auto mt-16 w-full max-w-[1100px] scroll-mt-20 space-y-20 px-4 sm:mt-24 sm:space-y-24 sm:px-6">
         <Chapter
           n={1}
@@ -170,6 +175,20 @@ export default async function Home() {
 
         <Chapter
           n={3}
+          title={<T en="Heat and drought, together" bn="গরম আর খরা, একসাথে" />}
+          big={<T en={`${hdRatio}× more often`} bn={`${bnNum(hdRatio)} গুণ বেশি`} />}
+          line={
+            <T
+              en={`months that are both among the hottest and the driest 10% for their time of year, over Earth's land, ${compound.late[0]}–${compound.late[1]} against ${compound.early[0]}–${compound.early[1]}. See the year before 13 disasters, month by month.`}
+              bn={`বছরের সেই সময়ের সবচেয়ে গরম ও সবচেয়ে শুষ্ক ১০%—দুটোই, এমন মাস, পৃথিবীর স্থলভাগে, ${bnNum(compound.late[0])}–${bnNum(compound.late[1])} বনাম ${bnNum(compound.early[0])}–${bnNum(compound.early[1])}। ১৩টি দুর্যোগের আগের বছর মাসে মাসে দেখুন।`}
+            />
+          }
+          href="/trends?scope=together"
+          visual={<HotDryMini />}
+        />
+
+        <Chapter
+          n={4}
           title={<T en="Disasters everywhere" bn="সবখানে দুর্যোগ" />}
           big={<T en={`${fmt(ev.flood + ev.cyclone + ev.drought)} alerts`} bn={`${bnNum(fmt(ev.flood + ev.cyclone + ev.drought))}টি সতর্কতা`} />}
           line={
@@ -190,7 +209,7 @@ export default async function Home() {
         />
 
         <Chapter
-          n={4}
+          n={5}
           title={<T en="Zoom in: South Asia" bn="কাছ থেকে: দক্ষিণ এশিয়া" />}
           big={<T en={`${warmer} °C`} bn={`${bnNum(warmer)} °সে`} />}
           line={
@@ -212,7 +231,7 @@ export default async function Home() {
         />
 
         <Chapter
-          n={5}
+          n={6}
           title={<T en="What comes next" bn="এরপর কী" />}
           big={<T en={`${moreWarming} °C more`} bn={`আরও ${bnNum(moreWarming)} °সে`} />}
           line={

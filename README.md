@@ -11,7 +11,7 @@ say comes next, and what to prepare for. Everything is in English and Bangla.
 
 | Page | Question it answers |
 |---|---|
-| [Home](https://earths-hidden-signals.vercel.app) | The global story in five chapters: warming stripes for Earth's land, rain moving in opposite directions, disasters worldwide, a zoom into South Asia, and 2041–2060. |
+| [Home](https://earths-hidden-signals.vercel.app) | The global story in six chapters: warming stripes for Earth's land, rain moving in opposite directions, heat and drought now coming together, disasters worldwide, a zoom into South Asia, and 2041–2060. |
 | [Your place](https://earths-hidden-signals.vercel.app/your-place) | Type **any town on Earth**: its own warming stripes, the change since 1981, NASA projections for 2041–2060, floods, cyclones, droughts and landslides recorded within 300 km, and what to prepare for. Compare it with its **climate twin** elsewhere on Earth, and download the report as an image to share. |
 | [Climate trends](https://earths-hidden-signals.vercel.app/trends) | A world map of trends for temperature and rain, with a detailed South Asia view: every square's rate, its 95% range, whether it is significant, and where its record turned. **Signals together:** where hot and dry months now coincide far more often, and the 12 months before 13 well-known disasters. |
 | [Disaster risk](https://earths-hidden-signals.vercel.app/hazards) | 14 disaster hotspots on every continent: recorded events, their climate trend, whether disasters follow the weather there, and the 2041–2060 outlook. South Asia's regions in full detail. |

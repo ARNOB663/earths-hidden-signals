@@ -12,7 +12,7 @@ import { cssVar, useTheme } from "@/lib/theme";
 
 type Month = { m: string; t: number; tr: number; r: number | null; rr: number; hot: boolean; dry: boolean; wet: boolean; hotDry: boolean; wetOnWet: boolean };
 type Event = { id: string; name: string; nameBn: string; type: string; month: string; lat: number; lon: number; months: Month[] };
-type Compound = { early: [number, number]; late: [number, number]; totals: { hotDry: [number, number]; wetOnWet: [number, number] }; cells: number[][] };
+export type Compound = { early: [number, number]; late: [number, number]; totals: { hotDry: [number, number]; wetOnWet: [number, number] }; cells: number[][] };
 
 const MONTHS_EN = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const MONTHS_BN = ["জানু", "ফেব্রু", "মার্চ", "এপ্রি", "মে", "জুন", "জুলা", "আগ", "সেপ্টে", "অক্টো", "নভে", "ডিসে"];
@@ -21,7 +21,7 @@ const LONG_BN = ["জানুয়ারি", "ফেব্রুয়ার�
 const DRY = "#c98a2c";
 const DRY_LIGHT = "#ecd3a5";
 
-function HotDryMap({ data }: { data: Compound }) {
+export function HotDryMap({ data }: { data: Compound }) {
   const ref = useRef<HTMLCanvasElement>(null);
   const theme = useTheme();
   useEffect(() => {
