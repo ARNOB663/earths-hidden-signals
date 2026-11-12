@@ -4,7 +4,7 @@
 // NASA's projections say for 2041–2060, disasters recorded nearby, and what to prepare for.
 // Everything is read from the committed data in /data/global/; place names come from Open-Meteo.
 
-import { CalendarBlank, Drop, Info, Globe, Hurricane, Mountains, ShieldCheck, Sun, Thermometer, TrendUp, Warning, Waves } from "@phosphor-icons/react";
+import { CalendarBlank, Drop, Info, Lightning, Globe, Hurricane, Mountains, ShieldCheck, Sun, Thermometer, TrendUp, Warning, Waves } from "@phosphor-icons/react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { WarmingStripes } from "@/components/home/WarmingStripes";
 import { bnNum } from "@/lib/bn";
@@ -450,6 +450,8 @@ export default function PlaceReport() {
                   <T en="Recorded events, not proof that climate change caused them." bn="নথিভুক্ত ঘটনা; জলবায়ু পরিবর্তনই এগুলোর কারণ, এমন প্রমাণ নয়।" />
                 </p>
               </section>
+
+              {report.compound && data!.compound && <SignalsTogether cell={report.compound} meta={data!.compound} bn={bn} />}
 
               <Prepare report={report} />
 
@@ -919,6 +921,79 @@ function AtAGlance({ place, report, bn }: { place: Place; report: Report; bn: bo
           </li>
         ))}
       </ul>
+    </section>
+  );
+}
+
+const MONTHS_BN = ["জানুয়ারি", "ফেব্রুয়ারি", "মার্চ", "এপ্রিল", "মে", "জুন", "জুলাই", "আগস্ট", "সেপ্টেম্বর", "অক্টোবর", "নভেম্বর", "ডিসেম্বর"];
+const MONTHS_EN = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+/** Months when two unusual signals came together here, how that changed, and whether disasters followed. */
+function SignalsTogether({ cell, meta, bn }: { cell: number[]; meta: { early: [number, number]; late: [number, number]; firstYear: number; radiusKm: number }; bn: boolean }) {
+  const [, , hdE, hdL, wwE, wwL, lastHd, lastWw, wwLift, wwClear, wwIn, wwMonths] = cell;
+  const n = (x: number | string) => (bn ? bnNum(String(x)) : String(x));
+  const when = (i: number) => {
+    if (i < 0) return null;
+    const y = meta.firstYear + Math.floor(i / 12);
+    return bn ? `${MONTHS_BN[i % 12]} ${bnNum(y)}` : `${MONTHS_EN[i % 12]} ${y}`;
+  };
+  const span = (r: [number, number]) => (bn ? `${bnNum(r[0])}–${bnNum(String(r[1]).slice(2))}` : `${r[0]}–${String(r[1]).slice(2)}`);
+  const row = (title: [string, string], what: [string, string], early: number, late: number, last: number) => (
+    <li className="rounded-2xl bg-sunken p-4">
+      <p className="text-sm font-medium text-ink">
+        <T en={title[0]} bn={title[1]} />
+      </p>
+      <p className="text-xs text-ink-3">
+        <T en={what[0]} bn={what[1]} />
+      </p>
+      <p className="mt-3 text-2xl font-semibold tabular-nums text-ink">
+        {n(early)} <span aria-hidden className="text-ink-3">→</span>{" "}
+        <span className={late > early * 1.5 && late >= 3 ? "text-[var(--warm-4)]" : ""}>{n(late)}</span>
+        <span className="ml-2 text-sm font-normal text-ink-2">
+          <T en={`months, ${span(meta.early)} vs ${span(meta.late)}`} bn={`মাস, ${span(meta.early)} বনাম ${span(meta.late)}`} />
+        </span>
+      </p>
+      {when(last) && (
+        <p className="mt-1 text-xs text-ink-3">
+          <T en={`Last time: ${when(last)}`} bn={`সর্বশেষ: ${when(last)}`} />
+        </p>
+      )}
+    </li>
+  );
+  const link =
+    wwLift < 0 ? (
+      <T en={`Too few recorded floods and landslides within ${meta.radiusKm} km to test a link.`} bn={`${bnNum(meta.radiusKm)} কিমির মধ্যে যোগসূত্র পরীক্ষার মতো যথেষ্ট বন্যা ও ভূমিধসের রেকর্ড নেই।`} />
+    ) : wwClear ? (
+      <T
+        en={`A clear link: ${wwIn} of the ${wwMonths} months with floods or landslides within ${meta.radiusKm} km were "very wet on wet ground" months, ${wwLift.toFixed(1)} times more often than chance.`}
+        bn={`স্পষ্ট যোগসূত্র: ${bnNum(meta.radiusKm)} কিমির মধ্যে বন্যা বা ভূমিধসের ${bnNum(wwMonths)}টি মাসের ${bnNum(wwIn)}টি ছিল "ভেজা মাটিতে খুব বেশি বৃষ্টি"-র মাস, কাকতালীয়ের চেয়ে ${bnNum(wwLift.toFixed(1))} গুণ বেশি।`}
+      />
+    ) : (
+      <T
+        en={`No clear link here: floods and landslides within ${meta.radiusKm} km did not come in these months more often than chance.`}
+        bn={`এখানে স্পষ্ট যোগসূত্র নেই: ${bnNum(meta.radiusKm)} কিমির মধ্যে বন্যা ও ভূমিধস এই মাসগুলোতে কাকতালীয়ের চেয়ে বেশি হয়নি।`}
+      />
+    );
+  return (
+    <section className="mt-4 rounded-3xl bg-card p-6 shadow-soft">
+      <h3 className="flex items-center gap-2 text-lg font-semibold text-ink">
+        <Lightning size={22} aria-hidden className="text-[var(--warm-3)]" />
+        <T en="Signals together" bn="একসাথে একাধিক সংকেত" />
+      </h3>
+      <p className="mt-1 text-sm text-ink-2">
+        <T
+          en="Months when two unusual signals came at once, from NASA's monthly temperature and rain here."
+          bn="যে মাসগুলোতে দুটি অস্বাভাবিক সংকেত একসাথে এসেছে, এখানকার নাসার মাসিক তাপমাত্রা ও বৃষ্টি থেকে।"
+        />
+      </p>
+      <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+        {row(["Hot and dry at once", "একসাথে গরম ও শুষ্ক"], ["Among the 10% hottest and 10% driest for that month", "সেই মাসের সবচেয়ে গরম ১০% আর সবচেয়ে শুষ্ক ১০%-এর মধ্যে"], hdE, hdL, lastHd)}
+        {row(["Very wet on wet ground", "ভেজা মাটিতে খুব বেশি বৃষ্টি"], ["Among the 10% wettest, after an already wet month", "সবচেয়ে ভেজা ১০%-এর মধ্যে, আগের মাসও ভেজা"], wwE, wwL, lastWw)}
+      </ul>
+      <p className="mt-4 text-sm text-ink-2">{link}</p>
+      <p className="mt-2 text-xs text-ink-3">
+        <T en="A pattern in the record, not a forecast." bn="রেকর্ডের একটি ধরন, পূর্বাভাস নয়।" />
+      </p>
     </section>
   );
 }

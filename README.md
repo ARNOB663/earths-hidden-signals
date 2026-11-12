@@ -13,7 +13,7 @@ say comes next, and what to prepare for. Everything is in English and Bangla.
 |---|---|
 | [Home](https://earths-hidden-signals.vercel.app) | The global story in five chapters: warming stripes for Earth's land, rain moving in opposite directions, disasters worldwide, a zoom into South Asia, and 2041–2060. |
 | [Your place](https://earths-hidden-signals.vercel.app/your-place) | Type **any town on Earth**: its own warming stripes, the change since 1981, NASA projections for 2041–2060, floods, cyclones, droughts and landslides recorded within 300 km, and what to prepare for. Compare it with its **climate twin** elsewhere on Earth, and download the report as an image to share. |
-| [Climate trends](https://earths-hidden-signals.vercel.app/trends) | A world map of trends for temperature and rain, with a detailed South Asia view: every square's rate, its 95% range, whether it is significant, and where its record turned. |
+| [Climate trends](https://earths-hidden-signals.vercel.app/trends) | A world map of trends for temperature and rain, with a detailed South Asia view: every square's rate, its 95% range, whether it is significant, and where its record turned. **Signals together:** where hot and dry months now coincide far more often, and the 12 months before 13 well-known disasters. |
 | [Disaster risk](https://earths-hidden-signals.vercel.app/hazards) | 14 disaster hotspots on every continent: recorded events, their climate trend, whether disasters follow the weather there, and the 2041–2060 outlook. South Asia's regions in full detail. |
 | [Satellite map](https://earths-hidden-signals.vercel.app/explore) | NASA satellite and model imagery (ground heat, air temperature, rain, greenness, forest loss) month by month since 2000, with a compare slider. |
 | [How it works](https://earths-hidden-signals.vercel.app/methods) | Data, statistics, cross-checks and limits, written to be checked. |
@@ -71,6 +71,7 @@ python turning.py                          # turning points
 python cmip6_download.py && python future.py && python risk.py       # South Asia projections and model test
 python twins.py && python global_trends.py                           # global trends, place data, twins
 python global_signals.py                                             # Arctic sea ice and CO2 cards
+python compound.py                                                   # signals together, disaster timelines
 python cmip6_download.py --global && python global_future.py && python global_hazards.py   # global projections and hotspots
 python cmip6_download.py --global --vars tasmax && python global_hotdays.py                  # very hot days by 2041-2060
 python -m pytest -q                        # tests for the statistics and pipelines

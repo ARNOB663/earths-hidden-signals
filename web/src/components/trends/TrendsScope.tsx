@@ -12,16 +12,19 @@ import { TrendsStart } from "./TrendsStart";
 import type { MeasureId, WorldCounts } from "./WorldExplorer";
 
 const WorldExplorer = dynamic(() => import("./WorldExplorer"), { ssr: false, loading: () => <MapLoading /> });
+const SignalsTogether = dynamic(() => import("./SignalsTogether"), { ssr: false, loading: () => <MapLoading /> });
+
+type Scope = "world" | "south-asia" | "together";
 
 export function TrendsScope({ counts, children }: { counts: WorldCounts; children: React.ReactNode }) {
   const params = useSearchParams();
   const detailed = params.get("scope") === "south-asia" || ["var", "zone", "lat", "season"].some((k) => params.has(k));
-  const [scope, setScope] = useState<"world" | "south-asia">(detailed ? "south-asia" : "world");
+  const [scope, setScope] = useState<Scope>(params.get("scope") === "together" ? "together" : detailed ? "south-asia" : "world");
   const [measure, setMeasure] = useState<MeasureId>("temperature");
 
-  const choose = (s: "world" | "south-asia") => {
+  const choose = (s: Scope) => {
     setScope(s);
-    window.history.replaceState(null, "", s === "world" ? "?scope=world" : "?scope=south-asia");
+    window.history.replaceState(null, "", `?scope=${s}`);
   };
 
   return (
@@ -36,6 +39,7 @@ export function TrendsScope({ counts, children }: { counts: WorldCounts; childre
           [
             ["world", "World", "বিশ্ব"],
             ["south-asia", "South Asia", "দক্ষিণ এশিয়া"],
+            ["together", "Signals together", "একসাথে সংকেত"],
           ] as const
         ).map(([id, en, bn]) => (
           <button
@@ -43,13 +47,13 @@ export function TrendsScope({ counts, children }: { counts: WorldCounts; childre
             type="button"
             aria-pressed={scope === id}
             onClick={() => choose(id)}
-            className={`rounded-full px-4 py-1.5 transition-colors ${scope === id ? "bg-accent-strong font-medium text-accent-ink" : "text-ink-2 hover:text-ink"}`}
+            className={`whitespace-nowrap rounded-full px-3 py-1.5 transition-colors sm:px-4 ${scope === id ? "bg-accent-strong font-medium text-accent-ink" : "text-ink-2 hover:text-ink"}`}
           >
             <T en={en} bn={bn} />
           </button>
         ))}
       </div>
-      {scope === "world" ? <WorldExplorer key={measure} initial={measure} counts={counts} onZoomSouthAsia={() => choose("south-asia")} /> : children}
+      {scope === "together" ? <SignalsTogether /> : scope === "world" ? <WorldExplorer key={measure} initial={measure} counts={counts} onZoomSouthAsia={() => choose("south-asia")} /> : children}
       {scope === "world" && !detailed && <TrendsStart onWorld={setMeasure} />}
     </div>
   );

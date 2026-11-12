@@ -234,6 +234,16 @@ export default async function MethodsPage() {
             near its middle, so we say where the record changes most, not when the change began.
           </li>
           <li>
+            <strong className="font-semibold text-ink">Signals together.</strong> A month is unusual when it is in the top or bottom
+            10% of the 45 values for that calendar month at that place (GISTEMP monthly temperature, GPCP monthly rain), so the
+            seasonal cycle is removed. &ldquo;Hot and dry&rdquo; needs both in the same month; &ldquo;very wet on wet ground&rdquo; is a
+            top-10% rain month after a month already in the top 25% (a stand-in for saturated soil, since NASA soil-moisture
+            files need a login). We count them in 1981–1995 and 2011–2025, and test whether floods and landslides within 300 km
+            came in such months more often than other months (one-sided Fisher exact test, Benjamini–Hochberg across places,
+            only with at least five event months). The &ldquo;year before a disaster&rdquo; timelines show the same monthly flags at
+            the event&apos;s location. A pattern in the record, not a forecast.
+          </li>
+          <li>
             <strong className="font-semibold text-ink">2041–2060.</strong> NASA NEX-GDDP-CMIP6 daily projections from six climate models
             (1° for South Asia, 2° worldwide), each compared only with its own 1995–2014 run. We report how often today&apos;s 1-in-10
             wet, dry or hot year would come, and how many models agree. A projection, not a forecast.

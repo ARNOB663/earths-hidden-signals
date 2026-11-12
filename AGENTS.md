@@ -18,6 +18,9 @@
 > 1995–2014, from daily `tasmax`: `cmip6_download.py --global --vars tasmax`; IITM-ESM publishes no tasmax).
 > A fixed 35 °C threshold was tried and dropped: 2° point sampling made it wrong for coastal and mountain
 > towns. `hotdays.json` is optional for the web: without it the town report leaves that line out.
+> `compound.py` writes `compound.json` (per cell: hot+dry and wet-on-wet months 1981–95 vs 2011–25, link to
+> nearby floods/landslides) and `compound-events.json` (12-month timelines for 13 named disasters); shown in
+> the town report and in Climate trends → Signals together (`?scope=together`).
 
 
 Two independent parts: `analysis/` (Python pipeline) writes committed JSON into `web/public/data/`; `web/` (Next.js 16) reads it at build/request time. The website works without rerunning the pipeline.
