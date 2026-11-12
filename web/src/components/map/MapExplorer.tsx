@@ -17,6 +17,7 @@ import {
   type Icon,
 } from "@phosphor-icons/react";
 import dynamic from "next/dynamic";
+import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import { bnMonth, bnNum } from "@/lib/bn";
@@ -85,7 +86,8 @@ export default function MapExplorer({ catalog }: { catalog: GibsCatalog }) {
   const [compareOn, setCompareOn] = useState(() => params.has("compare"));
   const [thenYear, setThenYear] = useState<string | null>(() => params.get("compare"));
   // Compare either by sliding between the two images, or as one map of the difference.
-  const [compareView, setCompareView] = useState<"slide" | "diff">(() => (params.get("view") === "diff" ? "diff" : "slide"));
+  // Difference is the default: two absolute images rarely show a few degrees of change by eye.
+  const [compareView, setCompareView] = useState<"slide" | "diff">(() => (params.get("view") === "slide" ? "slide" : "diff"));
   const [split, setSplit] = useState(0.6);
   // Map position from the link (?at=lat,lon,zoom), kept up to date as the map moves.
   const [view, setView] = useState<MapView | null>(() => {
@@ -121,7 +123,7 @@ export default function MapExplorer({ catalog }: { catalog: GibsCatalog }) {
     const at = view ? `&at=${view.lat.toFixed(2)},${view.lon.toFixed(2)},${view.zoom}` : "";
     const query =
       layer.kind === "gibs"
-        ? `?layer=${layer.id}${date ? `&date=${date}` : ""}${compareDate ? `&compare=${compareDate.slice(0, 4)}` : ""}${diffOn ? "&view=diff" : ""}${at}`
+        ? `?layer=${layer.id}${date ? `&date=${date}` : ""}${compareDate ? `&compare=${compareDate.slice(0, 4)}` : ""}${compareDate && !diffOn ? "&view=slide" : ""}${at}`
         : `?layer=${layer.id}&from=${yearRange[0]}&to=${yearRange[1]}${at}`;
     window.history.replaceState(null, "", query);
   }, [layer, date, yearRange, compareDate, view, diffOn]);
@@ -277,8 +279,8 @@ export default function MapExplorer({ catalog }: { catalog: GibsCatalog }) {
             <T key="2" en="Pick a month, or press Play to watch the years go by." bn="একটি মাস বেছে নিন, অথবা প্লে চেপে বছরগুলো একে একে দেখুন।" />,
             <T
               key="3"
-              en='Turn on "Compare two years" to see a place then and now, side by side.'
-              bn="&ldquo;দুই বছর তুলনা&rdquo; চালু করে একই জায়গা আগে ও এখন পাশাপাশি দেখুন।"
+              en='Turn on "Compare two years": the map colours what changed, for example red where it got hotter.'
+              bn="&ldquo;দুই বছর তুলনা&rdquo; চালু করুন: মানচিত্র পরিবর্তনটাকে রঙে দেখায়, যেমন বেশি গরম হলে লাল।"
             />,
           ]}
           buttonClassName={`absolute left-3 top-3 ${panelHidden ? "lg:left-4 lg:top-[76px]" : "lg:left-[392px] lg:top-4"}`}
@@ -462,8 +464,8 @@ export default function MapExplorer({ catalog }: { catalog: GibsCatalog }) {
                     <div role="radiogroup" aria-label={t("How to compare", "কীভাবে তুলনা করবেন")} className="grid grid-cols-2 gap-1 rounded-full bg-sunken p-1">
                       {(
                         [
-                          ["slide", "Slide", "স্লাইড"],
                           ["diff", "Difference", "পার্থক্য"],
+                          ["slide", "Side by side", "পাশাপাশি"],
                         ] as const
                       ).map(([value, en, bn]) => (
                         <button
@@ -504,7 +506,10 @@ export default function MapExplorer({ catalog }: { catalog: GibsCatalog }) {
                     </div>
                     {!diffSettings && (
                       <p className="text-xs text-ink-3">
-                        <T en="Drag the handle on the map." bn="মানচিত্রের হাতলটি টানুন।" />
+                        <T
+                          en="Drag the handle on the map. If both sides look alike, try Difference: it colours the change itself."
+                          bn="মানচিত্রের হাতলটি টানুন। দুই পাশ একই রকম লাগলে পার্থক্য দেখুন: সেটি পরিবর্তনটাকেই রঙে দেখায়।"
+                        />
                       </p>
                     )}
                   </div>
@@ -690,6 +695,15 @@ function DiffLegend({ kind, range, unit, then, now }: { kind: DiffKind; range: n
           <T en={`+${n} ${unit[0]} or more`} bn={`+${bnNum(n)} ${unit[1]} বা বেশি`} />
         </span>
       </div>
+      <p className="mt-2 text-xs text-ink-3">
+        <T
+          en="One month against another shows that month's weather, not a trend. "
+          bn="এক মাসের সাথে আরেক মাসের তুলনা সেই মাসের আবহাওয়া দেখায়, প্রবণতা নয়। "
+        />
+        <Link href="/trends" className="font-medium text-accent hover:underline">
+          <T en="See the 45-year trends" bn="৪৫ বছরের প্রবণতা দেখুন" />
+        </Link>
+      </p>
     </div>
   );
 }
