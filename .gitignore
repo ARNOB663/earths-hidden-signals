@@ -27,3 +27,8 @@ web/public/data/signals/frequency/
 
 # tool output: Playwright MCP session dumps (screenshots, page YAML, logs)
 .playwright-mcp/
+
+# Video production (local only, never pushed)
+video/
+nasa space app video challange/
+.claude/skills/remotion-*/
