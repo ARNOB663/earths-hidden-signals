@@ -81,3 +81,12 @@ No account or API key is needed for any step. [`AGENTS.md`](AGENTS.md) describes
 
 This project shows evidence-based trends to help people prepare. It is **not** a disaster forecast;
 always follow official warnings.
+
+## Use of AI (Super Intelligence)
+
+- **Code:** written with help from Claude (Anthropic) through Claude Code, for the Python data
+  pipeline, the website and the demo videos. The team chose the methods and checked the results
+  against the source data, the tests and an independent record (CRU TS).
+- **Voice-over:** the narration in our demo videos is AI-generated with ElevenLabs.
+- **Not AI:** every number on the site comes from statistical tests on NASA and partner data, not
+  from an AI model. No AI-generated images or footage are used.
